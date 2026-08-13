@@ -1,6 +1,6 @@
 {
   "name": "@ubx/sdk-google",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "Apache-2.0",
   "exports": {
     "./google/organization/access_approval_settings": "./google/organization/access_approval_settings.ts",

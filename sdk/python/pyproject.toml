@@ -1,6 +1,6 @@
 [project]
 name = "ubx-sdk-google"
-version = "0.2.0"
+version = "0.2.1"
 description = "Generated Python bindings for hashicorp/google@7.43.0 (ubx sdk gen). DO NOT EDIT."
 dependencies = ["ubx_sdk>=0.1.0,<0.2.0"]
 

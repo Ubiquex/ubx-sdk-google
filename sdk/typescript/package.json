@@ -1,6 +1,6 @@
 {
   "name": "@ubx/sdk-google",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Generated TypeScript bindings for hashicorp/google@7.43.0 (ubx sdk gen). DO NOT EDIT.",
   "type": "module",
   "dependencies": {
