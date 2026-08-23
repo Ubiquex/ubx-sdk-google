@@ -7,44 +7,68 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class RegionTargetHttpProxy_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_RegionTargetHttpProxy_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class RegionTargetHttpProxyConfig:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
+    fingerprint: Any = None
+    # Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For global external Application Load Balancers, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For classic Application Load Balancers, this option is not supported.
+    http_keep_alive_timeout_sec: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set toINTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
+    proxy_bind: Any = None
+    # Output only. [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
+    region: Any = None
+    # [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # URL to the UrlMap resource that defines the mapping from URL to the BackendService.
+    url_map: Any = None
 
 @dataclasses.dataclass
-class RegionTargetHttpProxyConfig:
-    deletion_policy: Any = None
+class RegionTargetHttpProxyAttrs:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetHttpProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpProxy.
+    fingerprint: Any = None
+    # Specifies how long to keep a connection open, after completing a response, while there is no matching traffic (in seconds). If an HTTP keep-alive is not specified, a default value (610 seconds) will be used. For global external Application Load Balancers, the minimum allowed value is 5 seconds and the maximum allowed value is 1200 seconds. For classic Application Load Balancers, this option is not supported.
     http_keep_alive_timeout_sec: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
+    # Output only. [Output Only] Type of resource. Always compute#targetHttpProxy for target HTTP proxies.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    project: Any = None
+    # This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set toINTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
+    proxy_bind: Any = None
+    # Output only. [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
     region: Any = None
+    # [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # URL to the UrlMap resource that defines the mapping from URL to the BackendService.
     url_map: Any = None
-    timeouts: Any = None
 
 RegionTargetHttpProxy = ubx.ResourceBinding(
     wire_type="google_compute_region_target_http_proxy",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
+        "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
         "http_keep_alive_timeout_sec": ubx.FieldSpec(wire_name="http_keep_alive_timeout_sec"),
         "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
+        "proxy_bind": ubx.FieldSpec(wire_name="proxy_bind"),
         "region": ubx.FieldSpec(wire_name="region"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "url_map": ubx.FieldSpec(wire_name="url_map"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_RegionTargetHttpProxy_TimeoutsFields,
-        ),
     },
 )

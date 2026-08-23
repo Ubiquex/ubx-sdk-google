@@ -3,97 +3,341 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RegionInstanceGroupManager_AllInstancesConfig struct {
+type RegionInstanceGroupManager_AllInstancesConfig_Properties struct {
+	// The label key-value pairs that you want to patch onto the instance.
 	Labels any
+	// The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata.
 	Metadata any
 }
 
+type RegionInstanceGroupManager_AllInstancesConfig struct {
+	// Represents the change that you want to make to the instance properties.
+	Properties any
+}
+
 type RegionInstanceGroupManager_AutoHealingPolicies struct {
+	// The health check resource URL (self-link) that determines instance health for auto-healing. Can be specified as a full URL, a self-link, or a name reference. (AI-inferred)
 	HealthCheck any
+	// The initial delay, in seconds, before an instance is considered available for auto-healing. This is the time to wait after an instance is created or restarted before checking its health for auto-healing purposes. (AI-inferred)
 	InitialDelaySec any
 }
 
+type RegionInstanceGroupManager_CurrentActions struct {
+	// Output only. The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
+	Abandoning any
+	// Output only. The number of instances in the managed instance group that are scheduled to be created or are currently being created. If the group fails to create any of these instances, it tries again until it creates the instance successfully. If you have disabled creation retries, this field will not be populated; instead, the creatingWithoutRetries field will be populated.
+	Creating any
+	// Output only. The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
+	CreatingWithoutRetries any
+	// Output only. The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
+	Deleting any
+	// Output only. The number of instances in the managed instance group that are running and have no scheduled actions.
+	None any
+	// Output only. The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
+	Recreating any
+	// Output only. The number of instances in the managed instance group that are being reconfigured with properties that do not require a restart or a recreate action. For example, setting or removing target pools for the instance.
+	Refreshing any
+	// Output only. The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
+	Restarting any
+	// Output only. The number of instances in the managed instance group that are scheduled to be resumed or are currently being resumed.
+	Resuming any
+	// Output only. The number of instances in the managed instance group that are scheduled to be started or are currently being started.
+	Starting any
+	// Output only. The number of instances in the managed instance group that are scheduled to be stopped or are currently being stopped.
+	Stopping any
+	// Output only. The number of instances in the managed instance group that are scheduled to be suspended or are currently being suspended.
+	Suspending any
+	// Output only. The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
+	Verifying any
+}
+
+type RegionInstanceGroupManager_DistributionPolicy_Zones struct {
+	// Specifies the zone to which instances are distributed as part of the distribution policy for this regional managed instance group. (AI-inferred)
+	Zone any
+}
+
+type RegionInstanceGroupManager_DistributionPolicy struct {
+	// The distribution shape to which the group converges either proactively or on resize events (depending on the value set inupdatePolicy.instanceRedistributionType).
+	TargetShape any
+	// Zones where the regional managed instance group will create and manage its instances. By default, a regional MIG doesn't automatically select an AI zone to create instances, even if an AI zone is available in the specified region. To create instances in an AI zone in the selected region, you must explicitly specify it in the distribution policy together with the other preferred zones.
+	Zones any
+}
+
 type RegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelections struct {
+	// List of machine types that can be used for this instance selection. The instance group manager can choose any of these types when provisioning instances according to the flexibility policy. (AI-inferred)
 	MachineTypes any
-	Name any
+	// The priority rank of this instance selection, where lower numbers have higher priority. Must be between 0 and 5. (AI-inferred)
 	Rank any
 }
 
 type RegionInstanceGroupManager_InstanceFlexibilityPolicy struct {
+	// Named instance selections configuring properties that the group will use when creating new VMs.
 	InstanceSelections any
 }
 
 type RegionInstanceGroupManager_InstanceLifecyclePolicy_OnRepair struct {
+	// Specifies whether the MIG can change a VM's zone during a repair. Valid values are: - NO (default): MIG cannot change a VM's zone during a repair. - YES: MIG can select a different zone for the VM during a repair.
 	AllowChangingZone any
 }
 
 type RegionInstanceGroupManager_InstanceLifecyclePolicy struct {
+	// The action that a MIG performs on a failed VM. If the value of the onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also applies to the VMs on which your application fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed VM.
 	DefaultActionOnFailure any
+	// A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
 	ForceUpdateOnRepair any
+	// The action that a MIG performs on an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are: - DEFAULT_ACTION (default): MIG uses the same action configured for instanceLifecyclePolicy.defaultActionOnFailure field. - REPAIR: MIG automatically repairs an unhealthy VM by recreating it. - DO_NOTHING: MIG doesn't repair an unhealthy VM. For more information, see About repairing VMs in a MIG.
 	OnFailedHealthCheck any
+	// Configuration for VM repairs in the MIG.
 	OnRepair any
 }
 
-type RegionInstanceGroupManager_NamedPort struct {
+type RegionInstanceGroupManager_NamedPorts struct {
+	// The symbolic name of the named port, which acts as the key in the named port mapping to a port number. (AI-inferred)
 	Name any
+	// The port number for this named port. (AI-inferred)
 	Port any
 }
 
 type RegionInstanceGroupManager_ResourcePolicies struct {
+	// The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
 	WorkloadPolicy any
 }
 
 type RegionInstanceGroupManager_StandbyPolicy struct {
+	// Specifies the number of seconds that the MIG should wait to suspend or stop a VM after that VM was created. The initial delay gives the initialization script the time to prepare your VM for a quick scale out. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
 	InitialDelaySec any
+	// Defines how a MIG resumes or starts VMs from a standby pool when the group scales out. The default mode is `MANUAL`.
 	Mode any
 }
 
-type RegionInstanceGroupManager_StatefulDisk struct {
-	DeleteRule any
-	DeviceName any
+type RegionInstanceGroupManager_StatefulPolicy_PreservedState_Disks struct {
+	// Specifies whether the stateful disk should be automatically deleted when the instance is deleted. Accepts 'true' or 'false'. (AI-inferred)
+	AutoDelete any
 }
 
-type RegionInstanceGroupManager_StatefulExternalIp struct {
-	DeleteRule any
-	InterfaceName any
+type RegionInstanceGroupManager_StatefulPolicy_PreservedState struct {
+	// Disks created on the instances that will be preserved on instance delete, update, etc. This map is keyed with the device names of the disks.
+	Disks any
+	// External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+	ExternalIps any
+	// Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name.
+	InternalIps any
+}
+
+type RegionInstanceGroupManager_StatefulPolicy struct {
+	// Configuration of preserved resources.
+	PreservedState any
+}
+
+type RegionInstanceGroupManager_Status_AllInstancesConfig struct {
+	// Output only. Current all-instances configuration revision. This value is in RFC3339 text format.
+	CurrentRevision any
+	// Output only. A bit indicating whether this configuration has been applied to all managed instances in the group.
+	Effective any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo struct {
+	// The domain associated with the error, typically indicating the service or API where the error originated (e.g., 'compute.googleapis.com'). (AI-inferred)
+	Domain any
+	// A map of key-value pairs containing additional error information that can help diagnose the issue. (AI-inferred)
+	Metadatas any
+	// The reason for the error, as defined by the error domain. (AI-inferred)
+	Reason any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links struct {
+	// The description of the help link provided for the error. This text explains the purpose of the linked resource, such as a documentation page. (AI-inferred)
+	Description any
+	// The URL of the help resource associated with the error. (AI-inferred)
+	Url any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help struct {
+	// A list of links that provide additional helpful information about the error. Each link includes a URL and an optional description. (AI-inferred)
+	Links any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage struct {
+	// The locale (e.g., 'en-US') for the localized error message, indicating the language in which the message is provided. (AI-inferred)
+	Locale any
+	// The human-readable localized message describing the error. (AI-inferred)
+	Message any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo struct {
+	// A map of dimension names to string values that identifies the specific quota that was exceeded, such as region or resource type. (AI-inferred)
+	Dimensions any
+	// The projected quota limit that would be in effect if the operation succeeds, used in quota error details to indicate the limit after a change. (AI-inferred)
+	FutureLimit any
+	// The quota limit for the metric that triggered the quota error. (AI-inferred)
+	Limit any
+	// The name of the specific quota limit that was exceeded, as reported in the quota error details. (AI-inferred)
+	LimitName any
+	// The name of the quota metric that was exceeded. (AI-inferred)
+	MetricName any
+	// The current rollout status of the applied accelerator topologies. Possible values are `IN_PROGRESS` and `ROLLOUT_STATUS_UNSPECIFIED`. (AI-inferred)
+	RolloutStatus any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails struct {
+	ErrorInfo any
+	// The help information associated with the error, containing links to relevant documentation and guidance for resolving the issue. (AI-inferred)
+	Help any
+	// A localized error message that provides a human-readable version of the error in a specific language, along with the locale identifier. (AI-inferred)
+	LocalizedMessage any
+	// Information about a quota violation related to the error, including the quota metric, limit, and current usage. (AI-inferred)
+	QuotaInfo any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors struct {
+	Code any
+	// A list of objects containing detailed information about the errors that occurred while applying accelerator topologies to the instance group. (AI-inferred)
+	ErrorDetails any
+	// The field or path in the resource configuration that caused the error. (AI-inferred)
+	Location any
+	// A human-readable error message describing the reason for the failure within the applied accelerator topology state. (AI-inferred)
+	Message any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error struct {
+	// A list of errors that occurred while applying accelerator topologies to the instance group. Each error object contains a code and message describing the failure. (AI-inferred)
+	Errors any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails struct {
+	// The error object contains details about a failure that occurred while applying an accelerator topology to the instance group, including the error code and message. (AI-inferred)
+	Error any
+	Timestamp any
+}
+
+type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies struct {
+	// The accelerator topology currently applied to this regional instance group manager. This may differ from the topology specified in the instance template, as it reflects the actual state. (AI-inferred)
+	AcceleratorTopology any
+	// The current state of the accelerator topology applied to the instance group. Possible values are: ACTIVATING, ACTIVE, DEACTIVATING, FAILED, INCOMPLETE, and REACTIVATING. (AI-inferred)
+	State any
+	StateDetails any
+}
+
+type RegionInstanceGroupManager_Status_BulkInstanceOperation struct {
+	// Output only. Informs whether bulk instance operation is in progress.
+	InProgress any
+	LastProgressCheck any
+}
+
+type RegionInstanceGroupManager_Status_CurrentInstanceStatuses struct {
+	// Output only. The number of instances in the managed instance group that have DEPROVISIONING status.
+	Deprovisioning any
+	// Output only. The number of instances that have not been created yet or have been deleted. Includes only instances that would be shown in the listManagedInstances method and not all instances that have been deleted in the lifetime of the MIG. Does not include FlexStart instances that are waiting for the resources availability, they are considered as 'pending'.
+	NonExistent any
+	// Output only. The number of instances in the managed instance group that have PENDING status, that is FlexStart instances that are waiting for resources. Instances that do not exist because of the other reasons are counted as 'non_existent'.
+	Pending any
+	// Output only. The number of instances in the managed instance group that have PENDING_STOP status.
+	PendingStop any
+	// Output only. The number of instances in the managed instance group that have PROVISIONING status.
+	Provisioning any
+	// Output only. The number of instances in the managed instance group that have REPAIRING status.
+	Repairing any
+	// Output only. The number of instances in the managed instance group that have RUNNING status.
+	Running any
+	// Output only. The number of instances in the managed instance group that have STAGING status.
+	Staging any
+	// Output only. The number of instances in the managed instance group that have STOPPED status.
+	Stopped any
+	// Output only. The number of instances in the managed instance group that have STOPPING status.
+	Stopping any
+	// Output only. The number of instances in the managed instance group that have SUSPENDED status.
+	Suspended any
+	// Output only. The number of instances in the managed instance group that have SUSPENDING status.
+	Suspending any
+	// Output only. The number of instances in the managed instance group that have TERMINATED status.
+	Terminated any
+}
+
+type RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigs struct {
+	// Output only. A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+	AllEffective any
+}
+
+type RegionInstanceGroupManager_Status_Stateful struct {
+	// Output only. A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful configuration even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
+	HasStatefulConfig any
+	// A list of statuses for each per-instance configuration in the regional instance group manager, containing the configuration ID and its current state. (AI-inferred)
+	PerInstanceConfigs any
+}
+
+type RegionInstanceGroupManager_Status_VersionTarget struct {
+	// Output only. A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances' target version are specified byversion field on Instance Group Manager.
+	IsReached any
+}
+
+type RegionInstanceGroupManager_Status struct {
+	// The status of the all-instances configuration for this regional instance group manager, including the fingerprint and the current state of the configuration applied to all instances. (AI-inferred)
+	AllInstancesConfig any
+	// Output only. The accelerator topology applied to this MIG. Currently only one accelerator topology is supported.
+	AppliedAcceleratorTopologies any
+	// Output only. The URL of theAutoscaler that targets this instance group manager.
+	Autoscaler any
+	// Bulk instance operation is the creation of VMs in a MIG when the targetSizePolicy.mode is set to BULK.
+	BulkInstanceOperation any
+	// The list of instance statuses and the number of instances in this managed instance group that have the status. For more information about how to interpret each status check the instance lifecycle documentation. Currently only shown for TPU MIGs.
+	CurrentInstanceStatuses any
+	// Output only. A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+	IsStable any
+	Stateful any
+	// A map of version names to the target number of instances for each version in the regional instance group manager. This indicates the intended distribution of instances among the configured versions. (AI-inferred)
+	VersionTarget any
 }
 
 type RegionInstanceGroupManager_TargetSizePolicy struct {
+	// The mode of target size policy based on which the MIG creates its VMs individually or all at once.
 	Mode any
 }
 
-type RegionInstanceGroupManager_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
-type RegionInstanceGroupManager_UpdatePolicy struct {
-	InstanceRedistributionType any
-	MaxSurgeFixed any
-	MaxSurgePercent any
-	MaxUnavailableFixed any
-	MaxUnavailablePercent any
-	MinimalAction any
-	MostDisruptiveAllowedAction any
-	ReplacementMethod any
-	Type any
-}
-
-type RegionInstanceGroupManager_Version_TargetSize struct {
+type RegionInstanceGroupManager_UpdatePolicy_MaxSurge struct {
+	// Output only. Absolute value of VM instances calculated based on the specific mode. - If the value is fixed, then the calculated value is equal to the fixed value. - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded.
+	Calculated any
+	// Specifies a fixed number of VM instances. This must be a positive integer.
 	Fixed any
+	// Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
 	Percent any
 }
 
-type RegionInstanceGroupManager_Version struct {
+type RegionInstanceGroupManager_UpdatePolicy struct {
+	// The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+	InstanceRedistributionType any
+	// Encapsulates numeric value that can be either absolute or relative.
+	MaxSurge any
+	// Encapsulates numeric value that can be either absolute or relative.
+	MaxUnavailable any
+	// Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action toREFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metadata. But if your application reads instance metadata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metadata changes.
+	MinimalAction any
+	// Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions,REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+	MostDisruptiveAllowedAction any
+	// What action should be used to replace instances. See minimal_action.REPLACE
+	ReplacementMethod any
+	// The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations orOPPORTUNISTIC so that you can select the VMs that you want to update.
+	Type any
+}
+
+type RegionInstanceGroupManager_Versions struct {
+	// The URL (self_link) of the instance template that defines the configuration for this version of the managed instance group. This template is used to create instances when the group scales or updates to this version. (AI-inferred)
 	InstanceTemplate any
 	Name any
+	// The target size for this version, specified either as a fixed number of instances or as a percentage of the group's total size. This controls how many instances are assigned to this version when using multiple versions. (AI-inferred)
 	TargetSize any
 }
 
-var RegionInstanceGroupManager_AllInstancesConfigFields = ubx.FieldMap{
+var RegionInstanceGroupManager_AllInstancesConfig_PropertiesFields = ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	}
+
+var RegionInstanceGroupManager_AllInstancesConfigFields = ubx.FieldMap{
+		"Properties": ubx.FieldSpec{
+			WireName: "properties",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_AllInstancesConfig_PropertiesFields,
+		},
 	}
 
 var RegionInstanceGroupManager_AutoHealingPoliciesFields = ubx.FieldMap{
@@ -101,16 +345,44 @@ var RegionInstanceGroupManager_AutoHealingPoliciesFields = ubx.FieldMap{
 		"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
 	}
 
+var RegionInstanceGroupManager_CurrentActionsFields = ubx.FieldMap{
+		"Abandoning": ubx.FieldSpec{WireName: "abandoning"},
+		"Creating": ubx.FieldSpec{WireName: "creating"},
+		"CreatingWithoutRetries": ubx.FieldSpec{WireName: "creating_without_retries"},
+		"Deleting": ubx.FieldSpec{WireName: "deleting"},
+		"None": ubx.FieldSpec{WireName: "none"},
+		"Recreating": ubx.FieldSpec{WireName: "recreating"},
+		"Refreshing": ubx.FieldSpec{WireName: "refreshing"},
+		"Restarting": ubx.FieldSpec{WireName: "restarting"},
+		"Resuming": ubx.FieldSpec{WireName: "resuming"},
+		"Starting": ubx.FieldSpec{WireName: "starting"},
+		"Stopping": ubx.FieldSpec{WireName: "stopping"},
+		"Suspending": ubx.FieldSpec{WireName: "suspending"},
+		"Verifying": ubx.FieldSpec{WireName: "verifying"},
+	}
+
+var RegionInstanceGroupManager_DistributionPolicy_ZonesFields = ubx.FieldMap{
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
+
+var RegionInstanceGroupManager_DistributionPolicyFields = ubx.FieldMap{
+		"TargetShape": ubx.FieldSpec{WireName: "target_shape"},
+		"Zones": ubx.FieldSpec{
+			WireName: "zones",
+			Kind: "list",
+			Fields: RegionInstanceGroupManager_DistributionPolicy_ZonesFields,
+		},
+	}
+
 var RegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionsFields = ubx.FieldMap{
 		"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rank": ubx.FieldSpec{WireName: "rank"},
 	}
 
 var RegionInstanceGroupManager_InstanceFlexibilityPolicyFields = ubx.FieldMap{
 		"InstanceSelections": ubx.FieldSpec{
 			WireName: "instance_selections",
-			Kind: "set",
+			Kind: "map",
 			Fields: RegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionsFields,
 		},
 	}
@@ -125,12 +397,12 @@ var RegionInstanceGroupManager_InstanceLifecyclePolicyFields = ubx.FieldMap{
 		"OnFailedHealthCheck": ubx.FieldSpec{WireName: "on_failed_health_check"},
 		"OnRepair": ubx.FieldSpec{
 			WireName: "on_repair",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_InstanceLifecyclePolicy_OnRepairFields,
 		},
 	}
 
-var RegionInstanceGroupManager_NamedPortFields = ubx.FieldMap{
+var RegionInstanceGroupManager_NamedPortsFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Port": ubx.FieldSpec{WireName: "port"},
 	}
@@ -144,108 +416,392 @@ var RegionInstanceGroupManager_StandbyPolicyFields = ubx.FieldMap{
 		"Mode": ubx.FieldSpec{WireName: "mode"},
 	}
 
-var RegionInstanceGroupManager_StatefulDiskFields = ubx.FieldMap{
-		"DeleteRule": ubx.FieldSpec{WireName: "delete_rule"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+var RegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields = ubx.FieldMap{
+		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
 	}
 
-var RegionInstanceGroupManager_StatefulExternalIpFields = ubx.FieldMap{
-		"DeleteRule": ubx.FieldSpec{WireName: "delete_rule"},
-		"InterfaceName": ubx.FieldSpec{WireName: "interface_name"},
+var RegionInstanceGroupManager_StatefulPolicy_PreservedStateFields = ubx.FieldMap{
+		"Disks": ubx.FieldSpec{
+			WireName: "disks",
+			Kind: "map",
+			Fields: RegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+		},
+		"ExternalIps": ubx.FieldSpec{
+			WireName: "external_ips",
+			Kind: "map",
+			Fields: RegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+		},
+		"InternalIps": ubx.FieldSpec{
+			WireName: "internal_ips",
+			Kind: "map",
+			Fields: RegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+		},
+	}
+
+var RegionInstanceGroupManager_StatefulPolicyFields = ubx.FieldMap{
+		"PreservedState": ubx.FieldSpec{
+			WireName: "preserved_state",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_StatefulPolicy_PreservedStateFields,
+		},
+	}
+
+var RegionInstanceGroupManager_Status_AllInstancesConfigFields = ubx.FieldMap{
+		"CurrentRevision": ubx.FieldSpec{WireName: "current_revision"},
+		"Effective": ubx.FieldSpec{WireName: "effective"},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
+		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+		"Reason": ubx.FieldSpec{WireName: "reason"},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Url": ubx.FieldSpec{WireName: "url"},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
+		"Links": ubx.FieldSpec{
+			WireName: "links",
+			Kind: "list",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields,
+		},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
+		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
+		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
+		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
+		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields = ubx.FieldMap{
+		"ErrorInfo": ubx.FieldSpec{
+			WireName: "error_info",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields,
+		},
+		"Help": ubx.FieldSpec{
+			WireName: "help",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields,
+		},
+		"LocalizedMessage": ubx.FieldSpec{
+			WireName: "localized_message",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields,
+		},
+		"QuotaInfo": ubx.FieldSpec{
+			WireName: "quota_info",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields,
+		},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields = ubx.FieldMap{
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"ErrorDetails": ubx.FieldSpec{
+			WireName: "error_details",
+			Kind: "list",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields,
+		},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields = ubx.FieldMap{
+		"Errors": ubx.FieldSpec{
+			WireName: "errors",
+			Kind: "list",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields,
+		},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields = ubx.FieldMap{
+		"Error": ubx.FieldSpec{
+			WireName: "error",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields,
+		},
+		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+	}
+
+var RegionInstanceGroupManager_Status_AppliedAcceleratorTopologiesFields = ubx.FieldMap{
+		"AcceleratorTopology": ubx.FieldSpec{WireName: "accelerator_topology"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"StateDetails": ubx.FieldSpec{
+			WireName: "state_details",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
+		},
+	}
+
+var RegionInstanceGroupManager_Status_BulkInstanceOperationFields = ubx.FieldMap{
+		"InProgress": ubx.FieldSpec{WireName: "in_progress"},
+		"LastProgressCheck": ubx.FieldSpec{
+			WireName: "last_progress_check",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
+		},
+	}
+
+var RegionInstanceGroupManager_Status_CurrentInstanceStatusesFields = ubx.FieldMap{
+		"Deprovisioning": ubx.FieldSpec{WireName: "deprovisioning"},
+		"NonExistent": ubx.FieldSpec{WireName: "non_existent"},
+		"Pending": ubx.FieldSpec{WireName: "pending"},
+		"PendingStop": ubx.FieldSpec{WireName: "pending_stop"},
+		"Provisioning": ubx.FieldSpec{WireName: "provisioning"},
+		"Repairing": ubx.FieldSpec{WireName: "repairing"},
+		"Running": ubx.FieldSpec{WireName: "running"},
+		"Staging": ubx.FieldSpec{WireName: "staging"},
+		"Stopped": ubx.FieldSpec{WireName: "stopped"},
+		"Stopping": ubx.FieldSpec{WireName: "stopping"},
+		"Suspended": ubx.FieldSpec{WireName: "suspended"},
+		"Suspending": ubx.FieldSpec{WireName: "suspending"},
+		"Terminated": ubx.FieldSpec{WireName: "terminated"},
+	}
+
+var RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigsFields = ubx.FieldMap{
+		"AllEffective": ubx.FieldSpec{WireName: "all_effective"},
+	}
+
+var RegionInstanceGroupManager_Status_StatefulFields = ubx.FieldMap{
+		"HasStatefulConfig": ubx.FieldSpec{WireName: "has_stateful_config"},
+		"PerInstanceConfigs": ubx.FieldSpec{
+			WireName: "per_instance_configs",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigsFields,
+		},
+	}
+
+var RegionInstanceGroupManager_Status_VersionTargetFields = ubx.FieldMap{
+		"IsReached": ubx.FieldSpec{WireName: "is_reached"},
+	}
+
+var RegionInstanceGroupManager_StatusFields = ubx.FieldMap{
+		"AllInstancesConfig": ubx.FieldSpec{
+			WireName: "all_instances_config",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_AllInstancesConfigFields,
+		},
+		"AppliedAcceleratorTopologies": ubx.FieldSpec{
+			WireName: "applied_accelerator_topologies",
+			Kind: "list",
+			Fields: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologiesFields,
+		},
+		"Autoscaler": ubx.FieldSpec{WireName: "autoscaler"},
+		"BulkInstanceOperation": ubx.FieldSpec{
+			WireName: "bulk_instance_operation",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_BulkInstanceOperationFields,
+		},
+		"CurrentInstanceStatuses": ubx.FieldSpec{
+			WireName: "current_instance_statuses",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_CurrentInstanceStatusesFields,
+		},
+		"IsStable": ubx.FieldSpec{WireName: "is_stable"},
+		"Stateful": ubx.FieldSpec{
+			WireName: "stateful",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_StatefulFields,
+		},
+		"VersionTarget": ubx.FieldSpec{
+			WireName: "version_target",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_Status_VersionTargetFields,
+		},
 	}
 
 var RegionInstanceGroupManager_TargetSizePolicyFields = ubx.FieldMap{
 		"Mode": ubx.FieldSpec{WireName: "mode"},
 	}
 
-var RegionInstanceGroupManager_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var RegionInstanceGroupManager_UpdatePolicy_MaxSurgeFields = ubx.FieldMap{
+		"Calculated": ubx.FieldSpec{WireName: "calculated"},
+		"Fixed": ubx.FieldSpec{WireName: "fixed"},
+		"Percent": ubx.FieldSpec{WireName: "percent"},
 	}
 
 var RegionInstanceGroupManager_UpdatePolicyFields = ubx.FieldMap{
 		"InstanceRedistributionType": ubx.FieldSpec{WireName: "instance_redistribution_type"},
-		"MaxSurgeFixed": ubx.FieldSpec{WireName: "max_surge_fixed"},
-		"MaxSurgePercent": ubx.FieldSpec{WireName: "max_surge_percent"},
-		"MaxUnavailableFixed": ubx.FieldSpec{WireName: "max_unavailable_fixed"},
-		"MaxUnavailablePercent": ubx.FieldSpec{WireName: "max_unavailable_percent"},
+		"MaxSurge": ubx.FieldSpec{
+			WireName: "max_surge",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_UpdatePolicy_MaxSurgeFields,
+		},
+		"MaxUnavailable": ubx.FieldSpec{
+			WireName: "max_unavailable",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_UpdatePolicy_MaxSurgeFields,
+		},
 		"MinimalAction": ubx.FieldSpec{WireName: "minimal_action"},
 		"MostDisruptiveAllowedAction": ubx.FieldSpec{WireName: "most_disruptive_allowed_action"},
 		"ReplacementMethod": ubx.FieldSpec{WireName: "replacement_method"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var RegionInstanceGroupManager_Version_TargetSizeFields = ubx.FieldMap{
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
-
-var RegionInstanceGroupManager_VersionFields = ubx.FieldMap{
+var RegionInstanceGroupManager_VersionsFields = ubx.FieldMap{
 		"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"TargetSize": ubx.FieldSpec{
 			WireName: "target_size",
-			Kind: "list",
-			Fields: RegionInstanceGroupManager_Version_TargetSizeFields,
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_UpdatePolicy_MaxSurgeFields,
 		},
 	}
 
 type RegionInstanceGroupManagerConfig struct {
-	BaseInstanceName any
-	DeletionPolicy any
-	Description any
-	DistributionPolicyTargetShape any
-	DistributionPolicyZones any
-	Id any
-	ListManagedInstancesResults any
-	Name any
-	Project any
-	Region any
-	TargetPools any
-	TargetSize any
-	TargetStoppedSize any
-	TargetSuspendedSize any
-	WaitForInstances any
-	WaitForInstancesStatus any
+	// The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred)
 	AllInstancesConfig any
+	// The autohealing policy for this managed instance group. You can specify only one value.
 	AutoHealingPolicies any
+	// The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
+	BaseInstanceName any
+	// Output only. The creation timestamp for this managed instance group inRFC3339 text format.
+	CreationTimestamp any
+	// The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred)
+	CurrentActions any
+	// An optional description of this resource.
+	Description any
+	// The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred)
+	DistributionPolicy any
+	// Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+	Fingerprint any
+	// Output only. A unique identifier for this resource type. The server generates this identifier.
+	Id any
 	InstanceFlexibilityPolicy any
+	// Output only. The URL of the Instance Group resource.
+	InstanceGroup any
+	// The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred)
 	InstanceLifecyclePolicy any
-	NamedPort any
+	// The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
+	InstanceTemplate any
+	// Output only. The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
+	Kind any
+	// Pagination behavior of the listManagedInstances API method for this managed instance group.
+	ListManagedInstancesResults any
+	// The name of the managed instance group. The name must be 1-63 characters long, and comply withRFC1035.
+	Name any
+	// [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
+	NamedPorts any
+	// Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources).
+	Region any
+	// The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred)
 	ResourcePolicies any
+	// Output only. Reserved for future use.
+	SatisfiesPzi any
+	// Output only. Reserved for future use.
+	SatisfiesPzs any
+	// Output only. The URL for this managed instance group. The server defines this URL.
+	SelfLink any
+	// The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred)
 	StandbyPolicy any
-	StatefulDisk any
-	StatefulExternalIp any
-	StatefulInternalIp any
+	// The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred)
+	StatefulPolicy any
+	// The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred)
+	Status any
+	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
+	TargetPools any
+	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
+	TargetSize any
+	// The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred)
 	TargetSizePolicy any
-	Timeouts any
+	// The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
+	TargetStoppedSize any
+	// The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
+	TargetSuspendedSize any
+	// The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred)
 	UpdatePolicy any
-	Version any
+	// Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
+	Versions any
+	// Output only. The URL of azone where the managed instance group is located (for zonal resources).
+	Zone any
+}
+
+type RegionInstanceGroupManagerAttrs struct {
+	// The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred)
+	AllInstancesConfig any
+	// The autohealing policy for this managed instance group. You can specify only one value.
+	AutoHealingPolicies any
+	// The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
+	BaseInstanceName any
+	// Output only. The creation timestamp for this managed instance group inRFC3339 text format.
+	CreationTimestamp any
+	// The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred)
+	CurrentActions any
+	// An optional description of this resource.
+	Description any
+	// The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred)
+	DistributionPolicy any
+	// Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+	Fingerprint any
+	// Output only. A unique identifier for this resource type. The server generates this identifier.
+	Id any
+	InstanceFlexibilityPolicy any
+	// Output only. The URL of the Instance Group resource.
+	InstanceGroup any
+	// The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred)
+	InstanceLifecyclePolicy any
+	// The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
+	InstanceTemplate any
+	// Output only. The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
+	Kind any
+	// Pagination behavior of the listManagedInstances API method for this managed instance group.
+	ListManagedInstancesResults any
+	// The name of the managed instance group. The name must be 1-63 characters long, and comply withRFC1035.
+	Name any
+	// [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
+	NamedPorts any
+	// Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources).
+	Region any
+	// The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred)
+	ResourcePolicies any
+	// Output only. Reserved for future use.
+	SatisfiesPzi any
+	// Output only. Reserved for future use.
+	SatisfiesPzs any
+	// Output only. The URL for this managed instance group. The server defines this URL.
+	SelfLink any
+	// The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred)
+	StandbyPolicy any
+	// The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred)
+	StatefulPolicy any
+	// The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred)
+	Status any
+	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
+	TargetPools any
+	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
+	TargetSize any
+	// The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred)
+	TargetSizePolicy any
+	// The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
+	TargetStoppedSize any
+	// The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
+	TargetSuspendedSize any
+	// The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred)
+	UpdatePolicy any
+	// Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
+	Versions any
+	// Output only. The URL of azone where the managed instance group is located (for zonal resources).
+	Zone any
 }
 
 var RegionInstanceGroupManager = ubx.ResourceBinding{
 	WireType: "google_compute_region_instance_group_manager",
 	Fields: ubx.FieldMap{
-		"BaseInstanceName": ubx.FieldSpec{WireName: "base_instance_name"},
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DistributionPolicyTargetShape": ubx.FieldSpec{WireName: "distribution_policy_target_shape"},
-		"DistributionPolicyZones": ubx.FieldSpec{WireName: "distribution_policy_zones"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ListManagedInstancesResults": ubx.FieldSpec{WireName: "list_managed_instances_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"TargetPools": ubx.FieldSpec{WireName: "target_pools"},
-		"TargetSize": ubx.FieldSpec{WireName: "target_size"},
-		"TargetStoppedSize": ubx.FieldSpec{WireName: "target_stopped_size"},
-		"TargetSuspendedSize": ubx.FieldSpec{WireName: "target_suspended_size"},
-		"WaitForInstances": ubx.FieldSpec{WireName: "wait_for_instances"},
-		"WaitForInstancesStatus": ubx.FieldSpec{WireName: "wait_for_instances_status"},
 		"AllInstancesConfig": ubx.FieldSpec{
 			WireName: "all_instances_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_AllInstancesConfigFields,
 		},
 		"AutoHealingPolicies": ubx.FieldSpec{
@@ -253,65 +809,84 @@ var RegionInstanceGroupManager = ubx.ResourceBinding{
 			Kind: "list",
 			Fields: RegionInstanceGroupManager_AutoHealingPoliciesFields,
 		},
+		"BaseInstanceName": ubx.FieldSpec{WireName: "base_instance_name"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+		"CurrentActions": ubx.FieldSpec{
+			WireName: "current_actions",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_CurrentActionsFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DistributionPolicy": ubx.FieldSpec{
+			WireName: "distribution_policy",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_DistributionPolicyFields,
+		},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceFlexibilityPolicy": ubx.FieldSpec{
 			WireName: "instance_flexibility_policy",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_InstanceFlexibilityPolicyFields,
 		},
+		"InstanceGroup": ubx.FieldSpec{WireName: "instance_group"},
 		"InstanceLifecyclePolicy": ubx.FieldSpec{
 			WireName: "instance_lifecycle_policy",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_InstanceLifecyclePolicyFields,
 		},
-		"NamedPort": ubx.FieldSpec{
-			WireName: "named_port",
-			Kind: "set",
-			Fields: RegionInstanceGroupManager_NamedPortFields,
+		"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"ListManagedInstancesResults": ubx.FieldSpec{WireName: "list_managed_instances_results"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NamedPorts": ubx.FieldSpec{
+			WireName: "named_ports",
+			Kind: "list",
+			Fields: RegionInstanceGroupManager_NamedPortsFields,
 		},
+		"Region": ubx.FieldSpec{WireName: "region"},
 		"ResourcePolicies": ubx.FieldSpec{
 			WireName: "resource_policies",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_ResourcePoliciesFields,
 		},
+		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
+		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"StandbyPolicy": ubx.FieldSpec{
 			WireName: "standby_policy",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_StandbyPolicyFields,
 		},
-		"StatefulDisk": ubx.FieldSpec{
-			WireName: "stateful_disk",
-			Kind: "set",
-			Fields: RegionInstanceGroupManager_StatefulDiskFields,
+		"StatefulPolicy": ubx.FieldSpec{
+			WireName: "stateful_policy",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_StatefulPolicyFields,
 		},
-		"StatefulExternalIp": ubx.FieldSpec{
-			WireName: "stateful_external_ip",
-			Kind: "list",
-			Fields: RegionInstanceGroupManager_StatefulExternalIpFields,
+		"Status": ubx.FieldSpec{
+			WireName: "status",
+			Kind: "object",
+			Fields: RegionInstanceGroupManager_StatusFields,
 		},
-		"StatefulInternalIp": ubx.FieldSpec{
-			WireName: "stateful_internal_ip",
-			Kind: "list",
-			Fields: RegionInstanceGroupManager_StatefulExternalIpFields,
-		},
+		"TargetPools": ubx.FieldSpec{WireName: "target_pools"},
+		"TargetSize": ubx.FieldSpec{WireName: "target_size"},
 		"TargetSizePolicy": ubx.FieldSpec{
 			WireName: "target_size_policy",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_TargetSizePolicyFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: RegionInstanceGroupManager_TimeoutsFields,
-		},
+		"TargetStoppedSize": ubx.FieldSpec{WireName: "target_stopped_size"},
+		"TargetSuspendedSize": ubx.FieldSpec{WireName: "target_suspended_size"},
 		"UpdatePolicy": ubx.FieldSpec{
 			WireName: "update_policy",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionInstanceGroupManager_UpdatePolicyFields,
 		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
+		"Versions": ubx.FieldSpec{
+			WireName: "versions",
 			Kind: "list",
-			Fields: RegionInstanceGroupManager_VersionFields,
+			Fields: RegionInstanceGroupManager_VersionsFields,
 		},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

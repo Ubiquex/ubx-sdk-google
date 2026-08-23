@@ -2,45 +2,73 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionDisk_AsyncPrimaryDisk {
-  disk: string;
+  /** Output only. [Output Only] URL of the DiskConsistencyGroupPolicy if replication was started on the disk as a member of a group. */
+  consistencyGroupPolicy?: string | Computed<string>;
+  /** Output only. [Output Only] ID of the DiskConsistencyGroupPolicy if replication was started on the disk as a member of a group. */
+  consistencyGroupPolicyId?: string | Computed<string>;
+  /** The other disk asynchronously replicated to or from the current disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk */
+  disk?: string | Computed<string>;
+  /** Output only. [Output Only] The unique ID of the other disk asynchronously replicated to or from the current disk. This value identifies the exact disk that was used to create this replication. For example, if you started replicating the persistent disk from a disk that was later deleted and recreated under the same name, the disk ID would identify the exact version of the disk that was used. */
+  diskId?: string | Computed<string>;
+}
+
+export interface RegionDisk_AsyncSecondaryDisks {
+  asyncReplicationDisk?: RegionDisk_AsyncPrimaryDisk | Computed<RegionDisk_AsyncPrimaryDisk>;
 }
 
 export interface RegionDisk_DiskEncryptionKey {
-  kmsKeyName: string;
-  rawKey: string;
-  rsaEncryptedKey: string;
-  sha256: string;
+  /** The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1 */
+  kmsKeyName?: string | Computed<string>;
+  /** The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name@project_id.iam.gserviceaccount.com/ */
+  kmsKeyServiceAccount?: string | Computed<string>;
+  /** [DEPRECATED] CSEK is no longer supported. Use CMEK instead. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or thersaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0=" */
+  rawKey?: string | Computed<string>;
+  /** [DEPRECATED] CSEK is no longer supported. Use CMEK instead. Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or thersaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem */
+  rsaEncryptedKey?: string | Computed<string>;
+  /** [DEPRECATED] CSEK is no longer supported. Use CMEK instead. [Output only] TheRFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource. */
+  sha256?: string | Computed<string>;
 }
 
 export interface RegionDisk_GuestOsFeatures {
-  type: string;
+  /** The type of guest OS feature to enable on the disk. Valid values include BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, and WINDOWS. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
-export interface RegionDisk_SourceImageEncryptionKey {
-  kmsKeyName: string;
-  kmsKeyServiceAccount: string;
-  rawKey: string;
-  rsaEncryptedKey: string;
-  sha256: string;
+export interface RegionDisk_Params {
+  /** Input only. Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty. */
+  resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
 }
 
-export interface RegionDisk_SourceSnapshotEncryptionKey {
-  rawKey: string;
-  sha256: string;
+export interface RegionDisk_ResourceStatus_AsyncPrimaryDisk {
+  /** The current state of the asynchronous primary disk, which can be one of the following: ACTIVE, CREATED, STARTING, STATE_UNSPECIFIED, STOPPED, or STOPPING. (AI-inferred) */
+  state?: string | Computed<string>;
 }
 
-export interface RegionDisk_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface RegionDisk_ResourceStatus {
+  /** The primary disk in an asynchronous replication configuration. This object contains the URL of the source regional persistent disk for the replication. (AI-inferred) */
+  asyncPrimaryDisk?: RegionDisk_ResourceStatus_AsyncPrimaryDisk | Computed<RegionDisk_ResourceStatus_AsyncPrimaryDisk>;
+  /** Key: disk, value: AsyncReplicationStatus message */
+  asyncSecondaryDisks?: Record<string, RegionDisk_ResourceStatus_AsyncPrimaryDisk> | Computed<Record<string, RegionDisk_ResourceStatus_AsyncPrimaryDisk>>;
 }
 
 const RegionDisk_AsyncPrimaryDiskFields: FieldMap = {
+  consistencyGroupPolicy: "consistency_group_policy",
+  consistencyGroupPolicyId: "consistency_group_policy_id",
   disk: "disk",
+  diskId: "disk_id",
+};
+
+const RegionDisk_AsyncSecondaryDisksFields: FieldMap = {
+  asyncReplicationDisk: {
+    wireName: "async_replication_disk",
+    kind: "object",
+    fields: RegionDisk_AsyncPrimaryDiskFields,
+  },
 };
 
 const RegionDisk_DiskEncryptionKeyFields: FieldMap = {
   kmsKeyName: "kms_key_name",
+  kmsKeyServiceAccount: "kms_key_service_account",
   rawKey: "raw_key",
   rsaEncryptedKey: "rsa_encrypted_key",
   sha256: "sha256",
@@ -50,147 +78,315 @@ const RegionDisk_GuestOsFeaturesFields: FieldMap = {
   type: "type",
 };
 
-const RegionDisk_SourceImageEncryptionKeyFields: FieldMap = {
-  kmsKeyName: "kms_key_name",
-  kmsKeyServiceAccount: "kms_key_service_account",
-  rawKey: "raw_key",
-  rsaEncryptedKey: "rsa_encrypted_key",
-  sha256: "sha256",
+const RegionDisk_ParamsFields: FieldMap = {
+  resourceManagerTags: "resource_manager_tags",
 };
 
-const RegionDisk_SourceSnapshotEncryptionKeyFields: FieldMap = {
-  rawKey: "raw_key",
-  sha256: "sha256",
+const RegionDisk_ResourceStatus_AsyncPrimaryDiskFields: FieldMap = {
+  state: "state",
 };
 
-const RegionDisk_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const RegionDisk_ResourceStatusFields: FieldMap = {
+  asyncPrimaryDisk: {
+    wireName: "async_primary_disk",
+    kind: "object",
+    fields: RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
+  },
+  asyncSecondaryDisks: {
+    wireName: "async_secondary_disks",
+    kind: "map",
+    fields: RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
+  },
 };
 
 export interface RegionDiskConfig {
+  /** The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types. */
   accessMode?: string | Computed<string>;
-  createSnapshotBeforeDestroy?: boolean | Computed<boolean>;
-  createSnapshotBeforeDestroyPrefix?: string | Computed<string>;
-  deletionPolicy?: string | Computed<string>;
+  /** The architecture of the disk. Valid values are ARM64 or X86_64. */
+  architecture?: string | Computed<string>;
+  /** The async_primary_disk object holds the reference to the primary disk in an asynchronous replication configuration. This field is computed and output-only, reflecting the primary disk associated with this regional disk. (AI-inferred) */
+  asyncPrimaryDisk?: RegionDisk_AsyncPrimaryDisk | Computed<RegionDisk_AsyncPrimaryDisk>;
+  /** Output only. [Output Only] A list of disks this disk is asynchronously replicated to. */
+  asyncSecondaryDisks?: Record<string, RegionDisk_AsyncSecondaryDisks> | Computed<Record<string, RegionDisk_AsyncSecondaryDisks>>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  id?: string | Computed<string>;
-  image?: string | Computed<string>;
-  labels?: Record<string, string> | Computed<Record<string, string>>;
-  licenses?: string[] | Computed<string[]>;
-  name: string | Computed<string>;
-  physicalBlockSizeBytes?: number | Computed<number>;
-  project?: string | Computed<string>;
-  provisionedIops?: number | Computed<number>;
-  provisionedThroughput?: number | Computed<number>;
-  region?: string | Computed<string>;
-  replicaZones: string[] | Computed<string[]>;
-  size?: number | Computed<number>;
-  snapshot?: string | Computed<string>;
-  sourceDisk?: string | Computed<string>;
-  type?: string | Computed<string>;
-  asyncPrimaryDisk?: RegionDisk_AsyncPrimaryDisk[] | Computed<RegionDisk_AsyncPrimaryDisk[]>;
-  diskEncryptionKey?: RegionDisk_DiskEncryptionKey[] | Computed<RegionDisk_DiskEncryptionKey[]>;
+  /** The disk encryption key for the regional persistent disk. This field is computed and output-only, meaning it is populated by the cloud provider when the disk is created or imported, and it contains the details of the encryption key used to protect the disk's contents. (AI-inferred) */
+  diskEncryptionKey?: RegionDisk_DiskEncryptionKey | Computed<RegionDisk_DiskEncryptionKey>;
+  /** Whether this disk is using confidential compute mode. */
+  enableConfidentialCompute?: boolean | Computed<boolean>;
+  /** A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options. */
   guestOsFeatures?: RegionDisk_GuestOsFeatures[] | Computed<RegionDisk_GuestOsFeatures[]>;
-  sourceImageEncryptionKey?: RegionDisk_SourceImageEncryptionKey[] | Computed<RegionDisk_SourceImageEncryptionKey[]>;
-  sourceSnapshotEncryptionKey?: RegionDisk_SourceSnapshotEncryptionKey[] | Computed<RegionDisk_SourceSnapshotEncryptionKey[]>;
-  timeouts?: RegionDisk_Timeouts | Computed<RegionDisk_Timeouts>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
+  id?: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Always compute#disk for disks. */
+  kind?: string | Computed<string>;
+  /** A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk. */
+  labelFingerprint?: string | Computed<string>;
+  /** Labels to apply to this disk. These can be later modified by the setLabels method. */
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Output only. [Output Only] Last attach timestamp inRFC3339 text format. */
+  lastAttachTimestamp?: string | Computed<string>;
+  /** Output only. [Output Only] Last detach timestamp inRFC3339 text format. */
+  lastDetachTimestamp?: string | Computed<string>;
+  /** Integer license codes indicating which licenses are attached to this disk. */
+  licenseCodes?: string[] | Computed<string[]>;
+  /** A list of publicly visible licenses. Reserved for Google's use. */
+  licenses?: string[] | Computed<string[]>;
+  /** An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API. */
+  locationHint?: string | Computed<string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** Internal use only. */
+  options?: string | Computed<string>;
+  /** Additional disk params. */
+  params?: RegionDisk_Params | Computed<RegionDisk_Params>;
+  /** Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project. */
+  physicalBlockSizeBytes?: string | Computed<string>;
+  /** Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see theExtreme persistent disk documentation. */
+  provisionedIops?: string | Computed<string>;
+  /** Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1. */
+  provisionedThroughput?: string | Computed<string>;
+  /** Output only. [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  region?: string | Computed<string>;
+  /** URLs of the zones where the disk should be replicated to. Only applicable for regional resources. */
+  replicaZones?: string[] | Computed<string[]>;
+  /** Resource policies applied to this disk for automatic snapshot creations. */
+  resourcePolicies?: string[] | Computed<string[]>;
+  resourceStatus?: RegionDisk_ResourceStatus | Computed<RegionDisk_ResourceStatus>;
+  /** Output only. Reserved for future use. */
+  satisfiesPzi?: boolean | Computed<boolean>;
+  /** Output only. [Output Only] Reserved for future use. */
+  satisfiesPzs?: boolean | Computed<boolean>;
+  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
+  selfLink?: string | Computed<string>;
+  /** Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0. */
+  sizeGb?: string | Computed<string>;
+  /** Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group. */
+  sourceConsistencyGroupPolicy?: string | Computed<string>;
+  /** Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group. */
+  sourceConsistencyGroupPolicyId?: string | Computed<string>;
+  /** The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk */
+  sourceDisk?: string | Computed<string>;
+  /** Output only. [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used. */
+  sourceDiskId?: string | Computed<string>;
+  /** The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family */
+  sourceImage?: string | Computed<string>;
+  /** The customer-supplied encryption key for the source image used to create this disk. This field is computed and output only, reporting the encryption key details when the source image was encrypted with a customer-supplied key. (AI-inferred) */
+  sourceImageEncryptionKey?: RegionDisk_DiskEncryptionKey | Computed<RegionDisk_DiskEncryptionKey>;
+  /** Output only. [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used. */
+  sourceImageId?: string | Computed<string>;
+  /** The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot */
+  sourceInstantSnapshot?: string | Computed<string>;
+  /** Output only. [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used. */
+  sourceInstantSnapshotId?: string | Computed<string>;
+  /** The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot */
+  sourceSnapshot?: string | Computed<string>;
+  /** The source snapshot's encryption key, used when creating a region disk from an encrypted snapshot. This field is computed and output-only, providing the key details of the source snapshot as returned by the API. (AI-inferred) */
+  sourceSnapshotEncryptionKey?: RegionDisk_DiskEncryptionKey | Computed<RegionDisk_DiskEncryptionKey>;
+  /** Output only. [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used. */
+  sourceSnapshotId?: string | Computed<string>;
+  /** The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead. */
+  sourceStorageObject?: string | Computed<string>;
+  /** Output only. [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting. */
+  status?: string | Computed<string>;
+  /** The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool */
+  storagePool?: string | Computed<string>;
+  /** URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example:projects/project/zones/zone/diskTypes/pd-ssd. See Persistent disk types. */
+  type?: string | Computed<string>;
+  /** Output only. [Output Only] Links to the users of the disk (attached instances) in form:projects/project/zones/zone/instances/instance */
+  users?: string[] | Computed<string[]>;
+  /** Output only. [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  zone?: string | Computed<string>;
 }
 
 export interface RegionDiskAttrs {
+  /** The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types. */
   accessMode: string;
-  createSnapshotBeforeDestroy: boolean;
-  createSnapshotBeforeDestroyPrefix: string;
+  /** The architecture of the disk. Valid values are ARM64 or X86_64. */
+  architecture: string;
+  /** The async_primary_disk object holds the reference to the primary disk in an asynchronous replication configuration. This field is computed and output-only, reflecting the primary disk associated with this regional disk. (AI-inferred) */
+  asyncPrimaryDisk: RegionDisk_AsyncPrimaryDisk;
+  /** Output only. [Output Only] A list of disks this disk is asynchronously replicated to. */
+  asyncSecondaryDisks: Record<string, RegionDisk_AsyncSecondaryDisks>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
-  deletionPolicy: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
-  diskId: string;
-  effectiveLabels: Record<string, string>;
-  id: string;
-  image: string;
-  labelFingerprint: string;
-  labels: Record<string, string>;
-  lastAttachTimestamp: string;
-  lastDetachTimestamp: string;
-  licenses: string[];
-  name: string;
-  physicalBlockSizeBytes: number;
-  project: string;
-  provisionedIops: number;
-  provisionedThroughput: number;
-  region: string;
-  replicaZones: string[];
-  selfLink: string;
-  size: number;
-  snapshot: string;
-  sourceDisk: string;
-  sourceDiskId: string;
-  sourceImageId: string;
-  sourceSnapshotId: string;
-  terraformLabels: Record<string, string>;
-  type: string;
-  users: string[];
-  asyncPrimaryDisk: RegionDisk_AsyncPrimaryDisk[];
-  diskEncryptionKey: RegionDisk_DiskEncryptionKey[];
+  /** The disk encryption key for the regional persistent disk. This field is computed and output-only, meaning it is populated by the cloud provider when the disk is created or imported, and it contains the details of the encryption key used to protect the disk's contents. (AI-inferred) */
+  diskEncryptionKey: RegionDisk_DiskEncryptionKey;
+  /** Whether this disk is using confidential compute mode. */
+  enableConfidentialCompute: boolean;
+  /** A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options. */
   guestOsFeatures: RegionDisk_GuestOsFeatures[];
-  sourceImageEncryptionKey: RegionDisk_SourceImageEncryptionKey[];
-  sourceSnapshotEncryptionKey: RegionDisk_SourceSnapshotEncryptionKey[];
-  timeouts: RegionDisk_Timeouts;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
+  id: string;
+  /** Output only. [Output Only] Type of the resource. Always compute#disk for disks. */
+  kind: string;
+  /** A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk. */
+  labelFingerprint: string;
+  /** Labels to apply to this disk. These can be later modified by the setLabels method. */
+  labels: Record<string, string>;
+  /** Output only. [Output Only] Last attach timestamp inRFC3339 text format. */
+  lastAttachTimestamp: string;
+  /** Output only. [Output Only] Last detach timestamp inRFC3339 text format. */
+  lastDetachTimestamp: string;
+  /** Integer license codes indicating which licenses are attached to this disk. */
+  licenseCodes: string[];
+  /** A list of publicly visible licenses. Reserved for Google's use. */
+  licenses: string[];
+  /** An opaque location hint used to place the disk close to other resources. This field is for use by internal tools that use the public API. */
+  locationHint: string;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name: string;
+  /** Internal use only. */
+  options: string;
+  /** Additional disk params. */
+  params: RegionDisk_Params;
+  /** Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project. */
+  physicalBlockSizeBytes: string;
+  /** Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see theExtreme persistent disk documentation. */
+  provisionedIops: string;
+  /** Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1. */
+  provisionedThroughput: string;
+  /** Output only. [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  region: string;
+  /** URLs of the zones where the disk should be replicated to. Only applicable for regional resources. */
+  replicaZones: string[];
+  /** Resource policies applied to this disk for automatic snapshot creations. */
+  resourcePolicies: string[];
+  resourceStatus: RegionDisk_ResourceStatus;
+  /** Output only. Reserved for future use. */
+  satisfiesPzi: boolean;
+  /** Output only. [Output Only] Reserved for future use. */
+  satisfiesPzs: boolean;
+  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
+  selfLink: string;
+  /** Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0. */
+  sizeGb: string;
+  /** Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group. */
+  sourceConsistencyGroupPolicy: string;
+  /** Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group. */
+  sourceConsistencyGroupPolicyId: string;
+  /** The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk */
+  sourceDisk: string;
+  /** Output only. [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used. */
+  sourceDiskId: string;
+  /** The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family */
+  sourceImage: string;
+  /** The customer-supplied encryption key for the source image used to create this disk. This field is computed and output only, reporting the encryption key details when the source image was encrypted with a customer-supplied key. (AI-inferred) */
+  sourceImageEncryptionKey: RegionDisk_DiskEncryptionKey;
+  /** Output only. [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used. */
+  sourceImageId: string;
+  /** The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot */
+  sourceInstantSnapshot: string;
+  /** Output only. [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used. */
+  sourceInstantSnapshotId: string;
+  /** The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot */
+  sourceSnapshot: string;
+  /** The source snapshot's encryption key, used when creating a region disk from an encrypted snapshot. This field is computed and output-only, providing the key details of the source snapshot as returned by the API. (AI-inferred) */
+  sourceSnapshotEncryptionKey: RegionDisk_DiskEncryptionKey;
+  /** Output only. [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used. */
+  sourceSnapshotId: string;
+  /** The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead. */
+  sourceStorageObject: string;
+  /** Output only. [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting. */
+  status: string;
+  /** The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool */
+  storagePool: string;
+  /** URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example:projects/project/zones/zone/diskTypes/pd-ssd. See Persistent disk types. */
+  type: string;
+  /** Output only. [Output Only] Links to the users of the disk (attached instances) in form:projects/project/zones/zone/instances/instance */
+  users: string[];
+  /** Output only. [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  zone: string;
 }
 
 export const RegionDisk: ResourceBinding<RegionDiskConfig, RegionDiskAttrs> = {
   wireType: "google_compute_region_disk",
   fields: {
     accessMode: "access_mode",
-    createSnapshotBeforeDestroy: "create_snapshot_before_destroy",
-    createSnapshotBeforeDestroyPrefix: "create_snapshot_before_destroy_prefix",
-    deletionPolicy: "deletion_policy",
+    architecture: "architecture",
+    asyncPrimaryDisk: {
+      wireName: "async_primary_disk",
+      kind: "object",
+      fields: RegionDisk_AsyncPrimaryDiskFields,
+    },
+    asyncSecondaryDisks: {
+      wireName: "async_secondary_disks",
+      kind: "map",
+      fields: RegionDisk_AsyncSecondaryDisksFields,
+    },
+    creationTimestamp: "creation_timestamp",
     description: "description",
+    diskEncryptionKey: {
+      wireName: "disk_encryption_key",
+      kind: "object",
+      fields: RegionDisk_DiskEncryptionKeyFields,
+    },
+    enableConfidentialCompute: "enable_confidential_compute",
+    guestOsFeatures: {
+      wireName: "guest_os_features",
+      kind: "list",
+      fields: RegionDisk_GuestOsFeaturesFields,
+    },
     id: "id",
-    image: "image",
+    kind: "kind",
+    labelFingerprint: "label_fingerprint",
     labels: "labels",
+    lastAttachTimestamp: "last_attach_timestamp",
+    lastDetachTimestamp: "last_detach_timestamp",
+    licenseCodes: "license_codes",
     licenses: "licenses",
+    locationHint: "location_hint",
     name: "name",
+    options: "options",
+    params: {
+      wireName: "params",
+      kind: "object",
+      fields: RegionDisk_ParamsFields,
+    },
     physicalBlockSizeBytes: "physical_block_size_bytes",
-    project: "project",
     provisionedIops: "provisioned_iops",
     provisionedThroughput: "provisioned_throughput",
     region: "region",
     replicaZones: "replica_zones",
-    size: "size",
-    snapshot: "snapshot",
+    resourcePolicies: "resource_policies",
+    resourceStatus: {
+      wireName: "resource_status",
+      kind: "object",
+      fields: RegionDisk_ResourceStatusFields,
+    },
+    satisfiesPzi: "satisfies_pzi",
+    satisfiesPzs: "satisfies_pzs",
+    selfLink: "self_link",
+    sizeGb: "size_gb",
+    sourceConsistencyGroupPolicy: "source_consistency_group_policy",
+    sourceConsistencyGroupPolicyId: "source_consistency_group_policy_id",
     sourceDisk: "source_disk",
-    type: "type",
-    asyncPrimaryDisk: {
-      wireName: "async_primary_disk",
-      kind: "list",
-      fields: RegionDisk_AsyncPrimaryDiskFields,
-    },
-    diskEncryptionKey: {
-      wireName: "disk_encryption_key",
-      kind: "list",
-      fields: RegionDisk_DiskEncryptionKeyFields,
-    },
-    guestOsFeatures: {
-      wireName: "guest_os_features",
-      kind: "set",
-      fields: RegionDisk_GuestOsFeaturesFields,
-    },
+    sourceDiskId: "source_disk_id",
+    sourceImage: "source_image",
     sourceImageEncryptionKey: {
       wireName: "source_image_encryption_key",
-      kind: "list",
-      fields: RegionDisk_SourceImageEncryptionKeyFields,
+      kind: "object",
+      fields: RegionDisk_DiskEncryptionKeyFields,
     },
+    sourceImageId: "source_image_id",
+    sourceInstantSnapshot: "source_instant_snapshot",
+    sourceInstantSnapshotId: "source_instant_snapshot_id",
+    sourceSnapshot: "source_snapshot",
     sourceSnapshotEncryptionKey: {
       wireName: "source_snapshot_encryption_key",
-      kind: "list",
-      fields: RegionDisk_SourceSnapshotEncryptionKeyFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
       kind: "object",
-      fields: RegionDisk_TimeoutsFields,
+      fields: RegionDisk_DiskEncryptionKeyFields,
     },
+    sourceSnapshotId: "source_snapshot_id",
+    sourceStorageObject: "source_storage_object",
+    status: "status",
+    storagePool: "storage_pool",
+    type: "type",
+    users: "users",
+    zone: "zone",
   },
 };

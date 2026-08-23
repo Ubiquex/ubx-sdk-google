@@ -8,107 +8,143 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PacketMirroring_CollectorIlb:
+    # Output only. [Output Only] Unique identifier for the forwarding rule; defined by the server.
+    canonical_url: Any = None
+    # Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
     url: Any = None
 
 @dataclasses.dataclass
 class PacketMirroring_Filter:
+    # One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
     cidr_ranges: Any = None
+    # Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
     direction: Any = None
-    ip_protocols: Any = None
+    # Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+    ipprotocols: Any = None
 
 @dataclasses.dataclass
 class PacketMirroring_MirroredResources:
-    tags: Any = None
+    # A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances.
     instances: Any = None
+    # A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks.
     subnetworks: Any = None
-
-@dataclasses.dataclass
-class PacketMirroring_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+    # A set of mirrored tags. Traffic from/to all VM instances that have one or more of these tags will be mirrored.
+    tags: Any = None
 
 _PacketMirroring_CollectorIlbFields = {
+    "canonical_url": ubx.FieldSpec(wire_name="canonical_url"),
     "url": ubx.FieldSpec(wire_name="url"),
 }
 
 _PacketMirroring_FilterFields = {
     "cidr_ranges": ubx.FieldSpec(wire_name="cidr_ranges"),
     "direction": ubx.FieldSpec(wire_name="direction"),
-    "ip_protocols": ubx.FieldSpec(wire_name="ip_protocols"),
+    "ipprotocols": ubx.FieldSpec(wire_name="ipprotocols"),
 }
 
 _PacketMirroring_MirroredResourcesFields = {
-    "tags": ubx.FieldSpec(wire_name="tags"),
     "instances": ubx.FieldSpec(
         wire_name="instances",
-        kind="set",
+        kind="list",
         fields=_PacketMirroring_CollectorIlbFields,
     ),
     "subnetworks": ubx.FieldSpec(
         wire_name="subnetworks",
-        kind="set",
+        kind="list",
         fields=_PacketMirroring_CollectorIlbFields,
     ),
-}
-
-_PacketMirroring_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
 }
 
 @dataclasses.dataclass
 class PacketMirroringConfig:
-    deletion_policy: Any = None
-    description: Any = None
-    enable: Any = None
-    id: Any = None
-    name: Any = None
-    priority: Any = None
-    project: Any = None
-    region: Any = None
+    # The internal load balancer (ILB) used as the collector for mirrored traffic. This output-only field identifies the forwarding rule that receives mirrored packets. (AI-inferred)
     collector_ilb: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+    enable: Any = None
+    # The filter configuration as returned by the API (output only). It defines the criteria that determine which packets are mirrored. (AI-inferred)
     filter: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
+    kind: Any = None
+    # An object defining the instances, subnetworks, or tags whose traffic is mirrored. This field is output-only and reflects the effective mirroring configuration. (AI-inferred)
     mirrored_resources: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # The network that the packet mirroring applies to. This field is output-only and contains the URL of the VPC network. (AI-inferred)
     network: Any = None
-    timeouts: Any = None
+    # The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+    priority: Any = None
+    # [Output Only] URI of the region where the packetMirroring resides.
+    region: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+
+@dataclasses.dataclass
+class PacketMirroringAttrs:
+    # The internal load balancer (ILB) used as the collector for mirrored traffic. This output-only field identifies the forwarding rule that receives mirrored packets. (AI-inferred)
+    collector_ilb: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+    enable: Any = None
+    # The filter configuration as returned by the API (output only). It defines the criteria that determine which packets are mirrored. (AI-inferred)
+    filter: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
+    kind: Any = None
+    # An object defining the instances, subnetworks, or tags whose traffic is mirrored. This field is output-only and reflects the effective mirroring configuration. (AI-inferred)
+    mirrored_resources: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # The network that the packet mirroring applies to. This field is output-only and contains the URL of the VPC network. (AI-inferred)
+    network: Any = None
+    # The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+    priority: Any = None
+    # [Output Only] URI of the region where the packetMirroring resides.
+    region: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
 
 PacketMirroring = ubx.ResourceBinding(
     wire_type="google_compute_packet_mirroring",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "enable": ubx.FieldSpec(wire_name="enable"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "priority": ubx.FieldSpec(wire_name="priority"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "collector_ilb": ubx.FieldSpec(
             wire_name="collector_ilb",
-            kind="list",
+            kind="object",
             fields=_PacketMirroring_CollectorIlbFields,
         ),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enable": ubx.FieldSpec(wire_name="enable"),
         "filter": ubx.FieldSpec(
             wire_name="filter",
-            kind="list",
+            kind="object",
             fields=_PacketMirroring_FilterFields,
         ),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
         "mirrored_resources": ubx.FieldSpec(
             wire_name="mirrored_resources",
-            kind="list",
+            kind="object",
             fields=_PacketMirroring_MirroredResourcesFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(
             wire_name="network",
-            kind="list",
+            kind="object",
             fields=_PacketMirroring_CollectorIlbFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_PacketMirroring_TimeoutsFields,
-        ),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "region": ubx.FieldSpec(wire_name="region"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
     },
 )

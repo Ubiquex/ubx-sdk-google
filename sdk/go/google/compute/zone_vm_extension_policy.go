@@ -4,7 +4,6 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneVmExtensionPolicy_ExtensionPolicies struct {
-	ExtensionName any
 	PinnedVersion any
 	StringConfig any
 }
@@ -17,14 +16,7 @@ type ZoneVmExtensionPolicy_InstanceSelectors struct {
 	LabelSelector any
 }
 
-type ZoneVmExtensionPolicy_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
-
 var ZoneVmExtensionPolicy_ExtensionPoliciesFields = ubx.FieldMap{
-		"ExtensionName": ubx.FieldSpec{WireName: "extension_name"},
 		"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
 		"StringConfig": ubx.FieldSpec{WireName: "string_config"},
 	}
@@ -36,52 +28,97 @@ var ZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = ubx.FieldMap{
 var ZoneVmExtensionPolicy_InstanceSelectorsFields = ubx.FieldMap{
 		"LabelSelector": ubx.FieldSpec{
 			WireName: "label_selector",
-			Kind: "list",
+			Kind: "object",
 			Fields: ZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
 		},
 	}
 
-var ZoneVmExtensionPolicy_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type ZoneVmExtensionPolicyConfig struct {
-	DeletionPolicy any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource.
 	Description any
-	Name any
-	Priority any
-	Project any
-	Zone any
+	// Required. A map of extension names (for example, "ops-agent") to their corresponding policy configurations.
 	ExtensionPolicies any
+	// Optional. Output only. [Output Only] Link to the global policy that manages this zone policy, if applicable.
+	GlobalResourceLink any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Optional. Selectors to target VMs for this policy. VMs are selected if they match *any* of the provided selectors (logical OR). If this list is empty, the policy applies to all VMs.
 	InstanceSelectors any
-	Timeouts any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#vmExtensionPolicy.
+	Kind any
+	// Optional. Output only. [Output Only] Indicates if this policy is managed by a global policy.
+	ManagedByGlobal any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Optional. Priority of this policy. Used to resolve conflicts when multiple policies apply to the same extension. The policy priority is an integer from 0 to 65535, inclusive. Lower integers indicate higher priorities. If you do not specify a priority when creating a rule, it is assigned a priority of 1000. If priorities are equal, the policy with the most recent creation timestamp takes precedence.
+	Priority any
+	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL for this resource's resource id.
+	SelfLinkWithId any
+	// Optional. Output only. [Output Only] Current state of the policy: ACTIVE or DELETING.
+	State any
+	// Output only. [Output Only] Update timestamp inRFC3339 text format.
+	UpdateTimestamp any
+}
+
+type ZoneVmExtensionPolicyAttrs struct {
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource.
+	Description any
+	// Required. A map of extension names (for example, "ops-agent") to their corresponding policy configurations.
+	ExtensionPolicies any
+	// Optional. Output only. [Output Only] Link to the global policy that manages this zone policy, if applicable.
+	GlobalResourceLink any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Optional. Selectors to target VMs for this policy. VMs are selected if they match *any* of the provided selectors (logical OR). If this list is empty, the policy applies to all VMs.
+	InstanceSelectors any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#vmExtensionPolicy.
+	Kind any
+	// Optional. Output only. [Output Only] Indicates if this policy is managed by a global policy.
+	ManagedByGlobal any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Optional. Priority of this policy. Used to resolve conflicts when multiple policies apply to the same extension. The policy priority is an integer from 0 to 65535, inclusive. Lower integers indicate higher priorities. If you do not specify a priority when creating a rule, it is assigned a priority of 1000. If priorities are equal, the policy with the most recent creation timestamp takes precedence.
+	Priority any
+	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL for this resource's resource id.
+	SelfLinkWithId any
+	// Optional. Output only. [Output Only] Current state of the policy: ACTIVE or DELETING.
+	State any
+	// Output only. [Output Only] Update timestamp inRFC3339 text format.
+	UpdateTimestamp any
 }
 
 var ZoneVmExtensionPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_zone_vm_extension_policy",
 	Fields: ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 		"ExtensionPolicies": ubx.FieldSpec{
 			WireName: "extension_policies",
-			Kind: "set",
+			Kind: "map",
 			Fields: ZoneVmExtensionPolicy_ExtensionPoliciesFields,
 		},
+		"GlobalResourceLink": ubx.FieldSpec{WireName: "global_resource_link"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceSelectors": ubx.FieldSpec{
 			WireName: "instance_selectors",
 			Kind: "list",
 			Fields: ZoneVmExtensionPolicy_InstanceSelectorsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: ZoneVmExtensionPolicy_TimeoutsFields,
-		},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"ManagedByGlobal": ubx.FieldSpec{WireName: "managed_by_global"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UpdateTimestamp": ubx.FieldSpec{WireName: "update_timestamp"},
 	},
 }

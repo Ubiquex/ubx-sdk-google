@@ -7,48 +7,118 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class RegionSslCertificate_Timeouts:
-    create: Any = None
-    delete: Any = None
+class RegionSslCertificate_Managed:
+    # Output only. [Output only] Detailed statuses of the domains specified for managed certificate resource.
+    domain_status: Any = None
+    # The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+    domains: Any = None
+    # Output only. [Output only] Status of the managed certificate resource.
+    status: Any = None
 
-_RegionSslCertificate_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+@dataclasses.dataclass
+class RegionSslCertificate_SelfManaged:
+    # A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+    certificate: Any = None
+    # A write-only private key in PEM format. Only insert requests will include this field.
+    private_key: Any = None
+
+_RegionSslCertificate_ManagedFields = {
+    "domain_status": ubx.FieldSpec(wire_name="domain_status"),
+    "domains": ubx.FieldSpec(wire_name="domains"),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_RegionSslCertificate_SelfManagedFields = {
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "private_key": ubx.FieldSpec(wire_name="private_key"),
 }
 
 @dataclasses.dataclass
 class RegionSslCertificateConfig:
+    # A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
     certificate: Any = None
-    deletion_policy: Any = None
+    # [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Output only. [Output Only] Expire time of the certificate. RFC3339
+    expire_time: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
+    kind: Any = None
+    # Configuration and status of a managed SSL certificate.
+    managed: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    name_prefix: Any = None
+    # A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
     private_key: Any = None
-    private_key_wo: Any = None
-    private_key_wo_version: Any = None
-    project: Any = None
+    # Output only. [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
     region: Any = None
-    timeouts: Any = None
+    # [Output only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Configuration and status of a self-managed SSL certificate.
+    self_managed: Any = None
+    # Output only. [Output Only] Domains associated with the certificate via Subject Alternative Name.
+    subject_alternative_names: Any = None
+    # (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
+    type: Any = None
+
+@dataclasses.dataclass
+class RegionSslCertificateAttrs:
+    # A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+    certificate: Any = None
+    # [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Output only. [Output Only] Expire time of the certificate. RFC3339
+    expire_time: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
+    kind: Any = None
+    # Configuration and status of a managed SSL certificate.
+    managed: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
+    private_key: Any = None
+    # Output only. [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
+    region: Any = None
+    # [Output only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Configuration and status of a self-managed SSL certificate.
+    self_managed: Any = None
+    # Output only. [Output Only] Domains associated with the certificate via Subject Alternative Name.
+    subject_alternative_names: Any = None
+    # (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
+    type: Any = None
 
 RegionSslCertificate = ubx.ResourceBinding(
     wire_type="google_compute_region_ssl_certificate",
     fields={
         "certificate": ubx.FieldSpec(wire_name="certificate"),
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
+        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "private_key": ubx.FieldSpec(wire_name="private_key"),
-        "private_key_wo": ubx.FieldSpec(wire_name="private_key_wo"),
-        "private_key_wo_version": ubx.FieldSpec(wire_name="private_key_wo_version"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "managed": ubx.FieldSpec(
+            wire_name="managed",
             kind="object",
-            fields=_RegionSslCertificate_TimeoutsFields,
+            fields=_RegionSslCertificate_ManagedFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "private_key": ubx.FieldSpec(wire_name="private_key"),
+        "region": ubx.FieldSpec(wire_name="region"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "self_managed": ubx.FieldSpec(
+            wire_name="self_managed",
+            kind="object",
+            fields=_RegionSslCertificate_SelfManagedFields,
+        ),
+        "subject_alternative_names": ubx.FieldSpec(wire_name="subject_alternative_names"),
+        "type": ubx.FieldSpec(wire_name="type"),
     },
 )

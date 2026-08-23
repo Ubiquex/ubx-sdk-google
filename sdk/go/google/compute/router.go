@@ -5,31 +5,211 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Router_Bgp_AdvertisedIpRanges struct {
 	Description any
+	// The IP range in CIDR notation (e.g., 192.168.0.0/16) that the router advertises to BGP peers. (AI-inferred)
 	Range any
 }
 
 type Router_Bgp struct {
+	// User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
 	AdvertiseMode any
+	// User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
 	AdvertisedGroups any
-	Asn any
-	IdentifierRange any
-	KeepaliveInterval any
+	// User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These IP ranges will be advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
 	AdvertisedIpRanges any
+	// Local BGP Autonomous System Number (ASN). Must be anRFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN.
+	Asn any
+	// Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID".
+	IdentifierRange any
+	// The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+	KeepaliveInterval any
+}
+
+type Router_BgpPeers_Bfd struct {
+	// The minimum interval, in milliseconds, between received BFD control packets for this BGP peer. This setting controls how quickly the router detects a peer failure. (AI-inferred)
+	MinReceiveInterval any
+	// The minimum interval (in milliseconds) between BFD transmissions for this BGP peer. The value must be between 100 and 30000 milliseconds. (AI-inferred)
+	MinTransmitInterval any
+	// The number of consecutive BFD control packets that must be missed before BFD declares the peer down. (AI-inferred)
+	Multiplier any
+	// The BFD session initialization mode. Valid values are ACTIVE, DISABLED, and PASSIVE. ACTIVE initiates the BFD session, PASSIVE waits for the peer to initiate, and DISABLED disables BFD. (AI-inferred)
+	SessionInitializationMode any
+}
+
+type Router_BgpPeers_CustomLearnedIpRanges struct {
+	// The IP range in CIDR notation to use as a custom learned IP range for the BGP peer. (AI-inferred)
+	Range any
+}
+
+type Router_BgpPeers struct {
+	// The route advertisement mode for the BGP peer. Use DEFAULT to advertise the provider's default route set, or CUSTOM to define specific routes via the advertised_ip_ranges field. (AI-inferred)
+	AdvertiseMode any
+	// Specifies the list of prefix groups to advertise in custom mode. Valid values are 'ALL_SUBNETS', 'ALL_VPC_SUBNETS', and 'ALL_PEER_SUBNETS'. This field can only be populated when advertise_mode is 'CUSTOM'. (AI-inferred)
+	AdvertisedGroups any
+	// A list of custom IP ranges to advertise to the BGP peer. Each object contains a CIDR 'range' (required) and an optional 'description'. (AI-inferred)
+	AdvertisedIpRanges any
+	// The priority of routes advertised to this BGP peer. In the case of multiple BGP peers advertising the same route, the route with the lowest priority is preferred. (AI-inferred)
+	AdvertisedRoutePriority any
+	// Configures Bidirectional Forwarding Detection (BFD) settings for this BGP peer. (AI-inferred)
+	Bfd any
+	// A list of custom learned route IP address ranges for this BGP peer. (AI-inferred)
+	CustomLearnedIpRanges any
+	// User-specified priority for routes learned from this BGP peer. Must be between 0 and 65535 inclusive, defaults to 100. (AI-inferred)
+	CustomLearnedRoutePriority any
+	// Indicates whether the BGP peer is enabled. The allowed values are TRUE and FALSE. (AI-inferred)
+	Enable any
+	// Enables IPv4 on the BGP peer. This flag is set to true by default. (AI-inferred)
+	EnableIpv4 any
+	// Enables IPv6 for the BGP peer. Set to true to allow the BGP peer to exchange IPv6 routes. (AI-inferred)
+	EnableIpv6 any
+	// List of names of Cloud Router route policies to apply to outgoing routes advertised to this BGP peer. (AI-inferred)
+	ExportPolicies any
+	// A list of Cloud Router route policy names that this BGP peer applies to incoming routes. These policies control which routes are accepted from the BGP peer. (AI-inferred)
+	ImportPolicies any
+	// The name of the router interface the BGP peer is associated with. This must match the name of an existing interface on the same Compute Router. (AI-inferred)
+	InterfaceName any
+	IpAddress any
+	// The IPv4 address that this BGP peer uses as the next hop for advertised routes. (AI-inferred)
+	Ipv4NexthopAddress any
+	// The IPv6 address used as the next-hop for routes advertised to this BGP peer. If not specified, the default IPv6 next-hop (typically the interface's address) is used. (AI-inferred)
+	Ipv6NexthopAddress any
+	// The management type of the BGP peer, which indicates whether the peer is managed by the associated attachment or by the user. Valid values are 'MANAGED_BY_ATTACHMENT' and 'MANAGED_BY_USER'. (AI-inferred)
+	ManagementType any
+	// The name of the MD5 authentication key to use for this BGP peer. The key must be defined in the router's BGP configuration. (AI-inferred)
+	Md5AuthenticationKeyName any
+	Name any
+	// The autonomous system number (ASN) of the BGP peer. Required when configuring a BGP peer on a Compute Router. (AI-inferred)
+	PeerAsn any
+	// The IP address of the BGP peer that this router will establish a BGP session with. (AI-inferred)
+	PeerIpAddress any
+	// The IPv4 address of the BGP peer, used as the next hop for routes learned from this peer. (AI-inferred)
+	PeerIpv4NexthopAddress any
+	PeerIpv6NexthopAddress any
+	// The URI of the VM instance that is the router appliance for this BGP peer. (AI-inferred)
+	RouterApplianceInstance any
+}
+
+type Router_Interfaces struct {
+	// The IP address and range for the router interface, used for BGP sessions. This can be a single IP address or a CIDR range in the form of 'IP/30'. If not specified, GCP will assign an IP address automatically. (AI-inferred)
+	IpRange any
+	// The IP version used by this interface. Valid values are IPV4 and IPV6. (AI-inferred)
+	IpVersion any
+	// The URL of the interconnect attachment to link with this router interface. This is used when the interface is for a VLAN attachment on an Interconnect. (AI-inferred)
+	LinkedInterconnectAttachment any
+	// The name of the VPN tunnel that this interface is linked to. Use this when the interface is of type 'tunnel'. (AI-inferred)
+	LinkedVpnTunnel any
+	// Indicates who manages this interface: MANAGED_BY_ATTACHMENT means the interface is managed by a VLAN attachment (Cloud Interconnect), while MANAGED_BY_USER means it is configured by the user. (AI-inferred)
+	ManagementType any
+	Name any
+	// The private IP address of the Compute Router interface. (AI-inferred)
+	PrivateIpAddress any
+	// The name of another interface in the same router that serves as the redundancy pair for this interface. When set, this interface is configured as part of a redundant BGP session. (AI-inferred)
+	RedundantInterface any
+	// The name or self-link of the subnetwork to which this router interface is attached. This field is used when the interface is associated with a subnetwork, such as for router appliance interfaces. (AI-inferred)
+	Subnetwork any
 }
 
 type Router_Md5AuthenticationKeys struct {
+	// The shared secret key used for MD5 authentication in the BGP session. This value is provided to the peer to authenticate the router. (AI-inferred)
 	Key any
+	// The name of the MD5 authentication key. It uniquely identifies the key within the router's BGP configuration. (AI-inferred)
 	Name any
 }
 
-type Router_Params struct {
-	ResourceManagerTags any
+type Router_Nats_LogConfig struct {
+	// Whether to enable logging for the NAT gateway. When set to true, logs are generated according to the filter specified in the log_config block. (AI-inferred)
+	Enable any
+	// Determines which NAT logs are exported. Valid values: ALL (log all NAT traffic), ERRORS_ONLY (log only failed translations), TRANSLATIONS_ONLY (log successful translations only). (AI-inferred)
+	Filter any
 }
 
-type Router_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type Router_Nats_Nat64Subnetworks struct {
+	// The name of the subnetwork to use for NAT64. (AI-inferred)
+	Name any
+}
+
+type Router_Nats_Rules_Action struct {
+	// The list of IP addresses to use as source NAT IPs for active connections when this NAT rule is applied. (AI-inferred)
+	SourceNatActiveIps any
+	// The list of source NAT IP ranges (in CIDR format) to use as the active NAT addresses for packets matching this rule. Required for the action block of a NAT rule. (AI-inferred)
+	SourceNatActiveRanges any
+	// List of source NAT IP addresses to be drained. These IPs will not be used for new connections, but existing connections will continue to use them until they are removed or connections terminate. (AI-inferred)
+	SourceNatDrainIps any
+	// A list of source NAT IP ranges to be drained. These ranges are used to gracefully terminate existing connections during a migration or deactivation of NAT IPs. (AI-inferred)
+	SourceNatDrainRanges any
+}
+
+type Router_Nats_Rules struct {
+	// The action configuration for this NAT rule, defining how traffic matching the rule's match condition is NATed. It specifies the source NAT IPs (active and drain) to use. (AI-inferred)
+	Action any
+	// A user-defined, human-readable description for the NAT rule. (AI-inferred)
+	Description any
+	// An expression in Common Expression Language (CEL) that defines which traffic this NAT rule applies to. It can match on packet attributes like source or destination IP, protocol, and ports, e.g., `inIpRange(destination.ip, '203.0.113.0/24')`. (AI-inferred)
+	Match any
+	// The unique number assigned to this NAT rule. Rules are evaluated in ascending order, and this number must be unique within the NAT configuration. (AI-inferred)
+	RuleNumber any
+}
+
+type Router_Nats_Subnetworks struct {
+	// The name of the subnetwork to include in the NAT configuration for this router NAT. (AI-inferred)
+	Name any
+	// List of the secondary ranges of the subnetwork that are allowed to use NAT. This can be provided only when 'LIST_OF_SECONDARY_IP_RANGES' is used for source_ip_ranges_to_nat. (AI-inferred)
+	SecondaryIpRangeNames any
+	// List of source IP ranges in the subnetwork that should be NATed. Valid values are 'ALL_IP_RANGES', 'PRIMARY_IP_RANGE', and 'LIST_OF_SECONDARY_IP_RANGES'. If 'LIST_OF_SECONDARY_IP_RANGES' is used, you must also specify `secondary_ip_range_names`. (AI-inferred)
+	SourceIpRangesToNat any
+}
+
+type Router_Nats struct {
+	// Specifies the network tier for the NAT. Allowed values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD. (AI-inferred)
+	AutoNetworkTier any
+	// A list of external IP addresses to be drained from the NAT. These IPs will no longer be used for new connections but will continue to serve existing connections until they are closed. (AI-inferred)
+	DrainNatIps any
+	// The effective TCP TIME_WAIT timeout in seconds for Cloud NAT connections, reflecting the actual value in use (either the configured value or the default). (AI-inferred)
+	EffectiveTcpTimeWaitTimeoutSec any
+	// If set to true, the NAT gateway dynamically allocates ports for each VM from a shared pool instead of using static port allocation. Defaults to false. (AI-inferred)
+	EnableDynamicPortAllocation any
+	// Whether to enable endpoint independent mapping for the NAT gateway. When enabled, the NAT gateway maps each internal IP and port pair to a unique external IP and port, independent of the destination. (AI-inferred)
+	EnableEndpointIndependentMapping any
+	// The list of endpoint types supported by this NAT configuration, controlling which types of network endpoints can use the NAT. (AI-inferred)
+	EndpointTypes any
+	// The idle timeout for ICMP connections in seconds. This controls how long an ICMP session is kept alive in the NAT without traffic before being closed. (AI-inferred)
+	IcmpIdleTimeoutSec any
+	// Configuration for NAT logging. This block allows enabling or disabling logging for the NAT gateway and specifying a filter to determine which connections are logged. (AI-inferred)
+	LogConfig any
+	// Maximum number of ports per VM used by the NAT configuration, per subnet. Defaults to 2048, with an allowed range of 64 to 65536. (AI-inferred)
+	MaxPortsPerVm any
+	// The minimum number of ports allocated to each VM in the NAT configuration. (AI-inferred)
+	MinPortsPerVm any
+	// The name of the Cloud NAT. This name must be unique within the parent router. (AI-inferred)
+	Name any
+	// A list of subnetworks (self-links) to be used for NAT64. NAT64 enables IPv6-only resources to communicate with IPv4-only services by mapping IPv6 addresses to IPv4 addresses. Each listed subnetwork must be configured with an IPv6 address range. (AI-inferred)
+	Nat64Subnetworks any
+	// Specifies how NAT IP addresses are allocated. AUTO_ONLY automatically allocates NAT IPs; MANUAL_ONLY requires you to specify them in nat_ips. (AI-inferred)
+	NatIpAllocateOption any
+	// List of self-links of external IP addresses to be used for NAT. Only valid when nat_ip_allocate_option is set to MANUAL_ONLY; if empty, an automatically allocated IP is used. (AI-inferred)
+	NatIps any
+	// A list of custom NAT rules. Each rule specifies a rule number, a match expression, and an action (e.g., translation or no translation) to control how traffic is routed through the NAT. (AI-inferred)
+	Rules any
+	// Specifies which IP ranges of the subnets are eligible for NAT. Valid values are: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, and LIST_OF_SUBNETWORKS. (AI-inferred)
+	SourceSubnetworkIpRangesToNat any
+	// Controls which IPv6 subnetwork IP ranges are eligible for NAT64. Set to ALL_IPV6_SUBNETWORKS to use all IPv6 subnets in the region, or LIST_OF_IPV6_SUBNETWORKS to use only the specific subnets listed in the associated subnetwork configuration. (AI-inferred)
+	SourceSubnetworkIpRangesToNat64 any
+	// The list of subnetworks that this NAT configuration applies to. Each object specifies a subnetwork and its NAT settings. (AI-inferred)
+	Subnetworks any
+	// Timeout in seconds for established TCP connections before they are considered idle and closed. Defaults to 1200 seconds. (AI-inferred)
+	TcpEstablishedIdleTimeoutSec any
+	// Timeout for TCP connections in the TIME_WAIT state, specified in seconds, within the router's NAT configuration. (AI-inferred)
+	TcpTimeWaitTimeoutSec any
+	// The timeout in seconds for TCP transitory idle connections. A transitory connection is one that is in the process of being established (e.g., during the TCP handshake); if no traffic is seen within this timeout, the connection is dropped. Defaults to 30 seconds. (AI-inferred)
+	TcpTransitoryIdleTimeoutSec any
+	// The type of NAT configuration. Valid values are `PRIVATE` and `PUBLIC`. (AI-inferred)
+	Type any
+	// The timeout (in seconds) for UDP connections through the NAT. Defaults to 30 seconds if not specified. (AI-inferred)
+	UdpIdleTimeoutSec any
+}
+
+type Router_Params struct {
+	// Tag keys/values directly bound to this resource. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID & namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
+	ResourceManagerTags any
 }
 
 var Router_Bgp_AdvertisedIpRangesFields = ubx.FieldMap{
@@ -40,14 +220,76 @@ var Router_Bgp_AdvertisedIpRangesFields = ubx.FieldMap{
 var Router_BgpFields = ubx.FieldMap{
 		"AdvertiseMode": ubx.FieldSpec{WireName: "advertise_mode"},
 		"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
+		"AdvertisedIpRanges": ubx.FieldSpec{
+			WireName: "advertised_ip_ranges",
+			Kind: "list",
+			Fields: Router_Bgp_AdvertisedIpRangesFields,
+		},
 		"Asn": ubx.FieldSpec{WireName: "asn"},
 		"IdentifierRange": ubx.FieldSpec{WireName: "identifier_range"},
 		"KeepaliveInterval": ubx.FieldSpec{WireName: "keepalive_interval"},
+	}
+
+var Router_BgpPeers_BfdFields = ubx.FieldMap{
+		"MinReceiveInterval": ubx.FieldSpec{WireName: "min_receive_interval"},
+		"MinTransmitInterval": ubx.FieldSpec{WireName: "min_transmit_interval"},
+		"Multiplier": ubx.FieldSpec{WireName: "multiplier"},
+		"SessionInitializationMode": ubx.FieldSpec{WireName: "session_initialization_mode"},
+	}
+
+var Router_BgpPeers_CustomLearnedIpRangesFields = ubx.FieldMap{
+		"Range": ubx.FieldSpec{WireName: "range"},
+	}
+
+var Router_BgpPeersFields = ubx.FieldMap{
+		"AdvertiseMode": ubx.FieldSpec{WireName: "advertise_mode"},
+		"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
 		"AdvertisedIpRanges": ubx.FieldSpec{
 			WireName: "advertised_ip_ranges",
-			Kind: "set",
+			Kind: "list",
 			Fields: Router_Bgp_AdvertisedIpRangesFields,
 		},
+		"AdvertisedRoutePriority": ubx.FieldSpec{WireName: "advertised_route_priority"},
+		"Bfd": ubx.FieldSpec{
+			WireName: "bfd",
+			Kind: "object",
+			Fields: Router_BgpPeers_BfdFields,
+		},
+		"CustomLearnedIpRanges": ubx.FieldSpec{
+			WireName: "custom_learned_ip_ranges",
+			Kind: "list",
+			Fields: Router_BgpPeers_CustomLearnedIpRangesFields,
+		},
+		"CustomLearnedRoutePriority": ubx.FieldSpec{WireName: "custom_learned_route_priority"},
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"EnableIpv4": ubx.FieldSpec{WireName: "enable_ipv4"},
+		"EnableIpv6": ubx.FieldSpec{WireName: "enable_ipv6"},
+		"ExportPolicies": ubx.FieldSpec{WireName: "export_policies"},
+		"ImportPolicies": ubx.FieldSpec{WireName: "import_policies"},
+		"InterfaceName": ubx.FieldSpec{WireName: "interface_name"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"Ipv4NexthopAddress": ubx.FieldSpec{WireName: "ipv4_nexthop_address"},
+		"Ipv6NexthopAddress": ubx.FieldSpec{WireName: "ipv6_nexthop_address"},
+		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
+		"Md5AuthenticationKeyName": ubx.FieldSpec{WireName: "md5_authentication_key_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PeerAsn": ubx.FieldSpec{WireName: "peer_asn"},
+		"PeerIpAddress": ubx.FieldSpec{WireName: "peer_ip_address"},
+		"PeerIpv4NexthopAddress": ubx.FieldSpec{WireName: "peer_ipv4_nexthop_address"},
+		"PeerIpv6NexthopAddress": ubx.FieldSpec{WireName: "peer_ipv6_nexthop_address"},
+		"RouterApplianceInstance": ubx.FieldSpec{WireName: "router_appliance_instance"},
+	}
+
+var Router_InterfacesFields = ubx.FieldMap{
+		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
+		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
+		"LinkedInterconnectAttachment": ubx.FieldSpec{WireName: "linked_interconnect_attachment"},
+		"LinkedVpnTunnel": ubx.FieldSpec{WireName: "linked_vpn_tunnel"},
+		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+		"RedundantInterface": ubx.FieldSpec{WireName: "redundant_interface"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
 	}
 
 var Router_Md5AuthenticationKeysFields = ubx.FieldMap{
@@ -55,63 +297,197 @@ var Router_Md5AuthenticationKeysFields = ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
 	}
 
+var Router_Nats_LogConfigFields = ubx.FieldMap{
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+	}
+
+var Router_Nats_Nat64SubnetworksFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
+
+var Router_Nats_Rules_ActionFields = ubx.FieldMap{
+		"SourceNatActiveIps": ubx.FieldSpec{WireName: "source_nat_active_ips"},
+		"SourceNatActiveRanges": ubx.FieldSpec{WireName: "source_nat_active_ranges"},
+		"SourceNatDrainIps": ubx.FieldSpec{WireName: "source_nat_drain_ips"},
+		"SourceNatDrainRanges": ubx.FieldSpec{WireName: "source_nat_drain_ranges"},
+	}
+
+var Router_Nats_RulesFields = ubx.FieldMap{
+		"Action": ubx.FieldSpec{
+			WireName: "action",
+			Kind: "object",
+			Fields: Router_Nats_Rules_ActionFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Match": ubx.FieldSpec{WireName: "match"},
+		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
+	}
+
+var Router_Nats_SubnetworksFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SecondaryIpRangeNames": ubx.FieldSpec{WireName: "secondary_ip_range_names"},
+		"SourceIpRangesToNat": ubx.FieldSpec{WireName: "source_ip_ranges_to_nat"},
+	}
+
+var Router_NatsFields = ubx.FieldMap{
+		"AutoNetworkTier": ubx.FieldSpec{WireName: "auto_network_tier"},
+		"DrainNatIps": ubx.FieldSpec{WireName: "drain_nat_ips"},
+		"EffectiveTcpTimeWaitTimeoutSec": ubx.FieldSpec{WireName: "effective_tcp_time_wait_timeout_sec"},
+		"EnableDynamicPortAllocation": ubx.FieldSpec{WireName: "enable_dynamic_port_allocation"},
+		"EnableEndpointIndependentMapping": ubx.FieldSpec{WireName: "enable_endpoint_independent_mapping"},
+		"EndpointTypes": ubx.FieldSpec{WireName: "endpoint_types"},
+		"IcmpIdleTimeoutSec": ubx.FieldSpec{WireName: "icmp_idle_timeout_sec"},
+		"LogConfig": ubx.FieldSpec{
+			WireName: "log_config",
+			Kind: "object",
+			Fields: Router_Nats_LogConfigFields,
+		},
+		"MaxPortsPerVm": ubx.FieldSpec{WireName: "max_ports_per_vm"},
+		"MinPortsPerVm": ubx.FieldSpec{WireName: "min_ports_per_vm"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Nat64Subnetworks": ubx.FieldSpec{
+			WireName: "nat64_subnetworks",
+			Kind: "list",
+			Fields: Router_Nats_Nat64SubnetworksFields,
+		},
+		"NatIpAllocateOption": ubx.FieldSpec{WireName: "nat_ip_allocate_option"},
+		"NatIps": ubx.FieldSpec{WireName: "nat_ips"},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: Router_Nats_RulesFields,
+		},
+		"SourceSubnetworkIpRangesToNat": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat"},
+		"SourceSubnetworkIpRangesToNat64": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat64"},
+		"Subnetworks": ubx.FieldSpec{
+			WireName: "subnetworks",
+			Kind: "list",
+			Fields: Router_Nats_SubnetworksFields,
+		},
+		"TcpEstablishedIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_established_idle_timeout_sec"},
+		"TcpTimeWaitTimeoutSec": ubx.FieldSpec{WireName: "tcp_time_wait_timeout_sec"},
+		"TcpTransitoryIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_transitory_idle_timeout_sec"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UdpIdleTimeoutSec": ubx.FieldSpec{WireName: "udp_idle_timeout_sec"},
+	}
+
 var Router_ParamsFields = ubx.FieldMap{
 		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
 	}
 
-var Router_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type RouterConfig struct {
-	DeletionPolicy any
-	Description any
-	EncryptedInterconnectRouter any
-	Id any
-	Name any
-	NccGateway any
-	Network any
-	Project any
-	Region any
+	// BGP configuration for the Cloud Router, including the autonomous system number (ASN), advertised route settings, and other BGP parameters. This field is optional when creating a router and is computed by the provider when not explicitly set. (AI-inferred)
 	Bgp any
+	// BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273.
+	BgpPeers any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+	EncryptedInterconnectRouter any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+	Interfaces any
+	// Output only. [Output Only] Type of resource. Always compute#router for routers.
+	Kind any
+	// Keys used for MD5 authentication.
 	Md5AuthenticationKeys any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// A list of NAT services created in this router.
+	Nats any
+	// URI of the ncc_gateway to which this router associated.
+	NccGateway any
+	// URI of the network to which this router belongs.
+	Network any
+	// Additional router parameters.
 	Params any
-	Timeouts any
+	// [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+	Region any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
+}
+
+type RouterAttrs struct {
+	// BGP configuration for the Cloud Router, including the autonomous system number (ASN), advertised route settings, and other BGP parameters. This field is optional when creating a router and is computed by the provider when not explicitly set. (AI-inferred)
+	Bgp any
+	// BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273.
+	BgpPeers any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+	EncryptedInterconnectRouter any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+	Interfaces any
+	// Output only. [Output Only] Type of resource. Always compute#router for routers.
+	Kind any
+	// Keys used for MD5 authentication.
+	Md5AuthenticationKeys any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// A list of NAT services created in this router.
+	Nats any
+	// URI of the ncc_gateway to which this router associated.
+	NccGateway any
+	// URI of the network to which this router belongs.
+	Network any
+	// Additional router parameters.
+	Params any
+	// [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+	Region any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
 }
 
 var Router = ubx.ResourceBinding{
 	WireType: "google_compute_router",
 	Fields: ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"Bgp": ubx.FieldSpec{
+			WireName: "bgp",
+			Kind: "object",
+			Fields: Router_BgpFields,
+		},
+		"BgpPeers": ubx.FieldSpec{
+			WireName: "bgp_peers",
+			Kind: "list",
+			Fields: Router_BgpPeersFields,
+		},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptedInterconnectRouter": ubx.FieldSpec{WireName: "encrypted_interconnect_router"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NccGateway": ubx.FieldSpec{WireName: "ncc_gateway"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Bgp": ubx.FieldSpec{
-			WireName: "bgp",
+		"Interfaces": ubx.FieldSpec{
+			WireName: "interfaces",
 			Kind: "list",
-			Fields: Router_BgpFields,
+			Fields: Router_InterfacesFields,
 		},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Md5AuthenticationKeys": ubx.FieldSpec{
 			WireName: "md5_authentication_keys",
 			Kind: "list",
 			Fields: Router_Md5AuthenticationKeysFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Nats": ubx.FieldSpec{
+			WireName: "nats",
+			Kind: "list",
+			Fields: Router_NatsFields,
+		},
+		"NccGateway": ubx.FieldSpec{WireName: "ncc_gateway"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "list",
+			Kind: "object",
 			Fields: Router_ParamsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Router_TimeoutsFields,
-		},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},
 }

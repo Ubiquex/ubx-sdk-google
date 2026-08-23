@@ -2,31 +2,46 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceAttachment_ConnectedEndpoints {
-  consumerNetwork: string;
-  endpoint: string;
-  natIps: string[];
-  propagatedConnectionCount: number;
-  pscConnectionId: string;
-  status: string;
-}
-
-export interface ServiceAttachment_PscServiceAttachmentId {
-  high: string;
-  low: string;
+  /** The URL of the consumer network that is connected to this service attachment, e.g. projects/{project}/global/networks/{network}. (AI-inferred) */
+  consumerNetwork?: string | Computed<string>;
+  /** The URL of the consumer endpoint (for example, a forwarding rule) that is connected to the service attachment. (AI-inferred) */
+  endpoint?: string | Computed<string>;
+  endpointWithId?: string | Computed<string>;
+  /** The list of NAT IP addresses allocated for the consumer endpoint. (AI-inferred) */
+  natIps?: string[] | Computed<string[]>;
+  /** The number of connections that have been propagated to the consumer network from the producer network for this connected endpoint. (AI-inferred) */
+  propagatedConnectionCount?: number | Computed<number>;
+  /** The unique identifier for the Private Service Connect connection associated with this connected endpoint. (AI-inferred) */
+  pscConnectionId?: string | Computed<string>;
+  /** The current status of the connected endpoint. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred) */
+  status?: string | Computed<string>;
 }
 
 export interface ServiceAttachment_ConsumerAcceptLists {
-  connectionLimit: number;
-  endpointUrl: string;
-  networkUrl: string;
-  projectIdOrNum: string;
+  /** The maximum number of connections allowed for the consumer in the accept list. A value of 0 means no limit. (AI-inferred) */
+  connectionLimit?: number | Computed<number>;
+  endpointUrl?: string | Computed<string>;
+  /** The URL of the network that is allowed to connect to this service attachment. (AI-inferred) */
+  networkUrl?: string | Computed<string>;
+  /** The project ID or project number of a consumer project that is allowed to connect to the service attachment. Used in the consumer accept list to identify the allowed project. (AI-inferred) */
+  projectIdOrNum?: string | Computed<string>;
 }
 
-export interface ServiceAttachment_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface ServiceAttachment_PscServiceAttachmentId {
+  high?: string | Computed<string>;
+  /** The lower 32 bits of the 64-bit PSC service attachment ID, represented as a decimal string. (AI-inferred) */
+  low?: string | Computed<string>;
 }
+
+const ServiceAttachment_ConnectedEndpointsFields: FieldMap = {
+  consumerNetwork: "consumer_network",
+  endpoint: "endpoint",
+  endpointWithId: "endpoint_with_id",
+  natIps: "nat_ips",
+  propagatedConnectionCount: "propagated_connection_count",
+  pscConnectionId: "psc_connection_id",
+  status: "status",
+};
 
 const ServiceAttachment_ConsumerAcceptListsFields: FieldMap = {
   connectionLimit: "connection_limit",
@@ -35,86 +50,139 @@ const ServiceAttachment_ConsumerAcceptListsFields: FieldMap = {
   projectIdOrNum: "project_id_or_num",
 };
 
-const ServiceAttachment_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const ServiceAttachment_PscServiceAttachmentIdFields: FieldMap = {
+  high: "high",
+  low: "low",
 };
 
 export interface ServiceAttachmentConfig {
-  connectionPreference: string | Computed<string>;
-  consumerRejectLists?: string[] | Computed<string[]>;
-  deletionPolicy?: string | Computed<string>;
-  description?: string | Computed<string>;
-  domainNames?: string[] | Computed<string[]>;
-  enableProxyProtocol: boolean | Computed<boolean>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  natSubnets: string[] | Computed<string[]>;
-  project?: string | Computed<string>;
-  propagatedConnectionLimit?: number | Computed<number>;
-  reconcileConnections?: boolean | Computed<boolean>;
-  region?: string | Computed<string>;
-  sendPropagatedConnectionLimitIfZero?: boolean | Computed<boolean>;
-  showNatIps?: boolean | Computed<boolean>;
-  targetService: string | Computed<string>;
+  /** Output only. [Output Only] An array of connections for all the consumers connected to this service attachment. */
+  connectedEndpoints?: ServiceAttachment_ConnectedEndpoints[] | Computed<ServiceAttachment_ConnectedEndpoints[]>;
+  /** The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules. */
+  connectionPreference?: string | Computed<string>;
+  /** Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints. */
   consumerAcceptLists?: ServiceAttachment_ConsumerAcceptLists[] | Computed<ServiceAttachment_ConsumerAcceptLists[]>;
-  timeouts?: ServiceAttachment_Timeouts | Computed<ServiceAttachment_Timeouts>;
+  /** Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks. */
+  consumerRejectLists?: string[] | Computed<string[]>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
+  description?: string | Computed<string>;
+  /** If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1. */
+  domainNames?: string[] | Computed<string[]>;
+  /** If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers. */
+  enableProxyProtocol?: boolean | Computed<boolean>;
+  /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment. */
+  fingerprint?: string | Computed<string>;
+  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
+  id?: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments. */
+  kind?: string | Computed<string>;
+  /** Metadata of the service attachment. */
+  metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** The number of NAT IP addresses to be allocated per connected endpoint. If not specified, the default value is 1. */
+  natIpsPerEndpoint?: number | Computed<number>;
+  /** An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment. */
+  natSubnets?: string[] | Computed<string[]>;
+  /** The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment. */
+  producerForwardingRule?: string | Computed<string>;
+  /** The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250. */
+  propagatedConnectionLimit?: number | Computed<number>;
+  pscServiceAttachmentId?: ServiceAttachment_PscServiceAttachmentId | Computed<ServiceAttachment_PscServiceAttachmentId>;
+  /** This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false. */
+  reconcileConnections?: boolean | Computed<boolean>;
+  /** Output only. [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  region?: string | Computed<string>;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** The URL of a service serving the endpoint identified by this service attachment. */
+  targetService?: string | Computed<string>;
 }
 
 export interface ServiceAttachmentAttrs {
+  /** Output only. [Output Only] An array of connections for all the consumers connected to this service attachment. */
   connectedEndpoints: ServiceAttachment_ConnectedEndpoints[];
+  /** The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules. */
   connectionPreference: string;
-  consumerRejectLists: string[];
-  deletionPolicy: string;
-  description: string;
-  domainNames: string[];
-  enableProxyProtocol: boolean;
-  fingerprint: string;
-  id: string;
-  name: string;
-  natSubnets: string[];
-  project: string;
-  propagatedConnectionLimit: number;
-  pscServiceAttachmentId: ServiceAttachment_PscServiceAttachmentId[];
-  reconcileConnections: boolean;
-  region: string;
-  selfLink: string;
-  sendPropagatedConnectionLimitIfZero: boolean;
-  showNatIps: boolean;
-  targetService: string;
+  /** Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints. */
   consumerAcceptLists: ServiceAttachment_ConsumerAcceptLists[];
-  timeouts: ServiceAttachment_Timeouts;
+  /** Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks. */
+  consumerRejectLists: string[];
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
+  description: string;
+  /** If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1. */
+  domainNames: string[];
+  /** If true, enable the proxy protocol which is for supplying client TCP/IP address data in TCP connections that traverse proxies on their way to destination servers. */
+  enableProxyProtocol: boolean;
+  /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment. */
+  fingerprint: string;
+  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
+  id: string;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments. */
+  kind: string;
+  /** Metadata of the service attachment. */
+  metadata: Record<string, string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name: string;
+  /** The number of NAT IP addresses to be allocated per connected endpoint. If not specified, the default value is 1. */
+  natIpsPerEndpoint: number;
+  /** An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment. */
+  natSubnets: string[];
+  /** The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment. */
+  producerForwardingRule: string;
+  /** The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250. */
+  propagatedConnectionLimit: number;
+  pscServiceAttachmentId: ServiceAttachment_PscServiceAttachmentId;
+  /** This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false. */
+  reconcileConnections: boolean;
+  /** Output only. [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  region: string;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink: string;
+  /** The URL of a service serving the endpoint identified by this service attachment. */
+  targetService: string;
 }
 
 export const ServiceAttachment: ResourceBinding<ServiceAttachmentConfig, ServiceAttachmentAttrs> = {
   wireType: "google_compute_service_attachment",
   fields: {
+    connectedEndpoints: {
+      wireName: "connected_endpoints",
+      kind: "list",
+      fields: ServiceAttachment_ConnectedEndpointsFields,
+    },
     connectionPreference: "connection_preference",
+    consumerAcceptLists: {
+      wireName: "consumer_accept_lists",
+      kind: "list",
+      fields: ServiceAttachment_ConsumerAcceptListsFields,
+    },
     consumerRejectLists: "consumer_reject_lists",
-    deletionPolicy: "deletion_policy",
+    creationTimestamp: "creation_timestamp",
     description: "description",
     domainNames: "domain_names",
     enableProxyProtocol: "enable_proxy_protocol",
+    fingerprint: "fingerprint",
     id: "id",
+    kind: "kind",
+    metadata: "metadata",
     name: "name",
+    natIpsPerEndpoint: "nat_ips_per_endpoint",
     natSubnets: "nat_subnets",
-    project: "project",
+    producerForwardingRule: "producer_forwarding_rule",
     propagatedConnectionLimit: "propagated_connection_limit",
+    pscServiceAttachmentId: {
+      wireName: "psc_service_attachment_id",
+      kind: "object",
+      fields: ServiceAttachment_PscServiceAttachmentIdFields,
+    },
     reconcileConnections: "reconcile_connections",
     region: "region",
-    sendPropagatedConnectionLimitIfZero: "send_propagated_connection_limit_if_zero",
-    showNatIps: "show_nat_ips",
+    selfLink: "self_link",
     targetService: "target_service",
-    consumerAcceptLists: {
-      wireName: "consumer_accept_lists",
-      kind: "set",
-      fields: ServiceAttachment_ConsumerAcceptListsFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: ServiceAttachment_TimeoutsFields,
-    },
   },
 };

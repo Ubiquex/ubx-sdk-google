@@ -7,53 +7,86 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Image_Deprecated:
+    # An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
+    deleted: Any = None
+    # An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
+    deprecated: Any = None
+    # An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
+    obsolete: Any = None
+    # The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
+    replacement: Any = None
+    # The deprecation state of this resource. This can be ACTIVE,DEPRECATED, OBSOLETE, or DELETED. Operations which communicate the end of life date for an image, can useACTIVE. Operations which create a new resource using aDEPRECATED resource will return successfully, but with a warning indicating the deprecated resource and recommending its replacement. Operations which use OBSOLETE orDELETED resources will be rejected and result in an error.
+    state: Any = None
+
+@dataclasses.dataclass
 class Image_GuestOsFeatures:
+    # Specifies the guest OS feature type for the image. Allowed values are: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Image_ImageEncryptionKey:
-    kms_key_self_link: Any = None
+    # The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
+    kms_key_name: Any = None
+    # The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name@project_id.iam.gserviceaccount.com/
     kms_key_service_account: Any = None
+    # [DEPRECATED] CSEK is no longer supported. Use CMEK instead. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or thersaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
     raw_key: Any = None
+    # [DEPRECATED] CSEK is no longer supported. Use CMEK instead. Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or thersaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
     rsa_encrypted_key: Any = None
+    # [DEPRECATED] CSEK is no longer supported. Use CMEK instead. [Output only] TheRFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
+    sha256: Any = None
 
 @dataclasses.dataclass
 class Image_Params:
+    # Input only. Resource manager tags to be bound to the image. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty.
     resource_manager_tags: Any = None
 
 @dataclasses.dataclass
 class Image_RawDisk:
+    # The format used to encode and transmit the block device, which should beTAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
     container_type: Any = None
-    sha1: Any = None
+    # [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
+    sha1_checksum: Any = None
+    # The full Google Cloud Storage URL or Artifact Registry path where the raw disk image archive is stored. The following are valid formats: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name - projects/project/locations/location/repositories/repo/packages/package/versions/version_id - projects/project/locations/location/repositories/repo/packages/package/versions/version_id@dirsum_sha256:hex_value In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
     source: Any = None
 
 @dataclasses.dataclass
 class Image_ShieldedInstanceInitialState_Dbs:
+    # The base64-encoded content of the database file (e.g., a UEFI secure boot database) to be stored in the shielded instance initial state. (AI-inferred)
     content: Any = None
+    # The file type of the database entry. Must be one of BIN, UNDEFINED, or X509. (AI-inferred)
     file_type: Any = None
 
 @dataclasses.dataclass
 class Image_ShieldedInstanceInitialState:
+    # The Key Database (db).
     dbs: Any = None
+    # The forbidden key database (dbx).
     dbxs: Any = None
+    # The Key Exchange Key (KEK).
     keks: Any = None
+    # The Platform Key (PK) for the shielded instance's secure boot, represented as an object containing the base64-encoded key content and its file type. (AI-inferred)
     pk: Any = None
 
-@dataclasses.dataclass
-class Image_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+_Image_DeprecatedFields = {
+    "deleted": ubx.FieldSpec(wire_name="deleted"),
+    "deprecated": ubx.FieldSpec(wire_name="deprecated"),
+    "obsolete": ubx.FieldSpec(wire_name="obsolete"),
+    "replacement": ubx.FieldSpec(wire_name="replacement"),
+    "state": ubx.FieldSpec(wire_name="state"),
+}
 
 _Image_GuestOsFeaturesFields = {
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _Image_ImageEncryptionKeyFields = {
-    "kms_key_self_link": ubx.FieldSpec(wire_name="kms_key_self_link"),
+    "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
     "kms_key_service_account": ubx.FieldSpec(wire_name="kms_key_service_account"),
     "raw_key": ubx.FieldSpec(wire_name="raw_key"),
     "rsa_encrypted_key": ubx.FieldSpec(wire_name="rsa_encrypted_key"),
+    "sha256": ubx.FieldSpec(wire_name="sha256"),
 }
 
 _Image_ParamsFields = {
@@ -62,7 +95,7 @@ _Image_ParamsFields = {
 
 _Image_RawDiskFields = {
     "container_type": ubx.FieldSpec(wire_name="container_type"),
-    "sha1": ubx.FieldSpec(wire_name="sha1"),
+    "sha1_checksum": ubx.FieldSpec(wire_name="sha1_checksum"),
     "source": ubx.FieldSpec(wire_name="source"),
 }
 
@@ -89,102 +122,230 @@ _Image_ShieldedInstanceInitialStateFields = {
     ),
     "pk": ubx.FieldSpec(
         wire_name="pk",
-        kind="list",
+        kind="object",
         fields=_Image_ShieldedInstanceInitialState_DbsFields,
     ),
 }
 
-_Image_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
 @dataclasses.dataclass
 class ImageConfig:
-    deletion_policy: Any = None
+    # The architecture of the image. Valid values are ARM64 or X86_64.
+    architecture: Any = None
+    # Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+    archive_size_bytes: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # Deprecation status for a public resource.
+    deprecated: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Size of the image when restored onto a persistent disk (in GB).
     disk_size_gb: Any = None
+    # Output only. Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+    enable_confidential_compute: Any = None
+    # The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
     family: Any = None
-    id: Any = None
-    labels: Any = None
-    licenses: Any = None
-    name: Any = None
-    project: Any = None
-    source_disk: Any = None
-    source_image: Any = None
-    source_snapshot: Any = None
-    storage_locations: Any = None
+    # A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
     guest_os_features: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # The customer-supplied encryption key that protects the image. This is optional when creating an image and becomes computed (populated by the provider) when the image is sourced from an encrypted disk or image. (AI-inferred)
     image_encryption_key: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#image for images.
+    kind: Any = None
+    # A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+    label_fingerprint: Any = None
+    # Labels to apply to this image. These can be later modified by the setLabels method.
+    labels: Any = None
+    # Integer license codes indicating which licenses are attached to this image.
+    license_codes: Any = None
+    # Any applicable license URI.
+    licenses: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Additional image params.
     params: Any = None
+    # The parameters of the raw disk image.
     raw_disk: Any = None
+    # Output only. Reserved for future use.
+    satisfies_pzi: Any = None
+    # Output only. [Output Only] Reserved for future use.
+    satisfies_pzs: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Initial State for shielded instance, these are public keys which are safe to store in public
     shielded_instance_initial_state: Any = None
+    # URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+    source_disk: Any = None
+    # The customer-supplied encryption key used to encrypt the source disk when the image was created. This field is computed and output-only, providing the key's metadata after the image is created. (AI-inferred)
     source_disk_encryption_key: Any = None
+    # Output only. [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+    source_disk_id: Any = None
+    # URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+    source_image: Any = None
+    # The customer-supplied encryption key of the source image, used when creating an image from an encrypted source image. This field is output only and is populated when the source image uses a customer-supplied encryption key. (AI-inferred)
     source_image_encryption_key: Any = None
+    # Output only. [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+    source_image_id: Any = None
+    # URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+    source_snapshot: Any = None
+    # The encryption key used to decrypt the source snapshot when creating the image. This is an output-only field computed by the API. (AI-inferred)
     source_snapshot_encryption_key: Any = None
-    timeouts: Any = None
+    # Output only. [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+    source_snapshot_id: Any = None
+    # The type of the image used to create this disk. The default and only valid value is RAW.
+    source_type: Any = None
+    # Output only. [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, orREADY.
+    status: Any = None
+    # Cloud Storage bucket storage location of the image (regional or multi-regional).
+    storage_locations: Any = None
+
+@dataclasses.dataclass
+class ImageAttrs:
+    # The architecture of the image. Valid values are ARM64 or X86_64.
+    architecture: Any = None
+    # Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+    archive_size_bytes: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # Deprecation status for a public resource.
+    deprecated: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Size of the image when restored onto a persistent disk (in GB).
+    disk_size_gb: Any = None
+    # Output only. Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+    enable_confidential_compute: Any = None
+    # The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+    family: Any = None
+    # A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
+    guest_os_features: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # The customer-supplied encryption key that protects the image. This is optional when creating an image and becomes computed (populated by the provider) when the image is sourced from an encrypted disk or image. (AI-inferred)
+    image_encryption_key: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#image for images.
+    kind: Any = None
+    # A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+    label_fingerprint: Any = None
+    # Labels to apply to this image. These can be later modified by the setLabels method.
+    labels: Any = None
+    # Integer license codes indicating which licenses are attached to this image.
+    license_codes: Any = None
+    # Any applicable license URI.
+    licenses: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Additional image params.
+    params: Any = None
+    # The parameters of the raw disk image.
+    raw_disk: Any = None
+    # Output only. Reserved for future use.
+    satisfies_pzi: Any = None
+    # Output only. [Output Only] Reserved for future use.
+    satisfies_pzs: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Initial State for shielded instance, these are public keys which are safe to store in public
+    shielded_instance_initial_state: Any = None
+    # URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+    source_disk: Any = None
+    # The customer-supplied encryption key used to encrypt the source disk when the image was created. This field is computed and output-only, providing the key's metadata after the image is created. (AI-inferred)
+    source_disk_encryption_key: Any = None
+    # Output only. [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+    source_disk_id: Any = None
+    # URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+    source_image: Any = None
+    # The customer-supplied encryption key of the source image, used when creating an image from an encrypted source image. This field is output only and is populated when the source image uses a customer-supplied encryption key. (AI-inferred)
+    source_image_encryption_key: Any = None
+    # Output only. [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+    source_image_id: Any = None
+    # URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+    source_snapshot: Any = None
+    # The encryption key used to decrypt the source snapshot when creating the image. This is an output-only field computed by the API. (AI-inferred)
+    source_snapshot_encryption_key: Any = None
+    # Output only. [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+    source_snapshot_id: Any = None
+    # The type of the image used to create this disk. The default and only valid value is RAW.
+    source_type: Any = None
+    # Output only. [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, orREADY.
+    status: Any = None
+    # Cloud Storage bucket storage location of the image (regional or multi-regional).
+    storage_locations: Any = None
 
 Image = ubx.ResourceBinding(
     wire_type="google_compute_image",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
+        "architecture": ubx.FieldSpec(wire_name="architecture"),
+        "archive_size_bytes": ubx.FieldSpec(wire_name="archive_size_bytes"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
+        "deprecated": ubx.FieldSpec(
+            wire_name="deprecated",
+            kind="object",
+            fields=_Image_DeprecatedFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
         "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+        "enable_confidential_compute": ubx.FieldSpec(wire_name="enable_confidential_compute"),
         "family": ubx.FieldSpec(wire_name="family"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "labels": ubx.FieldSpec(wire_name="labels"),
-        "licenses": ubx.FieldSpec(wire_name="licenses"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "source_disk": ubx.FieldSpec(wire_name="source_disk"),
-        "source_image": ubx.FieldSpec(wire_name="source_image"),
-        "source_snapshot": ubx.FieldSpec(wire_name="source_snapshot"),
-        "storage_locations": ubx.FieldSpec(wire_name="storage_locations"),
         "guest_os_features": ubx.FieldSpec(
             wire_name="guest_os_features",
-            kind="set",
+            kind="list",
             fields=_Image_GuestOsFeaturesFields,
         ),
+        "id": ubx.FieldSpec(wire_name="id"),
         "image_encryption_key": ubx.FieldSpec(
             wire_name="image_encryption_key",
-            kind="list",
+            kind="object",
             fields=_Image_ImageEncryptionKeyFields,
         ),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "label_fingerprint": ubx.FieldSpec(wire_name="label_fingerprint"),
+        "labels": ubx.FieldSpec(wire_name="labels"),
+        "license_codes": ubx.FieldSpec(wire_name="license_codes"),
+        "licenses": ubx.FieldSpec(wire_name="licenses"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "params": ubx.FieldSpec(
             wire_name="params",
-            kind="list",
+            kind="object",
             fields=_Image_ParamsFields,
         ),
         "raw_disk": ubx.FieldSpec(
             wire_name="raw_disk",
-            kind="list",
+            kind="object",
             fields=_Image_RawDiskFields,
         ),
+        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
+        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "shielded_instance_initial_state": ubx.FieldSpec(
             wire_name="shielded_instance_initial_state",
-            kind="list",
+            kind="object",
             fields=_Image_ShieldedInstanceInitialStateFields,
         ),
+        "source_disk": ubx.FieldSpec(wire_name="source_disk"),
         "source_disk_encryption_key": ubx.FieldSpec(
             wire_name="source_disk_encryption_key",
-            kind="list",
+            kind="object",
             fields=_Image_ImageEncryptionKeyFields,
         ),
+        "source_disk_id": ubx.FieldSpec(wire_name="source_disk_id"),
+        "source_image": ubx.FieldSpec(wire_name="source_image"),
         "source_image_encryption_key": ubx.FieldSpec(
             wire_name="source_image_encryption_key",
-            kind="list",
+            kind="object",
             fields=_Image_ImageEncryptionKeyFields,
         ),
+        "source_image_id": ubx.FieldSpec(wire_name="source_image_id"),
+        "source_snapshot": ubx.FieldSpec(wire_name="source_snapshot"),
         "source_snapshot_encryption_key": ubx.FieldSpec(
             wire_name="source_snapshot_encryption_key",
-            kind="list",
+            kind="object",
             fields=_Image_ImageEncryptionKeyFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Image_TimeoutsFields,
-        ),
+        "source_snapshot_id": ubx.FieldSpec(wire_name="source_snapshot_id"),
+        "source_type": ubx.FieldSpec(wire_name="source_type"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "storage_locations": ubx.FieldSpec(wire_name="storage_locations"),
     },
 )

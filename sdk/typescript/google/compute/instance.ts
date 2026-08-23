@@ -2,198 +2,465 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_AdvancedMachineFeatures {
-  enableNestedVirtualization: boolean;
-  enableUefiNetworking: boolean;
-  performanceMonitoringUnit: string;
-  threadsPerCore: number;
-  turboMode: string;
-  visibleCoreCount: number;
-}
-
-export interface Instance_AttachedDisk {
-  deviceName: string;
-  diskEncryptionKeyRaw: string;
-  diskEncryptionKeyRsa: string;
-  diskEncryptionKeySha256: string;
-  diskEncryptionServiceAccount: string;
-  forceAttach: boolean;
-  kmsKeySelfLink: string;
-  mode: string;
-  source: string;
-}
-
-export interface Instance_BootDisk_InitializeParams_SourceImageEncryptionKey {
-  kmsKeySelfLink: string;
-  kmsKeyServiceAccount: string;
-  rawKey: string;
-  rsaEncryptedKey: string;
-  sha256: string;
-}
-
-export interface Instance_BootDisk_InitializeParams {
-  architecture: string;
-  enableConfidentialCompute: boolean;
-  image: string;
-  labels: Record<string, string>;
-  provisionedIops: number;
-  provisionedThroughput: number;
-  replicaZones: string[];
-  resourceManagerTags: Record<string, string>;
-  resourcePolicies: string[];
-  size: number;
-  snapshot: string;
-  storagePool: string;
-  type: string;
-  sourceImageEncryptionKey: Instance_BootDisk_InitializeParams_SourceImageEncryptionKey[];
-  sourceSnapshotEncryptionKey: Instance_BootDisk_InitializeParams_SourceImageEncryptionKey[];
-}
-
-export interface Instance_BootDisk {
-  autoDelete: boolean;
-  deviceName: string;
-  diskEncryptionKeyRaw: string;
-  diskEncryptionKeyRsa: string;
-  diskEncryptionKeySha256: string;
-  diskEncryptionServiceAccount: string;
-  forceAttach: boolean;
-  guestOsFeatures: string[];
-  interface: string;
-  kmsKeySelfLink: string;
-  mode: string;
-  source: string;
-  initializeParams: Instance_BootDisk_InitializeParams[];
+  /** Whether to enable nested virtualization or not (default is false). */
+  enableNestedVirtualization?: boolean | Computed<boolean>;
+  /** Whether to enable UEFI networking for instance creation. */
+  enableUefiNetworking?: boolean | Computed<boolean>;
+  /** Type of Performance Monitoring Unit requested on instance. */
+  performanceMonitoringUnit?: string | Computed<string>;
+  /** The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed. */
+  threadsPerCore?: number | Computed<number>;
+  /** Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode. */
+  turboMode?: string | Computed<string>;
+  /** The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width. */
+  visibleCoreCount?: number | Computed<number>;
 }
 
 export interface Instance_ConfidentialInstanceConfig {
-  confidentialInstanceType: string;
-  enableConfidentialCompute: boolean;
+  /** Defines the type of technology used by the confidential instance. */
+  confidentialInstanceType?: string | Computed<string>;
+  /** Defines whether the instance should have confidential compute enabled. */
+  enableConfidentialCompute?: boolean | Computed<boolean>;
 }
 
-export interface Instance_GuestAccelerator {
-  count: number;
-  type: string;
+export interface Instance_Disks_DiskEncryptionKey {
+  /** The full resource name of the Cloud KMS key used to encrypt the disk, in the format projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}. This key is a customer-managed encryption key (CMEK) used for disk encryption. (AI-inferred) */
+  kmsKeyName?: string | Computed<string>;
+  /** The service account being used for the encryption request for the given KMS key. If not specified, the instance's default service account is used. (AI-inferred) */
+  kmsKeyServiceAccount?: string | Computed<string>;
+  /** The customer-supplied encryption key for the disk, provided as a base64-encoded 256-bit key. This is used to encrypt the disk when using customer-supplied encryption keys. (AI-inferred) */
+  rawKey?: string | Computed<string>;
+  /** The base64-encoded RSA-encrypted version of the customer-supplied encryption key, encrypted using Google's public RSA key. This is provided as an alternative to the unencrypted raw_key for protecting the key during transmission. (AI-inferred) */
+  rsaEncryptedKey?: string | Computed<string>;
+  /** The SHA256 hash of the customer-supplied encryption key (raw_key). This field is computed by Google and used to verify the key. (AI-inferred) */
+  sha256?: string | Computed<string>;
 }
 
-export interface Instance_InstanceEncryptionKey {
-  kmsKeySelfLink: string;
-  kmsKeyServiceAccount: string;
-  sha256: string;
+export interface Instance_Disks_GuestOsFeatures {
+  /** Specifies the type of guest OS feature to enable. Valid values include BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, and WINDOWS. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
-export interface Instance_NetworkInterface_AccessConfig {
-  natIp: string;
-  networkTier: string;
-  publicPtrDomainName: string;
+export interface Instance_Disks_InitializeParams {
+  /** The CPU architecture for the disk image. Valid values are ARCHITECTURE_UNSPECIFIED, ARM64, and X86_64. (AI-inferred) */
+  architecture?: string | Computed<string>;
+  /** An optional description for the disk being initialized. (AI-inferred) */
+  description?: string | Computed<string>;
+  diskName?: string | Computed<string>;
+  /** Specifies the size of the disk in gigabytes. If not set, the default size of the underlying image is used. (AI-inferred) */
+  diskSizeGb?: string | Computed<string>;
+  diskType?: string | Computed<string>;
+  /** Enables Confidential Compute for this disk, which encrypts data in use and allows the disk to be used with confidential VM instances. (AI-inferred) */
+  enableConfidentialCompute?: boolean | Computed<boolean>;
+  /** Labels to apply to the boot disk created from this initialize_params block. (AI-inferred) */
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** A list of license URIs to apply to this disk. This may be used to apply licenses that are not already present on the image. (AI-inferred) */
+  licenses?: string[] | Computed<string[]>;
+  /** The update action to perform when the disk configuration changes. Supported values: RECREATE_DISK (recreate the disk on any update), RECREATE_DISK_IF_SOURCE_CHANGED (recreate only if the source image/snapshot changes), USE_EXISTING_DISK (keep the existing disk). (AI-inferred) */
+  onUpdateAction?: string | Computed<string>;
+  /** The provisioned IOPS for the disk. This is applicable to disk types that support configurable IOPS, such as Hyperdisk or Extreme persistent disks. (AI-inferred) */
+  provisionedIops?: string | Computed<string>;
+  /** The provisioned throughput, in MB/s, for the disk. Only applicable to disk types that support provisioned throughput, such as Hyperdisk. (AI-inferred) */
+  provisionedThroughput?: string | Computed<string>;
+  /** The zones for a regional persistent disk. Provide exactly two zones to create a regional disk; if omitted, a zonal disk is created. (AI-inferred) */
+  replicaZones?: string[] | Computed<string[]>;
+  /** A map of resource manager tags to apply to the disk. Keys must be in the format tagKeys/{tag_key_id} and values in the format tagValues/{tag_value_id}. (AI-inferred) */
+  resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
+  /** A list of self-links to resource policies (such as snapshot schedules) to apply to the disk when it is created. (AI-inferred) */
+  resourcePolicies?: string[] | Computed<string[]>;
+  /** The source image to use for creating this disk. Can be a fully-qualified image URL, a project/image reference, or an image family name. (AI-inferred) */
+  sourceImage?: string | Computed<string>;
+  /** Provides the customer-supplied encryption key used to decrypt the source image when creating a disk from an encrypted image. This block is only used if the source image is encrypted with a customer-supplied key. (AI-inferred) */
+  sourceImageEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** The source snapshot used to create this disk. The disk will be initialized from the specified snapshot. (AI-inferred) */
+  sourceSnapshot?: string | Computed<string>;
+  /** The customer-supplied encryption key used to decrypt the source snapshot, if it was created with a customer-managed encryption key. (AI-inferred) */
+  sourceSnapshotEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** The URL of the storage pool in which to create the disk. If not specified, the default storage pool is used. (AI-inferred) */
+  storagePool?: string | Computed<string>;
 }
 
-export interface Instance_NetworkInterface_AliasIpRange {
-  ipCidrRange: string;
-  subnetworkRangeName: string;
+export interface Instance_Disks_ShieldedInstanceInitialState_Dbs {
+  /** The base64-encoded contents of the UEFI db (database) file for the shielded instance's initial state. (AI-inferred) */
+  content?: string | Computed<string>;
+  /** The file type of the database file. Valid values are BIN, UNDEFINED, and X509. (AI-inferred) */
+  fileType?: string | Computed<string>;
 }
 
-export interface Instance_NetworkInterface_Ipv6AccessConfig {
-  externalIpv6: string;
-  externalIpv6PrefixLength: string;
-  name: string;
-  networkTier: string;
-  publicPtrDomainName: string;
+export interface Instance_Disks_ShieldedInstanceInitialState {
+  /** The list of database certificates for the shielded instance initial state. Each object in the list represents a certificate with fields for content and file type. (AI-inferred) */
+  dbs?: Instance_Disks_ShieldedInstanceInitialState_Dbs[] | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs[]>;
+  /** A list of DBX (forbidden signature database) entries for the shielded VM initial state. These entries specify the forbidden signatures that Secure Boot will deny during boot. (AI-inferred) */
+  dbxs?: Instance_Disks_ShieldedInstanceInitialState_Dbs[] | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs[]>;
+  /** List of key exchange key (KEK) certificates used by the shielded instance's initial state. Each entry includes the certificate content and file type. (AI-inferred) */
+  keks?: Instance_Disks_ShieldedInstanceInitialState_Dbs[] | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs[]>;
+  /** The platform key (PK) entry, containing the base64-encoded content and file type of the platform key certificate used for verified boot. (AI-inferred) */
+  pk?: Instance_Disks_ShieldedInstanceInitialState_Dbs | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs>;
 }
 
-export interface Instance_NetworkInterface {
-  igmpQuery: string;
-  internalIpv6PrefixLength: number;
-  ipv6AccessType: string;
-  ipv6Address: string;
-  name: string;
-  network: string;
-  networkAttachment: string;
-  networkIp: string;
-  nicType: string;
-  parentNicName: string;
-  queueCount: number;
-  stackType: string;
-  subnetwork: string;
-  subnetworkProject: string;
-  vlan: number;
-  accessConfig: Instance_NetworkInterface_AccessConfig[];
-  aliasIpRange: Instance_NetworkInterface_AliasIpRange[];
-  ipv6AccessConfig: Instance_NetworkInterface_Ipv6AccessConfig[];
+export interface Instance_Disks {
+  /** The CPU architecture of the disk. Must be one of: ARCHITECTURE_UNSPECIFIED, ARM64, or X86_64. This specifies whether the disk is compatible with ARM64 or x86_64 instances. (AI-inferred) */
+  architecture?: string | Computed<string>;
+  /** If true, the disk will be automatically deleted when the instance is deleted. (AI-inferred) */
+  autoDelete?: boolean | Computed<boolean>;
+  /** A boolean flag indicating whether this disk is the boot disk for the instance. Only one disk can be the boot disk. (AI-inferred) */
+  boot?: boolean | Computed<boolean>;
+  /** The device name exposed to the instance for this disk. If not specified, Google Cloud assigns a default device name. This name is used to reference the disk inside the guest OS (e.g., as /dev/sdb). (AI-inferred) */
+  deviceName?: string | Computed<string>;
+  /** Configuration for a customer-supplied encryption key (CSEK) to encrypt this disk. (AI-inferred) */
+  diskEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** The size of the persistent disk in gigabytes (GB). If not set, the disk size is determined by the source image or the disk type's default. (AI-inferred) */
+  diskSizeGb?: string | Computed<string>;
+  /** If true, the disk is attached to this instance even if it is already attached to another instance. Defaults to false. (AI-inferred) */
+  forceAttach?: boolean | Computed<boolean>;
+  /** A list of guest OS features to enable for the disk. Each feature is an object with a `type` field, such as `UEFI_COMPATIBLE`, `SECURE_BOOT`, or `VIRTIO_SCSI_MULTIQUEUE`. (AI-inferred) */
+  guestOsFeatures?: Instance_Disks_GuestOsFeatures[] | Computed<Instance_Disks_GuestOsFeatures[]>;
+  /** The zero-based index of the disk in the instance, where index 0 corresponds to the boot disk. This uniquely identifies the disk among all disks attached to the instance. (AI-inferred) */
+  index?: number | Computed<number>;
+  /** This block is used to initialize a new disk from a source image or snapshot, specifying parameters such as the image, disk size, and disk type. (AI-inferred) */
+  initializeParams?: Instance_Disks_InitializeParams | Computed<Instance_Disks_InitializeParams>;
+  /** The disk interface type to use for attaching this disk. Must be one of 'SCSI' or 'NVME'. (AI-inferred) */
+  interface?: string | Computed<string>;
+  /** The kind of the disk resource, which is always 'compute#attachedDisk' for disks attached to an instance. (AI-inferred) */
+  kind?: string | Computed<string>;
+  /** List of license self-links (URLs) to apply to the disk. This is typically used when creating a boot disk from a custom image to specify the operating system licenses that apply, such as 'https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-10-buster'. (AI-inferred) */
+  licenses?: string[] | Computed<string[]>;
+  /** The mode in which the disk is attached to the instance, either READ_ONLY or READ_WRITE. (AI-inferred) */
+  mode?: string | Computed<string>;
+  /** Specifies whether the disk's data is preserved when the instance is stopped. Use PRESERVED to keep the data, or DISK_SAVED_STATE_UNSPECIFIED for the default behavior. (AI-inferred) */
+  savedState?: string | Computed<string>;
+  /** The shielded instance initial state for the disk, specifying the platform key (pk), key exchange key (kek), and database (db) that define the integrity policy for a Shielded VM instance booted from this disk. (AI-inferred) */
+  shieldedInstanceInitialState?: Instance_Disks_ShieldedInstanceInitialState | Computed<Instance_Disks_ShieldedInstanceInitialState>;
+  /** A reference (URL or name) to the source disk, image, or snapshot used to create or attach this disk. (AI-inferred) */
+  source?: string | Computed<string>;
+  /** The type of the disk, either PERSISTENT (persistent disk) or SCRATCH (local SSD). (AI-inferred) */
+  type?: string | Computed<string>;
+}
+
+export interface Instance_DisplayDevice {
+  /** Defines whether the instance has Display enabled. */
+  enableDisplay?: boolean | Computed<boolean>;
+}
+
+export interface Instance_GuestAccelerators {
+  /** The number of the guest accelerator cards of the specified type to attach to the instance. (AI-inferred) */
+  acceleratorCount?: number | Computed<number>;
+  /** The type of accelerator (GPU) to attach to the instance, specified by its name or a full/partial URL to the accelerator type resource. For example, 'nvidia-tesla-k80' or 'zones/us-central1-a/acceleratorTypes/nvidia-tesla-p100'. (AI-inferred) */
+  acceleratorType?: string | Computed<string>;
+}
+
+export interface Instance_Metadata_Items {
+  /** The metadata key for the instance metadata entry. This key, combined with the value, defines a key-value pair for custom instance metadata. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The value for this metadata entry. This is the data associated with the metadata key on the instance. (AI-inferred) */
+  value?: string | Computed<string>;
+}
+
+export interface Instance_Metadata {
+  /** Specifies a fingerprint for this request, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the resource. */
+  fingerprint?: string | Computed<string>;
+  /** Array of key/value pairs. The total size of all keys and values must be less than 512 KB. */
+  items?: Instance_Metadata_Items[] | Computed<Instance_Metadata_Items[]>;
+  /** Output only. [Output Only] Type of the resource. Always compute#metadata for metadata. */
+  kind?: string | Computed<string>;
+}
+
+export interface Instance_NetworkInterfaces_AccessConfigs {
+  externalIpv6?: string | Computed<string>;
+  /** The prefix length, in bits, of the external IPv6 address range assigned to this access configuration. It defines the network portion of the external IPv6 address. (AI-inferred) */
+  externalIpv6PrefixLength?: number | Computed<number>;
+  /** The kind of the access config, always set to 'compute#accessConfig'. (AI-inferred) */
+  kind?: string | Computed<string>;
+  /** The name of this access configuration. (AI-inferred) */
+  name?: string | Computed<string>;
+  /** The external IPv4 address assigned to the instance. Specify a static external IP (reserved) to assign it, or leave unset to have an ephemeral IP automatically assigned. (AI-inferred) */
+  natIp?: string | Computed<string>;
+  /** The network tier assigned to the access config's external IP. Allowed values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD, which control the pricing and performance tier for the external IP. (AI-inferred) */
+  networkTier?: string | Computed<string>;
+  /** Specifies a custom DNS PTR record for the public IP address of this access config. If not set, the default PTR record for the external IP is used. (AI-inferred) */
+  publicPtrDomainName?: string | Computed<string>;
+  /** The name of the Cloud Armor security policy to apply to this access config. This field is only applicable if the access_config type is EXTERNAL_MANAGED. (AI-inferred) */
+  securityPolicy?: string | Computed<string>;
+  /** Indicates whether a public DNS PTR record should be set for the external IP address associated with this access config. Set to true to enable public PTR record creation. (AI-inferred) */
+  setPublicPtr?: boolean | Computed<boolean>;
+  /** The type of access configuration. Valid values are DIRECT_IPV6 for direct IPv6 access and ONE_TO_ONE_NAT for standard one-to-one NAT (external IP). (AI-inferred) */
+  type?: string | Computed<string>;
+}
+
+export interface Instance_NetworkInterfaces_AliasIpRanges {
+  /** The IP CIDR range for this alias IP, specified in CIDR notation (e.g., '10.0.0.0/24'). (AI-inferred) */
+  ipCidrRange?: string | Computed<string>;
+  /** The name of the subnetwork secondary range to use for this alias IP range. This range must have an internal IP address type. If not specified, the primary range of the subnetwork is used. (AI-inferred) */
+  subnetworkRangeName?: string | Computed<string>;
+}
+
+export interface Instance_NetworkInterfaces {
+  /** Configures external IP addresses for this network interface. You can specify a static IP with `nat_ip`, or leave it unset to receive an ephemeral IP. (AI-inferred) */
+  accessConfigs?: Instance_NetworkInterfaces_AccessConfigs[] | Computed<Instance_NetworkInterfaces_AccessConfigs[]>;
+  /** A list of alias IP ranges to assign to this network interface. Each alias IP range allows the instance to use additional internal IP addresses. Typically includes an IP CIDR range and optionally a subnetwork range name. (AI-inferred) */
+  aliasIpRanges?: Instance_NetworkInterfaces_AliasIpRanges[] | Computed<Instance_NetworkInterfaces_AliasIpRanges[]>;
+  /** A list of IPv6 alias IP ranges to assign to this network interface. Each object defines an IPv6 CIDR range that the interface can use as an additional address. (AI-inferred) */
+  aliasIpv6Ranges?: Instance_NetworkInterfaces_AliasIpRanges[] | Computed<Instance_NetworkInterfaces_AliasIpRanges[]>;
+  /** Enable VPC-scoped DNS for the network interface. When true, DNS queries from the instance are resolved using the VPC network's DNS configuration. (AI-inferred) */
+  enableVpcScopedDns?: boolean | Computed<boolean>;
+  /** The fingerprint of the network interface, used for optimistic locking. (AI-inferred) */
+  fingerprint?: string | Computed<string>;
+  /** Configures the IGMP query mode for this network interface. Possible values are IGMP_QUERY_DISABLED and IGMP_QUERY_V2. (AI-inferred) */
+  igmpQuery?: string | Computed<string>;
+  internalIpv6PrefixLength?: number | Computed<number>;
+  /** List of IPv6 access configurations for the network interface. Each configuration sets the external IPv6 address options, such as the network tier (e.g., PREMIUM or STANDARD) and optional public DNS domain name. (AI-inferred) */
+  ipv6AccessConfigs?: Instance_NetworkInterfaces_AccessConfigs[] | Computed<Instance_NetworkInterfaces_AccessConfigs[]>;
+  /** The type of IPv6 access. Valid values are EXTERNAL and INTERNAL. EXTERNAL means the IPv6 address is publicly accessible, while INTERNAL means it is private to the VPC network. (AI-inferred) */
+  ipv6AccessType?: string | Computed<string>;
+  /** The external IPv6 address assigned to this network interface. (AI-inferred) */
+  ipv6Address?: string | Computed<string>;
+  /** The kind of the network interface resource. It is always set to 'compute#networkInterface'. (AI-inferred) */
+  kind?: string | Computed<string>;
+  /** The name assigned to this network interface, such as 'nic0'. (AI-inferred) */
+  name?: string | Computed<string>;
+  /** The name or self_link of the VPC network to attach this interface to. If subnetwork is not set, this field is required; otherwise, the network is inferred from the subnetwork. (AI-inferred) */
+  network?: string | Computed<string>;
+  /** The URL of the network attachment that this network interface should use. This can be specified instead of network or subnetwork when the interface is attached to a Network Attachment. (AI-inferred) */
+  networkAttachment?: string | Computed<string>;
+  /** The internal IPv4 address to assign to this network interface. If left unspecified, Compute Engine automatically assigns an ephemeral internal IP address. (AI-inferred) */
+  networkIp?: string | Computed<string>;
+  /** The type of network interface controller (NIC) to use for this network interface. Allowed values: GVNIC, IDPF, IRDMA, MRDMA, UNSPECIFIED_NIC_TYPE, VIRTIO_NET. (AI-inferred) */
+  nicType?: string | Computed<string>;
+  /** The name of the parent network interface that this interface is attached to or derived from, used in virtual NIC configurations (e.g., gVNIC). (AI-inferred) */
+  parentNicName?: string | Computed<string>;
+  /** The number of queues to create for this network interface. This field is supported only for gVNIC NICs and is used to configure the number of queue pairs for the interface. (AI-inferred) */
+  queueCount?: number | Computed<number>;
+  serviceClassId?: string | Computed<string>;
+  /** The IP stack type for the network interface. Valid values are IPV4_IPV6 (dual-stack), IPV4_ONLY, or IPV6_ONLY. (AI-inferred) */
+  stackType?: string | Computed<string>;
+  /** The name or self_link of the subnetwork to attach to this network interface. If not specified, the default subnetwork for the network is used. (AI-inferred) */
+  subnetwork?: string | Computed<string>;
+  /** The VLAN ID used for this network interface, applicable when the interface is attached to a VLAN attachment. (AI-inferred) */
+  vlan?: number | Computed<number>;
 }
 
 export interface Instance_NetworkPerformanceConfig {
-  totalEgressBandwidthTier: string;
+  /** The tier of total egress bandwidth for the instance. Valid values are DEFAULT (standard) and TIER_1 (higher bandwidth). (AI-inferred) */
+  totalEgressBandwidthTier?: string | Computed<string>;
+}
+
+export interface Instance_Params_RequestValidForDuration {
+  /** Span of time that's a fraction of a second at nanosecond resolution. Durations less than one second are represented with a 0 `seconds` field and a positive `nanos` field. Must be from 0 to 999,999,999 inclusive. */
+  nanos?: number | Computed<number>;
+  /** Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years */
+  seconds?: string | Computed<string>;
 }
 
 export interface Instance_Params {
-  resourceManagerTags: Record<string, string>;
-}
-
-export interface Instance_ReservationAffinity_SpecificReservation {
-  key: string;
-  values: string[];
+  /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
+  requestValidForDuration?: Instance_Params_RequestValidForDuration | Computed<Instance_Params_RequestValidForDuration>;
+  /** Input only. Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty. */
+  resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Instance_ReservationAffinity {
-  type: string;
-  specificReservation: Instance_ReservationAffinity_SpecificReservation[];
+  /** Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples. */
+  consumeReservationType?: string | Computed<string>;
+  /** Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify the name of your reservation as its value. */
+  key?: string | Computed<string>;
+  /** Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project. */
+  values?: string[] | Computed<string[]>;
 }
 
-export interface Instance_Scheduling_LocalSsdRecoveryTimeout {
-  nanos: number;
-  seconds: number;
+export interface Instance_ResourceStatus_EffectiveInstanceMetadata {
+  /** Effective block-project-ssh-keys value at Instance level. */
+  blockProjectSshKeysMetadataValue?: boolean | Computed<boolean>;
+  /** Effective enable-guest-attributes value at Instance level. */
+  enableGuestAttributesMetadataValue?: boolean | Computed<boolean>;
+  /** Effective enable-os-inventory value at Instance level. */
+  enableOsInventoryMetadataValue?: boolean | Computed<boolean>;
+  /** Effective enable-osconfig value at Instance level. */
+  enableOsconfigMetadataValue?: boolean | Computed<boolean>;
+  /** Effective enable-oslogin value at Instance level. */
+  enableOsloginMetadataValue?: boolean | Computed<boolean>;
+  /** Effective gce-container-declaration value at Instance level. */
+  gceContainerDeclarationMetadataValue?: boolean | Computed<boolean>;
+  /** Effective serial-port-enable value at Instance level. */
+  serialPortEnableMetadataValue?: boolean | Computed<boolean>;
+  /** Effective serial-port-logging-enable value at Instance level. */
+  serialPortLoggingEnableMetadataValue?: boolean | Computed<boolean>;
+  /** Effective VM DNS setting at Instance level. */
+  vmDnsSettingMetadataValue?: string | Computed<string>;
+}
+
+export interface Instance_ResourceStatus_PhysicalHostTopology_AdditionalAttributes {
+  /** Output only. The IDs of the accelerator topologies the instance belongs to. For example The key will be topologies like "4x4", "2x2x2" and the value will be the location ID of the topologies. */
+  acceleratorTopologyIds?: Record<string, string> | Computed<Record<string, string>>;
+}
+
+export interface Instance_ResourceStatus_PhysicalHostTopology {
+  /** Additional location information of the running instance. */
+  additionalAttributes?: Instance_ResourceStatus_PhysicalHostTopology_AdditionalAttributes | Computed<Instance_ResourceStatus_PhysicalHostTopology_AdditionalAttributes>;
+  /** [Output Only] The ID of the block in which the running instance is located. Instances within the same block experience low network latency. */
+  block?: string | Computed<string>;
+  /** [Output Only] The global name of the Compute Engine cluster where the running instance is located. */
+  cluster?: string | Computed<string>;
+  /** [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency. */
+  host?: string | Computed<string>;
+  /** [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block. */
+  subblock?: string | Computed<string>;
+}
+
+export interface Instance_ResourceStatus_ReservationConsumptionInfo {
+  /** Output only. [Output Only] The full resource name of the reservation that this instance is consuming from. */
+  consumedReservation?: string | Computed<string>;
+  /** Output only. [Output Only] The full resource name of the reservation block that this instance is consuming from. */
+  consumedReservationBlock?: string | Computed<string>;
+  /** Output only. [Output Only] The full resource name of the reservation sub-block that this instance is consuming from. */
+  consumedReservationSubBlock?: string | Computed<string>;
+}
+
+export interface Instance_ResourceStatus_Scheduling {
+  /** Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance. */
+  availabilityDomain?: number | Computed<number>;
+  /** Output only. Specifies the timestamp, when the instance will start graceful shutdown process, in RFC3339 text format. */
+  gracefulShutdownTimestamp?: string | Computed<string>;
+  /** Time in future when the instance will be terminated inRFC3339 text format. */
+  terminationTimestamp?: string | Computed<string>;
+}
+
+export interface Instance_ResourceStatus_ShutdownDetails {
+  /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
+  maxDuration?: Instance_Params_RequestValidForDuration | Computed<Instance_Params_RequestValidForDuration>;
+  /** Past timestamp indicating the beginning of current `stopState` in RFC3339 text format. */
+  requestTimestamp?: string | Computed<string>;
+  /** Current stopping state of the instance. */
+  stopState?: string | Computed<string>;
+  /** Target instance state. */
+  targetState?: string | Computed<string>;
+}
+
+export interface Instance_ResourceStatus_UpcomingMaintenance {
+  /** Indicates if the maintenance can be customer triggered. */
+  canReschedule?: boolean | Computed<boolean>;
+  /** The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format. */
+  latestWindowStartTime?: string | Computed<string>;
+  /** Indicates whether the UpcomingMaintenance will be triggered on VM shutdown. */
+  maintenanceOnShutdown?: boolean | Computed<boolean>;
+  /** The reasons for the maintenance. Only valid for vms. */
+  maintenanceReasons?: string[] | Computed<string[]>;
+  /** The status of upcoming maintenance for the instance, indicating whether maintenance is ongoing, pending, or unknown. Possible values are ONGOING, PENDING, and UNKNOWN. (AI-inferred) */
+  maintenanceStatus?: string | Computed<string>;
+  /** Defines the type of maintenance. */
+  type?: string | Computed<string>;
+  /** The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format. */
+  windowEndTime?: string | Computed<string>;
+  /** The current start time of the maintenance window. This timestamp value is in RFC3339 text format. */
+  windowStartTime?: string | Computed<string>;
+}
+
+export interface Instance_ResourceStatus {
+  /** Effective values of predefined metadata keys for an instance. */
+  effectiveInstanceMetadata?: Instance_ResourceStatus_EffectiveInstanceMetadata | Computed<Instance_ResourceStatus_EffectiveInstanceMetadata>;
+  /** Output only. [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId. */
+  physicalHost?: string | Computed<string>;
+  /** Represents the physical host topology of the host on which the VM is running. */
+  physicalHostTopology?: Instance_ResourceStatus_PhysicalHostTopology | Computed<Instance_ResourceStatus_PhysicalHostTopology>;
+  /** Reservation consumption information that the instance is consuming from. */
+  reservationConsumptionInfo?: Instance_ResourceStatus_ReservationConsumptionInfo | Computed<Instance_ResourceStatus_ReservationConsumptionInfo>;
+  /** The scheduling configuration of the instance as reported by the API in the resource_status block. This includes computed values such as host error timeout seconds and node affinities. (AI-inferred) */
+  scheduling?: Instance_ResourceStatus_Scheduling | Computed<Instance_ResourceStatus_Scheduling>;
+  /** Specifies if the instance is in `PENDING_STOP` state or there is a programmed stop scheduled. */
+  shutdownDetails?: Instance_ResourceStatus_ShutdownDetails | Computed<Instance_ResourceStatus_ShutdownDetails>;
+  /** Upcoming Maintenance notification information. */
+  upcomingMaintenance?: Instance_ResourceStatus_UpcomingMaintenance | Computed<Instance_ResourceStatus_UpcomingMaintenance>;
+}
+
+export interface Instance_Scheduling_GracefulShutdown {
+  /** Opts-in for graceful shutdown. */
+  enabled?: boolean | Computed<boolean>;
+  /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
+  maxDuration?: Instance_Params_RequestValidForDuration | Computed<Instance_Params_RequestValidForDuration>;
 }
 
 export interface Instance_Scheduling_NodeAffinities {
-  key: string;
-  operator: string;
-  values: string[];
+  /** The key for the node affinity, which corresponds to a node label key in the Compute Engine environment. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The operator for the node affinity condition. Valid values are IN (matches when the node is in the specified values), NOT_IN (matches when the node is not in the specified values), and OPERATOR_UNSPECIFIED (unspecified). (AI-inferred) */
+  operator?: string | Computed<string>;
+  /** The list of values for the node affinity key. This field is required when the operator is IN or NOT_IN. (AI-inferred) */
+  values?: string[] | Computed<string[]>;
 }
 
 export interface Instance_Scheduling_OnInstanceStopAction {
-  discardLocalSsd: boolean;
+  /** If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time. */
+  discardLocalSsd?: boolean | Computed<boolean>;
 }
 
 export interface Instance_Scheduling {
-  automaticRestart: boolean;
-  availabilityDomain: number;
-  instanceTerminationAction: string;
-  minNodeCpus: number;
-  onHostMaintenance: string;
-  preemptible: boolean;
-  provisioningModel: string;
-  terminationTime: string;
-  localSsdRecoveryTimeout: Instance_Scheduling_LocalSsdRecoveryTimeout[];
-  maxRunDuration: Instance_Scheduling_LocalSsdRecoveryTimeout[];
-  nodeAffinities: Instance_Scheduling_NodeAffinities[];
-  onInstanceStopAction: Instance_Scheduling_OnInstanceStopAction[];
+  /** Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances.Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine. */
+  automaticRestart?: boolean | Computed<boolean>;
+  /** Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance. */
+  availabilityDomain?: number | Computed<number>;
+  /** The configuration for gracefully shutting down the instance. */
+  gracefulShutdown?: Instance_Scheduling_GracefulShutdown | Computed<Instance_Scheduling_GracefulShutdown>;
+  /** Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used. */
+  hostErrorTimeoutSeconds?: number | Computed<number>;
+  /** Specifies the termination action for the instance. */
+  instanceTerminationAction?: string | Computed<string>;
+  /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
+  localSsdRecoveryTimeout?: Instance_Params_RequestValidForDuration | Computed<Instance_Params_RequestValidForDuration>;
+  /** An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API. */
+  locationHint?: string | Computed<string>;
+  /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
+  maxRunDuration?: Instance_Params_RequestValidForDuration | Computed<Instance_Params_RequestValidForDuration>;
+  /** The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node. */
+  minNodeCpus?: number | Computed<number>;
+  /** A set of node affinity and anti-affinity configurations. Refer toConfiguring node affinity for more information. Overrides reservationAffinity. */
+  nodeAffinities?: Instance_Scheduling_NodeAffinities[] | Computed<Instance_Scheduling_NodeAffinities[]>;
+  /** Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. Forpreemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy. */
+  onHostMaintenance?: string | Computed<string>;
+  /** Defines the behaviour for instances with the instance_termination_actionSTOP. */
+  onInstanceStopAction?: Instance_Scheduling_OnInstanceStopAction | Computed<Instance_Scheduling_OnInstanceStopAction>;
+  /** Defines whether the instance is preemptible. This can only be set during instance creation or while the instance isstopped and therefore, in a `TERMINATED` state. SeeInstance Life Cycle for more information on the possible instance states. */
+  preemptible?: boolean | Computed<boolean>;
+  /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
+  preemptionNoticeDuration?: Instance_Params_RequestValidForDuration | Computed<Instance_Params_RequestValidForDuration>;
+  /** Specifies the provisioning model of the instance. */
+  provisioningModel?: string | Computed<string>;
+  /** Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs. */
+  skipGuestOsShutdown?: boolean | Computed<boolean>;
+  /** Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance termination action will be performed at the termination time. */
+  terminationTime?: string | Computed<string>;
 }
 
-export interface Instance_ScratchDisk {
-  deviceName: string;
-  interface: string;
-  size: number;
-}
-
-export interface Instance_ServiceAccount {
-  email: string;
-  scopes: string[];
+export interface Instance_ServiceAccounts {
+  /** The email address of the service account to associate with the instance. (AI-inferred) */
+  email?: string | Computed<string>;
+  /** List of OAuth 2.0 scopes that should be granted to the service account for accessing Google Cloud APIs. For example, 'https://www.googleapis.com/auth/compute.readonly' or 'https://www.googleapis.com/auth/cloud-platform'. (AI-inferred) */
+  scopes?: string[] | Computed<string[]>;
 }
 
 export interface Instance_ShieldedInstanceConfig {
-  enableIntegrityMonitoring: boolean;
-  enableSecureBoot: boolean;
-  enableVtpm: boolean;
+  /** Defines whether the instance has integrity monitoring enabled.Enabled by default. */
+  enableIntegrityMonitoring?: boolean | Computed<boolean>;
+  /** Defines whether the instance has Secure Boot enabled.Disabled by default. */
+  enableSecureBoot?: boolean | Computed<boolean>;
+  /** Defines whether the instance has the vTPM enabled.Enabled by default. */
+  enableVtpm?: boolean | Computed<boolean>;
 }
 
-export interface Instance_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Instance_ShieldedInstanceIntegrityPolicy {
+  /** Updates the integrity policy baseline using the measurements from the VM instance's most recent boot. */
+  updateAutoLearnPolicy?: boolean | Computed<boolean>;
+}
+
+export interface Instance_Tags {
+  /** Specifies a fingerprint for this request, which is essentially a hash of the tags' contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update tags. You must always provide an up-to-date fingerprint hash in order to update or change tags. To see the latest fingerprint, make get() request to the instance. */
+  fingerprint?: string | Computed<string>;
+  /** An array of tags. Each tag must be 1-63 characters long, and comply with RFC1035. */
+  items?: string[] | Computed<string[]>;
 }
 
 export interface Instance_WorkloadIdentityConfig {
-  identity: string;
-  identityCertificateEnabled: boolean;
+  /** The email address of the service account to attach to the instance for workload identity. This enables the instance to use workload identity federation. (AI-inferred) */
+  identity?: string | Computed<string>;
+  identityCertificateEnabled?: boolean | Computed<boolean>;
 }
 
 const Instance_AdvancedMachineFeaturesFields: FieldMap = {
@@ -205,112 +472,188 @@ const Instance_AdvancedMachineFeaturesFields: FieldMap = {
   visibleCoreCount: "visible_core_count",
 };
 
-const Instance_AttachedDiskFields: FieldMap = {
-  deviceName: "device_name",
-  diskEncryptionKeyRaw: "disk_encryption_key_raw",
-  diskEncryptionKeyRsa: "disk_encryption_key_rsa",
-  diskEncryptionKeySha256: "disk_encryption_key_sha256",
-  diskEncryptionServiceAccount: "disk_encryption_service_account",
-  forceAttach: "force_attach",
-  kmsKeySelfLink: "kms_key_self_link",
-  mode: "mode",
-  source: "source",
+const Instance_ConfidentialInstanceConfigFields: FieldMap = {
+  confidentialInstanceType: "confidential_instance_type",
+  enableConfidentialCompute: "enable_confidential_compute",
 };
 
-const Instance_BootDisk_InitializeParams_SourceImageEncryptionKeyFields: FieldMap = {
-  kmsKeySelfLink: "kms_key_self_link",
+const Instance_Disks_DiskEncryptionKeyFields: FieldMap = {
+  kmsKeyName: "kms_key_name",
   kmsKeyServiceAccount: "kms_key_service_account",
   rawKey: "raw_key",
   rsaEncryptedKey: "rsa_encrypted_key",
   sha256: "sha256",
 };
 
-const Instance_BootDisk_InitializeParamsFields: FieldMap = {
+const Instance_Disks_GuestOsFeaturesFields: FieldMap = {
+  type: "type",
+};
+
+const Instance_Disks_InitializeParamsFields: FieldMap = {
   architecture: "architecture",
+  description: "description",
+  diskName: "disk_name",
+  diskSizeGb: "disk_size_gb",
+  diskType: "disk_type",
   enableConfidentialCompute: "enable_confidential_compute",
-  image: "image",
   labels: "labels",
+  licenses: "licenses",
+  onUpdateAction: "on_update_action",
   provisionedIops: "provisioned_iops",
   provisionedThroughput: "provisioned_throughput",
   replicaZones: "replica_zones",
   resourceManagerTags: "resource_manager_tags",
   resourcePolicies: "resource_policies",
-  size: "size",
-  snapshot: "snapshot",
-  storagePool: "storage_pool",
-  type: "type",
+  sourceImage: "source_image",
   sourceImageEncryptionKey: {
     wireName: "source_image_encryption_key",
-    kind: "list",
-    fields: Instance_BootDisk_InitializeParams_SourceImageEncryptionKeyFields,
+    kind: "object",
+    fields: Instance_Disks_DiskEncryptionKeyFields,
   },
+  sourceSnapshot: "source_snapshot",
   sourceSnapshotEncryptionKey: {
     wireName: "source_snapshot_encryption_key",
+    kind: "object",
+    fields: Instance_Disks_DiskEncryptionKeyFields,
+  },
+  storagePool: "storage_pool",
+};
+
+const Instance_Disks_ShieldedInstanceInitialState_DbsFields: FieldMap = {
+  content: "content",
+  fileType: "file_type",
+};
+
+const Instance_Disks_ShieldedInstanceInitialStateFields: FieldMap = {
+  dbs: {
+    wireName: "dbs",
     kind: "list",
-    fields: Instance_BootDisk_InitializeParams_SourceImageEncryptionKeyFields,
+    fields: Instance_Disks_ShieldedInstanceInitialState_DbsFields,
+  },
+  dbxs: {
+    wireName: "dbxs",
+    kind: "list",
+    fields: Instance_Disks_ShieldedInstanceInitialState_DbsFields,
+  },
+  keks: {
+    wireName: "keks",
+    kind: "list",
+    fields: Instance_Disks_ShieldedInstanceInitialState_DbsFields,
+  },
+  pk: {
+    wireName: "pk",
+    kind: "object",
+    fields: Instance_Disks_ShieldedInstanceInitialState_DbsFields,
   },
 };
 
-const Instance_BootDiskFields: FieldMap = {
+const Instance_DisksFields: FieldMap = {
+  architecture: "architecture",
   autoDelete: "auto_delete",
+  boot: "boot",
   deviceName: "device_name",
-  diskEncryptionKeyRaw: "disk_encryption_key_raw",
-  diskEncryptionKeyRsa: "disk_encryption_key_rsa",
-  diskEncryptionKeySha256: "disk_encryption_key_sha256",
-  diskEncryptionServiceAccount: "disk_encryption_service_account",
+  diskEncryptionKey: {
+    wireName: "disk_encryption_key",
+    kind: "object",
+    fields: Instance_Disks_DiskEncryptionKeyFields,
+  },
+  diskSizeGb: "disk_size_gb",
   forceAttach: "force_attach",
-  guestOsFeatures: "guest_os_features",
-  interface: "interface",
-  kmsKeySelfLink: "kms_key_self_link",
-  mode: "mode",
-  source: "source",
+  guestOsFeatures: {
+    wireName: "guest_os_features",
+    kind: "list",
+    fields: Instance_Disks_GuestOsFeaturesFields,
+  },
+  index: "index",
   initializeParams: {
     wireName: "initialize_params",
-    kind: "list",
-    fields: Instance_BootDisk_InitializeParamsFields,
+    kind: "object",
+    fields: Instance_Disks_InitializeParamsFields,
   },
-};
-
-const Instance_ConfidentialInstanceConfigFields: FieldMap = {
-  confidentialInstanceType: "confidential_instance_type",
-  enableConfidentialCompute: "enable_confidential_compute",
-};
-
-const Instance_GuestAcceleratorFields: FieldMap = {
-  count: "count",
+  interface: "interface",
+  kind: "kind",
+  licenses: "licenses",
+  mode: "mode",
+  savedState: "saved_state",
+  shieldedInstanceInitialState: {
+    wireName: "shielded_instance_initial_state",
+    kind: "object",
+    fields: Instance_Disks_ShieldedInstanceInitialStateFields,
+  },
+  source: "source",
   type: "type",
 };
 
-const Instance_InstanceEncryptionKeyFields: FieldMap = {
-  kmsKeySelfLink: "kms_key_self_link",
-  kmsKeyServiceAccount: "kms_key_service_account",
-  sha256: "sha256",
+const Instance_DisplayDeviceFields: FieldMap = {
+  enableDisplay: "enable_display",
 };
 
-const Instance_NetworkInterface_AccessConfigFields: FieldMap = {
+const Instance_GuestAcceleratorsFields: FieldMap = {
+  acceleratorCount: "accelerator_count",
+  acceleratorType: "accelerator_type",
+};
+
+const Instance_Metadata_ItemsFields: FieldMap = {
+  key: "key",
+  value: "value",
+};
+
+const Instance_MetadataFields: FieldMap = {
+  fingerprint: "fingerprint",
+  items: {
+    wireName: "items",
+    kind: "list",
+    fields: Instance_Metadata_ItemsFields,
+  },
+  kind: "kind",
+};
+
+const Instance_NetworkInterfaces_AccessConfigsFields: FieldMap = {
+  externalIpv6: "external_ipv6",
+  externalIpv6PrefixLength: "external_ipv6_prefix_length",
+  kind: "kind",
+  name: "name",
   natIp: "nat_ip",
   networkTier: "network_tier",
   publicPtrDomainName: "public_ptr_domain_name",
+  securityPolicy: "security_policy",
+  setPublicPtr: "set_public_ptr",
+  type: "type",
 };
 
-const Instance_NetworkInterface_AliasIpRangeFields: FieldMap = {
+const Instance_NetworkInterfaces_AliasIpRangesFields: FieldMap = {
   ipCidrRange: "ip_cidr_range",
   subnetworkRangeName: "subnetwork_range_name",
 };
 
-const Instance_NetworkInterface_Ipv6AccessConfigFields: FieldMap = {
-  externalIpv6: "external_ipv6",
-  externalIpv6PrefixLength: "external_ipv6_prefix_length",
-  name: "name",
-  networkTier: "network_tier",
-  publicPtrDomainName: "public_ptr_domain_name",
-};
-
-const Instance_NetworkInterfaceFields: FieldMap = {
+const Instance_NetworkInterfacesFields: FieldMap = {
+  accessConfigs: {
+    wireName: "access_configs",
+    kind: "list",
+    fields: Instance_NetworkInterfaces_AccessConfigsFields,
+  },
+  aliasIpRanges: {
+    wireName: "alias_ip_ranges",
+    kind: "list",
+    fields: Instance_NetworkInterfaces_AliasIpRangesFields,
+  },
+  aliasIpv6Ranges: {
+    wireName: "alias_ipv6_ranges",
+    kind: "list",
+    fields: Instance_NetworkInterfaces_AliasIpRangesFields,
+  },
+  enableVpcScopedDns: "enable_vpc_scoped_dns",
+  fingerprint: "fingerprint",
   igmpQuery: "igmp_query",
   internalIpv6PrefixLength: "internal_ipv6_prefix_length",
+  ipv6AccessConfigs: {
+    wireName: "ipv6_access_configs",
+    kind: "list",
+    fields: Instance_NetworkInterfaces_AccessConfigsFields,
+  },
   ipv6AccessType: "ipv6_access_type",
   ipv6Address: "ipv6_address",
+  kind: "kind",
   name: "name",
   network: "network",
   networkAttachment: "network_attachment",
@@ -318,52 +661,139 @@ const Instance_NetworkInterfaceFields: FieldMap = {
   nicType: "nic_type",
   parentNicName: "parent_nic_name",
   queueCount: "queue_count",
+  serviceClassId: "service_class_id",
   stackType: "stack_type",
   subnetwork: "subnetwork",
-  subnetworkProject: "subnetwork_project",
   vlan: "vlan",
-  accessConfig: {
-    wireName: "access_config",
-    kind: "list",
-    fields: Instance_NetworkInterface_AccessConfigFields,
-  },
-  aliasIpRange: {
-    wireName: "alias_ip_range",
-    kind: "list",
-    fields: Instance_NetworkInterface_AliasIpRangeFields,
-  },
-  ipv6AccessConfig: {
-    wireName: "ipv6_access_config",
-    kind: "list",
-    fields: Instance_NetworkInterface_Ipv6AccessConfigFields,
-  },
 };
 
 const Instance_NetworkPerformanceConfigFields: FieldMap = {
   totalEgressBandwidthTier: "total_egress_bandwidth_tier",
 };
 
+const Instance_Params_RequestValidForDurationFields: FieldMap = {
+  nanos: "nanos",
+  seconds: "seconds",
+};
+
 const Instance_ParamsFields: FieldMap = {
+  requestValidForDuration: {
+    wireName: "request_valid_for_duration",
+    kind: "object",
+    fields: Instance_Params_RequestValidForDurationFields,
+  },
   resourceManagerTags: "resource_manager_tags",
 };
 
-const Instance_ReservationAffinity_SpecificReservationFields: FieldMap = {
+const Instance_ReservationAffinityFields: FieldMap = {
+  consumeReservationType: "consume_reservation_type",
   key: "key",
   values: "values",
 };
 
-const Instance_ReservationAffinityFields: FieldMap = {
+const Instance_ResourceStatus_EffectiveInstanceMetadataFields: FieldMap = {
+  blockProjectSshKeysMetadataValue: "block_project_ssh_keys_metadata_value",
+  enableGuestAttributesMetadataValue: "enable_guest_attributes_metadata_value",
+  enableOsInventoryMetadataValue: "enable_os_inventory_metadata_value",
+  enableOsconfigMetadataValue: "enable_osconfig_metadata_value",
+  enableOsloginMetadataValue: "enable_oslogin_metadata_value",
+  gceContainerDeclarationMetadataValue: "gce_container_declaration_metadata_value",
+  serialPortEnableMetadataValue: "serial_port_enable_metadata_value",
+  serialPortLoggingEnableMetadataValue: "serial_port_logging_enable_metadata_value",
+  vmDnsSettingMetadataValue: "vm_dns_setting_metadata_value",
+};
+
+const Instance_ResourceStatus_PhysicalHostTopology_AdditionalAttributesFields: FieldMap = {
+  acceleratorTopologyIds: "accelerator_topology_ids",
+};
+
+const Instance_ResourceStatus_PhysicalHostTopologyFields: FieldMap = {
+  additionalAttributes: {
+    wireName: "additional_attributes",
+    kind: "object",
+    fields: Instance_ResourceStatus_PhysicalHostTopology_AdditionalAttributesFields,
+  },
+  block: "block",
+  cluster: "cluster",
+  host: "host",
+  subblock: "subblock",
+};
+
+const Instance_ResourceStatus_ReservationConsumptionInfoFields: FieldMap = {
+  consumedReservation: "consumed_reservation",
+  consumedReservationBlock: "consumed_reservation_block",
+  consumedReservationSubBlock: "consumed_reservation_sub_block",
+};
+
+const Instance_ResourceStatus_SchedulingFields: FieldMap = {
+  availabilityDomain: "availability_domain",
+  gracefulShutdownTimestamp: "graceful_shutdown_timestamp",
+  terminationTimestamp: "termination_timestamp",
+};
+
+const Instance_ResourceStatus_ShutdownDetailsFields: FieldMap = {
+  maxDuration: {
+    wireName: "max_duration",
+    kind: "object",
+    fields: Instance_Params_RequestValidForDurationFields,
+  },
+  requestTimestamp: "request_timestamp",
+  stopState: "stop_state",
+  targetState: "target_state",
+};
+
+const Instance_ResourceStatus_UpcomingMaintenanceFields: FieldMap = {
+  canReschedule: "can_reschedule",
+  latestWindowStartTime: "latest_window_start_time",
+  maintenanceOnShutdown: "maintenance_on_shutdown",
+  maintenanceReasons: "maintenance_reasons",
+  maintenanceStatus: "maintenance_status",
   type: "type",
-  specificReservation: {
-    wireName: "specific_reservation",
-    kind: "list",
-    fields: Instance_ReservationAffinity_SpecificReservationFields,
+  windowEndTime: "window_end_time",
+  windowStartTime: "window_start_time",
+};
+
+const Instance_ResourceStatusFields: FieldMap = {
+  effectiveInstanceMetadata: {
+    wireName: "effective_instance_metadata",
+    kind: "object",
+    fields: Instance_ResourceStatus_EffectiveInstanceMetadataFields,
+  },
+  physicalHost: "physical_host",
+  physicalHostTopology: {
+    wireName: "physical_host_topology",
+    kind: "object",
+    fields: Instance_ResourceStatus_PhysicalHostTopologyFields,
+  },
+  reservationConsumptionInfo: {
+    wireName: "reservation_consumption_info",
+    kind: "object",
+    fields: Instance_ResourceStatus_ReservationConsumptionInfoFields,
+  },
+  scheduling: {
+    wireName: "scheduling",
+    kind: "object",
+    fields: Instance_ResourceStatus_SchedulingFields,
+  },
+  shutdownDetails: {
+    wireName: "shutdown_details",
+    kind: "object",
+    fields: Instance_ResourceStatus_ShutdownDetailsFields,
+  },
+  upcomingMaintenance: {
+    wireName: "upcoming_maintenance",
+    kind: "object",
+    fields: Instance_ResourceStatus_UpcomingMaintenanceFields,
   },
 };
 
-const Instance_Scheduling_LocalSsdRecoveryTimeoutFields: FieldMap = {
-  nanos: "nanos",
-  seconds: "seconds",
+const Instance_Scheduling_GracefulShutdownFields: FieldMap = {
+  enabled: "enabled",
+  maxDuration: {
+    wireName: "max_duration",
+    kind: "object",
+    fields: Instance_Params_RequestValidForDurationFields,
+  },
 };
 
 const Instance_Scheduling_NodeAffinitiesFields: FieldMap = {
@@ -379,41 +809,48 @@ const Instance_Scheduling_OnInstanceStopActionFields: FieldMap = {
 const Instance_SchedulingFields: FieldMap = {
   automaticRestart: "automatic_restart",
   availabilityDomain: "availability_domain",
+  gracefulShutdown: {
+    wireName: "graceful_shutdown",
+    kind: "object",
+    fields: Instance_Scheduling_GracefulShutdownFields,
+  },
+  hostErrorTimeoutSeconds: "host_error_timeout_seconds",
   instanceTerminationAction: "instance_termination_action",
-  minNodeCpus: "min_node_cpus",
-  onHostMaintenance: "on_host_maintenance",
-  preemptible: "preemptible",
-  provisioningModel: "provisioning_model",
-  terminationTime: "termination_time",
   localSsdRecoveryTimeout: {
     wireName: "local_ssd_recovery_timeout",
-    kind: "list",
-    fields: Instance_Scheduling_LocalSsdRecoveryTimeoutFields,
+    kind: "object",
+    fields: Instance_Params_RequestValidForDurationFields,
   },
+  locationHint: "location_hint",
   maxRunDuration: {
     wireName: "max_run_duration",
-    kind: "list",
-    fields: Instance_Scheduling_LocalSsdRecoveryTimeoutFields,
+    kind: "object",
+    fields: Instance_Params_RequestValidForDurationFields,
   },
+  minNodeCpus: "min_node_cpus",
   nodeAffinities: {
     wireName: "node_affinities",
-    kind: "set",
+    kind: "list",
     fields: Instance_Scheduling_NodeAffinitiesFields,
   },
+  onHostMaintenance: "on_host_maintenance",
   onInstanceStopAction: {
     wireName: "on_instance_stop_action",
-    kind: "list",
+    kind: "object",
     fields: Instance_Scheduling_OnInstanceStopActionFields,
   },
+  preemptible: "preemptible",
+  preemptionNoticeDuration: {
+    wireName: "preemption_notice_duration",
+    kind: "object",
+    fields: Instance_Params_RequestValidForDurationFields,
+  },
+  provisioningModel: "provisioning_model",
+  skipGuestOsShutdown: "skip_guest_os_shutdown",
+  terminationTime: "termination_time",
 };
 
-const Instance_ScratchDiskFields: FieldMap = {
-  deviceName: "device_name",
-  interface: "interface",
-  size: "size",
-};
-
-const Instance_ServiceAccountFields: FieldMap = {
+const Instance_ServiceAccountsFields: FieldMap = {
   email: "email",
   scopes: "scopes",
 };
@@ -424,10 +861,13 @@ const Instance_ShieldedInstanceConfigFields: FieldMap = {
   enableVtpm: "enable_vtpm",
 };
 
-const Instance_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Instance_ShieldedInstanceIntegrityPolicyFields: FieldMap = {
+  updateAutoLearnPolicy: "update_auto_learn_policy",
+};
+
+const Instance_TagsFields: FieldMap = {
+  fingerprint: "fingerprint",
+  items: "items",
 };
 
 const Instance_WorkloadIdentityConfigFields: FieldMap = {
@@ -436,195 +876,327 @@ const Instance_WorkloadIdentityConfigFields: FieldMap = {
 };
 
 export interface InstanceConfig {
-  allowStoppingForUpdate?: boolean | Computed<boolean>;
+  /** Specifies options for controlling advanced machine features. Options that would traditionally be configured in a BIOS belong here. Features that require operating system support may have corresponding entries in the GuestOsFeatures of anImage (e.g., whether or not the OS in theImage supports nested virtualization being enabled or disabled). */
+  advancedMachineFeatures?: Instance_AdvancedMachineFeatures | Computed<Instance_AdvancedMachineFeatures>;
+  /** Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, seeEnabling IP Forwarding. */
   canIpForward?: boolean | Computed<boolean>;
-  deletionPolicy?: string | Computed<string>;
+  /** A set of Confidential Instance options. */
+  confidentialInstanceConfig?: Instance_ConfidentialInstanceConfig | Computed<Instance_ConfidentialInstanceConfig>;
+  /** Output only. [Output Only] The CPU platform used by this instance. */
+  cpuPlatform?: string | Computed<string>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** Whether the resource should be protected against deletion. */
   deletionProtection?: boolean | Computed<boolean>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  desiredStatus?: string | Computed<string>;
-  enableDisplay?: boolean | Computed<boolean>;
+  /** Array of disks associated with this instance. Persistent disks must be created before you can assign them. */
+  disks?: Instance_Disks[] | Computed<Instance_Disks[]>;
+  /** A set of Display Device options */
+  displayDevice?: Instance_DisplayDevice | Computed<Instance_DisplayDevice>;
+  /** Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance. */
+  fingerprint?: string | Computed<string>;
+  /** A list of the type and count of accelerator cards attached to the instance. */
+  guestAccelerators?: Instance_GuestAccelerators[] | Computed<Instance_GuestAccelerators[]>;
+  /** Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS. */
   hostname?: string | Computed<string>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
+  /** The customer-supplied encryption key used to encrypt the instance's boot disk. This field is computed and output-only. (AI-inferred) */
+  instanceEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified. */
   keyRevocationActionType?: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Always compute#instance for instances. */
+  kind?: string | Computed<string>;
+  /** A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance. */
+  labelFingerprint?: string | Computed<string>;
+  /** Labels to apply to this instance. These can be later modified by the setLabels method. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  machineType: string | Computed<string>;
-  metadata?: Record<string, string> | Computed<Record<string, string>>;
-  metadataStartupScript?: string | Computed<string>;
+  /** Output only. [Output Only] Last start timestamp inRFC3339 text format. */
+  lastStartTimestamp?: string | Computed<string>;
+  /** Output only. [Output Only] Last stop timestamp inRFC3339 text format. */
+  lastStopTimestamp?: string | Computed<string>;
+  /** Output only. [Output Only] Last suspended timestamp inRFC3339 text format. */
+  lastSuspendedTimestamp?: string | Computed<string>;
+  /** Specifies which method should be used for encrypting the Local SSDs attached to the VM. */
+  localSsdEncryptionMode?: string | Computed<string>;
+  /** Full or partial URL of the machine type resource to use for this instance, in the format:zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create acustom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read theSpecifications for custom machine types. */
+  machineType?: string | Computed<string>;
+  /** A metadata key/value entry. */
+  metadata?: Instance_Metadata | Computed<Instance_Metadata>;
+  /** Specifies aminimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". */
   minCpuPlatform?: string | Computed<string>;
-  name: string | Computed<string>;
-  project?: string | Computed<string>;
+  /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance. */
+  networkInterfaces?: Instance_NetworkInterfaces[] | Computed<Instance_NetworkInterfaces[]>;
+  networkPerformanceConfig?: Instance_NetworkPerformanceConfig | Computed<Instance_NetworkPerformanceConfig>;
+  /** Additional instance params. */
+  params?: Instance_Params | Computed<Instance_Params>;
+  /** The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default. */
+  privateIpv6GoogleAccess?: string | Computed<string>;
+  /** Specifies the reservations that this instance can consume from. */
+  reservationAffinity?: Instance_ReservationAffinity | Computed<Instance_ReservationAffinity>;
+  /** Resource policies applied to this instance. */
   resourcePolicies?: string[] | Computed<string[]>;
-  tags?: string[] | Computed<string[]>;
+  /** Contains output only fields. Use this sub-message for actual values set on Instance attributes as compared to the value requested by the user (intent) in their instance CRUD calls. */
+  resourceStatus?: Instance_ResourceStatus | Computed<Instance_ResourceStatus>;
+  /** Output only. [Output Only] Reserved for future use. */
+  satisfiesPzi?: boolean | Computed<boolean>;
+  /** Output only. [Output Only] Reserved for future use. */
+  satisfiesPzs?: boolean | Computed<boolean>;
+  /** Sets the scheduling options for an Instance. */
+  scheduling?: Instance_Scheduling | Computed<Instance_Scheduling>;
+  /** Output only. [Output Only] Server-defined URL for this resource. */
+  selfLink?: string | Computed<string>;
+  /** A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. SeeService Accounts for more information. */
+  serviceAccounts?: Instance_ServiceAccounts[] | Computed<Instance_ServiceAccounts[]>;
+  /** A set of Shielded Instance options. */
+  shieldedInstanceConfig?: Instance_ShieldedInstanceConfig | Computed<Instance_ShieldedInstanceConfig>;
+  /** The policy describes the baseline against which Instance boot integrity is measured. */
+  shieldedInstanceIntegrityPolicy?: Instance_ShieldedInstanceIntegrityPolicy | Computed<Instance_ShieldedInstanceIntegrityPolicy>;
+  /** Source machine image */
+  sourceMachineImage?: string | Computed<string>;
+  /** The customer-supplied encryption key for the source machine image used to create the instance. This field is output-only and reflects the encryption key details of the source image. (AI-inferred) */
+  sourceMachineImageEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** Output only. [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity. */
+  startRestricted?: boolean | Computed<boolean>;
+  /** Output only. [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the instance, see Instance life cycle. */
+  status?: string | Computed<string>;
+  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
+  statusMessage?: string | Computed<string>;
+  /** A set of instance tags. */
+  tags?: Instance_Tags | Computed<Instance_Tags>;
+  /** An output-only object containing the workload identity configuration for the instance, automatically computed and not user-settable. (AI-inferred) */
+  workloadIdentityConfig?: Instance_WorkloadIdentityConfig | Computed<Instance_WorkloadIdentityConfig>;
+  /** Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   zone?: string | Computed<string>;
-  advancedMachineFeatures?: Instance_AdvancedMachineFeatures[] | Computed<Instance_AdvancedMachineFeatures[]>;
-  attachedDisk?: Instance_AttachedDisk[] | Computed<Instance_AttachedDisk[]>;
-  bootDisk?: Instance_BootDisk[] | Computed<Instance_BootDisk[]>;
-  confidentialInstanceConfig?: Instance_ConfidentialInstanceConfig[] | Computed<Instance_ConfidentialInstanceConfig[]>;
-  guestAccelerator?: Instance_GuestAccelerator[] | Computed<Instance_GuestAccelerator[]>;
-  instanceEncryptionKey?: Instance_InstanceEncryptionKey[] | Computed<Instance_InstanceEncryptionKey[]>;
-  networkInterface?: Instance_NetworkInterface[] | Computed<Instance_NetworkInterface[]>;
-  networkPerformanceConfig?: Instance_NetworkPerformanceConfig[] | Computed<Instance_NetworkPerformanceConfig[]>;
-  params?: Instance_Params[] | Computed<Instance_Params[]>;
-  reservationAffinity?: Instance_ReservationAffinity[] | Computed<Instance_ReservationAffinity[]>;
-  scheduling?: Instance_Scheduling[] | Computed<Instance_Scheduling[]>;
-  scratchDisk?: Instance_ScratchDisk[] | Computed<Instance_ScratchDisk[]>;
-  serviceAccount?: Instance_ServiceAccount[] | Computed<Instance_ServiceAccount[]>;
-  shieldedInstanceConfig?: Instance_ShieldedInstanceConfig[] | Computed<Instance_ShieldedInstanceConfig[]>;
-  timeouts?: Instance_Timeouts | Computed<Instance_Timeouts>;
-  workloadIdentityConfig?: Instance_WorkloadIdentityConfig[] | Computed<Instance_WorkloadIdentityConfig[]>;
 }
 
 export interface InstanceAttrs {
-  allowStoppingForUpdate: boolean;
+  /** Specifies options for controlling advanced machine features. Options that would traditionally be configured in a BIOS belong here. Features that require operating system support may have corresponding entries in the GuestOsFeatures of anImage (e.g., whether or not the OS in theImage supports nested virtualization being enabled or disabled). */
+  advancedMachineFeatures: Instance_AdvancedMachineFeatures;
+  /** Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, seeEnabling IP Forwarding. */
   canIpForward: boolean;
+  /** A set of Confidential Instance options. */
+  confidentialInstanceConfig: Instance_ConfidentialInstanceConfig;
+  /** Output only. [Output Only] The CPU platform used by this instance. */
   cpuPlatform: string;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
-  currentStatus: string;
-  deletionPolicy: string;
+  /** Whether the resource should be protected against deletion. */
   deletionProtection: boolean;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
-  desiredStatus: string;
-  effectiveLabels: Record<string, string>;
-  enableDisplay: boolean;
+  /** Array of disks associated with this instance. Persistent disks must be created before you can assign them. */
+  disks: Instance_Disks[];
+  /** A set of Display Device options */
+  displayDevice: Instance_DisplayDevice;
+  /** Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance. */
+  fingerprint: string;
+  /** A list of the type and count of accelerator cards attached to the instance. */
+  guestAccelerators: Instance_GuestAccelerators[];
+  /** Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS. */
   hostname: string;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
-  instanceId: string;
+  /** The customer-supplied encryption key used to encrypt the instance's boot disk. This field is computed and output-only. (AI-inferred) */
+  instanceEncryptionKey: Instance_Disks_DiskEncryptionKey;
+  /** KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified. */
   keyRevocationActionType: string;
+  /** Output only. [Output Only] Type of the resource. Always compute#instance for instances. */
+  kind: string;
+  /** A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance. */
   labelFingerprint: string;
+  /** Labels to apply to this instance. These can be later modified by the setLabels method. */
   labels: Record<string, string>;
+  /** Output only. [Output Only] Last start timestamp inRFC3339 text format. */
+  lastStartTimestamp: string;
+  /** Output only. [Output Only] Last stop timestamp inRFC3339 text format. */
+  lastStopTimestamp: string;
+  /** Output only. [Output Only] Last suspended timestamp inRFC3339 text format. */
+  lastSuspendedTimestamp: string;
+  /** Specifies which method should be used for encrypting the Local SSDs attached to the VM. */
+  localSsdEncryptionMode: string;
+  /** Full or partial URL of the machine type resource to use for this instance, in the format:zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create acustom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read theSpecifications for custom machine types. */
   machineType: string;
-  metadata: Record<string, string>;
-  metadataFingerprint: string;
-  metadataStartupScript: string;
+  /** A metadata key/value entry. */
+  metadata: Instance_Metadata;
+  /** Specifies aminimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". */
   minCpuPlatform: string;
+  /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
-  project: string;
+  /** An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance. */
+  networkInterfaces: Instance_NetworkInterfaces[];
+  networkPerformanceConfig: Instance_NetworkPerformanceConfig;
+  /** Additional instance params. */
+  params: Instance_Params;
+  /** The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default. */
+  privateIpv6GoogleAccess: string;
+  /** Specifies the reservations that this instance can consume from. */
+  reservationAffinity: Instance_ReservationAffinity;
+  /** Resource policies applied to this instance. */
   resourcePolicies: string[];
+  /** Contains output only fields. Use this sub-message for actual values set on Instance attributes as compared to the value requested by the user (intent) in their instance CRUD calls. */
+  resourceStatus: Instance_ResourceStatus;
+  /** Output only. [Output Only] Reserved for future use. */
+  satisfiesPzi: boolean;
+  /** Output only. [Output Only] Reserved for future use. */
+  satisfiesPzs: boolean;
+  /** Sets the scheduling options for an Instance. */
+  scheduling: Instance_Scheduling;
+  /** Output only. [Output Only] Server-defined URL for this resource. */
   selfLink: string;
-  tags: string[];
-  tagsFingerprint: string;
-  terraformLabels: Record<string, string>;
+  /** A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. SeeService Accounts for more information. */
+  serviceAccounts: Instance_ServiceAccounts[];
+  /** A set of Shielded Instance options. */
+  shieldedInstanceConfig: Instance_ShieldedInstanceConfig;
+  /** The policy describes the baseline against which Instance boot integrity is measured. */
+  shieldedInstanceIntegrityPolicy: Instance_ShieldedInstanceIntegrityPolicy;
+  /** Source machine image */
+  sourceMachineImage: string;
+  /** The customer-supplied encryption key for the source machine image used to create the instance. This field is output-only and reflects the encryption key details of the source image. (AI-inferred) */
+  sourceMachineImageEncryptionKey: Instance_Disks_DiskEncryptionKey;
+  /** Output only. [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity. */
+  startRestricted: boolean;
+  /** Output only. [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the instance, see Instance life cycle. */
+  status: string;
+  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
+  statusMessage: string;
+  /** A set of instance tags. */
+  tags: Instance_Tags;
+  /** An output-only object containing the workload identity configuration for the instance, automatically computed and not user-settable. (AI-inferred) */
+  workloadIdentityConfig: Instance_WorkloadIdentityConfig;
+  /** Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   zone: string;
-  advancedMachineFeatures: Instance_AdvancedMachineFeatures[];
-  attachedDisk: Instance_AttachedDisk[];
-  bootDisk: Instance_BootDisk[];
-  confidentialInstanceConfig: Instance_ConfidentialInstanceConfig[];
-  guestAccelerator: Instance_GuestAccelerator[];
-  instanceEncryptionKey: Instance_InstanceEncryptionKey[];
-  networkInterface: Instance_NetworkInterface[];
-  networkPerformanceConfig: Instance_NetworkPerformanceConfig[];
-  params: Instance_Params[];
-  reservationAffinity: Instance_ReservationAffinity[];
-  scheduling: Instance_Scheduling[];
-  scratchDisk: Instance_ScratchDisk[];
-  serviceAccount: Instance_ServiceAccount[];
-  shieldedInstanceConfig: Instance_ShieldedInstanceConfig[];
-  timeouts: Instance_Timeouts;
-  workloadIdentityConfig: Instance_WorkloadIdentityConfig[];
 }
 
 export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
   wireType: "google_compute_instance",
   fields: {
-    allowStoppingForUpdate: "allow_stopping_for_update",
-    canIpForward: "can_ip_forward",
-    deletionPolicy: "deletion_policy",
-    deletionProtection: "deletion_protection",
-    description: "description",
-    desiredStatus: "desired_status",
-    enableDisplay: "enable_display",
-    hostname: "hostname",
-    id: "id",
-    keyRevocationActionType: "key_revocation_action_type",
-    labels: "labels",
-    machineType: "machine_type",
-    metadata: "metadata",
-    metadataStartupScript: "metadata_startup_script",
-    minCpuPlatform: "min_cpu_platform",
-    name: "name",
-    project: "project",
-    resourcePolicies: "resource_policies",
-    tags: "tags",
-    zone: "zone",
     advancedMachineFeatures: {
       wireName: "advanced_machine_features",
-      kind: "list",
+      kind: "object",
       fields: Instance_AdvancedMachineFeaturesFields,
     },
-    attachedDisk: {
-      wireName: "attached_disk",
-      kind: "list",
-      fields: Instance_AttachedDiskFields,
-    },
-    bootDisk: {
-      wireName: "boot_disk",
-      kind: "list",
-      fields: Instance_BootDiskFields,
-    },
+    canIpForward: "can_ip_forward",
     confidentialInstanceConfig: {
       wireName: "confidential_instance_config",
-      kind: "list",
+      kind: "object",
       fields: Instance_ConfidentialInstanceConfigFields,
     },
-    guestAccelerator: {
-      wireName: "guest_accelerator",
+    cpuPlatform: "cpu_platform",
+    creationTimestamp: "creation_timestamp",
+    deletionProtection: "deletion_protection",
+    description: "description",
+    disks: {
+      wireName: "disks",
       kind: "list",
-      fields: Instance_GuestAcceleratorFields,
+      fields: Instance_DisksFields,
     },
+    displayDevice: {
+      wireName: "display_device",
+      kind: "object",
+      fields: Instance_DisplayDeviceFields,
+    },
+    fingerprint: "fingerprint",
+    guestAccelerators: {
+      wireName: "guest_accelerators",
+      kind: "list",
+      fields: Instance_GuestAcceleratorsFields,
+    },
+    hostname: "hostname",
+    id: "id",
     instanceEncryptionKey: {
       wireName: "instance_encryption_key",
-      kind: "list",
-      fields: Instance_InstanceEncryptionKeyFields,
+      kind: "object",
+      fields: Instance_Disks_DiskEncryptionKeyFields,
     },
-    networkInterface: {
-      wireName: "network_interface",
+    keyRevocationActionType: "key_revocation_action_type",
+    kind: "kind",
+    labelFingerprint: "label_fingerprint",
+    labels: "labels",
+    lastStartTimestamp: "last_start_timestamp",
+    lastStopTimestamp: "last_stop_timestamp",
+    lastSuspendedTimestamp: "last_suspended_timestamp",
+    localSsdEncryptionMode: "local_ssd_encryption_mode",
+    machineType: "machine_type",
+    metadata: {
+      wireName: "metadata",
+      kind: "object",
+      fields: Instance_MetadataFields,
+    },
+    minCpuPlatform: "min_cpu_platform",
+    name: "name",
+    networkInterfaces: {
+      wireName: "network_interfaces",
       kind: "list",
-      fields: Instance_NetworkInterfaceFields,
+      fields: Instance_NetworkInterfacesFields,
     },
     networkPerformanceConfig: {
       wireName: "network_performance_config",
-      kind: "list",
+      kind: "object",
       fields: Instance_NetworkPerformanceConfigFields,
     },
     params: {
       wireName: "params",
-      kind: "list",
+      kind: "object",
       fields: Instance_ParamsFields,
     },
+    privateIpv6GoogleAccess: "private_ipv6_google_access",
     reservationAffinity: {
       wireName: "reservation_affinity",
-      kind: "list",
+      kind: "object",
       fields: Instance_ReservationAffinityFields,
     },
+    resourcePolicies: "resource_policies",
+    resourceStatus: {
+      wireName: "resource_status",
+      kind: "object",
+      fields: Instance_ResourceStatusFields,
+    },
+    satisfiesPzi: "satisfies_pzi",
+    satisfiesPzs: "satisfies_pzs",
     scheduling: {
       wireName: "scheduling",
-      kind: "list",
+      kind: "object",
       fields: Instance_SchedulingFields,
     },
-    scratchDisk: {
-      wireName: "scratch_disk",
+    selfLink: "self_link",
+    serviceAccounts: {
+      wireName: "service_accounts",
       kind: "list",
-      fields: Instance_ScratchDiskFields,
-    },
-    serviceAccount: {
-      wireName: "service_account",
-      kind: "list",
-      fields: Instance_ServiceAccountFields,
+      fields: Instance_ServiceAccountsFields,
     },
     shieldedInstanceConfig: {
       wireName: "shielded_instance_config",
-      kind: "list",
+      kind: "object",
       fields: Instance_ShieldedInstanceConfigFields,
     },
-    timeouts: {
-      wireName: "timeouts",
+    shieldedInstanceIntegrityPolicy: {
+      wireName: "shielded_instance_integrity_policy",
       kind: "object",
-      fields: Instance_TimeoutsFields,
+      fields: Instance_ShieldedInstanceIntegrityPolicyFields,
+    },
+    sourceMachineImage: "source_machine_image",
+    sourceMachineImageEncryptionKey: {
+      wireName: "source_machine_image_encryption_key",
+      kind: "object",
+      fields: Instance_Disks_DiskEncryptionKeyFields,
+    },
+    startRestricted: "start_restricted",
+    status: "status",
+    statusMessage: "status_message",
+    tags: {
+      wireName: "tags",
+      kind: "object",
+      fields: Instance_TagsFields,
     },
     workloadIdentityConfig: {
       wireName: "workload_identity_config",
-      kind: "list",
+      kind: "object",
       fields: Instance_WorkloadIdentityConfigFields,
     },
+    zone: "zone",
   },
 };

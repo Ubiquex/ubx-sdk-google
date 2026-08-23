@@ -2,31 +2,35 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VpnTunnel_CipherSuite_Phase1 {
-  dh: string[];
-  encryption: string[];
-  integrity: string[];
-  prf: string[];
+  /** List of Diffie-Hellman group identifiers used during IKE phase 1 negotiation for the VPN tunnel cipher suite. (AI-inferred) */
+  dh?: string[] | Computed<string[]>;
+  /** List of encryption algorithms used for IKE phase 1 negotiation. These algorithms define the encryption methods permitted during the initial IPsec/IKE key exchange. (AI-inferred) */
+  encryption?: string[] | Computed<string[]>;
+  /** The list of integrity algorithms permitted for IKE phase 1 negotiation. Supported values include SHA1, SHA256, SHA384, and SHA512; if left empty, the default set of algorithms is used. (AI-inferred) */
+  integrity?: string[] | Computed<string[]>;
+  /** The list of allowed Pseudo-Random Function (PRF) algorithms for the IKE phase 1 proposal, used for key derivation during the IKE handshake. (AI-inferred) */
+  prf?: string[] | Computed<string[]>;
 }
 
 export interface VpnTunnel_CipherSuite_Phase2 {
-  encryption: string[];
-  integrity: string[];
-  pfs: string[];
+  /** A list of acceptable encryption algorithms for Phase 2 of the IKE negotiation. (AI-inferred) */
+  encryption?: string[] | Computed<string[]>;
+  /** A list of integrity algorithms to be used for the IPsec phase 2 proposal in the VPN tunnel. The tunnel negotiates using one of the listed algorithms to ensure data integrity. (AI-inferred) */
+  integrity?: string[] | Computed<string[]>;
+  /** Specifies the Diffie-Hellman groups allowed for Perfect Forward Secrecy (PFS) during Phase 2 of the IKE negotiation. (AI-inferred) */
+  pfs?: string[] | Computed<string[]>;
 }
 
 export interface VpnTunnel_CipherSuite {
-  phase1: VpnTunnel_CipherSuite_Phase1[];
-  phase2: VpnTunnel_CipherSuite_Phase2[];
+  /** The phase1 object defines the IKE Phase 1 (ISAKMP SA) settings for the VPN tunnel's cipher suite, including the encryption, integrity, and DH group algorithms used during the initial key exchange. (AI-inferred) */
+  phase1?: VpnTunnel_CipherSuite_Phase1 | Computed<VpnTunnel_CipherSuite_Phase1>;
+  /** Settings for IPsec Phase 2 (IKE Quick Mode), including encryption and integrity algorithms, within the cipher suite for the VPN tunnel. (AI-inferred) */
+  phase2?: VpnTunnel_CipherSuite_Phase2 | Computed<VpnTunnel_CipherSuite_Phase2>;
 }
 
 export interface VpnTunnel_Params {
-  resourceManagerTags: Record<string, string>;
-}
-
-export interface VpnTunnel_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** Tag keys/values directly bound to this resource. Tag keys and values have the same definition as resource manager tags. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID & namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid. */
+  resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 const VpnTunnel_CipherSuite_Phase1Fields: FieldMap = {
@@ -45,12 +49,12 @@ const VpnTunnel_CipherSuite_Phase2Fields: FieldMap = {
 const VpnTunnel_CipherSuiteFields: FieldMap = {
   phase1: {
     wireName: "phase1",
-    kind: "list",
+    kind: "object",
     fields: VpnTunnel_CipherSuite_Phase1Fields,
   },
   phase2: {
     wireName: "phase2",
-    kind: "list",
+    kind: "object",
     fields: VpnTunnel_CipherSuite_Phase2Fields,
   },
 };
@@ -59,112 +63,150 @@ const VpnTunnel_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const VpnTunnel_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
-};
-
 export interface VpnTunnelConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred) */
+  cipherSuite?: VpnTunnel_CipherSuite | Computed<VpnTunnel_CipherSuite>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** [Output Only] Detailed status message for the VPN tunnel. */
+  detailedStatus?: string | Computed<string>;
+  /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
+  /** IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2. */
   ikeVersion?: number | Computed<number>;
+  /** Output only. [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels. */
+  kind?: string | Computed<string>;
+  /** A fingerprint for the labels being applied to this VpnTunnel, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnTunnel. */
+  labelFingerprint?: string | Computed<string>;
+  /** Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels. */
   localTrafficSelector?: string[] | Computed<string[]>;
-  name: string | Computed<string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  params?: VpnTunnel_Params | Computed<VpnTunnel_Params>;
+  /** URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway. */
   peerExternalGateway?: string | Computed<string>;
+  /** The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type. */
   peerExternalGatewayInterface?: number | Computed<number>;
+  /** URL of the peer side HA VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer Google Cloud VPN gateway. */
   peerGcpGateway?: string | Computed<string>;
+  /** IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels. */
   peerIp?: string | Computed<string>;
-  project?: string | Computed<string>;
+  /** [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region?: string | Computed<string>;
+  /** Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels. */
   remoteTrafficSelector?: string[] | Computed<string[]>;
+  /** URL of the router resource to be used for dynamic routing. */
   router?: string | Computed<string>;
+  /** [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway. */
   sharedSecret?: string | Computed<string>;
-  sharedSecretWo?: string | Computed<string>;
-  sharedSecretWoVersion?: string | Computed<string>;
+  /** Hash of the shared secret. */
+  sharedSecretHash?: string | Computed<string>;
+  /** [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel. */
+  status?: string | Computed<string>;
+  /** URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels. */
   targetVpnGateway?: string | Computed<string>;
+  /** URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created. */
   vpnGateway?: string | Computed<string>;
+  /** The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`. */
   vpnGatewayInterface?: number | Computed<number>;
-  cipherSuite?: VpnTunnel_CipherSuite[] | Computed<VpnTunnel_CipherSuite[]>;
-  params?: VpnTunnel_Params[] | Computed<VpnTunnel_Params[]>;
-  timeouts?: VpnTunnel_Timeouts | Computed<VpnTunnel_Timeouts>;
 }
 
 export interface VpnTunnelAttrs {
+  /** The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred) */
+  cipherSuite: VpnTunnel_CipherSuite;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
-  deletionPolicy: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** [Output Only] Detailed status message for the VPN tunnel. */
   detailedStatus: string;
-  effectiveLabels: Record<string, string>;
+  /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2. */
   ikeVersion: number;
+  /** Output only. [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels. */
+  kind: string;
+  /** A fingerprint for the labels being applied to this VpnTunnel, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnTunnel. */
   labelFingerprint: string;
+  /** Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty. */
   labels: Record<string, string>;
+  /** Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels. */
   localTrafficSelector: string[];
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
+  params: VpnTunnel_Params;
+  /** URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway. */
   peerExternalGateway: string;
+  /** The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type. */
   peerExternalGatewayInterface: number;
+  /** URL of the peer side HA VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer Google Cloud VPN gateway. */
   peerGcpGateway: string;
+  /** IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels. */
   peerIp: string;
-  project: string;
+  /** [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region: string;
+  /** Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels. */
   remoteTrafficSelector: string[];
+  /** URL of the router resource to be used for dynamic routing. */
   router: string;
+  /** [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway. */
   sharedSecret: string;
+  /** Hash of the shared secret. */
   sharedSecretHash: string;
-  sharedSecretWo: string;
-  sharedSecretWoVersion: string;
+  /** [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel. */
+  status: string;
+  /** URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels. */
   targetVpnGateway: string;
-  terraformLabels: Record<string, string>;
-  tunnelId: string;
+  /** URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created. */
   vpnGateway: string;
+  /** The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`. */
   vpnGatewayInterface: number;
-  cipherSuite: VpnTunnel_CipherSuite[];
-  params: VpnTunnel_Params[];
-  timeouts: VpnTunnel_Timeouts;
 }
 
 export const VpnTunnel: ResourceBinding<VpnTunnelConfig, VpnTunnelAttrs> = {
   wireType: "google_compute_vpn_tunnel",
   fields: {
-    deletionPolicy: "deletion_policy",
+    cipherSuite: {
+      wireName: "cipher_suite",
+      kind: "object",
+      fields: VpnTunnel_CipherSuiteFields,
+    },
+    creationTimestamp: "creation_timestamp",
     description: "description",
+    detailedStatus: "detailed_status",
     id: "id",
     ikeVersion: "ike_version",
+    kind: "kind",
+    labelFingerprint: "label_fingerprint",
     labels: "labels",
     localTrafficSelector: "local_traffic_selector",
     name: "name",
+    params: {
+      wireName: "params",
+      kind: "object",
+      fields: VpnTunnel_ParamsFields,
+    },
     peerExternalGateway: "peer_external_gateway",
     peerExternalGatewayInterface: "peer_external_gateway_interface",
     peerGcpGateway: "peer_gcp_gateway",
     peerIp: "peer_ip",
-    project: "project",
     region: "region",
     remoteTrafficSelector: "remote_traffic_selector",
     router: "router",
+    selfLink: "self_link",
     sharedSecret: "shared_secret",
-    sharedSecretWo: "shared_secret_wo",
-    sharedSecretWoVersion: "shared_secret_wo_version",
+    sharedSecretHash: "shared_secret_hash",
+    status: "status",
     targetVpnGateway: "target_vpn_gateway",
     vpnGateway: "vpn_gateway",
     vpnGatewayInterface: "vpn_gateway_interface",
-    cipherSuite: {
-      wireName: "cipher_suite",
-      kind: "list",
-      fields: VpnTunnel_CipherSuiteFields,
-    },
-    params: {
-      wireName: "params",
-      kind: "list",
-      fields: VpnTunnel_ParamsFields,
-    },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: VpnTunnel_TimeoutsFields,
-    },
   },
 };

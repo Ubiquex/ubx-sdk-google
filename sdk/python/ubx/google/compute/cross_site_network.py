@@ -7,38 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class CrossSiteNetwork_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_CrossSiteNetwork_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class CrossSiteNetworkConfig:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of the cross-site network.
+    description: Any = None
+    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
 
 @dataclasses.dataclass
-class CrossSiteNetworkConfig:
-    deletion_policy: Any = None
+class CrossSiteNetworkAttrs:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of the cross-site network.
     description: Any = None
+    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
     id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    project: Any = None
-    timeouts: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
 
 CrossSiteNetwork = ubx.ResourceBinding(
     wire_type="google_compute_cross_site_network",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_CrossSiteNetwork_TimeoutsFields,
-        ),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
     },
 )

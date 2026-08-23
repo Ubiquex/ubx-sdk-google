@@ -4,7 +4,6 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalVmExtensionPolicy_ExtensionPolicies struct {
-	ExtensionName any
 	PinnedVersion any
 	StringConfig any
 }
@@ -17,8 +16,18 @@ type GlobalVmExtensionPolicy_InstanceSelectors struct {
 	LabelSelector any
 }
 
+type GlobalVmExtensionPolicy_RolloutOperation_RolloutInput struct {
+	// Optional. Specifies the behavior of the rollout if a conflict is detected in a project during a rollout. This only applies to `insert` and `update` methods. A conflict occurs in the following cases: * `insert` method: If the zonal policy already exists when the insert happens. * `update` method: If the zonal policy was modified by a zonal API call outside of this rollout. Possible values are the following: * `""` (empty string): If a conflict occurs, the local value is not overwritten. This is the default behavior. * `"overwrite"`: If a conflict occurs, the local value is overwritten with the rollout value.
+	ConflictBehavior any
+	// Optional. The name of the rollout plan. Ex. projects//locations/global/rolloutPlans/.
+	Name any
+	// Optional. Specifies the predefined rollout plan for the policy. Valid values are `SLOW_ROLLOUT` and `FAST_ROLLOUT`. The recommended value is `SLOW_ROLLOUT` for progressive rollout. For more information, see Rollout plans for global policies.
+	PredefinedRolloutPlan any
+	// Optional. The UUID that identifies a policy rollout retry attempt for update and delete operations. Set this field only when retrying a rollout for an existing extension policy. * `update` method: Lets you retry policy rollout without changes. An error occurs if you set retry_uuid but the policy is modified. * `delete` method: Lets you retry policy deletion rollout if the previous deletion rollout is not finished and the policy is in the DELETING state. If you set this field when the policy is not in the DELETING state, an error occurs.
+	RetryUuid any
+}
+
 type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatus struct {
-	LocationName any
 	State any
 }
 
@@ -30,30 +39,17 @@ type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts stru
 }
 
 type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus struct {
+	// Output only. [Output Only] The current rollouts for the latest version of the resource. There should be only one current rollout, but for scalability, we make it repeated.
 	CurrentRollouts any
 	PreviousRollout any
 }
 
-type GlobalVmExtensionPolicy_RolloutOperation_RolloutInput struct {
-	ConflictBehavior any
-	Name any
-	PredefinedRolloutPlan any
-	RetryUuid any
-}
-
 type GlobalVmExtensionPolicy_RolloutOperation struct {
-	RolloutStatus any
 	RolloutInput any
-}
-
-type GlobalVmExtensionPolicy_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+	RolloutStatus any
 }
 
 var GlobalVmExtensionPolicy_ExtensionPoliciesFields = ubx.FieldMap{
-		"ExtensionName": ubx.FieldSpec{WireName: "extension_name"},
 		"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
 		"StringConfig": ubx.FieldSpec{WireName: "string_config"},
 	}
@@ -65,20 +61,26 @@ var GlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = ubx.FieldMap
 var GlobalVmExtensionPolicy_InstanceSelectorsFields = ubx.FieldMap{
 		"LabelSelector": ubx.FieldSpec{
 			WireName: "label_selector",
-			Kind: "list",
+			Kind: "object",
 			Fields: GlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
 		},
 	}
 
+var GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields = ubx.FieldMap{
+		"ConflictBehavior": ubx.FieldSpec{WireName: "conflict_behavior"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
+		"RetryUuid": ubx.FieldSpec{WireName: "retry_uuid"},
+	}
+
 var GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields = ubx.FieldMap{
-		"LocationName": ubx.FieldSpec{WireName: "location_name"},
 		"State": ubx.FieldSpec{WireName: "state"},
 	}
 
 var GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields = ubx.FieldMap{
 		"LocationRolloutStatus": ubx.FieldSpec{
 			WireName: "location_rollout_status",
-			Kind: "set",
+			Kind: "map",
 			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields,
 		},
 		"Rollout": ubx.FieldSpec{WireName: "rollout"},
@@ -94,76 +96,109 @@ var GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields = ubx.FieldMap{
 		},
 		"PreviousRollout": ubx.FieldSpec{
 			WireName: "previous_rollout",
-			Kind: "list",
+			Kind: "object",
 			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
 		},
 	}
 
-var GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields = ubx.FieldMap{
-		"ConflictBehavior": ubx.FieldSpec{WireName: "conflict_behavior"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
-		"RetryUuid": ubx.FieldSpec{WireName: "retry_uuid"},
-	}
-
 var GlobalVmExtensionPolicy_RolloutOperationFields = ubx.FieldMap{
-		"RolloutStatus": ubx.FieldSpec{
-			WireName: "rollout_status",
-			Kind: "list",
-			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
-		},
 		"RolloutInput": ubx.FieldSpec{
 			WireName: "rollout_input",
-			Kind: "list",
+			Kind: "object",
 			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields,
 		},
-	}
-
-var GlobalVmExtensionPolicy_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+		"RolloutStatus": ubx.FieldSpec{
+			WireName: "rollout_status",
+			Kind: "object",
+			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
+		},
 	}
 
 type GlobalVmExtensionPolicyConfig struct {
-	DeletionPolicy any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	Name any
-	Priority any
-	Project any
+	// Required. Map from extension (eg: "cloudops") to its policy configuration. The key is the name of the extension.
 	ExtensionPolicies any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Optional. Selector to target VMs for a policy. There is a logical "AND" between instance_selectors.
 	InstanceSelectors any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#globalVmExtensionPolicy for globalVmExtensionPolicies.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Optional. Used to resolve conflicts when multiple policies are active for the same extension. Defaults to 0. Larger the number, higher the priority. When the priority is the same, the policy with the newer create time has higher priority.
+	Priority any
+	// Represents the rollout operation
 	RolloutOperation any
-	Timeouts any
+	// Output only. [Output Only] The scoped resource status. It's only for tracking the purging status of the policy.
+	ScopedResourceStatus any
+	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL for this resource's resource id.
+	SelfLinkWithId any
+	// Output only. [Output Only] Update timestamp inRFC3339 text format.
+	UpdateTimestamp any
+}
+
+type GlobalVmExtensionPolicyAttrs struct {
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// Required. Map from extension (eg: "cloudops") to its policy configuration. The key is the name of the extension.
+	ExtensionPolicies any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Optional. Selector to target VMs for a policy. There is a logical "AND" between instance_selectors.
+	InstanceSelectors any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#globalVmExtensionPolicy for globalVmExtensionPolicies.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Optional. Used to resolve conflicts when multiple policies are active for the same extension. Defaults to 0. Larger the number, higher the priority. When the priority is the same, the policy with the newer create time has higher priority.
+	Priority any
+	// Represents the rollout operation
+	RolloutOperation any
+	// Output only. [Output Only] The scoped resource status. It's only for tracking the purging status of the policy.
+	ScopedResourceStatus any
+	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL for this resource's resource id.
+	SelfLinkWithId any
+	// Output only. [Output Only] Update timestamp inRFC3339 text format.
+	UpdateTimestamp any
 }
 
 var GlobalVmExtensionPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_global_vm_extension_policy",
 	Fields: ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Project": ubx.FieldSpec{WireName: "project"},
 		"ExtensionPolicies": ubx.FieldSpec{
 			WireName: "extension_policies",
-			Kind: "set",
+			Kind: "map",
 			Fields: GlobalVmExtensionPolicy_ExtensionPoliciesFields,
 		},
+		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceSelectors": ubx.FieldSpec{
 			WireName: "instance_selectors",
 			Kind: "list",
 			Fields: GlobalVmExtensionPolicy_InstanceSelectorsFields,
 		},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"RolloutOperation": ubx.FieldSpec{
 			WireName: "rollout_operation",
-			Kind: "list",
+			Kind: "object",
 			Fields: GlobalVmExtensionPolicy_RolloutOperationFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: GlobalVmExtensionPolicy_TimeoutsFields,
-		},
+		"ScopedResourceStatus": ubx.FieldSpec{WireName: "scoped_resource_status"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"UpdateTimestamp": ubx.FieldSpec{WireName: "update_timestamp"},
 	},
 }

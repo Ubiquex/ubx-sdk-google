@@ -3,30 +3,33 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RolloutPlan_Timeouts struct {
-	Create any
-	Delete any
-}
-
 type RolloutPlan_Waves_OrchestrationOptions_Delays struct {
+	// Specifies the grouping delimiter for delay execution. Valid values: DELIMITER_BATCH (delay applies per batch), DELIMITER_LOCATION (delay applies per location), DELIMITER_UNSPECIFIED (no specific grouping). (AI-inferred)
 	Delimiter any
+	// The duration of the delay, specified as a string with a time unit (e.g., '30s' or '5m'). (AI-inferred)
 	Duration any
+	// The type of delay for this orchestration step. Allowed values are TYPE_MINIMUM (minimum delay), TYPE_OFFSET (offset delay), and TYPE_UNSPECIFIED (not specified). (AI-inferred)
 	Type any
 }
 
 type RolloutPlan_Waves_OrchestrationOptions struct {
+	Delays any
+	// The maximum number of locations (zones) that can be updated concurrently during this wave of the rollout. The value can be a fixed number or a percentage of the total locations, e.g., '5' or '25%'. (AI-inferred)
 	MaxConcurrentLocations any
 	MaxConcurrentResourcesPerLocation any
-	Delays any
 }
 
 type RolloutPlan_Waves_Selectors_LocationSelector struct {
+	// A list of Google Cloud locations (regions or zones) to include in this location selector. Resources in these locations will be selected for the rollout wave. (AI-inferred)
 	IncludedLocations any
 }
 
 type RolloutPlan_Waves_Selectors_ResourceHierarchySelector struct {
+	// A list of folder resource names (or IDs) to include in the resource hierarchy selector. Resources contained within these folders are selected for the rollout wave. (AI-inferred)
 	IncludedFolders any
+	// The list of organization IDs to include in the rollout wave's resource hierarchy selector. Only the resources within these organizations are targeted by the wave. (AI-inferred)
 	IncludedOrganizations any
+	// A list of GCP project identifiers to include in the resource hierarchy selector. The rollout plan will apply to resources in these projects. (AI-inferred)
 	IncludedProjects any
 }
 
@@ -36,26 +39,24 @@ type RolloutPlan_Waves_Selectors struct {
 }
 
 type RolloutPlan_Waves_Validation_TimeBasedValidationMetadata struct {
+	// The duration to wait as part of time-based validation, represented as a string. (AI-inferred)
 	WaitDuration any
 }
 
 type RolloutPlan_Waves_Validation struct {
-	Type any
 	TimeBasedValidationMetadata any
+	Type any
 }
 
 type RolloutPlan_Waves struct {
 	DisplayName any
+	// The wave number, represented as a string, indicating the sequential order of the wave within the rollout plan. (AI-inferred)
 	Number any
 	OrchestrationOptions any
 	Selectors any
+	// Configures the validation procedure for this wave, specifying how the rollout verifies the health and readiness of the instances in the wave before advancing to the next wave. (AI-inferred)
 	Validation any
 }
-
-var RolloutPlan_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
 
 var RolloutPlan_Waves_OrchestrationOptions_DelaysFields = ubx.FieldMap{
 		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
@@ -64,13 +65,13 @@ var RolloutPlan_Waves_OrchestrationOptions_DelaysFields = ubx.FieldMap{
 	}
 
 var RolloutPlan_Waves_OrchestrationOptionsFields = ubx.FieldMap{
-		"MaxConcurrentLocations": ubx.FieldSpec{WireName: "max_concurrent_locations"},
-		"MaxConcurrentResourcesPerLocation": ubx.FieldSpec{WireName: "max_concurrent_resources_per_location"},
 		"Delays": ubx.FieldSpec{
 			WireName: "delays",
 			Kind: "list",
 			Fields: RolloutPlan_Waves_OrchestrationOptions_DelaysFields,
 		},
+		"MaxConcurrentLocations": ubx.FieldSpec{WireName: "max_concurrent_locations"},
+		"MaxConcurrentResourcesPerLocation": ubx.FieldSpec{WireName: "max_concurrent_resources_per_location"},
 	}
 
 var RolloutPlan_Waves_Selectors_LocationSelectorFields = ubx.FieldMap{
@@ -86,12 +87,12 @@ var RolloutPlan_Waves_Selectors_ResourceHierarchySelectorFields = ubx.FieldMap{
 var RolloutPlan_Waves_SelectorsFields = ubx.FieldMap{
 		"LocationSelector": ubx.FieldSpec{
 			WireName: "location_selector",
-			Kind: "list",
+			Kind: "object",
 			Fields: RolloutPlan_Waves_Selectors_LocationSelectorFields,
 		},
 		"ResourceHierarchySelector": ubx.FieldSpec{
 			WireName: "resource_hierarchy_selector",
-			Kind: "list",
+			Kind: "object",
 			Fields: RolloutPlan_Waves_Selectors_ResourceHierarchySelectorFields,
 		},
 	}
@@ -101,12 +102,12 @@ var RolloutPlan_Waves_Validation_TimeBasedValidationMetadataFields = ubx.FieldMa
 	}
 
 var RolloutPlan_Waves_ValidationFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
 		"TimeBasedValidationMetadata": ubx.FieldSpec{
 			WireName: "time_based_validation_metadata",
-			Kind: "list",
+			Kind: "object",
 			Fields: RolloutPlan_Waves_Validation_TimeBasedValidationMetadataFields,
 		},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
 var RolloutPlan_WavesFields = ubx.FieldMap{
@@ -114,7 +115,7 @@ var RolloutPlan_WavesFields = ubx.FieldMap{
 		"Number": ubx.FieldSpec{WireName: "number"},
 		"OrchestrationOptions": ubx.FieldSpec{
 			WireName: "orchestration_options",
-			Kind: "list",
+			Kind: "object",
 			Fields: RolloutPlan_Waves_OrchestrationOptionsFields,
 		},
 		"Selectors": ubx.FieldSpec{
@@ -124,36 +125,64 @@ var RolloutPlan_WavesFields = ubx.FieldMap{
 		},
 		"Validation": ubx.FieldSpec{
 			WireName: "validation",
-			Kind: "list",
+			Kind: "object",
 			Fields: RolloutPlan_Waves_ValidationFields,
 		},
 	}
 
 type RolloutPlanConfig struct {
-	DeletionPolicy any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
+	// Output only. [Output Only] Type of the resource. Always compute#rolloutPlan for rolloutPlans.
+	Kind any
+	// The location scope of the rollout plan. If not specified, the location scope is considered as ZONAL.
 	LocationScope any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	Project any
-	Timeouts any
+	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL for this resource's resource id.
+	SelfLinkWithId any
+	// Required. The waves included in this rollout plan.
+	Waves any
+}
+
+type RolloutPlanAttrs struct {
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of the resource. Always compute#rolloutPlan for rolloutPlans.
+	Kind any
+	// The location scope of the rollout plan. If not specified, the location scope is considered as ZONAL.
+	LocationScope any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL for this resource's resource id.
+	SelfLinkWithId any
+	// Required. The waves included in this rollout plan.
 	Waves any
 }
 
 var RolloutPlan = ubx.ResourceBinding{
 	WireType: "google_compute_rollout_plan",
 	Fields: ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"LocationScope": ubx.FieldSpec{WireName: "location_scope"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: RolloutPlan_TimeoutsFields,
-		},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
 		"Waves": ubx.FieldSpec{
 			WireName: "waves",
 			Kind: "list",

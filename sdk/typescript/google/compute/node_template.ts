@@ -2,29 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NodeTemplate_Accelerators {
-  acceleratorCount: number;
-  acceleratorType: string;
+  /** The number of accelerators of the specified type to attach to nodes created from this node template. This field is part of the accelerators block, which also specifies the accelerator type. (AI-inferred) */
+  acceleratorCount?: number | Computed<number>;
+  /** The type of accelerator (GPU) to attach to the node, such as 'nvidia-tesla-a100'. This should be a valid accelerator type identifier supported by Compute Engine. (AI-inferred) */
+  acceleratorType?: string | Computed<string>;
 }
 
 export interface NodeTemplate_Disks {
-  diskCount: number;
-  diskSizeGb: number;
-  diskType: string;
+  /** The number of disks of the specified type to attach to the node template. (AI-inferred) */
+  diskCount?: number | Computed<number>;
+  diskSizeGb?: number | Computed<number>;
+  /** The type of disk to attach to the node, such as 'local-ssd'. Defaults to 'local-ssd'. (AI-inferred) */
+  diskType?: string | Computed<string>;
 }
 
 export interface NodeTemplate_NodeTypeFlexibility {
-  cpus: string;
-  localSsd: string;
-  memory: string;
+  /** The number of virtual CPUs to allocate for the node template. Provide a specific integer value as a string (e.g., "8") or use "any" to allow flexible selection based on available resources. (AI-inferred) */
+  cpus?: string | Computed<string>;
+  localSsd?: string | Computed<string>;
+  /** Specifies the amount of memory (in MB) that the flexible node type must have. This is used to define a custom node type for the node template. (AI-inferred) */
+  memory?: string | Computed<string>;
 }
 
 export interface NodeTemplate_ServerBinding {
-  type: string;
-}
-
-export interface NodeTemplate_Timeouts {
-  create: string;
-  delete: string;
+  /** Specifies the server binding type for the node template, controlling whether the node can be restarted on any server or only on a minimal set of servers. Valid values are RESTART_NODE_ON_ANY_SERVER, RESTART_NODE_ON_MINIMAL_SERVERS, or SERVER_BINDING_TYPE_UNSPECIFIED. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 const NodeTemplate_AcceleratorsFields: FieldMap = {
@@ -48,83 +50,110 @@ const NodeTemplate_ServerBindingFields: FieldMap = {
   type: "type",
 };
 
-const NodeTemplate_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-};
-
 export interface NodeTemplateConfig {
-  cpuOvercommitType?: string | Computed<string>;
-  deletionPolicy?: string | Computed<string>;
-  description?: string | Computed<string>;
-  id?: string | Computed<string>;
-  name: string | Computed<string>;
-  nodeAffinityLabels?: Record<string, string> | Computed<Record<string, string>>;
-  nodeType?: string | Computed<string>;
-  project?: string | Computed<string>;
-  region?: string | Computed<string>;
+  /** A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred) */
   accelerators?: NodeTemplate_Accelerators[] | Computed<NodeTemplate_Accelerators[]>;
+  /** CPU overcommit. */
+  cpuOvercommitType?: string | Computed<string>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
+  description?: string | Computed<string>;
+  /** The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred) */
   disks?: NodeTemplate_Disks[] | Computed<NodeTemplate_Disks[]>;
-  nodeTypeFlexibility?: NodeTemplate_NodeTypeFlexibility[] | Computed<NodeTemplate_NodeTypeFlexibility[]>;
-  serverBinding?: NodeTemplate_ServerBinding[] | Computed<NodeTemplate_ServerBinding[]>;
-  timeouts?: NodeTemplate_Timeouts | Computed<NodeTemplate_Timeouts>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
+  id?: string | Computed<string>;
+  /** Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates. */
+  kind?: string | Computed<string>;
+  /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** Labels to use for node affinity, which will be used in instance scheduling. */
+  nodeAffinityLabels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The node type to use for nodes group that are created from this template. */
+  nodeType?: string | Computed<string>;
+  /** Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred) */
+  nodeTypeFlexibility?: NodeTemplate_NodeTypeFlexibility | Computed<NodeTemplate_NodeTypeFlexibility>;
+  /** Output only. [Output Only] The name of the region where the node template resides, such as us-central1. */
+  region?: string | Computed<string>;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred) */
+  serverBinding?: NodeTemplate_ServerBinding | Computed<NodeTemplate_ServerBinding>;
+  /** Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING. */
+  status?: string | Computed<string>;
+  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
+  statusMessage?: string | Computed<string>;
 }
 
 export interface NodeTemplateAttrs {
-  cpuOvercommitType: string;
-  creationTimestamp: string;
-  deletionPolicy: string;
-  description: string;
-  id: string;
-  name: string;
-  nodeAffinityLabels: Record<string, string>;
-  nodeType: string;
-  project: string;
-  region: string;
-  selfLink: string;
+  /** A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred) */
   accelerators: NodeTemplate_Accelerators[];
+  /** CPU overcommit. */
+  cpuOvercommitType: string;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
+  description: string;
+  /** The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred) */
   disks: NodeTemplate_Disks[];
-  nodeTypeFlexibility: NodeTemplate_NodeTypeFlexibility[];
-  serverBinding: NodeTemplate_ServerBinding[];
-  timeouts: NodeTemplate_Timeouts;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
+  id: string;
+  /** Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates. */
+  kind: string;
+  /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name: string;
+  /** Labels to use for node affinity, which will be used in instance scheduling. */
+  nodeAffinityLabels: Record<string, string>;
+  /** The node type to use for nodes group that are created from this template. */
+  nodeType: string;
+  /** Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred) */
+  nodeTypeFlexibility: NodeTemplate_NodeTypeFlexibility;
+  /** Output only. [Output Only] The name of the region where the node template resides, such as us-central1. */
+  region: string;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink: string;
+  /** The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred) */
+  serverBinding: NodeTemplate_ServerBinding;
+  /** Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING. */
+  status: string;
+  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
+  statusMessage: string;
 }
 
 export const NodeTemplate: ResourceBinding<NodeTemplateConfig, NodeTemplateAttrs> = {
   wireType: "google_compute_node_template",
   fields: {
-    cpuOvercommitType: "cpu_overcommit_type",
-    deletionPolicy: "deletion_policy",
-    description: "description",
-    id: "id",
-    name: "name",
-    nodeAffinityLabels: "node_affinity_labels",
-    nodeType: "node_type",
-    project: "project",
-    region: "region",
     accelerators: {
       wireName: "accelerators",
       kind: "list",
       fields: NodeTemplate_AcceleratorsFields,
     },
+    cpuOvercommitType: "cpu_overcommit_type",
+    creationTimestamp: "creation_timestamp",
+    description: "description",
     disks: {
       wireName: "disks",
       kind: "list",
       fields: NodeTemplate_DisksFields,
     },
+    id: "id",
+    kind: "kind",
+    name: "name",
+    nodeAffinityLabels: "node_affinity_labels",
+    nodeType: "node_type",
     nodeTypeFlexibility: {
       wireName: "node_type_flexibility",
-      kind: "list",
+      kind: "object",
       fields: NodeTemplate_NodeTypeFlexibilityFields,
     },
+    region: "region",
+    selfLink: "self_link",
     serverBinding: {
       wireName: "server_binding",
-      kind: "list",
+      kind: "object",
       fields: NodeTemplate_ServerBindingFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: NodeTemplate_TimeoutsFields,
-    },
+    status: "status",
+    statusMessage: "status_message",
   },
 };

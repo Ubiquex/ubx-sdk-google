@@ -2,90 +2,128 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Autoscaler_AutoscalingPolicy_CpuUtilization {
-  predictiveMethod: string;
-  target: number;
+  /** Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand. */
+  predictiveMethod?: string | Computed<string>;
+  /** The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization. */
+  utilizationTarget?: number | Computed<number>;
+}
+
+export interface Autoscaler_AutoscalingPolicy_CustomMetricUtilizations {
+  /** Filter string to identify a specific time series for the custom metric. Used to select which resource's metric data to scale on, often with conditions like resource.type or metric labels. (AI-inferred) */
+  filter?: string | Computed<string>;
+  /** The identifier (name) of the Cloud Monitoring metric to use for autoscaling. For example, compute.googleapis.com/instance/network/received_bytes_count. (AI-inferred) */
+  metric?: string | Computed<string>;
+  /** The target value of the custom metric that a single instance should handle. This is used as a per-instance scaling target to determine the number of instances needed. (AI-inferred) */
+  singleInstanceAssignment?: number | Computed<number>;
+  /** The target value of the custom metric that the autoscaler maintains. The autoscaler adjusts the number of instances to keep the metric value close to this target. (AI-inferred) */
+  utilizationTarget?: number | Computed<number>;
+  /** Specifies whether the utilization target is a gauge, delta per second, or delta per minute. Allowed values are DELTA_PER_MINUTE, DELTA_PER_SECOND, and GAUGE. (AI-inferred) */
+  utilizationTargetType?: string | Computed<string>;
 }
 
 export interface Autoscaler_AutoscalingPolicy_LoadBalancingUtilization {
-  target: number;
-}
-
-export interface Autoscaler_AutoscalingPolicy_Metric {
-  filter: string;
-  name: string;
-  singleInstanceAssignment: number;
-  target: number;
-  type: string;
+  /** Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that the autoscaler maintains. Must be a positive float value. If not defined, the default is 0.8. */
+  utilizationTarget?: number | Computed<number>;
 }
 
 export interface Autoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicas {
-  fixed: number;
-  percent: number;
+  /** Output only. Absolute value of VM instances calculated based on the specific mode. - If the value is fixed, then the calculated value is equal to the fixed value. - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded. */
+  calculated?: number | Computed<number>;
+  /** Specifies a fixed number of VM instances. This must be a positive integer. */
+  fixed?: number | Computed<number>;
+  /** Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%. */
+  percent?: number | Computed<number>;
 }
 
 export interface Autoscaler_AutoscalingPolicy_ScaleInControl {
-  timeWindowSec: number;
-  maxScaledInReplicas: Autoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicas[];
+  /** Encapsulates numeric value that can be either absolute or relative. */
+  maxScaledInReplicas?: Autoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicas | Computed<Autoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicas>;
+  /** How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above. */
+  timeWindowSec?: number | Computed<number>;
 }
 
 export interface Autoscaler_AutoscalingPolicy_ScalingSchedules {
-  description: string;
-  disabled: boolean;
-  durationSec: number;
-  minRequiredReplicas: number;
-  name: string;
-  schedule: string;
-  timeZone: string;
+  description?: string | Computed<string>;
+  /** Whether the scaling schedule is disabled. When set to true, the schedule is inactive and its scaling actions are not applied, even if the scheduled time occurs. (AI-inferred) */
+  disabled?: boolean | Computed<boolean>;
+  /** The duration of the scaling schedule in seconds. Must be between 1 and 86400 seconds inclusive. (AI-inferred) */
+  durationSec?: number | Computed<number>;
+  /** The minimum number of replicas that must be running for the autoscaler to apply this scaling schedule. If the current number of replicas is below this value, the autoscaler first scales to it. (AI-inferred) */
+  minRequiredReplicas?: number | Computed<number>;
+  /** The cron-style schedule expression that determines when the scaling schedule is active. It uses standard cron syntax (e.g., '0 9 * * *' for daily at 9 AM). (AI-inferred) */
+  schedule?: string | Computed<string>;
+  /** The time zone to use when interpreting the schedule. Must be a time zone name from the IANA time zone database (e.g., 'America/New_York'). (AI-inferred) */
+  timeZone?: string | Computed<string>;
 }
 
 export interface Autoscaler_AutoscalingPolicy {
-  cooldownPeriod: number;
-  maxReplicas: number;
-  minReplicas: number;
-  mode: string;
-  stabilizationPeriod: number;
-  cpuUtilization: Autoscaler_AutoscalingPolicy_CpuUtilization[];
-  loadBalancingUtilization: Autoscaler_AutoscalingPolicy_LoadBalancingUtilization[];
-  metric: Autoscaler_AutoscalingPolicy_Metric[];
-  scaleInControl: Autoscaler_AutoscalingPolicy_ScaleInControl[];
-  scalingSchedules: Autoscaler_AutoscalingPolicy_ScalingSchedules[];
+  /** The number of seconds that your application takes to initialize on a VM instance. This is referred to as the [initialization period](/compute/docs/autoscaler#cool_down_period). Specifying an accurate initialization period improves autoscaler decisions. For example, when scaling out, the autoscaler ignores data from VMs that are still initializing because those VMs might not yet represent normal usage of your application. The default initialization period is 60 seconds. Initialization periods might vary because of numerous factors. We recommend that you test how long your application takes to initialize. To do this, create a VM and time your application's startup process. */
+  coolDownPeriodSec?: number | Computed<number>;
+  /** CPU utilization policy. */
+  cpuUtilization?: Autoscaler_AutoscalingPolicy_CpuUtilization | Computed<Autoscaler_AutoscalingPolicy_CpuUtilization>;
+  /** Configuration parameters of autoscaling based on a custom metric. */
+  customMetricUtilizations?: Autoscaler_AutoscalingPolicy_CustomMetricUtilizations[] | Computed<Autoscaler_AutoscalingPolicy_CustomMetricUtilizations[]>;
+  /** Configuration parameters of autoscaling based on load balancing. */
+  loadBalancingUtilization?: Autoscaler_AutoscalingPolicy_LoadBalancingUtilization | Computed<Autoscaler_AutoscalingPolicy_LoadBalancingUtilization>;
+  /** The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas. */
+  maxNumReplicas?: number | Computed<number>;
+  /** The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed. */
+  minNumReplicas?: number | Computed<number>;
+  /** Defines the operating mode for this policy. The following modes are available: - OFF: Disables the autoscaler but maintains its configuration. - ONLY_SCALE_OUT: Restricts the autoscaler to add VM instances only. - ON: Enables all autoscaler activities according to its policy. For more information, see "Turning off or restricting an autoscaler" */
+  mode?: string | Computed<string>;
+  /** Configuration that allows for slower scale in so that even if Autoscaler recommends an abrupt scale in of a MIG, it will be throttled as specified by the parameters below. */
+  scaleInControl?: Autoscaler_AutoscalingPolicy_ScaleInControl | Computed<Autoscaler_AutoscalingPolicy_ScaleInControl>;
+  /** Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed. */
+  scalingSchedules?: Record<string, Autoscaler_AutoscalingPolicy_ScalingSchedules> | Computed<Record<string, Autoscaler_AutoscalingPolicy_ScalingSchedules>>;
+  /** The number of seconds that autoscaler waits for load stabilization before making scale-in decisions. This is referred to as the [stabilization period](/compute/docs/autoscaler#stabilization_period). This might appear as a delay in scaling in but it is an important mechanism for your application to not have fluctuating size due to short term load fluctuations. The default stabilization period is 600 seconds. */
+  stabilizationPeriodSec?: number | Computed<number>;
 }
 
-export interface Autoscaler_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Autoscaler_ScalingScheduleStatus {
+  /** The timestamp of the most recent start of this scaling schedule. (AI-inferred) */
+  lastStartTime?: string | Computed<string>;
+  nextStartTime?: string | Computed<string>;
+  /** The state of the scaling schedule, which can be ACTIVE, OBSOLETE, or DELETED. (AI-inferred) */
+  state?: string | Computed<string>;
+}
+
+export interface Autoscaler_StatusDetails {
+  /** The human-readable status message that provides additional details about the autoscaler's current state. (AI-inferred) */
+  message?: string | Computed<string>;
+  /** The type of the autoscaler status detail, indicating a specific scaling condition or issue. Valid values include: ALL_INSTANCES_UNHEALTHY, BACKEND_SERVICE_DOES_NOT_EXIST, CAPPED_AT_MAX_NUM_REPLICAS, CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE, CUSTOM_METRIC_INVALID, MIN_EQUALS_MAX, MISSING_CUSTOM_METRIC_DATA_POINTS, MISSING_LOAD_BALANCING_DATA_POINTS, MODE_OFF, MODE_ONLY_SCALE_OUT, MODE_ONLY_UP, MORE_THAN_ONE_BACKEND_SERVICE, NOT_ENOUGH_QUOTA_AVAILABLE, REGION_RESOURCE_STOCKOUT, SCALING_TARGET_DOES_NOT_EXIST, SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX, SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN, UNKNOWN, UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION, ZONE_RESOURCE_STOCKOUT. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 const Autoscaler_AutoscalingPolicy_CpuUtilizationFields: FieldMap = {
   predictiveMethod: "predictive_method",
-  target: "target",
+  utilizationTarget: "utilization_target",
+};
+
+const Autoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields: FieldMap = {
+  filter: "filter",
+  metric: "metric",
+  singleInstanceAssignment: "single_instance_assignment",
+  utilizationTarget: "utilization_target",
+  utilizationTargetType: "utilization_target_type",
 };
 
 const Autoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields: FieldMap = {
-  target: "target",
-};
-
-const Autoscaler_AutoscalingPolicy_MetricFields: FieldMap = {
-  filter: "filter",
-  name: "name",
-  singleInstanceAssignment: "single_instance_assignment",
-  target: "target",
-  type: "type",
+  utilizationTarget: "utilization_target",
 };
 
 const Autoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicasFields: FieldMap = {
+  calculated: "calculated",
   fixed: "fixed",
   percent: "percent",
 };
 
 const Autoscaler_AutoscalingPolicy_ScaleInControlFields: FieldMap = {
-  timeWindowSec: "time_window_sec",
   maxScaledInReplicas: {
     wireName: "max_scaled_in_replicas",
-    kind: "list",
+    kind: "object",
     fields: Autoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicasFields,
   },
+  timeWindowSec: "time_window_sec",
 };
 
 const Autoscaler_AutoscalingPolicy_ScalingSchedulesFields: FieldMap = {
@@ -93,95 +131,144 @@ const Autoscaler_AutoscalingPolicy_ScalingSchedulesFields: FieldMap = {
   disabled: "disabled",
   durationSec: "duration_sec",
   minRequiredReplicas: "min_required_replicas",
-  name: "name",
   schedule: "schedule",
   timeZone: "time_zone",
 };
 
 const Autoscaler_AutoscalingPolicyFields: FieldMap = {
-  cooldownPeriod: "cooldown_period",
-  maxReplicas: "max_replicas",
-  minReplicas: "min_replicas",
-  mode: "mode",
-  stabilizationPeriod: "stabilization_period",
+  coolDownPeriodSec: "cool_down_period_sec",
   cpuUtilization: {
     wireName: "cpu_utilization",
-    kind: "list",
+    kind: "object",
     fields: Autoscaler_AutoscalingPolicy_CpuUtilizationFields,
+  },
+  customMetricUtilizations: {
+    wireName: "custom_metric_utilizations",
+    kind: "list",
+    fields: Autoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields,
   },
   loadBalancingUtilization: {
     wireName: "load_balancing_utilization",
-    kind: "list",
+    kind: "object",
     fields: Autoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields,
   },
-  metric: {
-    wireName: "metric",
-    kind: "list",
-    fields: Autoscaler_AutoscalingPolicy_MetricFields,
-  },
+  maxNumReplicas: "max_num_replicas",
+  minNumReplicas: "min_num_replicas",
+  mode: "mode",
   scaleInControl: {
     wireName: "scale_in_control",
-    kind: "list",
+    kind: "object",
     fields: Autoscaler_AutoscalingPolicy_ScaleInControlFields,
   },
   scalingSchedules: {
     wireName: "scaling_schedules",
-    kind: "set",
+    kind: "map",
     fields: Autoscaler_AutoscalingPolicy_ScalingSchedulesFields,
   },
+  stabilizationPeriodSec: "stabilization_period_sec",
 };
 
-const Autoscaler_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Autoscaler_ScalingScheduleStatusFields: FieldMap = {
+  lastStartTime: "last_start_time",
+  nextStartTime: "next_start_time",
+  state: "state",
+};
+
+const Autoscaler_StatusDetailsFields: FieldMap = {
+  message: "message",
+  type: "type",
 };
 
 export interface AutoscalerConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** Cloud Autoscaler policy. */
+  autoscalingPolicy?: Autoscaler_AutoscalingPolicy | Computed<Autoscaler_AutoscalingPolicy>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  name: string | Computed<string>;
-  project?: string | Computed<string>;
-  target: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
+  kind?: string | Computed<string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction. */
+  recommendedSize?: number | Computed<number>;
+  /** Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope). */
+  region?: string | Computed<string>;
+  /** Output only. [Output Only] Status information of existing scaling schedules. */
+  scalingScheduleStatus?: Record<string, Autoscaler_ScalingScheduleStatus> | Computed<Record<string, Autoscaler_ScalingScheduleStatus>>;
+  /** [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future. */
+  status?: string | Computed<string>;
+  /** [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation forCommonly returned status messages for examples of status messages you might encounter. */
+  statusDetails?: Autoscaler_StatusDetails[] | Computed<Autoscaler_StatusDetails[]>;
+  /** URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler. */
+  target?: string | Computed<string>;
+  /** Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope). */
   zone?: string | Computed<string>;
-  autoscalingPolicy?: Autoscaler_AutoscalingPolicy[] | Computed<Autoscaler_AutoscalingPolicy[]>;
-  timeouts?: Autoscaler_Timeouts | Computed<Autoscaler_Timeouts>;
 }
 
 export interface AutoscalerAttrs {
+  /** Cloud Autoscaler policy. */
+  autoscalingPolicy: Autoscaler_AutoscalingPolicy;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
-  deletionPolicy: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
+  kind: string;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
-  project: string;
+  /** Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction. */
+  recommendedSize: number;
+  /** Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope). */
+  region: string;
+  /** Output only. [Output Only] Status information of existing scaling schedules. */
+  scalingScheduleStatus: Record<string, Autoscaler_ScalingScheduleStatus>;
+  /** [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future. */
+  status: string;
+  /** [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation forCommonly returned status messages for examples of status messages you might encounter. */
+  statusDetails: Autoscaler_StatusDetails[];
+  /** URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler. */
   target: string;
+  /** Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope). */
   zone: string;
-  autoscalingPolicy: Autoscaler_AutoscalingPolicy[];
-  timeouts: Autoscaler_Timeouts;
 }
 
 export const Autoscaler: ResourceBinding<AutoscalerConfig, AutoscalerAttrs> = {
   wireType: "google_compute_autoscaler",
   fields: {
-    deletionPolicy: "deletion_policy",
-    description: "description",
-    id: "id",
-    name: "name",
-    project: "project",
-    target: "target",
-    zone: "zone",
     autoscalingPolicy: {
       wireName: "autoscaling_policy",
-      kind: "list",
+      kind: "object",
       fields: Autoscaler_AutoscalingPolicyFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Autoscaler_TimeoutsFields,
+    creationTimestamp: "creation_timestamp",
+    description: "description",
+    id: "id",
+    kind: "kind",
+    name: "name",
+    recommendedSize: "recommended_size",
+    region: "region",
+    scalingScheduleStatus: {
+      wireName: "scaling_schedule_status",
+      kind: "map",
+      fields: Autoscaler_ScalingScheduleStatusFields,
     },
+    selfLink: "self_link",
+    status: "status",
+    statusDetails: {
+      wireName: "status_details",
+      kind: "list",
+      fields: Autoscaler_StatusDetailsFields,
+    },
+    target: "target",
+    zone: "zone",
   },
 };

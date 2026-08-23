@@ -3,109 +3,278 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Snapshot_GuestOsFeatures struct {
+	// The type of guest OS feature. This specifies a feature that the guest OS supports or requires. Valid values are: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
+	Type any
+}
+
 type Snapshot_Params struct {
+	// Input only. Resource manager tags to be bound to the snapshot. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty.
 	ResourceManagerTags any
 }
 
 type Snapshot_SnapshotEncryptionKey struct {
-	KmsKeySelfLink any
+	// The name of the encryption key that is stored in Google Cloud KMS. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key The fully-qualifed key name may be returned for resource GET requests. For example: "kmsKeyName": "projects/kms_project_id/locations/region/keyRings/ key_region/cryptoKeys/key /cryptoKeyVersions/1
+	KmsKeyName any
+	// The service account being used for the encryption request for the given KMS key. If absent, the Compute Engine default service account is used. For example: "kmsKeyServiceAccount": "name@project_id.iam.gserviceaccount.com/
 	KmsKeyServiceAccount any
+	// [DEPRECATED] CSEK is no longer supported. Use CMEK instead. Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource. You can provide either the rawKey or thersaEncryptedKey. For example: "rawKey": "SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0="
 	RawKey any
+	// [DEPRECATED] CSEK is no longer supported. Use CMEK instead. Specifies an RFC 4648 base64 encoded, RSA-wrapped 2048-bit customer-supplied encryption key to either encrypt or decrypt this resource. You can provide either the rawKey or thersaEncryptedKey. For example: "rsaEncryptedKey": "ieCx/NcW06PcT7Ep1X6LUTc/hLvUDYyzSZPPVCVPTVEohpeHASqC8uw5TzyO9U+Fka9JFH z0mBibXUInrC/jEk014kCK/NPjYgEMOyssZ4ZINPKxlUh2zn1bV+MCaTICrdmuSBTWlUUiFoD D6PYznLwh8ZNdaheCeZ8ewEXgFQ8V+sDroLaN3Xs3MDTXQEMMoNUXMCZEIpg9Vtp9x2oe==" The key must meet the following requirements before you can provide it to Compute Engine: 1. The key is wrapped using a RSA public key certificate provided by Google. 2. After being wrapped, the key must be encoded in RFC 4648 base64 encoding. Gets the RSA public key certificate provided by Google at: https://cloud-certs.storage.googleapis.com/google-cloud-csek-ingress.pem
 	RsaEncryptedKey any
+	// [DEPRECATED] CSEK is no longer supported. Use CMEK instead. [Output only] TheRFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key that protects this resource.
 	Sha256 any
 }
 
-type Snapshot_SourceDiskEncryptionKey struct {
-	KmsKeySelfLink any
-	KmsKeyServiceAccount any
-	RawKey any
-	RsaEncryptedKey any
-}
-
-type Snapshot_Timeouts struct {
-	Create any
-	Delete any
-	Update any
-}
+var Snapshot_GuestOsFeaturesFields = ubx.FieldMap{
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Snapshot_ParamsFields = ubx.FieldMap{
 		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
 	}
 
 var Snapshot_SnapshotEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeySelfLink": ubx.FieldSpec{WireName: "kms_key_self_link"},
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
 		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
 		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
 		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
 		"Sha256": ubx.FieldSpec{WireName: "sha256"},
 	}
 
-var Snapshot_SourceDiskEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeySelfLink": ubx.FieldSpec{WireName: "kms_key_self_link"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-	}
-
-var Snapshot_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type SnapshotConfig struct {
+	// Output only. [Output Only] The architecture of the snapshot. Valid values are ARM64 or X86_64.
+	Architecture any
+	// Output only. [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
+	AutoCreated any
+	// Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
 	ChainName any
-	DeletionPolicy any
+	// Output only. [Output Only] Size in bytes of the snapshot at creation time.
+	CreationSizeBytes any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// Output only. [Output Only] Size of the source disk, specified in GB.
+	DiskSizeGb any
+	// Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+	DownloadBytes any
+	// Output only. Whether this snapshot is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+	EnableConfidentialCompute any
+	// [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process.
+	GuestFlush any
+	// Output only. [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+	GuestOsFeatures any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
+	// Output only. [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
+	Kind any
+	// A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
+	LabelFingerprint any
+	// Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
 	Labels any
+	// Output only. [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
+	LicenseCodes any
+	// Output only. [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
+	Licenses any
+	// An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
+	LocationHint any
+	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	Project any
-	SnapshotType any
-	SourceDisk any
-	SourceInstantSnapshot any
-	StorageLocations any
-	Zone any
+	// Additional snapshot params.
 	Params any
+	// Output only. [Output Only] URL of the region where the snapshot resides. Only applicable for regional snapshots.
+	Region any
+	// Output only. Reserved for future use.
+	SatisfiesPzi any
+	// Output only. [Output Only] Reserved for future use.
+	SatisfiesPzs any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// The encryption key used to encrypt the snapshot. This field is computed and output-only, meaning the provider populates it with the key information returned from the API. (AI-inferred)
 	SnapshotEncryptionKey any
+	// Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
+	SnapshotGroupId any
+	// Output only. [Output only] The snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
+	SnapshotGroupName any
+	// Indicates the type of the snapshot.
+	SnapshotType any
+	// The source disk used to create this snapshot.
+	SourceDisk any
+	// The customer-supplied encryption key used to encrypt the source disk from which the snapshot was created. This field is output-only and reflects the key details as used by the API. (AI-inferred)
 	SourceDiskEncryptionKey any
-	Timeouts any
+	// The source disk whose recovery checkpoint will be used to create this snapshot.
+	SourceDiskForRecoveryCheckpoint any
+	// Output only. [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
+	SourceDiskId any
+	// The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+	SourceInstantSnapshot any
+	// The encryption key information for the source instant snapshot used to create this snapshot. This is a computed, output-only field that provides the customer-supplied encryption key (CSEK) details if the source instant snapshot was encrypted with one. (AI-inferred)
+	SourceInstantSnapshotEncryptionKey any
+	// Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this snapshot. For example, if you created the snapshot from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+	SourceInstantSnapshotId any
+	// Output only. [Output Only] URL of the resource policy which created this scheduled snapshot.
+	SourceSnapshotSchedulePolicy any
+	// Output only. [Output Only] ID of the resource policy which created this scheduled snapshot.
+	SourceSnapshotSchedulePolicyId any
+	// Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+	Status any
+	// Output only. [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
+	StorageBytes any
+	// Output only. [Deprecated] Instead, check the storageBytes field. After snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE. [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be unset, meaning the snapshot is being created, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+	StorageBytesStatus any
+	// Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
+	StorageLocations any
+}
+
+type SnapshotAttrs struct {
+	// Output only. [Output Only] The architecture of the snapshot. Valid values are ARM64 or X86_64.
+	Architecture any
+	// Output only. [Output Only] Set to true if snapshots are automatically created by applying resource policy on the target disk.
+	AutoCreated any
+	// Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
+	ChainName any
+	// Output only. [Output Only] Size in bytes of the snapshot at creation time.
+	CreationSizeBytes any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// Output only. [Output Only] Size of the source disk, specified in GB.
+	DiskSizeGb any
+	// Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+	DownloadBytes any
+	// Output only. Whether this snapshot is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+	EnableConfidentialCompute any
+	// [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process.
+	GuestFlush any
+	// Output only. [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
+	GuestOsFeatures any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of the resource. Always compute#snapshot for Snapshot resources.
+	Kind any
+	// A fingerprint for the labels being applied to this snapshot, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a snapshot.
+	LabelFingerprint any
+	// Labels to apply to this snapshot. These can be later modified by the setLabels method. Label values may be empty.
+	Labels any
+	// Output only. [Output Only] Integer license codes indicating which licenses are attached to this snapshot.
+	LicenseCodes any
+	// Output only. [Output Only] A list of public visible licenses that apply to this snapshot. This can be because the original image had licenses attached (such as a Windows image).
+	Licenses any
+	// An opaque location hint used to place the snapshot close to other resources. This field is for use by internal tools that use the public API.
+	LocationHint any
+	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Additional snapshot params.
+	Params any
+	// Output only. [Output Only] URL of the region where the snapshot resides. Only applicable for regional snapshots.
+	Region any
+	// Output only. Reserved for future use.
+	SatisfiesPzi any
+	// Output only. [Output Only] Reserved for future use.
+	SatisfiesPzs any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// The encryption key used to encrypt the snapshot. This field is computed and output-only, meaning the provider populates it with the key information returned from the API. (AI-inferred)
+	SnapshotEncryptionKey any
+	// Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
+	SnapshotGroupId any
+	// Output only. [Output only] The snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
+	SnapshotGroupName any
+	// Indicates the type of the snapshot.
+	SnapshotType any
+	// The source disk used to create this snapshot.
+	SourceDisk any
+	// The customer-supplied encryption key used to encrypt the source disk from which the snapshot was created. This field is output-only and reflects the key details as used by the API. (AI-inferred)
+	SourceDiskEncryptionKey any
+	// The source disk whose recovery checkpoint will be used to create this snapshot.
+	SourceDiskForRecoveryCheckpoint any
+	// Output only. [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
+	SourceDiskId any
+	// The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+	SourceInstantSnapshot any
+	// The encryption key information for the source instant snapshot used to create this snapshot. This is a computed, output-only field that provides the customer-supplied encryption key (CSEK) details if the source instant snapshot was encrypted with one. (AI-inferred)
+	SourceInstantSnapshotEncryptionKey any
+	// Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this snapshot. For example, if you created the snapshot from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+	SourceInstantSnapshotId any
+	// Output only. [Output Only] URL of the resource policy which created this scheduled snapshot.
+	SourceSnapshotSchedulePolicy any
+	// Output only. [Output Only] ID of the resource policy which created this scheduled snapshot.
+	SourceSnapshotSchedulePolicyId any
+	// Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+	Status any
+	// Output only. [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
+	StorageBytes any
+	// Output only. [Deprecated] Instead, check the storageBytes field. After snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE. [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be unset, meaning the snapshot is being created, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+	StorageBytesStatus any
+	// Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
+	StorageLocations any
 }
 
 var Snapshot = ubx.ResourceBinding{
 	WireType: "google_compute_snapshot",
 	Fields: ubx.FieldMap{
+		"Architecture": ubx.FieldSpec{WireName: "architecture"},
+		"AutoCreated": ubx.FieldSpec{WireName: "auto_created"},
 		"ChainName": ubx.FieldSpec{WireName: "chain_name"},
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationSizeBytes": ubx.FieldSpec{WireName: "creation_size_bytes"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
+		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+		"DownloadBytes": ubx.FieldSpec{WireName: "download_bytes"},
+		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+		"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
+		"GuestOsFeatures": ubx.FieldSpec{
+			WireName: "guest_os_features",
+			Kind: "list",
+			Fields: Snapshot_GuestOsFeaturesFields,
+		},
 		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
+		"Licenses": ubx.FieldSpec{WireName: "licenses"},
+		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"SnapshotType": ubx.FieldSpec{WireName: "snapshot_type"},
-		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
-		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
-		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "list",
+			Kind: "object",
 			Fields: Snapshot_ParamsFields,
 		},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
+		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"SnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "snapshot_encryption_key",
-			Kind: "list",
+			Kind: "object",
 			Fields: Snapshot_SnapshotEncryptionKeyFields,
 		},
+		"SnapshotGroupId": ubx.FieldSpec{WireName: "snapshot_group_id"},
+		"SnapshotGroupName": ubx.FieldSpec{WireName: "snapshot_group_name"},
+		"SnapshotType": ubx.FieldSpec{WireName: "snapshot_type"},
+		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
 		"SourceDiskEncryptionKey": ubx.FieldSpec{
 			WireName: "source_disk_encryption_key",
-			Kind: "list",
-			Fields: Snapshot_SourceDiskEncryptionKeyFields,
-		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
 			Kind: "object",
-			Fields: Snapshot_TimeoutsFields,
+			Fields: Snapshot_SnapshotEncryptionKeyFields,
 		},
+		"SourceDiskForRecoveryCheckpoint": ubx.FieldSpec{WireName: "source_disk_for_recovery_checkpoint"},
+		"SourceDiskId": ubx.FieldSpec{WireName: "source_disk_id"},
+		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
+		"SourceInstantSnapshotEncryptionKey": ubx.FieldSpec{
+			WireName: "source_instant_snapshot_encryption_key",
+			Kind: "object",
+			Fields: Snapshot_SnapshotEncryptionKeyFields,
+		},
+		"SourceInstantSnapshotId": ubx.FieldSpec{WireName: "source_instant_snapshot_id"},
+		"SourceSnapshotSchedulePolicy": ubx.FieldSpec{WireName: "source_snapshot_schedule_policy"},
+		"SourceSnapshotSchedulePolicyId": ubx.FieldSpec{WireName: "source_snapshot_schedule_policy_id"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"StorageBytes": ubx.FieldSpec{WireName: "storage_bytes"},
+		"StorageBytesStatus": ubx.FieldSpec{WireName: "storage_bytes_status"},
+		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
 	},
 }

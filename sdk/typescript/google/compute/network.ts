@@ -2,102 +2,263 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Network_Params {
-  resourceManagerTags: Record<string, string>;
+  /** Tag keys/values directly bound to this resource. Tag keys and values have the same definition as resource manager tags. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID & namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. */
+  resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
 }
 
-export interface Network_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface Network_Peerings_ConnectionStatus_ConsensusState {
+  /** The deletion status of this VPC network peering connection as part of the consensus state between local and peer networks. Possible values: DELETE_ACKNOWLEDGED, DELETE_STATUS_UNSPECIFIED, LOCAL_CANCEL_REQUESTED, LOCAL_DELETE_REQUESTED, PEER_CANCEL_REQUESTED, PEER_DELETE_REQUESTED. (AI-inferred) */
+  deleteStatus?: string | Computed<string>;
+  /** Represents the update status of the peering consensus state. Possible values: IN_SYNC (no pending updates), PENDING_LOCAL_ACKNOWLEDMENT (waiting for local acknowledgment), PENDING_PEER_ACKNOWLEDGEMENT (waiting for peer acknowledgment), UPDATE_STATUS_UNSPECIFIED (unset). (AI-inferred) */
+  updateStatus?: string | Computed<string>;
+}
+
+export interface Network_Peerings_ConnectionStatus_TrafficConfiguration {
+  /** Indicates whether the VPC network exports its custom routes (routes not automatically generated from subnets) to the peered network. (AI-inferred) */
+  exportCustomRoutesToPeer?: boolean | Computed<boolean>;
+  /** This boolean flag controls whether subnet routes with public IP addresses are exported to the peer network. When true, the VPC network exports routes to its peer for subnets that have public IPs, allowing the peer to reach these subnets via the peering connection. (AI-inferred) */
+  exportSubnetRoutesWithPublicIpToPeer?: boolean | Computed<boolean>;
+  /** When true, this peering connection imports custom routes (non-subnet routes) from the peer network. (AI-inferred) */
+  importCustomRoutesFromPeer?: boolean | Computed<boolean>;
+  /** A boolean flag indicating whether the peering connection imports subnet routes with public IP addresses from the peer network. (AI-inferred) */
+  importSubnetRoutesWithPublicIpFromPeer?: boolean | Computed<boolean>;
+  /** The IP stack type for the traffic over the peering connection, either IPV4_ONLY or IPV4_IPV6. (AI-inferred) */
+  stackType?: string | Computed<string>;
+}
+
+export interface Network_Peerings_ConnectionStatus {
+  consensusState?: Network_Peerings_ConnectionStatus_ConsensusState | Computed<Network_Peerings_ConnectionStatus_ConsensusState>;
+  /** The traffic configuration of the peering connection, providing the current traffic state and any associated details. (AI-inferred) */
+  trafficConfiguration?: Network_Peerings_ConnectionStatus_TrafficConfiguration | Computed<Network_Peerings_ConnectionStatus_TrafficConfiguration>;
+  /** Determines how updates to the peering are applied. CONSENSUS requires both networks to agree on updates, INDEPENDENT allows either side to update without the other's approval, and UNSPECIFIED indicates no strategy has been set. (AI-inferred) */
+  updateStrategy?: string | Computed<string>;
+}
+
+export interface Network_Peerings {
+  /** Whether to automatically create routes for the peer network in this VPC peering connection. When true, routes are automatically generated for destinations in the peered network; when false, no automatic route creation occurs. This field is deprecated in favor of export_custom_routes and import_custom_routes. (AI-inferred) */
+  autoCreateRoutes?: boolean | Computed<boolean>;
+  connectionStatus?: Network_Peerings_ConnectionStatus | Computed<Network_Peerings_ConnectionStatus>;
+  /** Controls whether subnet routes are exchanged with the peered network. When true (default), subnet routes are automatically advertised to the peer network; setting to false disables the exchange. (AI-inferred) */
+  exchangeSubnetRoutes?: boolean | Computed<boolean>;
+  /** Whether this network exports custom routes (such as dynamic routes and routes learned from other networks) to the peered network. When true, these routes are advertised to the peer. (AI-inferred) */
+  exportCustomRoutes?: boolean | Computed<boolean>;
+  /** Indicates whether subnet routes with public IP addresses are exported to the peer network. When set to true, the peer network can learn these routes; when false, they are not exported. (AI-inferred) */
+  exportSubnetRoutesWithPublicIp?: boolean | Computed<boolean>;
+  /** Indicates whether custom routes from the peered network are imported into this network's route table. Set to true to enable importing custom routes. (AI-inferred) */
+  importCustomRoutes?: boolean | Computed<boolean>;
+  /** Whether to import subnet routes with public IP addresses from the peer network. When false, only private subnet routes are imported. Defaults to false. (AI-inferred) */
+  importSubnetRoutesWithPublicIp?: boolean | Computed<boolean>;
+  name?: string | Computed<string>;
+  /** The name or self_link of the peer network to create the peering with. This can be a network in the same project or in a different project, and must be specified as a URL if cross-project. (AI-inferred) */
+  network?: string | Computed<string>;
+  /** The Maximum Transmission Unit (MTU) for the VPC network peering connection, specified in bytes. This is the MTU of the peer network and determines the maximum size of packets that can be sent over the peering link without fragmentation. (AI-inferred) */
+  peerMtu?: number | Computed<number>;
+  /** The stack type for the peering, either IPV4_ONLY or IPV4_IPV6, controlling whether IPv6 traffic is supported over the peering. (AI-inferred) */
+  stackType?: string | Computed<string>;
+  /** Current state of the VPC network peering connection, either ACTIVE or INACTIVE. (AI-inferred) */
+  state?: string | Computed<string>;
+  /** The output-only details of the VPC network peering state, providing additional context about the current peering status, such as the reason for the state. (AI-inferred) */
+  stateDetails?: string | Computed<string>;
+  /** Specifies the update strategy for the VPC peering. Possible values are 'CONSENSUS' (updates require agreement from both peering sides), 'INDEPENDENT' (updates can be made independently by either side), and 'UNSPECIFIED' (default, behavior is determined by the API). (AI-inferred) */
+  updateStrategy?: string | Computed<string>;
+}
+
+export interface Network_RoutingConfig {
+  /** Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm. */
+  bgpAlwaysCompareMed?: boolean | Computed<boolean>;
+  /** The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD. */
+  bgpBestPathSelectionMode?: string | Computed<string>;
+  /** Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT orADD_COST_TO_MED. */
+  bgpInterRegionCost?: string | Computed<string>;
+  /** Output only. [Output Only] Effective value of the bgp_always_compare_med field. */
+  effectiveBgpAlwaysCompareMed?: boolean | Computed<boolean>;
+  /** Output only. [Output Only] Effective value of the bgp_inter_region_cost field. */
+  effectiveBgpInterRegionCost?: string | Computed<string>;
+  /** The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set toGLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions. */
+  routingMode?: string | Computed<string>;
 }
 
 const Network_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const Network_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const Network_Peerings_ConnectionStatus_ConsensusStateFields: FieldMap = {
+  deleteStatus: "delete_status",
+  updateStatus: "update_status",
+};
+
+const Network_Peerings_ConnectionStatus_TrafficConfigurationFields: FieldMap = {
+  exportCustomRoutesToPeer: "export_custom_routes_to_peer",
+  exportSubnetRoutesWithPublicIpToPeer: "export_subnet_routes_with_public_ip_to_peer",
+  importCustomRoutesFromPeer: "import_custom_routes_from_peer",
+  importSubnetRoutesWithPublicIpFromPeer: "import_subnet_routes_with_public_ip_from_peer",
+  stackType: "stack_type",
+};
+
+const Network_Peerings_ConnectionStatusFields: FieldMap = {
+  consensusState: {
+    wireName: "consensus_state",
+    kind: "object",
+    fields: Network_Peerings_ConnectionStatus_ConsensusStateFields,
+  },
+  trafficConfiguration: {
+    wireName: "traffic_configuration",
+    kind: "object",
+    fields: Network_Peerings_ConnectionStatus_TrafficConfigurationFields,
+  },
+  updateStrategy: "update_strategy",
+};
+
+const Network_PeeringsFields: FieldMap = {
+  autoCreateRoutes: "auto_create_routes",
+  connectionStatus: {
+    wireName: "connection_status",
+    kind: "object",
+    fields: Network_Peerings_ConnectionStatusFields,
+  },
+  exchangeSubnetRoutes: "exchange_subnet_routes",
+  exportCustomRoutes: "export_custom_routes",
+  exportSubnetRoutesWithPublicIp: "export_subnet_routes_with_public_ip",
+  importCustomRoutes: "import_custom_routes",
+  importSubnetRoutesWithPublicIp: "import_subnet_routes_with_public_ip",
+  name: "name",
+  network: "network",
+  peerMtu: "peer_mtu",
+  stackType: "stack_type",
+  state: "state",
+  stateDetails: "state_details",
+  updateStrategy: "update_strategy",
+};
+
+const Network_RoutingConfigFields: FieldMap = {
+  bgpAlwaysCompareMed: "bgp_always_compare_med",
+  bgpBestPathSelectionMode: "bgp_best_path_selection_mode",
+  bgpInterRegionCost: "bgp_inter_region_cost",
+  effectiveBgpAlwaysCompareMed: "effective_bgp_always_compare_med",
+  effectiveBgpInterRegionCost: "effective_bgp_inter_region_cost",
+  routingMode: "routing_mode",
 };
 
 export interface NetworkConfig {
+  /** Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method. */
   autoCreateSubnetworks?: boolean | Computed<boolean>;
-  bgpAlwaysCompareMed?: boolean | Computed<boolean>;
-  bgpBestPathSelectionMode?: string | Computed<string>;
-  bgpInterRegionCost?: string | Computed<string>;
-  deleteBgpAlwaysCompareMed?: boolean | Computed<boolean>;
-  deleteDefaultRoutesOnCreate?: boolean | Computed<boolean>;
-  deletionPolicy?: string | Computed<string>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this field when you create the resource. */
   description?: string | Computed<string>;
+  /** Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. . */
   enableUlaInternalIpv6?: boolean | Computed<boolean>;
+  /** Output only. [Output Only] URL of the firewall policy the network is associated with. */
+  firewallPolicy?: string | Computed<string>;
+  /** [Output Only] The gateway address for default routing out of the network, selected by Google Cloud. */
+  gatewayIpv4?: string | Computed<string>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
+  /** When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. . */
   internalIpv6Range?: string | Computed<string>;
+  /** Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is aCIDR specification, for example:192.168.0.0/16. Provided by the client when the network is created. */
+  ipv4Range?: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Always compute#network for networks. */
+  kind?: string | Computed<string>;
+  /** Maximum Transmission Unit in bytes. The minimum value for this field is 1300 and the maximum value is 8896. The suggested value is 1500, which is the default MTU used on the Internet, or 8896 if you want to use Jumbo frames. If unspecified, the value defaults to 1460. */
   mtu?: number | Computed<number>;
-  name: string | Computed<string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
+  name?: string | Computed<string>;
+  /** The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified. */
   networkFirewallPolicyEnforcementOrder?: string | Computed<string>;
+  /** A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name} */
   networkProfile?: string | Computed<string>;
-  project?: string | Computed<string>;
-  routingMode?: string | Computed<string>;
-  params?: Network_Params[] | Computed<Network_Params[]>;
-  timeouts?: Network_Timeouts | Computed<Network_Timeouts>;
+  /** Additional network parameters. */
+  params?: Network_Params | Computed<Network_Params>;
+  /** Output only. [Output Only] A list of network peerings for the resource. */
+  peerings?: Network_Peerings[] | Computed<Network_Peerings[]>;
+  /** A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide. */
+  routingConfig?: Network_RoutingConfig | Computed<Network_RoutingConfig>;
+  /** [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
+  selfLinkWithId?: string | Computed<string>;
+  /** [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network. */
+  subnetworks?: string[] | Computed<string[]>;
 }
 
 export interface NetworkAttrs {
+  /** Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method. */
   autoCreateSubnetworks: boolean;
-  bgpAlwaysCompareMed: boolean;
-  bgpBestPathSelectionMode: string;
-  bgpInterRegionCost: string;
-  deleteBgpAlwaysCompareMed: boolean;
-  deleteDefaultRoutesOnCreate: boolean;
-  deletionPolicy: string;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp: string;
+  /** An optional description of this resource. Provide this field when you create the resource. */
   description: string;
+  /** Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. . */
   enableUlaInternalIpv6: boolean;
+  /** Output only. [Output Only] URL of the firewall policy the network is associated with. */
+  firewallPolicy: string;
+  /** [Output Only] The gateway address for default routing out of the network, selected by Google Cloud. */
   gatewayIpv4: string;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. . */
   internalIpv6Range: string;
+  /** Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is aCIDR specification, for example:192.168.0.0/16. Provided by the client when the network is created. */
+  ipv4Range: string;
+  /** Output only. [Output Only] Type of the resource. Always compute#network for networks. */
+  kind: string;
+  /** Maximum Transmission Unit in bytes. The minimum value for this field is 1300 and the maximum value is 8896. The suggested value is 1500, which is the default MTU used on the Internet, or 8896 if you want to use Jumbo frames. If unspecified, the value defaults to 1460. */
   mtu: number;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
   name: string;
+  /** The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified. */
   networkFirewallPolicyEnforcementOrder: string;
-  networkId: string;
+  /** A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name} */
   networkProfile: string;
-  numericId: string;
-  project: string;
-  routingMode: string;
+  /** Additional network parameters. */
+  params: Network_Params;
+  /** Output only. [Output Only] A list of network peerings for the resource. */
+  peerings: Network_Peerings[];
+  /** A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide. */
+  routingConfig: Network_RoutingConfig;
+  /** [Output Only] Server-defined URL for the resource. */
   selfLink: string;
-  params: Network_Params[];
-  timeouts: Network_Timeouts;
+  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
+  selfLinkWithId: string;
+  /** [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network. */
+  subnetworks: string[];
 }
 
 export const Network: ResourceBinding<NetworkConfig, NetworkAttrs> = {
   wireType: "google_compute_network",
   fields: {
     autoCreateSubnetworks: "auto_create_subnetworks",
-    bgpAlwaysCompareMed: "bgp_always_compare_med",
-    bgpBestPathSelectionMode: "bgp_best_path_selection_mode",
-    bgpInterRegionCost: "bgp_inter_region_cost",
-    deleteBgpAlwaysCompareMed: "delete_bgp_always_compare_med",
-    deleteDefaultRoutesOnCreate: "delete_default_routes_on_create",
-    deletionPolicy: "deletion_policy",
+    creationTimestamp: "creation_timestamp",
     description: "description",
     enableUlaInternalIpv6: "enable_ula_internal_ipv6",
+    firewallPolicy: "firewall_policy",
+    gatewayIpv4: "gateway_ipv4",
     id: "id",
     internalIpv6Range: "internal_ipv6_range",
+    ipv4Range: "ipv4_range",
+    kind: "kind",
     mtu: "mtu",
     name: "name",
     networkFirewallPolicyEnforcementOrder: "network_firewall_policy_enforcement_order",
     networkProfile: "network_profile",
-    project: "project",
-    routingMode: "routing_mode",
     params: {
       wireName: "params",
-      kind: "list",
+      kind: "object",
       fields: Network_ParamsFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Network_TimeoutsFields,
+    peerings: {
+      wireName: "peerings",
+      kind: "list",
+      fields: Network_PeeringsFields,
     },
+    routingConfig: {
+      wireName: "routing_config",
+      kind: "object",
+      fields: Network_RoutingConfigFields,
+    },
+    selfLink: "self_link",
+    selfLinkWithId: "self_link_with_id",
+    subnetworks: "subnetworks",
   },
 };

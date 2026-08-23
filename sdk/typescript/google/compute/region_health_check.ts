@@ -2,45 +2,60 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionHealthCheck_GrpcHealthCheck {
-  grpcServiceName: string;
-  port: number;
-  portName: string;
-  portSpecification: string;
+  /** The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII. */
+  grpcServiceName?: string | Computed<string>;
+  /** The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535. */
+  port?: number | Computed<number>;
+  /** Not supported. */
+  portName?: string | Computed<string>;
+  /** Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports. */
+  portSpecification?: string | Computed<string>;
 }
 
 export interface RegionHealthCheck_GrpcTlsHealthCheck {
-  grpcServiceName: string;
-  port: number;
-  portSpecification: string;
+  /** The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII. */
+  grpcServiceName?: string | Computed<string>;
+  /** The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535. */
+  port?: number | Computed<number>;
+  /** Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports. */
+  portSpecification?: string | Computed<string>;
 }
 
 export interface RegionHealthCheck_Http2HealthCheck {
-  host: string;
-  port: number;
-  portName: string;
-  portSpecification: string;
-  proxyHeader: string;
-  requestPath: string;
-  response: string;
+  /** The value of the host header in the HTTP/2 health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest */
+  host?: string | Computed<string>;
+  /** The TCP port number to which the health check prober sends packets. The default value is 443. Valid values are 1 through65535. */
+  port?: number | Computed<number>;
+  /** Not supported. */
+  portName?: string | Computed<string>;
+  /** Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports. */
+  portSpecification?: string | Computed<string>;
+  /** Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. */
+  proxyHeader?: string | Computed<string>;
+  /** The request path of the HTTP/2 health check request. The default value is/. Must comply withRFC3986. */
+  requestPath?: string | Computed<string>;
+  /** Creates a content-based HTTP/2 health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http */
+  response?: string | Computed<string>;
 }
 
 export interface RegionHealthCheck_LogConfig {
-  enable: boolean;
+  /** Indicates whether or not to export logs. This is false by default, which means no health check logging will be done. */
+  enable?: boolean | Computed<boolean>;
 }
 
 export interface RegionHealthCheck_SslHealthCheck {
-  port: number;
-  portName: string;
-  portSpecification: string;
-  proxyHeader: string;
-  request: string;
-  response: string;
-}
-
-export interface RegionHealthCheck_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** The TCP port number to which the health check prober sends packets. The default value is 443. Valid values are 1 through65535. */
+  port?: number | Computed<number>;
+  /** Not supported. */
+  portName?: string | Computed<string>;
+  /** Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports. */
+  portSpecification?: string | Computed<string>;
+  /** Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. */
+  proxyHeader?: string | Computed<string>;
+  /** Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection and SSL handshake. */
+  request?: string | Computed<string>;
+  /** Creates a content-based SSL health check. In addition to establishing a TCP connection and the TLS handshake, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp */
+  response?: string | Computed<string>;
 }
 
 const RegionHealthCheck_GrpcHealthCheckFields: FieldMap = {
@@ -79,117 +94,149 @@ const RegionHealthCheck_SslHealthCheckFields: FieldMap = {
   response: "response",
 };
 
-const RegionHealthCheck_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
-};
-
 export interface RegionHealthCheckConfig {
+  /** How often (in seconds) to send a health check. The default value is 5 seconds. */
   checkIntervalSec?: number | Computed<number>;
-  deletionPolicy?: string | Computed<string>;
+  /** Output only. [Output Only] Creation timestamp in3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred) */
+  grpcHealthCheck?: RegionHealthCheck_GrpcHealthCheck | Computed<RegionHealthCheck_GrpcHealthCheck>;
+  grpcTlsHealthCheck?: RegionHealthCheck_GrpcTlsHealthCheck | Computed<RegionHealthCheck_GrpcTlsHealthCheck>;
+  /** A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2. */
   healthyThreshold?: number | Computed<number>;
+  /** The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred) */
+  http2HealthCheck?: RegionHealthCheck_Http2HealthCheck | Computed<RegionHealthCheck_Http2HealthCheck>;
+  /** Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred) */
+  httpHealthCheck?: RegionHealthCheck_Http2HealthCheck | Computed<RegionHealthCheck_Http2HealthCheck>;
+  /** The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred) */
+  httpsHealthCheck?: RegionHealthCheck_Http2HealthCheck | Computed<RegionHealthCheck_Http2HealthCheck>;
+  /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  name: string | Computed<string>;
-  project?: string | Computed<string>;
+  /** Output only. Type of the resource. */
+  kind?: string | Computed<string>;
+  /** Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver. */
+  logConfig?: RegionHealthCheck_LogConfig | Computed<RegionHealthCheck_LogConfig>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash. */
+  name?: string | Computed<string>;
+  /** Output only. [Output Only] Region where the health check resides. Not applicable to global health checks. */
   region?: string | Computed<string>;
+  /** [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing. */
+  sourceRegions?: string[] | Computed<string[]>;
+  /** The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred) */
+  sslHealthCheck?: RegionHealthCheck_SslHealthCheck | Computed<RegionHealthCheck_SslHealthCheck>;
+  /** The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred) */
+  tcpHealthCheck?: RegionHealthCheck_SslHealthCheck | Computed<RegionHealthCheck_SslHealthCheck>;
+  /** How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec. */
   timeoutSec?: number | Computed<number>;
+  /** Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2, GRPC or GRPC_WITH_TLS. Exactly one of the protocol-specific health check fields must be specified, which must match type field. */
+  type?: string | Computed<string>;
+  /** A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2. */
   unhealthyThreshold?: number | Computed<number>;
-  grpcHealthCheck?: RegionHealthCheck_GrpcHealthCheck[] | Computed<RegionHealthCheck_GrpcHealthCheck[]>;
-  grpcTlsHealthCheck?: RegionHealthCheck_GrpcTlsHealthCheck[] | Computed<RegionHealthCheck_GrpcTlsHealthCheck[]>;
-  http2HealthCheck?: RegionHealthCheck_Http2HealthCheck[] | Computed<RegionHealthCheck_Http2HealthCheck[]>;
-  httpHealthCheck?: RegionHealthCheck_Http2HealthCheck[] | Computed<RegionHealthCheck_Http2HealthCheck[]>;
-  httpsHealthCheck?: RegionHealthCheck_Http2HealthCheck[] | Computed<RegionHealthCheck_Http2HealthCheck[]>;
-  logConfig?: RegionHealthCheck_LogConfig[] | Computed<RegionHealthCheck_LogConfig[]>;
-  sslHealthCheck?: RegionHealthCheck_SslHealthCheck[] | Computed<RegionHealthCheck_SslHealthCheck[]>;
-  tcpHealthCheck?: RegionHealthCheck_SslHealthCheck[] | Computed<RegionHealthCheck_SslHealthCheck[]>;
-  timeouts?: RegionHealthCheck_Timeouts | Computed<RegionHealthCheck_Timeouts>;
 }
 
 export interface RegionHealthCheckAttrs {
+  /** How often (in seconds) to send a health check. The default value is 5 seconds. */
   checkIntervalSec: number;
+  /** Output only. [Output Only] Creation timestamp in3339 text format. */
   creationTimestamp: string;
-  deletionPolicy: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
-  healthCheckId: number;
+  /** The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred) */
+  grpcHealthCheck: RegionHealthCheck_GrpcHealthCheck;
+  grpcTlsHealthCheck: RegionHealthCheck_GrpcTlsHealthCheck;
+  /** A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2. */
   healthyThreshold: number;
+  /** The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred) */
+  http2HealthCheck: RegionHealthCheck_Http2HealthCheck;
+  /** Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred) */
+  httpHealthCheck: RegionHealthCheck_Http2HealthCheck;
+  /** The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred) */
+  httpsHealthCheck: RegionHealthCheck_Http2HealthCheck;
+  /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** Output only. Type of the resource. */
+  kind: string;
+  /** Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver. */
+  logConfig: RegionHealthCheck_LogConfig;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash. */
   name: string;
-  project: string;
+  /** Output only. [Output Only] Region where the health check resides. Not applicable to global health checks. */
   region: string;
+  /** [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing. */
+  sourceRegions: string[];
+  /** The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred) */
+  sslHealthCheck: RegionHealthCheck_SslHealthCheck;
+  /** The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred) */
+  tcpHealthCheck: RegionHealthCheck_SslHealthCheck;
+  /** How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec. */
   timeoutSec: number;
+  /** Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2, GRPC or GRPC_WITH_TLS. Exactly one of the protocol-specific health check fields must be specified, which must match type field. */
   type: string;
+  /** A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2. */
   unhealthyThreshold: number;
-  grpcHealthCheck: RegionHealthCheck_GrpcHealthCheck[];
-  grpcTlsHealthCheck: RegionHealthCheck_GrpcTlsHealthCheck[];
-  http2HealthCheck: RegionHealthCheck_Http2HealthCheck[];
-  httpHealthCheck: RegionHealthCheck_Http2HealthCheck[];
-  httpsHealthCheck: RegionHealthCheck_Http2HealthCheck[];
-  logConfig: RegionHealthCheck_LogConfig[];
-  sslHealthCheck: RegionHealthCheck_SslHealthCheck[];
-  tcpHealthCheck: RegionHealthCheck_SslHealthCheck[];
-  timeouts: RegionHealthCheck_Timeouts;
 }
 
 export const RegionHealthCheck: ResourceBinding<RegionHealthCheckConfig, RegionHealthCheckAttrs> = {
   wireType: "google_compute_region_health_check",
   fields: {
     checkIntervalSec: "check_interval_sec",
-    deletionPolicy: "deletion_policy",
+    creationTimestamp: "creation_timestamp",
     description: "description",
-    healthyThreshold: "healthy_threshold",
-    id: "id",
-    name: "name",
-    project: "project",
-    region: "region",
-    timeoutSec: "timeout_sec",
-    unhealthyThreshold: "unhealthy_threshold",
     grpcHealthCheck: {
       wireName: "grpc_health_check",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_GrpcHealthCheckFields,
     },
     grpcTlsHealthCheck: {
       wireName: "grpc_tls_health_check",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_GrpcTlsHealthCheckFields,
     },
+    healthyThreshold: "healthy_threshold",
     http2HealthCheck: {
       wireName: "http2_health_check",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_Http2HealthCheckFields,
     },
     httpHealthCheck: {
       wireName: "http_health_check",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_Http2HealthCheckFields,
     },
     httpsHealthCheck: {
       wireName: "https_health_check",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_Http2HealthCheckFields,
     },
+    id: "id",
+    kind: "kind",
     logConfig: {
       wireName: "log_config",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_LogConfigFields,
     },
+    name: "name",
+    region: "region",
+    selfLink: "self_link",
+    sourceRegions: "source_regions",
     sslHealthCheck: {
       wireName: "ssl_health_check",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_SslHealthCheckFields,
     },
     tcpHealthCheck: {
       wireName: "tcp_health_check",
-      kind: "list",
+      kind: "object",
       fields: RegionHealthCheck_SslHealthCheckFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: RegionHealthCheck_TimeoutsFields,
-    },
+    timeoutSec: "timeout_sec",
+    type: "type",
+    unhealthyThreshold: "unhealthy_threshold",
   },
 };

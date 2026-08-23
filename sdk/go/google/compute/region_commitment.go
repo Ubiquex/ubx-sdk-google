@@ -4,24 +4,229 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionCommitment_LicenseResource struct {
+	// The number of licenses you plan to purchase.
 	Amount any
+	// The number of cores per license.
 	CoresPerLicense any
+	// The applicable license URI.
 	License any
 }
 
 type RegionCommitment_Params struct {
+	// Input only. Resource manager tags to be bound to the commitment. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty.
 	ResourceManagerTags any
 }
 
-type RegionCommitment_Resources struct {
-	AcceleratorType any
-	Amount any
-	Type any
+type RegionCommitment_Reservations_AdvancedDeploymentControl struct {
+	// The operational mode for the reservation. Valid values are ALL_CAPACITY (all capacity is provisioned immediately), HIGHLY_AVAILABLE_CAPACITY (capacity is distributed to support high availability), and RESERVATION_OPERATIONAL_MODE_UNSPECIFIED (mode not set, defaults to ALL_CAPACITY). (AI-inferred)
+	ReservationOperationalMode any
 }
 
-type RegionCommitment_Timeouts struct {
-	Create any
-	Delete any
+type RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator struct {
+	AcceleratorCount any
+	// Specifies the type of accelerator (GPU) used by the resources currently in use within the aggregate reservation. This value corresponds to the acceleratorType in the machine type, such as 'nvidia-tesla-t4'. (AI-inferred)
+	AcceleratorType any
+}
+
+type RegionCommitment_Reservations_AggregateReservation_InUseResources struct {
+	Accelerator any
+}
+
+type RegionCommitment_Reservations_AggregateReservation struct {
+	InUseResources any
+	// Specifies the resources included in this aggregate reservation. Each entry defines a resource type and the amount to reserve. (AI-inferred)
+	ReservedResources any
+	// The family of TPU VMs to reserve capacity for. Valid values include VM_FAMILY_CLOUD_TPU_DEVICE_CT3, VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P, and VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X. (AI-inferred)
+	VmFamily any
+	// The workload type of the aggregate reservation. Valid values are BATCH, SERVING, or UNSPECIFIED. This determines how the reservation is used for batch or serving workloads. (AI-inferred)
+	WorkloadType any
+}
+
+type RegionCommitment_Reservations_DeleteAfterDuration struct {
+	// The duration's sub-second component in nanoseconds, ranging from 0 to 999,999,999. (AI-inferred)
+	Nanos any
+	// The number of seconds in the duration after which the reservation is automatically deleted. Must be a string representation of an integer from 0 to 315,576,000,000 inclusive. (AI-inferred)
+	Seconds any
+}
+
+type RegionCommitment_Reservations_ReservationSharingPolicy struct {
+	// Specifies the sharing type for this reservation, controlling which services can use it. ALLOW_ALL permits all services, DISALLOW_ALL blocks all services, and SERVICE_SHARE_TYPE_UNSPECIFIED is the default unspecified value. (AI-inferred)
+	ServiceShareType any
+}
+
+type RegionCommitment_Reservations_ResourceMetadata struct {
+	ApiVersion any
+	ResourceType any
+}
+
+type RegionCommitment_Reservations_ResourceStatus_HealthInfo struct {
+	// The number of blocks that are degraded in the resource, as reported in its health information. This value indicates the extent of storage degradation for the resource. (AI-inferred)
+	DegradedBlockCount any
+	// The health status of the resource. Possible values: DEGRADED, HEALTHY, HEALTH_STATUS_UNSPECIFIED. (AI-inferred)
+	HealthStatus any
+	// The number of healthy blocks in the reservation's resource health status. (AI-inferred)
+	HealthyBlockCount any
+}
+
+type RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance struct {
+	// Indicates whether the upcoming group maintenance event can be rescheduled. (AI-inferred)
+	CanReschedule any
+	// The latest time at which the upcoming group maintenance window can start, as reported for this reservation's resource status. (AI-inferred)
+	LatestWindowStartTime any
+	MaintenanceOnShutdown any
+	MaintenanceReasons any
+	// The maintenance status of the upcoming group maintenance, indicating whether it is ONGOING, PENDING, or UNKNOWN. (AI-inferred)
+	MaintenanceStatus any
+	// The type of upcoming maintenance for the reservation group. Possible values are: MULTIPLE, SCHEDULED, UNKNOWN_TYPE, UNSCHEDULED. (AI-inferred)
+	Type any
+	// The end time of the maintenance window for the upcoming group maintenance event, expressed as a timestamp string. (AI-inferred)
+	WindowEndTime any
+	// The start time of the maintenance window for an upcoming maintenance event on the reservation, as a timestamp. (AI-inferred)
+	WindowStartTime any
+}
+
+type RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance struct {
+	// The number of instances in the reservation that are currently undergoing maintenance, as reported in the reservation maintenance status. (AI-inferred)
+	InstanceMaintenanceOngoingCount any
+	// The number of instances in this reservation that have maintenance pending. (AI-inferred)
+	InstanceMaintenancePendingCount any
+	// The number of resources within this reservation that are currently undergoing maintenance. (AI-inferred)
+	MaintenanceOngoingCount any
+	// The number of instances in this reservation that have a pending maintenance event. (AI-inferred)
+	MaintenancePendingCount any
+	// The maintenance scheduling type for the reservation. Possible values are: 'GROUPED' (maintenance is grouped for the reservation), 'INDEPENDENT' (maintenance is handled independently), and 'GROUP_MAINTENANCE_TYPE_UNSPECIFIED' (the type is not specified). (AI-inferred)
+	SchedulingType any
+	// The number of ongoing maintenance operations for the subblock infrastructure within the reservation. (AI-inferred)
+	SubblockInfraMaintenanceOngoingCount any
+	// The number of pending maintenance items for the subblock infrastructure, as reported in the reservation maintenance status. (AI-inferred)
+	SubblockInfraMaintenancePendingCount any
+	// Upcoming maintenance information for the entire reservation group, shown in the resource status. (AI-inferred)
+	UpcomingGroupMaintenance any
+}
+
+type RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation struct {
+	// The ID of the instance template used to specify the machine type and other properties for this specific SKU allocation in the reservation. (AI-inferred)
+	SourceInstanceTemplateId any
+	// The utilization of the specific SKU reservation, keyed by resource type (e.g., memory). Each value is a fraction of the total capacity of that resource. (AI-inferred)
+	Utilizations any
+}
+
+type RegionCommitment_Reservations_ResourceStatus struct {
+	HealthInfo any
+	// The number of capacity blocks that this reservation uses. (AI-inferred)
+	ReservationBlockCount any
+	// An object that provides the maintenance status details for the reservation, as part of the reservation's resource status. This is a computed field reflecting the current maintenance state of the reservation. (AI-inferred)
+	ReservationMaintenance any
+	SpecificSkuAllocation any
+}
+
+type RegionCommitment_Reservations_ShareSettings_ProjectMap struct {
+	// The ID of the Google Cloud project that has shared access to the commitment reservation. This is the key for the project_map entry. (AI-inferred)
+	ProjectId any
+}
+
+type RegionCommitment_Reservations_ShareSettings struct {
+	// A map of project IDs to project-specific configuration, used to specify which projects can share this commitment's reservations as part of the sharing settings. (AI-inferred)
+	ProjectMap any
+	// Defines the sharing type for this reservation. Allowed values are: LOCAL (only within the owning project), SPECIFIC_PROJECTS (shared with a list of specific projects), ORGANIZATION (shared with all projects in the organization), and SHARE_TYPE_UNSPECIFIED (default, indicating the field is not set). (AI-inferred)
+	ShareType any
+}
+
+type RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds struct {
+	// The size of the local SSD disk in gigabytes (GB), expressed as a string. (AI-inferred)
+	DiskSizeGb any
+	// The interface type for the local SSD. Supported values are `NVME` and `SCSI`. (AI-inferred)
+	Interface any
+}
+
+type RegionCommitment_Reservations_SpecificReservation_InstanceProperties struct {
+	// A list of guest accelerator (GPU) configurations to attach to instances created from this reservation. Each object defines an accelerator type and the number of accelerators. (AI-inferred)
+	GuestAccelerators any
+	// A list of local SSD configurations to attach to instances in this specific reservation. (AI-inferred)
+	LocalSsds any
+	// Optional location hint for the reserved instances, used by Compute Engine to optimize physical placement. (AI-inferred)
+	LocationHint any
+	// Specifies the machine type for the VM instances in this specific reservation. (AI-inferred)
+	MachineType any
+	// Specifies the minimum CPU platform allowed for VM instances in the specific reservation. The value must be a valid CPU platform name (e.g., 'Intel Skylake' or 'AMD Milan') and instances will be guaranteed to use a CPU platform at least as recent as the specified one. (AI-inferred)
+	MinCpuPlatform any
+}
+
+type RegionCommitment_Reservations_SpecificReservation struct {
+	// The number of virtual machine instances that are guaranteed to be available in this specific reservation. This value must be less than or equal to the total 'count' of the reservation. (AI-inferred)
+	AssuredCount any
+	// The number of virtual machine instances to reserve in the specific reservation. The value must be a positive integer. (AI-inferred)
+	Count any
+	// Number of reserved instances from this specific reservation that are currently in use. (AI-inferred)
+	InUseCount any
+	// The properties of the virtual machines to be reserved in this specific reservation, including machine type, minimum CPU platform, accelerator configuration, and local SSD count. (AI-inferred)
+	InstanceProperties any
+	// The self-link of an instance template that defines the properties of the instances to be reserved. When specified, the specific reservation is created based on the template's configuration. (AI-inferred)
+	SourceInstanceTemplate any
+}
+
+type RegionCommitment_Reservations struct {
+	AdvancedDeploymentControl any
+	// The aggregate reservation configuration, used to reserve capacity for a pool of resources (such as CPU and memory) without specifying exact instance shapes. It includes a VM family and a list of reserved resource types with counts, offering flexible capacity reservation for a group of instances. (AI-inferred)
+	AggregateReservation any
+	Commitment any
+	// Specifies the confidential computing type for the reservation. Valid values are CONFIDENTIAL_COMPUTE_TYPE_TDX (for Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED (default, unspecified). (AI-inferred)
+	ConfidentialComputeType any
+	// Creation timestamp in RFC3339 text format. (AI-inferred)
+	CreationTimestamp any
+	// A duration (seconds and optional nanos) after which the reservation is automatically deleted. If unset, the reservation persists until the commitment ends. (AI-inferred)
+	DeleteAfterDuration any
+	// The time at which the reservation will be automatically deleted, in RFC3339 format. (AI-inferred)
+	DeleteAtTime any
+	// The deployment type for this reservation. Allowed values are DENSE and DEPLOYMENT_TYPE_UNSPECIFIED. (AI-inferred)
+	DeploymentType any
+	Description any
+	// Specifies the early access mode for maintenance events on this reservation. Valid values are NO_EARLY_ACCESS, WAVE1, and WAVE2, indicating no early access, first wave, or second wave, respectively. (AI-inferred)
+	EarlyAccessMaintenance any
+	// Whether the reservation can be consumed by emergent maintenance requests. (AI-inferred)
+	EnableEmergentMaintenance any
+	Id any
+	// The type of the resource. Always 'compute#reservation' for this resource. (AI-inferred)
+	Kind any
+	// List of self_links of commitments linked to this reservation. This is used to associate the reservation with one or more commitments so that the commitment's discounts apply to the reserved capacity. (AI-inferred)
+	LinkedCommitments any
+	Name any
+	Params any
+	// The protection tier for the reservation, which determines the level of capacity protection. Valid values are `STANDARD`, `CAPACITY_OPTIMIZED`, and `PROTECTION_TIER_UNSPECIFIED` (the latter is the default when unspecified). (AI-inferred)
+	ProtectionTier any
+	ReservationSharingPolicy any
+	ResourceMetadata any
+	ResourcePolicies any
+	ResourceStatus any
+	// Whether this reservation satisfies the requirements for physical zone separation (PZS) for sole-tenant node groups. (AI-inferred)
+	SatisfiesPzs any
+	// The scheduling type of the reservation. Possible values: INDEPENDENT (reserves capacity for standalone instances), GROUPED (reserves capacity for a group of instances, typically used with managed instance groups), and GROUP_MAINTENANCE_TYPE_UNSPECIFIED (the scheduling type is not specified). (AI-inferred)
+	SchedulingType any
+	SelfLink any
+	// Configuration for sharing a reservation with other projects. It specifies the share type (LOCAL or SPECIFIC_PROJECTS) and, for SPECIFIC_PROJECTS, the set of projects that can use the reservation. (AI-inferred)
+	ShareSettings any
+	// Configuration for a specific reservation within the commitment. This block specifies the instance count and instance properties (such as machine type and GPUs) for reserved VMs, which are dedicated to a single project. (AI-inferred)
+	SpecificReservation any
+	// Indicates whether the reservation is a specific reservation (for a specific instance type) or a non-specific reservation (for an instance family). When true, the reservation is specific; when false, it is non-specific. (AI-inferred)
+	SpecificReservationRequired any
+	// The current status of the reservation, indicating its lifecycle state. Possible values are CREATING, DELETING, INVALID, READY, and UPDATING. (AI-inferred)
+	Status any
+	// The zone in which the reservation is created, within the commitment's region. (AI-inferred)
+	Zone any
+}
+
+type RegionCommitment_ResourceStatus struct {
+	// Output only. [Output Only] Indicates the end time of customer's eligibility to send custom term requests in RFC3339 text format. Term extension requests that (not the end time in the request) after this time will be rejected.
+	CustomTermEligibilityEndTimestamp any
+}
+
+type RegionCommitment_Resources struct {
+	// The type of accelerator (GPU) to include in the commitment, e.g., 'nvidia-tesla-v100'. Must be a valid accelerator type available in the region. (AI-inferred)
+	AcceleratorType any
+	// The quantity of the resource type (e.g., VCPU, MEMORY) to reserve in the commitment. (AI-inferred)
+	Amount any
+	// The type of resource to commit to. Allowed values are `VCPU`, `MEMORY`, `LOCAL_SSD`, `ACCELERATOR`, and `UNSPECIFIED`. (AI-inferred)
+	Type any
 }
 
 var RegionCommitment_LicenseResourceFields = ubx.FieldMap{
@@ -34,32 +239,332 @@ var RegionCommitment_ParamsFields = ubx.FieldMap{
 		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
 	}
 
+var RegionCommitment_Reservations_AdvancedDeploymentControlFields = ubx.FieldMap{
+		"ReservationOperationalMode": ubx.FieldSpec{WireName: "reservation_operational_mode"},
+	}
+
+var RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields = ubx.FieldMap{
+		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
+	}
+
+var RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields = ubx.FieldMap{
+		"Accelerator": ubx.FieldSpec{
+			WireName: "accelerator",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
+		},
+	}
+
+var RegionCommitment_Reservations_AggregateReservationFields = ubx.FieldMap{
+		"InUseResources": ubx.FieldSpec{
+			WireName: "in_use_resources",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
+		},
+		"ReservedResources": ubx.FieldSpec{
+			WireName: "reserved_resources",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
+		},
+		"VmFamily": ubx.FieldSpec{WireName: "vm_family"},
+		"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
+	}
+
+var RegionCommitment_Reservations_DeleteAfterDurationFields = ubx.FieldMap{
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
+
+var RegionCommitment_Reservations_ReservationSharingPolicyFields = ubx.FieldMap{
+		"ServiceShareType": ubx.FieldSpec{WireName: "service_share_type"},
+	}
+
+var RegionCommitment_Reservations_ResourceMetadataFields = ubx.FieldMap{
+		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	}
+
+var RegionCommitment_Reservations_ResourceStatus_HealthInfoFields = ubx.FieldMap{
+		"DegradedBlockCount": ubx.FieldSpec{WireName: "degraded_block_count"},
+		"HealthStatus": ubx.FieldSpec{WireName: "health_status"},
+		"HealthyBlockCount": ubx.FieldSpec{WireName: "healthy_block_count"},
+	}
+
+var RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields = ubx.FieldMap{
+		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
+		"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
+		"MaintenanceOnShutdown": ubx.FieldSpec{WireName: "maintenance_on_shutdown"},
+		"MaintenanceReasons": ubx.FieldSpec{WireName: "maintenance_reasons"},
+		"MaintenanceStatus": ubx.FieldSpec{WireName: "maintenance_status"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"WindowEndTime": ubx.FieldSpec{WireName: "window_end_time"},
+		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
+	}
+
+var RegionCommitment_Reservations_ResourceStatus_ReservationMaintenanceFields = ubx.FieldMap{
+		"InstanceMaintenanceOngoingCount": ubx.FieldSpec{WireName: "instance_maintenance_ongoing_count"},
+		"InstanceMaintenancePendingCount": ubx.FieldSpec{WireName: "instance_maintenance_pending_count"},
+		"MaintenanceOngoingCount": ubx.FieldSpec{WireName: "maintenance_ongoing_count"},
+		"MaintenancePendingCount": ubx.FieldSpec{WireName: "maintenance_pending_count"},
+		"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
+		"SubblockInfraMaintenanceOngoingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_ongoing_count"},
+		"SubblockInfraMaintenancePendingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_pending_count"},
+		"UpcomingGroupMaintenance": ubx.FieldSpec{
+			WireName: "upcoming_group_maintenance",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields,
+		},
+	}
+
+var RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocationFields = ubx.FieldMap{
+		"SourceInstanceTemplateId": ubx.FieldSpec{WireName: "source_instance_template_id"},
+		"Utilizations": ubx.FieldSpec{WireName: "utilizations"},
+	}
+
+var RegionCommitment_Reservations_ResourceStatusFields = ubx.FieldMap{
+		"HealthInfo": ubx.FieldSpec{
+			WireName: "health_info",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_HealthInfoFields,
+		},
+		"ReservationBlockCount": ubx.FieldSpec{WireName: "reservation_block_count"},
+		"ReservationMaintenance": ubx.FieldSpec{
+			WireName: "reservation_maintenance",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenanceFields,
+		},
+		"SpecificSkuAllocation": ubx.FieldSpec{
+			WireName: "specific_sku_allocation",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocationFields,
+		},
+	}
+
+var RegionCommitment_Reservations_ShareSettings_ProjectMapFields = ubx.FieldMap{
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	}
+
+var RegionCommitment_Reservations_ShareSettingsFields = ubx.FieldMap{
+		"ProjectMap": ubx.FieldSpec{
+			WireName: "project_map",
+			Kind: "map",
+			Fields: RegionCommitment_Reservations_ShareSettings_ProjectMapFields,
+		},
+		"ShareType": ubx.FieldSpec{WireName: "share_type"},
+	}
+
+var RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsdsFields = ubx.FieldMap{
+		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+		"Interface": ubx.FieldSpec{WireName: "interface"},
+	}
+
+var RegionCommitment_Reservations_SpecificReservation_InstancePropertiesFields = ubx.FieldMap{
+		"GuestAccelerators": ubx.FieldSpec{
+			WireName: "guest_accelerators",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
+		},
+		"LocalSsds": ubx.FieldSpec{
+			WireName: "local_ssds",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsdsFields,
+		},
+		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	}
+
+var RegionCommitment_Reservations_SpecificReservationFields = ubx.FieldMap{
+		"AssuredCount": ubx.FieldSpec{WireName: "assured_count"},
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"InUseCount": ubx.FieldSpec{WireName: "in_use_count"},
+		"InstanceProperties": ubx.FieldSpec{
+			WireName: "instance_properties",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_SpecificReservation_InstancePropertiesFields,
+		},
+		"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
+	}
+
+var RegionCommitment_ReservationsFields = ubx.FieldMap{
+		"AdvancedDeploymentControl": ubx.FieldSpec{
+			WireName: "advanced_deployment_control",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_AdvancedDeploymentControlFields,
+		},
+		"AggregateReservation": ubx.FieldSpec{
+			WireName: "aggregate_reservation",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_AggregateReservationFields,
+		},
+		"Commitment": ubx.FieldSpec{WireName: "commitment"},
+		"ConfidentialComputeType": ubx.FieldSpec{WireName: "confidential_compute_type"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+		"DeleteAfterDuration": ubx.FieldSpec{
+			WireName: "delete_after_duration",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_DeleteAfterDurationFields,
+		},
+		"DeleteAtTime": ubx.FieldSpec{WireName: "delete_at_time"},
+		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EarlyAccessMaintenance": ubx.FieldSpec{WireName: "early_access_maintenance"},
+		"EnableEmergentMaintenance": ubx.FieldSpec{WireName: "enable_emergent_maintenance"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"LinkedCommitments": ubx.FieldSpec{WireName: "linked_commitments"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Params": ubx.FieldSpec{
+			WireName: "params",
+			Kind: "object",
+			Fields: RegionCommitment_ParamsFields,
+		},
+		"ProtectionTier": ubx.FieldSpec{WireName: "protection_tier"},
+		"ReservationSharingPolicy": ubx.FieldSpec{
+			WireName: "reservation_sharing_policy",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ReservationSharingPolicyFields,
+		},
+		"ResourceMetadata": ubx.FieldSpec{
+			WireName: "resource_metadata",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceMetadataFields,
+		},
+		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
+		"ResourceStatus": ubx.FieldSpec{
+			WireName: "resource_status",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatusFields,
+		},
+		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"ShareSettings": ubx.FieldSpec{
+			WireName: "share_settings",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ShareSettingsFields,
+		},
+		"SpecificReservation": ubx.FieldSpec{
+			WireName: "specific_reservation",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_SpecificReservationFields,
+		},
+		"SpecificReservationRequired": ubx.FieldSpec{WireName: "specific_reservation_required"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
+
+var RegionCommitment_ResourceStatusFields = ubx.FieldMap{
+		"CustomTermEligibilityEndTimestamp": ubx.FieldSpec{WireName: "custom_term_eligibility_end_timestamp"},
+	}
+
 var RegionCommitment_ResourcesFields = ubx.FieldMap{
 		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
 		"Amount": ubx.FieldSpec{WireName: "amount"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	}
 
-var RegionCommitment_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-	}
-
 type RegionCommitmentConfig struct {
+	// Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
 	AutoRenew any
+	// The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
 	Category any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+	CustomEndTimestamp any
+	// An optional description of the commitment. You can provide this property when you create the resource.
 	Description any
+	// Output only. [Output Only] Commitment end time inRFC3339 text format.
+	EndTimestamp any
+	// The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred)
 	ExistingReservations any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	Name any
-	Plan any
-	Project any
-	Region any
-	Type any
+	// Output only. [Output Only] Type of the resource. Always compute#commitment for commitments.
+	Kind any
+	// Commitment for a particular license resource.
 	LicenseResource any
+	// The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+	MergeSourceCommitments any
+	// Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Additional commitment params.
 	Params any
+	// The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
+	Plan any
+	// Output only. [Output Only] URL of the region where the commitment and committed resources are located.
+	Region any
+	// The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
+	Reservations any
+	// [Output Only] Contains output only fields.
+	ResourceStatus any
+	// The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
 	Resources any
-	Timeouts any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+	SplitSourceCommitment any
+	// Output only. [Output Only] Commitment start time inRFC3339 text format.
+	StartTimestamp any
+	// Output only. [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
+	Status any
+	// Output only. [Output Only] An optional, human-readable explanation of the status.
+	StatusMessage any
+	// The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,GRAPHICS_OPTIMIZED_G4_VGPU,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+	Type any
+}
+
+type RegionCommitmentAttrs struct {
+	// Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
+	AutoRenew any
+	// The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
+	Category any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
+	CustomEndTimestamp any
+	// An optional description of the commitment. You can provide this property when you create the resource.
+	Description any
+	// Output only. [Output Only] Commitment end time inRFC3339 text format.
+	EndTimestamp any
+	// The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred)
+	ExistingReservations any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of the resource. Always compute#commitment for commitments.
+	Kind any
+	// Commitment for a particular license resource.
+	LicenseResource any
+	// The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
+	MergeSourceCommitments any
+	// Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Additional commitment params.
+	Params any
+	// The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
+	Plan any
+	// Output only. [Output Only] URL of the region where the commitment and committed resources are located.
+	Region any
+	// The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
+	Reservations any
+	// [Output Only] Contains output only fields.
+	ResourceStatus any
+	// The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
+	Resources any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
+	SplitSourceCommitment any
+	// Output only. [Output Only] Commitment start time inRFC3339 text format.
+	StartTimestamp any
+	// Output only. [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
+	Status any
+	// Output only. [Output Only] An optional, human-readable explanation of the status.
+	StatusMessage any
+	// The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,GRAPHICS_OPTIMIZED_G4_VGPU,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
+	Type any
 }
 
 var RegionCommitment = ubx.ResourceBinding{
@@ -67,33 +572,47 @@ var RegionCommitment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoRenew": ubx.FieldSpec{WireName: "auto_renew"},
 		"Category": ubx.FieldSpec{WireName: "category"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+		"CustomEndTimestamp": ubx.FieldSpec{WireName: "custom_end_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
+		"EndTimestamp": ubx.FieldSpec{WireName: "end_timestamp"},
 		"ExistingReservations": ubx.FieldSpec{WireName: "existing_reservations"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Plan": ubx.FieldSpec{WireName: "plan"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"LicenseResource": ubx.FieldSpec{
 			WireName: "license_resource",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionCommitment_LicenseResourceFields,
 		},
+		"MergeSourceCommitments": ubx.FieldSpec{WireName: "merge_source_commitments"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionCommitment_ParamsFields,
+		},
+		"Plan": ubx.FieldSpec{WireName: "plan"},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"Reservations": ubx.FieldSpec{
+			WireName: "reservations",
+			Kind: "list",
+			Fields: RegionCommitment_ReservationsFields,
+		},
+		"ResourceStatus": ubx.FieldSpec{
+			WireName: "resource_status",
+			Kind: "object",
+			Fields: RegionCommitment_ResourceStatusFields,
 		},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
 			Kind: "list",
 			Fields: RegionCommitment_ResourcesFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: RegionCommitment_TimeoutsFields,
-		},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SplitSourceCommitment": ubx.FieldSpec{WireName: "split_source_commitment"},
+		"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

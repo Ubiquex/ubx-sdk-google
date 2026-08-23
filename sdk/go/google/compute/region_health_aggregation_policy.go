@@ -3,45 +3,74 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RegionHealthAggregationPolicy_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type RegionHealthAggregationPolicyConfig struct {
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a HealthAggregationPolicy. An up-to-date fingerprint must be provided in order to patch the HealthAggregationPolicy; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the HealthAggregationPolicy.
+	Fingerprint any
+	// Can only be set if the policyType field isBACKEND_SERVICE_POLICY. Specifies the threshold (as a percentage) of healthy endpoints required in order to consider the aggregated health result HEALTHY. Defaults to 60. Must be in range [0, 100]. Not applicable if the policyType field isDNB_PUBLIC_IP_POLICY. Can be mutated. This field is optional, and will be set to the default if unspecified. Note that both this threshold and minHealthyThreshold must be satisfied in order for HEALTHY to be the aggregated result. "Endpoints" refers to network endpoints within a Network Endpoint Group or instances within an Instance Group.
+	HealthyPercentThreshold any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#healthAggregationPolicy for health aggregation policies.
+	Kind any
+	// Can only be set if the policyType field isBACKEND_SERVICE_POLICY. Specifies the minimum number of healthy endpoints required in order to consider the aggregated health result HEALTHY. Defaults to 1. Must be positive. Not applicable if the policyType field isDNB_PUBLIC_IP_POLICY. Can be mutated. This field is optional, and will be set to the default if unspecified. Note that both this threshold and healthyPercentThreshold must be satisfied in order for HEALTHY to be the aggregated result. "Endpoints" refers to network endpoints within a Network Endpoint Group or instances within an Instance Group.
+	MinHealthyThreshold any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Specifies the type of the healthAggregationPolicy. The only allowed value for global resources is DNS_PUBLIC_IP_POLICY. The only allowed value for regional resources is BACKEND_SERVICE_POLICY. Must be specified when the healthAggregationPolicy is created, and cannot be mutated.
+	PolicyType any
+	// Output only. [Output Only] URL of the region where the health aggregation policy resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+	Region any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL with id for the resource.
+	SelfLinkWithId any
 }
 
-var RegionHealthAggregationPolicy_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type RegionHealthAggregationPolicyConfig struct {
-	DeletionPolicy any
+type RegionHealthAggregationPolicyAttrs struct {
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a HealthAggregationPolicy. An up-to-date fingerprint must be provided in order to patch the HealthAggregationPolicy; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the HealthAggregationPolicy.
+	Fingerprint any
+	// Can only be set if the policyType field isBACKEND_SERVICE_POLICY. Specifies the threshold (as a percentage) of healthy endpoints required in order to consider the aggregated health result HEALTHY. Defaults to 60. Must be in range [0, 100]. Not applicable if the policyType field isDNB_PUBLIC_IP_POLICY. Can be mutated. This field is optional, and will be set to the default if unspecified. Note that both this threshold and minHealthyThreshold must be satisfied in order for HEALTHY to be the aggregated result. "Endpoints" refers to network endpoints within a Network Endpoint Group or instances within an Instance Group.
 	HealthyPercentThreshold any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#healthAggregationPolicy for health aggregation policies.
+	Kind any
+	// Can only be set if the policyType field isBACKEND_SERVICE_POLICY. Specifies the minimum number of healthy endpoints required in order to consider the aggregated health result HEALTHY. Defaults to 1. Must be positive. Not applicable if the policyType field isDNB_PUBLIC_IP_POLICY. Can be mutated. This field is optional, and will be set to the default if unspecified. Note that both this threshold and healthyPercentThreshold must be satisfied in order for HEALTHY to be the aggregated result. "Endpoints" refers to network endpoints within a Network Endpoint Group or instances within an Instance Group.
 	MinHealthyThreshold any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
+	// Specifies the type of the healthAggregationPolicy. The only allowed value for global resources is DNS_PUBLIC_IP_POLICY. The only allowed value for regional resources is BACKEND_SERVICE_POLICY. Must be specified when the healthAggregationPolicy is created, and cannot be mutated.
 	PolicyType any
-	Project any
+	// Output only. [Output Only] URL of the region where the health aggregation policy resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any
-	Timeouts any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// Output only. [Output Only] Server-defined URL with id for the resource.
+	SelfLinkWithId any
 }
 
 var RegionHealthAggregationPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_region_health_aggregation_policy",
 	Fields: ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"HealthyPercentThreshold": ubx.FieldSpec{WireName: "healthy_percent_threshold"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"MinHealthyThreshold": ubx.FieldSpec{WireName: "min_healthy_threshold"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"Project": ubx.FieldSpec{WireName: "project"},
 		"Region": ubx.FieldSpec{WireName: "region"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: RegionHealthAggregationPolicy_TimeoutsFields,
-		},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
 	},
 }

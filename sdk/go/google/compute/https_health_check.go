@@ -3,53 +3,79 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type HttpsHealthCheck_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type HttpsHealthCheckConfig struct {
+	// How often (in seconds) to send a health check. The default value is 5 seconds.
+	CheckIntervalSec any
+	// [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
+	HealthyThreshold any
+	// The value of the host header in the HTTPS health check request. If left empty (default value), the public IP on behalf of which this health check is performed will be used.
+	Host any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. Type of the resource.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// The TCP port number for the HTTPS health check request. The default value is 443.
+	Port any
+	// The request path of the HTTPS health check request. The default value is "/". Must comply withRFC3986.
+	RequestPath any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have a greater value than checkIntervalSec.
+	TimeoutSec any
+	// A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
+	UnhealthyThreshold any
 }
 
-var HttpsHealthCheck_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type HttpsHealthCheckConfig struct {
+type HttpsHealthCheckAttrs struct {
+	// How often (in seconds) to send a health check. The default value is 5 seconds.
 	CheckIntervalSec any
-	DeletionPolicy any
+	// [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
 	HealthyThreshold any
+	// The value of the host header in the HTTPS health check request. If left empty (default value), the public IP on behalf of which this health check is performed will be used.
 	Host any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
+	// Output only. Type of the resource.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
+	// The TCP port number for the HTTPS health check request. The default value is 443.
 	Port any
-	Project any
+	// The request path of the HTTPS health check request. The default value is "/". Must comply withRFC3986.
 	RequestPath any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have a greater value than checkIntervalSec.
 	TimeoutSec any
+	// A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
 	UnhealthyThreshold any
-	Timeouts any
 }
 
 var HttpsHealthCheck = ubx.ResourceBinding{
 	WireType: "google_compute_https_health_check",
 	Fields: ubx.FieldMap{
 		"CheckIntervalSec": ubx.FieldSpec{WireName: "check_interval_sec"},
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
 		"Host": ubx.FieldSpec{WireName: "host"},
 		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Port": ubx.FieldSpec{WireName: "port"},
-		"Project": ubx.FieldSpec{WireName: "project"},
 		"RequestPath": ubx.FieldSpec{WireName: "request_path"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
 		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: HttpsHealthCheck_TimeoutsFields,
-		},
 	},
 }
