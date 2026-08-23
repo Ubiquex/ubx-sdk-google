@@ -26,125 +26,173 @@ class SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdC
 
 @dataclasses.dataclass
 class SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig:
+    # If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
     enable: Any = None
+    # Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
     rule_visibility: Any = None
+    # Configuration options for layer7 adaptive protection for various customizable thresholds.
     threshold_configs: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_AdaptiveProtectionConfig:
-    layer_7_ddos_defense_config: Any = None
+    # Configuration options for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
+    layer7_ddos_defense_config: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig:
+    # A list of custom Content-Type header values to apply the JSON parsing. As per RFC 1341, a Content-Type header value has the following format: Content-Type := type "/" subtype *[";" parameter] When configuring a custom Content-Type header value, only the type/subtype needs to be specified, and the parameters should be excluded.
     content_types: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_AdvancedOptionsConfig:
+    json_custom_config: Any = None
     json_parsing: Any = None
     log_level: Any = None
+    # The maximum request size chosen by the customer with Waf enabled. Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case insensitive.
     request_body_inspection_size: Any = None
+    # An optional list of case-insensitive request header names to use for resolving the callers client IP address.
     user_ip_request_headers: Any = None
-    json_custom_config: Any = None
+
+@dataclasses.dataclass
+class SecurityPolicy_Associations:
+    attachment_id: Any = None
+    display_name: Any = None
+    excluded_folders: Any = None
+    excluded_projects: Any = None
+    name: Any = None
+    security_policy_id: Any = None
+    short_name: Any = None
+
+@dataclasses.dataclass
+class SecurityPolicy_DdosProtectionConfig:
+    ddos_adaptive_protection: Any = None
+    # DDoS Protection for Network Load Balancers (and VMs with public IPs) builds DDoS mitigations that minimize collateral damage. It quantifies this as the fraction of a non-abuse baseline that's inadvertently blocked. Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will not be deployed. Using a lower value will prioritize keeping collateral damage low, possibly at the cost of its effectiveness in rate limiting some or all of the attack. It should typically be unset, so Advanced DDoS (and Adaptive Protection) uses the best mitigation it can find. Setting the threshold is advised if there are logs for false positive detections with high collateral damage, and will cause Advanced DDoS to attempt to find a less aggressive rule that satisfies the constraint. If a suitable rule cannot be found, the system falls back to either no mitigation for smaller attacks or broader network throttles for larger ones.
+    ddos_impacted_baseline_threshold: Any = None
+    ddos_protection: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_RecaptchaOptionsConfig:
+    # An optional field to supply a reCAPTCHA site key to be used for all the rules using the redirect action with the type of GOOGLE_RECAPTCHA under the security policy. The specified site key needs to be created from the reCAPTCHA API. The user is responsible for the validity of the specified site key. If not specified, a Google-managed site key is used. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
     redirect_site_key: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_HeaderAction_RequestHeadersToAdds:
+class SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds:
     header_name: Any = None
     header_value: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_HeaderAction:
+class SecurityPolicy_Rules_HeaderAction:
     request_headers_to_adds: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_Match_Config:
+class SecurityPolicy_Rules_Match_Config:
     src_ip_ranges: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_Match_Expr:
+class SecurityPolicy_Rules_Match_Expr:
+    description: Any = None
     expression: Any = None
+    location: Any = None
+    title: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_Match_ExprOptions_RecaptchaOptions:
+class SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions:
     action_token_site_keys: Any = None
     session_token_site_keys: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_Match_ExprOptions:
+class SecurityPolicy_Rules_Match_ExprOptions:
     recaptcha_options: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_Match:
-    versioned_expr: Any = None
+class SecurityPolicy_Rules_Match:
     config: Any = None
     expr: Any = None
     expr_options: Any = None
+    versioned_expr: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookie:
-    operator: Any = None
-    value: Any = None
+class SecurityPolicy_Rules_NetworkMatch_UserDefinedFields:
+    name: Any = None
+    values: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion:
+class SecurityPolicy_Rules_NetworkMatch:
+    dest_ip_ranges: Any = None
+    dest_ports: Any = None
+    ip_protocols: Any = None
+    src_asns: Any = None
+    src_ip_ranges: Any = None
+    src_ports: Any = None
+    src_region_codes: Any = None
+    user_defined_fields: Any = None
+
+@dataclasses.dataclass
+class SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude:
+    op: Any = None
+    val: Any = None
+
+@dataclasses.dataclass
+class SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions:
+    request_cookies_to_exclude: Any = None
+    request_headers_to_exclude: Any = None
+    request_query_params_to_exclude: Any = None
+    request_uris_to_exclude: Any = None
     target_rule_ids: Any = None
     target_rule_set: Any = None
-    request_cookie: Any = None
-    request_header: Any = None
-    request_query_param: Any = None
-    request_uri: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_PreconfiguredWafConfig:
-    exclusion: Any = None
+class SecurityPolicy_Rules_PreconfiguredWafConfig:
+    exclusions: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_RateLimitOptions_BanThreshold:
+class SecurityPolicy_Rules_RateLimitOptions_BanThreshold:
     count: Any = None
     interval_sec: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_RateLimitOptions_EnforceOnKeyConfigs:
+class SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs:
     enforce_on_key_name: Any = None
     enforce_on_key_type: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptions:
+class SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions:
     target: Any = None
     type: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule_RateLimitOptions:
+class SecurityPolicy_Rules_RateLimitOptions:
     ban_duration_sec: Any = None
+    ban_threshold: Any = None
     conform_action: Any = None
     enforce_on_key: Any = None
+    enforce_on_key_configs: Any = None
     enforce_on_key_name: Any = None
     exceed_action: Any = None
-    ban_threshold: Any = None
-    enforce_on_key_configs: Any = None
     exceed_redirect_options: Any = None
     rate_limit_threshold: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Rule:
+class SecurityPolicy_Rules:
     action: Any = None
     description: Any = None
+    header_action: Any = None
+    kind: Any = None
+    match: Any = None
+    network_match: Any = None
+    preconfigured_waf_config: Any = None
     preview: Any = None
     priority: Any = None
-    header_action: Any = None
-    match: Any = None
-    preconfigured_waf_config: Any = None
     rate_limit_options: Any = None
     redirect_options: Any = None
 
 @dataclasses.dataclass
-class SecurityPolicy_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class SecurityPolicy_UserDefinedFields:
+    base: Any = None
+    mask: Any = None
+    name: Any = None
+    offset: Any = None
+    size: Any = None
 
 _SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigsFields = {
     "enable_each_unique_value": ubx.FieldSpec(wire_name="enable_each_unique_value"),
@@ -179,9 +227,9 @@ _SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfigFields = {
 }
 
 _SecurityPolicy_AdaptiveProtectionConfigFields = {
-    "layer_7_ddos_defense_config": ubx.FieldSpec(
-        wire_name="layer_7_ddos_defense_config",
-        kind="list",
+    "layer7_ddos_defense_config": ubx.FieldSpec(
+        wire_name="layer7_ddos_defense_config",
+        kind="object",
         fields=_SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfigFields,
     ),
 }
@@ -191,242 +239,370 @@ _SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields = {
 }
 
 _SecurityPolicy_AdvancedOptionsConfigFields = {
+    "json_custom_config": ubx.FieldSpec(
+        wire_name="json_custom_config",
+        kind="object",
+        fields=_SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields,
+    ),
     "json_parsing": ubx.FieldSpec(wire_name="json_parsing"),
     "log_level": ubx.FieldSpec(wire_name="log_level"),
     "request_body_inspection_size": ubx.FieldSpec(wire_name="request_body_inspection_size"),
     "user_ip_request_headers": ubx.FieldSpec(wire_name="user_ip_request_headers"),
-    "json_custom_config": ubx.FieldSpec(
-        wire_name="json_custom_config",
-        kind="list",
-        fields=_SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields,
-    ),
+}
+
+_SecurityPolicy_AssociationsFields = {
+    "attachment_id": ubx.FieldSpec(wire_name="attachment_id"),
+    "display_name": ubx.FieldSpec(wire_name="display_name"),
+    "excluded_folders": ubx.FieldSpec(wire_name="excluded_folders"),
+    "excluded_projects": ubx.FieldSpec(wire_name="excluded_projects"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "security_policy_id": ubx.FieldSpec(wire_name="security_policy_id"),
+    "short_name": ubx.FieldSpec(wire_name="short_name"),
+}
+
+_SecurityPolicy_DdosProtectionConfigFields = {
+    "ddos_adaptive_protection": ubx.FieldSpec(wire_name="ddos_adaptive_protection"),
+    "ddos_impacted_baseline_threshold": ubx.FieldSpec(wire_name="ddos_impacted_baseline_threshold"),
+    "ddos_protection": ubx.FieldSpec(wire_name="ddos_protection"),
 }
 
 _SecurityPolicy_RecaptchaOptionsConfigFields = {
     "redirect_site_key": ubx.FieldSpec(wire_name="redirect_site_key"),
 }
 
-_SecurityPolicy_Rule_HeaderAction_RequestHeadersToAddsFields = {
+_SecurityPolicy_Rules_HeaderAction_RequestHeadersToAddsFields = {
     "header_name": ubx.FieldSpec(wire_name="header_name"),
     "header_value": ubx.FieldSpec(wire_name="header_value"),
 }
 
-_SecurityPolicy_Rule_HeaderActionFields = {
+_SecurityPolicy_Rules_HeaderActionFields = {
     "request_headers_to_adds": ubx.FieldSpec(
         wire_name="request_headers_to_adds",
         kind="list",
-        fields=_SecurityPolicy_Rule_HeaderAction_RequestHeadersToAddsFields,
+        fields=_SecurityPolicy_Rules_HeaderAction_RequestHeadersToAddsFields,
     ),
 }
 
-_SecurityPolicy_Rule_Match_ConfigFields = {
+_SecurityPolicy_Rules_Match_ConfigFields = {
     "src_ip_ranges": ubx.FieldSpec(wire_name="src_ip_ranges"),
 }
 
-_SecurityPolicy_Rule_Match_ExprFields = {
+_SecurityPolicy_Rules_Match_ExprFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
     "expression": ubx.FieldSpec(wire_name="expression"),
+    "location": ubx.FieldSpec(wire_name="location"),
+    "title": ubx.FieldSpec(wire_name="title"),
 }
 
-_SecurityPolicy_Rule_Match_ExprOptions_RecaptchaOptionsFields = {
+_SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptionsFields = {
     "action_token_site_keys": ubx.FieldSpec(wire_name="action_token_site_keys"),
     "session_token_site_keys": ubx.FieldSpec(wire_name="session_token_site_keys"),
 }
 
-_SecurityPolicy_Rule_Match_ExprOptionsFields = {
+_SecurityPolicy_Rules_Match_ExprOptionsFields = {
     "recaptcha_options": ubx.FieldSpec(
         wire_name="recaptcha_options",
-        kind="list",
-        fields=_SecurityPolicy_Rule_Match_ExprOptions_RecaptchaOptionsFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptionsFields,
     ),
 }
 
-_SecurityPolicy_Rule_MatchFields = {
-    "versioned_expr": ubx.FieldSpec(wire_name="versioned_expr"),
+_SecurityPolicy_Rules_MatchFields = {
     "config": ubx.FieldSpec(
         wire_name="config",
-        kind="list",
-        fields=_SecurityPolicy_Rule_Match_ConfigFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_Match_ConfigFields,
     ),
     "expr": ubx.FieldSpec(
         wire_name="expr",
-        kind="list",
-        fields=_SecurityPolicy_Rule_Match_ExprFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_Match_ExprFields,
     ),
     "expr_options": ubx.FieldSpec(
         wire_name="expr_options",
+        kind="object",
+        fields=_SecurityPolicy_Rules_Match_ExprOptionsFields,
+    ),
+    "versioned_expr": ubx.FieldSpec(wire_name="versioned_expr"),
+}
+
+_SecurityPolicy_Rules_NetworkMatch_UserDefinedFieldsFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "values": ubx.FieldSpec(wire_name="values"),
+}
+
+_SecurityPolicy_Rules_NetworkMatchFields = {
+    "dest_ip_ranges": ubx.FieldSpec(wire_name="dest_ip_ranges"),
+    "dest_ports": ubx.FieldSpec(wire_name="dest_ports"),
+    "ip_protocols": ubx.FieldSpec(wire_name="ip_protocols"),
+    "src_asns": ubx.FieldSpec(wire_name="src_asns"),
+    "src_ip_ranges": ubx.FieldSpec(wire_name="src_ip_ranges"),
+    "src_ports": ubx.FieldSpec(wire_name="src_ports"),
+    "src_region_codes": ubx.FieldSpec(wire_name="src_region_codes"),
+    "user_defined_fields": ubx.FieldSpec(
+        wire_name="user_defined_fields",
         kind="list",
-        fields=_SecurityPolicy_Rule_Match_ExprOptionsFields,
+        fields=_SecurityPolicy_Rules_NetworkMatch_UserDefinedFieldsFields,
     ),
 }
 
-_SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields = {
-    "operator": ubx.FieldSpec(wire_name="operator"),
-    "value": ubx.FieldSpec(wire_name="value"),
+_SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields = {
+    "op": ubx.FieldSpec(wire_name="op"),
+    "val": ubx.FieldSpec(wire_name="val"),
 }
 
-_SecurityPolicy_Rule_PreconfiguredWafConfig_ExclusionFields = {
+_SecurityPolicy_Rules_PreconfiguredWafConfig_ExclusionsFields = {
+    "request_cookies_to_exclude": ubx.FieldSpec(
+        wire_name="request_cookies_to_exclude",
+        kind="list",
+        fields=_SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+    ),
+    "request_headers_to_exclude": ubx.FieldSpec(
+        wire_name="request_headers_to_exclude",
+        kind="list",
+        fields=_SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+    ),
+    "request_query_params_to_exclude": ubx.FieldSpec(
+        wire_name="request_query_params_to_exclude",
+        kind="list",
+        fields=_SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+    ),
+    "request_uris_to_exclude": ubx.FieldSpec(
+        wire_name="request_uris_to_exclude",
+        kind="list",
+        fields=_SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+    ),
     "target_rule_ids": ubx.FieldSpec(wire_name="target_rule_ids"),
     "target_rule_set": ubx.FieldSpec(wire_name="target_rule_set"),
-    "request_cookie": ubx.FieldSpec(
-        wire_name="request_cookie",
+}
+
+_SecurityPolicy_Rules_PreconfiguredWafConfigFields = {
+    "exclusions": ubx.FieldSpec(
+        wire_name="exclusions",
         kind="list",
-        fields=_SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
-    ),
-    "request_header": ubx.FieldSpec(
-        wire_name="request_header",
-        kind="list",
-        fields=_SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
-    ),
-    "request_query_param": ubx.FieldSpec(
-        wire_name="request_query_param",
-        kind="list",
-        fields=_SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
-    ),
-    "request_uri": ubx.FieldSpec(
-        wire_name="request_uri",
-        kind="list",
-        fields=_SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
+        fields=_SecurityPolicy_Rules_PreconfiguredWafConfig_ExclusionsFields,
     ),
 }
 
-_SecurityPolicy_Rule_PreconfiguredWafConfigFields = {
-    "exclusion": ubx.FieldSpec(
-        wire_name="exclusion",
-        kind="list",
-        fields=_SecurityPolicy_Rule_PreconfiguredWafConfig_ExclusionFields,
-    ),
-}
-
-_SecurityPolicy_Rule_RateLimitOptions_BanThresholdFields = {
+_SecurityPolicy_Rules_RateLimitOptions_BanThresholdFields = {
     "count": ubx.FieldSpec(wire_name="count"),
     "interval_sec": ubx.FieldSpec(wire_name="interval_sec"),
 }
 
-_SecurityPolicy_Rule_RateLimitOptions_EnforceOnKeyConfigsFields = {
+_SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigsFields = {
     "enforce_on_key_name": ubx.FieldSpec(wire_name="enforce_on_key_name"),
     "enforce_on_key_type": ubx.FieldSpec(wire_name="enforce_on_key_type"),
 }
 
-_SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptionsFields = {
+_SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields = {
     "target": ubx.FieldSpec(wire_name="target"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_SecurityPolicy_Rule_RateLimitOptionsFields = {
+_SecurityPolicy_Rules_RateLimitOptionsFields = {
     "ban_duration_sec": ubx.FieldSpec(wire_name="ban_duration_sec"),
-    "conform_action": ubx.FieldSpec(wire_name="conform_action"),
-    "enforce_on_key": ubx.FieldSpec(wire_name="enforce_on_key"),
-    "enforce_on_key_name": ubx.FieldSpec(wire_name="enforce_on_key_name"),
-    "exceed_action": ubx.FieldSpec(wire_name="exceed_action"),
     "ban_threshold": ubx.FieldSpec(
         wire_name="ban_threshold",
-        kind="list",
-        fields=_SecurityPolicy_Rule_RateLimitOptions_BanThresholdFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
     ),
+    "conform_action": ubx.FieldSpec(wire_name="conform_action"),
+    "enforce_on_key": ubx.FieldSpec(wire_name="enforce_on_key"),
     "enforce_on_key_configs": ubx.FieldSpec(
         wire_name="enforce_on_key_configs",
         kind="list",
-        fields=_SecurityPolicy_Rule_RateLimitOptions_EnforceOnKeyConfigsFields,
+        fields=_SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigsFields,
     ),
+    "enforce_on_key_name": ubx.FieldSpec(wire_name="enforce_on_key_name"),
+    "exceed_action": ubx.FieldSpec(wire_name="exceed_action"),
     "exceed_redirect_options": ubx.FieldSpec(
         wire_name="exceed_redirect_options",
-        kind="list",
-        fields=_SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptionsFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
     ),
     "rate_limit_threshold": ubx.FieldSpec(
         wire_name="rate_limit_threshold",
-        kind="list",
-        fields=_SecurityPolicy_Rule_RateLimitOptions_BanThresholdFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
     ),
 }
 
-_SecurityPolicy_RuleFields = {
+_SecurityPolicy_RulesFields = {
     "action": ubx.FieldSpec(wire_name="action"),
     "description": ubx.FieldSpec(wire_name="description"),
-    "preview": ubx.FieldSpec(wire_name="preview"),
-    "priority": ubx.FieldSpec(wire_name="priority"),
     "header_action": ubx.FieldSpec(
         wire_name="header_action",
-        kind="list",
-        fields=_SecurityPolicy_Rule_HeaderActionFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_HeaderActionFields,
     ),
+    "kind": ubx.FieldSpec(wire_name="kind"),
     "match": ubx.FieldSpec(
         wire_name="match",
-        kind="list",
-        fields=_SecurityPolicy_Rule_MatchFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_MatchFields,
+    ),
+    "network_match": ubx.FieldSpec(
+        wire_name="network_match",
+        kind="object",
+        fields=_SecurityPolicy_Rules_NetworkMatchFields,
     ),
     "preconfigured_waf_config": ubx.FieldSpec(
         wire_name="preconfigured_waf_config",
-        kind="list",
-        fields=_SecurityPolicy_Rule_PreconfiguredWafConfigFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_PreconfiguredWafConfigFields,
     ),
+    "preview": ubx.FieldSpec(wire_name="preview"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
     "rate_limit_options": ubx.FieldSpec(
         wire_name="rate_limit_options",
-        kind="list",
-        fields=_SecurityPolicy_Rule_RateLimitOptionsFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_RateLimitOptionsFields,
     ),
     "redirect_options": ubx.FieldSpec(
         wire_name="redirect_options",
-        kind="list",
-        fields=_SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptionsFields,
+        kind="object",
+        fields=_SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
     ),
 }
 
-_SecurityPolicy_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_SecurityPolicy_UserDefinedFieldsFields = {
+    "base": ubx.FieldSpec(wire_name="base"),
+    "mask": ubx.FieldSpec(wire_name="mask"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "offset": ubx.FieldSpec(wire_name="offset"),
+    "size": ubx.FieldSpec(wire_name="size"),
 }
 
 @dataclasses.dataclass
 class SecurityPolicyConfig:
-    deletion_policy: Any = None
-    description: Any = None
-    id: Any = None
-    labels: Any = None
-    name: Any = None
-    project: Any = None
-    type: Any = None
+    # Configuration options for Cloud Armor Adaptive Protection (CAAP).
     adaptive_protection_config: Any = None
     advanced_options_config: Any = None
+    # A list of associations that belong to this policy.
+    associations: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    ddos_protection_config: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+    fingerprint: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
+    kind: Any = None
+    # A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+    label_fingerprint: Any = None
+    # Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
+    labels: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Output only. [Output Only] The parent of the security policy.
+    parent: Any = None
     recaptcha_options_config: Any = None
-    rule: Any = None
-    timeouts: Any = None
+    # Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+    region: Any = None
+    # A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+    rules: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    short_name: Any = None
+    # The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+    type: Any = None
+    # Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+    user_defined_fields: Any = None
+
+@dataclasses.dataclass
+class SecurityPolicyAttrs:
+    # Configuration options for Cloud Armor Adaptive Protection (CAAP).
+    adaptive_protection_config: Any = None
+    advanced_options_config: Any = None
+    # A list of associations that belong to this policy.
+    associations: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    ddos_protection_config: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy.
+    fingerprint: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
+    kind: Any = None
+    # A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy.
+    label_fingerprint: Any = None
+    # Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
+    labels: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Output only. [Output Only] The parent of the security policy.
+    parent: Any = None
+    recaptcha_options_config: Any = None
+    # Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
+    region: Any = None
+    # A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
+    rules: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    short_name: Any = None
+    # The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time.
+    type: Any = None
+    # Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff"
+    user_defined_fields: Any = None
 
 SecurityPolicy = ubx.ResourceBinding(
     wire_type="google_compute_security_policy",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "type": ubx.FieldSpec(wire_name="type"),
         "adaptive_protection_config": ubx.FieldSpec(
             wire_name="adaptive_protection_config",
-            kind="list",
+            kind="object",
             fields=_SecurityPolicy_AdaptiveProtectionConfigFields,
         ),
         "advanced_options_config": ubx.FieldSpec(
             wire_name="advanced_options_config",
-            kind="list",
+            kind="object",
             fields=_SecurityPolicy_AdvancedOptionsConfigFields,
         ),
+        "associations": ubx.FieldSpec(
+            wire_name="associations",
+            kind="list",
+            fields=_SecurityPolicy_AssociationsFields,
+        ),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
+        "ddos_protection_config": ubx.FieldSpec(
+            wire_name="ddos_protection_config",
+            kind="object",
+            fields=_SecurityPolicy_DdosProtectionConfigFields,
+        ),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "label_fingerprint": ubx.FieldSpec(wire_name="label_fingerprint"),
+        "labels": ubx.FieldSpec(wire_name="labels"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parent": ubx.FieldSpec(wire_name="parent"),
         "recaptcha_options_config": ubx.FieldSpec(
             wire_name="recaptcha_options_config",
-            kind="list",
+            kind="object",
             fields=_SecurityPolicy_RecaptchaOptionsConfigFields,
         ),
-        "rule": ubx.FieldSpec(
-            wire_name="rule",
-            kind="set",
-            fields=_SecurityPolicy_RuleFields,
+        "region": ubx.FieldSpec(wire_name="region"),
+        "rules": ubx.FieldSpec(
+            wire_name="rules",
+            kind="list",
+            fields=_SecurityPolicy_RulesFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_SecurityPolicy_TimeoutsFields,
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "short_name": ubx.FieldSpec(wire_name="short_name"),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "user_defined_fields": ubx.FieldSpec(
+            wire_name="user_defined_fields",
+            kind="list",
+            fields=_SecurityPolicy_UserDefinedFieldsFields,
         ),
     },
 )

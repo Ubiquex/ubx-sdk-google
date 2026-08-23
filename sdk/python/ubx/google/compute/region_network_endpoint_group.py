@@ -8,29 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegionNetworkEndpointGroup_AppEngine:
+    # Optional serving service. The service name is case-sensitive and must be 1-63 characters long. Example value: default, my-service.
     service: Any = None
+    # An URL mask is one of the main components of the Cloud Function. A template to parse service and version fields from a request URL. URL mask allows for routing to multiple App Engine services without having to create multiple Network Endpoint Groups and backend services. For example, the request URLsfoo1-dot-appname.appspot.com/v1 andfoo1-dot-appname.appspot.com/v2 can be backed by the same Serverless NEG with URL mask<service>-dot-appname.appspot.com/<version>. The URL mask will parse them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively.
     url_mask: Any = None
+    # Optional serving version. The version name is case-sensitive and must be 1-100 characters long. Example value: v1, v2.
     version: Any = None
 
 @dataclasses.dataclass
 class RegionNetworkEndpointGroup_CloudFunction:
+    # A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: func1.
     function: Any = None
+    # An URL mask is one of the main components of the Cloud Function. A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs mydomain.com/function1 andmydomain.com/function2 can be backed by the same Serverless NEG with URL mask /<function>. The URL mask will parse them to { function = "function1" } and{ function = "function2" } respectively.
     url_mask: Any = None
 
 @dataclasses.dataclass
 class RegionNetworkEndpointGroup_CloudRun:
+    # Cloud Run service is the main resource of Cloud Run. The service must be 1-63 characters long, and comply withRFC1035. Example value: "run-service".
     service: Any = None
+    # Optional Cloud Run tag represents the "named-revision" to provide additional fine-grained traffic routing information. The tag must be 1-63 characters long, and comply withRFC1035. Example value: "revision-0010".
     tag: Any = None
+    # An URL mask is one of the main components of the Cloud Function. A template to parse <service> and<tag> fields from a request URL. URL mask allows for routing to multiple Run services without having to create multiple network endpoint groups and backend services. For example, request URLs foo1.domain.com/bar1 andfoo1.domain.com/bar2 can be backed by the same Serverless Network Endpoint Group (NEG) with URL mask<tag>.domain.com/<service>. The URL mask will parse them to { service="bar1", tag="foo1" } and { service="bar2", tag="foo2" } respectively.
     url_mask: Any = None
 
 @dataclasses.dataclass
 class RegionNetworkEndpointGroup_PscData:
+    # Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in L7 PSC-XLB.
+    consumer_psc_address: Any = None
+    # The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
     producer_port: Any = None
-
-@dataclasses.dataclass
-class RegionNetworkEndpointGroup_Timeouts:
-    create: Any = None
-    delete: Any = None
+    # Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group Consumer.
+    psc_connection_id: Any = None
+    # Output only. [Output Only] The connection status of the PSC Forwarding Rule.
+    psc_connection_status: Any = None
 
 _RegionNetworkEndpointGroup_AppEngineFields = {
     "service": ubx.FieldSpec(wire_name="service"),
@@ -50,69 +60,131 @@ _RegionNetworkEndpointGroup_CloudRunFields = {
 }
 
 _RegionNetworkEndpointGroup_PscDataFields = {
+    "consumer_psc_address": ubx.FieldSpec(wire_name="consumer_psc_address"),
     "producer_port": ubx.FieldSpec(wire_name="producer_port"),
-}
-
-_RegionNetworkEndpointGroup_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+    "psc_connection_id": ubx.FieldSpec(wire_name="psc_connection_id"),
+    "psc_connection_status": ubx.FieldSpec(wire_name="psc_connection_status"),
 }
 
 @dataclasses.dataclass
 class RegionNetworkEndpointGroupConfig:
-    deletion_policy: Any = None
-    description: Any = None
-    id: Any = None
-    name: Any = None
-    network: Any = None
-    network_endpoint_type: Any = None
-    project: Any = None
-    psc_target_service: Any = None
-    region: Any = None
-    subnetwork: Any = None
+    # Optional. Metadata defined as annotations on the network endpoint group.
+    annotations: Any = None
+    # Configuration for an App Engine network endpoint group (NEG). The service is optional, may be provided explicitly or in the URL mask. The version is optional and can only be provided explicitly or in the URL mask when service is present. Note: App Engine service must be in the same project and located in the same region as the Serverless NEG.
     app_engine: Any = None
+    # Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
     cloud_function: Any = None
+    # Configuration for a Cloud Run network endpoint group (NEG). The service must be provided explicitly or in the URL mask. The tag is optional, may be provided explicitly or in the URL mask. Note: Cloud Run service must be in the same project and located in the same region as the Serverless NEG.
     cloud_run: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP,SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+    default_port: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+    kind: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # The URL of the network to which all network endpoints in the NEG belong. For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT, if this field is not specified, a default network will be used. This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for global NEGs. For all other network endpoint types, this field is required.
+    network: Any = None
+    # Type of network endpoints in this network endpoint group. Can be one ofGCE_VM_IP, GCE_VM_IP_PORT,NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT,INTERNET_IP_PORT, SERVERLESS,PRIVATE_SERVICE_CONNECT, GCE_VM_IP_PORTMAP.
+    network_endpoint_type: Any = None
+    # All data that is specifically relevant to only network endpoint groups of type PRIVATE_SERVICE_CONNECT.
     psc_data: Any = None
-    timeouts: Any = None
+    # The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType isPRIVATE_SERVICE_CONNECT.
+    psc_target_service: Any = None
+    # Output only. [Output Only] The URL of theregion where the network endpoint group is located.
+    region: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Output only. [Output only] Number of network endpoints in the network endpoint group.
+    size: Any = None
+    # Optional URL of the subnetwork to which all network endpoints in the NEG belong.
+    subnetwork: Any = None
+    # Output only. [Output Only] The URL of thezone where the network endpoint group is located.
+    zone: Any = None
+
+@dataclasses.dataclass
+class RegionNetworkEndpointGroupAttrs:
+    # Optional. Metadata defined as annotations on the network endpoint group.
+    annotations: Any = None
+    # Configuration for an App Engine network endpoint group (NEG). The service is optional, may be provided explicitly or in the URL mask. The version is optional and can only be provided explicitly or in the URL mask when service is present. Note: App Engine service must be in the same project and located in the same region as the Serverless NEG.
+    app_engine: Any = None
+    # Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG.
+    cloud_function: Any = None
+    # Configuration for a Cloud Run network endpoint group (NEG). The service must be provided explicitly or in the URL mask. The tag is optional, may be provided explicitly or in the URL mask. Note: Cloud Run service must be in the same project and located in the same region as the Serverless NEG.
+    cloud_run: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP,SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
+    default_port: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+    kind: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # The URL of the network to which all network endpoints in the NEG belong. For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT, if this field is not specified, a default network will be used. This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for global NEGs. For all other network endpoint types, this field is required.
+    network: Any = None
+    # Type of network endpoints in this network endpoint group. Can be one ofGCE_VM_IP, GCE_VM_IP_PORT,NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT,INTERNET_IP_PORT, SERVERLESS,PRIVATE_SERVICE_CONNECT, GCE_VM_IP_PORTMAP.
+    network_endpoint_type: Any = None
+    # All data that is specifically relevant to only network endpoint groups of type PRIVATE_SERVICE_CONNECT.
+    psc_data: Any = None
+    # The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType isPRIVATE_SERVICE_CONNECT.
+    psc_target_service: Any = None
+    # Output only. [Output Only] The URL of theregion where the network endpoint group is located.
+    region: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Output only. [Output only] Number of network endpoints in the network endpoint group.
+    size: Any = None
+    # Optional URL of the subnetwork to which all network endpoints in the NEG belong.
+    subnetwork: Any = None
+    # Output only. [Output Only] The URL of thezone where the network endpoint group is located.
+    zone: Any = None
 
 RegionNetworkEndpointGroup = ubx.ResourceBinding(
     wire_type="google_compute_region_network_endpoint_group",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "network": ubx.FieldSpec(wire_name="network"),
-        "network_endpoint_type": ubx.FieldSpec(wire_name="network_endpoint_type"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "psc_target_service": ubx.FieldSpec(wire_name="psc_target_service"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "subnetwork": ubx.FieldSpec(wire_name="subnetwork"),
+        "annotations": ubx.FieldSpec(wire_name="annotations"),
         "app_engine": ubx.FieldSpec(
             wire_name="app_engine",
-            kind="list",
+            kind="object",
             fields=_RegionNetworkEndpointGroup_AppEngineFields,
         ),
         "cloud_function": ubx.FieldSpec(
             wire_name="cloud_function",
-            kind="list",
+            kind="object",
             fields=_RegionNetworkEndpointGroup_CloudFunctionFields,
         ),
         "cloud_run": ubx.FieldSpec(
             wire_name="cloud_run",
-            kind="list",
+            kind="object",
             fields=_RegionNetworkEndpointGroup_CloudRunFields,
         ),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
+        "default_port": ubx.FieldSpec(wire_name="default_port"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "network": ubx.FieldSpec(wire_name="network"),
+        "network_endpoint_type": ubx.FieldSpec(wire_name="network_endpoint_type"),
         "psc_data": ubx.FieldSpec(
             wire_name="psc_data",
-            kind="list",
+            kind="object",
             fields=_RegionNetworkEndpointGroup_PscDataFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_RegionNetworkEndpointGroup_TimeoutsFields,
-        ),
+        "psc_target_service": ubx.FieldSpec(wire_name="psc_target_service"),
+        "region": ubx.FieldSpec(wire_name="region"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "size": ubx.FieldSpec(wire_name="size"),
+        "subnetwork": ubx.FieldSpec(wire_name="subnetwork"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

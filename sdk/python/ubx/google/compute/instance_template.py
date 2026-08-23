@@ -7,168 +7,410 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class InstanceTemplate_AdvancedMachineFeatures:
+class InstanceTemplate_Properties_AdvancedMachineFeatures:
+    # Whether to enable nested virtualization or not (default is false).
     enable_nested_virtualization: Any = None
+    # Whether to enable UEFI networking for instance creation.
     enable_uefi_networking: Any = None
+    # Type of Performance Monitoring Unit requested on instance.
     performance_monitoring_unit: Any = None
+    # The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
     threads_per_core: Any = None
+    # Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
     turbo_mode: Any = None
+    # The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
     visible_core_count: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_ConfidentialInstanceConfig:
+class InstanceTemplate_Properties_ConfidentialInstanceConfig:
+    # Defines the type of technology used by the confidential instance.
     confidential_instance_type: Any = None
+    # Defines whether the instance should have confidential compute enabled.
     enable_confidential_compute: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_Disk_DiskEncryptionKey:
-    kms_key_self_link: Any = None
+class InstanceTemplate_Properties_Disks_DiskEncryptionKey:
+    # The fully qualified Cloud KMS key name used to encrypt the disk, such as projects/{{project}}/locations/{{location}}/keyRings/{{key_ring}}/cryptoKeys/{{key}}. (AI-inferred)
+    kms_key_name: Any = None
+    # The service account used to access the Cloud KMS key for disk encryption. If not specified, the Compute Engine Service Agent is used. (AI-inferred)
     kms_key_service_account: Any = None
-
-@dataclasses.dataclass
-class InstanceTemplate_Disk_SourceImageEncryptionKey:
-    kms_key_self_link: Any = None
-    kms_key_service_account: Any = None
+    # The raw customer-supplied encryption key, a base64-encoded 256-bit key, used to encrypt the disk. This key must be kept secret and is not retrievable after creation. (AI-inferred)
     raw_key: Any = None
+    # The RSA-encrypted customer-supplied encryption key, base64-encoded. This key is used to encrypt the disk and must be a 256-bit key encrypted with Google's public RSA key. (AI-inferred)
     rsa_encrypted_key: Any = None
+    # The SHA256 hash of the raw disk encryption key. This is used to verify the key integrity and is often computed by Google Cloud when a raw_key is provided, but it can also be supplied to match a specific key. (AI-inferred)
+    sha256: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_Disk:
+class InstanceTemplate_Properties_Disks_GuestOsFeatures:
+    # The type of guest OS feature to enable. Allowed values: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_Properties_Disks_InitializeParams:
+    # The architecture of the disk image to use for the boot volume. Valid values are ARM64 and X86_64; ARCHITECTURE_UNSPECIFIED indicates that the architecture is not set. (AI-inferred)
     architecture: Any = None
-    auto_delete: Any = None
-    boot: Any = None
-    device_name: Any = None
+    # The description of the disk that will be created from these initialization parameters. (AI-inferred)
+    description: Any = None
+    # Specifies the name of the disk to create. If not provided, a name is automatically generated based on the instance name. (AI-inferred)
     disk_name: Any = None
+    # The size of the disk in gigabytes. If not specified, the default size is the size of the source image or snapshot. (AI-inferred)
     disk_size_gb: Any = None
+    # The type of disk to provision, such as 'pd-standard' or 'pd-ssd'. Can be specified as a full or partial URL to a disk type resource. (AI-inferred)
     disk_type: Any = None
-    guest_os_features: Any = None
-    interface: Any = None
+    # Enable Confidential Compute mode for this disk. When enabled, the disk uses a hardware-based secure environment and supports confidential VM features. Defaults to false. (AI-inferred)
+    enable_confidential_compute: Any = None
+    # A set of key-value pairs to label the disk created from this initialization configuration. Labels can be used for organizing and identifying the disk. (AI-inferred)
     labels: Any = None
-    mode: Any = None
+    licenses: Any = None
+    # Specifies the update action to take when the disk configuration changes. Allowed values are 'RECREATE_DISK', 'RECREATE_DISK_IF_SOURCE_CHANGED', and 'USE_EXISTING_DISK', controlling whether to recreate the disk, recreate only if the source changed, or keep the existing disk. (AI-inferred)
+    on_update_action: Any = None
+    # Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle, relevant for performance optimization of persistent disks. (AI-inferred)
     provisioned_iops: Any = None
+    # The provisioned throughput for the disk, in MB/s, used to configure performance for supported disk types (e.g., Hyperdisk Throughput). Value is provided as a string. (AI-inferred)
     provisioned_throughput: Any = None
+    # Specifies the zones for a regional persistent disk. The disk is replicated to these zones. Only applicable when creating a regional persistent disk. (AI-inferred)
+    replica_zones: Any = None
+    # A map of resource manager tags to apply to the disk. Keys are resource manager tag key IDs (format: tagKeys/1234) and values are resource manager tag value IDs (format: tagValues/5678). (AI-inferred)
     resource_manager_tags: Any = None
+    # List of resource policies (e.g., snapshot schedule policies) to attach to the disk. These policies define automated operations such as scheduled snapshots. (AI-inferred)
     resource_policies: Any = None
-    source: Any = None
+    # The image to use for this disk, specified as a fully-qualified URL, self-link, or name. (AI-inferred)
     source_image: Any = None
-    source_snapshot: Any = None
-    storage_pool: Any = None
-    type: Any = None
-    disk_encryption_key: Any = None
+    # The customer-supplied encryption key used to decrypt the source image when creating the disk. This is required if the source image is encrypted with a customer-supplied encryption key. (AI-inferred)
     source_image_encryption_key: Any = None
+    # Specifies the source snapshot to use to create the disk. If provided, the disk is initialized from the snapshot. The snapshot can be specified as a full URL, partial URL, or name. (AI-inferred)
+    source_snapshot: Any = None
+    # The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-managed encryption key, used to decrypt the snapshot when initializing the disk. (AI-inferred)
     source_snapshot_encryption_key: Any = None
+    # The URL of the storage pool in which the disk is created. When set, the disk is provisioned from the named storage pool, which must exist in the same project and zone as the instance template. (AI-inferred)
+    storage_pool: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_GuestAccelerator:
-    count: Any = None
+class InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_Dbs:
+    # The base64-encoded content of the DB file (e.g., a certificate or key) used in the shielded instance initial state for this disk. (AI-inferred)
+    content: Any = None
+    # The file type of the database entry in the shielded instance initial state. Allowed values are BIN, X509, and UNDEFINED. (AI-inferred)
+    file_type: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState:
+    dbs: Any = None
+    # The list of DBX (database exchange) entries for the shielded instance's UEFI secure boot. These entries define the forbidden database used to revoke untrusted certificates or manifests during integrity verification. (AI-inferred)
+    dbxs: Any = None
+    # The Key Exchange Key (KEK) for the shielded instance's initial state. This is a list of objects, each specifying a KEK file's content and file type. (AI-inferred)
+    keks: Any = None
+    # The Platform Key (PK) of the shielded VM's initial state, which serves as the root of trust for the UEFI secure boot process. (AI-inferred)
+    pk: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_Properties_Disks:
+    # Specifies the CPU architecture of the disk, used for the boot image. Allowed values are ARCHITECTURE_UNSPECIFIED (default), ARM64, and X86_64. (AI-inferred)
+    architecture: Any = None
+    # Indicates whether the disk should be automatically deleted when the instance is deleted. Defaults to false if not specified. (AI-inferred)
+    auto_delete: Any = None
+    # Whether this disk is the boot disk for the instance. Only one disk can be marked as boot. (AI-inferred)
+    boot: Any = None
+    # The name of the disk device as exposed to the guest operating system. This can be used to reference the disk inside the instance. (AI-inferred)
+    device_name: Any = None
+    # The customer-supplied encryption key for the disk. This object configures how the disk is encrypted, typically using a raw key or a Cloud KMS key. (AI-inferred)
+    disk_encryption_key: Any = None
+    # The size of the disk in gigabytes, specified as a string (e.g., "10"). If omitted, the size is taken from the source image or snapshot. (AI-inferred)
+    disk_size_gb: Any = None
+    # If set to true, the disk will be attached even if it is currently in use by another instance. (AI-inferred)
+    force_attach: Any = None
+    # List of features to enable for the guest operating system on this disk. Each object in the list specifies a feature via its `type` field, such as `UEFI_COMPATIBLE` or `VIRTIO_SCSI_MULTIQUEUE`, which allows the disk to support advanced guest OS capabilities. (AI-inferred)
+    guest_os_features: Any = None
+    # The zero-based index of this disk. The boot disk must have index 0. (AI-inferred)
+    index: Any = None
+    # Specifies the parameters for initializing the disk, such as the source image, disk size, and disk type. (AI-inferred)
+    initialize_params: Any = None
+    # Specifies the disk interface type. Allowed values are 'SCSI' and 'NVME'. (AI-inferred)
+    interface: Any = None
+    # The type of resource. For an attached disk in an instance template, this is always 'compute#attachedDisk'. (AI-inferred)
+    kind: Any = None
+    # List of license URIs that apply to the disk, typically derived from the source image or snapshot. (AI-inferred)
+    licenses: Any = None
+    # Specifies the access mode of the disk. Valid values are READ_ONLY (attaches the disk as read-only) and READ_WRITE (attaches the disk with read-write access). (AI-inferred)
+    mode: Any = None
+    # The saved state of the disk when the instance is stopped. Allowed values are DISK_SAVED_STATE_UNSPECIFIED (default) and PRESERVED. (AI-inferred)
+    saved_state: Any = None
+    # Sets the initial state for shielded VM features on the boot disk, such as secure boot, vTPM, and integrity monitoring. This object configures which Shielded VM settings are enabled when the disk is used to boot a shielded instance. (AI-inferred)
+    shielded_instance_initial_state: Any = None
+    # The name or fully qualified URL of the source disk, image, or snapshot used to create the disk. (AI-inferred)
+    source: Any = None
+    # The type of disk to attach. Valid values are PERSISTENT for a standard persistent disk and SCRATCH for a local SSD. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_NetworkInterface_AccessConfig:
-    nat_ip: Any = None
-    network_tier: Any = None
-    public_ptr_domain_name: Any = None
+class InstanceTemplate_Properties_GuestAccelerators:
+    # The number of accelerators of the specified type to attach to the instance. (AI-inferred)
+    accelerator_count: Any = None
+    # The name of the accelerator type to attach, such as 'nvidia-tesla-k80' or 'nvidia-tesla-p100'. Example: 'nvidia-tesla-k80'. (AI-inferred)
+    accelerator_type: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_NetworkInterface_AliasIpRange:
+class InstanceTemplate_Properties_Metadata_Items:
+    # The key of the metadata item, used to set custom metadata on the instance template. (AI-inferred)
+    key: Any = None
+    # The value of the metadata item, corresponding to the metadata key in the instance template's metadata. (AI-inferred)
+    value: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_Properties_Metadata:
+    # Specifies a fingerprint for this request, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the resource.
+    fingerprint: Any = None
+    # Array of key/value pairs. The total size of all keys and values must be less than 512 KB.
+    items: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#metadata for metadata.
+    kind: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_Properties_NetworkInterfaces_AccessConfigs:
+    # The external IPv6 address assigned to the instance's network interface access config. If omitted, an ephemeral IPv6 address is automatically assigned. (AI-inferred)
+    external_ipv6: Any = None
+    # The prefix length of the external IPv6 address assigned to the instance. In Google Cloud, the only supported value is 96. (AI-inferred)
+    external_ipv6_prefix_length: Any = None
+    # The type of resource. For an access config, this is always 'compute#accessConfig'. (AI-inferred)
+    kind: Any = None
+    # The name of the access configuration. Defaults to 'external-nat' if not specified. (AI-inferred)
+    name: Any = None
+    # The external IP address to assign to the instance. If not specified, an ephemeral IP address is automatically assigned. (AI-inferred)
+    nat_ip: Any = None
+    # The network service tier for the access config. Accepted values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD. (AI-inferred)
+    network_tier: Any = None
+    # The public DNS domain name to be used for the reverse DNS (PTR) record of the external IP address associated with this access config. Must be a valid DNS name. (AI-inferred)
+    public_ptr_domain_name: Any = None
+    # The URL of a Cloud Armor security policy to apply to this access config. This policy filters traffic to the external IP address of the instance. (AI-inferred)
+    security_policy: Any = None
+    # If true, a public DNS PTR record is set for the external IP address of this access config, enabling reverse DNS lookup. Defaults to false. (AI-inferred)
+    set_public_ptr: Any = None
+    # The type of access configuration. Valid values are DIRECT_IPV6 for direct IPv6 access and ONE_TO_ONE_NAT for static external IP address (NAT). (AI-inferred)
+    type: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_Properties_NetworkInterfaces_AliasIpRanges:
+    # The IP CIDR range for this alias IP range, in CIDR notation (e.g., '10.0.0.0/24'). (AI-inferred)
     ip_cidr_range: Any = None
+    # The name of a secondary IP range in the subnetwork to allocate IP addresses from for this alias IP range. If not specified, the primary IP range of the subnetwork is used. (AI-inferred)
     subnetwork_range_name: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_NetworkInterface_Ipv6AccessConfig:
-    external_ipv6: Any = None
-    external_ipv6_prefix_length: Any = None
-    name: Any = None
-    network_tier: Any = None
-    public_ptr_domain_name: Any = None
-
-@dataclasses.dataclass
-class InstanceTemplate_NetworkInterface:
+class InstanceTemplate_Properties_NetworkInterfaces:
+    # A list of access configurations for the network interface. Each access config assigns a public IP address to the instance, enabling external connectivity, and can include settings such as the NAT IP and network tier. (AI-inferred)
+    access_configs: Any = None
+    # Alias IP ranges for this network interface. Each object in the list specifies a CIDR range (ip_cidr_range) and optionally a subnetwork range name (subnetwork_range_name) to assign as an alias IP range. (AI-inferred)
+    alias_ip_ranges: Any = None
+    alias_ipv6_ranges: Any = None
+    # Enables VPC-scoped DNS for this network interface, allowing DNS queries to use the VPC's DNS configuration and policies. (AI-inferred)
+    enable_vpc_scoped_dns: Any = None
+    # The fingerprint of the network interface configuration, generated by the API and used for optimistic locking. It changes whenever the interface settings are modified. (AI-inferred)
+    fingerprint: Any = None
+    # Whether IGMP query is enabled on this network interface. Valid values are `IGMP_QUERY_DISABLED` (no IGMP queries) and `IGMP_QUERY_V2` (enable IGMP v2 queries). (AI-inferred)
     igmp_query: Any = None
+    # The prefix length of the internal IPv6 address assigned to the network interface, such as 64 for a /64 subnetwork. (AI-inferred)
     internal_ipv6_prefix_length: Any = None
+    # The IPv6 access configurations for this network interface. Each configuration assigns an external IPv6 address to the interface, enabling IPv6 internet access, with only one access config supported per interface. (AI-inferred)
+    ipv6_access_configs: Any = None
+    # Specifies the access type for IPv6 addresses on this network interface. Set to EXTERNAL for an external IPv6 address, or INTERNAL for an internal IPv6 address. (AI-inferred)
     ipv6_access_type: Any = None
+    # The IPv6 address to assign to the network interface. This is used to specify a static IPv6 address for the interface. (AI-inferred)
     ipv6_address: Any = None
+    # The type of the resource. Always 'compute#networkInterface'. (AI-inferred)
+    kind: Any = None
     name: Any = None
+    # The name or self_link of the VPC network to attach this interface to. Either `network` or `subnetwork` is required; if you specify `subnetwork`, `network` is inferred. (AI-inferred)
     network: Any = None
+    # URL of the network attachment resource to which this network interface attaches. If specified, it overrides the network and subnetwork fields, and is used for the network attachment type of network interface. (AI-inferred)
     network_attachment: Any = None
+    # The private IPv4 address to assign to this network interface. If not set, an ephemeral address is automatically assigned. (AI-inferred)
     network_ip: Any = None
+    # Specifies the type of network interface card (NIC) to use for the interface. Allowed values are GVNIC, IDPF, IRDMA, MRDMA, UNSPECIFIED_NIC_TYPE, and VIRTIO_NET. (AI-inferred)
     nic_type: Any = None
     parent_nic_name: Any = None
+    # The number of queues to use for this network interface. A value of 0 indicates the default number of queues (one per vCPU). The value must be a power of 2 and cannot exceed the instance's vCPU count. (AI-inferred)
     queue_count: Any = None
+    service_class_id: Any = None
+    # The IP stack type for this network interface. Valid values are IPV4_IPV6 (dual-stack), IPV4_ONLY, and IPV6_ONLY. (AI-inferred)
     stack_type: Any = None
+    # The name or self-link of the subnetwork to which the network interface is attached. If not specified, the default subnetwork of the specified network is used. (AI-inferred)
     subnetwork: Any = None
-    subnetwork_project: Any = None
     vlan: Any = None
-    access_config: Any = None
-    alias_ip_range: Any = None
-    ipv6_access_config: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_NetworkPerformanceConfig:
+class InstanceTemplate_Properties_NetworkPerformanceConfig:
+    # The egress bandwidth tier to enable for the instance's network performance configuration. Allowed values are DEFAULT and TIER_1. (AI-inferred)
     total_egress_bandwidth_tier: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_ReservationAffinity_SpecificReservation:
+class InstanceTemplate_Properties_ReservationAffinity:
+    # Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default),SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+    consume_reservation_type: Any = None
+    # Corresponds to the label key of a reservation resource. To target aSPECIFIC_RESERVATION by name, specifygoogleapis.com/reservation-name as the key and specify the name of your reservation as its value.
     key: Any = None
+    # Corresponds to the label values of a reservation resource. This can be either a name to a reservation in the same project or "projects/different-project/reservations/some-reservation-name" to target a shared reservation in the same zone but in a different project.
     values: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_ReservationAffinity:
-    type: Any = None
-    specific_reservation: Any = None
-
-@dataclasses.dataclass
-class InstanceTemplate_Scheduling_LocalSsdRecoveryTimeout:
+class InstanceTemplate_Properties_Scheduling_GracefulShutdown_MaxDuration:
+    # Span of time that's a fraction of a second at nanosecond resolution. Durations less than one second are represented with a 0 `seconds` field and a positive `nanos` field. Must be from 0 to 999,999,999 inclusive.
     nanos: Any = None
+    # Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
     seconds: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_Scheduling_NodeAffinities:
+class InstanceTemplate_Properties_Scheduling_GracefulShutdown:
+    # Opts-in for graceful shutdown.
+    enabled: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    max_duration: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_Properties_Scheduling_NodeAffinities:
+    # The label key for the node affinity requirement. This is the key of a node label used to match nodes. (AI-inferred)
     key: Any = None
+    # Specifies the operator for the node affinity expression. Valid values are IN, NOT_IN, and OPERATOR_UNSPECIFIED. (AI-inferred)
     operator: Any = None
+    # The list of node affinity values. These values are matched against the key and operator to determine the scheduling constraint, e.g., the node group names when key is 'node-group-name'. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_Scheduling_OnInstanceStopAction:
+class InstanceTemplate_Properties_Scheduling_OnInstanceStopAction:
+    # If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
     discard_local_ssd: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_Scheduling:
+class InstanceTemplate_Properties_Scheduling:
+    # Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances.Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
     automatic_restart: Any = None
+    # Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
     availability_domain: Any = None
+    # The configuration for gracefully shutting down the instance.
+    graceful_shutdown: Any = None
+    # Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+    host_error_timeout_seconds: Any = None
+    # Specifies the termination action for the instance.
     instance_termination_action: Any = None
-    min_node_cpus: Any = None
-    on_host_maintenance: Any = None
-    preemptible: Any = None
-    provisioning_model: Any = None
-    termination_time: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     local_ssd_recovery_timeout: Any = None
+    # An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+    location_hint: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     max_run_duration: Any = None
+    # The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+    min_node_cpus: Any = None
+    # A set of node affinity and anti-affinity configurations. Refer toConfiguring node affinity for more information. Overrides reservationAffinity.
     node_affinities: Any = None
+    # Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. Forpreemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+    on_host_maintenance: Any = None
+    # Defines the behaviour for instances with the instance_termination_actionSTOP.
     on_instance_stop_action: Any = None
+    # Defines whether the instance is preemptible. This can only be set during instance creation or while the instance isstopped and therefore, in a `TERMINATED` state. SeeInstance Life Cycle for more information on the possible instance states.
+    preemptible: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    preemption_notice_duration: Any = None
+    # Specifies the provisioning model of the instance.
+    provisioning_model: Any = None
+    # Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+    skip_guest_os_shutdown: Any = None
+    # Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+    termination_time: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_ServiceAccount:
+class InstanceTemplate_Properties_ServiceAccounts:
+    # The email address of the service account to associate with the instance. If not provided, the default Compute Engine service account is used. (AI-inferred)
     email: Any = None
+    # A list of OAuth scopes to associate with the service account for the instance. For example, 'cloud-platform' gives full access, while 'storage-ro' grants read-only access to Cloud Storage. (AI-inferred)
     scopes: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_ShieldedInstanceConfig:
+class InstanceTemplate_Properties_ShieldedInstanceConfig:
+    # Defines whether the instance has integrity monitoring enabled.Enabled by default.
     enable_integrity_monitoring: Any = None
+    # Defines whether the instance has Secure Boot enabled.Disabled by default.
     enable_secure_boot: Any = None
+    # Defines whether the instance has the vTPM enabled.Enabled by default.
     enable_vtpm: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_Timeouts:
-    create: Any = None
-    delete: Any = None
+class InstanceTemplate_Properties_Tags:
+    # Specifies a fingerprint for this request, which is essentially a hash of the tags' contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update tags. You must always provide an up-to-date fingerprint hash in order to update or change tags. To see the latest fingerprint, make get() request to the instance.
+    fingerprint: Any = None
+    # An array of tags. Each tag must be 1-63 characters long, and comply with RFC1035.
+    items: Any = None
 
 @dataclasses.dataclass
-class InstanceTemplate_WorkloadIdentityConfig:
+class InstanceTemplate_Properties_WorkloadIdentityConfig:
+    # The service account email to use as the workload identity for the instance. If omitted, the default Compute Engine service account is used. (AI-inferred)
     identity: Any = None
+    # Whether the identity certificate is enabled for this workload identity configuration. (AI-inferred)
     identity_certificate_enabled: Any = None
 
-_InstanceTemplate_AdvancedMachineFeaturesFields = {
+@dataclasses.dataclass
+class InstanceTemplate_Properties:
+    # Specifies options for controlling advanced machine features. Options that would traditionally be configured in a BIOS belong here. Features that require operating system support may have corresponding entries in the GuestOsFeatures of anImage (e.g., whether or not the OS in theImage supports nested virtualization being enabled or disabled).
+    advanced_machine_features: Any = None
+    # Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set tofalse. See theEnable IP forwarding documentation for more information.
+    can_ip_forward: Any = None
+    # A set of Confidential Instance options.
+    confidential_instance_config: Any = None
+    # An optional text description for the instances that are created from these properties.
+    description: Any = None
+    # An array of disks that are associated with the instances that are created from these properties.
+    disks: Any = None
+    # A list of guest accelerator cards' type and count to use for instances created from these properties.
+    guest_accelerators: Any = None
+    # KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+    key_revocation_action_type: Any = None
+    # Labels to apply to instances that are created from these properties.
+    labels: Any = None
+    # Specifies which method should be used for encrypting the Local SSDs attached to the VM.
+    local_ssd_encryption_mode: Any = None
+    # The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+    machine_type: Any = None
+    # A metadata key/value entry.
+    metadata: Any = None
+    # Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+    min_cpu_platform: Any = None
+    # An array of network access configurations for this interface.
+    network_interfaces: Any = None
+    # Configuration block for network performance settings, including the total egress bandwidth tier which can be set to 'DEFAULT' or 'TIER_1'. (AI-inferred)
+    network_performance_config: Any = None
+    # The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+    private_ipv6_google_access: Any = None
+    # Specifies the reservations that this instance can consume from.
+    reservation_affinity: Any = None
+    # Input only. Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty.
+    resource_manager_tags: Any = None
+    # Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+    resource_policies: Any = None
+    # Sets the scheduling options for an Instance.
+    scheduling: Any = None
+    # A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+    service_accounts: Any = None
+    # A set of Shielded Instance options.
+    shielded_instance_config: Any = None
+    # A set of instance tags.
+    tags: Any = None
+    workload_identity_config: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_SourceInstanceParams_DiskConfigs:
+    # Whether the disk will be auto-deleted when the instance is deleted. When set in source_instance_params.disk_configs, this overrides the corresponding property from the source instance. (AI-inferred)
+    auto_delete: Any = None
+    # The custom image to use for this disk when creating the instance template from a source instance. If specified, this overrides the image of the corresponding source disk. (AI-inferred)
+    custom_image: Any = None
+    # The device name of the disk in the source instance to which this disk configuration applies. (AI-inferred)
+    device_name: Any = None
+    # Specifies how the disk is created from the source instance's disk. Valid values are ATTACH_READ_ONLY (attach read-only), BLANK (create a blank disk), CUSTOM_IMAGE (create from a custom image), DEFAULT (use default behavior), DO_NOT_INCLUDE (exclude the disk), SOURCE_IMAGE (create from the source image), and SOURCE_IMAGE_FAMILY (create from the source image family). (AI-inferred)
+    instantiate_from: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplate_SourceInstanceParams:
+    # Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, the source images for each disk will be used. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+    disk_configs: Any = None
+
+_InstanceTemplate_Properties_AdvancedMachineFeaturesFields = {
     "enable_nested_virtualization": ubx.FieldSpec(wire_name="enable_nested_virtualization"),
     "enable_uefi_networking": ubx.FieldSpec(wire_name="enable_uefi_networking"),
     "performance_monitoring_unit": ubx.FieldSpec(wire_name="performance_monitoring_unit"),
@@ -177,90 +419,184 @@ _InstanceTemplate_AdvancedMachineFeaturesFields = {
     "visible_core_count": ubx.FieldSpec(wire_name="visible_core_count"),
 }
 
-_InstanceTemplate_ConfidentialInstanceConfigFields = {
+_InstanceTemplate_Properties_ConfidentialInstanceConfigFields = {
     "confidential_instance_type": ubx.FieldSpec(wire_name="confidential_instance_type"),
     "enable_confidential_compute": ubx.FieldSpec(wire_name="enable_confidential_compute"),
 }
 
-_InstanceTemplate_Disk_DiskEncryptionKeyFields = {
-    "kms_key_self_link": ubx.FieldSpec(wire_name="kms_key_self_link"),
-    "kms_key_service_account": ubx.FieldSpec(wire_name="kms_key_service_account"),
-}
-
-_InstanceTemplate_Disk_SourceImageEncryptionKeyFields = {
-    "kms_key_self_link": ubx.FieldSpec(wire_name="kms_key_self_link"),
+_InstanceTemplate_Properties_Disks_DiskEncryptionKeyFields = {
+    "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
     "kms_key_service_account": ubx.FieldSpec(wire_name="kms_key_service_account"),
     "raw_key": ubx.FieldSpec(wire_name="raw_key"),
     "rsa_encrypted_key": ubx.FieldSpec(wire_name="rsa_encrypted_key"),
+    "sha256": ubx.FieldSpec(wire_name="sha256"),
 }
 
-_InstanceTemplate_DiskFields = {
+_InstanceTemplate_Properties_Disks_GuestOsFeaturesFields = {
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_InstanceTemplate_Properties_Disks_InitializeParamsFields = {
+    "architecture": ubx.FieldSpec(wire_name="architecture"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "disk_name": ubx.FieldSpec(wire_name="disk_name"),
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "disk_type": ubx.FieldSpec(wire_name="disk_type"),
+    "enable_confidential_compute": ubx.FieldSpec(wire_name="enable_confidential_compute"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
+    "licenses": ubx.FieldSpec(wire_name="licenses"),
+    "on_update_action": ubx.FieldSpec(wire_name="on_update_action"),
+    "provisioned_iops": ubx.FieldSpec(wire_name="provisioned_iops"),
+    "provisioned_throughput": ubx.FieldSpec(wire_name="provisioned_throughput"),
+    "replica_zones": ubx.FieldSpec(wire_name="replica_zones"),
+    "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
+    "resource_policies": ubx.FieldSpec(wire_name="resource_policies"),
+    "source_image": ubx.FieldSpec(wire_name="source_image"),
+    "source_image_encryption_key": ubx.FieldSpec(
+        wire_name="source_image_encryption_key",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Disks_DiskEncryptionKeyFields,
+    ),
+    "source_snapshot": ubx.FieldSpec(wire_name="source_snapshot"),
+    "source_snapshot_encryption_key": ubx.FieldSpec(
+        wire_name="source_snapshot_encryption_key",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Disks_DiskEncryptionKeyFields,
+    ),
+    "storage_pool": ubx.FieldSpec(wire_name="storage_pool"),
+}
+
+_InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_DbsFields = {
+    "content": ubx.FieldSpec(wire_name="content"),
+    "file_type": ubx.FieldSpec(wire_name="file_type"),
+}
+
+_InstanceTemplate_Properties_Disks_ShieldedInstanceInitialStateFields = {
+    "dbs": ubx.FieldSpec(
+        wire_name="dbs",
+        kind="list",
+        fields=_InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_DbsFields,
+    ),
+    "dbxs": ubx.FieldSpec(
+        wire_name="dbxs",
+        kind="list",
+        fields=_InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_DbsFields,
+    ),
+    "keks": ubx.FieldSpec(
+        wire_name="keks",
+        kind="list",
+        fields=_InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_DbsFields,
+    ),
+    "pk": ubx.FieldSpec(
+        wire_name="pk",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_DbsFields,
+    ),
+}
+
+_InstanceTemplate_Properties_DisksFields = {
     "architecture": ubx.FieldSpec(wire_name="architecture"),
     "auto_delete": ubx.FieldSpec(wire_name="auto_delete"),
     "boot": ubx.FieldSpec(wire_name="boot"),
     "device_name": ubx.FieldSpec(wire_name="device_name"),
-    "disk_name": ubx.FieldSpec(wire_name="disk_name"),
-    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
-    "disk_type": ubx.FieldSpec(wire_name="disk_type"),
-    "guest_os_features": ubx.FieldSpec(wire_name="guest_os_features"),
-    "interface": ubx.FieldSpec(wire_name="interface"),
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "mode": ubx.FieldSpec(wire_name="mode"),
-    "provisioned_iops": ubx.FieldSpec(wire_name="provisioned_iops"),
-    "provisioned_throughput": ubx.FieldSpec(wire_name="provisioned_throughput"),
-    "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
-    "resource_policies": ubx.FieldSpec(wire_name="resource_policies"),
-    "source": ubx.FieldSpec(wire_name="source"),
-    "source_image": ubx.FieldSpec(wire_name="source_image"),
-    "source_snapshot": ubx.FieldSpec(wire_name="source_snapshot"),
-    "storage_pool": ubx.FieldSpec(wire_name="storage_pool"),
-    "type": ubx.FieldSpec(wire_name="type"),
     "disk_encryption_key": ubx.FieldSpec(
         wire_name="disk_encryption_key",
-        kind="list",
-        fields=_InstanceTemplate_Disk_DiskEncryptionKeyFields,
+        kind="object",
+        fields=_InstanceTemplate_Properties_Disks_DiskEncryptionKeyFields,
     ),
-    "source_image_encryption_key": ubx.FieldSpec(
-        wire_name="source_image_encryption_key",
+    "disk_size_gb": ubx.FieldSpec(wire_name="disk_size_gb"),
+    "force_attach": ubx.FieldSpec(wire_name="force_attach"),
+    "guest_os_features": ubx.FieldSpec(
+        wire_name="guest_os_features",
         kind="list",
-        fields=_InstanceTemplate_Disk_SourceImageEncryptionKeyFields,
+        fields=_InstanceTemplate_Properties_Disks_GuestOsFeaturesFields,
     ),
-    "source_snapshot_encryption_key": ubx.FieldSpec(
-        wire_name="source_snapshot_encryption_key",
-        kind="list",
-        fields=_InstanceTemplate_Disk_SourceImageEncryptionKeyFields,
+    "index": ubx.FieldSpec(wire_name="index"),
+    "initialize_params": ubx.FieldSpec(
+        wire_name="initialize_params",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Disks_InitializeParamsFields,
     ),
-}
-
-_InstanceTemplate_GuestAcceleratorFields = {
-    "count": ubx.FieldSpec(wire_name="count"),
+    "interface": ubx.FieldSpec(wire_name="interface"),
+    "kind": ubx.FieldSpec(wire_name="kind"),
+    "licenses": ubx.FieldSpec(wire_name="licenses"),
+    "mode": ubx.FieldSpec(wire_name="mode"),
+    "saved_state": ubx.FieldSpec(wire_name="saved_state"),
+    "shielded_instance_initial_state": ubx.FieldSpec(
+        wire_name="shielded_instance_initial_state",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Disks_ShieldedInstanceInitialStateFields,
+    ),
+    "source": ubx.FieldSpec(wire_name="source"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_InstanceTemplate_NetworkInterface_AccessConfigFields = {
+_InstanceTemplate_Properties_GuestAcceleratorsFields = {
+    "accelerator_count": ubx.FieldSpec(wire_name="accelerator_count"),
+    "accelerator_type": ubx.FieldSpec(wire_name="accelerator_type"),
+}
+
+_InstanceTemplate_Properties_Metadata_ItemsFields = {
+    "key": ubx.FieldSpec(wire_name="key"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_InstanceTemplate_Properties_MetadataFields = {
+    "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
+    "items": ubx.FieldSpec(
+        wire_name="items",
+        kind="list",
+        fields=_InstanceTemplate_Properties_Metadata_ItemsFields,
+    ),
+    "kind": ubx.FieldSpec(wire_name="kind"),
+}
+
+_InstanceTemplate_Properties_NetworkInterfaces_AccessConfigsFields = {
+    "external_ipv6": ubx.FieldSpec(wire_name="external_ipv6"),
+    "external_ipv6_prefix_length": ubx.FieldSpec(wire_name="external_ipv6_prefix_length"),
+    "kind": ubx.FieldSpec(wire_name="kind"),
+    "name": ubx.FieldSpec(wire_name="name"),
     "nat_ip": ubx.FieldSpec(wire_name="nat_ip"),
     "network_tier": ubx.FieldSpec(wire_name="network_tier"),
     "public_ptr_domain_name": ubx.FieldSpec(wire_name="public_ptr_domain_name"),
+    "security_policy": ubx.FieldSpec(wire_name="security_policy"),
+    "set_public_ptr": ubx.FieldSpec(wire_name="set_public_ptr"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_InstanceTemplate_NetworkInterface_AliasIpRangeFields = {
+_InstanceTemplate_Properties_NetworkInterfaces_AliasIpRangesFields = {
     "ip_cidr_range": ubx.FieldSpec(wire_name="ip_cidr_range"),
     "subnetwork_range_name": ubx.FieldSpec(wire_name="subnetwork_range_name"),
 }
 
-_InstanceTemplate_NetworkInterface_Ipv6AccessConfigFields = {
-    "external_ipv6": ubx.FieldSpec(wire_name="external_ipv6"),
-    "external_ipv6_prefix_length": ubx.FieldSpec(wire_name="external_ipv6_prefix_length"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "network_tier": ubx.FieldSpec(wire_name="network_tier"),
-    "public_ptr_domain_name": ubx.FieldSpec(wire_name="public_ptr_domain_name"),
-}
-
-_InstanceTemplate_NetworkInterfaceFields = {
+_InstanceTemplate_Properties_NetworkInterfacesFields = {
+    "access_configs": ubx.FieldSpec(
+        wire_name="access_configs",
+        kind="list",
+        fields=_InstanceTemplate_Properties_NetworkInterfaces_AccessConfigsFields,
+    ),
+    "alias_ip_ranges": ubx.FieldSpec(
+        wire_name="alias_ip_ranges",
+        kind="list",
+        fields=_InstanceTemplate_Properties_NetworkInterfaces_AliasIpRangesFields,
+    ),
+    "alias_ipv6_ranges": ubx.FieldSpec(
+        wire_name="alias_ipv6_ranges",
+        kind="list",
+        fields=_InstanceTemplate_Properties_NetworkInterfaces_AliasIpRangesFields,
+    ),
+    "enable_vpc_scoped_dns": ubx.FieldSpec(wire_name="enable_vpc_scoped_dns"),
+    "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
     "igmp_query": ubx.FieldSpec(wire_name="igmp_query"),
     "internal_ipv6_prefix_length": ubx.FieldSpec(wire_name="internal_ipv6_prefix_length"),
+    "ipv6_access_configs": ubx.FieldSpec(
+        wire_name="ipv6_access_configs",
+        kind="list",
+        fields=_InstanceTemplate_Properties_NetworkInterfaces_AccessConfigsFields,
+    ),
     "ipv6_access_type": ubx.FieldSpec(wire_name="ipv6_access_type"),
     "ipv6_address": ubx.FieldSpec(wire_name="ipv6_address"),
+    "kind": ubx.FieldSpec(wire_name="kind"),
     "name": ubx.FieldSpec(wire_name="name"),
     "network": ubx.FieldSpec(wire_name="network"),
     "network_attachment": ubx.FieldSpec(wire_name="network_attachment"),
@@ -268,223 +604,270 @@ _InstanceTemplate_NetworkInterfaceFields = {
     "nic_type": ubx.FieldSpec(wire_name="nic_type"),
     "parent_nic_name": ubx.FieldSpec(wire_name="parent_nic_name"),
     "queue_count": ubx.FieldSpec(wire_name="queue_count"),
+    "service_class_id": ubx.FieldSpec(wire_name="service_class_id"),
     "stack_type": ubx.FieldSpec(wire_name="stack_type"),
     "subnetwork": ubx.FieldSpec(wire_name="subnetwork"),
-    "subnetwork_project": ubx.FieldSpec(wire_name="subnetwork_project"),
     "vlan": ubx.FieldSpec(wire_name="vlan"),
-    "access_config": ubx.FieldSpec(
-        wire_name="access_config",
-        kind="list",
-        fields=_InstanceTemplate_NetworkInterface_AccessConfigFields,
-    ),
-    "alias_ip_range": ubx.FieldSpec(
-        wire_name="alias_ip_range",
-        kind="list",
-        fields=_InstanceTemplate_NetworkInterface_AliasIpRangeFields,
-    ),
-    "ipv6_access_config": ubx.FieldSpec(
-        wire_name="ipv6_access_config",
-        kind="list",
-        fields=_InstanceTemplate_NetworkInterface_Ipv6AccessConfigFields,
-    ),
 }
 
-_InstanceTemplate_NetworkPerformanceConfigFields = {
+_InstanceTemplate_Properties_NetworkPerformanceConfigFields = {
     "total_egress_bandwidth_tier": ubx.FieldSpec(wire_name="total_egress_bandwidth_tier"),
 }
 
-_InstanceTemplate_ReservationAffinity_SpecificReservationFields = {
+_InstanceTemplate_Properties_ReservationAffinityFields = {
+    "consume_reservation_type": ubx.FieldSpec(wire_name="consume_reservation_type"),
     "key": ubx.FieldSpec(wire_name="key"),
     "values": ubx.FieldSpec(wire_name="values"),
 }
 
-_InstanceTemplate_ReservationAffinityFields = {
-    "type": ubx.FieldSpec(wire_name="type"),
-    "specific_reservation": ubx.FieldSpec(
-        wire_name="specific_reservation",
-        kind="list",
-        fields=_InstanceTemplate_ReservationAffinity_SpecificReservationFields,
-    ),
-}
-
-_InstanceTemplate_Scheduling_LocalSsdRecoveryTimeoutFields = {
+_InstanceTemplate_Properties_Scheduling_GracefulShutdown_MaxDurationFields = {
     "nanos": ubx.FieldSpec(wire_name="nanos"),
     "seconds": ubx.FieldSpec(wire_name="seconds"),
 }
 
-_InstanceTemplate_Scheduling_NodeAffinitiesFields = {
+_InstanceTemplate_Properties_Scheduling_GracefulShutdownFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "max_duration": ubx.FieldSpec(
+        wire_name="max_duration",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Scheduling_GracefulShutdown_MaxDurationFields,
+    ),
+}
+
+_InstanceTemplate_Properties_Scheduling_NodeAffinitiesFields = {
     "key": ubx.FieldSpec(wire_name="key"),
     "operator": ubx.FieldSpec(wire_name="operator"),
     "values": ubx.FieldSpec(wire_name="values"),
 }
 
-_InstanceTemplate_Scheduling_OnInstanceStopActionFields = {
+_InstanceTemplate_Properties_Scheduling_OnInstanceStopActionFields = {
     "discard_local_ssd": ubx.FieldSpec(wire_name="discard_local_ssd"),
 }
 
-_InstanceTemplate_SchedulingFields = {
+_InstanceTemplate_Properties_SchedulingFields = {
     "automatic_restart": ubx.FieldSpec(wire_name="automatic_restart"),
     "availability_domain": ubx.FieldSpec(wire_name="availability_domain"),
+    "graceful_shutdown": ubx.FieldSpec(
+        wire_name="graceful_shutdown",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Scheduling_GracefulShutdownFields,
+    ),
+    "host_error_timeout_seconds": ubx.FieldSpec(wire_name="host_error_timeout_seconds"),
     "instance_termination_action": ubx.FieldSpec(wire_name="instance_termination_action"),
-    "min_node_cpus": ubx.FieldSpec(wire_name="min_node_cpus"),
-    "on_host_maintenance": ubx.FieldSpec(wire_name="on_host_maintenance"),
-    "preemptible": ubx.FieldSpec(wire_name="preemptible"),
-    "provisioning_model": ubx.FieldSpec(wire_name="provisioning_model"),
-    "termination_time": ubx.FieldSpec(wire_name="termination_time"),
     "local_ssd_recovery_timeout": ubx.FieldSpec(
         wire_name="local_ssd_recovery_timeout",
-        kind="list",
-        fields=_InstanceTemplate_Scheduling_LocalSsdRecoveryTimeoutFields,
+        kind="object",
+        fields=_InstanceTemplate_Properties_Scheduling_GracefulShutdown_MaxDurationFields,
     ),
+    "location_hint": ubx.FieldSpec(wire_name="location_hint"),
     "max_run_duration": ubx.FieldSpec(
         wire_name="max_run_duration",
-        kind="list",
-        fields=_InstanceTemplate_Scheduling_LocalSsdRecoveryTimeoutFields,
+        kind="object",
+        fields=_InstanceTemplate_Properties_Scheduling_GracefulShutdown_MaxDurationFields,
     ),
+    "min_node_cpus": ubx.FieldSpec(wire_name="min_node_cpus"),
     "node_affinities": ubx.FieldSpec(
         wire_name="node_affinities",
-        kind="set",
-        fields=_InstanceTemplate_Scheduling_NodeAffinitiesFields,
+        kind="list",
+        fields=_InstanceTemplate_Properties_Scheduling_NodeAffinitiesFields,
     ),
+    "on_host_maintenance": ubx.FieldSpec(wire_name="on_host_maintenance"),
     "on_instance_stop_action": ubx.FieldSpec(
         wire_name="on_instance_stop_action",
-        kind="list",
-        fields=_InstanceTemplate_Scheduling_OnInstanceStopActionFields,
+        kind="object",
+        fields=_InstanceTemplate_Properties_Scheduling_OnInstanceStopActionFields,
     ),
+    "preemptible": ubx.FieldSpec(wire_name="preemptible"),
+    "preemption_notice_duration": ubx.FieldSpec(
+        wire_name="preemption_notice_duration",
+        kind="object",
+        fields=_InstanceTemplate_Properties_Scheduling_GracefulShutdown_MaxDurationFields,
+    ),
+    "provisioning_model": ubx.FieldSpec(wire_name="provisioning_model"),
+    "skip_guest_os_shutdown": ubx.FieldSpec(wire_name="skip_guest_os_shutdown"),
+    "termination_time": ubx.FieldSpec(wire_name="termination_time"),
 }
 
-_InstanceTemplate_ServiceAccountFields = {
+_InstanceTemplate_Properties_ServiceAccountsFields = {
     "email": ubx.FieldSpec(wire_name="email"),
     "scopes": ubx.FieldSpec(wire_name="scopes"),
 }
 
-_InstanceTemplate_ShieldedInstanceConfigFields = {
+_InstanceTemplate_Properties_ShieldedInstanceConfigFields = {
     "enable_integrity_monitoring": ubx.FieldSpec(wire_name="enable_integrity_monitoring"),
     "enable_secure_boot": ubx.FieldSpec(wire_name="enable_secure_boot"),
     "enable_vtpm": ubx.FieldSpec(wire_name="enable_vtpm"),
 }
 
-_InstanceTemplate_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
+_InstanceTemplate_Properties_TagsFields = {
+    "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
+    "items": ubx.FieldSpec(wire_name="items"),
 }
 
-_InstanceTemplate_WorkloadIdentityConfigFields = {
+_InstanceTemplate_Properties_WorkloadIdentityConfigFields = {
     "identity": ubx.FieldSpec(wire_name="identity"),
     "identity_certificate_enabled": ubx.FieldSpec(wire_name="identity_certificate_enabled"),
 }
 
+_InstanceTemplate_PropertiesFields = {
+    "advanced_machine_features": ubx.FieldSpec(
+        wire_name="advanced_machine_features",
+        kind="object",
+        fields=_InstanceTemplate_Properties_AdvancedMachineFeaturesFields,
+    ),
+    "can_ip_forward": ubx.FieldSpec(wire_name="can_ip_forward"),
+    "confidential_instance_config": ubx.FieldSpec(
+        wire_name="confidential_instance_config",
+        kind="object",
+        fields=_InstanceTemplate_Properties_ConfidentialInstanceConfigFields,
+    ),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "disks": ubx.FieldSpec(
+        wire_name="disks",
+        kind="list",
+        fields=_InstanceTemplate_Properties_DisksFields,
+    ),
+    "guest_accelerators": ubx.FieldSpec(
+        wire_name="guest_accelerators",
+        kind="list",
+        fields=_InstanceTemplate_Properties_GuestAcceleratorsFields,
+    ),
+    "key_revocation_action_type": ubx.FieldSpec(wire_name="key_revocation_action_type"),
+    "labels": ubx.FieldSpec(wire_name="labels"),
+    "local_ssd_encryption_mode": ubx.FieldSpec(wire_name="local_ssd_encryption_mode"),
+    "machine_type": ubx.FieldSpec(wire_name="machine_type"),
+    "metadata": ubx.FieldSpec(
+        wire_name="metadata",
+        kind="object",
+        fields=_InstanceTemplate_Properties_MetadataFields,
+    ),
+    "min_cpu_platform": ubx.FieldSpec(wire_name="min_cpu_platform"),
+    "network_interfaces": ubx.FieldSpec(
+        wire_name="network_interfaces",
+        kind="list",
+        fields=_InstanceTemplate_Properties_NetworkInterfacesFields,
+    ),
+    "network_performance_config": ubx.FieldSpec(
+        wire_name="network_performance_config",
+        kind="object",
+        fields=_InstanceTemplate_Properties_NetworkPerformanceConfigFields,
+    ),
+    "private_ipv6_google_access": ubx.FieldSpec(wire_name="private_ipv6_google_access"),
+    "reservation_affinity": ubx.FieldSpec(
+        wire_name="reservation_affinity",
+        kind="object",
+        fields=_InstanceTemplate_Properties_ReservationAffinityFields,
+    ),
+    "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
+    "resource_policies": ubx.FieldSpec(wire_name="resource_policies"),
+    "scheduling": ubx.FieldSpec(
+        wire_name="scheduling",
+        kind="object",
+        fields=_InstanceTemplate_Properties_SchedulingFields,
+    ),
+    "service_accounts": ubx.FieldSpec(
+        wire_name="service_accounts",
+        kind="list",
+        fields=_InstanceTemplate_Properties_ServiceAccountsFields,
+    ),
+    "shielded_instance_config": ubx.FieldSpec(
+        wire_name="shielded_instance_config",
+        kind="object",
+        fields=_InstanceTemplate_Properties_ShieldedInstanceConfigFields,
+    ),
+    "tags": ubx.FieldSpec(
+        wire_name="tags",
+        kind="object",
+        fields=_InstanceTemplate_Properties_TagsFields,
+    ),
+    "workload_identity_config": ubx.FieldSpec(
+        wire_name="workload_identity_config",
+        kind="object",
+        fields=_InstanceTemplate_Properties_WorkloadIdentityConfigFields,
+    ),
+}
+
+_InstanceTemplate_SourceInstanceParams_DiskConfigsFields = {
+    "auto_delete": ubx.FieldSpec(wire_name="auto_delete"),
+    "custom_image": ubx.FieldSpec(wire_name="custom_image"),
+    "device_name": ubx.FieldSpec(wire_name="device_name"),
+    "instantiate_from": ubx.FieldSpec(wire_name="instantiate_from"),
+}
+
+_InstanceTemplate_SourceInstanceParamsFields = {
+    "disk_configs": ubx.FieldSpec(
+        wire_name="disk_configs",
+        kind="list",
+        fields=_InstanceTemplate_SourceInstanceParams_DiskConfigsFields,
+    ),
+}
+
 @dataclasses.dataclass
 class InstanceTemplateConfig:
-    can_ip_forward: Any = None
+    # Output only. [Output Only] The creation timestamp for this instance template inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Output only. [Output Only] A unique identifier for this instance template. The server defines this identifier.
     id: Any = None
-    instance_description: Any = None
-    key_revocation_action_type: Any = None
-    labels: Any = None
-    machine_type: Any = None
-    metadata: Any = None
-    metadata_startup_script: Any = None
-    min_cpu_platform: Any = None
+    # Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
+    kind: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    name_prefix: Any = None
-    project: Any = None
+    # The instance properties defined by the template, containing configuration such as machine type, disks, network interfaces, and metadata. This field is computed and output-only. (AI-inferred)
+    properties: Any = None
+    # Output only. [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
     region: Any = None
-    resource_manager_tags: Any = None
-    resource_policies: Any = None
-    tags: Any = None
-    advanced_machine_features: Any = None
-    confidential_instance_config: Any = None
-    disk: Any = None
-    guest_accelerator: Any = None
-    network_interface: Any = None
-    network_performance_config: Any = None
-    reservation_affinity: Any = None
-    scheduling: Any = None
-    service_account: Any = None
-    shielded_instance_config: Any = None
-    timeouts: Any = None
-    workload_identity_config: Any = None
+    # Output only. [Output Only] The URL for this instance template. The server defines this URL.
+    self_link: Any = None
+    # The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance
+    source_instance: Any = None
+    # A specification of the parameters to use when creating the instance template from a source instance.
+    source_instance_params: Any = None
+
+@dataclasses.dataclass
+class InstanceTemplateAttrs:
+    # Output only. [Output Only] The creation timestamp for this instance template inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Output only. [Output Only] A unique identifier for this instance template. The server defines this identifier.
+    id: Any = None
+    # Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
+    kind: Any = None
+    # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # The instance properties defined by the template, containing configuration such as machine type, disks, network interfaces, and metadata. This field is computed and output-only. (AI-inferred)
+    properties: Any = None
+    # Output only. [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+    region: Any = None
+    # Output only. [Output Only] The URL for this instance template. The server defines this URL.
+    self_link: Any = None
+    # The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance
+    source_instance: Any = None
+    # A specification of the parameters to use when creating the instance template from a source instance.
+    source_instance_params: Any = None
 
 InstanceTemplate = ubx.ResourceBinding(
     wire_type="google_compute_instance_template",
     fields={
-        "can_ip_forward": ubx.FieldSpec(wire_name="can_ip_forward"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "instance_description": ubx.FieldSpec(wire_name="instance_description"),
-        "key_revocation_action_type": ubx.FieldSpec(wire_name="key_revocation_action_type"),
-        "labels": ubx.FieldSpec(wire_name="labels"),
-        "machine_type": ubx.FieldSpec(wire_name="machine_type"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "metadata_startup_script": ubx.FieldSpec(wire_name="metadata_startup_script"),
-        "min_cpu_platform": ubx.FieldSpec(wire_name="min_cpu_platform"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
-        "resource_policies": ubx.FieldSpec(wire_name="resource_policies"),
-        "tags": ubx.FieldSpec(wire_name="tags"),
-        "advanced_machine_features": ubx.FieldSpec(
-            wire_name="advanced_machine_features",
-            kind="list",
-            fields=_InstanceTemplate_AdvancedMachineFeaturesFields,
-        ),
-        "confidential_instance_config": ubx.FieldSpec(
-            wire_name="confidential_instance_config",
-            kind="list",
-            fields=_InstanceTemplate_ConfidentialInstanceConfigFields,
-        ),
-        "disk": ubx.FieldSpec(
-            wire_name="disk",
-            kind="list",
-            fields=_InstanceTemplate_DiskFields,
-        ),
-        "guest_accelerator": ubx.FieldSpec(
-            wire_name="guest_accelerator",
-            kind="list",
-            fields=_InstanceTemplate_GuestAcceleratorFields,
-        ),
-        "network_interface": ubx.FieldSpec(
-            wire_name="network_interface",
-            kind="list",
-            fields=_InstanceTemplate_NetworkInterfaceFields,
-        ),
-        "network_performance_config": ubx.FieldSpec(
-            wire_name="network_performance_config",
-            kind="list",
-            fields=_InstanceTemplate_NetworkPerformanceConfigFields,
-        ),
-        "reservation_affinity": ubx.FieldSpec(
-            wire_name="reservation_affinity",
-            kind="list",
-            fields=_InstanceTemplate_ReservationAffinityFields,
-        ),
-        "scheduling": ubx.FieldSpec(
-            wire_name="scheduling",
-            kind="list",
-            fields=_InstanceTemplate_SchedulingFields,
-        ),
-        "service_account": ubx.FieldSpec(
-            wire_name="service_account",
-            kind="list",
-            fields=_InstanceTemplate_ServiceAccountFields,
-        ),
-        "shielded_instance_config": ubx.FieldSpec(
-            wire_name="shielded_instance_config",
-            kind="list",
-            fields=_InstanceTemplate_ShieldedInstanceConfigFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "properties": ubx.FieldSpec(
+            wire_name="properties",
             kind="object",
-            fields=_InstanceTemplate_TimeoutsFields,
+            fields=_InstanceTemplate_PropertiesFields,
         ),
-        "workload_identity_config": ubx.FieldSpec(
-            wire_name="workload_identity_config",
-            kind="list",
-            fields=_InstanceTemplate_WorkloadIdentityConfigFields,
+        "region": ubx.FieldSpec(wire_name="region"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "source_instance": ubx.FieldSpec(wire_name="source_instance"),
+        "source_instance_params": ubx.FieldSpec(
+            wire_name="source_instance_params",
+            kind="object",
+            fields=_InstanceTemplate_SourceInstanceParamsFields,
         ),
     },
 )

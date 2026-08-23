@@ -3,71 +3,213 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Route_AsPaths struct {
+	// A list of autonomous system (AS) numbers that form the AS path for the route, ordered according to the path segment type (AS_SEQUENCE or AS_SET). (AI-inferred)
+	AsLists any
+	// The type of BGP AS path segment, indicating the ordering and confederation scope of the AS numbers in the segment. Possible values are: AS_SEQUENCE (ordered set of AS numbers), AS_SET (unordered set), AS_CONFED_SEQUENCE (ordered set within a confederation), AS_CONFED_SET (unordered set within a confederation). (AI-inferred)
+	PathSegmentType any
+}
+
 type Route_Params struct {
+	// Tag keys/values directly bound to this resource. Tag keys and values have the same definition as resource manager tags. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID & namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid.
 	ResourceManagerTags any
 }
 
-type Route_Timeouts struct {
-	Create any
-	Delete any
+type Route_Warnings_Data struct {
+	// The key of the key-value pair that provides additional information in the warning data. (AI-inferred)
+	Key any
+	// The value associated with a key in a warning data pair. This provides additional machine-readable details about the warning. (AI-inferred)
+	Value any
 }
+
+type Route_Warnings struct {
+	// A warning code that identifies the type of warning. Possible values include CLEANUP_FAILED, DEPRECATED_RESOURCE_USED, DEPRECATED_TYPE_USED, DISK_SIZE_LARGER_THAN_IMAGE_SIZE, EXPERIMENTAL_TYPE_USED, EXTERNAL_API_WARNING, FIELD_VALUE_OVERRIDEN, INJECTED_KERNELS_DEPRECATED, INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB, LARGE_DEPLOYMENT_WARNING, LIST_OVERHEAD_QUOTA_EXCEED, MISSING_TYPE_DEPENDENCY, NEXT_HOP_ADDRESS_NOT_ASSIGNED, NEXT_HOP_CANNOT_IP_FORWARD, NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE, NEXT_HOP_INSTANCE_NOT_FOUND, NEXT_HOP_INSTANCE_NOT_ON_NETWORK, NEXT_HOP_NOT_RUNNING, NOT_CRITICAL_ERROR, NO_RESULTS_ON_PAGE, PARTIAL_SUCCESS, QUOTA_INFO_UNAVAILABLE, REQUIRED_TOS_AGREEMENT, RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING, RESOURCE_NOT_DELETED, SCHEMA_VALIDATION_IGNORED, SINGLE_INSTANCE_PROPERTY_TEMPLATE, UNDECLARED_PROPERTIES, UNREACHABLE. (AI-inferred)
+	Code any
+	// A list of key-value pairs containing additional details about the warning. Each object in the list has a 'key' and a 'value' field that provide context for the warning message. (AI-inferred)
+	Data any
+	// A human-readable warning message describing the issue or condition associated with the route, as returned by the Compute Engine API. (AI-inferred)
+	Message any
+}
+
+var Route_AsPathsFields = ubx.FieldMap{
+		"AsLists": ubx.FieldSpec{WireName: "as_lists"},
+		"PathSegmentType": ubx.FieldSpec{WireName: "path_segment_type"},
+	}
 
 var Route_ParamsFields = ubx.FieldMap{
 		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
 	}
 
-var Route_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var Route_Warnings_DataFields = ubx.FieldMap{
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
+
+var Route_WarningsFields = ubx.FieldMap{
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "list",
+			Fields: Route_Warnings_DataFields,
+		},
+		"Message": ubx.FieldSpec{WireName: "message"},
 	}
 
 type RouteConfig struct {
-	DeletionPolicy any
+	// Output only. [Output Only] AS path.
+	AsPaths any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this field when you create the resource.
 	Description any
+	// The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
 	DestRange any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
+	// Output only. [Output Only] Type of this resource. Always compute#routes for Route resources.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
 	Name any
+	// Fully-qualified URL of the network that this route applies to.
 	Network any
+	// The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/project/global/gateways/default-internet-gateway
 	NextHopGateway any
+	// Output only. [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+	NextHopHub any
+	// The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
 	NextHopIlb any
+	// The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
 	NextHopInstance any
-	NextHopInstanceZone any
+	// Output only. [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+	NextHopInterRegionCost any
+	// Output only. [Output Only] The URL to an InterconnectAttachment which is the next hop for the route. This field will only be populated for dynamic routes generated by Cloud Router with a linked interconnectAttachment or the static route generated by each L2 Interconnect Attachment.
+	NextHopInterconnectAttachment any
+	// The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
 	NextHopIp any
+	// Output only. [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+	NextHopMed any
+	// The URL of the local network if it should handle matching packets.
+	NextHopNetwork any
+	// Output only. [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+	NextHopOrigin any
+	// Output only. [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+	NextHopPeering any
+	// The URL to a VpnTunnel that should handle matching packets.
 	NextHopVpnTunnel any
-	Priority any
-	Project any
-	Tags any
+	// Additional route parameters.
 	Params any
-	Timeouts any
+	// The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+	Priority any
+	// [Output only] The status of the route. This status applies to dynamic routes learned by Cloud Routers. It is also applicable to routes undergoing migration.
+	RouteStatus any
+	// Output only. [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+	RouteType any
+	// [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// A list of instance tags to which this route applies.
+	Tags any
+	// Output only. [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+	Warnings any
+}
+
+type RouteAttrs struct {
+	// Output only. [Output Only] AS path.
+	AsPaths any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this field when you create the resource.
+	Description any
+	// The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+	DestRange any
+	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of this resource. Always compute#routes for Route resources.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+	Name any
+	// Fully-qualified URL of the network that this route applies to.
+	Network any
+	// The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/project/global/gateways/default-internet-gateway
+	NextHopGateway any
+	// Output only. [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+	NextHopHub any
+	// The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+	NextHopIlb any
+	// The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+	NextHopInstance any
+	// Output only. [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+	NextHopInterRegionCost any
+	// Output only. [Output Only] The URL to an InterconnectAttachment which is the next hop for the route. This field will only be populated for dynamic routes generated by Cloud Router with a linked interconnectAttachment or the static route generated by each L2 Interconnect Attachment.
+	NextHopInterconnectAttachment any
+	// The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+	NextHopIp any
+	// Output only. [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+	NextHopMed any
+	// The URL of the local network if it should handle matching packets.
+	NextHopNetwork any
+	// Output only. [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+	NextHopOrigin any
+	// Output only. [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+	NextHopPeering any
+	// The URL to a VpnTunnel that should handle matching packets.
+	NextHopVpnTunnel any
+	// Additional route parameters.
+	Params any
+	// The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+	Priority any
+	// [Output only] The status of the route. This status applies to dynamic routes learned by Cloud Routers. It is also applicable to routes undergoing migration.
+	RouteStatus any
+	// Output only. [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+	RouteType any
+	// [Output Only] Server-defined fully-qualified URL for this resource.
+	SelfLink any
+	// A list of instance tags to which this route applies.
+	Tags any
+	// Output only. [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+	Warnings any
 }
 
 var Route = ubx.ResourceBinding{
 	WireType: "google_compute_route",
 	Fields: ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"AsPaths": ubx.FieldSpec{
+			WireName: "as_paths",
+			Kind: "list",
+			Fields: Route_AsPathsFields,
+		},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestRange": ubx.FieldSpec{WireName: "dest_range"},
 		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"NextHopGateway": ubx.FieldSpec{WireName: "next_hop_gateway"},
+		"NextHopHub": ubx.FieldSpec{WireName: "next_hop_hub"},
 		"NextHopIlb": ubx.FieldSpec{WireName: "next_hop_ilb"},
 		"NextHopInstance": ubx.FieldSpec{WireName: "next_hop_instance"},
-		"NextHopInstanceZone": ubx.FieldSpec{WireName: "next_hop_instance_zone"},
+		"NextHopInterRegionCost": ubx.FieldSpec{WireName: "next_hop_inter_region_cost"},
+		"NextHopInterconnectAttachment": ubx.FieldSpec{WireName: "next_hop_interconnect_attachment"},
 		"NextHopIp": ubx.FieldSpec{WireName: "next_hop_ip"},
+		"NextHopMed": ubx.FieldSpec{WireName: "next_hop_med"},
+		"NextHopNetwork": ubx.FieldSpec{WireName: "next_hop_network"},
+		"NextHopOrigin": ubx.FieldSpec{WireName: "next_hop_origin"},
+		"NextHopPeering": ubx.FieldSpec{WireName: "next_hop_peering"},
 		"NextHopVpnTunnel": ubx.FieldSpec{WireName: "next_hop_vpn_tunnel"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "list",
+			Kind: "object",
 			Fields: Route_ParamsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: Route_TimeoutsFields,
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"RouteStatus": ubx.FieldSpec{WireName: "route_status"},
+		"RouteType": ubx.FieldSpec{WireName: "route_type"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Warnings": ubx.FieldSpec{
+			WireName: "warnings",
+			Kind: "list",
+			Fields: Route_WarningsFields,
 		},
 	},
 }

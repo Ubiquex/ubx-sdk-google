@@ -3,49 +3,69 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TargetSslProxy_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type TargetSslProxyConfig struct {
+	// URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}.
+	CertificateMap any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+	ProxyHeader any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// URL to the BackendService resource.
+	Service any
+	// URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
+	SslCertificates any
+	// URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
+	SslPolicy any
 }
 
-var TargetSslProxy_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
-type TargetSslProxyConfig struct {
-	BackendService any
+type TargetSslProxyAttrs struct {
+	// URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}.
 	CertificateMap any
-	DeletionPolicy any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	Project any
+	// Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
 	ProxyHeader any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// URL to the BackendService resource.
+	Service any
+	// URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
 	SslCertificates any
+	// URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
 	SslPolicy any
-	Timeouts any
 }
 
 var TargetSslProxy = ubx.ResourceBinding{
 	WireType: "google_compute_target_ssl_proxy",
 	Fields: ubx.FieldMap{
-		"BackendService": ubx.FieldSpec{WireName: "backend_service"},
 		"CertificateMap": ubx.FieldSpec{WireName: "certificate_map"},
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
 		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Service": ubx.FieldSpec{WireName: "service"},
 		"SslCertificates": ubx.FieldSpec{WireName: "ssl_certificates"},
 		"SslPolicy": ubx.FieldSpec{WireName: "ssl_policy"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: TargetSslProxy_TimeoutsFields,
-		},
 	},
 }

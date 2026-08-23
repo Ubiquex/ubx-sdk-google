@@ -2,143 +2,191 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs {
-  enableEachUniqueValue: boolean;
-  type: string;
-  value: string;
+  enableEachUniqueValue?: boolean | Computed<boolean>;
+  type?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs {
-  autoDeployConfidenceThreshold: number;
-  autoDeployExpirationSec: number;
-  autoDeployImpactedBaselineThreshold: number;
-  autoDeployLoadThreshold: number;
-  detectionAbsoluteQps: number;
-  detectionLoadThreshold: number;
-  detectionRelativeToBaselineQps: number;
-  name: string;
-  trafficGranularityConfigs: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs[];
+  autoDeployConfidenceThreshold?: number | Computed<number>;
+  autoDeployExpirationSec?: number | Computed<number>;
+  autoDeployImpactedBaselineThreshold?: number | Computed<number>;
+  autoDeployLoadThreshold?: number | Computed<number>;
+  detectionAbsoluteQps?: number | Computed<number>;
+  detectionLoadThreshold?: number | Computed<number>;
+  detectionRelativeToBaselineQps?: number | Computed<number>;
+  name?: string | Computed<string>;
+  trafficGranularityConfigs?: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs[] | Computed<SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs[]>;
 }
 
 export interface SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig {
-  enable: boolean;
-  ruleVisibility: string;
-  thresholdConfigs: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs[];
+  /** If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR. */
+  enable?: boolean | Computed<boolean>;
+  /** Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR. */
+  ruleVisibility?: string | Computed<string>;
+  /** Configuration options for layer7 adaptive protection for various customizable thresholds. */
+  thresholdConfigs?: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs[] | Computed<SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs[]>;
 }
 
 export interface SecurityPolicy_AdaptiveProtectionConfig {
-  layer7DdosDefenseConfig: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig[];
+  /** Configuration options for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR. */
+  layer7DdosDefenseConfig?: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig | Computed<SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig>;
 }
 
 export interface SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig {
-  contentTypes: string[];
+  /** A list of custom Content-Type header values to apply the JSON parsing. As per RFC 1341, a Content-Type header value has the following format: Content-Type := type "/" subtype *[";" parameter] When configuring a custom Content-Type header value, only the type/subtype needs to be specified, and the parameters should be excluded. */
+  contentTypes?: string[] | Computed<string[]>;
 }
 
 export interface SecurityPolicy_AdvancedOptionsConfig {
-  jsonParsing: string;
-  logLevel: string;
-  requestBodyInspectionSize: string;
-  userIpRequestHeaders: string[];
-  jsonCustomConfig: SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig[];
+  jsonCustomConfig?: SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig | Computed<SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig>;
+  jsonParsing?: string | Computed<string>;
+  logLevel?: string | Computed<string>;
+  /** The maximum request size chosen by the customer with Waf enabled. Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case insensitive. */
+  requestBodyInspectionSize?: string | Computed<string>;
+  /** An optional list of case-insensitive request header names to use for resolving the callers client IP address. */
+  userIpRequestHeaders?: string[] | Computed<string[]>;
+}
+
+export interface SecurityPolicy_Associations {
+  attachmentId?: string | Computed<string>;
+  displayName?: string | Computed<string>;
+  excludedFolders?: string[] | Computed<string[]>;
+  excludedProjects?: string[] | Computed<string[]>;
+  name?: string | Computed<string>;
+  securityPolicyId?: string | Computed<string>;
+  shortName?: string | Computed<string>;
+}
+
+export interface SecurityPolicy_DdosProtectionConfig {
+  ddosAdaptiveProtection?: string | Computed<string>;
+  /** DDoS Protection for Network Load Balancers (and VMs with public IPs) builds DDoS mitigations that minimize collateral damage. It quantifies this as the fraction of a non-abuse baseline that's inadvertently blocked. Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will not be deployed. Using a lower value will prioritize keeping collateral damage low, possibly at the cost of its effectiveness in rate limiting some or all of the attack. It should typically be unset, so Advanced DDoS (and Adaptive Protection) uses the best mitigation it can find. Setting the threshold is advised if there are logs for false positive detections with high collateral damage, and will cause Advanced DDoS to attempt to find a less aggressive rule that satisfies the constraint. If a suitable rule cannot be found, the system falls back to either no mitigation for smaller attacks or broader network throttles for larger ones. */
+  ddosImpactedBaselineThreshold?: number | Computed<number>;
+  ddosProtection?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_RecaptchaOptionsConfig {
-  redirectSiteKey: string;
+  /** An optional field to supply a reCAPTCHA site key to be used for all the rules using the redirect action with the type of GOOGLE_RECAPTCHA under the security policy. The specified site key needs to be created from the reCAPTCHA API. The user is responsible for the validity of the specified site key. If not specified, a Google-managed site key is used. This field is only supported in Global Security Policies of type CLOUD_ARMOR. */
+  redirectSiteKey?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Rule_HeaderAction_RequestHeadersToAdds {
-  headerName: string;
-  headerValue: string;
+export interface SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds {
+  headerName?: string | Computed<string>;
+  headerValue?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Rule_HeaderAction {
-  requestHeadersToAdds: SecurityPolicy_Rule_HeaderAction_RequestHeadersToAdds[];
+export interface SecurityPolicy_Rules_HeaderAction {
+  requestHeadersToAdds?: SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds[] | Computed<SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds[]>;
 }
 
-export interface SecurityPolicy_Rule_Match_Config {
-  srcIpRanges: string[];
+export interface SecurityPolicy_Rules_Match_Config {
+  srcIpRanges?: string[] | Computed<string[]>;
 }
 
-export interface SecurityPolicy_Rule_Match_Expr {
-  expression: string;
+export interface SecurityPolicy_Rules_Match_Expr {
+  description?: string | Computed<string>;
+  expression?: string | Computed<string>;
+  location?: string | Computed<string>;
+  title?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Rule_Match_ExprOptions_RecaptchaOptions {
-  actionTokenSiteKeys: string[];
-  sessionTokenSiteKeys: string[];
+export interface SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions {
+  actionTokenSiteKeys?: string[] | Computed<string[]>;
+  sessionTokenSiteKeys?: string[] | Computed<string[]>;
 }
 
-export interface SecurityPolicy_Rule_Match_ExprOptions {
-  recaptchaOptions: SecurityPolicy_Rule_Match_ExprOptions_RecaptchaOptions[];
+export interface SecurityPolicy_Rules_Match_ExprOptions {
+  recaptchaOptions?: SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions | Computed<SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions>;
 }
 
-export interface SecurityPolicy_Rule_Match {
-  versionedExpr: string;
-  config: SecurityPolicy_Rule_Match_Config[];
-  expr: SecurityPolicy_Rule_Match_Expr[];
-  exprOptions: SecurityPolicy_Rule_Match_ExprOptions[];
+export interface SecurityPolicy_Rules_Match {
+  config?: SecurityPolicy_Rules_Match_Config | Computed<SecurityPolicy_Rules_Match_Config>;
+  expr?: SecurityPolicy_Rules_Match_Expr | Computed<SecurityPolicy_Rules_Match_Expr>;
+  exprOptions?: SecurityPolicy_Rules_Match_ExprOptions | Computed<SecurityPolicy_Rules_Match_ExprOptions>;
+  versionedExpr?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookie {
-  operator: string;
-  value: string;
+export interface SecurityPolicy_Rules_NetworkMatch_UserDefinedFields {
+  name?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
-export interface SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion {
-  targetRuleIds: string[];
-  targetRuleSet: string;
-  requestCookie: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookie[];
-  requestHeader: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookie[];
-  requestQueryParam: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookie[];
-  requestUri: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookie[];
+export interface SecurityPolicy_Rules_NetworkMatch {
+  destIpRanges?: string[] | Computed<string[]>;
+  destPorts?: string[] | Computed<string[]>;
+  ipProtocols?: string[] | Computed<string[]>;
+  srcAsns?: number[] | Computed<number[]>;
+  srcIpRanges?: string[] | Computed<string[]>;
+  srcPorts?: string[] | Computed<string[]>;
+  srcRegionCodes?: string[] | Computed<string[]>;
+  userDefinedFields?: SecurityPolicy_Rules_NetworkMatch_UserDefinedFields[] | Computed<SecurityPolicy_Rules_NetworkMatch_UserDefinedFields[]>;
 }
 
-export interface SecurityPolicy_Rule_PreconfiguredWafConfig {
-  exclusion: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion[];
+export interface SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude {
+  op?: string | Computed<string>;
+  val?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Rule_RateLimitOptions_BanThreshold {
-  count: number;
-  intervalSec: number;
+export interface SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions {
+  requestCookiesToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  requestHeadersToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  requestQueryParamsToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  requestUrisToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  targetRuleIds?: string[] | Computed<string[]>;
+  targetRuleSet?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Rule_RateLimitOptions_EnforceOnKeyConfigs {
-  enforceOnKeyName: string;
-  enforceOnKeyType: string;
+export interface SecurityPolicy_Rules_PreconfiguredWafConfig {
+  exclusions?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions[]>;
 }
 
-export interface SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptions {
-  target: string;
-  type: string;
+export interface SecurityPolicy_Rules_RateLimitOptions_BanThreshold {
+  count?: number | Computed<number>;
+  intervalSec?: number | Computed<number>;
 }
 
-export interface SecurityPolicy_Rule_RateLimitOptions {
-  banDurationSec: number;
-  conformAction: string;
-  enforceOnKey: string;
-  enforceOnKeyName: string;
-  exceedAction: string;
-  banThreshold: SecurityPolicy_Rule_RateLimitOptions_BanThreshold[];
-  enforceOnKeyConfigs: SecurityPolicy_Rule_RateLimitOptions_EnforceOnKeyConfigs[];
-  exceedRedirectOptions: SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptions[];
-  rateLimitThreshold: SecurityPolicy_Rule_RateLimitOptions_BanThreshold[];
+export interface SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs {
+  enforceOnKeyName?: string | Computed<string>;
+  enforceOnKeyType?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Rule {
-  action: string;
-  description: string;
-  preview: boolean;
-  priority: number;
-  headerAction: SecurityPolicy_Rule_HeaderAction[];
-  match: SecurityPolicy_Rule_Match[];
-  preconfiguredWafConfig: SecurityPolicy_Rule_PreconfiguredWafConfig[];
-  rateLimitOptions: SecurityPolicy_Rule_RateLimitOptions[];
-  redirectOptions: SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptions[];
+export interface SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions {
+  target?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
-export interface SecurityPolicy_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface SecurityPolicy_Rules_RateLimitOptions {
+  banDurationSec?: number | Computed<number>;
+  banThreshold?: SecurityPolicy_Rules_RateLimitOptions_BanThreshold | Computed<SecurityPolicy_Rules_RateLimitOptions_BanThreshold>;
+  conformAction?: string | Computed<string>;
+  enforceOnKey?: string | Computed<string>;
+  enforceOnKeyConfigs?: SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs[] | Computed<SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs[]>;
+  enforceOnKeyName?: string | Computed<string>;
+  exceedAction?: string | Computed<string>;
+  exceedRedirectOptions?: SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions | Computed<SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions>;
+  rateLimitThreshold?: SecurityPolicy_Rules_RateLimitOptions_BanThreshold | Computed<SecurityPolicy_Rules_RateLimitOptions_BanThreshold>;
+}
+
+export interface SecurityPolicy_Rules {
+  action?: string | Computed<string>;
+  description?: string | Computed<string>;
+  headerAction?: SecurityPolicy_Rules_HeaderAction | Computed<SecurityPolicy_Rules_HeaderAction>;
+  kind?: string | Computed<string>;
+  match?: SecurityPolicy_Rules_Match | Computed<SecurityPolicy_Rules_Match>;
+  networkMatch?: SecurityPolicy_Rules_NetworkMatch | Computed<SecurityPolicy_Rules_NetworkMatch>;
+  preconfiguredWafConfig?: SecurityPolicy_Rules_PreconfiguredWafConfig | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig>;
+  preview?: boolean | Computed<boolean>;
+  priority?: number | Computed<number>;
+  rateLimitOptions?: SecurityPolicy_Rules_RateLimitOptions | Computed<SecurityPolicy_Rules_RateLimitOptions>;
+  redirectOptions?: SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions | Computed<SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions>;
+}
+
+export interface SecurityPolicy_UserDefinedFields {
+  base?: string | Computed<string>;
+  mask?: string | Computed<string>;
+  name?: string | Computed<string>;
+  offset?: number | Computed<number>;
+  size?: number | Computed<number>;
 }
 
 const SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigsFields: FieldMap = {
@@ -175,8 +223,8 @@ const SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfigFields: Fie
 
 const SecurityPolicy_AdaptiveProtectionConfigFields: FieldMap = {
   layer7DdosDefenseConfig: {
-    wireName: "layer_7_ddos_defense_config",
-    kind: "list",
+    wireName: "layer7_ddos_defense_config",
+    kind: "object",
     fields: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfigFields,
   },
 };
@@ -186,262 +234,370 @@ const SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields: FieldMap = {
 };
 
 const SecurityPolicy_AdvancedOptionsConfigFields: FieldMap = {
+  jsonCustomConfig: {
+    wireName: "json_custom_config",
+    kind: "object",
+    fields: SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields,
+  },
   jsonParsing: "json_parsing",
   logLevel: "log_level",
   requestBodyInspectionSize: "request_body_inspection_size",
   userIpRequestHeaders: "user_ip_request_headers",
-  jsonCustomConfig: {
-    wireName: "json_custom_config",
-    kind: "list",
-    fields: SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields,
-  },
+};
+
+const SecurityPolicy_AssociationsFields: FieldMap = {
+  attachmentId: "attachment_id",
+  displayName: "display_name",
+  excludedFolders: "excluded_folders",
+  excludedProjects: "excluded_projects",
+  name: "name",
+  securityPolicyId: "security_policy_id",
+  shortName: "short_name",
+};
+
+const SecurityPolicy_DdosProtectionConfigFields: FieldMap = {
+  ddosAdaptiveProtection: "ddos_adaptive_protection",
+  ddosImpactedBaselineThreshold: "ddos_impacted_baseline_threshold",
+  ddosProtection: "ddos_protection",
 };
 
 const SecurityPolicy_RecaptchaOptionsConfigFields: FieldMap = {
   redirectSiteKey: "redirect_site_key",
 };
 
-const SecurityPolicy_Rule_HeaderAction_RequestHeadersToAddsFields: FieldMap = {
+const SecurityPolicy_Rules_HeaderAction_RequestHeadersToAddsFields: FieldMap = {
   headerName: "header_name",
   headerValue: "header_value",
 };
 
-const SecurityPolicy_Rule_HeaderActionFields: FieldMap = {
+const SecurityPolicy_Rules_HeaderActionFields: FieldMap = {
   requestHeadersToAdds: {
     wireName: "request_headers_to_adds",
     kind: "list",
-    fields: SecurityPolicy_Rule_HeaderAction_RequestHeadersToAddsFields,
+    fields: SecurityPolicy_Rules_HeaderAction_RequestHeadersToAddsFields,
   },
 };
 
-const SecurityPolicy_Rule_Match_ConfigFields: FieldMap = {
+const SecurityPolicy_Rules_Match_ConfigFields: FieldMap = {
   srcIpRanges: "src_ip_ranges",
 };
 
-const SecurityPolicy_Rule_Match_ExprFields: FieldMap = {
+const SecurityPolicy_Rules_Match_ExprFields: FieldMap = {
+  description: "description",
   expression: "expression",
+  location: "location",
+  title: "title",
 };
 
-const SecurityPolicy_Rule_Match_ExprOptions_RecaptchaOptionsFields: FieldMap = {
+const SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptionsFields: FieldMap = {
   actionTokenSiteKeys: "action_token_site_keys",
   sessionTokenSiteKeys: "session_token_site_keys",
 };
 
-const SecurityPolicy_Rule_Match_ExprOptionsFields: FieldMap = {
+const SecurityPolicy_Rules_Match_ExprOptionsFields: FieldMap = {
   recaptchaOptions: {
     wireName: "recaptcha_options",
-    kind: "list",
-    fields: SecurityPolicy_Rule_Match_ExprOptions_RecaptchaOptionsFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptionsFields,
   },
 };
 
-const SecurityPolicy_Rule_MatchFields: FieldMap = {
-  versionedExpr: "versioned_expr",
+const SecurityPolicy_Rules_MatchFields: FieldMap = {
   config: {
     wireName: "config",
-    kind: "list",
-    fields: SecurityPolicy_Rule_Match_ConfigFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_Match_ConfigFields,
   },
   expr: {
     wireName: "expr",
-    kind: "list",
-    fields: SecurityPolicy_Rule_Match_ExprFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_Match_ExprFields,
   },
   exprOptions: {
     wireName: "expr_options",
+    kind: "object",
+    fields: SecurityPolicy_Rules_Match_ExprOptionsFields,
+  },
+  versionedExpr: "versioned_expr",
+};
+
+const SecurityPolicy_Rules_NetworkMatch_UserDefinedFieldsFields: FieldMap = {
+  name: "name",
+  values: "values",
+};
+
+const SecurityPolicy_Rules_NetworkMatchFields: FieldMap = {
+  destIpRanges: "dest_ip_ranges",
+  destPorts: "dest_ports",
+  ipProtocols: "ip_protocols",
+  srcAsns: "src_asns",
+  srcIpRanges: "src_ip_ranges",
+  srcPorts: "src_ports",
+  srcRegionCodes: "src_region_codes",
+  userDefinedFields: {
+    wireName: "user_defined_fields",
     kind: "list",
-    fields: SecurityPolicy_Rule_Match_ExprOptionsFields,
+    fields: SecurityPolicy_Rules_NetworkMatch_UserDefinedFieldsFields,
   },
 };
 
-const SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields: FieldMap = {
-  operator: "operator",
-  value: "value",
+const SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields: FieldMap = {
+  op: "op",
+  val: "val",
 };
 
-const SecurityPolicy_Rule_PreconfiguredWafConfig_ExclusionFields: FieldMap = {
+const SecurityPolicy_Rules_PreconfiguredWafConfig_ExclusionsFields: FieldMap = {
+  requestCookiesToExclude: {
+    wireName: "request_cookies_to_exclude",
+    kind: "list",
+    fields: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+  },
+  requestHeadersToExclude: {
+    wireName: "request_headers_to_exclude",
+    kind: "list",
+    fields: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+  },
+  requestQueryParamsToExclude: {
+    wireName: "request_query_params_to_exclude",
+    kind: "list",
+    fields: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+  },
+  requestUrisToExclude: {
+    wireName: "request_uris_to_exclude",
+    kind: "list",
+    fields: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExcludeFields,
+  },
   targetRuleIds: "target_rule_ids",
   targetRuleSet: "target_rule_set",
-  requestCookie: {
-    wireName: "request_cookie",
+};
+
+const SecurityPolicy_Rules_PreconfiguredWafConfigFields: FieldMap = {
+  exclusions: {
+    wireName: "exclusions",
     kind: "list",
-    fields: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
-  },
-  requestHeader: {
-    wireName: "request_header",
-    kind: "list",
-    fields: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
-  },
-  requestQueryParam: {
-    wireName: "request_query_param",
-    kind: "list",
-    fields: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
-  },
-  requestUri: {
-    wireName: "request_uri",
-    kind: "list",
-    fields: SecurityPolicy_Rule_PreconfiguredWafConfig_Exclusion_RequestCookieFields,
+    fields: SecurityPolicy_Rules_PreconfiguredWafConfig_ExclusionsFields,
   },
 };
 
-const SecurityPolicy_Rule_PreconfiguredWafConfigFields: FieldMap = {
-  exclusion: {
-    wireName: "exclusion",
-    kind: "list",
-    fields: SecurityPolicy_Rule_PreconfiguredWafConfig_ExclusionFields,
-  },
-};
-
-const SecurityPolicy_Rule_RateLimitOptions_BanThresholdFields: FieldMap = {
+const SecurityPolicy_Rules_RateLimitOptions_BanThresholdFields: FieldMap = {
   count: "count",
   intervalSec: "interval_sec",
 };
 
-const SecurityPolicy_Rule_RateLimitOptions_EnforceOnKeyConfigsFields: FieldMap = {
+const SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigsFields: FieldMap = {
   enforceOnKeyName: "enforce_on_key_name",
   enforceOnKeyType: "enforce_on_key_type",
 };
 
-const SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptionsFields: FieldMap = {
+const SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields: FieldMap = {
   target: "target",
   type: "type",
 };
 
-const SecurityPolicy_Rule_RateLimitOptionsFields: FieldMap = {
+const SecurityPolicy_Rules_RateLimitOptionsFields: FieldMap = {
   banDurationSec: "ban_duration_sec",
-  conformAction: "conform_action",
-  enforceOnKey: "enforce_on_key",
-  enforceOnKeyName: "enforce_on_key_name",
-  exceedAction: "exceed_action",
   banThreshold: {
     wireName: "ban_threshold",
-    kind: "list",
-    fields: SecurityPolicy_Rule_RateLimitOptions_BanThresholdFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
   },
+  conformAction: "conform_action",
+  enforceOnKey: "enforce_on_key",
   enforceOnKeyConfigs: {
     wireName: "enforce_on_key_configs",
     kind: "list",
-    fields: SecurityPolicy_Rule_RateLimitOptions_EnforceOnKeyConfigsFields,
+    fields: SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigsFields,
   },
+  enforceOnKeyName: "enforce_on_key_name",
+  exceedAction: "exceed_action",
   exceedRedirectOptions: {
     wireName: "exceed_redirect_options",
-    kind: "list",
-    fields: SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptionsFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
   },
   rateLimitThreshold: {
     wireName: "rate_limit_threshold",
-    kind: "list",
-    fields: SecurityPolicy_Rule_RateLimitOptions_BanThresholdFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
   },
 };
 
-const SecurityPolicy_RuleFields: FieldMap = {
+const SecurityPolicy_RulesFields: FieldMap = {
   action: "action",
   description: "description",
-  preview: "preview",
-  priority: "priority",
   headerAction: {
     wireName: "header_action",
-    kind: "list",
-    fields: SecurityPolicy_Rule_HeaderActionFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_HeaderActionFields,
   },
+  kind: "kind",
   match: {
     wireName: "match",
-    kind: "list",
-    fields: SecurityPolicy_Rule_MatchFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_MatchFields,
+  },
+  networkMatch: {
+    wireName: "network_match",
+    kind: "object",
+    fields: SecurityPolicy_Rules_NetworkMatchFields,
   },
   preconfiguredWafConfig: {
     wireName: "preconfigured_waf_config",
-    kind: "list",
-    fields: SecurityPolicy_Rule_PreconfiguredWafConfigFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_PreconfiguredWafConfigFields,
   },
+  preview: "preview",
+  priority: "priority",
   rateLimitOptions: {
     wireName: "rate_limit_options",
-    kind: "list",
-    fields: SecurityPolicy_Rule_RateLimitOptionsFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_RateLimitOptionsFields,
   },
   redirectOptions: {
     wireName: "redirect_options",
-    kind: "list",
-    fields: SecurityPolicy_Rule_RateLimitOptions_ExceedRedirectOptionsFields,
+    kind: "object",
+    fields: SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
   },
 };
 
-const SecurityPolicy_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const SecurityPolicy_UserDefinedFieldsFields: FieldMap = {
+  base: "base",
+  mask: "mask",
+  name: "name",
+  offset: "offset",
+  size: "size",
 };
 
 export interface SecurityPolicyConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
+  adaptiveProtectionConfig?: SecurityPolicy_AdaptiveProtectionConfig | Computed<SecurityPolicy_AdaptiveProtectionConfig>;
+  advancedOptionsConfig?: SecurityPolicy_AdvancedOptionsConfig | Computed<SecurityPolicy_AdvancedOptionsConfig>;
+  /** A list of associations that belong to this policy. */
+  associations?: SecurityPolicy_Associations[] | Computed<SecurityPolicy_Associations[]>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  ddosProtectionConfig?: SecurityPolicy_DdosProtectionConfig | Computed<SecurityPolicy_DdosProtectionConfig>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy. */
+  fingerprint?: string | Computed<string>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
+  /** Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies */
+  kind?: string | Computed<string>;
+  /** A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy. */
+  labelFingerprint?: string | Computed<string>;
+  /** Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  name: string | Computed<string>;
-  project?: string | Computed<string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** Output only. [Output Only] The parent of the security policy. */
+  parent?: string | Computed<string>;
+  recaptchaOptionsConfig?: SecurityPolicy_RecaptchaOptionsConfig | Computed<SecurityPolicy_RecaptchaOptionsConfig>;
+  /** Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies. */
+  region?: string | Computed<string>;
+  /** A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added. */
+  rules?: SecurityPolicy_Rules[] | Computed<SecurityPolicy_Rules[]>;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  shortName?: string | Computed<string>;
+  /** The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time. */
   type?: string | Computed<string>;
-  adaptiveProtectionConfig?: SecurityPolicy_AdaptiveProtectionConfig[] | Computed<SecurityPolicy_AdaptiveProtectionConfig[]>;
-  advancedOptionsConfig?: SecurityPolicy_AdvancedOptionsConfig[] | Computed<SecurityPolicy_AdvancedOptionsConfig[]>;
-  recaptchaOptionsConfig?: SecurityPolicy_RecaptchaOptionsConfig[] | Computed<SecurityPolicy_RecaptchaOptionsConfig[]>;
-  rule?: SecurityPolicy_Rule[] | Computed<SecurityPolicy_Rule[]>;
-  timeouts?: SecurityPolicy_Timeouts | Computed<SecurityPolicy_Timeouts>;
+  /** Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff" */
+  userDefinedFields?: SecurityPolicy_UserDefinedFields[] | Computed<SecurityPolicy_UserDefinedFields[]>;
 }
 
 export interface SecurityPolicyAttrs {
-  deletionPolicy: string;
+  /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
+  adaptiveProtectionConfig: SecurityPolicy_AdaptiveProtectionConfig;
+  advancedOptionsConfig: SecurityPolicy_AdvancedOptionsConfig;
+  /** A list of associations that belong to this policy. */
+  associations: SecurityPolicy_Associations[];
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp: string;
+  ddosProtectionConfig: SecurityPolicy_DdosProtectionConfig;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
-  effectiveLabels: Record<string, string>;
+  /** Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make get() request to the security policy. */
   fingerprint: string;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies */
+  kind: string;
+  /** A fingerprint for the labels being applied to this security policy, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the security policy. */
   labelFingerprint: string;
+  /** Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty. */
   labels: Record<string, string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
-  project: string;
+  /** Output only. [Output Only] The parent of the security policy. */
+  parent: string;
+  recaptchaOptionsConfig: SecurityPolicy_RecaptchaOptionsConfig;
+  /** Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies. */
+  region: string;
+  /** A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added. */
+  rules: SecurityPolicy_Rules[];
+  /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
-  terraformLabels: Record<string, string>;
+  /** User-provided name of the organization security policy. The name should be unique in the organization in which the security policy is created. This should only be used when SecurityPolicyType is CLOUD_ARMOR. The name must be 1-63 characters long, and comply with https://www.ietf.org/rfc/rfc1035.txt. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  shortName: string;
+  /** The type indicates the intended use of the security policy. - CLOUD_ARMOR: Cloud Armor backend security policies can be configured to filter incoming HTTP requests targeting backend services. They filter requests before they hit the origin servers. - CLOUD_ARMOR_EDGE: Cloud Armor edge security policies can be configured to filter incoming HTTP requests targeting backend services (including Cloud CDN-enabled) as well as backend buckets (Cloud Storage). They filter requests before the request is served from Google's cache. - CLOUD_ARMOR_INTERNAL_SERVICE (preview only): Cloud Armor internal service policies can be configured to filter HTTP requests targeting services managed by Traffic Director in a service mesh. They filter requests before the request is served from the application. - CLOUD_ARMOR_NETWORK: Cloud Armor network policies can be configured to filter packets targeting network load balancing resources such as backend services, target pools, target instances, and instances with external IPs. They filter requests before the request is served from the application. This field can be set only at resource creation time. */
   type: string;
-  adaptiveProtectionConfig: SecurityPolicy_AdaptiveProtectionConfig[];
-  advancedOptionsConfig: SecurityPolicy_AdvancedOptionsConfig[];
-  recaptchaOptionsConfig: SecurityPolicy_RecaptchaOptionsConfig[];
-  rule: SecurityPolicy_Rule[];
-  timeouts: SecurityPolicy_Timeouts;
+  /** Definitions of user-defined fields for CLOUD_ARMOR_NETWORK policies. A user-defined field consists of up to 4 bytes extracted from a fixed offset in the packet, relative to the IPv4, IPv6, TCP, or UDP header, with an optional mask to select certain bits. Rules may then specify matching values for these fields. Example: userDefinedFields: - name: "ipv4_fragment_offset" base: IPV4 offset: 6 size: 2 mask: "0x1fff" */
+  userDefinedFields: SecurityPolicy_UserDefinedFields[];
 }
 
 export const SecurityPolicy: ResourceBinding<SecurityPolicyConfig, SecurityPolicyAttrs> = {
   wireType: "google_compute_security_policy",
   fields: {
-    deletionPolicy: "deletion_policy",
-    description: "description",
-    id: "id",
-    labels: "labels",
-    name: "name",
-    project: "project",
-    type: "type",
     adaptiveProtectionConfig: {
       wireName: "adaptive_protection_config",
-      kind: "list",
+      kind: "object",
       fields: SecurityPolicy_AdaptiveProtectionConfigFields,
     },
     advancedOptionsConfig: {
       wireName: "advanced_options_config",
-      kind: "list",
+      kind: "object",
       fields: SecurityPolicy_AdvancedOptionsConfigFields,
     },
+    associations: {
+      wireName: "associations",
+      kind: "list",
+      fields: SecurityPolicy_AssociationsFields,
+    },
+    creationTimestamp: "creation_timestamp",
+    ddosProtectionConfig: {
+      wireName: "ddos_protection_config",
+      kind: "object",
+      fields: SecurityPolicy_DdosProtectionConfigFields,
+    },
+    description: "description",
+    fingerprint: "fingerprint",
+    id: "id",
+    kind: "kind",
+    labelFingerprint: "label_fingerprint",
+    labels: "labels",
+    name: "name",
+    parent: "parent",
     recaptchaOptionsConfig: {
       wireName: "recaptcha_options_config",
-      kind: "list",
+      kind: "object",
       fields: SecurityPolicy_RecaptchaOptionsConfigFields,
     },
-    rule: {
-      wireName: "rule",
-      kind: "set",
-      fields: SecurityPolicy_RuleFields,
+    region: "region",
+    rules: {
+      wireName: "rules",
+      kind: "list",
+      fields: SecurityPolicy_RulesFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: SecurityPolicy_TimeoutsFields,
+    selfLink: "self_link",
+    shortName: "short_name",
+    type: "type",
+    userDefinedFields: {
+      wireName: "user_defined_fields",
+      kind: "list",
+      fields: SecurityPolicy_UserDefinedFieldsFields,
     },
   },
 };

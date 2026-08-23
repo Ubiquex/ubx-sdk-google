@@ -7,205 +7,435 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRules:
+    # A list of HTTP status codes that this error response rule matches. When a backend returns one of these response codes, the custom error response is used. For example, "404" or "500". (AI-inferred)
+    match_response_codes: Any = None
+    # The HTTP status code that the URL Map should return to the client when the error occurs. The value must be between 100 and 599. If not specified, the original error code is returned. (AI-inferred)
+    override_response_code: Any = None
+    # The path to the custom error page for this error response rule. This is typically a relative URL path (e.g., '/custom-error.html') that serves the error response from the backend or a static content bucket. (AI-inferred)
+    path: Any = None
+
+@dataclasses.dataclass
+class RegionUrlMap_DefaultCustomErrorResponsePolicy:
+    # Specifies rules for returning error responses. In a given policy, if you specify rules for both a range of error codes as well as rules for specific error codes then rules with specific error codes have a higher priority. For example, assume that you configure a rule for 401 (Un-authorized) code, and another for all 4 series error codes (4XX). If the backend service returns a401, then the rule for 401 will be applied. However if the backend service returns a 403, the rule for4xx takes effect.
+    error_response_rules: Any = None
+    # The full or partial URL to the BackendBucket resource that contains the custom error content. Examples are: - https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket - compute/v1/projects/project/global/backendBuckets/myBackendBucket - global/backendBuckets/myBackendBucket If errorService is not specified at lower levels likepathMatcher, pathRule and routeRule, an errorService specified at a higher level in theUrlMap will be used. IfUrlMap.defaultCustomErrorResponsePolicy contains one or moreerrorResponseRules[], it must specifyerrorService. If load balancer cannot reach the backendBucket, a simple Not Found Error will be returned, with the original response code (oroverrideResponseCode if configured). errorService is not supported for internal or regionalHTTP/HTTPS load balancers.
+    error_service: Any = None
+
+@dataclasses.dataclass
+class RegionUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicy:
+    # Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify `excludedQueryParameters` or `includedQueryParameters`, not both. '&' and '=' will be percent encoded and not treated as delimiters. Note: This field applies to routes that use backend services. Attempting to set it on a route that points exclusively to Backend Buckets will result in a configuration error. For routes that point to a Backend Bucket, use `includedQueryParameters` to define which parameters should be part of the cache key.
+    excluded_query_parameters: Any = None
+    # If true, requests to different hosts will be cached separately. Note: This setting is only applicable to routes that use a Backend Service. It does not affect requests served by a Backend Bucket, as the host is never included in a Backend Bucket's cache key. Attempting to set it on a route that points exclusively to Backend Buckets will result in a configuration error.
+    include_host: Any = None
+    # If true, http and https requests will be cached separately. Note: This setting is only applicable to routes that use a Backend Service. It does not affect requests served by a Backend Bucket, as the protocol is never included in a Backend Bucket's cache key. Attempting to set on a route that points exclusively to Backend Buckets will result in a configuration error.
+    include_protocol: Any = None
+    # If true, include query string parameters in the cache key according to `includedQueryParameters` and `excludedQueryParameters`. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely. Note: This field applies to routes that use backend services. Attempting to set it on a route that points exclusively to Backend Buckets will result in a configuration error. For routes that point to a Backend Bucket, use `includedQueryParameters` to define which parameters should be part of the cache key.
+    include_query_string: Any = None
+    # Allows HTTP cookies (by name) to be used in the cache key. The name=value pair will be used in the cache key Cloud CDN generates. Note: This setting is only applicable to routes that use a Backend Service. It does not affect requests served by a Backend Bucket. Attempting to set it on a route that points exclusively to Backend Buckets will result in a configuration error. Up to 5 cookie names can be specified.
+    included_cookie_names: Any = None
+    # Allows HTTP request headers (by name) to be used in the cache key.
+    included_header_names: Any = None
+    # Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify `includedQueryParameters` or `excludedQueryParameters`, not both. '&' and '=' will be percent encoded and not treated as delimiters.
+    included_query_parameters: Any = None
+
+@dataclasses.dataclass
+class RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtl:
+    # Span of time that's a fraction of a second at nanosecond resolution. Durations less than one second are represented with a 0 `seconds` field and a positive `nanos` field. Must be from 0 to 999,999,999 inclusive.
+    nanos: Any = None
+    # Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
+    seconds: Any = None
+
+@dataclasses.dataclass
+class RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicy:
+    # HTTP status code for which the negative caching policy applies. (AI-inferred)
+    code: Any = None
+    # The duration for which a negative cache entry is retained. This is a Duration object containing 'seconds' and 'nanos' fields. (AI-inferred)
+    ttl: Any = None
+
+@dataclasses.dataclass
+class RegionUrlMap_DefaultRouteAction_CachePolicy:
+    # Bypass the cache when the specified request headers are matched by name, e.g. Pragma or Authorization headers. Values are case-insensitive. Up to 5 header names can be specified. The cache is bypassed for all `cacheMode` values.
+    cache_bypass_request_header_names: Any = None
+    # Message containing what to include in the cache key for a request for Cache Policy defined on Route Action.
+    cache_key_policy: Any = None
+    # Specifies the cache setting for all responses from this route. If not specified, Cloud CDN uses `CACHE_ALL_STATIC` mode.
+    cache_mode: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    client_ttl: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    default_ttl: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    max_ttl: Any = None
+    # Negative caching allows per-status code TTLs to be set, in order to apply fine-grained caching for common errors or redirects. This can reduce the load on your origin and improve end-user experience by reducing response latency. When the `cacheMode` is set to `CACHE_ALL_STATIC` or `USE_ORIGIN_HEADERS`, negative caching applies to responses with the specified response code that lack any Cache-Control, Expires, or Pragma: no-cache directives. When the `cacheMode` is set to `FORCE_CACHE_ALL`, negative caching applies to all responses with the specified response code, and overrides any caching headers. By default, Cloud CDN applies the following TTLs to these HTTP status codes: * 300 (Multiple Choice), 301, 308 (Permanent Redirects): 10m * 404 (Not Found), 410 (Gone), 451 (Unavailable For Legal Reasons): 120s * 405 (Method Not Found), 501 (Not Implemented): 60s These defaults can be overridden in `negativeCachingPolicy`. If not specified, Cloud CDN applies negative caching by default.
+    negative_caching: Any = None
+    # Sets a cache TTL for the specified HTTP status code. `negativeCaching` must be enabled to configure `negativeCachingPolicy`. Omitting the policy and leaving `negativeCaching` enabled will use Cloud CDN's default cache TTLs. Note that when specifying an explicit `negativeCachingPolicy`, you should take care to specify a cache TTL for all response codes that you wish to cache. Cloud CDN will not apply any default negative caching when a policy exists.
+    negative_caching_policy: Any = None
+    # If true then Cloud CDN will combine multiple concurrent cache fill requests into a small number of requests to the origin. If not specified, Cloud CDN applies request coalescing by default.
+    request_coalescing: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    serve_while_stale: Any = None
+
+@dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_CorsPolicy:
+    # In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This field translates to the Access-Control-Allow-Credentials header. Default is false.
     allow_credentials: Any = None
+    # Specifies the content for the Access-Control-Allow-Headers header.
     allow_headers: Any = None
+    # Specifies the content for the Access-Control-Allow-Methods header.
     allow_methods: Any = None
+    # Specifies a regular expression that matches allowed origins. For more information, see regular expression syntax. An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
     allow_origin_regexes: Any = None
+    # Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
     allow_origins: Any = None
+    # If true, disables the CORS policy. The default value is false, which indicates that the CORS policy is in effect.
     disabled: Any = None
+    # Specifies the content for the Access-Control-Expose-Headers header.
     expose_headers: Any = None
+    # Specifies how long results of a preflight request can be cached in seconds. This field translates to the Access-Control-Max-Age header.
     max_age: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Abort:
+    # The HTTP status code used to abort the request. The value must be from 200 to 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
     http_status: Any = None
+    # The percentage of traffic for connections, operations, or requests that is aborted as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
     percentage: Any = None
-
-@dataclasses.dataclass
-class RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelay:
-    nanos: Any = None
-    seconds: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay:
-    percentage: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     fixed_delay: Any = None
+    # The percentage of traffic for connections, operations, or requests for which a delay is introduced as part of fault injection. The value must be from 0.0 to 100.0 inclusive.
+    percentage: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy:
+    # Specification for how requests are aborted as part of fault injection.
     abort: Any = None
+    # Specifies the delay introduced by the load balancer before forwarding the request to the backend service as part of fault injection.
     delay: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_RequestMirrorPolicy:
+    # The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
     backend_service: Any = None
+    # The percentage of requests to be mirrored to `backend_service`.
+    mirror_percent: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_RetryPolicy:
+    # Specifies the allowed number retries. This number must be > 0. If not specified, defaults to 1.
     num_retries: Any = None
-    retry_conditions: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     per_try_timeout: Any = None
+    # Specifies one or more conditions when this retry policy applies. Valid values are: - 5xx: retry is attempted if the instance or endpoint responds with any 5xx response code, or if the instance or endpoint does not respond at all. For example, disconnects, reset, read timeout, connection failure, and refused streams. - gateway-error: Similar to 5xx, but only applies to response codes 502, 503 or504. - connect-failure: a retry is attempted on failures connecting to the instance or endpoint. For example, connection timeouts. - retriable-4xx: a retry is attempted if the instance or endpoint responds with a 4xx response code. The only error that you can retry is error code 409. - refused-stream: a retry is attempted if the instance or endpoint resets the stream with a REFUSED_STREAM error code. This reset type indicates that it is safe to retry. - cancelled: a retry is attempted if the gRPC status code in the response header is set to cancelled. - deadline-exceeded: a retry is attempted if the gRPC status code in the response header is set todeadline-exceeded. - internal: a retry is attempted if the gRPC status code in the response header is set tointernal. - resource-exhausted: a retry is attempted if the gRPC status code in the response header is set toresource-exhausted. - unavailable: a retry is attempted if the gRPC status code in the response header is set tounavailable. Only the following codes are supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true. - cancelled - deadline-exceeded - internal - resource-exhausted - unavailable
+    retry_conditions: Any = None
+
+@dataclasses.dataclass
+class RegionUrlMap_DefaultRouteAction_UrlRewrite_RegexRewrite:
+    # Required. The regular expression used to match against the URL path. It uses RE2 syntax with the following constraints: - Any single character operators - Groups are allowed to have only submatch operator inside - Groups are allowed only without any char repetition, e.g. .* - Any char repetition, e.g. .*, is only allowed to be used in a single regex together with: - Empty string operators - Other repetitions - Ranges - Repetitions of ranges - Ranges are only allowed to have: - Character range - Digits range - Symbols listed in characters allowed for ranges
+    path_pattern: Any = None
+    # Required. Required when path pattern is specified. Used to rewrite matching parts of the path.
+    path_substitution: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_UrlRewrite:
+    # Before forwarding the request to the selected service, the request's host header is replaced with contents of hostRewrite. The value must be from 1 to 255 characters.
     host_rewrite: Any = None
+    # Before forwarding the request to the selected backend service, the matching portion of the request's path is replaced bypathPrefixRewrite. The value must be from 1 to 1024 characters.
     path_prefix_rewrite: Any = None
+    # If specified, the pattern rewrites the URL path (based on the :path header) using the HTTP template syntax. A corresponding path_template_match must be specified. Any template variables must exist in the path_template_match field. - -At least one variable must be specified in the path_template_match field - You can omit variables from the rewritten URL - The * and ** operators cannot be matched unless they have a corresponding variable name - e.g. {format=*} or {var=**}. For example, a path_template_match of /static/{format=**} could be rewritten as /static/content/{format} to prefix/content to the URL. Variables can also be re-ordered in a rewrite, so that /{country}/{format}/{suffix=**} can be rewritten as /content/{format}/{country}/{suffix}. At least one non-empty routeRules[].matchRules[].path_template_match is required. Only one of path_prefix_rewrite orpath_template_rewrite may be specified.
+    path_template_rewrite: Any = None
+    # The spec for modifying the path using a regular expression.
+    regex_rewrite: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd:
+    # The name of the HTTP header to add to the request. Must be a valid header name, typically containing only letters, digits, and hyphens (e.g., 'X-Forwarded-For'). (AI-inferred)
     header_name: Any = None
+    # The value of the request header to add. This value is sent to the backend service along with the header name. (AI-inferred)
     header_value: Any = None
+    # If true, the header value replaces an existing header with the same name. If false, the header is added as an additional header. (AI-inferred)
     replace: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction:
-    request_headers_to_remove: Any = None
-    response_headers_to_remove: Any = None
+    # The list of headers to be added to the request before it is forwarded to the backend service for this weighted backend service configuration. (AI-inferred)
     request_headers_to_add: Any = None
+    # A list of HTTP request header names to remove from the request before forwarding to the backend service. (AI-inferred)
+    request_headers_to_remove: Any = None
+    # A list of response headers to add, with each item specifying a header name and value. These headers are added to HTTP responses sent to the client when the request is served by this weighted backend service. (AI-inferred)
     response_headers_to_add: Any = None
+    # Specifies a list of response header names to remove before sending the response back to the client. (AI-inferred)
+    response_headers_to_remove: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction_WeightedBackendServices:
+    # The name of the backend service that receives traffic for this weighted backend service entry. (AI-inferred)
     backend_service: Any = None
-    weight: Any = None
+    # Defines the header modifications to apply to requests and responses for the corresponding weighted backend service in the region URL map. (AI-inferred)
     header_action: Any = None
+    # Specifies the relative weight for this backend service. Traffic is distributed proportionally to the weights of all backend services in the weighted_backend_services list. (AI-inferred)
+    weight: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultRouteAction:
+    # Message containing CachePolicy configuration for URL Map's Route Action.
+    cache_policy: Any = None
+    # The specification for allowing client-side cross-origin requests. For more information about the W3C recommendation for cross-origin resource sharing (CORS), see Fetch API Living Standard.
     cors_policy: Any = None
+    # The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure. As part of fault injection, when clients send requests to a backend service, delays can be introduced by the load balancer on a percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted by the load balancer for a percentage of requests.
     fault_injection_policy: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    max_stream_duration: Any = None
+    # A policy that specifies how requests intended for the route's backends are shadowed to a separate mirrored backend service. The load balancer doesn't wait for responses from the shadow service. Before sending traffic to the shadow service, the host or authority header is suffixed with-shadow.
     request_mirror_policy: Any = None
+    # The retry policy associates with HttpRouteRule
     retry_policy: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     timeout: Any = None
+    # The spec for modifying the path before sending the request to the matched backend service.
     url_rewrite: Any = None
+    # A list of weighted backend services to send traffic to when a route match occurs. The weights determine the fraction of traffic that flows to their corresponding backend service. If all traffic needs to go to a single backend service, there must be oneweightedBackendService with weight set to a non-zero number. After a backend service is identified and before forwarding the request to the backend service, advanced routing actions such as URL rewrites and header transformations are applied depending on additional settings specified in this HttpRouteAction.
     weighted_backend_services: Any = None
 
 @dataclasses.dataclass
 class RegionUrlMap_DefaultUrlRedirect:
+    # The host that is used in the redirect response instead of the one that was supplied in the request. The value must be from 1 to 255 characters.
     host_redirect: Any = None
+    # If set to true, the URL scheme in the redirected request is set to HTTPS. If set to false, the URL scheme of the redirected request remains the same as that of the request. This must only be set for URL maps used inTargetHttpProxys. Setting this true forTargetHttpsProxy is not permitted. The default is set to false.
     https_redirect: Any = None
+    # The path that is used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together withprefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request is used for the redirect. The value must be from 1 to 1024 characters.
     path_redirect: Any = None
+    # The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together withpathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request is used for the redirect. The value must be from 1 to 1024 characters.
     prefix_redirect: Any = None
+    # The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method is retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method is retained.
     redirect_response_code: Any = None
+    # If set to true, any accompanying query portion of the original URL is removed before redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
     strip_query: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_HostRule:
+class RegionUrlMap_HostRules:
     description: Any = None
+    # The list of host patterns to match. The request's Host header must match one of these patterns (e.g., 'example.com' or '*.example.com') for this host rule to apply. (AI-inferred)
     hosts: Any = None
+    # The name of the path matcher to use for this host rule. This must match the name of a path matcher defined in the region URL map's path_matchers list. (AI-inferred)
     path_matcher: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_DefaultRouteAction_UrlRewrite:
-    host_rewrite: Any = None
-    path_prefix_rewrite: Any = None
-    path_template_rewrite: Any = None
-
-@dataclasses.dataclass
-class RegionUrlMap_PathMatcher_DefaultRouteAction:
-    cors_policy: Any = None
-    fault_injection_policy: Any = None
-    max_stream_duration: Any = None
-    request_mirror_policy: Any = None
-    retry_policy: Any = None
-    timeout: Any = None
-    url_rewrite: Any = None
-    weighted_backend_services: Any = None
-
-@dataclasses.dataclass
-class RegionUrlMap_PathMatcher_PathRule:
+class RegionUrlMap_PathMatchers_PathRules:
+    # The custom error response policy for this path rule. It defines how to customize responses for specific HTTP error codes, such as the error page content and response code to serve. (AI-inferred)
+    custom_error_response_policy: Any = None
+    # List of path patterns to match against the incoming request path. Each path can contain a single trailing * wildcard. If the request path matches any of these patterns, the specified route action is applied. (AI-inferred)
     paths: Any = None
-    service: Any = None
+    # Specifies the route action to take for requests that match this path rule, such as forwarding to a backend service, configuring weighted backend services, URL rewrite, or setting timeouts. (AI-inferred)
     route_action: Any = None
+    # The backend service or backend bucket to use when the path matches this rule. Specify the self_link or name of a regional backend service or backend bucket. (AI-inferred)
+    service: Any = None
+    # Specifies a redirect for requests that match this path rule. When set, matched requests are redirected according to the configured redirect behavior instead of being forwarded to a backend service. (AI-inferred)
     url_redirect: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules_MatchRules_HeaderMatches_RangeMatch:
+class RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch:
+    # The inclusive end of the integer range used to match a header value. The header value must be less than or equal to this number to match. (AI-inferred)
     range_end: Any = None
+    # The start of the range (inclusive) to match for the header value. (AI-inferred)
     range_start: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules_MatchRules_HeaderMatches:
+class RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches:
+    # Specifies the exact header value that must match for the request to satisfy the match condition. (AI-inferred)
     exact_match: Any = None
+    # The name of the HTTP header to match. (AI-inferred)
     header_name: Any = None
+    # If set to true, the match condition is inverted, meaning the request matches when the header value does NOT equal the specified value. For example, with invert_match true and a specified value of 'foo', the match succeeds only if the header value is not 'foo'. (AI-inferred)
     invert_match: Any = None
+    # Specifies a prefix match for the header value. The header value must start with this prefix. (AI-inferred)
     prefix_match: Any = None
+    # When set to true, the match is successful only if the header is present. This is an alternative to using exact_match, prefix_match, suffix_match, and regex_match. (AI-inferred)
     present_match: Any = None
-    regex_match: Any = None
-    suffix_match: Any = None
+    # Defines an inclusive numeric range that the header value must fall within to match. The object contains integer fields rangeStart and rangeEnd. (AI-inferred)
     range_match: Any = None
+    # The regular expression pattern that the value of the header must match for the match rule to apply. It is used to match the header value against a regular expression, as an alternative to exact matching. (AI-inferred)
+    regex_match: Any = None
+    # The suffix that the header value must end with for the match to be considered successful. The match is case-sensitive. (AI-inferred)
+    suffix_match: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules_MatchRules_MetadataFilters_FilterLabels:
+class RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels:
+    # The key of the metadata filter label. This specifies the label name to match against when filtering requests. For example, in a filter label 'env=prod', the name is 'env'. (AI-inferred)
     name: Any = None
+    # The value of the metadata filter label. This value is matched against the corresponding metadata header value (e.g., x-goog-meta- prefixed header) for the request, and the request is considered matched when the header value equals this value. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules_MatchRules_MetadataFilters:
-    filter_match_criteria: Any = None
+class RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters:
+    # Specifies a list of metadata label filters, each containing a key (name) and value (value), used to match incoming request metadata for this routing rule. (AI-inferred)
     filter_labels: Any = None
+    # Specifies how the filter labels are combined: MATCH_ALL requires all specified labels to match, MATCH_ANY requires at least one to match, and NOT_SET indicates the field is not configured. (AI-inferred)
+    filter_match_criteria: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules_MatchRules_QueryParameterMatches:
+class RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches:
+    # The exact value to match against the query parameter's value. The match rule is satisfied only when the query parameter value equals this string exactly. (AI-inferred)
     exact_match: Any = None
+    # The name of the query parameter to match. (AI-inferred)
     name: Any = None
+    # When set to true, the match requires the query parameter to be present in the request, regardless of its value. (AI-inferred)
     present_match: Any = None
+    # The regular expression (RE2 syntax) that the query parameter value must match. This is mutually exclusive with exact_match. (AI-inferred)
     regex_match: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules_MatchRules:
+class RegionUrlMap_PathMatchers_RouteRules_MatchRules:
+    # Specifies the full request path that must exactly match for this match rule to apply. This is an exact match on the entire path, as opposed to prefix or regex matching. (AI-inferred)
     full_path_match: Any = None
-    ignore_case: Any = None
-    path_template_match: Any = None
-    prefix_match: Any = None
-    regex_match: Any = None
+    # Defines a list of HTTP header match conditions. The request must satisfy all specified header conditions for the match rule to be considered a match. (AI-inferred)
     header_matches: Any = None
+    # Indicates whether to ignore case when matching the request path. When set to true, the match is case-insensitive. (AI-inferred)
+    ignore_case: Any = None
+    # A list of metadata filters that requests must match. Each filter specifies a list of labels and a match criterion (MATCH_ALL or MATCH_ANY) to determine whether all or any labels must match. (AI-inferred)
     metadata_filters: Any = None
+    # Specifies a path template to match against the request path. The template can include variables in curly braces (e.g., /users/{id}) that match any value in that segment, enabling flexible path-based routing. (AI-inferred)
+    path_template_match: Any = None
+    # Specifies the prefix of the request path to match. The path must begin with this prefix, and the match is case-sensitive. (AI-inferred)
+    prefix_match: Any = None
+    # A list of query parameter match criteria for this match rule. Each entry specifies a query parameter name and value to match, with an optional exactMatch flag to control whether the match is exact or uses regular expressions. (AI-inferred)
     query_parameter_matches: Any = None
+    # A regular expression that the entire request path must match. This is used to determine if the route rule applies. (AI-inferred)
+    regex_match: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules_RouteAction:
-    cors_policy: Any = None
-    fault_injection_policy: Any = None
-    request_mirror_policy: Any = None
-    retry_policy: Any = None
-    timeout: Any = None
-    url_rewrite: Any = None
-    weighted_backend_services: Any = None
-
-@dataclasses.dataclass
-class RegionUrlMap_PathMatcher_RouteRules:
-    priority: Any = None
-    service: Any = None
+class RegionUrlMap_PathMatchers_RouteRules:
+    # The custom_error_response_policy block configures custom error responses for this route rule, allowing you to define custom error pages or redirects for specific HTTP error codes returned by the load balancer. (AI-inferred)
+    custom_error_response_policy: Any = None
+    # An optional, human-readable description of this route rule. (AI-inferred)
+    description: Any = None
+    # Defines the header actions for this route rule, including adding and removing request and response headers. (AI-inferred)
     header_action: Any = None
+    # List of match rules that define the conditions under which incoming requests are matched to this route rule. Each match rule can specify path matching criteria (such as full path, prefix, or regex), header and query parameter matches, and case sensitivity. (AI-inferred)
     match_rules: Any = None
+    # The priority for this route rule, as an integer from 0 to 2147483647. Lower values are evaluated first, and priorities must be unique within the path matcher. (AI-inferred)
+    priority: Any = None
+    # The action to be performed when a request matches this route rule, which may include URL rewriting, routing to weighted backend services, or other routing policies. (AI-inferred)
     route_action: Any = None
+    # The full or partial URL (or name) of the backend service to which traffic matching this rule is routed. (AI-inferred)
+    service: Any = None
+    # A block that defines a URL redirect action for this route rule. When specified, requests matching this rule are redirected to the URL specified by the redirect parameters. If url_redirect is set, neither the service nor the urlRewrite action may be set for the same rule. (AI-inferred)
     url_redirect: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_PathMatcher:
-    default_service: Any = None
-    description: Any = None
-    name: Any = None
+class RegionUrlMap_PathMatchers:
+    # Defines the default custom error response policy for this path matcher, controlling how errors from backend services are customized, such as serving a custom error page or redirecting. If this policy is not set, the URL map's default custom error response policy is used. (AI-inferred)
+    default_custom_error_response_policy: Any = None
+    # The default route action for the path matcher, applied when no path rule matches the request. (AI-inferred)
     default_route_action: Any = None
+    # The default BackendService that receives traffic for this path matcher when the request path does not match any pathRule. Specify the full or partial URL to a BackendService resource. (AI-inferred)
+    default_service: Any = None
+    # Default redirect configuration for requests that don't match any path rules in this path matcher. When set, unmatched requests are redirected according to this object instead of being forwarded to a default service. (AI-inferred)
     default_url_redirect: Any = None
+    # An optional description of the path matcher. (AI-inferred)
+    description: Any = None
+    # Configures the request header modifications (additions or removals) applied to requests that match this path matcher, before they are forwarded to the backend service. (AI-inferred)
     header_action: Any = None
-    path_rule: Any = None
+    # The name of the path matcher. (AI-inferred)
+    name: Any = None
+    # Path rules within a path matcher. Each rule contains a list of paths and the corresponding service (backend) to which traffic matching those paths should be routed. (AI-inferred)
+    path_rules: Any = None
+    # List of route rules that define how requests are matched and routed to backend services within the path matcher. Each route rule specifies match criteria and a corresponding service. (AI-inferred)
     route_rules: Any = None
 
 @dataclasses.dataclass
-class RegionUrlMap_Test:
+class RegionUrlMap_Tests:
+    # An optional description for a test case in the URL map, used to provide additional context or document the test's purpose. (AI-inferred)
     description: Any = None
+    expected_output_url: Any = None
+    expected_redirect_response_code: Any = None
+    # A list of HTTP request headers that must be present for the URL map test to match. Each item in the list is an object with a header name and value. (AI-inferred)
+    headers: Any = None
+    # The hostname or host pattern to match in the test request for validating URL map routing rules. (AI-inferred)
     host: Any = None
+    # The URL path to be used in the test request. For example, '/path'. (AI-inferred)
     path: Any = None
+    # A reference to the backend service that the test expects to handle requests for the specified host and path. (AI-inferred)
     service: Any = None
 
-@dataclasses.dataclass
-class RegionUrlMap_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+_RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields = {
+    "match_response_codes": ubx.FieldSpec(wire_name="match_response_codes"),
+    "override_response_code": ubx.FieldSpec(wire_name="override_response_code"),
+    "path": ubx.FieldSpec(wire_name="path"),
+}
+
+_RegionUrlMap_DefaultCustomErrorResponsePolicyFields = {
+    "error_response_rules": ubx.FieldSpec(
+        wire_name="error_response_rules",
+        kind="list",
+        fields=_RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields,
+    ),
+    "error_service": ubx.FieldSpec(wire_name="error_service"),
+}
+
+_RegionUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields = {
+    "excluded_query_parameters": ubx.FieldSpec(wire_name="excluded_query_parameters"),
+    "include_host": ubx.FieldSpec(wire_name="include_host"),
+    "include_protocol": ubx.FieldSpec(wire_name="include_protocol"),
+    "include_query_string": ubx.FieldSpec(wire_name="include_query_string"),
+    "included_cookie_names": ubx.FieldSpec(wire_name="included_cookie_names"),
+    "included_header_names": ubx.FieldSpec(wire_name="included_header_names"),
+    "included_query_parameters": ubx.FieldSpec(wire_name="included_query_parameters"),
+}
+
+_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields = {
+    "nanos": ubx.FieldSpec(wire_name="nanos"),
+    "seconds": ubx.FieldSpec(wire_name="seconds"),
+}
+
+_RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields = {
+    "code": ubx.FieldSpec(wire_name="code"),
+    "ttl": ubx.FieldSpec(
+        wire_name="ttl",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+    ),
+}
+
+_RegionUrlMap_DefaultRouteAction_CachePolicyFields = {
+    "cache_bypass_request_header_names": ubx.FieldSpec(wire_name="cache_bypass_request_header_names"),
+    "cache_key_policy": ubx.FieldSpec(
+        wire_name="cache_key_policy",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields,
+    ),
+    "cache_mode": ubx.FieldSpec(wire_name="cache_mode"),
+    "client_ttl": ubx.FieldSpec(
+        wire_name="client_ttl",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+    ),
+    "default_ttl": ubx.FieldSpec(
+        wire_name="default_ttl",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+    ),
+    "max_ttl": ubx.FieldSpec(
+        wire_name="max_ttl",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+    ),
+    "negative_caching": ubx.FieldSpec(wire_name="negative_caching"),
+    "negative_caching_policy": ubx.FieldSpec(
+        wire_name="negative_caching_policy",
+        kind="list",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields,
+    ),
+    "request_coalescing": ubx.FieldSpec(wire_name="request_coalescing"),
+    "serve_while_stale": ubx.FieldSpec(
+        wire_name="serve_while_stale",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+    ),
+}
 
 _RegionUrlMap_DefaultRouteAction_CorsPolicyFields = {
     "allow_credentials": ubx.FieldSpec(wire_name="allow_credentials"),
@@ -223,50 +453,57 @@ _RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields = {
     "percentage": ubx.FieldSpec(wire_name="percentage"),
 }
 
-_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelayFields = {
-    "nanos": ubx.FieldSpec(wire_name="nanos"),
-    "seconds": ubx.FieldSpec(wire_name="seconds"),
-}
-
 _RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields = {
-    "percentage": ubx.FieldSpec(wire_name="percentage"),
     "fixed_delay": ubx.FieldSpec(
         wire_name="fixed_delay",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelayFields,
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
     ),
+    "percentage": ubx.FieldSpec(wire_name="percentage"),
 }
 
 _RegionUrlMap_DefaultRouteAction_FaultInjectionPolicyFields = {
     "abort": ubx.FieldSpec(
         wire_name="abort",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields,
     ),
     "delay": ubx.FieldSpec(
         wire_name="delay",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields,
     ),
 }
 
 _RegionUrlMap_DefaultRouteAction_RequestMirrorPolicyFields = {
     "backend_service": ubx.FieldSpec(wire_name="backend_service"),
+    "mirror_percent": ubx.FieldSpec(wire_name="mirror_percent"),
 }
 
 _RegionUrlMap_DefaultRouteAction_RetryPolicyFields = {
     "num_retries": ubx.FieldSpec(wire_name="num_retries"),
-    "retry_conditions": ubx.FieldSpec(wire_name="retry_conditions"),
     "per_try_timeout": ubx.FieldSpec(
         wire_name="per_try_timeout",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelayFields,
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
     ),
+    "retry_conditions": ubx.FieldSpec(wire_name="retry_conditions"),
+}
+
+_RegionUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields = {
+    "path_pattern": ubx.FieldSpec(wire_name="path_pattern"),
+    "path_substitution": ubx.FieldSpec(wire_name="path_substitution"),
 }
 
 _RegionUrlMap_DefaultRouteAction_UrlRewriteFields = {
     "host_rewrite": ubx.FieldSpec(wire_name="host_rewrite"),
     "path_prefix_rewrite": ubx.FieldSpec(wire_name="path_prefix_rewrite"),
+    "path_template_rewrite": ubx.FieldSpec(wire_name="path_template_rewrite"),
+    "regex_rewrite": ubx.FieldSpec(
+        wire_name="regex_rewrite",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields,
+    ),
 }
 
 _RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields = {
@@ -276,59 +513,69 @@ _RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHea
 }
 
 _RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields = {
-    "request_headers_to_remove": ubx.FieldSpec(wire_name="request_headers_to_remove"),
-    "response_headers_to_remove": ubx.FieldSpec(wire_name="response_headers_to_remove"),
     "request_headers_to_add": ubx.FieldSpec(
         wire_name="request_headers_to_add",
         kind="list",
         fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
     ),
+    "request_headers_to_remove": ubx.FieldSpec(wire_name="request_headers_to_remove"),
     "response_headers_to_add": ubx.FieldSpec(
         wire_name="response_headers_to_add",
         kind="list",
         fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
     ),
+    "response_headers_to_remove": ubx.FieldSpec(wire_name="response_headers_to_remove"),
 }
 
 _RegionUrlMap_DefaultRouteAction_WeightedBackendServicesFields = {
     "backend_service": ubx.FieldSpec(wire_name="backend_service"),
-    "weight": ubx.FieldSpec(wire_name="weight"),
     "header_action": ubx.FieldSpec(
         wire_name="header_action",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
     ),
+    "weight": ubx.FieldSpec(wire_name="weight"),
 }
 
 _RegionUrlMap_DefaultRouteActionFields = {
+    "cache_policy": ubx.FieldSpec(
+        wire_name="cache_policy",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicyFields,
+    ),
     "cors_policy": ubx.FieldSpec(
         wire_name="cors_policy",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_CorsPolicyFields,
     ),
     "fault_injection_policy": ubx.FieldSpec(
         wire_name="fault_injection_policy",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicyFields,
+    ),
+    "max_stream_duration": ubx.FieldSpec(
+        wire_name="max_stream_duration",
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
     ),
     "request_mirror_policy": ubx.FieldSpec(
         wire_name="request_mirror_policy",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_RequestMirrorPolicyFields,
     ),
     "retry_policy": ubx.FieldSpec(
         wire_name="retry_policy",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_RetryPolicyFields,
     ),
     "timeout": ubx.FieldSpec(
         wire_name="timeout",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelayFields,
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
     ),
     "url_rewrite": ubx.FieldSpec(
         wire_name="url_rewrite",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_UrlRewriteFields,
     ),
     "weighted_backend_services": ubx.FieldSpec(
@@ -347,308 +594,293 @@ _RegionUrlMap_DefaultUrlRedirectFields = {
     "strip_query": ubx.FieldSpec(wire_name="strip_query"),
 }
 
-_RegionUrlMap_HostRuleFields = {
+_RegionUrlMap_HostRulesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "hosts": ubx.FieldSpec(wire_name="hosts"),
     "path_matcher": ubx.FieldSpec(wire_name="path_matcher"),
 }
 
-_RegionUrlMap_PathMatcher_DefaultRouteAction_UrlRewriteFields = {
-    "host_rewrite": ubx.FieldSpec(wire_name="host_rewrite"),
-    "path_prefix_rewrite": ubx.FieldSpec(wire_name="path_prefix_rewrite"),
-    "path_template_rewrite": ubx.FieldSpec(wire_name="path_template_rewrite"),
-}
-
-_RegionUrlMap_PathMatcher_DefaultRouteActionFields = {
-    "cors_policy": ubx.FieldSpec(
-        wire_name="cors_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_CorsPolicyFields,
+_RegionUrlMap_PathMatchers_PathRulesFields = {
+    "custom_error_response_policy": ubx.FieldSpec(
+        wire_name="custom_error_response_policy",
+        kind="object",
+        fields=_RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
     ),
-    "fault_injection_policy": ubx.FieldSpec(
-        wire_name="fault_injection_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicyFields,
-    ),
-    "max_stream_duration": ubx.FieldSpec(
-        wire_name="max_stream_duration",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelayFields,
-    ),
-    "request_mirror_policy": ubx.FieldSpec(
-        wire_name="request_mirror_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_RequestMirrorPolicyFields,
-    ),
-    "retry_policy": ubx.FieldSpec(
-        wire_name="retry_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_RetryPolicyFields,
-    ),
-    "timeout": ubx.FieldSpec(
-        wire_name="timeout",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelayFields,
-    ),
-    "url_rewrite": ubx.FieldSpec(
-        wire_name="url_rewrite",
-        kind="list",
-        fields=_RegionUrlMap_PathMatcher_DefaultRouteAction_UrlRewriteFields,
-    ),
-    "weighted_backend_services": ubx.FieldSpec(
-        wire_name="weighted_backend_services",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServicesFields,
-    ),
-}
-
-_RegionUrlMap_PathMatcher_PathRuleFields = {
     "paths": ubx.FieldSpec(wire_name="paths"),
-    "service": ubx.FieldSpec(wire_name="service"),
     "route_action": ubx.FieldSpec(
         wire_name="route_action",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteActionFields,
     ),
+    "service": ubx.FieldSpec(wire_name="service"),
     "url_redirect": ubx.FieldSpec(
         wire_name="url_redirect",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultUrlRedirectFields,
     ),
 }
 
-_RegionUrlMap_PathMatcher_RouteRules_MatchRules_HeaderMatches_RangeMatchFields = {
+_RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields = {
     "range_end": ubx.FieldSpec(wire_name="range_end"),
     "range_start": ubx.FieldSpec(wire_name="range_start"),
 }
 
-_RegionUrlMap_PathMatcher_RouteRules_MatchRules_HeaderMatchesFields = {
+_RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields = {
     "exact_match": ubx.FieldSpec(wire_name="exact_match"),
     "header_name": ubx.FieldSpec(wire_name="header_name"),
     "invert_match": ubx.FieldSpec(wire_name="invert_match"),
     "prefix_match": ubx.FieldSpec(wire_name="prefix_match"),
     "present_match": ubx.FieldSpec(wire_name="present_match"),
-    "regex_match": ubx.FieldSpec(wire_name="regex_match"),
-    "suffix_match": ubx.FieldSpec(wire_name="suffix_match"),
     "range_match": ubx.FieldSpec(
         wire_name="range_match",
-        kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRules_MatchRules_HeaderMatches_RangeMatchFields,
+        kind="object",
+        fields=_RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields,
     ),
+    "regex_match": ubx.FieldSpec(wire_name="regex_match"),
+    "suffix_match": ubx.FieldSpec(wire_name="suffix_match"),
 }
 
-_RegionUrlMap_PathMatcher_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields = {
+_RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_RegionUrlMap_PathMatcher_RouteRules_MatchRules_MetadataFiltersFields = {
-    "filter_match_criteria": ubx.FieldSpec(wire_name="filter_match_criteria"),
+_RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields = {
     "filter_labels": ubx.FieldSpec(
         wire_name="filter_labels",
         kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
+        fields=_RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
     ),
+    "filter_match_criteria": ubx.FieldSpec(wire_name="filter_match_criteria"),
 }
 
-_RegionUrlMap_PathMatcher_RouteRules_MatchRules_QueryParameterMatchesFields = {
+_RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields = {
     "exact_match": ubx.FieldSpec(wire_name="exact_match"),
     "name": ubx.FieldSpec(wire_name="name"),
     "present_match": ubx.FieldSpec(wire_name="present_match"),
     "regex_match": ubx.FieldSpec(wire_name="regex_match"),
 }
 
-_RegionUrlMap_PathMatcher_RouteRules_MatchRulesFields = {
+_RegionUrlMap_PathMatchers_RouteRules_MatchRulesFields = {
     "full_path_match": ubx.FieldSpec(wire_name="full_path_match"),
-    "ignore_case": ubx.FieldSpec(wire_name="ignore_case"),
-    "path_template_match": ubx.FieldSpec(wire_name="path_template_match"),
-    "prefix_match": ubx.FieldSpec(wire_name="prefix_match"),
-    "regex_match": ubx.FieldSpec(wire_name="regex_match"),
     "header_matches": ubx.FieldSpec(
         wire_name="header_matches",
         kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRules_MatchRules_HeaderMatchesFields,
+        fields=_RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields,
     ),
+    "ignore_case": ubx.FieldSpec(wire_name="ignore_case"),
     "metadata_filters": ubx.FieldSpec(
         wire_name="metadata_filters",
         kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRules_MatchRules_MetadataFiltersFields,
+        fields=_RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields,
     ),
+    "path_template_match": ubx.FieldSpec(wire_name="path_template_match"),
+    "prefix_match": ubx.FieldSpec(wire_name="prefix_match"),
     "query_parameter_matches": ubx.FieldSpec(
         wire_name="query_parameter_matches",
         kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRules_MatchRules_QueryParameterMatchesFields,
+        fields=_RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields,
     ),
+    "regex_match": ubx.FieldSpec(wire_name="regex_match"),
 }
 
-_RegionUrlMap_PathMatcher_RouteRules_RouteActionFields = {
-    "cors_policy": ubx.FieldSpec(
-        wire_name="cors_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_CorsPolicyFields,
+_RegionUrlMap_PathMatchers_RouteRulesFields = {
+    "custom_error_response_policy": ubx.FieldSpec(
+        wire_name="custom_error_response_policy",
+        kind="object",
+        fields=_RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
     ),
-    "fault_injection_policy": ubx.FieldSpec(
-        wire_name="fault_injection_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicyFields,
-    ),
-    "request_mirror_policy": ubx.FieldSpec(
-        wire_name="request_mirror_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_RequestMirrorPolicyFields,
-    ),
-    "retry_policy": ubx.FieldSpec(
-        wire_name="retry_policy",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_RetryPolicyFields,
-    ),
-    "timeout": ubx.FieldSpec(
-        wire_name="timeout",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Delay_FixedDelayFields,
-    ),
-    "url_rewrite": ubx.FieldSpec(
-        wire_name="url_rewrite",
-        kind="list",
-        fields=_RegionUrlMap_PathMatcher_DefaultRouteAction_UrlRewriteFields,
-    ),
-    "weighted_backend_services": ubx.FieldSpec(
-        wire_name="weighted_backend_services",
-        kind="list",
-        fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServicesFields,
-    ),
-}
-
-_RegionUrlMap_PathMatcher_RouteRulesFields = {
-    "priority": ubx.FieldSpec(wire_name="priority"),
-    "service": ubx.FieldSpec(wire_name="service"),
+    "description": ubx.FieldSpec(wire_name="description"),
     "header_action": ubx.FieldSpec(
         wire_name="header_action",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
     ),
     "match_rules": ubx.FieldSpec(
         wire_name="match_rules",
         kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRules_MatchRulesFields,
+        fields=_RegionUrlMap_PathMatchers_RouteRules_MatchRulesFields,
     ),
+    "priority": ubx.FieldSpec(wire_name="priority"),
     "route_action": ubx.FieldSpec(
         wire_name="route_action",
-        kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRules_RouteActionFields,
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteActionFields,
     ),
+    "service": ubx.FieldSpec(wire_name="service"),
     "url_redirect": ubx.FieldSpec(
         wire_name="url_redirect",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultUrlRedirectFields,
     ),
 }
 
-_RegionUrlMap_PathMatcherFields = {
-    "default_service": ubx.FieldSpec(wire_name="default_service"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "name": ubx.FieldSpec(wire_name="name"),
+_RegionUrlMap_PathMatchersFields = {
+    "default_custom_error_response_policy": ubx.FieldSpec(
+        wire_name="default_custom_error_response_policy",
+        kind="object",
+        fields=_RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
+    ),
     "default_route_action": ubx.FieldSpec(
         wire_name="default_route_action",
-        kind="list",
-        fields=_RegionUrlMap_PathMatcher_DefaultRouteActionFields,
+        kind="object",
+        fields=_RegionUrlMap_DefaultRouteActionFields,
     ),
+    "default_service": ubx.FieldSpec(wire_name="default_service"),
     "default_url_redirect": ubx.FieldSpec(
         wire_name="default_url_redirect",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultUrlRedirectFields,
     ),
+    "description": ubx.FieldSpec(wire_name="description"),
     "header_action": ubx.FieldSpec(
         wire_name="header_action",
-        kind="list",
+        kind="object",
         fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
     ),
-    "path_rule": ubx.FieldSpec(
-        wire_name="path_rule",
+    "name": ubx.FieldSpec(wire_name="name"),
+    "path_rules": ubx.FieldSpec(
+        wire_name="path_rules",
         kind="list",
-        fields=_RegionUrlMap_PathMatcher_PathRuleFields,
+        fields=_RegionUrlMap_PathMatchers_PathRulesFields,
     ),
     "route_rules": ubx.FieldSpec(
         wire_name="route_rules",
         kind="list",
-        fields=_RegionUrlMap_PathMatcher_RouteRulesFields,
+        fields=_RegionUrlMap_PathMatchers_RouteRulesFields,
     ),
 }
 
-_RegionUrlMap_TestFields = {
+_RegionUrlMap_TestsFields = {
     "description": ubx.FieldSpec(wire_name="description"),
+    "expected_output_url": ubx.FieldSpec(wire_name="expected_output_url"),
+    "expected_redirect_response_code": ubx.FieldSpec(wire_name="expected_redirect_response_code"),
+    "headers": ubx.FieldSpec(
+        wire_name="headers",
+        kind="list",
+        fields=_RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
+    ),
     "host": ubx.FieldSpec(wire_name="host"),
     "path": ubx.FieldSpec(wire_name="path"),
     "service": ubx.FieldSpec(wire_name="service"),
 }
 
-_RegionUrlMap_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
 @dataclasses.dataclass
 class RegionUrlMapConfig:
-    default_service: Any = None
-    deletion_policy: Any = None
-    description: Any = None
-    id: Any = None
-    name: Any = None
-    project: Any = None
-    region: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
+    default_custom_error_response_policy: Any = None
+    # Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred)
     default_route_action: Any = None
+    # The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+    default_service: Any = None
+    # Specifies settings for an HTTP redirect.
     default_url_redirect: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field is ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+    fingerprint: Any = None
+    # The request and response header transformations that take effect before the request is passed along to the selected backendService.
     header_action: Any = None
-    host_rule: Any = None
-    path_matcher: Any = None
-    test: Any = None
-    timeouts: Any = None
+    # The list of host rules to use against the URL.
+    host_rules: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#urlMaps for url maps.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # The list of named PathMatchers to use against the URL.
+    path_matchers: Any = None
+    # Output only. [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+    region: Any = None
+    # [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # The list of expected URL mapping tests. Request to update theUrlMap succeeds only if all test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
+    tests: Any = None
+
+@dataclasses.dataclass
+class RegionUrlMapAttrs:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
+    default_custom_error_response_policy: Any = None
+    # Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred)
+    default_route_action: Any = None
+    # The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+    default_service: Any = None
+    # Specifies settings for an HTTP redirect.
+    default_url_redirect: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field is ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+    fingerprint: Any = None
+    # The request and response header transformations that take effect before the request is passed along to the selected backendService.
+    header_action: Any = None
+    # The list of host rules to use against the URL.
+    host_rules: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#urlMaps for url maps.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # The list of named PathMatchers to use against the URL.
+    path_matchers: Any = None
+    # Output only. [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+    region: Any = None
+    # [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # The list of expected URL mapping tests. Request to update theUrlMap succeeds only if all test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
+    tests: Any = None
 
 RegionUrlMap = ubx.ResourceBinding(
     wire_type="google_compute_region_url_map",
     fields={
-        "default_service": ubx.FieldSpec(wire_name="default_service"),
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "region": ubx.FieldSpec(wire_name="region"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
+        "default_custom_error_response_policy": ubx.FieldSpec(
+            wire_name="default_custom_error_response_policy",
+            kind="object",
+            fields=_RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
+        ),
         "default_route_action": ubx.FieldSpec(
             wire_name="default_route_action",
-            kind="list",
+            kind="object",
             fields=_RegionUrlMap_DefaultRouteActionFields,
         ),
+        "default_service": ubx.FieldSpec(wire_name="default_service"),
         "default_url_redirect": ubx.FieldSpec(
             wire_name="default_url_redirect",
-            kind="list",
+            kind="object",
             fields=_RegionUrlMap_DefaultUrlRedirectFields,
         ),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
         "header_action": ubx.FieldSpec(
             wire_name="header_action",
-            kind="list",
+            kind="object",
             fields=_RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
         ),
-        "host_rule": ubx.FieldSpec(
-            wire_name="host_rule",
-            kind="set",
-            fields=_RegionUrlMap_HostRuleFields,
-        ),
-        "path_matcher": ubx.FieldSpec(
-            wire_name="path_matcher",
+        "host_rules": ubx.FieldSpec(
+            wire_name="host_rules",
             kind="list",
-            fields=_RegionUrlMap_PathMatcherFields,
+            fields=_RegionUrlMap_HostRulesFields,
         ),
-        "test": ubx.FieldSpec(
-            wire_name="test",
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "path_matchers": ubx.FieldSpec(
+            wire_name="path_matchers",
             kind="list",
-            fields=_RegionUrlMap_TestFields,
+            fields=_RegionUrlMap_PathMatchersFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_RegionUrlMap_TimeoutsFields,
+        "region": ubx.FieldSpec(wire_name="region"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "tests": ubx.FieldSpec(
+            wire_name="tests",
+            kind="list",
+            fields=_RegionUrlMap_TestsFields,
         ),
     },
 )

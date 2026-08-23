@@ -3,45 +3,109 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PublicAdvertisedPrefix_Timeouts struct {
-	Create any
-	Delete any
+type PublicAdvertisedPrefix_PublicDelegatedPrefixs struct {
+	IpRange any
+	Name any
+	Project any
+	Region any
+	Status any
 }
 
-var PublicAdvertisedPrefix_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+var PublicAdvertisedPrefix_PublicDelegatedPrefixsFields = ubx.FieldMap{
+		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Project": ubx.FieldSpec{WireName: "project"},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"Status": ubx.FieldSpec{WireName: "status"},
 	}
 
 type PublicAdvertisedPrefixConfig struct {
-	DeletionPolicy any
+	// Output only. [Output Only] The version of BYOIP API.
+	ByoipApiVersion any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// The address to be used for reverse DNS verification.
 	DnsVerificationIp any
+	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+	Fingerprint any
+	// Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
 	Id any
+	// The address range, in CIDR format, represented by this public advertised prefix.
 	IpCidrRange any
+	// The internet access type for IPv6 Public Advertised Prefixes.
 	Ipv6AccessType any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
+	// Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
 	PdpScope any
-	Project any
-	Timeouts any
+	// Output only. [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+	PublicDelegatedPrefixs any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// [Output Only] The shared secret to be used for reverse DNS verification.
+	SharedSecret any
+	// The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+	Status any
+}
+
+type PublicAdvertisedPrefixAttrs struct {
+	// Output only. [Output Only] The version of BYOIP API.
+	ByoipApiVersion any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// The address to be used for reverse DNS verification.
+	DnsVerificationIp any
+	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+	Fingerprint any
+	// Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
+	Id any
+	// The address range, in CIDR format, represented by this public advertised prefix.
+	IpCidrRange any
+	// The internet access type for IPv6 Public Advertised Prefixes.
+	Ipv6AccessType any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+	PdpScope any
+	// Output only. [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+	PublicDelegatedPrefixs any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// [Output Only] The shared secret to be used for reverse DNS verification.
+	SharedSecret any
+	// The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+	Status any
 }
 
 var PublicAdvertisedPrefix = ubx.ResourceBinding{
 	WireType: "google_compute_public_advertised_prefix",
 	Fields: ubx.FieldMap{
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"ByoipApiVersion": ubx.FieldSpec{WireName: "byoip_api_version"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DnsVerificationIp": ubx.FieldSpec{WireName: "dns_verification_ip"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
 		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PdpScope": ubx.FieldSpec{WireName: "pdp_scope"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: PublicAdvertisedPrefix_TimeoutsFields,
+		"PublicDelegatedPrefixs": ubx.FieldSpec{
+			WireName: "public_delegated_prefixs",
+			Kind: "list",
+			Fields: PublicAdvertisedPrefix_PublicDelegatedPrefixsFields,
 		},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SharedSecret": ubx.FieldSpec{WireName: "shared_secret"},
+		"Status": ubx.FieldSpec{WireName: "status"},
 	},
 }

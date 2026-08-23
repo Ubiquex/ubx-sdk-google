@@ -5,46 +5,69 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WireGroup_Endpoints_Interconnects struct {
 	Interconnect any
-	InterconnectName any
 	VlanTags any
 }
 
 type WireGroup_Endpoints struct {
-	Endpoint any
 	Interconnects any
 }
 
-type WireGroup_Timeouts struct {
-	Create any
-	Delete any
-	Update any
+type WireGroup_Topology_Endpoints struct {
+	City any
+	Label any
+}
+
+type WireGroup_Topology struct {
+	// Output only. Topology details for all endpoints in the wire group.
+	Endpoints any
 }
 
 type WireGroup_WireProperties struct {
+	// The configuration of the bandwidth allocation, one of the following: - ALLOCATE_PER_WIRE: configures a separate unmetered bandwidth allocation (and associated charges) for each wire in the group. - SHARED_WITH_WIRE_GROUP: this is the default behavior, which configures one unmetered bandwidth allocation for the wire group. The unmetered bandwidth is divided equally across each wire in the group, but dynamic throttling reallocates unused unmetered bandwidth from unused or underused wires to other wires in the group.
 	BandwidthAllocation any
+	// The unmetered bandwidth in Gigabits per second, using decimal units. `10` is 10 Gbps, `100` is 100 Gbps. The bandwidth must be greater than 0.
 	BandwidthUnmetered any
+	// Response when a fault is detected in a pseudowire: - NONE: default. - DISABLE_PORT: set the port line protocol down when inline probes detect a fault. This setting is only permitted on port mode pseudowires.
 	FaultResponse any
+}
+
+type WireGroup_Wires_Endpoints struct {
+	// The URL of the Compute Engine interconnect used by this endpoint. (AI-inferred)
+	Interconnect any
+	VlanTag any
+}
+
+type WireGroup_Wires struct {
+	AdminEnabled any
+	Endpoints any
+	Label any
+	WireProperties any
 }
 
 var WireGroup_Endpoints_InterconnectsFields = ubx.FieldMap{
 		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-		"InterconnectName": ubx.FieldSpec{WireName: "interconnect_name"},
 		"VlanTags": ubx.FieldSpec{WireName: "vlan_tags"},
 	}
 
 var WireGroup_EndpointsFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
 		"Interconnects": ubx.FieldSpec{
 			WireName: "interconnects",
-			Kind: "set",
+			Kind: "map",
 			Fields: WireGroup_Endpoints_InterconnectsFields,
 		},
 	}
 
-var WireGroup_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
+var WireGroup_Topology_EndpointsFields = ubx.FieldMap{
+		"City": ubx.FieldSpec{WireName: "city"},
+		"Label": ubx.FieldSpec{WireName: "label"},
+	}
+
+var WireGroup_TopologyFields = ubx.FieldMap{
+		"Endpoints": ubx.FieldSpec{
+			WireName: "endpoints",
+			Kind: "list",
+			Fields: WireGroup_Topology_EndpointsFields,
+		},
 	}
 
 var WireGroup_WirePropertiesFields = ubx.FieldMap{
@@ -53,43 +76,110 @@ var WireGroup_WirePropertiesFields = ubx.FieldMap{
 		"FaultResponse": ubx.FieldSpec{WireName: "fault_response"},
 	}
 
+var WireGroup_Wires_EndpointsFields = ubx.FieldMap{
+		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
+		"VlanTag": ubx.FieldSpec{WireName: "vlan_tag"},
+	}
+
+var WireGroup_WiresFields = ubx.FieldMap{
+		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
+		"Endpoints": ubx.FieldSpec{
+			WireName: "endpoints",
+			Kind: "list",
+			Fields: WireGroup_Wires_EndpointsFields,
+		},
+		"Label": ubx.FieldSpec{WireName: "label"},
+		"WireProperties": ubx.FieldSpec{
+			WireName: "wire_properties",
+			Kind: "object",
+			Fields: WireGroup_WirePropertiesFields,
+		},
+	}
+
 type WireGroupConfig struct {
+	// Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true.
 	AdminEnabled any
-	CrossSiteNetwork any
-	DeletionPolicy any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of the wire group.
 	Description any
-	Id any
-	Name any
-	Project any
+	// A map that contains the logical endpoints of the wire group. Specify key-value pairs for the map as follows: - Key: an RFC1035 user-specified label. - Value: an Endpoint object.
 	Endpoints any
-	Timeouts any
+	// Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
+	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
+	Reconciling any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// Topology details for the wire group.
+	Topology any
+	// The properties of a wire.
 	WireProperties any
+	// Output only. The single/redundant wire(s) managed by the wire group.
+	Wires any
+}
+
+type WireGroupAttrs struct {
+	// Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true.
+	AdminEnabled any
+	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of the wire group.
+	Description any
+	// A map that contains the logical endpoints of the wire group. Specify key-value pairs for the map as follows: - Key: an RFC1035 user-specified label. - Value: an Endpoint object.
+	Endpoints any
+	// Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
+	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+	Kind any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
+	Reconciling any
+	// Output only. [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// Topology details for the wire group.
+	Topology any
+	// The properties of a wire.
+	WireProperties any
+	// Output only. The single/redundant wire(s) managed by the wire group.
+	Wires any
 }
 
 var WireGroup = ubx.ResourceBinding{
 	WireType: "google_compute_wire_group",
 	Fields: ubx.FieldMap{
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"CrossSiteNetwork": ubx.FieldSpec{WireName: "cross_site_network"},
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "set",
+			Kind: "map",
 			Fields: WireGroup_EndpointsFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Topology": ubx.FieldSpec{
+			WireName: "topology",
 			Kind: "object",
-			Fields: WireGroup_TimeoutsFields,
+			Fields: WireGroup_TopologyFields,
 		},
 		"WireProperties": ubx.FieldSpec{
 			WireName: "wire_properties",
-			Kind: "list",
+			Kind: "object",
 			Fields: WireGroup_WirePropertiesFields,
+		},
+		"Wires": ubx.FieldSpec{
+			WireName: "wires",
+			Kind: "list",
+			Fields: WireGroup_WiresFields,
 		},
 	},
 }

@@ -2,29 +2,39 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionNetworkEndpointGroup_AppEngine {
-  service: string;
-  urlMask: string;
-  version: string;
+  /** Optional serving service. The service name is case-sensitive and must be 1-63 characters long. Example value: default, my-service. */
+  service?: string | Computed<string>;
+  /** An URL mask is one of the main components of the Cloud Function. A template to parse service and version fields from a request URL. URL mask allows for routing to multiple App Engine services without having to create multiple Network Endpoint Groups and backend services. For example, the request URLsfoo1-dot-appname.appspot.com/v1 andfoo1-dot-appname.appspot.com/v2 can be backed by the same Serverless NEG with URL mask<service>-dot-appname.appspot.com/<version>. The URL mask will parse them to { service = "foo1", version = "v1" } and { service = "foo1", version = "v2" } respectively. */
+  urlMask?: string | Computed<string>;
+  /** Optional serving version. The version name is case-sensitive and must be 1-100 characters long. Example value: v1, v2. */
+  version?: string | Computed<string>;
 }
 
 export interface RegionNetworkEndpointGroup_CloudFunction {
-  function: string;
-  urlMask: string;
+  /** A user-defined name of the Cloud Function. The function name is case-sensitive and must be 1-63 characters long. Example value: func1. */
+  function?: string | Computed<string>;
+  /** An URL mask is one of the main components of the Cloud Function. A template to parse function field from a request URL. URL mask allows for routing to multiple Cloud Functions without having to create multiple Network Endpoint Groups and backend services. For example, request URLs mydomain.com/function1 andmydomain.com/function2 can be backed by the same Serverless NEG with URL mask /<function>. The URL mask will parse them to { function = "function1" } and{ function = "function2" } respectively. */
+  urlMask?: string | Computed<string>;
 }
 
 export interface RegionNetworkEndpointGroup_CloudRun {
-  service: string;
-  tag: string;
-  urlMask: string;
+  /** Cloud Run service is the main resource of Cloud Run. The service must be 1-63 characters long, and comply withRFC1035. Example value: "run-service". */
+  service?: string | Computed<string>;
+  /** Optional Cloud Run tag represents the "named-revision" to provide additional fine-grained traffic routing information. The tag must be 1-63 characters long, and comply withRFC1035. Example value: "revision-0010". */
+  tag?: string | Computed<string>;
+  /** An URL mask is one of the main components of the Cloud Function. A template to parse <service> and<tag> fields from a request URL. URL mask allows for routing to multiple Run services without having to create multiple network endpoint groups and backend services. For example, request URLs foo1.domain.com/bar1 andfoo1.domain.com/bar2 can be backed by the same Serverless Network Endpoint Group (NEG) with URL mask<tag>.domain.com/<service>. The URL mask will parse them to { service="bar1", tag="foo1" } and { service="bar2", tag="foo2" } respectively. */
+  urlMask?: string | Computed<string>;
 }
 
 export interface RegionNetworkEndpointGroup_PscData {
-  producerPort: string;
-}
-
-export interface RegionNetworkEndpointGroup_Timeouts {
-  create: string;
-  delete: string;
+  /** Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in L7 PSC-XLB. */
+  consumerPscAddress?: string | Computed<string>;
+  /** The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type */
+  producerPort?: number | Computed<number>;
+  /** Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group Consumer. */
+  pscConnectionId?: string | Computed<string>;
+  /** Output only. [Output Only] The connection status of the PSC Forwarding Rule. */
+  pscConnectionStatus?: string | Computed<string>;
 }
 
 const RegionNetworkEndpointGroup_AppEngineFields: FieldMap = {
@@ -45,88 +55,131 @@ const RegionNetworkEndpointGroup_CloudRunFields: FieldMap = {
 };
 
 const RegionNetworkEndpointGroup_PscDataFields: FieldMap = {
+  consumerPscAddress: "consumer_psc_address",
   producerPort: "producer_port",
-};
-
-const RegionNetworkEndpointGroup_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
+  pscConnectionId: "psc_connection_id",
+  pscConnectionStatus: "psc_connection_status",
 };
 
 export interface RegionNetworkEndpointGroupConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** Optional. Metadata defined as annotations on the network endpoint group. */
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  /** Configuration for an App Engine network endpoint group (NEG). The service is optional, may be provided explicitly or in the URL mask. The version is optional and can only be provided explicitly or in the URL mask when service is present. Note: App Engine service must be in the same project and located in the same region as the Serverless NEG. */
+  appEngine?: RegionNetworkEndpointGroup_AppEngine | Computed<RegionNetworkEndpointGroup_AppEngine>;
+  /** Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG. */
+  cloudFunction?: RegionNetworkEndpointGroup_CloudFunction | Computed<RegionNetworkEndpointGroup_CloudFunction>;
+  /** Configuration for a Cloud Run network endpoint group (NEG). The service must be provided explicitly or in the URL mask. The tag is optional, may be provided explicitly or in the URL mask. Note: Cloud Run service must be in the same project and located in the same region as the Serverless NEG. */
+  cloudRun?: RegionNetworkEndpointGroup_CloudRun | Computed<RegionNetworkEndpointGroup_CloudRun>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP,SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified. */
+  defaultPort?: number | Computed<number>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  name: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group. */
+  kind?: string | Computed<string>;
+  /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** The URL of the network to which all network endpoints in the NEG belong. For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT, if this field is not specified, a default network will be used. This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for global NEGs. For all other network endpoint types, this field is required. */
   network?: string | Computed<string>;
+  /** Type of network endpoints in this network endpoint group. Can be one ofGCE_VM_IP, GCE_VM_IP_PORT,NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT,INTERNET_IP_PORT, SERVERLESS,PRIVATE_SERVICE_CONNECT, GCE_VM_IP_PORTMAP. */
   networkEndpointType?: string | Computed<string>;
-  project?: string | Computed<string>;
+  /** All data that is specifically relevant to only network endpoint groups of type PRIVATE_SERVICE_CONNECT. */
+  pscData?: RegionNetworkEndpointGroup_PscData | Computed<RegionNetworkEndpointGroup_PscData>;
+  /** The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType isPRIVATE_SERVICE_CONNECT. */
   pscTargetService?: string | Computed<string>;
-  region: string | Computed<string>;
+  /** Output only. [Output Only] The URL of theregion where the network endpoint group is located. */
+  region?: string | Computed<string>;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** Output only. [Output only] Number of network endpoints in the network endpoint group. */
+  size?: number | Computed<number>;
+  /** Optional URL of the subnetwork to which all network endpoints in the NEG belong. */
   subnetwork?: string | Computed<string>;
-  appEngine?: RegionNetworkEndpointGroup_AppEngine[] | Computed<RegionNetworkEndpointGroup_AppEngine[]>;
-  cloudFunction?: RegionNetworkEndpointGroup_CloudFunction[] | Computed<RegionNetworkEndpointGroup_CloudFunction[]>;
-  cloudRun?: RegionNetworkEndpointGroup_CloudRun[] | Computed<RegionNetworkEndpointGroup_CloudRun[]>;
-  pscData?: RegionNetworkEndpointGroup_PscData[] | Computed<RegionNetworkEndpointGroup_PscData[]>;
-  timeouts?: RegionNetworkEndpointGroup_Timeouts | Computed<RegionNetworkEndpointGroup_Timeouts>;
+  /** Output only. [Output Only] The URL of thezone where the network endpoint group is located. */
+  zone?: string | Computed<string>;
 }
 
 export interface RegionNetworkEndpointGroupAttrs {
-  deletionPolicy: string;
+  /** Optional. Metadata defined as annotations on the network endpoint group. */
+  annotations: Record<string, string>;
+  /** Configuration for an App Engine network endpoint group (NEG). The service is optional, may be provided explicitly or in the URL mask. The version is optional and can only be provided explicitly or in the URL mask when service is present. Note: App Engine service must be in the same project and located in the same region as the Serverless NEG. */
+  appEngine: RegionNetworkEndpointGroup_AppEngine;
+  /** Configuration for a Cloud Function network endpoint group (NEG). The function must be provided explicitly or in the URL mask. Note: Cloud Function must be in the same project and located in the same region as the Serverless NEG. */
+  cloudFunction: RegionNetworkEndpointGroup_CloudFunction;
+  /** Configuration for a Cloud Run network endpoint group (NEG). The service must be provided explicitly or in the URL mask. The tag is optional, may be provided explicitly or in the URL mask. Note: Cloud Run service must be in the same project and located in the same region as the Serverless NEG. */
+  cloudRun: RegionNetworkEndpointGroup_CloudRun;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp: string;
+  /** The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP,SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified. */
+  defaultPort: number;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group. */
+  kind: string;
+  /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
+  /** The URL of the network to which all network endpoints in the NEG belong. For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT, if this field is not specified, a default network will be used. This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for global NEGs. For all other network endpoint types, this field is required. */
   network: string;
+  /** Type of network endpoints in this network endpoint group. Can be one ofGCE_VM_IP, GCE_VM_IP_PORT,NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT,INTERNET_IP_PORT, SERVERLESS,PRIVATE_SERVICE_CONNECT, GCE_VM_IP_PORTMAP. */
   networkEndpointType: string;
-  project: string;
+  /** All data that is specifically relevant to only network endpoint groups of type PRIVATE_SERVICE_CONNECT. */
+  pscData: RegionNetworkEndpointGroup_PscData;
+  /** The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType isPRIVATE_SERVICE_CONNECT. */
   pscTargetService: string;
+  /** Output only. [Output Only] The URL of theregion where the network endpoint group is located. */
   region: string;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** Output only. [Output only] Number of network endpoints in the network endpoint group. */
+  size: number;
+  /** Optional URL of the subnetwork to which all network endpoints in the NEG belong. */
   subnetwork: string;
-  appEngine: RegionNetworkEndpointGroup_AppEngine[];
-  cloudFunction: RegionNetworkEndpointGroup_CloudFunction[];
-  cloudRun: RegionNetworkEndpointGroup_CloudRun[];
-  pscData: RegionNetworkEndpointGroup_PscData[];
-  timeouts: RegionNetworkEndpointGroup_Timeouts;
+  /** Output only. [Output Only] The URL of thezone where the network endpoint group is located. */
+  zone: string;
 }
 
 export const RegionNetworkEndpointGroup: ResourceBinding<RegionNetworkEndpointGroupConfig, RegionNetworkEndpointGroupAttrs> = {
   wireType: "google_compute_region_network_endpoint_group",
   fields: {
-    deletionPolicy: "deletion_policy",
-    description: "description",
-    id: "id",
-    name: "name",
-    network: "network",
-    networkEndpointType: "network_endpoint_type",
-    project: "project",
-    pscTargetService: "psc_target_service",
-    region: "region",
-    subnetwork: "subnetwork",
+    annotations: "annotations",
     appEngine: {
       wireName: "app_engine",
-      kind: "list",
+      kind: "object",
       fields: RegionNetworkEndpointGroup_AppEngineFields,
     },
     cloudFunction: {
       wireName: "cloud_function",
-      kind: "list",
+      kind: "object",
       fields: RegionNetworkEndpointGroup_CloudFunctionFields,
     },
     cloudRun: {
       wireName: "cloud_run",
-      kind: "list",
+      kind: "object",
       fields: RegionNetworkEndpointGroup_CloudRunFields,
     },
+    creationTimestamp: "creation_timestamp",
+    defaultPort: "default_port",
+    description: "description",
+    id: "id",
+    kind: "kind",
+    name: "name",
+    network: "network",
+    networkEndpointType: "network_endpoint_type",
     pscData: {
       wireName: "psc_data",
-      kind: "list",
+      kind: "object",
       fields: RegionNetworkEndpointGroup_PscDataFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: RegionNetworkEndpointGroup_TimeoutsFields,
-    },
+    pscTargetService: "psc_target_service",
+    region: "region",
+    selfLink: "self_link",
+    size: "size",
+    subnetwork: "subnetwork",
+    zone: "zone",
   },
 };

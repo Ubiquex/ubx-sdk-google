@@ -7,42 +7,63 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TargetGrpcProxy_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
-_TargetGrpcProxy_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
+class TargetGrpcProxyConfig:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+    fingerprint: Any = None
+    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL with id for the resource.
+    self_link_with_id: Any = None
+    # URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+    url_map: Any = None
+    # If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+    validate_for_proxyless: Any = None
 
 @dataclasses.dataclass
-class TargetGrpcProxyConfig:
-    deletion_policy: Any = None
+class TargetGrpcProxyAttrs:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+    fingerprint: Any = None
+    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
     id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    project: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL with id for the resource.
+    self_link_with_id: Any = None
+    # URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
     url_map: Any = None
+    # If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
     validate_for_proxyless: Any = None
-    timeouts: Any = None
 
 TargetGrpcProxy = ubx.ResourceBinding(
     wire_type="google_compute_target_grpc_proxy",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
+        "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
         "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "url_map": ubx.FieldSpec(wire_name="url_map"),
         "validate_for_proxyless": ubx.FieldSpec(wire_name="validate_for_proxyless"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_TargetGrpcProxy_TimeoutsFields,
-        ),
     },
 )

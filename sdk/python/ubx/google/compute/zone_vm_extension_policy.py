@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneVmExtensionPolicy_ExtensionPolicies:
-    extension_name: Any = None
     pinned_version: Any = None
     string_config: Any = None
 
@@ -20,14 +19,7 @@ class ZoneVmExtensionPolicy_InstanceSelectors_LabelSelector:
 class ZoneVmExtensionPolicy_InstanceSelectors:
     label_selector: Any = None
 
-@dataclasses.dataclass
-class ZoneVmExtensionPolicy_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
-
 _ZoneVmExtensionPolicy_ExtensionPoliciesFields = {
-    "extension_name": ubx.FieldSpec(wire_name="extension_name"),
     "pinned_version": ubx.FieldSpec(wire_name="pinned_version"),
     "string_config": ubx.FieldSpec(wire_name="string_config"),
 }
@@ -39,52 +31,97 @@ _ZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = {
 _ZoneVmExtensionPolicy_InstanceSelectorsFields = {
     "label_selector": ubx.FieldSpec(
         wire_name="label_selector",
-        kind="list",
+        kind="object",
         fields=_ZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
     ),
 }
 
-_ZoneVmExtensionPolicy_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
-}
-
 @dataclasses.dataclass
 class ZoneVmExtensionPolicyConfig:
-    deletion_policy: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource.
     description: Any = None
-    name: Any = None
-    priority: Any = None
-    project: Any = None
-    zone: Any = None
+    # Required. A map of extension names (for example, "ops-agent") to their corresponding policy configurations.
     extension_policies: Any = None
+    # Optional. Output only. [Output Only] Link to the global policy that manages this zone policy, if applicable.
+    global_resource_link: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Optional. Selectors to target VMs for this policy. VMs are selected if they match *any* of the provided selectors (logical OR). If this list is empty, the policy applies to all VMs.
     instance_selectors: Any = None
-    timeouts: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#vmExtensionPolicy.
+    kind: Any = None
+    # Optional. Output only. [Output Only] Indicates if this policy is managed by a global policy.
+    managed_by_global: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Optional. Priority of this policy. Used to resolve conflicts when multiple policies apply to the same extension. The policy priority is an integer from 0 to 65535, inclusive. Lower integers indicate higher priorities. If you do not specify a priority when creating a rule, it is assigned a priority of 1000. If priorities are equal, the policy with the most recent creation timestamp takes precedence.
+    priority: Any = None
+    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL for this resource's resource id.
+    self_link_with_id: Any = None
+    # Optional. Output only. [Output Only] Current state of the policy: ACTIVE or DELETING.
+    state: Any = None
+    # Output only. [Output Only] Update timestamp inRFC3339 text format.
+    update_timestamp: Any = None
+
+@dataclasses.dataclass
+class ZoneVmExtensionPolicyAttrs:
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource.
+    description: Any = None
+    # Required. A map of extension names (for example, "ops-agent") to their corresponding policy configurations.
+    extension_policies: Any = None
+    # Optional. Output only. [Output Only] Link to the global policy that manages this zone policy, if applicable.
+    global_resource_link: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Optional. Selectors to target VMs for this policy. VMs are selected if they match *any* of the provided selectors (logical OR). If this list is empty, the policy applies to all VMs.
+    instance_selectors: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#vmExtensionPolicy.
+    kind: Any = None
+    # Optional. Output only. [Output Only] Indicates if this policy is managed by a global policy.
+    managed_by_global: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Optional. Priority of this policy. Used to resolve conflicts when multiple policies apply to the same extension. The policy priority is an integer from 0 to 65535, inclusive. Lower integers indicate higher priorities. If you do not specify a priority when creating a rule, it is assigned a priority of 1000. If priorities are equal, the policy with the most recent creation timestamp takes precedence.
+    priority: Any = None
+    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL for this resource's resource id.
+    self_link_with_id: Any = None
+    # Optional. Output only. [Output Only] Current state of the policy: ACTIVE or DELETING.
+    state: Any = None
+    # Output only. [Output Only] Update timestamp inRFC3339 text format.
+    update_timestamp: Any = None
 
 ZoneVmExtensionPolicy = ubx.ResourceBinding(
     wire_type="google_compute_zone_vm_extension_policy",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "priority": ubx.FieldSpec(wire_name="priority"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
         "extension_policies": ubx.FieldSpec(
             wire_name="extension_policies",
-            kind="set",
+            kind="map",
             fields=_ZoneVmExtensionPolicy_ExtensionPoliciesFields,
         ),
+        "global_resource_link": ubx.FieldSpec(wire_name="global_resource_link"),
+        "id": ubx.FieldSpec(wire_name="id"),
         "instance_selectors": ubx.FieldSpec(
             wire_name="instance_selectors",
             kind="list",
             fields=_ZoneVmExtensionPolicy_InstanceSelectorsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_ZoneVmExtensionPolicy_TimeoutsFields,
-        ),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "managed_by_global": ubx.FieldSpec(wire_name="managed_by_global"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "priority": ubx.FieldSpec(wire_name="priority"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
+        "state": ubx.FieldSpec(wire_name="state"),
+        "update_timestamp": ubx.FieldSpec(wire_name="update_timestamp"),
     },
 )

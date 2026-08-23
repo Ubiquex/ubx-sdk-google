@@ -2,124 +2,144 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PacketMirroring_CollectorIlb {
-  url: string;
+  /** Output only. [Output Only] Unique identifier for the forwarding rule; defined by the server. */
+  canonicalUrl?: string | Computed<string>;
+  /** Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic. */
+  url?: string | Computed<string>;
 }
 
 export interface PacketMirroring_Filter {
-  cidrRanges: string[];
-  direction: string;
-  ipProtocols: string[];
+  /** One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0". */
+  cidrRanges?: string[] | Computed<string[]>;
+  /** Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH. */
+  direction?: string | Computed<string>;
+  /** Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. */
+  ipprotocols?: string[] | Computed<string[]>;
 }
 
 export interface PacketMirroring_MirroredResources {
-  tags: string[];
-  instances: PacketMirroring_CollectorIlb[];
-  subnetworks: PacketMirroring_CollectorIlb[];
-}
-
-export interface PacketMirroring_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances. */
+  instances?: PacketMirroring_CollectorIlb[] | Computed<PacketMirroring_CollectorIlb[]>;
+  /** A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks. */
+  subnetworks?: PacketMirroring_CollectorIlb[] | Computed<PacketMirroring_CollectorIlb[]>;
+  /** A set of mirrored tags. Traffic from/to all VM instances that have one or more of these tags will be mirrored. */
+  tags?: string[] | Computed<string[]>;
 }
 
 const PacketMirroring_CollectorIlbFields: FieldMap = {
+  canonicalUrl: "canonical_url",
   url: "url",
 };
 
 const PacketMirroring_FilterFields: FieldMap = {
   cidrRanges: "cidr_ranges",
   direction: "direction",
-  ipProtocols: "ip_protocols",
+  ipprotocols: "ipprotocols",
 };
 
 const PacketMirroring_MirroredResourcesFields: FieldMap = {
-  tags: "tags",
   instances: {
     wireName: "instances",
-    kind: "set",
+    kind: "list",
     fields: PacketMirroring_CollectorIlbFields,
   },
   subnetworks: {
     wireName: "subnetworks",
-    kind: "set",
+    kind: "list",
     fields: PacketMirroring_CollectorIlbFields,
   },
-};
-
-const PacketMirroring_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+  tags: "tags",
 };
 
 export interface PacketMirroringConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** The internal load balancer (ILB) used as the collector for mirrored traffic. This output-only field identifies the forwarding rule that receives mirrored packets. (AI-inferred) */
+  collectorIlb?: PacketMirroring_CollectorIlb | Computed<PacketMirroring_CollectorIlb>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE. */
   enable?: string | Computed<string>;
+  /** The filter configuration as returned by the API (output only). It defines the criteria that determine which packets are mirrored. (AI-inferred) */
+  filter?: PacketMirroring_Filter | Computed<PacketMirroring_Filter>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  name: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings. */
+  kind?: string | Computed<string>;
+  /** An object defining the instances, subnetworks, or tags whose traffic is mirrored. This field is output-only and reflects the effective mirroring configuration. (AI-inferred) */
+  mirroredResources?: PacketMirroring_MirroredResources | Computed<PacketMirroring_MirroredResources>;
+  /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** The network that the packet mirroring applies to. This field is output-only and contains the URL of the VPC network. (AI-inferred) */
+  network?: PacketMirroring_CollectorIlb | Computed<PacketMirroring_CollectorIlb>;
+  /** The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535. */
   priority?: number | Computed<number>;
-  project?: string | Computed<string>;
+  /** [Output Only] URI of the region where the packetMirroring resides. */
   region?: string | Computed<string>;
-  collectorIlb?: PacketMirroring_CollectorIlb[] | Computed<PacketMirroring_CollectorIlb[]>;
-  filter?: PacketMirroring_Filter[] | Computed<PacketMirroring_Filter[]>;
-  mirroredResources?: PacketMirroring_MirroredResources[] | Computed<PacketMirroring_MirroredResources[]>;
-  network?: PacketMirroring_CollectorIlb[] | Computed<PacketMirroring_CollectorIlb[]>;
-  timeouts?: PacketMirroring_Timeouts | Computed<PacketMirroring_Timeouts>;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
 }
 
 export interface PacketMirroringAttrs {
-  deletionPolicy: string;
+  /** The internal load balancer (ILB) used as the collector for mirrored traffic. This output-only field identifies the forwarding rule that receives mirrored packets. (AI-inferred) */
+  collectorIlb: PacketMirroring_CollectorIlb;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE. */
   enable: string;
+  /** The filter configuration as returned by the API (output only). It defines the criteria that determine which packets are mirrored. (AI-inferred) */
+  filter: PacketMirroring_Filter;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings. */
+  kind: string;
+  /** An object defining the instances, subnetworks, or tags whose traffic is mirrored. This field is output-only and reflects the effective mirroring configuration. (AI-inferred) */
+  mirroredResources: PacketMirroring_MirroredResources;
+  /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
+  /** The network that the packet mirroring applies to. This field is output-only and contains the URL of the VPC network. (AI-inferred) */
+  network: PacketMirroring_CollectorIlb;
+  /** The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535. */
   priority: number;
-  project: string;
+  /** [Output Only] URI of the region where the packetMirroring resides. */
   region: string;
-  collectorIlb: PacketMirroring_CollectorIlb[];
-  filter: PacketMirroring_Filter[];
-  mirroredResources: PacketMirroring_MirroredResources[];
-  network: PacketMirroring_CollectorIlb[];
-  timeouts: PacketMirroring_Timeouts;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink: string;
 }
 
 export const PacketMirroring: ResourceBinding<PacketMirroringConfig, PacketMirroringAttrs> = {
   wireType: "google_compute_packet_mirroring",
   fields: {
-    deletionPolicy: "deletion_policy",
-    description: "description",
-    enable: "enable",
-    id: "id",
-    name: "name",
-    priority: "priority",
-    project: "project",
-    region: "region",
     collectorIlb: {
       wireName: "collector_ilb",
-      kind: "list",
+      kind: "object",
       fields: PacketMirroring_CollectorIlbFields,
     },
+    creationTimestamp: "creation_timestamp",
+    description: "description",
+    enable: "enable",
     filter: {
       wireName: "filter",
-      kind: "list",
+      kind: "object",
       fields: PacketMirroring_FilterFields,
     },
+    id: "id",
+    kind: "kind",
     mirroredResources: {
       wireName: "mirrored_resources",
-      kind: "list",
+      kind: "object",
       fields: PacketMirroring_MirroredResourcesFields,
     },
+    name: "name",
     network: {
       wireName: "network",
-      kind: "list",
+      kind: "object",
       fields: PacketMirroring_CollectorIlbFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: PacketMirroring_TimeoutsFields,
-    },
+    priority: "priority",
+    region: "region",
+    selfLink: "self_link",
   },
 };

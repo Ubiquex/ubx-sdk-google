@@ -3,47 +3,119 @@ package compute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type SslCertificate_Timeouts struct {
-	Create any
-	Delete any
+type SslCertificate_Managed struct {
+	// Output only. [Output only] Detailed statuses of the domains specified for managed certificate resource.
+	DomainStatus any
+	// The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+	Domains any
+	// Output only. [Output only] Status of the managed certificate resource.
+	Status any
 }
 
-var SslCertificate_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
+type SslCertificate_SelfManaged struct {
+	// A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+	Certificate any
+	// A write-only private key in PEM format. Only insert requests will include this field.
+	PrivateKey any
+}
+
+var SslCertificate_ManagedFields = ubx.FieldMap{
+		"DomainStatus": ubx.FieldSpec{WireName: "domain_status"},
+		"Domains": ubx.FieldSpec{WireName: "domains"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
+
+var SslCertificate_SelfManagedFields = ubx.FieldMap{
+		"Certificate": ubx.FieldSpec{WireName: "certificate"},
+		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
 	}
 
 type SslCertificateConfig struct {
+	// A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
 	Certificate any
-	DeletionPolicy any
+	// [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// Output only. [Output Only] Expire time of the certificate. RFC3339
+	ExpireTime any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
+	Kind any
+	// Configuration and status of a managed SSL certificate.
+	Managed any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	NamePrefix any
+	// A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
 	PrivateKey any
-	PrivateKeyWo any
-	PrivateKeyWoVersion any
-	Project any
-	Timeouts any
+	// Output only. [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
+	Region any
+	// [Output only] Server-defined URL for the resource.
+	SelfLink any
+	// Configuration and status of a self-managed SSL certificate.
+	SelfManaged any
+	// Output only. [Output Only] Domains associated with the certificate via Subject Alternative Name.
+	SubjectAlternativeNames any
+	// (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
+	Type any
+}
+
+type SslCertificateAttrs struct {
+	// A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+	Certificate any
+	// [Output Only] Creation timestamp inRFC3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// Output only. [Output Only] Expire time of the certificate. RFC3339
+	ExpireTime any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
+	Kind any
+	// Configuration and status of a managed SSL certificate.
+	Managed any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+	Name any
+	// A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
+	PrivateKey any
+	// Output only. [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
+	Region any
+	// [Output only] Server-defined URL for the resource.
+	SelfLink any
+	// Configuration and status of a self-managed SSL certificate.
+	SelfManaged any
+	// Output only. [Output Only] Domains associated with the certificate via Subject Alternative Name.
+	SubjectAlternativeNames any
+	// (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
+	Type any
 }
 
 var SslCertificate = ubx.ResourceBinding{
 	WireType: "google_compute_ssl_certificate",
 	Fields: ubx.FieldMap{
 		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"PrivateKeyWo": ubx.FieldSpec{WireName: "private_key_wo"},
-		"PrivateKeyWoVersion": ubx.FieldSpec{WireName: "private_key_wo_version"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Managed": ubx.FieldSpec{
+			WireName: "managed",
 			Kind: "object",
-			Fields: SslCertificate_TimeoutsFields,
+			Fields: SslCertificate_ManagedFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfManaged": ubx.FieldSpec{
+			WireName: "self_managed",
+			Kind: "object",
+			Fields: SslCertificate_SelfManagedFields,
+		},
+		"SubjectAlternativeNames": ubx.FieldSpec{WireName: "subject_alternative_names"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

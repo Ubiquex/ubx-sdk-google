@@ -7,40 +7,242 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class NetworkFirewallPolicy_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class NetworkFirewallPolicy_Associations:
+    attachment_target: Any = None
+    display_name: Any = None
+    firewall_policy_id: Any = None
+    name: Any = None
+    short_name: Any = None
 
-_NetworkFirewallPolicy_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+@dataclasses.dataclass
+class NetworkFirewallPolicy_PacketMirroringRules_Match_Layer4Configs:
+    ip_protocol: Any = None
+    ports: Any = None
+
+@dataclasses.dataclass
+class NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTags:
+    name: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
+class NetworkFirewallPolicy_PacketMirroringRules_Match:
+    dest_address_groups: Any = None
+    dest_fqdns: Any = None
+    dest_ip_ranges: Any = None
+    dest_network_context: Any = None
+    dest_network_type: Any = None
+    dest_region_codes: Any = None
+    dest_threat_intelligences: Any = None
+    layer4_configs: Any = None
+    src_address_groups: Any = None
+    src_fqdns: Any = None
+    src_ip_ranges: Any = None
+    src_network_context: Any = None
+    src_network_type: Any = None
+    src_networks: Any = None
+    src_region_codes: Any = None
+    src_secure_tags: Any = None
+    src_threat_intelligences: Any = None
+
+@dataclasses.dataclass
+class NetworkFirewallPolicy_PacketMirroringRules:
+    action: Any = None
+    description: Any = None
+    direction: Any = None
+    disabled: Any = None
+    enable_logging: Any = None
+    kind: Any = None
+    match: Any = None
+    priority: Any = None
+    rule_name: Any = None
+    rule_tuple_count: Any = None
+    security_profile_group: Any = None
+    target_forwarding_rules: Any = None
+    target_resources: Any = None
+    target_secure_tags: Any = None
+    target_service_accounts: Any = None
+    target_type: Any = None
+    tls_inspect: Any = None
+
+_NetworkFirewallPolicy_AssociationsFields = {
+    "attachment_target": ubx.FieldSpec(wire_name="attachment_target"),
+    "display_name": ubx.FieldSpec(wire_name="display_name"),
+    "firewall_policy_id": ubx.FieldSpec(wire_name="firewall_policy_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "short_name": ubx.FieldSpec(wire_name="short_name"),
+}
+
+_NetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields = {
+    "ip_protocol": ubx.FieldSpec(wire_name="ip_protocol"),
+    "ports": ubx.FieldSpec(wire_name="ports"),
+}
+
+_NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "state": ubx.FieldSpec(wire_name="state"),
+}
+
+_NetworkFirewallPolicy_PacketMirroringRules_MatchFields = {
+    "dest_address_groups": ubx.FieldSpec(wire_name="dest_address_groups"),
+    "dest_fqdns": ubx.FieldSpec(wire_name="dest_fqdns"),
+    "dest_ip_ranges": ubx.FieldSpec(wire_name="dest_ip_ranges"),
+    "dest_network_context": ubx.FieldSpec(wire_name="dest_network_context"),
+    "dest_network_type": ubx.FieldSpec(wire_name="dest_network_type"),
+    "dest_region_codes": ubx.FieldSpec(wire_name="dest_region_codes"),
+    "dest_threat_intelligences": ubx.FieldSpec(wire_name="dest_threat_intelligences"),
+    "layer4_configs": ubx.FieldSpec(
+        wire_name="layer4_configs",
+        kind="list",
+        fields=_NetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields,
+    ),
+    "src_address_groups": ubx.FieldSpec(wire_name="src_address_groups"),
+    "src_fqdns": ubx.FieldSpec(wire_name="src_fqdns"),
+    "src_ip_ranges": ubx.FieldSpec(wire_name="src_ip_ranges"),
+    "src_network_context": ubx.FieldSpec(wire_name="src_network_context"),
+    "src_network_type": ubx.FieldSpec(wire_name="src_network_type"),
+    "src_networks": ubx.FieldSpec(wire_name="src_networks"),
+    "src_region_codes": ubx.FieldSpec(wire_name="src_region_codes"),
+    "src_secure_tags": ubx.FieldSpec(
+        wire_name="src_secure_tags",
+        kind="list",
+        fields=_NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+    ),
+    "src_threat_intelligences": ubx.FieldSpec(wire_name="src_threat_intelligences"),
+}
+
+_NetworkFirewallPolicy_PacketMirroringRulesFields = {
+    "action": ubx.FieldSpec(wire_name="action"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "direction": ubx.FieldSpec(wire_name="direction"),
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+    "enable_logging": ubx.FieldSpec(wire_name="enable_logging"),
+    "kind": ubx.FieldSpec(wire_name="kind"),
+    "match": ubx.FieldSpec(
+        wire_name="match",
+        kind="object",
+        fields=_NetworkFirewallPolicy_PacketMirroringRules_MatchFields,
+    ),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rule_name": ubx.FieldSpec(wire_name="rule_name"),
+    "rule_tuple_count": ubx.FieldSpec(wire_name="rule_tuple_count"),
+    "security_profile_group": ubx.FieldSpec(wire_name="security_profile_group"),
+    "target_forwarding_rules": ubx.FieldSpec(wire_name="target_forwarding_rules"),
+    "target_resources": ubx.FieldSpec(wire_name="target_resources"),
+    "target_secure_tags": ubx.FieldSpec(
+        wire_name="target_secure_tags",
+        kind="list",
+        fields=_NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+    ),
+    "target_service_accounts": ubx.FieldSpec(wire_name="target_service_accounts"),
+    "target_type": ubx.FieldSpec(wire_name="target_type"),
+    "tls_inspect": ubx.FieldSpec(wire_name="tls_inspect"),
 }
 
 @dataclasses.dataclass
 class NetworkFirewallPolicyConfig:
-    deletion_policy: Any = None
+    # A list of associations that belong to this firewall policy.
+    associations: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    display_name: Any = None
+    # Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+    fingerprint: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
+    # Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+    kind: Any = None
+    # Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
     name: Any = None
+    # A list of packet mirroring rules that belong to this policy.
+    packet_mirroring_rules: Any = None
+    # Output only. [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+    parent: Any = None
+    # The type of the firewall policy. This field can be one of VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY. Note: if not specified then VPC_POLICY will be used.
     policy_type: Any = None
-    project: Any = None
-    timeouts: Any = None
+    # Output only. [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+    region: Any = None
+    # Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+    rule_tuple_count: Any = None
+    # A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+    rules: Any = None
+    # [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
+    self_link_with_id: Any = None
+    # User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    short_name: Any = None
+
+@dataclasses.dataclass
+class NetworkFirewallPolicyAttrs:
+    # A list of associations that belong to this firewall policy.
+    associations: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    display_name: Any = None
+    # Specifies a fingerprint for this resource, which is essentially a hash of the metadata's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update metadata. You must always provide an up-to-date fingerprint hash in order to update or change metadata, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make get() request to the firewall policy.
+    fingerprint: Any = None
+    # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+    kind: Any = None
+    # Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+    name: Any = None
+    # A list of packet mirroring rules that belong to this policy.
+    packet_mirroring_rules: Any = None
+    # Output only. [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
+    parent: Any = None
+    # The type of the firewall policy. This field can be one of VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY. Note: if not specified then VPC_POLICY will be used.
+    policy_type: Any = None
+    # Output only. [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+    region: Any = None
+    # Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
+    rule_tuple_count: Any = None
+    # A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
+    rules: Any = None
+    # [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
+    self_link_with_id: Any = None
+    # User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    short_name: Any = None
 
 NetworkFirewallPolicy = ubx.ResourceBinding(
     wire_type="google_compute_network_firewall_policy",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "policy_type": ubx.FieldSpec(wire_name="policy_type"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_NetworkFirewallPolicy_TimeoutsFields,
+        "associations": ubx.FieldSpec(
+            wire_name="associations",
+            kind="list",
+            fields=_NetworkFirewallPolicy_AssociationsFields,
         ),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "display_name": ubx.FieldSpec(wire_name="display_name"),
+        "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "packet_mirroring_rules": ubx.FieldSpec(
+            wire_name="packet_mirroring_rules",
+            kind="list",
+            fields=_NetworkFirewallPolicy_PacketMirroringRulesFields,
+        ),
+        "parent": ubx.FieldSpec(wire_name="parent"),
+        "policy_type": ubx.FieldSpec(wire_name="policy_type"),
+        "region": ubx.FieldSpec(wire_name="region"),
+        "rule_tuple_count": ubx.FieldSpec(wire_name="rule_tuple_count"),
+        "rules": ubx.FieldSpec(
+            wire_name="rules",
+            kind="list",
+            fields=_NetworkFirewallPolicy_PacketMirroringRulesFields,
+        ),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
+        "short_name": ubx.FieldSpec(wire_name="short_name"),
     },
 )

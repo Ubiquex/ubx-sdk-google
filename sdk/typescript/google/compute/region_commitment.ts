@@ -2,24 +2,229 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionCommitment_LicenseResource {
-  amount: string;
-  coresPerLicense: string;
-  license: string;
+  /** The number of licenses you plan to purchase. */
+  amount?: string | Computed<string>;
+  /** The number of cores per license. */
+  coresPerLicense?: string | Computed<string>;
+  /** The applicable license URI. */
+  license?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Params {
-  resourceManagerTags: Record<string, string>;
+  /** Input only. Resource manager tags to be bound to the commitment. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty. */
+  resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
+}
+
+export interface RegionCommitment_Reservations_AdvancedDeploymentControl {
+  /** The operational mode for the reservation. Valid values are ALL_CAPACITY (all capacity is provisioned immediately), HIGHLY_AVAILABLE_CAPACITY (capacity is distributed to support high availability), and RESERVATION_OPERATIONAL_MODE_UNSPECIFIED (mode not set, defaults to ALL_CAPACITY). (AI-inferred) */
+  reservationOperationalMode?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator {
+  acceleratorCount?: number | Computed<number>;
+  /** Specifies the type of accelerator (GPU) used by the resources currently in use within the aggregate reservation. This value corresponds to the acceleratorType in the machine type, such as 'nvidia-tesla-t4'. (AI-inferred) */
+  acceleratorType?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_AggregateReservation_InUseResources {
+  accelerator?: RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator | Computed<RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator>;
+}
+
+export interface RegionCommitment_Reservations_AggregateReservation {
+  inUseResources?: RegionCommitment_Reservations_AggregateReservation_InUseResources[] | Computed<RegionCommitment_Reservations_AggregateReservation_InUseResources[]>;
+  /** Specifies the resources included in this aggregate reservation. Each entry defines a resource type and the amount to reserve. (AI-inferred) */
+  reservedResources?: RegionCommitment_Reservations_AggregateReservation_InUseResources[] | Computed<RegionCommitment_Reservations_AggregateReservation_InUseResources[]>;
+  /** The family of TPU VMs to reserve capacity for. Valid values include VM_FAMILY_CLOUD_TPU_DEVICE_CT3, VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P, and VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X. (AI-inferred) */
+  vmFamily?: string | Computed<string>;
+  /** The workload type of the aggregate reservation. Valid values are BATCH, SERVING, or UNSPECIFIED. This determines how the reservation is used for batch or serving workloads. (AI-inferred) */
+  workloadType?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_DeleteAfterDuration {
+  /** The duration's sub-second component in nanoseconds, ranging from 0 to 999,999,999. (AI-inferred) */
+  nanos?: number | Computed<number>;
+  /** The number of seconds in the duration after which the reservation is automatically deleted. Must be a string representation of an integer from 0 to 315,576,000,000 inclusive. (AI-inferred) */
+  seconds?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_ReservationSharingPolicy {
+  /** Specifies the sharing type for this reservation, controlling which services can use it. ALLOW_ALL permits all services, DISALLOW_ALL blocks all services, and SERVICE_SHARE_TYPE_UNSPECIFIED is the default unspecified value. (AI-inferred) */
+  serviceShareType?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_ResourceMetadata {
+  apiVersion?: string | Computed<string>;
+  resourceType?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_ResourceStatus_HealthInfo {
+  /** The number of blocks that are degraded in the resource, as reported in its health information. This value indicates the extent of storage degradation for the resource. (AI-inferred) */
+  degradedBlockCount?: number | Computed<number>;
+  /** The health status of the resource. Possible values: DEGRADED, HEALTHY, HEALTH_STATUS_UNSPECIFIED. (AI-inferred) */
+  healthStatus?: string | Computed<string>;
+  /** The number of healthy blocks in the reservation's resource health status. (AI-inferred) */
+  healthyBlockCount?: number | Computed<number>;
+}
+
+export interface RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance {
+  /** Indicates whether the upcoming group maintenance event can be rescheduled. (AI-inferred) */
+  canReschedule?: boolean | Computed<boolean>;
+  /** The latest time at which the upcoming group maintenance window can start, as reported for this reservation's resource status. (AI-inferred) */
+  latestWindowStartTime?: string | Computed<string>;
+  maintenanceOnShutdown?: boolean | Computed<boolean>;
+  maintenanceReasons?: string[] | Computed<string[]>;
+  /** The maintenance status of the upcoming group maintenance, indicating whether it is ONGOING, PENDING, or UNKNOWN. (AI-inferred) */
+  maintenanceStatus?: string | Computed<string>;
+  /** The type of upcoming maintenance for the reservation group. Possible values are: MULTIPLE, SCHEDULED, UNKNOWN_TYPE, UNSCHEDULED. (AI-inferred) */
+  type?: string | Computed<string>;
+  /** The end time of the maintenance window for the upcoming group maintenance event, expressed as a timestamp string. (AI-inferred) */
+  windowEndTime?: string | Computed<string>;
+  /** The start time of the maintenance window for an upcoming maintenance event on the reservation, as a timestamp. (AI-inferred) */
+  windowStartTime?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance {
+  /** The number of instances in the reservation that are currently undergoing maintenance, as reported in the reservation maintenance status. (AI-inferred) */
+  instanceMaintenanceOngoingCount?: number | Computed<number>;
+  /** The number of instances in this reservation that have maintenance pending. (AI-inferred) */
+  instanceMaintenancePendingCount?: number | Computed<number>;
+  /** The number of resources within this reservation that are currently undergoing maintenance. (AI-inferred) */
+  maintenanceOngoingCount?: number | Computed<number>;
+  /** The number of instances in this reservation that have a pending maintenance event. (AI-inferred) */
+  maintenancePendingCount?: number | Computed<number>;
+  /** The maintenance scheduling type for the reservation. Possible values are: 'GROUPED' (maintenance is grouped for the reservation), 'INDEPENDENT' (maintenance is handled independently), and 'GROUP_MAINTENANCE_TYPE_UNSPECIFIED' (the type is not specified). (AI-inferred) */
+  schedulingType?: string | Computed<string>;
+  /** The number of ongoing maintenance operations for the subblock infrastructure within the reservation. (AI-inferred) */
+  subblockInfraMaintenanceOngoingCount?: number | Computed<number>;
+  /** The number of pending maintenance items for the subblock infrastructure, as reported in the reservation maintenance status. (AI-inferred) */
+  subblockInfraMaintenancePendingCount?: number | Computed<number>;
+  /** Upcoming maintenance information for the entire reservation group, shown in the resource status. (AI-inferred) */
+  upcomingGroupMaintenance?: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance | Computed<RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance>;
+}
+
+export interface RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation {
+  /** The ID of the instance template used to specify the machine type and other properties for this specific SKU allocation in the reservation. (AI-inferred) */
+  sourceInstanceTemplateId?: string | Computed<string>;
+  /** The utilization of the specific SKU reservation, keyed by resource type (e.g., memory). Each value is a fraction of the total capacity of that resource. (AI-inferred) */
+  utilizations?: Record<string, string> | Computed<Record<string, string>>;
+}
+
+export interface RegionCommitment_Reservations_ResourceStatus {
+  healthInfo?: RegionCommitment_Reservations_ResourceStatus_HealthInfo | Computed<RegionCommitment_Reservations_ResourceStatus_HealthInfo>;
+  /** The number of capacity blocks that this reservation uses. (AI-inferred) */
+  reservationBlockCount?: number | Computed<number>;
+  /** An object that provides the maintenance status details for the reservation, as part of the reservation's resource status. This is a computed field reflecting the current maintenance state of the reservation. (AI-inferred) */
+  reservationMaintenance?: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance | Computed<RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance>;
+  specificSkuAllocation?: RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation | Computed<RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation>;
+}
+
+export interface RegionCommitment_Reservations_ShareSettings_ProjectMap {
+  /** The ID of the Google Cloud project that has shared access to the commitment reservation. This is the key for the project_map entry. (AI-inferred) */
+  projectId?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_ShareSettings {
+  /** A map of project IDs to project-specific configuration, used to specify which projects can share this commitment's reservations as part of the sharing settings. (AI-inferred) */
+  projectMap?: Record<string, RegionCommitment_Reservations_ShareSettings_ProjectMap> | Computed<Record<string, RegionCommitment_Reservations_ShareSettings_ProjectMap>>;
+  /** Defines the sharing type for this reservation. Allowed values are: LOCAL (only within the owning project), SPECIFIC_PROJECTS (shared with a list of specific projects), ORGANIZATION (shared with all projects in the organization), and SHARE_TYPE_UNSPECIFIED (default, indicating the field is not set). (AI-inferred) */
+  shareType?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds {
+  /** The size of the local SSD disk in gigabytes (GB), expressed as a string. (AI-inferred) */
+  diskSizeGb?: string | Computed<string>;
+  /** The interface type for the local SSD. Supported values are `NVME` and `SCSI`. (AI-inferred) */
+  interface?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_SpecificReservation_InstanceProperties {
+  /** A list of guest accelerator (GPU) configurations to attach to instances created from this reservation. Each object defines an accelerator type and the number of accelerators. (AI-inferred) */
+  guestAccelerators?: RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator[] | Computed<RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator[]>;
+  /** A list of local SSD configurations to attach to instances in this specific reservation. (AI-inferred) */
+  localSsds?: RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds[] | Computed<RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds[]>;
+  /** Optional location hint for the reserved instances, used by Compute Engine to optimize physical placement. (AI-inferred) */
+  locationHint?: string | Computed<string>;
+  /** Specifies the machine type for the VM instances in this specific reservation. (AI-inferred) */
+  machineType?: string | Computed<string>;
+  /** Specifies the minimum CPU platform allowed for VM instances in the specific reservation. The value must be a valid CPU platform name (e.g., 'Intel Skylake' or 'AMD Milan') and instances will be guaranteed to use a CPU platform at least as recent as the specified one. (AI-inferred) */
+  minCpuPlatform?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations_SpecificReservation {
+  /** The number of virtual machine instances that are guaranteed to be available in this specific reservation. This value must be less than or equal to the total 'count' of the reservation. (AI-inferred) */
+  assuredCount?: string | Computed<string>;
+  /** The number of virtual machine instances to reserve in the specific reservation. The value must be a positive integer. (AI-inferred) */
+  count?: string | Computed<string>;
+  /** Number of reserved instances from this specific reservation that are currently in use. (AI-inferred) */
+  inUseCount?: string | Computed<string>;
+  /** The properties of the virtual machines to be reserved in this specific reservation, including machine type, minimum CPU platform, accelerator configuration, and local SSD count. (AI-inferred) */
+  instanceProperties?: RegionCommitment_Reservations_SpecificReservation_InstanceProperties | Computed<RegionCommitment_Reservations_SpecificReservation_InstanceProperties>;
+  /** The self-link of an instance template that defines the properties of the instances to be reserved. When specified, the specific reservation is created based on the template's configuration. (AI-inferred) */
+  sourceInstanceTemplate?: string | Computed<string>;
+}
+
+export interface RegionCommitment_Reservations {
+  advancedDeploymentControl?: RegionCommitment_Reservations_AdvancedDeploymentControl | Computed<RegionCommitment_Reservations_AdvancedDeploymentControl>;
+  /** The aggregate reservation configuration, used to reserve capacity for a pool of resources (such as CPU and memory) without specifying exact instance shapes. It includes a VM family and a list of reserved resource types with counts, offering flexible capacity reservation for a group of instances. (AI-inferred) */
+  aggregateReservation?: RegionCommitment_Reservations_AggregateReservation | Computed<RegionCommitment_Reservations_AggregateReservation>;
+  commitment?: string | Computed<string>;
+  /** Specifies the confidential computing type for the reservation. Valid values are CONFIDENTIAL_COMPUTE_TYPE_TDX (for Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED (default, unspecified). (AI-inferred) */
+  confidentialComputeType?: string | Computed<string>;
+  /** Creation timestamp in RFC3339 text format. (AI-inferred) */
+  creationTimestamp?: string | Computed<string>;
+  /** A duration (seconds and optional nanos) after which the reservation is automatically deleted. If unset, the reservation persists until the commitment ends. (AI-inferred) */
+  deleteAfterDuration?: RegionCommitment_Reservations_DeleteAfterDuration | Computed<RegionCommitment_Reservations_DeleteAfterDuration>;
+  /** The time at which the reservation will be automatically deleted, in RFC3339 format. (AI-inferred) */
+  deleteAtTime?: string | Computed<string>;
+  /** The deployment type for this reservation. Allowed values are DENSE and DEPLOYMENT_TYPE_UNSPECIFIED. (AI-inferred) */
+  deploymentType?: string | Computed<string>;
+  description?: string | Computed<string>;
+  /** Specifies the early access mode for maintenance events on this reservation. Valid values are NO_EARLY_ACCESS, WAVE1, and WAVE2, indicating no early access, first wave, or second wave, respectively. (AI-inferred) */
+  earlyAccessMaintenance?: string | Computed<string>;
+  /** Whether the reservation can be consumed by emergent maintenance requests. (AI-inferred) */
+  enableEmergentMaintenance?: boolean | Computed<boolean>;
+  id?: string | Computed<string>;
+  /** The type of the resource. Always 'compute#reservation' for this resource. (AI-inferred) */
+  kind?: string | Computed<string>;
+  /** List of self_links of commitments linked to this reservation. This is used to associate the reservation with one or more commitments so that the commitment's discounts apply to the reserved capacity. (AI-inferred) */
+  linkedCommitments?: string[] | Computed<string[]>;
+  name?: string | Computed<string>;
+  params?: RegionCommitment_Params | Computed<RegionCommitment_Params>;
+  /** The protection tier for the reservation, which determines the level of capacity protection. Valid values are `STANDARD`, `CAPACITY_OPTIMIZED`, and `PROTECTION_TIER_UNSPECIFIED` (the latter is the default when unspecified). (AI-inferred) */
+  protectionTier?: string | Computed<string>;
+  reservationSharingPolicy?: RegionCommitment_Reservations_ReservationSharingPolicy | Computed<RegionCommitment_Reservations_ReservationSharingPolicy>;
+  resourceMetadata?: RegionCommitment_Reservations_ResourceMetadata | Computed<RegionCommitment_Reservations_ResourceMetadata>;
+  resourcePolicies?: Record<string, string> | Computed<Record<string, string>>;
+  resourceStatus?: RegionCommitment_Reservations_ResourceStatus | Computed<RegionCommitment_Reservations_ResourceStatus>;
+  /** Whether this reservation satisfies the requirements for physical zone separation (PZS) for sole-tenant node groups. (AI-inferred) */
+  satisfiesPzs?: boolean | Computed<boolean>;
+  /** The scheduling type of the reservation. Possible values: INDEPENDENT (reserves capacity for standalone instances), GROUPED (reserves capacity for a group of instances, typically used with managed instance groups), and GROUP_MAINTENANCE_TYPE_UNSPECIFIED (the scheduling type is not specified). (AI-inferred) */
+  schedulingType?: string | Computed<string>;
+  selfLink?: string | Computed<string>;
+  /** Configuration for sharing a reservation with other projects. It specifies the share type (LOCAL or SPECIFIC_PROJECTS) and, for SPECIFIC_PROJECTS, the set of projects that can use the reservation. (AI-inferred) */
+  shareSettings?: RegionCommitment_Reservations_ShareSettings | Computed<RegionCommitment_Reservations_ShareSettings>;
+  /** Configuration for a specific reservation within the commitment. This block specifies the instance count and instance properties (such as machine type and GPUs) for reserved VMs, which are dedicated to a single project. (AI-inferred) */
+  specificReservation?: RegionCommitment_Reservations_SpecificReservation | Computed<RegionCommitment_Reservations_SpecificReservation>;
+  /** Indicates whether the reservation is a specific reservation (for a specific instance type) or a non-specific reservation (for an instance family). When true, the reservation is specific; when false, it is non-specific. (AI-inferred) */
+  specificReservationRequired?: boolean | Computed<boolean>;
+  /** The current status of the reservation, indicating its lifecycle state. Possible values are CREATING, DELETING, INVALID, READY, and UPDATING. (AI-inferred) */
+  status?: string | Computed<string>;
+  /** The zone in which the reservation is created, within the commitment's region. (AI-inferred) */
+  zone?: string | Computed<string>;
+}
+
+export interface RegionCommitment_ResourceStatus {
+  /** Output only. [Output Only] Indicates the end time of customer's eligibility to send custom term requests in RFC3339 text format. Term extension requests that (not the end time in the request) after this time will be rejected. */
+  customTermEligibilityEndTimestamp?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Resources {
-  acceleratorType: string;
-  amount: string;
-  type: string;
-}
-
-export interface RegionCommitment_Timeouts {
-  create: string;
-  delete: string;
+  /** The type of accelerator (GPU) to include in the commitment, e.g., 'nvidia-tesla-v100'. Must be a valid accelerator type available in the region. (AI-inferred) */
+  acceleratorType?: string | Computed<string>;
+  /** The quantity of the resource type (e.g., VCPU, MEMORY) to reserve in the commitment. (AI-inferred) */
+  amount?: string | Computed<string>;
+  /** The type of resource to commit to. Allowed values are `VCPU`, `MEMORY`, `LOCAL_SSD`, `ACCELERATOR`, and `UNSPECIFIED`. (AI-inferred) */
+  type?: string | Computed<string>;
 }
 
 const RegionCommitment_LicenseResourceFields: FieldMap = {
@@ -32,56 +237,332 @@ const RegionCommitment_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
+const RegionCommitment_Reservations_AdvancedDeploymentControlFields: FieldMap = {
+  reservationOperationalMode: "reservation_operational_mode",
+};
+
+const RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields: FieldMap = {
+  acceleratorCount: "accelerator_count",
+  acceleratorType: "accelerator_type",
+};
+
+const RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields: FieldMap = {
+  accelerator: {
+    wireName: "accelerator",
+    kind: "object",
+    fields: RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
+  },
+};
+
+const RegionCommitment_Reservations_AggregateReservationFields: FieldMap = {
+  inUseResources: {
+    wireName: "in_use_resources",
+    kind: "list",
+    fields: RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
+  },
+  reservedResources: {
+    wireName: "reserved_resources",
+    kind: "list",
+    fields: RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
+  },
+  vmFamily: "vm_family",
+  workloadType: "workload_type",
+};
+
+const RegionCommitment_Reservations_DeleteAfterDurationFields: FieldMap = {
+  nanos: "nanos",
+  seconds: "seconds",
+};
+
+const RegionCommitment_Reservations_ReservationSharingPolicyFields: FieldMap = {
+  serviceShareType: "service_share_type",
+};
+
+const RegionCommitment_Reservations_ResourceMetadataFields: FieldMap = {
+  apiVersion: "api_version",
+  resourceType: "resource_type",
+};
+
+const RegionCommitment_Reservations_ResourceStatus_HealthInfoFields: FieldMap = {
+  degradedBlockCount: "degraded_block_count",
+  healthStatus: "health_status",
+  healthyBlockCount: "healthy_block_count",
+};
+
+const RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields: FieldMap = {
+  canReschedule: "can_reschedule",
+  latestWindowStartTime: "latest_window_start_time",
+  maintenanceOnShutdown: "maintenance_on_shutdown",
+  maintenanceReasons: "maintenance_reasons",
+  maintenanceStatus: "maintenance_status",
+  type: "type",
+  windowEndTime: "window_end_time",
+  windowStartTime: "window_start_time",
+};
+
+const RegionCommitment_Reservations_ResourceStatus_ReservationMaintenanceFields: FieldMap = {
+  instanceMaintenanceOngoingCount: "instance_maintenance_ongoing_count",
+  instanceMaintenancePendingCount: "instance_maintenance_pending_count",
+  maintenanceOngoingCount: "maintenance_ongoing_count",
+  maintenancePendingCount: "maintenance_pending_count",
+  schedulingType: "scheduling_type",
+  subblockInfraMaintenanceOngoingCount: "subblock_infra_maintenance_ongoing_count",
+  subblockInfraMaintenancePendingCount: "subblock_infra_maintenance_pending_count",
+  upcomingGroupMaintenance: {
+    wireName: "upcoming_group_maintenance",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields,
+  },
+};
+
+const RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocationFields: FieldMap = {
+  sourceInstanceTemplateId: "source_instance_template_id",
+  utilizations: "utilizations",
+};
+
+const RegionCommitment_Reservations_ResourceStatusFields: FieldMap = {
+  healthInfo: {
+    wireName: "health_info",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ResourceStatus_HealthInfoFields,
+  },
+  reservationBlockCount: "reservation_block_count",
+  reservationMaintenance: {
+    wireName: "reservation_maintenance",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenanceFields,
+  },
+  specificSkuAllocation: {
+    wireName: "specific_sku_allocation",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocationFields,
+  },
+};
+
+const RegionCommitment_Reservations_ShareSettings_ProjectMapFields: FieldMap = {
+  projectId: "project_id",
+};
+
+const RegionCommitment_Reservations_ShareSettingsFields: FieldMap = {
+  projectMap: {
+    wireName: "project_map",
+    kind: "map",
+    fields: RegionCommitment_Reservations_ShareSettings_ProjectMapFields,
+  },
+  shareType: "share_type",
+};
+
+const RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsdsFields: FieldMap = {
+  diskSizeGb: "disk_size_gb",
+  interface: "interface",
+};
+
+const RegionCommitment_Reservations_SpecificReservation_InstancePropertiesFields: FieldMap = {
+  guestAccelerators: {
+    wireName: "guest_accelerators",
+    kind: "list",
+    fields: RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
+  },
+  localSsds: {
+    wireName: "local_ssds",
+    kind: "list",
+    fields: RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsdsFields,
+  },
+  locationHint: "location_hint",
+  machineType: "machine_type",
+  minCpuPlatform: "min_cpu_platform",
+};
+
+const RegionCommitment_Reservations_SpecificReservationFields: FieldMap = {
+  assuredCount: "assured_count",
+  count: "count",
+  inUseCount: "in_use_count",
+  instanceProperties: {
+    wireName: "instance_properties",
+    kind: "object",
+    fields: RegionCommitment_Reservations_SpecificReservation_InstancePropertiesFields,
+  },
+  sourceInstanceTemplate: "source_instance_template",
+};
+
+const RegionCommitment_ReservationsFields: FieldMap = {
+  advancedDeploymentControl: {
+    wireName: "advanced_deployment_control",
+    kind: "object",
+    fields: RegionCommitment_Reservations_AdvancedDeploymentControlFields,
+  },
+  aggregateReservation: {
+    wireName: "aggregate_reservation",
+    kind: "object",
+    fields: RegionCommitment_Reservations_AggregateReservationFields,
+  },
+  commitment: "commitment",
+  confidentialComputeType: "confidential_compute_type",
+  creationTimestamp: "creation_timestamp",
+  deleteAfterDuration: {
+    wireName: "delete_after_duration",
+    kind: "object",
+    fields: RegionCommitment_Reservations_DeleteAfterDurationFields,
+  },
+  deleteAtTime: "delete_at_time",
+  deploymentType: "deployment_type",
+  description: "description",
+  earlyAccessMaintenance: "early_access_maintenance",
+  enableEmergentMaintenance: "enable_emergent_maintenance",
+  id: "id",
+  kind: "kind",
+  linkedCommitments: "linked_commitments",
+  name: "name",
+  params: {
+    wireName: "params",
+    kind: "object",
+    fields: RegionCommitment_ParamsFields,
+  },
+  protectionTier: "protection_tier",
+  reservationSharingPolicy: {
+    wireName: "reservation_sharing_policy",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ReservationSharingPolicyFields,
+  },
+  resourceMetadata: {
+    wireName: "resource_metadata",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ResourceMetadataFields,
+  },
+  resourcePolicies: "resource_policies",
+  resourceStatus: {
+    wireName: "resource_status",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ResourceStatusFields,
+  },
+  satisfiesPzs: "satisfies_pzs",
+  schedulingType: "scheduling_type",
+  selfLink: "self_link",
+  shareSettings: {
+    wireName: "share_settings",
+    kind: "object",
+    fields: RegionCommitment_Reservations_ShareSettingsFields,
+  },
+  specificReservation: {
+    wireName: "specific_reservation",
+    kind: "object",
+    fields: RegionCommitment_Reservations_SpecificReservationFields,
+  },
+  specificReservationRequired: "specific_reservation_required",
+  status: "status",
+  zone: "zone",
+};
+
+const RegionCommitment_ResourceStatusFields: FieldMap = {
+  customTermEligibilityEndTimestamp: "custom_term_eligibility_end_timestamp",
+};
+
 const RegionCommitment_ResourcesFields: FieldMap = {
   acceleratorType: "accelerator_type",
   amount: "amount",
   type: "type",
 };
 
-const RegionCommitment_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-};
-
 export interface RegionCommitmentConfig {
+  /** Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027. */
   autoRenew?: boolean | Computed<boolean>;
+  /** The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to. */
   category?: string | Computed<string>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration. */
+  customEndTimestamp?: string | Computed<string>;
+  /** An optional description of the commitment. You can provide this property when you create the resource. */
   description?: string | Computed<string>;
-  existingReservations?: string | Computed<string>;
+  /** Output only. [Output Only] Commitment end time inRFC3339 text format. */
+  endTimestamp?: string | Computed<string>;
+  /** The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred) */
+  existingReservations?: string[] | Computed<string[]>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  name: string | Computed<string>;
-  plan: string | Computed<string>;
-  project?: string | Computed<string>;
+  /** Output only. [Output Only] Type of the resource. Always compute#commitment for commitments. */
+  kind?: string | Computed<string>;
+  /** Commitment for a particular license resource. */
+  licenseResource?: RegionCommitment_LicenseResource | Computed<RegionCommitment_LicenseResource>;
+  /** The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments. */
+  mergeSourceCommitments?: string[] | Computed<string[]>;
+  /** Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** Additional commitment params. */
+  params?: RegionCommitment_Params | Computed<RegionCommitment_Params>;
+  /** The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years). */
+  plan?: string | Computed<string>;
+  /** Output only. [Output Only] URL of the region where the commitment and committed resources are located. */
   region?: string | Computed<string>;
-  type?: string | Computed<string>;
-  licenseResource?: RegionCommitment_LicenseResource[] | Computed<RegionCommitment_LicenseResource[]>;
-  params?: RegionCommitment_Params[] | Computed<RegionCommitment_Params[]>;
+  /** The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify theexistingReservations property instead. */
+  reservations?: RegionCommitment_Reservations[] | Computed<RegionCommitment_Reservations[]>;
+  /** [Output Only] Contains output only fields. */
+  resourceStatus?: RegionCommitment_ResourceStatus | Computed<RegionCommitment_ResourceStatus>;
+  /** The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type. */
   resources?: RegionCommitment_Resources[] | Computed<RegionCommitment_Resources[]>;
-  timeouts?: RegionCommitment_Timeouts | Computed<RegionCommitment_Timeouts>;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
+  /** The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments. */
+  splitSourceCommitment?: string | Computed<string>;
+  /** Output only. [Output Only] Commitment start time inRFC3339 text format. */
+  startTimestamp?: string | Computed<string>;
+  /** Output only. [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED. */
+  status?: string | Computed<string>;
+  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
+  statusMessage?: string | Computed<string>;
+  /** The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,GRAPHICS_OPTIMIZED_G4_VGPU,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series. */
+  type?: string | Computed<string>;
 }
 
 export interface RegionCommitmentAttrs {
+  /** Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027. */
   autoRenew: boolean;
+  /** The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to. */
   category: string;
-  commitmentId: number;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration. */
+  customEndTimestamp: string;
+  /** An optional description of the commitment. You can provide this property when you create the resource. */
   description: string;
+  /** Output only. [Output Only] Commitment end time inRFC3339 text format. */
   endTimestamp: string;
-  existingReservations: string;
+  /** The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred) */
+  existingReservations: string[];
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** Output only. [Output Only] Type of the resource. Always compute#commitment for commitments. */
+  kind: string;
+  /** Commitment for a particular license resource. */
+  licenseResource: RegionCommitment_LicenseResource;
+  /** The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments. */
+  mergeSourceCommitments: string[];
+  /** Name of the commitment. You must specify a name when you purchase the commitment. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
+  /** Additional commitment params. */
+  params: RegionCommitment_Params;
+  /** The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years). */
   plan: string;
-  project: string;
+  /** Output only. [Output Only] URL of the region where the commitment and committed resources are located. */
   region: string;
-  selfLink: string;
-  startTimestamp: string;
-  status: string;
-  statusMessage: string;
-  type: string;
-  licenseResource: RegionCommitment_LicenseResource[];
-  params: RegionCommitment_Params[];
+  /** The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify theexistingReservations property instead. */
+  reservations: RegionCommitment_Reservations[];
+  /** [Output Only] Contains output only fields. */
+  resourceStatus: RegionCommitment_ResourceStatus;
+  /** The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type. */
   resources: RegionCommitment_Resources[];
-  timeouts: RegionCommitment_Timeouts;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink: string;
+  /** The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments. */
+  splitSourceCommitment: string;
+  /** Output only. [Output Only] Commitment start time inRFC3339 text format. */
+  startTimestamp: string;
+  /** Output only. [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED. */
+  status: string;
+  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
+  statusMessage: string;
+  /** The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,GRAPHICS_OPTIMIZED_G4_VGPU,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series. */
+  type: string;
 }
 
 export const RegionCommitment: ResourceBinding<RegionCommitmentConfig, RegionCommitmentAttrs> = {
@@ -89,33 +570,47 @@ export const RegionCommitment: ResourceBinding<RegionCommitmentConfig, RegionCom
   fields: {
     autoRenew: "auto_renew",
     category: "category",
+    creationTimestamp: "creation_timestamp",
+    customEndTimestamp: "custom_end_timestamp",
     description: "description",
+    endTimestamp: "end_timestamp",
     existingReservations: "existing_reservations",
     id: "id",
-    name: "name",
-    plan: "plan",
-    project: "project",
-    region: "region",
-    type: "type",
+    kind: "kind",
     licenseResource: {
       wireName: "license_resource",
-      kind: "list",
+      kind: "object",
       fields: RegionCommitment_LicenseResourceFields,
     },
+    mergeSourceCommitments: "merge_source_commitments",
+    name: "name",
     params: {
       wireName: "params",
-      kind: "list",
+      kind: "object",
       fields: RegionCommitment_ParamsFields,
+    },
+    plan: "plan",
+    region: "region",
+    reservations: {
+      wireName: "reservations",
+      kind: "list",
+      fields: RegionCommitment_ReservationsFields,
+    },
+    resourceStatus: {
+      wireName: "resource_status",
+      kind: "object",
+      fields: RegionCommitment_ResourceStatusFields,
     },
     resources: {
       wireName: "resources",
       kind: "list",
       fields: RegionCommitment_ResourcesFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: RegionCommitment_TimeoutsFields,
-    },
+    selfLink: "self_link",
+    splitSourceCommitment: "split_source_commitment",
+    startTimestamp: "start_timestamp",
+    status: "status",
+    statusMessage: "status_message",
+    type: "type",
   },
 };

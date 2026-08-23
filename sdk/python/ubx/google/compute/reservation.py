@@ -7,59 +7,198 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Reservation_AdvancedDeploymentControl:
+    # Indicates chosen reservation operational mode for the reservation.
+    reservation_operational_mode: Any = None
+
+@dataclasses.dataclass
+class Reservation_AggregateReservation_InUseResources_Accelerator:
+    # The number of accelerators of the specified type that are currently in use by the reservation. (AI-inferred)
+    accelerator_count: Any = None
+    # The type of accelerator (GPU) used by this in-use resource within the aggregate reservation, such as 'nvidia-tesla-t4' or 'nvidia-tesla-a100'. (AI-inferred)
+    accelerator_type: Any = None
+
+@dataclasses.dataclass
+class Reservation_AggregateReservation_InUseResources:
+    # Configuration for the accelerator attached to this in-use resource, specifying the accelerator type and the number of accelerators. (AI-inferred)
+    accelerator: Any = None
+
+@dataclasses.dataclass
+class Reservation_AggregateReservation:
+    # Output only. [Output only] List of resources currently in use.
+    in_use_resources: Any = None
+    # List of reserved resources (CPUs, memory, accelerators).
+    reserved_resources: Any = None
+    # The VM family that all instances scheduled against this reservation must belong to.
+    vm_family: Any = None
+    # The workload type of the instances that will target this reservation.
+    workload_type: Any = None
+
+@dataclasses.dataclass
 class Reservation_DeleteAfterDuration:
+    # Span of time that's a fraction of a second at nanosecond resolution. Durations less than one second are represented with a 0 `seconds` field and a positive `nanos` field. Must be from 0 to 999,999,999 inclusive.
     nanos: Any = None
+    # Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
     seconds: Any = None
 
 @dataclasses.dataclass
 class Reservation_Params:
+    # Input only. Resource manager tags to be bound to the reservation. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty.
     resource_manager_tags: Any = None
 
 @dataclasses.dataclass
 class Reservation_ReservationSharingPolicy:
+    # Sharing config for all Google Cloud services.
     service_share_type: Any = None
 
 @dataclasses.dataclass
+class Reservation_ResourceMetadata:
+    # The version of the API interface that this resource was retrieved through. For example, `"2025-01-01"` or `"2025-01-01-preview"`.
+    api_version: Any = None
+    # The canonical resource type name in the format of a resource type as defined by [AIP-123](https://google.aip.dev/123). For example, `"compute.googleapis.com/Instance"`.
+    resource_type: Any = None
+
+@dataclasses.dataclass
+class Reservation_ResourceStatus_HealthInfo:
+    # The number of reservation blocks that are degraded.
+    degraded_block_count: Any = None
+    # The health status of the reservation.
+    health_status: Any = None
+    # The number of reservation blocks that are healthy.
+    healthy_block_count: Any = None
+
+@dataclasses.dataclass
+class Reservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance:
+    # Indicates if the maintenance can be customer triggered.
+    can_reschedule: Any = None
+    # The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+    latest_window_start_time: Any = None
+    # Indicates whether the UpcomingMaintenance will be triggered on VM shutdown.
+    maintenance_on_shutdown: Any = None
+    # The reasons for the maintenance. Only valid for vms.
+    maintenance_reasons: Any = None
+    # The current maintenance status for the upcoming group maintenance, with possible values ONGOING, PENDING, or UNKNOWN. (AI-inferred)
+    maintenance_status: Any = None
+    # Defines the type of maintenance.
+    type: Any = None
+    # The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+    window_end_time: Any = None
+    # The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+    window_start_time: Any = None
+
+@dataclasses.dataclass
+class Reservation_ResourceStatus_ReservationMaintenance:
+    # Describes number of instances that have ongoing maintenance.
+    instance_maintenance_ongoing_count: Any = None
+    # Describes number of instances that have pending maintenance.
+    instance_maintenance_pending_count: Any = None
+    # Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+    maintenance_ongoing_count: Any = None
+    # Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+    maintenance_pending_count: Any = None
+    # The type of maintenance for the reservation.
+    scheduling_type: Any = None
+    # Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+    subblock_infra_maintenance_ongoing_count: Any = None
+    # Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+    subblock_infra_maintenance_pending_count: Any = None
+    # Upcoming Maintenance notification information.
+    upcoming_group_maintenance: Any = None
+
+@dataclasses.dataclass
+class Reservation_ResourceStatus_SpecificSkuAllocation:
+    # ID of the instance template used to populate reservation properties.
+    source_instance_template_id: Any = None
+    # Per service utilization breakdown. The Key is the Google Cloud managed service name.
+    utilizations: Any = None
+
+@dataclasses.dataclass
+class Reservation_ResourceStatus:
+    # Health information for the reservation.
+    health_info: Any = None
+    # The number of reservation blocks associated with this reservation.
+    reservation_block_count: Any = None
+    # Maintenance Info for ReservationBlocks.
+    reservation_maintenance: Any = None
+    # Contains Properties set for the reservation.
+    specific_sku_allocation: Any = None
+
+@dataclasses.dataclass
 class Reservation_ShareSettings_ProjectMap:
-    id: Any = None
+    # The ID of the project with which the reservation is shared, used in the project_map for specific project sharing. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class Reservation_ShareSettings:
-    share_type: Any = None
+    # A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
     project_map: Any = None
-
-@dataclasses.dataclass
-class Reservation_SpecificReservation_InstanceProperties_GuestAccelerators:
-    accelerator_count: Any = None
-    accelerator_type: Any = None
+    # Type of sharing for this shared-reservation
+    share_type: Any = None
 
 @dataclasses.dataclass
 class Reservation_SpecificReservation_InstanceProperties_LocalSsds:
+    # The size of the local SSD in GB. Valid values are multiples of 375, from 375 to 3000 inclusive. Defaults to 375. (AI-inferred)
     disk_size_gb: Any = None
+    # The interface type for the local SSD, either `NVME` or `SCSI`. This determines the storage protocol used for the local SSD devices. (AI-inferred)
     interface: Any = None
 
 @dataclasses.dataclass
 class Reservation_SpecificReservation_InstanceProperties:
-    location_hint: Any = None
-    machine_type: Any = None
-    min_cpu_platform: Any = None
+    # Specifies accelerator type and count.
     guest_accelerators: Any = None
+    # Specifies amount of local ssd to reserve with each instance. The type of disk is local-ssd.
     local_ssds: Any = None
+    # An opaque location hint used to place the allocation close to other resources. This field is for use by internal tools that use the public API.
+    location_hint: Any = None
+    # Specifies type of machine (name only) which has fixed number of vCPUs and fixed amount of memory. This also includes specifying custom machine type following custom-NUMBER_OF_CPUS-AMOUNT_OF_MEMORY pattern.
+    machine_type: Any = None
+    # Minimum cpu platform the reservation.
+    min_cpu_platform: Any = None
 
 @dataclasses.dataclass
 class Reservation_SpecificReservation:
+    # Output only. [Output Only] Indicates how many instances are actually usable currently.
     assured_count: Any = None
+    # Specifies the number of resources that are allocated.
     count: Any = None
+    # Output only. [Output Only] Indicates how many instances are in use.
     in_use_count: Any = None
-    source_instance_template: Any = None
+    # Properties of the SKU instances being reserved. Next ID: 10
     instance_properties: Any = None
+    # Specifies the instance template to create the reservation. If you use this field, you must exclude the instanceProperties field. This field is optional, and it can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate
+    source_instance_template: Any = None
 
-@dataclasses.dataclass
-class Reservation_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+_Reservation_AdvancedDeploymentControlFields = {
+    "reservation_operational_mode": ubx.FieldSpec(wire_name="reservation_operational_mode"),
+}
+
+_Reservation_AggregateReservation_InUseResources_AcceleratorFields = {
+    "accelerator_count": ubx.FieldSpec(wire_name="accelerator_count"),
+    "accelerator_type": ubx.FieldSpec(wire_name="accelerator_type"),
+}
+
+_Reservation_AggregateReservation_InUseResourcesFields = {
+    "accelerator": ubx.FieldSpec(
+        wire_name="accelerator",
+        kind="object",
+        fields=_Reservation_AggregateReservation_InUseResources_AcceleratorFields,
+    ),
+}
+
+_Reservation_AggregateReservationFields = {
+    "in_use_resources": ubx.FieldSpec(
+        wire_name="in_use_resources",
+        kind="list",
+        fields=_Reservation_AggregateReservation_InUseResourcesFields,
+    ),
+    "reserved_resources": ubx.FieldSpec(
+        wire_name="reserved_resources",
+        kind="list",
+        fields=_Reservation_AggregateReservation_InUseResourcesFields,
+    ),
+    "vm_family": ubx.FieldSpec(wire_name="vm_family"),
+    "workload_type": ubx.FieldSpec(wire_name="workload_type"),
+}
 
 _Reservation_DeleteAfterDurationFields = {
     "nanos": ubx.FieldSpec(wire_name="nanos"),
@@ -74,23 +213,78 @@ _Reservation_ReservationSharingPolicyFields = {
     "service_share_type": ubx.FieldSpec(wire_name="service_share_type"),
 }
 
+_Reservation_ResourceMetadataFields = {
+    "api_version": ubx.FieldSpec(wire_name="api_version"),
+    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
+}
+
+_Reservation_ResourceStatus_HealthInfoFields = {
+    "degraded_block_count": ubx.FieldSpec(wire_name="degraded_block_count"),
+    "health_status": ubx.FieldSpec(wire_name="health_status"),
+    "healthy_block_count": ubx.FieldSpec(wire_name="healthy_block_count"),
+}
+
+_Reservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields = {
+    "can_reschedule": ubx.FieldSpec(wire_name="can_reschedule"),
+    "latest_window_start_time": ubx.FieldSpec(wire_name="latest_window_start_time"),
+    "maintenance_on_shutdown": ubx.FieldSpec(wire_name="maintenance_on_shutdown"),
+    "maintenance_reasons": ubx.FieldSpec(wire_name="maintenance_reasons"),
+    "maintenance_status": ubx.FieldSpec(wire_name="maintenance_status"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "window_end_time": ubx.FieldSpec(wire_name="window_end_time"),
+    "window_start_time": ubx.FieldSpec(wire_name="window_start_time"),
+}
+
+_Reservation_ResourceStatus_ReservationMaintenanceFields = {
+    "instance_maintenance_ongoing_count": ubx.FieldSpec(wire_name="instance_maintenance_ongoing_count"),
+    "instance_maintenance_pending_count": ubx.FieldSpec(wire_name="instance_maintenance_pending_count"),
+    "maintenance_ongoing_count": ubx.FieldSpec(wire_name="maintenance_ongoing_count"),
+    "maintenance_pending_count": ubx.FieldSpec(wire_name="maintenance_pending_count"),
+    "scheduling_type": ubx.FieldSpec(wire_name="scheduling_type"),
+    "subblock_infra_maintenance_ongoing_count": ubx.FieldSpec(wire_name="subblock_infra_maintenance_ongoing_count"),
+    "subblock_infra_maintenance_pending_count": ubx.FieldSpec(wire_name="subblock_infra_maintenance_pending_count"),
+    "upcoming_group_maintenance": ubx.FieldSpec(
+        wire_name="upcoming_group_maintenance",
+        kind="object",
+        fields=_Reservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields,
+    ),
+}
+
+_Reservation_ResourceStatus_SpecificSkuAllocationFields = {
+    "source_instance_template_id": ubx.FieldSpec(wire_name="source_instance_template_id"),
+    "utilizations": ubx.FieldSpec(wire_name="utilizations"),
+}
+
+_Reservation_ResourceStatusFields = {
+    "health_info": ubx.FieldSpec(
+        wire_name="health_info",
+        kind="object",
+        fields=_Reservation_ResourceStatus_HealthInfoFields,
+    ),
+    "reservation_block_count": ubx.FieldSpec(wire_name="reservation_block_count"),
+    "reservation_maintenance": ubx.FieldSpec(
+        wire_name="reservation_maintenance",
+        kind="object",
+        fields=_Reservation_ResourceStatus_ReservationMaintenanceFields,
+    ),
+    "specific_sku_allocation": ubx.FieldSpec(
+        wire_name="specific_sku_allocation",
+        kind="object",
+        fields=_Reservation_ResourceStatus_SpecificSkuAllocationFields,
+    ),
+}
+
 _Reservation_ShareSettings_ProjectMapFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
     "project_id": ubx.FieldSpec(wire_name="project_id"),
 }
 
 _Reservation_ShareSettingsFields = {
-    "share_type": ubx.FieldSpec(wire_name="share_type"),
     "project_map": ubx.FieldSpec(
         wire_name="project_map",
-        kind="set",
+        kind="map",
         fields=_Reservation_ShareSettings_ProjectMapFields,
     ),
-}
-
-_Reservation_SpecificReservation_InstanceProperties_GuestAcceleratorsFields = {
-    "accelerator_count": ubx.FieldSpec(wire_name="accelerator_count"),
-    "accelerator_type": ubx.FieldSpec(wire_name="accelerator_type"),
+    "share_type": ubx.FieldSpec(wire_name="share_type"),
 }
 
 _Reservation_SpecificReservation_InstanceProperties_LocalSsdsFields = {
@@ -99,94 +293,222 @@ _Reservation_SpecificReservation_InstanceProperties_LocalSsdsFields = {
 }
 
 _Reservation_SpecificReservation_InstancePropertiesFields = {
-    "location_hint": ubx.FieldSpec(wire_name="location_hint"),
-    "machine_type": ubx.FieldSpec(wire_name="machine_type"),
-    "min_cpu_platform": ubx.FieldSpec(wire_name="min_cpu_platform"),
     "guest_accelerators": ubx.FieldSpec(
         wire_name="guest_accelerators",
         kind="list",
-        fields=_Reservation_SpecificReservation_InstanceProperties_GuestAcceleratorsFields,
+        fields=_Reservation_AggregateReservation_InUseResources_AcceleratorFields,
     ),
     "local_ssds": ubx.FieldSpec(
         wire_name="local_ssds",
         kind="list",
         fields=_Reservation_SpecificReservation_InstanceProperties_LocalSsdsFields,
     ),
+    "location_hint": ubx.FieldSpec(wire_name="location_hint"),
+    "machine_type": ubx.FieldSpec(wire_name="machine_type"),
+    "min_cpu_platform": ubx.FieldSpec(wire_name="min_cpu_platform"),
 }
 
 _Reservation_SpecificReservationFields = {
     "assured_count": ubx.FieldSpec(wire_name="assured_count"),
     "count": ubx.FieldSpec(wire_name="count"),
     "in_use_count": ubx.FieldSpec(wire_name="in_use_count"),
-    "source_instance_template": ubx.FieldSpec(wire_name="source_instance_template"),
     "instance_properties": ubx.FieldSpec(
         wire_name="instance_properties",
-        kind="list",
+        kind="object",
         fields=_Reservation_SpecificReservation_InstancePropertiesFields,
     ),
-}
-
-_Reservation_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+    "source_instance_template": ubx.FieldSpec(wire_name="source_instance_template"),
 }
 
 @dataclasses.dataclass
 class ReservationConfig:
-    delete_at_time: Any = None
-    deletion_policy: Any = None
-    description: Any = None
-    name: Any = None
-    project: Any = None
-    specific_reservation_required: Any = None
-    zone: Any = None
+    # Advance control for cluster management, applicable only to DENSE deployment type reservations.
+    advanced_deployment_control: Any = None
+    # This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
+    aggregate_reservation: Any = None
+    # Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+    commitment: Any = None
+    # The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred)
+    confidential_compute_type: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     delete_after_duration: Any = None
+    # Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
+    delete_at_time: Any = None
+    # Specifies the deployment strategy for this reservation.
+    deployment_type: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Indicates the early access maintenance for the reservation. If this field is absent or set to NO_EARLY_ACCESS, the reservation is not enrolled in early access maintenance and the standard notice applies.
+    early_access_maintenance: Any = None
+    # Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+    enable_emergent_maintenance: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
+    kind: Any = None
+    # Output only. [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+    linked_commitments: Any = None
+    # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Additional reservation params.
     params: Any = None
+    # Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures).
+    protection_tier: Any = None
+    # An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred)
     reservation_sharing_policy: Any = None
+    # Standardized resource metadata common to all compute resources.
+    resource_metadata: Any = None
+    # Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+    resource_policies: Any = None
+    # [Output Only] Contains output only fields.
+    resource_status: Any = None
+    # Output only. [Output Only] Reserved for future use.
+    satisfies_pzs: Any = None
+    # The type of maintenance for the reservation.
+    scheduling_type: Any = None
+    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+    self_link: Any = None
+    # The share setting for reservations and sole tenancy node groups.
     share_settings: Any = None
+    # This reservation type allows to pre allocate specific instance configuration.
     specific_reservation: Any = None
-    timeouts: Any = None
+    # Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+    specific_reservation_required: Any = None
+    # Output only. [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+    status: Any = None
+    # Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+    zone: Any = None
+
+@dataclasses.dataclass
+class ReservationAttrs:
+    # Advance control for cluster management, applicable only to DENSE deployment type reservations.
+    advanced_deployment_control: Any = None
+    # This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
+    aggregate_reservation: Any = None
+    # Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+    commitment: Any = None
+    # The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred)
+    confidential_compute_type: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
+    delete_after_duration: Any = None
+    # Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
+    delete_at_time: Any = None
+    # Specifies the deployment strategy for this reservation.
+    deployment_type: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Indicates the early access maintenance for the reservation. If this field is absent or set to NO_EARLY_ACCESS, the reservation is not enrolled in early access maintenance and the standard notice applies.
+    early_access_maintenance: Any = None
+    # Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+    enable_emergent_maintenance: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
+    kind: Any = None
+    # Output only. [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+    linked_commitments: Any = None
+    # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Additional reservation params.
+    params: Any = None
+    # Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures).
+    protection_tier: Any = None
+    # An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred)
+    reservation_sharing_policy: Any = None
+    # Standardized resource metadata common to all compute resources.
+    resource_metadata: Any = None
+    # Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+    resource_policies: Any = None
+    # [Output Only] Contains output only fields.
+    resource_status: Any = None
+    # Output only. [Output Only] Reserved for future use.
+    satisfies_pzs: Any = None
+    # The type of maintenance for the reservation.
+    scheduling_type: Any = None
+    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+    self_link: Any = None
+    # The share setting for reservations and sole tenancy node groups.
+    share_settings: Any = None
+    # This reservation type allows to pre allocate specific instance configuration.
+    specific_reservation: Any = None
+    # Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+    specific_reservation_required: Any = None
+    # Output only. [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+    status: Any = None
+    # Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+    zone: Any = None
 
 Reservation = ubx.ResourceBinding(
     wire_type="google_compute_reservation",
     fields={
-        "delete_at_time": ubx.FieldSpec(wire_name="delete_at_time"),
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "specific_reservation_required": ubx.FieldSpec(wire_name="specific_reservation_required"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
+        "advanced_deployment_control": ubx.FieldSpec(
+            wire_name="advanced_deployment_control",
+            kind="object",
+            fields=_Reservation_AdvancedDeploymentControlFields,
+        ),
+        "aggregate_reservation": ubx.FieldSpec(
+            wire_name="aggregate_reservation",
+            kind="object",
+            fields=_Reservation_AggregateReservationFields,
+        ),
+        "commitment": ubx.FieldSpec(wire_name="commitment"),
+        "confidential_compute_type": ubx.FieldSpec(wire_name="confidential_compute_type"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "delete_after_duration": ubx.FieldSpec(
             wire_name="delete_after_duration",
-            kind="list",
+            kind="object",
             fields=_Reservation_DeleteAfterDurationFields,
         ),
+        "delete_at_time": ubx.FieldSpec(wire_name="delete_at_time"),
+        "deployment_type": ubx.FieldSpec(wire_name="deployment_type"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "early_access_maintenance": ubx.FieldSpec(wire_name="early_access_maintenance"),
+        "enable_emergent_maintenance": ubx.FieldSpec(wire_name="enable_emergent_maintenance"),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "linked_commitments": ubx.FieldSpec(wire_name="linked_commitments"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "params": ubx.FieldSpec(
             wire_name="params",
-            kind="list",
+            kind="object",
             fields=_Reservation_ParamsFields,
         ),
+        "protection_tier": ubx.FieldSpec(wire_name="protection_tier"),
         "reservation_sharing_policy": ubx.FieldSpec(
             wire_name="reservation_sharing_policy",
-            kind="list",
+            kind="object",
             fields=_Reservation_ReservationSharingPolicyFields,
         ),
+        "resource_metadata": ubx.FieldSpec(
+            wire_name="resource_metadata",
+            kind="object",
+            fields=_Reservation_ResourceMetadataFields,
+        ),
+        "resource_policies": ubx.FieldSpec(wire_name="resource_policies"),
+        "resource_status": ubx.FieldSpec(
+            wire_name="resource_status",
+            kind="object",
+            fields=_Reservation_ResourceStatusFields,
+        ),
+        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
+        "scheduling_type": ubx.FieldSpec(wire_name="scheduling_type"),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "share_settings": ubx.FieldSpec(
             wire_name="share_settings",
-            kind="list",
+            kind="object",
             fields=_Reservation_ShareSettingsFields,
         ),
         "specific_reservation": ubx.FieldSpec(
             wire_name="specific_reservation",
-            kind="list",
+            kind="object",
             fields=_Reservation_SpecificReservationFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_Reservation_TimeoutsFields,
-        ),
+        "specific_reservation_required": ubx.FieldSpec(wire_name="specific_reservation_required"),
+        "status": ubx.FieldSpec(wire_name="status"),
+        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

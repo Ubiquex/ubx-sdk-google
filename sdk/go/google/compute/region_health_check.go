@@ -4,45 +4,60 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionHealthCheck_GrpcHealthCheck struct {
+	// The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
 	GrpcServiceName any
+	// The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
 	Port any
+	// Not supported.
 	PortName any
+	// Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
 	PortSpecification any
 }
 
 type RegionHealthCheck_GrpcTlsHealthCheck struct {
+	// The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
 	GrpcServiceName any
+	// The TCP port number to which the health check prober sends packets. Valid values are 1 through 65535.
 	Port any
+	// Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
 	PortSpecification any
 }
 
 type RegionHealthCheck_Http2HealthCheck struct {
+	// The value of the host header in the HTTP/2 health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
 	Host any
+	// The TCP port number to which the health check prober sends packets. The default value is 443. Valid values are 1 through65535.
 	Port any
+	// Not supported.
 	PortName any
+	// Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
 	PortSpecification any
+	// Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
 	ProxyHeader any
+	// The request path of the HTTP/2 health check request. The default value is/. Must comply withRFC3986.
 	RequestPath any
+	// Creates a content-based HTTP/2 health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
 	Response any
 }
 
 type RegionHealthCheck_LogConfig struct {
+	// Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
 	Enable any
 }
 
 type RegionHealthCheck_SslHealthCheck struct {
+	// The TCP port number to which the health check prober sends packets. The default value is 443. Valid values are 1 through65535.
 	Port any
+	// Not supported.
 	PortName any
+	// Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using theport field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
 	PortSpecification any
+	// Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
 	ProxyHeader any
+	// Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection and SSL handshake.
 	Request any
+	// Creates a content-based SSL health check. In addition to establishing a TCP connection and the TLS handshake, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
 	Response any
-}
-
-type RegionHealthCheck_Timeouts struct {
-	Create any
-	Delete any
-	Update any
 }
 
 var RegionHealthCheck_GrpcHealthCheckFields = ubx.FieldMap{
@@ -81,91 +96,149 @@ var RegionHealthCheck_SslHealthCheckFields = ubx.FieldMap{
 		"Response": ubx.FieldSpec{WireName: "response"},
 	}
 
-var RegionHealthCheck_TimeoutsFields = ubx.FieldMap{
-		"Create": ubx.FieldSpec{WireName: "create"},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
-
 type RegionHealthCheckConfig struct {
+	// How often (in seconds) to send a health check. The default value is 5 seconds.
 	CheckIntervalSec any
-	DeletionPolicy any
+	// Output only. [Output Only] Creation timestamp in3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	HealthyThreshold any
-	Id any
-	Name any
-	Project any
-	Region any
-	TimeoutSec any
-	UnhealthyThreshold any
+	// The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
 	GrpcHealthCheck any
 	GrpcTlsHealthCheck any
+	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
+	HealthyThreshold any
+	// The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred)
 	Http2HealthCheck any
+	// Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred)
 	HttpHealthCheck any
+	// The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred)
 	HttpsHealthCheck any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. Type of the resource.
+	Kind any
+	// Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver.
 	LogConfig any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
+	Name any
+	// Output only. [Output Only] Region where the health check resides. Not applicable to global health checks.
+	Region any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+	SourceRegions any
+	// The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred)
 	SslHealthCheck any
+	// The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred)
 	TcpHealthCheck any
-	Timeouts any
+	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
+	TimeoutSec any
+	// Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2, GRPC or GRPC_WITH_TLS. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
+	Type any
+	// A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
+	UnhealthyThreshold any
+}
+
+type RegionHealthCheckAttrs struct {
+	// How often (in seconds) to send a health check. The default value is 5 seconds.
+	CheckIntervalSec any
+	// Output only. [Output Only] Creation timestamp in3339 text format.
+	CreationTimestamp any
+	// An optional description of this resource. Provide this property when you create the resource.
+	Description any
+	// The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
+	GrpcHealthCheck any
+	GrpcTlsHealthCheck any
+	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
+	HealthyThreshold any
+	// The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred)
+	Http2HealthCheck any
+	// Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred)
+	HttpHealthCheck any
+	// The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred)
+	HttpsHealthCheck any
+	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+	Id any
+	// Output only. Type of the resource.
+	Kind any
+	// Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver.
+	LogConfig any
+	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
+	Name any
+	// Output only. [Output Only] Region where the health check resides. Not applicable to global health checks.
+	Region any
+	// [Output Only] Server-defined URL for the resource.
+	SelfLink any
+	// The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
+	SourceRegions any
+	// The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred)
+	SslHealthCheck any
+	// The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred)
+	TcpHealthCheck any
+	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
+	TimeoutSec any
+	// Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2, GRPC or GRPC_WITH_TLS. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
+	Type any
+	// A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
+	UnhealthyThreshold any
 }
 
 var RegionHealthCheck = ubx.ResourceBinding{
 	WireType: "google_compute_region_health_check",
 	Fields: ubx.FieldMap{
 		"CheckIntervalSec": ubx.FieldSpec{WireName: "check_interval_sec"},
-		"DeletionPolicy": ubx.FieldSpec{WireName: "deletion_policy"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
-		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
 		"GrpcHealthCheck": ubx.FieldSpec{
 			WireName: "grpc_health_check",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_GrpcHealthCheckFields,
 		},
 		"GrpcTlsHealthCheck": ubx.FieldSpec{
 			WireName: "grpc_tls_health_check",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_GrpcTlsHealthCheckFields,
 		},
+		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
 		"Http2HealthCheck": ubx.FieldSpec{
 			WireName: "http2_health_check",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"HttpHealthCheck": ubx.FieldSpec{
 			WireName: "http_health_check",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"HttpsHealthCheck": ubx.FieldSpec{
 			WireName: "https_health_check",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_Http2HealthCheckFields,
 		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_LogConfigFields,
 		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SourceRegions": ubx.FieldSpec{WireName: "source_regions"},
 		"SslHealthCheck": ubx.FieldSpec{
 			WireName: "ssl_health_check",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_SslHealthCheckFields,
 		},
 		"TcpHealthCheck": ubx.FieldSpec{
 			WireName: "tcp_health_check",
-			Kind: "list",
+			Kind: "object",
 			Fields: RegionHealthCheck_SslHealthCheckFields,
 		},
-		"Timeouts": ubx.FieldSpec{
-			WireName: "timeouts",
-			Kind: "object",
-			Fields: RegionHealthCheck_TimeoutsFields,
-		},
+		"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
 	},
 }

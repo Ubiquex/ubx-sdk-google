@@ -7,19 +7,90 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers:
+    # The type of blocker preventing the intended capability. Possible values: INCOMPATIBLE_METROS, NOT_AVAILABLE, NO_INTERCONNECTS, NO_INTERCONNECTS_IN_METRO_AND_ZONE, OTHER, UNSPECIFIED. (AI-inferred)
+    blocker_type: Any = None
+    # A URL to documentation explaining why the intended capability is blocked. (AI-inferred)
+    documentation_link: Any = None
+    # A human-readable explanation of why the intended topology capability is blocked. (AI-inferred)
+    explanation: Any = None
+    # List of facility names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
+    facilities: Any = None
+    # The list of interconnect names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
+    interconnects: Any = None
+    # List of metro names (geographic locations) that block the intended topology capability from being achieved. (AI-inferred)
+    metros: Any = None
+    # A list of zones in which the intended topology capability is blocked or unavailable, as part of a capability blocker. (AI-inferred)
+    zones: Any = None
+
+@dataclasses.dataclass
+class InterconnectGroup_Configured_TopologyCapability:
+    # A list of reasons that prevent the interconnect group's intended topology capability from being realized. This computed field is empty when the intended capability is fully supported, and provides details on any issues otherwise. (AI-inferred)
+    intended_capability_blockers: Any = None
+    # The supported service level agreement (SLA) for this topology capability. Possible values are: NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL, UNSPECIFIED. (AI-inferred)
+    supported_sla: Any = None
+
+@dataclasses.dataclass
+class InterconnectGroup_Configured:
+    # [Output Only] How reliable this topology is configured to be, and why this group does or does not meet the requirements for the intended capability.
+    topology_capability: Any = None
+
+@dataclasses.dataclass
 class InterconnectGroup_Intent:
+    # Specifies the topology capability level for the interconnect group, indicating the required service level. Valid values are: NO_SLA (no service level agreement), PRODUCTION_CRITICAL (production workloads requiring high reliability), PRODUCTION_NON_CRITICAL (production workloads without critical reliability requirements), and UNSPECIFIED (value not set). (AI-inferred)
     topology_capability: Any = None
 
 @dataclasses.dataclass
 class InterconnectGroup_Interconnects:
     interconnect: Any = None
-    name: Any = None
 
 @dataclasses.dataclass
-class InterconnectGroup_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones:
+    interconnects: Any = None
+    zone: Any = None
+
+@dataclasses.dataclass
+class InterconnectGroup_PhysicalStructure_Metros_Facilities:
+    facility: Any = None
+    zones: Any = None
+
+@dataclasses.dataclass
+class InterconnectGroup_PhysicalStructure_Metros:
+    facilities: Any = None
+    # The metropolitan area where the interconnect group's physical structure is located, such as 'london' or 'sydney'. (AI-inferred)
+    metro: Any = None
+
+@dataclasses.dataclass
+class InterconnectGroup_PhysicalStructure:
+    # The metropolitan areas where the physical structure of the interconnect group is located. This computed field provides the list of metros supported by the physical infrastructure. (AI-inferred)
+    metros: Any = None
+
+_InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields = {
+    "blocker_type": ubx.FieldSpec(wire_name="blocker_type"),
+    "documentation_link": ubx.FieldSpec(wire_name="documentation_link"),
+    "explanation": ubx.FieldSpec(wire_name="explanation"),
+    "facilities": ubx.FieldSpec(wire_name="facilities"),
+    "interconnects": ubx.FieldSpec(wire_name="interconnects"),
+    "metros": ubx.FieldSpec(wire_name="metros"),
+    "zones": ubx.FieldSpec(wire_name="zones"),
+}
+
+_InterconnectGroup_Configured_TopologyCapabilityFields = {
+    "intended_capability_blockers": ubx.FieldSpec(
+        wire_name="intended_capability_blockers",
+        kind="list",
+        fields=_InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields,
+    ),
+    "supported_sla": ubx.FieldSpec(wire_name="supported_sla"),
+}
+
+_InterconnectGroup_ConfiguredFields = {
+    "topology_capability": ubx.FieldSpec(
+        wire_name="topology_capability",
+        kind="object",
+        fields=_InterconnectGroup_Configured_TopologyCapabilityFields,
+    ),
+}
 
 _InterconnectGroup_IntentFields = {
     "topology_capability": ubx.FieldSpec(wire_name="topology_capability"),
@@ -27,48 +98,118 @@ _InterconnectGroup_IntentFields = {
 
 _InterconnectGroup_InterconnectsFields = {
     "interconnect": ubx.FieldSpec(wire_name="interconnect"),
-    "name": ubx.FieldSpec(wire_name="name"),
 }
 
-_InterconnectGroup_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields = {
+    "interconnects": ubx.FieldSpec(wire_name="interconnects"),
+    "zone": ubx.FieldSpec(wire_name="zone"),
+}
+
+_InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields = {
+    "facility": ubx.FieldSpec(wire_name="facility"),
+    "zones": ubx.FieldSpec(
+        wire_name="zones",
+        kind="list",
+        fields=_InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields,
+    ),
+}
+
+_InterconnectGroup_PhysicalStructure_MetrosFields = {
+    "facilities": ubx.FieldSpec(
+        wire_name="facilities",
+        kind="list",
+        fields=_InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields,
+    ),
+    "metro": ubx.FieldSpec(wire_name="metro"),
+}
+
+_InterconnectGroup_PhysicalStructureFields = {
+    "metros": ubx.FieldSpec(
+        wire_name="metros",
+        kind="list",
+        fields=_InterconnectGroup_PhysicalStructure_MetrosFields,
+    ),
 }
 
 @dataclasses.dataclass
 class InterconnectGroupConfig:
-    deletion_policy: Any = None
+    # [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource.
+    configured: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by AIP 154.
+    etag: Any = None
+    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
     id: Any = None
-    name: Any = None
-    project: Any = None
+    # The user's intent for this group. This is the only required field besides the name that must be specified on group creation.
     intent: Any = None
+    # Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
     interconnects: Any = None
-    timeouts: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # [Output Only] An analysis of the physical layout of Interconnects in this group. Every Interconnect in the group is shown once in this structure.
+    physical_structure: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
+
+@dataclasses.dataclass
+class InterconnectGroupAttrs:
+    # [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource.
+    configured: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by AIP 154.
+    etag: Any = None
+    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
+    id: Any = None
+    # The user's intent for this group. This is the only required field besides the name that must be specified on group creation.
+    intent: Any = None
+    # Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
+    interconnects: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
+    kind: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # [Output Only] An analysis of the physical layout of Interconnects in this group. Every Interconnect in the group is shown once in this structure.
+    physical_structure: Any = None
+    # Output only. [Output Only] Server-defined URL for the resource.
+    self_link: Any = None
 
 InterconnectGroup = ubx.ResourceBinding(
     wire_type="google_compute_interconnect_group",
     fields={
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
+        "configured": ubx.FieldSpec(
+            wire_name="configured",
+            kind="object",
+            fields=_InterconnectGroup_ConfiguredFields,
+        ),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
+        "etag": ubx.FieldSpec(wire_name="etag"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
         "intent": ubx.FieldSpec(
             wire_name="intent",
-            kind="list",
+            kind="object",
             fields=_InterconnectGroup_IntentFields,
         ),
         "interconnects": ubx.FieldSpec(
             wire_name="interconnects",
-            kind="set",
+            kind="map",
             fields=_InterconnectGroup_InterconnectsFields,
         ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "physical_structure": ubx.FieldSpec(
+            wire_name="physical_structure",
             kind="object",
-            fields=_InterconnectGroup_TimeoutsFields,
+            fields=_InterconnectGroup_PhysicalStructureFields,
         ),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
     },
 )

@@ -2,32 +2,212 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Router_Bgp_AdvertisedIpRanges {
-  description: string;
-  range: string;
+  description?: string | Computed<string>;
+  /** The IP range in CIDR notation (e.g., 192.168.0.0/16) that the router advertises to BGP peers. (AI-inferred) */
+  range?: string | Computed<string>;
 }
 
 export interface Router_Bgp {
-  advertiseMode: string;
-  advertisedGroups: string[];
-  asn: number;
-  identifierRange: string;
-  keepaliveInterval: number;
-  advertisedIpRanges: Router_Bgp_AdvertisedIpRanges[];
+  /** User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM. */
+  advertiseMode?: string | Computed<string>;
+  /** User-specified list of prefix groups to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These groups will be advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups. */
+  advertisedGroups?: string[] | Computed<string[]>;
+  /** User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These IP ranges will be advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges. */
+  advertisedIpRanges?: Router_Bgp_AdvertisedIpRanges[] | Computed<Router_Bgp_AdvertisedIpRanges[]>;
+  /** Local BGP Autonomous System Number (ASN). Must be anRFC6996 private ASN, either 16-bit or 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this router will have the same local ASN. */
+  asn?: number | Computed<number>;
+  /** Explicitly specifies a range of valid BGP Identifiers for this Router. It is provided as a link-local IPv4 range (from 169.254.0.0/16), of size at least /30, even if the BGP sessions are over IPv6. It must not overlap with any IPv4 BGP session ranges. Other vendors commonly call this "router ID". */
+  identifierRange?: string | Computed<string>;
+  /** The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20. */
+  keepaliveInterval?: number | Computed<number>;
+}
+
+export interface Router_BgpPeers_Bfd {
+  /** The minimum interval, in milliseconds, between received BFD control packets for this BGP peer. This setting controls how quickly the router detects a peer failure. (AI-inferred) */
+  minReceiveInterval?: number | Computed<number>;
+  /** The minimum interval (in milliseconds) between BFD transmissions for this BGP peer. The value must be between 100 and 30000 milliseconds. (AI-inferred) */
+  minTransmitInterval?: number | Computed<number>;
+  /** The number of consecutive BFD control packets that must be missed before BFD declares the peer down. (AI-inferred) */
+  multiplier?: number | Computed<number>;
+  /** The BFD session initialization mode. Valid values are ACTIVE, DISABLED, and PASSIVE. ACTIVE initiates the BFD session, PASSIVE waits for the peer to initiate, and DISABLED disables BFD. (AI-inferred) */
+  sessionInitializationMode?: string | Computed<string>;
+}
+
+export interface Router_BgpPeers_CustomLearnedIpRanges {
+  /** The IP range in CIDR notation to use as a custom learned IP range for the BGP peer. (AI-inferred) */
+  range?: string | Computed<string>;
+}
+
+export interface Router_BgpPeers {
+  /** The route advertisement mode for the BGP peer. Use DEFAULT to advertise the provider's default route set, or CUSTOM to define specific routes via the advertised_ip_ranges field. (AI-inferred) */
+  advertiseMode?: string | Computed<string>;
+  /** Specifies the list of prefix groups to advertise in custom mode. Valid values are 'ALL_SUBNETS', 'ALL_VPC_SUBNETS', and 'ALL_PEER_SUBNETS'. This field can only be populated when advertise_mode is 'CUSTOM'. (AI-inferred) */
+  advertisedGroups?: string[] | Computed<string[]>;
+  /** A list of custom IP ranges to advertise to the BGP peer. Each object contains a CIDR 'range' (required) and an optional 'description'. (AI-inferred) */
+  advertisedIpRanges?: Router_Bgp_AdvertisedIpRanges[] | Computed<Router_Bgp_AdvertisedIpRanges[]>;
+  /** The priority of routes advertised to this BGP peer. In the case of multiple BGP peers advertising the same route, the route with the lowest priority is preferred. (AI-inferred) */
+  advertisedRoutePriority?: number | Computed<number>;
+  /** Configures Bidirectional Forwarding Detection (BFD) settings for this BGP peer. (AI-inferred) */
+  bfd?: Router_BgpPeers_Bfd | Computed<Router_BgpPeers_Bfd>;
+  /** A list of custom learned route IP address ranges for this BGP peer. (AI-inferred) */
+  customLearnedIpRanges?: Router_BgpPeers_CustomLearnedIpRanges[] | Computed<Router_BgpPeers_CustomLearnedIpRanges[]>;
+  /** User-specified priority for routes learned from this BGP peer. Must be between 0 and 65535 inclusive, defaults to 100. (AI-inferred) */
+  customLearnedRoutePriority?: number | Computed<number>;
+  /** Indicates whether the BGP peer is enabled. The allowed values are TRUE and FALSE. (AI-inferred) */
+  enable?: string | Computed<string>;
+  /** Enables IPv4 on the BGP peer. This flag is set to true by default. (AI-inferred) */
+  enableIpv4?: boolean | Computed<boolean>;
+  /** Enables IPv6 for the BGP peer. Set to true to allow the BGP peer to exchange IPv6 routes. (AI-inferred) */
+  enableIpv6?: boolean | Computed<boolean>;
+  /** List of names of Cloud Router route policies to apply to outgoing routes advertised to this BGP peer. (AI-inferred) */
+  exportPolicies?: string[] | Computed<string[]>;
+  /** A list of Cloud Router route policy names that this BGP peer applies to incoming routes. These policies control which routes are accepted from the BGP peer. (AI-inferred) */
+  importPolicies?: string[] | Computed<string[]>;
+  /** The name of the router interface the BGP peer is associated with. This must match the name of an existing interface on the same Compute Router. (AI-inferred) */
+  interfaceName?: string | Computed<string>;
+  ipAddress?: string | Computed<string>;
+  /** The IPv4 address that this BGP peer uses as the next hop for advertised routes. (AI-inferred) */
+  ipv4NexthopAddress?: string | Computed<string>;
+  /** The IPv6 address used as the next-hop for routes advertised to this BGP peer. If not specified, the default IPv6 next-hop (typically the interface's address) is used. (AI-inferred) */
+  ipv6NexthopAddress?: string | Computed<string>;
+  /** The management type of the BGP peer, which indicates whether the peer is managed by the associated attachment or by the user. Valid values are 'MANAGED_BY_ATTACHMENT' and 'MANAGED_BY_USER'. (AI-inferred) */
+  managementType?: string | Computed<string>;
+  /** The name of the MD5 authentication key to use for this BGP peer. The key must be defined in the router's BGP configuration. (AI-inferred) */
+  md5AuthenticationKeyName?: string | Computed<string>;
+  name?: string | Computed<string>;
+  /** The autonomous system number (ASN) of the BGP peer. Required when configuring a BGP peer on a Compute Router. (AI-inferred) */
+  peerAsn?: number | Computed<number>;
+  /** The IP address of the BGP peer that this router will establish a BGP session with. (AI-inferred) */
+  peerIpAddress?: string | Computed<string>;
+  /** The IPv4 address of the BGP peer, used as the next hop for routes learned from this peer. (AI-inferred) */
+  peerIpv4NexthopAddress?: string | Computed<string>;
+  peerIpv6NexthopAddress?: string | Computed<string>;
+  /** The URI of the VM instance that is the router appliance for this BGP peer. (AI-inferred) */
+  routerApplianceInstance?: string | Computed<string>;
+}
+
+export interface Router_Interfaces {
+  /** The IP address and range for the router interface, used for BGP sessions. This can be a single IP address or a CIDR range in the form of 'IP/30'. If not specified, GCP will assign an IP address automatically. (AI-inferred) */
+  ipRange?: string | Computed<string>;
+  /** The IP version used by this interface. Valid values are IPV4 and IPV6. (AI-inferred) */
+  ipVersion?: string | Computed<string>;
+  /** The URL of the interconnect attachment to link with this router interface. This is used when the interface is for a VLAN attachment on an Interconnect. (AI-inferred) */
+  linkedInterconnectAttachment?: string | Computed<string>;
+  /** The name of the VPN tunnel that this interface is linked to. Use this when the interface is of type 'tunnel'. (AI-inferred) */
+  linkedVpnTunnel?: string | Computed<string>;
+  /** Indicates who manages this interface: MANAGED_BY_ATTACHMENT means the interface is managed by a VLAN attachment (Cloud Interconnect), while MANAGED_BY_USER means it is configured by the user. (AI-inferred) */
+  managementType?: string | Computed<string>;
+  name?: string | Computed<string>;
+  /** The private IP address of the Compute Router interface. (AI-inferred) */
+  privateIpAddress?: string | Computed<string>;
+  /** The name of another interface in the same router that serves as the redundancy pair for this interface. When set, this interface is configured as part of a redundant BGP session. (AI-inferred) */
+  redundantInterface?: string | Computed<string>;
+  /** The name or self-link of the subnetwork to which this router interface is attached. This field is used when the interface is associated with a subnetwork, such as for router appliance interfaces. (AI-inferred) */
+  subnetwork?: string | Computed<string>;
 }
 
 export interface Router_Md5AuthenticationKeys {
-  key: string;
-  name: string;
+  /** The shared secret key used for MD5 authentication in the BGP session. This value is provided to the peer to authenticate the router. (AI-inferred) */
+  key?: string | Computed<string>;
+  /** The name of the MD5 authentication key. It uniquely identifies the key within the router's BGP configuration. (AI-inferred) */
+  name?: string | Computed<string>;
+}
+
+export interface Router_Nats_LogConfig {
+  /** Whether to enable logging for the NAT gateway. When set to true, logs are generated according to the filter specified in the log_config block. (AI-inferred) */
+  enable?: boolean | Computed<boolean>;
+  /** Determines which NAT logs are exported. Valid values: ALL (log all NAT traffic), ERRORS_ONLY (log only failed translations), TRANSLATIONS_ONLY (log successful translations only). (AI-inferred) */
+  filter?: string | Computed<string>;
+}
+
+export interface Router_Nats_Nat64Subnetworks {
+  /** The name of the subnetwork to use for NAT64. (AI-inferred) */
+  name?: string | Computed<string>;
+}
+
+export interface Router_Nats_Rules_Action {
+  /** The list of IP addresses to use as source NAT IPs for active connections when this NAT rule is applied. (AI-inferred) */
+  sourceNatActiveIps?: string[] | Computed<string[]>;
+  /** The list of source NAT IP ranges (in CIDR format) to use as the active NAT addresses for packets matching this rule. Required for the action block of a NAT rule. (AI-inferred) */
+  sourceNatActiveRanges?: string[] | Computed<string[]>;
+  /** List of source NAT IP addresses to be drained. These IPs will not be used for new connections, but existing connections will continue to use them until they are removed or connections terminate. (AI-inferred) */
+  sourceNatDrainIps?: string[] | Computed<string[]>;
+  /** A list of source NAT IP ranges to be drained. These ranges are used to gracefully terminate existing connections during a migration or deactivation of NAT IPs. (AI-inferred) */
+  sourceNatDrainRanges?: string[] | Computed<string[]>;
+}
+
+export interface Router_Nats_Rules {
+  /** The action configuration for this NAT rule, defining how traffic matching the rule's match condition is NATed. It specifies the source NAT IPs (active and drain) to use. (AI-inferred) */
+  action?: Router_Nats_Rules_Action | Computed<Router_Nats_Rules_Action>;
+  /** A user-defined, human-readable description for the NAT rule. (AI-inferred) */
+  description?: string | Computed<string>;
+  /** An expression in Common Expression Language (CEL) that defines which traffic this NAT rule applies to. It can match on packet attributes like source or destination IP, protocol, and ports, e.g., `inIpRange(destination.ip, '203.0.113.0/24')`. (AI-inferred) */
+  match?: string | Computed<string>;
+  /** The unique number assigned to this NAT rule. Rules are evaluated in ascending order, and this number must be unique within the NAT configuration. (AI-inferred) */
+  ruleNumber?: number | Computed<number>;
+}
+
+export interface Router_Nats_Subnetworks {
+  /** The name of the subnetwork to include in the NAT configuration for this router NAT. (AI-inferred) */
+  name?: string | Computed<string>;
+  /** List of the secondary ranges of the subnetwork that are allowed to use NAT. This can be provided only when 'LIST_OF_SECONDARY_IP_RANGES' is used for source_ip_ranges_to_nat. (AI-inferred) */
+  secondaryIpRangeNames?: string[] | Computed<string[]>;
+  /** List of source IP ranges in the subnetwork that should be NATed. Valid values are 'ALL_IP_RANGES', 'PRIMARY_IP_RANGE', and 'LIST_OF_SECONDARY_IP_RANGES'. If 'LIST_OF_SECONDARY_IP_RANGES' is used, you must also specify `secondary_ip_range_names`. (AI-inferred) */
+  sourceIpRangesToNat?: string[] | Computed<string[]>;
+}
+
+export interface Router_Nats {
+  /** Specifies the network tier for the NAT. Allowed values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD. (AI-inferred) */
+  autoNetworkTier?: string | Computed<string>;
+  /** A list of external IP addresses to be drained from the NAT. These IPs will no longer be used for new connections but will continue to serve existing connections until they are closed. (AI-inferred) */
+  drainNatIps?: string[] | Computed<string[]>;
+  /** The effective TCP TIME_WAIT timeout in seconds for Cloud NAT connections, reflecting the actual value in use (either the configured value or the default). (AI-inferred) */
+  effectiveTcpTimeWaitTimeoutSec?: number | Computed<number>;
+  /** If set to true, the NAT gateway dynamically allocates ports for each VM from a shared pool instead of using static port allocation. Defaults to false. (AI-inferred) */
+  enableDynamicPortAllocation?: boolean | Computed<boolean>;
+  /** Whether to enable endpoint independent mapping for the NAT gateway. When enabled, the NAT gateway maps each internal IP and port pair to a unique external IP and port, independent of the destination. (AI-inferred) */
+  enableEndpointIndependentMapping?: boolean | Computed<boolean>;
+  /** The list of endpoint types supported by this NAT configuration, controlling which types of network endpoints can use the NAT. (AI-inferred) */
+  endpointTypes?: string[] | Computed<string[]>;
+  /** The idle timeout for ICMP connections in seconds. This controls how long an ICMP session is kept alive in the NAT without traffic before being closed. (AI-inferred) */
+  icmpIdleTimeoutSec?: number | Computed<number>;
+  /** Configuration for NAT logging. This block allows enabling or disabling logging for the NAT gateway and specifying a filter to determine which connections are logged. (AI-inferred) */
+  logConfig?: Router_Nats_LogConfig | Computed<Router_Nats_LogConfig>;
+  /** Maximum number of ports per VM used by the NAT configuration, per subnet. Defaults to 2048, with an allowed range of 64 to 65536. (AI-inferred) */
+  maxPortsPerVm?: number | Computed<number>;
+  /** The minimum number of ports allocated to each VM in the NAT configuration. (AI-inferred) */
+  minPortsPerVm?: number | Computed<number>;
+  /** The name of the Cloud NAT. This name must be unique within the parent router. (AI-inferred) */
+  name?: string | Computed<string>;
+  /** A list of subnetworks (self-links) to be used for NAT64. NAT64 enables IPv6-only resources to communicate with IPv4-only services by mapping IPv6 addresses to IPv4 addresses. Each listed subnetwork must be configured with an IPv6 address range. (AI-inferred) */
+  nat64Subnetworks?: Router_Nats_Nat64Subnetworks[] | Computed<Router_Nats_Nat64Subnetworks[]>;
+  /** Specifies how NAT IP addresses are allocated. AUTO_ONLY automatically allocates NAT IPs; MANUAL_ONLY requires you to specify them in nat_ips. (AI-inferred) */
+  natIpAllocateOption?: string | Computed<string>;
+  /** List of self-links of external IP addresses to be used for NAT. Only valid when nat_ip_allocate_option is set to MANUAL_ONLY; if empty, an automatically allocated IP is used. (AI-inferred) */
+  natIps?: string[] | Computed<string[]>;
+  /** A list of custom NAT rules. Each rule specifies a rule number, a match expression, and an action (e.g., translation or no translation) to control how traffic is routed through the NAT. (AI-inferred) */
+  rules?: Router_Nats_Rules[] | Computed<Router_Nats_Rules[]>;
+  /** Specifies which IP ranges of the subnets are eligible for NAT. Valid values are: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, and LIST_OF_SUBNETWORKS. (AI-inferred) */
+  sourceSubnetworkIpRangesToNat?: string | Computed<string>;
+  /** Controls which IPv6 subnetwork IP ranges are eligible for NAT64. Set to ALL_IPV6_SUBNETWORKS to use all IPv6 subnets in the region, or LIST_OF_IPV6_SUBNETWORKS to use only the specific subnets listed in the associated subnetwork configuration. (AI-inferred) */
+  sourceSubnetworkIpRangesToNat64?: string | Computed<string>;
+  /** The list of subnetworks that this NAT configuration applies to. Each object specifies a subnetwork and its NAT settings. (AI-inferred) */
+  subnetworks?: Router_Nats_Subnetworks[] | Computed<Router_Nats_Subnetworks[]>;
+  /** Timeout in seconds for established TCP connections before they are considered idle and closed. Defaults to 1200 seconds. (AI-inferred) */
+  tcpEstablishedIdleTimeoutSec?: number | Computed<number>;
+  /** Timeout for TCP connections in the TIME_WAIT state, specified in seconds, within the router's NAT configuration. (AI-inferred) */
+  tcpTimeWaitTimeoutSec?: number | Computed<number>;
+  /** The timeout in seconds for TCP transitory idle connections. A transitory connection is one that is in the process of being established (e.g., during the TCP handshake); if no traffic is seen within this timeout, the connection is dropped. Defaults to 30 seconds. (AI-inferred) */
+  tcpTransitoryIdleTimeoutSec?: number | Computed<number>;
+  /** The type of NAT configuration. Valid values are `PRIVATE` and `PUBLIC`. (AI-inferred) */
+  type?: string | Computed<string>;
+  /** The timeout (in seconds) for UDP connections through the NAT. Defaults to 30 seconds if not specified. (AI-inferred) */
+  udpIdleTimeoutSec?: number | Computed<number>;
 }
 
 export interface Router_Params {
-  resourceManagerTags: Record<string, string>;
-}
-
-export interface Router_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  /** Tag keys/values directly bound to this resource. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID & namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid. */
+  resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 const Router_Bgp_AdvertisedIpRangesFields: FieldMap = {
@@ -38,14 +218,76 @@ const Router_Bgp_AdvertisedIpRangesFields: FieldMap = {
 const Router_BgpFields: FieldMap = {
   advertiseMode: "advertise_mode",
   advertisedGroups: "advertised_groups",
+  advertisedIpRanges: {
+    wireName: "advertised_ip_ranges",
+    kind: "list",
+    fields: Router_Bgp_AdvertisedIpRangesFields,
+  },
   asn: "asn",
   identifierRange: "identifier_range",
   keepaliveInterval: "keepalive_interval",
+};
+
+const Router_BgpPeers_BfdFields: FieldMap = {
+  minReceiveInterval: "min_receive_interval",
+  minTransmitInterval: "min_transmit_interval",
+  multiplier: "multiplier",
+  sessionInitializationMode: "session_initialization_mode",
+};
+
+const Router_BgpPeers_CustomLearnedIpRangesFields: FieldMap = {
+  range: "range",
+};
+
+const Router_BgpPeersFields: FieldMap = {
+  advertiseMode: "advertise_mode",
+  advertisedGroups: "advertised_groups",
   advertisedIpRanges: {
     wireName: "advertised_ip_ranges",
-    kind: "set",
+    kind: "list",
     fields: Router_Bgp_AdvertisedIpRangesFields,
   },
+  advertisedRoutePriority: "advertised_route_priority",
+  bfd: {
+    wireName: "bfd",
+    kind: "object",
+    fields: Router_BgpPeers_BfdFields,
+  },
+  customLearnedIpRanges: {
+    wireName: "custom_learned_ip_ranges",
+    kind: "list",
+    fields: Router_BgpPeers_CustomLearnedIpRangesFields,
+  },
+  customLearnedRoutePriority: "custom_learned_route_priority",
+  enable: "enable",
+  enableIpv4: "enable_ipv4",
+  enableIpv6: "enable_ipv6",
+  exportPolicies: "export_policies",
+  importPolicies: "import_policies",
+  interfaceName: "interface_name",
+  ipAddress: "ip_address",
+  ipv4NexthopAddress: "ipv4_nexthop_address",
+  ipv6NexthopAddress: "ipv6_nexthop_address",
+  managementType: "management_type",
+  md5AuthenticationKeyName: "md5_authentication_key_name",
+  name: "name",
+  peerAsn: "peer_asn",
+  peerIpAddress: "peer_ip_address",
+  peerIpv4NexthopAddress: "peer_ipv4_nexthop_address",
+  peerIpv6NexthopAddress: "peer_ipv6_nexthop_address",
+  routerApplianceInstance: "router_appliance_instance",
+};
+
+const Router_InterfacesFields: FieldMap = {
+  ipRange: "ip_range",
+  ipVersion: "ip_version",
+  linkedInterconnectAttachment: "linked_interconnect_attachment",
+  linkedVpnTunnel: "linked_vpn_tunnel",
+  managementType: "management_type",
+  name: "name",
+  privateIpAddress: "private_ip_address",
+  redundantInterface: "redundant_interface",
+  subnetwork: "subnetwork",
 };
 
 const Router_Md5AuthenticationKeysFields: FieldMap = {
@@ -53,81 +295,197 @@ const Router_Md5AuthenticationKeysFields: FieldMap = {
   name: "name",
 };
 
+const Router_Nats_LogConfigFields: FieldMap = {
+  enable: "enable",
+  filter: "filter",
+};
+
+const Router_Nats_Nat64SubnetworksFields: FieldMap = {
+  name: "name",
+};
+
+const Router_Nats_Rules_ActionFields: FieldMap = {
+  sourceNatActiveIps: "source_nat_active_ips",
+  sourceNatActiveRanges: "source_nat_active_ranges",
+  sourceNatDrainIps: "source_nat_drain_ips",
+  sourceNatDrainRanges: "source_nat_drain_ranges",
+};
+
+const Router_Nats_RulesFields: FieldMap = {
+  action: {
+    wireName: "action",
+    kind: "object",
+    fields: Router_Nats_Rules_ActionFields,
+  },
+  description: "description",
+  match: "match",
+  ruleNumber: "rule_number",
+};
+
+const Router_Nats_SubnetworksFields: FieldMap = {
+  name: "name",
+  secondaryIpRangeNames: "secondary_ip_range_names",
+  sourceIpRangesToNat: "source_ip_ranges_to_nat",
+};
+
+const Router_NatsFields: FieldMap = {
+  autoNetworkTier: "auto_network_tier",
+  drainNatIps: "drain_nat_ips",
+  effectiveTcpTimeWaitTimeoutSec: "effective_tcp_time_wait_timeout_sec",
+  enableDynamicPortAllocation: "enable_dynamic_port_allocation",
+  enableEndpointIndependentMapping: "enable_endpoint_independent_mapping",
+  endpointTypes: "endpoint_types",
+  icmpIdleTimeoutSec: "icmp_idle_timeout_sec",
+  logConfig: {
+    wireName: "log_config",
+    kind: "object",
+    fields: Router_Nats_LogConfigFields,
+  },
+  maxPortsPerVm: "max_ports_per_vm",
+  minPortsPerVm: "min_ports_per_vm",
+  name: "name",
+  nat64Subnetworks: {
+    wireName: "nat64_subnetworks",
+    kind: "list",
+    fields: Router_Nats_Nat64SubnetworksFields,
+  },
+  natIpAllocateOption: "nat_ip_allocate_option",
+  natIps: "nat_ips",
+  rules: {
+    wireName: "rules",
+    kind: "list",
+    fields: Router_Nats_RulesFields,
+  },
+  sourceSubnetworkIpRangesToNat: "source_subnetwork_ip_ranges_to_nat",
+  sourceSubnetworkIpRangesToNat64: "source_subnetwork_ip_ranges_to_nat64",
+  subnetworks: {
+    wireName: "subnetworks",
+    kind: "list",
+    fields: Router_Nats_SubnetworksFields,
+  },
+  tcpEstablishedIdleTimeoutSec: "tcp_established_idle_timeout_sec",
+  tcpTimeWaitTimeoutSec: "tcp_time_wait_timeout_sec",
+  tcpTransitoryIdleTimeoutSec: "tcp_transitory_idle_timeout_sec",
+  type: "type",
+  udpIdleTimeoutSec: "udp_idle_timeout_sec",
+};
+
 const Router_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const Router_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
-};
-
 export interface RouterConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** BGP configuration for the Cloud Router, including the autonomous system number (ASN), advertised route settings, and other BGP parameters. This field is optional when creating a router and is computed by the provider when not explicitly set. (AI-inferred) */
+  bgp?: Router_Bgp | Computed<Router_Bgp>;
+  /** BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273. */
+  bgpPeers?: Router_BgpPeers[] | Computed<Router_BgpPeers[]>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). */
   encryptedInterconnectRouter?: boolean | Computed<boolean>;
+  /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  name: string | Computed<string>;
-  nccGateway?: string | Computed<string>;
-  network?: string | Computed<string>;
-  project?: string | Computed<string>;
-  region?: string | Computed<string>;
-  bgp?: Router_Bgp[] | Computed<Router_Bgp[]>;
+  /** Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface. */
+  interfaces?: Router_Interfaces[] | Computed<Router_Interfaces[]>;
+  /** Output only. [Output Only] Type of resource. Always compute#router for routers. */
+  kind?: string | Computed<string>;
+  /** Keys used for MD5 authentication. */
   md5AuthenticationKeys?: Router_Md5AuthenticationKeys[] | Computed<Router_Md5AuthenticationKeys[]>;
-  params?: Router_Params[] | Computed<Router_Params[]>;
-  timeouts?: Router_Timeouts | Computed<Router_Timeouts>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** A list of NAT services created in this router. */
+  nats?: Router_Nats[] | Computed<Router_Nats[]>;
+  /** URI of the ncc_gateway to which this router associated. */
+  nccGateway?: string | Computed<string>;
+  /** URI of the network to which this router belongs. */
+  network?: string | Computed<string>;
+  /** Additional router parameters. */
+  params?: Router_Params | Computed<Router_Params>;
+  /** [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  region?: string | Computed<string>;
+  /** [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
 }
 
 export interface RouterAttrs {
+  /** BGP configuration for the Cloud Router, including the autonomous system number (ASN), advertised route settings, and other BGP parameters. This field is optional when creating a router and is computed by the provider when not explicitly set. (AI-inferred) */
+  bgp: Router_Bgp;
+  /** BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273. */
+  bgpPeers: Router_BgpPeers[];
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
-  deletionPolicy: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). */
   encryptedInterconnectRouter: boolean;
+  /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
-  name: string;
-  nccGateway: string;
-  network: string;
-  project: string;
-  region: string;
-  selfLink: string;
-  bgp: Router_Bgp[];
+  /** Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface. */
+  interfaces: Router_Interfaces[];
+  /** Output only. [Output Only] Type of resource. Always compute#router for routers. */
+  kind: string;
+  /** Keys used for MD5 authentication. */
   md5AuthenticationKeys: Router_Md5AuthenticationKeys[];
-  params: Router_Params[];
-  timeouts: Router_Timeouts;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name: string;
+  /** A list of NAT services created in this router. */
+  nats: Router_Nats[];
+  /** URI of the ncc_gateway to which this router associated. */
+  nccGateway: string;
+  /** URI of the network to which this router belongs. */
+  network: string;
+  /** Additional router parameters. */
+  params: Router_Params;
+  /** [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
+  region: string;
+  /** [Output Only] Server-defined URL for the resource. */
+  selfLink: string;
 }
 
 export const Router: ResourceBinding<RouterConfig, RouterAttrs> = {
   wireType: "google_compute_router",
   fields: {
-    deletionPolicy: "deletion_policy",
+    bgp: {
+      wireName: "bgp",
+      kind: "object",
+      fields: Router_BgpFields,
+    },
+    bgpPeers: {
+      wireName: "bgp_peers",
+      kind: "list",
+      fields: Router_BgpPeersFields,
+    },
+    creationTimestamp: "creation_timestamp",
     description: "description",
     encryptedInterconnectRouter: "encrypted_interconnect_router",
     id: "id",
-    name: "name",
-    nccGateway: "ncc_gateway",
-    network: "network",
-    project: "project",
-    region: "region",
-    bgp: {
-      wireName: "bgp",
+    interfaces: {
+      wireName: "interfaces",
       kind: "list",
-      fields: Router_BgpFields,
+      fields: Router_InterfacesFields,
     },
+    kind: "kind",
     md5AuthenticationKeys: {
       wireName: "md5_authentication_keys",
       kind: "list",
       fields: Router_Md5AuthenticationKeysFields,
     },
+    name: "name",
+    nats: {
+      wireName: "nats",
+      kind: "list",
+      fields: Router_NatsFields,
+    },
+    nccGateway: "ncc_gateway",
+    network: "network",
     params: {
       wireName: "params",
-      kind: "list",
+      kind: "object",
       fields: Router_ParamsFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: Router_TimeoutsFields,
-    },
+    region: "region",
+    selfLink: "self_link",
   },
 };

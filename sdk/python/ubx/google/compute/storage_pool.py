@@ -7,68 +7,237 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StoragePool_ExapoolProvisionedCapacityGb:
+    # Size, in GiB, of provisioned capacity-optimized capacity for this Exapool
+    capacity_optimized: Any = None
+    # Size, in GiB, of provisioned read-optimized capacity for this Exapool
+    read_optimized: Any = None
+    # Size, in GiB, of provisioned write-optimized capacity for this Exapool
+    write_optimized: Any = None
+
+@dataclasses.dataclass
 class StoragePool_Params:
+    # Input only. Resource manager tags to be bound to the storage pool. Tag keys and values have the same definition as resource manager tags. Keys and values can be either in numeric format, such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and `{tag_value_short_name}`. The field is ignored (both PUT & PATCH) when empty.
     resource_manager_tags: Any = None
 
 @dataclasses.dataclass
-class StoragePool_Timeouts:
-    create: Any = None
-    delete: Any = None
-    update: Any = None
+class StoragePool_ResourceStatus:
+    # [Output Only] Number of disks used.
+    disk_count: Any = None
+    # Output only. [Output Only] Maximum allowed read IOPS for this Exapool.
+    exapool_max_read_iops: Any = None
+    # Output only. [Output Only] Maximum allowed read throughput in MiB/s for this Exapool.
+    exapool_max_read_throughput: Any = None
+    # Output only. [Output Only] Maximum allowed write IOPS for this Exapool.
+    exapool_max_write_iops: Any = None
+    # Output only. [Output Only] Maximum allowed write throughput in MiB/s for this Exapool.
+    exapool_max_write_throughput: Any = None
+    # Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
+    last_resize_timestamp: Any = None
+    # [Output Only] Maximum allowed aggregate disk size in GiB.
+    max_total_provisioned_disk_capacity_gb: Any = None
+    # [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+    pool_used_capacity_bytes: Any = None
+    # [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+    pool_used_iops: Any = None
+    # [Output Only] Sum of all the disks' provisioned throughput in MiB/s.
+    pool_used_throughput: Any = None
+    # [Output Only] Amount of data written into the pool, before it is compacted.
+    pool_user_written_bytes: Any = None
+    # [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+    total_provisioned_disk_capacity_gb: Any = None
+    # [Output Only] Sum of all the disks' provisioned IOPS.
+    total_provisioned_disk_iops: Any = None
+    # [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+    total_provisioned_disk_throughput: Any = None
+
+@dataclasses.dataclass
+class StoragePool_ShareSettings_ProjectMap:
+    # The unique identifier of the Google Cloud project to which these share settings apply. (AI-inferred)
+    project_id: Any = None
+
+@dataclasses.dataclass
+class StoragePool_ShareSettings:
+    # A map of project id and project config.
+    project_map: Any = None
+
+_StoragePool_ExapoolProvisionedCapacityGbFields = {
+    "capacity_optimized": ubx.FieldSpec(wire_name="capacity_optimized"),
+    "read_optimized": ubx.FieldSpec(wire_name="read_optimized"),
+    "write_optimized": ubx.FieldSpec(wire_name="write_optimized"),
+}
 
 _StoragePool_ParamsFields = {
     "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
 }
 
-_StoragePool_TimeoutsFields = {
-    "create": ubx.FieldSpec(wire_name="create"),
-    "delete": ubx.FieldSpec(wire_name="delete"),
-    "update": ubx.FieldSpec(wire_name="update"),
+_StoragePool_ResourceStatusFields = {
+    "disk_count": ubx.FieldSpec(wire_name="disk_count"),
+    "exapool_max_read_iops": ubx.FieldSpec(wire_name="exapool_max_read_iops"),
+    "exapool_max_read_throughput": ubx.FieldSpec(wire_name="exapool_max_read_throughput"),
+    "exapool_max_write_iops": ubx.FieldSpec(wire_name="exapool_max_write_iops"),
+    "exapool_max_write_throughput": ubx.FieldSpec(wire_name="exapool_max_write_throughput"),
+    "last_resize_timestamp": ubx.FieldSpec(wire_name="last_resize_timestamp"),
+    "max_total_provisioned_disk_capacity_gb": ubx.FieldSpec(wire_name="max_total_provisioned_disk_capacity_gb"),
+    "pool_used_capacity_bytes": ubx.FieldSpec(wire_name="pool_used_capacity_bytes"),
+    "pool_used_iops": ubx.FieldSpec(wire_name="pool_used_iops"),
+    "pool_used_throughput": ubx.FieldSpec(wire_name="pool_used_throughput"),
+    "pool_user_written_bytes": ubx.FieldSpec(wire_name="pool_user_written_bytes"),
+    "total_provisioned_disk_capacity_gb": ubx.FieldSpec(wire_name="total_provisioned_disk_capacity_gb"),
+    "total_provisioned_disk_iops": ubx.FieldSpec(wire_name="total_provisioned_disk_iops"),
+    "total_provisioned_disk_throughput": ubx.FieldSpec(wire_name="total_provisioned_disk_throughput"),
+}
+
+_StoragePool_ShareSettings_ProjectMapFields = {
+    "project_id": ubx.FieldSpec(wire_name="project_id"),
+}
+
+_StoragePool_ShareSettingsFields = {
+    "project_map": ubx.FieldSpec(
+        wire_name="project_map",
+        kind="map",
+        fields=_StoragePool_ShareSettings_ProjectMapFields,
+    ),
 }
 
 @dataclasses.dataclass
 class StoragePoolConfig:
+    # Provisioning type of the byte capacity of the pool.
     capacity_provisioning_type: Any = None
-    deletion_policy: Any = None
-    deletion_protection: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Exapool provisioned capacities for each SKU type
+    exapool_provisioned_capacity_gb: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+    kind: Any = None
+    # A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+    label_fingerprint: Any = None
+    # Labels to apply to this storage pool. These can be later modified by the setLabels method.
     labels: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    performance_provisioning_type: Any = None
-    pool_provisioned_capacity_gb: Any = None
-    pool_provisioned_iops: Any = None
-    pool_provisioned_throughput: Any = None
-    project: Any = None
-    storage_pool_type: Any = None
-    zone: Any = None
+    # Additional storage pool params.
     params: Any = None
-    timeouts: Any = None
+    # Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+    performance_provisioning_type: Any = None
+    # Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+    pool_provisioned_capacity_gb: Any = None
+    # Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+    pool_provisioned_iops: Any = None
+    # Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+    pool_provisioned_throughput: Any = None
+    # [Output Only] Contains output only fields.
+    resource_status: Any = None
+    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL for this resource's resource id.
+    self_link_with_id: Any = None
+    # Share settings for the storage pool.
+    share_settings: Any = None
+    # Output only. [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+    state: Any = None
+    # [Output Only] Contains output only fields.
+    status: Any = None
+    # Type of the storage pool.
+    storage_pool_type: Any = None
+    # Output only. [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+    zone: Any = None
+
+@dataclasses.dataclass
+class StoragePoolAttrs:
+    # Provisioning type of the byte capacity of the pool.
+    capacity_provisioning_type: Any = None
+    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
+    creation_timestamp: Any = None
+    # An optional description of this resource. Provide this property when you create the resource.
+    description: Any = None
+    # Exapool provisioned capacities for each SKU type
+    exapool_provisioned_capacity_gb: Any = None
+    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+    id: Any = None
+    # Output only. [Output Only] Type of the resource. Always compute#storagePool for storage pools.
+    kind: Any = None
+    # A fingerprint for the labels being applied to this storage pool, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a storage pool.
+    label_fingerprint: Any = None
+    # Labels to apply to this storage pool. These can be later modified by the setLabels method.
+    labels: Any = None
+    # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+    name: Any = None
+    # Additional storage pool params.
+    params: Any = None
+    # Provisioning type of the performance-related parameters of the pool, such as throughput and IOPS.
+    performance_provisioning_type: Any = None
+    # Size of the storage pool in GiB. For more information about the size limits, see https://cloud.google.com/compute/docs/disks/storage-pools.
+    pool_provisioned_capacity_gb: Any = None
+    # Provisioned IOPS of the storage pool. Only relevant if the storage pool type is hyperdisk-balanced.
+    pool_provisioned_iops: Any = None
+    # Provisioned throughput of the storage pool in MiB/s. Only relevant if the storage pool type is hyperdisk-balanced or hyperdisk-throughput.
+    pool_provisioned_throughput: Any = None
+    # [Output Only] Contains output only fields.
+    resource_status: Any = None
+    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
+    self_link: Any = None
+    # Output only. [Output Only] Server-defined URL for this resource's resource id.
+    self_link_with_id: Any = None
+    # Share settings for the storage pool.
+    share_settings: Any = None
+    # Output only. [Output Only] The status of storage pool creation. - CREATING: Storage pool is provisioning. storagePool. - FAILED: Storage pool creation failed. - READY: Storage pool is ready for use. - DELETING: Storage pool is deleting.
+    state: Any = None
+    # [Output Only] Contains output only fields.
+    status: Any = None
+    # Type of the storage pool.
+    storage_pool_type: Any = None
+    # Output only. [Output Only] URL of the zone where the storage pool resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+    zone: Any = None
 
 StoragePool = ubx.ResourceBinding(
     wire_type="google_compute_storage_pool",
     fields={
         "capacity_provisioning_type": ubx.FieldSpec(wire_name="capacity_provisioning_type"),
-        "deletion_policy": ubx.FieldSpec(wire_name="deletion_policy"),
-        "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
+        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
+        "exapool_provisioned_capacity_gb": ubx.FieldSpec(
+            wire_name="exapool_provisioned_capacity_gb",
+            kind="object",
+            fields=_StoragePool_ExapoolProvisionedCapacityGbFields,
+        ),
+        "id": ubx.FieldSpec(wire_name="id"),
+        "kind": ubx.FieldSpec(wire_name="kind"),
+        "label_fingerprint": ubx.FieldSpec(wire_name="label_fingerprint"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
+        "params": ubx.FieldSpec(
+            wire_name="params",
+            kind="object",
+            fields=_StoragePool_ParamsFields,
+        ),
         "performance_provisioning_type": ubx.FieldSpec(wire_name="performance_provisioning_type"),
         "pool_provisioned_capacity_gb": ubx.FieldSpec(wire_name="pool_provisioned_capacity_gb"),
         "pool_provisioned_iops": ubx.FieldSpec(wire_name="pool_provisioned_iops"),
         "pool_provisioned_throughput": ubx.FieldSpec(wire_name="pool_provisioned_throughput"),
-        "project": ubx.FieldSpec(wire_name="project"),
+        "resource_status": ubx.FieldSpec(
+            wire_name="resource_status",
+            kind="object",
+            fields=_StoragePool_ResourceStatusFields,
+        ),
+        "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
+        "share_settings": ubx.FieldSpec(
+            wire_name="share_settings",
+            kind="object",
+            fields=_StoragePool_ShareSettingsFields,
+        ),
+        "state": ubx.FieldSpec(wire_name="state"),
+        "status": ubx.FieldSpec(
+            wire_name="status",
+            kind="object",
+            fields=_StoragePool_ResourceStatusFields,
+        ),
         "storage_pool_type": ubx.FieldSpec(wire_name="storage_pool_type"),
         "zone": ubx.FieldSpec(wire_name="zone"),
-        "params": ubx.FieldSpec(
-            wire_name="params",
-            kind="list",
-            fields=_StoragePool_ParamsFields,
-        ),
-        "timeouts": ubx.FieldSpec(
-            wire_name="timeouts",
-            kind="object",
-            fields=_StoragePool_TimeoutsFields,
-        ),
     },
 )

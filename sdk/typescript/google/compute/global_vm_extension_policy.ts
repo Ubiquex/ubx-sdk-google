@@ -2,56 +2,52 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GlobalVmExtensionPolicy_ExtensionPolicies {
-  extensionName: string;
-  pinnedVersion: string;
-  stringConfig: string;
+  pinnedVersion?: string | Computed<string>;
+  stringConfig?: string | Computed<string>;
 }
 
 export interface GlobalVmExtensionPolicy_InstanceSelectors_LabelSelector {
-  inclusionLabels: Record<string, string>;
+  inclusionLabels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface GlobalVmExtensionPolicy_InstanceSelectors {
-  labelSelector: GlobalVmExtensionPolicy_InstanceSelectors_LabelSelector[];
-}
-
-export interface GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatus {
-  locationName: string;
-  state: string;
-}
-
-export interface GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts {
-  locationRolloutStatus: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatus[];
-  rollout: string;
-  rolloutPlan: string;
-  state: string;
-}
-
-export interface GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus {
-  currentRollouts: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts[];
-  previousRollout: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts[];
+  labelSelector?: GlobalVmExtensionPolicy_InstanceSelectors_LabelSelector | Computed<GlobalVmExtensionPolicy_InstanceSelectors_LabelSelector>;
 }
 
 export interface GlobalVmExtensionPolicy_RolloutOperation_RolloutInput {
-  conflictBehavior: string;
-  name: string;
-  predefinedRolloutPlan: string;
-  retryUuid: string;
+  /** Optional. Specifies the behavior of the rollout if a conflict is detected in a project during a rollout. This only applies to `insert` and `update` methods. A conflict occurs in the following cases: * `insert` method: If the zonal policy already exists when the insert happens. * `update` method: If the zonal policy was modified by a zonal API call outside of this rollout. Possible values are the following: * `""` (empty string): If a conflict occurs, the local value is not overwritten. This is the default behavior. * `"overwrite"`: If a conflict occurs, the local value is overwritten with the rollout value. */
+  conflictBehavior?: string | Computed<string>;
+  /** Optional. The name of the rollout plan. Ex. projects//locations/global/rolloutPlans/. */
+  name?: string | Computed<string>;
+  /** Optional. Specifies the predefined rollout plan for the policy. Valid values are `SLOW_ROLLOUT` and `FAST_ROLLOUT`. The recommended value is `SLOW_ROLLOUT` for progressive rollout. For more information, see Rollout plans for global policies. */
+  predefinedRolloutPlan?: string | Computed<string>;
+  /** Optional. The UUID that identifies a policy rollout retry attempt for update and delete operations. Set this field only when retrying a rollout for an existing extension policy. * `update` method: Lets you retry policy rollout without changes. An error occurs if you set retry_uuid but the policy is modified. * `delete` method: Lets you retry policy deletion rollout if the previous deletion rollout is not finished and the policy is in the DELETING state. If you set this field when the policy is not in the DELETING state, an error occurs. */
+  retryUuid?: string | Computed<string>;
+}
+
+export interface GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatus {
+  state?: string | Computed<string>;
+}
+
+export interface GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts {
+  locationRolloutStatus?: Record<string, GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatus> | Computed<Record<string, GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatus>>;
+  rollout?: string | Computed<string>;
+  rolloutPlan?: string | Computed<string>;
+  state?: string | Computed<string>;
+}
+
+export interface GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus {
+  /** Output only. [Output Only] The current rollouts for the latest version of the resource. There should be only one current rollout, but for scalability, we make it repeated. */
+  currentRollouts?: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts[] | Computed<GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts[]>;
+  previousRollout?: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts | Computed<GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts>;
 }
 
 export interface GlobalVmExtensionPolicy_RolloutOperation {
-  rolloutStatus: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus[];
-  rolloutInput: GlobalVmExtensionPolicy_RolloutOperation_RolloutInput[];
-}
-
-export interface GlobalVmExtensionPolicy_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  rolloutInput?: GlobalVmExtensionPolicy_RolloutOperation_RolloutInput | Computed<GlobalVmExtensionPolicy_RolloutOperation_RolloutInput>;
+  rolloutStatus?: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus | Computed<GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus>;
 }
 
 const GlobalVmExtensionPolicy_ExtensionPoliciesFields: FieldMap = {
-  extensionName: "extension_name",
   pinnedVersion: "pinned_version",
   stringConfig: "string_config",
 };
@@ -63,20 +59,26 @@ const GlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields: FieldMap = 
 const GlobalVmExtensionPolicy_InstanceSelectorsFields: FieldMap = {
   labelSelector: {
     wireName: "label_selector",
-    kind: "list",
+    kind: "object",
     fields: GlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
   },
 };
 
+const GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields: FieldMap = {
+  conflictBehavior: "conflict_behavior",
+  name: "name",
+  predefinedRolloutPlan: "predefined_rollout_plan",
+  retryUuid: "retry_uuid",
+};
+
 const GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields: FieldMap = {
-  locationName: "location_name",
   state: "state",
 };
 
 const GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields: FieldMap = {
   locationRolloutStatus: {
     wireName: "location_rollout_status",
-    kind: "set",
+    kind: "map",
     fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields,
   },
   rollout: "rollout",
@@ -92,94 +94,109 @@ const GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields: FieldMap = {
   },
   previousRollout: {
     wireName: "previous_rollout",
-    kind: "list",
+    kind: "object",
     fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
   },
 };
 
-const GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields: FieldMap = {
-  conflictBehavior: "conflict_behavior",
-  name: "name",
-  predefinedRolloutPlan: "predefined_rollout_plan",
-  retryUuid: "retry_uuid",
-};
-
 const GlobalVmExtensionPolicy_RolloutOperationFields: FieldMap = {
-  rolloutStatus: {
-    wireName: "rollout_status",
-    kind: "list",
-    fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
-  },
   rolloutInput: {
     wireName: "rollout_input",
-    kind: "list",
+    kind: "object",
     fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields,
   },
-};
-
-const GlobalVmExtensionPolicy_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+  rolloutStatus: {
+    wireName: "rollout_status",
+    kind: "object",
+    fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
+  },
 };
 
 export interface GlobalVmExtensionPolicyConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  name: string | Computed<string>;
-  priority?: number | Computed<number>;
-  project?: string | Computed<string>;
-  extensionPolicies?: GlobalVmExtensionPolicy_ExtensionPolicies[] | Computed<GlobalVmExtensionPolicy_ExtensionPolicies[]>;
+  /** Required. Map from extension (eg: "cloudops") to its policy configuration. The key is the name of the extension. */
+  extensionPolicies?: Record<string, GlobalVmExtensionPolicy_ExtensionPolicies> | Computed<Record<string, GlobalVmExtensionPolicy_ExtensionPolicies>>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
+  id?: string | Computed<string>;
+  /** Optional. Selector to target VMs for a policy. There is a logical "AND" between instance_selectors. */
   instanceSelectors?: GlobalVmExtensionPolicy_InstanceSelectors[] | Computed<GlobalVmExtensionPolicy_InstanceSelectors[]>;
-  rolloutOperation?: GlobalVmExtensionPolicy_RolloutOperation[] | Computed<GlobalVmExtensionPolicy_RolloutOperation[]>;
-  timeouts?: GlobalVmExtensionPolicy_Timeouts | Computed<GlobalVmExtensionPolicy_Timeouts>;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#globalVmExtensionPolicy for globalVmExtensionPolicies. */
+  kind?: string | Computed<string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** Optional. Used to resolve conflicts when multiple policies are active for the same extension. Defaults to 0. Larger the number, higher the priority. When the priority is the same, the policy with the newer create time has higher priority. */
+  priority?: number | Computed<number>;
+  /** Represents the rollout operation */
+  rolloutOperation?: GlobalVmExtensionPolicy_RolloutOperation | Computed<GlobalVmExtensionPolicy_RolloutOperation>;
+  /** Output only. [Output Only] The scoped resource status. It's only for tracking the purging status of the policy. */
+  scopedResourceStatus?: string | Computed<string>;
+  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
+  selfLink?: string | Computed<string>;
+  /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
+  selfLinkWithId?: string | Computed<string>;
+  /** Output only. [Output Only] Update timestamp inRFC3339 text format. */
+  updateTimestamp?: string | Computed<string>;
 }
 
 export interface GlobalVmExtensionPolicyAttrs {
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
-  deletionPolicy: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** Required. Map from extension (eg: "cloudops") to its policy configuration. The key is the name of the extension. */
+  extensionPolicies: Record<string, GlobalVmExtensionPolicy_ExtensionPolicies>;
+  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
-  kind: string;
-  name: string;
-  priority: number;
-  project: string;
-  scopedResourceStatus: string;
-  selfLink: string;
-  updateTimestamp: string;
-  extensionPolicies: GlobalVmExtensionPolicy_ExtensionPolicies[];
+  /** Optional. Selector to target VMs for a policy. There is a logical "AND" between instance_selectors. */
   instanceSelectors: GlobalVmExtensionPolicy_InstanceSelectors[];
-  rolloutOperation: GlobalVmExtensionPolicy_RolloutOperation[];
-  timeouts: GlobalVmExtensionPolicy_Timeouts;
+  /** Output only. [Output Only] Type of the resource. Alwayscompute#globalVmExtensionPolicy for globalVmExtensionPolicies. */
+  kind: string;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name: string;
+  /** Optional. Used to resolve conflicts when multiple policies are active for the same extension. Defaults to 0. Larger the number, higher the priority. When the priority is the same, the policy with the newer create time has higher priority. */
+  priority: number;
+  /** Represents the rollout operation */
+  rolloutOperation: GlobalVmExtensionPolicy_RolloutOperation;
+  /** Output only. [Output Only] The scoped resource status. It's only for tracking the purging status of the policy. */
+  scopedResourceStatus: string;
+  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
+  selfLink: string;
+  /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
+  selfLinkWithId: string;
+  /** Output only. [Output Only] Update timestamp inRFC3339 text format. */
+  updateTimestamp: string;
 }
 
 export const GlobalVmExtensionPolicy: ResourceBinding<GlobalVmExtensionPolicyConfig, GlobalVmExtensionPolicyAttrs> = {
   wireType: "google_compute_global_vm_extension_policy",
   fields: {
-    deletionPolicy: "deletion_policy",
+    creationTimestamp: "creation_timestamp",
     description: "description",
-    name: "name",
-    priority: "priority",
-    project: "project",
     extensionPolicies: {
       wireName: "extension_policies",
-      kind: "set",
+      kind: "map",
       fields: GlobalVmExtensionPolicy_ExtensionPoliciesFields,
     },
+    id: "id",
     instanceSelectors: {
       wireName: "instance_selectors",
       kind: "list",
       fields: GlobalVmExtensionPolicy_InstanceSelectorsFields,
     },
+    kind: "kind",
+    name: "name",
+    priority: "priority",
     rolloutOperation: {
       wireName: "rollout_operation",
-      kind: "list",
+      kind: "object",
       fields: GlobalVmExtensionPolicy_RolloutOperationFields,
     },
-    timeouts: {
-      wireName: "timeouts",
-      kind: "object",
-      fields: GlobalVmExtensionPolicy_TimeoutsFields,
-    },
+    scopedResourceStatus: "scoped_resource_status",
+    selfLink: "self_link",
+    selfLinkWithId: "self_link_with_id",
+    updateTimestamp: "update_timestamp",
   },
 };

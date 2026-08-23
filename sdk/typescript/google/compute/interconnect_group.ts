@@ -2,57 +2,90 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers {
-  blockerType: string;
-  documentationLink: string;
-  explanation: string;
-  facilities: string[];
-  interconnects: string[];
-  metros: string[];
-  zones: string[];
+  /** The type of blocker preventing the intended capability. Possible values: INCOMPATIBLE_METROS, NOT_AVAILABLE, NO_INTERCONNECTS, NO_INTERCONNECTS_IN_METRO_AND_ZONE, OTHER, UNSPECIFIED. (AI-inferred) */
+  blockerType?: string | Computed<string>;
+  /** A URL to documentation explaining why the intended capability is blocked. (AI-inferred) */
+  documentationLink?: string | Computed<string>;
+  /** A human-readable explanation of why the intended topology capability is blocked. (AI-inferred) */
+  explanation?: string | Computed<string>;
+  /** List of facility names that are blocking the intended topology capability for this interconnect group. (AI-inferred) */
+  facilities?: string[] | Computed<string[]>;
+  /** The list of interconnect names that are blocking the intended topology capability for this interconnect group. (AI-inferred) */
+  interconnects?: string[] | Computed<string[]>;
+  /** List of metro names (geographic locations) that block the intended topology capability from being achieved. (AI-inferred) */
+  metros?: string[] | Computed<string[]>;
+  /** A list of zones in which the intended topology capability is blocked or unavailable, as part of a capability blocker. (AI-inferred) */
+  zones?: string[] | Computed<string[]>;
 }
 
 export interface InterconnectGroup_Configured_TopologyCapability {
-  intendedCapabilityBlockers: InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers[];
-  supportedSla: string;
+  /** A list of reasons that prevent the interconnect group's intended topology capability from being realized. This computed field is empty when the intended capability is fully supported, and provides details on any issues otherwise. (AI-inferred) */
+  intendedCapabilityBlockers?: InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers[] | Computed<InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers[]>;
+  /** The supported service level agreement (SLA) for this topology capability. Possible values are: NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL, UNSPECIFIED. (AI-inferred) */
+  supportedSla?: string | Computed<string>;
 }
 
 export interface InterconnectGroup_Configured {
-  topologyCapability: InterconnectGroup_Configured_TopologyCapability[];
-}
-
-export interface InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones {
-  interconnects: string[];
-  zone: string;
-}
-
-export interface InterconnectGroup_PhysicalStructure_Metros_Facilities {
-  facility: string;
-  zones: InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones[];
-}
-
-export interface InterconnectGroup_PhysicalStructure_Metros {
-  facilities: InterconnectGroup_PhysicalStructure_Metros_Facilities[];
-  metro: string;
-}
-
-export interface InterconnectGroup_PhysicalStructure {
-  metros: InterconnectGroup_PhysicalStructure_Metros[];
+  /** [Output Only] How reliable this topology is configured to be, and why this group does or does not meet the requirements for the intended capability. */
+  topologyCapability?: InterconnectGroup_Configured_TopologyCapability | Computed<InterconnectGroup_Configured_TopologyCapability>;
 }
 
 export interface InterconnectGroup_Intent {
-  topologyCapability: string;
+  /** Specifies the topology capability level for the interconnect group, indicating the required service level. Valid values are: NO_SLA (no service level agreement), PRODUCTION_CRITICAL (production workloads requiring high reliability), PRODUCTION_NON_CRITICAL (production workloads without critical reliability requirements), and UNSPECIFIED (value not set). (AI-inferred) */
+  topologyCapability?: string | Computed<string>;
 }
 
 export interface InterconnectGroup_Interconnects {
-  interconnect: string;
-  name: string;
+  interconnect?: string | Computed<string>;
 }
 
-export interface InterconnectGroup_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+export interface InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones {
+  interconnects?: string[] | Computed<string[]>;
+  zone?: string | Computed<string>;
 }
+
+export interface InterconnectGroup_PhysicalStructure_Metros_Facilities {
+  facility?: string | Computed<string>;
+  zones?: InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones[] | Computed<InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones[]>;
+}
+
+export interface InterconnectGroup_PhysicalStructure_Metros {
+  facilities?: InterconnectGroup_PhysicalStructure_Metros_Facilities[] | Computed<InterconnectGroup_PhysicalStructure_Metros_Facilities[]>;
+  /** The metropolitan area where the interconnect group's physical structure is located, such as 'london' or 'sydney'. (AI-inferred) */
+  metro?: string | Computed<string>;
+}
+
+export interface InterconnectGroup_PhysicalStructure {
+  /** The metropolitan areas where the physical structure of the interconnect group is located. This computed field provides the list of metros supported by the physical infrastructure. (AI-inferred) */
+  metros?: InterconnectGroup_PhysicalStructure_Metros[] | Computed<InterconnectGroup_PhysicalStructure_Metros[]>;
+}
+
+const InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields: FieldMap = {
+  blockerType: "blocker_type",
+  documentationLink: "documentation_link",
+  explanation: "explanation",
+  facilities: "facilities",
+  interconnects: "interconnects",
+  metros: "metros",
+  zones: "zones",
+};
+
+const InterconnectGroup_Configured_TopologyCapabilityFields: FieldMap = {
+  intendedCapabilityBlockers: {
+    wireName: "intended_capability_blockers",
+    kind: "list",
+    fields: InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields,
+  },
+  supportedSla: "supported_sla",
+};
+
+const InterconnectGroup_ConfiguredFields: FieldMap = {
+  topologyCapability: {
+    wireName: "topology_capability",
+    kind: "object",
+    fields: InterconnectGroup_Configured_TopologyCapabilityFields,
+  },
+};
 
 const InterconnectGroup_IntentFields: FieldMap = {
   topologyCapability: "topology_capability",
@@ -60,62 +93,118 @@ const InterconnectGroup_IntentFields: FieldMap = {
 
 const InterconnectGroup_InterconnectsFields: FieldMap = {
   interconnect: "interconnect",
-  name: "name",
 };
 
-const InterconnectGroup_TimeoutsFields: FieldMap = {
-  create: "create",
-  delete: "delete",
-  update: "update",
+const InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields: FieldMap = {
+  interconnects: "interconnects",
+  zone: "zone",
+};
+
+const InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields: FieldMap = {
+  facility: "facility",
+  zones: {
+    wireName: "zones",
+    kind: "list",
+    fields: InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields,
+  },
+};
+
+const InterconnectGroup_PhysicalStructure_MetrosFields: FieldMap = {
+  facilities: {
+    wireName: "facilities",
+    kind: "list",
+    fields: InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields,
+  },
+  metro: "metro",
+};
+
+const InterconnectGroup_PhysicalStructureFields: FieldMap = {
+  metros: {
+    wireName: "metros",
+    kind: "list",
+    fields: InterconnectGroup_PhysicalStructure_MetrosFields,
+  },
 };
 
 export interface InterconnectGroupConfig {
-  deletionPolicy?: string | Computed<string>;
+  /** [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource. */
+  configured?: InterconnectGroup_Configured | Computed<InterconnectGroup_Configured>;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
+  creationTimestamp?: string | Computed<string>;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by AIP 154. */
+  etag?: string | Computed<string>;
+  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
   id?: string | Computed<string>;
-  name: string | Computed<string>;
-  project?: string | Computed<string>;
-  intent?: InterconnectGroup_Intent[] | Computed<InterconnectGroup_Intent[]>;
-  interconnects?: InterconnectGroup_Interconnects[] | Computed<InterconnectGroup_Interconnects[]>;
-  timeouts?: InterconnectGroup_Timeouts | Computed<InterconnectGroup_Timeouts>;
+  /** The user's intent for this group. This is the only required field besides the name that must be specified on group creation. */
+  intent?: InterconnectGroup_Intent | Computed<InterconnectGroup_Intent>;
+  /** Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota. */
+  interconnects?: Record<string, InterconnectGroup_Interconnects> | Computed<Record<string, InterconnectGroup_Interconnects>>;
+  /** Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup */
+  kind?: string | Computed<string>;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
+  name?: string | Computed<string>;
+  /** [Output Only] An analysis of the physical layout of Interconnects in this group. Every Interconnect in the group is shown once in this structure. */
+  physicalStructure?: InterconnectGroup_PhysicalStructure | Computed<InterconnectGroup_PhysicalStructure>;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink?: string | Computed<string>;
 }
 
 export interface InterconnectGroupAttrs {
-  configured: InterconnectGroup_Configured[];
+  /** [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource. */
+  configured: InterconnectGroup_Configured;
+  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
-  deletionPolicy: string;
+  /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by AIP 154. */
+  etag: string;
+  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
   id: string;
+  /** The user's intent for this group. This is the only required field besides the name that must be specified on group creation. */
+  intent: InterconnectGroup_Intent;
+  /** Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota. */
+  interconnects: Record<string, InterconnectGroup_Interconnects>;
+  /** Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup */
+  kind: string;
+  /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
-  physicalStructure: InterconnectGroup_PhysicalStructure[];
-  project: string;
-  intent: InterconnectGroup_Intent[];
-  interconnects: InterconnectGroup_Interconnects[];
-  timeouts: InterconnectGroup_Timeouts;
+  /** [Output Only] An analysis of the physical layout of Interconnects in this group. Every Interconnect in the group is shown once in this structure. */
+  physicalStructure: InterconnectGroup_PhysicalStructure;
+  /** Output only. [Output Only] Server-defined URL for the resource. */
+  selfLink: string;
 }
 
 export const InterconnectGroup: ResourceBinding<InterconnectGroupConfig, InterconnectGroupAttrs> = {
   wireType: "google_compute_interconnect_group",
   fields: {
-    deletionPolicy: "deletion_policy",
+    configured: {
+      wireName: "configured",
+      kind: "object",
+      fields: InterconnectGroup_ConfiguredFields,
+    },
+    creationTimestamp: "creation_timestamp",
     description: "description",
+    etag: "etag",
     id: "id",
-    name: "name",
-    project: "project",
     intent: {
       wireName: "intent",
-      kind: "list",
+      kind: "object",
       fields: InterconnectGroup_IntentFields,
     },
     interconnects: {
       wireName: "interconnects",
-      kind: "set",
+      kind: "map",
       fields: InterconnectGroup_InterconnectsFields,
     },
-    timeouts: {
-      wireName: "timeouts",
+    kind: "kind",
+    name: "name",
+    physicalStructure: {
+      wireName: "physical_structure",
       kind: "object",
-      fields: InterconnectGroup_TimeoutsFields,
+      fields: InterconnectGroup_PhysicalStructureFields,
     },
+    selfLink: "self_link",
   },
 };
