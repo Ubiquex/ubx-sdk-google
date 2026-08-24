@@ -7,3 +7,6 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .documentai_processor import DocumentaiProcessor, DocumentaiProcessorConfig
 from .documentai_schema import DocumentaiSchema, DocumentaiSchemaConfig
 from .documentai_schema_version import DocumentaiSchemaVersion, DocumentaiSchemaVersionConfig
+from .v1beta3_documentai_v1beta3_processor import V1beta3DocumentaiV1beta3Processor, V1beta3DocumentaiV1beta3ProcessorConfig
+from .v1beta3_documentai_v1beta3_schema import V1beta3DocumentaiV1beta3Schema, V1beta3DocumentaiV1beta3SchemaConfig
+from .v1beta3_documentai_v1beta3_schema_version import V1beta3DocumentaiV1beta3SchemaVersion, V1beta3DocumentaiV1beta3SchemaVersionConfig

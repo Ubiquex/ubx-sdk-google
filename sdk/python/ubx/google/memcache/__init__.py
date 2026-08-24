@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .memcache_instance import MemcacheInstance, MemcacheInstanceConfig
+from .v1beta2_memcache_v1beta2_instance import V1beta2MemcacheV1beta2Instance, V1beta2MemcacheV1beta2InstanceConfig

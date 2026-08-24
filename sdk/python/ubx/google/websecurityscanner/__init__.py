@@ -4,4 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
+from .v1alpha_websecurityscanner_v1alpha_scan_config import V1alphaWebsecurityscannerV1alphaScanConfig, V1alphaWebsecurityscannerV1alphaScanConfigConfig
+from .v1beta_websecurityscanner_v1beta_scan_config import V1betaWebsecurityscannerV1betaScanConfig, V1betaWebsecurityscannerV1betaScanConfigConfig
 from .websecurityscanner_scan_config import WebsecurityscannerScanConfig, WebsecurityscannerScanConfigConfig

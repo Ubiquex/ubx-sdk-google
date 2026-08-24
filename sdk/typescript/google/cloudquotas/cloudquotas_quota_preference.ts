@@ -10,7 +10,7 @@ export interface CloudquotasQuotaPreference_QuotaConfig {
   preferredValue?: string | Computed<string>;
   /** Output only. The origin of the quota preference request. */
   requestOrigin?: string | Computed<string>;
-  /** Output only. Optional details about the state of this quota preference. */
+  /** Output only. Optional details about the state of this quota preference. For example, it may contain a description of a partially approved request or explain why the request was denied. */
   stateDetail?: string | Computed<string>;
   /** Output only. The trace id that the Google Cloud uses to provision the requested quota. This trace id may be used by the client to contact Cloud support to track the state of a quota preference request. The trace id is only produced for increase requests and is unique for each request. The quota decrease requests do not have a trace id. */
   traceId?: string | Computed<string>;

@@ -5,3 +5,5 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .firebaseappdistribution_group import FirebaseappdistributionGroup, FirebaseappdistributionGroupConfig
+from .v1alpha_firebaseappdistribution_v1alpha_test import V1alphaFirebaseappdistributionV1alphaTest, V1alphaFirebaseappdistributionV1alphaTestConfig
+from .v1alpha_firebaseappdistribution_v1alpha_test_case import V1alphaFirebaseappdistributionV1alphaTestCase, V1alphaFirebaseappdistributionV1alphaTestCaseConfig

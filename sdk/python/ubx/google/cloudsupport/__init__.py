@@ -7,3 +7,6 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .cloudsupport_case import CloudsupportCase, CloudsupportCaseConfig
 from .cloudsupport_comment import CloudsupportComment, CloudsupportCommentConfig
 from .cloudsupport_support_event_subscription import CloudsupportSupportEventSubscription, CloudsupportSupportEventSubscriptionConfig
+from .v2beta_cloudsupport_v2beta_case import V2betaCloudsupportV2betaCase, V2betaCloudsupportV2betaCaseConfig
+from .v2beta_cloudsupport_v2beta_comment import V2betaCloudsupportV2betaComment, V2betaCloudsupportV2betaCommentConfig
+from .v2beta_cloudsupport_v2beta_support_event_subscription import V2betaCloudsupportV2betaSupportEventSubscription, V2betaCloudsupportV2betaSupportEventSubscriptionConfig

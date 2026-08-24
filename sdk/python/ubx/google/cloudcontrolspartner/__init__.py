@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .cloudcontrolspartner_customer import CloudcontrolspartnerCustomer, CloudcontrolspartnerCustomerConfig
+from .v1beta_cloudcontrolspartner_v1beta_customer import V1betaCloudcontrolspartnerV1betaCustomer, V1betaCloudcontrolspartnerV1betaCustomerConfig

@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .parallelstore_instance import ParallelstoreInstance, ParallelstoreInstanceConfig
+from .v1beta_parallelstore_v1beta_instance import V1betaParallelstoreV1betaInstance, V1betaParallelstoreV1betaInstanceConfig

@@ -104,6 +104,10 @@ type FtpServerConfig struct {
 	Labels any
 	// Identifier. name of resource
 	Name any
+	// Output only. Whether the Server satisfies Physical Zone Isolation (PZI) requirements.
+	SatisfiesPzi any
+	// Output only. Whether the Server satisfies Physical Zone Separation (PZS) requirements.
+	SatisfiesPzs any
 	// Output only. Service agent used to access the customer bucket.
 	ServiceAgent any
 	// Output only. The state of the server.
@@ -129,6 +133,10 @@ type FtpServerAttrs struct {
 	Labels any
 	// Identifier. name of resource
 	Name any
+	// Output only. Whether the Server satisfies Physical Zone Isolation (PZI) requirements.
+	SatisfiesPzi any
+	// Output only. Whether the Server satisfies Physical Zone Separation (PZS) requirements.
+	SatisfiesPzs any
 	// Output only. Service agent used to access the customer bucket.
 	ServiceAgent any
 	// Output only. The state of the server.
@@ -160,6 +168,8 @@ var FtpServer = ubx.ResourceBinding{
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Name": ubx.FieldSpec{WireName: "name"},
+		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
+		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ServiceAgent": ubx.FieldSpec{WireName: "service_agent"},
 		"State": ubx.FieldSpec{WireName: "state"},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},

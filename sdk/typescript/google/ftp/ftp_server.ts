@@ -102,6 +102,10 @@ export interface FtpServerConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. name of resource */
   name?: string | Computed<string>;
+  /** Output only. Whether the Server satisfies Physical Zone Isolation (PZI) requirements. */
+  satisfiesPzi?: boolean | Computed<boolean>;
+  /** Output only. Whether the Server satisfies Physical Zone Separation (PZS) requirements. */
+  satisfiesPzs?: boolean | Computed<boolean>;
   /** Output only. Service agent used to access the customer bucket. */
   serviceAgent?: string | Computed<string>;
   /** Output only. The state of the server. */
@@ -127,6 +131,10 @@ export interface FtpServerAttrs {
   labels: Record<string, string>;
   /** Identifier. name of resource */
   name: string;
+  /** Output only. Whether the Server satisfies Physical Zone Isolation (PZI) requirements. */
+  satisfiesPzi: boolean;
+  /** Output only. Whether the Server satisfies Physical Zone Separation (PZS) requirements. */
+  satisfiesPzs: boolean;
   /** Output only. Service agent used to access the customer bucket. */
   serviceAgent: string;
   /** Output only. The state of the server. */
@@ -158,6 +166,8 @@ export const FtpServer: ResourceBinding<FtpServerConfig, FtpServerAttrs> = {
     },
     labels: "labels",
     name: "name",
+    satisfiesPzi: "satisfies_pzi",
+    satisfiesPzs: "satisfies_pzs",
     serviceAgent: "service_agent",
     state: "state",
     updateTime: "update_time",

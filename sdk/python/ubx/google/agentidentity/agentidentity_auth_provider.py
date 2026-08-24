@@ -8,24 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentidentityAuthProvider_AuthProviderTypeParams_ApiKey:
-    # Optional. Input only. The API key for this auth_provider.
+    # Optional. Input only. The API key for this auth provider.
     api_key: Any = None
 
 @dataclasses.dataclass
 class AgentidentityAuthProvider_AuthProviderTypeParams_ThreeLeggedOauth:
-    # Optional. The authorization endpoint to send users to for consenting to delegate to the agent. eg. "https://auth.atlassian.com/authorize"
+    # Optional. The authorization endpoint to send users to for consenting to delegate to the agent. For example, "https://auth.atlassian.com/authorize".
     authorization_url: Any = None
     # Optional. The client ID of the OAuth client.
     client_id: Any = None
     # Optional. Input only. The client secret of the OAuth client.
     client_secret: Any = None
-    # Optional. The default continue URI for 3LO flow and it will be used when no continue URI is provided in the RetrieveCredentials request.
+    # Optional. The default continue URI for the 3LO flow, used when no continue URI is provided in the RetrieveCredentials request.
     default_continue_uri: Any = None
     # Optional. Enables Proof Key for Code Exchange (PKCE) for the OAuth flow to prevent authorization code interception attacks.
     enable_pkce: Any = None
-    # Output only. The redirect URL this auth_provider uses for the OAuth exchange. This is deterministic based on the name of the auth_provider.
+    # Output only. The redirect URL this auth provider uses for the OAuth exchange. This is deterministic based on the name of the auth provider.
     redirect_url: Any = None
-    # Optional. The token endpoint for requesting tokens on behalf of an end user. eg. "https://auth.atlassian.com/oauth/token"
+    # Optional. The token endpoint for requesting tokens on behalf of an end user. For example, "https://auth.atlassian.com/oauth/token".
     token_url: Any = None
 
 @dataclasses.dataclass
@@ -39,13 +39,13 @@ class AgentidentityAuthProvider_AuthProviderTypeParams_TwoLeggedOauth:
 
 @dataclasses.dataclass
 class AgentidentityAuthProvider_AuthProviderTypeParams:
-    # Message describing ApiKeyParams object.
+    # Configuration for API key authentication.
     api_key: Any = None
-    # Message describing GeminiEnterpriseAuthProviderParams object.
+    # Configuration for Gemini Enterprise authentication.
     ge_auth_provider: Any = None
-    # Message describing ThreeLeggedOAuth object.
+    # Configuration for 3-legged OAuth (3LO) authentication.
     three_legged_oauth: Any = None
-    # Message describing TwoLeggedOAuth object.
+    # Configuration for 2-legged OAuth (2LO) authentication.
     two_legged_oauth: Any = None
 
 _AgentidentityAuthProvider_AuthProviderTypeParams_ApiKeyFields = {
@@ -89,56 +89,56 @@ _AgentidentityAuthProvider_AuthProviderTypeParamsFields = {
 
 @dataclasses.dataclass
 class AgentidentityAuthProviderConfig:
-    # Optional. List of scopes that are allowed to be requested for this auth_provider. If this list is non-empty, only scopes within this list may be requested. If this list is empty, all scopes may be requested. Scopes appearing in `blocked_scopes` are disallowed even if they appear in `allowed_scopes`. The number of allowed scopes is limited to 200.
+    # Optional. List of scopes that are allowed to be requested for this auth provider. If this list is non-empty, only scopes within this list may be requested. If this list is empty, all scopes may be requested. Scopes appearing in `blocked_scopes` are disallowed even if they appear in `allowed_scopes`. The number of allowed scopes is limited to 200.
     allowed_scopes: Any = None
-    # AuthProvider type specific parameters. Required when creating an auth_provider.
+    # Required. Parameters specific to the auth provider type.
     auth_provider_type_params: Any = None
-    # Optional. List of scopes that are blocked from being requested for this auth_provider. If a scope appears in this list, it will not be requested, even if it also appears in `allowed_scopes`. `blocked_scopes` takes precedence over `allowed_scopes`. The number of blocked scopes is limited to 200.
+    # Optional. List of scopes that are blocked from being requested for this auth provider. If a scope appears in this list, it will not be requested, even if it also appears in `allowed_scopes`. `blocked_scopes` takes precedence over `allowed_scopes`. The number of blocked scopes is limited to 200.
     blocked_scopes: Any = None
-    # Output only. [Output only] Create time stamp
+    # Output only. The creation timestamp.
     create_time: Any = None
-    # Output only. This is set to true if the auth_provider is deleted.
+    # Output only. Set to `true` if the auth provider is deleted.
     deleted: Any = None
     # Optional. Description of the resource. Must be less than 256 characters.
     description: Any = None
-    # Output only. The time when the auth_provider will expire.
+    # Output only. The time when the auth provider will expire.
     expire_time: Any = None
-    # Optional. Labels as key value pairs
+    # Optional. Labels as key-value pairs.
     labels: Any = None
-    # Identifier. The full resource name of the auth_provider. Format: projects/{project}/locations/{location}/authProviders/{auth_provider}
+    # Identifier. The full resource name of the auth provider. Format: projects/{project}/locations/{location}/authProviders/{auth_provider}
     name: Any = None
-    # Output only. The state of the auth_provider.
+    # Output only. The state of the auth provider.
     state: Any = None
-    # Output only. [Output only] Update time stamp
+    # Output only. The update timestamp.
     update_time: Any = None
-    # Optional. Input only. Represents the workload identity in IAM `principal://` format of the agent(s) that will use this AuthProvider. Example: `principal://agents.global.org-${ORG_ID}.system.id.goog/resources/aiplatform/projects/{PROJECT_ID}/locations/{LOCATIONS}/reasoningEngines/{ID}`
+    # Optional. Input only. Identifiers for the agents that will use this auth provider, starting with `principal://`. For example: `principal://agents.global.org-${ORG_ID}.system.id.goog/resources/aiplatform/projects/{PROJECT_ID}/locations/{LOCATIONS}/reasoningEngines/{ID}`
     workload_ids: Any = None
 
 @dataclasses.dataclass
 class AgentidentityAuthProviderAttrs:
-    # Optional. List of scopes that are allowed to be requested for this auth_provider. If this list is non-empty, only scopes within this list may be requested. If this list is empty, all scopes may be requested. Scopes appearing in `blocked_scopes` are disallowed even if they appear in `allowed_scopes`. The number of allowed scopes is limited to 200.
+    # Optional. List of scopes that are allowed to be requested for this auth provider. If this list is non-empty, only scopes within this list may be requested. If this list is empty, all scopes may be requested. Scopes appearing in `blocked_scopes` are disallowed even if they appear in `allowed_scopes`. The number of allowed scopes is limited to 200.
     allowed_scopes: Any = None
-    # AuthProvider type specific parameters. Required when creating an auth_provider.
+    # Required. Parameters specific to the auth provider type.
     auth_provider_type_params: Any = None
-    # Optional. List of scopes that are blocked from being requested for this auth_provider. If a scope appears in this list, it will not be requested, even if it also appears in `allowed_scopes`. `blocked_scopes` takes precedence over `allowed_scopes`. The number of blocked scopes is limited to 200.
+    # Optional. List of scopes that are blocked from being requested for this auth provider. If a scope appears in this list, it will not be requested, even if it also appears in `allowed_scopes`. `blocked_scopes` takes precedence over `allowed_scopes`. The number of blocked scopes is limited to 200.
     blocked_scopes: Any = None
-    # Output only. [Output only] Create time stamp
+    # Output only. The creation timestamp.
     create_time: Any = None
-    # Output only. This is set to true if the auth_provider is deleted.
+    # Output only. Set to `true` if the auth provider is deleted.
     deleted: Any = None
     # Optional. Description of the resource. Must be less than 256 characters.
     description: Any = None
-    # Output only. The time when the auth_provider will expire.
+    # Output only. The time when the auth provider will expire.
     expire_time: Any = None
-    # Optional. Labels as key value pairs
+    # Optional. Labels as key-value pairs.
     labels: Any = None
-    # Identifier. The full resource name of the auth_provider. Format: projects/{project}/locations/{location}/authProviders/{auth_provider}
+    # Identifier. The full resource name of the auth provider. Format: projects/{project}/locations/{location}/authProviders/{auth_provider}
     name: Any = None
-    # Output only. The state of the auth_provider.
+    # Output only. The state of the auth provider.
     state: Any = None
-    # Output only. [Output only] Update time stamp
+    # Output only. The update timestamp.
     update_time: Any = None
-    # Optional. Input only. Represents the workload identity in IAM `principal://` format of the agent(s) that will use this AuthProvider. Example: `principal://agents.global.org-${ORG_ID}.system.id.goog/resources/aiplatform/projects/{PROJECT_ID}/locations/{LOCATIONS}/reasoningEngines/{ID}`
+    # Optional. Input only. Identifiers for the agents that will use this auth provider, starting with `principal://`. For example: `principal://agents.global.org-${ORG_ID}.system.id.goog/resources/aiplatform/projects/{PROJECT_ID}/locations/{LOCATIONS}/reasoningEngines/{ID}`
     workload_ids: Any = None
 
 AgentidentityAuthProvider = ubx.ResourceBinding(
