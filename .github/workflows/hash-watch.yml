@@ -1,0 +1,374 @@
+name: hash-watch
+
+# Weekly check against every real, live member spec behind
+# [dynamic_provider_groups.google_all] (ubiquex, sdk/providers/.ubx/config)
+# for content drift. Google Cloud publishes no single, discrete, pinnable
+# release for this corpus -- each of the 162 real
+# [dynamic_providers.google_<api>] entries (plus the original google/
+# compute entry) is its own real, independently-versioned Discovery
+# Document -- there is no version number to poll the way
+# version-watch.yml did for this repo's own pre-1.0.0,
+# hashicorp/google-sourced form.
+#
+# NEW at 1.1.0: this repo has never had an automated drift watch since
+# regenerating from the real, full GCP Discovery Doc corpus.
+# version-watch.yml (the hashicorp/google-era workflow) was removed as
+# part of that regeneration -- real, deliberate, and flagged at the time
+# as follow-up work, not done in that PR. This is that follow-up.
+#
+# Real design history worth keeping, found the hard way this session:
+# a first draft of this file hashed the combined, POST-ENRICHMENT IR
+# (`ubx sdk gen --dump-ir`'s own schema.json), the same real artifact
+# VERSION's own merged-schema-sha256 used to record. That is wrong for
+# a drift watch -- confirmed live, by checking out ubiquex/
+# ubx-provider-dynamic at the exact commits current when THIS repo's own
+# committed VERSION was last written and recomputing: the historical
+# toolchain against TODAY's live specs produced a THIRD distinct hash,
+# different from both the committed value and a current-toolchain run.
+# Isolating that (same toolchain, different fetch time vs. same fetch
+# time, different toolchain) proved both upstream drift AND toolchain
+# drift were real and independently present.
+#
+# This file instead hashes the RAW FETCHED SPECS directly -- every
+# member's own schema_url content, parsed, canonicalized (sort_keys,
+# compact separators), and concatenated in a fixed, deterministic order
+# (members sorted by name) before the final hash. This never touches ubx
+# or ubx-provider-dynamic at all for the compare step -- only for the
+# regen step below, when a real change is actually found.
+#
+# Two real, live findings specific to this corpus, both confirmed by
+# repeated live fetches, neither guessed:
+#
+# 1. Every Google Discovery Document carries a top-level "revision"
+#    date-stamp -- confirmed served INCONSISTENTLY across concurrent
+#    requests to the SAME logical document (three different values
+#    fetched seconds apart from the identical URL). Not real
+#    API-surface content, a last-regenerated stamp Google's own backend
+#    fleet doesn't keep in sync with itself. Stripped before hashing.
+#
+# 2. One member, google_ftp, has a real, LIVE, ongoing inconsistency
+#    beyond "revision": its own Server schema's properties
+#    (satisfiesPzi/satisfiesPzs) are present in roughly half of all
+#    fetches and absent from the other half -- confirmed across 20
+#    consecutive live fetches, no convergence, meaning at least two of
+#    Google's own backend replica pools currently disagree with each
+#    other about this one API's real schema. This is genuine content,
+#    not metadata, so it is never safe to strip the way "revision" is --
+#    doing so risks silently hiding a real, deliberate schema change on
+#    some future day these two replica pools actually converge. No
+#    hash design, raw or canonicalized, can fully solve this for this
+#    one member: a single fetch has close to even odds of landing on
+#    either version. Accepted as a known, real, external limitation
+#    (Google's own infrastructure, not this workflow) rather than
+#    engineered around -- if this watch ever reports a change touching
+#    only google_ftp with no other member affected, check whether it's
+#    this same flip before assuming a real spec change happened.
+#
+# Rather than reconstruct the group's own 162-member list by hand here
+# (a real, live drift risk of its own if ubiquex's config ever
+# adds/removes a member and this file isn't updated in lockstep), this
+# checks out ubiquex (still needed, just to read its own real, live
+# sdk/providers/.ubx/config -- Python's stdlib tomllib parses it
+# directly, no external dependency) rather than duplicating the member
+# list here.
+#
+# Ported from ubx-sdk-datadog's own real, working rewrite of this same
+# file for its own two-member case.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  GROUP: google_all
+  REPO_NAME: google
+
+jobs:
+  check-and-regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ubx-sdk-google
+        uses: actions/checkout@v4
+
+      - name: Check out ubiquex (real source of truth for the group's own member list)
+        run: |
+          set -euo pipefail
+          # Fine-grained PAT, contents:read on Ubiquex/ubiquex -- same
+          # UBIQUEX_SOURCE_TOKEN secret this repo's own publish.yml uses.
+          git clone --depth=1 \
+            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up PyYAML
+        run: pip install --quiet pyyaml
+
+      - name: Fetch every member's raw spec and compute the merged-spec-sha256
+        id: merged
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF'
+          import hashlib, json, os, tomllib, urllib.request, yaml, datetime
+
+          GROUP = os.environ["GROUP"]
+
+          cfg = tomllib.load(open("${{ runner.temp }}/ubiquex-src/sdk/providers/.ubx/config", "rb"))
+          group = cfg["dynamic_provider_groups"][GROUP]
+          members = sorted(group["members"])
+          urls = {m: cfg["dynamic_providers"][m]["schema_url"] for m in members}
+
+          def fetch(url, retries=3):
+              req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
+              for i in range(retries):
+                  try:
+                      with urllib.request.urlopen(req, timeout=30) as resp:
+                          return resp.read()
+                  except Exception:
+                      if i == retries - 1:
+                          raise
+
+          def json_default(o):
+              if isinstance(o, (datetime.date, datetime.datetime)):
+                  return o.isoformat()
+              raise TypeError(f"not JSON serializable: {o!r}")
+
+          def canonicalize(raw_bytes):
+              text = raw_bytes.decode("utf-8")
+              try:
+                  doc = json.loads(text)
+              except json.JSONDecodeError:
+                  doc = yaml.safe_load(text)
+              # Real, confirmed instability found live (see this file's own
+              # header comment): a top-level "revision" key, when present,
+              # is metadata (a last-regenerated stamp), not API-surface
+              # content, and some live spec endpoints serve it
+              # inconsistently across replicas. Absent entirely from
+              # Datadog's/Azure's own specs (confirmed), so dropping it is
+              # a real no-op for both -- only Google-shaped Discovery
+              # Documents ever actually have this key.
+              if isinstance(doc, dict) and "revision" in doc:
+                  doc = {k: v for k, v in doc.items() if k != "revision"}
+              return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
+
+          h = hashlib.sha256()
+          for m in members:
+              h.update(canonicalize(fetch(urls[m])))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"hash={h.hexdigest()}\n")
+              out.write(f"members={len(members)}\n")
+          print(f"Live merged-spec-sha256: {h.hexdigest()} ({len(members)} members)")
+          PYEOF
+
+      - name: Compare against this repo's committed VERSION
+        id: compare
+        run: |
+          set -euo pipefail
+          current_hash="$(grep '^merged-spec-sha256:' VERSION | awk '{print $2}')"
+          current_members="$(grep '^members:' VERSION | awk '{print $2}')"
+          echo "current_hash=$current_hash" >> "$GITHUB_OUTPUT"
+          echo "current_members=$current_members" >> "$GITHUB_OUTPUT"
+          echo "This repo was last generated from merged-spec-sha256: $current_hash ($current_members members)"
+          if [ "$current_hash" = "${{ steps.merged.outputs.hash }}" ] && [ "$current_members" = "${{ steps.merged.outputs.members }}" ]; then
+            echo "newer=false" >> "$GITHUB_OUTPUT"
+            echo "Already current -- nothing to do."
+          else
+            echo "newer=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # --- everything below only runs when the merged corpus changed ---
+
+      - name: Check out ubx-provider-dynamic (only needed once a real change is found)
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          git clone --depth=1 \
+            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "${{ runner.temp }}/ubx-provider-dynamic-src"
+
+      - name: Set up Go
+        if: steps.compare.outputs.newer == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
+
+      - name: Set up Deno
+        if: steps.compare.outputs.newer == 'true'
+        uses: denoland/setup-deno@v2.0.5
+        with:
+          deno-version: "2.x"
+
+      - name: Build ubx
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
+          "${{ runner.temp }}/ubx" version
+
+      - name: Regenerate bindings (all three languages, through the real group)
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
+        run: |
+          set -euo pipefail
+          gendir="${{ runner.temp }}/ubxgen"
+          mkdir -p "$gendir"
+
+          own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
+          own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
+
+          mkdir -p "$gendir/out/$REPO_NAME/sdk/go"
+          cp sdk/go/go.mod "$gendir/out/$REPO_NAME/sdk/go/go.mod"
+
+          for lang in go ts py; do
+            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$GROUP" --lang "$lang" --out "$gendir/out" )
+          done
+
+          rsync -a --delete --exclude='go.sum' "$gendir/out/$REPO_NAME/sdk/go/" sdk/go/
+          rsync -a --delete --exclude='deno.json' --exclude='deno.lock' "$gendir/out/$REPO_NAME/sdk/typescript/" sdk/typescript/
+          rsync -a --delete "$gendir/out/$REPO_NAME/sdk/python/" sdk/python/
+
+          python3 -c "
+          import json
+          p = 'sdk/typescript/package.json'
+          d = json.load(open(p))
+          d['version'] = '$own_ts_version'
+          json.dump(d, open(p, 'w'), indent=2)
+          open(p, 'a').write('\n')
+          "
+          python3 -c "
+          import re
+          p = 'sdk/python/pyproject.toml'
+          content = open(p).read()
+          content = re.sub(r'version = \"[^\"]+\"', 'version = \"$own_py_version\"', content, count=1)
+          open(p, 'w').write(content)
+          "
+
+          cat > VERSION <<EOF
+          merged-spec-sha256: ${{ steps.merged.outputs.hash }}
+          members: ${{ steps.merged.outputs.members }}
+          fetched: $(date -u +%Y-%m-%d)
+          source: [dynamic_provider_groups.$GROUP] in ubiquex (sdk/providers/.ubx/config)
+          EOF
+
+      - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          python3 - <<PYEOF
+          import json, os
+
+          with open("sdk/typescript/deno.json") as fh:
+              cfg = json.load(fh)
+
+          exports = {}
+          for dirpath, _, filenames in os.walk("sdk/typescript/$REPO_NAME"):
+              for f in sorted(filenames):
+                  if not f.endswith(".ts"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), "sdk/typescript")
+                  exports["./" + rel[:-3]] = "./" + rel
+
+          cfg["exports"] = exports
+
+          with open("sdk/typescript/deno.json", "w") as fh:
+              json.dump(cfg, fh, indent=2)
+              fh.write("\n")
+
+          print(f"sdk/typescript/deno.json exports: {len(exports)} entries")
+          PYEOF
+
+      - name: Regenerate sdk/go/go.sum
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go mod tidy
+
+      - name: Sanity-check the regenerated Go tree still builds
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go build ./...
+          go vet ./...
+
+      - name: Sanity-check the regenerated TS tree still typechecks
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          cd sdk/typescript
+          find . -name "*.ts" -print0 | xargs -0 deno cache
+          find . -name "*.ts" -print0 | xargs -0 deno check --frozen
+
+      - name: Sanity-check the regenerated Python tree -- real import of every module
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          set -euo pipefail
+          deps="$(cd sdk/python && python3 -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))")"
+          pip install $deps
+          python3 - <<'PYEOF'
+          import os, sys, importlib
+
+          repo_root = os.path.join(os.getcwd(), "sdk", "python")
+          sys.path.insert(0, repo_root)
+
+          count = 0
+          errors = []
+          for dirpath, dirnames, filenames in os.walk(repo_root):
+              for f in filenames:
+                  if not f.endswith(".py"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), repo_root)
+                  mod = rel[:-3].replace(os.sep, ".")
+                  if mod.endswith(".__init__"):
+                      mod = mod[: -len(".__init__")]
+                  try:
+                      importlib.import_module(mod)
+                      count += 1
+                  except Exception as e:
+                      errors.append((mod, str(e)))
+
+          print(f"imported {count} modules OK")
+          if errors:
+              print(f"{len(errors)} ERRORS:")
+              for m, e in errors:
+                  print(f"  {m}: {e}")
+              sys.exit(1)
+          print("ZERO errors")
+          PYEOF
+
+      - name: Open PR
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          short="$(echo "${{ steps.merged.outputs.hash }}" | cut -c1-12)"
+          branch="sdk-regen/google-$short"
+          git checkout -b "$branch"
+          git add -A
+          git commit -m "sdk: regenerate from google_all merged corpus $short"
+          git push origin "$branch" --force
+          gh pr create \
+            --title "sdk: regenerate from google_all merged corpus $short" \
+            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a merged-spec content change across [dynamic_provider_groups.google_all]'s own members -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR.
+
+          Previous merged-spec-sha256: \`${{ steps.compare.outputs.current_hash }}\` (${{ steps.compare.outputs.current_members }} members)
+          New merged-spec-sha256: \`${{ steps.merged.outputs.hash }}\` (${{ steps.merged.outputs.members }} members)
+
+          New files = new resource. Modified files = an existing resource's schema changed. Removed files = a resource dropped out of the corpus (a member removed, or the resource itself removed upstream). This never auto-merges -- review the diff before merging." \
+            --base main --head "$branch"
