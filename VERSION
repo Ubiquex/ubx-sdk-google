@@ -1,4 +1,4 @@
-merged-schema-sha256: 30b0f92fec85f2d74def1f283f4f26bb1abb3d7ff1c96560a89384d0f2264ff5
+merged-spec-sha256: 62f89dbc003590566dbcec4b4460dfa9d15e24bd38b9f7fe60f5c0b668f896db
 members: 162
-fetched: 2026-08-23
+fetched: 2026-08-24
 source: [dynamic_provider_groups.google_all] in ubiquex (sdk/providers/.ubx/config)
