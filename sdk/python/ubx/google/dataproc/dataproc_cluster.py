@@ -376,7 +376,7 @@ class DataprocCluster_Metrics:
 
 @dataclasses.dataclass
 class DataprocCluster_Status:
-    # Optional. Output only. Details of cluster's state.
+    # Optional. Details of cluster's state.
     detail: Any = None
     # Output only. The cluster's state.
     state: Any = None

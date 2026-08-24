@@ -370,7 +370,7 @@ export interface DataprocCluster_Metrics {
 }
 
 export interface DataprocCluster_Status {
-  /** Optional. Output only. Details of cluster's state. */
+  /** Optional. Details of cluster's state. */
   detail?: string | Computed<string>;
   /** Output only. The cluster's state. */
   state?: string | Computed<string>;

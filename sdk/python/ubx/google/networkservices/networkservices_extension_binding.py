@@ -48,7 +48,7 @@ class NetworkservicesExtensionBinding_Target_Scope:
 
 @dataclasses.dataclass
 class NetworkservicesExtensionBinding_Target:
-    # Optional. The reference to the target resource, to which this binding should attach. Exactly one of `resources` or `scope` must be set. For Agent Gateway, this would be the full resource name, in the format: `projects/{project}/locations/{location}/agentGateways/{agent_gateway}`. For AI App, this would be the full resource name, in the format: `projects/{project}/locations/{location}/applications/{application}`.
+    # Optional. The reference to the target resource, to which this binding should attach. Exactly one of `resources` or `scope` must be set.
     resources: Any = None
     # Specifies the scope of resources to which this binding should attach.
     scope: Any = None
