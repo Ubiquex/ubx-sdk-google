@@ -104,7 +104,18 @@ jobs:
           # actually set on this repo, confirmed directly via the API, so
           # this checkout always failed here regardless of whether a real
           # change was ever found.)
-          git clone --depth=1 \
+          #
+          # --recurse-submodules: real, found-live bug -- ubiquex's own
+          # sdk/go, sdk/py, sdk/ts are real git submodules (its own
+          # Makefile runs `git submodule update --init --recursive`
+          # before every build); a bare clone leaves them empty, and
+          # `go build ./cmd/ubx` below fails ("no required module
+          # provides package .../sdk/py"). Never caught until this
+          # session's own real end-to-end verification, since the regen
+          # step below had never actually run before -- every prior test
+          # run's compare step found the corpus unchanged and returned
+          # before reaching this checkout's own real dependents.
+          git clone --depth=1 --recurse-submodules \
             "https://github.com/Ubiquex/ubiquex.git" \
             "${{ runner.temp }}/ubiquex-src"
 
