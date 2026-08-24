@@ -27,7 +27,7 @@ type CloudkmsCryptoKey_Primary_Attestation struct {
 }
 
 type CloudkmsCryptoKey_Primary_ExternalProtectionLevelOptions struct {
-	// Optional. The resource name of the backend environment where the key material of CryptoKeyVersions is associated with. Setting this field overrides the crypto_key_backend. This field may be set when CryptoKeyVersions is set to EXTERNAL_VPC. Format: `projects/*/locations/*/ekmConnections/*`.
+	// Optional. The resource name of the backend environment where the key material of CryptoKeyVersions is associated with. Setting this field overrides the CryptoKeyBackend. This field may be set when CryptoKeyVersions is set to EXTERNAL_VPC. Format: `projects/*/locations/*/ekmConnections/*`.
 	EkmConnectionBackendOverride any
 	// Optional. The path to the external key material on the EKM when using EkmConnection e.g., "v0/my/key". Set this field instead of external_key_uri when using an EkmConnection.
 	EkmConnectionKeyPath any
