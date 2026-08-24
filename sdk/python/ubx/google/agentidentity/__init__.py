@@ -5,3 +5,5 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .agentidentity_auth_provider import AgentidentityAuthProvider, AgentidentityAuthProviderConfig
+from .v1alpha_agentidentity_v1alpha_auth_provider import V1alphaAgentidentityV1alphaAuthProvider, V1alphaAgentidentityV1alphaAuthProviderConfig
+from .v1beta_agentidentity_v1beta_auth_provider import V1betaAgentidentityV1betaAuthProvider, V1betaAgentidentityV1betaAuthProviderConfig

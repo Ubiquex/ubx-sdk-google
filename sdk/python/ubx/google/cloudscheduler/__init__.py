@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .cloudscheduler_job import CloudschedulerJob, CloudschedulerJobConfig
+from .v1beta1_cloudscheduler_v1beta1_job import V1beta1CloudschedulerV1beta1Job, V1beta1CloudschedulerV1beta1JobConfig

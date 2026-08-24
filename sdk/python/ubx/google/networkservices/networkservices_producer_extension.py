@@ -34,7 +34,7 @@ class NetworkservicesProducerExtensionConfig:
     etag: Any = None
     # The configuration for the service that this `ProducerExtension` offers.
     extension_settings: Any = None
-    # Optional. Set of labels associated with the `ProducerExtension` resource. The format must comply with [the following requirements]((https://cloud.google.com/compute/docs/labeling-resources#requirements).
+    # Optional. Set of labels associated with the `ProducerExtension` resource. The format must comply with [the following requirements](https://cloud.google.com/compute/docs/labeling-resources#requirements).
     labels: Any = None
     # Identifier. Name of the `ProducerExtension` resource in the following format: `projects/{project}/locations/{location}/producerExtensions/{producer_extension}`.
     name: Any = None
@@ -53,7 +53,7 @@ class NetworkservicesProducerExtensionAttrs:
     etag: Any = None
     # The configuration for the service that this `ProducerExtension` offers.
     extension_settings: Any = None
-    # Optional. Set of labels associated with the `ProducerExtension` resource. The format must comply with [the following requirements]((https://cloud.google.com/compute/docs/labeling-resources#requirements).
+    # Optional. Set of labels associated with the `ProducerExtension` resource. The format must comply with [the following requirements](https://cloud.google.com/compute/docs/labeling-resources#requirements).
     labels: Any = None
     # Identifier. Name of the `ProducerExtension` resource in the following format: `projects/{project}/locations/{location}/producerExtensions/{producer_extension}`.
     name: Any = None

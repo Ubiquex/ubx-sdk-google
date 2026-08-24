@@ -10,3 +10,6 @@ from .firestore_database import FirestoreDatabase, FirestoreDatabaseConfig
 from .firestore_document import FirestoreDocument, FirestoreDocumentConfig
 from .firestore_index import FirestoreIndex, FirestoreIndexConfig
 from .firestore_user_cred import FirestoreUserCred, FirestoreUserCredConfig
+from .v1beta1_firestore_v1beta1_document import V1beta1FirestoreV1beta1Document, V1beta1FirestoreV1beta1DocumentConfig
+from .v1beta1_firestore_v1beta1_index import V1beta1FirestoreV1beta1Index, V1beta1FirestoreV1beta1IndexConfig
+from .v1beta2_firestore_v1beta2_index import V1beta2FirestoreV1beta2Index, V1beta2FirestoreV1beta2IndexConfig

@@ -6,3 +6,4 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .binaryauthorization_attestor import BinaryauthorizationAttestor, BinaryauthorizationAttestorConfig
 from .binaryauthorization_policy import BinaryauthorizationPolicy, BinaryauthorizationPolicyConfig
+from .v1beta1_binaryauthorization_v1beta1_attestor import V1beta1BinaryauthorizationV1beta1Attestor, V1beta1BinaryauthorizationV1beta1AttestorConfig

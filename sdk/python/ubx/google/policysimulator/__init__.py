@@ -6,3 +6,5 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .policysimulator_org_policy_violations_preview import PolicysimulatorOrgPolicyViolationsPreview, PolicysimulatorOrgPolicyViolationsPreviewConfig
 from .policysimulator_replay import PolicysimulatorReplay, PolicysimulatorReplayConfig
+from .v1beta_policysimulator_v1beta_org_policy_violations_preview import V1betaPolicysimulatorV1betaOrgPolicyViolationsPreview, V1betaPolicysimulatorV1betaOrgPolicyViolationsPreviewConfig
+from .v1beta_policysimulator_v1beta_replay import V1betaPolicysimulatorV1betaReplay, V1betaPolicysimulatorV1betaReplayConfig

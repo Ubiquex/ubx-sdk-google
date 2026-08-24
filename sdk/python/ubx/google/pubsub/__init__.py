@@ -8,3 +8,7 @@ from .pubsub_schema import PubsubSchema, PubsubSchemaConfig
 from .pubsub_snapshot import PubsubSnapshot, PubsubSnapshotConfig
 from .pubsub_subscription import PubsubSubscription, PubsubSubscriptionConfig
 from .pubsub_topic import PubsubTopic, PubsubTopicConfig
+from .v1beta1a_pubsub_v1beta1a_subscription import V1beta1aPubsubV1beta1aSubscription, V1beta1aPubsubV1beta1aSubscriptionConfig
+from .v1beta1a_pubsub_v1beta1a_topic import V1beta1aPubsubV1beta1aTopic, V1beta1aPubsubV1beta1aTopicConfig
+from .v1beta2_pubsub_v1beta2_subscription import V1beta2PubsubV1beta2Subscription, V1beta2PubsubV1beta2SubscriptionConfig
+from .v1beta2_pubsub_v1beta2_topic import V1beta2PubsubV1beta2Topic, V1beta2PubsubV1beta2TopicConfig

@@ -9,10 +9,12 @@ type NetworkmanagementConnectivityTest_Destination_AppEngineVersion struct {
 }
 
 type NetworkmanagementConnectivityTest_Destination_CloudRunRevision struct {
-	// Output only. The URI of the Cloud Run service that the revision belongs to. The format is: projects/{project}/locations/{location}/services/{service}
+	// Output only. The URI of the Cloud Run service that the revision belongs to. The format is: projects/{project}/locations/{location}/services/{service}. Mutually exclusive with worker_pool_uri.
 	ServiceUri any
 	// A [Cloud Run](https://cloud.google.com/run) [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get) URI. The format is: projects/{project}/locations/{location}/revisions/{revision}
 	Uri any
+	// Output only. The URI of the worker pool that the revision belongs to. The format is: projects/{project}/locations/{location}/workerPools/{workerPool}. Mutually exclusive with service_uri.
+	WorkerPoolUri any
 }
 
 type NetworkmanagementConnectivityTest_Destination struct {
@@ -168,6 +170,7 @@ type NetworkmanagementConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRun
 	Location any
 	ServiceUri any
 	Uri any
+	WorkerPoolUri any
 }
 
 type NetworkmanagementConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstance struct {
@@ -534,6 +537,7 @@ var NetworkmanagementConnectivityTest_Destination_AppEngineVersionFields = ubx.F
 var NetworkmanagementConnectivityTest_Destination_CloudRunRevisionFields = ubx.FieldMap{
 		"ServiceUri": ubx.FieldSpec{WireName: "service_uri"},
 		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"WorkerPoolUri": ubx.FieldSpec{WireName: "worker_pool_uri"},
 	}
 
 var NetworkmanagementConnectivityTest_DestinationFields = ubx.FieldMap{
@@ -689,6 +693,7 @@ var NetworkmanagementConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunR
 		"Location": ubx.FieldSpec{WireName: "location"},
 		"ServiceUri": ubx.FieldSpec{WireName: "service_uri"},
 		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"WorkerPoolUri": ubx.FieldSpec{WireName: "worker_pool_uri"},
 	}
 
 var NetworkmanagementConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstanceFields = ubx.FieldMap{

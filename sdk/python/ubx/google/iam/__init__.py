@@ -16,3 +16,4 @@ from .iam_service_account import IamServiceAccount, IamServiceAccountConfig
 from .iam_token import IamToken, IamTokenConfig
 from .iam_workforce_pool import IamWorkforcePool, IamWorkforcePoolConfig
 from .iam_workload_identity_pool import IamWorkloadIdentityPool, IamWorkloadIdentityPoolConfig
+from .v2beta_iam_v2beta_policy import V2betaIamV2betaPolicy, V2betaIamV2betaPolicyConfig

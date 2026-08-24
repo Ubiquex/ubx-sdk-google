@@ -4,4 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
+from .v1beta1_vpcaccess_v1beta1_connector import V1beta1VpcaccessV1beta1Connector, V1beta1VpcaccessV1beta1ConnectorConfig
 from .vpcaccess_connector import VpcaccessConnector, VpcaccessConnectorConfig

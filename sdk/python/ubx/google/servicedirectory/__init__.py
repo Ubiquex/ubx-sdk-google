@@ -7,3 +7,6 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .servicedirectory_endpoint import ServicedirectoryEndpoint, ServicedirectoryEndpointConfig
 from .servicedirectory_namespace import ServicedirectoryNamespace, ServicedirectoryNamespaceConfig
 from .servicedirectory_service import ServicedirectoryService, ServicedirectoryServiceConfig
+from .v1beta1_servicedirectory_v1beta1_endpoint import V1beta1ServicedirectoryV1beta1Endpoint, V1beta1ServicedirectoryV1beta1EndpointConfig
+from .v1beta1_servicedirectory_v1beta1_namespace import V1beta1ServicedirectoryV1beta1Namespace, V1beta1ServicedirectoryV1beta1NamespaceConfig
+from .v1beta1_servicedirectory_v1beta1_service import V1beta1ServicedirectoryV1beta1Service, V1beta1ServicedirectoryV1beta1ServiceConfig
