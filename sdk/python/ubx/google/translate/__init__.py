@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .translate_adaptive_mt_dataset import TranslateAdaptiveMtDataset, TranslateAdaptiveMtDatasetConfig
-from .translate_dataset import TranslateDataset, TranslateDatasetConfig
-from .translate_glossary import TranslateGlossary, TranslateGlossaryConfig
-from .translate_glossary_entry import TranslateGlossaryEntry, TranslateGlossaryEntryConfig
-from .translate_model import TranslateModel, TranslateModelConfig
+from .adaptive_mt_dataset import AdaptiveMtDataset, AdaptiveMtDatasetConfig
+from .dataset import Dataset, DatasetConfig
+from .glossary import Glossary, GlossaryConfig
+from .glossary_entry import GlossaryEntry, GlossaryEntryConfig
+from .model import Model, ModelConfig

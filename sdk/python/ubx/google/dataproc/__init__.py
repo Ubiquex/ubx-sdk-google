@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .dataproc_autoscaling_policy import DataprocAutoscalingPolicy, DataprocAutoscalingPolicyConfig
-from .dataproc_batch import DataprocBatch, DataprocBatchConfig
-from .dataproc_cluster import DataprocCluster, DataprocClusterConfig
-from .dataproc_node_group import DataprocNodeGroup, DataprocNodeGroupConfig
-from .dataproc_session import DataprocSession, DataprocSessionConfig
-from .dataproc_session_template import DataprocSessionTemplate, DataprocSessionTemplateConfig
-from .dataproc_workflow_template import DataprocWorkflowTemplate, DataprocWorkflowTemplateConfig
+from .autoscaling_policy import AutoscalingPolicy, AutoscalingPolicyConfig
+from .batch import Batch, BatchConfig
+from .cluster import Cluster, ClusterConfig
+from .node_group import NodeGroup, NodeGroupConfig
+from .session import Session, SessionConfig
+from .session_template import SessionTemplate, SessionTemplateConfig
+from .workflow_template import WorkflowTemplate, WorkflowTemplateConfig

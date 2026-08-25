@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .storagetransfer_agent_pool import StoragetransferAgentPool, StoragetransferAgentPoolConfig
-from .storagetransfer_transfer_job import StoragetransferTransferJob, StoragetransferTransferJobConfig
+from .agent_pool import AgentPool, AgentPoolConfig
+from .transfer_job import TransferJob, TransferJobConfig

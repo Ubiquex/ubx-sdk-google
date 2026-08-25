@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .apim_observation_job import ApimObservationJob, ApimObservationJobConfig
-from .apim_observation_source import ApimObservationSource, ApimObservationSourceConfig
+from .observation_job import ObservationJob, ObservationJobConfig
+from .observation_source import ObservationSource, ObservationSourceConfig

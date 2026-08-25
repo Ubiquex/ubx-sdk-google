@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .dataflow_job import DataflowJob, DataflowJobConfig
-from .dataflow_template import DataflowTemplate, DataflowTemplateConfig
+from .job import Job, JobConfig
+from .template import Template, TemplateConfig

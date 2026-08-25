@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .vision_product import VisionProduct, VisionProductConfig
-from .vision_product_set import VisionProductSet, VisionProductSetConfig
-from .vision_reference_image import VisionReferenceImage, VisionReferenceImageConfig
+from .product import Product, ProductConfig
+from .product_set import ProductSet, ProductSetConfig
+from .reference_image import ReferenceImage, ReferenceImageConfig

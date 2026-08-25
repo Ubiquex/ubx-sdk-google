@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .pubsublite_reservation import PubsubliteReservation, PubsubliteReservationConfig
-from .pubsublite_subscription import PubsubliteSubscription, PubsubliteSubscriptionConfig
-from .pubsublite_topic import PubsubliteTopic, PubsubliteTopicConfig
+from .reservation import Reservation, ReservationConfig
+from .subscription import Subscription, SubscriptionConfig
+from .topic import Topic, TopicConfig

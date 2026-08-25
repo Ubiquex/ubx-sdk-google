@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudnumberregistry_custom_range import CloudnumberregistryCustomRange, CloudnumberregistryCustomRangeConfig
-from .cloudnumberregistry_ipam_admin_scope import CloudnumberregistryIpamAdminScope, CloudnumberregistryIpamAdminScopeConfig
-from .cloudnumberregistry_org_number_registry import CloudnumberregistryOrgNumberRegistry, CloudnumberregistryOrgNumberRegistryConfig
-from .cloudnumberregistry_realm import CloudnumberregistryRealm, CloudnumberregistryRealmConfig
-from .cloudnumberregistry_registry_book import CloudnumberregistryRegistryBook, CloudnumberregistryRegistryBookConfig
+from .custom_range import CustomRange, CustomRangeConfig
+from .ipam_admin_scope import IpamAdminScope, IpamAdminScopeConfig
+from .org_number_registry import OrgNumberRegistry, OrgNumberRegistryConfig
+from .realm import Realm, RealmConfig
+from .registry_book import RegistryBook, RegistryBookConfig

@@ -4,13 +4,13 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .sqladmin_backup_run import SqladminBackupRun, SqladminBackupRunConfig
-from .sqladmin_database import SqladminDatabase, SqladminDatabaseConfig
-from .sqladmin_instance import SqladminInstance, SqladminInstanceConfig
-from .sqladmin_ssl_cert import SqladminSslCert, SqladminSslCertConfig
-from .sqladmin_user import SqladminUser, SqladminUserConfig
-from .v1beta4_sqladmin_v1beta4_backup_run import V1beta4SqladminV1beta4BackupRun, V1beta4SqladminV1beta4BackupRunConfig
-from .v1beta4_sqladmin_v1beta4_database import V1beta4SqladminV1beta4Database, V1beta4SqladminV1beta4DatabaseConfig
-from .v1beta4_sqladmin_v1beta4_instance import V1beta4SqladminV1beta4Instance, V1beta4SqladminV1beta4InstanceConfig
-from .v1beta4_sqladmin_v1beta4_ssl_cert import V1beta4SqladminV1beta4SslCert, V1beta4SqladminV1beta4SslCertConfig
-from .v1beta4_sqladmin_v1beta4_user import V1beta4SqladminV1beta4User, V1beta4SqladminV1beta4UserConfig
+from .backup_run import BackupRun, BackupRunConfig
+from .database import Database, DatabaseConfig
+from .instance import Instance, InstanceConfig
+from .ssl_cert import SslCert, SslCertConfig
+from .user import User, UserConfig
+from .v1beta4_backup_run import V1beta4BackupRun, V1beta4BackupRunConfig
+from .v1beta4_database import V1beta4Database, V1beta4DatabaseConfig
+from .v1beta4_instance import V1beta4Instance, V1beta4InstanceConfig
+from .v1beta4_ssl_cert import V1beta4SslCert, V1beta4SslCertConfig
+from .v1beta4_user import V1beta4User, V1beta4UserConfig

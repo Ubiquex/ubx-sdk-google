@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .tpu_node import TpuNode, TpuNodeConfig
-from .tpu_queued_resource import TpuQueuedResource, TpuQueuedResourceConfig
-from .v1alpha1_tpu_v1alpha1_node import V1alpha1TpuV1alpha1Node, V1alpha1TpuV1alpha1NodeConfig
-from .v2alpha1_tpu_v2alpha1_node import V2alpha1TpuV2alpha1Node, V2alpha1TpuV2alpha1NodeConfig
-from .v2alpha1_tpu_v2alpha1_queued_resource import V2alpha1TpuV2alpha1QueuedResource, V2alpha1TpuV2alpha1QueuedResourceConfig
+from .node import Node, NodeConfig
+from .queued_resource import QueuedResource, QueuedResourceConfig
+from .v1alpha1_node import V1alpha1Node, V1alpha1NodeConfig
+from .v2alpha1_node import V2alpha1Node, V2alpha1NodeConfig
+from .v2alpha1_queued_resource import V2alpha1QueuedResource, V2alpha1QueuedResourceConfig

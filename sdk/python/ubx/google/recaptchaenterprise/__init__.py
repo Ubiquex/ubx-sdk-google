@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .recaptchaenterprise_firewallpolicy import RecaptchaenterpriseFirewallpolicy, RecaptchaenterpriseFirewallpolicyConfig
-from .recaptchaenterprise_key import RecaptchaenterpriseKey, RecaptchaenterpriseKeyConfig
+from .firewallpolicy import Firewallpolicy, FirewallpolicyConfig
+from .key import Key, KeyConfig

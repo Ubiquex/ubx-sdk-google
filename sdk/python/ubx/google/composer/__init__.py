@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .composer_environment import ComposerEnvironment, ComposerEnvironmentConfig
-from .composer_user_workloads_config_map import ComposerUserWorkloadsConfigMap, ComposerUserWorkloadsConfigMapConfig
-from .composer_user_workloads_secret import ComposerUserWorkloadsSecret, ComposerUserWorkloadsSecretConfig
-from .v1beta1_composer_v1beta1_environment import V1beta1ComposerV1beta1Environment, V1beta1ComposerV1beta1EnvironmentConfig
-from .v1beta1_composer_v1beta1_user_workloads_config_map import V1beta1ComposerV1beta1UserWorkloadsConfigMap, V1beta1ComposerV1beta1UserWorkloadsConfigMapConfig
-from .v1beta1_composer_v1beta1_user_workloads_secret import V1beta1ComposerV1beta1UserWorkloadsSecret, V1beta1ComposerV1beta1UserWorkloadsSecretConfig
+from .environment import Environment, EnvironmentConfig
+from .user_workloads_config_map import UserWorkloadsConfigMap, UserWorkloadsConfigMapConfig
+from .user_workloads_secret import UserWorkloadsSecret, UserWorkloadsSecretConfig
+from .v1beta1_environment import V1beta1Environment, V1beta1EnvironmentConfig
+from .v1beta1_user_workloads_config_map import V1beta1UserWorkloadsConfigMap, V1beta1UserWorkloadsConfigMapConfig
+from .v1beta1_user_workloads_secret import V1beta1UserWorkloadsSecret, V1beta1UserWorkloadsSecretConfig

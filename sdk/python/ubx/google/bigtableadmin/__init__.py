@@ -4,12 +4,12 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .bigtableadmin_app_profile import BigtableadminAppProfile, BigtableadminAppProfileConfig
-from .bigtableadmin_authorized_view import BigtableadminAuthorizedView, BigtableadminAuthorizedViewConfig
-from .bigtableadmin_backup import BigtableadminBackup, BigtableadminBackupConfig
-from .bigtableadmin_cluster import BigtableadminCluster, BigtableadminClusterConfig
-from .bigtableadmin_instance import BigtableadminInstance, BigtableadminInstanceConfig
-from .bigtableadmin_logical_view import BigtableadminLogicalView, BigtableadminLogicalViewConfig
-from .bigtableadmin_materialized_view import BigtableadminMaterializedView, BigtableadminMaterializedViewConfig
-from .bigtableadmin_schema_bundle import BigtableadminSchemaBundle, BigtableadminSchemaBundleConfig
-from .bigtableadmin_table import BigtableadminTable, BigtableadminTableConfig
+from .app_profile import AppProfile, AppProfileConfig
+from .authorized_view import AuthorizedView, AuthorizedViewConfig
+from .backup import Backup, BackupConfig
+from .cluster import Cluster, ClusterConfig
+from .instance import Instance, InstanceConfig
+from .logical_view import LogicalView, LogicalViewConfig
+from .materialized_view import MaterializedView, MaterializedViewConfig
+from .schema_bundle import SchemaBundle, SchemaBundleConfig
+from .table import Table, TableConfig

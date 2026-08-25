@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .run_instance import RunInstance, RunInstanceConfig
-from .run_job import RunJob, RunJobConfig
-from .run_service import RunService, RunServiceConfig
-from .run_worker_pool import RunWorkerPool, RunWorkerPoolConfig
+from .instance import Instance, InstanceConfig
+from .job import Job, JobConfig
+from .service import Service, ServiceConfig
+from .worker_pool import WorkerPool, WorkerPoolConfig

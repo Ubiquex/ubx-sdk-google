@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .baremetalsolution_nfs_share import BaremetalsolutionNfsShare, BaremetalsolutionNfsShareConfig
-from .baremetalsolution_provisioning_config import BaremetalsolutionProvisioningConfig, BaremetalsolutionProvisioningConfigConfig
-from .baremetalsolution_snapshot import BaremetalsolutionSnapshot, BaremetalsolutionSnapshotConfig
+from .nfs_share import NfsShare, NfsShareConfig
+from .provisioning_config import ProvisioningConfig, ProvisioningConfigConfig
+from .snapshot import Snapshot, SnapshotConfig

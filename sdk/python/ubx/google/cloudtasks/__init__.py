@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudtasks_queue import CloudtasksQueue, CloudtasksQueueConfig
-from .cloudtasks_task import CloudtasksTask, CloudtasksTaskConfig
-from .v2beta2_cloudtasks_v2beta2_queue import V2beta2CloudtasksV2beta2Queue, V2beta2CloudtasksV2beta2QueueConfig
-from .v2beta2_cloudtasks_v2beta2_task import V2beta2CloudtasksV2beta2Task, V2beta2CloudtasksV2beta2TaskConfig
-from .v2beta3_cloudtasks_v2beta3_queue import V2beta3CloudtasksV2beta3Queue, V2beta3CloudtasksV2beta3QueueConfig
-from .v2beta3_cloudtasks_v2beta3_task import V2beta3CloudtasksV2beta3Task, V2beta3CloudtasksV2beta3TaskConfig
+from .queue import Queue, QueueConfig
+from .task import Task, TaskConfig
+from .v2beta2_queue import V2beta2Queue, V2beta2QueueConfig
+from .v2beta2_task import V2beta2Task, V2beta2TaskConfig
+from .v2beta3_queue import V2beta3Queue, V2beta3QueueConfig
+from .v2beta3_task import V2beta3Task, V2beta3TaskConfig

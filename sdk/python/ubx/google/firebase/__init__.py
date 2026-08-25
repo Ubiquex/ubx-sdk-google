@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .firebase_android_app import FirebaseAndroidApp, FirebaseAndroidAppConfig
-from .firebase_ios_app import FirebaseIosApp, FirebaseIosAppConfig
-from .firebase_web_app import FirebaseWebApp, FirebaseWebAppConfig
+from .android_app import AndroidApp, AndroidAppConfig
+from .ios_app import IosApp, IosAppConfig
+from .web_app import WebApp, WebAppConfig

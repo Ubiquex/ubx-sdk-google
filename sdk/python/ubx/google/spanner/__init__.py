@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .spanner_backup import SpannerBackup, SpannerBackupConfig
-from .spanner_backup_schedule import SpannerBackupSchedule, SpannerBackupScheduleConfig
-from .spanner_database import SpannerDatabase, SpannerDatabaseConfig
-from .spanner_instance import SpannerInstance, SpannerInstanceConfig_
-from .spanner_instance_config import SpannerInstanceConfig, SpannerInstanceConfigConfig
-from .spanner_instance_partition import SpannerInstancePartition, SpannerInstancePartitionConfig
-from .spanner_session import SpannerSession, SpannerSessionConfig
+from .backup import Backup, BackupConfig
+from .backup_schedule import BackupSchedule, BackupScheduleConfig
+from .database import Database, DatabaseConfig
+from .instance import Instance, InstanceConfig_
+from .instance_config import InstanceConfig, InstanceConfigConfig
+from .instance_partition import InstancePartition, InstancePartitionConfig
+from .session import Session, SessionConfig

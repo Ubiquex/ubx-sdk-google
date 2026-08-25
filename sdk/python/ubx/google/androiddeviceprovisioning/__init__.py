@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .androiddeviceprovisioning_configuration import AndroiddeviceprovisioningConfiguration, AndroiddeviceprovisioningConfigurationConfig
+from .configuration import Configuration, ConfigurationConfig

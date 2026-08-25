@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .bigqueryconnection_connection import BigqueryconnectionConnection, BigqueryconnectionConnectionConfig
-from .v1beta1_bigqueryconnection_v1beta1_connection import V1beta1BigqueryconnectionV1beta1Connection, V1beta1BigqueryconnectionV1beta1ConnectionConfig
+from .connection import Connection, ConnectionConfig
+from .v1beta1_connection import V1beta1Connection, V1beta1ConnectionConfig

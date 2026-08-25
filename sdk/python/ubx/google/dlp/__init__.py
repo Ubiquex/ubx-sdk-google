@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .dlp_connection import DlpConnection, DlpConnectionConfig
-from .dlp_content_policy import DlpContentPolicy, DlpContentPolicyConfig
-from .dlp_deidentify_template import DlpDeidentifyTemplate, DlpDeidentifyTemplateConfig
-from .dlp_discovery_config import DlpDiscoveryConfig, DlpDiscoveryConfigConfig
-from .dlp_dlp_job import DlpDlpJob, DlpDlpJobConfig
-from .dlp_inspect_template import DlpInspectTemplate, DlpInspectTemplateConfig
-from .dlp_job_trigger import DlpJobTrigger, DlpJobTriggerConfig
-from .dlp_stored_info_type import DlpStoredInfoType, DlpStoredInfoTypeConfig
+from .connection import Connection, ConnectionConfig
+from .content_policy import ContentPolicy, ContentPolicyConfig
+from .deidentify_template import DeidentifyTemplate, DeidentifyTemplateConfig
+from .discovery_config import DiscoveryConfig, DiscoveryConfigConfig
+from .dlp_job import DlpJob, DlpJobConfig
+from .inspect_template import InspectTemplate, InspectTemplateConfig
+from .job_trigger import JobTrigger, JobTriggerConfig
+from .stored_info_type import StoredInfoType, StoredInfoTypeConfig

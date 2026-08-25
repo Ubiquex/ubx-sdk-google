@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .apigateway_api import ApigatewayApi, ApigatewayApiConfig
-from .apigateway_config import ApigatewayConfig, ApigatewayConfigConfig
-from .apigateway_gateway import ApigatewayGateway, ApigatewayGatewayConfig
-from .v1beta_apigateway_v1beta_api import V1betaApigatewayV1betaApi, V1betaApigatewayV1betaApiConfig
-from .v1beta_apigateway_v1beta_config import V1betaApigatewayV1betaConfig, V1betaApigatewayV1betaConfigConfig
-from .v1beta_apigateway_v1beta_gateway import V1betaApigatewayV1betaGateway, V1betaApigatewayV1betaGatewayConfig
+from .api import Api, ApiConfig
+from .config import Config, ConfigConfig
+from .gateway import Gateway, GatewayConfig
+from .v1beta_api import V1betaApi, V1betaApiConfig
+from .v1beta_config import V1betaConfig, V1betaConfigConfig
+from .v1beta_gateway import V1betaGateway, V1betaGatewayConfig

@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudasset_feed import CloudassetFeed, CloudassetFeedConfig
-from .cloudasset_saved_query import CloudassetSavedQuery, CloudassetSavedQueryConfig
+from .feed import Feed, FeedConfig
+from .saved_query import SavedQuery, SavedQueryConfig

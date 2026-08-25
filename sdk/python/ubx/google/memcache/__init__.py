@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .memcache_instance import MemcacheInstance, MemcacheInstanceConfig
-from .v1beta2_memcache_v1beta2_instance import V1beta2MemcacheV1beta2Instance, V1beta2MemcacheV1beta2InstanceConfig
+from .instance import Instance, InstanceConfig
+from .v1beta2_instance import V1beta2Instance, V1beta2InstanceConfig

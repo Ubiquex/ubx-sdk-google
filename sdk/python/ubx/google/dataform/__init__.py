@@ -4,19 +4,19 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .dataform_compilation_result import DataformCompilationResult, DataformCompilationResultConfig
-from .dataform_folder import DataformFolder, DataformFolderConfig
-from .dataform_release_config import DataformReleaseConfig, DataformReleaseConfigConfig
-from .dataform_repository import DataformRepository, DataformRepositoryConfig
-from .dataform_team_folder import DataformTeamFolder, DataformTeamFolderConfig
-from .dataform_workflow_config import DataformWorkflowConfig, DataformWorkflowConfigConfig
-from .dataform_workflow_invocation import DataformWorkflowInvocation, DataformWorkflowInvocationConfig
-from .dataform_workspace import DataformWorkspace, DataformWorkspaceConfig
-from .v1beta1_dataform_v1beta1_compilation_result import V1beta1DataformV1beta1CompilationResult, V1beta1DataformV1beta1CompilationResultConfig
-from .v1beta1_dataform_v1beta1_folder import V1beta1DataformV1beta1Folder, V1beta1DataformV1beta1FolderConfig
-from .v1beta1_dataform_v1beta1_release_config import V1beta1DataformV1beta1ReleaseConfig, V1beta1DataformV1beta1ReleaseConfigConfig
-from .v1beta1_dataform_v1beta1_repository import V1beta1DataformV1beta1Repository, V1beta1DataformV1beta1RepositoryConfig
-from .v1beta1_dataform_v1beta1_team_folder import V1beta1DataformV1beta1TeamFolder, V1beta1DataformV1beta1TeamFolderConfig
-from .v1beta1_dataform_v1beta1_workflow_config import V1beta1DataformV1beta1WorkflowConfig, V1beta1DataformV1beta1WorkflowConfigConfig
-from .v1beta1_dataform_v1beta1_workflow_invocation import V1beta1DataformV1beta1WorkflowInvocation, V1beta1DataformV1beta1WorkflowInvocationConfig
-from .v1beta1_dataform_v1beta1_workspace import V1beta1DataformV1beta1Workspace, V1beta1DataformV1beta1WorkspaceConfig
+from .compilation_result import CompilationResult, CompilationResultConfig
+from .folder import Folder, FolderConfig
+from .release_config import ReleaseConfig, ReleaseConfigConfig
+from .repository import Repository, RepositoryConfig
+from .team_folder import TeamFolder, TeamFolderConfig
+from .v1beta1_compilation_result import V1beta1CompilationResult, V1beta1CompilationResultConfig
+from .v1beta1_folder import V1beta1Folder, V1beta1FolderConfig
+from .v1beta1_release_config import V1beta1ReleaseConfig, V1beta1ReleaseConfigConfig
+from .v1beta1_repository import V1beta1Repository, V1beta1RepositoryConfig
+from .v1beta1_team_folder import V1beta1TeamFolder, V1beta1TeamFolderConfig
+from .v1beta1_workflow_config import V1beta1WorkflowConfig, V1beta1WorkflowConfigConfig
+from .v1beta1_workflow_invocation import V1beta1WorkflowInvocation, V1beta1WorkflowInvocationConfig
+from .v1beta1_workspace import V1beta1Workspace, V1beta1WorkspaceConfig
+from .workflow_config import WorkflowConfig, WorkflowConfigConfig
+from .workflow_invocation import WorkflowInvocation, WorkflowInvocationConfig
+from .workspace import Workspace, WorkspaceConfig

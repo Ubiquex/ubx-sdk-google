@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .transcoder_job import TranscoderJob, TranscoderJobConfig
-from .transcoder_job_template import TranscoderJobTemplate, TranscoderJobTemplateConfig
+from .job import Job, JobConfig
+from .job_template import JobTemplate, JobTemplateConfig

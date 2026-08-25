@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .androidenterprise_enterprise import AndroidenterpriseEnterprise, AndroidenterpriseEnterpriseConfig
-from .androidenterprise_storelayoutcluster import AndroidenterpriseStorelayoutcluster, AndroidenterpriseStorelayoutclusterConfig
-from .androidenterprise_storelayoutpage import AndroidenterpriseStorelayoutpage, AndroidenterpriseStorelayoutpageConfig
-from .androidenterprise_user import AndroidenterpriseUser, AndroidenterpriseUserConfig
-from .androidenterprise_webapp import AndroidenterpriseWebapp, AndroidenterpriseWebappConfig
+from .enterprise import Enterprise, EnterpriseConfig
+from .storelayoutcluster import Storelayoutcluster, StorelayoutclusterConfig
+from .storelayoutpage import Storelayoutpage, StorelayoutpageConfig
+from .user import User, UserConfig
+from .webapp import Webapp, WebappConfig

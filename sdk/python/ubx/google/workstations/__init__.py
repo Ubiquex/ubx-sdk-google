@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .v1beta_workstations_v1beta_workstation import V1betaWorkstationsV1betaWorkstation, V1betaWorkstationsV1betaWorkstationConfig_
-from .v1beta_workstations_v1beta_workstation_cluster import V1betaWorkstationsV1betaWorkstationCluster, V1betaWorkstationsV1betaWorkstationClusterConfig
-from .v1beta_workstations_v1beta_workstation_config import V1betaWorkstationsV1betaWorkstationConfig, V1betaWorkstationsV1betaWorkstationConfigConfig
-from .workstations_workstation import WorkstationsWorkstation, WorkstationsWorkstationConfig_
-from .workstations_workstation_cluster import WorkstationsWorkstationCluster, WorkstationsWorkstationClusterConfig
-from .workstations_workstation_config import WorkstationsWorkstationConfig, WorkstationsWorkstationConfigConfig
+from .v1beta_workstation import V1betaWorkstation, V1betaWorkstationConfig_
+from .v1beta_workstation_cluster import V1betaWorkstationCluster, V1betaWorkstationClusterConfig
+from .v1beta_workstation_config import V1betaWorkstationConfig, V1betaWorkstationConfigConfig
+from .workstation import Workstation, WorkstationConfig_
+from .workstation_cluster import WorkstationCluster, WorkstationClusterConfig
+from .workstation_config import WorkstationConfig, WorkstationConfigConfig

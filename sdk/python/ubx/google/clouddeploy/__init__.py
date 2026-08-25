@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .clouddeploy_automation import ClouddeployAutomation, ClouddeployAutomationConfig
-from .clouddeploy_custom_target_type import ClouddeployCustomTargetType, ClouddeployCustomTargetTypeConfig
-from .clouddeploy_delivery_pipeline import ClouddeployDeliveryPipeline, ClouddeployDeliveryPipelineConfig
-from .clouddeploy_deploy_policy import ClouddeployDeployPolicy, ClouddeployDeployPolicyConfig
-from .clouddeploy_release import ClouddeployRelease, ClouddeployReleaseConfig
-from .clouddeploy_rollout import ClouddeployRollout, ClouddeployRolloutConfig
-from .clouddeploy_target import ClouddeployTarget, ClouddeployTargetConfig
+from .automation import Automation, AutomationConfig
+from .custom_target_type import CustomTargetType, CustomTargetTypeConfig
+from .delivery_pipeline import DeliveryPipeline, DeliveryPipelineConfig
+from .deploy_policy import DeployPolicy, DeployPolicyConfig
+from .release import Release, ReleaseConfig
+from .rollout import Rollout, RolloutConfig
+from .target import Target, TargetConfig

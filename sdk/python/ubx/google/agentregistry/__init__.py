@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .agentregistry_binding import AgentregistryBinding, AgentregistryBindingConfig
-from .agentregistry_service import AgentregistryService, AgentregistryServiceConfig
-from .v1alpha_agentregistry_v1alpha_binding import V1alphaAgentregistryV1alphaBinding, V1alphaAgentregistryV1alphaBindingConfig
-from .v1alpha_agentregistry_v1alpha_revision import V1alphaAgentregistryV1alphaRevision, V1alphaAgentregistryV1alphaRevisionConfig
-from .v1alpha_agentregistry_v1alpha_service import V1alphaAgentregistryV1alphaService, V1alphaAgentregistryV1alphaServiceConfig
-from .v1alpha_agentregistry_v1alpha_skill import V1alphaAgentregistryV1alphaSkill, V1alphaAgentregistryV1alphaSkillConfig
+from .binding import Binding, BindingConfig
+from .service import Service, ServiceConfig
+from .v1alpha_binding import V1alphaBinding, V1alphaBindingConfig
+from .v1alpha_revision import V1alphaRevision, V1alphaRevisionConfig
+from .v1alpha_service import V1alphaService, V1alphaServiceConfig
+from .v1alpha_skill import V1alphaSkill, V1alphaSkillConfig

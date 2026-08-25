@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .testing_device_session import TestingDeviceSession, TestingDeviceSessionConfig
-from .testing_test_matrice import TestingTestMatrice, TestingTestMatriceConfig
+from .device_session import DeviceSession, DeviceSessionConfig
+from .test_matrice import TestMatrice, TestMatriceConfig

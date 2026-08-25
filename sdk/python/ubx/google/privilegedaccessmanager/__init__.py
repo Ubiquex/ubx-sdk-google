@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .privilegedaccessmanager_entitlement import PrivilegedaccessmanagerEntitlement, PrivilegedaccessmanagerEntitlementConfig
-from .privilegedaccessmanager_grant import PrivilegedaccessmanagerGrant, PrivilegedaccessmanagerGrantConfig
+from .entitlement import Entitlement, EntitlementConfig
+from .grant import Grant, GrantConfig

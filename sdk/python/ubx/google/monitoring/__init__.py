@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .monitoring_alert_policy import MonitoringAlertPolicy, MonitoringAlertPolicyConfig
-from .monitoring_group import MonitoringGroup, MonitoringGroupConfig
-from .monitoring_metric_descriptor import MonitoringMetricDescriptor, MonitoringMetricDescriptorConfig
-from .monitoring_notification_channel import MonitoringNotificationChannel, MonitoringNotificationChannelConfig
-from .monitoring_service import MonitoringService, MonitoringServiceConfig
-from .monitoring_service_level_objective import MonitoringServiceLevelObjective, MonitoringServiceLevelObjectiveConfig
-from .monitoring_snooz import MonitoringSnooz, MonitoringSnoozConfig
-from .monitoring_uptime_check_config import MonitoringUptimeCheckConfig, MonitoringUptimeCheckConfigConfig
+from .alert_policy import AlertPolicy, AlertPolicyConfig
+from .group import Group, GroupConfig
+from .metric_descriptor import MetricDescriptor, MetricDescriptorConfig
+from .notification_channel import NotificationChannel, NotificationChannelConfig
+from .service import Service, ServiceConfig
+from .service_level_objective import ServiceLevelObjective, ServiceLevelObjectiveConfig
+from .snooz import Snooz, SnoozConfig
+from .uptime_check_config import UptimeCheckConfig, UptimeCheckConfigConfig

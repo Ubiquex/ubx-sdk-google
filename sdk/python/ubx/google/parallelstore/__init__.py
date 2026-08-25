@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .parallelstore_instance import ParallelstoreInstance, ParallelstoreInstanceConfig
-from .v1beta_parallelstore_v1beta_instance import V1betaParallelstoreV1betaInstance, V1betaParallelstoreV1betaInstanceConfig
+from .instance import Instance, InstanceConfig
+from .v1beta_instance import V1betaInstance, V1betaInstanceConfig

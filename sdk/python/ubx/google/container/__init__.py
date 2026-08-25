@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .container_cluster import ContainerCluster, ContainerClusterConfig
-from .container_node_pool import ContainerNodePool, ContainerNodePoolConfig
-from .v1beta1_container_v1beta1_cluster import V1beta1ContainerV1beta1Cluster, V1beta1ContainerV1beta1ClusterConfig
-from .v1beta1_container_v1beta1_node_pool import V1beta1ContainerV1beta1NodePool, V1beta1ContainerV1beta1NodePoolConfig
+from .cluster import Cluster, ClusterConfig
+from .node_pool import NodePool, NodePoolConfig
+from .v1beta1_cluster import V1beta1Cluster, V1beta1ClusterConfig
+from .v1beta1_node_pool import V1beta1NodePool, V1beta1NodePoolConfig

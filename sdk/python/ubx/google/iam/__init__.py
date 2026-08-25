@@ -4,16 +4,16 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .iam_credential import IamCredential, IamCredentialConfig
-from .iam_key import IamKey, IamKeyConfig
-from .iam_managed_identity import IamManagedIdentity, IamManagedIdentityConfig
-from .iam_namespace import IamNamespace, IamNamespaceConfig
-from .iam_oauth_client import IamOauthClient, IamOauthClientConfig
-from .iam_provider import IamProvider, IamProviderConfig
-from .iam_role import IamRole, IamRoleConfig
-from .iam_scim_tenant import IamScimTenant, IamScimTenantConfig
-from .iam_service_account import IamServiceAccount, IamServiceAccountConfig
-from .iam_token import IamToken, IamTokenConfig
-from .iam_workforce_pool import IamWorkforcePool, IamWorkforcePoolConfig
-from .iam_workload_identity_pool import IamWorkloadIdentityPool, IamWorkloadIdentityPoolConfig
-from .v2beta_iam_v2beta_policy import V2betaIamV2betaPolicy, V2betaIamV2betaPolicyConfig
+from .credential import Credential, CredentialConfig
+from .key import Key, KeyConfig
+from .managed_identity import ManagedIdentity, ManagedIdentityConfig
+from .namespace import Namespace, NamespaceConfig
+from .oauth_client import OauthClient, OauthClientConfig
+from .provider import Provider, ProviderConfig
+from .role import Role, RoleConfig
+from .scim_tenant import ScimTenant, ScimTenantConfig
+from .service_account import ServiceAccount, ServiceAccountConfig
+from .token import Token, TokenConfig
+from .v2beta_policy import V2betaPolicy, V2betaPolicyConfig
+from .workforce_pool import WorkforcePool, WorkforcePoolConfig
+from .workload_identity_pool import WorkloadIdentityPool, WorkloadIdentityPoolConfig

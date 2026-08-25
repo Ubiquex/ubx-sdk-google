@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .contactcenteraiplatform_contact_center import ContactcenteraiplatformContactCenter, ContactcenteraiplatformContactCenterConfig
+from .contact_center import ContactCenter, ContactCenterConfig

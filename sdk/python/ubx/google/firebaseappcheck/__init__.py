@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .firebaseappcheck_debug_token import FirebaseappcheckDebugToken, FirebaseappcheckDebugTokenConfig
-from .firebaseappcheck_resource_policy import FirebaseappcheckResourcePolicy, FirebaseappcheckResourcePolicyConfig
-from .v1beta_firebaseappcheck_v1beta_debug_token import V1betaFirebaseappcheckV1betaDebugToken, V1betaFirebaseappcheckV1betaDebugTokenConfig
-from .v1beta_firebaseappcheck_v1beta_resource_policy import V1betaFirebaseappcheckV1betaResourcePolicy, V1betaFirebaseappcheckV1betaResourcePolicyConfig
+from .debug_token import DebugToken, DebugTokenConfig
+from .resource_policy import ResourcePolicy, ResourcePolicyConfig
+from .v1beta_debug_token import V1betaDebugToken, V1betaDebugTokenConfig
+from .v1beta_resource_policy import V1betaResourcePolicy, V1betaResourcePolicyConfig

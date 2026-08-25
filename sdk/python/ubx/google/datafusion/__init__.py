@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .datafusion_instance import DatafusionInstance, DatafusionInstanceConfig
-from .v1beta1_datafusion_v1beta1_instance import V1beta1DatafusionV1beta1Instance, V1beta1DatafusionV1beta1InstanceConfig
+from .instance import Instance, InstanceConfig
+from .v1beta1_instance import V1beta1Instance, V1beta1InstanceConfig

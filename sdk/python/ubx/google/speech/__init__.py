@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .speech_custom_class import SpeechCustomClass, SpeechCustomClassConfig
-from .speech_phrase_set import SpeechPhraseSet, SpeechPhraseSetConfig
-from .v1p1beta1_speech_v1p1beta1_custom_class import V1p1beta1SpeechV1p1beta1CustomClass, V1p1beta1SpeechV1p1beta1CustomClassConfig
-from .v1p1beta1_speech_v1p1beta1_phrase_set import V1p1beta1SpeechV1p1beta1PhraseSet, V1p1beta1SpeechV1p1beta1PhraseSetConfig
+from .custom_class import CustomClass, CustomClassConfig
+from .phrase_set import PhraseSet, PhraseSetConfig
+from .v1p1beta1_custom_class import V1p1beta1CustomClass, V1p1beta1CustomClassConfig
+from .v1p1beta1_phrase_set import V1p1beta1PhraseSet, V1p1beta1PhraseSetConfig

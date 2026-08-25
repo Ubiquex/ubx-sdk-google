@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .bigqueryreservation_capacity_commitment import BigqueryreservationCapacityCommitment, BigqueryreservationCapacityCommitmentConfig
-from .bigqueryreservation_reservation import BigqueryreservationReservation, BigqueryreservationReservationConfig
-from .bigqueryreservation_reservation_group import BigqueryreservationReservationGroup, BigqueryreservationReservationGroupConfig
+from .capacity_commitment import CapacityCommitment, CapacityCommitmentConfig
+from .reservation import Reservation, ReservationConfig
+from .reservation_group import ReservationGroup, ReservationGroupConfig

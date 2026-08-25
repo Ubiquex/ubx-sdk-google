@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .rapidmigrationassessment_annotation import RapidmigrationassessmentAnnotation, RapidmigrationassessmentAnnotationConfig
-from .rapidmigrationassessment_collector import RapidmigrationassessmentCollector, RapidmigrationassessmentCollectorConfig
+from .annotation import Annotation, AnnotationConfig
+from .collector import Collector, CollectorConfig

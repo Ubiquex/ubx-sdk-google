@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .v1beta_workflowexecutions_v1beta_execution import V1betaWorkflowexecutionsV1betaExecution, V1betaWorkflowexecutionsV1betaExecutionConfig
-from .workflowexecutions_execution import WorkflowexecutionsExecution, WorkflowexecutionsExecutionConfig
+from .execution import Execution, ExecutionConfig
+from .v1beta_execution import V1betaExecution, V1betaExecutionConfig

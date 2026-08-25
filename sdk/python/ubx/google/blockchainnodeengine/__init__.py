@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .blockchainnodeengine_blockchain_node import BlockchainnodeengineBlockchainNode, BlockchainnodeengineBlockchainNodeConfig
+from .blockchain_node import BlockchainNode, BlockchainNodeConfig

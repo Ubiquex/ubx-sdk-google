@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .logging_bucket import LoggingBucket, LoggingBucketConfig
-from .logging_exclusion import LoggingExclusion, LoggingExclusionConfig
-from .logging_link import LoggingLink, LoggingLinkConfig
-from .logging_log_scope import LoggingLogScope, LoggingLogScopeConfig
-from .logging_metric import LoggingMetric, LoggingMetricConfig
-from .logging_saved_query import LoggingSavedQuery, LoggingSavedQueryConfig
-from .logging_sink import LoggingSink, LoggingSinkConfig
-from .logging_view import LoggingView, LoggingViewConfig
+from .bucket import Bucket, BucketConfig
+from .exclusion import Exclusion, ExclusionConfig
+from .link import Link, LinkConfig
+from .log_scope import LogScope, LogScopeConfig
+from .metric import Metric, MetricConfig
+from .saved_query import SavedQuery, SavedQueryConfig
+from .sink import Sink, SinkConfig
+from .view import View, ViewConfig

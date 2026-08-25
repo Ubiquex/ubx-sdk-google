@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .oslogin_ssh_public_key import OsloginSshPublicKey, OsloginSshPublicKeyConfig
-from .v1alpha_oslogin_v1alpha_ssh_public_key import V1alphaOsloginV1alphaSshPublicKey, V1alphaOsloginV1alphaSshPublicKeyConfig
-from .v1beta_oslogin_v1beta_ssh_public_key import V1betaOsloginV1betaSshPublicKey, V1betaOsloginV1betaSshPublicKeyConfig
+from .ssh_public_key import SshPublicKey, SshPublicKeyConfig
+from .v1alpha_ssh_public_key import V1alphaSshPublicKey, V1alphaSshPublicKeyConfig
+from .v1beta_ssh_public_key import V1betaSshPublicKey, V1betaSshPublicKeyConfig

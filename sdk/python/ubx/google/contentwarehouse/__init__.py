@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .contentwarehouse_document import ContentwarehouseDocument, ContentwarehouseDocumentConfig
-from .contentwarehouse_document_schema import ContentwarehouseDocumentSchema, ContentwarehouseDocumentSchemaConfig
-from .contentwarehouse_rule_set import ContentwarehouseRuleSet, ContentwarehouseRuleSetConfig
-from .contentwarehouse_synonym_set import ContentwarehouseSynonymSet, ContentwarehouseSynonymSetConfig
+from .document import Document, DocumentConfig
+from .document_schema import DocumentSchema, DocumentSchemaConfig
+from .rule_set import RuleSet, RuleSetConfig
+from .synonym_set import SynonymSet, SynonymSetConfig

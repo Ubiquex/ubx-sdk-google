@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .firebaseapphosting_backend import FirebaseapphostingBackend, FirebaseapphostingBackendConfig
-from .firebaseapphosting_build import FirebaseapphostingBuild, FirebaseapphostingBuildConfig
-from .firebaseapphosting_domain import FirebaseapphostingDomain, FirebaseapphostingDomainConfig
-from .firebaseapphosting_rollout import FirebaseapphostingRollout, FirebaseapphostingRolloutConfig
-from .v1beta_firebaseapphosting_v1beta_backend import V1betaFirebaseapphostingV1betaBackend, V1betaFirebaseapphostingV1betaBackendConfig
-from .v1beta_firebaseapphosting_v1beta_build import V1betaFirebaseapphostingV1betaBuild, V1betaFirebaseapphostingV1betaBuildConfig
-from .v1beta_firebaseapphosting_v1beta_domain import V1betaFirebaseapphostingV1betaDomain, V1betaFirebaseapphostingV1betaDomainConfig
-from .v1beta_firebaseapphosting_v1beta_rollout import V1betaFirebaseapphostingV1betaRollout, V1betaFirebaseapphostingV1betaRolloutConfig
+from .backend import Backend, BackendConfig
+from .build import Build, BuildConfig
+from .domain import Domain, DomainConfig
+from .rollout import Rollout, RolloutConfig
+from .v1beta_backend import V1betaBackend, V1betaBackendConfig
+from .v1beta_build import V1betaBuild, V1betaBuildConfig
+from .v1beta_domain import V1betaDomain, V1betaDomainConfig
+from .v1beta_rollout import V1betaRollout, V1betaRolloutConfig

@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .artifactregistry_attachment import ArtifactregistryAttachment, ArtifactregistryAttachmentConfig
-from .artifactregistry_repository import ArtifactregistryRepository, ArtifactregistryRepositoryConfig
-from .artifactregistry_rule import ArtifactregistryRule, ArtifactregistryRuleConfig
-from .artifactregistry_tag import ArtifactregistryTag, ArtifactregistryTagConfig
-from .v1beta1_artifactregistry_v1beta1_repository import V1beta1ArtifactregistryV1beta1Repository, V1beta1ArtifactregistryV1beta1RepositoryConfig
-from .v1beta1_artifactregistry_v1beta1_tag import V1beta1ArtifactregistryV1beta1Tag, V1beta1ArtifactregistryV1beta1TagConfig
-from .v1beta2_artifactregistry_v1beta2_repository import V1beta2ArtifactregistryV1beta2Repository, V1beta2ArtifactregistryV1beta2RepositoryConfig
-from .v1beta2_artifactregistry_v1beta2_tag import V1beta2ArtifactregistryV1beta2Tag, V1beta2ArtifactregistryV1beta2TagConfig
+from .attachment import Attachment, AttachmentConfig
+from .repository import Repository, RepositoryConfig
+from .rule import Rule, RuleConfig
+from .tag import Tag, TagConfig
+from .v1beta1_repository import V1beta1Repository, V1beta1RepositoryConfig
+from .v1beta1_tag import V1beta1Tag, V1beta1TagConfig
+from .v1beta2_repository import V1beta2Repository, V1beta2RepositoryConfig
+from .v1beta2_tag import V1beta2Tag, V1beta2TagConfig

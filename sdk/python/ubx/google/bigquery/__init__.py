@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .bigquery_dataset import BigqueryDataset, BigqueryDatasetConfig
-from .bigquery_job import BigqueryJob, BigqueryJobConfig
-from .bigquery_routine import BigqueryRoutine, BigqueryRoutineConfig
-from .bigquery_row_access_policy import BigqueryRowAccessPolicy, BigqueryRowAccessPolicyConfig
-from .bigquery_table import BigqueryTable, BigqueryTableConfig
+from .dataset import Dataset, DatasetConfig
+from .job import Job, JobConfig
+from .routine import Routine, RoutineConfig
+from .row_access_policy import RowAccessPolicy, RowAccessPolicyConfig
+from .table import Table, TableConfig

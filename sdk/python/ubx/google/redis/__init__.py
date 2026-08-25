@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .redis_acl_policy import RedisAclPolicy, RedisAclPolicyConfig
-from .redis_cluster import RedisCluster, RedisClusterConfig
-from .redis_instance import RedisInstance, RedisInstanceConfig
-from .v1beta1_redis_v1beta1_acl_policy import V1beta1RedisV1beta1AclPolicy, V1beta1RedisV1beta1AclPolicyConfig
-from .v1beta1_redis_v1beta1_cluster import V1beta1RedisV1beta1Cluster, V1beta1RedisV1beta1ClusterConfig
-from .v1beta1_redis_v1beta1_instance import V1beta1RedisV1beta1Instance, V1beta1RedisV1beta1InstanceConfig
+from .acl_policy import AclPolicy, AclPolicyConfig
+from .cluster import Cluster, ClusterConfig
+from .instance import Instance, InstanceConfig
+from .v1beta1_acl_policy import V1beta1AclPolicy, V1beta1AclPolicyConfig
+from .v1beta1_cluster import V1beta1Cluster, V1beta1ClusterConfig
+from .v1beta1_instance import V1beta1Instance, V1beta1InstanceConfig

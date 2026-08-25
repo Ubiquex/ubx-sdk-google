@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .datastore_index import DatastoreIndex, DatastoreIndexConfig
+from .index import Index, IndexConfig

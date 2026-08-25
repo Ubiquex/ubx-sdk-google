@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .parametermanager_parameter import ParametermanagerParameter, ParametermanagerParameterConfig
-from .parametermanager_template import ParametermanagerTemplate, ParametermanagerTemplateConfig
-from .parametermanager_version import ParametermanagerVersion, ParametermanagerVersionConfig
+from .parameter import Parameter, ParameterConfig
+from .template import Template, TemplateConfig
+from .version import Version, VersionConfig

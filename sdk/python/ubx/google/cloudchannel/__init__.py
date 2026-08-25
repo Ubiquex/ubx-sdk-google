@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudchannel_channel_partner_link import CloudchannelChannelPartnerLink, CloudchannelChannelPartnerLinkConfig
-from .cloudchannel_channel_partner_repricing_config import CloudchannelChannelPartnerRepricingConfig, CloudchannelChannelPartnerRepricingConfigConfig
-from .cloudchannel_customer import CloudchannelCustomer, CloudchannelCustomerConfig
-from .cloudchannel_customer_repricing_config import CloudchannelCustomerRepricingConfig, CloudchannelCustomerRepricingConfigConfig
-from .cloudchannel_entitlement import CloudchannelEntitlement, CloudchannelEntitlementConfig
+from .channel_partner_link import ChannelPartnerLink, ChannelPartnerLinkConfig
+from .channel_partner_repricing_config import ChannelPartnerRepricingConfig, ChannelPartnerRepricingConfigConfig
+from .customer import Customer, CustomerConfig
+from .customer_repricing_config import CustomerRepricingConfig, CustomerRepricingConfigConfig
+from .entitlement import Entitlement, EntitlementConfig

@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .osconfig_policy_orchestrator import OsconfigPolicyOrchestrator, OsconfigPolicyOrchestratorConfig
-from .v1alpha_osconfig_v1alpha_os_policy_assignment import V1alphaOsconfigV1alphaOsPolicyAssignment, V1alphaOsconfigV1alphaOsPolicyAssignmentConfig
-from .v1beta_osconfig_v1beta_guest_policy import V1betaOsconfigV1betaGuestPolicy, V1betaOsconfigV1betaGuestPolicyConfig
-from .v1beta_osconfig_v1beta_patch_deployment import V1betaOsconfigV1betaPatchDeployment, V1betaOsconfigV1betaPatchDeploymentConfig
-from .v2beta_osconfig_v2beta_policy_orchestrator import V2betaOsconfigV2betaPolicyOrchestrator, V2betaOsconfigV2betaPolicyOrchestratorConfig
+from .policy_orchestrator import PolicyOrchestrator, PolicyOrchestratorConfig
+from .v1alpha_os_policy_assignment import V1alphaOsPolicyAssignment, V1alphaOsPolicyAssignmentConfig
+from .v1beta_guest_policy import V1betaGuestPolicy, V1betaGuestPolicyConfig
+from .v1beta_patch_deployment import V1betaPatchDeployment, V1betaPatchDeploymentConfig
+from .v2beta_policy_orchestrator import V2betaPolicyOrchestrator, V2betaPolicyOrchestratorConfig

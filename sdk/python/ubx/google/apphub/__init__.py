@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .apphub_application import ApphubApplication, ApphubApplicationConfig
-from .apphub_service import ApphubService, ApphubServiceConfig
-from .apphub_service_project_attachment import ApphubServiceProjectAttachment, ApphubServiceProjectAttachmentConfig
-from .apphub_workload import ApphubWorkload, ApphubWorkloadConfig
-from .v1alpha_apphub_v1alpha_application import V1alphaApphubV1alphaApplication, V1alphaApphubV1alphaApplicationConfig
-from .v1alpha_apphub_v1alpha_service import V1alphaApphubV1alphaService, V1alphaApphubV1alphaServiceConfig
-from .v1alpha_apphub_v1alpha_service_project_attachment import V1alphaApphubV1alphaServiceProjectAttachment, V1alphaApphubV1alphaServiceProjectAttachmentConfig
-from .v1alpha_apphub_v1alpha_workload import V1alphaApphubV1alphaWorkload, V1alphaApphubV1alphaWorkloadConfig
+from .application import Application, ApplicationConfig
+from .service import Service, ServiceConfig
+from .service_project_attachment import ServiceProjectAttachment, ServiceProjectAttachmentConfig
+from .v1alpha_application import V1alphaApplication, V1alphaApplicationConfig
+from .v1alpha_service import V1alphaService, V1alphaServiceConfig
+from .v1alpha_service_project_attachment import V1alphaServiceProjectAttachment, V1alphaServiceProjectAttachmentConfig
+from .v1alpha_workload import V1alphaWorkload, V1alphaWorkloadConfig
+from .workload import Workload, WorkloadConfig

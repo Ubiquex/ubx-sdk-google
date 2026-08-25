@@ -4,17 +4,17 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .apihub_api import ApihubApi, ApihubApiConfig
-from .apihub_api_hub_instance import ApihubApiHubInstance, ApihubApiHubInstanceConfig
-from .apihub_attribute import ApihubAttribute, ApihubAttributeConfig
-from .apihub_curation import ApihubCuration, ApihubCurationConfig
-from .apihub_dependency import ApihubDependency, ApihubDependencyConfig
-from .apihub_deployment import ApihubDeployment, ApihubDeploymentConfig
-from .apihub_external_api import ApihubExternalApi, ApihubExternalApiConfig
-from .apihub_host_project_registration import ApihubHostProjectRegistration, ApihubHostProjectRegistrationConfig
-from .apihub_instance import ApihubInstance, ApihubInstanceConfig
-from .apihub_operation import ApihubOperation, ApihubOperationConfig
-from .apihub_plugin import ApihubPlugin, ApihubPluginConfig
-from .apihub_runtime_project_attachment import ApihubRuntimeProjectAttachment, ApihubRuntimeProjectAttachmentConfig
-from .apihub_spec import ApihubSpec, ApihubSpecConfig
-from .apihub_version import ApihubVersion, ApihubVersionConfig
+from .api import Api, ApiConfig
+from .api_hub_instance import ApiHubInstance, ApiHubInstanceConfig
+from .attribute import Attribute, AttributeConfig
+from .curation import Curation, CurationConfig
+from .dependency import Dependency, DependencyConfig
+from .deployment import Deployment, DeploymentConfig
+from .external_api import ExternalApi, ExternalApiConfig
+from .host_project_registration import HostProjectRegistration, HostProjectRegistrationConfig
+from .instance import Instance, InstanceConfig
+from .operation import Operation, OperationConfig
+from .plugin import Plugin, PluginConfig
+from .runtime_project_attachment import RuntimeProjectAttachment, RuntimeProjectAttachmentConfig
+from .spec import Spec, SpecConfig
+from .version import Version, VersionConfig

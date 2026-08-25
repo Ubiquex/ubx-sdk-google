@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .workloadmanager_actuation import WorkloadmanagerActuation, WorkloadmanagerActuationConfig
-from .workloadmanager_deployment import WorkloadmanagerDeployment, WorkloadmanagerDeploymentConfig
-from .workloadmanager_evaluation import WorkloadmanagerEvaluation, WorkloadmanagerEvaluationConfig
+from .actuation import Actuation, ActuationConfig
+from .deployment import Deployment, DeploymentConfig
+from .evaluation import Evaluation, EvaluationConfig
