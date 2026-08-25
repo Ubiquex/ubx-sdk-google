@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .config_deployment import ConfigDeployment, ConfigDeploymentConfig
-from .config_deployment_group import ConfigDeploymentGroup, ConfigDeploymentGroupConfig
-from .config_preview import ConfigPreview, ConfigPreviewConfig
+from .deployment import Deployment, DeploymentConfig
+from .deployment_group import DeploymentGroup, DeploymentGroupConfig
+from .preview import Preview, PreviewConfig

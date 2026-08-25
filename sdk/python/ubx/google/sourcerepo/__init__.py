@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .sourcerepo_repo import SourcerepoRepo, SourcerepoRepoConfig
+from .repo import Repo, RepoConfig

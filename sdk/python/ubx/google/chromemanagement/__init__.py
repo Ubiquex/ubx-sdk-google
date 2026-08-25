@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .chromemanagement_command import ChromemanagementCommand, ChromemanagementCommandConfig
-from .chromemanagement_connector_config import ChromemanagementConnectorConfig, ChromemanagementConnectorConfigConfig
+from .command import Command, CommandConfig
+from .connector_config import ConnectorConfig, ConnectorConfigConfig

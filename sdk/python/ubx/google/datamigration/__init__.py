@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .datamigration_connection_profile import DatamigrationConnectionProfile, DatamigrationConnectionProfileConfig
-from .datamigration_conversion_workspace import DatamigrationConversionWorkspace, DatamigrationConversionWorkspaceConfig
-from .datamigration_mapping_rule import DatamigrationMappingRule, DatamigrationMappingRuleConfig
-from .datamigration_migration_job import DatamigrationMigrationJob, DatamigrationMigrationJobConfig
-from .datamigration_private_connection import DatamigrationPrivateConnection, DatamigrationPrivateConnectionConfig
-from .v1beta1_datamigration_v1beta1_connection_profile import V1beta1DatamigrationV1beta1ConnectionProfile, V1beta1DatamigrationV1beta1ConnectionProfileConfig
-from .v1beta1_datamigration_v1beta1_migration_job import V1beta1DatamigrationV1beta1MigrationJob, V1beta1DatamigrationV1beta1MigrationJobConfig
+from .connection_profile import ConnectionProfile, ConnectionProfileConfig
+from .conversion_workspace import ConversionWorkspace, ConversionWorkspaceConfig
+from .mapping_rule import MappingRule, MappingRuleConfig
+from .migration_job import MigrationJob, MigrationJobConfig
+from .private_connection import PrivateConnection, PrivateConnectionConfig
+from .v1beta1_connection_profile import V1beta1ConnectionProfile, V1beta1ConnectionProfileConfig
+from .v1beta1_migration_job import V1beta1MigrationJob, V1beta1MigrationJobConfig

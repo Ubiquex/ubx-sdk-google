@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .developerconnect_account_connector import DeveloperconnectAccountConnector, DeveloperconnectAccountConnectorConfig
-from .developerconnect_connection import DeveloperconnectConnection, DeveloperconnectConnectionConfig
-from .developerconnect_git_repository_link import DeveloperconnectGitRepositoryLink, DeveloperconnectGitRepositoryLinkConfig
-from .developerconnect_insights_config import DeveloperconnectInsightsConfig, DeveloperconnectInsightsConfigConfig
+from .account_connector import AccountConnector, AccountConnectorConfig
+from .connection import Connection, ConnectionConfig
+from .git_repository_link import GitRepositoryLink, GitRepositoryLinkConfig
+from .insights_config import InsightsConfig, InsightsConfigConfig

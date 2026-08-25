@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .iap_brand import IapBrand, IapBrandConfig
-from .iap_dest_group import IapDestGroup, IapDestGroupConfig
-from .iap_identity_aware_proxy_client import IapIdentityAwareProxyClient, IapIdentityAwareProxyClientConfig
+from .brand import Brand, BrandConfig
+from .dest_group import DestGroup, DestGroupConfig
+from .identity_aware_proxy_client import IdentityAwareProxyClient, IdentityAwareProxyClientConfig

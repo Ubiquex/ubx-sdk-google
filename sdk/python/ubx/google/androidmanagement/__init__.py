@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .androidmanagement_enrollment_token import AndroidmanagementEnrollmentToken, AndroidmanagementEnrollmentTokenConfig
-from .androidmanagement_enterprise import AndroidmanagementEnterprise, AndroidmanagementEnterpriseConfig
-from .androidmanagement_migration_token import AndroidmanagementMigrationToken, AndroidmanagementMigrationTokenConfig
-from .androidmanagement_web_app import AndroidmanagementWebApp, AndroidmanagementWebAppConfig
+from .enrollment_token import EnrollmentToken, EnrollmentTokenConfig
+from .enterprise import Enterprise, EnterpriseConfig
+from .migration_token import MigrationToken, MigrationTokenConfig
+from .web_app import WebApp, WebAppConfig

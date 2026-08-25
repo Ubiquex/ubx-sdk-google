@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .ftp_server import FtpServer, FtpServerConfig
-from .ftp_user import FtpUser, FtpUserConfig
-from .v1alpha_ftp_v1alpha_server import V1alphaFtpV1alphaServer, V1alphaFtpV1alphaServerConfig
-from .v1alpha_ftp_v1alpha_user import V1alphaFtpV1alphaUser, V1alphaFtpV1alphaUserConfig
+from .server import Server, ServerConfig
+from .user import User, UserConfig
+from .v1alpha_server import V1alphaServer, V1alphaServerConfig
+from .v1alpha_user import V1alphaUser, V1alphaUserConfig

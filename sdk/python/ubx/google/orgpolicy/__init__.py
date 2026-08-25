@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .orgpolicy_custom_constraint import OrgpolicyCustomConstraint, OrgpolicyCustomConstraintConfig
-from .orgpolicy_policy import OrgpolicyPolicy, OrgpolicyPolicyConfig
+from .custom_constraint import CustomConstraint, CustomConstraintConfig
+from .policy import Policy, PolicyConfig

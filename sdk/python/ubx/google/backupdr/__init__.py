@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .backupdr_backup_plan import BackupdrBackupPlan, BackupdrBackupPlanConfig
-from .backupdr_backup_plan_association import BackupdrBackupPlanAssociation, BackupdrBackupPlanAssociationConfig
-from .backupdr_backup_vault import BackupdrBackupVault, BackupdrBackupVaultConfig
-from .backupdr_management_server import BackupdrManagementServer, BackupdrManagementServerConfig
+from .backup_plan import BackupPlan, BackupPlanConfig
+from .backup_plan_association import BackupPlanAssociation, BackupPlanAssociationConfig
+from .backup_vault import BackupVault, BackupVaultConfig
+from .management_server import ManagementServer, ManagementServerConfig

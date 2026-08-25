@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .essentialcontacts_contact import EssentialcontactsContact, EssentialcontactsContactConfig
+from .contact import Contact, ContactConfig

@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .privateca_ca_pool import PrivatecaCaPool, PrivatecaCaPoolConfig
-from .privateca_certificate import PrivatecaCertificate, PrivatecaCertificateConfig
-from .privateca_certificate_authority import PrivatecaCertificateAuthority, PrivatecaCertificateAuthorityConfig
-from .privateca_certificate_template import PrivatecaCertificateTemplate, PrivatecaCertificateTemplateConfig
+from .ca_pool import CaPool, CaPoolConfig
+from .certificate import Certificate, CertificateConfig
+from .certificate_authority import CertificateAuthority, CertificateAuthorityConfig
+from .certificate_template import CertificateTemplate, CertificateTemplateConfig

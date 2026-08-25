@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .ml_job import MlJob, MlJobConfig
-from .ml_model import MlModel, MlModelConfig
-from .ml_study import MlStudy, MlStudyConfig
-from .ml_trial import MlTrial, MlTrialConfig
-from .ml_version import MlVersion, MlVersionConfig
+from .job import Job, JobConfig
+from .model import Model, ModelConfig
+from .study import Study, StudyConfig
+from .trial import Trial, TrialConfig
+from .version import Version, VersionConfig

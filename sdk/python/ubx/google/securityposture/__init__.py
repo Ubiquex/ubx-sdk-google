@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .securityposture_posture import SecurityposturePosture, SecurityposturePostureConfig
-from .securityposture_posture_deployment import SecurityposturePostureDeployment, SecurityposturePostureDeploymentConfig
-from .securityposture_report import SecuritypostureReport, SecuritypostureReportConfig
+from .posture import Posture, PostureConfig
+from .posture_deployment import PostureDeployment, PostureDeploymentConfig
+from .report import Report, ReportConfig

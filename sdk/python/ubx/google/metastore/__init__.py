@@ -4,15 +4,15 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .metastore_backup import MetastoreBackup, MetastoreBackupConfig
-from .metastore_federation import MetastoreFederation, MetastoreFederationConfig
-from .metastore_metadata_import import MetastoreMetadataImport, MetastoreMetadataImportConfig
-from .metastore_service import MetastoreService, MetastoreServiceConfig
-from .v1alpha_metastore_v1alpha_backup import V1alphaMetastoreV1alphaBackup, V1alphaMetastoreV1alphaBackupConfig
-from .v1alpha_metastore_v1alpha_federation import V1alphaMetastoreV1alphaFederation, V1alphaMetastoreV1alphaFederationConfig
-from .v1alpha_metastore_v1alpha_metadata_import import V1alphaMetastoreV1alphaMetadataImport, V1alphaMetastoreV1alphaMetadataImportConfig
-from .v1alpha_metastore_v1alpha_service import V1alphaMetastoreV1alphaService, V1alphaMetastoreV1alphaServiceConfig
-from .v1beta_metastore_v1beta_backup import V1betaMetastoreV1betaBackup, V1betaMetastoreV1betaBackupConfig
-from .v1beta_metastore_v1beta_federation import V1betaMetastoreV1betaFederation, V1betaMetastoreV1betaFederationConfig
-from .v1beta_metastore_v1beta_metadata_import import V1betaMetastoreV1betaMetadataImport, V1betaMetastoreV1betaMetadataImportConfig
-from .v1beta_metastore_v1beta_service import V1betaMetastoreV1betaService, V1betaMetastoreV1betaServiceConfig
+from .backup import Backup, BackupConfig
+from .federation import Federation, FederationConfig
+from .metadata_import import MetadataImport, MetadataImportConfig
+from .service import Service, ServiceConfig
+from .v1alpha_backup import V1alphaBackup, V1alphaBackupConfig
+from .v1alpha_federation import V1alphaFederation, V1alphaFederationConfig
+from .v1alpha_metadata_import import V1alphaMetadataImport, V1alphaMetadataImportConfig
+from .v1alpha_service import V1alphaService, V1alphaServiceConfig
+from .v1beta_backup import V1betaBackup, V1betaBackupConfig
+from .v1beta_federation import V1betaFederation, V1betaFederationConfig
+from .v1beta_metadata_import import V1betaMetadataImport, V1betaMetadataImportConfig
+from .v1beta_service import V1betaService, V1betaServiceConfig

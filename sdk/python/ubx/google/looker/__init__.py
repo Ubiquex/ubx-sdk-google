@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .looker_backup import LookerBackup, LookerBackupConfig
-from .looker_instance import LookerInstance, LookerInstanceConfig
+from .backup import Backup, BackupConfig
+from .instance import Instance, InstanceConfig

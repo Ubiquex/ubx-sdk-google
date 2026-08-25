@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .firebaserules_release import FirebaserulesRelease, FirebaserulesReleaseConfig
-from .firebaserules_ruleset import FirebaserulesRuleset, FirebaserulesRulesetConfig
+from .release import Release, ReleaseConfig
+from .ruleset import Ruleset, RulesetConfig

@@ -4,15 +4,15 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .appengine_app import AppengineApp, AppengineAppConfig
-from .appengine_authorized_certificate import AppengineAuthorizedCertificate, AppengineAuthorizedCertificateConfig
-from .appengine_domain_mapping import AppengineDomainMapping, AppengineDomainMappingConfig
-from .appengine_ingress_rule import AppengineIngressRule, AppengineIngressRuleConfig
-from .appengine_version import AppengineVersion, AppengineVersionConfig
-from .v1alpha_appengine_v1alpha_authorized_certificate import V1alphaAppengineV1alphaAuthorizedCertificate, V1alphaAppengineV1alphaAuthorizedCertificateConfig
-from .v1alpha_appengine_v1alpha_domain_mapping import V1alphaAppengineV1alphaDomainMapping, V1alphaAppengineV1alphaDomainMappingConfig
-from .v1beta_appengine_v1beta_app import V1betaAppengineV1betaApp, V1betaAppengineV1betaAppConfig
-from .v1beta_appengine_v1beta_authorized_certificate import V1betaAppengineV1betaAuthorizedCertificate, V1betaAppengineV1betaAuthorizedCertificateConfig
-from .v1beta_appengine_v1beta_domain_mapping import V1betaAppengineV1betaDomainMapping, V1betaAppengineV1betaDomainMappingConfig
-from .v1beta_appengine_v1beta_ingress_rule import V1betaAppengineV1betaIngressRule, V1betaAppengineV1betaIngressRuleConfig
-from .v1beta_appengine_v1beta_version import V1betaAppengineV1betaVersion, V1betaAppengineV1betaVersionConfig
+from .app import App, AppConfig
+from .authorized_certificate import AuthorizedCertificate, AuthorizedCertificateConfig
+from .domain_mapping import DomainMapping, DomainMappingConfig
+from .ingress_rule import IngressRule, IngressRuleConfig
+from .v1alpha_authorized_certificate import V1alphaAuthorizedCertificate, V1alphaAuthorizedCertificateConfig
+from .v1alpha_domain_mapping import V1alphaDomainMapping, V1alphaDomainMappingConfig
+from .v1beta_app import V1betaApp, V1betaAppConfig
+from .v1beta_authorized_certificate import V1betaAuthorizedCertificate, V1betaAuthorizedCertificateConfig
+from .v1beta_domain_mapping import V1betaDomainMapping, V1betaDomainMappingConfig
+from .v1beta_ingress_rule import V1betaIngressRule, V1betaIngressRuleConfig
+from .v1beta_version import V1betaVersion, V1betaVersionConfig
+from .version import Version, VersionConfig

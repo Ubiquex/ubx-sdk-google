@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .toolresults_execution import ToolresultsExecution, ToolresultsExecutionConfig
-from .toolresults_history import ToolresultsHistory, ToolresultsHistoryConfig
-from .toolresults_perf_sample_sery import ToolresultsPerfSampleSery, ToolresultsPerfSampleSeryConfig
-from .toolresults_step import ToolresultsStep, ToolresultsStepConfig
+from .execution import Execution, ExecutionConfig
+from .history import History, HistoryConfig
+from .perf_sample_sery import PerfSampleSery, PerfSampleSeryConfig
+from .step import Step, StepConfig

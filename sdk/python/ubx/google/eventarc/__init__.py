@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .eventarc_channel import EventarcChannel, EventarcChannelConfig
-from .eventarc_channel_connection import EventarcChannelConnection, EventarcChannelConnectionConfig
-from .eventarc_enrollment import EventarcEnrollment, EventarcEnrollmentConfig
-from .eventarc_google_api_source import EventarcGoogleApiSource, EventarcGoogleApiSourceConfig
-from .eventarc_message_buse import EventarcMessageBuse, EventarcMessageBuseConfig
-from .eventarc_pipeline import EventarcPipeline, EventarcPipelineConfig
-from .eventarc_trigger import EventarcTrigger, EventarcTriggerConfig
+from .channel import Channel, ChannelConfig
+from .channel_connection import ChannelConnection, ChannelConnectionConfig
+from .enrollment import Enrollment, EnrollmentConfig
+from .google_api_source import GoogleApiSource, GoogleApiSourceConfig
+from .message_buse import MessageBuse, MessageBuseConfig
+from .pipeline import Pipeline, PipelineConfig
+from .trigger import Trigger, TriggerConfig

@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudsupport_case import CloudsupportCase, CloudsupportCaseConfig
-from .cloudsupport_comment import CloudsupportComment, CloudsupportCommentConfig
-from .cloudsupport_support_event_subscription import CloudsupportSupportEventSubscription, CloudsupportSupportEventSubscriptionConfig
-from .v2beta_cloudsupport_v2beta_case import V2betaCloudsupportV2betaCase, V2betaCloudsupportV2betaCaseConfig
-from .v2beta_cloudsupport_v2beta_comment import V2betaCloudsupportV2betaComment, V2betaCloudsupportV2betaCommentConfig
-from .v2beta_cloudsupport_v2beta_support_event_subscription import V2betaCloudsupportV2betaSupportEventSubscription, V2betaCloudsupportV2betaSupportEventSubscriptionConfig
+from .case import Case, CaseConfig
+from .comment import Comment, CommentConfig
+from .support_event_subscription import SupportEventSubscription, SupportEventSubscriptionConfig
+from .v2beta_case import V2betaCase, V2betaCaseConfig
+from .v2beta_comment import V2betaComment, V2betaCommentConfig
+from .v2beta_support_event_subscription import V2betaSupportEventSubscription, V2betaSupportEventSubscriptionConfig

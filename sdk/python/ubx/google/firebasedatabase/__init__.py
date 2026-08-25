@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .firebasedatabase_instance import FirebasedatabaseInstance, FirebasedatabaseInstanceConfig
+from .instance import Instance, InstanceConfig

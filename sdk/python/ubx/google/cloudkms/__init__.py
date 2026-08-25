@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudkms_crypto_key import CloudkmsCryptoKey, CloudkmsCryptoKeyConfig
-from .cloudkms_crypto_key_version import CloudkmsCryptoKeyVersion, CloudkmsCryptoKeyVersionConfig
-from .cloudkms_ekm_connection import CloudkmsEkmConnection, CloudkmsEkmConnectionConfig
-from .cloudkms_import_job import CloudkmsImportJob, CloudkmsImportJobConfig
-from .cloudkms_key_handle import CloudkmsKeyHandle, CloudkmsKeyHandleConfig
-from .cloudkms_key_ring import CloudkmsKeyRing, CloudkmsKeyRingConfig
-from .cloudkms_proposal import CloudkmsProposal, CloudkmsProposalConfig
-from .cloudkms_single_tenant_hsm_instance import CloudkmsSingleTenantHsmInstance, CloudkmsSingleTenantHsmInstanceConfig
+from .crypto_key import CryptoKey, CryptoKeyConfig
+from .crypto_key_version import CryptoKeyVersion, CryptoKeyVersionConfig
+from .ekm_connection import EkmConnection, EkmConnectionConfig
+from .import_job import ImportJob, ImportJobConfig
+from .key_handle import KeyHandle, KeyHandleConfig
+from .key_ring import KeyRing, KeyRingConfig
+from .proposal import Proposal, ProposalConfig
+from .single_tenant_hsm_instance import SingleTenantHsmInstance, SingleTenantHsmInstanceConfig

@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudscheduler_job import CloudschedulerJob, CloudschedulerJobConfig
-from .v1beta1_cloudscheduler_v1beta1_job import V1beta1CloudschedulerV1beta1Job, V1beta1CloudschedulerV1beta1JobConfig
+from .job import Job, JobConfig
+from .v1beta1_job import V1beta1Job, V1beta1JobConfig

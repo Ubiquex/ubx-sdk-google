@@ -4,12 +4,12 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .managedidentities_backup import ManagedidentitiesBackup, ManagedidentitiesBackupConfig
-from .managedidentities_domain import ManagedidentitiesDomain, ManagedidentitiesDomainConfig
-from .managedidentities_peering import ManagedidentitiesPeering, ManagedidentitiesPeeringConfig
-from .v1alpha1_managedidentities_v1alpha1_backup import V1alpha1ManagedidentitiesV1alpha1Backup, V1alpha1ManagedidentitiesV1alpha1BackupConfig
-from .v1alpha1_managedidentities_v1alpha1_domain import V1alpha1ManagedidentitiesV1alpha1Domain, V1alpha1ManagedidentitiesV1alpha1DomainConfig
-from .v1alpha1_managedidentities_v1alpha1_peering import V1alpha1ManagedidentitiesV1alpha1Peering, V1alpha1ManagedidentitiesV1alpha1PeeringConfig
-from .v1beta1_managedidentities_v1beta1_backup import V1beta1ManagedidentitiesV1beta1Backup, V1beta1ManagedidentitiesV1beta1BackupConfig
-from .v1beta1_managedidentities_v1beta1_domain import V1beta1ManagedidentitiesV1beta1Domain, V1beta1ManagedidentitiesV1beta1DomainConfig
-from .v1beta1_managedidentities_v1beta1_peering import V1beta1ManagedidentitiesV1beta1Peering, V1beta1ManagedidentitiesV1beta1PeeringConfig
+from .backup import Backup, BackupConfig
+from .domain import Domain, DomainConfig
+from .peering import Peering, PeeringConfig
+from .v1alpha1_backup import V1alpha1Backup, V1alpha1BackupConfig
+from .v1alpha1_domain import V1alpha1Domain, V1alpha1DomainConfig
+from .v1alpha1_peering import V1alpha1Peering, V1alpha1PeeringConfig
+from .v1beta1_backup import V1beta1Backup, V1beta1BackupConfig
+from .v1beta1_domain import V1beta1Domain, V1beta1DomainConfig
+from .v1beta1_peering import V1beta1Peering, V1beta1PeeringConfig

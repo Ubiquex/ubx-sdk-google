@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .datalineage_lineage_event import DatalineageLineageEvent, DatalineageLineageEventConfig
-from .datalineage_process import DatalineageProcess, DatalineageProcessConfig
-from .datalineage_run import DatalineageRun, DatalineageRunConfig
+from .lineage_event import LineageEvent, LineageEventConfig
+from .process import Process, ProcessConfig
+from .run import Run, RunConfig

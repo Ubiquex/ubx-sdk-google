@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudcontrolspartner_customer import CloudcontrolspartnerCustomer, CloudcontrolspartnerCustomerConfig
-from .v1beta_cloudcontrolspartner_v1beta_customer import V1betaCloudcontrolspartnerV1betaCustomer, V1betaCloudcontrolspartnerV1betaCustomerConfig
+from .customer import Customer, CustomerConfig
+from .v1beta_customer import V1betaCustomer, V1betaCustomerConfig

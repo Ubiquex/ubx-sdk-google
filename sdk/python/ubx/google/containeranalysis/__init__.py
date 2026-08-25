@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .containeranalysis_note import ContaineranalysisNote, ContaineranalysisNoteConfig
-from .containeranalysis_occurrence import ContaineranalysisOccurrence, ContaineranalysisOccurrenceConfig
-from .v1alpha1_containeranalysis_v1alpha1_note import V1alpha1ContaineranalysisV1alpha1Note, V1alpha1ContaineranalysisV1alpha1NoteConfig
-from .v1alpha1_containeranalysis_v1alpha1_occurrence import V1alpha1ContaineranalysisV1alpha1Occurrence, V1alpha1ContaineranalysisV1alpha1OccurrenceConfig
-from .v1beta1_containeranalysis_v1beta1_note import V1beta1ContaineranalysisV1beta1Note, V1beta1ContaineranalysisV1beta1NoteConfig
-from .v1beta1_containeranalysis_v1beta1_occurrence import V1beta1ContaineranalysisV1beta1Occurrence, V1beta1ContaineranalysisV1beta1OccurrenceConfig
+from .note import Note, NoteConfig
+from .occurrence import Occurrence, OccurrenceConfig
+from .v1alpha1_note import V1alpha1Note, V1alpha1NoteConfig
+from .v1alpha1_occurrence import V1alpha1Occurrence, V1alpha1OccurrenceConfig
+from .v1beta1_note import V1beta1Note, V1beta1NoteConfig
+from .v1beta1_occurrence import V1beta1Occurrence, V1beta1OccurrenceConfig

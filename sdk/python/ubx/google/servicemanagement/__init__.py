@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .servicemanagement_config import ServicemanagementConfig, ServicemanagementConfigConfig
-from .servicemanagement_rollout import ServicemanagementRollout, ServicemanagementRolloutConfig
-from .servicemanagement_service import ServicemanagementService, ServicemanagementServiceConfig
+from .config import Config, ConfigConfig
+from .rollout import Rollout, RolloutConfig
+from .service import Service, ServiceConfig

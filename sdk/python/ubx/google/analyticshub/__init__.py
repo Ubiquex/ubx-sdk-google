@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .analyticshub_data_exchange import AnalyticshubDataExchange, AnalyticshubDataExchangeConfig
-from .analyticshub_listing import AnalyticshubListing, AnalyticshubListingConfig
-from .analyticshub_query_template import AnalyticshubQueryTemplate, AnalyticshubQueryTemplateConfig
-from .v1beta1_analyticshub_v1beta1_data_exchange import V1beta1AnalyticshubV1beta1DataExchange, V1beta1AnalyticshubV1beta1DataExchangeConfig
-from .v1beta1_analyticshub_v1beta1_listing import V1beta1AnalyticshubV1beta1Listing, V1beta1AnalyticshubV1beta1ListingConfig
+from .data_exchange import DataExchange, DataExchangeConfig
+from .listing import Listing, ListingConfig
+from .query_template import QueryTemplate, QueryTemplateConfig
+from .v1beta1_data_exchange import V1beta1DataExchange, V1beta1DataExchangeConfig
+from .v1beta1_listing import V1beta1Listing, V1beta1ListingConfig

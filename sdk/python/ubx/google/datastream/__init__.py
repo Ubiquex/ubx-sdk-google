@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .datastream_connection_profile import DatastreamConnectionProfile, DatastreamConnectionProfileConfig
-from .datastream_private_connection import DatastreamPrivateConnection, DatastreamPrivateConnectionConfig
-from .datastream_route import DatastreamRoute, DatastreamRouteConfig
-from .datastream_stream import DatastreamStream, DatastreamStreamConfig
-from .v1alpha1_datastream_v1alpha1_connection_profile import V1alpha1DatastreamV1alpha1ConnectionProfile, V1alpha1DatastreamV1alpha1ConnectionProfileConfig
-from .v1alpha1_datastream_v1alpha1_private_connection import V1alpha1DatastreamV1alpha1PrivateConnection, V1alpha1DatastreamV1alpha1PrivateConnectionConfig
-from .v1alpha1_datastream_v1alpha1_route import V1alpha1DatastreamV1alpha1Route, V1alpha1DatastreamV1alpha1RouteConfig
-from .v1alpha1_datastream_v1alpha1_stream import V1alpha1DatastreamV1alpha1Stream, V1alpha1DatastreamV1alpha1StreamConfig
+from .connection_profile import ConnectionProfile, ConnectionProfileConfig
+from .private_connection import PrivateConnection, PrivateConnectionConfig
+from .route import Route, RouteConfig
+from .stream import Stream, StreamConfig
+from .v1alpha1_connection_profile import V1alpha1ConnectionProfile, V1alpha1ConnectionProfileConfig
+from .v1alpha1_private_connection import V1alpha1PrivateConnection, V1alpha1PrivateConnectionConfig
+from .v1alpha1_route import V1alpha1Route, V1alpha1RouteConfig
+from .v1alpha1_stream import V1alpha1Stream, V1alpha1StreamConfig

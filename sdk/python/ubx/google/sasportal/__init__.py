@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .sasportal_deployment import SasportalDeployment, SasportalDeploymentConfig
-from .sasportal_device import SasportalDevice, SasportalDeviceConfig
-from .sasportal_node import SasportalNode, SasportalNodeConfig
+from .deployment import Deployment, DeploymentConfig
+from .device import Device, DeviceConfig
+from .node import Node, NodeConfig

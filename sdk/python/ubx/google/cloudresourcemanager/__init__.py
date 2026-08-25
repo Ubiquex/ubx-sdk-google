@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudresourcemanager_folder import CloudresourcemanagerFolder, CloudresourcemanagerFolderConfig
-from .cloudresourcemanager_lien import CloudresourcemanagerLien, CloudresourcemanagerLienConfig
-from .cloudresourcemanager_project import CloudresourcemanagerProject, CloudresourcemanagerProjectConfig
-from .cloudresourcemanager_tag_key import CloudresourcemanagerTagKey, CloudresourcemanagerTagKeyConfig
-from .cloudresourcemanager_tag_value import CloudresourcemanagerTagValue, CloudresourcemanagerTagValueConfig
-from .v1beta1_cloudresourcemanager_v1beta1_project import V1beta1CloudresourcemanagerV1beta1Project, V1beta1CloudresourcemanagerV1beta1ProjectConfig
-from .v2beta1_cloudresourcemanager_v2beta1_folder import V2beta1CloudresourcemanagerV2beta1Folder, V2beta1CloudresourcemanagerV2beta1FolderConfig
+from .folder import Folder, FolderConfig
+from .lien import Lien, LienConfig
+from .project import Project, ProjectConfig
+from .tag_key import TagKey, TagKeyConfig
+from .tag_value import TagValue, TagValueConfig
+from .v1beta1_project import V1beta1Project, V1beta1ProjectConfig
+from .v2beta1_folder import V2beta1Folder, V2beta1FolderConfig

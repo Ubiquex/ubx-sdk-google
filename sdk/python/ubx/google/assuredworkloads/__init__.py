@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .assuredworkloads_workload import AssuredworkloadsWorkload, AssuredworkloadsWorkloadConfig
-from .v1beta1_assuredworkloads_v1beta1_workload import V1beta1AssuredworkloadsV1beta1Workload, V1beta1AssuredworkloadsV1beta1WorkloadConfig
+from .v1beta1_workload import V1beta1Workload, V1beta1WorkloadConfig
+from .workload import Workload, WorkloadConfig

@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .apikeys_key import ApikeysKey, ApikeysKeyConfig
+from .key import Key, KeyConfig

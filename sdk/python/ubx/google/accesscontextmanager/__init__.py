@@ -4,8 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .accesscontextmanager_access_level import AccesscontextmanagerAccessLevel, AccesscontextmanagerAccessLevelConfig
-from .accesscontextmanager_access_policy import AccesscontextmanagerAccessPolicy, AccesscontextmanagerAccessPolicyConfig
-from .accesscontextmanager_authorized_orgs_desc import AccesscontextmanagerAuthorizedOrgsDesc, AccesscontextmanagerAuthorizedOrgsDescConfig
-from .accesscontextmanager_gcp_user_access_binding import AccesscontextmanagerGcpUserAccessBinding, AccesscontextmanagerGcpUserAccessBindingConfig
-from .accesscontextmanager_service_perimeter import AccesscontextmanagerServicePerimeter, AccesscontextmanagerServicePerimeterConfig
+from .access_level import AccessLevel, AccessLevelConfig
+from .access_policy import AccessPolicy, AccessPolicyConfig
+from .authorized_orgs_desc import AuthorizedOrgsDesc, AuthorizedOrgsDescConfig
+from .gcp_user_access_binding import GcpUserAccessBinding, GcpUserAccessBindingConfig
+from .service_perimeter import ServicePerimeter, ServicePerimeterConfig

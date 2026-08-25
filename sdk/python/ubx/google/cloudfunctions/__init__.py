@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudfunctions_function import CloudfunctionsFunction, CloudfunctionsFunctionConfig
-from .v2alpha_cloudfunctions_v2alpha_function import V2alphaCloudfunctionsV2alphaFunction, V2alphaCloudfunctionsV2alphaFunctionConfig
-from .v2beta_cloudfunctions_v2beta_function import V2betaCloudfunctionsV2betaFunction, V2betaCloudfunctionsV2betaFunctionConfig
+from .function import Function, FunctionConfig
+from .v2alpha_function import V2alphaFunction, V2alphaFunctionConfig
+from .v2beta_function import V2betaFunction, V2betaFunctionConfig

@@ -4,17 +4,17 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .alloydb_backup import AlloydbBackup, AlloydbBackupConfig
-from .alloydb_cluster import AlloydbCluster, AlloydbClusterConfig
-from .alloydb_instance import AlloydbInstance, AlloydbInstanceConfig
-from .alloydb_user import AlloydbUser, AlloydbUserConfig
-from .v1alpha_alloydb_v1alpha_backup import V1alphaAlloydbV1alphaBackup, V1alphaAlloydbV1alphaBackupConfig
-from .v1alpha_alloydb_v1alpha_cluster import V1alphaAlloydbV1alphaCluster, V1alphaAlloydbV1alphaClusterConfig
-from .v1alpha_alloydb_v1alpha_endpoint import V1alphaAlloydbV1alphaEndpoint, V1alphaAlloydbV1alphaEndpointConfig
-from .v1alpha_alloydb_v1alpha_instance import V1alphaAlloydbV1alphaInstance, V1alphaAlloydbV1alphaInstanceConfig
-from .v1alpha_alloydb_v1alpha_user import V1alphaAlloydbV1alphaUser, V1alphaAlloydbV1alphaUserConfig
-from .v1beta_alloydb_v1beta_backup import V1betaAlloydbV1betaBackup, V1betaAlloydbV1betaBackupConfig
-from .v1beta_alloydb_v1beta_cluster import V1betaAlloydbV1betaCluster, V1betaAlloydbV1betaClusterConfig
-from .v1beta_alloydb_v1beta_endpoint import V1betaAlloydbV1betaEndpoint, V1betaAlloydbV1betaEndpointConfig
-from .v1beta_alloydb_v1beta_instance import V1betaAlloydbV1betaInstance, V1betaAlloydbV1betaInstanceConfig
-from .v1beta_alloydb_v1beta_user import V1betaAlloydbV1betaUser, V1betaAlloydbV1betaUserConfig
+from .backup import Backup, BackupConfig
+from .cluster import Cluster, ClusterConfig
+from .instance import Instance, InstanceConfig
+from .user import User, UserConfig
+from .v1alpha_backup import V1alphaBackup, V1alphaBackupConfig
+from .v1alpha_cluster import V1alphaCluster, V1alphaClusterConfig
+from .v1alpha_endpoint import V1alphaEndpoint, V1alphaEndpointConfig
+from .v1alpha_instance import V1alphaInstance, V1alphaInstanceConfig
+from .v1alpha_user import V1alphaUser, V1alphaUserConfig
+from .v1beta_backup import V1betaBackup, V1betaBackupConfig
+from .v1beta_cluster import V1betaCluster, V1betaClusterConfig
+from .v1beta_endpoint import V1betaEndpoint, V1betaEndpointConfig
+from .v1beta_instance import V1betaInstance, V1betaInstanceConfig
+from .v1beta_user import V1betaUser, V1betaUserConfig

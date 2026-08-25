@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .modelarmor_template import ModelarmorTemplate, ModelarmorTemplateConfig
+from .template import Template, TemplateConfig

@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .secretmanager_secret import SecretmanagerSecret, SecretmanagerSecretConfig
-from .v1beta1_secretmanager_v1beta1_secret import V1beta1SecretmanagerV1beta1Secret, V1beta1SecretmanagerV1beta1SecretConfig
-from .v1beta2_secretmanager_v1beta2_secret import V1beta2SecretmanagerV1beta2Secret, V1beta2SecretmanagerV1beta2SecretConfig
+from .secret import Secret, SecretConfig
+from .v1beta1_secret import V1beta1Secret, V1beta1SecretConfig
+from .v1beta2_secret import V1beta2Secret, V1beta2SecretConfig

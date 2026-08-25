@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .gkebackup_backup import GkebackupBackup, GkebackupBackupConfig
-from .gkebackup_backup_channel import GkebackupBackupChannel, GkebackupBackupChannelConfig
-from .gkebackup_backup_plan import GkebackupBackupPlan, GkebackupBackupPlanConfig
-from .gkebackup_restore import GkebackupRestore, GkebackupRestoreConfig
-from .gkebackup_restore_channel import GkebackupRestoreChannel, GkebackupRestoreChannelConfig
-from .gkebackup_restore_plan import GkebackupRestorePlan, GkebackupRestorePlanConfig
+from .backup import Backup, BackupConfig
+from .backup_channel import BackupChannel, BackupChannelConfig
+from .backup_plan import BackupPlan, BackupPlanConfig
+from .restore import Restore, RestoreConfig
+from .restore_channel import RestoreChannel, RestoreChannelConfig
+from .restore_plan import RestorePlan, RestorePlanConfig

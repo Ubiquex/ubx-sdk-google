@@ -4,15 +4,15 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .vmwareengine_cluster import VmwareengineCluster, VmwareengineClusterConfig
-from .vmwareengine_datastore import VmwareengineDatastore, VmwareengineDatastoreConfig
-from .vmwareengine_external_access_rule import VmwareengineExternalAccessRule, VmwareengineExternalAccessRuleConfig
-from .vmwareengine_external_address import VmwareengineExternalAddress, VmwareengineExternalAddressConfig
-from .vmwareengine_hcx_activation_key import VmwareengineHcxActivationKey, VmwareengineHcxActivationKeyConfig
-from .vmwareengine_logging_server import VmwareengineLoggingServer, VmwareengineLoggingServerConfig
-from .vmwareengine_management_dns_zone_binding import VmwareengineManagementDnsZoneBinding, VmwareengineManagementDnsZoneBindingConfig
-from .vmwareengine_network_peering import VmwareengineNetworkPeering, VmwareengineNetworkPeeringConfig
-from .vmwareengine_network_policy import VmwareengineNetworkPolicy, VmwareengineNetworkPolicyConfig
-from .vmwareengine_private_cloud import VmwareenginePrivateCloud, VmwareenginePrivateCloudConfig
-from .vmwareengine_private_connection import VmwareenginePrivateConnection, VmwareenginePrivateConnectionConfig
-from .vmwareengine_vmware_engine_network import VmwareengineVmwareEngineNetwork, VmwareengineVmwareEngineNetworkConfig
+from .cluster import Cluster, ClusterConfig
+from .datastore import Datastore, DatastoreConfig
+from .external_access_rule import ExternalAccessRule, ExternalAccessRuleConfig
+from .external_address import ExternalAddress, ExternalAddressConfig
+from .hcx_activation_key import HcxActivationKey, HcxActivationKeyConfig
+from .logging_server import LoggingServer, LoggingServerConfig
+from .management_dns_zone_binding import ManagementDnsZoneBinding, ManagementDnsZoneBindingConfig
+from .network_peering import NetworkPeering, NetworkPeeringConfig
+from .network_policy import NetworkPolicy, NetworkPolicyConfig
+from .private_cloud import PrivateCloud, PrivateCloudConfig
+from .private_connection import PrivateConnection, PrivateConnectionConfig
+from .vmware_engine_network import VmwareEngineNetwork, VmwareEngineNetworkConfig

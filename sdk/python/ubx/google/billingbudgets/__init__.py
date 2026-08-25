@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .billingbudgets_budget import BillingbudgetsBudget, BillingbudgetsBudgetConfig
-from .v1beta1_billingbudgets_v1beta1_budget import V1beta1BillingbudgetsV1beta1Budget, V1beta1BillingbudgetsV1beta1BudgetConfig
+from .budget import Budget, BudgetConfig
+from .v1beta1_budget import V1beta1Budget, V1beta1BudgetConfig

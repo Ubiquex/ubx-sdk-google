@@ -4,23 +4,23 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .ces_agent import CesAgent, CesAgentConfig
-from .ces_app import CesApp, CesAppConfig
-from .ces_deployment import CesDeployment, CesDeploymentConfig
-from .ces_example import CesExample, CesExampleConfig
-from .ces_guardrail import CesGuardrail, CesGuardrailConfig
-from .ces_tool import CesTool, CesToolConfig
-from .ces_toolset import CesToolset, CesToolsetConfig
-from .ces_version import CesVersion, CesVersionConfig
-from .v1beta_ces_v1beta_agent import V1betaCesV1betaAgent, V1betaCesV1betaAgentConfig
-from .v1beta_ces_v1beta_app import V1betaCesV1betaApp, V1betaCesV1betaAppConfig
-from .v1beta_ces_v1beta_deployment import V1betaCesV1betaDeployment, V1betaCesV1betaDeploymentConfig
-from .v1beta_ces_v1beta_evaluation import V1betaCesV1betaEvaluation, V1betaCesV1betaEvaluationConfig
-from .v1beta_ces_v1beta_evaluation_dataset import V1betaCesV1betaEvaluationDataset, V1betaCesV1betaEvaluationDatasetConfig
-from .v1beta_ces_v1beta_evaluation_expectation import V1betaCesV1betaEvaluationExpectation, V1betaCesV1betaEvaluationExpectationConfig
-from .v1beta_ces_v1beta_example import V1betaCesV1betaExample, V1betaCesV1betaExampleConfig
-from .v1beta_ces_v1beta_guardrail import V1betaCesV1betaGuardrail, V1betaCesV1betaGuardrailConfig
-from .v1beta_ces_v1beta_scheduled_evaluation_run import V1betaCesV1betaScheduledEvaluationRun, V1betaCesV1betaScheduledEvaluationRunConfig
-from .v1beta_ces_v1beta_tool import V1betaCesV1betaTool, V1betaCesV1betaToolConfig
-from .v1beta_ces_v1beta_toolset import V1betaCesV1betaToolset, V1betaCesV1betaToolsetConfig
-from .v1beta_ces_v1beta_version import V1betaCesV1betaVersion, V1betaCesV1betaVersionConfig
+from .agent import Agent, AgentConfig
+from .app import App, AppConfig
+from .deployment import Deployment, DeploymentConfig
+from .example import Example, ExampleConfig
+from .guardrail import Guardrail, GuardrailConfig
+from .tool import Tool, ToolConfig
+from .toolset import Toolset, ToolsetConfig
+from .v1beta_agent import V1betaAgent, V1betaAgentConfig
+from .v1beta_app import V1betaApp, V1betaAppConfig
+from .v1beta_deployment import V1betaDeployment, V1betaDeploymentConfig
+from .v1beta_evaluation import V1betaEvaluation, V1betaEvaluationConfig
+from .v1beta_evaluation_dataset import V1betaEvaluationDataset, V1betaEvaluationDatasetConfig
+from .v1beta_evaluation_expectation import V1betaEvaluationExpectation, V1betaEvaluationExpectationConfig
+from .v1beta_example import V1betaExample, V1betaExampleConfig
+from .v1beta_guardrail import V1betaGuardrail, V1betaGuardrailConfig
+from .v1beta_scheduled_evaluation_run import V1betaScheduledEvaluationRun, V1betaScheduledEvaluationRunConfig
+from .v1beta_tool import V1betaTool, V1betaToolConfig
+from .v1beta_toolset import V1betaToolset, V1betaToolsetConfig
+from .v1beta_version import V1betaVersion, V1betaVersionConfig
+from .version import Version, VersionConfig

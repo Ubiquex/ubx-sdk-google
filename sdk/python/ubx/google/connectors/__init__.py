@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .connectors_connection import ConnectorsConnection, ConnectorsConnectionConfig
-from .connectors_custom_connector import ConnectorsCustomConnector, ConnectorsCustomConnectorConfig
-from .connectors_custom_connector_version import ConnectorsCustomConnectorVersion, ConnectorsCustomConnectorVersionConfig
-from .connectors_end_user_authentication import ConnectorsEndUserAuthentication, ConnectorsEndUserAuthenticationConfig
-from .connectors_endpoint_attachment import ConnectorsEndpointAttachment, ConnectorsEndpointAttachmentConfig
-from .connectors_event_subscription import ConnectorsEventSubscription, ConnectorsEventSubscriptionConfig
-from .connectors_managed_zone import ConnectorsManagedZone, ConnectorsManagedZoneConfig
+from .connection import Connection, ConnectionConfig
+from .custom_connector import CustomConnector, CustomConnectorConfig
+from .custom_connector_version import CustomConnectorVersion, CustomConnectorVersionConfig
+from .end_user_authentication import EndUserAuthentication, EndUserAuthenticationConfig
+from .endpoint_attachment import EndpointAttachment, EndpointAttachmentConfig
+from .event_subscription import EventSubscription, EventSubscriptionConfig
+from .managed_zone import ManagedZone, ManagedZoneConfig

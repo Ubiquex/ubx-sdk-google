@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .securesourcemanager_branch_rule import SecuresourcemanagerBranchRule, SecuresourcemanagerBranchRuleConfig
-from .securesourcemanager_hook import SecuresourcemanagerHook, SecuresourcemanagerHookConfig
-from .securesourcemanager_instance import SecuresourcemanagerInstance, SecuresourcemanagerInstanceConfig
-from .securesourcemanager_issue import SecuresourcemanagerIssue, SecuresourcemanagerIssueConfig
-from .securesourcemanager_issue_comment import SecuresourcemanagerIssueComment, SecuresourcemanagerIssueCommentConfig
-from .securesourcemanager_pull_request import SecuresourcemanagerPullRequest, SecuresourcemanagerPullRequestConfig
-from .securesourcemanager_pull_request_comment import SecuresourcemanagerPullRequestComment, SecuresourcemanagerPullRequestCommentConfig
-from .securesourcemanager_repository import SecuresourcemanagerRepository, SecuresourcemanagerRepositoryConfig
+from .branch_rule import BranchRule, BranchRuleConfig
+from .hook import Hook, HookConfig
+from .instance import Instance, InstanceConfig
+from .issue import Issue, IssueConfig
+from .issue_comment import IssueComment, IssueCommentConfig
+from .pull_request import PullRequest, PullRequestConfig
+from .pull_request_comment import PullRequestComment, PullRequestCommentConfig
+from .repository import Repository, RepositoryConfig

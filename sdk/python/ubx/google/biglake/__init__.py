@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .biglake_catalog import BiglakeCatalog, BiglakeCatalogConfig
-from .biglake_database import BiglakeDatabase, BiglakeDatabaseConfig
-from .biglake_table import BiglakeTable, BiglakeTableConfig
+from .catalog import Catalog, CatalogConfig
+from .database import Database, DatabaseConfig
+from .table import Table, TableConfig

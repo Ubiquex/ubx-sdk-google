@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .ids_endpoint import IdsEndpoint, IdsEndpointConfig
+from .endpoint import Endpoint, EndpointConfig

@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .certificatemanager_certificate import CertificatemanagerCertificate, CertificatemanagerCertificateConfig
-from .certificatemanager_certificate_issuance_config import CertificatemanagerCertificateIssuanceConfig, CertificatemanagerCertificateIssuanceConfigConfig
-from .certificatemanager_certificate_map import CertificatemanagerCertificateMap, CertificatemanagerCertificateMapConfig
-from .certificatemanager_certificate_map_entry import CertificatemanagerCertificateMapEntry, CertificatemanagerCertificateMapEntryConfig
-from .certificatemanager_dns_authorization import CertificatemanagerDnsAuthorization, CertificatemanagerDnsAuthorizationConfig
-from .certificatemanager_trust_config import CertificatemanagerTrustConfig, CertificatemanagerTrustConfigConfig
+from .certificate import Certificate, CertificateConfig
+from .certificate_issuance_config import CertificateIssuanceConfig, CertificateIssuanceConfigConfig
+from .certificate_map import CertificateMap, CertificateMapConfig
+from .certificate_map_entry import CertificateMapEntry, CertificateMapEntryConfig
+from .dns_authorization import DnsAuthorization, DnsAuthorizationConfig
+from .trust_config import TrustConfig, TrustConfigConfig

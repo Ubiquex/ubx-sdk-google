@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .securitycenter_big_query_export import SecuritycenterBigQueryExport, SecuritycenterBigQueryExportConfig
-from .securitycenter_custom_module import SecuritycenterCustomModule, SecuritycenterCustomModuleConfig
-from .securitycenter_mute_config import SecuritycenterMuteConfig, SecuritycenterMuteConfigConfig
-from .securitycenter_notification_config import SecuritycenterNotificationConfig, SecuritycenterNotificationConfigConfig
-from .securitycenter_source import SecuritycenterSource, SecuritycenterSourceConfig
-from .v1beta1_securitycenter_v1beta1_source import V1beta1SecuritycenterV1beta1Source, V1beta1SecuritycenterV1beta1SourceConfig
+from .big_query_export import BigQueryExport, BigQueryExportConfig
+from .custom_module import CustomModule, CustomModuleConfig
+from .mute_config import MuteConfig, MuteConfigConfig
+from .notification_config import NotificationConfig, NotificationConfigConfig
+from .source import Source, SourceConfig
+from .v1beta1_source import V1beta1Source, V1beta1SourceConfig

@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .identitytoolkit_default_supported_idp_config import IdentitytoolkitDefaultSupportedIdpConfig, IdentitytoolkitDefaultSupportedIdpConfigConfig
-from .identitytoolkit_inbound_saml_config import IdentitytoolkitInboundSamlConfig, IdentitytoolkitInboundSamlConfigConfig
-from .identitytoolkit_oauth_idp_config import IdentitytoolkitOauthIdpConfig, IdentitytoolkitOauthIdpConfigConfig
-from .identitytoolkit_tenant import IdentitytoolkitTenant, IdentitytoolkitTenantConfig
+from .default_supported_idp_config import DefaultSupportedIdpConfig, DefaultSupportedIdpConfigConfig
+from .inbound_saml_config import InboundSamlConfig, InboundSamlConfigConfig
+from .oauth_idp_config import OauthIdpConfig, OauthIdpConfigConfig
+from .tenant import Tenant, TenantConfig

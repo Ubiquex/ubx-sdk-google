@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .observability_bucket import ObservabilityBucket, ObservabilityBucketConfig
-from .observability_link import ObservabilityLink, ObservabilityLinkConfig
-from .observability_trace_scope import ObservabilityTraceScope, ObservabilityTraceScopeConfig
+from .bucket import Bucket, BucketConfig
+from .link import Link, LinkConfig
+from .trace_scope import TraceScope, TraceScopeConfig

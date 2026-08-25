@@ -4,14 +4,14 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .storage_anywhere_cach import StorageAnywhereCach, StorageAnywhereCachConfig
-from .storage_bucket import StorageBucket, StorageBucketConfig
-from .storage_bucket_access_control import StorageBucketAccessControl, StorageBucketAccessControlConfig
-from .storage_default_object_access_control import StorageDefaultObjectAccessControl, StorageDefaultObjectAccessControlConfig
-from .storage_folder import StorageFolder, StorageFolderConfig
-from .storage_hmac_key import StorageHmacKey, StorageHmacKeyConfig
-from .storage_managed_folder import StorageManagedFolder, StorageManagedFolderConfig
-from .storage_notification import StorageNotification, StorageNotificationConfig
-from .storage_object import StorageObject, StorageObjectConfig
-from .storage_object_access_control import StorageObjectAccessControl, StorageObjectAccessControlConfig
-from .storage_rapid_cach import StorageRapidCach, StorageRapidCachConfig
+from .anywhere_cach import AnywhereCach, AnywhereCachConfig
+from .bucket import Bucket, BucketConfig
+from .bucket_access_control import BucketAccessControl, BucketAccessControlConfig
+from .default_object_access_control import DefaultObjectAccessControl, DefaultObjectAccessControlConfig
+from .folder import Folder, FolderConfig
+from .hmac_key import HmacKey, HmacKeyConfig
+from .managed_folder import ManagedFolder, ManagedFolderConfig
+from .notification import Notification, NotificationConfig
+from .object import Object, ObjectConfig
+from .object_access_control import ObjectAccessControl, ObjectAccessControlConfig
+from .rapid_cach import RapidCach, RapidCachConfig

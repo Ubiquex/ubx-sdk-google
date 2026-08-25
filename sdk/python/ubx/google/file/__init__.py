@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .file_backup import FileBackup, FileBackupConfig
-from .file_instance import FileInstance, FileInstanceConfig
-from .file_snapshot import FileSnapshot, FileSnapshotConfig
-from .v1beta1_file_v1beta1_backup import V1beta1FileV1beta1Backup, V1beta1FileV1beta1BackupConfig
-from .v1beta1_file_v1beta1_instance import V1beta1FileV1beta1Instance, V1beta1FileV1beta1InstanceConfig
-from .v1beta1_file_v1beta1_share import V1beta1FileV1beta1Share, V1beta1FileV1beta1ShareConfig
-from .v1beta1_file_v1beta1_snapshot import V1beta1FileV1beta1Snapshot, V1beta1FileV1beta1SnapshotConfig
+from .backup import Backup, BackupConfig
+from .instance import Instance, InstanceConfig
+from .snapshot import Snapshot, SnapshotConfig
+from .v1beta1_backup import V1beta1Backup, V1beta1BackupConfig
+from .v1beta1_instance import V1beta1Instance, V1beta1InstanceConfig
+from .v1beta1_share import V1beta1Share, V1beta1ShareConfig
+from .v1beta1_snapshot import V1beta1Snapshot, V1beta1SnapshotConfig

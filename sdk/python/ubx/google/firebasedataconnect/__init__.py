@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .firebasedataconnect_connector import FirebasedataconnectConnector, FirebasedataconnectConnectorConfig
-from .firebasedataconnect_schema import FirebasedataconnectSchema, FirebasedataconnectSchemaConfig
-from .firebasedataconnect_service import FirebasedataconnectService, FirebasedataconnectServiceConfig
-from .v1beta_firebasedataconnect_v1beta_connector import V1betaFirebasedataconnectV1betaConnector, V1betaFirebasedataconnectV1betaConnectorConfig
-from .v1beta_firebasedataconnect_v1beta_schema import V1betaFirebasedataconnectV1betaSchema, V1betaFirebasedataconnectV1betaSchemaConfig
-from .v1beta_firebasedataconnect_v1beta_service import V1betaFirebasedataconnectV1betaService, V1betaFirebasedataconnectV1betaServiceConfig
+from .connector import Connector, ConnectorConfig
+from .schema import Schema, SchemaConfig
+from .service import Service, ServiceConfig
+from .v1beta_connector import V1betaConnector, V1betaConnectorConfig
+from .v1beta_schema import V1betaSchema, V1betaSchemaConfig
+from .v1beta_service import V1betaService, V1betaServiceConfig

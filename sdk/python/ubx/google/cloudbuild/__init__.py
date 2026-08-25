@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .cloudbuild_connection import CloudbuildConnection, CloudbuildConnectionConfig
-from .cloudbuild_repository import CloudbuildRepository, CloudbuildRepositoryConfig
+from .connection import Connection, ConnectionConfig
+from .repository import Repository, RepositoryConfig

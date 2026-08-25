@@ -4,25 +4,25 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .netapp_active_directory import NetappActiveDirectory, NetappActiveDirectoryConfig
-from .netapp_backup import NetappBackup, NetappBackupConfig
-from .netapp_backup_policy import NetappBackupPolicy, NetappBackupPolicyConfig
-from .netapp_backup_vault import NetappBackupVault, NetappBackupVaultConfig
-from .netapp_host_group import NetappHostGroup, NetappHostGroupConfig
-from .netapp_kms_config import NetappKmsConfig, NetappKmsConfigConfig
-from .netapp_quota_rule import NetappQuotaRule, NetappQuotaRuleConfig
-from .netapp_replication import NetappReplication, NetappReplicationConfig
-from .netapp_snapshot import NetappSnapshot, NetappSnapshotConfig
-from .netapp_storage_pool import NetappStoragePool, NetappStoragePoolConfig
-from .netapp_volume import NetappVolume, NetappVolumeConfig
-from .v1beta1_netapp_v1beta1_active_directory import V1beta1NetappV1beta1ActiveDirectory, V1beta1NetappV1beta1ActiveDirectoryConfig
-from .v1beta1_netapp_v1beta1_backup import V1beta1NetappV1beta1Backup, V1beta1NetappV1beta1BackupConfig
-from .v1beta1_netapp_v1beta1_backup_policy import V1beta1NetappV1beta1BackupPolicy, V1beta1NetappV1beta1BackupPolicyConfig
-from .v1beta1_netapp_v1beta1_backup_vault import V1beta1NetappV1beta1BackupVault, V1beta1NetappV1beta1BackupVaultConfig
-from .v1beta1_netapp_v1beta1_host_group import V1beta1NetappV1beta1HostGroup, V1beta1NetappV1beta1HostGroupConfig
-from .v1beta1_netapp_v1beta1_kms_config import V1beta1NetappV1beta1KmsConfig, V1beta1NetappV1beta1KmsConfigConfig
-from .v1beta1_netapp_v1beta1_quota_rule import V1beta1NetappV1beta1QuotaRule, V1beta1NetappV1beta1QuotaRuleConfig
-from .v1beta1_netapp_v1beta1_replication import V1beta1NetappV1beta1Replication, V1beta1NetappV1beta1ReplicationConfig
-from .v1beta1_netapp_v1beta1_snapshot import V1beta1NetappV1beta1Snapshot, V1beta1NetappV1beta1SnapshotConfig
-from .v1beta1_netapp_v1beta1_storage_pool import V1beta1NetappV1beta1StoragePool, V1beta1NetappV1beta1StoragePoolConfig
-from .v1beta1_netapp_v1beta1_volume import V1beta1NetappV1beta1Volume, V1beta1NetappV1beta1VolumeConfig
+from .active_directory import ActiveDirectory, ActiveDirectoryConfig
+from .backup import Backup, BackupConfig
+from .backup_policy import BackupPolicy, BackupPolicyConfig
+from .backup_vault import BackupVault, BackupVaultConfig
+from .host_group import HostGroup, HostGroupConfig
+from .kms_config import KmsConfig, KmsConfigConfig
+from .quota_rule import QuotaRule, QuotaRuleConfig
+from .replication import Replication, ReplicationConfig
+from .snapshot import Snapshot, SnapshotConfig
+from .storage_pool import StoragePool, StoragePoolConfig
+from .v1beta1_active_directory import V1beta1ActiveDirectory, V1beta1ActiveDirectoryConfig
+from .v1beta1_backup import V1beta1Backup, V1beta1BackupConfig
+from .v1beta1_backup_policy import V1beta1BackupPolicy, V1beta1BackupPolicyConfig
+from .v1beta1_backup_vault import V1beta1BackupVault, V1beta1BackupVaultConfig
+from .v1beta1_host_group import V1beta1HostGroup, V1beta1HostGroupConfig
+from .v1beta1_kms_config import V1beta1KmsConfig, V1beta1KmsConfigConfig
+from .v1beta1_quota_rule import V1beta1QuotaRule, V1beta1QuotaRuleConfig
+from .v1beta1_replication import V1beta1Replication, V1beta1ReplicationConfig
+from .v1beta1_snapshot import V1beta1Snapshot, V1beta1SnapshotConfig
+from .v1beta1_storage_pool import V1beta1StoragePool, V1beta1StoragePoolConfig
+from .v1beta1_volume import V1beta1Volume, V1beta1VolumeConfig
+from .volume import Volume, VolumeConfig

@@ -4,13 +4,13 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .datacatalog_entry import DatacatalogEntry, DatacatalogEntryConfig
-from .datacatalog_entry_group import DatacatalogEntryGroup, DatacatalogEntryGroupConfig
-from .datacatalog_policy_tag import DatacatalogPolicyTag, DatacatalogPolicyTagConfig
-from .datacatalog_tag_template import DatacatalogTagTemplate, DatacatalogTagTemplateConfig
-from .datacatalog_taxonomy import DatacatalogTaxonomy, DatacatalogTaxonomyConfig
-from .v1beta1_datacatalog_v1beta1_entry import V1beta1DatacatalogV1beta1Entry, V1beta1DatacatalogV1beta1EntryConfig
-from .v1beta1_datacatalog_v1beta1_entry_group import V1beta1DatacatalogV1beta1EntryGroup, V1beta1DatacatalogV1beta1EntryGroupConfig
-from .v1beta1_datacatalog_v1beta1_policy_tag import V1beta1DatacatalogV1beta1PolicyTag, V1beta1DatacatalogV1beta1PolicyTagConfig
-from .v1beta1_datacatalog_v1beta1_tag_template import V1beta1DatacatalogV1beta1TagTemplate, V1beta1DatacatalogV1beta1TagTemplateConfig
-from .v1beta1_datacatalog_v1beta1_taxonomy import V1beta1DatacatalogV1beta1Taxonomy, V1beta1DatacatalogV1beta1TaxonomyConfig
+from .entry import Entry, EntryConfig
+from .entry_group import EntryGroup, EntryGroupConfig
+from .policy_tag import PolicyTag, PolicyTagConfig
+from .tag_template import TagTemplate, TagTemplateConfig
+from .taxonomy import Taxonomy, TaxonomyConfig
+from .v1beta1_entry import V1beta1Entry, V1beta1EntryConfig
+from .v1beta1_entry_group import V1beta1EntryGroup, V1beta1EntryGroupConfig
+from .v1beta1_policy_tag import V1beta1PolicyTag, V1beta1PolicyTagConfig
+from .v1beta1_tag_template import V1beta1TagTemplate, V1beta1TagTemplateConfig
+from .v1beta1_taxonomy import V1beta1Taxonomy, V1beta1TaxonomyConfig

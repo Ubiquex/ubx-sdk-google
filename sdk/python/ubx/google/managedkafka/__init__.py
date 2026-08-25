@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .managedkafka_acl import ManagedkafkaAcl, ManagedkafkaAclConfig
-from .managedkafka_cluster import ManagedkafkaCluster, ManagedkafkaClusterConfig
-from .managedkafka_connect_cluster import ManagedkafkaConnectCluster, ManagedkafkaConnectClusterConfig
-from .managedkafka_connector import ManagedkafkaConnector, ManagedkafkaConnectorConfig
-from .managedkafka_schema_registry import ManagedkafkaSchemaRegistry, ManagedkafkaSchemaRegistryConfig
-from .managedkafka_topic import ManagedkafkaTopic, ManagedkafkaTopicConfig
-from .managedkafka_version import ManagedkafkaVersion, ManagedkafkaVersionConfig
+from .acl import Acl, AclConfig
+from .cluster import Cluster, ClusterConfig
+from .connect_cluster import ConnectCluster, ConnectClusterConfig
+from .connector import Connector, ConnectorConfig
+from .schema_registry import SchemaRegistry, SchemaRegistryConfig
+from .topic import Topic, TopicConfig
+from .version import Version, VersionConfig
