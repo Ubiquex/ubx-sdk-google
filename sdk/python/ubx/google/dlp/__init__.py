@@ -8,7 +8,7 @@ from .connection import Connection, ConnectionConfig
 from .content_policy import ContentPolicy, ContentPolicyConfig
 from .deidentify_template import DeidentifyTemplate, DeidentifyTemplateConfig
 from .discovery_config import DiscoveryConfig, DiscoveryConfigConfig
-from .dlp_job import DlpJob, DlpJobConfig
 from .inspect_template import InspectTemplate, InspectTemplateConfig
+from .job import Job, JobConfig
 from .job_trigger import JobTrigger, JobTriggerConfig
 from .stored_info_type import StoredInfoType, StoredInfoTypeConfig
