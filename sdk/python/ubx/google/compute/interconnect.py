@@ -206,6 +206,8 @@ class InterconnectConfig:
     satisfies_pzs: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None
+    # Output only. Server-defined URL for this resource with the resource id.
+    self_link_with_id: Any = None
     # Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
     state: Any = None
     # To be deprecated.
@@ -283,6 +285,8 @@ class InterconnectAttrs:
     satisfies_pzs: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None
+    # Output only. Server-defined URL for this resource with the resource id.
+    self_link_with_id: Any = None
     # Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
     state: Any = None
     # To be deprecated.
@@ -347,6 +351,7 @@ Interconnect = ubx.ResourceBinding(
         "requested_link_count": ubx.FieldSpec(wire_name="requested_link_count"),
         "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "state": ubx.FieldSpec(wire_name="state"),
         "subzone": ubx.FieldSpec(wire_name="subzone"),
         "wire_groups": ubx.FieldSpec(wire_name="wire_groups"),

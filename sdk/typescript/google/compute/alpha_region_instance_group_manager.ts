@@ -379,8 +379,6 @@ export interface AlphaRegionInstanceGroupManager_TargetSizePolicy {
 export interface AlphaRegionInstanceGroupManager_UpdatePolicy {
   /** Actions that are allowed to update instances within MIG. */
   allowedActions?: string[] | Computed<string[]>;
-  /** Whether the boot disk is allowed to be updated with restart. */
-  disruptionMode?: string | Computed<string>;
   /** The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled. */
   instanceRedistributionType?: string | Computed<string>;
   /** Encapsulates numeric value that can be either absolute or relative. */
@@ -884,7 +882,6 @@ const AlphaRegionInstanceGroupManager_TargetSizePolicyFields: FieldMap = {
 
 const AlphaRegionInstanceGroupManager_UpdatePolicyFields: FieldMap = {
   allowedActions: "allowed_actions",
-  disruptionMode: "disruption_mode",
   instanceRedistributionType: "instance_redistribution_type",
   maxSurge: {
     wireName: "max_surge",

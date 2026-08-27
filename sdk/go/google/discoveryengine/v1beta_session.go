@@ -231,6 +231,7 @@ type V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGround
 }
 
 type V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References struct {
+	ChunkMetadata any
 	CodeSnippet any
 	Content any
 	DocumentMetadata any
@@ -644,6 +645,7 @@ var V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundi
 	}
 
 var V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_ReferencesFields = ubx.FieldMap{
+		"ChunkMetadata": ubx.FieldSpec{WireName: "chunk_metadata"},
 		"CodeSnippet": ubx.FieldSpec{WireName: "code_snippet"},
 		"Content": ubx.FieldSpec{WireName: "content"},
 		"DocumentMetadata": ubx.FieldSpec{

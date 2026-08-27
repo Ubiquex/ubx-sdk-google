@@ -4,5 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
+from .config_store_setting import ConfigStoreSetting, ConfigStoreSettingConfig
 from .job import Job, JobConfig
 from .template import Template, TemplateConfig

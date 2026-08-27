@@ -51,6 +51,7 @@ export interface V1beta1Instance_FileShares {
 
 export interface V1beta1Instance_Networks_PscConfig {
   endpointProject?: string | Computed<string>;
+  requestedIpAddress?: string | Computed<string>;
 }
 
 export interface V1beta1Instance_Networks {
@@ -165,6 +166,7 @@ const V1beta1Instance_FileSharesFields: FieldMap = {
 
 const V1beta1Instance_Networks_PscConfigFields: FieldMap = {
   endpointProject: "endpoint_project",
+  requestedIpAddress: "requested_ip_address",
 };
 
 const V1beta1Instance_NetworksFields: FieldMap = {

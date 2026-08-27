@@ -202,6 +202,8 @@ type InterconnectConfig struct {
 	SatisfiesPzs any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
+	// Output only. Server-defined URL for this resource with the resource id.
+	SelfLinkWithId any
 	// Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
 	State any
 	// To be deprecated.
@@ -279,6 +281,8 @@ type InterconnectAttrs struct {
 	SatisfiesPzs any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
+	// Output only. Server-defined URL for this resource with the resource id.
+	SelfLinkWithId any
 	// Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
 	State any
 	// To be deprecated.
@@ -344,6 +348,7 @@ var Interconnect = ubx.ResourceBinding{
 		"RequestedLinkCount": ubx.FieldSpec{WireName: "requested_link_count"},
 		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
 		"State": ubx.FieldSpec{WireName: "state"},
 		"Subzone": ubx.FieldSpec{WireName: "subzone"},
 		"WireGroups": ubx.FieldSpec{WireName: "wire_groups"},

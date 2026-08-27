@@ -385,8 +385,6 @@ class AlphaRegionInstanceGroupManager_TargetSizePolicy:
 class AlphaRegionInstanceGroupManager_UpdatePolicy:
     # Actions that are allowed to update instances within MIG.
     allowed_actions: Any = None
-    # Whether the boot disk is allowed to be updated with restart.
-    disruption_mode: Any = None
     # The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
     instance_redistribution_type: Any = None
     # Encapsulates numeric value that can be either absolute or relative.
@@ -889,7 +887,6 @@ _AlphaRegionInstanceGroupManager_TargetSizePolicyFields = {
 
 _AlphaRegionInstanceGroupManager_UpdatePolicyFields = {
     "allowed_actions": ubx.FieldSpec(wire_name="allowed_actions"),
-    "disruption_mode": ubx.FieldSpec(wire_name="disruption_mode"),
     "instance_redistribution_type": ubx.FieldSpec(wire_name="instance_redistribution_type"),
     "max_surge": ubx.FieldSpec(
         wire_name="max_surge",

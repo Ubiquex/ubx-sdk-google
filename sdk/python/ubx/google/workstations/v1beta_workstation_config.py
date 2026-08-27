@@ -141,6 +141,8 @@ class V1betaWorkstationConfig_HttpOptions:
 class V1betaWorkstationConfig_PersistentDirectories_GceHd:
     archive_timeout: Any = None
     max_size_gb: Any = None
+    provisioned_iops: Any = None
+    provisioned_throughput: Any = None
     reclaim_policy: Any = None
     size_gb: Any = None
     source_snapshot: Any = None
@@ -303,6 +305,8 @@ _V1betaWorkstationConfig_HttpOptionsFields = {
 _V1betaWorkstationConfig_PersistentDirectories_GceHdFields = {
     "archive_timeout": ubx.FieldSpec(wire_name="archive_timeout"),
     "max_size_gb": ubx.FieldSpec(wire_name="max_size_gb"),
+    "provisioned_iops": ubx.FieldSpec(wire_name="provisioned_iops"),
+    "provisioned_throughput": ubx.FieldSpec(wire_name="provisioned_throughput"),
     "reclaim_policy": ubx.FieldSpec(wire_name="reclaim_policy"),
     "size_gb": ubx.FieldSpec(wire_name="size_gb"),
     "source_snapshot": ubx.FieldSpec(wire_name="source_snapshot"),

@@ -372,7 +372,7 @@ type Cluster_Metrics struct {
 }
 
 type Cluster_Status struct {
-	// Optional. Output only. Details of cluster's state.
+	// Optional. Details of cluster's state.
 	Detail any
 	// Output only. The cluster's state.
 	State any

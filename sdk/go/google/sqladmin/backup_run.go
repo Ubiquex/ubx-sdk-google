@@ -4,6 +4,8 @@ package sqladmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupRun_DiskEncryptionConfiguration struct {
+	// Optional. If true, enables Confidential Mode for the instance's Hyperdisk Balanced volumes. Only supported for zonal C4A instances currently.
+	ConfidentialMode any
 	// This is always `sql#diskEncryptionConfiguration`.
 	Kind any
 	// Resource name of KMS key for disk encryption
@@ -27,6 +29,7 @@ type BackupRun_Error struct {
 }
 
 var BackupRun_DiskEncryptionConfigurationFields = ubx.FieldMap{
+		"ConfidentialMode": ubx.FieldSpec{WireName: "confidential_mode"},
 		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
 	}

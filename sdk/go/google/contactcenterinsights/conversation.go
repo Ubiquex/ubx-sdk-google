@@ -481,6 +481,93 @@ type Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata struct
 	SmartReplyAllowlistCovered any
 }
 
+type Conversation_Transcript_TranscriptSegments_Parts_Citation struct {
+	Snippet any
+	SourceTitle any
+	SourceUri any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_CustomPayload struct {
+	Payload any
+	PayloadType any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_Image struct {
+	AlternativeText any
+	Uri any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_Link struct {
+	Text any
+	Uri any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_List_Items struct {
+	SubItems any
+	Text any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_List struct {
+	Items any
+	ListType any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_Price struct {
+	CurrencyCode any
+	Nanos any
+	Units any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products struct {
+	Description any
+	DisplayName any
+	Id any
+	ImageUris any
+	Price any
+	Uri any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_ProductCollection struct {
+	Products any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_Chips struct {
+	ActionUri any
+	Text any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips struct {
+	Chips any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_Table_Rows struct {
+	Cells any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_Table struct {
+	Headers any
+	Rows any
+	Title any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts_Text struct {
+	Text any
+}
+
+type Conversation_Transcript_TranscriptSegments_Parts struct {
+	Citation any
+	CustomPayload any
+	Image any
+	Link any
+	List any
+	ProductCollection any
+	SuggestionChips any
+	Table any
+	Text any
+	Thought any
+	Video any
+}
+
 type Conversation_Transcript_TranscriptSegments_SegmentParticipant struct {
 	DialogflowParticipant any
 	DialogflowParticipantName any
@@ -502,6 +589,7 @@ type Conversation_Transcript_TranscriptSegments struct {
 	DialogflowSegmentMetadata any
 	LanguageCode any
 	MessageTime any
+	Parts any
 	SegmentParticipant any
 	Sentiment any
 	Text any
@@ -1176,6 +1264,157 @@ var Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadataFields =
 		"SmartReplyAllowlistCovered": ubx.FieldSpec{WireName: "smart_reply_allowlist_covered"},
 	}
 
+var Conversation_Transcript_TranscriptSegments_Parts_CitationFields = ubx.FieldMap{
+		"Snippet": ubx.FieldSpec{WireName: "snippet"},
+		"SourceTitle": ubx.FieldSpec{WireName: "source_title"},
+		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_CustomPayloadFields = ubx.FieldMap{
+		"Payload": ubx.FieldSpec{WireName: "payload"},
+		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_ImageFields = ubx.FieldMap{
+		"AlternativeText": ubx.FieldSpec{WireName: "alternative_text"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_LinkFields = ubx.FieldMap{
+		"Text": ubx.FieldSpec{WireName: "text"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_List_ItemsFields = ubx.FieldMap{
+		"SubItems": ubx.FieldSpec{WireName: "sub_items"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_ListFields = ubx.FieldMap{
+		"Items": ubx.FieldSpec{
+			WireName: "items",
+			Kind: "list",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_List_ItemsFields,
+		},
+		"ListType": ubx.FieldSpec{WireName: "list_type"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_PriceFields = ubx.FieldMap{
+		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Units": ubx.FieldSpec{WireName: "units"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_ProductsFields = ubx.FieldMap{
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"ImageUris": ubx.FieldSpec{WireName: "image_uris"},
+		"Price": ubx.FieldSpec{
+			WireName: "price",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_PriceFields,
+		},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_ProductCollectionFields = ubx.FieldMap{
+		"Products": ubx.FieldSpec{
+			WireName: "products",
+			Kind: "list",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_ProductsFields,
+		},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_ChipsFields = ubx.FieldMap{
+		"ActionUri": ubx.FieldSpec{WireName: "action_uri"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_SuggestionChipsFields = ubx.FieldMap{
+		"Chips": ubx.FieldSpec{
+			WireName: "chips",
+			Kind: "list",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_ChipsFields,
+		},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_Table_RowsFields = ubx.FieldMap{
+		"Cells": ubx.FieldSpec{WireName: "cells"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_TableFields = ubx.FieldMap{
+		"Headers": ubx.FieldSpec{WireName: "headers"},
+		"Rows": ubx.FieldSpec{
+			WireName: "rows",
+			Kind: "list",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_Table_RowsFields,
+		},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_Parts_TextFields = ubx.FieldMap{
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
+
+var Conversation_Transcript_TranscriptSegments_PartsFields = ubx.FieldMap{
+		"Citation": ubx.FieldSpec{
+			WireName: "citation",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_CitationFields,
+		},
+		"CustomPayload": ubx.FieldSpec{
+			WireName: "custom_payload",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_CustomPayloadFields,
+		},
+		"Image": ubx.FieldSpec{
+			WireName: "image",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_ImageFields,
+		},
+		"Link": ubx.FieldSpec{
+			WireName: "link",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_LinkFields,
+		},
+		"List": ubx.FieldSpec{
+			WireName: "list",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_ListFields,
+		},
+		"ProductCollection": ubx.FieldSpec{
+			WireName: "product_collection",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_ProductCollectionFields,
+		},
+		"SuggestionChips": ubx.FieldSpec{
+			WireName: "suggestion_chips",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_SuggestionChipsFields,
+		},
+		"Table": ubx.FieldSpec{
+			WireName: "table",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_TableFields,
+		},
+		"Text": ubx.FieldSpec{
+			WireName: "text",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_TextFields,
+		},
+		"Thought": ubx.FieldSpec{
+			WireName: "thought",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_TextFields,
+		},
+		"Video": ubx.FieldSpec{
+			WireName: "video",
+			Kind: "object",
+			Fields: Conversation_Transcript_TranscriptSegments_Parts_ImageFields,
+		},
+	}
+
 var Conversation_Transcript_TranscriptSegments_SegmentParticipantFields = ubx.FieldMap{
 		"DialogflowParticipant": ubx.FieldSpec{WireName: "dialogflow_participant"},
 		"DialogflowParticipantName": ubx.FieldSpec{WireName: "dialogflow_participant_name"},
@@ -1201,6 +1440,11 @@ var Conversation_Transcript_TranscriptSegmentsFields = ubx.FieldMap{
 		},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
 		"MessageTime": ubx.FieldSpec{WireName: "message_time"},
+		"Parts": ubx.FieldSpec{
+			WireName: "parts",
+			Kind: "list",
+			Fields: Conversation_Transcript_TranscriptSegments_PartsFields,
+		},
 		"SegmentParticipant": ubx.FieldSpec{
 			WireName: "segment_participant",
 			Kind: "object",

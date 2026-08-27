@@ -187,6 +187,8 @@ export interface BetaInterconnectConfig {
   satisfiesPzs?: boolean | Computed<boolean>;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
+  /** Output only. Server-defined URL for this resource with the resource id. */
+  selfLinkWithId?: string | Computed<string>;
   /** Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. */
   state?: string | Computed<string>;
   /** To be deprecated. */
@@ -264,6 +266,8 @@ export interface BetaInterconnectAttrs {
   satisfiesPzs: boolean;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** Output only. Server-defined URL for this resource with the resource id. */
+  selfLinkWithId: string;
   /** Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. */
   state: string;
   /** To be deprecated. */
@@ -329,6 +333,7 @@ export const BetaInterconnect: ResourceBinding<BetaInterconnectConfig, BetaInter
     requestedLinkCount: "requested_link_count",
     satisfiesPzs: "satisfies_pzs",
     selfLink: "self_link",
+    selfLinkWithId: "self_link_with_id",
     state: "state",
     subzone: "subzone",
     wireGroups: "wire_groups",

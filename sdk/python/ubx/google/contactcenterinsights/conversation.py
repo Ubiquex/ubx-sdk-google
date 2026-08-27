@@ -485,6 +485,93 @@ class Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata:
     smart_reply_allowlist_covered: Any = None
 
 @dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_Citation:
+    snippet: Any = None
+    source_title: Any = None
+    source_uri: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_CustomPayload:
+    payload: Any = None
+    payload_type: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_Image:
+    alternative_text: Any = None
+    uri: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_Link:
+    text: Any = None
+    uri: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_List_Items:
+    sub_items: Any = None
+    text: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_List:
+    items: Any = None
+    list_type: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_Price:
+    currency_code: Any = None
+    nanos: Any = None
+    units: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products:
+    description: Any = None
+    display_name: Any = None
+    id: Any = None
+    image_uris: Any = None
+    price: Any = None
+    uri: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_ProductCollection:
+    products: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_Chips:
+    action_uri: Any = None
+    text: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips:
+    chips: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_Table_Rows:
+    cells: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_Table:
+    headers: Any = None
+    rows: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts_Text:
+    text: Any = None
+
+@dataclasses.dataclass
+class Conversation_Transcript_TranscriptSegments_Parts:
+    citation: Any = None
+    custom_payload: Any = None
+    image: Any = None
+    link: Any = None
+    list: Any = None
+    product_collection: Any = None
+    suggestion_chips: Any = None
+    table: Any = None
+    text: Any = None
+    thought: Any = None
+    video: Any = None
+
+@dataclasses.dataclass
 class Conversation_Transcript_TranscriptSegments_SegmentParticipant:
     dialogflow_participant: Any = None
     dialogflow_participant_name: Any = None
@@ -506,6 +593,7 @@ class Conversation_Transcript_TranscriptSegments:
     dialogflow_segment_metadata: Any = None
     language_code: Any = None
     message_time: Any = None
+    parts: Any = None
     segment_participant: Any = None
     sentiment: Any = None
     text: Any = None
@@ -1179,6 +1267,157 @@ _Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadataFields = {
     "smart_reply_allowlist_covered": ubx.FieldSpec(wire_name="smart_reply_allowlist_covered"),
 }
 
+_Conversation_Transcript_TranscriptSegments_Parts_CitationFields = {
+    "snippet": ubx.FieldSpec(wire_name="snippet"),
+    "source_title": ubx.FieldSpec(wire_name="source_title"),
+    "source_uri": ubx.FieldSpec(wire_name="source_uri"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_CustomPayloadFields = {
+    "payload": ubx.FieldSpec(wire_name="payload"),
+    "payload_type": ubx.FieldSpec(wire_name="payload_type"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_ImageFields = {
+    "alternative_text": ubx.FieldSpec(wire_name="alternative_text"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_LinkFields = {
+    "text": ubx.FieldSpec(wire_name="text"),
+    "uri": ubx.FieldSpec(wire_name="uri"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_List_ItemsFields = {
+    "sub_items": ubx.FieldSpec(wire_name="sub_items"),
+    "text": ubx.FieldSpec(wire_name="text"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_ListFields = {
+    "items": ubx.FieldSpec(
+        wire_name="items",
+        kind="list",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_List_ItemsFields,
+    ),
+    "list_type": ubx.FieldSpec(wire_name="list_type"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_PriceFields = {
+    "currency_code": ubx.FieldSpec(wire_name="currency_code"),
+    "nanos": ubx.FieldSpec(wire_name="nanos"),
+    "units": ubx.FieldSpec(wire_name="units"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_ProductsFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "display_name": ubx.FieldSpec(wire_name="display_name"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "image_uris": ubx.FieldSpec(wire_name="image_uris"),
+    "price": ubx.FieldSpec(
+        wire_name="price",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_PriceFields,
+    ),
+    "uri": ubx.FieldSpec(wire_name="uri"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_ProductCollectionFields = {
+    "products": ubx.FieldSpec(
+        wire_name="products",
+        kind="list",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_ProductsFields,
+    ),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_ChipsFields = {
+    "action_uri": ubx.FieldSpec(wire_name="action_uri"),
+    "text": ubx.FieldSpec(wire_name="text"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_SuggestionChipsFields = {
+    "chips": ubx.FieldSpec(
+        wire_name="chips",
+        kind="list",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_ChipsFields,
+    ),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_Table_RowsFields = {
+    "cells": ubx.FieldSpec(wire_name="cells"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_TableFields = {
+    "headers": ubx.FieldSpec(wire_name="headers"),
+    "rows": ubx.FieldSpec(
+        wire_name="rows",
+        kind="list",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_Table_RowsFields,
+    ),
+    "title": ubx.FieldSpec(wire_name="title"),
+}
+
+_Conversation_Transcript_TranscriptSegments_Parts_TextFields = {
+    "text": ubx.FieldSpec(wire_name="text"),
+}
+
+_Conversation_Transcript_TranscriptSegments_PartsFields = {
+    "citation": ubx.FieldSpec(
+        wire_name="citation",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_CitationFields,
+    ),
+    "custom_payload": ubx.FieldSpec(
+        wire_name="custom_payload",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_CustomPayloadFields,
+    ),
+    "image": ubx.FieldSpec(
+        wire_name="image",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_ImageFields,
+    ),
+    "link": ubx.FieldSpec(
+        wire_name="link",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_LinkFields,
+    ),
+    "list": ubx.FieldSpec(
+        wire_name="list",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_ListFields,
+    ),
+    "product_collection": ubx.FieldSpec(
+        wire_name="product_collection",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_ProductCollectionFields,
+    ),
+    "suggestion_chips": ubx.FieldSpec(
+        wire_name="suggestion_chips",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_SuggestionChipsFields,
+    ),
+    "table": ubx.FieldSpec(
+        wire_name="table",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_TableFields,
+    ),
+    "text": ubx.FieldSpec(
+        wire_name="text",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_TextFields,
+    ),
+    "thought": ubx.FieldSpec(
+        wire_name="thought",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_TextFields,
+    ),
+    "video": ubx.FieldSpec(
+        wire_name="video",
+        kind="object",
+        fields=_Conversation_Transcript_TranscriptSegments_Parts_ImageFields,
+    ),
+}
+
 _Conversation_Transcript_TranscriptSegments_SegmentParticipantFields = {
     "dialogflow_participant": ubx.FieldSpec(wire_name="dialogflow_participant"),
     "dialogflow_participant_name": ubx.FieldSpec(wire_name="dialogflow_participant_name"),
@@ -1204,6 +1443,11 @@ _Conversation_Transcript_TranscriptSegmentsFields = {
     ),
     "language_code": ubx.FieldSpec(wire_name="language_code"),
     "message_time": ubx.FieldSpec(wire_name="message_time"),
+    "parts": ubx.FieldSpec(
+        wire_name="parts",
+        kind="list",
+        fields=_Conversation_Transcript_TranscriptSegments_PartsFields,
+    ),
     "segment_participant": ubx.FieldSpec(
         wire_name="segment_participant",
         kind="object",

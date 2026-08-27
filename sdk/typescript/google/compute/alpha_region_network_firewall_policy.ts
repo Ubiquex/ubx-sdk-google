@@ -225,6 +225,8 @@ const AlphaRegionNetworkFirewallPolicy_RolloutOperationFields: FieldMap = {
 };
 
 export interface AlphaRegionNetworkFirewallPolicyConfig {
+  /** Optional. If specified, it defines what should happen in case of backend issues for rules with apply_security_profile_group action. Allowed values: ALLOW, DENY. If not specified, the default behavior is ALLOW. */
+  applySecurityProfileFallbackAction?: string | Computed<string>;
   /** A list of associations that belong to this firewall policy. */
   associations?: AlphaRegionNetworkFirewallPolicy_Associations[] | Computed<AlphaRegionNetworkFirewallPolicy_Associations[]>;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
@@ -268,6 +270,8 @@ export interface AlphaRegionNetworkFirewallPolicyConfig {
 }
 
 export interface AlphaRegionNetworkFirewallPolicyAttrs {
+  /** Optional. If specified, it defines what should happen in case of backend issues for rules with apply_security_profile_group action. Allowed values: ALLOW, DENY. If not specified, the default behavior is ALLOW. */
+  applySecurityProfileFallbackAction: string;
   /** A list of associations that belong to this firewall policy. */
   associations: AlphaRegionNetworkFirewallPolicy_Associations[];
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
@@ -313,6 +317,7 @@ export interface AlphaRegionNetworkFirewallPolicyAttrs {
 export const AlphaRegionNetworkFirewallPolicy: ResourceBinding<AlphaRegionNetworkFirewallPolicyConfig, AlphaRegionNetworkFirewallPolicyAttrs> = {
   wireType: "google_compute_alpha_region_network_firewall_policy",
   fields: {
+    applySecurityProfileFallbackAction: "apply_security_profile_fallback_action",
     associations: {
       wireName: "associations",
       kind: "list",

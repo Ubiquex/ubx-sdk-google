@@ -479,6 +479,93 @@ export interface Conversation_Transcript_TranscriptSegments_DialogflowSegmentMet
   smartReplyAllowlistCovered?: boolean | Computed<boolean>;
 }
 
+export interface Conversation_Transcript_TranscriptSegments_Parts_Citation {
+  snippet?: string | Computed<string>;
+  sourceTitle?: string | Computed<string>;
+  sourceUri?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_CustomPayload {
+  payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  payloadType?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_Image {
+  alternativeText?: string | Computed<string>;
+  uri?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_Link {
+  text?: string | Computed<string>;
+  uri?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_List_Items {
+  subItems?: unknown[] | Computed<unknown[]>;
+  text?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_List {
+  items?: Conversation_Transcript_TranscriptSegments_Parts_List_Items[] | Computed<Conversation_Transcript_TranscriptSegments_Parts_List_Items[]>;
+  listType?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_Price {
+  currencyCode?: string | Computed<string>;
+  nanos?: number | Computed<number>;
+  units?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products {
+  description?: string | Computed<string>;
+  displayName?: string | Computed<string>;
+  id?: string | Computed<string>;
+  imageUris?: string[] | Computed<string[]>;
+  price?: Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_Price | Computed<Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_Price>;
+  uri?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_ProductCollection {
+  products?: Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products[] | Computed<Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products[]>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_Chips {
+  actionUri?: string | Computed<string>;
+  text?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips {
+  chips?: Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_Chips[] | Computed<Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_Chips[]>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_Table_Rows {
+  cells?: string[] | Computed<string[]>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_Table {
+  headers?: string[] | Computed<string[]>;
+  rows?: Conversation_Transcript_TranscriptSegments_Parts_Table_Rows[] | Computed<Conversation_Transcript_TranscriptSegments_Parts_Table_Rows[]>;
+  title?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts_Text {
+  text?: string | Computed<string>;
+}
+
+export interface Conversation_Transcript_TranscriptSegments_Parts {
+  citation?: Conversation_Transcript_TranscriptSegments_Parts_Citation | Computed<Conversation_Transcript_TranscriptSegments_Parts_Citation>;
+  customPayload?: Conversation_Transcript_TranscriptSegments_Parts_CustomPayload | Computed<Conversation_Transcript_TranscriptSegments_Parts_CustomPayload>;
+  image?: Conversation_Transcript_TranscriptSegments_Parts_Image | Computed<Conversation_Transcript_TranscriptSegments_Parts_Image>;
+  link?: Conversation_Transcript_TranscriptSegments_Parts_Link | Computed<Conversation_Transcript_TranscriptSegments_Parts_Link>;
+  list?: Conversation_Transcript_TranscriptSegments_Parts_List | Computed<Conversation_Transcript_TranscriptSegments_Parts_List>;
+  productCollection?: Conversation_Transcript_TranscriptSegments_Parts_ProductCollection | Computed<Conversation_Transcript_TranscriptSegments_Parts_ProductCollection>;
+  suggestionChips?: Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips | Computed<Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips>;
+  table?: Conversation_Transcript_TranscriptSegments_Parts_Table | Computed<Conversation_Transcript_TranscriptSegments_Parts_Table>;
+  text?: Conversation_Transcript_TranscriptSegments_Parts_Text | Computed<Conversation_Transcript_TranscriptSegments_Parts_Text>;
+  thought?: Conversation_Transcript_TranscriptSegments_Parts_Text | Computed<Conversation_Transcript_TranscriptSegments_Parts_Text>;
+  video?: Conversation_Transcript_TranscriptSegments_Parts_Image | Computed<Conversation_Transcript_TranscriptSegments_Parts_Image>;
+}
+
 export interface Conversation_Transcript_TranscriptSegments_SegmentParticipant {
   dialogflowParticipant?: string | Computed<string>;
   dialogflowParticipantName?: string | Computed<string>;
@@ -500,6 +587,7 @@ export interface Conversation_Transcript_TranscriptSegments {
   dialogflowSegmentMetadata?: Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata | Computed<Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata>;
   languageCode?: string | Computed<string>;
   messageTime?: string | Computed<string>;
+  parts?: Conversation_Transcript_TranscriptSegments_Parts[] | Computed<Conversation_Transcript_TranscriptSegments_Parts[]>;
   segmentParticipant?: Conversation_Transcript_TranscriptSegments_SegmentParticipant | Computed<Conversation_Transcript_TranscriptSegments_SegmentParticipant>;
   sentiment?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment>;
   text?: string | Computed<string>;
@@ -1174,6 +1262,157 @@ const Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadataFields
   smartReplyAllowlistCovered: "smart_reply_allowlist_covered",
 };
 
+const Conversation_Transcript_TranscriptSegments_Parts_CitationFields: FieldMap = {
+  snippet: "snippet",
+  sourceTitle: "source_title",
+  sourceUri: "source_uri",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_CustomPayloadFields: FieldMap = {
+  payload: "payload",
+  payloadType: "payload_type",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_ImageFields: FieldMap = {
+  alternativeText: "alternative_text",
+  uri: "uri",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_LinkFields: FieldMap = {
+  text: "text",
+  uri: "uri",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_List_ItemsFields: FieldMap = {
+  subItems: "sub_items",
+  text: "text",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_ListFields: FieldMap = {
+  items: {
+    wireName: "items",
+    kind: "list",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_List_ItemsFields,
+  },
+  listType: "list_type",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_PriceFields: FieldMap = {
+  currencyCode: "currency_code",
+  nanos: "nanos",
+  units: "units",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_ProductsFields: FieldMap = {
+  description: "description",
+  displayName: "display_name",
+  id: "id",
+  imageUris: "image_uris",
+  price: {
+    wireName: "price",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_PriceFields,
+  },
+  uri: "uri",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_ProductCollectionFields: FieldMap = {
+  products: {
+    wireName: "products",
+    kind: "list",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_ProductsFields,
+  },
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_ChipsFields: FieldMap = {
+  actionUri: "action_uri",
+  text: "text",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_SuggestionChipsFields: FieldMap = {
+  chips: {
+    wireName: "chips",
+    kind: "list",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_ChipsFields,
+  },
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_Table_RowsFields: FieldMap = {
+  cells: "cells",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_TableFields: FieldMap = {
+  headers: "headers",
+  rows: {
+    wireName: "rows",
+    kind: "list",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_Table_RowsFields,
+  },
+  title: "title",
+};
+
+const Conversation_Transcript_TranscriptSegments_Parts_TextFields: FieldMap = {
+  text: "text",
+};
+
+const Conversation_Transcript_TranscriptSegments_PartsFields: FieldMap = {
+  citation: {
+    wireName: "citation",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_CitationFields,
+  },
+  customPayload: {
+    wireName: "custom_payload",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_CustomPayloadFields,
+  },
+  image: {
+    wireName: "image",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_ImageFields,
+  },
+  link: {
+    wireName: "link",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_LinkFields,
+  },
+  list: {
+    wireName: "list",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_ListFields,
+  },
+  productCollection: {
+    wireName: "product_collection",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_ProductCollectionFields,
+  },
+  suggestionChips: {
+    wireName: "suggestion_chips",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_SuggestionChipsFields,
+  },
+  table: {
+    wireName: "table",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_TableFields,
+  },
+  text: {
+    wireName: "text",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_TextFields,
+  },
+  thought: {
+    wireName: "thought",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_TextFields,
+  },
+  video: {
+    wireName: "video",
+    kind: "object",
+    fields: Conversation_Transcript_TranscriptSegments_Parts_ImageFields,
+  },
+};
+
 const Conversation_Transcript_TranscriptSegments_SegmentParticipantFields: FieldMap = {
   dialogflowParticipant: "dialogflow_participant",
   dialogflowParticipantName: "dialogflow_participant_name",
@@ -1199,6 +1438,11 @@ const Conversation_Transcript_TranscriptSegmentsFields: FieldMap = {
   },
   languageCode: "language_code",
   messageTime: "message_time",
+  parts: {
+    wireName: "parts",
+    kind: "list",
+    fields: Conversation_Transcript_TranscriptSegments_PartsFields,
+  },
   segmentParticipant: {
     wireName: "segment_participant",
     kind: "object",
