@@ -523,6 +523,8 @@ type ClusterConfig struct {
 	Reconciling any
 	// Optional. Storage resources available to the cluster. Keys specify the ID of the storage resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters).
 	StorageResources any
+	// Output only. The globally unique identifier for this Cluster.
+	Uid any
 	// Output only. Time that the cluster was most recently updated.
 	UpdateTime any
 }
@@ -546,6 +548,8 @@ type ClusterAttrs struct {
 	Reconciling any
 	// Optional. Storage resources available to the cluster. Keys specify the ID of the storage resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters).
 	StorageResources any
+	// Output only. The globally unique identifier for this Cluster.
+	Uid any
 	// Output only. Time that the cluster was most recently updated.
 	UpdateTime any
 }
@@ -578,6 +582,7 @@ var Cluster = ubx.ResourceBinding{
 			Kind: "map",
 			Fields: Cluster_StorageResourcesFields,
 		},
+		"Uid": ubx.FieldSpec{WireName: "uid"},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

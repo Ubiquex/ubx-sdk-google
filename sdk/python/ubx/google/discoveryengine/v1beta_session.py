@@ -235,6 +235,7 @@ class V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroun
 
 @dataclasses.dataclass
 class V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References:
+    chunk_metadata: Any = None
     code_snippet: Any = None
     content: Any = None
     document_metadata: Any = None
@@ -647,6 +648,7 @@ _V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingM
 }
 
 _V1betaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_ReferencesFields = {
+    "chunk_metadata": ubx.FieldSpec(wire_name="chunk_metadata"),
     "code_snippet": ubx.FieldSpec(wire_name="code_snippet"),
     "content": ubx.FieldSpec(wire_name="content"),
     "document_metadata": ubx.FieldSpec(

@@ -135,6 +135,8 @@ export interface V1betaWorkstationConfig_HttpOptions {
 export interface V1betaWorkstationConfig_PersistentDirectories_GceHd {
   archiveTimeout?: string | Computed<string>;
   maxSizeGb?: number | Computed<number>;
+  provisionedIops?: string | Computed<string>;
+  provisionedThroughput?: string | Computed<string>;
   reclaimPolicy?: string | Computed<string>;
   sizeGb?: number | Computed<number>;
   sourceSnapshot?: string | Computed<string>;
@@ -298,6 +300,8 @@ const V1betaWorkstationConfig_HttpOptionsFields: FieldMap = {
 const V1betaWorkstationConfig_PersistentDirectories_GceHdFields: FieldMap = {
   archiveTimeout: "archive_timeout",
   maxSizeGb: "max_size_gb",
+  provisionedIops: "provisioned_iops",
+  provisionedThroughput: "provisioned_throughput",
   reclaimPolicy: "reclaim_policy",
   sizeGb: "size_gb",
   sourceSnapshot: "source_snapshot",

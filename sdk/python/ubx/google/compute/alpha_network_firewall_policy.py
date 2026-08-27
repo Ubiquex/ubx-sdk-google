@@ -231,6 +231,8 @@ _AlphaNetworkFirewallPolicy_RolloutOperationFields = {
 
 @dataclasses.dataclass
 class AlphaNetworkFirewallPolicyConfig:
+    # Optional. If specified, it defines what should happen in case of backend issues for rules with apply_security_profile_group action. Allowed values: ALLOW, DENY. If not specified, the default behavior is ALLOW.
+    apply_security_profile_fallback_action: Any = None
     # A list of associations that belong to this firewall policy.
     associations: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
@@ -274,6 +276,8 @@ class AlphaNetworkFirewallPolicyConfig:
 
 @dataclasses.dataclass
 class AlphaNetworkFirewallPolicyAttrs:
+    # Optional. If specified, it defines what should happen in case of backend issues for rules with apply_security_profile_group action. Allowed values: ALLOW, DENY. If not specified, the default behavior is ALLOW.
+    apply_security_profile_fallback_action: Any = None
     # A list of associations that belong to this firewall policy.
     associations: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
@@ -318,6 +322,7 @@ class AlphaNetworkFirewallPolicyAttrs:
 AlphaNetworkFirewallPolicy = ubx.ResourceBinding(
     wire_type="google_compute_alpha_network_firewall_policy",
     fields={
+        "apply_security_profile_fallback_action": ubx.FieldSpec(wire_name="apply_security_profile_fallback_action"),
         "associations": ubx.FieldSpec(
             wire_name="associations",
             kind="list",

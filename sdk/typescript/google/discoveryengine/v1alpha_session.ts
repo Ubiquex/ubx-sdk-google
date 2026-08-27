@@ -229,6 +229,7 @@ export interface V1alphaSession_Turns_DetailedAssistAnswer_Replies_GroundedConte
 }
 
 export interface V1alphaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References {
+  chunkMetadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
   codeSnippet?: string | Computed<string>;
   content?: string | Computed<string>;
   documentMetadata?: V1alphaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadata | Computed<V1alphaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadata>;
@@ -682,6 +683,7 @@ const V1alphaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGrou
 };
 
 const V1alphaSession_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_ReferencesFields: FieldMap = {
+  chunkMetadata: "chunk_metadata",
   codeSnippet: "code_snippet",
   content: "content",
   documentMetadata: {

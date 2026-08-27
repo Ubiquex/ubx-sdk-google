@@ -53,6 +53,7 @@ type V1beta1Instance_FileShares struct {
 
 type V1beta1Instance_Networks_PscConfig struct {
 	EndpointProject any
+	RequestedIpAddress any
 }
 
 type V1beta1Instance_Networks struct {
@@ -167,6 +168,7 @@ var V1beta1Instance_FileSharesFields = ubx.FieldMap{
 
 var V1beta1Instance_Networks_PscConfigFields = ubx.FieldMap{
 		"EndpointProject": ubx.FieldSpec{WireName: "endpoint_project"},
+		"RequestedIpAddress": ubx.FieldSpec{WireName: "requested_ip_address"},
 	}
 
 var V1beta1Instance_NetworksFields = ubx.FieldMap{

@@ -7,9 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_SignalAggregation:
+    # If statistic is PERCENTILE, percentile must be defined. This value is used only when statistic is PERCENTILE.
+    percentile: Any = None
+    # Required. The aggregator used to aggregate signal samples across the entire instance group. This field is required.
+    statistic: Any = None
+
+@dataclasses.dataclass
+class AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_TimeAggregation:
+    # If statistic is PERCENTILE, percentile must be defined. This value is used only when statistic is PERCENTILE.
+    percentile: Any = None
+    # Required. The aggregator used to aggregate signal samples over the `time_window_sec`. This field is required.
+    statistic: Any = None
+    # Required. The duration of the time window over which the signal samples are aggregated. This field is required.
+    time_window_sec: Any = None
+
+@dataclasses.dataclass
+class AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_UtilizationRange:
+    # Required. The upper bound of the utilization range. Must be greater or equal to min_utilization. This value is required when using range-based scaling. Scaling out is triggered if the utilization exceeds this value.
+    max_utilization: Any = None
+    # Required. The lower bound of the utilization range. Must be smaller or equal to max_utilization. This value is required when using range-based scaling. Scaling in is considered only if the utilization drops below this value.
+    min_utilization: Any = None
+    # The target utilization that the autoscaler aims to achieve when scaling is triggered. This value must be within the range [min_utilization, max_utilization]. If not specified, this will default to the average of max_utilization and min_utilization.
+    utilization_target: Any = None
+
+@dataclasses.dataclass
 class AlphaAutoscaler_AutoscalingPolicy_CpuUtilization:
     # Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
     predictive_method: Any = None
+    # Defines how scaling signal is aggregated in a group. Operates on the results of the `TimeAggregation`, reducing the per-instance values down to a single aggregate value across the entire instance group.
+    signal_aggregation: Any = None
+    # Defines how scaling signal is aggregated over a time window. Operates on all signal samples produced over the `time_window_sec`, reducing them to exactly one value.
+    time_aggregation: Any = None
+    # Represents a range of acceptable utilization values. This message is used to configure range-based scaling policies, allowing Autoscaler to maintain utilization within a specified range instead of aiming for a single target point.
+    utilization_range: Any = None
     # The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
     utilization_target: Any = None
 
@@ -94,8 +125,40 @@ class AlphaAutoscaler_StatusDetails:
     message: Any = None
     type: Any = None
 
+_AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_SignalAggregationFields = {
+    "percentile": ubx.FieldSpec(wire_name="percentile"),
+    "statistic": ubx.FieldSpec(wire_name="statistic"),
+}
+
+_AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_TimeAggregationFields = {
+    "percentile": ubx.FieldSpec(wire_name="percentile"),
+    "statistic": ubx.FieldSpec(wire_name="statistic"),
+    "time_window_sec": ubx.FieldSpec(wire_name="time_window_sec"),
+}
+
+_AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_UtilizationRangeFields = {
+    "max_utilization": ubx.FieldSpec(wire_name="max_utilization"),
+    "min_utilization": ubx.FieldSpec(wire_name="min_utilization"),
+    "utilization_target": ubx.FieldSpec(wire_name="utilization_target"),
+}
+
 _AlphaAutoscaler_AutoscalingPolicy_CpuUtilizationFields = {
     "predictive_method": ubx.FieldSpec(wire_name="predictive_method"),
+    "signal_aggregation": ubx.FieldSpec(
+        wire_name="signal_aggregation",
+        kind="object",
+        fields=_AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_SignalAggregationFields,
+    ),
+    "time_aggregation": ubx.FieldSpec(
+        wire_name="time_aggregation",
+        kind="object",
+        fields=_AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_TimeAggregationFields,
+    ),
+    "utilization_range": ubx.FieldSpec(
+        wire_name="utilization_range",
+        kind="object",
+        fields=_AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_UtilizationRangeFields,
+    ),
     "utilization_target": ubx.FieldSpec(wire_name="utilization_target"),
 }
 

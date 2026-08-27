@@ -137,6 +137,8 @@ type V1betaWorkstationConfig_HttpOptions struct {
 type V1betaWorkstationConfig_PersistentDirectories_GceHd struct {
 	ArchiveTimeout any
 	MaxSizeGb any
+	ProvisionedIops any
+	ProvisionedThroughput any
 	ReclaimPolicy any
 	SizeGb any
 	SourceSnapshot any
@@ -300,6 +302,8 @@ var V1betaWorkstationConfig_HttpOptionsFields = ubx.FieldMap{
 var V1betaWorkstationConfig_PersistentDirectories_GceHdFields = ubx.FieldMap{
 		"ArchiveTimeout": ubx.FieldSpec{WireName: "archive_timeout"},
 		"MaxSizeGb": ubx.FieldSpec{WireName: "max_size_gb"},
+		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
+		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
 		"ReclaimPolicy": ubx.FieldSpec{WireName: "reclaim_policy"},
 		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
 		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
