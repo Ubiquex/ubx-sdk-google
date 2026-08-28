@@ -17,6 +17,14 @@ One package per Google Cloud service boundary (`compute/`, `storage/`,
 `dataflow/`, `bigquery/`, ...), one file per resource type, in every
 language.
 
+## Install
+
+```
+go get github.com/ubiquex/ubx-sdk-google/sdk/go
+npm install @ubx/sdk-google
+pip install ubx-sdk-google
+```
+
 ## v1.0.0: source change AND scope expansion, not just a version bump
 
 Every version before `1.0.0` was generated from the `hashicorp/google`
@@ -70,3 +78,18 @@ sanity (`deno check`, real module import) not run locally.
 Depends on the shared runtime: [ubx-sdk-go](https://github.com/ubiquex/ubx-sdk-go) (Go),
 [`jsr:@ubx/sdk`](https://jsr.io/@ubx/sdk) (TypeScript),
 [`ubx-sdk`](https://pypi.org/project/ubx-sdk/) (Python, imported as `ubx_sdk`).
+
+<!-- README-GEN:BEGIN -->
+**Real, current counts** (`ubx sdk gen --dump-ir`): 1546 resource types, 792 data source types.
+
+**Real, current published versions:**
+- Go: `v1.2.0`
+- npm (`@ubx/sdk-google`): `1.2.0`
+- PyPI (`ubx-sdk-google`): `1.2.0`
+
+## Links
+
+- Docs: https://docs.ubiquex.io
+- Internals (architecture and design): https://github.com/Ubiquex/ubiquex-internals
+- Linear board: https://linear.app/ubiquex
+<!-- README-GEN:END -->
