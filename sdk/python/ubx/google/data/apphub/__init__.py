@@ -7,10 +7,6 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .discovered_service import DiscoveredService, DiscoveredServiceConfig
 from .discovered_workload import DiscoveredWorkload, DiscoveredWorkloadConfig
 from .extended_metadata_schema import ExtendedMetadataSchema, ExtendedMetadataSchemaConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .v1alpha_discovered_service import V1alphaDiscoveredService, V1alphaDiscoveredServiceConfig
 from .v1alpha_discovered_workload import V1alphaDiscoveredWorkload, V1alphaDiscoveredWorkloadConfig
 from .v1alpha_extended_metadata_schema import V1alphaExtendedMetadataSchema, V1alphaExtendedMetadataSchemaConfig
-from .v1alpha_location import V1alphaLocation, V1alphaLocationConfig
-from .v1alpha_operation import V1alphaOperation, V1alphaOperationConfig

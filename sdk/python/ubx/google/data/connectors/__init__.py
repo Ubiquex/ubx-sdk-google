@@ -6,7 +6,5 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .connector import Connector, ConnectorConfig
 from .eventtype import Eventtype, EventtypeConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .provider import Provider, ProviderConfig
 from .version import Version, VersionConfig

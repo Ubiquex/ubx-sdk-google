@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .config import Config, ConfigConfig
-from .operation import Operation, OperationConfig

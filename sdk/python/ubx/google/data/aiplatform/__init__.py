@@ -7,11 +7,9 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .annotation_spec import AnnotationSpec, AnnotationSpecConfig
 from .evaluation import Evaluation, EvaluationConfig
 from .feature_view_sync import FeatureViewSync, FeatureViewSyncConfig
-from .location import Location, LocationConfig
 from .model import Model, ModelConfig
 from .nas_trial_detail import NasTrialDetail, NasTrialDetailConfig
 from .notebook_runtime import NotebookRuntime, NotebookRuntimeConfig
-from .operation import Operation, OperationConfig
 from .rag_file import RagFile, RagFileConfig
 from .response import Response, ResponseConfig
 from .revision import Revision, RevisionConfig
@@ -23,12 +21,10 @@ from .v1beta1_annotation_spec import V1beta1AnnotationSpec, V1beta1AnnotationSpe
 from .v1beta1_evaluation import V1beta1Evaluation, V1beta1EvaluationConfig
 from .v1beta1_extension import V1beta1Extension, V1beta1ExtensionConfig
 from .v1beta1_feature_view_sync import V1beta1FeatureViewSync, V1beta1FeatureViewSyncConfig
-from .v1beta1_location import V1beta1Location, V1beta1LocationConfig
 from .v1beta1_model import V1beta1Model, V1beta1ModelConfig
 from .v1beta1_monitored_agent import V1beta1MonitoredAgent, V1beta1MonitoredAgentConfig
 from .v1beta1_nas_trial_detail import V1beta1NasTrialDetail, V1beta1NasTrialDetailConfig
 from .v1beta1_notebook_runtime import V1beta1NotebookRuntime, V1beta1NotebookRuntimeConfig
-from .v1beta1_operation import V1beta1Operation, V1beta1OperationConfig
 from .v1beta1_rag_file import V1beta1RagFile, V1beta1RagFileConfig
 from .v1beta1_response import V1beta1Response, V1beta1ResponseConfig
 from .v1beta1_revision import V1beta1Revision, V1beta1RevisionConfig

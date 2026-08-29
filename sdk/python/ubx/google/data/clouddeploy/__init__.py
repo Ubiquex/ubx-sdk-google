@@ -6,5 +6,3 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .automation_run import AutomationRun, AutomationRunConfig
 from .job_run import JobRun, JobRunConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig

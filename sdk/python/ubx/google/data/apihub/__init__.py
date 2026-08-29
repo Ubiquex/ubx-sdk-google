@@ -7,6 +7,3 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .addon import Addon, AddonConfig
 from .definition import Definition, DefinitionConfig
 from .discovered_api_observation import DiscoveredApiObservation, DiscoveredApiObservationConfig
-from .discovered_api_operation import DiscoveredApiOperation, DiscoveredApiOperationConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig

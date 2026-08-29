@@ -103,7 +103,6 @@ class Job_DataDiscoverySpec:
 class Job_DataDocumentationResult_DatasetResult_Queries:
     description: Any = None
     sql: Any = None
-    sql_dialect: Any = None
 
 @dataclasses.dataclass
 class Job_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths:
@@ -161,8 +160,6 @@ class Job_DataDocumentationSpec:
     catalog_publishing_enabled: Any = None
     # Optional. Specifies which components of the data documentation to generate. Any component that is required to generate the specified components will also be generated. If no generation scope is specified, all available documentation components will be generated.
     generation_scopes: Any = None
-    # Optional. The SQL dialect to use in the generated SQL queries. If not specified, the default dialect is Google SQL.
-    sql_dialect: Any = None
 
 @dataclasses.dataclass
 class Job_DataProfileResult_CatalogPublishingStatus:

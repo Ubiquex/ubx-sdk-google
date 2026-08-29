@@ -4,8 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .resource import Resource, ResourceConfig
 from .resource_change import ResourceChange, ResourceChangeConfig
 from .resource_drift import ResourceDrift, ResourceDriftConfig

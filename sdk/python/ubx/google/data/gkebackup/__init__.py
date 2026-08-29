@@ -5,8 +5,6 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .backup_plan_binding import BackupPlanBinding, BackupPlanBindingConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .restore_plan_binding import RestorePlanBinding, RestorePlanBindingConfig
 from .volume_backup import VolumeBackup, VolumeBackupConfig
 from .volume_restore import VolumeRestore, VolumeRestoreConfig

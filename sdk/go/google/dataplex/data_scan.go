@@ -106,7 +106,6 @@ type DataScan_DataDiscoverySpec struct {
 type DataScan_DataDocumentationResult_DatasetResult_Queries struct {
 	Description any
 	Sql any
-	SqlDialect any
 }
 
 type DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths struct {
@@ -164,8 +163,6 @@ type DataScan_DataDocumentationSpec struct {
 	CatalogPublishingEnabled any
 	// Optional. Specifies which components of the data documentation to generate. Any component that is required to generate the specified components will also be generated. If no generation scope is specified, all available documentation components will be generated.
 	GenerationScopes any
-	// Optional. The SQL dialect to use in the generated SQL queries. If not specified, the default dialect is Google SQL.
-	SqlDialect any
 }
 
 type DataScan_DataProfileResult_CatalogPublishingStatus struct {
@@ -737,7 +734,6 @@ var DataScan_DataDiscoverySpecFields = ubx.FieldMap{
 var DataScan_DataDocumentationResult_DatasetResult_QueriesFields = ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Sql": ubx.FieldSpec{WireName: "sql"},
-		"SqlDialect": ubx.FieldSpec{WireName: "sql_dialect"},
 	}
 
 var DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields = ubx.FieldMap{
@@ -819,7 +815,6 @@ var DataScan_DataDocumentationResultFields = ubx.FieldMap{
 var DataScan_DataDocumentationSpecFields = ubx.FieldMap{
 		"CatalogPublishingEnabled": ubx.FieldSpec{WireName: "catalog_publishing_enabled"},
 		"GenerationScopes": ubx.FieldSpec{WireName: "generation_scopes"},
-		"SqlDialect": ubx.FieldSpec{WireName: "sql_dialect"},
 	}
 
 var DataScan_DataProfileResult_CatalogPublishingStatusFields = ubx.FieldMap{

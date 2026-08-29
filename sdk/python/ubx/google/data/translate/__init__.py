@@ -5,5 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .adaptive_mt_file import AdaptiveMtFile, AdaptiveMtFileConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig

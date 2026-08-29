@@ -42,6 +42,7 @@ class Instance_FileShares:
 @dataclasses.dataclass
 class Instance_Networks_PscConfig:
     endpoint_project: Any = None
+    requested_ip_address: Any = None
 
 @dataclasses.dataclass
 class Instance_Networks:
@@ -135,6 +136,7 @@ _Instance_FileSharesFields = {
 
 _Instance_Networks_PscConfigFields = {
     "endpoint_project": ubx.FieldSpec(wire_name="endpoint_project"),
+    "requested_ip_address": ubx.FieldSpec(wire_name="requested_ip_address"),
 }
 
 _Instance_NetworksFields = {

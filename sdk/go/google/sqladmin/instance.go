@@ -3,39 +3,7 @@ package sqladmin
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Instance_DeploymentInfo_Source_TargetId struct {
-	// The name of the Cloud SQL instance being referenced. This does not include the project ID.
-	Name any
-	// The project ID of the Cloud SQL instance being referenced. The default is the same project ID as the instance references it.
-	Project any
-	// The region of the Cloud SQL instance being referenced.
-	Region any
-}
-
-type Instance_DeploymentInfo_Source struct {
-	// Reference to another Cloud SQL instance.
-	TargetId any
-}
-
-type Instance_DeploymentInfo_Target struct {
-	// Reference to another Cloud SQL instance.
-	SourceId any
-}
-
-type Instance_DeploymentInfo struct {
-	// Output only. The resource ID of the blue-green deployment.
-	DeploymentId any
-	// The source instance for the Blue-Green deployment.
-	Source any
-	// Output only. The current state of blue-green-deployment for UI tags
-	State any
-	// The target instance for the Blue-Green deployment.
-	Target any
-}
-
 type Instance_DiskEncryptionConfiguration struct {
-	// Optional. If true, enables Confidential Mode for the instance's Hyperdisk Balanced volumes. Only supported for zonal C4A instances currently.
-	ConfidentialMode any
 	// This is always `sql#diskEncryptionConfiguration`.
 	Kind any
 	// Resource name of KMS key for disk encryption
@@ -109,6 +77,15 @@ type Instance_Nodes struct {
 
 type Instance_OnPremisesConfiguration_SelectedObjects struct {
 	Database any
+}
+
+type Instance_OnPremisesConfiguration_SourceInstance struct {
+	// The name of the Cloud SQL instance being referenced. This does not include the project ID.
+	Name any
+	// The project ID of the Cloud SQL instance being referenced. The default is the same project ID as the instance references it.
+	Project any
+	// The region of the Cloud SQL instance being referenced.
+	Region any
 }
 
 type Instance_OnPremisesConfiguration struct {
@@ -339,7 +316,7 @@ type Instance_Settings_IpConfiguration_AuthorizedNetworks struct {
 type Instance_Settings_IpConfiguration_PscConfig struct {
 	// Optional. The list of consumer projects that are allow-listed for PSC connections to this instance. This instance can be connected to with PSC from any network in these projects. Each consumer project in this list may be represented by a project number (numeric) or by a project id (alphanumeric).
 	AllowedConsumerProjects any
-	// Optional. The network attachment of the consumer network that the Private Service Connect enabled Cloud SQL instance is authorized to connect using the PSC interface. format: projects/PROJECT/regions/REGION/networkAttachments/ID
+	// Optional. The network attachment of the consumer network that the Private Service Connect enabled Cloud SQL instance is authorized to connect via PSC interface. format: projects/PROJECT/regions/REGION/networkAttachments/ID
 	NetworkAttachmentUri any
 	// Optional. Whether to set up the PSC service connection policy automatically.
 	PscAutoConnectionPolicyEnabled any
@@ -584,45 +561,7 @@ type Instance_UpgradableDatabaseVersions struct {
 	Name any
 }
 
-var Instance_DeploymentInfo_Source_TargetIdFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
-
-var Instance_DeploymentInfo_SourceFields = ubx.FieldMap{
-		"TargetId": ubx.FieldSpec{
-			WireName: "target_id",
-			Kind: "object",
-			Fields: Instance_DeploymentInfo_Source_TargetIdFields,
-		},
-	}
-
-var Instance_DeploymentInfo_TargetFields = ubx.FieldMap{
-		"SourceId": ubx.FieldSpec{
-			WireName: "source_id",
-			Kind: "object",
-			Fields: Instance_DeploymentInfo_Source_TargetIdFields,
-		},
-	}
-
-var Instance_DeploymentInfoFields = ubx.FieldMap{
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: Instance_DeploymentInfo_SourceFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: Instance_DeploymentInfo_TargetFields,
-		},
-	}
-
 var Instance_DiskEncryptionConfigurationFields = ubx.FieldMap{
-		"ConfidentialMode": ubx.FieldSpec{WireName: "confidential_mode"},
 		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
 	}
@@ -698,6 +637,12 @@ var Instance_OnPremisesConfiguration_SelectedObjectsFields = ubx.FieldMap{
 		"Database": ubx.FieldSpec{WireName: "database"},
 	}
 
+var Instance_OnPremisesConfiguration_SourceInstanceFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Project": ubx.FieldSpec{WireName: "project"},
+		"Region": ubx.FieldSpec{WireName: "region"},
+	}
+
 var Instance_OnPremisesConfigurationFields = ubx.FieldMap{
 		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
 		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
@@ -715,7 +660,7 @@ var Instance_OnPremisesConfigurationFields = ubx.FieldMap{
 		"SourceInstance": ubx.FieldSpec{
 			WireName: "source_instance",
 			Kind: "object",
-			Fields: Instance_DeploymentInfo_Source_TargetIdFields,
+			Fields: Instance_OnPremisesConfiguration_SourceInstanceFields,
 		},
 		"SslOption": ubx.FieldSpec{WireName: "ssl_option"},
 		"Username": ubx.FieldSpec{WireName: "username"},
@@ -1108,8 +1053,6 @@ type InstanceConfig struct {
 	DatabaseInstalledVersion any
 	// The database engine type and version. The `databaseVersion` field cannot be changed after instance creation.
 	DatabaseVersion any
-	// Blue-green deployment metadata for a database instance. In a blue-green deployment, we maintain two environments, one of which is live. This message contains details about the blue-green deployment.
-	DeploymentInfo any
 	// Disk encryption configuration for an instance.
 	DiskEncryptionConfiguration any
 	// Disk encryption status for an instance.
@@ -1216,8 +1159,6 @@ type InstanceAttrs struct {
 	DatabaseInstalledVersion any
 	// The database engine type and version. The `databaseVersion` field cannot be changed after instance creation.
 	DatabaseVersion any
-	// Blue-green deployment metadata for a database instance. In a blue-green deployment, we maintain two environments, one of which is live. This message contains details about the blue-green deployment.
-	DeploymentInfo any
 	// Disk encryption configuration for an instance.
 	DiskEncryptionConfiguration any
 	// Disk encryption status for an instance.
@@ -1318,11 +1259,6 @@ var Instance = ubx.ResourceBinding{
 		"DatabaseCenterIntegrationEnabled": ubx.FieldSpec{WireName: "database_center_integration_enabled"},
 		"DatabaseInstalledVersion": ubx.FieldSpec{WireName: "database_installed_version"},
 		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
-		"DeploymentInfo": ubx.FieldSpec{
-			WireName: "deployment_info",
-			Kind: "object",
-			Fields: Instance_DeploymentInfoFields,
-		},
 		"DiskEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "disk_encryption_configuration",
 			Kind: "object",

@@ -6,11 +6,7 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .changelog import Changelog, ChangelogConfig
 from .conversation import Conversation, ConversationConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .v1beta_changelog import V1betaChangelog, V1betaChangelogConfig
 from .v1beta_conversation import V1betaConversation, V1betaConversationConfig
 from .v1beta_evaluation_run import V1betaEvaluationRun, V1betaEvaluationRunConfig
-from .v1beta_location import V1betaLocation, V1betaLocationConfig
-from .v1beta_operation import V1betaOperation, V1betaOperationConfig
 from .v1beta_result import V1betaResult, V1betaResultConfig

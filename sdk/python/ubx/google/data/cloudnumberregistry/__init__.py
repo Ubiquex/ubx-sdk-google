@@ -5,5 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .discovered_range import DiscoveredRange, DiscoveredRangeConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig

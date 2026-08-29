@@ -5,12 +5,6 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .instance import Instance, InstanceConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .service import Service, ServiceConfig
-from .v1alpha_location import V1alphaLocation, V1alphaLocationConfig
-from .v1alpha_operation import V1alphaOperation, V1alphaOperationConfig
 from .v1beta_instance import V1betaInstance, V1betaInstanceConfig
-from .v1beta_location import V1betaLocation, V1betaLocationConfig
-from .v1beta_operation import V1betaOperation, V1betaOperationConfig
 from .v1beta_service import V1betaService, V1betaServiceConfig

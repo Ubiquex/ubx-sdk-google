@@ -19,15 +19,6 @@ type V1alpha1Occurrence_AiSkillAnalysis_Findings struct {
 type V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult struct {
 	// Optional. Tracks max severity found.
 	MaxSeverity any
-	// Optional. The base name of the model that performed the scan.
-	ModelId any
-	// Output only. State of the scan.
-	ScanState any
-}
-
-type V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult struct {
-	// Optional. Tracks max severity found.
-	MaxSeverity any
 	// Output only. State of the scan.
 	ScanState any
 }
@@ -944,12 +935,6 @@ var V1alpha1Occurrence_AiSkillAnalysis_FindingsFields = ubx.FieldMap{
 
 var V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields = ubx.FieldMap{
 		"MaxSeverity": ubx.FieldSpec{WireName: "max_severity"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"ScanState": ubx.FieldSpec{WireName: "scan_state"},
-	}
-
-var V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields = ubx.FieldMap{
-		"MaxSeverity": ubx.FieldSpec{WireName: "max_severity"},
 		"ScanState": ubx.FieldSpec{WireName: "scan_state"},
 	}
 
@@ -967,7 +952,7 @@ var V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdictFields = ubx.FieldMap{
 		"MaliciousContentStaticResult": ubx.FieldSpec{
 			WireName: "malicious_content_static_result",
 			Kind: "object",
-			Fields: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields,
+			Fields: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
 		},
 		"MalwareScan": ubx.FieldSpec{
 			WireName: "malware_scan",

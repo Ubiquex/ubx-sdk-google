@@ -5,9 +5,7 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .instance import Instance, InstanceConfig
-from .location import Location, LocationConfig
 from .lun import Lun, LunConfig
 from .network import Network, NetworkConfig
-from .operation import Operation, OperationConfig
 from .os_image import OsImage, OsImageConfig
 from .volume import Volume, VolumeConfig

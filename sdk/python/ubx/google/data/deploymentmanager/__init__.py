@@ -5,12 +5,9 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .alpha_manifest import AlphaManifest, AlphaManifestConfig
-from .alpha_operation import AlphaOperation, AlphaOperationConfig
 from .alpha_resource import AlphaResource, AlphaResourceConfig
 from .alpha_type import AlphaType, AlphaTypeConfig
 from .manifest import Manifest, ManifestConfig
-from .operation import Operation, OperationConfig
 from .resource import Resource, ResourceConfig
 from .v2beta_manifest import V2betaManifest, V2betaManifestConfig
-from .v2beta_operation import V2betaOperation, V2betaOperationConfig
 from .v2beta_resource import V2betaResource, V2betaResourceConfig

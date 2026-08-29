@@ -8,7 +8,6 @@ from .android import Android, AndroidConfig
 from .certificate_provisioning_process import CertificateProvisioningProcess, CertificateProvisioningProcessConfig
 from .chrome import Chrome, ChromeConfig
 from .device import Device, DeviceConfig
-from .operation import Operation, OperationConfig
 from .profile import Profile, ProfileConfig
 from .user import User, UserConfig
 from .web import Web, WebConfig

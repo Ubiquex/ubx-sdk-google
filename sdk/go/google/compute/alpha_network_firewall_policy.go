@@ -227,6 +227,8 @@ var AlphaNetworkFirewallPolicy_RolloutOperationFields = ubx.FieldMap{
 	}
 
 type AlphaNetworkFirewallPolicyConfig struct {
+	// Optional. If specified, it defines what should happen in case of backend issues for rules with apply_security_profile_group action. Allowed values: ALLOW, DENY. If not specified, the default behavior is ALLOW.
+	ApplySecurityProfileFallbackAction any
 	// A list of associations that belong to this firewall policy.
 	Associations any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
@@ -270,6 +272,8 @@ type AlphaNetworkFirewallPolicyConfig struct {
 }
 
 type AlphaNetworkFirewallPolicyAttrs struct {
+	// Optional. If specified, it defines what should happen in case of backend issues for rules with apply_security_profile_group action. Allowed values: ALLOW, DENY. If not specified, the default behavior is ALLOW.
+	ApplySecurityProfileFallbackAction any
 	// A list of associations that belong to this firewall policy.
 	Associations any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
@@ -315,6 +319,7 @@ type AlphaNetworkFirewallPolicyAttrs struct {
 var AlphaNetworkFirewallPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_network_firewall_policy",
 	Fields: ubx.FieldMap{
+		"ApplySecurityProfileFallbackAction": ubx.FieldSpec{WireName: "apply_security_profile_fallback_action"},
 		"Associations": ubx.FieldSpec{
 			WireName: "associations",
 			Kind: "list",

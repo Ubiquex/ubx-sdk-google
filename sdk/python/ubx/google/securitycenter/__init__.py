@@ -8,5 +8,6 @@ from .big_query_export import BigQueryExport, BigQueryExportConfig
 from .custom_module import CustomModule, CustomModuleConfig
 from .mute_config import MuteConfig, MuteConfigConfig
 from .notification_config import NotificationConfig, NotificationConfigConfig
+from .resource_value_config import ResourceValueConfig, ResourceValueConfigConfig
 from .source import Source, SourceConfig
 from .v1beta1_source import V1beta1Source, V1beta1SourceConfig

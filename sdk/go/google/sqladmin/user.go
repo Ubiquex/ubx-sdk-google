@@ -24,9 +24,9 @@ type User_PasswordPolicy struct {
 }
 
 type User_SqlserverUserDetails struct {
-	// Indicates if the user has been disabled.
+	// If the user has been disabled
 	Disabled any
-	// Indicates the server roles for this user.
+	// The server roles for this user
 	ServerRoles any
 }
 

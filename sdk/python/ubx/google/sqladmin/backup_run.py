@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BackupRun_DiskEncryptionConfiguration:
-    # Optional. If true, enables Confidential Mode for the instance's Hyperdisk Balanced volumes. Only supported for zonal C4A instances currently.
-    confidential_mode: Any = None
     # This is always `sql#diskEncryptionConfiguration`.
     kind: Any = None
     # Resource name of KMS key for disk encryption
@@ -32,7 +30,6 @@ class BackupRun_Error:
     message: Any = None
 
 _BackupRun_DiskEncryptionConfigurationFields = {
-    "confidential_mode": ubx.FieldSpec(wire_name="confidential_mode"),
     "kind": ubx.FieldSpec(wire_name="kind"),
     "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
 }

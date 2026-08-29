@@ -6,10 +6,7 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .access_summary import AccessSummary, AccessSummaryConfig
 from .authorization import Authorization, AuthorizationConfig
-from .location import Location, LocationConfig
 from .v1alpha_access_summary import V1alphaAccessSummary, V1alphaAccessSummaryConfig
 from .v1alpha_authorization import V1alphaAuthorization, V1alphaAuthorizationConfig
-from .v1alpha_location import V1alphaLocation, V1alphaLocationConfig
 from .v1beta_access_summary import V1betaAccessSummary, V1betaAccessSummaryConfig
 from .v1beta_authorization import V1betaAuthorization, V1betaAuthorizationConfig
-from .v1beta_location import V1betaLocation, V1betaLocationConfig

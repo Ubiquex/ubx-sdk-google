@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .feedback_report import FeedbackReport, FeedbackReportConfig
-from .operation import Operation, OperationConfig
 from .release import Release, ReleaseConfig
 from .v1alpha_app import V1alphaApp, V1alphaAppConfig
 from .v1alpha_release_by_hash import V1alphaReleaseByHash, V1alphaReleaseByHashConfig

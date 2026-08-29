@@ -6,20 +6,14 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .docker_image import DockerImage, DockerImageConfig
 from .file import File, FileConfig
-from .location import Location, LocationConfig
 from .maven_artifact import MavenArtifact, MavenArtifactConfig
 from .npm_package import NpmPackage, NpmPackageConfig
-from .operation import Operation, OperationConfig
 from .package import Package, PackageConfig
 from .python_package import PythonPackage, PythonPackageConfig
 from .v1beta1_file import V1beta1File, V1beta1FileConfig
-from .v1beta1_location import V1beta1Location, V1beta1LocationConfig
-from .v1beta1_operation import V1beta1Operation, V1beta1OperationConfig
 from .v1beta1_package import V1beta1Package, V1beta1PackageConfig
 from .v1beta1_version import V1beta1Version, V1beta1VersionConfig
 from .v1beta2_file import V1beta2File, V1beta2FileConfig
-from .v1beta2_location import V1beta2Location, V1beta2LocationConfig
-from .v1beta2_operation import V1beta2Operation, V1beta2OperationConfig
 from .v1beta2_package import V1beta2Package, V1beta2PackageConfig
 from .v1beta2_version import V1beta2Version, V1beta2VersionConfig
 from .version import Version, VersionConfig

@@ -16,6 +16,7 @@ from .dataset_version import DatasetVersion, DatasetVersionConfig
 from .deployment_resource_pool import DeploymentResourcePool, DeploymentResourcePoolConfig
 from .endpoint import Endpoint, EndpointConfig
 from .entity_type import EntityType, EntityTypeConfig
+from .evaluation import Evaluation, EvaluationConfig
 from .evaluation_item import EvaluationItem, EvaluationItemConfig
 from .evaluation_metric import EvaluationMetric, EvaluationMetricConfig
 from .evaluation_run import EvaluationRun, EvaluationRunConfig
@@ -41,6 +42,7 @@ from .online_evaluator import OnlineEvaluator, OnlineEvaluatorConfig
 from .persistent_resource import PersistentResource, PersistentResourceConfig
 from .pipeline_job import PipelineJob, PipelineJobConfig
 from .rag_corpora import RagCorpora, RagCorporaConfig
+from .rag_file import RagFile, RagFileConfig
 from .reasoning_engine import ReasoningEngine, ReasoningEngineConfig
 from .run import Run, RunConfig
 from .sandbox_environment import SandboxEnvironment, SandboxEnvironmentConfig
@@ -48,6 +50,7 @@ from .sandbox_environment_template import SandboxEnvironmentTemplate, SandboxEnv
 from .schedule import Schedule, ScheduleConfig
 from .semantic_governance_policy import SemanticGovernancePolicy, SemanticGovernancePolicyConfig
 from .session import Session, SessionConfig
+from .slice import Slice, SliceConfig
 from .specialist_pool import SpecialistPool, SpecialistPoolConfig
 from .study import Study, StudyConfig
 from .tensorboard import Tensorboard, TensorboardConfig
@@ -69,6 +72,7 @@ from .v1beta1_dataset_version import V1beta1DatasetVersion, V1beta1DatasetVersio
 from .v1beta1_deployment_resource_pool import V1beta1DeploymentResourcePool, V1beta1DeploymentResourcePoolConfig
 from .v1beta1_endpoint import V1beta1Endpoint, V1beta1EndpointConfig
 from .v1beta1_entity_type import V1beta1EntityType, V1beta1EntityTypeConfig
+from .v1beta1_evaluation import V1beta1Evaluation, V1beta1EvaluationConfig
 from .v1beta1_evaluation_item import V1beta1EvaluationItem, V1beta1EvaluationItemConfig
 from .v1beta1_evaluation_metric import V1beta1EvaluationMetric, V1beta1EvaluationMetricConfig
 from .v1beta1_evaluation_run import V1beta1EvaluationRun, V1beta1EvaluationRunConfig
@@ -76,6 +80,7 @@ from .v1beta1_evaluation_set import V1beta1EvaluationSet, V1beta1EvaluationSetCo
 from .v1beta1_example_store import V1beta1ExampleStore, V1beta1ExampleStoreConfig
 from .v1beta1_execution import V1beta1Execution, V1beta1ExecutionConfig
 from .v1beta1_experiment import V1beta1Experiment, V1beta1ExperimentConfig
+from .v1beta1_extension import V1beta1Extension, V1beta1ExtensionConfig
 from .v1beta1_feature import V1beta1Feature, V1beta1FeatureConfig
 from .v1beta1_feature_group import V1beta1FeatureGroup, V1beta1FeatureGroupConfig
 from .v1beta1_feature_monitor import V1beta1FeatureMonitor, V1beta1FeatureMonitorConfig
@@ -101,6 +106,7 @@ from .v1beta1_persistent_resource import V1beta1PersistentResource, V1beta1Persi
 from .v1beta1_pipeline_job import V1beta1PipelineJob, V1beta1PipelineJobConfig
 from .v1beta1_rag_corpora import V1beta1RagCorpora, V1beta1RagCorporaConfig
 from .v1beta1_rag_data_schema import V1beta1RagDataSchema, V1beta1RagDataSchemaConfig
+from .v1beta1_rag_file import V1beta1RagFile, V1beta1RagFileConfig
 from .v1beta1_rag_metadata import V1beta1RagMetadata, V1beta1RagMetadataConfig
 from .v1beta1_reasoning_engine import V1beta1ReasoningEngine, V1beta1ReasoningEngineConfig
 from .v1beta1_run import V1beta1Run, V1beta1RunConfig
@@ -111,6 +117,7 @@ from .v1beta1_semantic_governance_policy import V1beta1SemanticGovernancePolicy,
 from .v1beta1_serving_profile import V1beta1ServingProfile, V1beta1ServingProfileConfig
 from .v1beta1_session import V1beta1Session, V1beta1SessionConfig
 from .v1beta1_skill import V1beta1Skill, V1beta1SkillConfig
+from .v1beta1_slice import V1beta1Slice, V1beta1SliceConfig
 from .v1beta1_specialist_pool import V1beta1SpecialistPool, V1beta1SpecialistPoolConfig
 from .v1beta1_study import V1beta1Study, V1beta1StudyConfig
 from .v1beta1_tensorboard import V1beta1Tensorboard, V1beta1TensorboardConfig

@@ -11,3 +11,5 @@ from .v1beta1_backup import V1beta1Backup, V1beta1BackupConfig
 from .v1beta1_instance import V1beta1Instance, V1beta1InstanceConfig
 from .v1beta1_share import V1beta1Share, V1beta1ShareConfig
 from .v1beta1_snapshot import V1beta1Snapshot, V1beta1SnapshotConfig
+from .v1beta1_volume import V1beta1Volume, V1beta1VolumeConfig
+from .v1beta1_volume_pool import V1beta1VolumePool, V1beta1VolumePoolConfig

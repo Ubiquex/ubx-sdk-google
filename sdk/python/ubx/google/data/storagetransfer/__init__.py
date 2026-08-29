@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .google_service_account import GoogleServiceAccount, GoogleServiceAccountConfig
-from .transfer_operation import TransferOperation, TransferOperationConfig

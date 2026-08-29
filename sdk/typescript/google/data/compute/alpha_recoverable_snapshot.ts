@@ -29,7 +29,7 @@ export interface AlphaRecoverableSnapshot_OriginalResource {
   creationSizeBytes?: string | Computed<string>;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp?: string | Computed<string>;
-  /** Output only. [Output Only] Deletion timestamp of snapshot inRFC3339 text format. */
+  /** Output only. [Output Only] Purge timestamp of recoverable snapshot inRFC3339 text format. */
   deletionTimestamp?: string | Computed<string>;
   /** An optional description of this resource. */
   description?: string | Computed<string>;

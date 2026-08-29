@@ -104,7 +104,6 @@ export interface DataScan_DataDiscoverySpec {
 export interface DataScan_DataDocumentationResult_DatasetResult_Queries {
   description?: string | Computed<string>;
   sql?: string | Computed<string>;
-  sqlDialect?: string | Computed<string>;
 }
 
 export interface DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths {
@@ -162,8 +161,6 @@ export interface DataScan_DataDocumentationSpec {
   catalogPublishingEnabled?: boolean | Computed<boolean>;
   /** Optional. Specifies which components of the data documentation to generate. Any component that is required to generate the specified components will also be generated. If no generation scope is specified, all available documentation components will be generated. */
   generationScopes?: string[] | Computed<string[]>;
-  /** Optional. The SQL dialect to use in the generated SQL queries. If not specified, the default dialect is Google SQL. */
-  sqlDialect?: string | Computed<string>;
 }
 
 export interface DataScan_DataProfileResult_CatalogPublishingStatus {
@@ -735,7 +732,6 @@ const DataScan_DataDiscoverySpecFields: FieldMap = {
 const DataScan_DataDocumentationResult_DatasetResult_QueriesFields: FieldMap = {
   description: "description",
   sql: "sql",
-  sqlDialect: "sql_dialect",
 };
 
 const DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields: FieldMap = {
@@ -817,7 +813,6 @@ const DataScan_DataDocumentationResultFields: FieldMap = {
 const DataScan_DataDocumentationSpecFields: FieldMap = {
   catalogPublishingEnabled: "catalog_publishing_enabled",
   generationScopes: "generation_scopes",
-  sqlDialect: "sql_dialect",
 };
 
 const DataScan_DataProfileResult_CatalogPublishingStatusFields: FieldMap = {

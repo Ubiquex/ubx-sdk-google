@@ -5,10 +5,6 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .image_import_job import ImageImportJob, ImageImportJobConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .replication_cycle import ReplicationCycle, ReplicationCycleConfig
 from .v1alpha1_image_import_job import V1alpha1ImageImportJob, V1alpha1ImageImportJobConfig
-from .v1alpha1_location import V1alpha1Location, V1alpha1LocationConfig
-from .v1alpha1_operation import V1alpha1Operation, V1alpha1OperationConfig
 from .v1alpha1_replication_cycle import V1alpha1ReplicationCycle, V1alpha1ReplicationCycleConfig

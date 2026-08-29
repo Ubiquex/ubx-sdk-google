@@ -32,11 +32,13 @@ from .v1alpha_evaluation import V1alphaEvaluation, V1alphaEvaluationConfig
 from .v1alpha_identity_mapping_store import V1alphaIdentityMappingStore, V1alphaIdentityMappingStoreConfig
 from .v1alpha_license_config import V1alphaLicenseConfig, V1alphaLicenseConfigConfig
 from .v1alpha_notebook import V1alphaNotebook, V1alphaNotebookConfig
+from .v1alpha_project import V1alphaProject, V1alphaProjectConfig
 from .v1alpha_sample_query import V1alphaSampleQuery, V1alphaSampleQueryConfig
 from .v1alpha_sample_query_set import V1alphaSampleQuerySet, V1alphaSampleQuerySetConfig
 from .v1alpha_schema import V1alphaSchema, V1alphaSchemaConfig
 from .v1alpha_serving_config import V1alphaServingConfig, V1alphaServingConfigConfig
 from .v1alpha_session import V1alphaSession, V1alphaSessionConfig
+from .v1alpha_source import V1alphaSource, V1alphaSourceConfig
 from .v1alpha_target_site import V1alphaTargetSite, V1alphaTargetSiteConfig
 from .v1beta_assistant import V1betaAssistant, V1betaAssistantConfig
 from .v1beta_control import V1betaControl, V1betaControlConfig

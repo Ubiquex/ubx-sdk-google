@@ -8,5 +8,6 @@ from .processor import Processor, ProcessorConfig
 from .schema import Schema, SchemaConfig
 from .schema_version import SchemaVersion, SchemaVersionConfig
 from .v1beta3_processor import V1beta3Processor, V1beta3ProcessorConfig
+from .v1beta3_processor_version import V1beta3ProcessorVersion, V1beta3ProcessorVersionConfig
 from .v1beta3_schema import V1beta3Schema, V1beta3SchemaConfig
 from .v1beta3_schema_version import V1beta3SchemaVersion, V1beta3SchemaVersionConfig
