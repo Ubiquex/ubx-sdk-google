@@ -120,6 +120,7 @@ from .beta_autoscaler import BetaAutoscaler, BetaAutoscalerConfig
 from .beta_backend_bucket import BetaBackendBucket, BetaBackendBucketConfig
 from .beta_backend_service import BetaBackendService, BetaBackendServiceConfig
 from .beta_cross_site_network import BetaCrossSiteNetwork, BetaCrossSiteNetworkConfig
+from .beta_dhcp_options_config import BetaDhcpOptionsConfig, BetaDhcpOptionsConfigConfig
 from .beta_disk import BetaDisk, BetaDiskConfig
 from .beta_external_vpn_gateway import BetaExternalVpnGateway, BetaExternalVpnGatewayConfig
 from .beta_firewall import BetaFirewall, BetaFirewallConfig

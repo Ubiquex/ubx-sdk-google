@@ -5,7 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .discoveredprofile import Discoveredprofile, DiscoveredprofileConfig
-from .execution import Execution, ExecutionConfig
 from .health import Health, HealthConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig

@@ -97,7 +97,6 @@ export interface Job_DataDiscoverySpec {
 export interface Job_DataDocumentationResult_DatasetResult_Queries {
   description?: string | Computed<string>;
   sql?: string | Computed<string>;
-  sqlDialect?: string | Computed<string>;
 }
 
 export interface Job_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths {
@@ -155,8 +154,6 @@ export interface Job_DataDocumentationSpec {
   catalogPublishingEnabled?: boolean | Computed<boolean>;
   /** Optional. Specifies which components of the data documentation to generate. Any component that is required to generate the specified components will also be generated. If no generation scope is specified, all available documentation components will be generated. */
   generationScopes?: string[] | Computed<string[]>;
-  /** Optional. The SQL dialect to use in the generated SQL queries. If not specified, the default dialect is Google SQL. */
-  sqlDialect?: string | Computed<string>;
 }
 
 export interface Job_DataProfileResult_CatalogPublishingStatus {

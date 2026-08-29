@@ -110,7 +110,6 @@ class DataScan_DataDiscoverySpec:
 class DataScan_DataDocumentationResult_DatasetResult_Queries:
     description: Any = None
     sql: Any = None
-    sql_dialect: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths:
@@ -168,8 +167,6 @@ class DataScan_DataDocumentationSpec:
     catalog_publishing_enabled: Any = None
     # Optional. Specifies which components of the data documentation to generate. Any component that is required to generate the specified components will also be generated. If no generation scope is specified, all available documentation components will be generated.
     generation_scopes: Any = None
-    # Optional. The SQL dialect to use in the generated SQL queries. If not specified, the default dialect is Google SQL.
-    sql_dialect: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataProfileResult_CatalogPublishingStatus:
@@ -740,7 +737,6 @@ _DataScan_DataDiscoverySpecFields = {
 _DataScan_DataDocumentationResult_DatasetResult_QueriesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "sql": ubx.FieldSpec(wire_name="sql"),
-    "sql_dialect": ubx.FieldSpec(wire_name="sql_dialect"),
 }
 
 _DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields = {
@@ -822,7 +818,6 @@ _DataScan_DataDocumentationResultFields = {
 _DataScan_DataDocumentationSpecFields = {
     "catalog_publishing_enabled": ubx.FieldSpec(wire_name="catalog_publishing_enabled"),
     "generation_scopes": ubx.FieldSpec(wire_name="generation_scopes"),
-    "sql_dialect": ubx.FieldSpec(wire_name="sql_dialect"),
 }
 
 _DataScan_DataProfileResult_CatalogPublishingStatusFields = {

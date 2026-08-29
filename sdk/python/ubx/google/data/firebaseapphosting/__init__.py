@@ -4,9 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .traffic import Traffic, TrafficConfig
-from .v1beta_location import V1betaLocation, V1betaLocationConfig
-from .v1beta_operation import V1betaOperation, V1betaOperationConfig
 from .v1beta_traffic import V1betaTraffic, V1betaTrafficConfig

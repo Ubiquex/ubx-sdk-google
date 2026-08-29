@@ -6,6 +6,5 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .application import Application, ApplicationConfig
 from .device import Device, DeviceConfig
-from .operation import Operation, OperationConfig
 from .policy import Policy, PolicyConfig
 from .provisioning_info import ProvisioningInfo, ProvisioningInfoConfig

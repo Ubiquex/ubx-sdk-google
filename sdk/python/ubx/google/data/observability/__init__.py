@@ -5,7 +5,5 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .dataset import Dataset, DatasetConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .scope import Scope, ScopeConfig
 from .view import View, ViewConfig

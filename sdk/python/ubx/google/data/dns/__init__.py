@@ -5,8 +5,6 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .key import Key, KeyConfig
-from .managed_zone_operation import ManagedZoneOperation, ManagedZoneOperationConfig
 from .project import Project, ProjectConfig
 from .v1beta2_dns_key import V1beta2DnsKey, V1beta2DnsKeyConfig
-from .v1beta2_managed_zone_operation import V1beta2ManagedZoneOperation, V1beta2ManagedZoneOperationConfig
 from .v1beta2_project import V1beta2Project, V1beta2ProjectConfig

@@ -6,6 +6,4 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .backup import Backup, BackupConfig
 from .field import Field, FieldConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .v1beta2_field import V1beta2Field, V1beta2FieldConfig

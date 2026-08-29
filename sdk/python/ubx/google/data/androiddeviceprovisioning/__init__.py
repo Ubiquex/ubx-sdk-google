@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .device import Device, DeviceConfig
-from .operation import Operation, OperationConfig

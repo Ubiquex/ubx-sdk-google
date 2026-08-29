@@ -5,6 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .api_observation import ApiObservation, ApiObservationConfig
-from .api_operation import ApiOperation, ApiOperationConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig

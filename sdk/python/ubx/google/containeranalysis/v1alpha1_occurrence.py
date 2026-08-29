@@ -23,15 +23,6 @@ class V1alpha1Occurrence_AiSkillAnalysis_Findings:
 class V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult:
     # Optional. Tracks max severity found.
     max_severity: Any = None
-    # Optional. The base name of the model that performed the scan.
-    model_id: Any = None
-    # Output only. State of the scan.
-    scan_state: Any = None
-
-@dataclasses.dataclass
-class V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult:
-    # Optional. Tracks max severity found.
-    max_severity: Any = None
     # Output only. State of the scan.
     scan_state: Any = None
 
@@ -947,12 +938,6 @@ _V1alpha1Occurrence_AiSkillAnalysis_FindingsFields = {
 
 _V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields = {
     "max_severity": ubx.FieldSpec(wire_name="max_severity"),
-    "model_id": ubx.FieldSpec(wire_name="model_id"),
-    "scan_state": ubx.FieldSpec(wire_name="scan_state"),
-}
-
-_V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields = {
-    "max_severity": ubx.FieldSpec(wire_name="max_severity"),
     "scan_state": ubx.FieldSpec(wire_name="scan_state"),
 }
 
@@ -970,7 +955,7 @@ _V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdictFields = {
     "malicious_content_static_result": ubx.FieldSpec(
         wire_name="malicious_content_static_result",
         kind="object",
-        fields=_V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields,
+        fields=_V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
     ),
     "malware_scan": ubx.FieldSpec(
         wire_name="malware_scan",

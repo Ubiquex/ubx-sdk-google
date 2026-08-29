@@ -5,12 +5,8 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .evaluation import Evaluation, EvaluationConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .processor_type import ProcessorType, ProcessorTypeConfig
 from .processor_version import ProcessorVersion, ProcessorVersionConfig
 from .v1beta3_evaluation import V1beta3Evaluation, V1beta3EvaluationConfig
-from .v1beta3_location import V1beta3Location, V1beta3LocationConfig
-from .v1beta3_operation import V1beta3Operation, V1beta3OperationConfig
 from .v1beta3_processor_type import V1beta3ProcessorType, V1beta3ProcessorTypeConfig
 from .v1beta3_processor_version import V1beta3ProcessorVersion, V1beta3ProcessorVersionConfig

@@ -17,15 +17,6 @@ export interface V1beta1Occurrence_AiSkillAnalysis_Findings {
 export interface V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult {
   /** Tracks max severity found. */
   maxSeverity?: string | Computed<string>;
-  /** The base name of the model that performed the scan. */
-  modelId?: string | Computed<string>;
-  /** Status of the scan. */
-  scanStatus?: string | Computed<string>;
-}
-
-export interface V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult {
-  /** Tracks max severity found. */
-  maxSeverity?: string | Computed<string>;
   /** Status of the scan. */
   scanStatus?: string | Computed<string>;
 }
@@ -41,7 +32,7 @@ export interface V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict {
   /** Result of Malicious Content LLM scan. */
   maliciousContentLlmResult?: V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult | Computed<V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult>;
   /** Result of Malicious Content Static scan. */
-  maliciousContentStaticResult?: V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult | Computed<V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult>;
+  maliciousContentStaticResult?: V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult | Computed<V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult>;
   /** Result of Malware scan. */
   malwareScan?: V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScan | Computed<V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScan>;
   /** Result of Workspace Policy scan. */
@@ -722,12 +713,6 @@ const V1beta1Occurrence_AiSkillAnalysis_FindingsFields: FieldMap = {
 
 const V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields: FieldMap = {
   maxSeverity: "max_severity",
-  modelId: "model_id",
-  scanStatus: "scan_status",
-};
-
-const V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields: FieldMap = {
-  maxSeverity: "max_severity",
   scanStatus: "scan_status",
 };
 
@@ -745,7 +730,7 @@ const V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdictFields: FieldMap = {
   maliciousContentStaticResult: {
     wireName: "malicious_content_static_result",
     kind: "object",
-    fields: V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields,
+    fields: V1beta1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
   },
   malwareScan: {
     wireName: "malware_scan",

@@ -7,6 +7,4 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .backup import Backup, BackupConfig
 from .data_source import DataSource, DataSourceConfig
 from .data_source_reference import DataSourceReference, DataSourceReferenceConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .revision import Revision, RevisionConfig

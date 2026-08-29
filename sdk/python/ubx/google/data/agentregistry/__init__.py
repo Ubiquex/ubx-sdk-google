@@ -6,12 +6,8 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .agent import Agent, AgentConfig
 from .endpoint import Endpoint, EndpointConfig
-from .location import Location, LocationConfig
 from .mcp_server import McpServer, McpServerConfig
-from .operation import Operation, OperationConfig
 from .v1alpha_agent import V1alphaAgent, V1alphaAgentConfig
 from .v1alpha_endpoint import V1alphaEndpoint, V1alphaEndpointConfig
-from .v1alpha_location import V1alphaLocation, V1alphaLocationConfig
 from .v1alpha_mcp_server import V1alphaMcpServer, V1alphaMcpServerConfig
-from .v1alpha_operation import V1alphaOperation, V1alphaOperationConfig
 from .v1alpha_publisher import V1alphaPublisher, V1alphaPublisherConfig

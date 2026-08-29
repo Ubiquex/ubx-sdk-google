@@ -7,14 +7,10 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .auth_token import AuthToken, AuthTokenConfig
 from .backup import Backup, BackupConfig
 from .backup_collection import BackupCollection, BackupCollectionConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .revision import Revision, RevisionConfig
 from .token_auth_user import TokenAuthUser, TokenAuthUserConfig
 from .v1beta1_auth_token import V1beta1AuthToken, V1beta1AuthTokenConfig
 from .v1beta1_backup import V1beta1Backup, V1beta1BackupConfig
 from .v1beta1_backup_collection import V1beta1BackupCollection, V1beta1BackupCollectionConfig
-from .v1beta1_location import V1beta1Location, V1beta1LocationConfig
-from .v1beta1_operation import V1beta1Operation, V1beta1OperationConfig
 from .v1beta1_revision import V1beta1Revision, V1beta1RevisionConfig
 from .v1beta1_token_auth_user import V1beta1TokenAuthUser, V1beta1TokenAuthUserConfig

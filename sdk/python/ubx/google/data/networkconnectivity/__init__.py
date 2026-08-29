@@ -5,12 +5,8 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .group import Group, GroupConfig
-from .location import Location, LocationConfig
 from .multicloud_data_transfer_supported_service import MulticloudDataTransferSupportedService, MulticloudDataTransferSupportedServiceConfig
-from .operation import Operation, OperationConfig
 from .remote_transport_profile import RemoteTransportProfile, RemoteTransportProfileConfig
 from .route import Route, RouteConfig
 from .route_table import RouteTable, RouteTableConfig
 from .service_class import ServiceClass, ServiceClassConfig
-from .v1alpha1_location import V1alpha1Location, V1alpha1LocationConfig
-from .v1alpha1_operation import V1alpha1Operation, V1alpha1OperationConfig

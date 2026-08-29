@@ -6,8 +6,6 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .effective_custom_module import EffectiveCustomModule, EffectiveCustomModuleConfig
 from .mute_config import MuteConfig, MuteConfigConfig
-from .operation import Operation, OperationConfig
 from .resource_value_config import ResourceValueConfig, ResourceValueConfigConfig
 from .simulation import Simulation, SimulationConfig
-from .v1beta1_operation import V1beta1Operation, V1beta1OperationConfig
 from .valued_resource import ValuedResource, ValuedResourceConfig

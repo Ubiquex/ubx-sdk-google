@@ -5,6 +5,5 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .data_source import DataSource, DataSourceConfig
-from .location import Location, LocationConfig
 from .run import Run, RunConfig
 from .transfer_resource import TransferResource, TransferResourceConfig

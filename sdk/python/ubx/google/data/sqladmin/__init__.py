@@ -5,6 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .connect import Connect, ConnectConfig
-from .operation import Operation, OperationConfig
 from .v1beta4_connect import V1beta4Connect, V1beta4ConnectConfig
-from .v1beta4_operation import V1beta4Operation, V1beta4OperationConfig

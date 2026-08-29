@@ -10,7 +10,6 @@ from .data import Data, DataConfig
 from .deployment import Deployment, DeploymentConfig
 from .flowhook import Flowhook, FlowhookConfig
 from .host_stat import HostStat, HostStatConfig
-from .operation import Operation, OperationConfig
 from .optimized_host_stat import OptimizedHostStat, OptimizedHostStatConfig
 from .optimized_stat import OptimizedStat, OptimizedStatConfig
 from .revision import Revision, RevisionConfig

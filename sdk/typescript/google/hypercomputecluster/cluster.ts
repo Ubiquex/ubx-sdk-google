@@ -521,8 +521,6 @@ export interface ClusterConfig {
   reconciling?: boolean | Computed<boolean>;
   /** Optional. Storage resources available to the cluster. Keys specify the ID of the storage resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters). */
   storageResources?: Record<string, Cluster_StorageResources> | Computed<Record<string, Cluster_StorageResources>>;
-  /** Output only. The globally unique identifier for this Cluster. */
-  uid?: string | Computed<string>;
   /** Output only. Time that the cluster was most recently updated. */
   updateTime?: string | Computed<string>;
 }
@@ -546,8 +544,6 @@ export interface ClusterAttrs {
   reconciling: boolean;
   /** Optional. Storage resources available to the cluster. Keys specify the ID of the storage resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters). */
   storageResources: Record<string, Cluster_StorageResources>;
-  /** Output only. The globally unique identifier for this Cluster. */
-  uid: string;
   /** Output only. Time that the cluster was most recently updated. */
   updateTime: string;
 }
@@ -580,7 +576,6 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
       kind: "map",
       fields: Cluster_StorageResourcesFields,
     },
-    uid: "uid",
     updateTime: "update_time",
   },
 };

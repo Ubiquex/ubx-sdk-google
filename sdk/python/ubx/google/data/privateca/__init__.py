@@ -5,5 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .certificate_revocation_list import CertificateRevocationList, CertificateRevocationListConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig

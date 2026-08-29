@@ -7,7 +7,5 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 from .config import Config, ConfigConfig
 from .consumer_group import ConsumerGroup, ConsumerGroupConfig
 from .context import Context, ContextConfig
-from .location import Location, LocationConfig
 from .mode import Mode, ModeConfig
-from .operation import Operation, OperationConfig
 from .schema import Schema, SchemaConfig

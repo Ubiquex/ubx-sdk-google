@@ -7,39 +7,7 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Instance_DeploymentInfo_Source_TargetId:
-    # The name of the Cloud SQL instance being referenced. This does not include the project ID.
-    name: Any = None
-    # The project ID of the Cloud SQL instance being referenced. The default is the same project ID as the instance references it.
-    project: Any = None
-    # The region of the Cloud SQL instance being referenced.
-    region: Any = None
-
-@dataclasses.dataclass
-class Instance_DeploymentInfo_Source:
-    # Reference to another Cloud SQL instance.
-    target_id: Any = None
-
-@dataclasses.dataclass
-class Instance_DeploymentInfo_Target:
-    # Reference to another Cloud SQL instance.
-    source_id: Any = None
-
-@dataclasses.dataclass
-class Instance_DeploymentInfo:
-    # Output only. The resource ID of the blue-green deployment.
-    deployment_id: Any = None
-    # The source instance for the Blue-Green deployment.
-    source: Any = None
-    # Output only. The current state of blue-green-deployment for UI tags
-    state: Any = None
-    # The target instance for the Blue-Green deployment.
-    target: Any = None
-
-@dataclasses.dataclass
 class Instance_DiskEncryptionConfiguration:
-    # Optional. If true, enables Confidential Mode for the instance's Hyperdisk Balanced volumes. Only supported for zonal C4A instances currently.
-    confidential_mode: Any = None
     # This is always `sql#diskEncryptionConfiguration`.
     kind: Any = None
     # Resource name of KMS key for disk encryption
@@ -113,6 +81,15 @@ class Instance_Nodes:
 @dataclasses.dataclass
 class Instance_OnPremisesConfiguration_SelectedObjects:
     database: Any = None
+
+@dataclasses.dataclass
+class Instance_OnPremisesConfiguration_SourceInstance:
+    # The name of the Cloud SQL instance being referenced. This does not include the project ID.
+    name: Any = None
+    # The project ID of the Cloud SQL instance being referenced. The default is the same project ID as the instance references it.
+    project: Any = None
+    # The region of the Cloud SQL instance being referenced.
+    region: Any = None
 
 @dataclasses.dataclass
 class Instance_OnPremisesConfiguration:
@@ -343,7 +320,7 @@ class Instance_Settings_IpConfiguration_AuthorizedNetworks:
 class Instance_Settings_IpConfiguration_PscConfig:
     # Optional. The list of consumer projects that are allow-listed for PSC connections to this instance. This instance can be connected to with PSC from any network in these projects. Each consumer project in this list may be represented by a project number (numeric) or by a project id (alphanumeric).
     allowed_consumer_projects: Any = None
-    # Optional. The network attachment of the consumer network that the Private Service Connect enabled Cloud SQL instance is authorized to connect using the PSC interface. format: projects/PROJECT/regions/REGION/networkAttachments/ID
+    # Optional. The network attachment of the consumer network that the Private Service Connect enabled Cloud SQL instance is authorized to connect via PSC interface. format: projects/PROJECT/regions/REGION/networkAttachments/ID
     network_attachment_uri: Any = None
     # Optional. Whether to set up the PSC service connection policy automatically.
     psc_auto_connection_policy_enabled: Any = None
@@ -587,45 +564,7 @@ class Instance_UpgradableDatabaseVersions:
     major_version: Any = None
     name: Any = None
 
-_Instance_DeploymentInfo_Source_TargetIdFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "project": ubx.FieldSpec(wire_name="project"),
-    "region": ubx.FieldSpec(wire_name="region"),
-}
-
-_Instance_DeploymentInfo_SourceFields = {
-    "target_id": ubx.FieldSpec(
-        wire_name="target_id",
-        kind="object",
-        fields=_Instance_DeploymentInfo_Source_TargetIdFields,
-    ),
-}
-
-_Instance_DeploymentInfo_TargetFields = {
-    "source_id": ubx.FieldSpec(
-        wire_name="source_id",
-        kind="object",
-        fields=_Instance_DeploymentInfo_Source_TargetIdFields,
-    ),
-}
-
-_Instance_DeploymentInfoFields = {
-    "deployment_id": ubx.FieldSpec(wire_name="deployment_id"),
-    "source": ubx.FieldSpec(
-        wire_name="source",
-        kind="object",
-        fields=_Instance_DeploymentInfo_SourceFields,
-    ),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "target": ubx.FieldSpec(
-        wire_name="target",
-        kind="object",
-        fields=_Instance_DeploymentInfo_TargetFields,
-    ),
-}
-
 _Instance_DiskEncryptionConfigurationFields = {
-    "confidential_mode": ubx.FieldSpec(wire_name="confidential_mode"),
     "kind": ubx.FieldSpec(wire_name="kind"),
     "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
 }
@@ -701,6 +640,12 @@ _Instance_OnPremisesConfiguration_SelectedObjectsFields = {
     "database": ubx.FieldSpec(wire_name="database"),
 }
 
+_Instance_OnPremisesConfiguration_SourceInstanceFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "project": ubx.FieldSpec(wire_name="project"),
+    "region": ubx.FieldSpec(wire_name="region"),
+}
+
 _Instance_OnPremisesConfigurationFields = {
     "ca_certificate": ubx.FieldSpec(wire_name="ca_certificate"),
     "client_certificate": ubx.FieldSpec(wire_name="client_certificate"),
@@ -718,7 +663,7 @@ _Instance_OnPremisesConfigurationFields = {
     "source_instance": ubx.FieldSpec(
         wire_name="source_instance",
         kind="object",
-        fields=_Instance_DeploymentInfo_Source_TargetIdFields,
+        fields=_Instance_OnPremisesConfiguration_SourceInstanceFields,
     ),
     "ssl_option": ubx.FieldSpec(wire_name="ssl_option"),
     "username": ubx.FieldSpec(wire_name="username"),
@@ -1112,8 +1057,6 @@ class InstanceConfig:
     database_installed_version: Any = None
     # The database engine type and version. The `databaseVersion` field cannot be changed after instance creation.
     database_version: Any = None
-    # Blue-green deployment metadata for a database instance. In a blue-green deployment, we maintain two environments, one of which is live. This message contains details about the blue-green deployment.
-    deployment_info: Any = None
     # Disk encryption configuration for an instance.
     disk_encryption_configuration: Any = None
     # Disk encryption status for an instance.
@@ -1220,8 +1163,6 @@ class InstanceAttrs:
     database_installed_version: Any = None
     # The database engine type and version. The `databaseVersion` field cannot be changed after instance creation.
     database_version: Any = None
-    # Blue-green deployment metadata for a database instance. In a blue-green deployment, we maintain two environments, one of which is live. This message contains details about the blue-green deployment.
-    deployment_info: Any = None
     # Disk encryption configuration for an instance.
     disk_encryption_configuration: Any = None
     # Disk encryption status for an instance.
@@ -1321,11 +1262,6 @@ Instance = ubx.ResourceBinding(
         "database_center_integration_enabled": ubx.FieldSpec(wire_name="database_center_integration_enabled"),
         "database_installed_version": ubx.FieldSpec(wire_name="database_installed_version"),
         "database_version": ubx.FieldSpec(wire_name="database_version"),
-        "deployment_info": ubx.FieldSpec(
-            wire_name="deployment_info",
-            kind="object",
-            fields=_Instance_DeploymentInfoFields,
-        ),
         "disk_encryption_configuration": ubx.FieldSpec(
             wire_name="disk_encryption_configuration",
             kind="object",

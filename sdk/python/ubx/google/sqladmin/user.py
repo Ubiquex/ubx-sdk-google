@@ -28,9 +28,9 @@ class User_PasswordPolicy:
 
 @dataclasses.dataclass
 class User_SqlserverUserDetails:
-    # Indicates if the user has been disabled.
+    # If the user has been disabled
     disabled: Any = None
-    # Indicates the server roles for this user.
+    # The server roles for this user
     server_roles: Any = None
 
 _User_PasswordPolicy_StatusFields = {

@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .job import Job, JobConfig
-from .operation import Operation, OperationConfig

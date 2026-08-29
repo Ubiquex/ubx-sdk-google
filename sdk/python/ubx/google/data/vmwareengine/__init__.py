@@ -5,9 +5,7 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .announcement import Announcement, AnnouncementConfig
-from .location import Location, LocationConfig
 from .node import Node, NodeConfig
 from .node_type import NodeType, NodeTypeConfig
-from .operation import Operation, OperationConfig
 from .subnet import Subnet, SubnetConfig
 from .upgrade import Upgrade, UpgradeConfig

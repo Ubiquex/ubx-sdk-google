@@ -4,11 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .operation import Operation, OperationConfig
 from .v1alpha_instance_ospolicies_compliance import V1alphaInstanceOspoliciesCompliance, V1alphaInstanceOspoliciesComplianceConfig
 from .v1alpha_inventory import V1alphaInventory, V1alphaInventoryConfig
-from .v1alpha_operation import V1alphaOperation, V1alphaOperationConfig
 from .v1alpha_report import V1alphaReport, V1alphaReportConfig
 from .v1alpha_vulnerability_report import V1alphaVulnerabilityReport, V1alphaVulnerabilityReportConfig
 from .v1beta_patch_job import V1betaPatchJob, V1betaPatchJobConfig
-from .v2beta_operation import V2betaOperation, V2betaOperationConfig

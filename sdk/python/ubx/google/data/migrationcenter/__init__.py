@@ -6,11 +6,7 @@ SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .asset import Asset, AssetConfig
 from .error_frame import ErrorFrame, ErrorFrameConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .relation import Relation, RelationConfig
 from .v1alpha1_asset import V1alpha1Asset, V1alpha1AssetConfig
 from .v1alpha1_error_frame import V1alpha1ErrorFrame, V1alpha1ErrorFrameConfig
-from .v1alpha1_location import V1alpha1Location, V1alpha1LocationConfig
-from .v1alpha1_operation import V1alpha1Operation, V1alpha1OperationConfig
 from .v1alpha1_relation import V1alpha1Relation, V1alpha1RelationConfig

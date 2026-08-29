@@ -5,14 +5,8 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .accelerator_type import AcceleratorType, AcceleratorTypeConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .runtime_version import RuntimeVersion, RuntimeVersionConfig
 from .v1alpha1_accelerator_type import V1alpha1AcceleratorType, V1alpha1AcceleratorTypeConfig
-from .v1alpha1_location import V1alpha1Location, V1alpha1LocationConfig
-from .v1alpha1_operation import V1alpha1Operation, V1alpha1OperationConfig
 from .v1alpha1_tensorflow_version import V1alpha1TensorflowVersion, V1alpha1TensorflowVersionConfig
 from .v2alpha1_accelerator_type import V2alpha1AcceleratorType, V2alpha1AcceleratorTypeConfig
-from .v2alpha1_location import V2alpha1Location, V2alpha1LocationConfig
-from .v2alpha1_operation import V2alpha1Operation, V2alpha1OperationConfig
 from .v2alpha1_runtime_version import V2alpha1RuntimeVersion, V2alpha1RuntimeVersionConfig

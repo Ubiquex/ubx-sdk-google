@@ -5,6 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .database import Database, DatabaseConfig
-from .location import Location, LocationConfig
-from .operation import Operation, OperationConfig
 from .pluggable_database import PluggableDatabase, PluggableDatabaseConfig

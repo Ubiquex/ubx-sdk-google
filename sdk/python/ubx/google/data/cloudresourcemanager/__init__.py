@@ -4,10 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
-from .capability import Capability, CapabilityConfig
 from .effective_tag_binding_collection import EffectiveTagBindingCollection, EffectiveTagBindingCollectionConfig
-from .operation import Operation, OperationConfig
 from .organization import Organization, OrganizationConfig
 from .tag_binding_collection import TagBindingCollection, TagBindingCollectionConfig
 from .v1beta1_organization import V1beta1Organization, V1beta1OrganizationConfig
-from .v2beta1_operation import V2beta1Operation, V2beta1OperationConfig
