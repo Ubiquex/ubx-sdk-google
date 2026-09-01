@@ -303,12 +303,17 @@ jobs:
             --out "${{ runner.temp }}/gen-unused" --lang go)
 
       - name: Check out ubiquex-docs (sparse -- only this provider's own artifacts)
+        # ubiquex-docs' own artifacts/ directory is named "gcp", not
+        # "google" -- confirmed directly, not assumed uniform with the
+        # other five providers (every other provider's own artifacts/
+        # directory matches its ubx-sdk-<provider> repo name exactly;
+        # this is the one real exception).
         run: |
           set -euo pipefail
           git clone --depth=1 --filter=blob:none --sparse \
             "https://github.com/Ubiquex/ubiquex-docs.git" \
             "${{ runner.temp }}/ubiquex-docs-src"
-          git -C "${{ runner.temp }}/ubiquex-docs-src" sparse-checkout set artifacts/google
+          git -C "${{ runner.temp }}/ubiquex-docs-src" sparse-checkout set artifacts/gcp
 
       - name: Package the docs artifact
         run: |
@@ -316,10 +321,10 @@ jobs:
           staging="${{ runner.temp }}/docs-artifact"
           mkdir -p "$staging/artifacts"
           cp -r "${{ runner.temp }}/schema-dump/google" "$staging/schema"
-          cp "${{ runner.temp }}/ubiquex-docs-src/artifacts/google/descriptions.json" \
-             "${{ runner.temp }}/ubiquex-docs-src/artifacts/google/intros.json" \
-             "${{ runner.temp }}/ubiquex-docs-src/artifacts/google/categories.json" \
-             "${{ runner.temp }}/ubiquex-docs-src/artifacts/google/exclusions.json" \
+          cp "${{ runner.temp }}/ubiquex-docs-src/artifacts/gcp/descriptions.json" \
+             "${{ runner.temp }}/ubiquex-docs-src/artifacts/gcp/intros.json" \
+             "${{ runner.temp }}/ubiquex-docs-src/artifacts/gcp/categories.json" \
+             "${{ runner.temp }}/ubiquex-docs-src/artifacts/gcp/exclusions.json" \
              "$staging/artifacts/"
           r="$(find "$staging/schema" -maxdepth 1 -name '*.json' ! -name 'data_*' ! -name 'schema.json' ! -name 'PROVENANCE.json' | wc -l | tr -d ' ')"
           d="$(find "$staging/schema" -maxdepth 1 -name 'data_*.json' | wc -l | tr -d ' ')"
