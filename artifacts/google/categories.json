@@ -12,25 +12,67 @@
   "google_accesscontextmanager_gcp_user_access_binding": {
    "label": "Access Context Manager"
   },
+  "google_accesscontextmanager_service": {
+   "label": "Access Context Manager"
+  },
   "google_accesscontextmanager_service_perimeter": {
    "label": "Access Context Manager"
   },
+  "google_agentidentity_access_summary": {
+   "label": "Agent Identity"
+  },
   "google_agentidentity_auth_provider": {
+   "label": "Agent Identity"
+  },
+  "google_agentidentity_authorization": {
+   "label": "Agent Identity"
+  },
+  "google_agentidentity_v1alpha_access_summary": {
    "label": "Agent Identity"
   },
   "google_agentidentity_v1alpha_auth_provider": {
    "label": "Agent Identity"
   },
+  "google_agentidentity_v1alpha_authorization": {
+   "label": "Agent Identity"
+  },
+  "google_agentidentity_v1beta_access_summary": {
+   "label": "Agent Identity"
+  },
   "google_agentidentity_v1beta_auth_provider": {
    "label": "Agent Identity"
   },
+  "google_agentidentity_v1beta_authorization": {
+   "label": "Agent Identity"
+  },
+  "google_agentregistry_agent": {
+   "label": "Agent Registry"
+  },
   "google_agentregistry_binding": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_endpoint": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_mcp_server": {
    "label": "Agent Registry"
   },
   "google_agentregistry_service": {
    "label": "Agent Registry"
   },
+  "google_agentregistry_v1alpha_agent": {
+   "label": "Agent Registry"
+  },
   "google_agentregistry_v1alpha_binding": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_v1alpha_endpoint": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_v1alpha_mcp_server": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_v1alpha_publisher": {
    "label": "Agent Registry"
   },
   "google_agentregistry_v1alpha_revision": {
@@ -43,6 +85,9 @@
    "label": "Agent Registry"
   },
   "google_aiplatform_agent": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_annotation_spec": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_artifact": {
@@ -111,6 +156,9 @@
   "google_aiplatform_feature_view": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_feature_view_sync": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_featurestore": {
    "label": "Gemini Enterprise Agent Platform"
   },
@@ -132,13 +180,22 @@
   "google_aiplatform_metadata_store": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_model": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_model_deployment_monitoring_job": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_nas_job": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_nas_trial_detail": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_notebook_execution_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_notebook_runtime": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_notebook_runtime_template": {
@@ -162,10 +219,19 @@
   "google_aiplatform_reasoning_engine": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_response": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_revision": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_run": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_sandbox_environment": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_sandbox_environment_snapshot": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_sandbox_environment_template": {
@@ -211,6 +277,15 @@
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_v1beta1_agent_anomaly_detection_scope": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_analyzed_invocation": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_analyzed_session": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_annotation_spec": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_v1beta1_artifact": {
@@ -291,6 +366,9 @@
   "google_aiplatform_v1beta1_feature_view": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_v1beta1_feature_view_sync": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_v1beta1_featurestore": {
    "label": "Gemini Enterprise Agent Platform"
   },
@@ -315,6 +393,9 @@
   "google_aiplatform_v1beta1_metadata_store": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_v1beta1_model": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_v1beta1_model_deployment_monitoring_job": {
    "label": "Gemini Enterprise Agent Platform"
   },
@@ -324,10 +405,19 @@
   "google_aiplatform_v1beta1_model_monitoring_job": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_v1beta1_monitored_agent": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_v1beta1_nas_job": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_v1beta1_nas_trial_detail": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_v1beta1_notebook_execution_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_notebook_runtime": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_v1beta1_notebook_runtime_template": {
@@ -357,10 +447,22 @@
   "google_aiplatform_v1beta1_reasoning_engine": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_v1beta1_response": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_revision": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_v1beta1_run": {
    "label": "Gemini Enterprise Agent Platform"
   },
+  "google_aiplatform_v1beta1_runtime_revision": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
   "google_aiplatform_v1beta1_sandbox_environment": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_sandbox_environment_snapshot": {
    "label": "Gemini Enterprise Agent Platform"
   },
   "google_aiplatform_v1beta1_sandbox_environment_template": {
@@ -456,6 +558,9 @@
   "google_analyticshub_query_template": {
    "label": "Analytics Hub"
   },
+  "google_analyticshub_subscription": {
+   "label": "Analytics Hub"
+  },
   "google_analyticshub_v1beta1_data_exchange": {
    "label": "Analytics Hub"
   },
@@ -465,7 +570,34 @@
   "google_androiddeviceprovisioning_configuration": {
    "label": "Android Device Provisioning Partner"
   },
+  "google_androiddeviceprovisioning_device": {
+   "label": "Android Device Provisioning Partner"
+  },
+  "google_androidenterprise_device": {
+   "label": "Google Play EMM"
+  },
   "google_androidenterprise_enterprise": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_entitlement": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_grouplicense": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_install": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_managedconfigurationsfordevice": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_managedconfigurationsforuser": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_permission": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_product": {
    "label": "Google Play EMM"
   },
   "google_androidenterprise_storelayoutcluster": {
@@ -480,6 +612,12 @@
   "google_androidenterprise_webapp": {
    "label": "Google Play EMM"
   },
+  "google_androidmanagement_application": {
+   "label": "Android Management"
+  },
+  "google_androidmanagement_device": {
+   "label": "Android Management"
+  },
   "google_androidmanagement_enrollment_token": {
    "label": "Android Management"
   },
@@ -487,6 +625,12 @@
    "label": "Android Management"
   },
   "google_androidmanagement_migration_token": {
+   "label": "Android Management"
+  },
+  "google_androidmanagement_policy": {
+   "label": "Android Management"
+  },
+  "google_androidmanagement_provisioning_info": {
    "label": "Android Management"
   },
   "google_androidmanagement_web_app": {
@@ -540,7 +684,13 @@
   "google_apigee_attachment": {
    "label": "Apigee"
   },
+  "google_apigee_attribute": {
+   "label": "Apigee"
+  },
   "google_apigee_canaryevaluation": {
+   "label": "Apigee"
+  },
+  "google_apigee_data": {
    "label": "Apigee"
   },
   "google_apigee_datacollector": {
@@ -550,6 +700,9 @@
    "label": "Apigee"
   },
   "google_apigee_debugsession": {
+   "label": "Apigee"
+  },
+  "google_apigee_deployment": {
    "label": "Apigee"
   },
   "google_apigee_developer": {
@@ -573,10 +726,16 @@
   "google_apigee_export": {
    "label": "Apigee"
   },
+  "google_apigee_flowhook": {
+   "label": "Apigee"
+  },
   "google_apigee_host_query": {
    "label": "Apigee"
   },
   "google_apigee_host_security_report": {
+   "label": "Apigee"
+  },
+  "google_apigee_host_stat": {
    "label": "Apigee"
   },
   "google_apigee_instance": {
@@ -592,6 +751,12 @@
    "label": "Apigee"
   },
   "google_apigee_nat_address": {
+   "label": "Apigee"
+  },
+  "google_apigee_optimized_host_stat": {
+   "label": "Apigee"
+  },
+  "google_apigee_optimized_stat": {
    "label": "Apigee"
   },
   "google_apigee_organization": {
@@ -615,10 +780,16 @@
   "google_apigee_resourcefile": {
    "label": "Apigee"
   },
+  "google_apigee_revision": {
+   "label": "Apigee"
+  },
   "google_apigee_security_action": {
    "label": "Apigee"
   },
   "google_apigee_security_feedback": {
+   "label": "Apigee"
+  },
+  "google_apigee_security_incident": {
    "label": "Apigee"
   },
   "google_apigee_security_monitoring_condition": {
@@ -639,11 +810,17 @@
   "google_apigee_space": {
    "label": "Apigee"
   },
+  "google_apigee_stat": {
+   "label": "Apigee"
+  },
   "google_apigee_subscription": {
    "label": "Apigee"
   },
   "google_apigee_targetserver": {
    "label": "Apigee"
+  },
+  "google_apihub_addon": {
+   "label": "Apigee API hub"
   },
   "google_apihub_api": {
    "label": "Apigee API hub"
@@ -657,10 +834,16 @@
   "google_apihub_curation": {
    "label": "Apigee API hub"
   },
+  "google_apihub_definition": {
+   "label": "Apigee API hub"
+  },
   "google_apihub_dependency": {
    "label": "Apigee API hub"
   },
   "google_apihub_deployment": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_discovered_api_observation": {
    "label": "Apigee API hub"
   },
   "google_apihub_external_api": {
@@ -690,6 +873,9 @@
   "google_apikeys_key": {
    "label": "API Keys"
   },
+  "google_apim_api_observation": {
+   "label": "API Management"
+  },
   "google_apim_observation_job": {
    "label": "API Management"
   },
@@ -706,6 +892,12 @@
    "label": "App Engine"
   },
   "google_appengine_ingress_rule": {
+   "label": "App Engine"
+  },
+  "google_appengine_instance": {
+   "label": "App Engine"
+  },
+  "google_appengine_service": {
    "label": "App Engine"
   },
   "google_appengine_v1alpha_authorized_certificate": {
@@ -726,6 +918,12 @@
   "google_appengine_v1beta_ingress_rule": {
    "label": "App Engine"
   },
+  "google_appengine_v1beta_instance": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1beta_service": {
+   "label": "App Engine"
+  },
   "google_appengine_v1beta_version": {
    "label": "App Engine"
   },
@@ -735,6 +933,15 @@
   "google_apphub_application": {
    "label": "App Hub"
   },
+  "google_apphub_discovered_service": {
+   "label": "App Hub"
+  },
+  "google_apphub_discovered_workload": {
+   "label": "App Hub"
+  },
+  "google_apphub_extended_metadata_schema": {
+   "label": "App Hub"
+  },
   "google_apphub_service": {
    "label": "App Hub"
   },
@@ -742,6 +949,15 @@
    "label": "App Hub"
   },
   "google_apphub_v1alpha_application": {
+   "label": "App Hub"
+  },
+  "google_apphub_v1alpha_discovered_service": {
+   "label": "App Hub"
+  },
+  "google_apphub_v1alpha_discovered_workload": {
+   "label": "App Hub"
+  },
+  "google_apphub_v1alpha_extended_metadata_schema": {
    "label": "App Hub"
   },
   "google_apphub_v1alpha_service": {
@@ -759,6 +975,24 @@
   "google_artifactregistry_attachment": {
    "label": "Artifact Registry"
   },
+  "google_artifactregistry_docker_image": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_file": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_maven_artifact": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_npm_package": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_package": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_python_package": {
+   "label": "Artifact Registry"
+  },
   "google_artifactregistry_repository": {
    "label": "Artifact Registry"
   },
@@ -768,10 +1002,25 @@
   "google_artifactregistry_tag": {
    "label": "Artifact Registry"
   },
+  "google_artifactregistry_v1beta1_file": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta1_package": {
+   "label": "Artifact Registry"
+  },
   "google_artifactregistry_v1beta1_repository": {
    "label": "Artifact Registry"
   },
   "google_artifactregistry_v1beta1_tag": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta1_version": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta2_file": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta2_package": {
    "label": "Artifact Registry"
   },
   "google_artifactregistry_v1beta2_repository": {
@@ -780,7 +1029,19 @@
   "google_artifactregistry_v1beta2_tag": {
    "label": "Artifact Registry"
   },
+  "google_artifactregistry_v1beta2_version": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_version": {
+   "label": "Artifact Registry"
+  },
+  "google_assuredworkloads_v1beta1_violation": {
+   "label": "Assured Workloads"
+  },
   "google_assuredworkloads_v1beta1_workload": {
+   "label": "Assured Workloads"
+  },
+  "google_assuredworkloads_violation": {
    "label": "Assured Workloads"
   },
   "google_assuredworkloads_workload": {
@@ -801,10 +1062,28 @@
   "google_backupdr_data_source": {
    "label": "Google Cloud Backup and DR Service"
   },
+  "google_backupdr_data_source_reference": {
+   "label": "Google Cloud Backup and DR Service"
+  },
   "google_backupdr_management_server": {
    "label": "Google Cloud Backup and DR Service"
   },
+  "google_backupdr_revision": {
+   "label": "Google Cloud Backup and DR Service"
+  },
+  "google_baremetalsolution_instance": {
+   "label": "Bare Metal Solution"
+  },
+  "google_baremetalsolution_lun": {
+   "label": "Bare Metal Solution"
+  },
+  "google_baremetalsolution_network": {
+   "label": "Bare Metal Solution"
+  },
   "google_baremetalsolution_nfs_share": {
+   "label": "Bare Metal Solution"
+  },
+  "google_baremetalsolution_os_image": {
    "label": "Bare Metal Solution"
   },
   "google_baremetalsolution_provisioning_config": {
@@ -813,7 +1092,13 @@
   "google_baremetalsolution_snapshot": {
    "label": "Bare Metal Solution"
   },
+  "google_baremetalsolution_volume": {
+   "label": "Bare Metal Solution"
+  },
   "google_batch_job": {
+   "label": "Batch"
+  },
+  "google_batch_task": {
    "label": "Batch"
   },
   "google_beyondcorp_app_connection": {
@@ -849,6 +1134,9 @@
   "google_beyondcorp_v1alpha_connector": {
    "label": "BeyondCorp Enterprise"
   },
+  "google_beyondcorp_v1alpha_insight": {
+   "label": "BeyondCorp Enterprise"
+  },
   "google_beyondcorp_v1alpha_security_gateway": {
    "label": "BeyondCorp Enterprise"
   },
@@ -870,6 +1158,9 @@
   "google_bigquery_job": {
    "label": "BigQuery"
   },
+  "google_bigquery_model": {
+   "label": "BigQuery"
+  },
   "google_bigquery_routine": {
    "label": "BigQuery"
   },
@@ -888,7 +1179,16 @@
   "google_bigquerydatapolicy_data_policy": {
    "label": "BigQuery"
   },
+  "google_bigquerydatatransfer_data_source": {
+   "label": "BigQuery Data Transfer Service"
+  },
+  "google_bigquerydatatransfer_run": {
+   "label": "BigQuery Data Transfer Service"
+  },
   "google_bigquerydatatransfer_transfer_config": {
+   "label": "BigQuery Data Transfer Service"
+  },
+  "google_bigquerydatatransfer_transfer_resource": {
    "label": "BigQuery Data Transfer Service"
   },
   "google_bigqueryreservation_capacity_commitment": {
@@ -969,6 +1269,12 @@
   "google_ces_app": {
    "label": "Gemini Enterprise for Customer Experience"
   },
+  "google_ces_changelog": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_conversation": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
   "google_ces_deployment": {
    "label": "Gemini Enterprise for Customer Experience"
   },
@@ -990,6 +1296,12 @@
   "google_ces_v1beta_app": {
    "label": "Gemini Enterprise for Customer Experience"
   },
+  "google_ces_v1beta_changelog": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_conversation": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
   "google_ces_v1beta_deployment": {
    "label": "Gemini Enterprise for Customer Experience"
   },
@@ -1002,10 +1314,16 @@
   "google_ces_v1beta_evaluation_expectation": {
    "label": "Gemini Enterprise for Customer Experience"
   },
+  "google_ces_v1beta_evaluation_run": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
   "google_ces_v1beta_example": {
    "label": "Gemini Enterprise for Customer Experience"
   },
   "google_ces_v1beta_guardrail": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_result": {
    "label": "Gemini Enterprise for Customer Experience"
   },
   "google_ces_v1beta_scheduled_evaluation_run": {
@@ -1023,10 +1341,31 @@
   "google_ces_version": {
    "label": "Gemini Enterprise for Customer Experience"
   },
+  "google_chromemanagement_android": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_chromemanagement_certificate_provisioning_process": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_chromemanagement_chrome": {
+   "label": "Chrome Enterprise Premium"
+  },
   "google_chromemanagement_command": {
    "label": "Chrome Enterprise Premium"
   },
   "google_chromemanagement_connector_config": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_chromemanagement_device": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_chromemanagement_profile": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_chromemanagement_user": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_chromemanagement_web": {
    "label": "Chrome Enterprise Premium"
   },
   "google_cloudasset_feed": {
@@ -1065,7 +1404,22 @@
   "google_cloudcontrolspartner_v1beta_customer": {
    "label": "Assured Workloads"
   },
+  "google_cloudcontrolspartner_v1beta_violation": {
+   "label": "Assured Workloads"
+  },
+  "google_cloudcontrolspartner_v1beta_workload": {
+   "label": "Assured Workloads"
+  },
+  "google_cloudcontrolspartner_violation": {
+   "label": "Assured Workloads"
+  },
+  "google_cloudcontrolspartner_workload": {
+   "label": "Assured Workloads"
+  },
   "google_clouddeploy_automation": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_automation_run": {
    "label": "Cloud Deploy"
   },
   "google_clouddeploy_custom_target_type": {
@@ -1075,6 +1429,9 @@
    "label": "Cloud Deploy"
   },
   "google_clouddeploy_deploy_policy": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_job_run": {
    "label": "Cloud Deploy"
   },
   "google_clouddeploy_release": {
@@ -1098,10 +1455,19 @@
   "google_cloudidentity_allowlisted_domain": {
    "label": "Cloud Identity"
   },
+  "google_cloudidentity_client_state": {
+   "label": "Cloud Identity"
+  },
   "google_cloudidentity_device": {
    "label": "Cloud Identity"
   },
+  "google_cloudidentity_device_user": {
+   "label": "Cloud Identity"
+  },
   "google_cloudidentity_group": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_idp_credential": {
    "label": "Cloud Identity"
   },
   "google_cloudidentity_inbound_oidc_sso_profile": {
@@ -1119,13 +1485,25 @@
   "google_cloudidentity_policy": {
    "label": "Cloud Identity"
   },
+  "google_cloudidentity_userinvitation": {
+   "label": "Cloud Identity"
+  },
   "google_cloudidentity_v1beta1_allowlisted_domain": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_client_state": {
    "label": "Cloud Identity"
   },
   "google_cloudidentity_v1beta1_device": {
    "label": "Cloud Identity"
   },
+  "google_cloudidentity_v1beta1_device_user": {
+   "label": "Cloud Identity"
+  },
   "google_cloudidentity_v1beta1_group": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_idp_credential": {
    "label": "Cloud Identity"
   },
   "google_cloudidentity_v1beta1_inbound_oidc_sso_profile": {
@@ -1141,6 +1519,9 @@
    "label": "Cloud Identity"
   },
   "google_cloudidentity_v1beta1_policy": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_userinvitation": {
    "label": "Cloud Identity"
   },
   "google_cloudkms_crypto_key": {
@@ -1164,10 +1545,16 @@
   "google_cloudkms_proposal": {
    "label": "Cloud Key Management Service"
   },
+  "google_cloudkms_retired_resource": {
+   "label": "Cloud Key Management Service"
+  },
   "google_cloudkms_single_tenant_hsm_instance": {
    "label": "Cloud Key Management Service"
   },
   "google_cloudnumberregistry_custom_range": {
+   "label": "Cloud Number Registry"
+  },
+  "google_cloudnumberregistry_discovered_range": {
    "label": "Cloud Number Registry"
   },
   "google_cloudnumberregistry_ipam_admin_scope": {
@@ -1185,19 +1572,31 @@
   "google_cloudquotas_quota_preference": {
    "label": "Cloud Quotas"
   },
+  "google_cloudresourcemanager_effective_tag_binding_collection": {
+   "label": "Resource Manager"
+  },
   "google_cloudresourcemanager_folder": {
    "label": "Resource Manager"
   },
   "google_cloudresourcemanager_lien": {
    "label": "Resource Manager"
   },
+  "google_cloudresourcemanager_organization": {
+   "label": "Resource Manager"
+  },
   "google_cloudresourcemanager_project": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_tag_binding_collection": {
    "label": "Resource Manager"
   },
   "google_cloudresourcemanager_tag_key": {
    "label": "Resource Manager"
   },
   "google_cloudresourcemanager_tag_value": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_v1beta1_organization": {
    "label": "Resource Manager"
   },
   "google_cloudresourcemanager_v1beta1_project": {
@@ -1212,6 +1611,9 @@
   "google_cloudscheduler_v1beta1_job": {
    "label": "Cloud Scheduler"
   },
+  "google_cloudsupport_attachment": {
+   "label": "Google Cloud Support"
+  },
   "google_cloudsupport_case": {
    "label": "Google Cloud Support"
   },
@@ -1219,6 +1621,9 @@
    "label": "Google Cloud Support"
   },
   "google_cloudsupport_support_event_subscription": {
+   "label": "Google Cloud Support"
+  },
+  "google_cloudsupport_v2beta_attachment": {
    "label": "Google Cloud Support"
   },
   "google_cloudsupport_v2beta_case": {
@@ -1266,10 +1671,16 @@
   "google_composer_v1beta1_user_workloads_secret": {
    "label": "Cloud Composer"
   },
+  "google_compute_accelerator_type": {
+   "label": "Compute Engine"
+  },
   "google_compute_address": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_accelerator_pod_controller": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_accelerator_type": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_address": {
@@ -1291,6 +1702,12 @@
    "label": "Compute Engine"
   },
   "google_compute_alpha_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_disk_setting": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_disk_type": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_external_vpn_gateway": {
@@ -1335,6 +1752,9 @@
   "google_compute_alpha_health_check": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_host": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_http_health_check": {
    "label": "Compute Engine"
   },
@@ -1342,6 +1762,12 @@
    "label": "Compute Engine"
   },
   "google_compute_alpha_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_image_family_view": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_image_view": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_instance": {
@@ -1354,6 +1780,9 @@
    "label": "Compute Engine"
   },
   "google_compute_alpha_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instance_setting": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_instance_template": {
@@ -1380,7 +1809,16 @@
   "google_compute_alpha_license": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_license_code": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_machine_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_machine_type": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_managed_ruleset": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_network": {
@@ -1398,13 +1836,22 @@
   "google_compute_alpha_network_firewall_policy": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_network_profile": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_node_group": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_node_template": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_node_type": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_organization_global_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_organization_rollout": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_organization_rollout_plan": {
@@ -1413,16 +1860,31 @@
   "google_compute_alpha_organization_security_policy": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_organization_snapshot_recycle_bin_policy": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_organization_zone_vm_extension_policy": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_packet_mirroring": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_preview_feature": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_project": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_project_view": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_public_advertised_prefix": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_recoverable_snapshot": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_region_autoscaler": {
@@ -1509,10 +1971,25 @@
   "google_compute_alpha_region_url_map": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_reliability_risk": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_reservation": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_reservation_block": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_reservation_slot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_reservation_sub_block": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_resource_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_rollout": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_rollout_plan": {
@@ -1536,6 +2013,12 @@
   "google_compute_alpha_snapshot_group": {
    "label": "Compute Engine"
   },
+  "google_compute_alpha_snapshot_recycle_bin_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_snapshot_setting": {
+   "label": "Compute Engine"
+  },
   "google_compute_alpha_ssl_certificate": {
    "label": "Compute Engine"
   },
@@ -1543,6 +2026,9 @@
    "label": "Compute Engine"
   },
   "google_compute_alpha_storage_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_storage_pool_type": {
    "label": "Compute Engine"
   },
   "google_compute_alpha_subnetwork": {
@@ -1599,6 +2085,9 @@
   "google_compute_backend_service": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_accelerator_type": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_address": {
    "label": "Compute Engine"
   },
@@ -1614,7 +2103,16 @@
   "google_compute_beta_cross_site_network": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_dhcp_options_config": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_disk_setting": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_disk_type": {
    "label": "Compute Engine"
   },
   "google_compute_beta_external_vpn_gateway": {
@@ -1638,6 +2136,9 @@
   "google_compute_beta_global_forwarding_rule": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_global_frontend_setting": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_global_network_endpoint_group": {
    "label": "Compute Engine"
   },
@@ -1650,6 +2151,9 @@
   "google_compute_beta_health_check": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_host": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_http_health_check": {
    "label": "Compute Engine"
   },
@@ -1657,6 +2161,12 @@
    "label": "Compute Engine"
   },
   "google_compute_beta_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_image_family_view": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_image_view": {
    "label": "Compute Engine"
   },
   "google_compute_beta_instance": {
@@ -1669,6 +2179,9 @@
    "label": "Compute Engine"
   },
   "google_compute_beta_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instance_setting": {
    "label": "Compute Engine"
   },
   "google_compute_beta_instance_template": {
@@ -1695,7 +2208,16 @@
   "google_compute_beta_license": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_license_code": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_machine_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_machine_type": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_managed_ruleset": {
    "label": "Compute Engine"
   },
   "google_compute_beta_network": {
@@ -1713,10 +2235,19 @@
   "google_compute_beta_network_firewall_policy": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_network_profile": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_node_group": {
    "label": "Compute Engine"
   },
   "google_compute_beta_node_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_node_type": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_organization_rollout": {
    "label": "Compute Engine"
   },
   "google_compute_beta_organization_rollout_plan": {
@@ -1725,13 +2256,28 @@
   "google_compute_beta_organization_security_policy": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_organization_snapshot_recycle_bin_policy": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_packet_mirroring": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_preview_feature": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_project": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_project_view": {
    "label": "Compute Engine"
   },
   "google_compute_beta_public_advertised_prefix": {
    "label": "Compute Engine"
   },
   "google_compute_beta_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_recoverable_snapshot": {
    "label": "Compute Engine"
   },
   "google_compute_beta_region_autoscaler": {
@@ -1818,10 +2364,25 @@
   "google_compute_beta_region_url_map": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_reliability_risk": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_reservation": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_reservation_block": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_reservation_slot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_reservation_sub_block": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_resource_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_rollout": {
    "label": "Compute Engine"
   },
   "google_compute_beta_rollout_plan": {
@@ -1845,6 +2406,12 @@
   "google_compute_beta_snapshot_group": {
    "label": "Compute Engine"
   },
+  "google_compute_beta_snapshot_recycle_bin_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_snapshot_setting": {
+   "label": "Compute Engine"
+  },
   "google_compute_beta_ssl_certificate": {
    "label": "Compute Engine"
   },
@@ -1852,6 +2419,9 @@
    "label": "Compute Engine"
   },
   "google_compute_beta_storage_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_storage_pool_type": {
    "label": "Compute Engine"
   },
   "google_compute_beta_subnetwork": {
@@ -1902,6 +2472,9 @@
   "google_compute_disk": {
    "label": "Compute Engine"
   },
+  "google_compute_disk_type": {
+   "label": "Compute Engine"
+  },
   "google_compute_external_vpn_gateway": {
    "label": "Compute Engine"
   },
@@ -1935,6 +2508,9 @@
   "google_compute_health_check": {
    "label": "Compute Engine"
   },
+  "google_compute_host": {
+   "label": "Compute Engine"
+  },
   "google_compute_http_health_check": {
    "label": "Compute Engine"
   },
@@ -1942,6 +2518,9 @@
    "label": "Compute Engine"
   },
   "google_compute_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_image_family_view": {
    "label": "Compute Engine"
   },
   "google_compute_instance": {
@@ -1954,6 +2533,9 @@
    "label": "Compute Engine"
   },
   "google_compute_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instance_setting": {
    "label": "Compute Engine"
   },
   "google_compute_instance_template": {
@@ -1980,7 +2562,13 @@
   "google_compute_license": {
    "label": "Compute Engine"
   },
+  "google_compute_license_code": {
+   "label": "Compute Engine"
+  },
   "google_compute_machine_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_machine_type": {
    "label": "Compute Engine"
   },
   "google_compute_network": {
@@ -1998,16 +2586,28 @@
   "google_compute_network_firewall_policy": {
    "label": "Compute Engine"
   },
+  "google_compute_network_profile": {
+   "label": "Compute Engine"
+  },
   "google_compute_node_group": {
    "label": "Compute Engine"
   },
   "google_compute_node_template": {
    "label": "Compute Engine"
   },
+  "google_compute_node_type": {
+   "label": "Compute Engine"
+  },
   "google_compute_organization_security_policy": {
    "label": "Compute Engine"
   },
   "google_compute_packet_mirroring": {
+   "label": "Compute Engine"
+  },
+  "google_compute_preview_feature": {
+   "label": "Compute Engine"
+  },
+  "google_compute_project": {
    "label": "Compute Engine"
   },
   "google_compute_public_advertised_prefix": {
@@ -2094,10 +2694,25 @@
   "google_compute_region_url_map": {
    "label": "Compute Engine"
   },
+  "google_compute_reliability_risk": {
+   "label": "Compute Engine"
+  },
   "google_compute_reservation": {
    "label": "Compute Engine"
   },
+  "google_compute_reservation_block": {
+   "label": "Compute Engine"
+  },
+  "google_compute_reservation_slot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_reservation_sub_block": {
+   "label": "Compute Engine"
+  },
   "google_compute_resource_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_rollout": {
    "label": "Compute Engine"
   },
   "google_compute_rollout_plan": {
@@ -2118,6 +2733,9 @@
   "google_compute_snapshot": {
    "label": "Compute Engine"
   },
+  "google_compute_snapshot_setting": {
+   "label": "Compute Engine"
+  },
   "google_compute_ssl_certificate": {
    "label": "Compute Engine"
   },
@@ -2125,6 +2743,9 @@
    "label": "Compute Engine"
   },
   "google_compute_storage_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_storage_pool_type": {
    "label": "Compute Engine"
   },
   "google_compute_subnetwork": {
@@ -2178,7 +2799,25 @@
   "google_config_preview": {
    "label": "Infrastructure Manager"
   },
+  "google_config_resource": {
+   "label": "Infrastructure Manager"
+  },
+  "google_config_resource_change": {
+   "label": "Infrastructure Manager"
+  },
+  "google_config_resource_drift": {
+   "label": "Infrastructure Manager"
+  },
+  "google_config_revision": {
+   "label": "Infrastructure Manager"
+  },
+  "google_config_terraform_version": {
+   "label": "Infrastructure Manager"
+  },
   "google_connectors_connection": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_connector": {
    "label": "Integration Connectors"
   },
   "google_connectors_custom_connector": {
@@ -2196,7 +2835,16 @@
   "google_connectors_event_subscription": {
    "label": "Integration Connectors"
   },
+  "google_connectors_eventtype": {
+   "label": "Integration Connectors"
+  },
   "google_connectors_managed_zone": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_provider": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_version": {
    "label": "Integration Connectors"
   },
   "google_contactcenteraiplatform_contact_center": {
@@ -2289,6 +2937,9 @@
   "google_containeranalysis_v1alpha1_occurrence": {
    "label": "Container Analysis"
   },
+  "google_containeranalysis_v1alpha1_scan_config": {
+   "label": "Container Analysis"
+  },
   "google_containeranalysis_v1beta1_note": {
    "label": "Container Analysis"
   },
@@ -2299,6 +2950,9 @@
    "label": "Document AI Warehouse"
   },
   "google_contentwarehouse_document_schema": {
+   "label": "Document AI Warehouse"
+  },
+  "google_contentwarehouse_reference_id": {
    "label": "Document AI Warehouse"
   },
   "google_contentwarehouse_rule_set": {
@@ -2337,7 +2991,13 @@
   "google_datacatalog_v1beta1_taxonomy": {
    "label": "Dataplex Universal Catalog"
   },
+  "google_dataflow_config_store_setting": {
+   "label": "Dataflow"
+  },
   "google_dataflow_job": {
+   "label": "Dataflow"
+  },
+  "google_dataflow_snapshot": {
    "label": "Dataflow"
   },
   "google_dataflow_template": {
@@ -2397,6 +3057,9 @@
   "google_datafusion_v1beta1_instance": {
    "label": "Cloud Data Fusion"
   },
+  "google_datalineage_config": {
+   "label": "Dataplex Universal Catalog"
+  },
   "google_datalineage_lineage_event": {
    "label": "Dataplex Universal Catalog"
   },
@@ -2416,6 +3079,9 @@
    "label": "Database Migration Service"
   },
   "google_datamigration_migration_job": {
+   "label": "Database Migration Service"
+  },
+  "google_datamigration_object": {
    "label": "Database Migration Service"
   },
   "google_datamigration_private_connection": {
@@ -2443,6 +3109,9 @@
    "label": "Dataplex Universal Catalog"
   },
   "google_dataplex_category": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_change_request": {
    "label": "Dataplex Universal Catalog"
   },
   "google_dataplex_data_asset": {
@@ -2484,6 +3153,9 @@
   "google_dataplex_glossary": {
    "label": "Dataplex Universal Catalog"
   },
+  "google_dataplex_job": {
+   "label": "Dataplex Universal Catalog"
+  },
   "google_dataplex_lake": {
    "label": "Dataplex Universal Catalog"
   },
@@ -2514,6 +3186,9 @@
   "google_dataproc_cluster": {
    "label": "Dataproc"
   },
+  "google_dataproc_job": {
+   "label": "Dataproc"
+  },
   "google_dataproc_node_group": {
    "label": "Dataproc"
   },
@@ -2532,6 +3207,9 @@
   "google_datastream_connection_profile": {
    "label": "Datastream"
   },
+  "google_datastream_object": {
+   "label": "Datastream"
+  },
   "google_datastream_private_connection": {
    "label": "Datastream"
   },
@@ -2542,6 +3220,9 @@
    "label": "Datastream"
   },
   "google_datastream_v1alpha1_connection_profile": {
+   "label": "Datastream"
+  },
+  "google_datastream_v1alpha1_object": {
    "label": "Datastream"
   },
   "google_datastream_v1alpha1_private_connection": {
@@ -2559,16 +3240,37 @@
   "google_deploymentmanager_alpha_deployment": {
    "label": "Cloud Deployment Manager"
   },
+  "google_deploymentmanager_alpha_manifest": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_alpha_resource": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_alpha_type": {
+   "label": "Cloud Deployment Manager"
+  },
   "google_deploymentmanager_alpha_type_provider": {
    "label": "Cloud Deployment Manager"
   },
   "google_deploymentmanager_deployment": {
    "label": "Cloud Deployment Manager"
   },
+  "google_deploymentmanager_manifest": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_resource": {
+   "label": "Cloud Deployment Manager"
+  },
   "google_deploymentmanager_v2beta_composite_type": {
    "label": "Cloud Deployment Manager"
   },
   "google_deploymentmanager_v2beta_deployment": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_v2beta_manifest": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_v2beta_resource": {
    "label": "Cloud Deployment Manager"
   },
   "google_deploymentmanager_v2beta_type_provider": {
@@ -2587,6 +3289,12 @@
    "label": "Developer Connect"
   },
   "google_dialogflow_agent": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_changelog": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_deployment": {
    "label": "Dialogflow"
   },
   "google_dialogflow_entity_type": {
@@ -2616,6 +3324,9 @@
   "google_dialogflow_playbook": {
    "label": "Dialogflow"
   },
+  "google_dialogflow_result": {
+   "label": "Dialogflow"
+  },
   "google_dialogflow_security_setting": {
    "label": "Dialogflow"
   },
@@ -2626,6 +3337,9 @@
    "label": "Dialogflow"
   },
   "google_dialogflow_transition_route_group": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_answer_record": {
    "label": "Dialogflow"
   },
   "google_dialogflow_v2beta1_context": {
@@ -2673,6 +3387,15 @@
   "google_dialogflow_v3beta1_agent": {
    "label": "Dialogflow"
   },
+  "google_dialogflow_v3beta1_changelog": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_conversation": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_deployment": {
+   "label": "Dialogflow"
+  },
   "google_dialogflow_v3beta1_entity_type": {
    "label": "Dialogflow"
   },
@@ -2700,6 +3423,9 @@
   "google_dialogflow_v3beta1_playbook": {
    "label": "Dialogflow"
   },
+  "google_dialogflow_v3beta1_result": {
+   "label": "Dialogflow"
+  },
   "google_dialogflow_v3beta1_security_setting": {
    "label": "Dialogflow"
   },
@@ -2724,7 +3450,13 @@
   "google_dialogflow_webhook": {
    "label": "Dialogflow"
   },
+  "google_discoveryengine_answer": {
+   "label": "Vertex AI Search"
+  },
   "google_discoveryengine_assistant": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_cmek_config": {
    "label": "Vertex AI Search"
   },
   "google_discoveryengine_control": {
@@ -2763,6 +3495,12 @@
   "google_discoveryengine_target_site": {
    "label": "Vertex AI Search"
   },
+  "google_discoveryengine_task": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_user_store": {
+   "label": "Vertex AI Search"
+  },
   "google_discoveryengine_v1alpha_agent": {
    "label": "Vertex AI Search"
   },
@@ -2772,13 +3510,31 @@
   "google_discoveryengine_v1alpha_alpha_evolve_program": {
    "label": "Vertex AI Search"
   },
+  "google_discoveryengine_v1alpha_answer": {
+   "label": "Vertex AI Search"
+  },
   "google_discoveryengine_v1alpha_assistant": {
    "label": "Vertex AI Search"
   },
   "google_discoveryengine_v1alpha_authorization": {
    "label": "Vertex AI Search"
   },
+  "google_discoveryengine_v1alpha_billing_account_license_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_branch": {
+   "label": "Vertex AI Search"
+  },
   "google_discoveryengine_v1alpha_canned_query": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_chunk": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_cmek_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_collection": {
    "label": "Vertex AI Search"
   },
   "google_discoveryengine_v1alpha_control": {
@@ -2832,7 +3588,19 @@
   "google_discoveryengine_v1alpha_target_site": {
    "label": "Vertex AI Search"
   },
+  "google_discoveryengine_v1alpha_user_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_widget_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_answer": {
+   "label": "Vertex AI Search"
+  },
   "google_discoveryengine_v1beta_assistant": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_cmek_config": {
    "label": "Vertex AI Search"
   },
   "google_discoveryengine_v1beta_control": {
@@ -2877,6 +3645,15 @@
   "google_discoveryengine_v1beta_target_site": {
    "label": "Vertex AI Search"
   },
+  "google_discoveryengine_v1beta_user_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_widget_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_dlp_column_data_profile": {
+   "label": "Sensitive Data Protection"
+  },
   "google_dlp_connection": {
    "label": "Sensitive Data Protection"
   },
@@ -2889,6 +3666,9 @@
   "google_dlp_discovery_config": {
    "label": "Sensitive Data Protection"
   },
+  "google_dlp_file_store_data_profile": {
+   "label": "Sensitive Data Protection"
+  },
   "google_dlp_inspect_template": {
    "label": "Sensitive Data Protection"
   },
@@ -2898,16 +3678,28 @@
   "google_dlp_job_trigger": {
    "label": "Sensitive Data Protection"
   },
+  "google_dlp_project_data_profile": {
+   "label": "Sensitive Data Protection"
+  },
   "google_dlp_stored_info_type": {
    "label": "Sensitive Data Protection"
   },
+  "google_dlp_table_data_profile": {
+   "label": "Sensitive Data Protection"
+  },
   "google_dns_change": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_key": {
    "label": "Cloud DNS"
   },
   "google_dns_managed_zone": {
    "label": "Cloud DNS"
   },
   "google_dns_policy": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_project": {
    "label": "Cloud DNS"
   },
   "google_dns_resource_record_set": {
@@ -2922,10 +3714,16 @@
   "google_dns_v1beta2_change": {
    "label": "Cloud DNS"
   },
+  "google_dns_v1beta2_dns_key": {
+   "label": "Cloud DNS"
+  },
   "google_dns_v1beta2_managed_zone": {
    "label": "Cloud DNS"
   },
   "google_dns_v1beta2_policy": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_v1beta2_project": {
    "label": "Cloud DNS"
   },
   "google_dns_v1beta2_resource_record_set": {
@@ -2937,7 +3735,16 @@
   "google_dns_v1beta2_response_policy_rule": {
    "label": "Cloud DNS"
   },
+  "google_documentai_evaluation": {
+   "label": "Document AI"
+  },
   "google_documentai_processor": {
+   "label": "Document AI"
+  },
+  "google_documentai_processor_type": {
+   "label": "Document AI"
+  },
+  "google_documentai_processor_version": {
    "label": "Document AI"
   },
   "google_documentai_schema": {
@@ -2946,7 +3753,13 @@
   "google_documentai_schema_version": {
    "label": "Document AI"
   },
+  "google_documentai_v1beta3_evaluation": {
+   "label": "Document AI"
+  },
   "google_documentai_v1beta3_processor": {
+   "label": "Document AI"
+  },
+  "google_documentai_v1beta3_processor_type": {
    "label": "Document AI"
   },
   "google_documentai_v1beta3_processor_version": {
@@ -2979,6 +3792,9 @@
   "google_eventarc_pipeline": {
    "label": "Eventarc"
   },
+  "google_eventarc_provider": {
+   "label": "Eventarc"
+  },
   "google_eventarc_trigger": {
    "label": "Eventarc"
   },
@@ -3003,34 +3819,103 @@
   "google_file_v1beta1_snapshot": {
    "label": "Filestore"
   },
+  "google_file_v1beta1_volume": {
+   "label": "Filestore"
+  },
+  "google_file_v1beta1_volume_pool": {
+   "label": "Filestore"
+  },
   "google_firebase_android_app": {
    "label": "Firebase"
   },
   "google_firebase_ios_app": {
    "label": "Firebase"
   },
+  "google_firebase_project": {
+   "label": "Firebase"
+  },
   "google_firebase_web_app": {
    "label": "Firebase"
   },
+  "google_firebaseappcheck_app_attest_config": {
+   "label": "Firebase App Check"
+  },
   "google_firebaseappcheck_debug_token": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_device_check_config": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_jwk": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_play_integrity_config": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_recaptcha_enterprise_config": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_recaptcha_v3_config": {
    "label": "Firebase App Check"
   },
   "google_firebaseappcheck_resource_policy": {
    "label": "Firebase App Check"
   },
+  "google_firebaseappcheck_service": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_app_attest_config": {
+   "label": "Firebase App Check"
+  },
   "google_firebaseappcheck_v1beta_debug_token": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_device_check_config": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_jwk": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_play_integrity_config": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_recaptcha_config": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_recaptcha_enterprise_config": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_recaptcha_v3_config": {
    "label": "Firebase App Check"
   },
   "google_firebaseappcheck_v1beta_resource_policy": {
    "label": "Firebase App Check"
   },
+  "google_firebaseappcheck_v1beta_service": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappdistribution_feedback_report": {
+   "label": "Firebase App Distribution"
+  },
   "google_firebaseappdistribution_group": {
+   "label": "Firebase App Distribution"
+  },
+  "google_firebaseappdistribution_release": {
+   "label": "Firebase App Distribution"
+  },
+  "google_firebaseappdistribution_v1alpha_app": {
+   "label": "Firebase App Distribution"
+  },
+  "google_firebaseappdistribution_v1alpha_release_by_hash": {
    "label": "Firebase App Distribution"
   },
   "google_firebaseappdistribution_v1alpha_test": {
    "label": "Firebase App Distribution"
   },
   "google_firebaseappdistribution_v1alpha_test_case": {
+   "label": "Firebase App Distribution"
+  },
+  "google_firebaseappdistribution_v1alpha_upload_statu": {
    "label": "Firebase App Distribution"
   },
   "google_firebaseapphosting_backend": {
@@ -3045,6 +3930,9 @@
   "google_firebaseapphosting_rollout": {
    "label": "Firebase App Hosting"
   },
+  "google_firebaseapphosting_traffic": {
+   "label": "Firebase App Hosting"
+  },
   "google_firebaseapphosting_v1beta_backend": {
    "label": "Firebase App Hosting"
   },
@@ -3055,6 +3943,9 @@
    "label": "Firebase App Hosting"
   },
   "google_firebaseapphosting_v1beta_rollout": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_v1beta_traffic": {
    "label": "Firebase App Hosting"
   },
   "google_firebasedatabase_instance": {
@@ -3084,6 +3975,9 @@
   "google_firebaserules_ruleset": {
    "label": "Firebase Security Rules"
   },
+  "google_firestore_backup": {
+   "label": "Firestore"
+  },
   "google_firestore_backup_schedule": {
    "label": "Firestore"
   },
@@ -3096,6 +3990,9 @@
   "google_firestore_document": {
    "label": "Firestore"
   },
+  "google_firestore_field": {
+   "label": "Firestore"
+  },
   "google_firestore_index": {
    "label": "Firestore"
   },
@@ -3106,6 +4003,9 @@
    "label": "Firestore"
   },
   "google_firestore_v1beta1_index": {
+   "label": "Firestore"
+  },
+  "google_firestore_v1beta2_field": {
    "label": "Firestore"
   },
   "google_firestore_v1beta2_index": {
@@ -3132,6 +4032,9 @@
   "google_gkebackup_backup_plan": {
    "label": "Backup for GKE"
   },
+  "google_gkebackup_backup_plan_binding": {
+   "label": "Backup for GKE"
+  },
   "google_gkebackup_restore": {
    "label": "Backup for GKE"
   },
@@ -3139,6 +4042,15 @@
    "label": "Backup for GKE"
   },
   "google_gkebackup_restore_plan": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_restore_plan_binding": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_volume_backup": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_volume_restore": {
    "label": "Backup for GKE"
   },
   "google_gkehub_feature": {
@@ -3160,6 +4072,9 @@
    "label": "GKE Hub"
   },
   "google_gkehub_v1alpha_rbacrolebinding": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_rollout": {
    "label": "GKE Hub"
   },
   "google_gkehub_v1alpha_rollout_sequence": {
@@ -3187,6 +4102,9 @@
    "label": "GKE Hub"
   },
   "google_gkehub_v1beta_rbacrolebinding": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_rollout": {
    "label": "GKE Hub"
   },
   "google_gkehub_v1beta_rollout_sequence": {
@@ -3390,6 +4308,9 @@
   "google_managedidentities_peering": {
    "label": "Managed Service for Microsoft Active Directory"
   },
+  "google_managedidentities_sql_integration": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
   "google_managedidentities_v1alpha1_backup": {
    "label": "Managed Service for Microsoft Active Directory"
   },
@@ -3397,6 +4318,9 @@
    "label": "Managed Service for Microsoft Active Directory"
   },
   "google_managedidentities_v1alpha1_peering": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_v1alpha1_sql_integration": {
    "label": "Managed Service for Microsoft Active Directory"
   },
   "google_managedidentities_v1beta1_backup": {
@@ -3408,16 +4332,34 @@
   "google_managedidentities_v1beta1_peering": {
    "label": "Managed Service for Microsoft Active Directory"
   },
+  "google_managedidentities_v1beta1_sql_integration": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
   "google_managedkafka_acl": {
    "label": "Google Cloud Managed Service for Apache Kafka"
   },
   "google_managedkafka_cluster": {
    "label": "Google Cloud Managed Service for Apache Kafka"
   },
+  "google_managedkafka_config": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
   "google_managedkafka_connect_cluster": {
    "label": "Google Cloud Managed Service for Apache Kafka"
   },
   "google_managedkafka_connector": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_consumer_group": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_context": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_mode": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_schema": {
    "label": "Google Cloud Managed Service for Apache Kafka"
   },
   "google_managedkafka_schema_registry": {
@@ -3471,10 +4413,16 @@
   "google_metastore_v1beta_service": {
    "label": "Dataproc Metastore"
   },
+  "google_migrationcenter_asset": {
+   "label": "Migration Center"
+  },
   "google_migrationcenter_assets_export_job": {
    "label": "Migration Center"
   },
   "google_migrationcenter_discovery_client": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_error_frame": {
    "label": "Migration Center"
   },
   "google_migrationcenter_group": {
@@ -3489,6 +4437,9 @@
   "google_migrationcenter_preference_set": {
    "label": "Migration Center"
   },
+  "google_migrationcenter_relation": {
+   "label": "Migration Center"
+  },
   "google_migrationcenter_report": {
    "label": "Migration Center"
   },
@@ -3498,10 +4449,16 @@
   "google_migrationcenter_source": {
    "label": "Migration Center"
   },
+  "google_migrationcenter_v1alpha1_asset": {
+   "label": "Migration Center"
+  },
   "google_migrationcenter_v1alpha1_assets_export_job": {
    "label": "Migration Center"
   },
   "google_migrationcenter_v1alpha1_discovery_client": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_error_frame": {
    "label": "Migration Center"
   },
   "google_migrationcenter_v1alpha1_group": {
@@ -3514,6 +4471,9 @@
    "label": "Migration Center"
   },
   "google_migrationcenter_v1alpha1_preference_set": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_relation": {
    "label": "Migration Center"
   },
   "google_migrationcenter_v1alpha1_report": {
@@ -3546,6 +4506,9 @@
   "google_modelarmor_template": {
    "label": "Model Armor"
   },
+  "google_monitoring_alert": {
+   "label": "Cloud Monitoring"
+  },
   "google_monitoring_alert_policy": {
    "label": "Cloud Monitoring"
   },
@@ -3555,7 +4518,13 @@
   "google_monitoring_metric_descriptor": {
    "label": "Cloud Monitoring"
   },
+  "google_monitoring_monitored_resource_descriptor": {
+   "label": "Cloud Monitoring"
+  },
   "google_monitoring_notification_channel": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_notification_channel_descriptor": {
    "label": "Cloud Monitoring"
   },
   "google_monitoring_service": {
@@ -3645,6 +4614,9 @@
   "google_networkconnectivity_gateway_advertised_route": {
    "label": "Network Connectivity Center"
   },
+  "google_networkconnectivity_group": {
+   "label": "Network Connectivity Center"
+  },
   "google_networkconnectivity_hub": {
    "label": "Network Connectivity Center"
   },
@@ -3654,6 +4626,9 @@
   "google_networkconnectivity_multicloud_data_transfer_config": {
    "label": "Network Connectivity Center"
   },
+  "google_networkconnectivity_multicloud_data_transfer_supported_service": {
+   "label": "Network Connectivity Center"
+  },
   "google_networkconnectivity_policy_based_route": {
    "label": "Network Connectivity Center"
   },
@@ -3661,6 +4636,18 @@
    "label": "Network Connectivity Center"
   },
   "google_networkconnectivity_regional_endpoint": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_remote_transport_profile": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_route": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_route_table": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_service_class": {
    "label": "Network Connectivity Center"
   },
   "google_networkconnectivity_service_connection_map": {
@@ -3690,7 +4677,13 @@
   "google_networkmanagement_connectivity_test": {
    "label": "Network Intelligence Center"
   },
+  "google_networkmanagement_monitoring_point": {
+   "label": "Network Intelligence Center"
+  },
   "google_networkmanagement_network_monitoring_provider": {
+   "label": "Network Intelligence Center"
+  },
+  "google_networkmanagement_network_path": {
    "label": "Network Intelligence Center"
   },
   "google_networkmanagement_v1beta1_connectivity_test": {
@@ -3700,6 +4693,9 @@
    "label": "Network Intelligence Center"
   },
   "google_networkmanagement_vpc_flow_logs_config": {
+   "label": "Network Intelligence Center"
+  },
+  "google_networkmanagement_web_path": {
    "label": "Network Intelligence Center"
   },
   "google_networksecurity_address_group": {
@@ -3900,6 +4896,9 @@
   "google_networkservices_producer_extension": {
    "label": "Cloud Service Mesh"
   },
+  "google_networkservices_route_view": {
+   "label": "Cloud Service Mesh"
+  },
   "google_networkservices_service_binding": {
    "label": "Cloud Service Mesh"
   },
@@ -3954,6 +4953,9 @@
   "google_networkservices_v1beta1_producer_extension": {
    "label": "Cloud Service Mesh"
   },
+  "google_networkservices_v1beta1_route_view": {
+   "label": "Cloud Service Mesh"
+  },
   "google_networkservices_v1beta1_service_binding": {
    "label": "Cloud Service Mesh"
   },
@@ -3984,10 +4986,19 @@
   "google_observability_bucket": {
    "label": "Google Cloud Observability"
   },
+  "google_observability_dataset": {
+   "label": "Google Cloud Observability"
+  },
   "google_observability_link": {
    "label": "Google Cloud Observability"
   },
+  "google_observability_scope": {
+   "label": "Google Cloud Observability"
+  },
   "google_observability_trace_scope": {
+   "label": "Google Cloud Observability"
+  },
+  "google_observability_view": {
    "label": "Google Cloud Observability"
   },
   "google_oracledatabase_autonomous_database": {
@@ -3997,6 +5008,9 @@
    "label": "Oracle Database@Google Cloud"
   },
   "google_oracledatabase_cloud_vm_cluster": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_database": {
    "label": "Oracle Database@Google Cloud"
   },
   "google_oracledatabase_db_system": {
@@ -4023,6 +5037,9 @@
   "google_oracledatabase_odb_subnet": {
    "label": "Oracle Database@Google Cloud"
   },
+  "google_oracledatabase_pluggable_database": {
+   "label": "Oracle Database@Google Cloud"
+  },
   "google_orgpolicy_custom_constraint": {
    "label": "Organization Policy Service"
   },
@@ -4032,13 +5049,28 @@
   "google_osconfig_policy_orchestrator": {
    "label": "VM Manager"
   },
+  "google_osconfig_v1alpha_instance_ospolicies_compliance": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v1alpha_inventory": {
+   "label": "VM Manager"
+  },
   "google_osconfig_v1alpha_os_policy_assignment": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v1alpha_report": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v1alpha_vulnerability_report": {
    "label": "VM Manager"
   },
   "google_osconfig_v1beta_guest_policy": {
    "label": "VM Manager"
   },
   "google_osconfig_v1beta_patch_deployment": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v1beta_patch_job": {
    "label": "VM Manager"
   },
   "google_osconfig_v2beta_policy_orchestrator": {
@@ -4087,6 +5119,9 @@
    "label": "Certificate Authority Service"
   },
   "google_privateca_certificate_authority": {
+   "label": "Certificate Authority Service"
+  },
+  "google_privateca_certificate_revocation_list": {
    "label": "Certificate Authority Service"
   },
   "google_privateca_certificate_template": {
@@ -4146,13 +5181,37 @@
   "google_redis_acl_policy": {
    "label": "Memorystore for Redis"
   },
+  "google_redis_auth_token": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_backup": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_backup_collection": {
+   "label": "Memorystore for Redis"
+  },
   "google_redis_cluster": {
    "label": "Memorystore for Redis"
   },
   "google_redis_instance": {
    "label": "Memorystore for Redis"
   },
+  "google_redis_revision": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_token_auth_user": {
+   "label": "Memorystore for Redis"
+  },
   "google_redis_v1beta1_acl_policy": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_v1beta1_auth_token": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_v1beta1_backup": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_v1beta1_backup_collection": {
    "label": "Memorystore for Redis"
   },
   "google_redis_v1beta1_cluster": {
@@ -4161,13 +5220,25 @@
   "google_redis_v1beta1_instance": {
    "label": "Memorystore for Redis"
   },
+  "google_redis_v1beta1_revision": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_v1beta1_token_auth_user": {
+   "label": "Memorystore for Redis"
+  },
   "google_run_instance": {
    "label": "Cloud Run"
   },
   "google_run_job": {
    "label": "Cloud Run"
   },
+  "google_run_revision": {
+   "label": "Cloud Run"
+  },
   "google_run_service": {
+   "label": "Cloud Run"
+  },
+  "google_run_task": {
    "label": "Cloud Run"
   },
   "google_run_worker_pool": {
@@ -4254,13 +5325,25 @@
   "google_sasportal_node": {
    "label": "Spectrum Access System Portal"
   },
+  "google_sasportal_policy": {
+   "label": "Spectrum Access System Portal"
+  },
   "google_secretmanager_secret": {
    "label": "Secret Manager"
   },
   "google_secretmanager_v1beta1_secret": {
    "label": "Secret Manager"
   },
+  "google_secretmanager_v1beta1_version": {
+   "label": "Secret Manager"
+  },
   "google_secretmanager_v1beta2_secret": {
+   "label": "Secret Manager"
+  },
+  "google_secretmanager_v1beta2_version": {
+   "label": "Secret Manager"
+  },
+  "google_secretmanager_version": {
    "label": "Secret Manager"
   },
   "google_securesourcemanager_branch_rule": {
@@ -4293,6 +5376,9 @@
   "google_securitycenter_custom_module": {
    "label": "Security Command Center"
   },
+  "google_securitycenter_effective_custom_module": {
+   "label": "Security Command Center"
+  },
   "google_securitycenter_mute_config": {
    "label": "Security Command Center"
   },
@@ -4302,16 +5388,25 @@
   "google_securitycenter_resource_value_config": {
    "label": "Security Command Center"
   },
+  "google_securitycenter_simulation": {
+   "label": "Security Command Center"
+  },
   "google_securitycenter_source": {
    "label": "Security Command Center"
   },
   "google_securitycenter_v1beta1_source": {
    "label": "Security Command Center"
   },
+  "google_securitycenter_valued_resource": {
+   "label": "Security Command Center"
+  },
   "google_securityposture_posture": {
    "label": "Security Command Center"
   },
   "google_securityposture_posture_deployment": {
+   "label": "Security Command Center"
+  },
+  "google_securityposture_posture_template": {
    "label": "Security Command Center"
   },
   "google_securityposture_report": {
@@ -4386,6 +5481,9 @@
   "google_sqladmin_backup_run": {
    "label": "Cloud SQL"
   },
+  "google_sqladmin_connect": {
+   "label": "Cloud SQL"
+  },
   "google_sqladmin_database": {
    "label": "Cloud SQL"
   },
@@ -4399,6 +5497,9 @@
    "label": "Cloud SQL"
   },
   "google_sqladmin_v1beta4_backup_run": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_v1beta4_connect": {
    "label": "Cloud SQL"
   },
   "google_sqladmin_v1beta4_database": {
@@ -4446,10 +5547,16 @@
   "google_storage_rapid_cach": {
    "label": "Cloud Storage"
   },
+  "google_storage_service_account": {
+   "label": "Cloud Storage"
+  },
   "google_storagebatchoperations_job": {
    "label": "Storage Batch Operations"
   },
   "google_storagetransfer_agent_pool": {
+   "label": "Storage Transfer Service"
+  },
+  "google_storagetransfer_google_service_account": {
    "label": "Storage Transfer Service"
   },
   "google_storagetransfer_transfer_job": {
@@ -4458,7 +5565,16 @@
   "google_testing_device_session": {
    "label": "Firebase Test Lab"
   },
+  "google_testing_test_environment_catalog": {
+   "label": "Firebase Test Lab"
+  },
   "google_testing_test_matrice": {
+   "label": "Firebase Test Lab"
+  },
+  "google_toolresults_cluster": {
+   "label": "Firebase Test Lab"
+  },
+  "google_toolresults_environment": {
    "label": "Firebase Test Lab"
   },
   "google_toolresults_execution": {
@@ -4473,19 +5589,40 @@
   "google_toolresults_step": {
    "label": "Firebase Test Lab"
   },
+  "google_toolresults_test_case": {
+   "label": "Firebase Test Lab"
+  },
+  "google_tpu_accelerator_type": {
+   "label": "Cloud TPU"
+  },
   "google_tpu_node": {
    "label": "Cloud TPU"
   },
   "google_tpu_queued_resource": {
    "label": "Cloud TPU"
   },
+  "google_tpu_runtime_version": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_v1alpha1_accelerator_type": {
+   "label": "Cloud TPU"
+  },
   "google_tpu_v1alpha1_node": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_v1alpha1_tensorflow_version": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_v2alpha1_accelerator_type": {
    "label": "Cloud TPU"
   },
   "google_tpu_v2alpha1_node": {
    "label": "Cloud TPU"
   },
   "google_tpu_v2alpha1_queued_resource": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_v2alpha1_runtime_version": {
    "label": "Cloud TPU"
   },
   "google_transcoder_job": {
@@ -4495,6 +5632,9 @@
    "label": "Transcoder API"
   },
   "google_translate_adaptive_mt_dataset": {
+   "label": "Cloud Translation"
+  },
+  "google_translate_adaptive_mt_file": {
    "label": "Cloud Translation"
   },
   "google_translate_dataset": {
@@ -4536,7 +5676,13 @@
   "google_vmmigration_image_import": {
    "label": "Migrate to Virtual Machines"
   },
+  "google_vmmigration_image_import_job": {
+   "label": "Migrate to Virtual Machines"
+  },
   "google_vmmigration_migrating_vm": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_replication_cycle": {
    "label": "Migrate to Virtual Machines"
   },
   "google_vmmigration_source": {
@@ -4566,7 +5712,13 @@
   "google_vmmigration_v1alpha1_image_import": {
    "label": "Migrate to Virtual Machines"
   },
+  "google_vmmigration_v1alpha1_image_import_job": {
+   "label": "Migrate to Virtual Machines"
+  },
   "google_vmmigration_v1alpha1_migrating_vm": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_replication_cycle": {
    "label": "Migrate to Virtual Machines"
   },
   "google_vmmigration_v1alpha1_source": {
@@ -4577,6 +5729,9 @@
   },
   "google_vmmigration_v1alpha1_utilization_report": {
    "label": "Migrate to Virtual Machines"
+  },
+  "google_vmwareengine_announcement": {
+   "label": "Google Cloud VMware Engine"
   },
   "google_vmwareengine_cluster": {
    "label": "Google Cloud VMware Engine"
@@ -4605,10 +5760,22 @@
   "google_vmwareengine_network_policy": {
    "label": "Google Cloud VMware Engine"
   },
+  "google_vmwareengine_node": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_node_type": {
+   "label": "Google Cloud VMware Engine"
+  },
   "google_vmwareengine_private_cloud": {
    "label": "Google Cloud VMware Engine"
   },
   "google_vmwareengine_private_connection": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_subnet": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_upgrade": {
    "label": "Google Cloud VMware Engine"
   },
   "google_vmwareengine_vmware_engine_network": {
@@ -4620,16 +5787,37 @@
   "google_vpcaccess_v1beta1_connector": {
    "label": "Serverless VPC Access"
   },
+  "google_websecurityscanner_finding": {
+   "label": "Web Security Scanner"
+  },
   "google_websecurityscanner_scan_config": {
+   "label": "Web Security Scanner"
+  },
+  "google_websecurityscanner_scan_run": {
+   "label": "Web Security Scanner"
+  },
+  "google_websecurityscanner_v1alpha_finding": {
    "label": "Web Security Scanner"
   },
   "google_websecurityscanner_v1alpha_scan_config": {
    "label": "Web Security Scanner"
   },
+  "google_websecurityscanner_v1alpha_scan_run": {
+   "label": "Web Security Scanner"
+  },
+  "google_websecurityscanner_v1beta_finding": {
+   "label": "Web Security Scanner"
+  },
   "google_websecurityscanner_v1beta_scan_config": {
    "label": "Web Security Scanner"
   },
+  "google_websecurityscanner_v1beta_scan_run": {
+   "label": "Web Security Scanner"
+  },
   "google_workflowexecutions_execution": {
+   "label": "Workflows"
+  },
+  "google_workflowexecutions_step_entry": {
    "label": "Workflows"
   },
   "google_workflowexecutions_v1beta_execution": {
@@ -4647,7 +5835,13 @@
   "google_workloadmanager_deployment": {
    "label": "Workload Manager"
   },
+  "google_workloadmanager_discoveredprofile": {
+   "label": "Workload Manager"
+  },
   "google_workloadmanager_evaluation": {
+   "label": "Workload Manager"
+  },
+  "google_workloadmanager_health": {
    "label": "Workload Manager"
   },
   "google_workstations_v1beta_workstation": {
