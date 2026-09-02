@@ -1,0 +1,4673 @@
+{
+ "overrides": {
+  "google_accesscontextmanager_access_level": {
+   "label": "Access Context Manager"
+  },
+  "google_accesscontextmanager_access_policy": {
+   "label": "Access Context Manager"
+  },
+  "google_accesscontextmanager_authorized_orgs_desc": {
+   "label": "Access Context Manager"
+  },
+  "google_accesscontextmanager_gcp_user_access_binding": {
+   "label": "Access Context Manager"
+  },
+  "google_accesscontextmanager_service_perimeter": {
+   "label": "Access Context Manager"
+  },
+  "google_agentidentity_auth_provider": {
+   "label": "Agent Identity"
+  },
+  "google_agentidentity_v1alpha_auth_provider": {
+   "label": "Agent Identity"
+  },
+  "google_agentidentity_v1beta_auth_provider": {
+   "label": "Agent Identity"
+  },
+  "google_agentregistry_binding": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_service": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_v1alpha_binding": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_v1alpha_revision": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_v1alpha_service": {
+   "label": "Agent Registry"
+  },
+  "google_agentregistry_v1alpha_skill": {
+   "label": "Agent Registry"
+  },
+  "google_aiplatform_agent": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_artifact": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_batch_prediction_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_cached_content": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_context": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_custom_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_data_labeling_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_dataset": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_dataset_version": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_deployment_resource_pool": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_endpoint": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_entity_type": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_evaluation": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_evaluation_item": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_evaluation_metric": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_evaluation_run": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_evaluation_set": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_execution": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_experiment": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_feature": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_feature_group": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_feature_online_store": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_feature_view": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_featurestore": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_hyperparameter_tuning_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_index": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_index_endpoint": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_memory": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_metadata_schema": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_metadata_store": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_model_deployment_monitoring_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_nas_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_notebook_execution_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_notebook_runtime_template": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_online_evaluator": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_persistent_resource": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_pipeline_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_rag_corpora": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_rag_file": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_reasoning_engine": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_run": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_sandbox_environment": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_sandbox_environment_template": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_schedule": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_semantic_governance_policy": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_session": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_slice": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_specialist_pool": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_study": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_tensorboard": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_time_sery": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_training_pipeline": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_trial": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_tuning_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_a2a_task": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_agent": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_agent_anomaly_detection_scope": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_artifact": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_batch_prediction_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_cached_content": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_context": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_custom_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_data_labeling_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_dataset": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_dataset_version": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_deployment_resource_pool": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_endpoint": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_entity_type": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_evaluation": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_evaluation_item": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_evaluation_metric": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_evaluation_run": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_evaluation_set": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_example_store": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_execution": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_experiment": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_extension": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_feature": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_feature_group": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_feature_monitor": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_feature_monitor_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_feature_online_store": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_feature_view": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_featurestore": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_feedback_entry": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_hyperparameter_tuning_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_index": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_index_endpoint": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_memory": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_metadata_schema": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_metadata_store": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_model_deployment_monitoring_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_model_monitor": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_model_monitoring_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_nas_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_notebook_execution_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_notebook_runtime_template": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_online_evaluator": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_persistent_resource": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_pipeline_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_rag_corpora": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_rag_data_schema": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_rag_file": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_rag_metadata": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_reasoning_engine": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_run": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_sandbox_environment": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_sandbox_environment_template": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_schedule": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_semantic_governance_policy": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_serving_profile": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_session": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_skill": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_slice": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_specialist_pool": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_study": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_tensorboard": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_time_sery": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_training_pipeline": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_trial": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_aiplatform_v1beta1_tuning_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_alloydb_backup": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_cluster": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_instance": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_user": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1alpha_backup": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1alpha_cluster": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1alpha_endpoint": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1alpha_instance": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1alpha_user": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1beta_backup": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1beta_cluster": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1beta_endpoint": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1beta_instance": {
+   "label": "AlloyDB"
+  },
+  "google_alloydb_v1beta_user": {
+   "label": "AlloyDB"
+  },
+  "google_analyticshub_data_exchange": {
+   "label": "Analytics Hub"
+  },
+  "google_analyticshub_listing": {
+   "label": "Analytics Hub"
+  },
+  "google_analyticshub_query_template": {
+   "label": "Analytics Hub"
+  },
+  "google_analyticshub_v1beta1_data_exchange": {
+   "label": "Analytics Hub"
+  },
+  "google_analyticshub_v1beta1_listing": {
+   "label": "Analytics Hub"
+  },
+  "google_androiddeviceprovisioning_configuration": {
+   "label": "Android Device Provisioning Partner"
+  },
+  "google_androidenterprise_enterprise": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_storelayoutcluster": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_storelayoutpage": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_user": {
+   "label": "Google Play EMM"
+  },
+  "google_androidenterprise_webapp": {
+   "label": "Google Play EMM"
+  },
+  "google_androidmanagement_enrollment_token": {
+   "label": "Android Management"
+  },
+  "google_androidmanagement_enterprise": {
+   "label": "Android Management"
+  },
+  "google_androidmanagement_migration_token": {
+   "label": "Android Management"
+  },
+  "google_androidmanagement_web_app": {
+   "label": "Android Management"
+  },
+  "google_apigateway_api": {
+   "label": "API Gateway"
+  },
+  "google_apigateway_config": {
+   "label": "API Gateway"
+  },
+  "google_apigateway_gateway": {
+   "label": "API Gateway"
+  },
+  "google_apigateway_v1beta_api": {
+   "label": "API Gateway"
+  },
+  "google_apigateway_v1beta_config": {
+   "label": "API Gateway"
+  },
+  "google_apigateway_v1beta_gateway": {
+   "label": "API Gateway"
+  },
+  "google_apigee_aliase": {
+   "label": "Apigee"
+  },
+  "google_apigee_api": {
+   "label": "Apigee"
+  },
+  "google_apigee_apicategory": {
+   "label": "Apigee"
+  },
+  "google_apigee_apidoc": {
+   "label": "Apigee"
+  },
+  "google_apigee_apim_service_extension": {
+   "label": "Apigee"
+  },
+  "google_apigee_apiproduct": {
+   "label": "Apigee"
+  },
+  "google_apigee_app": {
+   "label": "Apigee"
+  },
+  "google_apigee_appgroup": {
+   "label": "Apigee"
+  },
+  "google_apigee_archive_deployment": {
+   "label": "Apigee"
+  },
+  "google_apigee_attachment": {
+   "label": "Apigee"
+  },
+  "google_apigee_canaryevaluation": {
+   "label": "Apigee"
+  },
+  "google_apigee_datacollector": {
+   "label": "Apigee"
+  },
+  "google_apigee_datastore": {
+   "label": "Apigee"
+  },
+  "google_apigee_debugsession": {
+   "label": "Apigee"
+  },
+  "google_apigee_developer": {
+   "label": "Apigee"
+  },
+  "google_apigee_dns_zone": {
+   "label": "Apigee"
+  },
+  "google_apigee_endpoint_attachment": {
+   "label": "Apigee"
+  },
+  "google_apigee_entry": {
+   "label": "Apigee"
+  },
+  "google_apigee_envgroup": {
+   "label": "Apigee"
+  },
+  "google_apigee_environment": {
+   "label": "Apigee"
+  },
+  "google_apigee_export": {
+   "label": "Apigee"
+  },
+  "google_apigee_host_query": {
+   "label": "Apigee"
+  },
+  "google_apigee_host_security_report": {
+   "label": "Apigee"
+  },
+  "google_apigee_instance": {
+   "label": "Apigee"
+  },
+  "google_apigee_key": {
+   "label": "Apigee"
+  },
+  "google_apigee_keystore": {
+   "label": "Apigee"
+  },
+  "google_apigee_keyvaluemap": {
+   "label": "Apigee"
+  },
+  "google_apigee_nat_address": {
+   "label": "Apigee"
+  },
+  "google_apigee_organization": {
+   "label": "Apigee"
+  },
+  "google_apigee_override": {
+   "label": "Apigee"
+  },
+  "google_apigee_query": {
+   "label": "Apigee"
+  },
+  "google_apigee_rateplan": {
+   "label": "Apigee"
+  },
+  "google_apigee_reference": {
+   "label": "Apigee"
+  },
+  "google_apigee_report": {
+   "label": "Apigee"
+  },
+  "google_apigee_resourcefile": {
+   "label": "Apigee"
+  },
+  "google_apigee_security_action": {
+   "label": "Apigee"
+  },
+  "google_apigee_security_feedback": {
+   "label": "Apigee"
+  },
+  "google_apigee_security_monitoring_condition": {
+   "label": "Apigee"
+  },
+  "google_apigee_security_profile": {
+   "label": "Apigee"
+  },
+  "google_apigee_security_profiles_v2": {
+   "label": "Apigee"
+  },
+  "google_apigee_security_report": {
+   "label": "Apigee"
+  },
+  "google_apigee_sharedflow": {
+   "label": "Apigee"
+  },
+  "google_apigee_space": {
+   "label": "Apigee"
+  },
+  "google_apigee_subscription": {
+   "label": "Apigee"
+  },
+  "google_apigee_targetserver": {
+   "label": "Apigee"
+  },
+  "google_apihub_api": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_api_hub_instance": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_attribute": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_curation": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_dependency": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_deployment": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_external_api": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_host_project_registration": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_instance": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_operation": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_plugin": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_runtime_project_attachment": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_spec": {
+   "label": "Apigee API hub"
+  },
+  "google_apihub_version": {
+   "label": "Apigee API hub"
+  },
+  "google_apikeys_key": {
+   "label": "API Keys"
+  },
+  "google_apim_observation_job": {
+   "label": "API Management"
+  },
+  "google_apim_observation_source": {
+   "label": "API Management"
+  },
+  "google_appengine_app": {
+   "label": "App Engine"
+  },
+  "google_appengine_authorized_certificate": {
+   "label": "App Engine"
+  },
+  "google_appengine_domain_mapping": {
+   "label": "App Engine"
+  },
+  "google_appengine_ingress_rule": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1alpha_authorized_certificate": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1alpha_domain_mapping": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1beta_app": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1beta_authorized_certificate": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1beta_domain_mapping": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1beta_ingress_rule": {
+   "label": "App Engine"
+  },
+  "google_appengine_v1beta_version": {
+   "label": "App Engine"
+  },
+  "google_appengine_version": {
+   "label": "App Engine"
+  },
+  "google_apphub_application": {
+   "label": "App Hub"
+  },
+  "google_apphub_service": {
+   "label": "App Hub"
+  },
+  "google_apphub_service_project_attachment": {
+   "label": "App Hub"
+  },
+  "google_apphub_v1alpha_application": {
+   "label": "App Hub"
+  },
+  "google_apphub_v1alpha_service": {
+   "label": "App Hub"
+  },
+  "google_apphub_v1alpha_service_project_attachment": {
+   "label": "App Hub"
+  },
+  "google_apphub_v1alpha_workload": {
+   "label": "App Hub"
+  },
+  "google_apphub_workload": {
+   "label": "App Hub"
+  },
+  "google_artifactregistry_attachment": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_repository": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_rule": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_tag": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta1_repository": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta1_tag": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta2_repository": {
+   "label": "Artifact Registry"
+  },
+  "google_artifactregistry_v1beta2_tag": {
+   "label": "Artifact Registry"
+  },
+  "google_assuredworkloads_v1beta1_workload": {
+   "label": "Assured Workloads"
+  },
+  "google_assuredworkloads_workload": {
+   "label": "Assured Workloads"
+  },
+  "google_backupdr_backup": {
+   "label": "Google Cloud Backup and DR Service"
+  },
+  "google_backupdr_backup_plan": {
+   "label": "Google Cloud Backup and DR Service"
+  },
+  "google_backupdr_backup_plan_association": {
+   "label": "Google Cloud Backup and DR Service"
+  },
+  "google_backupdr_backup_vault": {
+   "label": "Google Cloud Backup and DR Service"
+  },
+  "google_backupdr_data_source": {
+   "label": "Google Cloud Backup and DR Service"
+  },
+  "google_backupdr_management_server": {
+   "label": "Google Cloud Backup and DR Service"
+  },
+  "google_baremetalsolution_nfs_share": {
+   "label": "Bare Metal Solution"
+  },
+  "google_baremetalsolution_provisioning_config": {
+   "label": "Bare Metal Solution"
+  },
+  "google_baremetalsolution_snapshot": {
+   "label": "Bare Metal Solution"
+  },
+  "google_batch_job": {
+   "label": "Batch"
+  },
+  "google_beyondcorp_app_connection": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_app_connector": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_app_gateway": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_application": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_security_gateway": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_app_connection": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_app_connector": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_app_gateway": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_application": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_connection": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_connector": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_security_gateway": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_beyondcorp_v1alpha_subscription": {
+   "label": "BeyondCorp Enterprise"
+  },
+  "google_biglake_catalog": {
+   "label": "Lakehouse"
+  },
+  "google_biglake_database": {
+   "label": "Lakehouse"
+  },
+  "google_biglake_table": {
+   "label": "Lakehouse"
+  },
+  "google_bigquery_dataset": {
+   "label": "BigQuery"
+  },
+  "google_bigquery_job": {
+   "label": "BigQuery"
+  },
+  "google_bigquery_routine": {
+   "label": "BigQuery"
+  },
+  "google_bigquery_row_access_policy": {
+   "label": "BigQuery"
+  },
+  "google_bigquery_table": {
+   "label": "BigQuery"
+  },
+  "google_bigqueryconnection_connection": {
+   "label": "BigQuery"
+  },
+  "google_bigqueryconnection_v1beta1_connection": {
+   "label": "BigQuery"
+  },
+  "google_bigquerydatapolicy_data_policy": {
+   "label": "BigQuery"
+  },
+  "google_bigquerydatatransfer_transfer_config": {
+   "label": "BigQuery Data Transfer Service"
+  },
+  "google_bigqueryreservation_capacity_commitment": {
+   "label": "BigQuery"
+  },
+  "google_bigqueryreservation_reservation": {
+   "label": "BigQuery"
+  },
+  "google_bigqueryreservation_reservation_group": {
+   "label": "BigQuery"
+  },
+  "google_bigtableadmin_app_profile": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_authorized_view": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_backup": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_cluster": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_instance": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_logical_view": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_materialized_view": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_schema_bundle": {
+   "label": "Bigtable"
+  },
+  "google_bigtableadmin_table": {
+   "label": "Bigtable"
+  },
+  "google_billingbudgets_budget": {
+   "label": "Cloud Billing"
+  },
+  "google_billingbudgets_v1beta1_budget": {
+   "label": "Cloud Billing"
+  },
+  "google_binaryauthorization_attestor": {
+   "label": "Binary Authorization"
+  },
+  "google_binaryauthorization_policy": {
+   "label": "Binary Authorization"
+  },
+  "google_binaryauthorization_v1beta1_attestor": {
+   "label": "Binary Authorization"
+  },
+  "google_blockchainnodeengine_blockchain_node": {
+   "label": "Blockchain Node Engine"
+  },
+  "google_certificatemanager_certificate": {
+   "label": "Certificate Manager"
+  },
+  "google_certificatemanager_certificate_issuance_config": {
+   "label": "Certificate Manager"
+  },
+  "google_certificatemanager_certificate_map": {
+   "label": "Certificate Manager"
+  },
+  "google_certificatemanager_certificate_map_entry": {
+   "label": "Certificate Manager"
+  },
+  "google_certificatemanager_dns_authorization": {
+   "label": "Certificate Manager"
+  },
+  "google_certificatemanager_trust_config": {
+   "label": "Certificate Manager"
+  },
+  "google_ces_agent": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_app": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_deployment": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_example": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_guardrail": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_tool": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_toolset": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_agent": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_app": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_deployment": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_evaluation": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_evaluation_dataset": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_evaluation_expectation": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_example": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_guardrail": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_scheduled_evaluation_run": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_tool": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_toolset": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_v1beta_version": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_ces_version": {
+   "label": "Gemini Enterprise for Customer Experience"
+  },
+  "google_chromemanagement_command": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_chromemanagement_connector_config": {
+   "label": "Chrome Enterprise Premium"
+  },
+  "google_cloudasset_feed": {
+   "label": "Cloud Asset Inventory"
+  },
+  "google_cloudasset_saved_query": {
+   "label": "Cloud Asset Inventory"
+  },
+  "google_cloudbilling_billing_account": {
+   "label": "Cloud Billing"
+  },
+  "google_cloudbuild_connection": {
+   "label": "Cloud Build"
+  },
+  "google_cloudbuild_repository": {
+   "label": "Cloud Build"
+  },
+  "google_cloudchannel_channel_partner_link": {
+   "label": "Google Cloud Channel"
+  },
+  "google_cloudchannel_channel_partner_repricing_config": {
+   "label": "Google Cloud Channel"
+  },
+  "google_cloudchannel_customer": {
+   "label": "Google Cloud Channel"
+  },
+  "google_cloudchannel_customer_repricing_config": {
+   "label": "Google Cloud Channel"
+  },
+  "google_cloudchannel_entitlement": {
+   "label": "Google Cloud Channel"
+  },
+  "google_cloudcontrolspartner_customer": {
+   "label": "Assured Workloads"
+  },
+  "google_cloudcontrolspartner_v1beta_customer": {
+   "label": "Assured Workloads"
+  },
+  "google_clouddeploy_automation": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_custom_target_type": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_delivery_pipeline": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_deploy_policy": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_release": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_rollout": {
+   "label": "Cloud Deploy"
+  },
+  "google_clouddeploy_target": {
+   "label": "Cloud Deploy"
+  },
+  "google_cloudfunctions_function": {
+   "label": "Cloud Functions"
+  },
+  "google_cloudfunctions_v2alpha_function": {
+   "label": "Cloud Functions"
+  },
+  "google_cloudfunctions_v2beta_function": {
+   "label": "Cloud Functions"
+  },
+  "google_cloudidentity_allowlisted_domain": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_device": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_group": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_inbound_oidc_sso_profile": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_inbound_saml_sso_profile": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_inbound_sso_assignment": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_membership": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_policy": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_allowlisted_domain": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_device": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_group": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_inbound_oidc_sso_profile": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_inbound_saml_sso_profile": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_inbound_sso_assignment": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_membership": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudidentity_v1beta1_policy": {
+   "label": "Cloud Identity"
+  },
+  "google_cloudkms_crypto_key": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudkms_crypto_key_version": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudkms_ekm_connection": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudkms_import_job": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudkms_key_handle": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudkms_key_ring": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudkms_proposal": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudkms_single_tenant_hsm_instance": {
+   "label": "Cloud Key Management Service"
+  },
+  "google_cloudnumberregistry_custom_range": {
+   "label": "Cloud Number Registry"
+  },
+  "google_cloudnumberregistry_ipam_admin_scope": {
+   "label": "Cloud Number Registry"
+  },
+  "google_cloudnumberregistry_org_number_registry": {
+   "label": "Cloud Number Registry"
+  },
+  "google_cloudnumberregistry_realm": {
+   "label": "Cloud Number Registry"
+  },
+  "google_cloudnumberregistry_registry_book": {
+   "label": "Cloud Number Registry"
+  },
+  "google_cloudquotas_quota_preference": {
+   "label": "Cloud Quotas"
+  },
+  "google_cloudresourcemanager_folder": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_lien": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_project": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_tag_key": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_tag_value": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_v1beta1_project": {
+   "label": "Resource Manager"
+  },
+  "google_cloudresourcemanager_v2beta1_folder": {
+   "label": "Resource Manager"
+  },
+  "google_cloudscheduler_job": {
+   "label": "Cloud Scheduler"
+  },
+  "google_cloudscheduler_v1beta1_job": {
+   "label": "Cloud Scheduler"
+  },
+  "google_cloudsupport_case": {
+   "label": "Google Cloud Support"
+  },
+  "google_cloudsupport_comment": {
+   "label": "Google Cloud Support"
+  },
+  "google_cloudsupport_support_event_subscription": {
+   "label": "Google Cloud Support"
+  },
+  "google_cloudsupport_v2beta_case": {
+   "label": "Google Cloud Support"
+  },
+  "google_cloudsupport_v2beta_comment": {
+   "label": "Google Cloud Support"
+  },
+  "google_cloudsupport_v2beta_support_event_subscription": {
+   "label": "Google Cloud Support"
+  },
+  "google_cloudtasks_queue": {
+   "label": "Cloud Tasks"
+  },
+  "google_cloudtasks_task": {
+   "label": "Cloud Tasks"
+  },
+  "google_cloudtasks_v2beta2_queue": {
+   "label": "Cloud Tasks"
+  },
+  "google_cloudtasks_v2beta2_task": {
+   "label": "Cloud Tasks"
+  },
+  "google_cloudtasks_v2beta3_queue": {
+   "label": "Cloud Tasks"
+  },
+  "google_cloudtasks_v2beta3_task": {
+   "label": "Cloud Tasks"
+  },
+  "google_composer_environment": {
+   "label": "Cloud Composer"
+  },
+  "google_composer_user_workloads_config_map": {
+   "label": "Cloud Composer"
+  },
+  "google_composer_user_workloads_secret": {
+   "label": "Cloud Composer"
+  },
+  "google_composer_v1beta1_environment": {
+   "label": "Cloud Composer"
+  },
+  "google_composer_v1beta1_user_workloads_config_map": {
+   "label": "Cloud Composer"
+  },
+  "google_composer_v1beta1_user_workloads_secret": {
+   "label": "Cloud Composer"
+  },
+  "google_compute_address": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_accelerator_pod_controller": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_address": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_autoscaler": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_backend_bucket": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_backend_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_cross_site_network": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_dhcp_options_config": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_external_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_firewall": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_folder_global_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_folder_zone_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_forwarding_rule": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_future_reservation": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_global_address": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_global_forwarding_rule": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_global_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_global_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_global_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_ha_controller": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_http_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_https_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instance": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instance_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instance_group_manager": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instance_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instant_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_instant_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_interconnect": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_interconnect_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_interconnect_attachment_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_interconnect_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_license": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_machine_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_network": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_network_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_network_edge_security_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_network_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_node_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_node_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_organization_global_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_organization_rollout_plan": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_organization_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_organization_zone_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_packet_mirroring": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_public_advertised_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_autoscaler": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_backend_bucket": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_backend_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_commitment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_composite_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_health_aggregation_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_health_check_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_health_source": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_instance_group_manager": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_instance_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_instant_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_instant_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_multi_mig": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_network_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_network_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_notification_endpoint": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_ssl_certificate": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_ssl_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_target_http_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_target_https_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_target_tcp_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_region_url_map": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_reservation": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_resource_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_rollout_plan": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_route": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_router": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_service_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_ssl_certificate": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_ssl_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_storage_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_subnetwork": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_grpc_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_http_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_https_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_instance": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_ssl_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_tcp_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_target_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_url_map": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_vpn_tunnel": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_wire_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_zone_queued_resource": {
+   "label": "Compute Engine"
+  },
+  "google_compute_alpha_zone_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_autoscaler": {
+   "label": "Compute Engine"
+  },
+  "google_compute_backend_bucket": {
+   "label": "Compute Engine"
+  },
+  "google_compute_backend_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_address": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_autoscaler": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_backend_bucket": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_backend_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_cross_site_network": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_external_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_firewall": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_forwarding_rule": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_future_reservation": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_global_address": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_global_forwarding_rule": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_global_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_global_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_global_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_http_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_https_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instance": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instance_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instance_group_manager": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instance_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instant_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_instant_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_interconnect": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_interconnect_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_interconnect_attachment_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_interconnect_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_license": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_machine_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_network": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_network_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_network_edge_security_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_network_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_node_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_node_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_organization_rollout_plan": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_organization_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_packet_mirroring": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_public_advertised_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_autoscaler": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_backend_bucket": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_backend_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_commitment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_composite_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_health_aggregation_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_health_check_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_health_source": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_instance_group_manager": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_instance_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_instant_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_instant_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_multi_mig": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_network_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_network_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_notification_endpoint": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_ssl_certificate": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_ssl_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_target_http_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_target_https_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_target_tcp_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_region_url_map": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_reservation": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_resource_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_rollout_plan": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_route": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_router": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_service_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_ssl_certificate": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_ssl_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_storage_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_subnetwork": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_grpc_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_http_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_https_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_instance": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_ssl_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_tcp_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_target_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_url_map": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_vpn_tunnel": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_wire_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_beta_zone_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_cross_site_network": {
+   "label": "Compute Engine"
+  },
+  "google_compute_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_external_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_firewall": {
+   "label": "Compute Engine"
+  },
+  "google_compute_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_forwarding_rule": {
+   "label": "Compute Engine"
+  },
+  "google_compute_future_reservation": {
+   "label": "Compute Engine"
+  },
+  "google_compute_global_address": {
+   "label": "Compute Engine"
+  },
+  "google_compute_global_forwarding_rule": {
+   "label": "Compute Engine"
+  },
+  "google_compute_global_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_global_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_global_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_http_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_https_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instance": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instance_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instance_group_manager": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instance_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instant_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_instant_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_interconnect": {
+   "label": "Compute Engine"
+  },
+  "google_compute_interconnect_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_interconnect_attachment_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_interconnect_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_license": {
+   "label": "Compute Engine"
+  },
+  "google_compute_machine_image": {
+   "label": "Compute Engine"
+  },
+  "google_compute_network": {
+   "label": "Compute Engine"
+  },
+  "google_compute_network_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_network_edge_security_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_network_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_node_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_node_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_organization_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_packet_mirroring": {
+   "label": "Compute Engine"
+  },
+  "google_compute_public_advertised_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_public_delegated_prefix": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_autoscaler": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_backend_bucket": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_backend_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_commitment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_composite_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_disk": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_health_aggregation_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_health_check": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_health_check_service": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_health_source": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_instance_group_manager": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_instance_group_manager_resize_request": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_instance_template": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_instant_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_instant_snapshot_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_network_endpoint_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_network_firewall_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_notification_endpoint": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_ssl_certificate": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_ssl_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_target_http_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_target_https_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_target_tcp_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_region_url_map": {
+   "label": "Compute Engine"
+  },
+  "google_compute_reservation": {
+   "label": "Compute Engine"
+  },
+  "google_compute_resource_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_rollout_plan": {
+   "label": "Compute Engine"
+  },
+  "google_compute_route": {
+   "label": "Compute Engine"
+  },
+  "google_compute_router": {
+   "label": "Compute Engine"
+  },
+  "google_compute_security_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_service_attachment": {
+   "label": "Compute Engine"
+  },
+  "google_compute_snapshot": {
+   "label": "Compute Engine"
+  },
+  "google_compute_ssl_certificate": {
+   "label": "Compute Engine"
+  },
+  "google_compute_ssl_policy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_storage_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_subnetwork": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_grpc_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_http_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_https_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_instance": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_pool": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_ssl_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_tcp_proxy": {
+   "label": "Compute Engine"
+  },
+  "google_compute_target_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_url_map": {
+   "label": "Compute Engine"
+  },
+  "google_compute_vpn_gateway": {
+   "label": "Compute Engine"
+  },
+  "google_compute_vpn_tunnel": {
+   "label": "Compute Engine"
+  },
+  "google_compute_wire_group": {
+   "label": "Compute Engine"
+  },
+  "google_compute_zone_vm_extension_policy": {
+   "label": "Compute Engine"
+  },
+  "google_config_deployment": {
+   "label": "Infrastructure Manager"
+  },
+  "google_config_deployment_group": {
+   "label": "Infrastructure Manager"
+  },
+  "google_config_preview": {
+   "label": "Infrastructure Manager"
+  },
+  "google_connectors_connection": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_custom_connector": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_custom_connector_version": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_end_user_authentication": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_endpoint_attachment": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_event_subscription": {
+   "label": "Integration Connectors"
+  },
+  "google_connectors_managed_zone": {
+   "label": "Integration Connectors"
+  },
+  "google_contactcenteraiplatform_contact_center": {
+   "label": "Contact Center as a Service"
+  },
+  "google_contactcenterinsights_analyse": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_analysis_rule": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_assessment": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_assessment_rule": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_assistant_session": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_authorized_view": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_authorized_view_set": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_auto_labeling_rule": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_chart": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_conversation": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_dashboard": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_dataset": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_feedback_label": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_issue": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_issue_model": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_phrase_matcher": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_qa_question": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_qa_question_tag": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_qa_scorecard": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_revision": {
+   "label": "Conversational Insights"
+  },
+  "google_contactcenterinsights_view": {
+   "label": "Conversational Insights"
+  },
+  "google_container_cluster": {
+   "label": "Google Kubernetes Engine"
+  },
+  "google_container_node_pool": {
+   "label": "Google Kubernetes Engine"
+  },
+  "google_container_v1beta1_cluster": {
+   "label": "Google Kubernetes Engine"
+  },
+  "google_container_v1beta1_node_pool": {
+   "label": "Google Kubernetes Engine"
+  },
+  "google_containeranalysis_note": {
+   "label": "Container Analysis"
+  },
+  "google_containeranalysis_occurrence": {
+   "label": "Container Analysis"
+  },
+  "google_containeranalysis_v1alpha1_note": {
+   "label": "Container Analysis"
+  },
+  "google_containeranalysis_v1alpha1_occurrence": {
+   "label": "Container Analysis"
+  },
+  "google_containeranalysis_v1beta1_note": {
+   "label": "Container Analysis"
+  },
+  "google_containeranalysis_v1beta1_occurrence": {
+   "label": "Container Analysis"
+  },
+  "google_contentwarehouse_document": {
+   "label": "Document AI Warehouse"
+  },
+  "google_contentwarehouse_document_schema": {
+   "label": "Document AI Warehouse"
+  },
+  "google_contentwarehouse_rule_set": {
+   "label": "Document AI Warehouse"
+  },
+  "google_contentwarehouse_synonym_set": {
+   "label": "Document AI Warehouse"
+  },
+  "google_datacatalog_entry": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_entry_group": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_policy_tag": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_tag_template": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_taxonomy": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_v1beta1_entry": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_v1beta1_entry_group": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_v1beta1_policy_tag": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_v1beta1_tag_template": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datacatalog_v1beta1_taxonomy": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataflow_job": {
+   "label": "Dataflow"
+  },
+  "google_dataflow_template": {
+   "label": "Dataflow"
+  },
+  "google_dataform_compilation_result": {
+   "label": "Dataform"
+  },
+  "google_dataform_folder": {
+   "label": "Dataform"
+  },
+  "google_dataform_release_config": {
+   "label": "Dataform"
+  },
+  "google_dataform_repository": {
+   "label": "Dataform"
+  },
+  "google_dataform_team_folder": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_compilation_result": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_folder": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_release_config": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_repository": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_team_folder": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_workflow_config": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_workflow_invocation": {
+   "label": "Dataform"
+  },
+  "google_dataform_v1beta1_workspace": {
+   "label": "Dataform"
+  },
+  "google_dataform_workflow_config": {
+   "label": "Dataform"
+  },
+  "google_dataform_workflow_invocation": {
+   "label": "Dataform"
+  },
+  "google_dataform_workspace": {
+   "label": "Dataform"
+  },
+  "google_datafusion_instance": {
+   "label": "Cloud Data Fusion"
+  },
+  "google_datafusion_v1beta1_instance": {
+   "label": "Cloud Data Fusion"
+  },
+  "google_datalineage_lineage_event": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datalineage_process": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datalineage_run": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_datamigration_connection_profile": {
+   "label": "Database Migration Service"
+  },
+  "google_datamigration_conversion_workspace": {
+   "label": "Database Migration Service"
+  },
+  "google_datamigration_mapping_rule": {
+   "label": "Database Migration Service"
+  },
+  "google_datamigration_migration_job": {
+   "label": "Database Migration Service"
+  },
+  "google_datamigration_private_connection": {
+   "label": "Database Migration Service"
+  },
+  "google_datamigration_v1beta1_connection_profile": {
+   "label": "Database Migration Service"
+  },
+  "google_datamigration_v1beta1_migration_job": {
+   "label": "Database Migration Service"
+  },
+  "google_datapipelines_pipeline": {
+   "label": "Dataflow"
+  },
+  "google_dataplex_aspect_type": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_asset": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_attribute": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_binding": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_category": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_data_asset": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_data_attribute_binding": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_data_domain": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_data_product": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_data_scan": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_data_taxonomy": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_encryption_config": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_entity": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_entry": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_entry_group": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_entry_link": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_entry_type": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_glossary": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_lake": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_metadata_feed": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_metadata_job": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_partition": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_task": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_term": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataplex_zone": {
+   "label": "Dataplex Universal Catalog"
+  },
+  "google_dataproc_autoscaling_policy": {
+   "label": "Dataproc"
+  },
+  "google_dataproc_batch": {
+   "label": "Dataproc"
+  },
+  "google_dataproc_cluster": {
+   "label": "Dataproc"
+  },
+  "google_dataproc_node_group": {
+   "label": "Dataproc"
+  },
+  "google_dataproc_session": {
+   "label": "Dataproc"
+  },
+  "google_dataproc_session_template": {
+   "label": "Dataproc"
+  },
+  "google_dataproc_workflow_template": {
+   "label": "Dataproc"
+  },
+  "google_datastore_index": {
+   "label": "Firestore in Datastore mode"
+  },
+  "google_datastream_connection_profile": {
+   "label": "Datastream"
+  },
+  "google_datastream_private_connection": {
+   "label": "Datastream"
+  },
+  "google_datastream_route": {
+   "label": "Datastream"
+  },
+  "google_datastream_stream": {
+   "label": "Datastream"
+  },
+  "google_datastream_v1alpha1_connection_profile": {
+   "label": "Datastream"
+  },
+  "google_datastream_v1alpha1_private_connection": {
+   "label": "Datastream"
+  },
+  "google_datastream_v1alpha1_route": {
+   "label": "Datastream"
+  },
+  "google_datastream_v1alpha1_stream": {
+   "label": "Datastream"
+  },
+  "google_deploymentmanager_alpha_composite_type": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_alpha_deployment": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_alpha_type_provider": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_deployment": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_v2beta_composite_type": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_v2beta_deployment": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_deploymentmanager_v2beta_type_provider": {
+   "label": "Cloud Deployment Manager"
+  },
+  "google_developerconnect_account_connector": {
+   "label": "Developer Connect"
+  },
+  "google_developerconnect_connection": {
+   "label": "Developer Connect"
+  },
+  "google_developerconnect_git_repository_link": {
+   "label": "Developer Connect"
+  },
+  "google_developerconnect_insights_config": {
+   "label": "Developer Connect"
+  },
+  "google_dialogflow_agent": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_entity_type": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_environment": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_example": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_experiment": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_flow": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_generator": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_intent": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_page": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_playbook": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_security_setting": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_test_case": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_tool": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_transition_route_group": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_context": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_conversation": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_conversation_profile": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_document": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_entity_type": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_environment": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_evaluation": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_generator": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_intent": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_knowledge_base": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_participant": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_sip_trunk": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_tool": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v2beta1_version": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_agent": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_entity_type": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_environment": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_example": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_experiment": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_flow": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_generator": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_intent": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_page": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_playbook": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_security_setting": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_test_case": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_tool": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_transition_route_group": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_version": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_v3beta1_webhook": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_version": {
+   "label": "Dialogflow"
+  },
+  "google_dialogflow_webhook": {
+   "label": "Dialogflow"
+  },
+  "google_discoveryengine_assistant": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_control": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_conversation": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_data_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_document": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_engine": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_identity_mapping_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_license_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_push_notification_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_schema": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_serving_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_session": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_target_site": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_agent": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_alpha_evolve_experiment": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_alpha_evolve_program": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_assistant": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_authorization": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_canned_query": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_control": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_conversation": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_data_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_document": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_engine": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_evaluation": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_identity_mapping_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_license_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_notebook": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_project": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_sample_query": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_sample_query_set": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_schema": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_serving_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_session": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_source": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1alpha_target_site": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_assistant": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_control": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_conversation": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_data_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_document": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_engine": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_evaluation": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_identity_mapping_store": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_license_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_sample_query": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_sample_query_set": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_schema": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_serving_config": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_session": {
+   "label": "Vertex AI Search"
+  },
+  "google_discoveryengine_v1beta_target_site": {
+   "label": "Vertex AI Search"
+  },
+  "google_dlp_connection": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dlp_content_policy": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dlp_deidentify_template": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dlp_discovery_config": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dlp_inspect_template": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dlp_job": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dlp_job_trigger": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dlp_stored_info_type": {
+   "label": "Sensitive Data Protection"
+  },
+  "google_dns_change": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_managed_zone": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_policy": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_resource_record_set": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_response_policy": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_response_policy_rule": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_v1beta2_change": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_v1beta2_managed_zone": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_v1beta2_policy": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_v1beta2_resource_record_set": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_v1beta2_response_policy": {
+   "label": "Cloud DNS"
+  },
+  "google_dns_v1beta2_response_policy_rule": {
+   "label": "Cloud DNS"
+  },
+  "google_documentai_processor": {
+   "label": "Document AI"
+  },
+  "google_documentai_schema": {
+   "label": "Document AI"
+  },
+  "google_documentai_schema_version": {
+   "label": "Document AI"
+  },
+  "google_documentai_v1beta3_processor": {
+   "label": "Document AI"
+  },
+  "google_documentai_v1beta3_processor_version": {
+   "label": "Document AI"
+  },
+  "google_documentai_v1beta3_schema": {
+   "label": "Document AI"
+  },
+  "google_documentai_v1beta3_schema_version": {
+   "label": "Document AI"
+  },
+  "google_essentialcontacts_contact": {
+   "label": "Essential Contacts"
+  },
+  "google_eventarc_channel": {
+   "label": "Eventarc"
+  },
+  "google_eventarc_channel_connection": {
+   "label": "Eventarc"
+  },
+  "google_eventarc_enrollment": {
+   "label": "Eventarc"
+  },
+  "google_eventarc_google_api_source": {
+   "label": "Eventarc"
+  },
+  "google_eventarc_message_buse": {
+   "label": "Eventarc"
+  },
+  "google_eventarc_pipeline": {
+   "label": "Eventarc"
+  },
+  "google_eventarc_trigger": {
+   "label": "Eventarc"
+  },
+  "google_file_backup": {
+   "label": "Filestore"
+  },
+  "google_file_instance": {
+   "label": "Filestore"
+  },
+  "google_file_snapshot": {
+   "label": "Filestore"
+  },
+  "google_file_v1beta1_backup": {
+   "label": "Filestore"
+  },
+  "google_file_v1beta1_instance": {
+   "label": "Filestore"
+  },
+  "google_file_v1beta1_share": {
+   "label": "Filestore"
+  },
+  "google_file_v1beta1_snapshot": {
+   "label": "Filestore"
+  },
+  "google_firebase_android_app": {
+   "label": "Firebase"
+  },
+  "google_firebase_ios_app": {
+   "label": "Firebase"
+  },
+  "google_firebase_web_app": {
+   "label": "Firebase"
+  },
+  "google_firebaseappcheck_debug_token": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_resource_policy": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_debug_token": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappcheck_v1beta_resource_policy": {
+   "label": "Firebase App Check"
+  },
+  "google_firebaseappdistribution_group": {
+   "label": "Firebase App Distribution"
+  },
+  "google_firebaseappdistribution_v1alpha_test": {
+   "label": "Firebase App Distribution"
+  },
+  "google_firebaseappdistribution_v1alpha_test_case": {
+   "label": "Firebase App Distribution"
+  },
+  "google_firebaseapphosting_backend": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_build": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_domain": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_rollout": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_v1beta_backend": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_v1beta_build": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_v1beta_domain": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebaseapphosting_v1beta_rollout": {
+   "label": "Firebase App Hosting"
+  },
+  "google_firebasedatabase_instance": {
+   "label": "Firebase Realtime Database"
+  },
+  "google_firebasedataconnect_connector": {
+   "label": "Firebase Data Connect"
+  },
+  "google_firebasedataconnect_schema": {
+   "label": "Firebase Data Connect"
+  },
+  "google_firebasedataconnect_service": {
+   "label": "Firebase Data Connect"
+  },
+  "google_firebasedataconnect_v1beta_connector": {
+   "label": "Firebase Data Connect"
+  },
+  "google_firebasedataconnect_v1beta_schema": {
+   "label": "Firebase Data Connect"
+  },
+  "google_firebasedataconnect_v1beta_service": {
+   "label": "Firebase Data Connect"
+  },
+  "google_firebaserules_release": {
+   "label": "Firebase Security Rules"
+  },
+  "google_firebaserules_ruleset": {
+   "label": "Firebase Security Rules"
+  },
+  "google_firestore_backup_schedule": {
+   "label": "Firestore"
+  },
+  "google_firestore_change_stream": {
+   "label": "Firestore"
+  },
+  "google_firestore_database": {
+   "label": "Firestore"
+  },
+  "google_firestore_document": {
+   "label": "Firestore"
+  },
+  "google_firestore_index": {
+   "label": "Firestore"
+  },
+  "google_firestore_user_cred": {
+   "label": "Firestore"
+  },
+  "google_firestore_v1beta1_document": {
+   "label": "Firestore"
+  },
+  "google_firestore_v1beta1_index": {
+   "label": "Firestore"
+  },
+  "google_firestore_v1beta2_index": {
+   "label": "Firestore"
+  },
+  "google_ftp_server": {
+   "label": "Cloud FTP"
+  },
+  "google_ftp_user": {
+   "label": "Cloud FTP"
+  },
+  "google_ftp_v1alpha_server": {
+   "label": "Cloud FTP"
+  },
+  "google_ftp_v1alpha_user": {
+   "label": "Cloud FTP"
+  },
+  "google_gkebackup_backup": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_backup_channel": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_backup_plan": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_restore": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_restore_channel": {
+   "label": "Backup for GKE"
+  },
+  "google_gkebackup_restore_plan": {
+   "label": "Backup for GKE"
+  },
+  "google_gkehub_feature": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_binding": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_feature": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_fleet": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_membership": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_namespace": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_rbacrolebinding": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_rollout_sequence": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1alpha_scope": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta1_membership": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_binding": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_feature": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_fleet": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_membership": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_namespace": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_rbacrolebinding": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_rollout_sequence": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v1beta_scope": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v2alpha_feature": {
+   "label": "GKE Hub"
+  },
+  "google_gkehub_v2beta_feature": {
+   "label": "GKE Hub"
+  },
+  "google_gkeonprem_bare_metal_admin_cluster": {
+   "label": "Google Distributed Cloud"
+  },
+  "google_gkeonprem_bare_metal_cluster": {
+   "label": "Google Distributed Cloud"
+  },
+  "google_gkeonprem_bare_metal_node_pool": {
+   "label": "Google Distributed Cloud"
+  },
+  "google_gkeonprem_vmware_admin_cluster": {
+   "label": "Google Distributed Cloud"
+  },
+  "google_gkeonprem_vmware_cluster": {
+   "label": "Google Distributed Cloud"
+  },
+  "google_gkeonprem_vmware_node_pool": {
+   "label": "Google Distributed Cloud"
+  },
+  "google_healthcare_attribute_definition": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_consent": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_consent_artifact": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_consent_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_dataset": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_dicom_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_fhir_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_hl7_v2_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_message": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_user_data_mapping": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_attribute_definition": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_consent": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_consent_artifact": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_consent_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_dataset": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_dicom_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_fhir_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_hl7_v2_store": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_message": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_healthcare_v1beta1_user_data_mapping": {
+   "label": "Cloud Healthcare API"
+  },
+  "google_hypercomputecluster_cluster": {
+   "label": "Cluster Director"
+  },
+  "google_iam_credential": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_key": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_managed_identity": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_namespace": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_oauth_client": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_provider": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_role": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_scim_tenant": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_service_account": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_token": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_v2beta_policy": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_workforce_pool": {
+   "label": "Identity and Access Management"
+  },
+  "google_iam_workload_identity_pool": {
+   "label": "Identity and Access Management"
+  },
+  "google_iampolicies_iam_policy": {
+   "label": "Identity and Access Management"
+  },
+  "google_iap_brand": {
+   "label": "Identity-Aware Proxy"
+  },
+  "google_iap_dest_group": {
+   "label": "Identity-Aware Proxy"
+  },
+  "google_iap_identity_aware_proxy_client": {
+   "label": "Identity-Aware Proxy"
+  },
+  "google_identitytoolkit_default_supported_idp_config": {
+   "label": "Identity Platform"
+  },
+  "google_identitytoolkit_inbound_saml_config": {
+   "label": "Identity Platform"
+  },
+  "google_identitytoolkit_oauth_idp_config": {
+   "label": "Identity Platform"
+  },
+  "google_identitytoolkit_tenant": {
+   "label": "Identity Platform"
+  },
+  "google_ids_endpoint": {
+   "label": "Cloud IDS"
+  },
+  "google_logging_bucket": {
+   "label": "Cloud Logging"
+  },
+  "google_logging_exclusion": {
+   "label": "Cloud Logging"
+  },
+  "google_logging_link": {
+   "label": "Cloud Logging"
+  },
+  "google_logging_log_scope": {
+   "label": "Cloud Logging"
+  },
+  "google_logging_metric": {
+   "label": "Cloud Logging"
+  },
+  "google_logging_saved_query": {
+   "label": "Cloud Logging"
+  },
+  "google_logging_sink": {
+   "label": "Cloud Logging"
+  },
+  "google_logging_view": {
+   "label": "Cloud Logging"
+  },
+  "google_looker_backup": {
+   "label": "Looker"
+  },
+  "google_looker_instance": {
+   "label": "Looker"
+  },
+  "google_lustre_instance": {
+   "label": "Google Cloud Managed Lustre"
+  },
+  "google_managedidentities_backup": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_domain": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_peering": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_v1alpha1_backup": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_v1alpha1_domain": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_v1alpha1_peering": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_v1beta1_backup": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_v1beta1_domain": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedidentities_v1beta1_peering": {
+   "label": "Managed Service for Microsoft Active Directory"
+  },
+  "google_managedkafka_acl": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_cluster": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_connect_cluster": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_connector": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_schema_registry": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_topic": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_managedkafka_version": {
+   "label": "Google Cloud Managed Service for Apache Kafka"
+  },
+  "google_memcache_instance": {
+   "label": "Memorystore for Memcached"
+  },
+  "google_memcache_v1beta2_instance": {
+   "label": "Memorystore for Memcached"
+  },
+  "google_metastore_backup": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_federation": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_metadata_import": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_service": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1alpha_backup": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1alpha_federation": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1alpha_metadata_import": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1alpha_service": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1beta_backup": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1beta_federation": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1beta_metadata_import": {
+   "label": "Dataproc Metastore"
+  },
+  "google_metastore_v1beta_service": {
+   "label": "Dataproc Metastore"
+  },
+  "google_migrationcenter_assets_export_job": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_discovery_client": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_group": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_import_data_file": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_import_job": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_preference_set": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_report": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_report_config": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_source": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_assets_export_job": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_discovery_client": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_group": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_import_data_file": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_import_job": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_preference_set": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_report": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_report_config": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_report_export_job": {
+   "label": "Migration Center"
+  },
+  "google_migrationcenter_v1alpha1_source": {
+   "label": "Migration Center"
+  },
+  "google_ml_job": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_ml_model": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_ml_study": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_ml_trial": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_ml_version": {
+   "label": "Gemini Enterprise Agent Platform"
+  },
+  "google_modelarmor_template": {
+   "label": "Model Armor"
+  },
+  "google_monitoring_alert_policy": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_group": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_metric_descriptor": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_notification_channel": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_service": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_service_level_objective": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_snooz": {
+   "label": "Cloud Monitoring"
+  },
+  "google_monitoring_uptime_check_config": {
+   "label": "Cloud Monitoring"
+  },
+  "google_netapp_active_directory": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_backup": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_backup_policy": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_backup_vault": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_host_group": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_kms_config": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_quota_rule": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_replication": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_snapshot": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_storage_pool": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_active_directory": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_backup": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_backup_policy": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_backup_vault": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_host_group": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_kms_config": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_quota_rule": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_replication": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_snapshot": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_storage_pool": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_v1beta1_volume": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_netapp_volume": {
+   "label": "Google Cloud NetApp Volumes"
+  },
+  "google_networkconnectivity_automated_dns_record": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_destination": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_gateway_advertised_route": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_hub": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_internal_range": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_multicloud_data_transfer_config": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_policy_based_route": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_psc_authorization_policy": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_regional_endpoint": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_service_connection_map": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_service_connection_policy": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_service_connection_token": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_spoke": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_transport": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_v1alpha1_hub": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_v1alpha1_internal_range": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkconnectivity_v1alpha1_spoke": {
+   "label": "Network Connectivity Center"
+  },
+  "google_networkmanagement_connectivity_test": {
+   "label": "Network Intelligence Center"
+  },
+  "google_networkmanagement_network_monitoring_provider": {
+   "label": "Network Intelligence Center"
+  },
+  "google_networkmanagement_v1beta1_connectivity_test": {
+   "label": "Network Intelligence Center"
+  },
+  "google_networkmanagement_v1beta1_vpc_flow_logs_config": {
+   "label": "Network Intelligence Center"
+  },
+  "google_networkmanagement_vpc_flow_logs_config": {
+   "label": "Network Intelligence Center"
+  },
+  "google_networksecurity_address_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_authorization_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_authz_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_backend_authentication_config": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_client_tls_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_dns_threat_detector": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_firewall_endpoint": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_firewall_endpoint_association": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_gateway_security_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_intercept_deployment": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_intercept_deployment_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_intercept_endpoint_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_intercept_endpoint_group_association": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_mirroring_deployment": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_mirroring_deployment_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_mirroring_endpoint_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_mirroring_endpoint_group_association": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_rule": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_sac_attachment": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_sac_realm": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_security_profile": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_security_profile_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_server_tls_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_tls_inspection_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_url_list": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_address_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_authorization_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_authz_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_backend_authentication_config": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_client_tls_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_dns_threat_detector": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_firewall_endpoint": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_firewall_endpoint_association": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_gateway_security_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_intercept_deployment": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_intercept_deployment_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_intercept_endpoint_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_intercept_endpoint_group_association": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_mirroring_deployment": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_mirroring_deployment_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_mirroring_endpoint_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_mirroring_endpoint_group_association": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_rule": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_sac_attachment": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_sac_realm": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_security_profile": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_security_profile_group": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_server_tls_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_tls_inspection_policy": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_url_list": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networksecurity_v1beta1_wildfire_verdict_change_request": {
+   "label": "Cloud Next Generation Firewall"
+  },
+  "google_networkservices_agent_connectivity_template": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_agent_gateway": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_authz_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_endpoint_policy": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_extension_binding": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_gateway": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_grpc_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_http_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_lb_edge_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_lb_route_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_lb_traffic_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_mesh": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_multicast_consumer_association": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_multicast_group_consumer_activation": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_producer_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_service_binding": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_service_lb_policy": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_tcp_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_tls_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_agent_connectivity_template": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_agent_gateway": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_authz_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_endpoint_policy": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_extension_binding": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_gateway": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_grpc_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_http_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_lb_edge_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_lb_route_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_lb_tcp_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_lb_traffic_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_mesh": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_producer_extension": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_service_binding": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_service_lb_policy": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_tcp_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_tls_route": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_version": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_v1beta1_wasm_plugin": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_version": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_networkservices_wasm_plugin": {
+   "label": "Cloud Service Mesh"
+  },
+  "google_notebooks_instance": {
+   "label": "Vertex AI Workbench"
+  },
+  "google_observability_bucket": {
+   "label": "Google Cloud Observability"
+  },
+  "google_observability_link": {
+   "label": "Google Cloud Observability"
+  },
+  "google_observability_trace_scope": {
+   "label": "Google Cloud Observability"
+  },
+  "google_oracledatabase_autonomous_database": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_cloud_exadata_infrastructure": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_cloud_vm_cluster": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_db_system": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_exadb_vm_cluster": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_exascale_db_storage_vault": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_goldengate_connection": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_goldengate_connection_assignment": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_goldengate_deployment": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_odb_network": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_oracledatabase_odb_subnet": {
+   "label": "Oracle Database@Google Cloud"
+  },
+  "google_orgpolicy_custom_constraint": {
+   "label": "Organization Policy Service"
+  },
+  "google_orgpolicy_policy": {
+   "label": "Organization Policy Service"
+  },
+  "google_osconfig_policy_orchestrator": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v1alpha_os_policy_assignment": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v1beta_guest_policy": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v1beta_patch_deployment": {
+   "label": "VM Manager"
+  },
+  "google_osconfig_v2beta_policy_orchestrator": {
+   "label": "VM Manager"
+  },
+  "google_oslogin_ssh_public_key": {
+   "label": "OS Login"
+  },
+  "google_oslogin_v1alpha_ssh_public_key": {
+   "label": "OS Login"
+  },
+  "google_oslogin_v1beta_ssh_public_key": {
+   "label": "OS Login"
+  },
+  "google_parallelstore_instance": {
+   "label": "Parallelstore"
+  },
+  "google_parallelstore_v1beta_instance": {
+   "label": "Parallelstore"
+  },
+  "google_parametermanager_parameter": {
+   "label": "Parameter Manager"
+  },
+  "google_parametermanager_template": {
+   "label": "Parameter Manager"
+  },
+  "google_parametermanager_version": {
+   "label": "Parameter Manager"
+  },
+  "google_policysimulator_org_policy_violations_preview": {
+   "label": "Policy Simulator"
+  },
+  "google_policysimulator_replay": {
+   "label": "Policy Simulator"
+  },
+  "google_policysimulator_v1beta_org_policy_violations_preview": {
+   "label": "Policy Simulator"
+  },
+  "google_policysimulator_v1beta_replay": {
+   "label": "Policy Simulator"
+  },
+  "google_privateca_ca_pool": {
+   "label": "Certificate Authority Service"
+  },
+  "google_privateca_certificate": {
+   "label": "Certificate Authority Service"
+  },
+  "google_privateca_certificate_authority": {
+   "label": "Certificate Authority Service"
+  },
+  "google_privateca_certificate_template": {
+   "label": "Certificate Authority Service"
+  },
+  "google_privilegedaccessmanager_entitlement": {
+   "label": "Privileged Access Manager"
+  },
+  "google_privilegedaccessmanager_grant": {
+   "label": "Privileged Access Manager"
+  },
+  "google_pubsub_schema": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsub_snapshot": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsub_subscription": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsub_topic": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsub_v1beta1a_subscription": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsub_v1beta1a_topic": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsub_v1beta2_subscription": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsub_v1beta2_topic": {
+   "label": "Pub/Sub"
+  },
+  "google_pubsublite_reservation": {
+   "label": "Pub/Sub Lite"
+  },
+  "google_pubsublite_subscription": {
+   "label": "Pub/Sub Lite"
+  },
+  "google_pubsublite_topic": {
+   "label": "Pub/Sub Lite"
+  },
+  "google_rapidmigrationassessment_annotation": {
+   "label": "Rapid Migration Assessment"
+  },
+  "google_rapidmigrationassessment_collector": {
+   "label": "Rapid Migration Assessment"
+  },
+  "google_recaptchaenterprise_firewallpolicy": {
+   "label": "reCAPTCHA Enterprise"
+  },
+  "google_recaptchaenterprise_key": {
+   "label": "reCAPTCHA Enterprise"
+  },
+  "google_redis_acl_policy": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_cluster": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_instance": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_v1beta1_acl_policy": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_v1beta1_cluster": {
+   "label": "Memorystore for Redis"
+  },
+  "google_redis_v1beta1_instance": {
+   "label": "Memorystore for Redis"
+  },
+  "google_run_instance": {
+   "label": "Cloud Run"
+  },
+  "google_run_job": {
+   "label": "Cloud Run"
+  },
+  "google_run_service": {
+   "label": "Cloud Run"
+  },
+  "google_run_worker_pool": {
+   "label": "Cloud Run"
+  },
+  "google_saasservicemgmt_release": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_rollout": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_rollout_kind": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_saa": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_tenant": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_unit": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_unit_kind": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_unit_operation": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_flag": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_flag_attribute": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_flag_release": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_flag_revision": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_release": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_rollout": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_rollout_kind": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_saa": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_saas_release": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_tenant": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_unit": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_unit_group": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_unit_group_operation": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_unit_kind": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_saasservicemgmt_v1beta1_unit_operation": {
+   "label": "App Lifecycle Manager"
+  },
+  "google_sasportal_customer": {
+   "label": "Spectrum Access System Portal"
+  },
+  "google_sasportal_deployment": {
+   "label": "Spectrum Access System Portal"
+  },
+  "google_sasportal_device": {
+   "label": "Spectrum Access System Portal"
+  },
+  "google_sasportal_node": {
+   "label": "Spectrum Access System Portal"
+  },
+  "google_secretmanager_secret": {
+   "label": "Secret Manager"
+  },
+  "google_secretmanager_v1beta1_secret": {
+   "label": "Secret Manager"
+  },
+  "google_secretmanager_v1beta2_secret": {
+   "label": "Secret Manager"
+  },
+  "google_securesourcemanager_branch_rule": {
+   "label": "Secure Source Manager"
+  },
+  "google_securesourcemanager_hook": {
+   "label": "Secure Source Manager"
+  },
+  "google_securesourcemanager_instance": {
+   "label": "Secure Source Manager"
+  },
+  "google_securesourcemanager_issue": {
+   "label": "Secure Source Manager"
+  },
+  "google_securesourcemanager_issue_comment": {
+   "label": "Secure Source Manager"
+  },
+  "google_securesourcemanager_pull_request": {
+   "label": "Secure Source Manager"
+  },
+  "google_securesourcemanager_pull_request_comment": {
+   "label": "Secure Source Manager"
+  },
+  "google_securesourcemanager_repository": {
+   "label": "Secure Source Manager"
+  },
+  "google_securitycenter_big_query_export": {
+   "label": "Security Command Center"
+  },
+  "google_securitycenter_custom_module": {
+   "label": "Security Command Center"
+  },
+  "google_securitycenter_mute_config": {
+   "label": "Security Command Center"
+  },
+  "google_securitycenter_notification_config": {
+   "label": "Security Command Center"
+  },
+  "google_securitycenter_resource_value_config": {
+   "label": "Security Command Center"
+  },
+  "google_securitycenter_source": {
+   "label": "Security Command Center"
+  },
+  "google_securitycenter_v1beta1_source": {
+   "label": "Security Command Center"
+  },
+  "google_securityposture_posture": {
+   "label": "Security Command Center"
+  },
+  "google_securityposture_posture_deployment": {
+   "label": "Security Command Center"
+  },
+  "google_securityposture_report": {
+   "label": "Security Command Center"
+  },
+  "google_servicedirectory_endpoint": {
+   "label": "Service Directory"
+  },
+  "google_servicedirectory_namespace": {
+   "label": "Service Directory"
+  },
+  "google_servicedirectory_service": {
+   "label": "Service Directory"
+  },
+  "google_servicedirectory_v1beta1_endpoint": {
+   "label": "Service Directory"
+  },
+  "google_servicedirectory_v1beta1_namespace": {
+   "label": "Service Directory"
+  },
+  "google_servicedirectory_v1beta1_service": {
+   "label": "Service Directory"
+  },
+  "google_servicemanagement_config": {
+   "label": "Service Management"
+  },
+  "google_servicemanagement_rollout": {
+   "label": "Service Management"
+  },
+  "google_servicemanagement_service": {
+   "label": "Service Management"
+  },
+  "google_siteverification_site_verification_web_resource": {
+   "label": "Site Verification"
+  },
+  "google_sourcerepo_repo": {
+   "label": "Cloud Source Repositories"
+  },
+  "google_spanner_backup": {
+   "label": "Cloud Spanner"
+  },
+  "google_spanner_backup_schedule": {
+   "label": "Cloud Spanner"
+  },
+  "google_spanner_database": {
+   "label": "Cloud Spanner"
+  },
+  "google_spanner_instance": {
+   "label": "Cloud Spanner"
+  },
+  "google_spanner_instance_config": {
+   "label": "Cloud Spanner"
+  },
+  "google_spanner_instance_partition": {
+   "label": "Cloud Spanner"
+  },
+  "google_spanner_session": {
+   "label": "Cloud Spanner"
+  },
+  "google_speech_custom_class": {
+   "label": "Speech-to-Text"
+  },
+  "google_speech_phrase_set": {
+   "label": "Speech-to-Text"
+  },
+  "google_speech_v1p1beta1_custom_class": {
+   "label": "Speech-to-Text"
+  },
+  "google_speech_v1p1beta1_phrase_set": {
+   "label": "Speech-to-Text"
+  },
+  "google_sqladmin_backup_run": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_database": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_instance": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_ssl_cert": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_user": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_v1beta4_backup_run": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_v1beta4_database": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_v1beta4_instance": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_v1beta4_ssl_cert": {
+   "label": "Cloud SQL"
+  },
+  "google_sqladmin_v1beta4_user": {
+   "label": "Cloud SQL"
+  },
+  "google_storage_anywhere_cach": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_bucket": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_bucket_access_control": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_default_object_access_control": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_folder": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_hmac_key": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_managed_folder": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_notification": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_object": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_object_access_control": {
+   "label": "Cloud Storage"
+  },
+  "google_storage_rapid_cach": {
+   "label": "Cloud Storage"
+  },
+  "google_storagebatchoperations_job": {
+   "label": "Storage Batch Operations"
+  },
+  "google_storagetransfer_agent_pool": {
+   "label": "Storage Transfer Service"
+  },
+  "google_storagetransfer_transfer_job": {
+   "label": "Storage Transfer Service"
+  },
+  "google_testing_device_session": {
+   "label": "Firebase Test Lab"
+  },
+  "google_testing_test_matrice": {
+   "label": "Firebase Test Lab"
+  },
+  "google_toolresults_execution": {
+   "label": "Firebase Test Lab"
+  },
+  "google_toolresults_history": {
+   "label": "Firebase Test Lab"
+  },
+  "google_toolresults_perf_sample_sery": {
+   "label": "Firebase Test Lab"
+  },
+  "google_toolresults_step": {
+   "label": "Firebase Test Lab"
+  },
+  "google_tpu_node": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_queued_resource": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_v1alpha1_node": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_v2alpha1_node": {
+   "label": "Cloud TPU"
+  },
+  "google_tpu_v2alpha1_queued_resource": {
+   "label": "Cloud TPU"
+  },
+  "google_transcoder_job": {
+   "label": "Transcoder API"
+  },
+  "google_transcoder_job_template": {
+   "label": "Transcoder API"
+  },
+  "google_translate_adaptive_mt_dataset": {
+   "label": "Cloud Translation"
+  },
+  "google_translate_dataset": {
+   "label": "Cloud Translation"
+  },
+  "google_translate_glossary": {
+   "label": "Cloud Translation"
+  },
+  "google_translate_glossary_entry": {
+   "label": "Cloud Translation"
+  },
+  "google_translate_model": {
+   "label": "Cloud Translation"
+  },
+  "google_vision_product": {
+   "label": "Cloud Vision"
+  },
+  "google_vision_product_set": {
+   "label": "Cloud Vision"
+  },
+  "google_vision_reference_image": {
+   "label": "Cloud Vision"
+  },
+  "google_vmmigration_clone_job": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_cutover_job": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_datacenter_connector": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_disk_migration_job": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_group": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_image_import": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_migrating_vm": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_source": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_target_project": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_utilization_report": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_clone_job": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_cutover_job": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_datacenter_connector": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_disk_migration_job": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_group": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_image_import": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_migrating_vm": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_source": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_target_project": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmmigration_v1alpha1_utilization_report": {
+   "label": "Migrate to Virtual Machines"
+  },
+  "google_vmwareengine_cluster": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_datastore": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_external_access_rule": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_external_address": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_hcx_activation_key": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_logging_server": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_management_dns_zone_binding": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_network_peering": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_network_policy": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_private_cloud": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_private_connection": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vmwareengine_vmware_engine_network": {
+   "label": "Google Cloud VMware Engine"
+  },
+  "google_vpcaccess_connector": {
+   "label": "Serverless VPC Access"
+  },
+  "google_vpcaccess_v1beta1_connector": {
+   "label": "Serverless VPC Access"
+  },
+  "google_websecurityscanner_scan_config": {
+   "label": "Web Security Scanner"
+  },
+  "google_websecurityscanner_v1alpha_scan_config": {
+   "label": "Web Security Scanner"
+  },
+  "google_websecurityscanner_v1beta_scan_config": {
+   "label": "Web Security Scanner"
+  },
+  "google_workflowexecutions_execution": {
+   "label": "Workflows"
+  },
+  "google_workflowexecutions_v1beta_execution": {
+   "label": "Workflows"
+  },
+  "google_workflows_v1beta_workflow": {
+   "label": "Workflows"
+  },
+  "google_workflows_workflow": {
+   "label": "Workflows"
+  },
+  "google_workloadmanager_actuation": {
+   "label": "Workload Manager"
+  },
+  "google_workloadmanager_deployment": {
+   "label": "Workload Manager"
+  },
+  "google_workloadmanager_evaluation": {
+   "label": "Workload Manager"
+  },
+  "google_workstations_v1beta_workstation": {
+   "label": "Cloud Workstations"
+  },
+  "google_workstations_v1beta_workstation_cluster": {
+   "label": "Cloud Workstations"
+  },
+  "google_workstations_v1beta_workstation_config": {
+   "label": "Cloud Workstations"
+  },
+  "google_workstations_workstation": {
+   "label": "Cloud Workstations"
+  },
+  "google_workstations_workstation_cluster": {
+   "label": "Cloud Workstations"
+  },
+  "google_workstations_workstation_config": {
+   "label": "Cloud Workstations"
+  }
+ },
+ "services": {}
+}
