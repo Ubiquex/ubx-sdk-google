@@ -20,11 +20,17 @@ export interface App_AudioProcessingConfig_BargeInConfig {
 }
 
 export interface App_AudioProcessingConfig_SynthesizeSpeechConfigs {
+  /** The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred) */
   consentAudioGcsUri?: string | Computed<string>;
+  /** An instruction given to the model or agent. (AI-inferred) */
   instruction?: string | Computed<string>;
+  /** The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred) */
   model?: string | Computed<string>;
+  /** The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred) */
   speakingRate?: number | Computed<number>;
+  /** Configuration for which synthesized voice this agent uses. (AI-inferred) */
   voice?: string | Computed<string>;
+  /** The Cloud Storage URI of an audio sample used to clone a custom voice. (AI-inferred) */
   voiceSampleGcsUri?: string | Computed<string>;
 }
 
@@ -49,7 +55,9 @@ export interface App_ClientCertificateSettings {
 }
 
 export interface App_DataStoreSettings_Engines {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -274,30 +282,52 @@ export interface App_ModelSettings {
 }
 
 export interface App_PredefinedVariableDeclarations_Schema {
+  /** Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred) */
   additionalProperties?: unknown | Computed<unknown>;
+  /** A list of schemas where a value must satisfy at least one to be valid. (AI-inferred) */
   anyOf?: unknown[] | Computed<unknown[]>;
+  /** The value used when this field is left unset. (AI-inferred) */
   default?: unknown | Computed<unknown>;
+  /** Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred) */
   defs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exact, closed set of values a `string`-typed schema allows. (AI-inferred) */
   enum?: string[] | Computed<string[]>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
+  /** The most elements an `array`-typed value may have. (AI-inferred) */
   maxItems?: string | Computed<string>;
+  /** The largest value a `number`/`integer`-typed value may take. (AI-inferred) */
   maximum?: number | Computed<number>;
+  /** The fewest elements an `array`-typed value may have. (AI-inferred) */
   minItems?: string | Computed<string>;
+  /** The smallest value a `number`/`integer`-typed value may take. (AI-inferred) */
   minimum?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred) */
   prefixItems?: unknown[] | Computed<unknown[]>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: string[] | Computed<string[]>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** Whether every element of an array-typed value must be distinct. (AI-inferred) */
   uniqueItems?: boolean | Computed<boolean>;
 }
 
 export interface App_PredefinedVariableDeclarations {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A schema describing this value's own expected structure. (AI-inferred) */
   schema?: App_PredefinedVariableDeclarations_Schema | Computed<App_PredefinedVariableDeclarations_Schema>;
 }
 

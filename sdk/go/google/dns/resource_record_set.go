@@ -4,27 +4,42 @@ package dns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers struct {
-	IpAddress        any
-	IpProtocol       any
-	Kind             any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The IP protocol version this applies to. (AI-inferred)
+	IpProtocol any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The type of load balancer this internal target is, e.g. regional internal. (AI-inferred)
 	LoadBalancerType any
-	NetworkUrl       any
-	Port             any
-	Project          any
-	Region           any
+	// The VPC network this private zone or policy is visible from. (AI-inferred)
+	NetworkUrl any
+	// A network port number. (AI-inferred)
+	Port any
+	// The Google Cloud project this applies to. (AI-inferred)
+	Project any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
 }
 
 type ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets struct {
-	ExternalEndpoints     any
+	// The external IP address(es) a forwarding rule directs matching queries to. (AI-inferred)
+	ExternalEndpoints any
+	// The internal load balancer(s) this record's own routing policy targets. (AI-inferred)
 	InternalLoadBalancers any
 }
 
 type ResourceRecordSet_RoutingPolicy_Geo_Items struct {
+	// The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
 	HealthCheckedTargets any
-	Kind                 any
-	Location             any
-	Rrdatas              any
-	SignatureRrdatas     any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// The record data (RDATA) value(s) for this DNS record. (AI-inferred)
+	Rrdatas any
+	// The DNSSEC signature record data for this record set. (AI-inferred)
+	SignatureRrdatas any
 }
 
 type ResourceRecordSet_RoutingPolicy_Geo struct {
@@ -32,13 +47,15 @@ type ResourceRecordSet_RoutingPolicy_Geo struct {
 	EnableFencing any
 	// The primary geo routing configuration. If there are multiple items with the same location, an error is returned instead.
 	Items any
-	Kind  any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ResourceRecordSet_RoutingPolicy_PrimaryBackup struct {
 	// Configures a `RRSetRoutingPolicy` that routes based on the geo location of the querying user.
 	BackupGeoTargets any
-	Kind             any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// HealthCheckTargets describes endpoints to health-check when responding to Routing Policy queries. Only the healthy endpoints will be included in the response. Set either `internal_load_balancer` or `external_endpoints`. Do not set both.
 	PrimaryTargets any
 	// When serving state is `PRIMARY`, this field provides the option of sending a small percentage of the traffic to the backup targets.
@@ -46,16 +63,23 @@ type ResourceRecordSet_RoutingPolicy_PrimaryBackup struct {
 }
 
 type ResourceRecordSet_RoutingPolicy_Wrr_Items struct {
+	// The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
 	HealthCheckedTargets any
-	Kind                 any
-	Rrdatas              any
-	SignatureRrdatas     any
-	Weight               any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The record data (RDATA) value(s) for this DNS record. (AI-inferred)
+	Rrdatas any
+	// The DNSSEC signature record data for this record set. (AI-inferred)
+	SignatureRrdatas any
+	// The relative weight of this target in weighted round-robin routing -- higher values receive proportionally more traffic. (AI-inferred)
+	Weight any
 }
 
 type ResourceRecordSet_RoutingPolicy_Wrr struct {
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
 	Items any
-	Kind  any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ResourceRecordSet_RoutingPolicy struct {
@@ -63,7 +87,8 @@ type ResourceRecordSet_RoutingPolicy struct {
 	Geo any
 	// The fully qualified URL of the HealthCheck to use for this RRSetRoutingPolicy. Format this URL like `https://www.googleapis.com/compute/v1/projects/{project}/global/healthChecks/{healthCheck}`. https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks
 	HealthCheck any
-	Kind        any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// Configures a RRSetRoutingPolicy such that all queries are responded with the primary_targets if they are healthy. And if all of them are unhealthy, then we fallback to a geo localized policy.
 	PrimaryBackup any
 	// Configures a RRSetRoutingPolicy that routes in a weighted round robin fashion.
@@ -169,6 +194,7 @@ var ResourceRecordSet_RoutingPolicyFields = ubx.FieldMap{
 }
 
 type ResourceRecordSetConfig struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// For example, www.example.com.
 	Name any
@@ -185,6 +211,7 @@ type ResourceRecordSetConfig struct {
 }
 
 type ResourceRecordSetAttrs struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// For example, www.example.com.
 	Name any

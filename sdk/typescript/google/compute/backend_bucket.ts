@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BackendBucket_CdnPolicy_BypassCacheOnRequestHeaders {
+  /** The name of the request header to bypass the cache for. (AI-inferred) */
   headerName?: string | Computed<string>;
 }
 
@@ -13,7 +14,9 @@ export interface BackendBucket_CdnPolicy_CacheKeyPolicy {
 }
 
 export interface BackendBucket_CdnPolicy_NegativeCachingPolicy {
+  /** The HTTP status code that this negative caching policy applies to. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Time-to-live in seconds for the cached response for the specified HTTP status code. This defines how long the negative cache entry persists. (AI-inferred) */
   ttl?: number | Computed<number>;
 }
 
@@ -50,6 +53,7 @@ export interface BackendBucket_Params {
 }
 
 export interface BackendBucket_UsedBy {
+  /** The reference URL of the resource that uses this backend bucket, such as a URL map. (AI-inferred) */
   reference?: string | Computed<string>;
 }
 

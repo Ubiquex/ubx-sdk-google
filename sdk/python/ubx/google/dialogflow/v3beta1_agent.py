@@ -234,56 +234,104 @@ _V3beta1Agent_TextToSpeechSettingsFields = {
 
 @dataclasses.dataclass
 class V3beta1AgentConfig:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
     answer_feedback_settings: Any = None
+    # The URI of an image representing this agent in the console and integrations. (AI-inferred)
     avatar_uri: Any = None
+    # Configures whether this conversation profile's own conversation data is exported to BigQuery. (AI-inferred)
     bigquery_export_settings: Any = None
+    # TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
     client_certificate_settings: Any = None
+    # The language this agent responds in when no other language is specified or detected. (AI-inferred)
     default_language_code: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
     enable_multi_language_training: Any = None
+    # Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
     enable_spell_correction: Any = None
+    # Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
     enable_stackdriver_logging: Any = None
+    # Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
     gen_app_builder_settings: Any = None
+    # Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
     git_integration_settings: Any = None
+    # Whether this resource is currently locked against modification. (AI-inferred)
     locked: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for personalizing agent behavior per end user. (AI-inferred)
     personalization_settings: Any = None
+    # A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
     security_settings: Any = None
+    # Configuration for this agent's own speech-to-text behavior. (AI-inferred)
     speech_to_text_settings: Any = None
+    # The flow the conversation begins in. (AI-inferred)
     start_flow: Any = None
+    # The playbook the conversation begins in. (AI-inferred)
     start_playbook: Any = None
+    # The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
     supported_language_codes: Any = None
+    # Configuration for this agent's own text-to-speech behavior. (AI-inferred)
     text_to_speech_settings: Any = None
+    # The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
     time_zone: Any = None
 
 @dataclasses.dataclass
 class V3beta1AgentAttrs:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
     answer_feedback_settings: Any = None
+    # The URI of an image representing this agent in the console and integrations. (AI-inferred)
     avatar_uri: Any = None
+    # Configures whether this conversation profile's own conversation data is exported to BigQuery. (AI-inferred)
     bigquery_export_settings: Any = None
+    # TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
     client_certificate_settings: Any = None
+    # The language this agent responds in when no other language is specified or detected. (AI-inferred)
     default_language_code: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
     enable_multi_language_training: Any = None
+    # Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
     enable_spell_correction: Any = None
+    # Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
     enable_stackdriver_logging: Any = None
+    # Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
     gen_app_builder_settings: Any = None
+    # Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
     git_integration_settings: Any = None
+    # Whether this resource is currently locked against modification. (AI-inferred)
     locked: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for personalizing agent behavior per end user. (AI-inferred)
     personalization_settings: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
     satisfies_pzi: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
     satisfies_pzs: Any = None
+    # A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
     security_settings: Any = None
+    # Configuration for this agent's own speech-to-text behavior. (AI-inferred)
     speech_to_text_settings: Any = None
+    # The flow the conversation begins in. (AI-inferred)
     start_flow: Any = None
+    # The playbook the conversation begins in. (AI-inferred)
     start_playbook: Any = None
+    # The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
     supported_language_codes: Any = None
+    # Configuration for this agent's own text-to-speech behavior. (AI-inferred)
     text_to_speech_settings: Any = None
+    # The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
     time_zone: Any = None
 
 V3beta1Agent = ubx.ResourceBinding(

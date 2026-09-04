@@ -8,11 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Build_Config_EffectiveEnv:
+    # Whether this record is currently reachable. (AI-inferred)
     availability: Any = None
+    # The origin this rewrite or header rule applies to. (AI-inferred)
     origin: Any = None
+    # The name of the file this content originates from. (AI-inferred)
     origin_file_name: Any = None
+    # A reference to the secret this applies to. (AI-inferred)
     secret: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
+    # A named environment variable made available to this build or run. (AI-inferred)
     variable: Any = None
 
 @dataclasses.dataclass
@@ -39,14 +45,20 @@ class Build_Config:
 
 @dataclasses.dataclass
 class Build_Errors_Error:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Build_Errors:
+    # A reference to the underlying Google Cloud resource. (AI-inferred)
     cloud_resource: Any = None
+    # Detail about an error that occurred. (AI-inferred)
     error: Any = None
+    # Which layer of the system produced this error. (AI-inferred)
     error_source: Any = None
 
 @dataclasses.dataclass

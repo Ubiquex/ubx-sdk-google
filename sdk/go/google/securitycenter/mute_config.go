@@ -4,24 +4,39 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MuteConfigConfig struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	ExpiryTime  any
-	Filter      any
-	Name        any
-	Type        any
+	// When this resource expires. (AI-inferred)
+	ExpiryTime any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type MuteConfigAttrs struct {
-	CreateTime       any
-	Description      any
-	DisplayName      any
-	ExpiryTime       any
-	Filter           any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// When this resource expires. (AI-inferred)
+	ExpiryTime any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The identity that most recently modified this resource. (AI-inferred)
 	MostRecentEditor any
-	Name             any
-	Type             any
-	UpdateTime       any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var MuteConfig = ubx.ResourceBinding{

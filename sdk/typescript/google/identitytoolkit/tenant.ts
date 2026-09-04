@@ -37,11 +37,14 @@ export interface Tenant_Inheritance {
 }
 
 export interface Tenant_MfaConfig_ProviderConfigs_TotpProviderConfig {
+  /** The number of adjacent 30-second time intervals checked when validating a TOTP code, tolerating minor clock drift between the client and server. (AI-inferred) */
   adjacentIntervals?: number | Computed<number>;
 }
 
 export interface Tenant_MfaConfig_ProviderConfigs {
+  /** Whether this multi-factor authentication provider is enabled, disabled, or mandatory. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Configuration for time-based one-time password (TOTP) as a multi-factor authentication method. (AI-inferred) */
   totpProviderConfig?: Tenant_MfaConfig_ProviderConfigs_TotpProviderConfig | Computed<Tenant_MfaConfig_ProviderConfigs_TotpProviderConfig>;
 }
 
@@ -70,16 +73,24 @@ export interface Tenant_Monitoring {
 }
 
 export interface Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptions {
+  /** Whether a password must contain at least one lowercase letter. (AI-inferred) */
   containsLowercaseCharacter?: boolean | Computed<boolean>;
+  /** Whether a password must contain at least one non-alphanumeric character. (AI-inferred) */
   containsNonAlphanumericCharacter?: boolean | Computed<boolean>;
+  /** Whether a password must contain at least one digit. (AI-inferred) */
   containsNumericCharacter?: boolean | Computed<boolean>;
+  /** Whether a password must contain at least one uppercase letter. (AI-inferred) */
   containsUppercaseCharacter?: boolean | Computed<boolean>;
+  /** The longest password this policy allows. (AI-inferred) */
   maxPasswordLength?: number | Computed<number>;
+  /** The shortest password this policy allows. (AI-inferred) */
   minPasswordLength?: number | Computed<number>;
 }
 
 export interface Tenant_PasswordPolicyConfig_PasswordPolicyVersions {
+  /** Custom password complexity requirements enforced by this policy. (AI-inferred) */
   customStrengthOptions?: Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptions | Computed<Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptions>;
+  /** The version of the password policy schema this configuration follows. (AI-inferred) */
   schemaVersion?: number | Computed<number>;
 }
 
@@ -95,17 +106,23 @@ export interface Tenant_PasswordPolicyConfig {
 }
 
 export interface Tenant_RecaptchaConfig_ManagedRules {
+  /** What action to take when this reCAPTCHA rule's own condition is met, e.g. `BLOCK` or `ALLOW`. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The upper bound of the reCAPTCHA risk score range this rule applies to. (AI-inferred) */
   endScore?: number | Computed<number>;
 }
 
 export interface Tenant_RecaptchaConfig_RecaptchaKeys {
+  /** The reCAPTCHA site key used for this tenant. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Tenant_RecaptchaConfig_TollFraudManagedRules {
+  /** What action to take when this reCAPTCHA rule's own condition is met, e.g. `BLOCK` or `ALLOW`. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The lower bound of the reCAPTCHA risk score range this rule applies to. (AI-inferred) */
   startScore?: number | Computed<number>;
 }
 

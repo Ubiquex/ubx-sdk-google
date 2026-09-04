@@ -13,11 +13,14 @@ class Reservation_AdvancedDeploymentControl:
 
 @dataclasses.dataclass
 class Reservation_AggregateReservation_InUseResources_Accelerator:
+    # The number of accelerators of the specified type that are currently in use by the reservation. (AI-inferred)
     accelerator_count: Any = None
+    # The type of accelerator (GPU) used by this in-use resource within the aggregate reservation, such as 'nvidia-tesla-t4' or 'nvidia-tesla-a100'. (AI-inferred)
     accelerator_type: Any = None
 
 @dataclasses.dataclass
 class Reservation_AggregateReservation_InUseResources:
+    # Configuration for the accelerator attached to this in-use resource, specifying the accelerator type and the number of accelerators. (AI-inferred)
     accelerator: Any = None
 
 @dataclasses.dataclass
@@ -74,6 +77,7 @@ class Reservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance
     maintenance_on_shutdown: Any = None
     # The reasons for the maintenance. Only valid for vms.
     maintenance_reasons: Any = None
+    # The current maintenance status for the upcoming group maintenance, with possible values ONGOING, PENDING, or UNKNOWN. (AI-inferred)
     maintenance_status: Any = None
     # Defines the type of maintenance.
     type: Any = None
@@ -121,6 +125,7 @@ class Reservation_ResourceStatus:
 
 @dataclasses.dataclass
 class Reservation_ShareSettings_ProjectMap:
+    # The ID of the project with which the reservation is shared, used in the project_map for specific project sharing. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
@@ -132,7 +137,9 @@ class Reservation_ShareSettings:
 
 @dataclasses.dataclass
 class Reservation_SpecificReservation_InstanceProperties_LocalSsds:
+    # The size of the local SSD in GB. Valid values are multiples of 375, from 375 to 3000 inclusive. Defaults to 375. (AI-inferred)
     disk_size_gb: Any = None
+    # The interface type for the local SSD, either `NVME` or `SCSI`. This determines the storage protocol used for the local SSD devices. (AI-inferred)
     interface: Any = None
 
 @dataclasses.dataclass
@@ -319,6 +326,7 @@ class ReservationConfig:
     advanced_deployment_control: Any = None
     # This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
     aggregate_reservation: Any = None
+    # The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred)
     confidential_compute_type: Any = None
     # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     delete_after_duration: Any = None
@@ -338,6 +346,7 @@ class ReservationConfig:
     params: Any = None
     # Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures).
     protection_tier: Any = None
+    # An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred)
     reservation_sharing_policy: Any = None
     # Standardized resource metadata common to all compute resources.
     resource_metadata: Any = None
@@ -364,6 +373,7 @@ class ReservationAttrs:
     aggregate_reservation: Any = None
     # Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
     commitment: Any = None
+    # The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred)
     confidential_compute_type: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None
@@ -391,6 +401,7 @@ class ReservationAttrs:
     params: Any = None
     # Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures).
     protection_tier: Any = None
+    # An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred)
     reservation_sharing_policy: Any = None
     # Standardized resource metadata common to all compute resources.
     resource_metadata: Any = None

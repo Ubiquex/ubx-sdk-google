@@ -32,8 +32,10 @@ type AlphaRegionInstantSnapshotGroupConfig struct {
 	// Optional. An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name                   any
-	ResourceStatus         any
+	Name any
+	// Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred)
+	ResourceStatus any
+	// A reference to the resource policy defining the consistency group this instant snapshot group was created from. (AI-inferred)
 	SourceConsistencyGroup any
 }
 
@@ -49,12 +51,14 @@ type AlphaRegionInstantSnapshotGroupAttrs struct {
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Output only. [Output Only] URL of the region where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region         any
+	Region any
+	// Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred)
 	ResourceStatus any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource's resource id.
-	SelfLinkWithId         any
+	SelfLinkWithId any
+	// A reference to the resource policy defining the consistency group this instant snapshot group was created from. (AI-inferred)
 	SourceConsistencyGroup any
 	// Output only. [Output Only]
 	Status any

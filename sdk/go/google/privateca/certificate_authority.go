@@ -11,130 +11,206 @@ type CertificateAuthority_AccessUrls struct {
 }
 
 type CertificateAuthority_CaCertificateDescriptions_AuthorityKeyId struct {
+	// An identifier for this key. (AI-inferred)
 	KeyId any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_CertFingerprint struct {
+	// A SHA-256 hash of this content. (AI-inferred)
 	Sha256Hash any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_PublicKey struct {
+	// A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
 	Format any
-	Key    any
+	// The key material for this key pair. (AI-inferred)
+	Key any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId struct {
+	// The numeric component(s) making up an object identifier. (AI-inferred)
 	ObjectIdPath any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes struct {
+	// An X.509 object identifier (OID). (AI-inferred)
 	ObjectId any
-	Type     any
-	Value    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence struct {
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject struct {
-	CommonName         any
-	CountryCode        any
-	Locality           any
-	Organization       any
+	// The Common Name field of this certificate's own subject. (AI-inferred)
+	CommonName any
+	// The two-letter country code in this certificate's own subject. (AI-inferred)
+	CountryCode any
+	// The locality (city) field in this certificate's own subject. (AI-inferred)
+	Locality any
+	// The organization field in this certificate's own subject. (AI-inferred)
+	Organization any
+	// The organizational unit field in this certificate's own subject. (AI-inferred)
 	OrganizationalUnit any
-	PostalCode         any
-	Province           any
-	RdnSequence        any
-	StreetAddress      any
+	// The postal code field in this certificate's own subject. (AI-inferred)
+	PostalCode any
+	// The state/province field in this certificate's own subject. (AI-inferred)
+	Province any
+	// The subject expressed as a raw sequence of Relative Distinguished Names. (AI-inferred)
+	RdnSequence any
+	// The street address field in this certificate's own subject. (AI-inferred)
+	StreetAddress any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSans struct {
+	// Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
 	Critical any
+	// An X.509 object identifier (OID). (AI-inferred)
 	ObjectId any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName struct {
-	CustomSans     any
-	DnsNames       any
+	// Caller-defined Subject Alternative Name(s) beyond the standard DNS/email/IP/URI types. (AI-inferred)
+	CustomSans any
+	// The DNS name(s) this certificate is valid for. (AI-inferred)
+	DnsNames any
+	// The email address(es) this certificate is valid for. (AI-inferred)
 	EmailAddresses any
-	IpAddresses    any
-	Uris           any
+	// The IP address(es) this certificate is valid for. (AI-inferred)
+	IpAddresses any
+	// The URI(s) this certificate is valid for. (AI-inferred)
+	Uris any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_SubjectDescription struct {
+	// This certificate's own serial number, in hexadecimal. (AI-inferred)
 	HexSerialNumber any
-	Lifetime        any
-	NotAfterTime    any
-	NotBeforeTime   any
-	Subject         any
-	SubjectAltName  any
+	// How long this certificate remains valid for, from issuance. (AI-inferred)
+	Lifetime any
+	// The timestamp after which this certificate is no longer valid. (AI-inferred)
+	NotAfterTime any
+	// The timestamp before which this certificate isn't yet valid. (AI-inferred)
+	NotBeforeTime any
+	// The identity this certificate identifies. (AI-inferred)
+	Subject any
+	// Additional identity/identities this certificate is also valid for, beyond its own primary subject. (AI-inferred)
+	SubjectAltName any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptions struct {
-	IsCa                any
+	// Whether this certificate is itself a CA certificate, authorized to sign other certificates. (AI-inferred)
+	IsCa any
+	// The maximum number of intermediate CA certificates permitted below this one in a certificate chain. (AI-inferred)
 	MaxIssuerPathLength any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsage struct {
-	CertSign          any
+	// Whether this certificate is authorized to sign other certificates. (AI-inferred)
+	CertSign any
+	// Whether this certificate is authorized for non-repudiation (content commitment). (AI-inferred)
 	ContentCommitment any
-	CrlSign           any
-	DataEncipherment  any
-	DecipherOnly      any
-	DigitalSignature  any
-	EncipherOnly      any
-	KeyAgreement      any
-	KeyEncipherment   any
+	// Whether this certificate is authorized to sign certificate revocation lists. (AI-inferred)
+	CrlSign any
+	// Whether this certificate is authorized for direct data encipherment. (AI-inferred)
+	DataEncipherment any
+	// Whether this certificate's own key agreement usage is restricted to deciphering only. (AI-inferred)
+	DecipherOnly any
+	// Whether this certificate is authorized for digital signatures. (AI-inferred)
+	DigitalSignature any
+	// Whether this certificate's own key agreement usage is restricted to enciphering only. (AI-inferred)
+	EncipherOnly any
+	// Whether this certificate is authorized for key agreement. (AI-inferred)
+	KeyAgreement any
+	// Whether this certificate is authorized for key encipherment. (AI-inferred)
+	KeyEncipherment any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsage struct {
-	ClientAuth      any
-	CodeSigning     any
+	// Whether this certificate is authorized for TLS client authentication. (AI-inferred)
+	ClientAuth any
+	// Whether this certificate is authorized for code signing. (AI-inferred)
+	CodeSigning any
+	// Whether this certificate is authorized for email protection (S/MIME). (AI-inferred)
 	EmailProtection any
-	OcspSigning     any
-	ServerAuth      any
-	TimeStamping    any
+	// Whether this certificate is authorized for OCSP response signing. (AI-inferred)
+	OcspSigning any
+	// Whether this certificate is authorized for TLS server authentication. (AI-inferred)
+	ServerAuth any
+	// Whether this certificate is authorized for trusted timestamping. (AI-inferred)
+	TimeStamping any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage struct {
-	BaseKeyUsage             any
-	ExtendedKeyUsage         any
+	// The core X.509 Key Usage bit(s) (e.g. digital signature, key encipherment) this certificate is authorized for. (AI-inferred)
+	BaseKeyUsage any
+	// The extended (application-specific) key usage purpose(s) this certificate is authorized for, e.g. server or client authentication. (AI-inferred)
+	ExtendedKeyUsage any
+	// Extended key usage object identifier(s) not recognized as one of the standard, named purposes. (AI-inferred)
 	UnknownExtendedKeyUsages any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraints struct {
-	Critical                any
-	ExcludedDnsNames        any
-	ExcludedEmailAddresses  any
-	ExcludedIpRanges        any
-	ExcludedUris            any
-	PermittedDnsNames       any
+	// Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
+	Critical any
+	// DNS name(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
+	ExcludedDnsNames any
+	// Email address(es) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
+	ExcludedEmailAddresses any
+	// IP address range(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
+	ExcludedIpRanges any
+	// URI(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
+	ExcludedUris any
+	// DNS name(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
+	PermittedDnsNames any
+	// Email address(es) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
 	PermittedEmailAddresses any
-	PermittedIpRanges       any
-	PermittedUris           any
+	// IP address range(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
+	PermittedIpRanges any
+	// URI(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
+	PermittedUris any
 }
 
 type CertificateAuthority_CaCertificateDescriptions_X509Description struct {
+	// Additional, caller-defined X.509 extension(s) included in this certificate. (AI-inferred)
 	AdditionalExtensions any
-	AiaOcspServers       any
-	CaOptions            any
-	KeyUsage             any
-	NameConstraints      any
-	PolicyIds            any
+	// The OCSP responder URL(s) included in the Authority Information Access extension. (AI-inferred)
+	AiaOcspServers any
+	// CA-specific certificate options, e.g. whether this certificate itself may sign other CA certificates. (AI-inferred)
+	CaOptions any
+	// The X.509 Key Usage extension, defining what cryptographic operations this certificate is authorized for. (AI-inferred)
+	KeyUsage any
+	// Restrictions on the namespace(s) (DNS, email, IP, URI) a CA is permitted to issue certificates for. (AI-inferred)
+	NameConstraints any
+	// The certificate policy object identifier(s) this certificate asserts compliance with. (AI-inferred)
+	PolicyIds any
 }
 
 type CertificateAuthority_CaCertificateDescriptions struct {
+	// The URL(s), included in the Authority Information Access extension, where the issuing CA certificate can be downloaded. (AI-inferred)
 	AiaIssuingCertificateUrls any
-	AuthorityKeyId            any
-	CertFingerprint           any
-	CrlDistributionPoints     any
-	PublicKey                 any
-	SubjectDescription        any
-	SubjectKeyId              any
-	TbsCertificateDigest      any
-	X509Description           any
+	// The X.509 Authority Key Identifier extension, identifying the key used to sign this certificate. (AI-inferred)
+	AuthorityKeyId any
+	// A cryptographic fingerprint of this certificate. (AI-inferred)
+	CertFingerprint any
+	// The URL(s) where this certificate's own revocation list (CRL) can be downloaded. (AI-inferred)
+	CrlDistributionPoints any
+	// The public key of this certificate or key pair. (AI-inferred)
+	PublicKey any
+	// A human-readable description of this certificate's own subject. (AI-inferred)
+	SubjectDescription any
+	// The X.509 Subject Key Identifier extension, identifying this certificate's own public key. (AI-inferred)
+	SubjectKeyId any
+	// A digest of the to-be-signed portion of this certificate. (AI-inferred)
+	TbsCertificateDigest any
+	// A structured description of this certificate's own X.509 fields. (AI-inferred)
+	X509Description any
 }
 
 type CertificateAuthority_Config_SubjectConfig struct {

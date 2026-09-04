@@ -4,21 +4,33 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs struct {
+	// When set to true, traffic is tracked separately for each unique value of the configured traffic granularity type (e.g., each unique HTTP header host). When false, traffic is aggregated according to the granularity type. (AI-inferred)
 	EnableEachUniqueValue any
-	Type                  any
-	Value                 any
+	// The type of traffic granularity to use for the layer 7 DDoS defense threshold. This can be HTTP_HEADER_HOST to group traffic by host header, HTTP_PATH to group by request path, or UNSPECIFIED_TYPE if not set. (AI-inferred)
+	Type any
+	// The IP address or CIDR range for this traffic granularity configuration. The interpretation depends on the associated type field (IP or CIDR). (AI-inferred)
+	Value any
 }
 
 type RegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs struct {
-	AutoDeployConfidenceThreshold       any
-	AutoDeployExpirationSec             any
+	// The confidence threshold percentage that triggers auto-deployment of adaptive protection. Must be a number between 0 and 100. (AI-inferred)
+	AutoDeployConfidenceThreshold any
+	// Duration in seconds after which the auto-deployed adaptive protection mitigation expires. This sets how long the mitigation remains active before being automatically withdrawn. (AI-inferred)
+	AutoDeployExpirationSec any
+	// Threshold for the ratio of impacted baseline traffic that triggers automatic deployment of the DDoS defense. When the measured impacted baseline exceeds this value, the adaptive protection automatically deploys the defense. (AI-inferred)
 	AutoDeployImpactedBaselineThreshold any
-	AutoDeployLoadThreshold             any
-	DetectionAbsoluteQps                any
-	DetectionLoadThreshold              any
-	DetectionRelativeToBaselineQps      any
-	Name                                any
-	TrafficGranularityConfigs           any
+	// The load threshold in requests per second per backend instance that triggers automatic deployment of Layer 7 adaptive protection. (AI-inferred)
+	AutoDeployLoadThreshold any
+	// The absolute QPS threshold (in requests per second) that triggers adaptive protection detection. When traffic to the protected resource exceeds this rate, the system may consider it anomalous and apply DDoS defense actions. (AI-inferred)
+	DetectionAbsoluteQps any
+	// The minimum number of requests per second that triggers adaptive protection detection for this threshold configuration. (AI-inferred)
+	DetectionLoadThreshold any
+	// Detection threshold relative to the baseline queries per second (QPS). A value of 1.0 means the threshold equals the baseline QPS; values greater than 1.0 require proportionally more traffic to trigger detection. (AI-inferred)
+	DetectionRelativeToBaselineQps any
+	// A unique name for this threshold configuration, used to identify it within the layer 7 DDoS defense settings of the adaptive protection config. (AI-inferred)
+	Name any
+	// A list of traffic granularity configurations for a layer 7 DDoS defense threshold. These configs define how traffic is aggregated or segmented (e.g., by source IP or range) when determining whether a threshold is exceeded, enabling granular control over adaptive protection rules. (AI-inferred)
+	TrafficGranularityConfigs any
 }
 
 type RegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig struct {
@@ -41,9 +53,12 @@ type RegionSecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig struct {
 }
 
 type RegionSecurityPolicy_AdvancedOptionsConfig struct {
+	// Custom configuration for JSON parsing, used in the advanced options of a security policy. It typically specifies content types that should be parsed as JSON. (AI-inferred)
 	JsonCustomConfig any
-	JsonParsing      any
-	LogLevel         any
+	// Configures JSON parsing mode for the security policy: DISABLED (no JSON parsing), STANDARD (standard JSON parsing), or STANDARD_WITH_GRAPHQL (standard JSON parsing with GraphQL support). (AI-inferred)
+	JsonParsing any
+	// The logging level for the security policy. Valid values are NORMAL and VERBOSE, where VERBOSE enables more detailed logging. (AI-inferred)
+	LogLevel any
 	// The maximum request size chosen by the customer with Waf enabled. Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case insensitive.
 	RequestBodyInspectionSize any
 	// An optional list of case-insensitive request header names to use for resolving the callers client IP address.
@@ -51,20 +66,27 @@ type RegionSecurityPolicy_AdvancedOptionsConfig struct {
 }
 
 type RegionSecurityPolicy_Associations struct {
-	AttachmentId     any
-	DisplayName      any
-	ExcludedFolders  any
+	// The ID of the resource to which the regional security policy is associated, typically the self_link of a backend service. (AI-inferred)
+	AttachmentId any
+	// The display_name is an optional user-defined name for the association, used for display purposes. It does not affect the association's identity, which is determined by the name field. (AI-inferred)
+	DisplayName any
+	// List of folder IDs to exclude from the association when the target is an organization or a folder. Resources in these excluded folders will not have the security policy applied. (AI-inferred)
+	ExcludedFolders any
+	// An optional list of project IDs that are excluded from this security policy association. When the association targets a project or organization, these projects will not have the policy applied. (AI-inferred)
 	ExcludedProjects any
 	Name             any
+	// The ID of the security policy to associate with the target in this association block. (AI-inferred)
 	SecurityPolicyId any
 	ShortName        any
 }
 
 type RegionSecurityPolicy_DdosProtectionConfig struct {
+	// The mode of DDoS adaptive protection for this region security policy. Set to DISABLED to turn it off, ENABLED to turn it on, or PREVIEW to test without enforcing. The UNSPECIFIED values are placeholders for internal use. (AI-inferred)
 	DdosAdaptiveProtection any
 	// DDoS Protection for Network Load Balancers (and VMs with public IPs) builds DDoS mitigations that minimize collateral damage. It quantifies this as the fraction of a non-abuse baseline that's inadvertently blocked. Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will not be deployed. Using a lower value will prioritize keeping collateral damage low, possibly at the cost of its effectiveness in rate limiting some or all of the attack. It should typically be unset, so Advanced DDoS (and Adaptive Protection) uses the best mitigation it can find. Setting the threshold is advised if there are logs for false positive detections with high collateral damage, and will cause Advanced DDoS to attempt to find a less aggressive rule that satisfies the constraint. If a suitable rule cannot be found, the system falls back to either no mitigation for smaller attacks or broader network throttles for larger ones.
 	DdosImpactedBaselineThreshold any
-	DdosProtection                any
+	// The DDoS protection tier to use for the regional security policy. Valid values are STANDARD, ADVANCED, and ADVANCED_PREVIEW. (AI-inferred)
+	DdosProtection any
 }
 
 type RegionSecurityPolicy_RecaptchaOptionsConfig struct {
@@ -73,27 +95,36 @@ type RegionSecurityPolicy_RecaptchaOptionsConfig struct {
 }
 
 type RegionSecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds struct {
-	HeaderName  any
+	// The name of the HTTP request header to add to the request. For example, 'X-Forwarded-For'. (AI-inferred)
+	HeaderName any
+	// The value of the custom header to be added to requests. (AI-inferred)
 	HeaderValue any
 }
 
 type RegionSecurityPolicy_Rules_HeaderAction struct {
+	// A list of request headers to add to the request. Each element in the list contains a header_name and header_value. (AI-inferred)
 	RequestHeadersToAdds any
 }
 
 type RegionSecurityPolicy_Rules_Match_Config struct {
+	// A list of source IP address ranges in CIDR format. The rule matches requests whose source IP address falls within any of these ranges. (AI-inferred)
 	SrcIpRanges any
 }
 
 type RegionSecurityPolicy_Rules_Match_Expr struct {
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// The Common Expression Language (CEL) expression that defines the criteria for matching this security policy rule. (AI-inferred)
+	Expression any
+	// The source location of the expression, used for debugging. This may specify a file name, line number, or other identifier of where the expression was defined. (AI-inferred)
+	Location any
+	// A short, human-readable title for the expression. This is optional and helps identify the purpose or meaning of the match expression. (AI-inferred)
+	Title any
 }
 
 type RegionSecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions struct {
-	ActionTokenSiteKeys  any
+	// A list of reCAPTCHA Enterprise site keys used for action tokens. These keys are used to validate the action token in the request. (AI-inferred)
+	ActionTokenSiteKeys any
+	// A list of site keys used to verify reCAPTCHA session tokens. (AI-inferred)
 	SessionTokenSiteKeys any
 }
 
@@ -102,93 +133,143 @@ type RegionSecurityPolicy_Rules_Match_ExprOptions struct {
 }
 
 type RegionSecurityPolicy_Rules_Match struct {
-	Config        any
-	Expr          any
-	ExprOptions   any
+	// The configuration for the match condition, specifying the source and destination IP ranges to match. (AI-inferred)
+	Config any
+	// The expr block provides a Common Expression Language (CEL) expression that defines the matching condition for the security policy rule. The rule is applied when the expression evaluates to true. (AI-inferred)
+	Expr any
+	// Options for the expression in the match rule, such as reCAPTCHA configuration. (AI-inferred)
+	ExprOptions any
+	// The versioned expression for the match rule. Must be set to SRC_IPS_V1 when using source IP-based matching; this is the only supported value. (AI-inferred)
 	VersionedExpr any
 }
 
 type RegionSecurityPolicy_Rules_NetworkMatch_UserDefinedFields struct {
-	Name   any
+	// The name of the user-defined field to match in the request. This corresponds to the field name as defined in the security policy's user-defined fields. (AI-inferred)
+	Name any
+	// A list of values to match the user-defined field against. The incoming packet matches if the field value equals any of the specified values. (AI-inferred)
 	Values any
 }
 
 type RegionSecurityPolicy_Rules_NetworkMatch struct {
-	DestIpRanges      any
-	DestPorts         any
-	IpProtocols       any
-	SrcAsns           any
-	SrcIpRanges       any
-	SrcPorts          any
-	SrcRegionCodes    any
+	// Destination IP address ranges in CIDR format for matching network traffic. (AI-inferred)
+	DestIpRanges any
+	// A list of destination ports to match, where each entry is a single port (e.g., '80') or a range (e.g., '80-90'). Used in L4 network match conditions for security policy rules. (AI-inferred)
+	DestPorts   any
+	IpProtocols any
+	// A list of source Autonomous System Numbers (ASNs) to match. The rule applies to requests originating from networks belonging to any of the specified ASNs. (AI-inferred)
+	SrcAsns any
+	// A list of source IP address ranges (CIDR format) that the rule matches for incoming traffic. (AI-inferred)
+	SrcIpRanges any
+	// A list of source ports to match for this rule. Each entry can be a single port number or a port range (e.g., '80' or '80-90'). If unspecified, all source ports are matched. (AI-inferred)
+	SrcPorts any
+	// A list of source region codes to match against the source region of the traffic. (AI-inferred)
+	SrcRegionCodes any
+	// A list of user-defined field configurations used to match network traffic within a security policy rule. Each configuration specifies a field name and a list of values to match against. (AI-inferred)
 	UserDefinedFields any
 }
 
 type RegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude struct {
-	Op  any
+	// The operator to apply when matching the request cookie value. Allowed values are CONTAINS, ENDS_WITH, EQUALS, EQUALS_ANY, STARTS_WITH. (AI-inferred)
+	Op any
+	// The value of the request cookie to exclude from WAF evaluation. When specified, only cookies whose value exactly matches this field are excluded; when omitted, the exclusion applies to any cookie with the matching key. (AI-inferred)
 	Val any
 }
 
 type RegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions struct {
-	RequestCookiesToExclude     any
-	RequestHeadersToExclude     any
+	// A list of request cookies to exclude from WAF evaluation. Each exclusion specifies an operator (EQUALS or STARTS_WITH) and a value representing the cookie name to match. (AI-inferred)
+	RequestCookiesToExclude any
+	// A list of request headers to exclude from the preconfigured WAF rule evaluation. Each object specifies a header key, a match operator, and a value; the operator can be one of EQUALS_TO, EQUALS_ANY, STARTS_WITH, ENDS_WITH, or CONTAINS. (AI-inferred)
+	RequestHeadersToExclude any
+	// A list of query parameters to exclude from WAF evaluation, allowing specific query parameters to be ignored by preconfigured WAF rules. (AI-inferred)
 	RequestQueryParamsToExclude any
-	RequestUrisToExclude        any
-	TargetRuleIds               any
-	TargetRuleSet               any
+	// A list of request URIs to exclude from the preconfigured WAF rule evaluation. Each object specifies a URI matching condition, typically including a value and an operator. (AI-inferred)
+	RequestUrisToExclude any
+	// List of target rule IDs for the exclusion. When empty, all preconfigured WAF rules are excluded. (AI-inferred)
+	TargetRuleIds any
+	// The target WAF rule set to which the exclusion applies. (AI-inferred)
+	TargetRuleSet any
 }
 
 type RegionSecurityPolicy_Rules_PreconfiguredWafConfig struct {
+	// A list of exclusion rules for this preconfigured WAF rule, specifying request attributes (e.g., headers, cookies, query parameters) that should be ignored during WAF evaluation to avoid false positives or allow specific traffic. (AI-inferred)
 	Exclusions any
 }
 
 type RegionSecurityPolicy_Rules_RateLimitOptions_BanThreshold struct {
-	Count       any
+	// The number of requests that must be exceeded within the configured interval to trigger a ban. Used in the ban_threshold of rate limiting for a security policy rule. (AI-inferred)
+	Count any
+	// The time interval, in seconds, over which the ban threshold count is measured before a ban is enforced. (AI-inferred)
 	IntervalSec any
 }
 
 type RegionSecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs struct {
+	// The name of the key (e.g., HTTP header or cookie name) to enforce rate limiting on. Required when enforce_on_key_type is HTTP_HEADER or COOKIE. (AI-inferred)
 	EnforceOnKeyName any
+	// The type of key on which to enforce rate limiting. This specifies which request attribute (e.g., source IP, HTTP header, path) is used to identify and group clients for rate limiting. Valid values are: ALL, ASN, HTTP_COOKIE, HTTP_HEADER, HTTP_PATH, IP, REGION_CODE, SNI, TLS_JA3_FINGERPRINT, TLS_JA4_FINGERPRINT, USER_IP, XFF_IP. (AI-inferred)
 	EnforceOnKeyType any
 }
 
 type RegionSecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions struct {
+	// The URL to which requests that exceed the rate limit are redirected. This is used when the redirect type is set to EXTERNAL_302. (AI-inferred)
 	Target any
-	Type   any
+	// The type of redirect action to take when the rate limit is exceeded. Allowed values are EXTERNAL_302 and GOOGLE_RECAPTCHA. (AI-inferred)
+	Type any
 }
 
 type RegionSecurityPolicy_Rules_RateLimitOptions struct {
-	BanDurationSec        any
-	BanThreshold          any
-	ConformAction         any
-	EnforceOnKey          any
-	EnforceOnKeyConfigs   any
-	EnforceOnKeyName      any
-	ExceedAction          any
+	// The duration in seconds that a client is banned after exceeding the ban threshold. Only applicable when exceed_action is set to 'ban'. (AI-inferred)
+	BanDurationSec any
+	// Threshold that, when exceeded, triggers banning of clients. This nested block is part of rate limit options; when a client surpasses the specified count within the interval, the client is banned. (AI-inferred)
+	BanThreshold any
+	// The action to take when a request is within the allowed rate limit. For rate limiting, this must be set to 'allow'. (AI-inferred)
+	ConformAction any
+	// Specifies the key type used to identify requests for rate limiting enforcement. Accepted values are: ALL, ASN, HTTP_COOKIE, HTTP_HEADER, HTTP_PATH, IP, REGION_CODE, SNI, TLS_JA3_FINGERPRINT, TLS_JA4_FINGERPRINT, USER_IP, and XFF_IP. (AI-inferred)
+	EnforceOnKey any
+	// Specifies a list of key configurations used to enforce the rate limit. Each configuration contains the key type (e.g., IP, HTTP_HEADER) and an optional key name. (AI-inferred)
+	EnforceOnKeyConfigs any
+	// The name of the header or cookie to enforce the rate limit on. This field is required when enforce_on_key is set to HTTP_HEADER or HTTP_COOKIE. (AI-inferred)
+	EnforceOnKeyName any
+	// The action to take when a request exceeds the rate limit defined in these rate limit options. (AI-inferred)
+	ExceedAction any
+	// Specifies the redirect action for requests that exceed the configured rate limit. This object defines the redirect type (e.g., EXTERNAL_302) and the target URL to redirect excess traffic to. (AI-inferred)
 	ExceedRedirectOptions any
-	RateLimitThreshold    any
+	// Configuration for the rate limit threshold, specifying the maximum number of requests allowed within a given time interval before triggering the configured action. Typically includes fields like count and interval. (AI-inferred)
+	RateLimitThreshold any
 }
 
 type RegionSecurityPolicy_Rules struct {
-	Action                 any
-	Description            any
-	HeaderAction           any
-	Kind                   any
-	Match                  any
-	NetworkMatch           any
+	// The action to perform when a request matches the rule. Allowed values are 'allow' or 'deny', with an optional custom HTTP status code for deny (e.g., 'deny(403)'). (AI-inferred)
+	Action any
+	// An optional description of the security policy rule. (AI-inferred)
+	Description any
+	// Specifies the header action to apply to requests that match this rule. This block allows you to add or remove HTTP headers using request_headers_to_adds and request_headers_to_remove. (AI-inferred)
+	HeaderAction any
+	// The kind of the resource, set to 'compute#securityPolicyRule' for a region security policy rule. (AI-inferred)
+	Kind any
+	// The match criteria for this security policy rule. It defines the conditions under which the rule is applied, such as source IP ranges, ports, or request expressions. (AI-inferred)
+	Match any
+	// The network match configuration for the rule, specifying network conditions like source IP ranges, source region codes, and user-defined fields that the request must satisfy for the rule to apply. (AI-inferred)
+	NetworkMatch any
+	// The preconfigured_waf_config block configures settings for the preconfigured WAF rules applied to this security policy rule. It allows you to customize the inspection behavior, such as defining exclusions to skip certain parts of requests from WAF evaluation. (AI-inferred)
 	PreconfiguredWafConfig any
-	Preview                any
-	Priority               any
-	RateLimitOptions       any
-	RedirectOptions        any
+	// Whether the rule is in preview mode. Preview rules are not enforced, but their actions are still logged and can be used to test rule behavior before enabling enforcement. (AI-inferred)
+	Preview any
+	// An integer that specifies the evaluation priority of the rule. Lower values are evaluated first. Must be unique within the security policy. (AI-inferred)
+	Priority         any
+	RateLimitOptions any
+	RedirectOptions  any
 }
 
 type RegionSecurityPolicy_UserDefinedFields struct {
-	Base   any
-	Mask   any
-	Name   any
+	// The base protocol or address family that the user-defined field applies to. Valid values are IPV4, IPV6, TCP, UDP. (AI-inferred)
+	Base any
+	// A string representation of the bitmask used to extract the user-defined field from the network packet. The mask is applied to the field specified by the base, offset, and size to select the relevant bits for matching. (AI-inferred)
+	Mask any
+	Name any
+	// The byte offset from the specified base (e.g., IP header) where the user-defined field begins. Used together with `base` and `size` to define a custom packet field for matching. (AI-inferred)
 	Offset any
-	Size   any
+	// The size of the user-defined field in bytes, which specifies how many bytes of the named field to inspect. (AI-inferred)
+	Size any
 }
 
 var RegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigsFields = ubx.FieldMap{
@@ -486,7 +567,8 @@ type RegionSecurityPolicyConfig struct {
 	// Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
 	Labels any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name                   any
+	Name any
+	// The reCAPTCHA options configuration for the region security policy. This output-only object is populated by the API and includes settings such as whether to fail open when reCAPTCHA is unavailable. (AI-inferred)
 	RecaptchaOptionsConfig any
 	// A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
 	Rules any
@@ -522,7 +604,8 @@ type RegionSecurityPolicyAttrs struct {
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Output only. [Output Only] The parent of the security policy.
-	Parent                 any
+	Parent any
+	// The reCAPTCHA options configuration for the region security policy. This output-only object is populated by the API and includes settings such as whether to fail open when reCAPTCHA is unavailable. (AI-inferred)
 	RecaptchaOptionsConfig any
 	// Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
 	Region any

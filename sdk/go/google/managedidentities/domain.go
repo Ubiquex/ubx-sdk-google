@@ -4,17 +4,28 @@ package managedidentities
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domain_Trusts struct {
-	CreateTime              any
-	LastTrustHeartbeatTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// When the last successful heartbeat with the trusted domain occurred. (AI-inferred)
+	LastTrustHeartbeatTime any
+	// Whether authentication requests from the trusted domain are restricted to explicitly permitted resources. (AI-inferred)
 	SelectiveAuthentication any
-	State                   any
-	StateDescription        any
-	TargetDnsIpAddresses    any
-	TargetDomainName        any
-	TrustDirection          any
-	TrustHandshakeSecret    any
-	TrustType               any
-	UpdateTime              any
+	// The current status of this trust relationship. (AI-inferred)
+	State any
+	// A human-readable description of this trust relationship's own current state. (AI-inferred)
+	StateDescription any
+	// The DNS server IP address(es) for the trusted domain. (AI-inferred)
+	TargetDnsIpAddresses any
+	// The fully qualified name of the domain this trust is established with. (AI-inferred)
+	TargetDomainName any
+	// Whether this trust is one-way or bidirectional. (AI-inferred)
+	TrustDirection any
+	// The shared secret used to establish this trust relationship. (AI-inferred)
+	TrustHandshakeSecret any
+	// The kind of trust relationship established, e.g. forest or external. (AI-inferred)
+	TrustType any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type DomainConfig struct {

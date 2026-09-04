@@ -2,33 +2,46 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Index_Fields_SearchConfig_GeoSpec {
+  /** Whether GeoJSON-format indexing is disabled for this geospatial field. (AI-inferred) */
   geoJsonIndexingDisabled?: boolean | Computed<boolean>;
 }
 
 export interface Index_Fields_SearchConfig_TextSpec_IndexSpecs {
+  /** How this text index breaks the field's own value into searchable terms, e.g. `TOKENIZED`. (AI-inferred) */
   indexType?: string | Computed<string>;
+  /** How broadly this text index matches queries, e.g. `MATCH_GLOBALLY` for substring matches anywhere in the field. (AI-inferred) */
   matchType?: string | Computed<string>;
 }
 
 export interface Index_Fields_SearchConfig_TextSpec {
+  /** The individual text-indexing rule(s) applied to this field. (AI-inferred) */
   indexSpecs?: Index_Fields_SearchConfig_TextSpec_IndexSpecs[] | Computed<Index_Fields_SearchConfig_TextSpec_IndexSpecs[]>;
 }
 
 export interface Index_Fields_SearchConfig {
+  /** Configures this field as a geospatial search index. (AI-inferred) */
   geoSpec?: Index_Fields_SearchConfig_GeoSpec | Computed<Index_Fields_SearchConfig_GeoSpec>;
+  /** Configures this field as a full-text search index. (AI-inferred) */
   textSpec?: Index_Fields_SearchConfig_TextSpec | Computed<Index_Fields_SearchConfig_TextSpec>;
 }
 
 export interface Index_Fields_VectorConfig {
+  /** The number of dimensions the vectors stored in this field have. (AI-inferred) */
   dimension?: number | Computed<number>;
+  /** Uses a flat (exhaustive, brute-force) vector index structure, trading index build/update simplicity for scan-time cost at large scale. (AI-inferred) */
   flat?: unknown | Computed<unknown>;
 }
 
 export interface Index_Fields {
+  /** Indexes the contents of an array-typed field for `CONTAINS`-style membership queries. (AI-inferred) */
   arrayConfig?: string | Computed<string>;
+  /** The document field this index entry covers, in dot notation. (AI-inferred) */
   fieldPath?: string | Computed<string>;
+  /** The sort direction this index supports for `field_path`: `ASCENDING` or `DESCENDING`. (AI-inferred) */
   order?: string | Computed<string>;
+  /** Configures `field_path` as a full-text or geo search index, rather than a standard ordered/array index. (AI-inferred) */
   searchConfig?: Index_Fields_SearchConfig | Computed<Index_Fields_SearchConfig>;
+  /** Configures this field as a vector similarity search index, for nearest-neighbor queries over embeddings. (AI-inferred) */
   vectorConfig?: Index_Fields_VectorConfig | Computed<Index_Fields_VectorConfig>;
 }
 

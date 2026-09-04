@@ -102,19 +102,27 @@ export interface DataScan_DataDiscoverySpec {
 }
 
 export interface DataScan_DataDocumentationResult_DatasetResult_Queries {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A SQL statement or expression. (AI-inferred) */
   sql?: string | Computed<string>;
 }
 
 export interface DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths {
+  /** The path(s) this applies to. (AI-inferred) */
   paths?: string[] | Computed<string[]>;
+  /** The fully qualified name of this table. (AI-inferred) */
   tableFqn?: string | Computed<string>;
 }
 
 export interface DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships {
+  /** The field path(s) on the left-hand entry this relationship connects from. (AI-inferred) */
   leftSchemaPaths?: DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths | Computed<DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths>;
+  /** The field path(s) on the right-hand entry this relationship connects to. (AI-inferred) */
   rightSchemaPaths?: DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths | Computed<DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths>;
+  /** The source(s) this data or configuration is drawn from. (AI-inferred) */
   sources?: string[] | Computed<string[]>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -128,8 +136,11 @@ export interface DataScan_DataDocumentationResult_DatasetResult {
 }
 
 export interface DataScan_DataDocumentationResult_TableResult_Schema_Fields {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The field(s) making up this schema or aspect. (AI-inferred) */
   fields?: unknown[] | Computed<unknown[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -181,46 +192,72 @@ export interface DataScan_DataProfileResult_PostScanActionsResult {
 }
 
 export interface DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfile {
+  /** The average (mean) value observed for this column. (AI-inferred) */
   average?: number | Computed<number>;
+  /** The largest value this parameter may take. (AI-inferred) */
   max?: number | Computed<number>;
+  /** The smallest value this parameter may take. (AI-inferred) */
   min?: number | Computed<number>;
+  /** The quartile value(s) computed for this column's own distribution. (AI-inferred) */
   quartiles?: number[] | Computed<number[]>;
+  /** The standard deviation observed for this column's own values. (AI-inferred) */
   standardDeviation?: number | Computed<number>;
 }
 
 export interface DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfile {
+  /** The average (mean) value observed for this column. (AI-inferred) */
   average?: number | Computed<number>;
+  /** The largest value this parameter may take. (AI-inferred) */
   max?: string | Computed<string>;
+  /** The smallest value this parameter may take. (AI-inferred) */
   min?: string | Computed<string>;
+  /** The quartile value(s) computed for this column's own distribution. (AI-inferred) */
   quartiles?: string[] | Computed<string[]>;
+  /** The standard deviation observed for this column's own values. (AI-inferred) */
   standardDeviation?: number | Computed<number>;
 }
 
 export interface DataScan_DataProfileResult_Profile_Fields_Profile_StringProfile {
+  /** The average length observed for this string column's own values. (AI-inferred) */
   averageLength?: number | Computed<number>;
+  /** The most characters a `string`-typed value may have. (AI-inferred) */
   maxLength?: string | Computed<string>;
+  /** The fewest characters a `string`-typed value may have. (AI-inferred) */
   minLength?: string | Computed<string>;
 }
 
 export interface DataScan_DataProfileResult_Profile_Fields_Profile_TopNvalues {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The proportion this applies to. (AI-inferred) */
   ratio?: number | Computed<number>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface DataScan_DataProfileResult_Profile_Fields_Profile {
+  /** The fraction of this column's own values that are distinct. (AI-inferred) */
   distinctRatio?: number | Computed<number>;
+  /** Statistical profile computed for a floating-point column. (AI-inferred) */
   doubleProfile?: DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfile | Computed<DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfile>;
+  /** Statistical profile computed for an integer column. (AI-inferred) */
   integerProfile?: DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfile | Computed<DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfile>;
+  /** The fraction of this column's own values that are null. (AI-inferred) */
   nullRatio?: number | Computed<number>;
+  /** Statistical profile computed for a string column. (AI-inferred) */
   stringProfile?: DataScan_DataProfileResult_Profile_Fields_Profile_StringProfile | Computed<DataScan_DataProfileResult_Profile_Fields_Profile_StringProfile>;
+  /** The N most frequently occurring value(s) observed for this column. (AI-inferred) */
   topNvalues?: DataScan_DataProfileResult_Profile_Fields_Profile_TopNvalues[] | Computed<DataScan_DataProfileResult_Profile_Fields_Profile_TopNvalues[]>;
 }
 
 export interface DataScan_DataProfileResult_Profile_Fields {
+  /** Whether this schema field is nullable, required, or repeated. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Statistical profile data computed for this column or table. (AI-inferred) */
   profile?: DataScan_DataProfileResult_Profile_Fields_Profile | Computed<DataScan_DataProfileResult_Profile_Fields_Profile>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -300,148 +337,225 @@ export interface DataScan_DataQualityResult_AnomalyDetectionGeneratedAssets {
 }
 
 export interface DataScan_DataQualityResult_Columns_Dimensions_Dimension {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Columns_Dimensions {
+  /** The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred) */
   dimension?: DataScan_DataQualityResult_Columns_Dimensions_Dimension | Computed<DataScan_DataQualityResult_Columns_Dimensions_Dimension>;
+  /** Whether this data quality check passed. (AI-inferred) */
   passed?: boolean | Computed<boolean>;
+  /** The overall score this quality scan or profile produced. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
 export interface DataScan_DataQualityResult_Columns {
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The data quality dimension(s) this scan assesses. (AI-inferred) */
   dimensions?: DataScan_DataQualityResult_Columns_Dimensions[] | Computed<DataScan_DataQualityResult_Columns_Dimensions[]>;
+  /** Whether this data quality check passed. (AI-inferred) */
   passed?: boolean | Computed<boolean>;
+  /** The overall score this quality scan or profile produced. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
 export interface DataScan_DataQualityResult_Rules_DebugQueriesResultSets_Results {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_DebugQueriesResultSets {
+  /** The result(s) produced by this operation. (AI-inferred) */
   results?: DataScan_DataQualityResult_Rules_DebugQueriesResultSets_Results[] | Computed<DataScan_DataQualityResult_Rules_DebugQueriesResultSets_Results[]>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_DebugQueries {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A SQL statement. (AI-inferred) */
   sqlStatement?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_RangeExpectation {
+  /** The maximum acceptable value for this data quality rule. (AI-inferred) */
   maxValue?: string | Computed<string>;
+  /** The minimum acceptable value for this data quality rule. (AI-inferred) */
   minValue?: string | Computed<string>;
+  /** Whether the maximum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred) */
   strictMaxEnabled?: boolean | Computed<boolean>;
+  /** Whether the minimum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred) */
   strictMinEnabled?: boolean | Computed<boolean>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_RegexExpectation {
+  /** A regular expression this rule matches against. (AI-inferred) */
   regex?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation {
+  /** A SQL expression. (AI-inferred) */
   sqlExpression?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSource {
+  /** A typed relationship connecting two catalog entries. (AI-inferred) */
   entryLink?: string | Computed<string>;
+  /** The kind of relationship this entry link represents. (AI-inferred) */
   entryLinkType?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySource {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the catalog entry this applies to. (AI-inferred) */
   entry?: string | Computed<string>;
+  /** A reference to the entry type defining this catalog entry's own structure. (AI-inferred) */
   entryType?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements {
+  /** One of the two catalog entries connected by this link. (AI-inferred) */
   entryLinkSource?: DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSource | Computed<DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSource>;
+  /** Detail about where this catalog entry's own data was sourced from. (AI-inferred) */
   entrySource?: DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySource | Computed<DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySource>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_RuleSource {
+  /** The path element(s) locating this rule within its own containing scan. (AI-inferred) */
   rulePathElements?: DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements[] | Computed<DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements[]>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_SetExpectation {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_SqlAssertion {
+  /** A SQL statement. (AI-inferred) */
   sqlStatement?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectation {
+  /** The maximum acceptable value for this data quality rule. (AI-inferred) */
   maxValue?: string | Computed<string>;
+  /** The minimum acceptable value for this data quality rule. (AI-inferred) */
   minValue?: string | Computed<string>;
+  /** The specific statistic this measurement reports. (AI-inferred) */
   statistic?: string | Computed<string>;
+  /** Whether the maximum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred) */
   strictMaxEnabled?: boolean | Computed<boolean>;
+  /** Whether the minimum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred) */
   strictMinEnabled?: boolean | Computed<boolean>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParameters {
+  /** The value used when this field is left unset. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollection {
+  /** The SQL query text. (AI-inferred) */
   query?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate {
+  /** Which operation(s) this entry/resource supports. (AI-inferred) */
   capabilities?: string[] | Computed<string[]>;
+  /** The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred) */
   dimension?: string | Computed<string>;
+  /** The parameter(s) this custom SQL rule or query accepts. (AI-inferred) */
   inputParameters?: Record<string, DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParameters> | Computed<Record<string, DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParameters>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to the collection of resources this SQL query targets. (AI-inferred) */
   sqlCollection?: DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollection[] | Computed<DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollection[]>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_TemplateReference_Values {
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule_TemplateReference {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The final SQL statement actually run, after any template substitution. (AI-inferred) */
   resolvedSql?: string | Computed<string>;
+  /** A predefined rule template this rule instantiates. (AI-inferred) */
   ruleTemplate?: DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate | Computed<DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: Record<string, DataScan_DataQualityResult_Rules_Rule_TemplateReference_Values> | Computed<Record<string, DataScan_DataQualityResult_Rules_Rule_TemplateReference_Values>>;
 }
 
 export interface DataScan_DataQualityResult_Rules_Rule {
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The underlying SQL query/queries run to compute this result, surfaced for debugging. (AI-inferred) */
   debugQueries?: DataScan_DataQualityResult_Rules_Rule_DebugQueries[] | Computed<DataScan_DataQualityResult_Rules_Rule_DebugQueries[]>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred) */
   dimension?: string | Computed<string>;
+  /** Whether null values are excluded from this rule's own evaluation. (AI-inferred) */
   ignoreNull?: boolean | Computed<boolean>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A data quality rule asserting that this column's own values are never null. (AI-inferred) */
   nonNullExpectation?: unknown | Computed<unknown>;
+  /** A data quality rule asserting that this column's own values fall within a specified range. (AI-inferred) */
   rangeExpectation?: DataScan_DataQualityResult_Rules_Rule_RangeExpectation | Computed<DataScan_DataQualityResult_Rules_Rule_RangeExpectation>;
+  /** A data quality rule asserting that this column's own values match a regular expression. (AI-inferred) */
   regexExpectation?: DataScan_DataQualityResult_Rules_Rule_RegexExpectation | Computed<DataScan_DataQualityResult_Rules_Rule_RegexExpectation>;
+  /** A data quality rule asserting that a custom SQL row-level condition holds. (AI-inferred) */
   rowConditionExpectation?: DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation | Computed<DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation>;
+  /** Where this rule's own definition came from, e.g. inline or a referenced template. (AI-inferred) */
   ruleSource?: DataScan_DataQualityResult_Rules_Rule_RuleSource | Computed<DataScan_DataQualityResult_Rules_Rule_RuleSource>;
+  /** A data quality rule asserting that this column's own values belong to a specified set. (AI-inferred) */
   setExpectation?: DataScan_DataQualityResult_Rules_Rule_SetExpectation | Computed<DataScan_DataQualityResult_Rules_Rule_SetExpectation>;
+  /** A data quality rule defined by a custom SQL assertion, rather than a built-in rule type. (AI-inferred) */
   sqlAssertion?: DataScan_DataQualityResult_Rules_Rule_SqlAssertion | Computed<DataScan_DataQualityResult_Rules_Rule_SqlAssertion>;
+  /** A data quality rule asserting that a computed statistic (e.g. row count) falls within a specified range. (AI-inferred) */
   statisticRangeExpectation?: DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectation | Computed<DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectation>;
+  /** Whether this scan or rule is currently suspended from running. (AI-inferred) */
   suspended?: boolean | Computed<boolean>;
+  /** A data quality rule asserting that a custom SQL table-level condition holds. (AI-inferred) */
   tableConditionExpectation?: DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation | Computed<DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation>;
+  /** A reference to the rule template this instantiates. (AI-inferred) */
   templateReference?: DataScan_DataQualityResult_Rules_Rule_TemplateReference | Computed<DataScan_DataQualityResult_Rules_Rule_TemplateReference>;
+  /** The value that must be met or crossed for this to apply. (AI-inferred) */
   threshold?: number | Computed<number>;
+  /** A data quality rule asserting that this column's own values are all unique. (AI-inferred) */
   uniquenessExpectation?: unknown | Computed<unknown>;
 }
 
 export interface DataScan_DataQualityResult_Rules {
+  /** How many rows were evaluated for this data quality assertion. (AI-inferred) */
   assertionRowCount?: string | Computed<string>;
+  /** The raw result set(s) returned by the debug queries. (AI-inferred) */
   debugQueriesResultSets?: DataScan_DataQualityResult_Rules_DebugQueriesResultSets[] | Computed<DataScan_DataQualityResult_Rules_DebugQueriesResultSets[]>;
+  /** How many rows were evaluated for this data quality rule. (AI-inferred) */
   evaluatedCount?: string | Computed<string>;
+  /** A SQL query returning the specific row(s) that failed this data quality rule. (AI-inferred) */
   failingRowsQuery?: string | Computed<string>;
+  /** How many null values were observed in this column. (AI-inferred) */
   nullCount?: string | Computed<string>;
+  /** The fraction of evaluated rows that passed this data quality rule. (AI-inferred) */
   passRatio?: number | Computed<number>;
+  /** Whether this data quality check passed. (AI-inferred) */
   passed?: boolean | Computed<boolean>;
+  /** How many rows passed this data quality rule. (AI-inferred) */
   passedCount?: string | Computed<string>;
+  /** The data quality rule that produced this result. (AI-inferred) */
   rule?: DataScan_DataQualityResult_Rules_Rule | Computed<DataScan_DataQualityResult_Rules_Rule>;
 }
 
@@ -563,51 +677,79 @@ export interface DataScan_ExecutionStatus {
 }
 
 export interface DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints {
+  /** Whether this schema field is required, optional, or repeated. (AI-inferred) */
   cardinality?: string | Computed<string>;
 }
 
 export interface DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHints {
+  /** How this value is normalized before comparison. (AI-inferred) */
   normalization?: string | Computed<string>;
+  /** Configuration for how this metadata is automatically synthesized. (AI-inferred) */
   synthesis?: string | Computed<string>;
 }
 
 export interface DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields {
+  /** The data type of this value or column. (AI-inferred) */
   dataType?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred) */
   extractionHints?: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHints | Computed<DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHints>;
+  /** The field(s) making up this schema or aspect. (AI-inferred) */
   fields?: unknown[] | Computed<unknown[]>;
+  /** The category of metadata this entry represents. (AI-inferred) */
   metadataType?: string | Computed<string>;
+  /** Whether this schema field is nullable, required, or repeated. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappings {
+  /** A reference to a specific field. (AI-inferred) */
   field?: string | Computed<string>;
+  /** The field this foreign key references. (AI-inferred) */
   referencedField?: string | Computed<string>;
 }
 
 export interface DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** How field(s) from a source entry map into this destination entry. (AI-inferred) */
   fieldMappings?: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappings[] | Computed<DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappings[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The type of node a metadata relationship's own target refers to. (AI-inferred) */
   referencedNodeType?: string | Computed<string>;
 }
 
 export interface DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred) */
   extractionHints?: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints | Computed<DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints>;
+  /** The field(s) making up this schema or aspect. (AI-inferred) */
   fields?: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields[] | Computed<DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields[]>;
+  /** The foreign key constraint(s) defined on this table. (AI-inferred) */
   foreignKeys?: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys[] | Computed<DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The type of node a metadata relationship's own source refers to. (AI-inferred) */
   sourceNodeType?: string | Computed<string>;
+  /** The type of node this relationship's own target refers to. (AI-inferred) */
   targetNodeType?: string | Computed<string>;
 }
 
 export interface DataScan_UnstructuredDataProfileResult_GraphProfile_NodeTypes {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred) */
   extractionHints?: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints | Computed<DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints>;
+  /** The field(s) making up this schema or aspect. (AI-inferred) */
   fields?: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields[] | Computed<DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The column(s) making up this table's own primary key. (AI-inferred) */
   primaryKeys?: string[] | Computed<string[]>;
 }
 

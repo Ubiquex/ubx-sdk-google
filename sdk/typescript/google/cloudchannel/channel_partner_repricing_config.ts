@@ -17,16 +17,21 @@ export interface ChannelPartnerRepricingConfig_RepricingConfig_Adjustment {
 }
 
 export interface ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupCondition {
+  /** The real, named group of SKUs this repricing condition matches against. (AI-inferred) */
   skuGroup?: string | Computed<string>;
 }
 
 export interface ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition {
+  /** A real repricing condition matching entitlements whose SKU belongs to a specific `sku_group`. (AI-inferred) */
   skuGroupCondition?: ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupCondition | Computed<ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupCondition>;
 }
 
 export interface ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides {
+  /** The real margin adjustment (as a `percentage_adjustment`) this repricing rule applies when its own `repricing_condition` matches. (AI-inferred) */
   adjustment?: ChannelPartnerRepricingConfig_RepricingConfig_Adjustment | Computed<ChannelPartnerRepricingConfig_RepricingConfig_Adjustment>;
+  /** The real cost basis (`COST_AT_LIST` or `DIRECT_CUSTOMER_COST`) this repricing rule's own adjustment is calculated against. (AI-inferred) */
   rebillingBasis?: string | Computed<string>;
+  /** The real condition (such as a matching `sku_group`) that must hold for this conditional repricing override to apply. (AI-inferred) */
   repricingCondition?: ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition | Computed<ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition>;
 }
 

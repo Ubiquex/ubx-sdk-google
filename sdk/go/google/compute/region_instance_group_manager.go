@@ -16,7 +16,9 @@ type RegionInstanceGroupManager_AllInstancesConfig struct {
 }
 
 type RegionInstanceGroupManager_AutoHealingPolicies struct {
-	HealthCheck     any
+	// The health check resource URL (self-link) that determines instance health for auto-healing. Can be specified as a full URL, a self-link, or a name reference. (AI-inferred)
+	HealthCheck any
+	// The initial delay, in seconds, before an instance is considered available for auto-healing. This is the time to wait after an instance is created or restarted before checking its health for auto-healing purposes. (AI-inferred)
 	InitialDelaySec any
 }
 
@@ -50,6 +52,7 @@ type RegionInstanceGroupManager_CurrentActions struct {
 }
 
 type RegionInstanceGroupManager_DistributionPolicy_Zones struct {
+	// Specifies the zone to which instances are distributed as part of the distribution policy for this regional managed instance group. (AI-inferred)
 	Zone any
 }
 
@@ -61,8 +64,10 @@ type RegionInstanceGroupManager_DistributionPolicy struct {
 }
 
 type RegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelections struct {
+	// List of machine types that can be used for this instance selection. The instance group manager can choose any of these types when provisioning instances according to the flexibility policy. (AI-inferred)
 	MachineTypes any
-	Rank         any
+	// The priority rank of this instance selection, where lower numbers have higher priority. Must be between 0 and 5. (AI-inferred)
+	Rank any
 }
 
 type RegionInstanceGroupManager_InstanceFlexibilityPolicy struct {
@@ -87,7 +92,9 @@ type RegionInstanceGroupManager_InstanceLifecyclePolicy struct {
 }
 
 type RegionInstanceGroupManager_NamedPorts struct {
+	// The symbolic name of the named port, which acts as the key in the named port mapping to a port number. (AI-inferred)
 	Name any
+	// The port number for this named port. (AI-inferred)
 	Port any
 }
 
@@ -104,6 +111,7 @@ type RegionInstanceGroupManager_StandbyPolicy struct {
 }
 
 type RegionInstanceGroupManager_StatefulPolicy_PreservedState_Disks struct {
+	// Specifies whether the stateful disk should be automatically deleted when the instance is deleted. Accepts 'true' or 'false'. (AI-inferred)
 	AutoDelete any
 }
 
@@ -129,61 +137,85 @@ type RegionInstanceGroupManager_Status_AllInstancesConfig struct {
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain    any
+	// The domain associated with the error, typically indicating the service or API where the error originated (e.g., 'compute.googleapis.com'). (AI-inferred)
+	Domain any
+	// A map of key-value pairs containing additional error information that can help diagnose the issue. (AI-inferred)
 	Metadatas any
-	Reason    any
+	// The reason for the error, as defined by the error domain. (AI-inferred)
+	Reason any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links struct {
+	// The description of the help link provided for the error. This text explains the purpose of the linked resource, such as a documentation page. (AI-inferred)
 	Description any
-	Url         any
+	// The URL of the help resource associated with the error. (AI-inferred)
+	Url any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help struct {
+	// A list of links that provide additional helpful information about the error. Each link includes a URL and an optional description. (AI-inferred)
 	Links any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale  any
+	// The locale (e.g., 'en-US') for the localized error message, indicating the language in which the message is provided. (AI-inferred)
+	Locale any
+	// The human-readable localized message describing the error. (AI-inferred)
 	Message any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions    any
-	FutureLimit   any
-	Limit         any
-	LimitName     any
-	MetricName    any
+	// A map of dimension names to string values that identifies the specific quota that was exceeded, such as region or resource type. (AI-inferred)
+	Dimensions any
+	// The projected quota limit that would be in effect if the operation succeeds, used in quota error details to indicate the limit after a change. (AI-inferred)
+	FutureLimit any
+	// The quota limit for the metric that triggered the quota error. (AI-inferred)
+	Limit any
+	// The name of the specific quota limit that was exceeded, as reported in the quota error details. (AI-inferred)
+	LimitName any
+	// The name of the quota metric that was exceeded. (AI-inferred)
+	MetricName any
+	// The current rollout status of the applied accelerator topologies. Possible values are `IN_PROGRESS` and `ROLLOUT_STATUS_UNSPECIFIED`. (AI-inferred)
 	RolloutStatus any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails struct {
-	ErrorInfo        any
-	Help             any
+	ErrorInfo any
+	// The help information associated with the error, containing links to relevant documentation and guidance for resolving the issue. (AI-inferred)
+	Help any
+	// A localized error message that provides a human-readable version of the error in a specific language, along with the locale identifier. (AI-inferred)
 	LocalizedMessage any
-	QuotaInfo        any
+	// Information about a quota violation related to the error, including the quota metric, limit, and current usage. (AI-inferred)
+	QuotaInfo any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors struct {
-	Code         any
+	Code any
+	// A list of objects containing detailed information about the errors that occurred while applying accelerator topologies to the instance group. (AI-inferred)
 	ErrorDetails any
-	Location     any
-	Message      any
+	// The field or path in the resource configuration that caused the error. (AI-inferred)
+	Location any
+	// A human-readable error message describing the reason for the failure within the applied accelerator topology state. (AI-inferred)
+	Message any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error struct {
+	// A list of errors that occurred while applying accelerator topologies to the instance group. Each error object contains a code and message describing the failure. (AI-inferred)
 	Errors any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails struct {
+	// The error object contains details about a failure that occurred while applying an accelerator topology to the instance group, including the error code and message. (AI-inferred)
 	Error     any
 	Timestamp any
 }
 
 type RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies struct {
+	// The accelerator topology currently applied to this regional instance group manager. This may differ from the topology specified in the instance template, as it reflects the actual state. (AI-inferred)
 	AcceleratorTopology any
-	State               any
-	StateDetails        any
+	// The current state of the accelerator topology applied to the instance group. Possible values are: ACTIVATING, ACTIVE, DEACTIVATING, FAILED, INCOMPLETE, and REACTIVATING. (AI-inferred)
+	State        any
+	StateDetails any
 }
 
 type RegionInstanceGroupManager_Status_BulkInstanceOperation struct {
@@ -228,7 +260,8 @@ type RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigs struct {
 
 type RegionInstanceGroupManager_Status_Stateful struct {
 	// Output only. A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful configuration even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
-	HasStatefulConfig  any
+	HasStatefulConfig any
+	// A list of statuses for each per-instance configuration in the regional instance group manager, containing the configuration ID and its current state. (AI-inferred)
 	PerInstanceConfigs any
 }
 
@@ -238,6 +271,7 @@ type RegionInstanceGroupManager_Status_VersionTarget struct {
 }
 
 type RegionInstanceGroupManager_Status struct {
+	// The status of the all-instances configuration for this regional instance group manager, including the fingerprint and the current state of the configuration applied to all instances. (AI-inferred)
 	AllInstancesConfig any
 	// Output only. The accelerator topology applied to this MIG. Currently only one accelerator topology is supported.
 	AppliedAcceleratorTopologies any
@@ -248,8 +282,9 @@ type RegionInstanceGroupManager_Status struct {
 	// The list of instance statuses and the number of instances in this managed instance group that have the status. For more information about how to interpret each status check the instance lifecycle documentation. Currently only shown for TPU MIGs.
 	CurrentInstanceStatuses any
 	// Output only. A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
-	IsStable      any
-	Stateful      any
+	IsStable any
+	Stateful any
+	// A map of version names to the target number of instances for each version in the regional instance group manager. This indicates the intended distribution of instances among the configured versions. (AI-inferred)
 	VersionTarget any
 }
 
@@ -285,9 +320,11 @@ type RegionInstanceGroupManager_UpdatePolicy struct {
 }
 
 type RegionInstanceGroupManager_Versions struct {
+	// The URL (self_link) of the instance template that defines the configuration for this version of the managed instance group. This template is used to create instances when the group scales or updates to this version. (AI-inferred)
 	InstanceTemplate any
 	Name             any
-	TargetSize       any
+	// The target size for this version, specified either as a fixed number of instances or as a percentage of the group's total size. This controls how many instances are assigned to this version when using multiple versions. (AI-inferred)
+	TargetSize any
 }
 
 var RegionInstanceGroupManager_AllInstancesConfig_PropertiesFields = ubx.FieldMap{
@@ -624,19 +661,23 @@ var RegionInstanceGroupManager_VersionsFields = ubx.FieldMap{
 }
 
 type RegionInstanceGroupManagerConfig struct {
+	// The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred)
 	AllInstancesConfig any
 	// The autohealing policy for this managed instance group. You can specify only one value.
 	AutoHealingPolicies any
 	// The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
 	BaseInstanceName any
-	CurrentActions   any
+	// The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred)
+	CurrentActions any
 	// An optional description of this resource.
-	Description        any
+	Description any
+	// The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred)
 	DistributionPolicy any
 	// Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
 	Fingerprint               any
 	InstanceFlexibilityPolicy any
-	InstanceLifecyclePolicy   any
+	// The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred)
+	InstanceLifecyclePolicy any
 	// The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
 	InstanceTemplate any
 	// Pagination behavior of the listManagedInstances API method for this managed instance group.
@@ -644,26 +685,33 @@ type RegionInstanceGroupManagerConfig struct {
 	// The name of the managed instance group. The name must be 1-63 characters long, and comply withRFC1035.
 	Name any
 	// [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
-	NamedPorts       any
+	NamedPorts any
+	// The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred)
 	ResourcePolicies any
-	StandbyPolicy    any
-	StatefulPolicy   any
-	Status           any
+	// The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred)
+	StandbyPolicy any
+	// The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred)
+	StatefulPolicy any
+	// The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred)
+	Status any
 	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
 	TargetPools any
 	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
-	TargetSize       any
+	TargetSize any
+	// The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred)
 	TargetSizePolicy any
 	// The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
 	TargetStoppedSize any
 	// The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
 	TargetSuspendedSize any
-	UpdatePolicy        any
+	// The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred)
+	UpdatePolicy any
 	// Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
 	Versions any
 }
 
 type RegionInstanceGroupManagerAttrs struct {
+	// The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred)
 	AllInstancesConfig any
 	// The autohealing policy for this managed instance group. You can specify only one value.
 	AutoHealingPolicies any
@@ -671,9 +719,11 @@ type RegionInstanceGroupManagerAttrs struct {
 	BaseInstanceName any
 	// Output only. The creation timestamp for this managed instance group inRFC3339 text format.
 	CreationTimestamp any
-	CurrentActions    any
+	// The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred)
+	CurrentActions any
 	// An optional description of this resource.
-	Description        any
+	Description any
+	// The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred)
 	DistributionPolicy any
 	// Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
 	Fingerprint any
@@ -681,7 +731,8 @@ type RegionInstanceGroupManagerAttrs struct {
 	Id                        any
 	InstanceFlexibilityPolicy any
 	// Output only. The URL of the Instance Group resource.
-	InstanceGroup           any
+	InstanceGroup any
+	// The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred)
 	InstanceLifecyclePolicy any
 	// The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
 	InstanceTemplate any
@@ -694,27 +745,33 @@ type RegionInstanceGroupManagerAttrs struct {
 	// [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
 	NamedPorts any
 	// Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources).
-	Region           any
+	Region any
+	// The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred)
 	ResourcePolicies any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
 	// Output only. Reserved for future use.
 	SatisfiesPzs any
 	// Output only. The URL for this managed instance group. The server defines this URL.
-	SelfLink       any
-	StandbyPolicy  any
+	SelfLink any
+	// The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred)
+	StandbyPolicy any
+	// The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred)
 	StatefulPolicy any
-	Status         any
+	// The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred)
+	Status any
 	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
 	TargetPools any
 	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
-	TargetSize       any
+	TargetSize any
+	// The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred)
 	TargetSizePolicy any
 	// The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
 	TargetStoppedSize any
 	// The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
 	TargetSuspendedSize any
-	UpdatePolicy        any
+	// The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred)
+	UpdatePolicy any
 	// Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
 	Versions any
 	// Output only. The URL of azone where the managed instance group is located (for zonal resources).

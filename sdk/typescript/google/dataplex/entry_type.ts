@@ -7,6 +7,7 @@ export interface EntryType_Authorization {
 }
 
 export interface EntryType_RequiredAspects {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

@@ -13,45 +13,65 @@ class Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfig:
 
 @dataclasses.dataclass
 class Study_StudyConfig_AutomatedStoppingConfig:
+    # Configuration for stopping trials early using a decay-curve prediction of their own final performance. (AI-inferred)
     decay_curve_stopping_config: Any = None
     # The median automated stopping rule stops a pending trial if the trial's best objective_value is strictly below the median 'performance' of all completed trials reported up to the trial's last measurement. Currently, 'performance' refers to the running average of the objective values reported by the trial in each measurement.
     median_automated_stopping_config: Any = None
 
 @dataclasses.dataclass
 class Study_StudyConfig_Metrics:
+    # Whether this objective is being minimized or maximized. (AI-inferred)
     goal: Any = None
+    # The name of the metric being reported. (AI-inferred)
     metric: Any = None
 
 @dataclasses.dataclass
 class Study_StudyConfig_Parameters_CategoricalValueSpec:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Study_StudyConfig_Parameters_DiscreteValueSpec:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Study_StudyConfig_Parameters_DoubleValueSpec:
+    # The maximum value allowed. (AI-inferred)
     max_value: Any = None
+    # The minimum value allowed. (AI-inferred)
     min_value: Any = None
 
 @dataclasses.dataclass
 class Study_StudyConfig_Parameters_IntegerValueSpec:
+    # The maximum value allowed. (AI-inferred)
     max_value: Any = None
+    # The minimum value allowed. (AI-inferred)
     min_value: Any = None
 
 @dataclasses.dataclass
 class Study_StudyConfig_Parameters:
+    # The set of string value(s) a categorical hyperparameter may take. (AI-inferred)
     categorical_value_spec: Any = None
+    # Hyperparameter(s) evaluated only when this parent parameter takes a specific value. (AI-inferred)
     child_parameter_specs: Any = None
+    # The set of numeric value(s) a discrete hyperparameter may take. (AI-inferred)
     discrete_value_spec: Any = None
+    # The valid range of a floating-point hyperparameter. (AI-inferred)
     double_value_spec: Any = None
+    # The valid range of an integer hyperparameter. (AI-inferred)
     integer_value_spec: Any = None
+    # The name of a hyperparameter being tuned. (AI-inferred)
     parameter: Any = None
+    # The parent categorical value(s) this conditional parameter applies under. (AI-inferred)
     parent_categorical_values: Any = None
+    # The parent discrete value(s) this conditional parameter applies under. (AI-inferred)
     parent_discrete_values: Any = None
+    # The parent integer value(s) this conditional parameter applies under. (AI-inferred)
     parent_int_values: Any = None
+    # How this hyperparameter's own search space is scaled, e.g. linearly or logarithmically. (AI-inferred)
     scale_type: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

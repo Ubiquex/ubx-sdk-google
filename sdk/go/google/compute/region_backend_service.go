@@ -4,9 +4,12 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionBackendService_Backends_CustomMetrics struct {
-	DryRun         any
+	// If true, the metric is only used for observation; it will not affect load balancing. Defaults to false. (AI-inferred)
+	DryRun any
+	// The maximum utilization for the custom metric, as a fractional value (0.0 to 1.0). This is used to normalize the custom metric value for load balancing when the backend's balancing mode is CUSTOM_METRIC. (AI-inferred)
 	MaxUtilization any
-	Name           any
+	// The name of the custom metric to use for this backend. This should match the name of a metric defined in the backend service's custom metrics configuration. (AI-inferred)
+	Name any
 }
 
 type RegionBackendService_Backends_OrchestrationInfo struct {
@@ -14,28 +17,46 @@ type RegionBackendService_Backends_OrchestrationInfo struct {
 }
 
 type RegionBackendService_Backends struct {
-	BalancingMode                  any
-	CapacityScaler                 any
-	CustomMetrics                  any
-	Description                    any
-	Failover                       any
-	Group                          any
-	MaxConnections                 any
-	MaxConnectionsPerEndpoint      any
-	MaxConnectionsPerInstance      any
-	MaxInFlightRequests            any
+	// Defines the balancing mode for this backend, determining how capacity is measured. Allowed values are: CONNECTION (active connections), CUSTOM_METRICS (custom metric-based), IN_FLIGHT (in-flight requests), RATE (requests per second), and UTILIZATION (CPU utilization). (AI-inferred)
+	BalancingMode any
+	// A multiplier applied to the backend's service capacity to adjust its weight relative to other backends. Defaults to 1. (AI-inferred)
+	CapacityScaler any
+	// Custom metrics for backend load balancing, used when the backend's balancing_mode is set to 'CUSTOM'. Each object specifies the metric name and optional maximum rate. (AI-inferred)
+	CustomMetrics any
+	Description   any
+	// Specifies whether this backend is a failover backend. If true, the backend is used only when the primary (non-failover) backends become unhealthy. (AI-inferred)
+	Failover any
+	// The fully qualified URL of the instance group or network endpoint group (NEG) that serves as the backend for this region backend service. This is typically the self_link of the resource. (AI-inferred)
+	Group any
+	// The maximum number of simultaneous connections to this backend. This is only used when the balancing mode is CONNECTION. (AI-inferred)
+	MaxConnections any
+	// The maximum number of simultaneous connections that can be established to a single backend endpoint (IP:port). When set, the backend service enforces this limit per endpoint, and traffic is not routed to endpoints that have reached the limit. (AI-inferred)
+	MaxConnectionsPerEndpoint any
+	// The maximum number of connections per backend instance. This field is only applicable when the backend's balancingMode is 'CONNECTION'. (AI-inferred)
+	MaxConnectionsPerInstance any
+	// The maximum number of in-flight requests that can be sent to the backend at any given time. (AI-inferred)
+	MaxInFlightRequests any
+	// The maximum number of outstanding (concurrent) requests that the load balancer forwards to a single backend endpoint. A value of 0 disables the limit. (AI-inferred)
 	MaxInFlightRequestsPerEndpoint any
+	// The maximum number of outstanding requests that a single backend instance can handle. If not set, the default is 0, which means unlimited. (AI-inferred)
 	MaxInFlightRequestsPerInstance any
-	MaxRate                        any
-	MaxRatePerEndpoint             any
-	MaxRatePerInstance             any
-	MaxUtilization                 any
-	OrchestrationInfo              any
-	Preference                     any
-	TrafficDuration                any
+	// The maximum number of requests per second (RPS) that this backend group can handle. This is used when the backend's balancing mode is set to RATE to cap the total traffic sent to this backend. (AI-inferred)
+	MaxRate any
+	// Maximum requests per second that each individual endpoint (e.g., instance or network endpoint) in the backend is allowed to serve. Used when the backend's balancing mode is RATE and the backend is backed by a network endpoint group (NEG). (AI-inferred)
+	MaxRatePerEndpoint any
+	// Upper bound for the number of requests per second that can be sent to an instance in this backend. This must be set when the balancing mode is RATE. (AI-inferred)
+	MaxRatePerInstance any
+	// The maximum utilization of the backend, expressed as a fraction between 0.0 and 1.0. When the utilization exceeds this value, the load balancer stops sending new requests to the backend. (AI-inferred)
+	MaxUtilization any
+	// Configures the orchestration settings for this backend. Requires that the backend is a network endpoint group (NEG) and specifies the name of the orchestration it belongs to. (AI-inferred)
+	OrchestrationInfo any
+	// The preference for this backend, indicating whether it should be used preferentially over other backends in the backend service. Valid values are DEFAULT (normal preference), PREFERENCE_UNSPECIFIED (no preference), and PREFERRED (traffic is preferentially routed to this backend). (AI-inferred)
+	Preference      any
+	TrafficDuration any
 }
 
 type RegionBackendService_CdnPolicy_BypassCacheOnRequestHeaders struct {
+	// The name of the request header that triggers cache bypass when present in a request. (AI-inferred)
 	HeaderName any
 }
 
@@ -57,8 +78,10 @@ type RegionBackendService_CdnPolicy_CacheKeyPolicy struct {
 }
 
 type RegionBackendService_CdnPolicy_NegativeCachingPolicy struct {
+	// The HTTP status code that will trigger negative caching for this policy. For example, 404 or 500. (AI-inferred)
 	Code any
-	Ttl  any
+	// The time-to-live (TTL) in seconds for the CDN to cache a negative response (e.g., an HTTP error status code) specified in this policy entry. (AI-inferred)
+	Ttl any
 }
 
 type RegionBackendService_CdnPolicy struct {
@@ -143,6 +166,7 @@ type RegionBackendService_ConsistentHash struct {
 }
 
 type RegionBackendService_CustomMetrics struct {
+	// If set to true, this metric is used only for logging and not for load balancing decisions. (AI-inferred)
 	DryRun any
 	Name   any
 }
@@ -163,14 +187,16 @@ type RegionBackendService_HaPolicy_Leader_NetworkEndpoint struct {
 
 type RegionBackendService_HaPolicy_Leader struct {
 	// A fully-qualified URL (starting with https://www.googleapis.com/) of the zonal Network Endpoint Group (NEG) with `GCE_VM_IP` endpoints that the leader is attached to. The leader's backendGroup must already be specified as a backend of this backend service. Removing a backend that is designated as the leader's backendGroup is not permitted.
-	BackendGroup    any
+	BackendGroup any
+	// The network endpoint that is designated as the leader in the high availability policy. It identifies the backend endpoint that will act as the leader for the regional backend service. (AI-inferred)
 	NetworkEndpoint any
 }
 
 type RegionBackendService_HaPolicy struct {
 	// Specifies whether fast IP move is enabled, and if so, the mechanism to achieve it. Supported values are: - DISABLED: Fast IP Move is disabled. You can only use the haPolicy.leader API to update the leader. - >GARP_RA: Provides a method to very quickly define a new network endpoint as the leader. This method is faster than updating the leader using the haPolicy.leader API. Fast IP move works as follows: The VM hosting the network endpoint that should become the new leader sends either a Gratuitous ARP (GARP) packet (IPv4) or an ICMPv6 Router Advertisement(RA) packet (IPv6). Google Cloud immediately but temporarily associates the forwarding rule IP address with that VM, and both new and in-flight packets are quickly delivered to that VM. Note the important properties of the Fast IP Move functionality: - The GARP/RA-initiated re-routing stays active for approximately 20 minutes. After triggering fast failover, you must also appropriately set the haPolicy.leader. - The new leader instance should continue to send GARP/RA packets periodically every 10 seconds until at least 10 minutes after updating the haPolicy.leader (but stop immediately if it is no longer the leader). - After triggering a fast failover, we recommend that you wait at least 3 seconds before sending another GARP/RA packet from a different VM instance to avoid race conditions. - Don't send GARP/RA packets from different VM instances at the same time. If multiple instances continue to send GARP/RA packets, traffic might be routed to different destinations in an alternating order. This condition ceases when a single instance issues a GARP/RA packet. - The GARP/RA request always takes priority over the leader API. Using the haPolicy.leader API to change the leader to a different instance will have no effect until the GARP/RA request becomes inactive. - The GARP/RA packets should follow the GARP/RA Packet Specifications.. - When multiple forwarding rules refer to a regional backend service, you need only send a GARP or RA packet for a single forwarding rule virtual IP. The virtual IPs for all forwarding rules targeting the same backend service will also be moved to the sender of the GARP or RA packet. The following are the Fast IP Move limitations (that is, when fastIPMove is not DISABLED): - Multiple forwarding rules cannot use the same IP address if one of them refers to a regional backend service with fastIPMove. - The regional backend service must set the network field, and all NEGs must belong to that network. However, individual NEGs can belong to different subnetworks of that network. - The maximum number of network endpoints across all backends of a backend service with fastIPMove is 32. - The maximum number of backend services with fastIPMove that can have the same network endpoint attached to one of its backends is 64. - The maximum number of backend services with fastIPMove in a VPC in a region is 64. - The network endpoints that are attached to a backend of a backend service with fastIPMove cannot resolve to Gen3+ machines for IPv6. - Traffic directed to the leader by a static route next hop will not be redirected to a new leader by fast failover. Such traffic will only be redirected once an haPolicy.leader update has taken effect. Only traffic to the forwarding rule's virtual IP will be redirected to a new leader by fast failover. haPolicy.fastIPMove can be set only at backend service creation time. Once set, it cannot be updated. By default, fastIpMove is set to DISABLED.
 	FastIpmove any
-	Leader     any
+	// The leader election configuration for the backend service's high availability policy. It specifies how a leader instance is selected among the backend instances. (AI-inferred)
+	Leader any
 }
 
 type RegionBackendService_Iap struct {
@@ -185,17 +211,22 @@ type RegionBackendService_Iap struct {
 }
 
 type RegionBackendService_LocalityLbPolicies_CustomPolicy struct {
+	// The optional data to be passed to the custom policy. This is a JSON-encoded string containing the policy configuration. (AI-inferred)
 	Data any
+	// The name of the custom policy used for locality load balancing in the backend service. (AI-inferred)
 	Name any
 }
 
 type RegionBackendService_LocalityLbPolicies_Policy struct {
+	// The load balancing policy to use. Allowed values: INVALID_LB_POLICY, LEAST_REQUEST, MAGLEV, ORIGINAL_DESTINATION, RANDOM, RING_HASH, ROUND_ROBIN, WEIGHTED_GCP_RENDEZVOUS, WEIGHTED_MAGLEV, WEIGHTED_ROUND_ROBIN. (AI-inferred)
 	Name any
 }
 
 type RegionBackendService_LocalityLbPolicies struct {
+	// The custom policy configuration for this locality's load balancing. It allows specifying a user-defined (custom) load balancing policy in place of a predefined one. (AI-inferred)
 	CustomPolicy any
-	Policy       any
+	// The load balancing policy for this locality, including the policy type and any type-specific configuration. (AI-inferred)
+	Policy any
 }
 
 type RegionBackendService_LogConfig struct {
@@ -221,6 +252,7 @@ type RegionBackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinity struct
 }
 
 type RegionBackendService_NetworkPassThroughLbTrafficPolicy struct {
+	// Configuration for zonal affinity in the traffic policy. When enabled, the load balancer prefers backends in the same zone as the client, reducing cross-zone traffic. (AI-inferred)
 	ZonalAffinity any
 }
 
@@ -275,11 +307,14 @@ type RegionBackendService_SecuritySettings struct {
 }
 
 type RegionBackendService_Subsetting struct {
+	// The subsetting policy for the backend service. Valid values are 'CONSISTENT_HASH_SUBSETTING' and 'NONE'. (AI-inferred)
 	Policy any
 }
 
 type RegionBackendService_TlsSettings_SubjectAltNames struct {
-	DnsName                   any
+	// The DNS name to include as a subject alternative name (SAN) for TLS certificate validation against the backend service. (AI-inferred)
+	DnsName any
+	// A Uniform Resource Identifier (URI) to include as a subject alternative name (SAN) in the TLS certificate. This is used to match the backend service's identity against a URI, such as a SPIFFE ID or other URI-based identity. (AI-inferred)
 	UniformResourceIdentifier any
 }
 
@@ -295,6 +330,7 @@ type RegionBackendService_TlsSettings struct {
 }
 
 type RegionBackendService_UsedBy struct {
+	// The full URL of the resource that references (uses) this backend service. (AI-inferred)
 	Reference any
 }
 
@@ -675,7 +711,8 @@ type RegionBackendServiceConfig struct {
 	// Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing, Internal HTTP(S) load balancing and Traffic Director.
 	Subsetting any
 	// The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
-	TimeoutSec  any
+	TimeoutSec any
+	// TLS settings for the backend service. This field is only relevant if the load balancing scheme is INTERNAL_MANAGED. (AI-inferred)
 	TlsSettings any
 }
 
@@ -777,7 +814,8 @@ type RegionBackendServiceAttrs struct {
 	// Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing, Internal HTTP(S) load balancing and Traffic Director.
 	Subsetting any
 	// The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
-	TimeoutSec  any
+	TimeoutSec any
+	// TLS settings for the backend service. This field is only relevant if the load balancing scheme is INTERNAL_MANAGED. (AI-inferred)
 	TlsSettings any
 	// Output only. [Output Only] List of resources referencing given backend service.
 	UsedBy any

@@ -80,14 +80,20 @@ class StoredInfoType_Config:
 
 @dataclasses.dataclass
 class StoredInfoType_CurrentVersion_Errors_Details:
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # Additional detail explaining this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result or error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class StoredInfoType_CurrentVersion_Errors:
+    # Additional detail explaining this result. (AI-inferred)
     details: Any = None
+    # Additional detail about this event. (AI-inferred)
     extra_info: Any = None
+    # The timestamp(s) recorded for this event. (AI-inferred)
     timestamps: Any = None
 
 @dataclasses.dataclass

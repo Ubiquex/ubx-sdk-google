@@ -2,16 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InterceptDeploymentGroup_ConnectedEndpointGroups {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface InterceptDeploymentGroup_Locations {
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface InterceptDeploymentGroup_NestedDeployments {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

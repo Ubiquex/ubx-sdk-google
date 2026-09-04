@@ -38,14 +38,20 @@ class GoldengateDeployment_Properties_DeploymentDiagnosticData:
 
 @dataclasses.dataclass
 class GoldengateDeployment_Properties_IngressIps:
+    # The IP address this resource accepts inbound connections on. (AI-inferred)
     ingress_ip_address: Any = None
 
 @dataclasses.dataclass
 class GoldengateDeployment_Properties_Locks:
+    # A reference to the Oracle Cloud Infrastructure compartment this resource belongs to. (AI-inferred)
     compartment_id: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # A reference to a related resource. (AI-inferred)
     related_resource_id: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -104,7 +110,9 @@ class GoldengateDeployment_Properties_OggData:
 
 @dataclasses.dataclass
 class GoldengateDeployment_Properties_Placements:
+    # The Oracle Cloud Infrastructure availability domain this resource runs in. (AI-inferred)
     availability_domain: Any = None
+    # The Oracle Cloud Infrastructure fault domain this resource runs in. (AI-inferred)
     fault_domain: Any = None
 
 @dataclasses.dataclass

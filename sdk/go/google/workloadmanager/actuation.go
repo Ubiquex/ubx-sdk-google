@@ -27,7 +27,9 @@ type Actuation_ActuationOutput struct {
 }
 
 type Actuation_DeploymentOutput struct {
+	// The name of a Terraform output variable produced by this actuation's own deployment run. (AI-inferred)
 	Name any
+	// The Terraform type of this output variable's value (e.g. `string`, `list`). (AI-inferred)
 	Type any
 }
 

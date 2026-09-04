@@ -4,21 +4,33 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BigQueryExportConfig struct {
-	Dataset     any
+	// A reference to the BigQuery dataset this applies to. (AI-inferred)
+	Dataset any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Filter      any
-	Name        any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type BigQueryExportAttrs struct {
-	CreateTime       any
-	Dataset          any
-	Description      any
-	Filter           any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A reference to the BigQuery dataset this applies to. (AI-inferred)
+	Dataset any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The identity that most recently modified this resource. (AI-inferred)
 	MostRecentEditor any
-	Name             any
-	Principal        any
-	UpdateTime       any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The identity this applies to. (AI-inferred)
+	Principal any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var BigQueryExport = ubx.ResourceBinding{

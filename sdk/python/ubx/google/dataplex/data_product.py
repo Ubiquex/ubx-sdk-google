@@ -13,14 +13,20 @@ class DataProduct_AccessApprovalConfig:
 
 @dataclasses.dataclass
 class DataProduct_AccessGroups_Principal:
+    # A Google Group this permission or contact applies to. (AI-inferred)
     google_group: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class DataProduct_AccessGroups:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The identity this permission grant applies to. (AI-inferred)
     principal: Any = None
 
 _DataProduct_AccessApprovalConfigFields = {

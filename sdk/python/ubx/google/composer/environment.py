@@ -48,7 +48,9 @@ class Environment_Config_MaintenanceWindow:
 
 @dataclasses.dataclass
 class Environment_Config_MasterAuthorizedNetworksConfig_CidrBlocks:
+    # A CIDR-notation IP range allowed to reach the environment's GKE master through HTTPS when `master_authorized_networks_config` is enabled. (AI-inferred)
     cidr_block: Any = None
+    # A human-readable label for this CIDR block, shown in the console alongside `cidr_block`. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
@@ -188,7 +190,9 @@ class Environment_Config_WebServerConfig:
 
 @dataclasses.dataclass
 class Environment_Config_WebServerNetworkAccessControl_AllowedIpRanges:
+    # A human-readable note explaining why this IP range is allowed to reach the Airflow web server. (AI-inferred)
     description: Any = None
+    # A CIDR-notation IP range permitted to access the environment's Airflow web UI. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

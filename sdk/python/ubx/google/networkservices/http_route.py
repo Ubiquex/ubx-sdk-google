@@ -8,130 +8,204 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_CorsPolicy:
+    # Whether the CORS response allows credentialed (cookie-bearing) cross-origin requests. (AI-inferred)
     allow_credentials: Any = None
+    # The request header(s) the CORS policy allows. (AI-inferred)
     allow_headers: Any = None
+    # The HTTP method(s) the CORS policy allows. (AI-inferred)
     allow_methods: Any = None
+    # Regular expression(s) matching origins the CORS policy allows. (AI-inferred)
     allow_origin_regexes: Any = None
+    # The origin(s) the CORS policy allows. (AI-inferred)
     allow_origins: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # The response header(s) the CORS policy exposes to the calling origin. (AI-inferred)
     expose_headers: Any = None
+    # How long, in seconds, the CORS preflight response may be cached by the browser. (AI-inferred)
     max_age: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_Destinations_RequestHeaderModifier:
+    # Adds this header if not already present. (AI-inferred)
     add: Any = None
+    # Removes this header before forwarding. (AI-inferred)
     remove: Any = None
+    # Sets this header, overwriting any existing value. (AI-inferred)
     set: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_Destinations:
+    # Header modification(s) applied to the request before forwarding. (AI-inferred)
     request_header_modifier: Any = None
+    # Header modification(s) applied to the response before returning it to the client. (AI-inferred)
     response_header_modifier: Any = None
+    # The name of the service this applies to. (AI-inferred)
     service_name: Any = None
+    # The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_DirectResponse:
+    # A fixed response body, as raw bytes. (AI-inferred)
     bytes_body: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
+    # A fixed response body, as a plain string. (AI-inferred)
     string_body: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_FaultInjectionPolicy_Abort:
+    # The HTTP status code returned. (AI-inferred)
     http_status: Any = None
+    # A percentage value. (AI-inferred)
     percentage: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_FaultInjectionPolicy_Delay:
+    # A fixed delay duration applied to matching requests. (AI-inferred)
     fixed_delay: Any = None
+    # A percentage value. (AI-inferred)
     percentage: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_FaultInjectionPolicy:
+    # Immediately fails matching requests with a fixed status code, for fault-injection testing. (AI-inferred)
     abort: Any = None
+    # Configuration for artificially delaying matching requests, for fault-injection testing. (AI-inferred)
     delay: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_Redirect:
+    # The host this request is redirected to. (AI-inferred)
     host_redirect: Any = None
+    # Whether matching requests are redirected from HTTP to HTTPS. (AI-inferred)
     https_redirect: Any = None
+    # The path this request is redirected to. (AI-inferred)
     path_redirect: Any = None
+    # The port this request is redirected to. (AI-inferred)
     port_redirect: Any = None
+    # The prefix substituted in place of the matched path prefix. (AI-inferred)
     prefix_rewrite: Any = None
+    # The HTTP status code returned in this direct response. (AI-inferred)
     response_code: Any = None
+    # Whether the query string is dropped from the URL before redirecting. (AI-inferred)
     strip_query: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_RequestMirrorPolicy:
+    # The destination this traffic is routed to. (AI-inferred)
     destination: Any = None
+    # The percentage of matching traffic also sent to a mirrored destination, in addition to its own real destination. (AI-inferred)
     mirror_percent: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_RetryPolicy:
+    # The maximum number of times a failed request is retried. (AI-inferred)
     num_retries: Any = None
+    # The timeout applied to each individual retry attempt. (AI-inferred)
     per_try_timeout: Any = None
+    # The condition(s) (e.g. specific status codes) under which a failed request is retried. (AI-inferred)
     retry_conditions: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_StatefulSessionAffinity:
+    # How long a session-affinity cookie remains valid. (AI-inferred)
     cookie_ttl: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action_UrlRewrite:
+    # Rewrites the `Host` header before forwarding to the backend. (AI-inferred)
     host_rewrite: Any = None
+    # Rewrites the matched path prefix before forwarding to the backend. (AI-inferred)
     path_prefix_rewrite: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Action:
+    # Cross-Origin Resource Sharing configuration applied to matching requests. (AI-inferred)
     cors_policy: Any = None
+    # The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
     destinations: Any = None
+    # Responds directly with a fixed status code and body, rather than routing to a backend. (AI-inferred)
     direct_response: Any = None
+    # Configuration for artificially injecting delays or aborted requests, for resilience testing. (AI-inferred)
     fault_injection_policy: Any = None
+    # How long an idle connection is kept open before being closed. (AI-inferred)
     idle_timeout: Any = None
+    # Redirects matching requests to a different host, path, or port. (AI-inferred)
     redirect: Any = None
+    # Header modification(s) applied to the request before forwarding. (AI-inferred)
     request_header_modifier: Any = None
+    # Configuration for sending a copy of matching traffic to a separate destination, without affecting the real response. (AI-inferred)
     request_mirror_policy: Any = None
+    # Header modification(s) applied to the response before returning it to the client. (AI-inferred)
     response_header_modifier: Any = None
+    # Configuration for automatically retrying failed requests. (AI-inferred)
     retry_policy: Any = None
+    # Configuration for consistently routing a client's own requests to the same backend, using a session cookie. (AI-inferred)
     stateful_session_affinity: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
+    # Rewrites the request's own host and/or path before forwarding to the backend. (AI-inferred)
     url_rewrite: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Matches_Headers_RangeMatch:
+    # Where this range ends. (AI-inferred)
     end: Any = None
+    # Where this range starts. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Matches_Headers:
+    # Matches only this exact value. (AI-inferred)
     exact_match: Any = None
+    # An HTTP header this applies to. (AI-inferred)
     header: Any = None
+    # Whether this match condition's own result is inverted. (AI-inferred)
     invert_match: Any = None
+    # Matches values starting with this prefix. (AI-inferred)
     prefix_match: Any = None
+    # Matches based only on whether this header is present, regardless of its own value. (AI-inferred)
     present_match: Any = None
+    # Matches when the value falls within this numeric range. (AI-inferred)
     range_match: Any = None
+    # Matches values against this regular expression. (AI-inferred)
     regex_match: Any = None
+    # Matches values ending with this suffix. (AI-inferred)
     suffix_match: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Matches_QueryParameters:
+    # Matches only this exact value. (AI-inferred)
     exact_match: Any = None
+    # Matches based only on whether this header is present, regardless of its own value. (AI-inferred)
     present_match: Any = None
+    # A single query parameter this rule matches against. (AI-inferred)
     query_parameter: Any = None
+    # Matches values against this regular expression. (AI-inferred)
     regex_match: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules_Matches:
+    # Matches only this exact, complete path. (AI-inferred)
     full_path_match: Any = None
+    # The HTTP header(s) this applies to. (AI-inferred)
     headers: Any = None
+    # Whether this match is case-insensitive. (AI-inferred)
     ignore_case: Any = None
+    # Matches values starting with this prefix. (AI-inferred)
     prefix_match: Any = None
+    # The query parameter(s) this rule matches against. (AI-inferred)
     query_parameters: Any = None
+    # Matches values against this regular expression. (AI-inferred)
     regex_match: Any = None
 
 @dataclasses.dataclass
 class HttpRoute_Rules:
+    # The action taken when this rule matches. (AI-inferred)
     action: Any = None
+    # The match condition(s) this rule evaluates. (AI-inferred)
     matches: Any = None
 
 _HttpRoute_Rules_Action_CorsPolicyFields = {

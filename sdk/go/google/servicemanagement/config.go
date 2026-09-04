@@ -4,82 +4,125 @@ package servicemanagement
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Config_Apis_Methods_Options struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type Config_Apis_Methods struct {
-	Edition           any
-	Name              any
-	Options           any
-	RequestStreaming  any
-	RequestTypeUrl    any
+	// The protocol buffer edition this file was written against. (AI-inferred)
+	Edition any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Additional configuration option(s) for this element. (AI-inferred)
+	Options any
+	// Whether this method streams its own request, rather than sending it in a single message. (AI-inferred)
+	RequestStreaming any
+	// The fully qualified type URL of this method's own request message. (AI-inferred)
+	RequestTypeUrl any
+	// Whether this method streams its own response, rather than returning it in a single message. (AI-inferred)
 	ResponseStreaming any
-	ResponseTypeUrl   any
-	Syntax            any
+	// The fully qualified type URL of this method's own response message. (AI-inferred)
+	ResponseTypeUrl any
+	// Which protocol buffer syntax version this file uses. (AI-inferred)
+	Syntax any
 }
 
 type Config_Apis_Mixins struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The root type or resource this hierarchy is anchored at. (AI-inferred)
 	Root any
 }
 
 type Config_Apis_SourceContext struct {
+	// The name of the source file this element is defined in. (AI-inferred)
 	FileName any
 }
 
 type Config_Apis struct {
-	Edition       any
-	Methods       any
-	Mixins        any
-	Name          any
-	Options       any
+	// The protocol buffer edition this file was written against. (AI-inferred)
+	Edition any
+	// The method(s) making up this service or interface. (AI-inferred)
+	Methods any
+	// Other API interface(s) whose own methods are mixed into this one. (AI-inferred)
+	Mixins any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Additional configuration option(s) for this element. (AI-inferred)
+	Options any
+	// Identifies the source file/location this element was defined in. (AI-inferred)
 	SourceContext any
-	Syntax        any
-	Version       any
+	// Which protocol buffer syntax version this file uses. (AI-inferred)
+	Syntax any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Config_Aspects_Rules struct {
-	Config   any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
 	Selector any
 }
 
 type Config_Aspects struct {
-	Kind  any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The rule(s) making up this policy. (AI-inferred)
 	Rules any
-	Spec  any
+	// The specification defining this resource's own behavior. (AI-inferred)
+	Spec any
 }
 
 type Config_Authentication_Providers_JwtLocations struct {
-	Cookie      any
-	Header      any
-	Query       any
+	// The cookie name this JWT location reads from. (AI-inferred)
+	Cookie any
+	// An HTTP header this applies to. (AI-inferred)
+	Header any
+	// The query text or expression. (AI-inferred)
+	Query any
+	// A required prefix a matching value must start with. (AI-inferred)
 	ValuePrefix any
 }
 
 type Config_Authentication_Providers struct {
-	Audiences        any
+	// The intended audience value(s) a JWT must carry to authenticate to this API. (AI-inferred)
+	Audiences any
+	// The OAuth authorization endpoint URL. (AI-inferred)
 	AuthorizationUrl any
-	Id               any
-	Issuer           any
-	JwksUri          any
-	JwtLocations     any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The JWT issuer identity trusted for this authentication provider. (AI-inferred)
+	Issuer any
+	// The URL of the JSON Web Key Set used to verify JWTs from this issuer. (AI-inferred)
+	JwksUri any
+	// Where in the request a JWT may be found, e.g. a specific header or query parameter. (AI-inferred)
+	JwtLocations any
 }
 
 type Config_Authentication_Rules_Oauth struct {
+	// The recommended OAuth scope(s) for calling this API. (AI-inferred)
 	CanonicalScopes any
 }
 
 type Config_Authentication_Rules_Requirements struct {
-	Audiences  any
+	// The intended audience value(s) a JWT must carry to authenticate to this API. (AI-inferred)
+	Audiences any
+	// A reference to the authentication provider this applies to. (AI-inferred)
 	ProviderId any
 }
 
 type Config_Authentication_Rules struct {
+	// Whether this method can be called without any authentication credential. (AI-inferred)
 	AllowWithoutCredential any
-	Oauth                  any
-	Requirements           any
-	Selector               any
+	// OAuth 2.0 authentication requirement(s) for this method. (AI-inferred)
+	Oauth any
+	// The authentication/authorization requirement(s) this applies. (AI-inferred)
+	Requirements any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Authentication struct {
@@ -90,17 +133,28 @@ type Config_Authentication struct {
 }
 
 type Config_Backend_Rules struct {
-	Address                    any
-	Deadline                   any
-	DisableAuth                any
-	JwtAudience                any
-	LoadBalancingPolicy        any
-	MinDeadline                any
-	OperationDeadline          any
+	// The network address this applies to. (AI-inferred)
+	Address any
+	// The maximum time, in seconds, this call may take before timing out. (AI-inferred)
+	Deadline any
+	// Whether authentication is disabled for this method. (AI-inferred)
+	DisableAuth any
+	// The expected audience claim value in JWTs from this issuer. (AI-inferred)
+	JwtAudience any
+	// Which policy the client uses to distribute calls across backend replicas. (AI-inferred)
+	LoadBalancingPolicy any
+	// The minimum deadline, in seconds, callers may request for this method. (AI-inferred)
+	MinDeadline any
+	// The maximum time a long-running operation started by this method may take before timing out. (AI-inferred)
+	OperationDeadline any
+	// Configuration override(s) applied depending on which protocol (e.g. gRPC vs HTTP) the request arrived over. (AI-inferred)
 	OverridesByRequestProtocol any
-	PathTranslation            any
-	Protocol                   any
-	Selector                   any
+	// How the URL path is translated into the backend request, e.g. appended or replaced. (AI-inferred)
+	PathTranslation any
+	// The wire protocol this applies to. (AI-inferred)
+	Protocol any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Backend struct {
@@ -109,7 +163,9 @@ type Config_Backend struct {
 }
 
 type Config_Billing_ConsumerDestinations struct {
-	Metrics           any
+	// The metric(s) this configuration applies to. (AI-inferred)
+	Metrics any
+	// The resource type this monitoring data is associated with. (AI-inferred)
 	MonitoredResource any
 }
 
@@ -119,11 +175,16 @@ type Config_Billing struct {
 }
 
 type Config_Context_Rules struct {
-	AllowedRequestExtensions  any
+	// The protocol buffer extension(s) allowed in this method's own request message. (AI-inferred)
+	AllowedRequestExtensions any
+	// The protocol buffer extension(s) allowed in this method's own response message. (AI-inferred)
 	AllowedResponseExtensions any
-	Provided                  any
-	Requested                 any
-	Selector                  any
+	// Interface(s) this service implements and exposes to callers. (AI-inferred)
+	Provided any
+	// Interface(s) this service depends on and requests be made available. (AI-inferred)
+	Requested any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Context struct {
@@ -132,14 +193,19 @@ type Config_Context struct {
 }
 
 type Config_Control_MethodPolicies_RequestPolicies struct {
+	// The IAM permission required to access this resource. (AI-inferred)
 	ResourcePermission any
-	ResourceType       any
-	Selector           any
+	// The resource type this permission or quota applies to. (AI-inferred)
+	ResourceType any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Control_MethodPolicies struct {
+	// Policy/policies applied to requests for this API. (AI-inferred)
 	RequestPolicies any
-	Selector        any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Control struct {
@@ -150,8 +216,10 @@ type Config_Control struct {
 }
 
 type Config_CustomError_Rules struct {
+	// Whether this message type represents an error/exception, for client-library-generation purposes. (AI-inferred)
 	IsErrorType any
-	Selector    any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_CustomError struct {
@@ -162,16 +230,23 @@ type Config_CustomError struct {
 }
 
 type Config_Documentation_Pages struct {
-	Content  any
-	Name     any
+	// The literal content of this value. (AI-inferred)
+	Content any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Nested documentation page(s) under this one. (AI-inferred)
 	Subpages any
 }
 
 type Config_Documentation_Rules struct {
-	DeprecationDescription  any
-	Description             any
+	// A human-readable explanation of why this element is deprecated and what to use instead. (AI-inferred)
+	DeprecationDescription any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Word(s) excluded from the client-library-generation naming replacement rules. (AI-inferred)
 	DisableReplacementWords any
-	Selector                any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Documentation struct {
@@ -194,43 +269,68 @@ type Config_Documentation struct {
 }
 
 type Config_Endpoints struct {
-	Aliases   any
+	// Alternate name(s) this also resolves under. (AI-inferred)
+	Aliases any
+	// Whether Cross-Origin Resource Sharing requests are allowed for this API. (AI-inferred)
 	AllowCors any
-	Name      any
-	Target    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The destination this applies to. (AI-inferred)
+	Target any
 }
 
 type Config_Enums_Enumvalue struct {
-	Name    any
-	Number  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The field number assigned to this protocol buffer field. (AI-inferred)
+	Number any
+	// Additional configuration option(s) for this element. (AI-inferred)
 	Options any
 }
 
 type Config_Enums struct {
-	Edition       any
-	Enumvalue     any
-	Name          any
-	Options       any
+	// The protocol buffer edition this file was written against. (AI-inferred)
+	Edition any
+	// A single named value within this enum type. (AI-inferred)
+	Enumvalue any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Additional configuration option(s) for this element. (AI-inferred)
+	Options any
+	// Identifies the source file/location this element was defined in. (AI-inferred)
 	SourceContext any
-	Syntax        any
+	// Which protocol buffer syntax version this file uses. (AI-inferred)
+	Syntax any
 }
 
 type Config_Http_Rules_Custom struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
+	// The URL path pattern this method's own HTTP binding matches. (AI-inferred)
 	Path any
 }
 
 type Config_Http_Rules struct {
+	// Additional URL path pattern(s) this method is also reachable at, beyond its own primary HTTP binding. (AI-inferred)
 	AdditionalBindings any
-	Body               any
-	Custom             any
-	Delete             any
-	Get                any
-	Patch              any
-	Post               any
-	Put                any
-	ResponseBody       any
-	Selector           any
+	// The message field mapped to the HTTP request body. (AI-inferred)
+	Body any
+	// A caller-defined HTTP binding, using a custom verb. (AI-inferred)
+	Custom any
+	// The HTTP `DELETE` binding for this method. (AI-inferred)
+	Delete any
+	// The HTTP `GET` binding for this method. (AI-inferred)
+	Get any
+	// The HTTP `PATCH` binding for this method. (AI-inferred)
+	Patch any
+	// The HTTP `POST` binding for this method. (AI-inferred)
+	Post any
+	// The HTTP `PUT` binding for this method. (AI-inferred)
+	Put any
+	// The message field the HTTP response body is mapped from. (AI-inferred)
+	ResponseBody any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Http struct {
@@ -241,7 +341,9 @@ type Config_Http struct {
 }
 
 type Config_Logging_ConsumerDestinations struct {
-	Logs              any
+	// The log type(s) this monitored resource emits. (AI-inferred)
+	Logs any
+	// The resource type this monitoring data is associated with. (AI-inferred)
 	MonitoredResource any
 }
 
@@ -253,46 +355,74 @@ type Config_Logging struct {
 }
 
 type Config_Logs_Labels struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Key         any
-	ValueType   any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// The data type of this value. (AI-inferred)
+	ValueType any
 }
 
 type Config_Logs struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Labels      any
-	Name        any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Config_Metrics_Metadata struct {
-	IngestDelay                      any
-	LaunchStage                      any
-	SamplePeriod                     any
+	// How long data is delayed before being ingested into monitoring. (AI-inferred)
+	IngestDelay any
+	// The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
+	LaunchStage any
+	// How often this metric is sampled. (AI-inferred)
+	SamplePeriod any
+	// At which resource hierarchy level (e.g. project, organization) this metric's own time series is aggregated. (AI-inferred)
 	TimeSeriesResourceHierarchyLevel any
 }
 
 type Config_Metrics struct {
-	Description            any
-	DisplayName            any
-	Labels                 any
-	LaunchStage            any
-	Metadata               any
-	MetricKind             any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
+	LaunchStage any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// Whether this metric is a gauge, delta, or cumulative measurement. (AI-inferred)
+	MetricKind any
+	// The monitored resource type(s) this log or metric applies to. (AI-inferred)
 	MonitoredResourceTypes any
-	Name                   any
-	Type                   any
-	Unit                   any
-	ValueType              any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The unit this measurement is expressed in. (AI-inferred)
+	Unit any
+	// The data type of this value. (AI-inferred)
+	ValueType any
 }
 
 type Config_MonitoredResources struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Labels      any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
 	LaunchStage any
-	Name        any
-	Type        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Config_Monitoring struct {
@@ -303,104 +433,160 @@ type Config_Monitoring struct {
 }
 
 type Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGeneration struct {
+	// Whether elements omitted from the public surface are still generated, marked internal, rather than skipped entirely. (AI-inferred)
 	GenerateOmittedAsInternal any
-	Methods                   any
+	// The method(s) making up this service or interface. (AI-inferred)
+	Methods any
 }
 
 type Config_Publishing_LibrarySettings_CppSettings_Common struct {
-	Destinations             any
-	ReferenceDocsUri         any
+	// Where this data or traffic is sent. (AI-inferred)
+	Destinations any
+	// The URL of this API's own reference documentation. (AI-inferred)
+	ReferenceDocsUri any
+	// Restricts generated client library surface to only a caller-specified subset of methods. (AI-inferred)
 	SelectiveGapicGeneration any
 }
 
 type Config_Publishing_LibrarySettings_CppSettings struct {
+	// Configuration shared across every client library language for this API. (AI-inferred)
 	Common any
 }
 
 type Config_Publishing_LibrarySettings_DotnetSettings struct {
-	Common                 any
+	// Configuration shared across every client library language for this API. (AI-inferred)
+	Common any
+	// Namespace(s) forced to use a specific alias in generated client libraries. (AI-inferred)
 	ForcedNamespaceAliases any
-	HandwrittenSignatures  any
-	IgnoredResources       any
-	RenamedResources       any
-	RenamedServices        any
+	// Method signature(s) manually curated for this client library, overriding the automatically derived ones. (AI-inferred)
+	HandwrittenSignatures any
+	// Resource(s) excluded from automatic client library resource-name helper generation. (AI-inferred)
+	IgnoredResources any
+	// Resource(s) whose own generated client-library name differs from their real API resource name. (AI-inferred)
+	RenamedResources any
+	// Service(s) whose own generated client-library name differs from their real API service name. (AI-inferred)
+	RenamedServices any
 }
 
 type Config_Publishing_LibrarySettings_GoSettings struct {
-	Common          any
+	// Configuration shared across every client library language for this API. (AI-inferred)
+	Common any
+	// Service(s) whose own generated client-library name differs from their real API service name. (AI-inferred)
 	RenamedServices any
 }
 
 type Config_Publishing_LibrarySettings_JavaSettings struct {
-	Common            any
-	LibraryPackage    any
+	// Configuration shared across every client library language for this API. (AI-inferred)
+	Common any
+	// The package name generated client libraries use for this API. (AI-inferred)
+	LibraryPackage any
+	// The class name(s) generated client libraries use for this service, per language. (AI-inferred)
 	ServiceClassNames any
 }
 
 type Config_Publishing_LibrarySettings_PhpSettings struct {
-	Common         any
+	// Configuration shared across every client library language for this API. (AI-inferred)
+	Common any
+	// The package name generated client libraries use for this API. (AI-inferred)
 	LibraryPackage any
 }
 
 type Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeatures struct {
+	// Whether generated Python types follow idiomatic Python naming/structure conventions, rather than a direct proto mapping. (AI-inferred)
 	ProtobufPythonicTypesEnabled any
-	RestAsyncIoEnabled           any
-	UnversionedPackageDisabled   any
+	// Whether the generated REST client library uses asynchronous I/O. (AI-inferred)
+	RestAsyncIoEnabled any
+	// Whether an unversioned convenience package is omitted from the generated client library. (AI-inferred)
+	UnversionedPackageDisabled any
 }
 
 type Config_Publishing_LibrarySettings_PythonSettings struct {
-	Common               any
+	// Configuration shared across every client library language for this API. (AI-inferred)
+	Common any
+	// Client-library-generation features still marked experimental for this language. (AI-inferred)
 	ExperimentalFeatures any
 }
 
 type Config_Publishing_LibrarySettings struct {
-	CppSettings      any
-	DotnetSettings   any
-	GoSettings       any
-	JavaSettings     any
-	LaunchStage      any
-	NodeSettings     any
-	PhpSettings      any
-	PythonSettings   any
+	// Client library generation settings specific to C++. (AI-inferred)
+	CppSettings any
+	// Client library generation settings specific to .NET. (AI-inferred)
+	DotnetSettings any
+	// Client library generation settings specific to Go. (AI-inferred)
+	GoSettings any
+	// Client library generation settings specific to Java. (AI-inferred)
+	JavaSettings any
+	// The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
+	LaunchStage any
+	// Client library generation settings specific to Node.js. (AI-inferred)
+	NodeSettings any
+	// Client library generation settings specific to PHP. (AI-inferred)
+	PhpSettings any
+	// Client library generation settings specific to Python. (AI-inferred)
+	PythonSettings any
+	// Whether enum values are serialized as numbers rather than names, in the REST transport. (AI-inferred)
 	RestNumericEnums any
-	RubySettings     any
-	Version          any
+	// Client library generation settings specific to Ruby. (AI-inferred)
+	RubySettings any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Config_Publishing_MethodSettings_Batching_BatchDescriptor struct {
-	BatchedField        any
+	// The request field that holds the batched item(s). (AI-inferred)
+	BatchedField any
+	// Field(s) used to determine which of several possible message types this payload actually is. (AI-inferred)
 	DiscriminatorFields any
-	SubresponseField    any
+	// The response field holding an individual item, when the method returns multiple results per page. (AI-inferred)
+	SubresponseField any
 }
 
 type Config_Publishing_MethodSettings_Batching_Thresholds struct {
-	DelayThreshold                   any
-	ElementCountLimit                any
-	ElementCountThreshold            any
-	FlowControlByteLimit             any
-	FlowControlElementLimit          any
+	// How long to wait, at most, before flushing a batch even if it hasn't reached its own size limit. (AI-inferred)
+	DelayThreshold any
+	// The maximum number of elements allowed in a single batch. (AI-inferred)
+	ElementCountLimit any
+	// The number of elements that triggers flushing a batch early. (AI-inferred)
+	ElementCountThreshold any
+	// The maximum number of unacknowledged bytes allowed before flow control pauses further sends. (AI-inferred)
+	FlowControlByteLimit any
+	// The maximum number of unacknowledged elements allowed before flow control pauses further sends. (AI-inferred)
+	FlowControlElementLimit any
+	// What happens when a flow-control limit is exceeded, e.g. block or throw an error. (AI-inferred)
 	FlowControlLimitExceededBehavior any
-	RequestByteLimit                 any
-	RequestByteThreshold             any
+	// The maximum total request size, in bytes, allowed in a single batch. (AI-inferred)
+	RequestByteLimit any
+	// The total request size, in bytes, that triggers flushing a batch early. (AI-inferred)
+	RequestByteThreshold any
 }
 
 type Config_Publishing_MethodSettings_Batching struct {
+	// Configuration for how individual requests are automatically batched together into fewer underlying calls. (AI-inferred)
 	BatchDescriptor any
-	Thresholds      any
+	// The threshold value(s) that trigger this alert or action. (AI-inferred)
+	Thresholds any
 }
 
 type Config_Publishing_MethodSettings_LongRunning struct {
-	InitialPollDelay    any
-	MaxPollDelay        any
+	// How long to wait before the first poll of a long-running operation's own status. (AI-inferred)
+	InitialPollDelay any
+	// The maximum interval between polls of a long-running operation's own status. (AI-inferred)
+	MaxPollDelay any
+	// The factor the poll interval is multiplied by after each unsuccessful poll, for exponential backoff. (AI-inferred)
 	PollDelayMultiplier any
-	TotalPollTimeout    any
+	// The maximum total time spent polling a long-running operation before giving up. (AI-inferred)
+	TotalPollTimeout any
 }
 
 type Config_Publishing_MethodSettings struct {
+	// Request field(s) the server automatically populates if the caller leaves them unset. (AI-inferred)
 	AutoPopulatedFields any
-	Batching            any
-	LongRunning         any
-	Selector            any
+	// Configuration for automatically batching client requests together for efficiency. (AI-inferred)
+	Batching any
+	// Configuration for this method's own long-running operation semantics, e.g. polling interval. (AI-inferred)
+	LongRunning any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Publishing struct {
@@ -429,24 +615,39 @@ type Config_Publishing struct {
 }
 
 type Config_Quota_Limits struct {
-	DefaultLimit  any
-	Description   any
-	DisplayName   any
-	Duration      any
-	FreeTier      any
-	MaxLimit      any
-	Metric        any
-	Name          any
+	// The default quota limit applied when no more specific override exists. (AI-inferred)
+	DefaultLimit any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// How long this applies for. (AI-inferred)
+	Duration any
+	// The quota amount available at no charge, before billed usage begins. (AI-inferred)
+	FreeTier any
+	// The maximum quota limit an override may raise this metric to. (AI-inferred)
+	MaxLimit any
+	// A reference to the metric this applies to. (AI-inferred)
+	Metric any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Which source (e.g. internal, external) this traffic originated from. (AI-inferred)
 	TrafficSource any
-	Unit          any
-	Values        any
+	// The unit this measurement is expressed in. (AI-inferred)
+	Unit any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type Config_Quota_MetricRules struct {
-	AgenticMetricCosts    any
-	MetricCosts           any
+	// Quota cost override(s) applied when this method is invoked by an AI agent, rather than a regular caller. (AI-inferred)
+	AgenticMetricCosts any
+	// How much quota each metric consumes per call to this method. (AI-inferred)
+	MetricCosts any
+	// Quota cost override(s) applied when this method is invoked by a regular (non-agent) caller. (AI-inferred)
 	NonagenticMetricCosts any
-	Selector              any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_Quota struct {
@@ -462,14 +663,19 @@ type Config_SourceInfo struct {
 }
 
 type Config_SystemParameters_Rules_Parameters struct {
-	HttpHeader        any
-	Name              any
+	// The HTTP header name this JWT location reads from. (AI-inferred)
+	HttpHeader any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The query parameter name this JWT location reads from. (AI-inferred)
 	UrlQueryParameter any
 }
 
 type Config_SystemParameters_Rules struct {
+	// The parameter(s) making up this configuration. (AI-inferred)
 	Parameters any
-	Selector   any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
 }
 
 type Config_SystemParameters struct {
@@ -478,32 +684,52 @@ type Config_SystemParameters struct {
 }
 
 type Config_SystemTypes_Fields struct {
-	Cardinality  any
+	// Whether this field is optional, required, or repeated. (AI-inferred)
+	Cardinality any
+	// The value used when this field is left unset. (AI-inferred)
 	DefaultValue any
-	JsonName     any
-	Kind         any
-	Name         any
-	Number       any
-	OneofIndex   any
-	Options      any
-	Packed       any
-	TypeUrl      any
+	// The name this field is serialized under in JSON, when different from its own proto field name. (AI-inferred)
+	JsonName any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The field number assigned to this protocol buffer field. (AI-inferred)
+	Number any
+	// Which `oneof` group this field belongs to, if any. (AI-inferred)
+	OneofIndex any
+	// Additional configuration option(s) for this element. (AI-inferred)
+	Options any
+	// Whether repeated scalar field values are packed into a single, more compact encoding. (AI-inferred)
+	Packed any
+	// The fully qualified type URL of this message. (AI-inferred)
+	TypeUrl any
 }
 
 type Config_SystemTypes struct {
-	Edition       any
-	Fields        any
-	Name          any
-	Oneofs        any
-	Options       any
+	// The protocol buffer edition this file was written against. (AI-inferred)
+	Edition any
+	// The field(s) making up this message. (AI-inferred)
+	Fields any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The `oneof` group(s) defined in this message. (AI-inferred)
+	Oneofs any
+	// Additional configuration option(s) for this element. (AI-inferred)
+	Options any
+	// Identifies the source file/location this element was defined in. (AI-inferred)
 	SourceContext any
-	Syntax        any
+	// Which protocol buffer syntax version this file uses. (AI-inferred)
+	Syntax any
 }
 
 type Config_Usage_Rules struct {
+	// Whether calls without an API key are allowed for this method. (AI-inferred)
 	AllowUnregisteredCalls any
-	Selector               any
-	SkipServiceControl     any
+	// A pattern selecting which API element(s) this rule applies to. (AI-inferred)
+	Selector any
+	// Whether Service Control checks (quota, auth, billing) are bypassed for this method. (AI-inferred)
+	SkipServiceControl any
 }
 
 type Config_Usage struct {

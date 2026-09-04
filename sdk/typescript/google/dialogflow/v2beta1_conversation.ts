@@ -578,24 +578,40 @@ const V2beta1Conversation_TelephonyConnectionInfoFields: FieldMap = {
 };
 
 export interface V2beta1ConversationConfig {
+  /** A reference to the conversation profile this applies to. (AI-inferred) */
   conversationProfile?: string | Computed<string>;
+  /** The current stage of this conversation, e.g. whether a human or automated agent is handling it. (AI-inferred) */
   conversationStage?: string | Computed<string>;
+  /** The conversation profile this conversation started with. (AI-inferred) */
   initialConversationProfile?: V2beta1Conversation_InitialConversationProfile | Computed<V2beta1Conversation_InitialConversationProfile>;
+  /** The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred) */
   phoneNumber?: V2beta1Conversation_PhoneNumber | Computed<V2beta1Conversation_PhoneNumber>;
+  /** Real, telephony-specific connection details for this conversation, when connected over a phone call. (AI-inferred) */
   telephonyConnectionInfo?: V2beta1Conversation_TelephonyConnectionInfo | Computed<V2beta1Conversation_TelephonyConnectionInfo>;
 }
 
 export interface V2beta1ConversationAttrs {
+  /** A reference to the conversation profile this applies to. (AI-inferred) */
   conversationProfile: string;
+  /** The current stage of this conversation, e.g. whether a human or automated agent is handling it. (AI-inferred) */
   conversationStage: string;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime: string;
+  /** The real context references this conversation was created with, keyed by their own identifiers. (AI-inferred) */
   ingestedContextReferences: Record<string, V2beta1Conversation_IngestedContextReferences>;
+  /** The conversation profile this conversation started with. (AI-inferred) */
   initialConversationProfile: V2beta1Conversation_InitialConversationProfile;
+  /** The initial context values provided to each generator configured for this conversation. (AI-inferred) */
   initialGeneratorContexts: Record<string, V2beta1Conversation_InitialGeneratorContexts>;
+  /** The current lifecycle state of this conversation, e.g. in progress or completed. (AI-inferred) */
   lifecycleState: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred) */
   phoneNumber: V2beta1Conversation_PhoneNumber;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime: string;
+  /** Real, telephony-specific connection details for this conversation, when connected over a phone call. (AI-inferred) */
   telephonyConnectionInfo: V2beta1Conversation_TelephonyConnectionInfo;
 }
 

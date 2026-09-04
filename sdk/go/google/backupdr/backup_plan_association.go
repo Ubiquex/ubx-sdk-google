@@ -14,16 +14,23 @@ type BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationProperties struc
 }
 
 type BackupPlanAssociation_RulesConfigInfo_LastBackupError struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type BackupPlanAssociation_RulesConfigInfo struct {
-	LastBackupError                     any
-	LastBackupState                     any
+	// Detail about the error encountered during the most recent backup attempt. (AI-inferred)
+	LastBackupError any
+	// The outcome of the most recent backup attempt. (AI-inferred)
+	LastBackupState any
+	// The consistency point in time of the most recent successful backup. (AI-inferred)
 	LastSuccessfulBackupConsistencyTime any
-	RuleId                              any
+	// A reference to the backup rule this applies to. (AI-inferred)
+	RuleId any
 }
 
 var BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields = ubx.FieldMap{

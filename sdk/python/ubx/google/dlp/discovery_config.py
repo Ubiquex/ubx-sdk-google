@@ -8,78 +8,112 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_ExportData_ProfileTable:
+    # The BigQuery dataset ID this applies to. (AI-inferred)
     dataset_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The BigQuery table ID this applies to. (AI-inferred)
     table_id: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_ExportData:
+    # The destination BigQuery table this job's own data profile is written to. (AI-inferred)
     profile_table: Any = None
+    # The destination BigQuery table a sample of this job's own findings is written to. (AI-inferred)
     sample_findings_table: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_Conditions:
+    # The minimum overall risk score a profile must reach for this condition to be satisfied. (AI-inferred)
     minimum_risk_score: Any = None
+    # The minimum sensitivity score a profile must reach for this condition to be satisfied. (AI-inferred)
     minimum_sensitivity_score: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred)
     logical_operator: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_PubSubNotification_PubsubCondition:
+    # The condition expression(s) making up this rule. (AI-inferred)
     expressions: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_PubSubNotification:
+    # How much detail the published notification includes, e.g. the full table profile versus just the resource name. (AI-inferred)
     detail_of_message: Any = None
+    # Which kind of event triggers this notification, e.g. a new or changed profile. (AI-inferred)
     event: Any = None
+    # Restricts which discovery events actually trigger a Pub/Sub notification. (AI-inferred)
     pubsub_condition: Any = None
+    # A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
     topic: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_PublishToDataplexCatalog:
+    # Treats this identified quasi-identifier combination as lower risk than its own raw k-anonymity value would otherwise suggest. (AI-inferred)
     lower_data_risk_to_low: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScore:
+    # The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_TagResources_TagConditions_Tag:
+    # A tag value, namespaced to disambiguate it from identically-named values in other tag systems. (AI-inferred)
     namespaced_value: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_TagResources_TagConditions:
+    # A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
     sensitivity_score: Any = None
+    # A tag applied to matching resources. (AI-inferred)
     tag: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions_TagResources:
+    # Treats this identified quasi-identifier combination as lower risk than its own raw k-anonymity value would otherwise suggest. (AI-inferred)
     lower_data_risk_to_low: Any = None
+    # Which profile generation(s) (e.g. new versus updated) trigger tagging. (AI-inferred)
     profile_generations_to_tag: Any = None
+    # The condition(s) under which a specific tag is applied. (AI-inferred)
     tag_conditions: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_Actions:
+    # Exports this job's own results to a destination table. (AI-inferred)
     export_data: Any = None
+    # Publishes a Pub/Sub notification when this discovery event occurs. (AI-inferred)
     pub_sub_notification: Any = None
+    # Publishes this discovery event to Google Security Operations (Chronicle). (AI-inferred)
     publish_to_chronicle: Any = None
+    # Publishes this discovery event's own findings as Dataplex Catalog metadata. (AI-inferred)
     publish_to_dataplex_catalog: Any = None
+    # Publishes this discovery event to Security Command Center. (AI-inferred)
     publish_to_scc: Any = None
+    # Tags matching resources based on their own discovery/profiling results. (AI-inferred)
     tag_resources: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Errors_Details:
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # Additional detail explaining this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result or error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Errors:
+    # Additional detail explaining this result. (AI-inferred)
     details: Any = None
+    # Additional detail about this event. (AI-inferred)
     extra_info: Any = None
+    # The timestamp(s) recorded for this event. (AI-inferred)
     timestamps: Any = None
 
 @dataclasses.dataclass
@@ -124,273 +158,388 @@ class DiscoveryConfig_DiscoveryConfig_ProcessingLocation:
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence:
+    # How often this recurs. (AI-inferred)
     frequency: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence:
+    # How often this recurs. (AI-inferred)
     frequency: Any = None
+    # The info type(s) this applies to. (AI-inferred)
     types: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence:
+    # How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred)
     inspect_template_modified_cadence: Any = None
+    # How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred)
     refresh_frequency: Any = None
+    # How often changes to a resource's own schema are picked up by this discovery scan. (AI-inferred)
     schema_modified_cadence: Any = None
+    # How often a modified BigQuery table is re-scanned. (AI-inferred)
     table_modified_cadence: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditions:
+    # The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
     min_age: Any = None
+    # The minimum number of rows a table must have to be included in this discovery scan. (AI-inferred)
     min_row_count: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_Types:
+    # The info type(s) this applies to. (AI-inferred)
     types: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions:
+    # Restricts this scan to resources created after this timestamp. (AI-inferred)
     created_after: Any = None
+    # A set of conditions where at least one, rather than all, must be satisfied. (AI-inferred)
     or_conditions: Any = None
+    # Which BigQuery table type(s) this scan includes, e.g. all types or only supported ones. (AI-inferred)
     type_collection: Any = None
+    # The info type(s) this applies to. (AI-inferred)
     types: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_Patterns:
+    # A regular expression restricting this scan to matching BigQuery dataset IDs. (AI-inferred)
     dataset_id_regex: Any = None
+    # A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
     project_id_regex: Any = None
+    # A regular expression restricting this scan to matching BigQuery table IDs. (AI-inferred)
     table_id_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes:
+    # The name pattern(s) resources are matched against for this configuration. (AI-inferred)
     patterns: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables:
+    # Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
     include_regexes: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter:
+    # Applies to every BigQuery table not otherwise explicitly matched. (AI-inferred)
     other_tables: Any = None
+    # A reference to a specific BigQuery table. (AI-inferred)
     table_reference: Any = None
+    # The table(s) this applies to. (AI-inferred)
     tables: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget:
+    # How often this discovery target is re-scanned for new or modified resources. (AI-inferred)
     cadence: Any = None
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Conditions:
+    # Restricts this discovery scan to Cloud SQL instances running the given database engine(s). (AI-inferred)
     database_engines: Any = None
+    # The info type(s) this applies to. (AI-inferred)
     types: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_Patterns:
+    # A regular expression restricting this scan to matching database names. (AI-inferred)
     database_regex: Any = None
+    # A regular expression restricting this scan to matching database resource names. (AI-inferred)
     database_resource_name_regex: Any = None
+    # A regular expression restricting this scan to matching instance names. (AI-inferred)
     instance_regex: Any = None
+    # A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
     project_id_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes:
+    # The name pattern(s) resources are matched against for this configuration. (AI-inferred)
     patterns: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection:
+    # Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
     include_regexes: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReference:
+    # The database this applies to. (AI-inferred)
     database: Any = None
+    # A reference to a specific database resource. (AI-inferred)
     database_resource: Any = None
+    # The instance this applies to. (AI-inferred)
     instance: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter:
+    # The set of resources this configuration applies to. (AI-inferred)
     collection: Any = None
+    # A reference to a specific database instance and database. (AI-inferred)
     database_resource_reference: Any = None
+    # A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
     others: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadence:
+    # How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred)
     inspect_template_modified_cadence: Any = None
+    # How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred)
     refresh_frequency: Any = None
+    # How often changes to a resource's own schema are picked up by this discovery scan. (AI-inferred)
     schema_modified_cadence: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # How often this discovery scan re-runs to find newly created resources. (AI-inferred)
     generation_cadence: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditions:
+    # Which Cloud Storage bucket-level attribute(s) (e.g. IAM policy, encryption type) are included in this bucket's own profile. (AI-inferred)
     included_bucket_attributes: Any = None
+    # Which Cloud Storage object-level attribute(s) are included in this bucket's own profile. (AI-inferred)
     included_object_attributes: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions:
+    # Criteria a Cloud Storage bucket must meet to be included in this discovery scan. (AI-inferred)
     cloud_storage_conditions: Any = None
+    # Restricts this scan to resources created after this timestamp. (AI-inferred)
     created_after: Any = None
+    # The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
     min_age: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReference:
+    # The name of the Cloud Storage bucket this applies to. (AI-inferred)
     bucket_name: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegex:
+    # A regular expression restricting this discovery scan to matching Cloud Storage bucket names. (AI-inferred)
     bucket_name_regex: Any = None
+    # A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
     project_id_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns:
+    # A regular expression restricting this scan to matching Cloud Storage bucket names. (AI-inferred)
     cloud_storage_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes:
+    # The name pattern(s) resources are matched against for this configuration. (AI-inferred)
     patterns: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFilters:
+    # A tag key, namespaced to disambiguate it from identically-named keys in other tag systems. (AI-inferred)
     namespaced_tag_key: Any = None
+    # A tag value, namespaced to disambiguate it from identically-named values in other tag systems. (AI-inferred)
     namespaced_tag_value: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags:
+    # Restricts this discovery scan to resources carrying specific tag key/value pair(s). (AI-inferred)
     tag_filters: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection:
+    # Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
     include_regexes: Any = None
+    # Restricts this discovery scan to resources carrying specific tag(s). (AI-inferred)
     include_tags: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter:
+    # A reference to a specific Cloud Storage bucket. (AI-inferred)
     cloud_storage_resource_reference: Any = None
+    # The set of resources this configuration applies to. (AI-inferred)
     collection: Any = None
+    # A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
     others: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence:
+    # How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred)
     inspect_template_modified_cadence: Any = None
+    # How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred)
     refresh_frequency: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # How often this discovery scan re-runs to find newly created resources. (AI-inferred)
     generation_cadence: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditions:
+    # Restricts this discovery scan to specific Amazon S3 storage bucket type(s). (AI-inferred)
     bucket_types: Any = None
+    # Restricts this discovery scan to Amazon S3 objects in the given storage class(es). (AI-inferred)
     object_storage_classes: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions:
+    # Criteria an Amazon S3 bucket must meet to be included in this discovery scan. (AI-inferred)
     amazon_s3_bucket_conditions: Any = None
+    # The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
     min_age: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceType:
+    # Which external data source this applies to. (AI-inferred)
     data_source: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegex:
+    # A regular expression restricting this scan to matching AWS account IDs. (AI-inferred)
     account_id_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex:
+    # A regular expression restricting this scan to matching AWS account(s). (AI-inferred)
     aws_account_regex: Any = None
+    # A regular expression restricting this discovery scan to matching Cloud Storage bucket names. (AI-inferred)
     bucket_name_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns:
+    # A regular expression restricting this scan to matching Amazon S3 bucket names. (AI-inferred)
     amazon_s3_bucket_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes:
+    # The name pattern(s) resources are matched against for this configuration. (AI-inferred)
     patterns: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection:
+    # Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
     include_regexes: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccount:
+    # An AWS account identifier. (AI-inferred)
     account_id: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket:
+    # The AWS account this applies to. (AI-inferred)
     aws_account: Any = None
+    # The name of the Cloud Storage bucket this applies to. (AI-inferred)
     bucket_name: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource:
+    # A specific Amazon S3 bucket this applies to. (AI-inferred)
     amazon_s3_bucket: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter:
+    # The set of resources this configuration applies to. (AI-inferred)
     collection: Any = None
+    # A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
     others: Any = None
+    # Restricts this discovery target to one specific, explicitly named resource, rather than a pattern match. (AI-inferred)
     single_resource: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # The kind of external, non-Google-Cloud data source this discovery target scans. (AI-inferred)
     data_source_type: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # How often this discovery scan re-runs to find newly created resources. (AI-inferred)
     generation_cadence: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Conditions:
+    # Restricts this scan to resources created after this timestamp. (AI-inferred)
     created_after: Any = None
+    # The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
     min_age: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_Patterns:
+    # A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
     project_id_regex: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes:
+    # The name pattern(s) resources are matched against for this configuration. (AI-inferred)
     patterns: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection:
+    # Regular expression pattern(s) restricting this scan to matching Vertex AI dataset names. (AI-inferred)
     vertex_dataset_regexes: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReference:
+    # The resource name of the Vertex AI dataset this applies to. (AI-inferred)
     dataset_resource_name: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter:
+    # The set of resources this configuration applies to. (AI-inferred)
     collection: Any = None
+    # A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
     others: Any = None
+    # A reference to a specific Vertex AI dataset. (AI-inferred)
     vertex_dataset_resource_reference: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # How often this discovery scan re-runs to find newly created resources. (AI-inferred)
     generation_cadence: Any = None
 
 @dataclasses.dataclass
 class DiscoveryConfig_DiscoveryConfig_Targets:
+    # Configures this discovery scan to profile BigQuery tables. (AI-inferred)
     big_query_target: Any = None
+    # Configures this discovery scan to profile Cloud SQL databases. (AI-inferred)
     cloud_sql_target: Any = None
+    # Configures this discovery scan to profile Cloud Storage buckets. (AI-inferred)
     cloud_storage_target: Any = None
+    # Configures this discovery scan to profile resources in a non-Google-Cloud environment, e.g. Amazon S3. (AI-inferred)
     other_cloud_target: Any = None
+    # Configures this discovery scan to profile detected secrets/credentials. (AI-inferred)
     secrets_target: Any = None
+    # Configures this discovery scan to profile Vertex AI datasets. (AI-inferred)
     vertex_dataset_target: Any = None
 
 @dataclasses.dataclass

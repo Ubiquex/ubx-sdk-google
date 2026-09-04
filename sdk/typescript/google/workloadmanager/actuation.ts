@@ -25,7 +25,9 @@ export interface Actuation_ActuationOutput {
 }
 
 export interface Actuation_DeploymentOutput {
+  /** The name of a Terraform output variable produced by this actuation's own deployment run. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Terraform type of this output variable's value (e.g. `string`, `list`). (AI-inferred) */
   type?: string | Computed<string>;
 }
 

@@ -20,7 +20,9 @@ class RegionInstanceGroupManager_AllInstancesConfig:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_AutoHealingPolicies:
+    # The health check resource URL (self-link) that determines instance health for auto-healing. Can be specified as a full URL, a self-link, or a name reference. (AI-inferred)
     health_check: Any = None
+    # The initial delay, in seconds, before an instance is considered available for auto-healing. This is the time to wait after an instance is created or restarted before checking its health for auto-healing purposes. (AI-inferred)
     initial_delay_sec: Any = None
 
 @dataclasses.dataclass
@@ -54,6 +56,7 @@ class RegionInstanceGroupManager_CurrentActions:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_DistributionPolicy_Zones:
+    # Specifies the zone to which instances are distributed as part of the distribution policy for this regional managed instance group. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
@@ -65,7 +68,9 @@ class RegionInstanceGroupManager_DistributionPolicy:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelections:
+    # List of machine types that can be used for this instance selection. The instance group manager can choose any of these types when provisioning instances according to the flexibility policy. (AI-inferred)
     machine_types: Any = None
+    # The priority rank of this instance selection, where lower numbers have higher priority. Must be between 0 and 5. (AI-inferred)
     rank: Any = None
 
 @dataclasses.dataclass
@@ -91,7 +96,9 @@ class RegionInstanceGroupManager_InstanceLifecyclePolicy:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_NamedPorts:
+    # The symbolic name of the named port, which acts as the key in the named port mapping to a port number. (AI-inferred)
     name: Any = None
+    # The port number for this named port. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
@@ -108,6 +115,7 @@ class RegionInstanceGroupManager_StandbyPolicy:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_StatefulPolicy_PreservedState_Disks:
+    # Specifies whether the stateful disk should be automatically deleted when the instance is deleted. Accepts 'true' or 'false'. (AI-inferred)
     auto_delete: Any = None
 
 @dataclasses.dataclass
@@ -133,59 +141,83 @@ class RegionInstanceGroupManager_Status_AllInstancesConfig:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo:
+    # The domain associated with the error, typically indicating the service or API where the error originated (e.g., 'compute.googleapis.com'). (AI-inferred)
     domain: Any = None
+    # A map of key-value pairs containing additional error information that can help diagnose the issue. (AI-inferred)
     metadatas: Any = None
+    # The reason for the error, as defined by the error domain. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links:
+    # The description of the help link provided for the error. This text explains the purpose of the linked resource, such as a documentation page. (AI-inferred)
     description: Any = None
+    # The URL of the help resource associated with the error. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help:
+    # A list of links that provide additional helpful information about the error. Each link includes a URL and an optional description. (AI-inferred)
     links: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage:
+    # The locale (e.g., 'en-US') for the localized error message, indicating the language in which the message is provided. (AI-inferred)
     locale: Any = None
+    # The human-readable localized message describing the error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo:
+    # A map of dimension names to string values that identifies the specific quota that was exceeded, such as region or resource type. (AI-inferred)
     dimensions: Any = None
+    # The projected quota limit that would be in effect if the operation succeeds, used in quota error details to indicate the limit after a change. (AI-inferred)
     future_limit: Any = None
+    # The quota limit for the metric that triggered the quota error. (AI-inferred)
     limit: Any = None
+    # The name of the specific quota limit that was exceeded, as reported in the quota error details. (AI-inferred)
     limit_name: Any = None
+    # The name of the quota metric that was exceeded. (AI-inferred)
     metric_name: Any = None
+    # The current rollout status of the applied accelerator topologies. Possible values are `IN_PROGRESS` and `ROLLOUT_STATUS_UNSPECIFIED`. (AI-inferred)
     rollout_status: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails:
     error_info: Any = None
+    # The help information associated with the error, containing links to relevant documentation and guidance for resolving the issue. (AI-inferred)
     help: Any = None
+    # A localized error message that provides a human-readable version of the error in a specific language, along with the locale identifier. (AI-inferred)
     localized_message: Any = None
+    # Information about a quota violation related to the error, including the quota metric, limit, and current usage. (AI-inferred)
     quota_info: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors:
     code: Any = None
+    # A list of objects containing detailed information about the errors that occurred while applying accelerator topologies to the instance group. (AI-inferred)
     error_details: Any = None
+    # The field or path in the resource configuration that caused the error. (AI-inferred)
     location: Any = None
+    # A human-readable error message describing the reason for the failure within the applied accelerator topology state. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error:
+    # A list of errors that occurred while applying accelerator topologies to the instance group. Each error object contains a code and message describing the failure. (AI-inferred)
     errors: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails:
+    # The error object contains details about a failure that occurred while applying an accelerator topology to the instance group, including the error code and message. (AI-inferred)
     error: Any = None
     timestamp: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies:
+    # The accelerator topology currently applied to this regional instance group manager. This may differ from the topology specified in the instance template, as it reflects the actual state. (AI-inferred)
     accelerator_topology: Any = None
+    # The current state of the accelerator topology applied to the instance group. Possible values are: ACTIVATING, ACTIVE, DEACTIVATING, FAILED, INCOMPLETE, and REACTIVATING. (AI-inferred)
     state: Any = None
     state_details: Any = None
 
@@ -233,6 +265,7 @@ class RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigs:
 class RegionInstanceGroupManager_Status_Stateful:
     # Output only. A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful configuration even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
     has_stateful_config: Any = None
+    # A list of statuses for each per-instance configuration in the regional instance group manager, containing the configuration ID and its current state. (AI-inferred)
     per_instance_configs: Any = None
 
 @dataclasses.dataclass
@@ -242,6 +275,7 @@ class RegionInstanceGroupManager_Status_VersionTarget:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Status:
+    # The status of the all-instances configuration for this regional instance group manager, including the fingerprint and the current state of the configuration applied to all instances. (AI-inferred)
     all_instances_config: Any = None
     # Output only. The accelerator topology applied to this MIG. Currently only one accelerator topology is supported.
     applied_accelerator_topologies: Any = None
@@ -254,6 +288,7 @@ class RegionInstanceGroupManager_Status:
     # Output only. A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
     is_stable: Any = None
     stateful: Any = None
+    # A map of version names to the target number of instances for each version in the regional instance group manager. This indicates the intended distribution of instances among the configured versions. (AI-inferred)
     version_target: Any = None
 
 @dataclasses.dataclass
@@ -289,8 +324,10 @@ class RegionInstanceGroupManager_UpdatePolicy:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManager_Versions:
+    # The URL (self_link) of the instance template that defines the configuration for this version of the managed instance group. This template is used to create instances when the group scales or updates to this version. (AI-inferred)
     instance_template: Any = None
     name: Any = None
+    # The target size for this version, specified either as a fixed number of instances or as a percentage of the group's total size. This controls how many instances are assigned to this version when using multiple versions. (AI-inferred)
     target_size: Any = None
 
 _RegionInstanceGroupManager_AllInstancesConfig_PropertiesFields = {
@@ -628,18 +665,22 @@ _RegionInstanceGroupManager_VersionsFields = {
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerConfig:
+    # The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred)
     all_instances_config: Any = None
     # The autohealing policy for this managed instance group. You can specify only one value.
     auto_healing_policies: Any = None
     # The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
     base_instance_name: Any = None
+    # The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred)
     current_actions: Any = None
     # An optional description of this resource.
     description: Any = None
+    # The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred)
     distribution_policy: Any = None
     # Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
     fingerprint: Any = None
     instance_flexibility_policy: Any = None
+    # The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred)
     instance_lifecycle_policy: Any = None
     # The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
     instance_template: Any = None
@@ -649,25 +690,32 @@ class RegionInstanceGroupManagerConfig:
     name: Any = None
     # [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
     named_ports: Any = None
+    # The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred)
     resource_policies: Any = None
+    # The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred)
     standby_policy: Any = None
+    # The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred)
     stateful_policy: Any = None
+    # The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred)
     status: Any = None
     # The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
     target_pools: Any = None
     # The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
     target_size: Any = None
+    # The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred)
     target_size_policy: Any = None
     # The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
     target_stopped_size: Any = None
     # The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
     target_suspended_size: Any = None
+    # The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred)
     update_policy: Any = None
     # Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
     versions: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerAttrs:
+    # The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred)
     all_instances_config: Any = None
     # The autohealing policy for this managed instance group. You can specify only one value.
     auto_healing_policies: Any = None
@@ -675,9 +723,11 @@ class RegionInstanceGroupManagerAttrs:
     base_instance_name: Any = None
     # Output only. The creation timestamp for this managed instance group inRFC3339 text format.
     creation_timestamp: Any = None
+    # The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred)
     current_actions: Any = None
     # An optional description of this resource.
     description: Any = None
+    # The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred)
     distribution_policy: Any = None
     # Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
     fingerprint: Any = None
@@ -686,6 +736,7 @@ class RegionInstanceGroupManagerAttrs:
     instance_flexibility_policy: Any = None
     # Output only. The URL of the Instance Group resource.
     instance_group: Any = None
+    # The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred)
     instance_lifecycle_policy: Any = None
     # The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
     instance_template: Any = None
@@ -699,6 +750,7 @@ class RegionInstanceGroupManagerAttrs:
     named_ports: Any = None
     # Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources).
     region: Any = None
+    # The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred)
     resource_policies: Any = None
     # Output only. Reserved for future use.
     satisfies_pzi: Any = None
@@ -706,18 +758,23 @@ class RegionInstanceGroupManagerAttrs:
     satisfies_pzs: Any = None
     # Output only. The URL for this managed instance group. The server defines this URL.
     self_link: Any = None
+    # The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred)
     standby_policy: Any = None
+    # The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred)
     stateful_policy: Any = None
+    # The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred)
     status: Any = None
     # The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
     target_pools: Any = None
     # The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
     target_size: Any = None
+    # The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred)
     target_size_policy: Any = None
     # The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
     target_stopped_size: Any = None
     # The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
     target_suspended_size: Any = None
+    # The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred)
     update_policy: Any = None
     # Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
     versions: Any = None

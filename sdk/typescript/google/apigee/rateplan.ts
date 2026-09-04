@@ -2,20 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Rateplan_ConsumptionPricingRates_Fee {
+  /** The ISO 4217 currency code monetary values are expressed in. (AI-inferred) */
   currencyCode?: string | Computed<string>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The unit this measurement is expressed in. (AI-inferred) */
   units?: string | Computed<string>;
 }
 
 export interface Rateplan_ConsumptionPricingRates {
+  /** Where this range ends. (AI-inferred) */
   end?: string | Computed<string>;
+  /** A monetary charge applied. (AI-inferred) */
   fee?: Rateplan_ConsumptionPricingRates_Fee | Computed<Rateplan_ConsumptionPricingRates_Fee>;
+  /** Where this range starts. (AI-inferred) */
   start?: string | Computed<string>;
 }
 
 export interface Rateplan_RevenueShareRates {
+  /** Where this range ends. (AI-inferred) */
   end?: string | Computed<string>;
+  /** The percentage of a resource shared with another entity. (AI-inferred) */
   sharePercentage?: number | Computed<number>;
+  /** Where this range starts. (AI-inferred) */
   start?: string | Computed<string>;
 }
 

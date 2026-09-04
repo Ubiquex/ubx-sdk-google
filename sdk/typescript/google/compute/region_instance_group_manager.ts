@@ -14,7 +14,9 @@ export interface RegionInstanceGroupManager_AllInstancesConfig {
 }
 
 export interface RegionInstanceGroupManager_AutoHealingPolicies {
+  /** The health check resource URL (self-link) that determines instance health for auto-healing. Can be specified as a full URL, a self-link, or a name reference. (AI-inferred) */
   healthCheck?: string | Computed<string>;
+  /** The initial delay, in seconds, before an instance is considered available for auto-healing. This is the time to wait after an instance is created or restarted before checking its health for auto-healing purposes. (AI-inferred) */
   initialDelaySec?: number | Computed<number>;
 }
 
@@ -48,6 +50,7 @@ export interface RegionInstanceGroupManager_CurrentActions {
 }
 
 export interface RegionInstanceGroupManager_DistributionPolicy_Zones {
+  /** Specifies the zone to which instances are distributed as part of the distribution policy for this regional managed instance group. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
@@ -59,7 +62,9 @@ export interface RegionInstanceGroupManager_DistributionPolicy {
 }
 
 export interface RegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelections {
+  /** List of machine types that can be used for this instance selection. The instance group manager can choose any of these types when provisioning instances according to the flexibility policy. (AI-inferred) */
   machineTypes?: string[] | Computed<string[]>;
+  /** The priority rank of this instance selection, where lower numbers have higher priority. Must be between 0 and 5. (AI-inferred) */
   rank?: number | Computed<number>;
 }
 
@@ -85,7 +90,9 @@ export interface RegionInstanceGroupManager_InstanceLifecyclePolicy {
 }
 
 export interface RegionInstanceGroupManager_NamedPorts {
+  /** The symbolic name of the named port, which acts as the key in the named port mapping to a port number. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The port number for this named port. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
@@ -102,6 +109,7 @@ export interface RegionInstanceGroupManager_StandbyPolicy {
 }
 
 export interface RegionInstanceGroupManager_StatefulPolicy_PreservedState_Disks {
+  /** Specifies whether the stateful disk should be automatically deleted when the instance is deleted. Accepts 'true' or 'false'. (AI-inferred) */
   autoDelete?: string | Computed<string>;
 }
 
@@ -127,59 +135,83 @@ export interface RegionInstanceGroupManager_Status_AllInstancesConfig {
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo {
+  /** The domain associated with the error, typically indicating the service or API where the error originated (e.g., 'compute.googleapis.com'). (AI-inferred) */
   domain?: string | Computed<string>;
+  /** A map of key-value pairs containing additional error information that can help diagnose the issue. (AI-inferred) */
   metadatas?: Record<string, string> | Computed<Record<string, string>>;
+  /** The reason for the error, as defined by the error domain. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links {
+  /** The description of the help link provided for the error. This text explains the purpose of the linked resource, such as a documentation page. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The URL of the help resource associated with the error. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help {
+  /** A list of links that provide additional helpful information about the error. Each link includes a URL and an optional description. (AI-inferred) */
   links?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links[] | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links[]>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage {
+  /** The locale (e.g., 'en-US') for the localized error message, indicating the language in which the message is provided. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** The human-readable localized message describing the error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo {
+  /** A map of dimension names to string values that identifies the specific quota that was exceeded, such as region or resource type. (AI-inferred) */
   dimensions?: Record<string, string> | Computed<Record<string, string>>;
+  /** The projected quota limit that would be in effect if the operation succeeds, used in quota error details to indicate the limit after a change. (AI-inferred) */
   futureLimit?: number | Computed<number>;
+  /** The quota limit for the metric that triggered the quota error. (AI-inferred) */
   limit?: number | Computed<number>;
+  /** The name of the specific quota limit that was exceeded, as reported in the quota error details. (AI-inferred) */
   limitName?: string | Computed<string>;
+  /** The name of the quota metric that was exceeded. (AI-inferred) */
   metricName?: string | Computed<string>;
+  /** The current rollout status of the applied accelerator topologies. Possible values are `IN_PROGRESS` and `ROLLOUT_STATUS_UNSPECIFIED`. (AI-inferred) */
   rolloutStatus?: string | Computed<string>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails {
   errorInfo?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo>;
+  /** The help information associated with the error, containing links to relevant documentation and guidance for resolving the issue. (AI-inferred) */
   help?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help>;
+  /** A localized error message that provides a human-readable version of the error in a specific language, along with the locale identifier. (AI-inferred) */
   localizedMessage?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage>;
+  /** Information about a quota violation related to the error, including the quota metric, limit, and current usage. (AI-inferred) */
   quotaInfo?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors {
   code?: string | Computed<string>;
+  /** A list of objects containing detailed information about the errors that occurred while applying accelerator topologies to the instance group. (AI-inferred) */
   errorDetails?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails[] | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails[]>;
+  /** The field or path in the resource configuration that caused the error. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A human-readable error message describing the reason for the failure within the applied accelerator topology state. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error {
+  /** A list of errors that occurred while applying accelerator topologies to the instance group. Each error object contains a code and message describing the failure. (AI-inferred) */
   errors?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors[] | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors[]>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails {
+  /** The error object contains details about a failure that occurred while applying an accelerator topology to the instance group, including the error code and message. (AI-inferred) */
   error?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error>;
   timestamp?: string | Computed<string>;
 }
 
 export interface RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies {
+  /** The accelerator topology currently applied to this regional instance group manager. This may differ from the topology specified in the instance template, as it reflects the actual state. (AI-inferred) */
   acceleratorTopology?: string | Computed<string>;
+  /** The current state of the accelerator topology applied to the instance group. Possible values are: ACTIVATING, ACTIVE, DEACTIVATING, FAILED, INCOMPLETE, and REACTIVATING. (AI-inferred) */
   state?: string | Computed<string>;
   stateDetails?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails>;
 }
@@ -227,6 +259,7 @@ export interface RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigs {
 export interface RegionInstanceGroupManager_Status_Stateful {
   /** Output only. A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful configuration even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions. */
   hasStatefulConfig?: boolean | Computed<boolean>;
+  /** A list of statuses for each per-instance configuration in the regional instance group manager, containing the configuration ID and its current state. (AI-inferred) */
   perInstanceConfigs?: RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigs | Computed<RegionInstanceGroupManager_Status_Stateful_PerInstanceConfigs>;
 }
 
@@ -236,6 +269,7 @@ export interface RegionInstanceGroupManager_Status_VersionTarget {
 }
 
 export interface RegionInstanceGroupManager_Status {
+  /** The status of the all-instances configuration for this regional instance group manager, including the fingerprint and the current state of the configuration applied to all instances. (AI-inferred) */
   allInstancesConfig?: RegionInstanceGroupManager_Status_AllInstancesConfig | Computed<RegionInstanceGroupManager_Status_AllInstancesConfig>;
   /** Output only. The accelerator topology applied to this MIG. Currently only one accelerator topology is supported. */
   appliedAcceleratorTopologies?: RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies[] | Computed<RegionInstanceGroupManager_Status_AppliedAcceleratorTopologies[]>;
@@ -248,6 +282,7 @@ export interface RegionInstanceGroupManager_Status {
   /** Output only. A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified. */
   isStable?: boolean | Computed<boolean>;
   stateful?: RegionInstanceGroupManager_Status_Stateful | Computed<RegionInstanceGroupManager_Status_Stateful>;
+  /** A map of version names to the target number of instances for each version in the regional instance group manager. This indicates the intended distribution of instances among the configured versions. (AI-inferred) */
   versionTarget?: RegionInstanceGroupManager_Status_VersionTarget | Computed<RegionInstanceGroupManager_Status_VersionTarget>;
 }
 
@@ -283,8 +318,10 @@ export interface RegionInstanceGroupManager_UpdatePolicy {
 }
 
 export interface RegionInstanceGroupManager_Versions {
+  /** The URL (self_link) of the instance template that defines the configuration for this version of the managed instance group. This template is used to create instances when the group scales or updates to this version. (AI-inferred) */
   instanceTemplate?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** The target size for this version, specified either as a fixed number of instances or as a percentage of the group's total size. This controls how many instances are assigned to this version when using multiple versions. (AI-inferred) */
   targetSize?: RegionInstanceGroupManager_UpdatePolicy_MaxSurge | Computed<RegionInstanceGroupManager_UpdatePolicy_MaxSurge>;
 }
 
@@ -622,18 +659,22 @@ const RegionInstanceGroupManager_VersionsFields: FieldMap = {
 };
 
 export interface RegionInstanceGroupManagerConfig {
+  /** The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred) */
   allInstancesConfig?: RegionInstanceGroupManager_AllInstancesConfig | Computed<RegionInstanceGroupManager_AllInstancesConfig>;
   /** The autohealing policy for this managed instance group. You can specify only one value. */
   autoHealingPolicies?: RegionInstanceGroupManager_AutoHealingPolicies[] | Computed<RegionInstanceGroupManager_AutoHealingPolicies[]>;
   /** The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?)) */
   baseInstanceName?: string | Computed<string>;
+  /** The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred) */
   currentActions?: RegionInstanceGroupManager_CurrentActions | Computed<RegionInstanceGroupManager_CurrentActions>;
   /** An optional description of this resource. */
   description?: string | Computed<string>;
+  /** The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred) */
   distributionPolicy?: RegionInstanceGroupManager_DistributionPolicy | Computed<RegionInstanceGroupManager_DistributionPolicy>;
   /** Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager. */
   fingerprint?: string | Computed<string>;
   instanceFlexibilityPolicy?: RegionInstanceGroupManager_InstanceFlexibilityPolicy | Computed<RegionInstanceGroupManager_InstanceFlexibilityPolicy>;
+  /** The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred) */
   instanceLifecyclePolicy?: RegionInstanceGroupManager_InstanceLifecyclePolicy | Computed<RegionInstanceGroupManager_InstanceLifecyclePolicy>;
   /** The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE. */
   instanceTemplate?: string | Computed<string>;
@@ -643,25 +684,32 @@ export interface RegionInstanceGroupManagerConfig {
   name?: string | Computed<string>;
   /** [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager. */
   namedPorts?: RegionInstanceGroupManager_NamedPorts[] | Computed<RegionInstanceGroupManager_NamedPorts[]>;
+  /** The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred) */
   resourcePolicies?: RegionInstanceGroupManager_ResourcePolicies | Computed<RegionInstanceGroupManager_ResourcePolicies>;
+  /** The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred) */
   standbyPolicy?: RegionInstanceGroupManager_StandbyPolicy | Computed<RegionInstanceGroupManager_StandbyPolicy>;
+  /** The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred) */
   statefulPolicy?: RegionInstanceGroupManager_StatefulPolicy | Computed<RegionInstanceGroupManager_StatefulPolicy>;
+  /** The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred) */
   status?: RegionInstanceGroupManager_Status | Computed<RegionInstanceGroupManager_Status>;
   /** The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group. */
   targetPools?: string[] | Computed<string[]>;
   /** The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number. */
   targetSize?: number | Computed<number>;
+  /** The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred) */
   targetSizePolicy?: RegionInstanceGroupManager_TargetSizePolicy | Computed<RegionInstanceGroupManager_TargetSizePolicy>;
   /** The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method. */
   targetStoppedSize?: number | Computed<number>;
   /** The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method. */
   targetSuspendedSize?: number | Computed<number>;
+  /** The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred) */
   updatePolicy?: RegionInstanceGroupManager_UpdatePolicy | Computed<RegionInstanceGroupManager_UpdatePolicy>;
   /** Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates. */
   versions?: RegionInstanceGroupManager_Versions[] | Computed<RegionInstanceGroupManager_Versions[]>;
 }
 
 export interface RegionInstanceGroupManagerAttrs {
+  /** The computed configuration applied to all instances in this regional instance group manager. This field is output-only and reflects the current all-instances configuration. (AI-inferred) */
   allInstancesConfig: RegionInstanceGroupManager_AllInstancesConfig;
   /** The autohealing policy for this managed instance group. You can specify only one value. */
   autoHealingPolicies: RegionInstanceGroupManager_AutoHealingPolicies[];
@@ -669,9 +717,11 @@ export interface RegionInstanceGroupManagerAttrs {
   baseInstanceName: string;
   /** Output only. The creation timestamp for this managed instance group inRFC3339 text format. */
   creationTimestamp: string;
+  /** The current actions on instances in the group, providing counts of pending operations (e.g., creating, deleting, restarting, recreating). This is a computed attribute that reflects the live state of the managed instance group. (AI-inferred) */
   currentActions: RegionInstanceGroupManager_CurrentActions;
   /** An optional description of this resource. */
   description: string;
+  /** The distribution policy for the regional instance group manager, defining how instances are distributed across zones in the region. (AI-inferred) */
   distributionPolicy: RegionInstanceGroupManager_DistributionPolicy;
   /** Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager. */
   fingerprint: string;
@@ -680,6 +730,7 @@ export interface RegionInstanceGroupManagerAttrs {
   instanceFlexibilityPolicy: RegionInstanceGroupManager_InstanceFlexibilityPolicy;
   /** Output only. The URL of the Instance Group resource. */
   instanceGroup: string;
+  /** The lifecycle policy that determines how the managed instance group handles instance failures, including whether to restart or replace instances. This field is computed and output-only, reflecting the effective policy applied to the group. (AI-inferred) */
   instanceLifecyclePolicy: RegionInstanceGroupManager_InstanceLifecyclePolicy;
   /** The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE. */
   instanceTemplate: string;
@@ -693,6 +744,7 @@ export interface RegionInstanceGroupManagerAttrs {
   namedPorts: RegionInstanceGroupManager_NamedPorts[];
   /** Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources). */
   region: string;
+  /** The resource policies attached to the instances in this regional managed instance group. This field is output-only and reflects the current policies applied to the group's instances. (AI-inferred) */
   resourcePolicies: RegionInstanceGroupManager_ResourcePolicies;
   /** Output only. Reserved for future use. */
   satisfiesPzi: boolean;
@@ -700,18 +752,23 @@ export interface RegionInstanceGroupManagerAttrs {
   satisfiesPzs: boolean;
   /** Output only. The URL for this managed instance group. The server defines this URL. */
   selfLink: string;
+  /** The standby policy for the managed instance group, which defines settings for standby instances, such as the initial delay before a standby instance is stopped. This field is output-only and populated by the Google Compute Engine API. (AI-inferred) */
   standbyPolicy: RegionInstanceGroupManager_StandbyPolicy;
+  /** The stateful policy configuration for the regional instance group manager. This optional block defines which disks and metadata are preserved for instances during group operations such as Rolling Update or Instance Regeneration. (AI-inferred) */
   statefulPolicy: RegionInstanceGroupManager_StatefulPolicy;
+  /** The current status of the managed instance group, including stability and the state of managed instances. This is a computed field that provides read-only information about the group's runtime state. (AI-inferred) */
   status: RegionInstanceGroupManager_Status;
   /** The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group. */
   targetPools: string[];
   /** The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number. */
   targetSize: number;
+  /** The target_size_policy block defines the scaling limits for the managed instance group, specifying the minimum and maximum number of instances. This field is computed when not explicitly set, and the API determines the effective policy. (AI-inferred) */
   targetSizePolicy: RegionInstanceGroupManager_TargetSizePolicy;
   /** The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method. */
   targetStoppedSize: number;
   /** The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method. */
   targetSuspendedSize: number;
+  /** The update policy for the managed instance group, defining how instances are updated (e.g., rolling updates). This field is computed and reflects the current policy applied by the API. (AI-inferred) */
   updatePolicy: RegionInstanceGroupManager_UpdatePolicy;
   /** Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates. */
   versions: RegionInstanceGroupManager_Versions[];

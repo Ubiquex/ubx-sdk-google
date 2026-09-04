@@ -4,12 +4,16 @@ package dns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponsePolicy_GkeClusters struct {
+	// The GKE cluster this private zone's own visibility is scoped to. (AI-inferred)
 	GkeClusterName any
-	Kind           any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ResponsePolicy_Networks struct {
-	Kind       any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The VPC network this private zone or policy is visible from. (AI-inferred)
 	NetworkUrl any
 }
 
@@ -29,7 +33,8 @@ type ResponsePolicyConfig struct {
 	// The list of Google Kubernetes Engine clusters to which this response policy is applied.
 	GkeClusters any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any
@@ -45,7 +50,8 @@ type ResponsePolicyAttrs struct {
 	// The list of Google Kubernetes Engine clusters to which this response policy is applied.
 	GkeClusters any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any

@@ -92,6 +92,7 @@ const AlphaVpnTunnel_PqcPhase1Fields: FieldMap = {
 export interface AlphaVpnTunnelConfig {
   /** Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits. */
   capacityTier?: string | Computed<string>;
+  /** The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred) */
   cipherSuite?: AlphaVpnTunnel_CipherSuite | Computed<AlphaVpnTunnel_CipherSuite>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -118,7 +119,9 @@ export interface AlphaVpnTunnelConfig {
   peerGcpGateway?: string | Computed<string>;
   /** IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels. */
   peerIp?: string | Computed<string>;
+  /** This tunnel's own post-quantum cryptography configuration for IKE phase 1, the initial key exchange. (AI-inferred) */
   pqcPhase1?: AlphaVpnTunnel_PqcPhase1 | Computed<AlphaVpnTunnel_PqcPhase1>;
+  /** This tunnel's own post-quantum cryptography configuration for IKE phase 2, the IPsec security association. (AI-inferred) */
   pqcPhase2?: AlphaVpnTunnel_PqcPhase1 | Computed<AlphaVpnTunnel_PqcPhase1>;
   /** [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region?: string | Computed<string>;
@@ -145,6 +148,7 @@ export interface AlphaVpnTunnelConfig {
 export interface AlphaVpnTunnelAttrs {
   /** Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits. */
   capacityTier: string;
+  /** The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred) */
   cipherSuite: AlphaVpnTunnel_CipherSuite;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
@@ -175,7 +179,9 @@ export interface AlphaVpnTunnelAttrs {
   peerGcpGateway: string;
   /** IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels. */
   peerIp: string;
+  /** This tunnel's own post-quantum cryptography configuration for IKE phase 1, the initial key exchange. (AI-inferred) */
   pqcPhase1: AlphaVpnTunnel_PqcPhase1;
+  /** This tunnel's own post-quantum cryptography configuration for IKE phase 2, the IPsec security association. (AI-inferred) */
   pqcPhase2: AlphaVpnTunnel_PqcPhase1;
   /** [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region: string;

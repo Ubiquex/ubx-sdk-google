@@ -26,30 +26,52 @@ const V3beta1SecuritySetting_InsightsExportSettingsFields: FieldMap = {
 };
 
 export interface V3beta1SecuritySettingConfig {
+  /** Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred) */
   audioExportSettings?: V3beta1SecuritySetting_AudioExportSettings | Computed<V3beta1SecuritySetting_AudioExportSettings>;
+  /** A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred) */
   deidentifyTemplate?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Configuration for exporting conversation data to Conversational Insights. (AI-inferred) */
   insightsExportSettings?: V3beta1SecuritySetting_InsightsExportSettings | Computed<V3beta1SecuritySetting_InsightsExportSettings>;
+  /** A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred) */
   inspectTemplate?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Which category/categories of stored data this purge request removes. (AI-inferred) */
   purgeDataTypes?: string[] | Computed<string[]>;
+  /** How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred) */
   redactionScope?: string | Computed<string>;
+  /** How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred) */
   redactionStrategy?: string | Computed<string>;
+  /** How long conversation data is retained before automatic deletion. (AI-inferred) */
   retentionStrategy?: string | Computed<string>;
+  /** How many days conversation data is retained before automatic deletion. (AI-inferred) */
   retentionWindowDays?: number | Computed<number>;
 }
 
 export interface V3beta1SecuritySettingAttrs {
+  /** Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred) */
   audioExportSettings: V3beta1SecuritySetting_AudioExportSettings;
+  /** A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred) */
   deidentifyTemplate: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Configuration for exporting conversation data to Conversational Insights. (AI-inferred) */
   insightsExportSettings: V3beta1SecuritySetting_InsightsExportSettings;
+  /** A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred) */
   inspectTemplate: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Which category/categories of stored data this purge request removes. (AI-inferred) */
   purgeDataTypes: string[];
+  /** How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred) */
   redactionScope: string;
+  /** How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred) */
   redactionStrategy: string;
+  /** How long conversation data is retained before automatic deletion. (AI-inferred) */
   retentionStrategy: string;
+  /** How many days conversation data is retained before automatic deletion. (AI-inferred) */
   retentionWindowDays: number;
 }
 

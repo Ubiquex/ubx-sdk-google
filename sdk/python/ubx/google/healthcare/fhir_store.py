@@ -43,99 +43,145 @@ class FhirStore_NotificationConfig:
 
 @dataclasses.dataclass
 class FhirStore_NotificationConfigs:
+    # A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
     pubsub_topic: Any = None
+    # Whether the full resource content is included in the notification, rather than just its own reference. (AI-inferred)
     send_full_resource: Any = None
+    # Whether the resource's own prior content is included in the notification when it's deleted. (AI-inferred)
     send_previous_resource_on_delete: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfig:
+    # How long, in milliseconds, this consent or resource remains valid. (AI-inferred)
     expiration_ms: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig:
+    # Partitions BigQuery export by each resource's own last-updated time. (AI-inferred)
     last_updated_partition_config: Any = None
+    # The maximum nesting depth allowed when parsing recursive HL7v2 structures. (AI-inferred)
     recursive_structure_depth: Any = None
+    # Which schema representation this parser uses. (AI-inferred)
     schema_type: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_BigqueryDestination:
+    # A reference to the dataset this applies to. (AI-inferred)
     dataset_uri: Any = None
+    # Whether this operation proceeds even if it would otherwise be blocked by a safety check. (AI-inferred)
     force: Any = None
+    # Configuration for how HL7v2 messages are parsed against a schema. (AI-inferred)
     schema_config: Any = None
+    # Whether export output overwrites, appends to, or requires an empty destination table. (AI-inferred)
     write_disposition: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList:
+    # The DICOM tag(s) this applies to. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom:
+    # A predefined profile determining which resource types/fields this filter includes. (AI-inferred)
     filter_profile: Any = None
+    # The field(s) explicitly kept, with everything else removed. (AI-inferred)
     keep_list: Any = None
+    # The field(s) explicitly removed, with everything else kept. (AI-inferred)
     remove_list: Any = None
+    # Whether resource ID fields are excluded from de-identification. (AI-inferred)
     skip_id_redaction: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataList:
+    # The action to perform. (AI-inferred)
     action: Any = None
+    # The path(s) this applies to. (AI-inferred)
     paths: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir:
+    # Whether unspecified FHIR extension(s) are kept by default, rather than stripped. (AI-inferred)
     default_keep_extensions: Any = None
+    # Per-field de-identification configuration, one entry per targeted field. (AI-inferred)
     field_metadata_list: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Image:
+    # How free-text fields are redacted during de-identification. (AI-inferred)
     text_redaction_mode: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfig:
+    # The character substituted in place of each masked character. (AI-inferred)
     masking_character: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrapped:
+    # The encryption key used for this cryptographic transformation. (AI-inferred)
     crypto_key: Any = None
+    # The crypto key's own bytes, encrypted by a Cloud KMS key. (AI-inferred)
     wrapped_key: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig:
+    # The encryption key used for this cryptographic transformation. (AI-inferred)
     crypto_key: Any = None
+    # A crypto key wrapped by Cloud KMS. (AI-inferred)
     kms_wrapped: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations:
+    # Replaces characters in a matching value with a fixed masking character. (AI-inferred)
     character_mask_config: Any = None
+    # De-identifies a value by replacing it with a cryptographic hash. (AI-inferred)
     crypto_hash_config: Any = None
+    # De-identifies dates by shifting them a random, per-context number of days. (AI-inferred)
     date_shift_config: Any = None
+    # The info type(s) this applies to. (AI-inferred)
     info_types: Any = None
+    # De-identifies a value by removing it entirely. (AI-inferred)
     redact_config: Any = None
+    # De-identifies a value by replacing it with its own detected info type name. (AI-inferred)
     replace_with_info_type_config: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text:
+    # Further de-identification transformation(s) applied on top of the primary configuration. (AI-inferred)
     additional_transformations: Any = None
+    # Info type(s) excluded from de-identification, even if they'd otherwise match. (AI-inferred)
     exclude_info_types: Any = None
+    # The transformation(s) applied to matching data. (AI-inferred)
     transformations: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config:
+    # Configuration specific to DICOM (medical imaging) data. (AI-inferred)
     dicom: Any = None
+    # Configuration specific to FHIR (structured clinical) data. (AI-inferred)
     fhir: Any = None
+    # Configuration specific to image data within DICOM instances. (AI-inferred)
     image: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
+    # Whether processing happens within the resource's own region, rather than a multi-region location. (AI-inferred)
     use_regional_data_processing: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs_DeidentifiedStoreDestination:
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # A reference to the data store this applies to. (AI-inferred)
     store: Any = None
 
 @dataclasses.dataclass
 class FhirStore_StreamConfigs:
+    # The BigQuery table this operation's own output is written to. (AI-inferred)
     bigquery_destination: Any = None
+    # The destination store de-identified output is written to. (AI-inferred)
     deidentified_store_destination: Any = None
+    # The FHIR resource type(s) this applies to. (AI-inferred)
     resource_types: Any = None
 
 @dataclasses.dataclass

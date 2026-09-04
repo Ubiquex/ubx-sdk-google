@@ -70,7 +70,8 @@ type Deployment_SapSystemS4Config_Location struct {
 	DnsZone any
 	// Optional. DNS zone name suffix.
 	DnsZoneNameSuffix any
-	InternetAccess    any
+	// How the deployed S/4HANA VMs reach the internet: `ALLOW_EXTERNAL_IP` (assign each VM a public IP) or `CONFIGURE_NAT` (route outbound traffic through Cloud NAT instead). (AI-inferred)
+	InternetAccess any
 	// Optional. Network project.
 	NetworkProject any
 	// Required. Region name.
@@ -86,6 +87,7 @@ type Deployment_SapSystemS4Config_Location struct {
 }
 
 type Deployment_SapSystemS4Config struct {
+	// If `true`, Workload Manager is allowed to stop the SAP S/4HANA VM(s) to apply an update that requires a restart, rather than failing the update in place. (AI-inferred)
 	AllowStoppingForUpdate any
 	// Ansible runner service account. Let customers bring their own service account for the Ansible runner.
 	AnsibleRunnerServiceAccount any
@@ -225,6 +227,7 @@ type Deployment_SqlServerWorkload struct {
 }
 
 type Deployment_TerraformVariables struct {
+	// The value passed for this Terraform input variable when Workload Manager runs the generated deployment configuration. (AI-inferred)
 	InputValue any
 }
 

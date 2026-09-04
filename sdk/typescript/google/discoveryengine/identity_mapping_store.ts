@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IdentityMappingStore_CmekConfig_SingleRegionKeys {
+  /** The Cloud KMS key used to encrypt this resource's own data. (AI-inferred) */
   kmsKey?: string | Computed<string>;
 }
 

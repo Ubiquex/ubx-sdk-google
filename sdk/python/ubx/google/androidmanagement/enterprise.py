@@ -37,26 +37,38 @@ class Enterprise_Logo:
 
 @dataclasses.dataclass
 class Enterprise_SigninDetails_GoogleAuthenticationOptions:
+    # Whether Google authentication is real, `OPTIONAL` or `REQUIRED` at device sign-in for this enterprise. (AI-inferred)
     authentication_requirement: Any = None
 
 @dataclasses.dataclass
 class Enterprise_SigninDetails:
+    # Whether personal use of a fully-managed device is real, allowed, disallowed, or disallowed with no user profile at all. (AI-inferred)
     allow_personal_usage: Any = None
+    # Whether this sign-in detail is real, the enterprise's own current default sign-in configuration. (AI-inferred)
     default_status: Any = None
+    # Real Google authentication requirements applied at device sign-in for this enterprise. (AI-inferred)
     google_authentication_options: Any = None
+    # The real, generated QR code content for this sign-in detail, used to enroll a device via this specific sign-in configuration. (AI-inferred)
     qr_code: Any = None
+    # The real enrollment token associated with this sign-in detail. (AI-inferred)
     signin_enrollment_token: Any = None
+    # The real URL a device is directed to for user authentication under this sign-in detail. (AI-inferred)
     signin_url: Any = None
+    # A real, client-supplied tag distinguishing this sign-in detail's own enrollment token from others on the same enterprise. (AI-inferred)
     token_tag: Any = None
 
 @dataclasses.dataclass
 class Enterprise_TermsAndConditions_Content:
+    # The real, default-language text of this terms-and-conditions content, shown when no `localized_messages` entry matches the user's own locale. (AI-inferred)
     default_message: Any = None
+    # Real, per-locale translations of this terms-and-conditions content. (AI-inferred)
     localized_messages: Any = None
 
 @dataclasses.dataclass
 class Enterprise_TermsAndConditions:
+    # The real, localized text content of this enterprise's own terms and conditions. (AI-inferred)
     content: Any = None
+    # A real, short header/title shown above this terms-and-conditions content. (AI-inferred)
     header: Any = None
 
 _Enterprise_ContactInfoFields = {

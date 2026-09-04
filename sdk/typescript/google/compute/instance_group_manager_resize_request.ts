@@ -2,32 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InstanceGroupManagerResizeRequest_Instances_PreservedState_Disks {
+  /** Specifies whether the preserved state disk is automatically deleted when the instance is deleted. Accepts string values 'true' or 'false' (defaults to 'false'). (AI-inferred) */
   autoDelete?: string | Computed<string>;
+  /** The access mode for the preserved disk. Valid values are READ_ONLY and READ_WRITE. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The source disk associated with the preserved state. This is the device name or URL of the disk attached to the instance. (AI-inferred) */
   source?: string | Computed<string>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddress {
+  /** The external IP address to preserve for the instance in the resize request. (AI-inferred) */
   address?: string | Computed<string>;
+  /** The literal IP address value to preserve for the external IP. (AI-inferred) */
   literal?: string | Computed<string>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps {
+  /** Whether the preserved external IP address should be automatically deleted when the associated instance is deleted, controlling the lifecycle of the IP in the instance's preserved state. (AI-inferred) */
   autoDelete?: string | Computed<string>;
   ipAddress?: InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddress | Computed<InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddress>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Instances_PreservedState {
+  /** Map of disk device names to their preservation state. The key is the device name of the disk, and the value configures preservation settings such as whether the disk is automatically deleted when the instance is deleted. (AI-inferred) */
   disks?: Record<string, InstanceGroupManagerResizeRequest_Instances_PreservedState_Disks> | Computed<Record<string, InstanceGroupManagerResizeRequest_Instances_PreservedState_Disks>>;
+  /** Map of instance names to preserved external IP configurations for the resize operation. The keys are instance names, and the values are objects representing the external IP assignment for each instance. (AI-inferred) */
   externalIps?: Record<string, InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps> | Computed<Record<string, InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps>>;
+  /** Preserved internal IPs for the instance. The map keys are the network interface names, and the values define the IP address and auto-delete settings for each interface. (AI-inferred) */
   internalIps?: Record<string, InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps> | Computed<Record<string, InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps>>;
+  /** Preserved metadata key-value pairs to be applied to the instances created by the resize request. This overrides metadata from the instance template for these instances. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Instances {
   fingerprint?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** Configuration for the state to preserve for the instance in the resize request. This block is used to set stateful disks and metadata that should be preserved when the instance is created or deleted. See the preserved_state sub-block for the full structure. (AI-inferred) */
   preservedState?: InstanceGroupManagerResizeRequest_Instances_PreservedState | Computed<InstanceGroupManagerResizeRequest_Instances_PreservedState>;
+  /** The status of the instance in relation to the resize request. Possible values are APPLYING, DELETING, EFFECTIVE, NONE, UNAPPLIED, and UNAPPLIED_DELETION, indicating whether the instance is being applied, deleted, effective, not applicable, unapplied, or scheduled for deletion but not yet applied. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
@@ -39,45 +51,62 @@ export interface InstanceGroupManagerResizeRequest_RequestedRunDuration {
 }
 
 export interface InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfo {
+  /** The logical grouping for the error, such as 'global' for consumer-facing errors or a service-specific domain like 'compute.googleapis.com' for producer-facing errors. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** Metadata about the error, as key-value pairs. The keys and values are service-specific and provide additional context for the error condition. (AI-inferred) */
   metadatas?: Record<string, string> | Computed<Record<string, string>>;
+  /** The `reason` is a stable, machine-readable identifier that indicates the specific cause of the error. It is typically part of the error info structure and can be used to programmatically handle distinct error conditions. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_Links {
   description?: string | Computed<string>;
+  /** The URL pointing to additional documentation or resources for troubleshooting the error. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help {
+  /** A list of links to documentation or resources that provide additional information about the error. Each link includes a description and a URL. (AI-inferred) */
   links?: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_Links[] | Computed<InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_Links[]>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessage {
+  /** The locale code for the localized error message (e.g., en-US). (AI-inferred) */
   locale?: string | Computed<string>;
+  /** The localized text of the error message, intended for display to users. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo {
+  /** The quota dimensions (such as region or zone) as key-value pairs. Each key is a dimension name and the value is the dimension value, both as strings. (AI-inferred) */
   dimensions?: Record<string, string> | Computed<Record<string, string>>;
   futureLimit?: number | Computed<number>;
+  /** The quota limit for the resource, representing the maximum allowed value for the metric in question. (AI-inferred) */
   limit?: number | Computed<number>;
+  /** The name of the quota limit that was exceeded, as reported in the quota error details. (AI-inferred) */
   limitName?: string | Computed<string>;
+  /** The name of the quota metric that was exceeded, identifying the specific quota limit that caused the error. (AI-inferred) */
   metricName?: string | Computed<string>;
+  /** The rollout status of the quota. Possible values are IN_PROGRESS (indicating a rollout is currently underway) and ROLLOUT_STATUS_UNSPECIFIED (indicating the status is not specified). (AI-inferred) */
   rolloutStatus?: string | Computed<string>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails {
   errorInfo?: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfo | Computed<InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfo>;
+  /** Help information for the error, containing links to documentation that can assist in resolving the issue. (AI-inferred) */
   help?: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help | Computed<InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help>;
+  /** An object containing a localized error message and its locale. Provides a user-readable error description in the user's preferred language. (AI-inferred) */
   localizedMessage?: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessage | Computed<InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessage>;
   quotaInfo?: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo | Computed<InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo>;
 }
 
 export interface InstanceGroupManagerResizeRequest_Status_Error_Errors {
+  /** The error code for this error entry, typically a machine-readable identifier for the specific error type. (AI-inferred) */
   code?: string | Computed<string>;
   errorDetails?: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails[] | Computed<InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails[]>;
+  /** The location of the error in the request, such as the path to a specific field or parameter that caused the error. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A human-readable error message describing the failure. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -94,6 +123,7 @@ export interface InstanceGroupManagerResizeRequest_Status_LastAttempt {
 export interface InstanceGroupManagerResizeRequest_Status {
   /** Output only. Fatal errors encountered during the queueing or provisioning phases of the ResizeRequest that caused the transition to the FAILED state. Contrary to the last_attempt errors, this field is final and errors are never removed from here, as the ResizeRequest is not going to retry. */
   error?: InstanceGroupManagerResizeRequest_Status_Error | Computed<InstanceGroupManagerResizeRequest_Status_Error>;
+  /** The result of the most recent resize attempt, including any error that occurred if the attempt failed. (AI-inferred) */
   lastAttempt?: InstanceGroupManagerResizeRequest_Status_LastAttempt | Computed<InstanceGroupManagerResizeRequest_Status_LastAttempt>;
 }
 
@@ -259,6 +289,7 @@ export interface InstanceGroupManagerResizeRequestConfig {
   requestedRunDuration?: InstanceGroupManagerResizeRequest_RequestedRunDuration | Computed<InstanceGroupManagerResizeRequest_RequestedRunDuration>;
   /** The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'. */
   resizeBy?: number | Computed<number>;
+  /** The status of the resize request, containing the current state of the operation (such as pending, succeeded, or failed) and any error details if the request was not successful. (AI-inferred) */
   status?: InstanceGroupManagerResizeRequest_Status | Computed<InstanceGroupManagerResizeRequest_Status>;
 }
 
@@ -287,6 +318,7 @@ export interface InstanceGroupManagerResizeRequestAttrs {
   selfLinkWithId: string;
   /** Output only. Current state of the request. */
   state: string;
+  /** The status of the resize request, containing the current state of the operation (such as pending, succeeded, or failed) and any error details if the request was not successful. (AI-inferred) */
   status: InstanceGroupManagerResizeRequest_Status;
   /** Output only. The URL of a zone where the resize request is located. Populated only for zonal resize requests. */
   zone: string;

@@ -62,20 +62,32 @@ const V3beta1Generator_PromptTextFields: FieldMap = {
 };
 
 export interface V3beta1GeneratorConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred) */
   llmModelSettings?: V3beta1Generator_LlmModelSettings | Computed<V3beta1Generator_LlmModelSettings>;
+  /** A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred) */
   modelParameter?: V3beta1Generator_ModelParameter | Computed<V3beta1Generator_ModelParameter>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred) */
   placeholders?: V3beta1Generator_Placeholders[] | Computed<V3beta1Generator_Placeholders[]>;
+  /** The prompt text played or displayed to the user. (AI-inferred) */
   promptText?: V3beta1Generator_PromptText | Computed<V3beta1Generator_PromptText>;
 }
 
 export interface V3beta1GeneratorAttrs {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred) */
   llmModelSettings: V3beta1Generator_LlmModelSettings;
+  /** A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred) */
   modelParameter: V3beta1Generator_ModelParameter;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred) */
   placeholders: V3beta1Generator_Placeholders[];
+  /** The prompt text played or displayed to the user. (AI-inferred) */
   promptText: V3beta1Generator_PromptText;
 }
 

@@ -2,16 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds {
+  /** Configuration for automatically removing node(s) when utilization drops. (AI-inferred) */
   scaleIn?: number | Computed<number>;
+  /** Configuration for automatically adding node(s) when utilization rises. (AI-inferred) */
   scaleOut?: number | Computed<number>;
 }
 
 export interface Cluster_AutoscalingSettings_AutoscalingPolicies {
+  /** The utilization threshold(s) that trigger scaling based on consumed memory. (AI-inferred) */
   consumedMemoryThresholds?: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds | Computed<Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds>;
+  /** The utilization threshold(s) that trigger scaling based on CPU usage. (AI-inferred) */
   cpuThresholds?: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds | Computed<Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds>;
+  /** The utilization threshold(s) that trigger scaling based on granted memory. (AI-inferred) */
   grantedMemoryThresholds?: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds | Computed<Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds>;
+  /** A reference to the node type this applies to. (AI-inferred) */
   nodeTypeId?: string | Computed<string>;
+  /** The number of node(s) added each time this cluster scales out. (AI-inferred) */
   scaleOutSize?: number | Computed<number>;
+  /** The utilization threshold(s) that trigger scaling based on storage usage. (AI-inferred) */
   storageThresholds?: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds | Computed<Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds>;
 }
 
@@ -27,23 +35,35 @@ export interface Cluster_AutoscalingSettings {
 }
 
 export interface Cluster_DatastoreMountConfig_DatastoreNetwork {
+  /** The number of active connection(s). (AI-inferred) */
   connectionCount?: number | Computed<number>;
+  /** The maximum transmission unit size, in bytes, for this network. (AI-inferred) */
   mtu?: number | Computed<number>;
+  /** A reference to the network peering this applies to. (AI-inferred) */
   networkPeering?: string | Computed<string>;
+  /** A reference to the subnet this applies to. (AI-inferred) */
   subnet?: string | Computed<string>;
 }
 
 export interface Cluster_DatastoreMountConfig {
+  /** Whether this datastore is accessible for reading only or for reading and writing. (AI-inferred) */
   accessMode?: string | Computed<string>;
+  /** A reference to the datastore this applies to. (AI-inferred) */
   datastore?: string | Computed<string>;
+  /** The network hosting this datastore. (AI-inferred) */
   datastoreNetwork?: Cluster_DatastoreMountConfig_DatastoreNetwork | Computed<Cluster_DatastoreMountConfig_DatastoreNetwork>;
+  /** A single exported file share. (AI-inferred) */
   fileShare?: string | Computed<string>;
+  /** The NFS protocol version this file share uses. (AI-inferred) */
   nfsVersion?: string | Computed<string>;
+  /** The server(s) this applies to. (AI-inferred) */
   servers?: string[] | Computed<string[]>;
 }
 
 export interface Cluster_NodeTypeConfigs {
+  /** The number of CPU core(s) enabled per node, when overriding the node type's own default. (AI-inferred) */
   customCoreCount?: number | Computed<number>;
+  /** The number of node(s) provisioned. (AI-inferred) */
   nodeCount?: number | Computed<number>;
 }
 

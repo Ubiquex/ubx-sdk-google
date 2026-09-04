@@ -59,19 +59,30 @@ const V2beta1SipTrunk_PeerHostnamesFields: FieldMap = {
 };
 
 export interface V2beta1SipTrunkConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The real hostname(s) this SIP trunk expects its own peer to present. (AI-inferred) */
   expectedHostname?: string[] | Computed<string[]>;
+  /** The real Google root certificate this SIP trunk uses to verify its own peer's TLS connection. (AI-inferred) */
   googleRootCertFile?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real hostname(s) of this SIP trunk's own peer endpoint(s). (AI-inferred) */
   peerHostnames?: V2beta1SipTrunk_PeerHostnames[] | Computed<V2beta1SipTrunk_PeerHostnames[]>;
 }
 
 export interface V2beta1SipTrunkAttrs {
+  /** The real, current connection(s) this SIP trunk maintains. (AI-inferred) */
   connections: V2beta1SipTrunk_Connections[];
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The real hostname(s) this SIP trunk expects its own peer to present. (AI-inferred) */
   expectedHostname: string[];
+  /** The real Google root certificate this SIP trunk uses to verify its own peer's TLS connection. (AI-inferred) */
   googleRootCertFile: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The real hostname(s) of this SIP trunk's own peer endpoint(s). (AI-inferred) */
   peerHostnames: V2beta1SipTrunk_PeerHostnames[];
 }
 

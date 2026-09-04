@@ -201,7 +201,8 @@ type V1beta1BudgetAttrs struct {
 	// Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag will cause an update to overwrite other changes.
 	Etag any
 	// Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
-	Name           any
+	Name any
+	// Who has full access to this budget's own data, in conjunction with the caller's own real IAM permissions, e.g. billing-account-level or project-level. (AI-inferred)
 	OwnershipScope any
 	// Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
 	ThresholdRules any

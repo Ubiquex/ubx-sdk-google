@@ -7,14 +7,20 @@ export interface DataProduct_AccessApprovalConfig {
 }
 
 export interface DataProduct_AccessGroups_Principal {
+  /** A Google Group this permission or contact applies to. (AI-inferred) */
   googleGroup?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface DataProduct_AccessGroups {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The identity this permission grant applies to. (AI-inferred) */
   principal?: DataProduct_AccessGroups_Principal | Computed<DataProduct_AccessGroups_Principal>;
 }
 

@@ -4,17 +4,23 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Message_Message_ParsedData_Segments struct {
-	Fields    any
+	// The field(s) this applies to. (AI-inferred)
+	Fields any
+	// An identifier for this HL7v2 segment type, e.g. `MSH` or `PID`. (AI-inferred)
 	SegmentId any
-	SetId     any
+	// An identifier grouping related HL7v2 segments together. (AI-inferred)
+	SetId any
 }
 
 type Message_Message_ParsedData struct {
+	// The segment(s) making up this HL7v2 message. (AI-inferred)
 	Segments any
 }
 
 type Message_Message_PatientIds struct {
-	Type  any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 

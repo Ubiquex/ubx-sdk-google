@@ -8,12 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResponsePolicy_GkeClusters:
+    # The GKE cluster this private zone's own visibility is scoped to. (AI-inferred)
     gke_cluster_name: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicy_Networks:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The VPC network this private zone or policy is visible from. (AI-inferred)
     network_url: Any = None
 
 _ResponsePolicy_GkeClustersFields = {
@@ -34,6 +38,7 @@ class ResponsePolicyConfig:
     gke_clusters: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None
@@ -50,6 +55,7 @@ class ResponsePolicyAttrs:
     gke_clusters: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None

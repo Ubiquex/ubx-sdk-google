@@ -4,8 +4,10 @@ package datastore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Index_Properties struct {
+	// Whether this composite index property is real, sorted `ASCENDING` or `DESCENDING`. (AI-inferred)
 	Direction any
-	Name      any
+	// The real, indexed entity property name this composite index property covers. (AI-inferred)
+	Name any
 }
 
 var Index_PropertiesFields = ubx.FieldMap{

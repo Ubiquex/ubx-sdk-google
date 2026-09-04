@@ -20,7 +20,9 @@ class Rollout_Control:
 
 @dataclasses.dataclass
 class Rollout_Stats_OperationsByState:
+    # The real number of unit operations currently in this specific rollout state. (AI-inferred)
     count: Any = None
+    # The real, named grouping (e.g. a rollout wave) this operation-state count applies to. (AI-inferred)
     group: Any = None
 
 @dataclasses.dataclass

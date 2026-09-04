@@ -20,24 +20,40 @@ const V3beta1EntityType_ExcludedPhrasesFields: FieldMap = {
 };
 
 export interface V3beta1EntityTypeConfig {
+  /** Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred) */
   autoExpansionMode?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred) */
   enableFuzzyExtraction?: boolean | Computed<boolean>;
+  /** The entity/entities extracted or referenced. (AI-inferred) */
   entities?: V3beta1EntityType_Entities[] | Computed<V3beta1EntityType_Entities[]>;
+  /** Phrase(s) explicitly excluded from matching this entity, even if they'd otherwise qualify. (AI-inferred) */
   excludedPhrases?: V3beta1EntityType_ExcludedPhrases[] | Computed<V3beta1EntityType_ExcludedPhrases[]>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred) */
   redact?: boolean | Computed<boolean>;
 }
 
 export interface V3beta1EntityTypeAttrs {
+  /** Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred) */
   autoExpansionMode: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred) */
   enableFuzzyExtraction: boolean;
+  /** The entity/entities extracted or referenced. (AI-inferred) */
   entities: V3beta1EntityType_Entities[];
+  /** Phrase(s) explicitly excluded from matching this entity, even if they'd otherwise qualify. (AI-inferred) */
   excludedPhrases: V3beta1EntityType_ExcludedPhrases[];
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred) */
   redact: boolean;
 }
 

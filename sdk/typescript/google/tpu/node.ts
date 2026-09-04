@@ -19,7 +19,9 @@ export interface Node_BootDiskConfig {
 }
 
 export interface Node_DataDisks {
+  /** The real access mode (`READ_WRITE` or `READ_ONLY`) this data disk is attached to the TPU node with. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The real Compute Engine disk this TPU node's own data disk is created from or attached to. (AI-inferred) */
   sourceDisk?: string | Computed<string>;
 }
 
@@ -37,12 +39,16 @@ export interface Node_NetworkConfig {
 }
 
 export interface Node_NetworkEndpoints_AccessConfig {
+  /** The real, assigned external (public) IP address for this TPU node's own network endpoint. (AI-inferred) */
   externalIp?: string | Computed<string>;
 }
 
 export interface Node_NetworkEndpoints {
+  /** Real, external-access configuration (such as the assigned `external_ip`) for this TPU node's own network endpoint. (AI-inferred) */
   accessConfig?: Node_NetworkEndpoints_AccessConfig | Computed<Node_NetworkEndpoints_AccessConfig>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The real network port this TPU node's own network endpoint listens on. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
@@ -68,9 +74,13 @@ export interface Node_ShieldedInstanceConfig {
 }
 
 export interface Node_Symptoms {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Real, additional detail text describing this detected TPU node symptom. (AI-inferred) */
   details?: string | Computed<string>;
+  /** The real, detected category of issue (e.g. `OUT_OF_MEMORY`, `HBM_OUT_OF_MEMORY`) affecting this TPU node. (AI-inferred) */
   symptomType?: string | Computed<string>;
+  /** The real, specific TPU worker this symptom was detected on, within a multi-worker TPU node. (AI-inferred) */
   workerId?: string | Computed<string>;
 }
 

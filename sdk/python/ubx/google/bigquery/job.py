@@ -28,9 +28,11 @@ class Job_Configuration_Copy:
     destination_encryption_configuration: Any = None
     # Optional. The time when the destination table expires. Expired tables will be deleted and their storage reclaimed.
     destination_expiration_time: Any = None
+    # The table this operation writes to. (AI-inferred)
     destination_table: Any = None
     # Optional. Supported operation types in table copy job.
     operation_type: Any = None
+    # The table this job's own input is read from. (AI-inferred)
     source_table: Any = None
     # [Pick one] Source tables to copy.
     source_tables: Any = None
@@ -69,6 +71,7 @@ class Job_Configuration_Extract:
     print_header: Any = None
     # Id path of a model.
     source_model: Any = None
+    # The table this job's own input is read from. (AI-inferred)
     source_table: Any = None
     # Whether to use logical types when extracting to AVRO format. Not applicable when extracting models.
     use_avro_logical_types: Any = None
@@ -80,7 +83,9 @@ class Job_Configuration_Load_Clustering:
 
 @dataclasses.dataclass
 class Job_Configuration_Load_ConnectionProperties:
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -132,56 +137,86 @@ class Job_Configuration_Load_RangePartitioning:
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields_Categories:
+    # The literal name(s) this applies to. (AI-inferred)
     names: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfo:
+    # The data governance tag(s) applied to this column. (AI-inferred)
     data_governance_tags: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields_DataPolicies:
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields_DataPolicyList:
+    # Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
     data_policies: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo:
+    # Whether a generated column's own value is computed asynchronously after write, rather than synchronously. (AI-inferred)
     asynchronous: Any = None
+    # The SQL expression computing this generated column's own value. (AI-inferred)
     generation_expression: Any = None
+    # Whether a generated column's own computed value is physically stored, rather than recomputed on each read. (AI-inferred)
     stored: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields_GeneratedColumn:
+    # Detail about a generated column's own computation. (AI-inferred)
     generated_expression_info: Any = None
+    # Whether this column's own value is stored, virtual (computed on read), or not generated at all. (AI-inferred)
     generated_mode: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields_RangeElementType:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Load_Schema_Fields:
+    # The set of category labels this applies to. (AI-inferred)
     categories: Any = None
+    # The collation (locale-aware string comparison rule) applied to a `STRING`-typed field, e.g. `und:ci` for case-insensitive comparison, or empty for the default case-sensitive comparison. (AI-inferred)
     collation: Any = None
+    # Detail about the data governance tag(s) associated with this column. (AI-inferred)
     data_governance_tags_info: Any = None
+    # Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
     data_policies: Any = None
+    # The data policies (e.g. dynamic data masking rules) applied to this column. (AI-inferred)
     data_policy_list: Any = None
+    # A SQL expression computing this column's own default value when none is supplied on insert. (AI-inferred)
     default_value_expression: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
     fields: Any = None
+    # The native type definition of this column in the external system it's federated from. (AI-inferred)
     foreign_type_definition: Any = None
+    # A column whose own value is computed from other columns, rather than stored directly. (AI-inferred)
     generated_column: Any = None
+    # The most characters a `string`-typed value may have. (AI-inferred)
     max_length: Any = None
+    # Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred)
     mode: Any = None
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The Data Catalog policy tag(s) governing access to this column. (AI-inferred)
     policy_tags: Any = None
+    # For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
     precision: Any = None
+    # The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
     range_element_type: Any = None
+    # How values are rounded when they exceed this `NUMERIC`/`BIGNUMERIC` field's own scale. (AI-inferred)
     rounding_mode: Any = None
+    # For a `NUMERIC`/`BIGNUMERIC` field, how many digits are kept after the decimal point. (AI-inferred)
     scale: Any = None
+    # The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred)
     timestamp_precision: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -235,6 +270,7 @@ class Job_Configuration_Load:
     decimal_target_types: Any = None
     # Configuration for Cloud KMS encryption settings.
     destination_encryption_configuration: Any = None
+    # The table this operation writes to. (AI-inferred)
     destination_table: Any = None
     # Properties for the destination table.
     destination_table_properties: Any = None
@@ -264,6 +300,7 @@ class Job_Configuration_Load:
     projection_fields: Any = None
     # Optional. The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true. To include the specific quote character within a quoted value, precede it with an additional matching quote character. For example, if you want to escape the default character ' " ', use ' "" '. @default "
     quote: Any = None
+    # Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
     range_partitioning: Any = None
     # Optional. The user can provide a reference file with the reader schema. This file is only loaded if it is part of source URIs, but is not loaded otherwise. It is enabled for the following formats: AVRO, PARQUET, ORC.
     reference_file_schema_uri: Any = None
@@ -285,6 +322,7 @@ class Job_Configuration_Load:
     source_uris: Any = None
     # Optional. Date format used for parsing TIME values.
     time_format: Any = None
+    # Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
     time_partitioning: Any = None
     # Optional. Default time zone that will apply when parsing timestamp values that have no specific time zone.
     time_zone: Any = None
@@ -306,34 +344,51 @@ class Job_Configuration_Query_DefaultDataset:
 
 @dataclasses.dataclass
 class Job_Configuration_Query_QueryParameters_ParameterType_StructTypes:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_QueryParameters_ParameterType:
+    # The schema of the element type, when this field is an `ARRAY`. (AI-inferred)
     array_type: Any = None
+    # The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
     range_element_type: Any = None
+    # The field(s) making up a `STRUCT`-typed schema. (AI-inferred)
     struct_types: Any = None
+    # The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred)
     timestamp_precision: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_QueryParameters_ParameterValue_RangeValue:
+    # Where this range ends. (AI-inferred)
     end: Any = None
+    # Where this range starts. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_QueryParameters_ParameterValue:
+    # The individual element value(s) making up an array value. (AI-inferred)
     array_values: Any = None
+    # A value expressed as a `RANGE` type. (AI-inferred)
     range_value: Any = None
+    # The field value(s) making up a `STRUCT`-typed value. (AI-inferred)
     struct_values: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_QueryParameters:
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The data type of this routine parameter. (AI-inferred)
     parameter_type: Any = None
+    # The value passed for this parameter. (AI-inferred)
     parameter_value: Any = None
 
 @dataclasses.dataclass
@@ -347,18 +402,25 @@ class Job_Configuration_Query_ScriptOptions:
 
 @dataclasses.dataclass
 class Job_Configuration_Query_SystemVariables_Types_StructType_Fields:
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_SystemVariables_Types_StructType:
+    # The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
     fields: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_SystemVariables_Types:
+    # The type of each element in an `ARRAY`-typed value. (AI-inferred)
     array_element_type: Any = None
+    # The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
     range_element_type: Any = None
+    # The field(s) making up a `STRUCT`-typed value. (AI-inferred)
     struct_type: Any = None
+    # The base data type this schema node represents, e.g. `STRING` or `STRUCT`. (AI-inferred)
     type_kind: Any = None
 
 @dataclasses.dataclass
@@ -370,94 +432,156 @@ class Job_Configuration_Query_SystemVariables:
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_AvroOptions:
+    # Whether Avro logical types (e.g. decimal, timestamp) are converted to their corresponding BigQuery types, rather than their raw underlying type. (AI-inferred)
     use_avro_logical_types: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig:
+    # The fully qualified name of the protocol buffer message type this data is encoded as. (AI-inferred)
     proto_message_name: Any = None
+    # A reference to the schema bundle (e.g. a set of `.proto` definitions) this configuration uses. (AI-inferred)
     schema_bundle_id: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns:
+    # The text encoding this field's own byte values should be interpreted with. (AI-inferred)
     encoding: Any = None
+    # The name of the field this applies to. (AI-inferred)
     field_name: Any = None
+    # Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
     only_read_latest: Any = None
+    # Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
     proto_config: Any = None
+    # The Bigtable column qualifier, in its own raw encoded (byte) form. (AI-inferred)
     qualifier_encoded: Any = None
+    # The Bigtable column qualifier, decoded as a string. (AI-inferred)
     qualifier_string: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies:
+    # The column(s) this applies to. (AI-inferred)
     columns: Any = None
+    # The text encoding this field's own byte values should be interpreted with. (AI-inferred)
     encoding: Any = None
+    # The Bigtable column family this applies to. (AI-inferred)
     family_id: Any = None
+    # Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
     only_read_latest: Any = None
+    # Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
     proto_config: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_BigtableOptions:
+    # The Bigtable column family/families this configuration applies to. (AI-inferred)
     column_families: Any = None
+    # Whether Bigtable column families not explicitly configured are silently ignored, rather than causing an error. (AI-inferred)
     ignore_unspecified_column_families: Any = None
+    # Whether Bigtable column family data is returned as a single JSON-encoded column, rather than one column per qualifier. (AI-inferred)
     output_column_families_as_json: Any = None
+    # Whether the Bigtable row key is read as a plain string, rather than raw bytes. (AI-inferred)
     read_rowkey_as_string: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_CsvOptions:
+    # Whether CSV rows with fewer columns than the schema are accepted, with missing trailing fields treated as null. (AI-inferred)
     allow_jagged_rows: Any = None
+    # Whether newline characters are allowed inside quoted CSV field values. (AI-inferred)
     allow_quoted_newlines: Any = None
+    # The text encoding this field's own byte values should be interpreted with. (AI-inferred)
     encoding: Any = None
+    # The character separating fields in a delimited source file, e.g. `,`. (AI-inferred)
     field_delimiter: Any = None
+    # The string that represents a null value in the source data. (AI-inferred)
     null_marker: Any = None
+    # The string(s) that represent a null value in the source data. (AI-inferred)
     null_markers: Any = None
+    # Whether ASCII control characters in CSV data are preserved as-is, rather than stripped. (AI-inferred)
     preserve_ascii_control_characters: Any = None
+    # The character used to quote field values in a delimited source file. (AI-inferred)
     quote: Any = None
+    # How many leading rows of the source file are skipped, e.g. a CSV header row. (AI-inferred)
     skip_leading_rows: Any = None
+    # Whether source file columns are matched to table columns by name or by position. (AI-inferred)
     source_column_match: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_GoogleSheetsOptions:
+    # The range this value spans. (AI-inferred)
     range: Any = None
+    # How many leading rows of the source file are skipped, e.g. a CSV header row. (AI-inferred)
     skip_leading_rows: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions_JsonOptions:
+    # The text encoding this field's own byte values should be interpreted with. (AI-inferred)
     encoding: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_TableDefinitions:
+    # Whether the table's own schema is automatically inferred from the source data, rather than explicitly specified. (AI-inferred)
     autodetect: Any = None
+    # Configuration specific to reading data in Avro format. (AI-inferred)
     avro_options: Any = None
+    # Configuration specific to reading data from a federated Bigtable source. (AI-inferred)
     bigtable_options: Any = None
+    # The compression codec applied to this data. (AI-inferred)
     compression: Any = None
+    # A reference to the connection resource this uses to reach an external data source. (AI-inferred)
     connection_id: Any = None
+    # Configuration specific to reading data in CSV format. (AI-inferred)
     csv_options: Any = None
+    # The format date values are parsed/rendered with. (AI-inferred)
     date_format: Any = None
+    # The format datetime values are parsed/rendered with. (AI-inferred)
     datetime_format: Any = None
+    # Which numeric type(s) `NUMERIC`/`BIGNUMERIC` source values are converted to when loaded. (AI-inferred)
     decimal_target_types: Any = None
+    # How the source file set is specified, e.g. as a list of URIs or a manifest file. (AI-inferred)
     file_set_spec_type: Any = None
+    # Configuration specific to reading data from a linked Google Sheet. (AI-inferred)
     google_sheets_options: Any = None
+    # Configuration for reading data laid out using Hive-style directory partitioning. (AI-inferred)
     hive_partitioning_options: Any = None
+    # Whether source data values not matching any column in the table's own schema are silently dropped, rather than causing an error. (AI-inferred)
     ignore_unknown_values: Any = None
+    # How JSON source data is interpreted, e.g. as newline-delimited records or a GeoJSON feature collection. (AI-inferred)
     json_extension: Any = None
+    # Configuration specific to reading data in JSON format. (AI-inferred)
     json_options: Any = None
+    # The maximum number of bad records tolerated before the load job fails. (AI-inferred)
     max_bad_records: Any = None
+    # Whether and how BigLake table metadata is cached, e.g. automatically refreshed. (AI-inferred)
     metadata_cache_mode: Any = None
+    # Metadata describing an object referenced by this table, for object tables. (AI-inferred)
     object_metadata: Any = None
+    # Configuration specific to reading data in Parquet format. (AI-inferred)
     parquet_options: Any = None
+    # The URI of a reference file whose own embedded schema is used for the whole external table. (AI-inferred)
     reference_file_schema_uri: Any = None
+    # The schema describing this table's own field structure. (AI-inferred)
     schema: Any = None
+    # The file format of the source data, e.g. `CSV`, `AVRO`, or `PARQUET`. (AI-inferred)
     source_format: Any = None
+    # The source file URI(s) this data is loaded/read from. (AI-inferred)
     source_uris: Any = None
+    # The format time values are parsed/rendered with. (AI-inferred)
     time_format: Any = None
+    # The time zone this applies to. (AI-inferred)
     time_zone: Any = None
+    # The format timestamp values are parsed/rendered with. (AI-inferred)
     timestamp_format: Any = None
+    # The precision timestamp values are converted to when loaded. (AI-inferred)
     timestamp_target_precision: Any = None
 
 @dataclasses.dataclass
 class Job_Configuration_Query_UserDefinedFunctionResources:
+    # Routine logic supplied directly as inline source code, rather than referencing an external definition. (AI-inferred)
     inline_code: Any = None
+    # A URI identifying this external resource. (AI-inferred)
     resource_uri: Any = None
 
 @dataclasses.dataclass
@@ -478,6 +602,7 @@ class Job_Configuration_Query:
     default_dataset: Any = None
     # Configuration for Cloud KMS encryption settings.
     destination_encryption_configuration: Any = None
+    # The table this operation writes to. (AI-inferred)
     destination_table: Any = None
     # Optional. If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For GoogleSQL queries, this flag is ignored and results are never flattened.
     flatten_results: Any = None
@@ -495,6 +620,7 @@ class Job_Configuration_Query:
     query: Any = None
     # Query parameters for GoogleSQL queries.
     query_parameters: Any = None
+    # Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
     range_partitioning: Any = None
     # Allows the schema of the destination table to be updated as a side effect of the query job. Schema update options are supported in three cases: when writeDisposition is WRITE_APPEND; when writeDisposition is WRITE_TRUNCATE_DATA; when writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema. One or more of the following values are specified: * ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. * ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable.
     schema_update_options: Any = None
@@ -504,6 +630,7 @@ class Job_Configuration_Query:
     system_variables: Any = None
     # Optional. You can specify external table definitions, which operate as ephemeral tables that can be queried. These definitions are configured using a JSON map, where the string key represents the table identifier, and the value is the corresponding external data configuration object.
     table_definitions: Any = None
+    # Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
     time_partitioning: Any = None
     # Optional. Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query uses BigQuery's [GoogleSQL](https://docs.cloud.google.com/bigquery/docs/introduction-sql). When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false.
     use_legacy_sql: Any = None
@@ -569,12 +696,19 @@ class Job_Statistics_DataMaskingStatistics:
 
 @dataclasses.dataclass
 class Job_Statistics_Extract_Timeline:
+    # How many work units this stage is currently processing. (AI-inferred)
     active_units: Any = None
+    # How many work units this stage has finished processing. (AI-inferred)
     completed_units: Any = None
+    # How long this stage/step has been running, in milliseconds. (AI-inferred)
     elapsed_ms: Any = None
+    # An estimate of how many more work units could run in parallel right now, given available slots. (AI-inferred)
     estimated_runnable_units: Any = None
+    # How many work units this stage hasn't started processing yet. (AI-inferred)
     pending_units: Any = None
+    # What fraction of available shuffle memory this stage used. (AI-inferred)
     shuffle_ram_usage_ratio: Any = None
+    # The total slot-milliseconds consumed across every stage of this job. (AI-inferred)
     total_slot_ms: Any = None
 
 @dataclasses.dataclass
@@ -603,7 +737,9 @@ class Job_Statistics_Load:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_BiEngineStatistics_BiEngineReasons:
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # A human-readable message describing this event, error, or status. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -657,11 +793,17 @@ class Job_Statistics_Query_ExportDataStatistics:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_ExternalServiceCosts:
+    # How compute cost for this job is charged, e.g. on-demand or by reserved slots. (AI-inferred)
     billing_method: Any = None
+    # The number of bytes this job was billed for. (AI-inferred)
     bytes_billed: Any = None
+    # The number of bytes this job actually processed. (AI-inferred)
     bytes_processed: Any = None
+    # A reference to the external service this job used. (AI-inferred)
     external_service: Any = None
+    # The number of query slots reserved for this job. (AI-inferred)
     reserved_slot_count: Any = None
+    # The total slot-milliseconds this job consumed. (AI-inferred)
     slot_ms: Any = None
 
 @dataclasses.dataclass
@@ -671,25 +813,36 @@ class Job_Statistics_Query_GenAiStats_ErrorStats:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_GenAiStats_FunctionStats_CacheStats:
+    # The number of rows served from cached metadata. (AI-inferred)
     num_cache_hit_rows: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStats:
+    # A human-readable message describing this event, error, or status. (AI-inferred)
     message: Any = None
+    # The number of rows this query avoided scanning due to metadata caching. (AI-inferred)
     num_cost_optimized_rows: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStats:
+    # The error(s) encountered. (AI-inferred)
     errors: Any = None
+    # The number of rows that failed to load. (AI-inferred)
     num_failed_rows: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_GenAiStats_FunctionStats:
+    # Statistics about how effectively cached metadata was used for this query. (AI-inferred)
     cache_stats: Any = None
+    # Statistics about how metadata caching reduced this query's own scan cost. (AI-inferred)
     cost_optimization_stats: Any = None
+    # Statistics about error rows encountered while loading data. (AI-inferred)
     error_stats: Any = None
+    # The name of the routine. (AI-inferred)
     function_name: Any = None
+    # The number of rows processed. (AI-inferred)
     num_processed_rows: Any = None
+    # The prompt text sent to the model. (AI-inferred)
     prompt: Any = None
 
 @dataclasses.dataclass
@@ -733,9 +886,13 @@ class Job_Statistics_Query_LoadQueryStatistics:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MaterializedViewStatistics_MaterializedView:
+    # Whether this option was actually selected/used. (AI-inferred)
     chosen: Any = None
+    # The estimated number of bytes this query avoided scanning due to metadata caching or BI Engine acceleration. (AI-inferred)
     estimated_bytes_saved: Any = None
+    # Why this row or record was rejected. (AI-inferred)
     rejected_reason: Any = None
+    # A reference to a specific BigQuery table. (AI-inferred)
     table_reference: Any = None
 
 @dataclasses.dataclass
@@ -745,17 +902,26 @@ class Job_Statistics_Query_MaterializedViewStatistics:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStats:
+    # The number of input partitions remaining after column-metadata-based pruning. (AI-inferred)
     post_cmeta_pruning_parallel_input_count: Any = None
+    # The number of partitions remaining after column-metadata-based pruning. (AI-inferred)
     post_cmeta_pruning_partition_count: Any = None
+    # The number of input partitions before column-metadata-based pruning. (AI-inferred)
     pre_cmeta_pruning_parallel_input_count: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage:
+    # A human-readable explanation of this result. (AI-inferred)
     explanation: Any = None
+    # Statistics about how much data this query avoided reading due to partition/index pruning. (AI-inferred)
     pruning_stats: Any = None
+    # How old this cached data or metadata currently is. (AI-inferred)
     staleness: Any = None
+    # A reference to a specific BigQuery table. (AI-inferred)
     table_reference: Any = None
+    # Whether this table is a standard table, view, materialized view, or external table. (AI-inferred)
     table_type: Any = None
+    # Why this index, cache, or optimization wasn't used for this query. (AI-inferred)
     unused_reason: Any = None
 
 @dataclasses.dataclass
@@ -765,305 +931,524 @@ class Job_Statistics_Query_MetadataCacheStatistics:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics:
+    # The Akaike Information Criterion for this fitted model -- lower values indicate a better tradeoff between fit and complexity. (AI-inferred)
     aic: Any = None
+    # The log-likelihood of the fitted model given the training data. (AI-inferred)
     log_likelihood: Any = None
+    # The variance of the model's own residuals. (AI-inferred)
     variance: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder:
+    # The differencing degree (`d`) of the ARIMA model -- how many times the series was differenced to make it stationary. (AI-inferred)
     d: Any = None
+    # The autoregressive order (`p`) of the ARIMA model -- how many past values it regresses on. (AI-inferred)
     p: Any = None
+    # The moving-average order (`q`) of the ARIMA model -- how many past forecast errors it incorporates. (AI-inferred)
     q: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics:
+    # Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred)
     arima_fitting_metrics: Any = None
+    # Whether this ARIMA model was fit with a drift term. (AI-inferred)
     has_drift: Any = None
+    # Whether the fitted ARIMA model detected a holiday effect in the time series. (AI-inferred)
     has_holiday_effect: Any = None
+    # Whether the fitted ARIMA model detected spikes and dips in the time series. (AI-inferred)
     has_spikes_and_dips: Any = None
+    # Whether the fitted ARIMA model detected step changes in the time series. (AI-inferred)
     has_step_changes: Any = None
+    # The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
     non_seasonal_order: Any = None
+    # The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
     seasonal_periods: Any = None
+    # The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred)
     time_series_id: Any = None
+    # The identifier(s) of the time series this applies to. (AI-inferred)
     time_series_ids: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics:
+    # Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred)
     arima_fitting_metrics: Any = None
+    # Forecast-quality metrics for a single fitted ARIMA time series model. (AI-inferred)
     arima_single_model_forecasting_metrics: Any = None
+    # Whether this ARIMA model was fit with a drift term. (AI-inferred)
     has_drift: Any = None
+    # The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
     non_seasonal_order: Any = None
+    # The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
     seasonal_periods: Any = None
+    # The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred)
     time_series_id: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics:
+    # The fraction of predictions this model got exactly right, on its own evaluation data. (AI-inferred)
     accuracy: Any = None
+    # The harmonic mean of this model's own precision and recall, on its own evaluation data. (AI-inferred)
     f1_score: Any = None
+    # The logarithmic loss of the model's own predicted probabilities against the true labels -- lower is better. (AI-inferred)
     log_loss: Any = None
+    # For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
     precision: Any = None
+    # The fraction of actual positive cases this model correctly identified, on its own evaluation data. (AI-inferred)
     recall: Any = None
+    # The area under the ROC curve for this classification model -- closer to 1.0 indicates better separation between classes. (AI-inferred)
     roc_auc: Any = None
+    # The classification probability threshold above which a prediction is treated as positive. (AI-inferred)
     threshold: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixList:
+    # The fraction of predictions this model got exactly right, on its own evaluation data. (AI-inferred)
     accuracy: Any = None
+    # The harmonic mean of this model's own precision and recall, on its own evaluation data. (AI-inferred)
     f1_score: Any = None
+    # The count of instances the model incorrectly predicted as negative. (AI-inferred)
     false_negatives: Any = None
+    # The count of instances the model incorrectly predicted as positive. (AI-inferred)
     false_positives: Any = None
+    # The classification probability threshold above which a prediction is treated as the positive class. (AI-inferred)
     positive_class_threshold: Any = None
+    # For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
     precision: Any = None
+    # The fraction of actual positive cases this model correctly identified, on its own evaluation data. (AI-inferred)
     recall: Any = None
+    # The count of instances the model correctly predicted as negative. (AI-inferred)
     true_negatives: Any = None
+    # The count of instances the model correctly predicted as positive. (AI-inferred)
     true_positives: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics:
+    # Classification evaluation metrics (precision, recall, accuracy, etc.) computed across all classes, aggregated to a single score. (AI-inferred)
     aggregate_classification_metrics: Any = None
+    # The confusion matrix/matrices computed at various classification thresholds, for a binary classifier. (AI-inferred)
     binary_confusion_matrix_list: Any = None
+    # The label value treated as the negative class. (AI-inferred)
     negative_label: Any = None
+    # The label value treated as the positive class. (AI-inferred)
     positive_label: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCounts:
+    # The category this value or classification belongs to. (AI-inferred)
     category: Any = None
+    # How many of this item there are. (AI-inferred)
     count: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue:
+    # How many times each category value occurred. (AI-inferred)
     category_counts: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues:
+    # A single categorical value and its own observed count. (AI-inferred)
     categorical_value: Any = None
+    # The name of the feature (input) column this applies to. (AI-inferred)
     feature_column: Any = None
+    # A numeric value. (AI-inferred)
     numerical_value: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters:
+    # The identifier of the cluster centroid this applies to, for a clustering model. (AI-inferred)
     centroid_id: Any = None
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The value(s) of the input feature(s) for this instance. (AI-inferred)
     feature_values: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics:
+    # The cluster(s) produced by a clustering model. (AI-inferred)
     clusters: Any = None
+    # A clustering-quality score measuring average similarity between each cluster and its most similar other cluster -- lower is better. (AI-inferred)
     davies_bouldin_index: Any = None
+    # The average squared distance from each point to its own assigned cluster centroid. (AI-inferred)
     mean_squared_distance: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetrics:
+    # The total fraction of variance explained across all retained principal components. (AI-inferred)
     total_explained_variance_ratio: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_Entries:
+    # How many item(s) this applies to. (AI-inferred)
     item_count: Any = None
+    # The label the model predicted for this instance. (AI-inferred)
     predicted_label: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows:
+    # The true, observed label for this evaluation instance. (AI-inferred)
     actual_label: Any = None
+    # The entry/entries making up this collection. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList:
+    # The minimum confidence a prediction must reach to be accepted. (AI-inferred)
     confidence_threshold: Any = None
+    # The row(s) making up this result. (AI-inferred)
     rows: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics:
+    # Classification evaluation metrics (precision, recall, accuracy, etc.) computed across all classes, aggregated to a single score. (AI-inferred)
     aggregate_classification_metrics: Any = None
+    # The confusion matrix/matrices computed at various classification thresholds. (AI-inferred)
     confusion_matrix_list: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetrics:
+    # The average rank assigned across evaluation instances, for a ranking model. (AI-inferred)
     average_rank: Any = None
+    # The mean of average precision scores across queries/users, for a ranking model. (AI-inferred)
     mean_average_precision: Any = None
+    # The average squared difference between predicted and actual values, for a regression model. (AI-inferred)
     mean_squared_error: Any = None
+    # A ranking-quality score comparing the model's own result ordering to an ideal ordering, normalized to [0, 1]. (AI-inferred)
     normalized_discounted_cumulative_gain: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetrics:
+    # The average absolute difference between predicted and actual values, for a regression model. (AI-inferred)
     mean_absolute_error: Any = None
+    # The average squared difference between predicted and actual values, for a regression model. (AI-inferred)
     mean_squared_error: Any = None
+    # The average squared difference between the log of predicted and actual values, for a regression model. (AI-inferred)
     mean_squared_log_error: Any = None
+    # The median absolute difference between predicted and actual values, for a regression model. (AI-inferred)
     median_absolute_error: Any = None
+    # The proportion of variance in the target explained by the model -- closer to 1.0 indicates a better fit. (AI-inferred)
     r_squared: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics:
+    # Forecast-quality metrics for a fitted ARIMA model, one set per time series. (AI-inferred)
     arima_forecasting_metrics: Any = None
+    # Evaluation metrics specific to a binary (two-class) classification model. (AI-inferred)
     binary_classification_metrics: Any = None
+    # Evaluation metrics specific to a clustering model. (AI-inferred)
     clustering_metrics: Any = None
+    # Evaluation metrics specific to a dimensionality-reduction (e.g. PCA) model. (AI-inferred)
     dimensionality_reduction_metrics: Any = None
+    # Evaluation metrics specific to a multi-class classification model. (AI-inferred)
     multi_class_classification_metrics: Any = None
+    # Evaluation metrics specific to a ranking/recommendation model. (AI-inferred)
     ranking_metrics: Any = None
+    # Evaluation metrics specific to a regression model. (AI-inferred)
     regression_metrics: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials_Hparams:
+    # The activation function used between hidden layers of a neural network model, e.g. `RELU`. (AI-inferred)
     activation_fn: Any = None
+    # Whether the ARIMA model automatically adjusts for detected step changes in the time series. (AI-inferred)
     adjust_step_changes: Any = None
+    # Whether feature attribution is computed using a faster, approximate method rather than an exact one. (AI-inferred)
     approx_global_feature_contrib: Any = None
+    # Whether BigQuery ML automatically searches for the best-fitting ARIMA order, rather than using a caller-specified one. (AI-inferred)
     auto_arima: Any = None
+    # The maximum ARIMA order considered during automatic order search. (AI-inferred)
     auto_arima_max_order: Any = None
+    # The minimum ARIMA order considered during automatic order search. (AI-inferred)
     auto_arima_min_order: Any = None
+    # Whether class weights are automatically balanced based on label frequency in the training data. (AI-inferred)
     auto_class_weights: Any = None
+    # How many examples are processed together in each training step. (AI-inferred)
     batch_size: Any = None
+    # The boosting algorithm used, e.g. `GBTREE` or `DART`. (AI-inferred)
     booster_type: Any = None
+    # The maximum training time allotted, in hours. (AI-inferred)
     budget_hours: Any = None
+    # Whether statistical p-values are computed for model coefficients. (AI-inferred)
     calculate_pvalues: Any = None
+    # How categorical features are encoded into numeric input for the model, e.g. one-hot. (AI-inferred)
     category_encoding_method: Any = None
+    # Whether transient spikes and dips are automatically smoothed out of the time series before fitting. (AI-inferred)
     clean_spikes_and_dips: Any = None
+    # The color space used to interpret pixel data. (AI-inferred)
     color_space: Any = None
+    # The fraction of features randomly sampled at each tree level, for a boosted tree model. (AI-inferred)
     colsample_bylevel: Any = None
+    # The fraction of features randomly sampled at each tree split, for a boosted tree model. (AI-inferred)
     colsample_bynode: Any = None
+    # The fraction of features randomly sampled when building each tree, for a boosted tree model. (AI-inferred)
     colsample_bytree: Any = None
+    # Which metric feature contributions/attributions are computed relative to. (AI-inferred)
     contribution_metric: Any = None
+    # How tree contributions are normalized in DART boosting, e.g. `TREE` or `FOREST`. (AI-inferred)
     dart_normalize_type: Any = None
+    # The expected time interval between consecutive observations in a time series, e.g. daily or hourly. (AI-inferred)
     data_frequency: Any = None
+    # The column identifying which split (train/eval) each row belongs to, for a custom data split. (AI-inferred)
     data_split_column: Any = None
+    # The fraction of training data held out for evaluation. (AI-inferred)
     data_split_eval_fraction: Any = None
+    # How training data is divided into training and evaluation sets, e.g. random or sequential. (AI-inferred)
     data_split_method: Any = None
+    # Whether the time series is decomposed into trend, seasonal, and holiday components as part of fitting. (AI-inferred)
     decompose_time_series: Any = None
+    # The column(s) identifying which entity/dimension each row of a multi-dimensional time series belongs to. (AI-inferred)
     dimension_id_columns: Any = None
+    # The distance metric used to measure similarity between points, e.g. Euclidean or cosine. (AI-inferred)
     distance_type: Any = None
+    # The fraction of units randomly dropped during training, to reduce overfitting. (AI-inferred)
     dropout: Any = None
+    # Whether training stops automatically once further iterations no longer improve the evaluation metric. (AI-inferred)
     early_stop: Any = None
+    # Whether global (whole-model) feature-importance explanations are computed, in addition to per-prediction ones. (AI-inferred)
     enable_global_explain: Any = None
+    # How long a deployed model endpoint is kept warm without traffic before being torn down. (AI-inferred)
     endpoint_idle_ttl: Any = None
+    # Whether user feedback for this recommender model is implicit or explicit. (AI-inferred)
     feedback_type: Any = None
+    # Whether an intercept term is fit as part of the model, rather than forcing it to zero. (AI-inferred)
     fit_intercept: Any = None
+    # The lower bound of the forecast's own confidence interval. (AI-inferred)
     forecast_limit_lower_bound: Any = None
+    # The upper bound of the forecast's own confidence interval. (AI-inferred)
     forecast_limit_upper_bound: Any = None
+    # The number of units in each hidden layer, for a neural network model. (AI-inferred)
     hidden_units: Any = None
+    # The region whose public holidays are factored into ARIMA forecasting. (AI-inferred)
     holiday_region: Any = None
+    # The region(s) whose public holidays are factored into ARIMA forecasting. (AI-inferred)
     holiday_regions: Any = None
+    # How many future time steps this forecast covers. (AI-inferred)
     horizon: Any = None
+    # The metric(s) hyperparameter tuning optimizes for. (AI-inferred)
     hparam_tuning_objectives: Any = None
+    # The Hugging Face Hub identifier of the model this references. (AI-inferred)
     hugging_face_model_id: Any = None
+    # Whether the ARIMA model's own drift term is included when computing forecasts. (AI-inferred)
     include_drift: Any = None
+    # The learning rate used at the start of training, before any line-search adjustment. (AI-inferred)
     initial_learn_rate: Any = None
+    # The column(s) holding the true label(s) used to train and evaluate the model. (AI-inferred)
     input_label_columns: Any = None
+    # The column giving each training example's own relative importance weight. (AI-inferred)
     instance_weight_column: Any = None
+    # How many interpolation steps are used when computing Integrated Gradients feature attributions. (AI-inferred)
     integrated_gradients_num_steps: Any = None
+    # The column marking which rows belong to the held-out test set. (AI-inferred)
     is_test_column: Any = None
+    # The column identifying the item in a recommender model's own training data. (AI-inferred)
     item_column: Any = None
+    # The column providing caller-specified initial centroid positions for k-means clustering. (AI-inferred)
     kmeans_initialization_column: Any = None
+    # How initial centroid positions are chosen for k-means clustering, e.g. random or k-means++. (AI-inferred)
     kmeans_initialization_method: Any = None
+    # The L1 regularization strength applied to activations, for a neural network model. (AI-inferred)
     l1_reg_activation: Any = None
+    # The L1 regularization strength applied during training. (AI-inferred)
     l1_regularization: Any = None
+    # The L2 regularization strength applied during training. (AI-inferred)
     l2_regularization: Any = None
+    # Per-class weight(s) applied during training, to counteract class imbalance. (AI-inferred)
     label_class_weights: Any = None
+    # The step size used to update model weights during training. (AI-inferred)
     learn_rate: Any = None
+    # How the learning rate changes over training, e.g. fixed or line-search. (AI-inferred)
     learn_rate_strategy: Any = None
+    # The loss function optimized during training. (AI-inferred)
     loss_type: Any = None
+    # The machine type provisioned for this training job. (AI-inferred)
     machine_type: Any = None
+    # The maximum number of training iterations. (AI-inferred)
     max_iterations: Any = None
+    # The maximum number of hyperparameter tuning trials run concurrently. (AI-inferred)
     max_parallel_trials: Any = None
+    # The maximum number of serving replicas this deployed model may scale up to. (AI-inferred)
     max_replica_count: Any = None
+    # The maximum number of historical time steps used when fitting the model. (AI-inferred)
     max_time_series_length: Any = None
+    # The maximum depth a single decision tree may reach. (AI-inferred)
     max_tree_depth: Any = None
+    # The minimum support threshold an itemset must reach to be considered frequent, for association rule mining. (AI-inferred)
     min_apriori_support: Any = None
+    # The minimum relative improvement in loss required to continue training another iteration. (AI-inferred)
     min_relative_progress: Any = None
+    # The minimum number of serving replicas this deployed model scales down to. (AI-inferred)
     min_replica_count: Any = None
+    # The minimum loss reduction required to make a further split in a decision tree. (AI-inferred)
     min_split_loss: Any = None
+    # The minimum number of historical time steps required to fit the model. (AI-inferred)
     min_time_series_length: Any = None
+    # The minimum sum of instance weight required in a tree leaf, for a boosted tree model. (AI-inferred)
     min_tree_child_weight: Any = None
+    # The Model Garden identifier of the foundation model this references. (AI-inferred)
     model_garden_model_name: Any = None
+    # Which model registry this model is published to. (AI-inferred)
     model_registry: Any = None
+    # The Cloud Storage URI of the model artifact. (AI-inferred)
     model_uri: Any = None
+    # The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
     non_seasonal_order: Any = None
+    # The number of clusters the model is fit with. (AI-inferred)
     num_clusters: Any = None
+    # The number of latent factors used in a matrix factorization model. (AI-inferred)
     num_factors: Any = None
+    # The number of trees built in parallel at each boosting round, for a random-forest-style ensemble. (AI-inferred)
     num_parallel_tree: Any = None
+    # The number of principal components computed by a PCA model. (AI-inferred)
     num_principal_components: Any = None
+    # The number of hyperparameter tuning trials run. (AI-inferred)
     num_trials: Any = None
+    # Which algorithm is used to optimize the training objective. (AI-inferred)
     optimization_strategy: Any = None
+    # The optimization algorithm used to update model weights during training, e.g. Adam. (AI-inferred)
     optimizer: Any = None
+    # The fraction of total variance each principal component explains. (AI-inferred)
     pca_explained_variance_ratio: Any = None
+    # The algorithm used to compute principal components. (AI-inferred)
     pca_solver: Any = None
+    # The reservation-assignment label key this job's own reservation affinity matches on. (AI-inferred)
     reservation_affinity_key: Any = None
+    # Whether this job must, may, or must not use a specific reservation. (AI-inferred)
     reservation_affinity_type: Any = None
+    # The reservation-assignment label value(s) this job's own reservation affinity matches on. (AI-inferred)
     reservation_affinity_values: Any = None
+    # How many feature-permutation paths Sampled Shapley samples to approximate attributions. (AI-inferred)
     sampled_shapley_num_paths: Any = None
+    # Whether input features are automatically normalized (scaled) before training. (AI-inferred)
     scale_features: Any = None
+    # Whether input features are standardized (zero mean, unit variance) before training. (AI-inferred)
     standardize_features: Any = None
+    # The fraction of training examples randomly sampled for each boosting round. (AI-inferred)
     subsample: Any = None
+    # The TensorFlow version this imported model was trained with. (AI-inferred)
     tf_version: Any = None
+    # The column holding the value(s) to forecast. (AI-inferred)
     time_series_data_column: Any = None
+    # The column identifying which time series each row belongs to, when training on multiple series at once. (AI-inferred)
     time_series_id_column: Any = None
+    # The column(s) identifying which time series each row belongs to, when training on multiple series at once. (AI-inferred)
     time_series_id_columns: Any = None
+    # The fraction of the time series' own full length used to compute this metric. (AI-inferred)
     time_series_length_fraction: Any = None
+    # The column holding each observation's own timestamp. (AI-inferred)
     time_series_timestamp_column: Any = None
+    # The algorithm used to build each decision tree, e.g. exact or histogram-based. (AI-inferred)
     tree_method: Any = None
+    # The window size used to smooth the trend component when decomposing the time series. (AI-inferred)
     trend_smoothing_window_size: Any = None
+    # The column identifying the user in a recommender model's own training data. (AI-inferred)
     user_column: Any = None
+    # The Vertex AI Model Registry version alias(es) assigned to this model. (AI-inferred)
     vertex_ai_model_version_aliases: Any = None
+    # The confidence weighting parameter used by the Weighted Alternating Least Squares algorithm, for matrix factorization. (AI-inferred)
     wals_alpha: Any = None
+    # Whether training resumes from a previous model's own learned weights, rather than starting from scratch. (AI-inferred)
     warm_start: Any = None
+    # The XGBoost library version this imported model was trained with. (AI-inferred)
     xgboost_version: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_HparamTrials:
+    # When this event ended, as a Unix timestamp in milliseconds. (AI-inferred)
     end_time_ms: Any = None
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # The loss value computed on the evaluation (held-out) dataset. (AI-inferred)
     eval_loss: Any = None
+    # The evaluation metric(s) computed for this trained model. (AI-inferred)
     evaluation_metrics: Any = None
+    # The evaluation metric(s) recorded for one hyperparameter tuning trial. (AI-inferred)
     hparam_tuning_evaluation_metrics: Any = None
+    # The hyperparameter value(s) used for this trial. (AI-inferred)
     hparams: Any = None
+    # When this event started, as a Unix timestamp in milliseconds. (AI-inferred)
     start_time_ms: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # The loss value computed on the training dataset. (AI-inferred)
     training_loss: Any = None
+    # An identifier for this hyperparameter tuning trial. (AI-inferred)
     trial_id: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficients:
+    # The fitted autoregressive coefficient(s) of the model. (AI-inferred)
     auto_regressive_coefficients: Any = None
+    # The fitted intercept term of the model. (AI-inferred)
     intercept_coefficient: Any = None
+    # The fitted moving-average coefficient(s) of an ARIMA model. (AI-inferred)
     moving_average_coefficients: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo:
+    # The fitted autoregressive, moving-average, and intercept coefficient(s) of an ARIMA model. (AI-inferred)
     arima_coefficients: Any = None
+    # Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred)
     arima_fitting_metrics: Any = None
+    # Whether this ARIMA model was fit with a drift term. (AI-inferred)
     has_drift: Any = None
+    # Whether the fitted ARIMA model detected a holiday effect in the time series. (AI-inferred)
     has_holiday_effect: Any = None
+    # Whether the fitted ARIMA model detected spikes and dips in the time series. (AI-inferred)
     has_spikes_and_dips: Any = None
+    # Whether the fitted ARIMA model detected step changes in the time series. (AI-inferred)
     has_step_changes: Any = None
+    # The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
     non_seasonal_order: Any = None
+    # The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
     seasonal_periods: Any = None
+    # The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred)
     time_series_id: Any = None
+    # The identifier(s) of the time series this applies to. (AI-inferred)
     time_series_ids: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult:
+    # Detail about one fitted ARIMA model, when a query trains multiple time series at once. (AI-inferred)
     arima_model_info: Any = None
+    # The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
     seasonal_periods: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfos:
+    # The identifier of the cluster centroid this applies to, for a clustering model. (AI-inferred)
     centroid_id: Any = None
+    # The average distance from a cluster's own centroid to its member points. (AI-inferred)
     cluster_radius: Any = None
+    # How many training examples fall into this cluster. (AI-inferred)
     cluster_size: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfos:
+    # The running total of variance explained as successive principal components are added, for a PCA model. (AI-inferred)
     cumulative_explained_variance_ratio: Any = None
+    # How much of the total variance in the data this component/model accounts for. (AI-inferred)
     explained_variance: Any = None
+    # The fraction of total variance this principal component explains. (AI-inferred)
     explained_variance_ratio: Any = None
+    # The identifier of the principal component this applies to. (AI-inferred)
     principal_component_id: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_MlStatistics_IterationResults:
+    # The fitted ARIMA model result(s), one per time series analyzed. (AI-inferred)
     arima_result: Any = None
+    # Detail about each cluster produced by a clustering model. (AI-inferred)
     cluster_infos: Any = None
+    # How long this operation took, in milliseconds. (AI-inferred)
     duration_ms: Any = None
+    # The loss value computed on the evaluation (held-out) dataset. (AI-inferred)
     eval_loss: Any = None
+    # The position of this item within its own containing sequence. (AI-inferred)
     index: Any = None
+    # The step size used to update model weights during training. (AI-inferred)
     learn_rate: Any = None
+    # Detail about each principal component computed by a PCA model. (AI-inferred)
     principal_component_infos: Any = None
+    # The loss value computed on the training dataset. (AI-inferred)
     training_loss: Any = None
 
 @dataclasses.dataclass
@@ -1088,55 +1473,81 @@ class Job_Statistics_Query_ModelTraining:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_ObjectStorageStats:
+    # The number of bytes served from cached metadata/results, rather than freshly read. (AI-inferred)
     cache_bytes_read: Any = None
+    # Which cloud provider hosts this external resource. (AI-inferred)
     cloud_provider: Any = None
+    # The number of bytes read from Cloud Storage objects. (AI-inferred)
     object_storage_bytes_read: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChange:
+    # How much the record count read differs from a prior baseline, as a percentage. (AI-inferred)
     records_read_diff_percentage: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights:
+    # How the model's own input data has changed since it was last trained, if at all. (AI-inferred)
     input_data_change: Any = None
+    # An identifier for this query stage. (AI-inferred)
     stage_id: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoins:
+    # The number of rows on the left side of a join stage. (AI-inferred)
     left_rows: Any = None
+    # The number of rows this stage/job produced. (AI-inferred)
     output_rows: Any = None
+    # The number of rows on the right side of a join stage. (AI-inferred)
     right_rows: Any = None
+    # This step's own position within its own containing sequence. (AI-inferred)
     step_index: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSources:
+    # The maximum output size any single work unit in this stage produced, in bytes. (AI-inferred)
     output_bytes_max: Any = None
+    # The median output size across work units in this stage, in bytes. (AI-inferred)
     output_bytes_median: Any = None
+    # The 95th-percentile output size across work units in this stage, in bytes. (AI-inferred)
     output_bytes_p95: Any = None
+    # An identifier for this query stage. (AI-inferred)
     stage_id: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew:
+    # The query stage(s) identified as the source of a detected data skew. (AI-inferred)
     skew_sources: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights:
+    # Why this query wasn't accelerated by BI Engine, when it wasn't. (AI-inferred)
     bi_engine_reasons: Any = None
+    # Join(s) in this query involving a high-cardinality key, flagged as a potential performance concern. (AI-inferred)
     high_cardinality_joins: Any = None
+    # Whether this query was slowed by hitting its own project's shuffle capacity limit. (AI-inferred)
     insufficient_shuffle_quota: Any = None
+    # Whether one or more partitions in this stage received disproportionately more data than others, flagged as a potential performance concern. (AI-inferred)
     partition_skew: Any = None
+    # Whether this stage was slowed by contention for query execution slots. (AI-inferred)
     slot_contention: Any = None
+    # An identifier for this query stage. (AI-inferred)
     stage_id: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsight:
+    # The average age, in milliseconds, of the cached metadata used before this refresh. (AI-inferred)
     avg_previous_staleness_ms: Any = None
+    # How much cache staleness increased relative to a prior baseline, as a percentage. (AI-inferred)
     staleness_percentage_increase: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_PerformanceInsights_TableChangeInsights:
+    # Whether cached metadata was available but deliberately not used for this query, despite being used previously. (AI-inferred)
     metadata_cache_not_used_but_used_previously: Any = None
+    # Detail about how stale the cached metadata used for this query was. (AI-inferred)
     metadata_cache_staleness_insight: Any = None
+    # A reference to a specific BigQuery table. (AI-inferred)
     table_reference: Any = None
 
 @dataclasses.dataclass
@@ -1157,66 +1568,112 @@ class Job_Statistics_Query_QueryInfo:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_QueryPlan_Steps:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The finer-grained sub-step(s) making up this step. (AI-inferred)
     substeps: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_QueryPlan:
+    # How many parallel input partitions have finished processing. (AI-inferred)
     completed_parallel_inputs: Any = None
+    # Whether this query ran using on-demand or reserved compute capacity. (AI-inferred)
     compute_mode: Any = None
+    # The average compute time per work unit in this stage, in milliseconds. (AI-inferred)
     compute_ms_avg: Any = None
+    # The maximum compute time for any single work unit in this stage, in milliseconds. (AI-inferred)
     compute_ms_max: Any = None
+    # The average fraction of total stage time spent computing, versus reading/writing/waiting. (AI-inferred)
     compute_ratio_avg: Any = None
+    # The maximum fraction of total stage time any single work unit spent computing. (AI-inferred)
     compute_ratio_max: Any = None
+    # When this stage/step ended, in milliseconds since the job started. (AI-inferred)
     end_ms: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The upstream query stage(s) this stage reads its own input from. (AI-inferred)
     input_stages: Any = None
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The number of input partitions this stage processes in parallel. (AI-inferred)
     parallel_inputs: Any = None
+    # The average time spent reading per work unit in this stage, in milliseconds. (AI-inferred)
     read_ms_avg: Any = None
+    # The maximum time spent reading by any single work unit in this stage, in milliseconds. (AI-inferred)
     read_ms_max: Any = None
+    # The average fraction of total stage time spent reading. (AI-inferred)
     read_ratio_avg: Any = None
+    # The maximum fraction of total stage time any single work unit spent reading. (AI-inferred)
     read_ratio_max: Any = None
+    # The number of records read. (AI-inferred)
     records_read: Any = None
+    # The number of records written. (AI-inferred)
     records_written: Any = None
+    # The total number of bytes this stage wrote to shuffle. (AI-inferred)
     shuffle_output_bytes: Any = None
+    # The number of shuffle output bytes that spilled to disk because they didn't fit in memory. (AI-inferred)
     shuffle_output_bytes_spilled: Any = None
+    # The total slot-milliseconds this job consumed. (AI-inferred)
     slot_ms: Any = None
+    # When this stage/step started, in milliseconds since the job started. (AI-inferred)
     start_ms: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # The ordered step(s) making up this sequence. (AI-inferred)
     steps: Any = None
+    # The average time spent waiting per work unit in this stage, in milliseconds. (AI-inferred)
     wait_ms_avg: Any = None
+    # The maximum time spent waiting by any single work unit in this stage, in milliseconds. (AI-inferred)
     wait_ms_max: Any = None
+    # The average fraction of total stage time spent waiting. (AI-inferred)
     wait_ratio_avg: Any = None
+    # The maximum fraction of total stage time any single work unit spent waiting. (AI-inferred)
     wait_ratio_max: Any = None
+    # The average time spent writing per work unit in this stage, in milliseconds. (AI-inferred)
     write_ms_avg: Any = None
+    # The maximum time spent writing by any single work unit in this stage, in milliseconds. (AI-inferred)
     write_ms_max: Any = None
+    # The average fraction of total stage time spent writing. (AI-inferred)
     write_ratio_avg: Any = None
+    # The maximum fraction of total stage time any single work unit spent writing. (AI-inferred)
     write_ratio_max: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_ReferencedPropertyGraphs:
+    # The BigQuery dataset ID this applies to. (AI-inferred)
     dataset_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # A reference to the property graph this applies to. (AI-inferred)
     property_graph_id: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_ReservationUsage:
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The total slot-milliseconds this job consumed. (AI-inferred)
     slot_ms: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_SearchStatistics_IndexPruningStats:
+    # A reference to the underlying table a view or materialized view is defined over. (AI-inferred)
     base_table: Any = None
+    # A reference to the search index this applies to. (AI-inferred)
     index_id: Any = None
+    # The number of input partitions remaining after index-based pruning. (AI-inferred)
     post_index_pruning_parallel_input_count: Any = None
+    # The number of input partitions before index-based pruning. (AI-inferred)
     pre_index_pruning_parallel_input_count: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_SearchStatistics_IndexUnusedReasons:
+    # A reference to the underlying table a view or materialized view is defined over. (AI-inferred)
     base_table: Any = None
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # The name of the search index. (AI-inferred)
     index_name: Any = None
+    # A human-readable message describing this event, error, or status. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -1252,14 +1709,20 @@ class Job_Statistics_Query_SparkStatistics:
 
 @dataclasses.dataclass
 class Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasons:
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # A human-readable message describing this event, error, or status. (AI-inferred)
     message: Any = None
+    # The column(s) a search index doesn't cover, requiring a fallback table scan for queries referencing them. (AI-inferred)
     uncovered_columns: Any = None
 
 @dataclasses.dataclass
 class Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages:
+    # A reference to the underlying table a view or materialized view is defined over. (AI-inferred)
     base_table: Any = None
+    # Whether this query was accelerated by BI Engine. (AI-inferred)
     is_query_accelerated: Any = None
+    # Why a search index's own stored column(s) weren't used to answer this query. (AI-inferred)
     stored_columns_unused_reasons: Any = None
 
 @dataclasses.dataclass
@@ -1281,10 +1744,13 @@ class Job_Statistics_Query:
     cache_hit: Any = None
     # Identifier for a dataset.
     dcl_target_dataset: Any = None
+    # The table a Data Control Language statement (e.g. `GRANT`) applies to. (AI-inferred)
     dcl_target_table: Any = None
+    # The view a Data Control Language statement (e.g. `GRANT`) applies to. (AI-inferred)
     dcl_target_view: Any = None
     # Output only. The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries.
     ddl_affected_row_access_policy_count: Any = None
+    # The table a Data Definition Language statement created or modified. (AI-inferred)
     ddl_destination_table: Any = None
     # Output only. The DDL operation performed, possibly dependent on the pre-existence of the DDL target.
     ddl_operation_performed: Any = None
@@ -1294,6 +1760,7 @@ class Job_Statistics_Query:
     ddl_target_routine: Any = None
     # Id path of a row access policy.
     ddl_target_row_access_policy: Any = None
+    # The table a Data Definition Language statement applies to. (AI-inferred)
     ddl_target_table: Any = None
     # Detailed statistics for DML statements
     dml_stats: Any = None
@@ -1315,6 +1782,7 @@ class Job_Statistics_Query:
     metadata_cache_statistics: Any = None
     # Job statistics specific to a BigQuery ML training job.
     ml_statistics: Any = None
+    # Detail about this model's own training run. (AI-inferred)
     model_training: Any = None
     # Deprecated.
     model_training_current_iteration: Any = None
@@ -1374,11 +1842,17 @@ class Job_Statistics_RowLevelSecurityStatistics:
 
 @dataclasses.dataclass
 class Job_Statistics_ScriptStatistics_StackFrames:
+    # The column position this range ends at. (AI-inferred)
     end_column: Any = None
+    # The line number this range ends at. (AI-inferred)
     end_line: Any = None
+    # A reference to the stored procedure this applies to. (AI-inferred)
     procedure_id: Any = None
+    # The column position this range starts at. (AI-inferred)
     start_column: Any = None
+    # The line number this range starts at. (AI-inferred)
     start_line: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
@@ -3364,6 +3838,7 @@ _Job_StatusFields = {
 
 @dataclasses.dataclass
 class JobConfig:
+    # The configuration for this job. (AI-inferred)
     configuration: Any = None
     # Reason about why a Job was created from a [`jobs.query`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query) method when used with `JOB_CREATION_OPTIONAL` Job creation mode. For [`jobs.insert`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/insert) method calls it will always be `REQUESTED`.
     job_creation_reason: Any = None
@@ -3371,10 +3846,12 @@ class JobConfig:
     job_reference: Any = None
     # Statistics for a single job execution.
     statistics: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class JobAttrs:
+    # The configuration for this job. (AI-inferred)
     configuration: Any = None
     # Output only. A hash of this resource.
     etag: Any = None
@@ -3392,6 +3869,7 @@ class JobAttrs:
     self_link: Any = None
     # Statistics for a single job execution.
     statistics: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
     # Output only. Email address of the user who ran the job.
     user_email: Any = None

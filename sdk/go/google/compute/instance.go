@@ -26,70 +26,117 @@ type Instance_ConfidentialInstanceConfig struct {
 }
 
 type Instance_Disks_DiskEncryptionKey struct {
-	KmsKeyName           any
+	// The full resource name of the Cloud KMS key used to encrypt the disk, in the format projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}. This key is a customer-managed encryption key (CMEK) used for disk encryption. (AI-inferred)
+	KmsKeyName any
+	// The service account being used for the encryption request for the given KMS key. If not specified, the instance's default service account is used. (AI-inferred)
 	KmsKeyServiceAccount any
-	RawKey               any
-	RsaEncryptedKey      any
-	Sha256               any
+	// The customer-supplied encryption key for the disk, provided as a base64-encoded 256-bit key. This is used to encrypt the disk when using customer-supplied encryption keys. (AI-inferred)
+	RawKey any
+	// The base64-encoded RSA-encrypted version of the customer-supplied encryption key, encrypted using Google's public RSA key. This is provided as an alternative to the unencrypted raw_key for protecting the key during transmission. (AI-inferred)
+	RsaEncryptedKey any
+	// The SHA256 hash of the customer-supplied encryption key (raw_key). This field is computed by Google and used to verify the key. (AI-inferred)
+	Sha256 any
 }
 
 type Instance_Disks_GuestOsFeatures struct {
+	// Specifies the type of guest OS feature to enable. Valid values include BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, and WINDOWS. (AI-inferred)
 	Type any
 }
 
 type Instance_Disks_InitializeParams struct {
-	Architecture                any
-	Description                 any
-	DiskName                    any
-	DiskSizeGb                  any
-	DiskType                    any
-	EnableConfidentialCompute   any
-	Labels                      any
-	Licenses                    any
-	OnUpdateAction              any
-	ProvisionedIops             any
-	ProvisionedThroughput       any
-	ReplicaZones                any
-	ResourceManagerTags         any
-	ResourcePolicies            any
-	SourceImage                 any
-	SourceImageEncryptionKey    any
-	SourceSnapshot              any
+	// The CPU architecture for the disk image. Valid values are ARCHITECTURE_UNSPECIFIED, ARM64, and X86_64. (AI-inferred)
+	Architecture any
+	// An optional description for the disk being initialized. (AI-inferred)
+	Description any
+	DiskName    any
+	// Specifies the size of the disk in gigabytes. If not set, the default size of the underlying image is used. (AI-inferred)
+	DiskSizeGb any
+	DiskType   any
+	// Enables Confidential Compute for this disk, which encrypts data in use and allows the disk to be used with confidential VM instances. (AI-inferred)
+	EnableConfidentialCompute any
+	// Labels to apply to the boot disk created from this initialize_params block. (AI-inferred)
+	Labels any
+	// A list of license URIs to apply to this disk. This may be used to apply licenses that are not already present on the image. (AI-inferred)
+	Licenses any
+	// The update action to perform when the disk configuration changes. Supported values: RECREATE_DISK (recreate the disk on any update), RECREATE_DISK_IF_SOURCE_CHANGED (recreate only if the source image/snapshot changes), USE_EXISTING_DISK (keep the existing disk). (AI-inferred)
+	OnUpdateAction any
+	// The provisioned IOPS for the disk. This is applicable to disk types that support configurable IOPS, such as Hyperdisk or Extreme persistent disks. (AI-inferred)
+	ProvisionedIops any
+	// The provisioned throughput, in MB/s, for the disk. Only applicable to disk types that support provisioned throughput, such as Hyperdisk. (AI-inferred)
+	ProvisionedThroughput any
+	// The zones for a regional persistent disk. Provide exactly two zones to create a regional disk; if omitted, a zonal disk is created. (AI-inferred)
+	ReplicaZones any
+	// A map of resource manager tags to apply to the disk. Keys must be in the format tagKeys/{tag_key_id} and values in the format tagValues/{tag_value_id}. (AI-inferred)
+	ResourceManagerTags any
+	// A list of self-links to resource policies (such as snapshot schedules) to apply to the disk when it is created. (AI-inferred)
+	ResourcePolicies any
+	// The source image to use for creating this disk. Can be a fully-qualified image URL, a project/image reference, or an image family name. (AI-inferred)
+	SourceImage any
+	// Provides the customer-supplied encryption key used to decrypt the source image when creating a disk from an encrypted image. This block is only used if the source image is encrypted with a customer-supplied key. (AI-inferred)
+	SourceImageEncryptionKey any
+	// The source snapshot used to create this disk. The disk will be initialized from the specified snapshot. (AI-inferred)
+	SourceSnapshot any
+	// The customer-supplied encryption key used to decrypt the source snapshot, if it was created with a customer-managed encryption key. (AI-inferred)
 	SourceSnapshotEncryptionKey any
-	StoragePool                 any
+	// The URL of the storage pool in which to create the disk. If not specified, the default storage pool is used. (AI-inferred)
+	StoragePool any
 }
 
 type Instance_Disks_ShieldedInstanceInitialState_Dbs struct {
-	Content  any
+	// The base64-encoded contents of the UEFI db (database) file for the shielded instance's initial state. (AI-inferred)
+	Content any
+	// The file type of the database file. Valid values are BIN, UNDEFINED, and X509. (AI-inferred)
 	FileType any
 }
 
 type Instance_Disks_ShieldedInstanceInitialState struct {
-	Dbs  any
+	// The list of database certificates for the shielded instance initial state. Each object in the list represents a certificate with fields for content and file type. (AI-inferred)
+	Dbs any
+	// A list of DBX (forbidden signature database) entries for the shielded VM initial state. These entries specify the forbidden signatures that Secure Boot will deny during boot. (AI-inferred)
 	Dbxs any
+	// List of key exchange key (KEK) certificates used by the shielded instance's initial state. Each entry includes the certificate content and file type. (AI-inferred)
 	Keks any
-	Pk   any
+	// The platform key (PK) entry, containing the base64-encoded content and file type of the platform key certificate used for verified boot. (AI-inferred)
+	Pk any
 }
 
 type Instance_Disks struct {
-	Architecture                 any
-	AutoDelete                   any
-	Boot                         any
-	DeviceName                   any
-	DiskEncryptionKey            any
-	DiskSizeGb                   any
-	ForceAttach                  any
-	GuestOsFeatures              any
-	Index                        any
-	InitializeParams             any
-	Interface                    any
-	Kind                         any
-	Licenses                     any
-	Mode                         any
-	SavedState                   any
+	// The CPU architecture of the disk. Must be one of: ARCHITECTURE_UNSPECIFIED, ARM64, or X86_64. This specifies whether the disk is compatible with ARM64 or x86_64 instances. (AI-inferred)
+	Architecture any
+	// If true, the disk will be automatically deleted when the instance is deleted. (AI-inferred)
+	AutoDelete any
+	// A boolean flag indicating whether this disk is the boot disk for the instance. Only one disk can be the boot disk. (AI-inferred)
+	Boot any
+	// The device name exposed to the instance for this disk. If not specified, Google Cloud assigns a default device name. This name is used to reference the disk inside the guest OS (e.g., as /dev/sdb). (AI-inferred)
+	DeviceName any
+	// Configuration for a customer-supplied encryption key (CSEK) to encrypt this disk. (AI-inferred)
+	DiskEncryptionKey any
+	// The size of the persistent disk in gigabytes (GB). If not set, the disk size is determined by the source image or the disk type's default. (AI-inferred)
+	DiskSizeGb any
+	// If true, the disk is attached to this instance even if it is already attached to another instance. Defaults to false. (AI-inferred)
+	ForceAttach any
+	// A list of guest OS features to enable for the disk. Each feature is an object with a `type` field, such as `UEFI_COMPATIBLE`, `SECURE_BOOT`, or `VIRTIO_SCSI_MULTIQUEUE`. (AI-inferred)
+	GuestOsFeatures any
+	// The zero-based index of the disk in the instance, where index 0 corresponds to the boot disk. This uniquely identifies the disk among all disks attached to the instance. (AI-inferred)
+	Index any
+	// This block is used to initialize a new disk from a source image or snapshot, specifying parameters such as the image, disk size, and disk type. (AI-inferred)
+	InitializeParams any
+	// The disk interface type to use for attaching this disk. Must be one of 'SCSI' or 'NVME'. (AI-inferred)
+	Interface any
+	// The kind of the disk resource, which is always 'compute#attachedDisk' for disks attached to an instance. (AI-inferred)
+	Kind any
+	// List of license self-links (URLs) to apply to the disk. This is typically used when creating a boot disk from a custom image to specify the operating system licenses that apply, such as 'https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-10-buster'. (AI-inferred)
+	Licenses any
+	// The mode in which the disk is attached to the instance, either READ_ONLY or READ_WRITE. (AI-inferred)
+	Mode any
+	// Specifies whether the disk's data is preserved when the instance is stopped. Use PRESERVED to keep the data, or DISK_SAVED_STATE_UNSPECIFIED for the default behavior. (AI-inferred)
+	SavedState any
+	// The shielded instance initial state for the disk, specifying the platform key (pk), key exchange key (kek), and database (db) that define the integrity policy for a Shielded VM instance booted from this disk. (AI-inferred)
 	ShieldedInstanceInitialState any
-	Source                       any
-	Type                         any
+	// A reference (URL or name) to the source disk, image, or snapshot used to create or attach this disk. (AI-inferred)
+	Source any
+	// The type of the disk, either PERSISTENT (persistent disk) or SCRATCH (local SSD). (AI-inferred)
+	Type any
 }
 
 type Instance_DisplayDevice struct {
@@ -98,12 +145,16 @@ type Instance_DisplayDevice struct {
 }
 
 type Instance_GuestAccelerators struct {
+	// The number of the guest accelerator cards of the specified type to attach to the instance. (AI-inferred)
 	AcceleratorCount any
-	AcceleratorType  any
+	// The type of accelerator (GPU) to attach to the instance, specified by its name or a full/partial URL to the accelerator type resource. For example, 'nvidia-tesla-k80' or 'zones/us-central1-a/acceleratorTypes/nvidia-tesla-p100'. (AI-inferred)
+	AcceleratorType any
 }
 
 type Instance_Metadata_Items struct {
-	Key   any
+	// The metadata key for the instance metadata entry. This key, combined with the value, defines a key-value pair for custom instance metadata. (AI-inferred)
+	Key any
+	// The value for this metadata entry. This is the data associated with the metadata key on the instance. (AI-inferred)
 	Value any
 }
 
@@ -117,49 +168,81 @@ type Instance_Metadata struct {
 }
 
 type Instance_NetworkInterfaces_AccessConfigs struct {
-	ExternalIpv6             any
+	ExternalIpv6 any
+	// The prefix length, in bits, of the external IPv6 address range assigned to this access configuration. It defines the network portion of the external IPv6 address. (AI-inferred)
 	ExternalIpv6PrefixLength any
-	Kind                     any
-	Name                     any
-	NatIp                    any
-	NetworkTier              any
-	PublicPtrDomainName      any
-	SecurityPolicy           any
-	SetPublicPtr             any
-	Type                     any
+	// The kind of the access config, always set to 'compute#accessConfig'. (AI-inferred)
+	Kind any
+	// The name of this access configuration. (AI-inferred)
+	Name any
+	// The external IPv4 address assigned to the instance. Specify a static external IP (reserved) to assign it, or leave unset to have an ephemeral IP automatically assigned. (AI-inferred)
+	NatIp any
+	// The network tier assigned to the access config's external IP. Allowed values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD, which control the pricing and performance tier for the external IP. (AI-inferred)
+	NetworkTier any
+	// Specifies a custom DNS PTR record for the public IP address of this access config. If not set, the default PTR record for the external IP is used. (AI-inferred)
+	PublicPtrDomainName any
+	// The name of the Cloud Armor security policy to apply to this access config. This field is only applicable if the access_config type is EXTERNAL_MANAGED. (AI-inferred)
+	SecurityPolicy any
+	// Indicates whether a public DNS PTR record should be set for the external IP address associated with this access config. Set to true to enable public PTR record creation. (AI-inferred)
+	SetPublicPtr any
+	// The type of access configuration. Valid values are DIRECT_IPV6 for direct IPv6 access and ONE_TO_ONE_NAT for standard one-to-one NAT (external IP). (AI-inferred)
+	Type any
 }
 
 type Instance_NetworkInterfaces_AliasIpRanges struct {
-	IpCidrRange         any
+	// The IP CIDR range for this alias IP, specified in CIDR notation (e.g., '10.0.0.0/24'). (AI-inferred)
+	IpCidrRange any
+	// The name of the subnetwork secondary range to use for this alias IP range. This range must have an internal IP address type. If not specified, the primary range of the subnetwork is used. (AI-inferred)
 	SubnetworkRangeName any
 }
 
 type Instance_NetworkInterfaces struct {
-	AccessConfigs            any
-	AliasIpRanges            any
-	AliasIpv6Ranges          any
-	EnableVpcScopedDns       any
-	Fingerprint              any
+	// Configures external IP addresses for this network interface. You can specify a static IP with `nat_ip`, or leave it unset to receive an ephemeral IP. (AI-inferred)
+	AccessConfigs any
+	// A list of alias IP ranges to assign to this network interface. Each alias IP range allows the instance to use additional internal IP addresses. Typically includes an IP CIDR range and optionally a subnetwork range name. (AI-inferred)
+	AliasIpRanges any
+	// A list of IPv6 alias IP ranges to assign to this network interface. Each object defines an IPv6 CIDR range that the interface can use as an additional address. (AI-inferred)
+	AliasIpv6Ranges any
+	// Enable VPC-scoped DNS for the network interface. When true, DNS queries from the instance are resolved using the VPC network's DNS configuration. (AI-inferred)
+	EnableVpcScopedDns any
+	// The fingerprint of the network interface, used for optimistic locking. (AI-inferred)
+	Fingerprint any
+	// Configures the IGMP query mode for this network interface. Possible values are IGMP_QUERY_DISABLED and IGMP_QUERY_V2. (AI-inferred)
 	IgmpQuery                any
 	InternalIpv6PrefixLength any
-	Ipv6AccessConfigs        any
-	Ipv6AccessType           any
-	Ipv6Address              any
-	Kind                     any
-	Name                     any
-	Network                  any
-	NetworkAttachment        any
-	NetworkIp                any
-	NicType                  any
-	ParentNicName            any
-	QueueCount               any
-	ServiceClassId           any
-	StackType                any
-	Subnetwork               any
-	Vlan                     any
+	// List of IPv6 access configurations for the network interface. Each configuration sets the external IPv6 address options, such as the network tier (e.g., PREMIUM or STANDARD) and optional public DNS domain name. (AI-inferred)
+	Ipv6AccessConfigs any
+	// The type of IPv6 access. Valid values are EXTERNAL and INTERNAL. EXTERNAL means the IPv6 address is publicly accessible, while INTERNAL means it is private to the VPC network. (AI-inferred)
+	Ipv6AccessType any
+	// The external IPv6 address assigned to this network interface. (AI-inferred)
+	Ipv6Address any
+	// The kind of the network interface resource. It is always set to 'compute#networkInterface'. (AI-inferred)
+	Kind any
+	// The name assigned to this network interface, such as 'nic0'. (AI-inferred)
+	Name any
+	// The name or self_link of the VPC network to attach this interface to. If subnetwork is not set, this field is required; otherwise, the network is inferred from the subnetwork. (AI-inferred)
+	Network any
+	// The URL of the network attachment that this network interface should use. This can be specified instead of network or subnetwork when the interface is attached to a Network Attachment. (AI-inferred)
+	NetworkAttachment any
+	// The internal IPv4 address to assign to this network interface. If left unspecified, Compute Engine automatically assigns an ephemeral internal IP address. (AI-inferred)
+	NetworkIp any
+	// The type of network interface controller (NIC) to use for this network interface. Allowed values: GVNIC, IDPF, IRDMA, MRDMA, UNSPECIFIED_NIC_TYPE, VIRTIO_NET. (AI-inferred)
+	NicType any
+	// The name of the parent network interface that this interface is attached to or derived from, used in virtual NIC configurations (e.g., gVNIC). (AI-inferred)
+	ParentNicName any
+	// The number of queues to create for this network interface. This field is supported only for gVNIC NICs and is used to configure the number of queue pairs for the interface. (AI-inferred)
+	QueueCount     any
+	ServiceClassId any
+	// The IP stack type for the network interface. Valid values are IPV4_IPV6 (dual-stack), IPV4_ONLY, or IPV6_ONLY. (AI-inferred)
+	StackType any
+	// The name or self_link of the subnetwork to attach to this network interface. If not specified, the default subnetwork for the network is used. (AI-inferred)
+	Subnetwork any
+	// The VLAN ID used for this network interface, applicable when the interface is attached to a VLAN attachment. (AI-inferred)
+	Vlan any
 }
 
 type Instance_NetworkPerformanceConfig struct {
+	// The tier of total egress bandwidth for the instance. Valid values are DEFAULT (standard) and TIER_1 (higher bandwidth). (AI-inferred)
 	TotalEgressBandwidthTier any
 }
 
@@ -263,7 +346,8 @@ type Instance_ResourceStatus_UpcomingMaintenance struct {
 	MaintenanceOnShutdown any
 	// The reasons for the maintenance. Only valid for vms.
 	MaintenanceReasons any
-	MaintenanceStatus  any
+	// The status of upcoming maintenance for the instance, indicating whether maintenance is ongoing, pending, or unknown. Possible values are ONGOING, PENDING, and UNKNOWN. (AI-inferred)
+	MaintenanceStatus any
 	// Defines the type of maintenance.
 	Type any
 	// The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
@@ -281,7 +365,8 @@ type Instance_ResourceStatus struct {
 	PhysicalHostTopology any
 	// Reservation consumption information that the instance is consuming from.
 	ReservationConsumptionInfo any
-	Scheduling                 any
+	// The scheduling configuration of the instance as reported by the API in the resource_status block. This includes computed values such as host error timeout seconds and node affinities. (AI-inferred)
+	Scheduling any
 	// Specifies if the instance is in `PENDING_STOP` state or there is a programmed stop scheduled.
 	ShutdownDetails any
 	// Upcoming Maintenance notification information.
@@ -296,9 +381,12 @@ type Instance_Scheduling_GracefulShutdown struct {
 }
 
 type Instance_Scheduling_NodeAffinities struct {
-	Key      any
+	// The key for the node affinity, which corresponds to a node label key in the Compute Engine environment. (AI-inferred)
+	Key any
+	// The operator for the node affinity condition. Valid values are IN (matches when the node is in the specified values), NOT_IN (matches when the node is not in the specified values), and OPERATOR_UNSPECIFIED (unspecified). (AI-inferred)
 	Operator any
-	Values   any
+	// The list of values for the node affinity key. This field is required when the operator is IN or NOT_IN. (AI-inferred)
+	Values any
 }
 
 type Instance_Scheduling_OnInstanceStopAction struct {
@@ -344,7 +432,9 @@ type Instance_Scheduling struct {
 }
 
 type Instance_ServiceAccounts struct {
-	Email  any
+	// The email address of the service account to associate with the instance. (AI-inferred)
+	Email any
+	// List of OAuth 2.0 scopes that should be granted to the service account for accessing Google Cloud APIs. For example, 'https://www.googleapis.com/auth/compute.readonly' or 'https://www.googleapis.com/auth/cloud-platform'. (AI-inferred)
 	Scopes any
 }
 
@@ -370,6 +460,7 @@ type Instance_Tags struct {
 }
 
 type Instance_WorkloadIdentityConfig struct {
+	// The email address of the service account to attach to the instance for workload identity. This enables the instance to use workload identity federation. (AI-inferred)
 	Identity                   any
 	IdentityCertificateEnabled any
 }
@@ -806,7 +897,8 @@ type InstanceConfig struct {
 	// A list of the type and count of accelerator cards attached to the instance.
 	GuestAccelerators any
 	// Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
-	Hostname              any
+	Hostname any
+	// The customer-supplied encryption key used to encrypt the instance's boot disk. This field is computed and output-only. (AI-inferred)
 	InstanceEncryptionKey any
 	// KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
 	KeyRevocationActionType any
@@ -846,10 +938,12 @@ type InstanceConfig struct {
 	// The policy describes the baseline against which Instance boot integrity is measured.
 	ShieldedInstanceIntegrityPolicy any
 	// Source machine image
-	SourceMachineImage              any
+	SourceMachineImage any
+	// The customer-supplied encryption key for the source machine image used to create the instance. This field is output-only and reflects the encryption key details of the source image. (AI-inferred)
 	SourceMachineImageEncryptionKey any
 	// A set of instance tags.
-	Tags                   any
+	Tags any
+	// An output-only object containing the workload identity configuration for the instance, automatically computed and not user-settable. (AI-inferred)
 	WorkloadIdentityConfig any
 }
 
@@ -879,7 +973,8 @@ type InstanceAttrs struct {
 	// Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
 	Hostname any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id                    any
+	Id any
+	// The customer-supplied encryption key used to encrypt the instance's boot disk. This field is computed and output-only. (AI-inferred)
 	InstanceEncryptionKey any
 	// KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
 	KeyRevocationActionType any
@@ -933,7 +1028,8 @@ type InstanceAttrs struct {
 	// The policy describes the baseline against which Instance boot integrity is measured.
 	ShieldedInstanceIntegrityPolicy any
 	// Source machine image
-	SourceMachineImage              any
+	SourceMachineImage any
+	// The customer-supplied encryption key for the source machine image used to create the instance. This field is output-only and reflects the encryption key details of the source image. (AI-inferred)
 	SourceMachineImageEncryptionKey any
 	// Output only. [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
 	StartRestricted any
@@ -942,7 +1038,8 @@ type InstanceAttrs struct {
 	// Output only. [Output Only] An optional, human-readable explanation of the status.
 	StatusMessage any
 	// A set of instance tags.
-	Tags                   any
+	Tags any
+	// An output-only object containing the workload identity configuration for the instance, automatically computed and not user-settable. (AI-inferred)
 	WorkloadIdentityConfig any
 	// Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Zone any

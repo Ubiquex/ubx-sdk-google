@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConsentArtifact_ConsentContentScreenshots:
+    # A Cloud Storage object URI. (AI-inferred)
     gcs_uri: Any = None
+    # The raw, unparsed byte content of this message. (AI-inferred)
     raw_bytes: Any = None
 
 @dataclasses.dataclass

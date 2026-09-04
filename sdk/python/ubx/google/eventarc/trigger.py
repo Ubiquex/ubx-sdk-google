@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Trigger_Conditions:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -60,8 +62,11 @@ class Trigger_Destination:
 
 @dataclasses.dataclass
 class Trigger_EventFilters:
+    # A single custom attribute. (AI-inferred)
     attribute: Any = None
+    # How this condition's own operands are compared. (AI-inferred)
     operator: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

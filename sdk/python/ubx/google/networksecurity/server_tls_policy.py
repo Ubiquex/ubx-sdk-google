@@ -8,15 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstance:
+    # A reference to the service extension plugin instance this applies to. (AI-inferred)
     plugin_instance: Any = None
 
 @dataclasses.dataclass
 class ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpoint:
+    # The URI this configuration targets or proxies to. (AI-inferred)
     target_uri: Any = None
 
 @dataclasses.dataclass
 class ServerTlsPolicy_MtlsPolicy_ClientValidationCa:
+    # A reference to the certificate provider supplying TLS certificates for this configuration. (AI-inferred)
     certificate_provider_instance: Any = None
+    # The gRPC endpoint this plugin or configuration connects to. (AI-inferred)
     grpc_endpoint: Any = None
 
 @dataclasses.dataclass

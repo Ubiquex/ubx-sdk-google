@@ -2,78 +2,112 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DiscoveryConfig_Actions_ExportData_ProfileTable {
+  /** The BigQuery dataset ID this applies to. (AI-inferred) */
   datasetId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The BigQuery table ID this applies to. (AI-inferred) */
   tableId?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_Actions_ExportData {
+  /** The destination BigQuery table this job's own data profile is written to. (AI-inferred) */
   profileTable?: DiscoveryConfig_Actions_ExportData_ProfileTable | Computed<DiscoveryConfig_Actions_ExportData_ProfileTable>;
+  /** The destination BigQuery table a sample of this job's own findings is written to. (AI-inferred) */
   sampleFindingsTable?: DiscoveryConfig_Actions_ExportData_ProfileTable | Computed<DiscoveryConfig_Actions_ExportData_ProfileTable>;
 }
 
 export interface DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_Conditions {
+  /** The minimum overall risk score a profile must reach for this condition to be satisfied. (AI-inferred) */
   minimumRiskScore?: string | Computed<string>;
+  /** The minimum sensitivity score a profile must reach for this condition to be satisfied. (AI-inferred) */
   minimumSensitivityScore?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_Conditions[] | Computed<DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_Conditions[]>;
+  /** How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred) */
   logicalOperator?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_Actions_PubSubNotification_PubsubCondition {
+  /** The condition expression(s) making up this rule. (AI-inferred) */
   expressions?: DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions | Computed<DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions>;
 }
 
 export interface DiscoveryConfig_Actions_PubSubNotification {
+  /** How much detail the published notification includes, e.g. the full table profile versus just the resource name. (AI-inferred) */
   detailOfMessage?: string | Computed<string>;
+  /** Which kind of event triggers this notification, e.g. a new or changed profile. (AI-inferred) */
   event?: string | Computed<string>;
+  /** Restricts which discovery events actually trigger a Pub/Sub notification. (AI-inferred) */
   pubsubCondition?: DiscoveryConfig_Actions_PubSubNotification_PubsubCondition | Computed<DiscoveryConfig_Actions_PubSubNotification_PubsubCondition>;
+  /** A reference to the Pub/Sub topic notifications are published to. (AI-inferred) */
   topic?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_Actions_PublishToDataplexCatalog {
+  /** Treats this identified quasi-identifier combination as lower risk than its own raw k-anonymity value would otherwise suggest. (AI-inferred) */
   lowerDataRiskToLow?: boolean | Computed<boolean>;
 }
 
 export interface DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScore {
+  /** The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred) */
   score?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_Actions_TagResources_TagConditions_Tag {
+  /** A tag value, namespaced to disambiguate it from identically-named values in other tag systems. (AI-inferred) */
   namespacedValue?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_Actions_TagResources_TagConditions {
+  /** A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred) */
   sensitivityScore?: DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScore | Computed<DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScore>;
+  /** A tag applied to matching resources. (AI-inferred) */
   tag?: DiscoveryConfig_Actions_TagResources_TagConditions_Tag | Computed<DiscoveryConfig_Actions_TagResources_TagConditions_Tag>;
 }
 
 export interface DiscoveryConfig_Actions_TagResources {
+  /** Treats this identified quasi-identifier combination as lower risk than its own raw k-anonymity value would otherwise suggest. (AI-inferred) */
   lowerDataRiskToLow?: boolean | Computed<boolean>;
+  /** Which profile generation(s) (e.g. new versus updated) trigger tagging. (AI-inferred) */
   profileGenerationsToTag?: string[] | Computed<string[]>;
+  /** The condition(s) under which a specific tag is applied. (AI-inferred) */
   tagConditions?: DiscoveryConfig_Actions_TagResources_TagConditions[] | Computed<DiscoveryConfig_Actions_TagResources_TagConditions[]>;
 }
 
 export interface DiscoveryConfig_Actions {
+  /** Exports this job's own results to a destination table. (AI-inferred) */
   exportData?: DiscoveryConfig_Actions_ExportData | Computed<DiscoveryConfig_Actions_ExportData>;
+  /** Publishes a Pub/Sub notification when this discovery event occurs. (AI-inferred) */
   pubSubNotification?: DiscoveryConfig_Actions_PubSubNotification | Computed<DiscoveryConfig_Actions_PubSubNotification>;
+  /** Publishes this discovery event to Google Security Operations (Chronicle). (AI-inferred) */
   publishToChronicle?: unknown | Computed<unknown>;
+  /** Publishes this discovery event's own findings as Dataplex Catalog metadata. (AI-inferred) */
   publishToDataplexCatalog?: DiscoveryConfig_Actions_PublishToDataplexCatalog | Computed<DiscoveryConfig_Actions_PublishToDataplexCatalog>;
+  /** Publishes this discovery event to Security Command Center. (AI-inferred) */
   publishToScc?: unknown | Computed<unknown>;
+  /** Tags matching resources based on their own discovery/profiling results. (AI-inferred) */
   tagResources?: DiscoveryConfig_Actions_TagResources | Computed<DiscoveryConfig_Actions_TagResources>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Errors_Details {
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result or error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Errors {
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: DiscoveryConfig_DiscoveryConfig_Errors_Details | Computed<DiscoveryConfig_DiscoveryConfig_Errors_Details>;
+  /** Additional detail about this event. (AI-inferred) */
   extraInfo?: string | Computed<string>;
+  /** The timestamp(s) recorded for this event. (AI-inferred) */
   timestamps?: string[] | Computed<string[]>;
 }
 
@@ -118,273 +152,388 @@ export interface DiscoveryConfig_DiscoveryConfig_ProcessingLocation {
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence {
+  /** How often this recurs. (AI-inferred) */
   frequency?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence {
+  /** How often this recurs. (AI-inferred) */
   frequency?: string | Computed<string>;
+  /** The info type(s) this applies to. (AI-inferred) */
   types?: string[] | Computed<string[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence {
+  /** How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred) */
   inspectTemplateModifiedCadence?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence>;
+  /** How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred) */
   refreshFrequency?: string | Computed<string>;
+  /** How often changes to a resource's own schema are picked up by this discovery scan. (AI-inferred) */
   schemaModifiedCadence?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence>;
+  /** How often a modified BigQuery table is re-scanned. (AI-inferred) */
   tableModifiedCadence?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditions {
+  /** The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred) */
   minAge?: string | Computed<string>;
+  /** The minimum number of rows a table must have to be included in this discovery scan. (AI-inferred) */
   minRowCount?: number | Computed<number>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_Types {
+  /** The info type(s) this applies to. (AI-inferred) */
   types?: string[] | Computed<string[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions {
+  /** Restricts this scan to resources created after this timestamp. (AI-inferred) */
   createdAfter?: string | Computed<string>;
+  /** A set of conditions where at least one, rather than all, must be satisfied. (AI-inferred) */
   orConditions?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditions>;
+  /** Which BigQuery table type(s) this scan includes, e.g. all types or only supported ones. (AI-inferred) */
   typeCollection?: string | Computed<string>;
+  /** The info type(s) this applies to. (AI-inferred) */
   types?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_Types | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_Types>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_Patterns {
+  /** A regular expression restricting this scan to matching BigQuery dataset IDs. (AI-inferred) */
   datasetIdRegex?: string | Computed<string>;
+  /** A regular expression restricting this discovery scan to matching project IDs. (AI-inferred) */
   projectIdRegex?: string | Computed<string>;
+  /** A regular expression restricting this scan to matching BigQuery table IDs. (AI-inferred) */
   tableIdRegex?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes {
+  /** The name pattern(s) resources are matched against for this configuration. (AI-inferred) */
   patterns?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_Patterns[] | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_Patterns[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables {
+  /** Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred) */
   includeRegexes?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter {
+  /** Applies to every BigQuery table not otherwise explicitly matched. (AI-inferred) */
   otherTables?: unknown | Computed<unknown>;
+  /** A reference to a specific BigQuery table. (AI-inferred) */
   tableReference?: DiscoveryConfig_Actions_ExportData_ProfileTable | Computed<DiscoveryConfig_Actions_ExportData_ProfileTable>;
+  /** The table(s) this applies to. (AI-inferred) */
   tables?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget {
+  /** How often this discovery target is re-scanned for new or modified resources. (AI-inferred) */
   cadence?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence>;
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: unknown | Computed<unknown>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Conditions {
+  /** Restricts this discovery scan to Cloud SQL instances running the given database engine(s). (AI-inferred) */
   databaseEngines?: string[] | Computed<string[]>;
+  /** The info type(s) this applies to. (AI-inferred) */
   types?: string[] | Computed<string[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_Patterns {
+  /** A regular expression restricting this scan to matching database names. (AI-inferred) */
   databaseRegex?: string | Computed<string>;
+  /** A regular expression restricting this scan to matching database resource names. (AI-inferred) */
   databaseResourceNameRegex?: string | Computed<string>;
+  /** A regular expression restricting this scan to matching instance names. (AI-inferred) */
   instanceRegex?: string | Computed<string>;
+  /** A regular expression restricting this discovery scan to matching project IDs. (AI-inferred) */
   projectIdRegex?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes {
+  /** The name pattern(s) resources are matched against for this configuration. (AI-inferred) */
   patterns?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_Patterns[] | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_Patterns[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection {
+  /** Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred) */
   includeRegexes?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReference {
+  /** The database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** A reference to a specific database resource. (AI-inferred) */
   databaseResource?: string | Computed<string>;
+  /** The instance this applies to. (AI-inferred) */
   instance?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter {
+  /** The set of resources this configuration applies to. (AI-inferred) */
   collection?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection>;
+  /** A reference to a specific database instance and database. (AI-inferred) */
   databaseResourceReference?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReference | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReference>;
+  /** A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred) */
   others?: unknown | Computed<unknown>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadence {
+  /** How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred) */
   inspectTemplateModifiedCadence?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence>;
+  /** How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred) */
   refreshFrequency?: string | Computed<string>;
+  /** How often changes to a resource's own schema are picked up by this discovery scan. (AI-inferred) */
   schemaModifiedCadence?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Conditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Conditions>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: unknown | Computed<unknown>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter>;
+  /** How often this discovery scan re-runs to find newly created resources. (AI-inferred) */
   generationCadence?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadence>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditions {
+  /** Which Cloud Storage bucket-level attribute(s) (e.g. IAM policy, encryption type) are included in this bucket's own profile. (AI-inferred) */
   includedBucketAttributes?: string[] | Computed<string[]>;
+  /** Which Cloud Storage object-level attribute(s) are included in this bucket's own profile. (AI-inferred) */
   includedObjectAttributes?: string[] | Computed<string[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions {
+  /** Criteria a Cloud Storage bucket must meet to be included in this discovery scan. (AI-inferred) */
   cloudStorageConditions?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditions>;
+  /** Restricts this scan to resources created after this timestamp. (AI-inferred) */
   createdAfter?: string | Computed<string>;
+  /** The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred) */
   minAge?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReference {
+  /** The name of the Cloud Storage bucket this applies to. (AI-inferred) */
   bucketName?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegex {
+  /** A regular expression restricting this discovery scan to matching Cloud Storage bucket names. (AI-inferred) */
   bucketNameRegex?: string | Computed<string>;
+  /** A regular expression restricting this discovery scan to matching project IDs. (AI-inferred) */
   projectIdRegex?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns {
+  /** A regular expression restricting this scan to matching Cloud Storage bucket names. (AI-inferred) */
   cloudStorageRegex?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegex | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegex>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes {
+  /** The name pattern(s) resources are matched against for this configuration. (AI-inferred) */
   patterns?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns[] | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFilters {
+  /** A tag key, namespaced to disambiguate it from identically-named keys in other tag systems. (AI-inferred) */
   namespacedTagKey?: string | Computed<string>;
+  /** A tag value, namespaced to disambiguate it from identically-named values in other tag systems. (AI-inferred) */
   namespacedTagValue?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags {
+  /** Restricts this discovery scan to resources carrying specific tag key/value pair(s). (AI-inferred) */
   tagFilters?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFilters[] | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFilters[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection {
+  /** Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred) */
   includeRegexes?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes>;
+  /** Restricts this discovery scan to resources carrying specific tag(s). (AI-inferred) */
   includeTags?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter {
+  /** A reference to a specific Cloud Storage bucket. (AI-inferred) */
   cloudStorageResourceReference?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReference | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReference>;
+  /** The set of resources this configuration applies to. (AI-inferred) */
   collection?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection>;
+  /** A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred) */
   others?: unknown | Computed<unknown>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence {
+  /** How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred) */
   inspectTemplateModifiedCadence?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence>;
+  /** How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred) */
   refreshFrequency?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: unknown | Computed<unknown>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter>;
+  /** How often this discovery scan re-runs to find newly created resources. (AI-inferred) */
   generationCadence?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditions {
+  /** Restricts this discovery scan to specific Amazon S3 storage bucket type(s). (AI-inferred) */
   bucketTypes?: string[] | Computed<string[]>;
+  /** Restricts this discovery scan to Amazon S3 objects in the given storage class(es). (AI-inferred) */
   objectStorageClasses?: string[] | Computed<string[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions {
+  /** Criteria an Amazon S3 bucket must meet to be included in this discovery scan. (AI-inferred) */
   amazonS3BucketConditions?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditions>;
+  /** The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred) */
   minAge?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceType {
+  /** Which external data source this applies to. (AI-inferred) */
   dataSource?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegex {
+  /** A regular expression restricting this scan to matching AWS account IDs. (AI-inferred) */
   accountIdRegex?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex {
+  /** A regular expression restricting this scan to matching AWS account(s). (AI-inferred) */
   awsAccountRegex?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegex | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegex>;
+  /** A regular expression restricting this discovery scan to matching Cloud Storage bucket names. (AI-inferred) */
   bucketNameRegex?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns {
+  /** A regular expression restricting this scan to matching Amazon S3 bucket names. (AI-inferred) */
   amazonS3BucketRegex?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes {
+  /** The name pattern(s) resources are matched against for this configuration. (AI-inferred) */
   patterns?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns[] | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection {
+  /** Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred) */
   includeRegexes?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccount {
+  /** An AWS account identifier. (AI-inferred) */
   accountId?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket {
+  /** The AWS account this applies to. (AI-inferred) */
   awsAccount?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccount | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccount>;
+  /** The name of the Cloud Storage bucket this applies to. (AI-inferred) */
   bucketName?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource {
+  /** A specific Amazon S3 bucket this applies to. (AI-inferred) */
   amazonS3Bucket?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter {
+  /** The set of resources this configuration applies to. (AI-inferred) */
   collection?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection>;
+  /** A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred) */
   others?: unknown | Computed<unknown>;
+  /** Restricts this discovery target to one specific, explicitly named resource, rather than a pattern match. (AI-inferred) */
   singleResource?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions>;
+  /** The kind of external, non-Google-Cloud data source this discovery target scans. (AI-inferred) */
   dataSourceType?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceType | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceType>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: unknown | Computed<unknown>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter>;
+  /** How often this discovery scan re-runs to find newly created resources. (AI-inferred) */
   generationCadence?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Conditions {
+  /** Restricts this scan to resources created after this timestamp. (AI-inferred) */
   createdAfter?: string | Computed<string>;
+  /** The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred) */
   minAge?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_Patterns {
+  /** A regular expression restricting this discovery scan to matching project IDs. (AI-inferred) */
   projectIdRegex?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes {
+  /** The name pattern(s) resources are matched against for this configuration. (AI-inferred) */
   patterns?: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_Patterns[] | Computed<DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_Patterns[]>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection {
+  /** Regular expression pattern(s) restricting this scan to matching Vertex AI dataset names. (AI-inferred) */
   vertexDatasetRegexes?: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes | Computed<DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReference {
+  /** The resource name of the Vertex AI dataset this applies to. (AI-inferred) */
   datasetResourceName?: string | Computed<string>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter {
+  /** The set of resources this configuration applies to. (AI-inferred) */
   collection?: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection | Computed<DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection>;
+  /** A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred) */
   others?: unknown | Computed<unknown>;
+  /** A reference to a specific Vertex AI dataset. (AI-inferred) */
   vertexDatasetResourceReference?: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReference | Computed<DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReference>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Conditions | Computed<DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Conditions>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: unknown | Computed<unknown>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter | Computed<DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter>;
+  /** How often this discovery scan re-runs to find newly created resources. (AI-inferred) */
   generationCadence?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence>;
 }
 
 export interface DiscoveryConfig_DiscoveryConfig_Targets {
+  /** Configures this discovery scan to profile BigQuery tables. (AI-inferred) */
   bigQueryTarget?: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget | Computed<DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget>;
+  /** Configures this discovery scan to profile Cloud SQL databases. (AI-inferred) */
   cloudSqlTarget?: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget>;
+  /** Configures this discovery scan to profile Cloud Storage buckets. (AI-inferred) */
   cloudStorageTarget?: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget | Computed<DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget>;
+  /** Configures this discovery scan to profile resources in a non-Google-Cloud environment, e.g. Amazon S3. (AI-inferred) */
   otherCloudTarget?: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget | Computed<DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget>;
+  /** Configures this discovery scan to profile detected secrets/credentials. (AI-inferred) */
   secretsTarget?: unknown | Computed<unknown>;
+  /** Configures this discovery scan to profile Vertex AI datasets. (AI-inferred) */
   vertexDatasetTarget?: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget | Computed<DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget>;
 }
 

@@ -4,7 +4,9 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityMonitoringCondition_Include_Resources struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 

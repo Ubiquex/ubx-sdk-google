@@ -4,17 +4,26 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicDelegatedPrefix_PublicDelegatedSubPrefixs struct {
-	AllocatablePrefixLength      any
+	// The prefix length (in bits) of the sub-prefixes that can be allocated from this delegated sub-prefix. For instance, a value of 26 indicates that /26 CIDR blocks can be allocated. (AI-inferred)
+	AllocatablePrefixLength any
+	// The project ID or name to which this sub-prefix is delegated, allowing that project to use the delegated prefix. (AI-inferred)
 	DelegateeProject             any
 	Description                  any
 	EnableEnhancedIpv4Allocation any
-	IpCidrRange                  any
-	Ipv6AccessType               any
-	IsAddress                    any
-	Mode                         any
-	Name                         any
-	Region                       any
-	Status                       any
+	// The IP CIDR range of this public delegated sub-prefix. (AI-inferred)
+	IpCidrRange any
+	// The access type for the IPv6 addresses in the sub-prefix. EXTERNAL means the prefix is used for publicly accessible IPv6 addresses, while INTERNAL means it is used for internal/private IPv6 addresses. (AI-inferred)
+	Ipv6AccessType any
+	// Specifies whether the sub-prefix is an address range (true) or a public delegated prefix (false). (AI-inferred)
+	IsAddress any
+	// The mode of the sub-prefix, indicating how it is used. Allowed values are: DELEGATION, EXTERNAL_IPV6_FORWARDING_RULE_CREATION, EXTERNAL_IPV6_SUBNETWORK_CREATION, and INTERNAL_IPV6_SUBNETWORK_CREATION. (AI-inferred)
+	Mode any
+	// The name of the public delegated sub-prefix. This is used as an identifier for the sub-prefix within the public delegated prefix. (AI-inferred)
+	Name any
+	// The region of the sub-prefix. If not specified, the region of the parent public delegated prefix is used. (AI-inferred)
+	Region any
+	// The status of the public delegated sub-prefix, which can be either ACTIVE or INACTIVE. (AI-inferred)
+	Status any
 }
 
 var PublicDelegatedPrefix_PublicDelegatedSubPrefixsFields = ubx.FieldMap{

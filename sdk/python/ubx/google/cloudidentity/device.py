@@ -27,43 +27,72 @@ class Device_AndroidSpecificAttributes:
 
 @dataclasses.dataclass
 class Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfo:
+    # Whether this Chrome browser is managed, unmanaged, or pending enrollment. (AI-inferred)
     browser_management_state: Any = None
+    # The version of Chrome this browser reports. (AI-inferred)
     browser_version: Any = None
+    # Whether Chrome's own built-in DNS client is enabled. (AI-inferred)
     is_built_in_dns_client_enabled: Any = None
+    # Whether bulk data entry is analyzed for data loss prevention. (AI-inferred)
     is_bulk_data_entry_analysis_enabled: Any = None
+    # Whether the Chrome Cleanup Tool is enabled. (AI-inferred)
     is_chrome_cleanup_enabled: Any = None
+    # Whether the Chrome Remote Desktop app is blocked. (AI-inferred)
     is_chrome_remote_desktop_app_blocked: Any = None
+    # Whether downloaded files are analyzed for data loss prevention. (AI-inferred)
     is_file_download_analysis_enabled: Any = None
+    # Whether uploaded files are analyzed for data loss prevention. (AI-inferred)
     is_file_upload_analysis_enabled: Any = None
+    # Whether visited URLs are checked against threat intelligence in real time. (AI-inferred)
     is_realtime_url_check_enabled: Any = None
+    # Whether browser security events are analyzed and reported. (AI-inferred)
     is_security_event_analysis_enabled: Any = None
+    # Whether Chrome's own site isolation security feature is enabled. (AI-inferred)
     is_site_isolation_enabled: Any = None
+    # Whether third-party software is blocked from injecting into Chrome. (AI-inferred)
     is_third_party_blocking_enabled: Any = None
+    # The condition under which a password-reuse warning is shown to the user. (AI-inferred)
     password_protection_warning_trigger: Any = None
+    # The level of Safe Browsing protection applied, e.g. standard or enhanced. (AI-inferred)
     safe_browsing_protection_level: Any = None
 
 @dataclasses.dataclass
 class Device_EndpointVerificationSpecificAttributes_BrowserAttributes:
+    # Metadata reported by a managed Chrome browser. (AI-inferred)
     chrome_browser_info: Any = None
+    # The unique identifier of this Chrome profile. (AI-inferred)
     chrome_profile_id: Any = None
+    # When this Chrome profile last synced. (AI-inferred)
     last_profile_sync_time: Any = None
 
 @dataclasses.dataclass
 class Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplate:
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The major version number this applies to. (AI-inferred)
     major_version: Any = None
+    # The minor version number this applies to. (AI-inferred)
     minor_version: Any = None
 
 @dataclasses.dataclass
 class Device_EndpointVerificationSpecificAttributes_CertificateAttributes:
+    # The certificate template this device's own certificate was issued from. (AI-inferred)
     certificate_template: Any = None
+    # A cryptographic fingerprint of this certificate. (AI-inferred)
     fingerprint: Any = None
+    # The issuer identity of this certificate. (AI-inferred)
     issuer: Any = None
+    # This certificate's own serial number. (AI-inferred)
     serial_number: Any = None
+    # The subject identity of this certificate. (AI-inferred)
     subject: Any = None
+    # A cryptographic thumbprint of this certificate. (AI-inferred)
     thumbprint: Any = None
+    # Whether this certificate has passed validation. (AI-inferred)
     validation_state: Any = None
+    # When this certificate's own validity period ends. (AI-inferred)
     validity_expiration_time: Any = None
+    # When this certificate's own validity period begins. (AI-inferred)
     validity_start_time: Any = None
 
 @dataclasses.dataclass

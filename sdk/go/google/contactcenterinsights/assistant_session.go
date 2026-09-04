@@ -4,13 +4,17 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssistantSession_Messages_Chunks struct {
+	// The plain-text content. (AI-inferred)
 	Text any
 }
 
 type AssistantSession_Messages struct {
-	Chunks    any
+	// The retrieved content chunk(s) making up this result. (AI-inferred)
+	Chunks any
+	// When this event occurred. (AI-inferred)
 	EventTime any
-	Role      any
+	// Who this content is attributed to, e.g. agent or end user. (AI-inferred)
+	Role any
 }
 
 var AssistantSession_Messages_ChunksFields = ubx.FieldMap{

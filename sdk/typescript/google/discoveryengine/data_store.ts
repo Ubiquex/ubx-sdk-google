@@ -24,6 +24,7 @@ export interface DataStore_BillingEstimation {
 }
 
 export interface DataStore_CmekConfig_SingleRegionKeys {
+  /** The Cloud KMS key used to encrypt this resource's own data. (AI-inferred) */
   kmsKey?: string | Computed<string>;
 }
 

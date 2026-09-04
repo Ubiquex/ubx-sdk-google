@@ -116,8 +116,11 @@ class Version_Deployment_Container:
 
 @dataclasses.dataclass
 class Version_Deployment_Files:
+    # The MIME type of this file's own content. (AI-inferred)
     mime_type: Any = None
+    # A SHA-1 checksum of this file's own content. (AI-inferred)
     sha1_sum: Any = None
+    # The Cloud Storage URL this file's own content is read from. (AI-inferred)
     source_url: Any = None
 
 @dataclasses.dataclass
@@ -156,8 +159,11 @@ class Version_Entrypoint:
 
 @dataclasses.dataclass
 class Version_ErrorHandlers:
+    # The error condition this custom error handler responds to. (AI-inferred)
     error_code: Any = None
+    # The MIME type of this file's own content. (AI-inferred)
     mime_type: Any = None
+    # Configuration for serving a matching URL as a static file. (AI-inferred)
     static_file: Any = None
 
 @dataclasses.dataclass
@@ -169,27 +175,43 @@ class Version_FlexibleRuntimeSettings:
 
 @dataclasses.dataclass
 class Version_Handlers_ApiEndpoint:
+    # The path to the script handling this request. (AI-inferred)
     script_path: Any = None
 
 @dataclasses.dataclass
 class Version_Handlers_StaticFiles:
+    # Whether application code is permitted to read this file at runtime. (AI-inferred)
     application_readable: Any = None
+    # How long a cached response for this handler may be reused. (AI-inferred)
     expiration: Any = None
+    # The HTTP header(s) included in the response. (AI-inferred)
     http_headers: Any = None
+    # The MIME type of this file's own content. (AI-inferred)
     mime_type: Any = None
+    # A file or resource path. (AI-inferred)
     path: Any = None
+    # Whether a request is only served if a matching static file actually exists. (AI-inferred)
     require_matching_file: Any = None
+    # The regular expression matching local file path(s) to include in this deployment. (AI-inferred)
     upload_path_regex: Any = None
 
 @dataclasses.dataclass
 class Version_Handlers:
+    # Routes requests for this handler to the App Engine APIs endpoint. (AI-inferred)
     api_endpoint: Any = None
+    # What happens when a request fails this handler's own authentication requirement. (AI-inferred)
     auth_fail_action: Any = None
+    # The login requirement enforced for requests matching this handler. (AI-inferred)
     login: Any = None
+    # The HTTP status code used when redirecting requests to HTTPS. (AI-inferred)
     redirect_http_response_code: Any = None
+    # The script handling requests that match this URL pattern. (AI-inferred)
     script: Any = None
+    # Whether this handler requires, optionally allows, or never uses HTTPS. (AI-inferred)
     security_level: Any = None
+    # Configuration for serving matching URL(s) as static file(s). (AI-inferred)
     static_files: Any = None
+    # The regular expression this handler's own URL pattern matches against. (AI-inferred)
     url_regex: Any = None
 
 @dataclasses.dataclass
@@ -211,7 +233,9 @@ class Version_HealthCheck:
 
 @dataclasses.dataclass
 class Version_Libraries:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the specific version this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -270,8 +294,11 @@ class Version_ReadinessCheck:
 
 @dataclasses.dataclass
 class Version_Resources_Volumes:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The size of this resource, in gibibytes. (AI-inferred)
     size_gb: Any = None
+    # The kind of storage volume mounted, e.g. `tmpfs`. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass

@@ -508,38 +508,68 @@ _V3beta1Playbook_LlmModelSettingsFields = {
 
 @dataclasses.dataclass
 class V3beta1PlaybookConfig:
+    # Custom code run inline as part of this fulfillment or tool. (AI-inferred)
     code_block: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A human-readable statement of what this playbook is meant to accomplish. (AI-inferred)
     goal: Any = None
+    # The event handler(s) defined here. (AI-inferred)
     handlers: Any = None
+    # The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
     input_parameter_definitions: Any = None
+    # An instruction given to the model or playbook. (AI-inferred)
     instruction: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
     output_parameter_definitions: Any = None
+    # Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred)
     playbook_type: Any = None
+    # The tool(s) this playbook can invoke. (AI-inferred)
     referenced_tools: Any = None
+    # Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
     speech_settings: Any = None
 
 @dataclasses.dataclass
 class V3beta1PlaybookAttrs:
+    # Custom code run inline as part of this fulfillment or tool. (AI-inferred)
     code_block: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A human-readable statement of what this playbook is meant to accomplish. (AI-inferred)
     goal: Any = None
+    # The event handler(s) defined here. (AI-inferred)
     handlers: Any = None
+    # Action(s) defined directly within this step, rather than delegated to a referenced tool or playbook. (AI-inferred)
     inline_actions: Any = None
+    # The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
     input_parameter_definitions: Any = None
+    # An instruction given to the model or playbook. (AI-inferred)
     instruction: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
     output_parameter_definitions: Any = None
+    # Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred)
     playbook_type: Any = None
+    # The flow(s) this playbook or tool can invoke. (AI-inferred)
     referenced_flows: Any = None
+    # The playbook(s) this playbook can invoke as a sub-task. (AI-inferred)
     referenced_playbooks: Any = None
+    # The tool(s) this playbook can invoke. (AI-inferred)
     referenced_tools: Any = None
+    # Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
     speech_settings: Any = None
+    # How many tokens this content consumed. (AI-inferred)
     token_count: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 V3beta1Playbook = ubx.ResourceBinding(

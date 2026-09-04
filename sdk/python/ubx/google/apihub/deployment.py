@@ -8,25 +8,36 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Deployment_Attributes_EnumValues_Values:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
     immutable: Any = None
 
 @dataclasses.dataclass
 class Deployment_Attributes_EnumValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Deployment_Attributes_JsonValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Deployment_Attributes:
+    # A reference to the custom attribute this applies to. (AI-inferred)
     attribute: Any = None
+    # The selected value(s) of a multi-select enum-typed custom attribute. (AI-inferred)
     enum_values: Any = None
+    # JSON-typed value(s) for this custom attribute. (AI-inferred)
     json_values: Any = None
+    # Multiple text value(s) for this custom attribute. (AI-inferred)
     string_values: Any = None
+    # URI-typed value(s) for this custom attribute. (AI-inferred)
     uri_values: Any = None
 
 @dataclasses.dataclass
@@ -36,15 +47,22 @@ class Deployment_Documentation:
 
 @dataclasses.dataclass
 class Deployment_SourceMetadata_PluginInstanceActionSource:
+    # An identifier for this action, unique within its own containing plugin. (AI-inferred)
     action_id: Any = None
+    # A reference to the plugin instance this applies to. (AI-inferred)
     plugin_instance: Any = None
 
 @dataclasses.dataclass
 class Deployment_SourceMetadata:
+    # When the original, externally-sourced resource was created. (AI-inferred)
     original_resource_create_time: Any = None
+    # The identifier of the original, externally-sourced resource this was imported from. (AI-inferred)
     original_resource_id: Any = None
+    # When the original, externally-sourced resource was last updated. (AI-inferred)
     original_resource_update_time: Any = None
+    # Where this plugin action's own definition is sourced from. (AI-inferred)
     plugin_instance_action_source: Any = None
+    # The kind of source this data came from. (AI-inferred)
     source_type: Any = None
 
 _Deployment_Attributes_EnumValues_ValuesFields = {

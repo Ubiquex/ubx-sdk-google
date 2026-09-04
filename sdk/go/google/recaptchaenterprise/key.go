@@ -45,6 +45,7 @@ type Key_WafSettings struct {
 }
 
 type Key_WebSettings_ChallengeSettings_ActionSettings struct {
+	// The minimum reCAPTCHA risk score a request on this action must reach to be treated as legitimate, below which the configured challenge or block applies. (AI-inferred)
 	ScoreThreshold any
 }
 

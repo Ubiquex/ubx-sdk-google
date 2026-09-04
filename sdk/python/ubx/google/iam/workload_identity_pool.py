@@ -21,12 +21,16 @@ class WorkloadIdentityPool_InlineCertificateIssuanceConfig:
 
 @dataclasses.dataclass
 class WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCas:
+    # The certificate, in PEM format. (AI-inferred)
     pem_certificate: Any = None
 
 @dataclasses.dataclass
 class WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles:
+    # The intermediate certificate authority certificate(s) in this trust bundle. (AI-inferred)
     intermediate_cas: Any = None
+    # The root certificate authority certificate(s) this trust bundle is anchored to. (AI-inferred)
     trust_anchors: Any = None
+    # Whether this trust bundle also trusts Google's own default shared certificate authorities, in addition to the explicitly listed ones. (AI-inferred)
     trust_default_shared_ca: Any = None
 
 @dataclasses.dataclass

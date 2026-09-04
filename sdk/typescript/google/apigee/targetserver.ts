@@ -13,6 +13,7 @@ export interface Targetserver_SSlinfo {
   ciphers?: string[] | Computed<string[]>;
   /** Optional. Enables two-way TLS. */
   clientAuthEnabled?: boolean | Computed<boolean>;
+  /** The Common Name field of this certificate's own subject. (AI-inferred) */
   commonName?: Targetserver_SSlinfo_CommonName | Computed<Targetserver_SSlinfo_CommonName>;
   /** Required. Enables TLS. If false, neither one-way nor two-way TLS will be enabled. */
   enabled?: boolean | Computed<boolean>;

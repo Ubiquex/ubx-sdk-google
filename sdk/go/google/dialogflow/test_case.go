@@ -4,331 +4,513 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config_BargeInConfig struct {
+	// How long after the agent starts speaking before the caller is allowed to interrupt it. (AI-inferred)
 	NoBargeInDuration any
-	TotalDuration     any
+	// The total time this operation, run, or window covers. (AI-inferred)
+	TotalDuration any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config struct {
-	AudioEncoding                 any
-	BargeInConfig                 any
-	EnableWordInfo                any
-	Model                         any
-	ModelVariant                  any
+	// The audio encoding format, e.g. `AUDIO_ENCODING_LINEAR_16`. (AI-inferred)
+	AudioEncoding any
+	// Configuration for whether and how the caller can interrupt (barge in on) the agent's own spoken response. (AI-inferred)
+	BargeInConfig any
+	// Whether per-word confidence and timing detail is included in speech recognition results. (AI-inferred)
+	EnableWordInfo any
+	// The name of the model this applies to. (AI-inferred)
+	Model any
+	// Which specific model variant this uses. (AI-inferred)
+	ModelVariant any
+	// Opts this agent out of automatic migration to Dialogflow's newer Conformer speech-recognition model. (AI-inferred)
 	OptOutConformerModelMigration any
-	PhraseHints                   any
-	SampleRateHertz               any
-	SingleUtterance               any
+	// Phrase(s) speech recognition is biased toward recognizing correctly. (AI-inferred)
+	PhraseHints any
+	// The audio sample rate, in Hz. (AI-inferred)
+	SampleRateHertz any
+	// Whether speech recognition ends after detecting a single utterance, rather than continuing to listen. (AI-inferred)
+	SingleUtterance any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio struct {
-	Audio  any
+	// The synthesized audio content for this response. (AI-inferred)
+	Audio any
+	// The configuration for this resource. (AI-inferred)
 	Config any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_Dtmf struct {
-	Digits      any
+	// The DTMF digit(s) entered. (AI-inferred)
+	Digits any
+	// The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
 	FinishDigit any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_Event struct {
+	// The name of the event this handler responds to. (AI-inferred)
 	Event any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_Intent struct {
+	// A reference to the intent this applies to. (AI-inferred)
 	Intent any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_Text struct {
+	// The plain-text content of this response message. (AI-inferred)
 	Text any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult_Error struct {
+	// The message content. (AI-inferred)
 	Message any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult struct {
-	Action           any
-	Error            any
+	// The specific action, exposed by `tool`, being invoked. (AI-inferred)
+	Action any
+	// Error detail for this failed operation. (AI-inferred)
+	Error any
+	// The parameter value(s) produced by this operation. (AI-inferred)
 	OutputParameters any
-	Tool             any
+	// The tool this fulfillment or response invokes. (AI-inferred)
+	Tool any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput_Input struct {
-	Audio          any
-	Dtmf           any
-	Event          any
-	Intent         any
-	LanguageCode   any
-	Text           any
+	// The synthesized audio content for this response. (AI-inferred)
+	Audio any
+	// DTMF (touch-tone) input configuration or data. (AI-inferred)
+	Dtmf any
+	// The name of the event this handler responds to. (AI-inferred)
+	Event any
+	// A reference to the intent this applies to. (AI-inferred)
+	Intent any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
+	// The result returned from invoking a tool. (AI-inferred)
 	ToolCallResult any
 }
 
 type TestCase_LastTestResult_ConversationTurns_UserInput struct {
+	// Whether Dialogflow analyzes the sentiment of end-user input during the conversation. (AI-inferred)
 	EnableSentimentAnalysis any
-	InjectedParameters      any
-	Input                   any
-	IsWebhookEnabled        any
+	// Parameter value(s) supplied directly into this playbook or flow invocation, bypassing normal collection. (AI-inferred)
+	InjectedParameters any
+	// The input provided to this operation. (AI-inferred)
+	Input any
+	// Whether this tool is implemented by calling a webhook, rather than a built-in action. (AI-inferred)
+	IsWebhookEnabled any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_AudioExportGcsDestination struct {
+	// The URI of an audio clip this response instructs the client to play. (AI-inferred)
 	Uri any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_DtmfSettings struct {
-	Enabled                    any
+	// Whether this setting is turned on. (AI-inferred)
+	Enabled any
+	// How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred)
 	EndpointingTimeoutDuration any
-	FinishDigit                any
-	InterdigitTimeoutDuration  any
-	MaxDigits                  any
+	// The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
+	FinishDigit any
+	// The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred)
+	InterdigitTimeoutDuration any
+	// The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred)
+	MaxDigits any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_LoggingSettings struct {
+	// Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred)
 	EnableConsentBasedRedaction any
-	EnableInteractionLogging    any
-	EnableStackdriverLogging    any
+	// Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred)
+	EnableInteractionLogging any
+	// Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
+	EnableStackdriverLogging any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_SpeechSettings struct {
-	EndpointerSensitivity      any
-	Models                     any
-	NoSpeechTimeout            any
+	// How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred)
+	EndpointerSensitivity any
+	// Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred)
+	Models any
+	// How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred)
+	NoSpeechTimeout any
+	// Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred)
 	UseTimeoutBasedEndpointing any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings struct {
+	// The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred)
 	AudioExportGcsDestination any
-	DtmfSettings              any
-	LoggingSettings           any
-	SpeechSettings            any
+	// Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred)
+	DtmfSettings any
+	// Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred)
+	LoggingSettings any
+	// Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
+	SpeechSettings any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess struct {
+	// Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
 	Metadata any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	Audio                     any
-	Uri                       any
+	// The synthesized audio content for this response. (AI-inferred)
+	Audio any
+	// The URI of an audio clip this response instructs the client to play. (AI-inferred)
+	Uri any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio struct {
+	// The ordered audio segments making up a `mixed_audio` response. (AI-inferred)
 	Segments any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	Ssml                      any
-	Text                      any
+	// Speech Synthesis Markup Language text, giving finer control over how this response is spoken aloud than plain `text` allows. (AI-inferred)
+	Ssml any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	AudioUri                  any
+	// The URI of the client-hosted audio clip a `play_audio` response points to. (AI-inferred)
+	AudioUri any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall struct {
+	// The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
 	PhoneNumber any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	Text                      any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall struct {
-	Action          any
+	// The specific action, exposed by `tool`, being invoked. (AI-inferred)
+	Action any
+	// The parameter values passed as input when invoking this tool's action. (AI-inferred)
 	InputParameters any
-	Tool            any
+	// The tool this fulfillment or response invokes. (AI-inferred)
+	Tool any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message struct {
-	Channel               any
-	ConversationSuccess   any
-	EndInteraction        any
-	KnowledgeInfoCard     any
-	LiveAgentHandoff      any
-	MixedAudio            any
-	OutputAudioText       any
-	Payload               any
-	PlayAudio             any
-	ResponseType          any
+	// The output channel this response message is scoped to (e.g. a specific integration), so different channels can receive different responses for the same turn. (AI-inferred)
+	Channel any
+	// Signals that the conversation reached a successful outcome, optionally carrying metadata describing why. (AI-inferred)
+	ConversationSuccess any
+	// Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
+	EndInteraction any
+	// An info-card response generated from a knowledge base or generative answer, rendered by clients that support Infobot Messenger-compatible cards. (AI-inferred)
+	KnowledgeInfoCard any
+	// Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
+	LiveAgentHandoff any
+	// An audio response composed of multiple segments, mixing Dialogflow's own synthesized speech with client-hosted audio clips played via `play_audio`. (AI-inferred)
+	MixedAudio any
+	// A text or SSML response used preferentially for speech synthesis, when the response also carries a plain `text` variant for display. (AI-inferred)
+	OutputAudioText any
+	// A custom, integration-specific JSON payload carried alongside this response message. (AI-inferred)
+	Payload any
+	// Signals the client to play an audio clip hosted at `audio_uri`, rather than synthesizing speech itself. (AI-inferred)
+	PlayAudio any
+	// Which kind of response message this is (e.g. entry prompt, follow-up, or error), controlling when Dialogflow surfaces it. (AI-inferred)
+	ResponseType any
+	// Signals a telephony integration to transfer the active call to `phone_number`. (AI-inferred)
 	TelephonyTransferCall any
-	Text                  any
-	ToolCall              any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
+	// A request from the agent to invoke a specific `tool`'s own `action`, passing `input_parameters`. (AI-inferred)
+	ToolCall any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent struct {
+	// Further, nested cascading if/else conditions evaluated when this case's own condition matches. (AI-inferred)
 	AdditionalCases any
-	Message         any
+	// The message content. (AI-inferred)
+	Message any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases struct {
+	// The message(s) or action(s) to run when this case's own condition matches. (AI-inferred)
 	CaseContent any
-	Condition   any
+	// A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
+	Condition any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases struct {
+	// The ordered condition/content pair(s) making up this cascading if/else. (AI-inferred)
 	Cases any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Generators struct {
-	Generator       any
+	// A reference to the generator this invokes. (AI-inferred)
+	Generator any
+	// The parameter values passed as input when invoking this tool's action. (AI-inferred)
 	InputParameters any
+	// The session parameter this generator's own output is written to. (AI-inferred)
 	OutputParameter any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_SetParameterActions struct {
+	// The name of the parameter this applies to. (AI-inferred)
 	Parameter any
-	Value     any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment struct {
-	AdvancedSettings         any
-	CodeBlockFunction        any
-	ConditionalCases         any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// The name of the Cloud Function this fulfillment invokes to run custom code inline. (AI-inferred)
+	CodeBlockFunction any
+	// A cascading if/else list of conditions -- the first one whose own `condition` evaluates true is used, the rest are ignored. (AI-inferred)
+	ConditionalCases any
+	// Whether Dialogflow falls back to a generative (LLM-produced) response when no other route matches, rather than a static no-match message. (AI-inferred)
 	EnableGenerativeFallback any
-	Generators               any
-	Messages                 any
-	ReturnPartialResponses   any
-	SetParameterActions      any
-	Tag                      any
-	Webhook                  any
+	// The generator(s) (LLM prompt-based response generation) invoked by this fulfillment. (AI-inferred)
+	Generators any
+	// The response message(s) this fulfillment returns. (AI-inferred)
+	Messages any
+	// Whether this fulfillment streams its own response back incrementally, rather than waiting to send it all at once. (AI-inferred)
+	ReturnPartialResponses any
+	// Session parameter value(s) this fulfillment sets before running its own webhook call or response. (AI-inferred)
+	SetParameterActions any
+	// A caller-defined identifier included in the webhook request, letting the webhook service tell which fulfillment triggered it. (AI-inferred)
+	Tag any
+	// A reference to the webhook this fulfillment calls. (AI-inferred)
+	Webhook any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers struct {
-	Event              any
-	Name               any
-	TargetFlow         any
-	TargetPage         any
-	TargetPlaybook     any
+	// The name of the event this handler responds to. (AI-inferred)
+	Event any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The flow this transition moves the conversation to. (AI-inferred)
+	TargetFlow any
+	// The page this transition moves the conversation to. (AI-inferred)
+	TargetPage any
+	// The playbook this transition moves the conversation to. (AI-inferred)
+	TargetPlaybook any
+	// The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
 	TriggerFulfillment any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters_FillBehavior struct {
+	// The fulfillment run the first time this page's own form parameter is requested. (AI-inferred)
 	InitialPromptFulfillment any
-	RepromptEventHandlers    any
+	// Event handler(s) triggered when the caller's own input doesn't satisfy this form parameter, prompting again. (AI-inferred)
+	RepromptEventHandlers any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters struct {
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
 	AdvancedSettings any
-	DefaultValue     any
-	DisplayName      any
-	EntityType       any
-	FillBehavior     any
-	IsList           any
-	Redact           any
-	Required         any
+	// The value used when this parameter is left unset. (AI-inferred)
+	DefaultValue any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the entity type this applies to. (AI-inferred)
+	EntityType any
+	// Configuration for how this page prompts for and validates its own required parameters. (AI-inferred)
+	FillBehavior any
+	// Whether this parameter captures a list of values, rather than a single one. (AI-inferred)
+	IsList any
+	// Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
+	Redact any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form struct {
+	// The parameter(s) making up this configuration. (AI-inferred)
 	Parameters any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings_DataStoreConnections struct {
-	DataStore              any
-	DataStoreType          any
+	// A reference to the Vertex AI Search data store this connection reads from. (AI-inferred)
+	DataStore any
+	// What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred)
+	DataStoreType any
+	// How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred)
 	DocumentProcessingMode any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings struct {
+	// The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred)
 	DataStoreConnections any
-	Enabled              any
-	TargetFlow           any
-	TargetPage           any
-	TriggerFulfillment   any
+	// Whether this setting is turned on. (AI-inferred)
+	Enabled any
+	// The flow this transition moves the conversation to. (AI-inferred)
+	TargetFlow any
+	// The page this transition moves the conversation to. (AI-inferred)
+	TargetPage any
+	// The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
+	TriggerFulfillment any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_TransitionRoutes struct {
-	Condition          any
-	Description        any
-	Intent             any
-	Name               any
-	TargetFlow         any
-	TargetPage         any
+	// A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
+	Condition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A reference to the intent this applies to. (AI-inferred)
+	Intent any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The flow this transition moves the conversation to. (AI-inferred)
+	TargetFlow any
+	// The page this transition moves the conversation to. (AI-inferred)
+	TargetPage any
+	// The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
 	TriggerFulfillment any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage struct {
-	AdvancedSettings           any
-	Description                any
-	DisplayName                any
-	EntryFulfillment           any
-	EventHandlers              any
-	Form                       any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred)
+	EntryFulfillment any
+	// The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
+	EventHandlers any
+	// The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred)
+	Form any
+	// Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
 	KnowledgeConnectorSettings any
-	Name                       any
-	TransitionRouteGroups      any
-	TransitionRoutes           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The reusable transition route group(s) included on this page/flow. (AI-inferred)
+	TransitionRouteGroups any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
+	TransitionRoutes any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Differences struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Type        any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Status struct {
-	Code    any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// The message content. (AI-inferred)
 	Message any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_Parameters struct {
+	// A reference to the entity type this applies to. (AI-inferred)
 	EntityType any
-	Id         any
-	IsList     any
-	Redact     any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// Whether this parameter captures a list of values, rather than a single one. (AI-inferred)
+	IsList any
+	// Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
+	Redact any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases_Parts struct {
+	// An identifier for this parameter, unique within its own containing form or intent. (AI-inferred)
 	ParameterId any
-	Text        any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases struct {
-	Id          any
-	Parts       any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The ordered content parts making up this training phrase or message. (AI-inferred)
+	Parts any
+	// How many times a matching training phrase part was annotated with this parameter, when disambiguating repeated entities. (AI-inferred)
 	RepeatCount any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent struct {
-	Description     any
-	DisplayName     any
-	DtmfPattern     any
-	IsFallback      any
-	Labels          any
-	Name            any
-	Parameters      any
-	Priority        any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The DTMF digit pattern this matches against. (AI-inferred)
+	DtmfPattern any
+	// Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
+	IsFallback any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
+	// The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
+	Priority any
+	// Example user utterances used to train this intent's own recognition. (AI-inferred)
 	TrainingPhrases any
 }
 
 type TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput struct {
-	CurrentPage       any
-	DiagnosticInfo    any
-	Differences       any
+	// The page the conversation is currently on. (AI-inferred)
+	CurrentPage any
+	// Structured, low-level detail about how this turn was processed, useful for debugging. (AI-inferred)
+	DiagnosticInfo any
+	// The specific difference(s) found between the expected and actual test results. (AI-inferred)
+	Differences any
+	// The session parameter value(s) in effect at this point in the conversation. (AI-inferred)
 	SessionParameters any
-	Status            any
-	TextResponses     any
-	TriggeredIntent   any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// The text response variant(s) this message can be rendered as. (AI-inferred)
+	TextResponses any
+	// The intent that was matched and triggered this turn. (AI-inferred)
+	TriggeredIntent any
 }
 
 type TestCase_LastTestResult_ConversationTurns struct {
-	UserInput          any
+	// The end-user's own input for this turn. (AI-inferred)
+	UserInput any
+	// The agent's own recorded output (messages, parameters, matched intent) for this conversation turn. (AI-inferred)
 	VirtualAgentOutput any
 }
 
 type TestCase_LastTestResult struct {
+	// The ordered turn(s) making up this conversation or test case. (AI-inferred)
 	ConversationTurns any
-	Environment       any
-	Name              any
-	TestResult        any
-	TestTime          any
+	// A reference to the environment this applies to. (AI-inferred)
+	Environment any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The outcome of running this test. (AI-inferred)
+	TestResult any
+	// When this test was run. (AI-inferred)
+	TestTime any
 }
 
 type TestCase_TestConfig struct {
-	Flow               any
-	Page               any
+	// A reference to the flow this applies to. (AI-inferred)
+	Flow any
+	// A reference to the page this applies to. (AI-inferred)
+	Page any
+	// The session parameter(s) tracked and reported for this experiment. (AI-inferred)
 	TrackingParameters any
 }
 
@@ -890,24 +1072,39 @@ var TestCase_TestConfigFields = ubx.FieldMap{
 }
 
 type TestCaseConfig struct {
-	DisplayName               any
-	LastTestResult            any
-	Name                      any
-	Notes                     any
-	Tags                      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The outcome of the most recent run of this test case. (AI-inferred)
+	LastTestResult any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Free-text notes attached to this resource. (AI-inferred)
+	Notes any
+	// Free-form label(s) attached to this resource. (AI-inferred)
+	Tags any
+	// The expected conversation turn(s) this test case verifies. (AI-inferred)
 	TestCaseConversationTurns any
-	TestConfig                any
+	// Configuration for this test run. (AI-inferred)
+	TestConfig any
 }
 
 type TestCaseAttrs struct {
-	CreationTime              any
-	DisplayName               any
-	LastTestResult            any
-	Name                      any
-	Notes                     any
-	Tags                      any
+	// When this resource was created. (AI-inferred)
+	CreationTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The outcome of the most recent run of this test case. (AI-inferred)
+	LastTestResult any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Free-text notes attached to this resource. (AI-inferred)
+	Notes any
+	// Free-form label(s) attached to this resource. (AI-inferred)
+	Tags any
+	// The expected conversation turn(s) this test case verifies. (AI-inferred)
 	TestCaseConversationTurns any
-	TestConfig                any
+	// Configuration for this test run. (AI-inferred)
+	TestConfig any
 }
 
 var TestCase = ubx.ResourceBinding{

@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_BrokerDetails {
+  /** Output only. This broker's own index within the cluster. (AI-inferred) */
   brokerIndex?: string | Computed<string>;
+  /** Output only. This broker's own Kafka node ID. (AI-inferred) */
   nodeId?: string | Computed<string>;
+  /** Output only. The availability zone (rack) this broker runs in, used for rack-aware replica placement. (AI-inferred) */
   rack?: string | Computed<string>;
 }
 
@@ -15,6 +18,7 @@ export interface Cluster_CapacityConfig {
 }
 
 export interface Cluster_GcpConfig_AccessConfig_NetworkConfigs {
+  /** The subnet this cluster is reachable from. (AI-inferred) */
   subnet?: string | Computed<string>;
 }
 
@@ -36,6 +40,7 @@ export interface Cluster_RebalanceConfig {
 }
 
 export interface Cluster_TlsConfig_TrustConfig_CasConfigs {
+  /** The Certificate Authority Service CA pool trusted for validating client TLS certificates. (AI-inferred) */
   caPool?: string | Computed<string>;
 }
 

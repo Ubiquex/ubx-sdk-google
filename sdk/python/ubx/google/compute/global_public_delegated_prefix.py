@@ -8,16 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GlobalPublicDelegatedPrefix_PublicDelegatedSubPrefixs:
+    # The prefix length (in bits) of the sub-prefixes that can be allocated from this public delegated sub-prefix. This value is an integer representing the CIDR mask length. (AI-inferred)
     allocatable_prefix_length: Any = None
+    # The project ID to which this sub-prefix is delegated. The specified project is allowed to use this prefix range. (AI-inferred)
     delegatee_project: Any = None
     description: Any = None
+    # Enables enhanced IPv4 allocation for this public delegated sub-prefix. This feature allows the sub-prefix to be used with Cloud NAT and internal load balancing. (AI-inferred)
     enable_enhanced_ipv4_allocation: Any = None
+    # The IP address range of this sub-prefix, in CIDR notation (e.g., '192.0.2.0/24'). (AI-inferred)
     ip_cidr_range: Any = None
+    # The access type for this IPv6 sub-prefix, indicating whether it is used for external (public) traffic or internal (private) traffic. Allowed values: EXTERNAL or INTERNAL. (AI-inferred)
     ipv6_access_type: Any = None
+    # Whether this sub-prefix is a single IP address (true) or a CIDR prefix (false). (AI-inferred)
     is_address: Any = None
+    # The mode of the sub-prefix, specifying the type of resources that can be created from it. Possible values are DELEGATION, EXTERNAL_IPV6_FORWARDING_RULE_CREATION, EXTERNAL_IPV6_SUBNETWORK_CREATION, and INTERNAL_IPV6_SUBNETWORK_CREATION. (AI-inferred)
     mode: Any = None
     name: Any = None
+    # The region where this public delegated sub-prefix is located. The sub-prefix can only be used within this region. (AI-inferred)
     region: Any = None
+    # The status of the public delegated sub-prefix, indicating whether it is currently active or inactive. Valid values are ACTIVE and INACTIVE. (AI-inferred)
     status: Any = None
 
 _GlobalPublicDelegatedPrefix_PublicDelegatedSubPrefixsFields = {

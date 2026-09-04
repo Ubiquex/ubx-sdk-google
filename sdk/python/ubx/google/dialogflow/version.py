@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Version_NluSettings:
+    # The minimum confidence an intent match must reach to be accepted, below which it's treated as no match. (AI-inferred)
     classification_threshold: Any = None
+    # Which mode this agent's own NLU model is trained with. (AI-inferred)
     model_training_mode: Any = None
+    # Which underlying model architecture this uses. (AI-inferred)
     model_type: Any = None
 
 _Version_NluSettingsFields = {
@@ -20,18 +23,28 @@ _Version_NluSettingsFields = {
 
 @dataclasses.dataclass
 class VersionConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
     nlu_settings: Any = None
 
 @dataclasses.dataclass
 class VersionAttrs:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
     nlu_settings: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 Version = ubx.ResourceBinding(

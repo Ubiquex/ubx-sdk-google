@@ -16,8 +16,10 @@ type FeatureView_BigtableMetadata struct {
 }
 
 type FeatureView_FeatureRegistrySource_FeatureGroups struct {
+	// The feature group this applies to. (AI-inferred)
 	FeatureGroupId any
-	FeatureIds     any
+	// The specific feature(s) within `feature_group_id` this applies to. (AI-inferred)
+	FeatureIds any
 }
 
 type FeatureView_FeatureRegistrySource struct {
@@ -140,6 +142,7 @@ var FeatureView_VertexRagSourceFields = ubx.FieldMap{
 }
 
 type FeatureViewConfig struct {
+	// The BigQuery table or view this feature view reads its own data from. (AI-inferred)
 	BigQuerySource any
 	// Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances.
 	BigtableMetadata any
@@ -164,6 +167,7 @@ type FeatureViewConfig struct {
 }
 
 type FeatureViewAttrs struct {
+	// The BigQuery table or view this feature view reads its own data from. (AI-inferred)
 	BigQuerySource any
 	// Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances.
 	BigtableMetadata any

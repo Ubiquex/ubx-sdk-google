@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PhraseSet_PhraseSet_Phrases:
+    # The real strength (a positive number, higher biases more strongly) this phrase should be boosted by during recognition. (AI-inferred)
     boost: Any = None
+    # The real, literal term this custom class item contributes to the class's own recognition bias. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

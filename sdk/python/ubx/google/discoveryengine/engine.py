@@ -43,6 +43,7 @@ class Engine_ChatEngineMetadata:
 
 @dataclasses.dataclass
 class Engine_CmekConfig_SingleRegionKeys:
+    # The Cloud KMS key used to encrypt this resource's own data. (AI-inferred)
     kms_key: Any = None
 
 @dataclasses.dataclass

@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MetricDescriptor_Labels:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The key of this label or attribute. (AI-inferred)
     key: Any = None
+    # The data type of this metric's own values, e.g. `INT64` or `DOUBLE`. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass

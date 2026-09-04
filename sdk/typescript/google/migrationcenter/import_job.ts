@@ -2,39 +2,58 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors {
+  /** Additional detail about this error. (AI-inferred) */
   errorDetails?: string | Computed<string>;
+  /** How serious this finding is. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError {
+  /** The row number this error occurred on. (AI-inferred) */
   rowNumber?: number | Computed<number>;
 }
 
 export interface ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError {
+  /** Detail about a failure while parsing an uploaded CSV file. (AI-inferred) */
   csvError?: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError | Computed<ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError>;
+  /** The path to this file. (AI-inferred) */
   filePath?: string | Computed<string>;
 }
 
 export interface ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxError {
+  /** The row number this error occurred on. (AI-inferred) */
   rowNumber?: number | Computed<number>;
+  /** The spreadsheet sheet this applies to. (AI-inferred) */
   sheet?: string | Computed<string>;
 }
 
 export interface ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors {
+  /** Detail about a failure while reading an uploaded archive file. (AI-inferred) */
   archiveError?: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError | Computed<ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError>;
+  /** A human-readable name for this asset. (AI-inferred) */
   assetTitle?: string | Computed<string>;
+  /** Detail about a failure while parsing an uploaded CSV file. (AI-inferred) */
   csvError?: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError | Computed<ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError>;
+  /** The error(s) encountered. (AI-inferred) */
   errors?: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors[] | Computed<ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors[]>;
+  /** The row number this error occurred on. (AI-inferred) */
   rowNumber?: number | Computed<number>;
+  /** The name of this virtual machine. (AI-inferred) */
   vmName?: string | Computed<string>;
+  /** A unique identifier for this virtual machine. (AI-inferred) */
   vmUuid?: string | Computed<string>;
+  /** Detail about a failure while parsing an uploaded Excel file. (AI-inferred) */
   xlsxError?: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxError | Computed<ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxError>;
 }
 
 export interface ImportJob_ExecutionReport_ExecutionErrors_FileValidations {
+  /** The error(s) encountered while processing this file. (AI-inferred) */
   fileErrors?: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors[] | Computed<ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors[]>;
+  /** The name of this file. (AI-inferred) */
   fileName?: string | Computed<string>;
+  /** Whether this report is incomplete, e.g. due to processing errors on some assets. (AI-inferred) */
   partialReport?: boolean | Computed<boolean>;
+  /** The error(s) encountered on specific row(s) of this file. (AI-inferred) */
   rowErrors?: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors[] | Computed<ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors[]>;
 }
 

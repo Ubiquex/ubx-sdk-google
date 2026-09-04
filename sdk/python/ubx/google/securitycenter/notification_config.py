@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NotificationConfig_StreamingConfig:
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
 
 _NotificationConfig_StreamingConfigFields = {
@@ -16,17 +17,26 @@ _NotificationConfig_StreamingConfigFields = {
 
 @dataclasses.dataclass
 class NotificationConfigConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
     pubsub_topic: Any = None
+    # Configuration for streaming matching finding(s) to a destination. (AI-inferred)
     streaming_config: Any = None
 
 @dataclasses.dataclass
 class NotificationConfigAttrs:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
     pubsub_topic: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # Configuration for streaming matching finding(s) to a destination. (AI-inferred)
     streaming_config: Any = None
 
 NotificationConfig = ubx.ResourceBinding(

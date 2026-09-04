@@ -21,16 +21,21 @@ type Certificate_CertificateDescription_PublicKey struct {
 }
 
 type Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId struct {
+	// The numeric component(s) making up an object identifier. (AI-inferred)
 	ObjectIdPath any
 }
 
 type Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes struct {
+	// An X.509 object identifier (OID). (AI-inferred)
 	ObjectId any
-	Type     any
-	Value    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence struct {
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
 }
 
@@ -56,9 +61,12 @@ type Certificate_CertificateDescription_SubjectDescription_Subject struct {
 }
 
 type Certificate_CertificateDescription_SubjectDescription_SubjectAltName_CustomSans struct {
+	// Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
 	Critical any
+	// An X.509 object identifier (OID). (AI-inferred)
 	ObjectId any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Certificate_CertificateDescription_SubjectDescription_SubjectAltName struct {

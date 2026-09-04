@@ -19,14 +19,19 @@ type Note_Build struct {
 }
 
 type Note_Compliance_CisBenchmark struct {
+	// The compliance benchmark profile level this check belongs to, e.g. Level 1 or Level 2. (AI-inferred)
 	ProfileLevel any
-	Severity     any
+	// How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred)
+	Severity any
 }
 
 type Note_Compliance_Version struct {
+	// The compliance benchmark document this check is defined in. (AI-inferred)
 	BenchmarkDocument any
-	CpeUri            any
-	Version           any
+	// A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
+	CpeUri any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Note_Compliance struct {
@@ -34,7 +39,8 @@ type Note_Compliance struct {
 	CisBenchmark any
 	// A description about this compliance check.
 	Description any
-	Impact      any
+	// The consequence of this vulnerability if exploited. (AI-inferred)
+	Impact any
 	// A rationale for the existence of this compliance check.
 	Rationale any
 	// A description of remediation steps if the compliance check fails.
@@ -74,26 +80,40 @@ type Note_Image struct {
 }
 
 type Note_Package_Digest struct {
-	Algo        any
+	// The hash algorithm used, e.g. `SHA256`. (AI-inferred)
+	Algo any
+	// The raw bytes of this digest. (AI-inferred)
 	DigestBytes any
 }
 
 type Note_Package_Distribution_LatestVersion struct {
-	Epoch     any
-	FullName  any
+	// The package version's own epoch, used to order versions when the upstream numbering scheme changed. (AI-inferred)
+	Epoch any
+	// The fully qualified name of this package or resource. (AI-inferred)
+	FullName any
+	// Whether this version range's own boundary is inclusive. (AI-inferred)
 	Inclusive any
-	Kind      any
-	Name      any
-	Revision  any
+	// The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The specific revision of this source this applies to. (AI-inferred)
+	Revision any
 }
 
 type Note_Package_Distribution struct {
-	Architecture  any
-	CpeUri        any
-	Description   any
+	// The CPU architecture this applies to, e.g. `x86_64`. (AI-inferred)
+	Architecture any
+	// A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
+	CpeUri any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The most recent version of this package. (AI-inferred)
 	LatestVersion any
-	Maintainer    any
-	Url           any
+	// The maintainer of this package. (AI-inferred)
+	Maintainer any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type Note_Package_License struct {
@@ -129,8 +149,10 @@ type Note_Package struct {
 }
 
 type Note_RelatedUrl struct {
+	// A human-readable label for this item. (AI-inferred)
 	Label any
-	Url   any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type Note_SbomReference struct {
@@ -141,15 +163,21 @@ type Note_SbomReference struct {
 }
 
 type Note_Upgrade_Distributions struct {
+	// How this vulnerability or finding is classified. (AI-inferred)
 	Classification any
-	CpeUri         any
-	Cve            any
-	Severity       any
+	// A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
+	CpeUri any
+	// The CVE identifier for this vulnerability. (AI-inferred)
+	Cve any
+	// How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred)
+	Severity any
 }
 
 type Note_Upgrade_WindowsUpdate_Categories struct {
+	// An identifier for the category this belongs to. (AI-inferred)
 	CategoryId any
-	Name       any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Note_Upgrade_WindowsUpdate_Identity struct {
@@ -203,9 +231,11 @@ type Note_Vulnerability_CvssV2 struct {
 	// Confidentiality Impact (C). Defined in CVSS v2, v3.
 	ConfidentialityImpact any
 	// Exploit Maturity (E). Defined in CVSS v4.
-	ExploitMaturity     any
+	ExploitMaturity any
+	// A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred)
 	ExploitabilityScore any
-	ImpactScore         any
+	// A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred)
+	ImpactScore any
 	// Integrity Impact (I). Defined in CVSS v2, v3.
 	IntegrityImpact any
 	// Privileges Required (PR). Defined in CVSS v3, v4.
@@ -229,48 +259,77 @@ type Note_Vulnerability_CvssV2 struct {
 }
 
 type Note_Vulnerability_CvssV3 struct {
+	// How difficult a successful exploit of this vulnerability is to execute, per CVSS. (AI-inferred)
 	AttackComplexity any
 	// Base Metrics Represents the intrinsic characteristics of a vulnerability that are constant over time and across user environments.
-	AttackVector       any
+	AttackVector any
+	// The impact to system availability if this vulnerability is exploited, per CVSS. (AI-inferred)
 	AvailabilityImpact any
 	// The base score is a function of the base metric scores.
-	BaseScore             any
+	BaseScore any
+	// The impact to data confidentiality if this vulnerability is exploited, per CVSS. (AI-inferred)
 	ConfidentialityImpact any
-	ExploitabilityScore   any
-	ImpactScore           any
-	IntegrityImpact       any
-	PrivilegesRequired    any
-	Scope                 any
-	UserInteraction       any
+	// A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred)
+	ExploitabilityScore any
+	// A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred)
+	ImpactScore any
+	// The impact to data integrity if this vulnerability is exploited, per CVSS. (AI-inferred)
+	IntegrityImpact any
+	// What level of privilege an attacker needs to exploit this vulnerability, per CVSS. (AI-inferred)
+	PrivilegesRequired any
+	// What this occurrence's own analysis covers. (AI-inferred)
+	Scope any
+	// Whether exploiting this vulnerability requires interaction from a user other than the attacker, per CVSS. (AI-inferred)
+	UserInteraction any
 }
 
 type Note_Vulnerability_Details struct {
-	AffectedCpeUri       any
-	AffectedPackage      any
-	AffectedVersionEnd   any
+	// The CPE URI of the package version affected by this vulnerability. (AI-inferred)
+	AffectedCpeUri any
+	// The name of the package affected by this vulnerability. (AI-inferred)
+	AffectedPackage any
+	// The end of the version range affected by this vulnerability. (AI-inferred)
+	AffectedVersionEnd any
+	// The start of the version range affected by this vulnerability. (AI-inferred)
 	AffectedVersionStart any
-	Description          any
-	FixedCpeUri          any
-	FixedPackage         any
-	FixedVersion         any
-	IsObsolete           any
-	PackageType          any
-	SeverityName         any
-	Source               any
-	SourceUpdateTime     any
-	Vendor               any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The CPE URI of the package version that fixes this vulnerability. (AI-inferred)
+	FixedCpeUri any
+	// The name of the package that fixes this vulnerability. (AI-inferred)
+	FixedPackage any
+	// The version that fixes this vulnerability. (AI-inferred)
+	FixedVersion any
+	// Whether this note or occurrence has been superseded and should be treated as no longer current. (AI-inferred)
+	IsObsolete any
+	// The package manager/ecosystem this package belongs to, e.g. `DEBIAN` or `NPM`. (AI-inferred)
+	PackageType any
+	// A human-readable name for this vulnerability's own severity level. (AI-inferred)
+	SeverityName any
+	// The source this build's own materials were drawn from. (AI-inferred)
+	Source any
+	// When this source note was last updated. (AI-inferred)
+	SourceUpdateTime any
+	// The vendor of this package or software. (AI-inferred)
+	Vendor any
 }
 
 type Note_Vulnerability_WindowsDetails_FixingKbs struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
-	Url  any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type Note_Vulnerability_WindowsDetails struct {
-	CpeUri      any
+	// A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
+	CpeUri any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	FixingKbs   any
-	Name        any
+	// The Windows Knowledge Base article(s) that fix this vulnerability. (AI-inferred)
+	FixingKbs any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Note_Vulnerability struct {
@@ -304,9 +363,12 @@ type Note_VulnerabilityAssessment_Assessment_Justification struct {
 }
 
 type Note_VulnerabilityAssessment_Assessment_Remediations struct {
-	Details         any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// The category of fix available for this vulnerability, e.g. a package update or workaround. (AI-inferred)
 	RemediationType any
-	RemediationUri  any
+	// A URI with guidance on remediating this vulnerability. (AI-inferred)
+	RemediationUri any
 }
 
 type Note_VulnerabilityAssessment_Assessment struct {
@@ -754,14 +816,16 @@ type NoteConfig struct {
 	// Note kind that represents a logical attestation "role" or "authority". For example, an organization might have one `Authority` for "QA" and one for "build". This note is intended to act strictly as a grouping mechanism for the attached occurrences (Attestations). This grouping mechanism also provides a security boundary, since IAM ACLs gate the ability for a principle to attach an occurrence to a given note. It also provides a single point of lookup to find all attached attestation occurrences, even if they don't all live in the same project.
 	Attestation any
 	// Note holding the version of the provider's builder and the signature of the provenance message in the build details occurrence.
-	Build      any
+	Build any
+	// Detail about this resource's own compliance check result. (AI-inferred)
 	Compliance any
 	// Output only. The time this note was created. This field can be used as a filter in list requests.
 	CreateTime any
 	// An artifact that can be deployed in some runtime.
 	Deployment any
 	// A note that indicates a type of analysis a provider would perform. This note exists in a provider's project. A `Discovery` occurrence is created in a consumer's project at the start of analysis.
-	Discovery       any
+	Discovery any
+	// An attestation wrapped in the Dead Simple Signing Envelope (DSSE) format. (AI-inferred)
 	DsseAttestation any
 	// Time of expiration for this note. Empty if note does not expire.
 	ExpirationTime any
@@ -801,14 +865,16 @@ type NoteAttrs struct {
 	// Note kind that represents a logical attestation "role" or "authority". For example, an organization might have one `Authority` for "QA" and one for "build". This note is intended to act strictly as a grouping mechanism for the attached occurrences (Attestations). This grouping mechanism also provides a security boundary, since IAM ACLs gate the ability for a principle to attach an occurrence to a given note. It also provides a single point of lookup to find all attached attestation occurrences, even if they don't all live in the same project.
 	Attestation any
 	// Note holding the version of the provider's builder and the signature of the provenance message in the build details occurrence.
-	Build      any
+	Build any
+	// Detail about this resource's own compliance check result. (AI-inferred)
 	Compliance any
 	// Output only. The time this note was created. This field can be used as a filter in list requests.
 	CreateTime any
 	// An artifact that can be deployed in some runtime.
 	Deployment any
 	// A note that indicates a type of analysis a provider would perform. This note exists in a provider's project. A `Discovery` occurrence is created in a consumer's project at the start of analysis.
-	Discovery       any
+	Discovery any
+	// An attestation wrapped in the Dead Simple Signing Envelope (DSSE) format. (AI-inferred)
 	DsseAttestation any
 	// Time of expiration for this note. Empty if note does not expire.
 	ExpirationTime any

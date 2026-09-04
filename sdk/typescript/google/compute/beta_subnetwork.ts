@@ -157,6 +157,7 @@ export interface BetaSubnetworkConfig {
   privateIpGoogleAccess?: boolean | Computed<boolean>;
   /** This field is for internal use. This field can be both set at resource creation time and updated usingpatch. */
   privateIpv6GoogleAccess?: string | Computed<string>;
+  /** What this subnetwork is used for, e.g. a regular subnet or a regional managed proxy subnet for internal HTTP(S) load balancing. (AI-inferred) */
   purpose?: string | Computed<string>;
   /** URL of the region where the Subnetwork resides. This field can be set only at resource creation time. */
   region?: string | Computed<string>;
@@ -221,6 +222,7 @@ export interface BetaSubnetworkAttrs {
   privateIpGoogleAccess: boolean;
   /** This field is for internal use. This field can be both set at resource creation time and updated usingpatch. */
   privateIpv6GoogleAccess: string;
+  /** What this subnetwork is used for, e.g. a regular subnet or a regional managed proxy subnet for internal HTTP(S) load balancing. (AI-inferred) */
   purpose: string;
   /** URL of the region where the Subnetwork resides. This field can be set only at resource creation time. */
   region: string;

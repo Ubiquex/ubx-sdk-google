@@ -25,8 +25,11 @@ type PolicyBasedRoute_VirtualMachine struct {
 }
 
 type PolicyBasedRoute_Warnings struct {
-	Code           any
-	Data           any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// The literal content of this field. (AI-inferred)
+	Data any
+	// A human-readable description of a non-fatal warning. (AI-inferred)
 	WarningMessage any
 }
 

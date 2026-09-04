@@ -2,12 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReferenceImage_BoundingPolys_NormalizedVertices {
+  /** The horizontal coordinate of one vertex in a bounding polygon. (AI-inferred) */
   x?: number | Computed<number>;
+  /** The vertical coordinate of one vertex in a bounding polygon. (AI-inferred) */
   y?: number | Computed<number>;
 }
 
 export interface ReferenceImage_BoundingPolys {
+  /** The real polygon vertices bounding the product within this reference image, normalized to `[0, 1]` relative to the image's own dimensions. (AI-inferred) */
   normalizedVertices?: ReferenceImage_BoundingPolys_NormalizedVertices[] | Computed<ReferenceImage_BoundingPolys_NormalizedVertices[]>;
+  /** The real polygon vertices bounding the product within this reference image, in the image's own real pixel coordinate space. (AI-inferred) */
   vertices?: ReferenceImage_BoundingPolys_NormalizedVertices[] | Computed<ReferenceImage_BoundingPolys_NormalizedVertices[]>;
 }
 

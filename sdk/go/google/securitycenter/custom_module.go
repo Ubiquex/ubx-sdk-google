@@ -4,26 +4,43 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomModuleConfig struct {
-	CloudProvider   any
-	Config          any
-	Description     any
-	DisplayName     any
+	// The cloud provider this resource belongs to. (AI-inferred)
+	CloudProvider any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether this feature is enabled, disabled, or inherited from a parent. (AI-inferred)
 	EnablementState any
-	Name            any
-	Type            any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type CustomModuleAttrs struct {
-	AncestorModule  any
-	CloudProvider   any
-	Config          any
-	Description     any
-	DisplayName     any
+	// A reference to the parent security posture module this inherits from. (AI-inferred)
+	AncestorModule any
+	// The cloud provider this resource belongs to. (AI-inferred)
+	CloudProvider any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether this feature is enabled, disabled, or inherited from a parent. (AI-inferred)
 	EnablementState any
-	LastEditor      any
-	Name            any
-	Type            any
-	UpdateTime      any
+	// The identity that most recently modified this resource. (AI-inferred)
+	LastEditor any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var CustomModule = ubx.ResourceBinding{

@@ -28,10 +28,15 @@ class Subnetwork_Params:
 
 @dataclasses.dataclass
 class Subnetwork_SecondaryIpRanges:
+    # The CIDR range for the secondary IP range, specified in CIDR notation (e.g., '10.0.1.0/24'). This range must not overlap with the primary or other secondary IP ranges in the subnetwork. (AI-inferred)
     ip_cidr_range: Any = None
+    # The name of the IP collection to use for this secondary IP range. (AI-inferred)
     ip_collection: Any = None
+    # The IP version of this secondary IP range. Allowed values are IPV4, IPV6, or IP_VERSION_UNSPECIFIED. (AI-inferred)
     ip_version: Any = None
+    # The name of the secondary IP range. Must be unique within the subnetwork. (AI-inferred)
     range_name: Any = None
+    # Reference to a reserved internal range (by name or URI) used to allocate this secondary IP range. Specify this instead of ip_cidr_range to use a pre-reserved internal range for the secondary range. (AI-inferred)
     reserved_internal_range: Any = None
 
 @dataclasses.dataclass
@@ -46,8 +51,11 @@ class Subnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization:
 
 @dataclasses.dataclass
 class Subnetwork_UtilizationDetails_Ipv4Utilizations:
+    # The name of the IP range (e.g., primary or a specific secondary range) for which this IPv4 utilization is reported. (AI-inferred)
     range_name: Any = None
+    # The total number of IPv4 addresses allocated in the subnetwork, represented as a string. (AI-inferred)
     total_allocated_ip: Any = None
+    # The total number of free (unassigned) IPv4 addresses in the subnet's utilization range, represented as a string. (AI-inferred)
     total_free_ip: Any = None
 
 @dataclasses.dataclass
@@ -161,6 +169,7 @@ class SubnetworkConfig:
     private_ip_google_access: Any = None
     # This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
     private_ipv6_google_access: Any = None
+    # The purpose of the subnetwork, indicating how it is used. Valid values include GLOBAL_MANAGED_PROXY, INTERNAL_HTTPS_LOAD_BALANCER, PEER_MIGRATION, PRIVATE, PRIVATE_NAT, PRIVATE_RFC_1918, PRIVATE_SERVICE_CONNECT, and REGIONAL_MANAGED_PROXY. When not set, the default is PRIVATE. (AI-inferred)
     purpose: Any = None
     # URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
     region: Any = None
@@ -223,6 +232,7 @@ class SubnetworkAttrs:
     private_ip_google_access: Any = None
     # This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
     private_ipv6_google_access: Any = None
+    # The purpose of the subnetwork, indicating how it is used. Valid values include GLOBAL_MANAGED_PROXY, INTERNAL_HTTPS_LOAD_BALANCER, PEER_MIGRATION, PRIVATE, PRIVATE_NAT, PRIVATE_RFC_1918, PRIVATE_SERVICE_CONNECT, and REGIONAL_MANAGED_PROXY. When not set, the default is PRIVATE. (AI-inferred)
     purpose: Any = None
     # URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
     region: Any = None

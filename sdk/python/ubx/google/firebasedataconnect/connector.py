@@ -15,7 +15,9 @@ class Connector_ClientCache:
 
 @dataclasses.dataclass
 class Connector_Source_Files:
+    # The literal content of this field. (AI-inferred)
     content: Any = None
+    # A file or resource path. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass

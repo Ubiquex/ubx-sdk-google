@@ -19,7 +19,9 @@ export interface Secret_Replication_Automatic {
 }
 
 export interface Secret_Replication_UserManaged_Replicas {
+  /** The customer-managed encryption key (CMEK) configuration for this replica -- omit to use Google-managed encryption for this region instead. (AI-inferred) */
   customerManagedEncryption?: Secret_CustomerManagedEncryption | Computed<Secret_CustomerManagedEncryption>;
+  /** The region this secret is explicitly replicated to under user-managed replication, e.g. `us-central1`. (AI-inferred) */
   location?: string | Computed<string>;
 }
 
@@ -61,6 +63,7 @@ export interface Secret_Rotation {
 }
 
 export interface Secret_Topics {
+  /** The Pub/Sub topic Secret Manager publishes notifications to for events on this secret (e.g. new versions), in the form `projects/{project}/topics/{topic}`. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

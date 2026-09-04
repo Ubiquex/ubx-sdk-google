@@ -16,7 +16,9 @@ type Rollout_Control struct {
 }
 
 type Rollout_Stats_OperationsByState struct {
+	// The real number of unit operations currently in this specific rollout state. (AI-inferred)
 	Count any
+	// The real, named grouping (e.g. a rollout wave) this operation-state count applies to. (AI-inferred)
 	Group any
 }
 

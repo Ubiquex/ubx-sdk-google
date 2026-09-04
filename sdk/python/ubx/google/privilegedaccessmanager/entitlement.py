@@ -15,12 +15,16 @@ class Entitlement_AdditionalNotificationTargets:
 
 @dataclasses.dataclass
 class Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers:
+    # The principal(s) this applies to. (AI-inferred)
     principals: Any = None
 
 @dataclasses.dataclass
 class Entitlement_ApprovalWorkflow_ManualApprovals_Steps:
+    # The number of approval(s) still required before this grant can be activated. (AI-inferred)
     approvals_needed: Any = None
+    # Email address(es) notified when an approval decision is needed. (AI-inferred)
     approver_email_recipients: Any = None
+    # The principal(s) authorized to approve this grant. (AI-inferred)
     approvers: Any = None
 
 @dataclasses.dataclass
@@ -37,7 +41,9 @@ class Entitlement_ApprovalWorkflow:
 
 @dataclasses.dataclass
 class Entitlement_PrivilegedAccess_GcpIamAccess_RoleBindings:
+    # A Common Expression Language (CEL) condition that must hold for this rule to apply. (AI-inferred)
     condition_expression: Any = None
+    # The IAM role this grant provides temporary access to. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass

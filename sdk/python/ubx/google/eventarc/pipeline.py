@@ -8,46 +8,66 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Pipeline_Destinations_AuthenticationConfig_GoogleOidc:
+    # The intended recipient of this authentication token. (AI-inferred)
     audience: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Destinations_AuthenticationConfig_OauthToken:
+    # What this configuration's own scope covers. (AI-inferred)
     scope: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Destinations_AuthenticationConfig:
+    # Authenticates delivered requests using a Google-signed OIDC token. (AI-inferred)
     google_oidc: Any = None
+    # Authenticates delivered requests using an OAuth access token. (AI-inferred)
     oauth_token: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Destinations_HttpEndpoint:
+    # The CEL expression mapping a source event into a CloudEvents-formatted message. (AI-inferred)
     message_binding_template: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Destinations_NetworkConfig:
+    # A reference to the network attachment used to reach this private destination. (AI-inferred)
     network_attachment: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Destinations_OutputPayloadFormat_Avro:
+    # The literal content of this schema. (AI-inferred)
     schema_definition: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Destinations_OutputPayloadFormat:
+    # Configuration for encoding this schema using Avro. (AI-inferred)
     avro: Any = None
+    # Configuration for encoding this schema using JSON. (AI-inferred)
     json: Any = None
+    # Configuration for encoding this schema using Protocol Buffers. (AI-inferred)
     protobuf: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Destinations:
+    # Configuration for authenticating requests delivered to this destination. (AI-inferred)
     authentication_config: Any = None
+    # The HTTP endpoint events are delivered to. (AI-inferred)
     http_endpoint: Any = None
+    # A reference to the message bus this applies to. (AI-inferred)
     message_bus: Any = None
+    # Configuration controlling how this destination is reached over the network. (AI-inferred)
     network_config: Any = None
+    # The format events are encoded in when delivered. (AI-inferred)
     output_payload_format: Any = None
+    # A reference to the Pub/Sub topic this applies to. (AI-inferred)
     topic: Any = None
+    # A reference to the workflow this event triggers. (AI-inferred)
     workflow: Any = None
 
 @dataclasses.dataclass
@@ -57,10 +77,12 @@ class Pipeline_LoggingConfig:
 
 @dataclasses.dataclass
 class Pipeline_Mediations_Transformation:
+    # The CEL expression used to transform this event's own payload. (AI-inferred)
     transformation_template: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Mediations:
+    # A transformation applied to this event before delivery. (AI-inferred)
     transformation: Any = None
 
 @dataclasses.dataclass

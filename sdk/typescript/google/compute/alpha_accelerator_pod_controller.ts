@@ -51,6 +51,7 @@ export interface AlphaAcceleratorPodControllerAttrs {
   description: string;
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** The kind of resource this is, a fixed, server-set discriminator string. (AI-inferred) */
   kind: string;
   /** Map of management interfaces. Keys must be valid RFC1035 names and at most 63 characters long. */
   managementInterfaces: Record<string, AlphaAcceleratorPodController_ManagementInterfaces>;

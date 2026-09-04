@@ -13,6 +13,7 @@ type Tool_AgentTool struct {
 }
 
 type Tool_ClientFunction_Parameters struct {
+	// Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
 	AdditionalProperties any
 	// Optional. The value should be validated against any (one or more) of the subschemas in the list.
 	AnyOf any
@@ -23,7 +24,8 @@ type Tool_ClientFunction_Parameters struct {
 	// Optional. The description of the data.
 	Description any
 	// Optional. Possible values of the element of primitive type with enum format. Examples: 1. We can define direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]} 2. We can define apartment number as : {type:INTEGER, format:enum, enum:["101", "201", "301"]}
-	Enum  any
+	Enum any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
 	Items any
 	// Optional. Maximum number of the elements for Type.ARRAY.
 	MaxItems any
@@ -115,30 +117,42 @@ type Tool_ConnectorTool struct {
 }
 
 type Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints struct {
+	// The attribute value at this control point. (AI-inferred)
 	AttributeValue any
-	BoostAmount    any
+	// The boost applied at this control point. (AI-inferred)
+	BoostAmount any
 }
 
 type Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec struct {
-	AttributeType     any
-	ControlPoints     any
-	FieldName         any
+	// The kind of attribute this boost rule keys on. (AI-inferred)
+	AttributeType any
+	// The mapping between an attribute's own value and its resulting boost amount, defining the boost curve. (AI-inferred)
+	ControlPoints any
+	// The name of the field this applies to. (AI-inferred)
+	FieldName any
+	// How boost values are interpolated between control points, e.g. linear. (AI-inferred)
 	InterpolationType any
 }
 
 type Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs struct {
-	Boost            any
+	// How much to raise or lower a matching result's own ranking. (AI-inferred)
+	Boost any
+	// A boost rule computed from a continuous field value, rather than a fixed amount. (AI-inferred)
 	BoostControlSpec any
-	Condition        any
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
+	Condition any
 }
 
 type Tool_DataStoreTool_BoostSpecs_Spec struct {
+	// Rule(s) boosting or burying specific search results when their own condition matches. (AI-inferred)
 	ConditionBoostSpecs any
 }
 
 type Tool_DataStoreTool_BoostSpecs struct {
+	// The data store(s) this tool queries. (AI-inferred)
 	DataStores any
-	Spec       any
+	// The specification defining this resource's own behavior. (AI-inferred)
+	Spec any
 }
 
 type Tool_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig struct {
@@ -182,30 +196,43 @@ type Tool_DataStoreTool_EngineSource struct {
 }
 
 type Tool_DataStoreTool_ModalityConfigs_GroundingConfig struct {
-	Disabled       any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// How strictly generated answers must be grounded in retrieved source content. (AI-inferred)
 	GroundingLevel any
 }
 
 type Tool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettings struct {
-	Model       any
+	// The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
+	Model any
+	// Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred)
 	Temperature any
 }
 
 type Tool_DataStoreTool_ModalityConfigs_RewriterConfig struct {
-	Disabled      any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
 	ModelSettings any
-	Prompt        any
+	// The prompt text sent to the model. (AI-inferred)
+	Prompt any
 }
 
 type Tool_DataStoreTool_ModalityConfigs_SnippetsConfig struct {
+	// Whether source snippets are included alongside a generated answer. (AI-inferred)
 	EnableSnippets any
 }
 
 type Tool_DataStoreTool_ModalityConfigs struct {
-	GroundingConfig     any
-	ModalityType        any
-	RewriterConfig      any
-	SnippetsConfig      any
+	// Configuration for how strictly generated answers must be grounded in retrieved source content. (AI-inferred)
+	GroundingConfig any
+	// Which modality (text, audio, etc.) this applies to. (AI-inferred)
+	ModalityType any
+	// Configuration for automatically rewriting the user's own query before retrieval, to improve search results. (AI-inferred)
+	RewriterConfig any
+	// Configuration for including source snippets alongside a generated answer. (AI-inferred)
+	SnippetsConfig any
+	// Configuration for how retrieved search results are summarized into a generated answer. (AI-inferred)
 	SummarizationConfig any
 }
 
@@ -312,7 +339,9 @@ type Tool_McpTool_ServiceDirectoryConfig struct {
 }
 
 type Tool_McpTool_TlsConfig_CaCerts struct {
-	Cert        any
+	// A TLS certificate. (AI-inferred)
+	Cert any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
@@ -377,20 +406,31 @@ type Tool_PythonFunction struct {
 }
 
 type Tool_RemoteAgentTool_AgentCard_Skills struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Examples    any
-	Id          any
-	InputModes  any
-	Name        any
+	// Example(s) illustrating expected behavior. (AI-inferred)
+	Examples any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The input modality/modalities (text, audio, etc.) this supports. (AI-inferred)
+	InputModes any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The output modality/modalities (text, audio, etc.) this supports. (AI-inferred)
 	OutputModes any
-	Tags        any
+	// Free-form label(s) attached to this resource. (AI-inferred)
+	Tags any
 }
 
 type Tool_RemoteAgentTool_AgentCard_SupportedInterfaces struct {
+	// The communication protocol this interface accepts requests over. (AI-inferred)
 	ProtocolBinding any
+	// The protocol version this interface implements. (AI-inferred)
 	ProtocolVersion any
-	Tenant          any
-	Url             any
+	// A reference to the tenant this applies to. (AI-inferred)
+	Tenant any
+	// The URL this tool calls. (AI-inferred)
+	Url any
 }
 
 type Tool_RemoteAgentTool_AgentCard struct {

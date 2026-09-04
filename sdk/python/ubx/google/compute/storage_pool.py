@@ -53,6 +53,7 @@ class StoragePool_ResourceStatus:
 
 @dataclasses.dataclass
 class StoragePool_ShareSettings_ProjectMap:
+    # The unique identifier of the Google Cloud project to which these share settings apply. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass

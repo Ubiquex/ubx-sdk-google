@@ -8,22 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Hub_RoutingVpcs:
+    # Whether this filter is required for new site-to-site data transfer spokes. (AI-inferred)
     required_for_new_site_to_site_data_transfer_spokes: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Hub_SpokeSummary_SpokeStateCounts:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Hub_SpokeSummary_SpokeStateReasonCounts:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # A machine-readable code explaining why this resource is in its own current state. (AI-inferred)
     state_reason_code: Any = None
 
 @dataclasses.dataclass
 class Hub_SpokeSummary_SpokeTypeCounts:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The kind of resource this spoke represents, e.g. VPN tunnel or VPC network. (AI-inferred)
     spoke_type: Any = None
 
 @dataclasses.dataclass

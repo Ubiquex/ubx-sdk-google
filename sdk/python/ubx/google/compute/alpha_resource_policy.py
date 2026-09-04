@@ -306,6 +306,7 @@ _AlphaResourcePolicy_WorkloadPolicyFields = {
 
 @dataclasses.dataclass
 class AlphaResourcePolicyConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
     # Resource policy for disk consistency groups.
     disk_consistency_group_policy: Any = None
@@ -327,6 +328,7 @@ class AlphaResourcePolicyConfig:
 class AlphaResourcePolicyAttrs:
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
     # Resource policy for disk consistency groups.
     disk_consistency_group_policy: Any = None
@@ -340,6 +342,7 @@ class AlphaResourcePolicyAttrs:
     kind: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
+    # The Google Cloud region this resource policy applies to. (AI-inferred)
     region: Any = None
     # Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification.
     resource_status: Any = None

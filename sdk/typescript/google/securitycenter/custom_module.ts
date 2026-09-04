@@ -2,25 +2,42 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomModuleConfig {
+  /** The cloud provider this resource belongs to. (AI-inferred) */
   cloudProvider?: string | Computed<string>;
+  /** The configuration for this resource. (AI-inferred) */
   config?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether this feature is enabled, disabled, or inherited from a parent. (AI-inferred) */
   enablementState?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface CustomModuleAttrs {
+  /** A reference to the parent security posture module this inherits from. (AI-inferred) */
   ancestorModule: string;
+  /** The cloud provider this resource belongs to. (AI-inferred) */
   cloudProvider: string;
+  /** The configuration for this resource. (AI-inferred) */
   config: Record<string, unknown>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Whether this feature is enabled, disabled, or inherited from a parent. (AI-inferred) */
   enablementState: string;
+  /** The identity that most recently modified this resource. (AI-inferred) */
   lastEditor: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type: string;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

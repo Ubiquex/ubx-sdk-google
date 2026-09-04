@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Index_DeployedIndexes:
+    # The identifier this index was deployed under. (AI-inferred)
     deployed_index_id: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the index endpoint this index is deployed to. (AI-inferred)
     index_endpoint: Any = None
 
 @dataclasses.dataclass

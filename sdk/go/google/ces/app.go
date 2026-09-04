@@ -22,12 +22,18 @@ type App_AudioProcessingConfig_BargeInConfig struct {
 }
 
 type App_AudioProcessingConfig_SynthesizeSpeechConfigs struct {
+	// The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred)
 	ConsentAudioGcsUri any
-	Instruction        any
-	Model              any
-	SpeakingRate       any
-	Voice              any
-	VoiceSampleGcsUri  any
+	// An instruction given to the model or agent. (AI-inferred)
+	Instruction any
+	// The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
+	Model any
+	// The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred)
+	SpeakingRate any
+	// Configuration for which synthesized voice this agent uses. (AI-inferred)
+	Voice any
+	// The Cloud Storage URI of an audio sample used to clone a custom voice. (AI-inferred)
+	VoiceSampleGcsUri any
 }
 
 type App_AudioProcessingConfig struct {
@@ -51,7 +57,9 @@ type App_ClientCertificateSettings struct {
 }
 
 type App_DataStoreSettings_Engines struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
@@ -276,31 +284,53 @@ type App_ModelSettings struct {
 }
 
 type App_PredefinedVariableDeclarations_Schema struct {
+	// Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
 	AdditionalProperties any
-	AnyOf                any
-	Default              any
-	Defs                 any
-	Description          any
-	Enum                 any
-	Items                any
-	MaxItems             any
-	Maximum              any
-	MinItems             any
-	Minimum              any
-	Nullable             any
-	PrefixItems          any
-	Properties           any
-	Ref                  any
-	Required             any
-	Title                any
-	Type                 any
-	UniqueItems          any
+	// A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
+	AnyOf any
+	// The value used when this field is left unset. (AI-inferred)
+	Default any
+	// Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
+	Defs any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
+	Enum any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
+	// The most elements an `array`-typed value may have. (AI-inferred)
+	MaxItems any
+	// The largest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Maximum any
+	// The fewest elements an `array`-typed value may have. (AI-inferred)
+	MinItems any
+	// The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Minimum any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred)
+	PrefixItems any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// Whether every element of an array-typed value must be distinct. (AI-inferred)
+	UniqueItems any
 }
 
 type App_PredefinedVariableDeclarations struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
-	Schema      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A schema describing this value's own expected structure. (AI-inferred)
+	Schema any
 }
 
 type App_TimeZoneSettings struct {

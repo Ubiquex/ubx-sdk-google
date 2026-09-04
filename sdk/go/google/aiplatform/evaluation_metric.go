@@ -70,36 +70,55 @@ type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationC
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio struct {
-	BitRate    any
-	Delivery   any
-	MimeType   any
+	// The audio or video bit rate, in bits per second. (AI-inferred)
+	BitRate any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The audio sample rate, in Hz. (AI-inferred)
 	SampleRate any
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	ImageSize   any
-	MimeType    any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
+	ImageSize any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text struct {
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
 	MimeType any
-	Schema   any
+	// A schema describing this value's own expected structure. (AI-inferred)
+	Schema any
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	Duration    any
-	GcsUri      any
-	Resolution  any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// How long this clip, window, or operation lasts. (AI-inferred)
+	Duration any
+	// A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
+	GcsUri any
+	// The pixel dimensions of this image or video. (AI-inferred)
+	Resolution any
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat struct {
+	// Audio content or configuration. (AI-inferred)
 	Audio any
+	// Image content or configuration. (AI-inferred)
 	Image any
-	Text  any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// Video content or configuration. (AI-inferred)
 	Video any
 }
 
@@ -120,7 +139,8 @@ type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationC
 	Example any
 	// Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
 	Format any
-	Items  any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
 	// Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
 	MaxItems any
 	// Optional. If type is `STRING`, `max_length` specifies the maximum length of the string.
@@ -173,21 +193,28 @@ type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationC
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig struct {
+	// The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
 	VoiceName any
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig struct {
-	MimeType         any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
 	VoiceSampleAudio any
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig struct {
-	PrebuiltVoiceConfig   any
+	// Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
+	PrebuiltVoiceConfig any
+	// Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
 	ReplicatedVoiceConfig any
 }
 
 type EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs struct {
-	Speaker     any
+	// Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
+	Speaker any
+	// The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
 	VoiceConfig any
 }
 

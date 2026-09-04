@@ -4,29 +4,44 @@ package firebaseapphosting
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domain_CustomDomainStatus_Issues struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_Records struct {
-	DomainName     any
-	Rdata          any
-	RelevantState  any
+	// The domain name this applies to. (AI-inferred)
+	DomainName any
+	// The record data expected for this DNS record. (AI-inferred)
+	Rdata any
+	// The lifecycle state most relevant to this domain check's own current result. (AI-inferred)
+	RelevantState any
+	// The action needed to resolve this domain check's own current issue. (AI-inferred)
 	RequiredAction any
-	Type           any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Domain_CustomDomainStatus_RequiredDnsUpdates_Desired struct {
+	// Detail about an error encountered while checking this domain. (AI-inferred)
 	CheckError any
+	// The domain name this applies to. (AI-inferred)
 	DomainName any
-	Records    any
+	// The DNS record(s) this applies to. (AI-inferred)
+	Records any
 }
 
 type Domain_CustomDomainStatus_RequiredDnsUpdates struct {
-	CheckTime  any
-	Desired    any
+	// When this domain check was last run. (AI-inferred)
+	CheckTime any
+	// The value expected for this domain to be considered correctly configured. (AI-inferred)
+	Desired any
+	// The value actually observed for this domain. (AI-inferred)
 	Discovered any
+	// The domain name this applies to. (AI-inferred)
 	DomainName any
 }
 

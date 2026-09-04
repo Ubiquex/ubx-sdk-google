@@ -13,8 +13,11 @@ export interface DeviceSession_AndroidDevice {
 }
 
 export interface DeviceSession_StateHistories {
+  /** The real timestamp when this device session or test execution entered its own current state. (AI-inferred) */
   eventTime?: string | Computed<string>;
+  /** The real, current lifecycle state (e.g. `ACTIVE`, `EXPIRED`, `FINISHED`) of this device session. (AI-inferred) */
   sessionState?: string | Computed<string>;
+  /** Real, additional detail explaining this device session's or test execution's own current state. (AI-inferred) */
   stateMessage?: string | Computed<string>;
 }
 

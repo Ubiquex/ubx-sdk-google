@@ -8,62 +8,101 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceConnectionMap_ConsumerPscConfigs:
+    # The project the consuming instance belongs to. (AI-inferred)
     consumer_instance_project: Any = None
+    # Whether access to this endpoint is restricted to its own region, rather than global. (AI-inferred)
     disable_global_access: Any = None
+    # Whether this applies to IPv4 or IPv6. (AI-inferred)
     ip_version: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The identifier of the producer-side instance backing this connection. (AI-inferred)
     producer_instance_id: Any = None
+    # Metadata describing the producer-side instance backing this connection. (AI-inferred)
     producer_instance_metadata: Any = None
+    # A reference to the Google Cloud project this applies to. (AI-inferred)
     project: Any = None
+    # The mapping of endpoint IP addresses to the service attachment(s) they connect to. (AI-inferred)
     service_attachment_ip_address_map: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus:
+    # Detail about an error that occurred. (AI-inferred)
     error: Any = None
+    # The fully qualified domain name this applies to. (AI-inferred)
     fqdn: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionMap_ConsumerPscConnections_ErrorInfo:
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # Additional structured metadata about this resource. (AI-inferred)
     metadata: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionMap_ConsumerPscConnections:
+    # The current status of automated DNS record creation for this connection. (AI-inferred)
     dns_automation_status: Any = None
+    # Detail about an error that occurred. (AI-inferred)
     error: Any = None
+    # Structured detail about an error that occurred. (AI-inferred)
     error_info: Any = None
+    # The category of error that occurred. (AI-inferred)
     error_type: Any = None
+    # A reference to the forwarding rule this applies to. (AI-inferred)
     forwarding_rule: Any = None
+    # A reference to the underlying Compute Engine operation. (AI-inferred)
     gce_operation: Any = None
+    # An IP address. (AI-inferred)
     ip: Any = None
+    # Whether this applies to IPv4 or IPv6. (AI-inferred)
     ip_version: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The identifier of the producer-side instance backing this connection. (AI-inferred)
     producer_instance_id: Any = None
+    # Metadata describing the producer-side instance backing this connection. (AI-inferred)
     producer_instance_metadata: Any = None
+    # A reference to the Google Cloud project this applies to. (AI-inferred)
     project: Any = None
+    # The unique identifier of this Private Service Connect connection. (AI-inferred)
     psc_connection_id: Any = None
+    # A reference to the specific subnetwork selected for this connection. (AI-inferred)
     selected_subnetwork: Any = None
+    # A reference to the service attachment this connects to. (AI-inferred)
     service_attachment_uri: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpec:
+    # The DNS suffix this configuration applies to. (AI-inferred)
     dns_suffix: Any = None
+    # The hostname this applies to. (AI-inferred)
     hostname: Any = None
+    # The time-to-live applied to this DNS record. (AI-inferred)
     ttl: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionMap_ProducerPscConfigs:
+    # Configuration for automatically creating DNS record(s) for this Private Service Connect connection. (AI-inferred)
     automated_dns_creation_spec: Any = None
+    # A reference to the service attachment this connects to. (AI-inferred)
     service_attachment_uri: Any = None
 
 _ServiceConnectionMap_ConsumerPscConfigsFields = {

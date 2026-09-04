@@ -8,11 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabels:
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_Inventories:
+    # The short name of the operating system this applies to, e.g. `debian` or `windows`. (AI-inferred)
     os_short_name: Any = None
+    # The operating system version this applies to. (AI-inferred)
     os_version: Any = None
 
 @dataclasses.dataclass
@@ -28,114 +31,175 @@ class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_Instan
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Gcs:
+    # The Cloud Storage bucket this resource is sourced from. (AI-inferred)
     bucket: Any = None
+    # The specific Cloud Storage object generation to use. (AI-inferred)
     generation: Any = None
+    # The Cloud Storage object this resource is sourced from. (AI-inferred)
     object: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Remote:
+    # A SHA-256 checksum verifying this resource's own content. (AI-inferred)
     sha256_checksum: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File:
+    # Whether package installation is allowed without verifying its own signature. (AI-inferred)
     allow_insecure: Any = None
+    # Sources this resource from a Cloud Storage object. (AI-inferred)
     gcs: Any = None
+    # The destination path on the instance this resource is installed to. (AI-inferred)
     local_path: Any = None
+    # Sources this resource from a remote URL. (AI-inferred)
     remote: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce:
+    # The argument(s) passed to this command. (AI-inferred)
     args: Any = None
+    # A reference to a specific file. (AI-inferred)
     file: Any = None
+    # The interpreter used to run this script, e.g. `SHELL` or `POWERSHELL`. (AI-inferred)
     interpreter: Any = None
+    # The path this script's own output is written to. (AI-inferred)
     output_file_path: Any = None
+    # The script content to run. (AI-inferred)
     script: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec:
+    # Whether this policy's own desired state is actively enforced, rather than only reported. (AI-inferred)
     enforce: Any = None
+    # A command used to check whether this resource's own desired state is already satisfied. (AI-inferred)
     validate: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_File:
+    # The literal content of this resource. (AI-inferred)
     content: Any = None
+    # A reference to a specific file. (AI-inferred)
     file: Any = None
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # The file permission(s) applied. (AI-inferred)
     permissions: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Deb:
+    # Whether package dependencies are automatically pulled in. (AI-inferred)
     pull_deps: Any = None
+    # Where this resource's own content is sourced from. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Msi:
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # Where this resource's own content is sourced from. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg:
+    # Configuration for managing packages via APT (Debian/Ubuntu). (AI-inferred)
     apt: Any = None
+    # Configuration for installing a `.deb` package. (AI-inferred)
     deb: Any = None
+    # Whether this resource should be present or absent on the target instance. (AI-inferred)
     desired_state: Any = None
+    # Configuration for installing a Googet package (Windows). (AI-inferred)
     googet: Any = None
+    # Configuration for installing an MSI package (Windows). (AI-inferred)
     msi: Any = None
+    # Configuration for installing an RPM package. (AI-inferred)
     rpm: Any = None
+    # Configuration for managing packages via YUM (RHEL/CentOS). (AI-inferred)
     yum: Any = None
+    # Configuration for managing packages via Zypper (SUSE). (AI-inferred)
     zypper: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Apt:
+    # The kind of APT repository archive, e.g. `DEB` or `DEB_SRC`. (AI-inferred)
     archive_type: Any = None
+    # The APT repository component(s) (e.g. `main`, `contrib`) to include. (AI-inferred)
     components: Any = None
+    # The APT repository distribution (e.g. `stable`) to use. (AI-inferred)
     distribution: Any = None
+    # The GPG key used to verify this repository's own packages. (AI-inferred)
     gpg_key: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Goo:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Yum:
+    # The base URL of this repository. (AI-inferred)
     base_url: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The GPG key(s) used to verify this repository's own packages. (AI-inferred)
     gpg_keys: Any = None
+    # An identifier for this resource, unique within its own containing policy. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository:
+    # Configuration for managing packages via APT (Debian/Ubuntu). (AI-inferred)
     apt: Any = None
+    # Configuration for managing packages via Googet (Windows). (AI-inferred)
     goo: Any = None
+    # Configuration for managing packages via YUM (RHEL/CentOS). (AI-inferred)
     yum: Any = None
+    # Configuration for managing packages via Zypper (SUSE). (AI-inferred)
     zypper: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources:
+    # Runs a script or executable as this resource's own action. (AI-inferred)
     exec: Any = None
+    # A reference to a specific file. (AI-inferred)
     file: Any = None
+    # An identifier for this resource, unique within its own containing policy. (AI-inferred)
     id: Any = None
+    # Configuration for managing a specific software package. (AI-inferred)
     pkg: Any = None
+    # Configuration for a package repository this instance should use. (AI-inferred)
     repository: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups:
+    # Restricts this policy to instance(s) matching specific OS short name/version. (AI-inferred)
     inventory_filters: Any = None
+    # The resource(s) this policy manages. (AI-inferred)
     resources: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies:
+    # Whether this policy is considered satisfied when no resource group matches the target instance. (AI-inferred)
     allow_no_resource_group_match: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # An identifier for this resource, unique within its own containing policy. (AI-inferred)
     id: Any = None
+    # The file permission mode applied. (AI-inferred)
     mode: Any = None
+    # The resource group(s) making up this policy, each targeting a specific OS. (AI-inferred)
     resource_groups: Any = None
 
 @dataclasses.dataclass
@@ -190,16 +254,21 @@ class PolicyOrchestrator_OrchestratedResource:
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelector:
+    # The location(s) included in this policy's own scope. (AI-inferred)
     included_locations: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelector:
+    # The folder(s) included in this inventory/report. (AI-inferred)
     included_folders: Any = None
+    # The project(s) included in this policy's own scope. (AI-inferred)
     included_projects: Any = None
 
 @dataclasses.dataclass
 class PolicyOrchestrator_OrchestrationScope_Selectors:
+    # Restricts this policy's own scope to specific location(s). (AI-inferred)
     location_selector: Any = None
+    # Restricts this policy's own scope based on resource hierarchy (organization, folder, project). (AI-inferred)
     resource_hierarchy_selector: Any = None
 
 @dataclasses.dataclass

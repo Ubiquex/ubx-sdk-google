@@ -8,186 +8,277 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Playbook_CodeBlock:
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_AudioExportGcsDestination:
+    # The URI of an audio clip this response instructs the client to play. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_DtmfSettings:
+    # Whether this setting is turned on. (AI-inferred)
     enabled: Any = None
+    # How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred)
     endpointing_timeout_duration: Any = None
+    # The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
     finish_digit: Any = None
+    # The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred)
     interdigit_timeout_duration: Any = None
+    # The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred)
     max_digits: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_LoggingSettings:
+    # Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred)
     enable_consent_based_redaction: Any = None
+    # Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred)
     enable_interaction_logging: Any = None
+    # Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
     enable_stackdriver_logging: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettings:
+    # How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred)
     endpointer_sensitivity: Any = None
+    # Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred)
     models: Any = None
+    # How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred)
     no_speech_timeout: Any = None
+    # Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred)
     use_timeout_based_endpointing: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings:
+    # The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred)
     audio_export_gcs_destination: Any = None
+    # Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred)
     dtmf_settings: Any = None
+    # Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred)
     logging_settings: Any = None
+    # Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
     speech_settings: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess:
+    # Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
     metadata: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # The synthesized audio content for this response. (AI-inferred)
     audio: Any = None
+    # The URI of an audio clip this response instructs the client to play. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio:
+    # The ordered audio segments making up a `mixed_audio` response. (AI-inferred)
     segments: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # Speech Synthesis Markup Language text, giving finer control over how this response is spoken aloud than plain `text` allows. (AI-inferred)
     ssml: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # The URI of the client-hosted audio clip a `play_audio` response points to. (AI-inferred)
     audio_uri: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall:
+    # The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
     phone_number: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_Text:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall:
+    # The specific action, exposed by `tool`, being invoked. (AI-inferred)
     action: Any = None
+    # The parameter values passed as input when invoking this tool's action. (AI-inferred)
     input_parameters: Any = None
+    # The tool this fulfillment or response invokes. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message:
+    # The output channel this response message is scoped to (e.g. a specific integration), so different channels can receive different responses for the same turn. (AI-inferred)
     channel: Any = None
+    # Signals that the conversation reached a successful outcome, optionally carrying metadata describing why. (AI-inferred)
     conversation_success: Any = None
+    # Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
     end_interaction: Any = None
+    # An info-card response generated from a knowledge base or generative answer, rendered by clients that support Infobot Messenger-compatible cards. (AI-inferred)
     knowledge_info_card: Any = None
+    # Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
     live_agent_handoff: Any = None
+    # An audio response composed of multiple segments, mixing Dialogflow's own synthesized speech with client-hosted audio clips played via `play_audio`. (AI-inferred)
     mixed_audio: Any = None
+    # A text or SSML response used preferentially for speech synthesis, when the response also carries a plain `text` variant for display. (AI-inferred)
     output_audio_text: Any = None
+    # A custom, integration-specific JSON payload carried alongside this response message. (AI-inferred)
     payload: Any = None
+    # Signals the client to play an audio clip hosted at `audio_uri`, rather than synthesizing speech itself. (AI-inferred)
     play_audio: Any = None
+    # Which kind of response message this is (e.g. entry prompt, follow-up, or error), controlling when Dialogflow surfaces it. (AI-inferred)
     response_type: Any = None
+    # Signals a telephony integration to transfer the active call to `phone_number`. (AI-inferred)
     telephony_transfer_call: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
+    # A request from the agent to invoke a specific `tool`'s own `action`, passing `input_parameters`. (AI-inferred)
     tool_call: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent:
+    # Further, nested cascading if/else conditions evaluated when this case's own condition matches. (AI-inferred)
     additional_cases: Any = None
+    # The message content. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases:
+    # The message(s) or action(s) to run when this case's own condition matches. (AI-inferred)
     case_content: Any = None
+    # A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases:
+    # The ordered condition/content pair(s) making up this cascading if/else. (AI-inferred)
     cases: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_Generators:
+    # A reference to the generator this invokes. (AI-inferred)
     generator: Any = None
+    # The parameter values passed as input when invoking this tool's action. (AI-inferred)
     input_parameters: Any = None
+    # The session parameter this generator's own output is written to. (AI-inferred)
     output_parameter: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment_SetParameterActions:
+    # The name of the parameter this applies to. (AI-inferred)
     parameter: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler_Fulfillment:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # The name of the Cloud Function this fulfillment invokes to run custom code inline. (AI-inferred)
     code_block_function: Any = None
+    # A cascading if/else list of conditions -- the first one whose own `condition` evaluates true is used, the rest are ignored. (AI-inferred)
     conditional_cases: Any = None
+    # Whether Dialogflow falls back to a generative (LLM-produced) response when no other route matches, rather than a static no-match message. (AI-inferred)
     enable_generative_fallback: Any = None
+    # The generator(s) (LLM prompt-based response generation) invoked by this fulfillment. (AI-inferred)
     generators: Any = None
+    # The response message(s) this fulfillment returns. (AI-inferred)
     messages: Any = None
+    # Whether this fulfillment streams its own response back incrementally, rather than waiting to send it all at once. (AI-inferred)
     return_partial_responses: Any = None
+    # Session parameter value(s) this fulfillment sets before running its own webhook call or response. (AI-inferred)
     set_parameter_actions: Any = None
+    # A caller-defined identifier included in the webhook request, letting the webhook service tell which fulfillment triggered it. (AI-inferred)
     tag: Any = None
+    # A reference to the webhook this fulfillment calls. (AI-inferred)
     webhook: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_EventHandler:
+    # A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
     condition: Any = None
+    # The name of the event this handler responds to. (AI-inferred)
     event: Any = None
+    # The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred)
     fulfillment: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers_LifecycleHandler:
+    # A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
     condition: Any = None
+    # The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred)
     fulfillment: Any = None
+    # Which stage of its own lifecycle this playbook run is currently in. (AI-inferred)
     lifecycle_stage: Any = None
 
 @dataclasses.dataclass
 class Playbook_Handlers:
+    # Runs a fulfillment when a specific named event fires. (AI-inferred)
     event_handler: Any = None
+    # Runs a fulfillment at a specific point in this playbook's own lifecycle. (AI-inferred)
     lifecycle_handler: Any = None
 
 @dataclasses.dataclass
 class Playbook_InputParameterDefinitions_TypeSchema_InlineSchema:
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Playbook_InputParameterDefinitions_TypeSchema_SchemaReference:
+    # A schema describing this value's own expected structure. (AI-inferred)
     schema: Any = None
+    # The tool this fulfillment or response invokes. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass
 class Playbook_InputParameterDefinitions_TypeSchema:
+    # Defines this parameter's own type schema directly, rather than referencing one. (AI-inferred)
     inline_schema: Any = None
+    # References a separately defined schema, rather than declaring one inline. (AI-inferred)
     schema_reference: Any = None
 
 @dataclasses.dataclass
 class Playbook_InputParameterDefinitions:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The schema describing this parameter's own expected type. (AI-inferred)
     type_schema: Any = None
 
 @dataclasses.dataclass
 class Playbook_Instruction_Steps:
+    # The ordered step(s) making up this sequence. (AI-inferred)
     steps: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Playbook_Instruction:
+    # Instructions steering how the playbook's own goal should be pursued. (AI-inferred)
     guidelines: Any = None
+    # The ordered step(s) making up this sequence. (AI-inferred)
     steps: Any = None
 
 @dataclasses.dataclass
 class Playbook_LlmModelSettings:
+    # The name of the model this applies to. (AI-inferred)
     model: Any = None
+    # The prompt text played or displayed to the user. (AI-inferred)
     prompt_text: Any = None
 
 _Playbook_CodeBlockFields = {
@@ -492,36 +583,64 @@ _Playbook_LlmModelSettingsFields = {
 
 @dataclasses.dataclass
 class PlaybookConfig:
+    # Custom code run inline as part of this fulfillment or tool. (AI-inferred)
     code_block: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A human-readable statement of what this playbook is meant to accomplish. (AI-inferred)
     goal: Any = None
+    # The event handler(s) defined here. (AI-inferred)
     handlers: Any = None
+    # The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
     input_parameter_definitions: Any = None
+    # An instruction given to the model or playbook. (AI-inferred)
     instruction: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
     output_parameter_definitions: Any = None
+    # Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred)
     playbook_type: Any = None
+    # The tool(s) this playbook can invoke. (AI-inferred)
     referenced_tools: Any = None
 
 @dataclasses.dataclass
 class PlaybookAttrs:
+    # Custom code run inline as part of this fulfillment or tool. (AI-inferred)
     code_block: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A human-readable statement of what this playbook is meant to accomplish. (AI-inferred)
     goal: Any = None
+    # The event handler(s) defined here. (AI-inferred)
     handlers: Any = None
+    # Action(s) defined directly within this step, rather than delegated to a referenced tool or playbook. (AI-inferred)
     inline_actions: Any = None
+    # The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
     input_parameter_definitions: Any = None
+    # An instruction given to the model or playbook. (AI-inferred)
     instruction: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
     output_parameter_definitions: Any = None
+    # Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred)
     playbook_type: Any = None
+    # The flow(s) this playbook or tool can invoke. (AI-inferred)
     referenced_flows: Any = None
+    # The playbook(s) this playbook can invoke as a sub-task. (AI-inferred)
     referenced_playbooks: Any = None
+    # The tool(s) this playbook can invoke. (AI-inferred)
     referenced_tools: Any = None
+    # How many tokens this content consumed. (AI-inferred)
     token_count: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 Playbook = ubx.ResourceBinding(

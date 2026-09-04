@@ -2,89 +2,149 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProvisioningConfig_Instances_ClientNetwork {
+  /** The real IP address to assign this instance on the referenced network. (AI-inferred) */
   address?: string | Computed<string>;
+  /** A real, already-provisioned Bare Metal Solution network to attach this instance to, instead of provisioning a new one. (AI-inferred) */
   existingNetworkId?: string | Computed<string>;
+  /** The real identifier of the Bare Metal Solution network this instance's own network interface attaches to. (AI-inferred) */
   networkId?: string | Computed<string>;
 }
 
 export interface ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfaces {
+  /** Whether this logical network interface is real, used as the instance's own default network gateway. (AI-inferred) */
   defaultGateway?: boolean | Computed<boolean>;
+  /** A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred) */
   id?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real network type (`CLIENT` or `PRIVATE`) this logical network interface attaches to. (AI-inferred) */
   networkType?: string | Computed<string>;
 }
 
 export interface ProvisioningConfig_Instances_LogicalInterfaces {
+  /** The real, physical network interface index this logical interface configuration applies to. (AI-inferred) */
   interfaceIndex?: number | Computed<number>;
+  /** The real, physical network attachments that make up one logical network interface on this instance. (AI-inferred) */
   logicalNetworkInterfaces?: ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfaces[] | Computed<ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfaces[]>;
+  /** The real, client-assigned name for this logical network interface configuration. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface ProvisioningConfig_Instances {
+  /** Whether to enable account-wide network access for this Bare Metal Solution instance, rather than scoping it to a single client network. (AI-inferred) */
   accountNetworksEnabled?: boolean | Computed<boolean>;
+  /** Real, requested client-facing network configuration for this Bare Metal Solution instance. (AI-inferred) */
   clientNetwork?: ProvisioningConfig_Instances_ClientNetwork | Computed<ProvisioningConfig_Instances_ClientNetwork>;
+  /** Whether to real, enable hyperthreading on this Bare Metal Solution instance's own CPU. (AI-inferred) */
   hyperthreading?: boolean | Computed<boolean>;
+  /** A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The real Bare Metal Solution server type (CPU/memory/storage configuration) to provision this instance as. (AI-inferred) */
   instanceType?: string | Computed<string>;
+  /** The real Cloud KMS key version used to encrypt this instance's own boot volume. (AI-inferred) */
   kmsKeyVersion?: string | Computed<string>;
+  /** The real, logical network interfaces to configure on this Bare Metal Solution instance, each mapping to one or more physical `logical_network_interfaces`. (AI-inferred) */
   logicalInterfaces?: ProvisioningConfig_Instances_LogicalInterfaces[] | Computed<ProvisioningConfig_Instances_LogicalInterfaces[]>;
+  /** The real, client-assigned name for this logical network interface configuration. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real VLAN configuration (`SINGLE_VLAN` or `MULTI_VLAN`) this instance's own logical interfaces use. (AI-inferred) */
   networkConfig?: string | Computed<string>;
+  /** The real, named network template this instance's own network configuration is provisioned from. (AI-inferred) */
   networkTemplate?: string | Computed<string>;
+  /** The real operating system image to provision this Bare Metal Solution instance with. (AI-inferred) */
   osImage?: string | Computed<string>;
+  /** Real, requested private (internal) network configuration for this Bare Metal Solution instance. (AI-inferred) */
   privateNetwork?: ProvisioningConfig_Instances_ClientNetwork | Computed<ProvisioningConfig_Instances_ClientNetwork>;
+  /** The real, existing SSH key names to authorize for access to this instance at provisioning time. (AI-inferred) */
   sshKeyNames?: string[] | Computed<string[]>;
+  /** A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred) */
   userNote?: string | Computed<string>;
 }
 
 export interface ProvisioningConfig_Networks_VlanAttachments {
+  /** A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The real pairing key used to establish this VLAN attachment's own interconnection. (AI-inferred) */
   pairingKey?: string | Computed<string>;
 }
 
 export interface ProvisioningConfig_Networks {
+  /** The real network bandwidth tier (e.g. `BW_10_GBPS`) requested for this Bare Metal Solution network. (AI-inferred) */
   bandwidth?: string | Computed<string>;
+  /** The real CIDR range requested for this Bare Metal Solution network. (AI-inferred) */
   cidr?: string | Computed<string>;
+  /** The real Google Cloud service this Bare Metal Solution network peers with. (AI-inferred) */
   gcpService?: string | Computed<string>;
+  /** A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether to real, enable jumbo frames (larger MTU) on this Bare Metal Solution network. (AI-inferred) */
   jumboFramesEnabled?: boolean | Computed<boolean>;
+  /** The real, client-assigned name for this logical network interface configuration. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real CIDR sizing tier requested for services on this Bare Metal Solution network, or `DISABLED` if none is needed. (AI-inferred) */
   serviceCidr?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred) */
   userNote?: string | Computed<string>;
+  /** The real VLAN attachment(s) connecting this Bare Metal Solution network to Google Cloud. (AI-inferred) */
   vlanAttachments?: ProvisioningConfig_Networks_VlanAttachments[] | Computed<ProvisioningConfig_Networks_VlanAttachments[]>;
+  /** Whether this VLAN attachment's own interconnect is real, provisioned in the same Google Cloud project as the Bare Metal Solution environment. (AI-inferred) */
   vlanSameProject?: boolean | Computed<boolean>;
+  /** The real virtual routing and forwarding (VRF) instance this Bare Metal Solution network is provisioned in. (AI-inferred) */
   vrf?: string | Computed<string>;
 }
 
 export interface ProvisioningConfig_Volumes_LunRanges {
+  /** The real number of LUNs to provision at this `size_gb` within this LUN range. (AI-inferred) */
   quantity?: number | Computed<number>;
+  /** The real, per-LUN size, in GiB, requested within this LUN range. (AI-inferred) */
   sizeGb?: number | Computed<number>;
 }
 
 export interface ProvisioningConfig_Volumes_NfsExports {
+  /** Whether this NFS-allowed client is permitted to access device files on the share. (AI-inferred) */
   allowDev?: boolean | Computed<boolean>;
+  /** Whether this NFS-allowed client is permitted to use set-user-ID and set-group-ID bits on the share. (AI-inferred) */
   allowSuid?: boolean | Computed<boolean>;
+  /** The real CIDR range requested for this Bare Metal Solution network. (AI-inferred) */
   cidr?: string | Computed<string>;
+  /** The real Bare Metal Solution machine ID this NFS export access rule applies to. (AI-inferred) */
   machineId?: string | Computed<string>;
+  /** The real identifier of the Bare Metal Solution network this instance's own network interface attaches to. (AI-inferred) */
   networkId?: string | Computed<string>;
+  /** Whether this NFS-allowed client is exempt from root squashing, letting a client's own root user act as root on the share. (AI-inferred) */
   noRootSquash?: boolean | Computed<boolean>;
+  /** The real access level (`READ_ONLY` or `READ_WRITE`) this NFS export grants the referenced `machine_id`. (AI-inferred) */
   permissions?: string | Computed<string>;
 }
 
 export interface ProvisioningConfig_Volumes {
+  /** The real Google Cloud service this Bare Metal Solution network peers with. (AI-inferred) */
   gcpService?: string | Computed<string>;
+  /** A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The real, requested LUN (logical unit number) ranges and sizing for a fibre-channel-attached Bare Metal Solution volume. (AI-inferred) */
   lunRanges?: ProvisioningConfig_Volumes_LunRanges[] | Computed<ProvisioningConfig_Volumes_LunRanges[]>;
+  /** The real Bare Metal Solution machine IDs this volume should be attached to. (AI-inferred) */
   machineIds?: string[] | Computed<string[]>;
+  /** The real, client-assigned name for this logical network interface configuration. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real, requested NFS export access rules for this Bare Metal Solution volume, when provisioned over NFS. (AI-inferred) */
   nfsExports?: ProvisioningConfig_Volumes_NfsExports[] | Computed<ProvisioningConfig_Volumes_NfsExports[]>;
+  /** The real storage performance tier requested for this Bare Metal Solution volume. (AI-inferred) */
   performanceTier?: string | Computed<string>;
+  /** The real storage protocol (`PROTOCOL_FC` or `PROTOCOL_NFS`) requested for this Bare Metal Solution volume. (AI-inferred) */
   protocol?: string | Computed<string>;
+  /** The real, per-LUN size, in GiB, requested within this LUN range. (AI-inferred) */
   sizeGb?: number | Computed<number>;
+  /** Whether real, automatic snapshotting is enabled for this Bare Metal Solution volume. (AI-inferred) */
   snapshotsEnabled?: boolean | Computed<boolean>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred) */
   userNote?: string | Computed<string>;
 }
 

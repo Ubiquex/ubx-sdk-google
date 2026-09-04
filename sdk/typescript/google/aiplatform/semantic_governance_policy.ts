@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SemanticGovernancePolicy_McpTools {
+  /** A reference to the MCP server this applies to. (AI-inferred) */
   mcpServer?: string | Computed<string>;
+  /** The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred) */
   tools?: string[] | Computed<string[]>;
 }
 

@@ -25,11 +25,14 @@ type Preview_ProviderConfig struct {
 }
 
 type Preview_TerraformBlueprint_ExternalValues_DeploymentSource struct {
+	// The other deployment this external value is sourced from. (AI-inferred)
 	Deployment any
+	// The name of the specific Terraform output on the source deployment to use as this value. (AI-inferred)
 	OutputName any
 }
 
 type Preview_TerraformBlueprint_ExternalValues struct {
+	// References an output value from another Infrastructure Manager deployment, letting this preview's blueprint consume it as an input. (AI-inferred)
 	DeploymentSource any
 }
 
@@ -43,6 +46,7 @@ type Preview_TerraformBlueprint_GitSource struct {
 }
 
 type Preview_TerraformBlueprint_InputValues struct {
+	// The literal value passed for this Terraform input variable when the preview plan is computed. (AI-inferred)
 	InputValue any
 }
 
@@ -58,10 +62,14 @@ type Preview_TerraformBlueprint struct {
 }
 
 type Preview_TfErrors struct {
-	Error            any
+	// Structured detail for one error Terraform reported while computing this preview. (AI-inferred)
+	Error any
+	// A human-readable summary of why this Terraform preview operation failed. (AI-inferred)
 	ErrorDescription any
+	// The HTTP status code returned by the underlying API call that failed, when the error originated from one. (AI-inferred)
 	HttpResponseCode any
-	ResourceAddress  any
+	// The Terraform resource address (e.g. `google_storage_bucket.my_bucket`) this error occurred on. (AI-inferred)
+	ResourceAddress any
 }
 
 var Preview_ErrorStatusFields = ubx.FieldMap{

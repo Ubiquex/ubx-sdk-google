@@ -24,33 +24,51 @@ class Instance_DirectoryServices:
 
 @dataclasses.dataclass
 class Instance_FileShares_NfsExportOptions:
+    # Whether this connection is read-only or read-write. (AI-inferred)
     access_mode: Any = None
+    # The group ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred)
     anon_gid: Any = None
+    # The user ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred)
     anon_uid: Any = None
+    # The IP address range(s), in CIDR notation, this applies to. (AI-inferred)
     ip_ranges: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # How requests from root or unmapped clients are remapped. (AI-inferred)
     squash_mode: Any = None
 
 @dataclasses.dataclass
 class Instance_FileShares:
+    # The provisioned capacity, in gibibytes. (AI-inferred)
     capacity_gb: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The NFS export configuration for this file share. (AI-inferred)
     nfs_export_options: Any = None
+    # A reference to the backup this resource is created from. (AI-inferred)
     source_backup: Any = None
+    # A reference to the Backup and DR backup this resource is created from. (AI-inferred)
     source_backupdr_backup: Any = None
 
 @dataclasses.dataclass
 class Instance_Networks_PscConfig:
+    # A reference to the project this endpoint is created in. (AI-inferred)
     endpoint_project: Any = None
     requested_ip_address: Any = None
 
 @dataclasses.dataclass
 class Instance_Networks:
+    # Whether this instance is reached via direct peering or Private Service Access. (AI-inferred)
     connect_mode: Any = None
+    # The IP address(es) assigned to this resource. (AI-inferred)
     ip_addresses: Any = None
+    # The mode(s) this applies to. (AI-inferred)
     modes: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # Configuration for connecting to this instance via Private Service Connect. (AI-inferred)
     psc_config: Any = None
+    # The IP address range reserved for this instance. (AI-inferred)
     reserved_ip_range: Any = None
 
 @dataclasses.dataclass
@@ -85,10 +103,15 @@ class Instance_PerformanceLimits:
 
 @dataclasses.dataclass
 class Instance_Replication_Replicas:
+    # When this replication last successfully synced. (AI-inferred)
     last_active_sync_time: Any = None
+    # A reference to the replication peer instance. (AI-inferred)
     peer_instance: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The reason(s) explaining this resource's own current state. (AI-inferred)
     state_reasons: Any = None
+    # When this resource's own state was last updated. (AI-inferred)
     state_update_time: Any = None
 
 @dataclasses.dataclass

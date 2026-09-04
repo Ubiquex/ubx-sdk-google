@@ -4,7 +4,9 @@ package eventarc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trigger_Conditions struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
@@ -56,9 +58,12 @@ type Trigger_Destination struct {
 }
 
 type Trigger_EventFilters struct {
+	// A single custom attribute. (AI-inferred)
 	Attribute any
-	Operator  any
-	Value     any
+	// How this condition's own operands are compared. (AI-inferred)
+	Operator any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Trigger_RetryPolicy struct {

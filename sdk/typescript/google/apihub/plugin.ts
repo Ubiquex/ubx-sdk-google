@@ -2,25 +2,39 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Plugin_ActionsConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** How this plugin action is triggered, e.g. manually or on a schedule. (AI-inferred) */
   triggerMode?: string | Computed<string>;
 }
 
 export interface Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptions {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface Plugin_ConfigTemplate_AdditionalConfigTemplate {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The allowed option(s) for an enum-typed custom attribute. (AI-inferred) */
   enumOptions?: Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptions[] | Computed<Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptions[]>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The allowed option(s) for a multi-select enum-typed custom attribute. (AI-inferred) */
   multiSelectOptions?: Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptions[] | Computed<Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptions[]>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: boolean | Computed<boolean>;
+  /** A regular expression this custom attribute's own value must match. (AI-inferred) */
   validationRegex?: string | Computed<string>;
+  /** The data type of this custom attribute's own value. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
@@ -54,9 +68,13 @@ export interface Plugin_HostingService {
 }
 
 export interface Plugin_Type_EnumValues_Values {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether this custom attribute's own value can't be changed after creation. (AI-inferred) */
   immutable?: boolean | Computed<boolean>;
 }
 

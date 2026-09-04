@@ -16,19 +16,29 @@ var V3beta1Version_NluSettingsFields = ubx.FieldMap{
 }
 
 type V3beta1VersionConfig struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
 	NluSettings any
 }
 
 type V3beta1VersionAttrs struct {
-	CreateTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
 	NluSettings any
-	State       any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 var V3beta1Version = ubx.ResourceBinding{

@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Spoke_Gateway_IpRangeReservations:
+    # The IP address range, in CIDR notation, this applies to. (AI-inferred)
     ip_range: Any = None
 
 @dataclasses.dataclass
@@ -59,7 +60,9 @@ class Spoke_LinkedProducerVpcNetwork:
 
 @dataclasses.dataclass
 class Spoke_LinkedRouterApplianceInstances_Instances:
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # A reference to the virtual machine this applies to. (AI-inferred)
     virtual_machine: Any = None
 
 @dataclasses.dataclass
@@ -96,8 +99,11 @@ class Spoke_LinkedVpcNetwork:
 
 @dataclasses.dataclass
 class Spoke_Reasons:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # Additional detail intended for the end user. (AI-inferred)
     user_details: Any = None
 
 _Spoke_Gateway_IpRangeReservationsFields = {
@@ -182,6 +188,7 @@ class SpokeConfig:
     labels: Any = None
     # A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.
     linked_interconnect_attachments: Any = None
+    # A reference to the producer's own linked VPC network. (AI-inferred)
     linked_producer_vpc_network: Any = None
     # A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke.
     linked_router_appliance_instances: Any = None
@@ -212,6 +219,7 @@ class SpokeAttrs:
     labels: Any = None
     # A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.
     linked_interconnect_attachments: Any = None
+    # A reference to the producer's own linked VPC network. (AI-inferred)
     linked_producer_vpc_network: Any = None
     # A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke.
     linked_router_appliance_instances: Any = None

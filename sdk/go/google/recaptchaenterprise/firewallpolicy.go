@@ -4,21 +4,30 @@ package recaptchaenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Firewallpolicy_Actions_SetHeader struct {
-	Key   any
+	// The header name to set. (AI-inferred)
+	Key any
+	// The header value to set. (AI-inferred)
 	Value any
 }
 
 type Firewallpolicy_Actions_Substitute struct {
+	// The path whose content is served in place of the matching request. (AI-inferred)
 	Path any
 }
 
 type Firewallpolicy_Actions struct {
-	Allow                  any
-	Block                  any
+	// Lets the matching request through unmodified. (AI-inferred)
+	Allow any
+	// Blocks the matching request outright. (AI-inferred)
+	Block any
+	// Injects the reCAPTCHA client-side script into the matching response, without otherwise altering it. (AI-inferred)
 	IncludeRecaptchaScript any
-	Redirect               any
-	SetHeader              any
-	Substitute             any
+	// Redirects the matching request to reCAPTCHA's own interstitial challenge page. (AI-inferred)
+	Redirect any
+	// Adds or overwrites a header on the matching request before forwarding it. (AI-inferred)
+	SetHeader any
+	// Serves an alternate path's own content in place of the matching request, without redirecting the client. (AI-inferred)
+	Substitute any
 }
 
 var Firewallpolicy_Actions_SetHeaderFields = ubx.FieldMap{

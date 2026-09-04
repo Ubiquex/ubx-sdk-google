@@ -14,8 +14,10 @@ type BareMetalAdminCluster_ClusterOperations struct {
 }
 
 type BareMetalAdminCluster_ControlPlane_ApiServerArgs struct {
+	// A command-line argument. (AI-inferred)
 	Argument any
-	Value    any
+	// The value of this taint or label. (AI-inferred)
+	Value any
 }
 
 type BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_KubeletConfig struct {
@@ -28,14 +30,19 @@ type BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfi
 }
 
 type BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_NodeConfigs struct {
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
 	Labels any
+	// The IP address of this node. (AI-inferred)
 	NodeIp any
 }
 
 type BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_Taints struct {
+	// What happens to a pod that doesn't tolerate this taint. (AI-inferred)
 	Effect any
-	Key    any
-	Value  any
+	// The key of this taint or label. (AI-inferred)
+	Key any
+	// The value of this taint or label. (AI-inferred)
+	Value any
 }
 
 type BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig struct {
@@ -69,16 +76,23 @@ type BareMetalAdminCluster_Fleet struct {
 }
 
 type BareMetalAdminCluster_LoadBalancer_BgpLbConfig_AddressPools struct {
-	Addresses     any
+	// The IP address(es) this applies to. (AI-inferred)
+	Addresses any
+	// Whether known problematic IP addresses are avoided when allocating this pool. (AI-inferred)
 	AvoidBuggyIps any
-	ManualAssign  any
-	Pool          any
+	// Whether IP addresses are manually assigned, rather than allocated from a pool. (AI-inferred)
+	ManualAssign any
+	// A reference to the node pool this applies to. (AI-inferred)
+	Pool any
 }
 
 type BareMetalAdminCluster_LoadBalancer_BgpLbConfig_BgpPeerConfigs struct {
-	Asn               any
+	// The BGP Autonomous System Number this applies to. (AI-inferred)
+	Asn any
+	// The node(s) making up this cluster's own control plane. (AI-inferred)
 	ControlPlaneNodes any
-	IpAddress         any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
 }
 
 type BareMetalAdminCluster_LoadBalancer_BgpLbConfig struct {
@@ -124,11 +138,14 @@ type BareMetalAdminCluster_MaintenanceConfig struct {
 }
 
 type BareMetalAdminCluster_MaintenanceStatus_MachineDrainStatus_DrainedMachines struct {
+	// The IP address of this node. (AI-inferred)
 	NodeIp any
 }
 
 type BareMetalAdminCluster_MaintenanceStatus_MachineDrainStatus_DrainingMachines struct {
-	NodeIp   any
+	// The IP address of this node. (AI-inferred)
+	NodeIp any
+	// How many pods are scheduled on this node. (AI-inferred)
 	PodCount any
 }
 
@@ -183,6 +200,7 @@ type BareMetalAdminCluster_Proxy struct {
 }
 
 type BareMetalAdminCluster_SecurityConfig_Authorization_AdminUsers struct {
+	// The username used to authenticate. (AI-inferred)
 	Username any
 }
 
@@ -197,15 +215,22 @@ type BareMetalAdminCluster_SecurityConfig struct {
 }
 
 type BareMetalAdminCluster_Status_Conditions struct {
+	// When this condition last changed from one status to another. (AI-inferred)
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	State              any
-	Type               any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type BareMetalAdminCluster_Status_Versions_Versions struct {
-	Count   any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
@@ -247,11 +272,16 @@ type BareMetalAdminCluster_Storage struct {
 }
 
 type BareMetalAdminCluster_ValidationCheck_Status_Result struct {
-	Category    any
+	// The category this belongs to. (AI-inferred)
+	Category any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Details     any
-	Reason      any
-	State       any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type BareMetalAdminCluster_ValidationCheck_Status struct {

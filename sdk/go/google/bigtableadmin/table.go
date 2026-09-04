@@ -18,174 +18,250 @@ type Table_ChangeStreamConfig struct {
 }
 
 type Table_ClusterStates_EncryptionInfo_EncryptionStatus struct {
-	Code    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Table_ClusterStates_EncryptionInfo struct {
+	// Output only. Whether this cluster's own customer-managed encryption key is currently accessible and working. (AI-inferred)
 	EncryptionStatus any
-	EncryptionType   any
-	KmsKeyVersion    any
+	// Whether this data is encrypted with a Google-managed or customer-managed key. (AI-inferred)
+	EncryptionType any
+	// The specific Cloud KMS key version currently used to encrypt this resource's own data. (AI-inferred)
+	KmsKeyVersion any
 }
 
 type Table_ClusterStates struct {
-	EncryptionInfo   any
+	// Output only. The current encryption status of this cluster's own data. (AI-inferred)
+	EncryptionInfo any
+	// The current replication status of this cluster relative to the rest of the instance. (AI-inferred)
 	ReplicationState any
 }
 
 type Table_ColumnFamilies_GcRule_Intersection struct {
+	// The rule(s) making up this configuration. (AI-inferred)
 	Rules any
 }
 
 type Table_ColumnFamilies_GcRule struct {
-	Intersection   any
-	MaxAge         any
+	// Defines this aggregate as computing the intersection of set-valued inputs. (AI-inferred)
+	Intersection any
+	// The maximum age a cell version may reach before being eligible for garbage collection. (AI-inferred)
+	MaxAge any
+	// The maximum number of cell versions kept per column before older ones are garbage collected. (AI-inferred)
 	MaxNumVersions any
-	Union          any
+	// Defines this aggregate as computing the union of set-valued inputs. (AI-inferred)
+	Union any
 }
 
 type Table_ColumnFamilies_Stats struct {
+	// Output only. The average number of stored cell versions per column, across this table. (AI-inferred)
 	AverageCellsPerColumn any
-	AverageColumnsPerRow  any
-	LogicalDataBytes      any
-	LogicalDataHddBytes   any
-	LogicalDataSsdBytes   any
+	// Output only. The average number of columns per row, across this table. (AI-inferred)
+	AverageColumnsPerRow any
+	// Output only. The logical (uncompressed) size of this table's own data, in bytes. (AI-inferred)
+	LogicalDataBytes any
+	// Output only. The logical size of this table's own data stored on HDD, in bytes. (AI-inferred)
+	LogicalDataHddBytes any
+	// Output only. The logical size of this table's own data stored on SSD, in bytes. (AI-inferred)
+	LogicalDataSsdBytes any
 }
 
 type Table_ColumnFamilies_ValueType_AggregateType struct {
+	// Defines this column as storing a HyperLogLog++ sketch, for approximate distinct-count aggregation. (AI-inferred)
 	HllppUniqueCount any
-	InputType        any
-	Max              any
-	Min              any
-	StateType        any
-	Sum              any
+	// The type of value this aggregate/encoding accepts as input. (AI-inferred)
+	InputType any
+	// Defines this aggregate as computing the maximum of its own input values. (AI-inferred)
+	Max any
+	// Defines this aggregate as computing the minimum of its own input values. (AI-inferred)
+	Min any
+	// The kind of state this represents. (AI-inferred)
+	StateType any
+	// Defines this aggregate as computing the sum of its own input values. (AI-inferred)
+	Sum any
 }
 
 type Table_ColumnFamilies_ValueType_ArrayType struct {
+	// The type of each element in an array-typed column. (AI-inferred)
 	ElementType any
 }
 
 type Table_ColumnFamilies_ValueType_BoolType struct {
+	// How this value is encoded into raw Bigtable bytes. (AI-inferred)
 	Encoding any
 }
 
 type Table_ColumnFamilies_ValueType_BytesType_Encoding_Raw struct {
+	// Whether embedded null bytes in delimited encoding are escaped, rather than treated as a delimiter. (AI-inferred)
 	EscapeNulls any
 }
 
 type Table_ColumnFamilies_ValueType_BytesType_Encoding struct {
+	// Uses the raw, unencoded bytes directly, with no type-specific encoding applied. (AI-inferred)
 	Raw any
 }
 
 type Table_ColumnFamilies_ValueType_BytesType struct {
+	// How this value is encoded into raw Bigtable bytes. (AI-inferred)
 	Encoding any
 }
 
 type Table_ColumnFamilies_ValueType_EnumType struct {
-	EnumName       any
+	// The name of this enum type. (AI-inferred)
+	EnumName any
+	// A reference to the schema bundle (e.g. protocol buffer definitions) this configuration uses. (AI-inferred)
 	SchemaBundleId any
 }
 
 type Table_ColumnFamilies_ValueType_Int32Type_Encoding struct {
-	BigEndianBytes   any
+	// Encodes this value as fixed-width, big-endian bytes. (AI-inferred)
+	BigEndianBytes any
+	// Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred)
 	OrderedCodeBytes any
 }
 
 type Table_ColumnFamilies_ValueType_Int32Type struct {
+	// How this value is encoded into raw Bigtable bytes. (AI-inferred)
 	Encoding any
 }
 
 type Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytes struct {
+	// Defines this column's own value as raw bytes. (AI-inferred)
 	BytesType any
 }
 
 type Table_ColumnFamilies_ValueType_Int64Type_Encoding struct {
-	BigEndianBytes   any
+	// Encodes this value as fixed-width, big-endian bytes. (AI-inferred)
+	BigEndianBytes any
+	// Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred)
 	OrderedCodeBytes any
 }
 
 type Table_ColumnFamilies_ValueType_Int64Type struct {
+	// How this value is encoded into raw Bigtable bytes. (AI-inferred)
 	Encoding any
 }
 
 type Table_ColumnFamilies_ValueType_MapType struct {
-	KeyType   any
+	// The type of a map type's own key. (AI-inferred)
+	KeyType any
+	// The type of a map type's own value, or an aggregate's own accumulated value. (AI-inferred)
 	ValueType any
 }
 
 type Table_ColumnFamilies_ValueType_ProtoType struct {
-	MessageName    any
+	// The name of the protocol buffer message type this value is encoded as. (AI-inferred)
+	MessageName any
+	// A reference to the schema bundle (e.g. protocol buffer definitions) this configuration uses. (AI-inferred)
 	SchemaBundleId any
 }
 
 type Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8Bytes struct {
+	// The character used to escape embedded delimiter or null bytes in delimited encoding. (AI-inferred)
 	NullEscapeChar any
 }
 
 type Table_ColumnFamilies_ValueType_StringType_Encoding struct {
+	// Encodes this value as UTF-8 bytes. (AI-inferred)
 	Utf8Bytes any
-	Utf8Raw   any
+	// Uses the raw bytes directly, interpreted as UTF-8 text. (AI-inferred)
+	Utf8Raw any
 }
 
 type Table_ColumnFamilies_ValueType_StringType struct {
+	// How this value is encoded into raw Bigtable bytes. (AI-inferred)
 	Encoding any
 }
 
 type Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytes struct {
+	// The byte sequence separating encoded values. (AI-inferred)
 	Delimiter any
 }
 
 type Table_ColumnFamilies_ValueType_StructType_Encoding struct {
-	DelimitedBytes   any
+	// Encodes this value as raw bytes followed by a delimiter character. (AI-inferred)
+	DelimitedBytes any
+	// Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred)
 	OrderedCodeBytes any
-	Singleton        any
+	// Marks this rule as a leaf condition, rather than a union/intersection of further sub-rules. (AI-inferred)
+	Singleton any
 }
 
 type Table_ColumnFamilies_ValueType_StructType_Fields struct {
+	// The name of this struct field. (AI-inferred)
 	FieldName any
-	Type      any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Table_ColumnFamilies_ValueType_StructType struct {
+	// How this value is encoded into raw Bigtable bytes. (AI-inferred)
 	Encoding any
-	Fields   any
+	// The field(s) making up this struct type. (AI-inferred)
+	Fields any
 }
 
 type Table_ColumnFamilies_ValueType_TimestampType_Encoding struct {
+	// Encodes a timestamp as a 64-bit integer count of microseconds since the Unix epoch. (AI-inferred)
 	UnixMicrosInt64 any
 }
 
 type Table_ColumnFamilies_ValueType_TimestampType struct {
+	// How this value is encoded into raw Bigtable bytes. (AI-inferred)
 	Encoding any
 }
 
 type Table_ColumnFamilies_ValueType struct {
+	// Defines this column as storing a running aggregate (e.g. sum, max) computed automatically as new values are written. (AI-inferred)
 	AggregateType any
-	ArrayType     any
-	BoolType      any
-	BytesType     any
-	DateType      any
-	EnumType      any
-	Float32Type   any
-	Float64Type   any
+	// Defines this column's own value as an array of another type. (AI-inferred)
+	ArrayType any
+	// Defines this column's own value as a boolean. (AI-inferred)
+	BoolType any
+	// Defines this column's own value as raw bytes. (AI-inferred)
+	BytesType any
+	// Defines this column's own value as a calendar date. (AI-inferred)
+	DateType any
+	// Defines this column's own value as one of a fixed set of named integer values. (AI-inferred)
+	EnumType any
+	// Defines this column's own value as a 32-bit floating-point number. (AI-inferred)
+	Float32Type any
+	// Defines this column's own value as a 64-bit floating-point number. (AI-inferred)
+	Float64Type any
+	// Defines this column's own value as geospatial data. (AI-inferred)
 	GeographyType any
-	Int32Type     any
-	Int64Type     any
-	MapType       any
-	ProtoType     any
-	StringType    any
-	StructType    any
+	// Defines this column's own value as a 32-bit integer. (AI-inferred)
+	Int32Type any
+	// Defines this column's own value as a 64-bit integer. (AI-inferred)
+	Int64Type any
+	// Defines this column's own value as a map from keys to values. (AI-inferred)
+	MapType any
+	// Defines this column's own value as a protocol buffer message. (AI-inferred)
+	ProtoType any
+	// Defines this column's own value as a string. (AI-inferred)
+	StringType any
+	// Defines this column's own value as a struct with named fields. (AI-inferred)
+	StructType any
+	// Defines this column's own value as a timestamp. (AI-inferred)
 	TimestampType any
 }
 
 type Table_ColumnFamilies struct {
-	GcRule    any
-	Stats     any
+	// The garbage-collection rule determining which stored cell versions in this column family are automatically deleted. (AI-inferred)
+	GcRule any
+	// Statistics about this resource. (AI-inferred)
+	Stats any
+	// The type of a map type's own value, or an aggregate's own accumulated value. (AI-inferred)
 	ValueType any
 }
 
 type Table_InitialSplits struct {
+	// The key of this key/value pair. (AI-inferred)
 	Key any
 }
 
@@ -210,27 +286,45 @@ type Table_RestoreInfo struct {
 }
 
 type Table_RowKeySchema_Fields_Type struct {
+	// Defines this column as storing a running aggregate (e.g. sum, max) computed automatically as new values are written. (AI-inferred)
 	AggregateType any
-	ArrayType     any
-	BoolType      any
-	BytesType     any
-	DateType      any
-	EnumType      any
-	Float32Type   any
-	Float64Type   any
+	// Defines this column's own value as an array of another type. (AI-inferred)
+	ArrayType any
+	// Defines this column's own value as a boolean. (AI-inferred)
+	BoolType any
+	// Defines this column's own value as raw bytes. (AI-inferred)
+	BytesType any
+	// Defines this column's own value as a calendar date. (AI-inferred)
+	DateType any
+	// Defines this column's own value as one of a fixed set of named integer values. (AI-inferred)
+	EnumType any
+	// Defines this column's own value as a 32-bit floating-point number. (AI-inferred)
+	Float32Type any
+	// Defines this column's own value as a 64-bit floating-point number. (AI-inferred)
+	Float64Type any
+	// Defines this column's own value as geospatial data. (AI-inferred)
 	GeographyType any
-	Int32Type     any
-	Int64Type     any
-	MapType       any
-	ProtoType     any
-	StringType    any
-	StructType    any
+	// Defines this column's own value as a 32-bit integer. (AI-inferred)
+	Int32Type any
+	// Defines this column's own value as a 64-bit integer. (AI-inferred)
+	Int64Type any
+	// Defines this column's own value as a map from keys to values. (AI-inferred)
+	MapType any
+	// Defines this column's own value as a protocol buffer message. (AI-inferred)
+	ProtoType any
+	// Defines this column's own value as a string. (AI-inferred)
+	StringType any
+	// Defines this column's own value as a struct with named fields. (AI-inferred)
+	StructType any
+	// Defines this column's own value as a timestamp. (AI-inferred)
 	TimestampType any
 }
 
 type Table_RowKeySchema_Fields struct {
+	// The name of this struct field. (AI-inferred)
 	FieldName any
-	Type      any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Table_RowKeySchema struct {

@@ -23,9 +23,13 @@ class Cluster_AutomatedBackupPolicy_TimeBasedRetention:
 
 @dataclasses.dataclass
 class Cluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
@@ -149,19 +153,27 @@ class Cluster_MaintenanceSchedule:
 
 @dataclasses.dataclass
 class Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # The month component of a date. (AI-inferred)
     month: Any = None
+    # The year component of a date. (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods:
+    # When this window or period ends. (AI-inferred)
     end_date: Any = None
+    # When this window or period starts. (AI-inferred)
     start_date: Any = None
+    # The time this event occurred at. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class Cluster_MaintenanceUpdatePolicy_MaintenanceWindows:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass

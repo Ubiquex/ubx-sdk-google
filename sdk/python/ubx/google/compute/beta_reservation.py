@@ -340,6 +340,7 @@ class BetaReservationConfig:
     advanced_deployment_control: Any = None
     # This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
     aggregate_reservation: Any = None
+    # The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
     confidential_compute_type: Any = None
     # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     delete_after_duration: Any = None
@@ -383,6 +384,7 @@ class BetaReservationAttrs:
     aggregate_reservation: Any = None
     # Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
     commitment: Any = None
+    # The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
     confidential_compute_type: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None

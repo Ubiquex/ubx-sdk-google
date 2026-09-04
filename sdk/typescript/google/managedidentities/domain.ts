@@ -2,16 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Domain_Trusts {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** When the last successful heartbeat with the trusted domain occurred. (AI-inferred) */
   lastTrustHeartbeatTime?: string | Computed<string>;
+  /** Whether authentication requests from the trusted domain are restricted to explicitly permitted resources. (AI-inferred) */
   selectiveAuthentication?: boolean | Computed<boolean>;
+  /** The current status of this trust relationship. (AI-inferred) */
   state?: string | Computed<string>;
+  /** A human-readable description of this trust relationship's own current state. (AI-inferred) */
   stateDescription?: string | Computed<string>;
+  /** The DNS server IP address(es) for the trusted domain. (AI-inferred) */
   targetDnsIpAddresses?: string[] | Computed<string[]>;
+  /** The fully qualified name of the domain this trust is established with. (AI-inferred) */
   targetDomainName?: string | Computed<string>;
+  /** Whether this trust is one-way or bidirectional. (AI-inferred) */
   trustDirection?: string | Computed<string>;
+  /** The shared secret used to establish this trust relationship. (AI-inferred) */
   trustHandshakeSecret?: string | Computed<string>;
+  /** The kind of trust relationship established, e.g. forest or external. (AI-inferred) */
   trustType?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 

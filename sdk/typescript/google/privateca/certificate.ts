@@ -19,16 +19,21 @@ export interface Certificate_CertificateDescription_PublicKey {
 }
 
 export interface Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId {
+  /** The numeric component(s) making up an object identifier. (AI-inferred) */
   objectIdPath?: number[] | Computed<number[]>;
 }
 
 export interface Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes {
+  /** An X.509 object identifier (OID). (AI-inferred) */
   objectId?: Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId | Computed<Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence {
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes[] | Computed<Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes[]>;
 }
 
@@ -54,8 +59,11 @@ export interface Certificate_CertificateDescription_SubjectDescription_Subject {
 }
 
 export interface Certificate_CertificateDescription_SubjectDescription_SubjectAltName_CustomSans {
+  /** Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred) */
   critical?: boolean | Computed<boolean>;
+  /** An X.509 object identifier (OID). (AI-inferred) */
   objectId?: Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId | Computed<Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

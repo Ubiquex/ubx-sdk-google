@@ -47,6 +47,7 @@ export interface StoragePool_ResourceStatus {
 }
 
 export interface StoragePool_ShareSettings_ProjectMap {
+  /** The unique identifier of the Google Cloud project to which these share settings apply. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 

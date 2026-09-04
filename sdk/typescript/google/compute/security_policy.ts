@@ -2,20 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs {
+  /** If true, the threshold is applied to each unique value (e.g., each source IP) independently, instead of aggregating all traffic together. (AI-inferred) */
   enableEachUniqueValue?: boolean | Computed<boolean>;
+  /** The type of traffic granularity. Valid values are `HTTP_HEADER_HOST` (group traffic by the HTTP Host header), `HTTP_PATH` (group traffic by the HTTP request path), and `UNSPECIFIED_TYPE` (default, unspecified). (AI-inferred) */
   type?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs {
+  /** The minimum confidence score (between 0 and 1) that adaptive protection requires before automatically deploying mitigation rules for layer 7 DDoS defense. (AI-inferred) */
   autoDeployConfidenceThreshold?: number | Computed<number>;
+  /** The number of seconds that the auto-deploy system waits before automatically deploying the mitigation rules. If not set, the default value is 3600 seconds. (AI-inferred) */
   autoDeployExpirationSec?: number | Computed<number>;
   autoDeployImpactedBaselineThreshold?: number | Computed<number>;
+  /** Specifies the traffic load threshold in requests per second that triggers automatic deployment of Layer 7 DDoS adaptive protection. When traffic exceeds this threshold and other conditions are met, Google Cloud Armor may automatically enable mitigation. (AI-inferred) */
   autoDeployLoadThreshold?: number | Computed<number>;
+  /** The absolute queries per second (QPS) threshold that triggers detection of a layer 7 DDoS attack. (AI-inferred) */
   detectionAbsoluteQps?: number | Computed<number>;
+  /** The load threshold in requests per second that triggers detection of a potential DDoS attack by the layer 7 adaptive protection. Exceeding this threshold causes the system to start monitoring traffic for attack indicators. (AI-inferred) */
   detectionLoadThreshold?: number | Computed<number>;
+  /** Detection threshold in queries per second (QPS) relative to the baseline traffic level for triggering adaptive protection. A value greater than 1 indicates a multiple of the baseline QPS. (AI-inferred) */
   detectionRelativeToBaselineQps?: number | Computed<number>;
   name?: string | Computed<string>;
+  /** A list of traffic granularity configurations for the threshold. Each configuration defines a traffic type (such as SOURCE_IP or USER_AGENT) and a value to specify the granularity of traffic to which the threshold applies. (AI-inferred) */
   trafficGranularityConfigs?: SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs[] | Computed<SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs[]>;
 }
 
@@ -40,7 +49,9 @@ export interface SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig {
 
 export interface SecurityPolicy_AdvancedOptionsConfig {
   jsonCustomConfig?: SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig | Computed<SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig>;
+  /** Controls the JSON payload parsing mode for the security policy. Possible values: DISABLED (no JSON parsing), STANDARD (standard JSON parsing), or STANDARD_WITH_GRAPHQL (standard JSON plus GraphQL parsing). (AI-inferred) */
   jsonParsing?: string | Computed<string>;
+  /** Specifies the log level for the security policy, controlling how much detail is logged. Valid values are NORMAL and VERBOSE. (AI-inferred) */
   logLevel?: string | Computed<string>;
   /** The maximum request size chosen by the customer with Waf enabled. Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case insensitive. */
   requestBodyInspectionSize?: string | Computed<string>;
@@ -49,19 +60,25 @@ export interface SecurityPolicy_AdvancedOptionsConfig {
 }
 
 export interface SecurityPolicy_Associations {
+  /** The ID of the resource (e.g., backend service or target instance) to which the security policy is attached. (AI-inferred) */
   attachmentId?: string | Computed<string>;
+  /** The display name of the security policy association. This is a user-defined name used to identify the association. (AI-inferred) */
   displayName?: string | Computed<string>;
   excludedFolders?: string[] | Computed<string[]>;
+  /** A list of project IDs or project numbers to exclude from this security policy association. This is used when the security policy is associated with a parent resource such as an organization or folder, to prevent the policy from applying to the specified projects. (AI-inferred) */
   excludedProjects?: string[] | Computed<string[]>;
   name?: string | Computed<string>;
+  /** The ID of the security policy that is being associated. (AI-inferred) */
   securityPolicyId?: string | Computed<string>;
   shortName?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_DdosProtectionConfig {
+  /** Configures the adaptive protection mode for DDoS attacks. Allowed values are DISABLED, ENABLED, PREVIEW, and UNSPECIFIED_ADAPTIVE_PROTECTION (the default, which uses the provider's unspecified behavior). (AI-inferred) */
   ddosAdaptiveProtection?: string | Computed<string>;
   /** DDoS Protection for Network Load Balancers (and VMs with public IPs) builds DDoS mitigations that minimize collateral damage. It quantifies this as the fraction of a non-abuse baseline that's inadvertently blocked. Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will not be deployed. Using a lower value will prioritize keeping collateral damage low, possibly at the cost of its effectiveness in rate limiting some or all of the attack. It should typically be unset, so Advanced DDoS (and Adaptive Protection) uses the best mitigation it can find. Setting the threshold is advised if there are logs for false positive detections with high collateral damage, and will cause Advanced DDoS to attempt to find a less aggressive rule that satisfies the constraint. If a suitable rule cannot be found, the system falls back to either no mitigation for smaller attacks or broader network throttles for larger ones. */
   ddosImpactedBaselineThreshold?: number | Computed<number>;
+  /** Specifies the Google Cloud Armor DDoS protection tier for this security policy. Valid values are ADVANCED, ADVANCED_PREVIEW, and STANDARD. (AI-inferred) */
   ddosProtection?: string | Computed<string>;
 }
 
@@ -71,27 +88,37 @@ export interface SecurityPolicy_RecaptchaOptionsConfig {
 }
 
 export interface SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds {
+  /** The name of the header to add to the request. For example, 'X-Frame-Options'. (AI-inferred) */
   headerName?: string | Computed<string>;
+  /** The value of the request header to add. This is the literal string value that will be sent with the header. (AI-inferred) */
   headerValue?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_Rules_HeaderAction {
+  /** A list of request headers to be added to matching requests. Each object specifies a header name and its value. (AI-inferred) */
   requestHeadersToAdds?: SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds[] | Computed<SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds[]>;
 }
 
 export interface SecurityPolicy_Rules_Match_Config {
+  /** List of source IP address ranges (in CIDR notation) that the rule uses to match traffic. (AI-inferred) */
   srcIpRanges?: string[] | Computed<string[]>;
 }
 
 export interface SecurityPolicy_Rules_Match_Expr {
+  /** A human-readable description of the expression, used to document the purpose or intent of the match condition. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The CEL expression that defines the match condition for the security policy rule. This expression is evaluated against incoming requests to determine if the rule applies. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** Optional string that identifies the source location (e.g., file and line) of the CEL expression, used for error reporting and debugging. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The title for the match expression, providing a human-readable name to identify the expression in the security policy rule. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions {
+  /** A list of site keys to be used for validating reCAPTCHA action tokens. (AI-inferred) */
   actionTokenSiteKeys?: string[] | Computed<string[]>;
+  /** Specifies a list of reCAPTCHA site keys used to verify session tokens for this rule. (AI-inferred) */
   sessionTokenSiteKeys?: string[] | Computed<string[]>;
 }
 
@@ -100,92 +127,143 @@ export interface SecurityPolicy_Rules_Match_ExprOptions {
 }
 
 export interface SecurityPolicy_Rules_Match {
+  /** The match configuration for the rule, which defines the traffic to match using parameters such as source IP ranges, versioned expression, and layer 4 configs. (AI-inferred) */
   config?: SecurityPolicy_Rules_Match_Config | Computed<SecurityPolicy_Rules_Match_Config>;
+  /** The expr block defines a match expression in Common Expression Language (CEL) that is evaluated against incoming requests. If the expression evaluates to true, the rule is applied. (AI-inferred) */
   expr?: SecurityPolicy_Rules_Match_Expr | Computed<SecurityPolicy_Rules_Match_Expr>;
   exprOptions?: SecurityPolicy_Rules_Match_ExprOptions | Computed<SecurityPolicy_Rules_Match_ExprOptions>;
+  /** The version of the expression to use for the match rule. Currently, only 'SRC_IPS_V1' is supported, which matches on source IP addresses. (AI-inferred) */
   versionedExpr?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_Rules_NetworkMatch_UserDefinedFields {
+  /** Identifies the user-defined field to match in network traffic. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A list of string values to match against the referenced user-defined field. The rule matches when the field value is equal to one of these values. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface SecurityPolicy_Rules_NetworkMatch {
+  /** List of destination IP ranges (in CIDR format) that this network match rule applies to. Each entry can be an IPv4 or IPv6 CIDR block, e.g., '192.0.2.0/24' or '2001:db8::/32'. Traffic whose destination IP falls within any of these ranges will match the rule. (AI-inferred) */
   destIpRanges?: string[] | Computed<string[]>;
+  /** An optional list of destination ports to match. Each element may be a single port number (e.g., '80') or a range of ports (e.g., '80-90'). If not specified, all destination ports are matched. (AI-inferred) */
   destPorts?: string[] | Computed<string[]>;
+  /** A list of IP protocols that the rule matches. Traffic must use one of the specified protocols to match the rule; if omitted, the rule matches all IP protocols. (AI-inferred) */
   ipProtocols?: string[] | Computed<string[]>;
+  /** List of source Autonomous System Numbers (ASNs) that the source IP address of the request must belong to for the rule to match. (AI-inferred) */
   srcAsns?: number[] | Computed<number[]>;
+  /** A list of source IP address ranges in CIDR notation that incoming traffic must match for the rule to apply. (AI-inferred) */
   srcIpRanges?: string[] | Computed<string[]>;
+  /** A list of source ports or port ranges (e.g., '80' or '80-90') to match in the network rule. (AI-inferred) */
   srcPorts?: string[] | Computed<string[]>;
+  /** List of source region codes (two-letter ISO 3166 alpha-2 country codes) used to match requests based on the geographic location of the source IP address. (AI-inferred) */
   srcRegionCodes?: string[] | Computed<string[]>;
+  /** A list of user-defined fields for matching network traffic. Each object contains a field name and optional values to match against. (AI-inferred) */
   userDefinedFields?: SecurityPolicy_Rules_NetworkMatch_UserDefinedFields[] | Computed<SecurityPolicy_Rules_NetworkMatch_UserDefinedFields[]>;
 }
 
 export interface SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude {
+  /** The match operator to use for the cookie, such as CONTAINS, ENDS_WITH, EQUALS, EQUALS_ANY, or STARTS_WITH. (AI-inferred) */
   op?: string | Computed<string>;
+  /** The value of the request cookie to exclude. (AI-inferred) */
   val?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions {
+  /** A list of request cookies to exclude from the preconfigured WAF rule evaluation. Each object defines a cookie to be ignored when the rule inspects incoming requests. (AI-inferred) */
   requestCookiesToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  /** Specifies a list of request headers to exclude from the preconfigured WAF rule evaluation. When configured, these headers are not inspected by the WAF rules, helping to avoid false positives. (AI-inferred) */
   requestHeadersToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  /** A list of request query parameters to exclude from evaluation by the preconfigured WAF rule. Each object defines a query parameter that should be ignored when the rule is applied. (AI-inferred) */
   requestQueryParamsToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  /** A list of request URIs to exclude from matching the preconfigured WAF rule. Each item defines a specific URI that should be excluded from evaluation, so requests to these URIs will not be blocked or flagged by this rule. (AI-inferred) */
   requestUrisToExclude?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude[]>;
+  /** The list of specific rule IDs to exclude from the preconfigured WAF configuration. These are the target rules that the exclusion applies to. (AI-inferred) */
   targetRuleIds?: string[] | Computed<string[]>;
+  /** The name of the predefined WAF rule set that this exclusion applies to. (AI-inferred) */
   targetRuleSet?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_Rules_PreconfiguredWafConfig {
+  /** A list of exclusions for the preconfigured WAF configuration. Each exclusion defines rules or rule sets that are excluded from the managed preconfigured WAF rules. (AI-inferred) */
   exclusions?: SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions[] | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions[]>;
 }
 
 export interface SecurityPolicy_Rules_RateLimitOptions_BanThreshold {
+  /** The number of requests that must be exceeded to trigger the ban threshold. (AI-inferred) */
   count?: number | Computed<number>;
+  /** The time interval in seconds during which the number of requests (count) is evaluated to determine if the ban threshold is exceeded. For example, an interval_sec of 60 means the count must be exceeded within a 60-second rolling window. (AI-inferred) */
   intervalSec?: number | Computed<number>;
 }
 
 export interface SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs {
+  /** The name of the key to enforce rate limiting on, such as the header name or cookie name, as specified by the corresponding enforce_on_key_type field. (AI-inferred) */
   enforceOnKeyName?: string | Computed<string>;
+  /** The type of request key to enforce rate limiting on. Valid values include: ALL, ASN, HTTP_COOKIE, HTTP_HEADER, HTTP_PATH, IP, REGION_CODE, SNI, TLS_JA3_FINGERPRINT, TLS_JA4_FINGERPRINT, USER_IP, XFF_IP. (AI-inferred) */
   enforceOnKeyType?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions {
+  /** The target URL to redirect to when the rate limit is exceeded. Required when the redirect type is EXTERNAL_302. (AI-inferred) */
   target?: string | Computed<string>;
+  /** The type of redirect to use when the rate limit is exceeded. Possible values are EXTERNAL_302, which redirects to an external URL, and GOOGLE_RECAPTCHA, which presents a Google reCAPTCHA challenge. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface SecurityPolicy_Rules_RateLimitOptions {
+  /** The duration in seconds that a client is banned when the rule action is 'rate_based_ban'. (AI-inferred) */
   banDurationSec?: number | Computed<number>;
+  /** The threshold that triggers a temporary ban for an IP address that has exceeded the rate limit. It includes a count of requests and an interval in seconds over which the count is measured. (AI-inferred) */
   banThreshold?: SecurityPolicy_Rules_RateLimitOptions_BanThreshold | Computed<SecurityPolicy_Rules_RateLimitOptions_BanThreshold>;
+  /** Action to take for requests that are within the configured rate limit (i.e., do not exceed the threshold). (AI-inferred) */
   conformAction?: string | Computed<string>;
+  /** The key type on which the rate limit is enforced. Valid values are ALL, ASN, HTTP_COOKIE, HTTP_HEADER, HTTP_PATH, IP, REGION_CODE, SNI, TLS_JA3_FINGERPRINT, TLS_JA4_FINGERPRINT, USER_IP, and XFF_IP. (AI-inferred) */
   enforceOnKey?: string | Computed<string>;
+  /** A list of configurations that specify the keys on which to enforce the rate limit. Each configuration includes a key type (e.g., IP, HTTP_HEADER, HTTP_COOKIE) and can optionally define exclusions for the rate limit. (AI-inferred) */
   enforceOnKeyConfigs?: SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs[] | Computed<SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs[]>;
+  /** The name of the key to enforce the rate limit on, used when the enforceOnKey field requires a key name (e.g., the HTTP header name when enforceOnKey is HTTP_HEADER). (AI-inferred) */
   enforceOnKeyName?: string | Computed<string>;
+  /** Action to take when the rate limit threshold is exceeded. Valid values are 'deny(403)' and 'rateBasedBan'. (AI-inferred) */
   exceedAction?: string | Computed<string>;
+  /** Options for the redirect action taken when requests exceed the rate limit threshold. Used when the exceed action is set to redirect, specifying the redirect type and target URL. (AI-inferred) */
   exceedRedirectOptions?: SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions | Computed<SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions>;
+  /** An object defining the request threshold that triggers rate limiting. It specifies the number of requests (count) allowed within a given time interval (interval_sec). (AI-inferred) */
   rateLimitThreshold?: SecurityPolicy_Rules_RateLimitOptions_BanThreshold | Computed<SecurityPolicy_Rules_RateLimitOptions_BanThreshold>;
 }
 
 export interface SecurityPolicy_Rules {
+  /** The action to take when a request matches the rule. (AI-inferred) */
   action?: string | Computed<string>;
   description?: string | Computed<string>;
+  /** The header_action block configures the request headers to add or remove for requests that match this security policy rule. (AI-inferred) */
   headerAction?: SecurityPolicy_Rules_HeaderAction | Computed<SecurityPolicy_Rules_HeaderAction>;
+  /** The type of the resource. Always 'compute#securityPolicyRule'. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The match block configures the request criteria that trigger the rule. It can contain either a config block for source IP ranges or an expr block for a CEL expression, depending on the policy version. (AI-inferred) */
   match?: SecurityPolicy_Rules_Match | Computed<SecurityPolicy_Rules_Match>;
+  /** Defines the network match criteria for a security policy rule, specifying conditions such as source and destination IP ranges, IP protocols, and ports that determine when the rule applies. (AI-inferred) */
   networkMatch?: SecurityPolicy_Rules_NetworkMatch | Computed<SecurityPolicy_Rules_NetworkMatch>;
+  /** Configuration block for preconfigured WAF (Web Application Firewall) rules. This block contains exclusions that allow selectively disabling specific preconfigured WAF rules or parts of them for this security policy rule. (AI-inferred) */
   preconfiguredWafConfig?: SecurityPolicy_Rules_PreconfiguredWafConfig | Computed<SecurityPolicy_Rules_PreconfiguredWafConfig>;
+  /** If true, the rule is in preview mode, meaning the action is not enforced but traffic is logged for testing. (AI-inferred) */
   preview?: boolean | Computed<boolean>;
+  /** The priority of this rule. Rules are evaluated in order from lowest to highest value (i.e., lower numbers have higher precedence). The priority must be an integer between 0 and 2147483647. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** This block configures the rate limiting behavior for the rule, including parameters like the threshold and enforcement key. (AI-inferred) */
   rateLimitOptions?: SecurityPolicy_Rules_RateLimitOptions | Computed<SecurityPolicy_Rules_RateLimitOptions>;
+  /** Configuration for the redirect action to take when this rule matches. Contains settings such as redirect type and target. (AI-inferred) */
   redirectOptions?: SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions | Computed<SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions>;
 }
 
 export interface SecurityPolicy_UserDefinedFields {
+  /** The base protocol or address family on which this user-defined field operates. Valid values are IPV4, IPV6, TCP, and UDP. (AI-inferred) */
   base?: string | Computed<string>;
+  /** The mask that identifies the field to extract from the request or response, such as an HTTP header name when base is 'request'. (AI-inferred) */
   mask?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** The byte offset from the start of the selected base (e.g., TCP header) where the user-defined field begins. Offsets are zero-based; an offset of 0 refers to the first byte. (AI-inferred) */
   offset?: number | Computed<number>;
+  /** Specifies the fixed length in bytes to extract from the base (e.g., TCP or UDP header) when defining a user-defined field by size. This is mutually exclusive with 'match' and is used to capture a fixed-size portion of the packet. (AI-inferred) */
   size?: number | Computed<number>;
 }
 
@@ -474,6 +552,7 @@ export interface SecurityPolicyConfig {
   advancedOptionsConfig?: SecurityPolicy_AdvancedOptionsConfig | Computed<SecurityPolicy_AdvancedOptionsConfig>;
   /** A list of associations that belong to this policy. */
   associations?: SecurityPolicy_Associations[] | Computed<SecurityPolicy_Associations[]>;
+  /** Configuration for DDoS protection on the security policy, containing the protection class. This field is computed and output-only, so it cannot be set in configuration. (AI-inferred) */
   ddosProtectionConfig?: SecurityPolicy_DdosProtectionConfig | Computed<SecurityPolicy_DdosProtectionConfig>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -485,6 +564,7 @@ export interface SecurityPolicyConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
+  /** Configuration for reCAPTCHA options in the security policy. This field is computed, meaning it is populated by the API and cannot be set manually. (AI-inferred) */
   recaptchaOptionsConfig?: SecurityPolicy_RecaptchaOptionsConfig | Computed<SecurityPolicy_RecaptchaOptionsConfig>;
   /** A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added. */
   rules?: SecurityPolicy_Rules[] | Computed<SecurityPolicy_Rules[]>;
@@ -504,6 +584,7 @@ export interface SecurityPolicyAttrs {
   associations: SecurityPolicy_Associations[];
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** Configuration for DDoS protection on the security policy, containing the protection class. This field is computed and output-only, so it cannot be set in configuration. (AI-inferred) */
   ddosProtectionConfig: SecurityPolicy_DdosProtectionConfig;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
@@ -521,6 +602,7 @@ export interface SecurityPolicyAttrs {
   name: string;
   /** Output only. [Output Only] The parent of the security policy. */
   parent: string;
+  /** Configuration for reCAPTCHA options in the security policy. This field is computed, meaning it is populated by the API and cannot be set manually. (AI-inferred) */
   recaptchaOptionsConfig: SecurityPolicy_RecaptchaOptionsConfig;
   /** Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies. */
   region: string;

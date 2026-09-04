@@ -31,7 +31,9 @@ export interface AlphaInstantSnapshotGroupConfig {
   description?: string | Computed<string>;
   /** Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
+  /** Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred) */
   resourceStatus?: AlphaInstantSnapshotGroup_ResourceStatus | Computed<AlphaInstantSnapshotGroup_ResourceStatus>;
+  /** A reference to the resource policy defining the consistency group this instant snapshot group was created from. (AI-inferred) */
   sourceConsistencyGroup?: string | Computed<string>;
 }
 
@@ -48,11 +50,13 @@ export interface AlphaInstantSnapshotGroupAttrs {
   name: string;
   /** Output only. [Output Only] URL of the region where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region: string;
+  /** Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred) */
   resourceStatus: AlphaInstantSnapshotGroup_ResourceStatus;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
   /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
   selfLinkWithId: string;
+  /** A reference to the resource policy defining the consistency group this instant snapshot group was created from. (AI-inferred) */
   sourceConsistencyGroup: string;
   /** Output only. [Output Only] */
   status: string;

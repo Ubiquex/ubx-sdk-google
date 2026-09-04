@@ -136,6 +136,7 @@ export interface AlphaDiskConfig {
   replicaZones?: string[] | Computed<string[]>;
   /** Resource policies applied to this disk for automatic snapshot creations. */
   resourcePolicies?: string[] | Computed<string[]>;
+  /** Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred) */
   resourceStatus?: AlphaDisk_ResourceStatus | Computed<AlphaDisk_ResourceStatus>;
   /** Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0. */
   sizeGb?: string | Computed<string>;
@@ -225,6 +226,7 @@ export interface AlphaDiskAttrs {
   replicaZones: string[];
   /** Resource policies applied to this disk for automatic snapshot creations. */
   resourcePolicies: string[];
+  /** Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred) */
   resourceStatus: AlphaDisk_ResourceStatus;
   /** Output only. Reserved for future use. */
   satisfiesPzi: boolean;

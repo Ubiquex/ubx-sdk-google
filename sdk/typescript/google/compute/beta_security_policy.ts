@@ -528,9 +528,11 @@ const BetaSecurityPolicy_UserDefinedFieldsFields: FieldMap = {
 export interface BetaSecurityPolicyConfig {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig?: BetaSecurityPolicy_AdaptiveProtectionConfig | Computed<BetaSecurityPolicy_AdaptiveProtectionConfig>;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig?: BetaSecurityPolicy_AdvancedOptionsConfig | Computed<BetaSecurityPolicy_AdvancedOptionsConfig>;
   /** A list of associations that belong to this policy. */
   associations?: BetaSecurityPolicy_Associations[] | Computed<BetaSecurityPolicy_Associations[]>;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig?: BetaSecurityPolicy_DdosProtectionConfig | Computed<BetaSecurityPolicy_DdosProtectionConfig>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -558,11 +560,13 @@ export interface BetaSecurityPolicyConfig {
 export interface BetaSecurityPolicyAttrs {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig: BetaSecurityPolicy_AdaptiveProtectionConfig;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig: BetaSecurityPolicy_AdvancedOptionsConfig;
   /** A list of associations that belong to this policy. */
   associations: BetaSecurityPolicy_Associations[];
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig: BetaSecurityPolicy_DdosProtectionConfig;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;

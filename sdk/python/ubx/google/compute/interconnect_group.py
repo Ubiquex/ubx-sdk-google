@@ -8,17 +8,26 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers:
+    # The type of blocker preventing the intended capability. Possible values: INCOMPATIBLE_METROS, NOT_AVAILABLE, NO_INTERCONNECTS, NO_INTERCONNECTS_IN_METRO_AND_ZONE, OTHER, UNSPECIFIED. (AI-inferred)
     blocker_type: Any = None
+    # A URL to documentation explaining why the intended capability is blocked. (AI-inferred)
     documentation_link: Any = None
+    # A human-readable explanation of why the intended topology capability is blocked. (AI-inferred)
     explanation: Any = None
+    # List of facility names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
     facilities: Any = None
+    # The list of interconnect names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
     interconnects: Any = None
+    # List of metro names (geographic locations) that block the intended topology capability from being achieved. (AI-inferred)
     metros: Any = None
+    # A list of zones in which the intended topology capability is blocked or unavailable, as part of a capability blocker. (AI-inferred)
     zones: Any = None
 
 @dataclasses.dataclass
 class InterconnectGroup_Configured_TopologyCapability:
+    # A list of reasons that prevent the interconnect group's intended topology capability from being realized. This computed field is empty when the intended capability is fully supported, and provides details on any issues otherwise. (AI-inferred)
     intended_capability_blockers: Any = None
+    # The supported service level agreement (SLA) for this topology capability. Possible values are: NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL, UNSPECIFIED. (AI-inferred)
     supported_sla: Any = None
 
 @dataclasses.dataclass
@@ -28,6 +37,7 @@ class InterconnectGroup_Configured:
 
 @dataclasses.dataclass
 class InterconnectGroup_Intent:
+    # Specifies the topology capability level for the interconnect group, indicating the required service level. Valid values are: NO_SLA (no service level agreement), PRODUCTION_CRITICAL (production workloads requiring high reliability), PRODUCTION_NON_CRITICAL (production workloads without critical reliability requirements), and UNSPECIFIED (value not set). (AI-inferred)
     topology_capability: Any = None
 
 @dataclasses.dataclass
@@ -47,10 +57,12 @@ class InterconnectGroup_PhysicalStructure_Metros_Facilities:
 @dataclasses.dataclass
 class InterconnectGroup_PhysicalStructure_Metros:
     facilities: Any = None
+    # The metropolitan area where the interconnect group's physical structure is located, such as 'london' or 'sydney'. (AI-inferred)
     metro: Any = None
 
 @dataclasses.dataclass
 class InterconnectGroup_PhysicalStructure:
+    # The metropolitan areas where the physical structure of the interconnect group is located. This computed field provides the list of metros supported by the physical infrastructure. (AI-inferred)
     metros: Any = None
 
 _InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields = {

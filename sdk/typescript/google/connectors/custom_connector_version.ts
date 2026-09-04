@@ -2,20 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValue {
+  /** The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/* /locations/* /keyRings/* /cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred) */
   kmsKeyName?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValue {
+  /** The specific Secret Manager secret version referenced. (AI-inferred) */
   secretVersion?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfig_AdditionalVariables {
+  /** This configuration variable's own value, when its type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred) */
   encryptionKeyValue?: CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValue | Computed<CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValue>;
+  /** This admin filter's own value, when its type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred) */
   secretValue?: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValue | Computed<CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValue>;
+  /** This admin filter's own value, when its type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
@@ -110,93 +119,148 @@ export interface CustomConnectorVersion_AuthConfig {
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLink {
+  /** The OAuth client ID issued by the connected service. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** The OAuth client secret issued by the connected service. (AI-inferred) */
   clientSecret?: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValue | Computed<CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValue>;
+  /** Whether to use Proof Key for Code Exchange (PKCE) to secure the OAuth authorization code flow. (AI-inferred) */
   enablePkce?: boolean | Computed<boolean>;
+  /** Whether to omit query parameters when constructing the authorization redirect URI. (AI-inferred) */
   omitQueryParams?: boolean | Computed<boolean>;
+  /** The OAuth scope(s) requested during authorization. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
+  /** The authorization endpoint URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptions {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A unique identifier for this webhook subscription. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptions {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Whether this option is selected by default. (AI-inferred) */
   preselected?: boolean | Computed<boolean>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig {
+  /** Whether a value outside the predefined option list may also be entered. (AI-inferred) */
   allowCustomValues?: boolean | Computed<boolean>;
+  /** The selectable option(s) for this multi-select configuration field. (AI-inferred) */
   multipleSelectOptions?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptions[] | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptions[]>;
+  /** The character used to separate multiple selected values. (AI-inferred) */
   valueSeparator?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisons {
+  /** This configuration variable's own value, when its type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** How the compared field's own value is evaluated, e.g. equals or contains. (AI-inferred) */
   comparator?: string | Computed<string>;
+  /** This admin filter's own value, when its type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** This admin filter's own value, when its type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition {
+  /** The individual field-level condition(s) making up this logical expression. (AI-inferred) */
   fieldComparisons?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisons[] | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisons[]>;
+  /** The nested condition(s) combined by this logical expression. (AI-inferred) */
   logicalExpressions?: unknown[] | Computed<unknown[]>;
+  /** How the nested condition(s) are combined, e.g. `AND` or `OR`. (AI-inferred) */
   logicalOperator?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_Resource {
+  /** A template describing the resource path this role grant applies to. (AI-inferred) */
   pathTemplate?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant {
+  /** Guidance text shown to the user configuring this role grant. (AI-inferred) */
   helperTextTemplate?: string | Computed<string>;
+  /** The identity this role grant is issued to. (AI-inferred) */
   principal?: string | Computed<string>;
+  /** The resource this role grant applies to. (AI-inferred) */
   resource?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_Resource | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_Resource>;
+  /** The role(s) granted. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates {
+  /** Configuration for the OAuth 2.0 authorization code flow used to obtain credentials. (AI-inferred) */
   authorizationCodeLink?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLink | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLink>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The selectable option(s) for this enumerated configuration field. (AI-inferred) */
   enumOptions?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptions[] | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptions[]>;
+  /** Where this configuration field's own enumerated option list is sourced from. (AI-inferred) */
   enumSource?: string | Computed<string>;
+  /** Whether this configuration field is only shown under advanced/optional settings. (AI-inferred) */
   isAdvanced?: boolean | Computed<boolean>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Where this configuration field's own value is stored, e.g. inline or as a Secret Manager reference. (AI-inferred) */
   locationType?: string | Computed<string>;
+  /** Configuration for a field that accepts more than one selected value. (AI-inferred) */
   multipleSelectConfig?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: boolean | Computed<boolean>;
+  /** The condition that must be satisfied for this configuration field to apply. (AI-inferred) */
   requiredCondition?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition>;
+  /** Configuration for automatically granting a role needed by this connector. (AI-inferred) */
   roleGrant?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant>;
+  /** Whether this configuration field is required, optional, or deprecated. (AI-inferred) */
   state?: string | Computed<string>;
+  /** A regular expression this configuration field's own value must match. (AI-inferred) */
   validationRegex?: string | Computed<string>;
+  /** The data type this configuration field's own value holds, e.g. string, integer, or boolean. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_AuthConfigTemplates {
+  /** The identifier for this authentication configuration. (AI-inferred) */
   authKey?: string | Computed<string>;
+  /** The kind of authentication this connection uses, e.g. `OAUTH2_AUTHORIZATION_CODE` or `USER_PASSWORD`. (AI-inferred) */
   authType?: string | Computed<string>;
+  /** The configuration field(s) this connector's own authentication method requires or accepts. (AI-inferred) */
   configVariableTemplates?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates[] | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates[]>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether this is the default authentication configuration for the connector. (AI-inferred) */
   isDefault?: boolean | Computed<boolean>;
 }
 
 export interface CustomConnectorVersion_DestinationConfigs_Destinations {
+  /** The hostname of this destination. (AI-inferred) */
   host?: string | Computed<string>;
+  /** The port this destination listens on. (AI-inferred) */
   port?: number | Computed<number>;
+  /** A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred) */
   serviceAttachment?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersion_DestinationConfigs {
+  /** The backend endpoint(s) traffic for this connection is routed to. (AI-inferred) */
   destinations?: CustomConnectorVersion_DestinationConfigs_Destinations[] | Computed<CustomConnectorVersion_DestinationConfigs_Destinations[]>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
 }
 

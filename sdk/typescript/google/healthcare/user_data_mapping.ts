@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserDataMapping_ResourceAttributes {
+  /** A reference to the attribute definition this applies to. (AI-inferred) */
   attributeDefinitionId?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 

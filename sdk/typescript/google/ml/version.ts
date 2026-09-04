@@ -9,7 +9,9 @@ export interface Version_AcceleratorConfig {
 }
 
 export interface Version_AutoScaling_Metrics {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The value this metric is being optimized toward. (AI-inferred) */
   target?: number | Computed<number>;
 }
 
@@ -23,11 +25,14 @@ export interface Version_AutoScaling {
 }
 
 export interface Version_Container_Env {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Version_Container_Ports {
+  /** The port number the training container listens on. (AI-inferred) */
   containerPort?: number | Computed<number>;
 }
 

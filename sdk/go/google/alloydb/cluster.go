@@ -19,9 +19,13 @@ type Cluster_AutomatedBackupPolicy_TimeBasedRetention struct {
 }
 
 type Cluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
@@ -145,19 +149,27 @@ type Cluster_MaintenanceSchedule struct {
 }
 
 type Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate struct {
-	Day   any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// The month component of a date. (AI-inferred)
 	Month any
-	Year  any
+	// The year component of a date. (AI-inferred)
+	Year any
 }
 
 type Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods struct {
-	EndDate   any
+	// When this window or period ends. (AI-inferred)
+	EndDate any
+	// When this window or period starts. (AI-inferred)
 	StartDate any
-	Time      any
+	// The time this event occurred at. (AI-inferred)
+	Time any
 }
 
 type Cluster_MaintenanceUpdatePolicy_MaintenanceWindows struct {
-	Day       any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// When this event or window started. (AI-inferred)
 	StartTime any
 }
 

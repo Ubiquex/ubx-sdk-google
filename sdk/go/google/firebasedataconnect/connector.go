@@ -11,8 +11,10 @@ type Connector_ClientCache struct {
 }
 
 type Connector_Source_Files struct {
+	// The literal content of this field. (AI-inferred)
 	Content any
-	Path    any
+	// A file or resource path. (AI-inferred)
+	Path any
 }
 
 type Connector_Source struct {

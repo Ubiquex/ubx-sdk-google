@@ -4,9 +4,12 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentGroup_DeploymentUnits struct {
+	// The other deployment unit(s) within this group that must apply successfully before this one. (AI-inferred)
 	Dependencies any
-	Deployment   any
-	Id           any
+	// The underlying Infrastructure Manager deployment this unit corresponds to. (AI-inferred)
+	Deployment any
+	// A caller-chosen identifier for this deployment unit, unique within its own deployment group. (AI-inferred)
+	Id any
 }
 
 type DeploymentGroup_ProvisioningError struct {

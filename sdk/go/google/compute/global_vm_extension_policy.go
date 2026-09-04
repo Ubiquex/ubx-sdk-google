@@ -4,15 +4,18 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalVmExtensionPolicy_ExtensionPolicies struct {
+	// The specific version of the extension to pin the policy to. When set, the policy always uses this exact version. If unset, the latest available version is used. (AI-inferred)
 	PinnedVersion any
 	StringConfig  any
 }
 
 type GlobalVmExtensionPolicy_InstanceSelectors_LabelSelector struct {
+	// A map of key-value pairs that an instance's labels must match for the instance to be included in the selection. Instances with all of these labels are selected. (AI-inferred)
 	InclusionLabels any
 }
 
 type GlobalVmExtensionPolicy_InstanceSelectors struct {
+	// A label selector object used to match instances based on their labels, determining which instances the policy applies to. (AI-inferred)
 	LabelSelector any
 }
 
@@ -32,15 +35,18 @@ type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_Loca
 }
 
 type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts struct {
+	// A map of location names to the current rollout status for each location, indicating the progress of the rollout operation in each geographic region. (AI-inferred)
 	LocationRolloutStatus any
 	Rollout               any
 	RolloutPlan           any
-	State                 any
+	// The current state of the rollout operation, with possible values STATE_CANCELLED, STATE_COMPLETED, STATE_FAILED, STATE_PAUSED, STATE_PROCESSING, STATE_UNKNOWN, and STATE_UNSPECIFIED. (AI-inferred)
+	State any
 }
 
 type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus struct {
 	// Output only. [Output Only] The current rollouts for the latest version of the resource. There should be only one current rollout, but for scalability, we make it repeated.
 	CurrentRollouts any
+	// The status details of the previous rollout operation, if one exists. This object is present only when a prior rollout has been performed and contains information about that prior rollout's state. (AI-inferred)
 	PreviousRollout any
 }
 

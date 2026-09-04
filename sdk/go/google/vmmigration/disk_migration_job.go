@@ -15,17 +15,25 @@ type DiskMigrationJob_AwsSourceDiskDetails struct {
 }
 
 type DiskMigrationJob_Errors struct {
-	Code    any
+	// The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
+	Code any
+	// Real, structured detail data attached to a migration error, giving more specific context than its own `message` alone. (AI-inferred)
 	Details any
+	// A real, human-readable status or error message for this migration step. (AI-inferred)
 	Message any
 }
 
 type DiskMigrationJob_Steps struct {
-	CopyingSourceDiskSnapshot  any
+	// Real, detailed progress for VM Migration's own step copying a snapshot of the source disk to Google Cloud, for a standalone disk migration. (AI-inferred)
+	CopyingSourceDiskSnapshot any
+	// Real, detailed progress for VM Migration's own step creating a snapshot of the source disk, for a standalone disk migration. (AI-inferred)
 	CreatingSourceDiskSnapshot any
-	EndTime                    any
-	ProvisioningTargetDisk     any
-	StartTime                  any
+	// The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
+	EndTime any
+	// Real, detailed progress for VM Migration's own step provisioning the target Persistent Disk in Google Cloud, for a standalone disk migration. (AI-inferred)
+	ProvisioningTargetDisk any
+	// The real timestamp when this migration step or cycle started. (AI-inferred)
+	StartTime any
 }
 
 type DiskMigrationJob_TargetDetails_Encryption struct {

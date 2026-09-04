@@ -563,11 +563,13 @@ const AlphaOrganizationSecurityPolicy_UserDefinedFieldsFields: FieldMap = {
 export interface AlphaOrganizationSecurityPolicyConfig {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig?: AlphaOrganizationSecurityPolicy_AdaptiveProtectionConfig | Computed<AlphaOrganizationSecurityPolicy_AdaptiveProtectionConfig>;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig?: AlphaOrganizationSecurityPolicy_AdvancedOptionsConfig | Computed<AlphaOrganizationSecurityPolicy_AdvancedOptionsConfig>;
   /** A list of associations that belong to this policy. */
   associations?: AlphaOrganizationSecurityPolicy_Associations[] | Computed<AlphaOrganizationSecurityPolicy_Associations[]>;
   /** Configuration options for Cloud Armor. */
   cloudArmorConfig?: AlphaOrganizationSecurityPolicy_CloudArmorConfig | Computed<AlphaOrganizationSecurityPolicy_CloudArmorConfig>;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig?: AlphaOrganizationSecurityPolicy_DdosProtectionConfig | Computed<AlphaOrganizationSecurityPolicy_DdosProtectionConfig>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -595,6 +597,7 @@ export interface AlphaOrganizationSecurityPolicyConfig {
 export interface AlphaOrganizationSecurityPolicyAttrs {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig: AlphaOrganizationSecurityPolicy_AdaptiveProtectionConfig;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig: AlphaOrganizationSecurityPolicy_AdvancedOptionsConfig;
   /** A list of associations that belong to this policy. */
   associations: AlphaOrganizationSecurityPolicy_Associations[];
@@ -602,6 +605,7 @@ export interface AlphaOrganizationSecurityPolicyAttrs {
   cloudArmorConfig: AlphaOrganizationSecurityPolicy_CloudArmorConfig;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig: AlphaOrganizationSecurityPolicy_DdosProtectionConfig;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;

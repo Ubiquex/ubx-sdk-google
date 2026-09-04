@@ -11,11 +11,16 @@ type Autoscaler_AutoscalingPolicy_CpuUtilization struct {
 }
 
 type Autoscaler_AutoscalingPolicy_CustomMetricUtilizations struct {
-	Filter                   any
-	Metric                   any
+	// Filter string to identify a specific time series for the custom metric. Used to select which resource's metric data to scale on, often with conditions like resource.type or metric labels. (AI-inferred)
+	Filter any
+	// The identifier (name) of the Cloud Monitoring metric to use for autoscaling. For example, compute.googleapis.com/instance/network/received_bytes_count. (AI-inferred)
+	Metric any
+	// The target value of the custom metric that a single instance should handle. This is used as a per-instance scaling target to determine the number of instances needed. (AI-inferred)
 	SingleInstanceAssignment any
-	UtilizationTarget        any
-	UtilizationTargetType    any
+	// The target value of the custom metric that the autoscaler maintains. The autoscaler adjusts the number of instances to keep the metric value close to this target. (AI-inferred)
+	UtilizationTarget any
+	// Specifies whether the utilization target is a gauge, delta per second, or delta per minute. Allowed values are DELTA_PER_MINUTE, DELTA_PER_SECOND, and GAUGE. (AI-inferred)
+	UtilizationTargetType any
 }
 
 type Autoscaler_AutoscalingPolicy_LoadBalancingUtilization struct {
@@ -40,12 +45,17 @@ type Autoscaler_AutoscalingPolicy_ScaleInControl struct {
 }
 
 type Autoscaler_AutoscalingPolicy_ScalingSchedules struct {
-	Description         any
-	Disabled            any
-	DurationSec         any
+	Description any
+	// Whether the scaling schedule is disabled. When set to true, the schedule is inactive and its scaling actions are not applied, even if the scheduled time occurs. (AI-inferred)
+	Disabled any
+	// The duration of the scaling schedule in seconds. Must be between 1 and 86400 seconds inclusive. (AI-inferred)
+	DurationSec any
+	// The minimum number of replicas that must be running for the autoscaler to apply this scaling schedule. If the current number of replicas is below this value, the autoscaler first scales to it. (AI-inferred)
 	MinRequiredReplicas any
-	Schedule            any
-	TimeZone            any
+	// The cron-style schedule expression that determines when the scaling schedule is active. It uses standard cron syntax (e.g., '0 9 * * *' for daily at 9 AM). (AI-inferred)
+	Schedule any
+	// The time zone to use when interpreting the schedule. Must be a time zone name from the IANA time zone database (e.g., 'America/New_York'). (AI-inferred)
+	TimeZone any
 }
 
 type Autoscaler_AutoscalingPolicy struct {
@@ -72,14 +82,18 @@ type Autoscaler_AutoscalingPolicy struct {
 }
 
 type Autoscaler_ScalingScheduleStatus struct {
+	// The timestamp of the most recent start of this scaling schedule. (AI-inferred)
 	LastStartTime any
 	NextStartTime any
-	State         any
+	// The state of the scaling schedule, which can be ACTIVE, OBSOLETE, or DELETED. (AI-inferred)
+	State any
 }
 
 type Autoscaler_StatusDetails struct {
+	// The human-readable status message that provides additional details about the autoscaler's current state. (AI-inferred)
 	Message any
-	Type    any
+	// The type of the autoscaler status detail, indicating a specific scaling condition or issue. Valid values include: ALL_INSTANCES_UNHEALTHY, BACKEND_SERVICE_DOES_NOT_EXIST, CAPPED_AT_MAX_NUM_REPLICAS, CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE, CUSTOM_METRIC_INVALID, MIN_EQUALS_MAX, MISSING_CUSTOM_METRIC_DATA_POINTS, MISSING_LOAD_BALANCING_DATA_POINTS, MODE_OFF, MODE_ONLY_SCALE_OUT, MODE_ONLY_UP, MORE_THAN_ONE_BACKEND_SERVICE, NOT_ENOUGH_QUOTA_AVAILABLE, REGION_RESOURCE_STOCKOUT, SCALING_TARGET_DOES_NOT_EXIST, SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX, SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN, UNKNOWN, UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION, ZONE_RESOURCE_STOCKOUT. (AI-inferred)
+	Type any
 }
 
 var Autoscaler_AutoscalingPolicy_CpuUtilizationFields = ubx.FieldMap{

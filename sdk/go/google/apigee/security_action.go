@@ -34,7 +34,9 @@ type SecurityAction_Deny struct {
 }
 
 type SecurityAction_Flag_Headers struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 

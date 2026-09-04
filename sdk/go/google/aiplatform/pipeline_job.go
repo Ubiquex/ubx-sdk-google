@@ -43,76 +43,125 @@ type PipelineJob_JobDetail_PipelineContext struct {
 }
 
 type PipelineJob_JobDetail_TaskDetails_Execution struct {
-	CreateTime    any
-	Description   any
-	DisplayName   any
-	Etag          any
-	Labels        any
-	Metadata      any
-	Name          any
-	SchemaTitle   any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A human-readable title for this schema. (AI-inferred)
+	SchemaTitle any
+	// The version of this schema. (AI-inferred)
 	SchemaVersion any
-	State         any
-	UpdateTime    any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetail struct {
-	FailedMainJobs            any
+	// The main container job(s) that failed during this task's own execution. (AI-inferred)
+	FailedMainJobs any
+	// The pre-caching-check job(s) that failed during this task's own execution. (AI-inferred)
 	FailedPreCachingCheckJobs any
-	MainJob                   any
-	PreCachingCheckJob        any
+	// A reference to this task's own main container job. (AI-inferred)
+	MainJob any
+	// A reference to this task's own pre-caching-check job. (AI-inferred)
+	PreCachingCheckJob any
 }
 
 type PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetail struct {
+	// The job(s) that failed during this task's own execution. (AI-inferred)
 	FailedJobs any
-	Job        any
+	// A reference to the underlying job. (AI-inferred)
+	Job any
 }
 
 type PipelineJob_JobDetail_TaskDetails_ExecutorDetail struct {
+	// Detail specific to a task executed as a container. (AI-inferred)
 	ContainerDetail any
+	// Detail specific to a task executed as a custom training job. (AI-inferred)
 	CustomJobDetail any
 }
 
 type PipelineJob_JobDetail_TaskDetails_Inputs_Artifacts struct {
-	CreateTime    any
-	Description   any
-	DisplayName   any
-	Etag          any
-	Labels        any
-	Metadata      any
-	Name          any
-	SchemaTitle   any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A human-readable title for this schema. (AI-inferred)
+	SchemaTitle any
+	// The version of this schema. (AI-inferred)
 	SchemaVersion any
-	State         any
-	UpdateTime    any
-	Uri           any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type PipelineJob_JobDetail_TaskDetails_Inputs struct {
+	// The pipeline artifact(s) making up this input or output. (AI-inferred)
 	Artifacts any
 }
 
 type PipelineJob_JobDetail_TaskDetails_PipelineTaskStatus struct {
-	Error      any
-	State      any
+	// Error detail for this failed operation. (AI-inferred)
+	Error any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
 	UpdateTime any
 }
 
 type PipelineJob_JobDetail_TaskDetails struct {
-	CreateTime         any
-	EndTime            any
-	Error              any
-	Execution          any
-	ExecutorDetail     any
-	Inputs             any
-	Outputs            any
-	ParentTaskId       any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// Error detail for this failed operation. (AI-inferred)
+	Error any
+	// Detail about this task's own concrete execution. (AI-inferred)
+	Execution any
+	// Detail about the underlying compute (container job or custom job) that executed this task. (AI-inferred)
+	ExecutorDetail any
+	// The input(s) to this operation. (AI-inferred)
+	Inputs any
+	// The output(s) produced by this operation. (AI-inferred)
+	Outputs any
+	// A reference to this task's own parent task in the pipeline DAG. (AI-inferred)
+	ParentTaskId any
+	// The history of status changes this pipeline task has gone through. (AI-inferred)
 	PipelineTaskStatus any
-	StartTime          any
-	State              any
-	TaskId             any
-	TaskName           any
-	TaskUniqueName     any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
+	// An identifier for this pipeline task, unique within its own pipeline run. (AI-inferred)
+	TaskId any
+	// The name of this pipeline task, as defined in the pipeline template. (AI-inferred)
+	TaskName any
+	// A globally unique name for this pipeline task, disambiguating tasks with the same `task_name` across loop/condition iterations. (AI-inferred)
+	TaskUniqueName any
 }
 
 type PipelineJob_JobDetail struct {
@@ -125,8 +174,11 @@ type PipelineJob_JobDetail struct {
 }
 
 type PipelineJob_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain        any
+	// The domain this configuration or resource applies to. (AI-inferred)
+	Domain any
+	// The VPC network this resource is deployed into. (AI-inferred)
 	TargetNetwork any
+	// The Google Cloud project this resource targets. (AI-inferred)
 	TargetProject any
 }
 
@@ -138,12 +190,16 @@ type PipelineJob_PscInterfaceConfig struct {
 }
 
 type PipelineJob_RuntimeConfig_InputArtifacts struct {
+	// A reference to the specific pipeline artifact this applies to. (AI-inferred)
 	ArtifactId any
 }
 
 type PipelineJob_RuntimeConfig_Parameters struct {
+	// A floating-point value, populated when this field's own type is a double. (AI-inferred)
 	DoubleValue any
-	IntValue    any
+	// An integer value, populated when this field's own type is an integer. (AI-inferred)
+	IntValue any
+	// A text value, populated when this field's own type is a string. (AI-inferred)
 	StringValue any
 }
 

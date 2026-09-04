@@ -7,8 +7,11 @@ export interface WorkflowInvocation_DataEncryptionState {
 }
 
 export interface WorkflowInvocation_InvocationConfig_IncludedTargets {
+  /** The database (BigQuery project) this included target table belongs to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** The name of this included target table. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The schema (BigQuery dataset) this included target table belongs to. (AI-inferred) */
   schema?: string | Computed<string>;
 }
 

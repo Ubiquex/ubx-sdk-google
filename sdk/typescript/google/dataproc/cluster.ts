@@ -7,98 +7,152 @@ export interface Cluster_Config_AutoscalingConfig {
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators {
+  /** How many accelerator (GPU) devices are attached per instance. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The full URI of the accelerator type attached. (AI-inferred) */
   acceleratorTypeUri?: string | Computed<string>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs {
+  /** The size, in GB, of this disk. (AI-inferred) */
   diskSizeGb?: number | Computed<number>;
+  /** The disk type provisioned, e.g. `pd-ssd`. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** The provisioned IOPS for this disk, when using a disk type that supports configuring it. (AI-inferred) */
   provisionedIops?: string | Computed<string>;
+  /** The provisioned throughput for this disk, when using a disk type that supports configuring it. (AI-inferred) */
   provisionedThroughput?: string | Computed<string>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig {
+  /** Additional persistent disk(s) attached to each instance, beyond the boot disk. (AI-inferred) */
   attachedDiskConfigs?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs[] | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs[]>;
+  /** The provisioned IOPS for the boot disk, when using a disk type that supports configuring it. (AI-inferred) */
   bootDiskProvisionedIops?: string | Computed<string>;
+  /** The provisioned throughput for the boot disk, when using a disk type that supports configuring it. (AI-inferred) */
   bootDiskProvisionedThroughput?: string | Computed<string>;
+  /** The size, in GB, of each instance's own boot disk. (AI-inferred) */
   bootDiskSizeGb?: number | Computed<number>;
+  /** The boot disk type provisioned for each instance, e.g. `pd-ssd`. (AI-inferred) */
   bootDiskType?: string | Computed<string>;
+  /** The interface local SSDs are attached over, e.g. `NVME` or `SCSI`. (AI-inferred) */
   localSsdInterface?: string | Computed<string>;
+  /** How many local SSD disks are attached. (AI-inferred) */
   numLocalSsds?: number | Computed<number>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList {
+  /** Configuration for each instance's own attached disk(s). (AI-inferred) */
   diskConfig?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig>;
+  /** The machine type(s) this applies to. (AI-inferred) */
   machineTypes?: string[] | Computed<string[]>;
+  /** The relative preference order of this option -- lower values are preferred first. (AI-inferred) */
   rank?: number | Computed<number>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults {
+  /** The Compute Engine machine type provisioned for each instance. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The number of VM instances this applies to. (AI-inferred) */
   vmCount?: number | Computed<number>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix {
+  /** The number of instances always provisioned as standard (non-Spot), before any additional Spot capacity mix applies. (AI-inferred) */
   standardCapacityBase?: number | Computed<number>;
+  /** The percentage of capacity above `standard_capacity_base` provisioned as standard (non-Spot), rather than Spot. (AI-inferred) */
   standardCapacityPercentAboveBase?: number | Computed<number>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy {
+  /** The machine type(s) considered for this instance group's own flexible provisioning. (AI-inferred) */
   instanceMachineTypes?: Record<string, string> | Computed<Record<string, string>>;
+  /** The ranked machine type option(s) considered when provisioning instances for this group. (AI-inferred) */
   instanceSelectionList?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList[] | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList[]>;
+  /** Output only. Which machine type(s) were actually selected when provisioning this instance group. (AI-inferred) */
   instanceSelectionResults?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults[] | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults[]>;
+  /** Configures a mix of standard and Spot/preemptible instances within this group. (AI-inferred) */
   provisioningModelMix?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences {
+  /** An identifier for this specific instance. (AI-inferred) */
   instanceId?: string | Computed<string>;
+  /** The name of this instance. (AI-inferred) */
   instanceName?: string | Computed<string>;
+  /** The public ECIES key used to encrypt sensitive job parameters. (AI-inferred) */
   publicEciesKey?: string | Computed<string>;
+  /** A public key used for encryption or authentication. (AI-inferred) */
   publicKey?: string | Computed<string>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig {
+  /** The name of the underlying Compute Engine managed instance group. (AI-inferred) */
   instanceGroupManagerName?: string | Computed<string>;
+  /** The URI of the underlying Compute Engine managed instance group. (AI-inferred) */
   instanceGroupManagerUri?: string | Computed<string>;
+  /** The name of the Compute Engine instance template used for this instance group. (AI-inferred) */
   instanceTemplateName?: string | Computed<string>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig {
+  /** The fraction of instances that must successfully register before cluster creation is considered complete. (AI-inferred) */
   requiredRegistrationFraction?: number | Computed<number>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig {
+  /** The accelerator (GPU) device(s) attached to each instance. (AI-inferred) */
   accelerators?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators[] | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators[]>;
+  /** Configuration for each instance's own attached disk(s). (AI-inferred) */
   diskConfig?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig>;
+  /** The custom image URI used for this cluster's own instances. (AI-inferred) */
   imageUri?: string | Computed<string>;
+  /** Configures a mix of machine types and provisioning models for this instance group, to improve availability and cost. (AI-inferred) */
   instanceFlexibilityPolicy?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy>;
+  /** The name(s) of the instance(s) this applies to. (AI-inferred) */
   instanceNames?: string[] | Computed<string[]>;
+  /** Reference(s) to specific instance(s). (AI-inferred) */
   instanceReferences?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences[] | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences[]>;
+  /** Whether this instance is preemptible/spot, rather than standard on-demand. (AI-inferred) */
   isPreemptible?: boolean | Computed<boolean>;
+  /** The full URI of the machine type provisioned. (AI-inferred) */
   machineTypeUri?: string | Computed<string>;
+  /** Configuration for the underlying Compute Engine managed instance group backing this cluster's own instance group. (AI-inferred) */
   managedGroupConfig?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig>;
+  /** The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred) */
   minCpuPlatform?: string | Computed<string>;
+  /** The minimum number of instances required for cluster creation to succeed. (AI-inferred) */
   minNumInstances?: number | Computed<number>;
+  /** How many instances this group has. (AI-inferred) */
   numInstances?: number | Computed<number>;
+  /** Whether instances in this group are `PREEMPTIBLE`, `SPOT`, or non-preemptible. (AI-inferred) */
   preemptibility?: string | Computed<string>;
+  /** Configuration for how many instances must be running before the cluster is considered started. (AI-inferred) */
   startupConfig?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups_NodeGroup {
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for a Dataproc node group -- a shared pool of instances usable across clusters. (AI-inferred) */
   nodeGroupConfig?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig>;
+  /** The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
 }
 
 export interface Cluster_Config_AuxiliaryNodeGroups {
+  /** A reference to the node group this applies to. (AI-inferred) */
   nodeGroup?: Cluster_Config_AuxiliaryNodeGroups_NodeGroup | Computed<Cluster_Config_AuxiliaryNodeGroups_NodeGroup>;
+  /** A caller-chosen identifier for this node group, unique within its own cluster. (AI-inferred) */
   nodeGroupId?: string | Computed<string>;
 }
 
 export interface Cluster_Config_DataprocMetricConfig_Metrics {
+  /** Caller-specified metric(s) used to override the default autoscaling signal. (AI-inferred) */
   metricOverrides?: string[] | Computed<string[]>;
+  /** Which source (e.g. Hadoop YARN, Spark) autoscaling metrics are drawn from. (AI-inferred) */
   metricSource?: string | Computed<string>;
 }
 
@@ -192,36 +246,55 @@ export interface Cluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTarget {
 }
 
 export interface Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling {
+  /** The maximum number of nodes this group may scale up to. (AI-inferred) */
   maxNodeCount?: number | Computed<number>;
+  /** The minimum number of nodes this group scales down to. (AI-inferred) */
   minNodeCount?: number | Computed<number>;
 }
 
 export interface Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators {
+  /** How many accelerator (GPU) devices are attached per instance. (AI-inferred) */
   acceleratorCount?: string | Computed<string>;
+  /** The accelerator (GPU) type attached, e.g. `nvidia-tesla-t4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The fraction of a physical GPU allocated per partition, when GPU partitioning is used. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
 }
 
 export interface Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config {
+  /** The accelerator (GPU) device(s) attached to each instance. (AI-inferred) */
   accelerators?: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators[] | Computed<Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators[]>;
+  /** The Cloud KMS key used to encrypt each instance's own boot disk. (AI-inferred) */
   bootDiskKmsKey?: string | Computed<string>;
+  /** How many local SSD disks are attached to each instance. (AI-inferred) */
   localSsdCount?: number | Computed<number>;
+  /** The Compute Engine machine type provisioned for each instance. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred) */
   minCpuPlatform?: string | Computed<string>;
+  /** Whether each instance is preemptible, lower cost but reclaimable at any time. (AI-inferred) */
   preemptible?: boolean | Computed<boolean>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** Whether each instance runs as a Spot VM, lower cost but reclaimable at any time. (AI-inferred) */
   spot?: boolean | Computed<boolean>;
 }
 
 export interface Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig {
+  /** Configuration for automatically resizing this cluster's own worker instance group(s) based on load. (AI-inferred) */
   autoscaling?: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling | Computed<Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling>;
+  /** The configuration for this resource. (AI-inferred) */
   config?: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config | Computed<Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config>;
+  /** The zone(s) this resource is spread across. (AI-inferred) */
   locations?: string[] | Computed<string[]>;
 }
 
 export interface Cluster_Config_GkeClusterConfig_NodePoolTarget {
+  /** A reference to the node pool this applies to, for a GKE-based Dataproc cluster. (AI-inferred) */
   nodePool?: string | Computed<string>;
+  /** Configuration for a GKE node pool backing this Dataproc-on-GKE cluster. (AI-inferred) */
   nodePoolConfig?: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig | Computed<Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig>;
+  /** The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
 }
 
@@ -235,7 +308,9 @@ export interface Cluster_Config_GkeClusterConfig {
 }
 
 export interface Cluster_Config_InitializationActions {
+  /** The Pig/Hive/Presto script file to execute. (AI-inferred) */
   executableFile?: string | Computed<string>;
+  /** How long this workflow template's own execution may run before being cancelled. (AI-inferred) */
   executionTimeout?: string | Computed<string>;
 }
 

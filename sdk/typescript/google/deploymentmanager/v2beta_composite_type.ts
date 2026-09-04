@@ -444,6 +444,7 @@ const V2betaCompositeType_TemplateContentsFields: FieldMap = {
 export interface V2betaCompositeTypeConfig {
   /** An optional textual description of the resource; provided by the client when the resource is created. */
   description?: string | Computed<string>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
   /** Output only. Creation timestamp in RFC3339 text format. */
   insertTime?: string | Computed<string>;
@@ -455,6 +456,7 @@ export interface V2betaCompositeTypeConfig {
   operation?: V2betaCompositeType_Operation | Computed<V2betaCompositeType_Operation>;
   /** Output only. Server defined URL for the resource. */
   selfLink?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   status?: string | Computed<string>;
   /** Files that make up the template contents of a template type. */
   templateContents?: V2betaCompositeType_TemplateContents | Computed<V2betaCompositeType_TemplateContents>;
@@ -463,6 +465,7 @@ export interface V2betaCompositeTypeConfig {
 export interface V2betaCompositeTypeAttrs {
   /** An optional textual description of the resource; provided by the client when the resource is created. */
   description: string;
+  /** A unique identifier for this resource. (AI-inferred) */
   id: string;
   /** Output only. Creation timestamp in RFC3339 text format. */
   insertTime: string;
@@ -474,6 +477,7 @@ export interface V2betaCompositeTypeAttrs {
   operation: V2betaCompositeType_Operation;
   /** Output only. Server defined URL for the resource. */
   selfLink: string;
+  /** The current status of this resource. (AI-inferred) */
   status: string;
   /** Files that make up the template contents of a template type. */
   templateContents: V2betaCompositeType_TemplateContents;

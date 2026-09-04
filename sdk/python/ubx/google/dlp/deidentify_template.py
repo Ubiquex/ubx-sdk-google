@@ -8,29 +8,41 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor:
+    # The blue color channel value. (AI-inferred)
     blue: Any = None
+    # The green color channel value. (AI-inferred)
     green: Any = None
+    # The red color channel value. (AI-inferred)
     red: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore:
+    # The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes:
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
+    # A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
     sensitivity_score: Any = None
+    # The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms:
+    # Applies this transformation to every detected info type, rather than a specific selected list. (AI-inferred)
     all_info_types: Any = None
+    # Applies this transformation to all detected text, rather than only specific info types. (AI-inferred)
     all_text: Any = None
+    # The RGB color used to redact matched regions in an image. (AI-inferred)
     redaction_color: Any = None
+    # Restricts this transformation to specific, named info type(s), rather than all of them. (AI-inferred)
     selected_info_types: Any = None
 
 @dataclasses.dataclass
@@ -40,135 +52,202 @@ class DeidentifyTemplate_DeidentifyConfig_ImageTransformations:
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue:
+    # The day-of-month component of a date value. (AI-inferred)
     day: Any = None
+    # The month component of a date value. (AI-inferred)
     month: Any = None
+    # The year component of a date value. (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max:
+    # A `true`/`false` value, populated when this `Value`'s own type is boolean. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     boolean_value: Any = None
+    # A calendar date value (year/month/day), populated when this `Value`'s own type is a date. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     date_value: Any = None
+    # A day-of-the-week value (e.g. `MONDAY`), populated when this `Value`'s own type is a weekday. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     day_of_week_value: Any = None
+    # A floating-point number, populated when this `Value`'s own type is a float. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     float_value: Any = None
+    # A whole-number value, populated when this `Value`'s own type is an integer. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     integer_value: Any = None
+    # A text value, populated when this `Value`'s own type is a string. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     string_value: Any = None
+    # A time-of-day value (hour/minute/second), populated when this `Value`'s own type is a time and the date/timezone aren't significant. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     time_value: Any = None
+    # A full date-and-time value, populated when this `Value`'s own type is a timestamp. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     timestamp_value: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets:
+    # The upper bound of this range. (AI-inferred)
     max: Any = None
+    # The lower bound of this range. (AI-inferred)
     min: Any = None
+    # The value substituted in place of the original. (AI-inferred)
     replacement_value: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig:
+    # The bucket range(s) making up this bucketing configuration. (AI-inferred)
     buckets: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore:
+    # How many characters at the start/end are left unmasked, before masking the rest. (AI-inferred)
     characters_to_skip: Any = None
+    # A predefined character set (e.g. punctuation) skipped over when applying this transformation. (AI-inferred)
     common_characters_to_ignore: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig:
+    # Character(s) skipped over (left as-is) when applying this transformation. (AI-inferred)
     characters_to_ignore: Any = None
+    # The character substituted in place of each masked character. (AI-inferred)
     masking_character: Any = None
+    # How many characters to mask, counting from the position `reverse_order` specifies. (AI-inferred)
     number_to_mask: Any = None
+    # Whether masking counts characters from the end of the value rather than the start. (AI-inferred)
     reverse_order: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context:
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped:
+    # The resource name of the Cloud KMS key used to unwrap `wrapped_key`. (AI-inferred)
     crypto_key_name: Any = None
+    # The crypto key's own bytes, encrypted (wrapped) by the Cloud KMS key named in `crypto_key_name`. (AI-inferred)
     wrapped_key: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped:
+    # The raw key bytes themselves. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey:
+    # A crypto key wrapped by Cloud KMS -- Sensitive Data Protection calls KMS to unwrap `wrapped_key` using `crypto_key_name` before use. (AI-inferred)
     kms_wrapped: Any = None
+    # A crypto key generated fresh, at random, for this request only -- never persisted or reusable afterward. (AI-inferred)
     transient: Any = None
+    # A crypto key supplied as raw, unencrypted bytes. Simpler than `kms_wrapped` but carries more risk of the key leaking, since Sensitive Data Protection never handles it wrapped. (AI-inferred)
     unwrapped: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig:
+    # Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
     context: Any = None
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
+    # The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
     surrogate_info_type: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig:
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig:
+    # A predefined character set (e.g. numeric, alphanumeric) the format-preserving encryption output is drawn from. (AI-inferred)
     common_alphabet: Any = None
+    # Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
     context: Any = None
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
+    # A caller-defined character set the format-preserving encryption output is drawn from, instead of a predefined `common_alphabet`. (AI-inferred)
     custom_alphabet: Any = None
+    # The number of distinct symbols the format-preserving encryption's own alphabet uses. (AI-inferred)
     radix: Any = None
+    # The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
     surrogate_info_type: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig:
+    # Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
     context: Any = None
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
+    # The most days a date may be shifted earlier. (AI-inferred)
     lower_bound_days: Any = None
+    # The most days a date may be shifted later. (AI-inferred)
     upper_bound_days: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig:
+    # The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
     bucket_size: Any = None
+    # The lowest value included in bucketing. (AI-inferred)
     lower_bound: Any = None
+    # The highest value included in bucketing. (AI-inferred)
     upper_bound: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig:
+    # The literal value to substitute in. (AI-inferred)
     new_value: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList:
+    # The literal words/phrases making up this `word_list`. (AI-inferred)
     words: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig:
+    # A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
     word_list: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig:
+    # Which component of the date/time value to keep, e.g. `YEAR` or `MONTH`. (AI-inferred)
     part_to_extract: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation:
+    # Groups numeric or date values into named ranges, replacing the original value with its own bucket label. (AI-inferred)
     bucketing_config: Any = None
+    # Replaces characters in a matching value with a fixed masking character, optionally leaving some characters unmasked. (AI-inferred)
     character_mask_config: Any = None
+    # De-identifies a value with a deterministic, reversible cryptographic transform -- the same input always produces the same output, letting values still be joined/grouped on after de-identification. (AI-inferred)
     crypto_deterministic_config: Any = None
+    # De-identifies a value by replacing it with a cryptographic hash, a one-way transform that can't be reversed. (AI-inferred)
     crypto_hash_config: Any = None
+    # De-identifies a value using format-preserving encryption (FFX mode) -- the output has the same format (length, character set) as the input. (AI-inferred)
     crypto_replace_ffx_fpe_config: Any = None
+    # De-identifies dates by shifting them a random, per-context number of days within a bounded range, preserving date arithmetic (like intervals between events) while hiding the real dates. (AI-inferred)
     date_shift_config: Any = None
+    # Groups numeric values into fixed-width ranges between `lower_bound` and `upper_bound`, each `bucket_size` wide. (AI-inferred)
     fixed_size_bucketing_config: Any = None
+    # De-identifies a value by removing it entirely, leaving no replacement. (AI-inferred)
     redact_config: Any = None
+    # De-identifies a value by replacing it with a fixed, generic replacement token. (AI-inferred)
     replace_config: Any = None
+    # De-identifies a value by replacing it with a value drawn from a supplied word list. (AI-inferred)
     replace_dictionary_config: Any = None
+    # De-identifies a value by replacing it with its own detected info type name (e.g. `[EMAIL_ADDRESS]`), rather than a fixed token. (AI-inferred)
     replace_with_info_type_config: Any = None
+    # De-identifies a date/time value by keeping only one component of it (e.g. just the year), discarding the rest. (AI-inferred)
     time_part_config: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
     primitive_transformation: Any = None
 
 @dataclasses.dataclass
@@ -178,32 +257,44 @@ class DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations:
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions:
+    # A reference to the field this applies to. (AI-inferred)
     field: Any = None
+    # The comparison operator this condition uses. (AI-inferred)
     operator: Any = None
+    # The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred)
     logical_operator: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition:
+    # The condition expression(s) making up this rule. (AI-inferred)
     expressions: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations:
+    # The condition that must hold for this rule to apply. (AI-inferred)
     condition: Any = None
+    # The field(s) this applies to. (AI-inferred)
     fields: Any = None
+    # De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred)
     info_type_transformations: Any = None
+    # A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
     primitive_transformation: Any = None
 
 @dataclasses.dataclass
 class DeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions:
+    # The condition that must hold for this rule to apply. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass

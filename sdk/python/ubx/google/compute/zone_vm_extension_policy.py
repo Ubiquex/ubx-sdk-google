@@ -13,10 +13,12 @@ class ZoneVmExtensionPolicy_ExtensionPolicies:
 
 @dataclasses.dataclass
 class ZoneVmExtensionPolicy_InstanceSelectors_LabelSelector:
+    # A map of label keys to values that an instance must have for the selector to match. An instance is included if it has all specified labels with matching values. (AI-inferred)
     inclusion_labels: Any = None
 
 @dataclasses.dataclass
 class ZoneVmExtensionPolicy_InstanceSelectors:
+    # Specifies the label-based criteria for selecting instances to apply the VM extension policy. This selector uses labels on instances to determine inclusion. (AI-inferred)
     label_selector: Any = None
 
 _ZoneVmExtensionPolicy_ExtensionPoliciesFields = {

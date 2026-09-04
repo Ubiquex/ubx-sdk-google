@@ -2,56 +2,83 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Example_Actions_AgentUtterance {
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Example_Actions_FlowInvocation {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the flow this applies to. (AI-inferred) */
   flow?: string | Computed<string>;
+  /** The current state of a flow invocation. (AI-inferred) */
   flowState?: string | Computed<string>;
 }
 
 export interface Example_Actions_FlowTransition {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the flow this applies to. (AI-inferred) */
   flow?: string | Computed<string>;
 }
 
 export interface Example_Actions_PlaybookInvocation_PlaybookInput {
+  /** A summary of the conversation so far, provided as context. (AI-inferred) */
   precedingConversationSummary?: string | Computed<string>;
 }
 
 export interface Example_Actions_PlaybookInvocation_PlaybookOutput {
+  /** Output only. A summary of how this test run or evaluation went. (AI-inferred) */
   executionSummary?: string | Computed<string>;
 }
 
 export interface Example_Actions_PlaybookInvocation {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the playbook this applies to. (AI-inferred) */
   playbook?: string | Computed<string>;
+  /** The input parameter value(s) a playbook invocation was given. (AI-inferred) */
   playbookInput?: Example_Actions_PlaybookInvocation_PlaybookInput | Computed<Example_Actions_PlaybookInvocation_PlaybookInput>;
+  /** The output parameter value(s) a playbook invocation produced. (AI-inferred) */
   playbookOutput?: Example_Actions_PlaybookInvocation_PlaybookOutput | Computed<Example_Actions_PlaybookInvocation_PlaybookOutput>;
+  /** The current state of a playbook invocation. (AI-inferred) */
   playbookState?: string | Computed<string>;
 }
 
 export interface Example_Actions_PlaybookTransition {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the playbook this applies to. (AI-inferred) */
   playbook?: string | Computed<string>;
 }
 
 export interface Example_Actions_ToolUse {
+  /** The specific action, exposed by `tool`, being invoked. (AI-inferred) */
   action?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The parameter value(s) passed into this action when it's invoked. (AI-inferred) */
   inputActionParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The parameter value(s) this action's own execution is expected to produce. (AI-inferred) */
   outputActionParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The tool this fulfillment or response invokes. (AI-inferred) */
   tool?: string | Computed<string>;
 }
 
 export interface Example_Actions {
+  /** A line spoken by the virtual agent, as recorded in a test case's own conversation turn. (AI-inferred) */
   agentUtterance?: Example_Actions_AgentUtterance | Computed<Example_Actions_AgentUtterance>;
+  /** A record of a flow being invoked during this conversation. (AI-inferred) */
   flowInvocation?: Example_Actions_FlowInvocation | Computed<Example_Actions_FlowInvocation>;
+  /** A record of the conversation moving from one flow/page to another. (AI-inferred) */
   flowTransition?: Example_Actions_FlowTransition | Computed<Example_Actions_FlowTransition>;
+  /** A record of a playbook being invoked during this conversation. (AI-inferred) */
   playbookInvocation?: Example_Actions_PlaybookInvocation | Computed<Example_Actions_PlaybookInvocation>;
+  /** A record of the conversation moving into or out of a playbook. (AI-inferred) */
   playbookTransition?: Example_Actions_PlaybookTransition | Computed<Example_Actions_PlaybookTransition>;
+  /** A record of a tool being invoked during this conversation. (AI-inferred) */
   toolUse?: Example_Actions_ToolUse | Computed<Example_Actions_ToolUse>;
+  /** A line spoken by the end user, as recorded in a test case's own conversation turn. (AI-inferred) */
   userUtterance?: Example_Actions_AgentUtterance | Computed<Example_Actions_AgentUtterance>;
 }
 
@@ -146,27 +173,46 @@ const Example_ActionsFields: FieldMap = {
 };
 
 export interface ExampleConfig {
+  /** The action(s) taken by this step or event. (AI-inferred) */
   actions?: Example_Actions[] | Computed<Example_Actions[]>;
+  /** The current state of this conversation. (AI-inferred) */
   conversationState?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The input parameter value(s) a playbook invocation was given. (AI-inferred) */
   playbookInput?: Example_Actions_PlaybookInvocation_PlaybookInput | Computed<Example_Actions_PlaybookInvocation_PlaybookInput>;
+  /** The output parameter value(s) a playbook invocation produced. (AI-inferred) */
   playbookOutput?: Example_Actions_PlaybookInvocation_PlaybookOutput | Computed<Example_Actions_PlaybookInvocation_PlaybookOutput>;
 }
 
 export interface ExampleAttrs {
+  /** The action(s) taken by this step or event. (AI-inferred) */
   actions: Example_Actions[];
+  /** The current state of this conversation. (AI-inferred) */
   conversationState: string;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The input parameter value(s) a playbook invocation was given. (AI-inferred) */
   playbookInput: Example_Actions_PlaybookInvocation_PlaybookInput;
+  /** The output parameter value(s) a playbook invocation produced. (AI-inferred) */
   playbookOutput: Example_Actions_PlaybookInvocation_PlaybookOutput;
+  /** How many tokens this content consumed. (AI-inferred) */
   tokenCount: string;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

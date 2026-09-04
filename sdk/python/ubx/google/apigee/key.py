@@ -8,12 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Key_ApiProducts:
+    # A reference to the API product this applies to. (AI-inferred)
     apiproduct: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class Key_Attributes:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 _Key_AttributesFields = {

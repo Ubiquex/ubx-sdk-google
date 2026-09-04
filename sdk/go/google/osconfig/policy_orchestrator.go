@@ -4,12 +4,15 @@ package osconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabels struct {
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
 	Labels any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_Inventories struct {
+	// The short name of the operating system this applies to, e.g. `debian` or `windows`. (AI-inferred)
 	OsShortName any
-	OsVersion   any
+	// The operating system version this applies to. (AI-inferred)
+	OsVersion any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter struct {
@@ -24,115 +27,176 @@ type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_Instanc
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Gcs struct {
-	Bucket     any
+	// The Cloud Storage bucket this resource is sourced from. (AI-inferred)
+	Bucket any
+	// The specific Cloud Storage object generation to use. (AI-inferred)
 	Generation any
-	Object     any
+	// The Cloud Storage object this resource is sourced from. (AI-inferred)
+	Object any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Remote struct {
+	// A SHA-256 checksum verifying this resource's own content. (AI-inferred)
 	Sha256Checksum any
-	Uri            any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File struct {
+	// Whether package installation is allowed without verifying its own signature. (AI-inferred)
 	AllowInsecure any
-	Gcs           any
-	LocalPath     any
-	Remote        any
+	// Sources this resource from a Cloud Storage object. (AI-inferred)
+	Gcs any
+	// The destination path on the instance this resource is installed to. (AI-inferred)
+	LocalPath any
+	// Sources this resource from a remote URL. (AI-inferred)
+	Remote any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce struct {
-	Args           any
-	File           any
-	Interpreter    any
+	// The argument(s) passed to this command. (AI-inferred)
+	Args any
+	// A reference to a specific file. (AI-inferred)
+	File any
+	// The interpreter used to run this script, e.g. `SHELL` or `POWERSHELL`. (AI-inferred)
+	Interpreter any
+	// The path this script's own output is written to. (AI-inferred)
 	OutputFilePath any
-	Script         any
+	// The script content to run. (AI-inferred)
+	Script any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec struct {
-	Enforce  any
+	// Whether this policy's own desired state is actively enforced, rather than only reported. (AI-inferred)
+	Enforce any
+	// A command used to check whether this resource's own desired state is already satisfied. (AI-inferred)
 	Validate any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_File struct {
-	Content     any
-	File        any
-	Path        any
+	// The literal content of this resource. (AI-inferred)
+	Content any
+	// A reference to a specific file. (AI-inferred)
+	File any
+	// A file or object path. (AI-inferred)
+	Path any
+	// The file permission(s) applied. (AI-inferred)
 	Permissions any
-	State       any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Deb struct {
+	// Whether package dependencies are automatically pulled in. (AI-inferred)
 	PullDeps any
-	Source   any
+	// Where this resource's own content is sourced from. (AI-inferred)
+	Source any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Msi struct {
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
 	Properties any
-	Source     any
+	// Where this resource's own content is sourced from. (AI-inferred)
+	Source any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg struct {
-	Apt          any
-	Deb          any
+	// Configuration for managing packages via APT (Debian/Ubuntu). (AI-inferred)
+	Apt any
+	// Configuration for installing a `.deb` package. (AI-inferred)
+	Deb any
+	// Whether this resource should be present or absent on the target instance. (AI-inferred)
 	DesiredState any
-	Googet       any
-	Msi          any
-	Rpm          any
-	Yum          any
-	Zypper       any
+	// Configuration for installing a Googet package (Windows). (AI-inferred)
+	Googet any
+	// Configuration for installing an MSI package (Windows). (AI-inferred)
+	Msi any
+	// Configuration for installing an RPM package. (AI-inferred)
+	Rpm any
+	// Configuration for managing packages via YUM (RHEL/CentOS). (AI-inferred)
+	Yum any
+	// Configuration for managing packages via Zypper (SUSE). (AI-inferred)
+	Zypper any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Apt struct {
-	ArchiveType  any
-	Components   any
+	// The kind of APT repository archive, e.g. `DEB` or `DEB_SRC`. (AI-inferred)
+	ArchiveType any
+	// The APT repository component(s) (e.g. `main`, `contrib`) to include. (AI-inferred)
+	Components any
+	// The APT repository distribution (e.g. `stable`) to use. (AI-inferred)
 	Distribution any
-	GpgKey       any
-	Uri          any
+	// The GPG key used to verify this repository's own packages. (AI-inferred)
+	GpgKey any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Goo struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
-	Url  any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Yum struct {
-	BaseUrl     any
+	// The base URL of this repository. (AI-inferred)
+	BaseUrl any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	GpgKeys     any
-	Id          any
+	// The GPG key(s) used to verify this repository's own packages. (AI-inferred)
+	GpgKeys any
+	// An identifier for this resource, unique within its own containing policy. (AI-inferred)
+	Id any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository struct {
-	Apt    any
-	Goo    any
-	Yum    any
+	// Configuration for managing packages via APT (Debian/Ubuntu). (AI-inferred)
+	Apt any
+	// Configuration for managing packages via Googet (Windows). (AI-inferred)
+	Goo any
+	// Configuration for managing packages via YUM (RHEL/CentOS). (AI-inferred)
+	Yum any
+	// Configuration for managing packages via Zypper (SUSE). (AI-inferred)
 	Zypper any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources struct {
-	Exec       any
-	File       any
-	Id         any
-	Pkg        any
+	// Runs a script or executable as this resource's own action. (AI-inferred)
+	Exec any
+	// A reference to a specific file. (AI-inferred)
+	File any
+	// An identifier for this resource, unique within its own containing policy. (AI-inferred)
+	Id any
+	// Configuration for managing a specific software package. (AI-inferred)
+	Pkg any
+	// Configuration for a package repository this instance should use. (AI-inferred)
 	Repository any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups struct {
+	// Restricts this policy to instance(s) matching specific OS short name/version. (AI-inferred)
 	InventoryFilters any
-	Resources        any
+	// The resource(s) this policy manages. (AI-inferred)
+	Resources any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies struct {
+	// Whether this policy is considered satisfied when no resource group matches the target instance. (AI-inferred)
 	AllowNoResourceGroupMatch any
-	Description               any
-	Id                        any
-	Mode                      any
-	ResourceGroups            any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// An identifier for this resource, unique within its own containing policy. (AI-inferred)
+	Id any
+	// The file permission mode applied. (AI-inferred)
+	Mode any
+	// The resource group(s) making up this policy, each targeting a specific OS. (AI-inferred)
+	ResourceGroups any
 }
 
 type PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_Rollout_DisruptionBudget struct {
@@ -186,16 +250,21 @@ type PolicyOrchestrator_OrchestratedResource struct {
 }
 
 type PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelector struct {
+	// The location(s) included in this policy's own scope. (AI-inferred)
 	IncludedLocations any
 }
 
 type PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelector struct {
-	IncludedFolders  any
+	// The folder(s) included in this inventory/report. (AI-inferred)
+	IncludedFolders any
+	// The project(s) included in this policy's own scope. (AI-inferred)
 	IncludedProjects any
 }
 
 type PolicyOrchestrator_OrchestrationScope_Selectors struct {
-	LocationSelector          any
+	// Restricts this policy's own scope to specific location(s). (AI-inferred)
+	LocationSelector any
+	// Restricts this policy's own scope based on resource hierarchy (organization, folder, project). (AI-inferred)
 	ResourceHierarchySelector any
 }
 

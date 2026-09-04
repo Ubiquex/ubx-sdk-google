@@ -4,35 +4,50 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value struct {
-	Contains   any
-	Exact      any
+	// Matches when the value contains this substring. (AI-inferred)
+	Contains any
+	// Matches only this exact value. (AI-inferred)
+	Exact any
+	// Whether this match is case-insensitive. (AI-inferred)
 	IgnoreCase any
-	Prefix     any
-	Suffix     any
+	// Matches values starting with this prefix. (AI-inferred)
+	Prefix any
+	// Matches values ending with this suffix. (AI-inferred)
+	Suffix any
 }
 
 type ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type ExtensionBinding_MatchConditions_To_Destination_HeaderSet struct {
+	// The HTTP header(s) this applies to. (AI-inferred)
 	Headers any
 }
 
 type ExtensionBinding_MatchConditions_To_Destination struct {
+	// A set of HTTP header match condition(s) that must all be satisfied. (AI-inferred)
 	HeaderSet any
-	Hosts     any
-	Paths     any
+	// The host(s) this rule applies to. (AI-inferred)
+	Hosts any
+	// The URL path(s) this rule matches. (AI-inferred)
+	Paths any
+	// The resource(s) this applies to. (AI-inferred)
 	Resources any
 }
 
 type ExtensionBinding_MatchConditions_To struct {
-	Destination    any
+	// The destination this traffic is routed to. (AI-inferred)
+	Destination any
+	// A destination explicitly excluded from this match. (AI-inferred)
 	NotDestination any
 }
 
 type ExtensionBinding_MatchConditions struct {
+	// The destination(s) this rule matches traffic to. (AI-inferred)
 	To any
 }
 

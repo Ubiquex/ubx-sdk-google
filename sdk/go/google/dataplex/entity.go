@@ -59,15 +59,22 @@ type Entity_Format struct {
 }
 
 type Entity_Schema_Fields struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Fields      any
-	Mode        any
-	Name        any
-	Type        any
+	// The field(s) making up this schema or aspect. (AI-inferred)
+	Fields any
+	// Whether this schema field is nullable, required, or repeated. (AI-inferred)
+	Mode any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Entity_Schema_PartitionFields struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 

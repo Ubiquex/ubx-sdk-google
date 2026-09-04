@@ -46,13 +46,18 @@ class Workload_PartnerPermissions:
 
 @dataclasses.dataclass
 class Workload_ResourceSettings:
+    # A human-readable name for this resource setting, shown in the console alongside the underlying `resource_id`. (AI-inferred)
     display_name: Any = None
+    # The identifier of the resource this setting applies to -- a project ID for `CONSUMER_PROJECT`/`ENCRYPTION_KEYS_PROJECT`, or a KeyRing ID for `KEYRING`. (AI-inferred)
     resource_id: Any = None
+    # Which kind of resource this setting configures: `CONSUMER_PROJECT` or `CONSUMER_FOLDER` (the workload's own regulated project/folder), `ENCRYPTION_KEYS_PROJECT` (the project holding CMEK keys), or `KEYRING` (the KMS KeyRing itself). (AI-inferred)
     resource_type: Any = None
 
 @dataclasses.dataclass
 class Workload_Resources:
+    # Output only. The identifier of a resource Assured Workloads created as part of this workload (a project ID or KeyRing ID). (AI-inferred)
     resource_id: Any = None
+    # Output only. The kind of resource `resource_id` refers to: `CONSUMER_PROJECT`, `CONSUMER_FOLDER`, `ENCRYPTION_KEYS_PROJECT`, or `KEYRING`. (AI-inferred)
     resource_type: Any = None
 
 @dataclasses.dataclass

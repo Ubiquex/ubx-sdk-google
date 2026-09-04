@@ -21,8 +21,11 @@ export interface CustomJob_JobSpec_BaseOutputDirectory {
 }
 
 export interface CustomJob_JobSpec_PscInterfaceConfig_DnsPeeringConfigs {
+  /** The domain this configuration or resource applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** The VPC network this resource is deployed into. (AI-inferred) */
   targetNetwork?: string | Computed<string>;
+  /** The Google Cloud project this resource targets. (AI-inferred) */
   targetProject?: string | Computed<string>;
 }
 
@@ -47,65 +50,101 @@ export interface CustomJob_JobSpec_Scheduling {
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_Env {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec {
+  /** The argument value(s) passed to this call. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** The container entrypoint command and argument(s) to run. (AI-inferred) */
   command?: string[] | Computed<string[]>;
+  /** Environment variable(s) set for this job's own execution. (AI-inferred) */
   env?: CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_Env[] | Computed<CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_Env[]>;
+  /** The container image URI to run. (AI-inferred) */
   imageUri?: string | Computed<string>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_DiskSpec {
+  /** The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred) */
   bootDiskSizeGb?: number | Computed<number>;
+  /** The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred) */
   bootDiskType?: string | Computed<string>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_LustreMounts {
+  /** The filesystem identifier to mount. (AI-inferred) */
   filesystem?: string | Computed<string>;
+  /** The IP address of the filesystem instance to mount. (AI-inferred) */
   instanceIp?: string | Computed<string>;
+  /** The filesystem path this volume is mounted at. (AI-inferred) */
   mountPoint?: string | Computed<string>;
+  /** An identifier for this mounted volume, unique within its own job. (AI-inferred) */
   volumeHandle?: string | Computed<string>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity {
+  /** A key identifying this entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred) */
   reservationAffinityType?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec {
+  /** How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
+  /** The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred) */
   reservationAffinity?: CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity | Computed<CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity>;
+  /** The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred) */
   tpuTopology?: string | Computed<string>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_NfsMounts {
+  /** The filesystem path this volume is mounted at. (AI-inferred) */
   mountPoint?: string | Computed<string>;
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The server hostname or IP address to connect to. (AI-inferred) */
   server?: string | Computed<string>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpec {
+  /** The argument value(s) passed to this call. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** Environment variable(s) set for this job's own execution. (AI-inferred) */
   env?: CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_Env[] | Computed<CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_Env[]>;
+  /** The prebuilt Vertex AI executor image this Python package runs on top of. (AI-inferred) */
   executorImageUri?: string | Computed<string>;
+  /** The Cloud Storage URI(s) of the Python package(s) (e.g. a `.tar.gz` sdist) to install and run. (AI-inferred) */
   packageUris?: string[] | Computed<string[]>;
+  /** The Python module to execute as this worker's own entry point. (AI-inferred) */
   pythonModule?: string | Computed<string>;
 }
 
 export interface CustomJob_JobSpec_WorkerPoolSpecs {
+  /** The container image and command this worker pool runs. (AI-inferred) */
   containerSpec?: CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec | Computed<CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec>;
+  /** The boot disk configuration provisioned for this job's own machine(s). (AI-inferred) */
   diskSpec?: CustomJob_JobSpec_WorkerPoolSpecs_DiskSpec | Computed<CustomJob_JobSpec_WorkerPoolSpecs_DiskSpec>;
+  /** Managed Lustre filesystem(s) mounted into this job's own worker containers. (AI-inferred) */
   lustreMounts?: CustomJob_JobSpec_WorkerPoolSpecs_LustreMounts[] | Computed<CustomJob_JobSpec_WorkerPoolSpecs_LustreMounts[]>;
+  /** The machine type, accelerator, and count provisioned to run this job. (AI-inferred) */
   machineSpec?: CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec | Computed<CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec>;
+  /** NFS filesystem(s) mounted into this job's own worker containers. (AI-inferred) */
   nfsMounts?: CustomJob_JobSpec_WorkerPoolSpecs_NfsMounts[] | Computed<CustomJob_JobSpec_WorkerPoolSpecs_NfsMounts[]>;
+  /** A Python package (rather than a container image) this worker pool runs, using a prebuilt executor image. (AI-inferred) */
   pythonPackageSpec?: CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpec | Computed<CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpec>;
+  /** How many machine replicas this job runs. (AI-inferred) */
   replicaCount?: string | Computed<string>;
 }
 

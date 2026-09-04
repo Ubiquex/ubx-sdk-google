@@ -9,10 +9,12 @@ type VpnGateway_Params struct {
 }
 
 type VpnGateway_VpnInterfaces struct {
-	Id                     any
+	Id any
+	// The Interconnect attachment to use for this VPN interface. This is applicable when using HA VPN over Cloud Interconnect. (AI-inferred)
 	InterconnectAttachment any
-	IpAddress              any
-	Ipv6Address            any
+	// The external IP address assigned to this VPN gateway interface. (AI-inferred)
+	IpAddress   any
+	Ipv6Address any
 }
 
 var VpnGateway_ParamsFields = ubx.FieldMap{

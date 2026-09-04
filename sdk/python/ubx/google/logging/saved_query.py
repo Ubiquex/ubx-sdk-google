@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SavedQuery_LoggingQuery_SummaryFields:
+    # A reference to a specific field. (AI-inferred)
     field: Any = None
 
 @dataclasses.dataclass
@@ -23,32 +24,50 @@ class SavedQuery_LoggingQuery:
 
 @dataclasses.dataclass
 class SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunction:
+    # The parameter(s) configuring this operation. (AI-inferred)
     parameters: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualField:
+    # The source field(s) this virtual field is derived from. (AI-inferred)
     underlying_field_sources: Any = None
+    # The computation type defining how this virtual field's own value is derived. (AI-inferred)
     virtual_field_type: Any = None
 
 @dataclasses.dataclass
 class SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField:
+    # An alternate name this field is also known by. (AI-inferred)
     alias: Any = None
+    # Converts this field's own value to a different type. (AI-inferred)
     cast: Any = None
+    # A reference to a specific field. (AI-inferred)
     field: Any = None
+    # The transformation operation applied to this field. (AI-inferred)
     operation: Any = None
+    # Extracts a value from this field using a regular expression. (AI-inferred)
     regex_extraction: Any = None
+    # The SQL aggregation function (e.g. `COUNT`, `SUM`) applied to this field. (AI-inferred)
     sql_aggregation_function: Any = None
+    # The unit values are rounded down to when this field is truncated. (AI-inferred)
     truncation_granularity: Any = None
+    # A field computed from other field(s), rather than read directly from the log entry. (AI-inferred)
     virtual_field: Any = None
 
 @dataclasses.dataclass
 class SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources:
+    # A reference to another field this alias resolves to. (AI-inferred)
     alias_ref: Any = None
+    # The data type of this analytics table column. (AI-inferred)
     column_type: Any = None
+    # A reference to a specific field. (AI-inferred)
     field: Any = None
+    # Whether this field's own value is parsed as JSON. (AI-inferred)
     is_json: Any = None
+    # The path to this field's own containing parent. (AI-inferred)
     parent_path: Any = None
+    # A field derived and exposed as a new, named column. (AI-inferred)
     projected_field: Any = None
 
 @dataclasses.dataclass
@@ -75,7 +94,9 @@ class SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter:
 
 @dataclasses.dataclass
 class SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBys:
+    # Where this field's own value is read from, e.g. the log payload or its own labels. (AI-inferred)
     field_source: Any = None
+    # Whether results are sorted ascending or descending. (AI-inferred)
     sort_order_direction: Any = None
 
 @dataclasses.dataclass

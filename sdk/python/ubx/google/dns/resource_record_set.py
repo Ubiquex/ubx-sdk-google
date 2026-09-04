@@ -8,26 +8,41 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers:
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The IP protocol version this applies to. (AI-inferred)
     ip_protocol: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The type of load balancer this internal target is, e.g. regional internal. (AI-inferred)
     load_balancer_type: Any = None
+    # The VPC network this private zone or policy is visible from. (AI-inferred)
     network_url: Any = None
+    # A network port number. (AI-inferred)
     port: Any = None
+    # The Google Cloud project this applies to. (AI-inferred)
     project: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets:
+    # The external IP address(es) a forwarding rule directs matching queries to. (AI-inferred)
     external_endpoints: Any = None
+    # The internal load balancer(s) this record's own routing policy targets. (AI-inferred)
     internal_load_balancers: Any = None
 
 @dataclasses.dataclass
 class ResourceRecordSet_RoutingPolicy_Geo_Items:
+    # The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
     health_checked_targets: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The record data (RDATA) value(s) for this DNS record. (AI-inferred)
     rrdatas: Any = None
+    # The DNSSEC signature record data for this record set. (AI-inferred)
     signature_rrdatas: Any = None
 
 @dataclasses.dataclass
@@ -36,12 +51,14 @@ class ResourceRecordSet_RoutingPolicy_Geo:
     enable_fencing: Any = None
     # The primary geo routing configuration. If there are multiple items with the same location, an error is returned instead.
     items: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ResourceRecordSet_RoutingPolicy_PrimaryBackup:
     # Configures a `RRSetRoutingPolicy` that routes based on the geo location of the querying user.
     backup_geo_targets: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # HealthCheckTargets describes endpoints to health-check when responding to Routing Policy queries. Only the healthy endpoints will be included in the response. Set either `internal_load_balancer` or `external_endpoints`. Do not set both.
     primary_targets: Any = None
@@ -50,15 +67,22 @@ class ResourceRecordSet_RoutingPolicy_PrimaryBackup:
 
 @dataclasses.dataclass
 class ResourceRecordSet_RoutingPolicy_Wrr_Items:
+    # The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
     health_checked_targets: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The record data (RDATA) value(s) for this DNS record. (AI-inferred)
     rrdatas: Any = None
+    # The DNSSEC signature record data for this record set. (AI-inferred)
     signature_rrdatas: Any = None
+    # The relative weight of this target in weighted round-robin routing -- higher values receive proportionally more traffic. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class ResourceRecordSet_RoutingPolicy_Wrr:
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
@@ -67,6 +91,7 @@ class ResourceRecordSet_RoutingPolicy:
     geo: Any = None
     # The fully qualified URL of the HealthCheck to use for this RRSetRoutingPolicy. Format this URL like `https://www.googleapis.com/compute/v1/projects/{project}/global/healthChecks/{healthCheck}`. https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks
     health_check: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # Configures a RRSetRoutingPolicy such that all queries are responded with the primary_targets if they are healthy. And if all of them are unhealthy, then we fallback to a geo localized policy.
     primary_backup: Any = None
@@ -173,6 +198,7 @@ _ResourceRecordSet_RoutingPolicyFields = {
 
 @dataclasses.dataclass
 class ResourceRecordSetConfig:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # For example, www.example.com.
     name: Any = None
@@ -189,6 +215,7 @@ class ResourceRecordSetConfig:
 
 @dataclasses.dataclass
 class ResourceRecordSetAttrs:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # For example, www.example.com.
     name: Any = None

@@ -4,13 +4,18 @@ package dns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policy_AlternativeNameServerConfig_TargetNameServers struct {
+	// Whether forwarded queries are sent over the public internet or a private network path. (AI-inferred)
 	ForwardingPath any
-	Ipv4Address    any
-	Ipv6Address    any
-	Kind           any
+	// An IPv4 address. (AI-inferred)
+	Ipv4Address any
+	// An IPv6 address. (AI-inferred)
+	Ipv6Address any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type Policy_AlternativeNameServerConfig struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.
 	TargetNameServers any
@@ -19,16 +24,21 @@ type Policy_AlternativeNameServerConfig struct {
 type Policy_Dns64Config_Scope struct {
 	// Controls whether DNS64 is enabled globally for all networks bound to the policy.
 	AllQueries any
-	Kind       any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type Policy_Dns64Config struct {
-	Kind  any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// What this configuration's own visibility is scoped to. (AI-inferred)
 	Scope any
 }
 
 type Policy_Networks struct {
-	Kind       any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The VPC network this private zone or policy is visible from. (AI-inferred)
 	NetworkUrl any
 }
 
@@ -68,6 +78,7 @@ var Policy_NetworksFields = ubx.FieldMap{
 }
 
 type PolicyConfig struct {
+	// Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
 	AlternativeNameServerConfig any
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
 	Description any
@@ -78,7 +89,8 @@ type PolicyConfig struct {
 	// Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.
 	EnableLogging any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User-assigned name for this policy.
 	Name any
@@ -87,6 +99,7 @@ type PolicyConfig struct {
 }
 
 type PolicyAttrs struct {
+	// Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
 	AlternativeNameServerConfig any
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
 	Description any
@@ -97,7 +110,8 @@ type PolicyAttrs struct {
 	// Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.
 	EnableLogging any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User-assigned name for this policy.
 	Name any

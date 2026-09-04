@@ -17,8 +17,11 @@ class IssueModel_InputDataConfig:
 
 @dataclasses.dataclass
 class IssueModel_TrainingStats_IssueStats:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the detected issue this applies to. (AI-inferred)
     issue: Any = None
+    # How many conversations have been manually labeled for this dataset. (AI-inferred)
     labeled_conversations_count: Any = None
 
 @dataclasses.dataclass

@@ -2,20 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_InstanceMessages {
+  /** A machine-readable code identifying this instance-level advisory, e.g. `ZONE_DISTRIBUTION_UNBALANCED`. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable description of this instance-level advisory. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime {
+  /** The hour component of the start time. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of the start time. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of the start time. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of the start time. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface Instance_MaintenancePolicy_WeeklyMaintenanceWindow {
+  /** The day of the week this recurring maintenance window occurs on. (AI-inferred) */
   day?: string | Computed<string>;
+  /** How long this recurring maintenance window lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** The time of day this recurring maintenance window starts at. (AI-inferred) */
   startTime?: Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime | Computed<Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime>;
 }
 
@@ -40,18 +49,28 @@ export interface Instance_MaintenanceSchedule {
 }
 
 export interface Instance_MemcacheNodes_Parameters {
+  /** An identifier for this parameter set. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The Memcached configuration parameters themselves, as key/value pairs. (AI-inferred) */
   params?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Instance_MemcacheNodes {
+  /** Output only. The hostname or IP address this Memcached node listens on. (AI-inferred) */
   host?: string | Computed<string>;
+  /** Output only. The full, exact Memcached server version running on this node. (AI-inferred) */
   memcacheFullVersion?: string | Computed<string>;
+  /** The Memcached protocol version this instance runs, e.g. `MEMCACHE_1_5`. (AI-inferred) */
   memcacheVersion?: string | Computed<string>;
+  /** Output only. An identifier for this node, unique within its own instance. (AI-inferred) */
   nodeId?: string | Computed<string>;
+  /** Output only. The effective Memcached configuration parameters currently applied to this node. (AI-inferred) */
   parameters?: Instance_MemcacheNodes_Parameters | Computed<Instance_MemcacheNodes_Parameters>;
+  /** Output only. The port this Memcached node listens on. (AI-inferred) */
   port?: number | Computed<number>;
+  /** Output only. This node's own current lifecycle state, e.g. `READY` or `UPDATING`. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Output only. The zone this node is running in. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
@@ -134,6 +153,7 @@ export interface InstanceConfig {
   nodeConfig?: Instance_NodeConfig | Computed<Instance_NodeConfig>;
   /** Required. Number of nodes in the Memcached instance. */
   nodeCount?: number | Computed<number>;
+  /** The Memcached configuration parameters requested for this instance; may differ from `memcache_nodes.parameters` until every node has picked up the change. (AI-inferred) */
   parameters?: Instance_MemcacheNodes_Parameters | Computed<Instance_MemcacheNodes_Parameters>;
   /** Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29. */
   reservedIpRangeId?: string[] | Computed<string[]>;
@@ -176,6 +196,7 @@ export interface InstanceAttrs {
   nodeConfig: Instance_NodeConfig;
   /** Required. Number of nodes in the Memcached instance. */
   nodeCount: number;
+  /** The Memcached configuration parameters requested for this instance; may differ from `memcache_nodes.parameters` until every node has picked up the change. (AI-inferred) */
   parameters: Instance_MemcacheNodes_Parameters;
   /** Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29. */
   reservedIpRangeId: string[];

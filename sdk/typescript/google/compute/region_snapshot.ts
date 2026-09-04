@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionSnapshot_GuestOsFeatures {
+  /** The guest OS feature type to enable for the snapshot. Possible values include: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -52,16 +53,19 @@ export interface RegionSnapshotConfig {
   name?: string | Computed<string>;
   /** Additional snapshot params. */
   params?: RegionSnapshot_Params | Computed<RegionSnapshot_Params>;
+  /** The customer-managed encryption key used to encrypt this region snapshot. (AI-inferred) */
   snapshotEncryptionKey?: RegionSnapshot_SnapshotEncryptionKey | Computed<RegionSnapshot_SnapshotEncryptionKey>;
   /** Indicates the type of the snapshot. */
   snapshotType?: string | Computed<string>;
   /** The source disk used to create this snapshot. */
   sourceDisk?: string | Computed<string>;
+  /** The customer-supplied encryption key details for the source disk. This field is output-only and reflects the encryption key used by the source disk when it is protected by a customer-supplied encryption key. (AI-inferred) */
   sourceDiskEncryptionKey?: RegionSnapshot_SnapshotEncryptionKey | Computed<RegionSnapshot_SnapshotEncryptionKey>;
   /** The source disk whose recovery checkpoint will be used to create this snapshot. */
   sourceDiskForRecoveryCheckpoint?: string | Computed<string>;
   /** The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot */
   sourceInstantSnapshot?: string | Computed<string>;
+  /** The customer-supplied encryption key of the source instant snapshot. This key is required if the source instant snapshot is encrypted with a customer-managed key, and it is also exposed as an output when populated by the API. (AI-inferred) */
   sourceInstantSnapshotEncryptionKey?: RegionSnapshot_SnapshotEncryptionKey | Computed<RegionSnapshot_SnapshotEncryptionKey>;
   /** Cloud Storage bucket storage location of the snapshot (regional or multi-regional). */
   storageLocations?: string[] | Computed<string[]>;
@@ -116,6 +120,7 @@ export interface RegionSnapshotAttrs {
   satisfiesPzs: boolean;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** The customer-managed encryption key used to encrypt this region snapshot. (AI-inferred) */
   snapshotEncryptionKey: RegionSnapshot_SnapshotEncryptionKey;
   /** Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted. */
   snapshotGroupId: string;
@@ -125,6 +130,7 @@ export interface RegionSnapshotAttrs {
   snapshotType: string;
   /** The source disk used to create this snapshot. */
   sourceDisk: string;
+  /** The customer-supplied encryption key details for the source disk. This field is output-only and reflects the encryption key used by the source disk when it is protected by a customer-supplied encryption key. (AI-inferred) */
   sourceDiskEncryptionKey: RegionSnapshot_SnapshotEncryptionKey;
   /** The source disk whose recovery checkpoint will be used to create this snapshot. */
   sourceDiskForRecoveryCheckpoint: string;
@@ -132,6 +138,7 @@ export interface RegionSnapshotAttrs {
   sourceDiskId: string;
   /** The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot */
   sourceInstantSnapshot: string;
+  /** The customer-supplied encryption key of the source instant snapshot. This key is required if the source instant snapshot is encrypted with a customer-managed key, and it is also exposed as an output when populated by the API. (AI-inferred) */
   sourceInstantSnapshotEncryptionKey: RegionSnapshot_SnapshotEncryptionKey;
   /** Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this snapshot. For example, if you created the snapshot from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used. */
   sourceInstantSnapshotId: string;

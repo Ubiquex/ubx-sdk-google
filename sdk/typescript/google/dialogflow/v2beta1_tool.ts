@@ -200,29 +200,50 @@ const V2beta1Tool_OpenApiSpecFields: FieldMap = {
 };
 
 export interface V2beta1ToolConfig {
+  /** Configures whether this tool's own real action(s) require explicit confirmation before running. (AI-inferred) */
   actionConfirmationRequirement?: Record<string, string> | Computed<Record<string, string>>;
+  /** The specification of a connector (an external API or service) a generator can call. (AI-inferred) */
   connectorSpec?: V2beta1Tool_ConnectorSpec | Computed<V2beta1Tool_ConnectorSpec>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The specification of an extension a generator can invoke. (AI-inferred) */
   extensionSpec?: V2beta1Tool_ExtensionSpec | Computed<V2beta1Tool_ExtensionSpec>;
+  /** Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred) */
   functionSpec?: V2beta1Tool_FunctionSpec | Computed<V2beta1Tool_FunctionSpec>;
+  /** Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSpec?: V2beta1Tool_OpenApiSpec | Computed<V2beta1Tool_OpenApiSpec>;
+  /** The real, caller-supplied key identifying which of this playbook's own tools an action invokes. (AI-inferred) */
   toolKey?: string | Computed<string>;
 }
 
 export interface V2beta1ToolAttrs {
+  /** Configures whether this tool's own real action(s) require explicit confirmation before running. (AI-inferred) */
   actionConfirmationRequirement: Record<string, string>;
+  /** The specification of a connector (an external API or service) a generator can call. (AI-inferred) */
   connectorSpec: V2beta1Tool_ConnectorSpec;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The specification of an extension a generator can invoke. (AI-inferred) */
   extensionSpec: V2beta1Tool_ExtensionSpec;
+  /** Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred) */
   functionSpec: V2beta1Tool_FunctionSpec;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSpec: V2beta1Tool_OpenApiSpec;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred) */
   satisfiesPzi: boolean;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred) */
   satisfiesPzs: boolean;
+  /** The real, caller-supplied key identifying which of this playbook's own tools an action invokes. (AI-inferred) */
   toolKey: string;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

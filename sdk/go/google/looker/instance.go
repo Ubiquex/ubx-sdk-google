@@ -63,8 +63,10 @@ type Instance_EncryptionConfig struct {
 }
 
 type Instance_IngressIpAllowlistConfig_AllowlistRules struct {
+	// A human-readable note explaining why this IP range is allowlisted for ingress to the instance. (AI-inferred)
 	Description any
-	IpRange     any
+	// A CIDR-notation IP range allowed to reach this Looker instance's UI and API logins. (AI-inferred)
+	IpRange any
 }
 
 type Instance_IngressIpAllowlistConfig struct {
@@ -109,10 +111,15 @@ type Instance_PeriodicExportConfig struct {
 }
 
 type Instance_PscConfig_ServiceAttachments struct {
-	ConnectionStatus           any
-	FailureReason              any
-	LocalFqdn                  any
-	LocalFqdns                 any
+	// The state of this Private Service Connect egress connection: `ACCEPTED` (established and functioning), `PENDING` (not yet established), `NEEDS_ATTENTION` (a problem with the target service attachment), `REJECTED` (explicitly rejected by the target project), `CLOSED` (the target service attachment no longer exists), or `UNKNOWN`. (AI-inferred)
+	ConnectionStatus any
+	// Output only. A human-readable explanation of why this service attachment connection isn't `ACCEPTED`, populated when `connection_status` indicates a problem. (AI-inferred)
+	FailureReason any
+	// Output only. The fully qualified domain name this Looker instance uses, on its own side, to reach the published service over this PSC connection. (AI-inferred)
+	LocalFqdn any
+	// Output only. Every local fully qualified domain name resolving to this PSC connection, when more than one is provisioned. (AI-inferred)
+	LocalFqdns any
+	// The URI of the published service attachment this Looker instance connects to for egress over Private Service Connect. (AI-inferred)
 	TargetServiceAttachmentUri any
 }
 

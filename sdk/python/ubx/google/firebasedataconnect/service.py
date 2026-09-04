@@ -8,69 +8,109 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Service_Connectors_ClientCache:
+    # Whether the entity's own identifier is included in this result. (AI-inferred)
     entity_id_included: Any = None
+    # Whether strict schema validation is enforced. (AI-inferred)
     strict_validation_enabled: Any = None
 
 @dataclasses.dataclass
 class Service_Connectors_Source_Files:
+    # The literal content of this field. (AI-inferred)
     content: Any = None
+    # A file or resource path. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class Service_Connectors_Source:
+    # The file(s) making up this schema or connector. (AI-inferred)
     files: Any = None
 
 @dataclasses.dataclass
 class Service_Connectors:
+    # Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
     annotations: Any = None
+    # Caching configuration applied on the client side. (AI-inferred)
     client_cache: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Output only. `true` while the backend is still working to bring this resource's actual state in line with its most recent requested change. (AI-inferred)
     reconciling: Any = None
+    # The GraphQL source document defining this schema or connector. (AI-inferred)
     source: Any = None
+    # Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
     uid: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Service_Schemas_Datasources_HttpGraphql:
+    # How long this operation is allowed to run before timing out. (AI-inferred)
     timeout: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Service_Schemas_Datasources_Postgresql_CloudSql:
+    # The Cloud SQL edition this instance runs, e.g. Enterprise or Enterprise Plus. (AI-inferred)
     edition: Any = None
+    # A reference to the underlying database instance. (AI-inferred)
     instance: Any = None
 
 @dataclasses.dataclass
 class Service_Schemas_Datasources_Postgresql:
+    # Configuration for connecting to a Cloud SQL database. (AI-inferred)
     cloud_sql: Any = None
+    # A reference to the database this applies to. (AI-inferred)
     database: Any = None
+    # Whether this resource is temporary and not intended to persist. (AI-inferred)
     ephemeral: Any = None
+    # The GraphQL schema defining this service's own data model. (AI-inferred)
     schema: Any = None
+    # How schema change(s) are applied to the underlying database. (AI-inferred)
     schema_migration: Any = None
+    # How strictly the schema is validated against the underlying database before deployment. (AI-inferred)
     schema_validation: Any = None
+    # Whether this schema is not yet linked to a data source. (AI-inferred)
     unlinked: Any = None
 
 @dataclasses.dataclass
 class Service_Schemas_Datasources:
+    # Configuration for exposing this connector's own operations over HTTP GraphQL. (AI-inferred)
     http_graphql: Any = None
+    # Configuration specific to a PostgreSQL data source. (AI-inferred)
     postgresql: Any = None
 
 @dataclasses.dataclass
 class Service_Schemas:
+    # Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
     annotations: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The data source(s) this service connects to. (AI-inferred)
     datasources: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Output only. `true` while the backend is still working to bring this resource's actual state in line with its most recent requested change. (AI-inferred)
     reconciling: Any = None
+    # The GraphQL source document defining this schema or connector. (AI-inferred)
     source: Any = None
+    # Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
     uid: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 _Service_Connectors_Source_FilesFields = {

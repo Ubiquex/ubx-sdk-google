@@ -21,16 +21,24 @@ type Feature_Spec_Configmanagement_Binauthz struct {
 }
 
 type Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides_Containers struct {
+	// The name of this container. (AI-inferred)
 	ContainerName any
-	CpuLimit      any
-	CpuRequest    any
-	MemoryLimit   any
+	// The maximum CPU this container may use. (AI-inferred)
+	CpuLimit any
+	// The CPU amount reserved for this container. (AI-inferred)
+	CpuRequest any
+	// The maximum memory this container may use. (AI-inferred)
+	MemoryLimit any
+	// The memory amount reserved for this container. (AI-inferred)
 	MemoryRequest any
 }
 
 type Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides struct {
-	Containers          any
-	DeploymentName      any
+	// The container(s) making up this deployment. (AI-inferred)
+	Containers any
+	// The name of this Kubernetes Deployment. (AI-inferred)
+	DeploymentName any
+	// The Kubernetes namespace this Deployment runs in. (AI-inferred)
 	DeploymentNamespace any
 }
 
@@ -138,91 +146,146 @@ type Feature_Spec_Configmanagement struct {
 }
 
 type Feature_Spec_Identityservice_AuthMethods_AzureadConfig struct {
-	ClientId              any
-	ClientSecret          any
+	// The OAuth/OIDC client ID used to authenticate. (AI-inferred)
+	ClientId any
+	// The OAuth/OIDC client secret used to authenticate. (AI-inferred)
+	ClientSecret any
+	// The client secret, encrypted for storage. (AI-inferred)
 	EncryptedClientSecret any
-	GroupFormat           any
-	KubectlRedirectUri    any
-	Tenant                any
-	UserClaim             any
+	// How group membership is formatted in the identity provider's own claims. (AI-inferred)
+	GroupFormat any
+	// The redirect URI `kubectl` uses to complete the OIDC login flow. (AI-inferred)
+	KubectlRedirectUri any
+	// A reference to the tenant this applies to. (AI-inferred)
+	Tenant any
+	// The OIDC claim holding the user's own identifier. (AI-inferred)
+	UserClaim any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_GoogleConfig struct {
+	// Whether this feature is turned off. (AI-inferred)
 	Disable any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_LdapConfig_Group struct {
-	BaseDn      any
-	Filter      any
+	// The LDAP base distinguished name searches start from. (AI-inferred)
+	BaseDn any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The LDAP attribute used as the user's own unique identifier. (AI-inferred)
 	IdAttribute any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_LdapConfig_Server struct {
+	// The base64-encoded CA certificate trusted for verifying this server's own TLS certificate. (AI-inferred)
 	CertificateAuthorityData any
-	ConnectionType           any
-	Host                     any
+	// How this cluster connects back to Google Cloud, e.g. directly or via a proxy. (AI-inferred)
+	ConnectionType any
+	// The hostname of the identity provider server. (AI-inferred)
+	Host any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentials struct {
-	Dn                any
+	// A distinguished name. (AI-inferred)
+	Dn any
+	// The password, encrypted for storage. (AI-inferred)
 	EncryptedPassword any
-	Password          any
+	// The password used to authenticate. (AI-inferred)
+	Password any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount struct {
+	// Username/password credentials used for a simple LDAP bind. (AI-inferred)
 	SimpleBindCredentials any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_LdapConfig_User struct {
-	BaseDn         any
-	Filter         any
-	IdAttribute    any
+	// The LDAP base distinguished name searches start from. (AI-inferred)
+	BaseDn any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The LDAP attribute used as the user's own unique identifier. (AI-inferred)
+	IdAttribute any
+	// The LDAP attribute presented to the user as their own login name. (AI-inferred)
 	LoginAttribute any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_LdapConfig struct {
-	Group          any
-	Server         any
+	// A reference to the group this applies to. (AI-inferred)
+	Group any
+	// The server hostname or address this connects to. (AI-inferred)
+	Server any
+	// The service account credentials used to bind to this LDAP directory for authentication. (AI-inferred)
 	ServiceAccount any
-	User           any
+	// A reference to the user this applies to. (AI-inferred)
+	User any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_OidcConfig struct {
+	// The base64-encoded CA certificate trusted for verifying this server's own TLS certificate. (AI-inferred)
 	CertificateAuthorityData any
-	ClientId                 any
-	ClientSecret             any
-	DeployCloudConsoleProxy  any
-	EnableAccessToken        any
-	EncryptedClientSecret    any
-	ExtraParams              any
-	GroupPrefix              any
-	GroupsClaim              any
-	IssuerUri                any
-	KubectlRedirectUri       any
-	Scopes                   any
-	UserClaim                any
-	UserPrefix               any
+	// The OAuth/OIDC client ID used to authenticate. (AI-inferred)
+	ClientId any
+	// The OAuth/OIDC client secret used to authenticate. (AI-inferred)
+	ClientSecret any
+	// Whether a proxy is deployed to let the Cloud Console reach this cluster's own private control plane. (AI-inferred)
+	DeployCloudConsoleProxy any
+	// Whether short-lived access tokens are issued for authenticating to this cluster. (AI-inferred)
+	EnableAccessToken any
+	// The client secret, encrypted for storage. (AI-inferred)
+	EncryptedClientSecret any
+	// Additional caller-defined parameter(s) passed to the identity provider. (AI-inferred)
+	ExtraParams any
+	// A prefix prepended to group names sourced from the identity provider. (AI-inferred)
+	GroupPrefix any
+	// The OIDC claim holding a user's own group membership. (AI-inferred)
+	GroupsClaim any
+	// The OIDC issuer URL for this identity provider. (AI-inferred)
+	IssuerUri any
+	// The redirect URI `kubectl` uses to complete the OIDC login flow. (AI-inferred)
+	KubectlRedirectUri any
+	// The OAuth scope(s) requested. (AI-inferred)
+	Scopes any
+	// The OIDC claim holding the user's own identifier. (AI-inferred)
+	UserClaim any
+	// A prefix prepended to usernames sourced from the identity provider. (AI-inferred)
+	UserPrefix any
 }
 
 type Feature_Spec_Identityservice_AuthMethods_SamlConfig struct {
-	AttributeMapping             any
-	GroupPrefix                  any
-	GroupsAttribute              any
+	// How claims in the identity provider's own token map to Kubernetes user/group attributes. (AI-inferred)
+	AttributeMapping any
+	// A prefix prepended to group names sourced from the identity provider. (AI-inferred)
+	GroupPrefix any
+	// The LDAP attribute holding a user's own group membership. (AI-inferred)
+	GroupsAttribute any
+	// The certificate(s) trusted for verifying SAML assertions from this identity provider. (AI-inferred)
 	IdentityProviderCertificates any
-	IdentityProviderId           any
-	IdentityProviderSsoUri       any
-	UserAttribute                any
-	UserPrefix                   any
+	// An identifier for this identity provider. (AI-inferred)
+	IdentityProviderId any
+	// The single sign-on URL for this SAML identity provider. (AI-inferred)
+	IdentityProviderSsoUri any
+	// The LDAP attribute holding the user's own identifier. (AI-inferred)
+	UserAttribute any
+	// A prefix prepended to usernames sourced from the identity provider. (AI-inferred)
+	UserPrefix any
 }
 
 type Feature_Spec_Identityservice_AuthMethods struct {
+	// Configuration for authenticating using Microsoft Entra ID (Azure AD). (AI-inferred)
 	AzureadConfig any
-	GoogleConfig  any
-	LdapConfig    any
-	Name          any
-	OidcConfig    any
-	Proxy         any
-	SamlConfig    any
+	// Configuration for authenticating using Google identity. (AI-inferred)
+	GoogleConfig any
+	// Configuration for authenticating against an LDAP directory. (AI-inferred)
+	LdapConfig any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for authenticating using OpenID Connect. (AI-inferred)
+	OidcConfig any
+	// The proxy this connection routes through. (AI-inferred)
+	Proxy any
+	// Configuration for authenticating using SAML. (AI-inferred)
+	SamlConfig any
 }
 
 type Feature_Spec_Identityservice_IdentityServiceOptions_DiagnosticInterface struct {
@@ -252,31 +315,45 @@ type Feature_Spec_Origin struct {
 }
 
 type Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits struct {
-	Cpu    any
+	// The CPU amount requested or allocated. (AI-inferred)
+	Cpu any
+	// The memory amount requested or allocated. (AI-inferred)
 	Memory any
 }
 
 type Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources struct {
-	Limits   any
+	// The maximum resource amount(s) allowed. (AI-inferred)
+	Limits any
+	// The resource amount(s) reserved for this container. (AI-inferred)
 	Requests any
 }
 
 type Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerations struct {
-	Effect   any
-	Key      any
+	// What happens to a pod that doesn't tolerate this taint. (AI-inferred)
+	Effect any
+	// A key identifying this entry. (AI-inferred)
+	Key any
+	// How this taint's own key/value is compared against a toleration. (AI-inferred)
 	Operator any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs struct {
+	// The compute resource requirement(s) for this container. (AI-inferred)
 	ContainerResources any
-	PodAffinity        any
-	PodAntiAffinity    any
-	PodTolerations     any
-	ReplicaCount       any
+	// Constraint(s) preferring or requiring pods to be scheduled near other specific pods. (AI-inferred)
+	PodAffinity any
+	// Constraint(s) preferring or requiring pods to be scheduled away from other specific pods. (AI-inferred)
+	PodAntiAffinity any
+	// The taint(s) this pod tolerates, allowing it to be scheduled onto otherwise-repelling nodes. (AI-inferred)
+	PodTolerations any
+	// How many replicas this deployment runs. (AI-inferred)
+	ReplicaCount any
 }
 
 type Feature_Spec_Policycontroller_PolicyControllerHubConfig_PolicyContent_Bundles struct {
+	// The Kubernetes namespace(s) excluded from this policy. (AI-inferred)
 	ExemptedNamespaces any
 }
 
@@ -377,18 +454,25 @@ type Feature_State_Clusterupgrade_Ignored struct {
 }
 
 type Feature_State_Clusterupgrade_Upgrades_Status struct {
-	Code       any
-	Reason     any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
 	UpdateTime any
 }
 
 type Feature_State_Clusterupgrade_Upgrades_Upgrade struct {
-	Name    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
 type Feature_State_Clusterupgrade_Upgrades struct {
-	Status  any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// Configuration for automatically upgrading this component. (AI-inferred)
 	Upgrade any
 }
 
@@ -433,25 +517,36 @@ type Feature_State_Configmanagement_ConfigSyncState_DeploymentState struct {
 }
 
 type Feature_State_Configmanagement_ConfigSyncState_Errors struct {
+	// A human-readable description of the error. (AI-inferred)
 	ErrorMessage any
 }
 
 type Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvk struct {
-	Group   any
-	Kind    any
+	// A reference to the group this applies to. (AI-inferred)
+	Group any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
 type Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources struct {
-	ResourceGvk       any
-	ResourceName      any
+	// The Kubernetes Group/Version/Kind of this resource. (AI-inferred)
+	ResourceGvk any
+	// The name of this Kubernetes resource. (AI-inferred)
+	ResourceName any
+	// The Kubernetes namespace this resource belongs to. (AI-inferred)
 	ResourceNamespace any
-	SourcePath        any
+	// The path this configuration was sourced from. (AI-inferred)
+	SourcePath any
 }
 
 type Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors struct {
-	Code           any
-	ErrorMessage   any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// The resource(s) associated with this error. (AI-inferred)
 	ErrorResources any
 }
 
@@ -584,8 +679,10 @@ type Feature_State_Metering struct {
 }
 
 type Feature_State_Policycontroller_ComponentStates struct {
+	// Additional detail about this result. (AI-inferred)
 	Details any
-	State   any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type Feature_State_Policycontroller_PolicyContentState struct {
@@ -607,9 +704,12 @@ type Feature_State_Policycontroller struct {
 }
 
 type Feature_State_Rbacrolebindingactuation_RbacrolebindingStates struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	State       any
-	UpdateTime  any
+	// The current status of this resource. (AI-inferred)
+	State any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Feature_State_Rbacrolebindingactuation struct {
@@ -618,32 +718,47 @@ type Feature_State_Rbacrolebindingactuation struct {
 }
 
 type Feature_State_Servicemesh_AnalysisMessages_MessageBase_Type struct {
-	Code        any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
 type Feature_State_Servicemesh_AnalysisMessages_MessageBase struct {
+	// A URL to further documentation about this. (AI-inferred)
 	DocumentationUrl any
-	Level            any
-	Type             any
+	// The severity or intensity level of this setting. (AI-inferred)
+	Level any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Feature_State_Servicemesh_AnalysisMessages struct {
-	Args          any
-	Description   any
-	MessageBase   any
+	// The argument(s) passed to this command. (AI-inferred)
+	Args any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The base message template used for this notification. (AI-inferred)
+	MessageBase any
+	// The path(s) to the Kubernetes manifest(s) this applies to. (AI-inferred)
 	ResourcePaths any
 }
 
 type Feature_State_Servicemesh_Conditions struct {
-	Code              any
-	Details           any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// A URL to further documentation about this. (AI-inferred)
 	DocumentationLink any
-	Severity          any
+	// How serious this finding is. (AI-inferred)
+	Severity any
 }
 
 type Feature_State_Servicemesh_ControlPlaneManagement_Details struct {
-	Code    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
 }
 

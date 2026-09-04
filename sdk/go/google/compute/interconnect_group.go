@@ -4,18 +4,27 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers struct {
-	BlockerType       any
+	// The type of blocker preventing the intended capability. Possible values: INCOMPATIBLE_METROS, NOT_AVAILABLE, NO_INTERCONNECTS, NO_INTERCONNECTS_IN_METRO_AND_ZONE, OTHER, UNSPECIFIED. (AI-inferred)
+	BlockerType any
+	// A URL to documentation explaining why the intended capability is blocked. (AI-inferred)
 	DocumentationLink any
-	Explanation       any
-	Facilities        any
-	Interconnects     any
-	Metros            any
-	Zones             any
+	// A human-readable explanation of why the intended topology capability is blocked. (AI-inferred)
+	Explanation any
+	// List of facility names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
+	Facilities any
+	// The list of interconnect names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
+	Interconnects any
+	// List of metro names (geographic locations) that block the intended topology capability from being achieved. (AI-inferred)
+	Metros any
+	// A list of zones in which the intended topology capability is blocked or unavailable, as part of a capability blocker. (AI-inferred)
+	Zones any
 }
 
 type InterconnectGroup_Configured_TopologyCapability struct {
+	// A list of reasons that prevent the interconnect group's intended topology capability from being realized. This computed field is empty when the intended capability is fully supported, and provides details on any issues otherwise. (AI-inferred)
 	IntendedCapabilityBlockers any
-	SupportedSla               any
+	// The supported service level agreement (SLA) for this topology capability. Possible values are: NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL, UNSPECIFIED. (AI-inferred)
+	SupportedSla any
 }
 
 type InterconnectGroup_Configured struct {
@@ -24,6 +33,7 @@ type InterconnectGroup_Configured struct {
 }
 
 type InterconnectGroup_Intent struct {
+	// Specifies the topology capability level for the interconnect group, indicating the required service level. Valid values are: NO_SLA (no service level agreement), PRODUCTION_CRITICAL (production workloads requiring high reliability), PRODUCTION_NON_CRITICAL (production workloads without critical reliability requirements), and UNSPECIFIED (value not set). (AI-inferred)
 	TopologyCapability any
 }
 
@@ -43,10 +53,12 @@ type InterconnectGroup_PhysicalStructure_Metros_Facilities struct {
 
 type InterconnectGroup_PhysicalStructure_Metros struct {
 	Facilities any
-	Metro      any
+	// The metropolitan area where the interconnect group's physical structure is located, such as 'london' or 'sydney'. (AI-inferred)
+	Metro any
 }
 
 type InterconnectGroup_PhysicalStructure struct {
+	// The metropolitan areas where the physical structure of the interconnect group is located. This computed field provides the list of metros supported by the physical infrastructure. (AI-inferred)
 	Metros any
 }
 

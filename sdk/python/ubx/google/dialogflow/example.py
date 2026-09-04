@@ -8,56 +8,83 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Example_Actions_AgentUtterance:
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Example_Actions_FlowInvocation:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the flow this applies to. (AI-inferred)
     flow: Any = None
+    # The current state of a flow invocation. (AI-inferred)
     flow_state: Any = None
 
 @dataclasses.dataclass
 class Example_Actions_FlowTransition:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the flow this applies to. (AI-inferred)
     flow: Any = None
 
 @dataclasses.dataclass
 class Example_Actions_PlaybookInvocation_PlaybookInput:
+    # A summary of the conversation so far, provided as context. (AI-inferred)
     preceding_conversation_summary: Any = None
 
 @dataclasses.dataclass
 class Example_Actions_PlaybookInvocation_PlaybookOutput:
+    # Output only. A summary of how this test run or evaluation went. (AI-inferred)
     execution_summary: Any = None
 
 @dataclasses.dataclass
 class Example_Actions_PlaybookInvocation:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the playbook this applies to. (AI-inferred)
     playbook: Any = None
+    # The input parameter value(s) a playbook invocation was given. (AI-inferred)
     playbook_input: Any = None
+    # The output parameter value(s) a playbook invocation produced. (AI-inferred)
     playbook_output: Any = None
+    # The current state of a playbook invocation. (AI-inferred)
     playbook_state: Any = None
 
 @dataclasses.dataclass
 class Example_Actions_PlaybookTransition:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the playbook this applies to. (AI-inferred)
     playbook: Any = None
 
 @dataclasses.dataclass
 class Example_Actions_ToolUse:
+    # The specific action, exposed by `tool`, being invoked. (AI-inferred)
     action: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The parameter value(s) passed into this action when it's invoked. (AI-inferred)
     input_action_parameters: Any = None
+    # The parameter value(s) this action's own execution is expected to produce. (AI-inferred)
     output_action_parameters: Any = None
+    # The tool this fulfillment or response invokes. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass
 class Example_Actions:
+    # A line spoken by the virtual agent, as recorded in a test case's own conversation turn. (AI-inferred)
     agent_utterance: Any = None
+    # A record of a flow being invoked during this conversation. (AI-inferred)
     flow_invocation: Any = None
+    # A record of the conversation moving from one flow/page to another. (AI-inferred)
     flow_transition: Any = None
+    # A record of a playbook being invoked during this conversation. (AI-inferred)
     playbook_invocation: Any = None
+    # A record of the conversation moving into or out of a playbook. (AI-inferred)
     playbook_transition: Any = None
+    # A record of a tool being invoked during this conversation. (AI-inferred)
     tool_use: Any = None
+    # A line spoken by the end user, as recorded in a test case's own conversation turn. (AI-inferred)
     user_utterance: Any = None
 
 _Example_Actions_AgentUtteranceFields = {
@@ -152,27 +179,46 @@ _Example_ActionsFields = {
 
 @dataclasses.dataclass
 class ExampleConfig:
+    # The action(s) taken by this step or event. (AI-inferred)
     actions: Any = None
+    # The current state of this conversation. (AI-inferred)
     conversation_state: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The input parameter value(s) a playbook invocation was given. (AI-inferred)
     playbook_input: Any = None
+    # The output parameter value(s) a playbook invocation produced. (AI-inferred)
     playbook_output: Any = None
 
 @dataclasses.dataclass
 class ExampleAttrs:
+    # The action(s) taken by this step or event. (AI-inferred)
     actions: Any = None
+    # The current state of this conversation. (AI-inferred)
     conversation_state: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The input parameter value(s) a playbook invocation was given. (AI-inferred)
     playbook_input: Any = None
+    # The output parameter value(s) a playbook invocation produced. (AI-inferred)
     playbook_output: Any = None
+    # How many tokens this content consumed. (AI-inferred)
     token_count: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 Example = ubx.ResourceBinding(

@@ -149,7 +149,8 @@ type AlphaWireGroupAttrs struct {
 	// Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
 	Reconciling any
 	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink       any
+	SelfLink any
+	// The server-defined, fully qualified URL for this exact resource, including its own numeric resource id. (AI-inferred)
 	SelfLinkWithId any
 	// Service level details determined for the wire group configuration.
 	ServiceLevel any

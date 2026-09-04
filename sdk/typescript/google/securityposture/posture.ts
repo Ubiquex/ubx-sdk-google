@@ -2,108 +2,163 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Posture_PolicySets_Policies_ComplianceStandards {
+  /** A reference to a specific compliance control within a standard. (AI-inferred) */
   control?: string | Computed<string>;
+  /** A reference to the compliance standard this maps to. (AI-inferred) */
   standard?: string | Computed<string>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A boolean expression evaluated to determine whether this rule applies. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypes {
+  /** Whether this item is included in the applied policy. (AI-inferred) */
   included?: string[] | Computed<string[]>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Values {
+  /** The set of values permitted by this constraint. (AI-inferred) */
   allowedValues?: string[] | Computed<string[]>;
+  /** The set of values explicitly disallowed by this constraint. (AI-inferred) */
   deniedValues?: string[] | Computed<string[]>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules {
+  /** Whether every value is permitted, with no restriction. (AI-inferred) */
   allowAll?: boolean | Computed<boolean>;
+  /** The condition that must be satisfied for this rule to apply. (AI-inferred) */
   condition?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition>;
+  /** Whether every value is disallowed, with no exceptions. (AI-inferred) */
   denyAll?: boolean | Computed<boolean>;
+  /** Whether this constraint's own rule is actively enforced, rather than only evaluated. (AI-inferred) */
   enforce?: boolean | Computed<boolean>;
+  /** The parameter(s) configuring this policy or module. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource type(s) this constraint applies to. (AI-inferred) */
   resourceTypes?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypes | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypes>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Values | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Values>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint {
+  /** A reference to a predefined Organization Policy constraint. (AI-inferred) */
   cannedConstraintId?: string | Computed<string>;
+  /** The rule(s) making up this Organization Policy. (AI-inferred) */
   policyRules?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules[] | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules[]>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraint {
+  /** Whether this rule allows or denies the matching action. (AI-inferred) */
   actionType?: string | Computed<string>;
+  /** The condition that must be satisfied for this rule to apply. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The API method type(s) (e.g. `CREATE`, `UPDATE`) this custom constraint evaluates. (AI-inferred) */
   methodTypes?: string[] | Computed<string[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The resource type(s) this constraint applies to. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom {
+  /** A caller-defined Organization Policy constraint. (AI-inferred) */
   customConstraint?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraint | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraint>;
+  /** The rule(s) making up this Organization Policy. (AI-inferred) */
   policyRules?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules[] | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules[]>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_Properties {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Common Expression Language (CEL) expression evaluated by this custom constraint. (AI-inferred) */
   valueExpression?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput {
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_Properties[] | Computed<Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_Properties[]>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelector {
+  /** The resource type(s) this constraint applies to. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config {
+  /** Additional, custom output data returned alongside this finding. (AI-inferred) */
   customOutput?: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput | Computed<Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The condition evaluated against a resource for this constraint. (AI-inferred) */
   predicate?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition>;
+  /** Guidance for resolving this finding. (AI-inferred) */
   recommendation?: string | Computed<string>;
+  /** Restricts this policy to resource(s) matching a specific type. (AI-inferred) */
   resourceSelector?: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelector | Computed<Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelector>;
+  /** How serious this finding is. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule {
+  /** The configuration for this resource. (AI-inferred) */
   config?: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config | Computed<Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether this Security Health Analytics module is enabled, disabled, or inherited. (AI-inferred) */
   moduleEnablementState?: string | Computed<string>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModule {
+  /** Whether this Security Health Analytics module is enabled, disabled, or inherited. (AI-inferred) */
   moduleEnablementState?: string | Computed<string>;
+  /** The name of the Security Health Analytics module this applies to. (AI-inferred) */
   moduleName?: string | Computed<string>;
 }
 
 export interface Posture_PolicySets_Policies_Constraint {
+  /** A reference to a built-in Organization Policy constraint enforced by this posture. (AI-inferred) */
   orgPolicyConstraint?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint>;
+  /** A caller-defined Organization Policy constraint enforced by this posture. (AI-inferred) */
   orgPolicyConstraintCustom?: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom | Computed<Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom>;
+  /** A caller-defined Security Health Analytics detector module. (AI-inferred) */
   securityHealthAnalyticsCustomModule?: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule | Computed<Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule>;
+  /** A built-in Security Health Analytics detector module. (AI-inferred) */
   securityHealthAnalyticsModule?: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModule | Computed<Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModule>;
 }
 
 export interface Posture_PolicySets_Policies {
+  /** The compliance standard(s) (and their own control IDs) this policy maps to. (AI-inferred) */
   complianceStandards?: Posture_PolicySets_Policies_ComplianceStandards[] | Computed<Posture_PolicySets_Policies_ComplianceStandards[]>;
+  /** A reference to the constraint this policy enforces. (AI-inferred) */
   constraint?: Posture_PolicySets_Policies_Constraint | Computed<Posture_PolicySets_Policies_Constraint>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A reference to the policy this applies to. (AI-inferred) */
   policyId?: string | Computed<string>;
 }
 
 export interface Posture_PolicySets {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The policy/policies making up this posture. (AI-inferred) */
   policies?: Posture_PolicySets_Policies[] | Computed<Posture_PolicySets_Policies[]>;
+  /** A reference to the policy set this applies to. (AI-inferred) */
   policySetId?: string | Computed<string>;
 }
 

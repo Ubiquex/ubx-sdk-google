@@ -2,16 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SourceConfig {
+  /** The fully qualified, canonical name of this resource. (AI-inferred) */
   canonicalName?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface SourceAttrs {
+  /** The fully qualified, canonical name of this resource. (AI-inferred) */
   canonicalName: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
 }
 

@@ -14,7 +14,9 @@ export interface Rollout_Control {
 }
 
 export interface Rollout_Stats_OperationsByState {
+  /** The real number of unit operations currently in this specific rollout state. (AI-inferred) */
   count?: number | Computed<number>;
+  /** The real, named grouping (e.g. a rollout wave) this operation-state count applies to. (AI-inferred) */
   group?: string | Computed<string>;
 }
 

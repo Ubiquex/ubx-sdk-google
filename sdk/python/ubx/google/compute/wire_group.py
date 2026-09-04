@@ -36,6 +36,7 @@ class WireGroup_WireProperties:
 
 @dataclasses.dataclass
 class WireGroup_Wires_Endpoints:
+    # The URL of the Compute Engine interconnect used by this endpoint. (AI-inferred)
     interconnect: Any = None
     vlan_tag: Any = None
 

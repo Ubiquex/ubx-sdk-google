@@ -7,38 +7,59 @@ export interface Network_Params {
 }
 
 export interface Network_Peerings_ConnectionStatus_ConsensusState {
+  /** The deletion status of this VPC network peering connection as part of the consensus state between local and peer networks. Possible values: DELETE_ACKNOWLEDGED, DELETE_STATUS_UNSPECIFIED, LOCAL_CANCEL_REQUESTED, LOCAL_DELETE_REQUESTED, PEER_CANCEL_REQUESTED, PEER_DELETE_REQUESTED. (AI-inferred) */
   deleteStatus?: string | Computed<string>;
+  /** Represents the update status of the peering consensus state. Possible values: IN_SYNC (no pending updates), PENDING_LOCAL_ACKNOWLEDMENT (waiting for local acknowledgment), PENDING_PEER_ACKNOWLEDGEMENT (waiting for peer acknowledgment), UPDATE_STATUS_UNSPECIFIED (unset). (AI-inferred) */
   updateStatus?: string | Computed<string>;
 }
 
 export interface Network_Peerings_ConnectionStatus_TrafficConfiguration {
+  /** Indicates whether the VPC network exports its custom routes (routes not automatically generated from subnets) to the peered network. (AI-inferred) */
   exportCustomRoutesToPeer?: boolean | Computed<boolean>;
+  /** This boolean flag controls whether subnet routes with public IP addresses are exported to the peer network. When true, the VPC network exports routes to its peer for subnets that have public IPs, allowing the peer to reach these subnets via the peering connection. (AI-inferred) */
   exportSubnetRoutesWithPublicIpToPeer?: boolean | Computed<boolean>;
+  /** When true, this peering connection imports custom routes (non-subnet routes) from the peer network. (AI-inferred) */
   importCustomRoutesFromPeer?: boolean | Computed<boolean>;
+  /** A boolean flag indicating whether the peering connection imports subnet routes with public IP addresses from the peer network. (AI-inferred) */
   importSubnetRoutesWithPublicIpFromPeer?: boolean | Computed<boolean>;
+  /** The IP stack type for the traffic over the peering connection, either IPV4_ONLY or IPV4_IPV6. (AI-inferred) */
   stackType?: string | Computed<string>;
 }
 
 export interface Network_Peerings_ConnectionStatus {
   consensusState?: Network_Peerings_ConnectionStatus_ConsensusState | Computed<Network_Peerings_ConnectionStatus_ConsensusState>;
+  /** The traffic configuration of the peering connection, providing the current traffic state and any associated details. (AI-inferred) */
   trafficConfiguration?: Network_Peerings_ConnectionStatus_TrafficConfiguration | Computed<Network_Peerings_ConnectionStatus_TrafficConfiguration>;
+  /** Determines how updates to the peering are applied. CONSENSUS requires both networks to agree on updates, INDEPENDENT allows either side to update without the other's approval, and UNSPECIFIED indicates no strategy has been set. (AI-inferred) */
   updateStrategy?: string | Computed<string>;
 }
 
 export interface Network_Peerings {
+  /** Whether to automatically create routes for the peer network in this VPC peering connection. When true, routes are automatically generated for destinations in the peered network; when false, no automatic route creation occurs. This field is deprecated in favor of export_custom_routes and import_custom_routes. (AI-inferred) */
   autoCreateRoutes?: boolean | Computed<boolean>;
   connectionStatus?: Network_Peerings_ConnectionStatus | Computed<Network_Peerings_ConnectionStatus>;
+  /** Controls whether subnet routes are exchanged with the peered network. When true (default), subnet routes are automatically advertised to the peer network; setting to false disables the exchange. (AI-inferred) */
   exchangeSubnetRoutes?: boolean | Computed<boolean>;
+  /** Whether this network exports custom routes (such as dynamic routes and routes learned from other networks) to the peered network. When true, these routes are advertised to the peer. (AI-inferred) */
   exportCustomRoutes?: boolean | Computed<boolean>;
+  /** Indicates whether subnet routes with public IP addresses are exported to the peer network. When set to true, the peer network can learn these routes; when false, they are not exported. (AI-inferred) */
   exportSubnetRoutesWithPublicIp?: boolean | Computed<boolean>;
+  /** Indicates whether custom routes from the peered network are imported into this network's route table. Set to true to enable importing custom routes. (AI-inferred) */
   importCustomRoutes?: boolean | Computed<boolean>;
+  /** Whether to import subnet routes with public IP addresses from the peer network. When false, only private subnet routes are imported. Defaults to false. (AI-inferred) */
   importSubnetRoutesWithPublicIp?: boolean | Computed<boolean>;
   name?: string | Computed<string>;
+  /** The name or self_link of the peer network to create the peering with. This can be a network in the same project or in a different project, and must be specified as a URL if cross-project. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The Maximum Transmission Unit (MTU) for the VPC network peering connection, specified in bytes. This is the MTU of the peer network and determines the maximum size of packets that can be sent over the peering link without fragmentation. (AI-inferred) */
   peerMtu?: number | Computed<number>;
+  /** The stack type for the peering, either IPV4_ONLY or IPV4_IPV6, controlling whether IPv6 traffic is supported over the peering. (AI-inferred) */
   stackType?: string | Computed<string>;
+  /** Current state of the VPC network peering connection, either ACTIVE or INACTIVE. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The output-only details of the VPC network peering state, providing additional context about the current peering status, such as the reason for the state. (AI-inferred) */
   stateDetails?: string | Computed<string>;
+  /** Specifies the update strategy for the VPC peering. Possible values are 'CONSENSUS' (updates require agreement from both peering sides), 'INDEPENDENT' (updates can be made independently by either side), and 'UNSPECIFIED' (default, behavior is determined by the API). (AI-inferred) */
   updateStrategy?: string | Computed<string>;
 }
 

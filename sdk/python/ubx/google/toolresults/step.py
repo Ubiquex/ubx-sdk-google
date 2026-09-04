@@ -15,14 +15,20 @@ class Step_CompletionTime:
 
 @dataclasses.dataclass
 class Step_DimensionValue:
+    # The real key of this dimension value, identifying what real axis (e.g. device model, API level) this step's own results are broken out by. (AI-inferred)
     key: Any = None
+    # The real value of this dimension, matching its own `key`. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Step_MultiStep_PrimaryStep_IndividualOutcome:
+    # The real, sequential number of this individual step's own outcome within a multi-step (sharded) test run. (AI-inferred)
     multistep_number: Any = None
+    # The real, overall outcome (`success`, `failure`, `inconclusive`, `flaky`, `skipped`) of this individual step or multi-step run. (AI-inferred)
     outcome_summary: Any = None
+    # The real, measured wall-clock duration this individual step's own run took. (AI-inferred)
     run_duration: Any = None
+    # The real Tool Results step ID this individual multi-step outcome corresponds to. (AI-inferred)
     step_id: Any = None
 
 @dataclasses.dataclass
@@ -98,35 +104,53 @@ class Step_Outcome:
 
 @dataclasses.dataclass
 class Step_TestExecutionStep_TestIssues_StackTrace:
+    # The real, raw exception text captured in this test issue's own `stack_trace`. (AI-inferred)
     exception: Any = None
 
 @dataclasses.dataclass
 class Step_TestExecutionStep_TestIssues_WarningMigration:
+    # The real, fully-qualified type name of the structured warning payload in this `warning_migration` entry. (AI-inferred)
     type_url: Any = None
+    # The real value of this dimension, matching its own `key`. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Step_TestExecutionStep_TestIssues:
+    # The real category (`common` or `robo`) this detected test issue falls under. (AI-inferred)
     category: Any = None
+    # A real, human-readable error message explaining this detected test issue. (AI-inferred)
     error_message: Any = None
+    # The real severity level (`info`, `suggestion`, `warning`, `severe`) Firebase Test Lab assigned this detected test issue. (AI-inferred)
     severity: Any = None
+    # The real, captured stack trace for this detected test issue, when the issue is an exception or crash. (AI-inferred)
     stack_trace: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # Real, structured detail for a test issue that's been migrated to a newer warning representation. (AI-inferred)
     warning_migration: Any = None
 
 @dataclasses.dataclass
 class Step_TestExecutionStep_TestSuiteOverviews_XmlSource:
+    # The real Cloud Storage URI of this test suite's own uploaded `xml_source` file. (AI-inferred)
     file_uri: Any = None
 
 @dataclasses.dataclass
 class Step_TestExecutionStep_TestSuiteOverviews:
+    # The real, total wall-clock duration this test suite took to run. (AI-inferred)
     elapsed_time: Any = None
+    # The real number of tests in this test suite that ended in an error (as opposed to a normal failure). (AI-inferred)
     error_count: Any = None
+    # The real number of tests in this test suite that failed. (AI-inferred)
     failure_count: Any = None
+    # The real number of tests in this test suite detected as flaky (inconsistent across reruns). (AI-inferred)
     flaky_count: Any = None
+    # The real name of this test suite. (AI-inferred)
     name: Any = None
+    # The real number of tests in this test suite that were skipped. (AI-inferred)
     skipped_count: Any = None
+    # The real total number of tests in this test suite. (AI-inferred)
     total_count: Any = None
+    # A real, uploaded XML test report (e.g. JUnit-format) this test suite overview was parsed from. (AI-inferred)
     xml_source: Any = None
 
 @dataclasses.dataclass
@@ -141,14 +165,20 @@ class Step_TestExecutionStep_ToolExecution_ExitCode:
 
 @dataclasses.dataclass
 class Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCase:
+    # The real, fully-qualified class name of the test case this tool output describes. (AI-inferred)
     class_name: Any = None
+    # The real name of this test suite. (AI-inferred)
     name: Any = None
+    # The real name of the test suite this test case belongs to. (AI-inferred)
     test_suite_name: Any = None
 
 @dataclasses.dataclass
 class Step_TestExecutionStep_ToolExecution_ToolOutputs:
+    # The real timestamp when this tool execution's own output was recorded. (AI-inferred)
     creation_time: Any = None
+    # The real, captured output (such as a log or report file) produced by running this tool. (AI-inferred)
     output: Any = None
+    # Real, structured detail about one individual test case this tool execution's own output describes. (AI-inferred)
     test_case: Any = None
 
 @dataclasses.dataclass

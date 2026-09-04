@@ -22,7 +22,8 @@ type FeatureGroup_BigQuery struct {
 	EntityIdColumns any
 	// Optional. Set if the data source is not a time-series.
 	StaticDataSource any
-	TimeSeries       any
+	// Configuration for reading this feature group's own data as a time series from BigQuery. (AI-inferred)
+	TimeSeries any
 }
 
 var FeatureGroup_BigQuery_BigQuerySourceFields = ubx.FieldMap{

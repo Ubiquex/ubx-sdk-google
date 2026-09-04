@@ -4,6 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionSnapshot_GuestOsFeatures struct {
+	// The guest OS feature type to enable for the snapshot. Possible values include: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
 	Type any
 }
 
@@ -53,17 +54,20 @@ type RegionSnapshotConfig struct {
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Additional snapshot params.
-	Params                any
+	Params any
+	// The customer-managed encryption key used to encrypt this region snapshot. (AI-inferred)
 	SnapshotEncryptionKey any
 	// Indicates the type of the snapshot.
 	SnapshotType any
 	// The source disk used to create this snapshot.
-	SourceDisk              any
+	SourceDisk any
+	// The customer-supplied encryption key details for the source disk. This field is output-only and reflects the encryption key used by the source disk when it is protected by a customer-supplied encryption key. (AI-inferred)
 	SourceDiskEncryptionKey any
 	// The source disk whose recovery checkpoint will be used to create this snapshot.
 	SourceDiskForRecoveryCheckpoint any
 	// The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
-	SourceInstantSnapshot              any
+	SourceInstantSnapshot any
+	// The customer-supplied encryption key of the source instant snapshot. This key is required if the source instant snapshot is encrypted with a customer-managed key, and it is also exposed as an output when populated by the API. (AI-inferred)
 	SourceInstantSnapshotEncryptionKey any
 	// Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
 	StorageLocations any
@@ -117,7 +121,8 @@ type RegionSnapshotAttrs struct {
 	// Output only. [Output Only] Reserved for future use.
 	SatisfiesPzs any
 	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink              any
+	SelfLink any
+	// The customer-managed encryption key used to encrypt this region snapshot. (AI-inferred)
 	SnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
 	SnapshotGroupId any
@@ -126,14 +131,16 @@ type RegionSnapshotAttrs struct {
 	// Indicates the type of the snapshot.
 	SnapshotType any
 	// The source disk used to create this snapshot.
-	SourceDisk              any
+	SourceDisk any
+	// The customer-supplied encryption key details for the source disk. This field is output-only and reflects the encryption key used by the source disk when it is protected by a customer-supplied encryption key. (AI-inferred)
 	SourceDiskEncryptionKey any
 	// The source disk whose recovery checkpoint will be used to create this snapshot.
 	SourceDiskForRecoveryCheckpoint any
 	// Output only. [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
 	SourceDiskId any
 	// The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
-	SourceInstantSnapshot              any
+	SourceInstantSnapshot any
+	// The customer-supplied encryption key of the source instant snapshot. This key is required if the source instant snapshot is encrypted with a customer-managed key, and it is also exposed as an output when populated by the API. (AI-inferred)
 	SourceInstantSnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this snapshot. For example, if you created the snapshot from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
 	SourceInstantSnapshotId any

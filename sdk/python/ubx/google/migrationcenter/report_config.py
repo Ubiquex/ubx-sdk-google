@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReportConfig_GroupPreferencesetAssignments:
+    # A reference to the asset group this applies to. (AI-inferred)
     group: Any = None
+    # A reference to the preference set this report was generated with. (AI-inferred)
     preference_set: Any = None
 
 _ReportConfig_GroupPreferencesetAssignmentsFields = {

@@ -288,25 +288,42 @@ _V3beta1Tool_OpenApiSpecFields = {
 
 @dataclasses.dataclass
 class V3beta1ToolConfig:
+    # The specification of a connector (an external API or service) a generator can call. (AI-inferred)
     connector_spec: Any = None
+    # Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
     data_store_spec: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The specification of an extension a generator can invoke. (AI-inferred)
     extension_spec: Any = None
+    # Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
     function_spec: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_spec: Any = None
 
 @dataclasses.dataclass
 class V3beta1ToolAttrs:
+    # The specification of a connector (an external API or service) a generator can call. (AI-inferred)
     connector_spec: Any = None
+    # Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
     data_store_spec: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The specification of an extension a generator can invoke. (AI-inferred)
     extension_spec: Any = None
+    # Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
     function_spec: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_spec: Any = None
+    # Which kind of tool this is, e.g. an OpenAPI-defined service, a function, or a data store. (AI-inferred)
     tool_type: Any = None
 
 V3beta1Tool = ubx.ResourceBinding(

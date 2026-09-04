@@ -102,7 +102,9 @@ class GoldengateConnection_Properties_DatabricksConnectionProperties:
 
 @dataclasses.dataclass
 class GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributes:
+    # The key of this metadata entry. (AI-inferred)
     key: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -338,8 +340,11 @@ class GoldengateConnection_Properties_JavaMessageServiceConnectionProperties:
 
 @dataclasses.dataclass
 class GoldengateConnection_Properties_KafkaConnectionProperties_BootstrapServers:
+    # The hostname this applies to. (AI-inferred)
     host: Any = None
+    # The port number this applies to. (AI-inferred)
     port: Any = None
+    # The private IP address assigned to this resource. (AI-inferred)
     private_ip_address: Any = None
 
 @dataclasses.dataclass

@@ -160,39 +160,69 @@ var V3beta1Experiment_VariantsHistoryFields = ubx.FieldMap{
 }
 
 type V3beta1ExperimentConfig struct {
-	CreateTime           any
-	Definition           any
-	Description          any
-	DisplayName          any
-	EndTime              any
-	ExperimentLength     any
-	LastUpdateTime       any
-	Name                 any
-	Result               any
-	RolloutConfig        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The definition of this resource. (AI-inferred)
+	Definition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// How long this experiment runs before automatically concluding. (AI-inferred)
+	ExperimentLength any
+	// When this resource was last updated. (AI-inferred)
+	LastUpdateTime any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The result produced by this operation. (AI-inferred)
+	Result any
+	// Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
+	RolloutConfig any
+	// Why this rollout was halted, if it failed. (AI-inferred)
 	RolloutFailureReason any
-	RolloutState         any
-	StartTime            any
-	State                any
-	VariantsHistory      any
+	// The current progress of this gradual rollout. (AI-inferred)
+	RolloutState any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The history of variant configurations this experiment has run with over time. (AI-inferred)
+	VariantsHistory any
 }
 
 type V3beta1ExperimentAttrs struct {
-	CreateTime           any
-	Definition           any
-	Description          any
-	DisplayName          any
-	EndTime              any
-	ExperimentLength     any
-	LastUpdateTime       any
-	Name                 any
-	Result               any
-	RolloutConfig        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The definition of this resource. (AI-inferred)
+	Definition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// How long this experiment runs before automatically concluding. (AI-inferred)
+	ExperimentLength any
+	// When this resource was last updated. (AI-inferred)
+	LastUpdateTime any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The result produced by this operation. (AI-inferred)
+	Result any
+	// Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
+	RolloutConfig any
+	// Why this rollout was halted, if it failed. (AI-inferred)
 	RolloutFailureReason any
-	RolloutState         any
-	StartTime            any
-	State                any
-	VariantsHistory      any
+	// The current progress of this gradual rollout. (AI-inferred)
+	RolloutState any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The history of variant configurations this experiment has run with over time. (AI-inferred)
+	VariantsHistory any
 }
 
 var V3beta1Experiment = ubx.ResourceBinding{

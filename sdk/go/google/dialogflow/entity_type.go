@@ -4,11 +4,14 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityType_Entities struct {
+	// Alternate word/phrase(s) that also match this entity value. (AI-inferred)
 	Synonyms any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type EntityType_ExcludedPhrases struct {
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -22,25 +25,41 @@ var EntityType_ExcludedPhrasesFields = ubx.FieldMap{
 }
 
 type EntityTypeConfig struct {
-	AutoExpansionMode     any
-	DisplayName           any
+	// Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
+	AutoExpansionMode any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
 	EnableFuzzyExtraction any
-	Entities              any
-	ExcludedPhrases       any
-	Kind                  any
-	Name                  any
-	Redact                any
+	// The entity/entities extracted or referenced. (AI-inferred)
+	Entities any
+	// Phrase(s) explicitly excluded from matching this entity, even if they'd otherwise qualify. (AI-inferred)
+	ExcludedPhrases any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
+	Redact any
 }
 
 type EntityTypeAttrs struct {
-	AutoExpansionMode     any
-	DisplayName           any
+	// Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
+	AutoExpansionMode any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
 	EnableFuzzyExtraction any
-	Entities              any
-	ExcludedPhrases       any
-	Kind                  any
-	Name                  any
-	Redact                any
+	// The entity/entities extracted or referenced. (AI-inferred)
+	Entities any
+	// Phrase(s) explicitly excluded from matching this entity, even if they'd otherwise qualify. (AI-inferred)
+	ExcludedPhrases any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
+	Redact any
 }
 
 var EntityType = ubx.ResourceBinding{

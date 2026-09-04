@@ -68,6 +68,7 @@ var V1beta2Policy_NetworksFields = ubx.FieldMap{
 }
 
 type V1beta2PolicyConfig struct {
+	// Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
 	AlternativeNameServerConfig any
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
 	Description any
@@ -78,7 +79,8 @@ type V1beta2PolicyConfig struct {
 	// Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.
 	EnableLogging any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User-assigned name for this policy.
 	Name any
@@ -87,6 +89,7 @@ type V1beta2PolicyConfig struct {
 }
 
 type V1beta2PolicyAttrs struct {
+	// Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
 	AlternativeNameServerConfig any
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
 	Description any
@@ -97,7 +100,8 @@ type V1beta2PolicyAttrs struct {
 	// Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.
 	EnableLogging any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User-assigned name for this policy.
 	Name any

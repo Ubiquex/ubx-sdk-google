@@ -93,6 +93,7 @@ export interface AlphaNodeGroupConfig {
   autoscalingPolicy?: AlphaNodeGroup_AutoscalingPolicy | Computed<AlphaNodeGroup_AutoscalingPolicy>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** An opaque, server-generated value that changes whenever this resource is updated, used to detect concurrent modification on write. (AI-inferred) */
   fingerprint?: string | Computed<string>;
   /** An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate. */
   locationHint?: string | Computed<string>;
@@ -116,6 +117,7 @@ export interface AlphaNodeGroupAttrs {
   creationTimestamp: string;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** An opaque, server-generated value that changes whenever this resource is updated, used to detect concurrent modification on write. (AI-inferred) */
   fingerprint: string;
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
@@ -141,6 +143,7 @@ export interface AlphaNodeGroupAttrs {
   shareSettings: AlphaNodeGroup_ShareSettings;
   /** Output only. [Output Only] The total number of nodes in the node group. */
   size: number;
+  /** The current operational status of this sole-tenant node group, e.g. whether it is still being created. (AI-inferred) */
   status: string;
   /** Output only. [Output Only] The name of the zone where the node group resides, such as us-central1-a. */
   zone: string;

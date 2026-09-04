@@ -49,6 +49,7 @@ type StoragePool_ResourceStatus struct {
 }
 
 type StoragePool_ShareSettings_ProjectMap struct {
+	// The unique identifier of the Google Cloud project to which these share settings apply. (AI-inferred)
 	ProjectId any
 }
 

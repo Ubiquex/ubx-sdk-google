@@ -2,21 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Unit_Conditions {
+  /** The real timestamp when this SaaS offering's own condition last changed status. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A real, human-readable explanation for this condition's own current status. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A real, short, machine-readable reason code for this condition's own current status. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The real, current status (`STATUS_TRUE`, `STATUS_FALSE`, `STATUS_UNKNOWN`) of this condition. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Unit_Dependencies {
+  /** A real, local alias this unit uses to refer to a dependency, distinct from the dependency's own real resource name. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** A reference to the real `google_saasservicemgmt_unit` this dependency points at. (AI-inferred) */
   unit?: string | Computed<string>;
 }
 
 export interface Unit_InputVariables {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The real, declared value of this input variable, matching its own `type`. (AI-inferred) */
   value?: string | Computed<string>;
+  /** The real, named input variable this default value applies to. (AI-inferred) */
   variable?: string | Computed<string>;
 }
 

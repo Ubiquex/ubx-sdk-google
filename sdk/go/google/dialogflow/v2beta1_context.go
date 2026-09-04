@@ -4,15 +4,21 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1ContextConfig struct {
+	// The number of conversational turns this context remains active for. (AI-inferred)
 	LifespanCount any
-	Name          any
-	Parameters    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
 }
 
 type V2beta1ContextAttrs struct {
+	// The number of conversational turns this context remains active for. (AI-inferred)
 	LifespanCount any
-	Name          any
-	Parameters    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
 }
 
 var V2beta1Context = ubx.ResourceBinding{

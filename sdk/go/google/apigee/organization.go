@@ -42,7 +42,9 @@ type Organization_AddonsConfig struct {
 }
 
 type Organization_Properties_Property struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 

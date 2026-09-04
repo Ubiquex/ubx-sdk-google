@@ -4,76 +4,110 @@ package accesscontextmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpoint struct {
+	// A reference to the forwarding rule this applies to. (AI-inferred)
 	ForwardingRule any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources struct {
+	// A reference to the access level this applies to. (AI-inferred)
 	AccessLevel any
+	// A reference to the Private Service Connect endpoint this applies to. (AI-inferred)
 	PscEndpoint any
-	Resource    any
+	// A reference to the resource this applies to. (AI-inferred)
+	Resource any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressFrom struct {
-	Identities        any
-	IdentityType      any
+	// The identity/identities this rule applies to. (AI-inferred)
+	Identities any
+	// The category of identity/identities this rule applies to, e.g. any identity or a specific list. (AI-inferred)
+	IdentityType any
+	// Whether access is restricted based on the request's own network source. (AI-inferred)
 	SourceRestriction any
-	Sources           any
+	// The source(s) this rule matches traffic from. (AI-inferred)
+	Sources any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectors struct {
-	Method     any
+	// The specific API method this rule applies to. (AI-inferred)
+	Method any
+	// The specific IAM permission this rule applies to. (AI-inferred)
 	Permission any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations struct {
+	// The specific API method(s) or permission(s) this rule applies to. (AI-inferred)
 	MethodSelectors any
-	ServiceName     any
+	// The name of the Google Cloud service this applies to. (AI-inferred)
+	ServiceName any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressTo struct {
+	// External (non-Google-Cloud) resource(s) this rule applies to. (AI-inferred)
 	ExternalResources any
-	Operations        any
-	Resources         any
-	Roles             any
+	// The API operation(s) this rule applies to. (AI-inferred)
+	Operations any
+	// The resource(s) this rule applies to. (AI-inferred)
+	Resources any
+	// The IAM role(s) this restriction applies to. (AI-inferred)
+	Roles any
 }
 
 type ServicePerimeter_Spec_EgressPolicies struct {
+	// The source(s) this egress rule applies to. (AI-inferred)
 	EgressFrom any
-	EgressTo   any
-	Title      any
+	// The destination(s) this egress rule permits access to. (AI-inferred)
+	EgressTo any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type ServicePerimeter_Spec_IngressPolicies_IngressFrom struct {
-	Identities   any
+	// The identity/identities this rule applies to. (AI-inferred)
+	Identities any
+	// The category of identity/identities this rule applies to, e.g. any identity or a specific list. (AI-inferred)
 	IdentityType any
-	Sources      any
+	// The source(s) this rule matches traffic from. (AI-inferred)
+	Sources any
 }
 
 type ServicePerimeter_Spec_IngressPolicies_IngressTo struct {
+	// The API operation(s) this rule applies to. (AI-inferred)
 	Operations any
-	Resources  any
-	Roles      any
+	// The resource(s) this rule applies to. (AI-inferred)
+	Resources any
+	// The IAM role(s) this restriction applies to. (AI-inferred)
+	Roles any
 }
 
 type ServicePerimeter_Spec_IngressPolicies struct {
+	// The source(s) this ingress rule applies to. (AI-inferred)
 	IngressFrom any
-	IngressTo   any
-	Title       any
+	// The destination(s) this ingress rule permits access to. (AI-inferred)
+	IngressTo any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeader struct {
-	Key   any
+	// A key identifying this entry. (AI-inferred)
+	Key any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers struct {
+	// Whether an identifying header is added to requests as they pass through this configuration. (AI-inferred)
 	AddRequestHeader any
 }
 
 type ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns struct {
+	// Additional modifier(s) refining how this rule is evaluated. (AI-inferred)
 	Modifiers any
-	Pattern   any
-	Service   any
+	// A regular expression a `string`-typed value must match. (AI-inferred)
+	Pattern any
+	// The Google Cloud service this rule applies to. (AI-inferred)
+	Service any
 }
 
 type ServicePerimeter_Spec_VpcAccessibleServices struct {

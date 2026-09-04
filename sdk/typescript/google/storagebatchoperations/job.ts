@@ -2,16 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Job_BucketList_Buckets_Manifest {
+  /** The Cloud Storage location of the manifest file listing the objects this job applies to. (AI-inferred) */
   manifestLocation?: string | Computed<string>;
 }
 
 export interface Job_BucketList_Buckets_PrefixList {
+  /** The object name prefix(es) this job's own transformation applies to. (AI-inferred) */
   includedObjectPrefixes?: string[] | Computed<string[]>;
 }
 
 export interface Job_BucketList_Buckets {
+  /** The Cloud Storage bucket this batch job's own transformation applies to. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** Selects this bucket's own target objects from an explicit manifest file, rather than a prefix match. (AI-inferred) */
   manifest?: Job_BucketList_Buckets_Manifest | Computed<Job_BucketList_Buckets_Manifest>;
+  /** Selects this bucket's own target objects by object-name prefix, rather than an explicit manifest. (AI-inferred) */
   prefixList?: Job_BucketList_Buckets_PrefixList | Computed<Job_BucketList_Buckets_PrefixList>;
 }
 
@@ -45,13 +50,18 @@ export interface Job_DeleteObject {
 }
 
 export interface Job_ErrorSummaries_ErrorLogEntries {
+  /** Detail explaining why this specific object failed. (AI-inferred) */
   errorDetails?: string[] | Computed<string[]>;
+  /** The `gs://` URI of the object that failed. (AI-inferred) */
   objectUri?: string | Computed<string>;
 }
 
 export interface Job_ErrorSummaries {
+  /** The gRPC-style status code shared by every error grouped under this summary, e.g. `PERMISSION_DENIED`. (AI-inferred) */
   errorCode?: string | Computed<string>;
+  /** How many objects failed with this exact error code. (AI-inferred) */
   errorCount?: string | Computed<string>;
+  /** A sample of the individual object failures grouped under this error summary. (AI-inferred) */
   errorLogEntries?: Job_ErrorSummaries_ErrorLogEntries[] | Computed<Job_ErrorSummaries_ErrorLogEntries[]>;
 }
 
@@ -138,7 +148,9 @@ export interface Job_RewriteObject {
 }
 
 export interface Job_SetObjectAcls_AccessControlsUpdates_Grants {
+  /** The grantee (user, group, or project) this ACL grant applies to. (AI-inferred) */
   entity?: string | Computed<string>;
+  /** The access role granted to `entity`, e.g. `READER` or `OWNER`. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
@@ -155,6 +167,7 @@ export interface Job_SetObjectAcls {
 }
 
 export interface Job_UpdateObjectCustomContext_CustomContextUpdates_Updates {
+  /** The value this batch job sets for the matching custom metadata key on each target object. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

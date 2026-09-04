@@ -66,39 +66,64 @@ class BatchPredictionJob_Error:
 
 @dataclasses.dataclass
 class BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomain:
+    # The largest value this parameter may take. (AI-inferred)
     max_value: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min_value: Any = None
+    # The mean of this feature's own values before normalization. (AI-inferred)
     original_mean: Any = None
+    # The standard deviation of this feature's own values before normalization. (AI-inferred)
     original_stddev: Any = None
 
 @dataclasses.dataclass
 class BatchPredictionJob_ExplanationSpec_Metadata_Inputs_Visualization:
+    # Attribution values below this percentile are clipped from the visualization. (AI-inferred)
     clip_percent_lowerbound: Any = None
+    # Attribution values above this percentile are clipped from the visualization. (AI-inferred)
     clip_percent_upperbound: Any = None
+    # The color scheme used to render attribution values in the visualization. (AI-inferred)
     color_map: Any = None
+    # How the attribution visualization is overlaid on the original input image. (AI-inferred)
     overlay_type: Any = None
+    # Whether the visualization highlights positive attributions, negative attributions, or both. (AI-inferred)
     polarity: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class BatchPredictionJob_ExplanationSpec_Metadata_Inputs:
+    # The name of the tensor giving the shape of a sparse input, when this input is represented sparsely. (AI-inferred)
     dense_shape_tensor_name: Any = None
+    # The baseline value(s) for the encoded tensor, used as the reference point feature attributions are computed against. (AI-inferred)
     encoded_baselines: Any = None
+    # The name of the encoded (post-transformation) input tensor this metadata describes. (AI-inferred)
     encoded_tensor_name: Any = None
+    # How this input feature is encoded into its own model tensor, e.g. `BAG_OF_FEATURES` or `IDENTITY`. (AI-inferred)
     encoding: Any = None
+    # The real-world value range (min/max, or original mean/standard deviation if normalized) this input feature was drawn from. (AI-inferred)
     feature_value_domain: Any = None
+    # Groups related input features together for combined feature-attribution reporting. (AI-inferred)
     group_name: Any = None
+    # The feature name corresponding to each index position in the input tensor -- required when `encoding` is a sparse/indicator encoding. (AI-inferred)
     index_feature_mapping: Any = None
+    # The name of the tensor giving the indices of a sparse input's own non-zero values. (AI-inferred)
     indices_tensor_name: Any = None
+    # The baseline value(s) for this input, used as the reference point feature attributions are computed against. (AI-inferred)
     input_baselines: Any = None
+    # The name of the model's own input tensor this metadata describes. (AI-inferred)
     input_tensor_name: Any = None
+    # The kind of data this input represents, e.g. `numeric`, `image`, or `text`. (AI-inferred)
     modality: Any = None
+    # How feature attributions for this input are rendered visually, e.g. for image inputs. (AI-inferred)
     visualization: Any = None
 
 @dataclasses.dataclass
 class BatchPredictionJob_ExplanationSpec_Metadata_Outputs:
+    # The key identifying which display-name mapping to apply to this output's own values. (AI-inferred)
     display_name_mapping_key: Any = None
+    # Maps output tensor index positions to their own human-readable display names. (AI-inferred)
     index_display_name_mapping: Any = None
+    # The name of the model's own output tensor this metadata describes. (AI-inferred)
     output_tensor_name: Any = None
 
 @dataclasses.dataclass
@@ -149,7 +174,9 @@ class BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributi
 
 @dataclasses.dataclass
 class BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The standard deviation parameter of a Gaussian/normal distribution used for sampling. (AI-inferred)
     sigma: Any = None
 
 @dataclasses.dataclass
@@ -285,11 +312,14 @@ class BatchPredictionJob_ResourcesConsumed:
 
 @dataclasses.dataclass
 class BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_Env:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPorts:
+    # The port number the container listens on. (AI-inferred)
     container_port: Any = None
 
 @dataclasses.dataclass

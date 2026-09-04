@@ -4,21 +4,30 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValue struct {
+	// The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
 	KmsKeyName any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValue struct {
+	// The specific Secret Manager secret version referenced. (AI-inferred)
 	SecretVersion any
 }
 
 type CustomConnectorVersion_AuthConfig_AdditionalVariables struct {
-	BoolValue          any
+	// This configuration variable's own value, when its type is boolean. (AI-inferred)
+	BoolValue any
+	// This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred)
 	EncryptionKeyValue any
-	IntValue           any
-	Key                any
-	SecretValue        any
-	StringValue        any
+	// This admin filter's own value, when its type is an integer. (AI-inferred)
+	IntValue any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
+	SecretValue any
+	// This admin filter's own value, when its type is a string. (AI-inferred)
+	StringValue any
 }
 
 type CustomConnectorVersion_AuthConfig_Oauth2AuthCodeFlow struct {
@@ -112,94 +121,149 @@ type CustomConnectorVersion_AuthConfig struct {
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLink struct {
-	ClientId        any
-	ClientSecret    any
-	EnablePkce      any
+	// The OAuth client ID issued by the connected service. (AI-inferred)
+	ClientId any
+	// The OAuth client secret issued by the connected service. (AI-inferred)
+	ClientSecret any
+	// Whether to use Proof Key for Code Exchange (PKCE) to secure the OAuth authorization code flow. (AI-inferred)
+	EnablePkce any
+	// Whether to omit query parameters when constructing the authorization redirect URI. (AI-inferred)
 	OmitQueryParams any
-	Scopes          any
-	Uri             any
+	// The OAuth scope(s) requested during authorization. (AI-inferred)
+	Scopes any
+	// The authorization endpoint URI. (AI-inferred)
+	Uri any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptions struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
+	// A unique identifier for this webhook subscription. (AI-inferred)
+	Id any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptions struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Key         any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// Whether this option is selected by default. (AI-inferred)
 	Preselected any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig struct {
-	AllowCustomValues     any
+	// Whether a value outside the predefined option list may also be entered. (AI-inferred)
+	AllowCustomValues any
+	// The selectable option(s) for this multi-select configuration field. (AI-inferred)
 	MultipleSelectOptions any
-	ValueSeparator        any
+	// The character used to separate multiple selected values. (AI-inferred)
+	ValueSeparator any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisons struct {
-	BoolValue   any
-	Comparator  any
-	IntValue    any
-	Key         any
+	// This configuration variable's own value, when its type is boolean. (AI-inferred)
+	BoolValue any
+	// How the compared field's own value is evaluated, e.g. equals or contains. (AI-inferred)
+	Comparator any
+	// This admin filter's own value, when its type is an integer. (AI-inferred)
+	IntValue any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// This admin filter's own value, when its type is a string. (AI-inferred)
 	StringValue any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition struct {
-	FieldComparisons   any
+	// The individual field-level condition(s) making up this logical expression. (AI-inferred)
+	FieldComparisons any
+	// The nested condition(s) combined by this logical expression. (AI-inferred)
 	LogicalExpressions any
-	LogicalOperator    any
+	// How the nested condition(s) are combined, e.g. `AND` or `OR`. (AI-inferred)
+	LogicalOperator any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_Resource struct {
+	// A template describing the resource path this role grant applies to. (AI-inferred)
 	PathTemplate any
-	Type         any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant struct {
+	// Guidance text shown to the user configuring this role grant. (AI-inferred)
 	HelperTextTemplate any
-	Principal          any
-	Resource           any
-	Roles              any
+	// The identity this role grant is issued to. (AI-inferred)
+	Principal any
+	// The resource this role grant applies to. (AI-inferred)
+	Resource any
+	// The role(s) granted. (AI-inferred)
+	Roles any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates struct {
+	// Configuration for the OAuth 2.0 authorization code flow used to obtain credentials. (AI-inferred)
 	AuthorizationCodeLink any
-	Description           any
-	DisplayName           any
-	EnumOptions           any
-	EnumSource            any
-	IsAdvanced            any
-	Key                   any
-	LocationType          any
-	MultipleSelectConfig  any
-	Required              any
-	RequiredCondition     any
-	RoleGrant             any
-	State                 any
-	ValidationRegex       any
-	ValueType             any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The selectable option(s) for this enumerated configuration field. (AI-inferred)
+	EnumOptions any
+	// Where this configuration field's own enumerated option list is sourced from. (AI-inferred)
+	EnumSource any
+	// Whether this configuration field is only shown under advanced/optional settings. (AI-inferred)
+	IsAdvanced any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// Where this configuration field's own value is stored, e.g. inline or as a Secret Manager reference. (AI-inferred)
+	LocationType any
+	// Configuration for a field that accepts more than one selected value. (AI-inferred)
+	MultipleSelectConfig any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
+	// The condition that must be satisfied for this configuration field to apply. (AI-inferred)
+	RequiredCondition any
+	// Configuration for automatically granting a role needed by this connector. (AI-inferred)
+	RoleGrant any
+	// Whether this configuration field is required, optional, or deprecated. (AI-inferred)
+	State any
+	// A regular expression this configuration field's own value must match. (AI-inferred)
+	ValidationRegex any
+	// The data type this configuration field's own value holds, e.g. string, integer, or boolean. (AI-inferred)
+	ValueType any
 }
 
 type CustomConnectorVersion_AuthConfigTemplates struct {
-	AuthKey                 any
-	AuthType                any
+	// The identifier for this authentication configuration. (AI-inferred)
+	AuthKey any
+	// The kind of authentication this connection uses, e.g. `OAUTH2_AUTHORIZATION_CODE` or `USER_PASSWORD`. (AI-inferred)
+	AuthType any
+	// The configuration field(s) this connector's own authentication method requires or accepts. (AI-inferred)
 	ConfigVariableTemplates any
-	Description             any
-	DisplayName             any
-	IsDefault               any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether this is the default authentication configuration for the connector. (AI-inferred)
+	IsDefault any
 }
 
 type CustomConnectorVersion_DestinationConfigs_Destinations struct {
-	Host              any
-	Port              any
+	// The hostname of this destination. (AI-inferred)
+	Host any
+	// The port this destination listens on. (AI-inferred)
+	Port any
+	// A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred)
 	ServiceAttachment any
 }
 
 type CustomConnectorVersion_DestinationConfigs struct {
+	// The backend endpoint(s) traffic for this connection is routed to. (AI-inferred)
 	Destinations any
-	Key          any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
 }
 
 type CustomConnectorVersion_PartnerMetadata struct {

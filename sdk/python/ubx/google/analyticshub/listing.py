@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Listing_BigqueryDataset_EffectiveReplicas:
+    # The real Google Cloud region this listing's own dataset replica is hosted in. (AI-inferred)
     location: Any = None
+    # Whether this replica is real, the primary (source of truth) copy of the shared dataset. (AI-inferred)
     primary_state: Any = None
+    # The real, current availability (`READY_TO_USE` or `UNAVAILABLE`) of this dataset replica. (AI-inferred)
     replica_state: Any = None
 
 @dataclasses.dataclass
@@ -23,7 +26,9 @@ class Listing_BigqueryDataset_RestrictedExportPolicy:
 
 @dataclasses.dataclass
 class Listing_BigqueryDataset_SelectedResources:
+    # The real, fully-qualified BigQuery routine (a stored procedure or function) this listing selectively shares, instead of an entire dataset. (AI-inferred)
     routine: Any = None
+    # The real, fully-qualified BigQuery table this listing selectively shares, instead of an entire dataset. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass

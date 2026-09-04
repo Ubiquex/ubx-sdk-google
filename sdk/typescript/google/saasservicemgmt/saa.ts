@@ -2,10 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Saa_Conditions {
+  /** The real timestamp when this SaaS offering's own condition last changed status. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A real, human-readable explanation for this condition's own current status. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A real, short, machine-readable reason code for this condition's own current status. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The real, current status (`STATUS_TRUE`, `STATUS_FALSE`, `STATUS_UNKNOWN`) of this condition. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -19,6 +24,7 @@ export interface Saa_Error {
 }
 
 export interface Saa_Locations {
+  /** The real, declared name of this SaaS offering's own available deployment location, or of a repricing/entitlement parameter. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

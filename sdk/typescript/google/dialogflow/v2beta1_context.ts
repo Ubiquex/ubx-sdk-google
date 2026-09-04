@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V2beta1ContextConfig {
+  /** The number of conversational turns this context remains active for. (AI-inferred) */
   lifespanCount?: number | Computed<number>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface V2beta1ContextAttrs {
+  /** The number of conversational turns this context remains active for. (AI-inferred) */
   lifespanCount: number;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters: Record<string, unknown>;
 }
 

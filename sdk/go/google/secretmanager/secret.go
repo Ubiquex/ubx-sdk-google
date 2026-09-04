@@ -21,8 +21,10 @@ type Secret_Replication_Automatic struct {
 }
 
 type Secret_Replication_UserManaged_Replicas struct {
+	// The customer-managed encryption key (CMEK) configuration for this replica -- omit to use Google-managed encryption for this region instead. (AI-inferred)
 	CustomerManagedEncryption any
-	Location                  any
+	// The region this secret is explicitly replicated to under user-managed replication, e.g. `us-central1`. (AI-inferred)
+	Location any
 }
 
 type Secret_Replication_UserManaged struct {
@@ -63,6 +65,7 @@ type Secret_Rotation struct {
 }
 
 type Secret_Topics struct {
+	// The Pub/Sub topic Secret Manager publishes notifications to for events on this secret (e.g. new versions), in the form `projects/{project}/topics/{topic}`. (AI-inferred)
 	Name any
 }
 

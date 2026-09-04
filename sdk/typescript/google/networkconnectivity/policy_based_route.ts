@@ -23,8 +23,11 @@ export interface PolicyBasedRoute_VirtualMachine {
 }
 
 export interface PolicyBasedRoute_Warnings {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: string | Computed<string>;
+  /** The literal content of this field. (AI-inferred) */
   data?: Record<string, string> | Computed<Record<string, string>>;
+  /** A human-readable description of a non-fatal warning. (AI-inferred) */
   warningMessage?: string | Computed<string>;
 }
 

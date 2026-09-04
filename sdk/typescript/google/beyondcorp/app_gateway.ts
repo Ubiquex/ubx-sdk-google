@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AppGateway_AllocatedConnections {
+  /** The port on the app gateway's own ingress this allocated connection listens on. (AI-inferred) */
   ingressPort?: number | Computed<number>;
+  /** The Private Service Connect URI backing this allocated connection. (AI-inferred) */
   pscUri?: string | Computed<string>;
 }
 

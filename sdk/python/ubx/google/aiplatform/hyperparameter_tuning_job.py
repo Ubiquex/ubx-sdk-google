@@ -42,60 +42,88 @@ class HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpec:
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Metrics_SafetyConfig:
+    # The minimum fraction of trials that must be predicted safe before an unsafe trial is allowed to be tried anyway. (AI-inferred)
     desired_min_safe_trials_fraction: Any = None
+    # The metric value below which a trial is considered unsafe. (AI-inferred)
     safety_threshold: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Metrics:
+    # Whether this metric should be `MAXIMIZE`d or `MINIMIZE`d during tuning. (AI-inferred)
     goal: Any = None
+    # An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
     metric_id: Any = None
+    # Configuration for safe hyperparameter tuning, which avoids proposing trials predicted to badly underperform. (AI-inferred)
     safety_config: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs:
+    # The definition (type, range, or allowed values) of this hyperparameter. (AI-inferred)
     parameter_spec: Any = None
+    # The parent categorical value(s) that activate this conditional parameter. (AI-inferred)
     parent_categorical_values: Any = None
+    # The parent discrete value(s) that activate this conditional parameter. (AI-inferred)
     parent_discrete_values: Any = None
+    # The parent integer value(s) that activate this conditional parameter. (AI-inferred)
     parent_int_values: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The largest value this parameter may take. (AI-inferred)
     max_value: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min_value: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The largest value this parameter may take. (AI-inferred)
     max_value: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min_value: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_StudySpec_Parameters:
+    # Defines this hyperparameter as a categorical value, chosen from a fixed set of string options. (AI-inferred)
     categorical_value_spec: Any = None
+    # Sub-parameter(s) that only apply when this parameter takes specific value(s), for hyperparameter search spaces with conditional structure. (AI-inferred)
     conditional_parameter_specs: Any = None
+    # Defines this hyperparameter as a value chosen from a fixed, explicit list of numbers. (AI-inferred)
     discrete_value_spec: Any = None
+    # Defines this hyperparameter as a floating-point value within a `min_value`/`max_value` range. (AI-inferred)
     double_value_spec: Any = None
+    # Defines this hyperparameter as an integer value within a `min_value`/`max_value` range. (AI-inferred)
     integer_value_spec: Any = None
+    # The name of this hyperparameter, unique within its own study. (AI-inferred)
     parameter_id: Any = None
+    # How this hyperparameter's own search range is scaled when sampling, e.g. `UNIT_LINEAR_SCALE` or `UNIT_LOG_SCALE`. (AI-inferred)
     scale_type: Any = None
 
 @dataclasses.dataclass
@@ -150,8 +178,11 @@ class HyperparameterTuningJob_TrialJobSpec_BaseOutputDirectory:
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfig_DnsPeeringConfigs:
+    # The domain this configuration or resource applies to. (AI-inferred)
     domain: Any = None
+    # The VPC network this resource is deployed into. (AI-inferred)
     target_network: Any = None
+    # The Google Cloud project this resource targets. (AI-inferred)
     target_project: Any = None
 
 @dataclasses.dataclass
@@ -176,65 +207,101 @@ class HyperparameterTuningJob_TrialJobSpec_Scheduling:
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec:
+    # The argument value(s) passed to this call. (AI-inferred)
     args: Any = None
+    # The container entrypoint command and argument(s) to run. (AI-inferred)
     command: Any = None
+    # Environment variable(s) set for this job's own execution. (AI-inferred)
     env: Any = None
+    # The container image URI to run. (AI-inferred)
     image_uri: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpec:
+    # The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred)
     boot_disk_size_gb: Any = None
+    # The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred)
     boot_disk_type: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMounts:
+    # The filesystem identifier to mount. (AI-inferred)
     filesystem: Any = None
+    # The IP address of the filesystem instance to mount. (AI-inferred)
     instance_ip: Any = None
+    # The filesystem path this volume is mounted at. (AI-inferred)
     mount_point: Any = None
+    # An identifier for this mounted volume, unique within its own job. (AI-inferred)
     volume_handle: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity:
+    # A key identifying this entry. (AI-inferred)
     key: Any = None
+    # Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
     reservation_affinity_type: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec:
+    # How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
     accelerator_type: Any = None
+    # The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
     gpu_partition_size: Any = None
+    # The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
     machine_type: Any = None
+    # Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
     reservation_affinity: Any = None
+    # The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
     tpu_topology: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMounts:
+    # The filesystem path this volume is mounted at. (AI-inferred)
     mount_point: Any = None
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # The server hostname or IP address to connect to. (AI-inferred)
     server: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpec:
+    # The argument value(s) passed to this call. (AI-inferred)
     args: Any = None
+    # Environment variable(s) set for this job's own execution. (AI-inferred)
     env: Any = None
+    # The prebuilt Vertex AI executor image this Python package runs on top of. (AI-inferred)
     executor_image_uri: Any = None
+    # The Cloud Storage URI(s) of the Python package(s) (e.g. a `.tar.gz` sdist) to install and run. (AI-inferred)
     package_uris: Any = None
+    # The Python module to execute as this worker's own entry point. (AI-inferred)
     python_module: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs:
+    # The container image and command this worker pool runs. (AI-inferred)
     container_spec: Any = None
+    # The boot disk configuration provisioned for this job's own machine(s). (AI-inferred)
     disk_spec: Any = None
+    # Managed Lustre filesystem(s) mounted into this job's own worker containers. (AI-inferred)
     lustre_mounts: Any = None
+    # The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
     machine_spec: Any = None
+    # NFS filesystem(s) mounted into this job's own worker containers. (AI-inferred)
     nfs_mounts: Any = None
+    # A Python package (rather than a container image) this worker pool runs, using a prebuilt executor image. (AI-inferred)
     python_package_spec: Any = None
+    # How many machine replicas this job runs. (AI-inferred)
     replica_count: Any = None
 
 @dataclasses.dataclass
@@ -272,33 +339,52 @@ class HyperparameterTuningJob_TrialJobSpec:
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_Trials_FinalMeasurement_Metrics:
+    # An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
     metric_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_Trials_FinalMeasurement:
+    # How long this operation has been running, or took to complete. (AI-inferred)
     elapsed_duration: Any = None
+    # The metric value(s) recorded for this measurement. (AI-inferred)
     metrics: Any = None
+    # How many steps this job or trial ran for. (AI-inferred)
     step_count: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_Trials_Parameters:
+    # The name of this hyperparameter, unique within its own study. (AI-inferred)
     parameter_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJob_Trials:
+    # An identifier for the client that requested this trial. (AI-inferred)
     client_id: Any = None
+    # A reference to the custom training job running this trial. (AI-inferred)
     custom_job: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # The trial's own final, reported metric value(s) once it completed. (AI-inferred)
     final_measurement: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # Why this trial was reported infeasible, if it was. (AI-inferred)
     infeasible_reason: Any = None
+    # The metric value(s) reported at each intermediate step during this trial. (AI-inferred)
     measurements: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
+    # Interactive web UI URI(s) (e.g. a notebook or TensorBoard) for monitoring this trial while it runs. (AI-inferred)
     web_access_uris: Any = None
 
 _HyperparameterTuningJob_EncryptionSpecFields = {

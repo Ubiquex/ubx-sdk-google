@@ -4,7 +4,9 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointPolicy_EndpointMatcher_MetadataLabelMatcher_MetadataLabels struct {
-	LabelName  any
+	// The name of the label this applies to. (AI-inferred)
+	LabelName any
+	// The value of the label this applies to. (AI-inferred)
 	LabelValue any
 }
 

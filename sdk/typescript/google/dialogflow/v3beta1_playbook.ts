@@ -502,38 +502,68 @@ const V3beta1Playbook_LlmModelSettingsFields: FieldMap = {
 };
 
 export interface V3beta1PlaybookConfig {
+  /** Custom code run inline as part of this fulfillment or tool. (AI-inferred) */
   codeBlock?: V3beta1Playbook_CodeBlock | Computed<V3beta1Playbook_CodeBlock>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A human-readable statement of what this playbook is meant to accomplish. (AI-inferred) */
   goal?: string | Computed<string>;
+  /** The event handler(s) defined here. (AI-inferred) */
   handlers?: V3beta1Playbook_Handlers[] | Computed<V3beta1Playbook_Handlers[]>;
+  /** The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred) */
   inputParameterDefinitions?: V3beta1Playbook_InputParameterDefinitions[] | Computed<V3beta1Playbook_InputParameterDefinitions[]>;
+  /** An instruction given to the model or playbook. (AI-inferred) */
   instruction?: V3beta1Playbook_Instruction | Computed<V3beta1Playbook_Instruction>;
+  /** Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred) */
   llmModelSettings?: V3beta1Playbook_LlmModelSettings | Computed<V3beta1Playbook_LlmModelSettings>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred) */
   outputParameterDefinitions?: V3beta1Playbook_InputParameterDefinitions[] | Computed<V3beta1Playbook_InputParameterDefinitions[]>;
+  /** Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred) */
   playbookType?: string | Computed<string>;
+  /** The tool(s) this playbook can invoke. (AI-inferred) */
   referencedTools?: string[] | Computed<string[]>;
+  /** Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred) */
   speechSettings?: V3beta1Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettings | Computed<V3beta1Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettings>;
 }
 
 export interface V3beta1PlaybookAttrs {
+  /** Custom code run inline as part of this fulfillment or tool. (AI-inferred) */
   codeBlock: V3beta1Playbook_CodeBlock;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** A human-readable statement of what this playbook is meant to accomplish. (AI-inferred) */
   goal: string;
+  /** The event handler(s) defined here. (AI-inferred) */
   handlers: V3beta1Playbook_Handlers[];
+  /** Action(s) defined directly within this step, rather than delegated to a referenced tool or playbook. (AI-inferred) */
   inlineActions: string[];
+  /** The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred) */
   inputParameterDefinitions: V3beta1Playbook_InputParameterDefinitions[];
+  /** An instruction given to the model or playbook. (AI-inferred) */
   instruction: V3beta1Playbook_Instruction;
+  /** Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred) */
   llmModelSettings: V3beta1Playbook_LlmModelSettings;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred) */
   outputParameterDefinitions: V3beta1Playbook_InputParameterDefinitions[];
+  /** Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred) */
   playbookType: string;
+  /** The flow(s) this playbook or tool can invoke. (AI-inferred) */
   referencedFlows: string[];
+  /** The playbook(s) this playbook can invoke as a sub-task. (AI-inferred) */
   referencedPlaybooks: string[];
+  /** The tool(s) this playbook can invoke. (AI-inferred) */
   referencedTools: string[];
+  /** Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred) */
   speechSettings: V3beta1Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettings;
+  /** How many tokens this content consumed. (AI-inferred) */
   tokenCount: string;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

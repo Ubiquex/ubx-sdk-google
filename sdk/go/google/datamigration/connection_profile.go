@@ -18,6 +18,7 @@ type ConnectionProfile_Alloydb_Settings_InitialUser struct {
 }
 
 type ConnectionProfile_Alloydb_Settings_PrimaryInstanceSettings_InstanceNetworkConfig_AuthorizedExternalNetworks struct {
+	// The IP address range this network rule applies to, in CIDR notation. (AI-inferred)
 	CidrRange any
 }
 
@@ -82,10 +83,14 @@ type ConnectionProfile_Cloudsql_Settings_DataCacheConfig struct {
 }
 
 type ConnectionProfile_Cloudsql_Settings_IpConfig_AuthorizedNetworks struct {
+	// The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
 	ExpireTime any
-	Label      any
-	Ttl        any
-	Value      any
+	// A human-readable label for this network rule. (AI-inferred)
+	Label any
+	// How long this network rule remains valid. (AI-inferred)
+	Ttl any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type ConnectionProfile_Cloudsql_Settings_IpConfig struct {

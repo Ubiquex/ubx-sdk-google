@@ -230,57 +230,105 @@ var V3beta1Agent_TextToSpeechSettingsFields = ubx.FieldMap{
 }
 
 type V3beta1AgentConfig struct {
-	AdvancedSettings            any
-	AnswerFeedbackSettings      any
-	AvatarUri                   any
-	BigqueryExportSettings      any
-	ClientCertificateSettings   any
-	DefaultLanguageCode         any
-	Description                 any
-	DisplayName                 any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
+	AnswerFeedbackSettings any
+	// The URI of an image representing this agent in the console and integrations. (AI-inferred)
+	AvatarUri any
+	// Configures whether this conversation profile's own conversation data is exported to BigQuery. (AI-inferred)
+	BigqueryExportSettings any
+	// TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
+	ClientCertificateSettings any
+	// The language this agent responds in when no other language is specified or detected. (AI-inferred)
+	DefaultLanguageCode any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
 	EnableMultiLanguageTraining any
-	EnableSpellCorrection       any
-	EnableStackdriverLogging    any
-	GenAppBuilderSettings       any
-	GitIntegrationSettings      any
-	Locked                      any
-	Name                        any
-	PersonalizationSettings     any
-	SecuritySettings            any
-	SpeechToTextSettings        any
-	StartFlow                   any
-	StartPlaybook               any
-	SupportedLanguageCodes      any
-	TextToSpeechSettings        any
-	TimeZone                    any
+	// Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
+	EnableSpellCorrection any
+	// Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
+	EnableStackdriverLogging any
+	// Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
+	GenAppBuilderSettings any
+	// Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
+	GitIntegrationSettings any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for personalizing agent behavior per end user. (AI-inferred)
+	PersonalizationSettings any
+	// A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
+	SecuritySettings any
+	// Configuration for this agent's own speech-to-text behavior. (AI-inferred)
+	SpeechToTextSettings any
+	// The flow the conversation begins in. (AI-inferred)
+	StartFlow any
+	// The playbook the conversation begins in. (AI-inferred)
+	StartPlaybook any
+	// The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
+	SupportedLanguageCodes any
+	// Configuration for this agent's own text-to-speech behavior. (AI-inferred)
+	TextToSpeechSettings any
+	// The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
+	TimeZone any
 }
 
 type V3beta1AgentAttrs struct {
-	AdvancedSettings            any
-	AnswerFeedbackSettings      any
-	AvatarUri                   any
-	BigqueryExportSettings      any
-	ClientCertificateSettings   any
-	DefaultLanguageCode         any
-	Description                 any
-	DisplayName                 any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
+	AnswerFeedbackSettings any
+	// The URI of an image representing this agent in the console and integrations. (AI-inferred)
+	AvatarUri any
+	// Configures whether this conversation profile's own conversation data is exported to BigQuery. (AI-inferred)
+	BigqueryExportSettings any
+	// TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
+	ClientCertificateSettings any
+	// The language this agent responds in when no other language is specified or detected. (AI-inferred)
+	DefaultLanguageCode any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
 	EnableMultiLanguageTraining any
-	EnableSpellCorrection       any
-	EnableStackdriverLogging    any
-	GenAppBuilderSettings       any
-	GitIntegrationSettings      any
-	Locked                      any
-	Name                        any
-	PersonalizationSettings     any
-	SatisfiesPzi                any
-	SatisfiesPzs                any
-	SecuritySettings            any
-	SpeechToTextSettings        any
-	StartFlow                   any
-	StartPlaybook               any
-	SupportedLanguageCodes      any
-	TextToSpeechSettings        any
-	TimeZone                    any
+	// Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
+	EnableSpellCorrection any
+	// Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
+	EnableStackdriverLogging any
+	// Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
+	GenAppBuilderSettings any
+	// Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
+	GitIntegrationSettings any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for personalizing agent behavior per end user. (AI-inferred)
+	PersonalizationSettings any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
+	SatisfiesPzi any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
+	SatisfiesPzs any
+	// A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
+	SecuritySettings any
+	// Configuration for this agent's own speech-to-text behavior. (AI-inferred)
+	SpeechToTextSettings any
+	// The flow the conversation begins in. (AI-inferred)
+	StartFlow any
+	// The playbook the conversation begins in. (AI-inferred)
+	StartPlaybook any
+	// The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
+	SupportedLanguageCodes any
+	// Configuration for this agent's own text-to-speech behavior. (AI-inferred)
+	TextToSpeechSettings any
+	// The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
+	TimeZone any
 }
 
 var V3beta1Agent = ubx.ResourceBinding{

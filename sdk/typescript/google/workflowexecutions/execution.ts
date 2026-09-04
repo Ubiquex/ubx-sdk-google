@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Execution_Error_StackTrace_Elements_Position {
+  /** The real, zero-based column number this stack trace position points at. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The real number of characters this stack trace position spans. (AI-inferred) */
   length?: string | Computed<string>;
+  /** The real, one-based line number this stack trace position points at. (AI-inferred) */
   line?: string | Computed<string>;
 }
 
 export interface Execution_Error_StackTrace_Elements {
+  /** The real, source-code position (line, column, length) this stack trace element points at. (AI-inferred) */
   position?: Execution_Error_StackTrace_Elements_Position | Computed<Execution_Error_StackTrace_Elements_Position>;
+  /** The real, named workflow step or subworkflow this stack trace element was executing in. (AI-inferred) */
   routine?: string | Computed<string>;
+  /** The real, named step within the `routine` this stack trace element points at. (AI-inferred) */
   step?: string | Computed<string>;
 }
 
@@ -35,7 +41,9 @@ export interface Execution_StateError {
 }
 
 export interface Execution_Status_CurrentSteps {
+  /** The real, named workflow step or subworkflow this stack trace element was executing in. (AI-inferred) */
   routine?: string | Computed<string>;
+  /** The real, named step within the `routine` this stack trace element points at. (AI-inferred) */
   step?: string | Computed<string>;
 }
 

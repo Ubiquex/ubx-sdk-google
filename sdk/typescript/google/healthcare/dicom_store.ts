@@ -9,19 +9,27 @@ export interface DicomStore_NotificationConfig {
 }
 
 export interface DicomStore_NotificationConfigs {
+  /** A reference to the Pub/Sub topic notifications are published to. (AI-inferred) */
   pubsubTopic?: string | Computed<string>;
 }
 
 export interface DicomStore_StreamConfigs_BigqueryDestination {
+  /** Whether this operation proceeds even if it would otherwise be blocked by a safety check. (AI-inferred) */
   force?: boolean | Computed<boolean>;
+  /** Whether the source store's own resources are included, in addition to the destination's. (AI-inferred) */
   includeSourceStore?: boolean | Computed<boolean>;
+  /** Whether the parsed message schema is flattened into a single-level structure. (AI-inferred) */
   schemaFlattened?: unknown | Computed<unknown>;
+  /** The message schema, expressed as JSON. (AI-inferred) */
   schemaJson?: unknown | Computed<unknown>;
+  /** A reference to the BigQuery table this applies to. (AI-inferred) */
   tableUri?: string | Computed<string>;
+  /** Whether export output overwrites, appends to, or requires an empty destination table. (AI-inferred) */
   writeDisposition?: string | Computed<string>;
 }
 
 export interface DicomStore_StreamConfigs {
+  /** The BigQuery table this operation's own output is written to. (AI-inferred) */
   bigqueryDestination?: DicomStore_StreamConfigs_BigqueryDestination | Computed<DicomStore_StreamConfigs_BigqueryDestination>;
 }
 

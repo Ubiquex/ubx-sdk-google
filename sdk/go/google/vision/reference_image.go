@@ -4,13 +4,17 @@ package vision
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReferenceImage_BoundingPolys_NormalizedVertices struct {
+	// The horizontal coordinate of one vertex in a bounding polygon. (AI-inferred)
 	X any
+	// The vertical coordinate of one vertex in a bounding polygon. (AI-inferred)
 	Y any
 }
 
 type ReferenceImage_BoundingPolys struct {
+	// The real polygon vertices bounding the product within this reference image, normalized to `[0, 1]` relative to the image's own dimensions. (AI-inferred)
 	NormalizedVertices any
-	Vertices           any
+	// The real polygon vertices bounding the product within this reference image, in the image's own real pixel coordinate space. (AI-inferred)
+	Vertices any
 }
 
 var ReferenceImage_BoundingPolys_NormalizedVerticesFields = ubx.FieldMap{

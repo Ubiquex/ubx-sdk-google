@@ -2,24 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RolloutPlan_Waves_OrchestrationOptions_Delays {
+  /** Specifies the grouping delimiter for delay execution. Valid values: DELIMITER_BATCH (delay applies per batch), DELIMITER_LOCATION (delay applies per location), DELIMITER_UNSPECIFIED (no specific grouping). (AI-inferred) */
   delimiter?: string | Computed<string>;
+  /** The duration of the delay, specified as a string with a time unit (e.g., '30s' or '5m'). (AI-inferred) */
   duration?: string | Computed<string>;
+  /** The type of delay for this orchestration step. Allowed values are TYPE_MINIMUM (minimum delay), TYPE_OFFSET (offset delay), and TYPE_UNSPECIFIED (not specified). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface RolloutPlan_Waves_OrchestrationOptions {
   delays?: RolloutPlan_Waves_OrchestrationOptions_Delays[] | Computed<RolloutPlan_Waves_OrchestrationOptions_Delays[]>;
+  /** The maximum number of locations (zones) that can be updated concurrently during this wave of the rollout. The value can be a fixed number or a percentage of the total locations, e.g., '5' or '25%'. (AI-inferred) */
   maxConcurrentLocations?: string | Computed<string>;
   maxConcurrentResourcesPerLocation?: string | Computed<string>;
 }
 
 export interface RolloutPlan_Waves_Selectors_LocationSelector {
+  /** A list of Google Cloud locations (regions or zones) to include in this location selector. Resources in these locations will be selected for the rollout wave. (AI-inferred) */
   includedLocations?: string[] | Computed<string[]>;
 }
 
 export interface RolloutPlan_Waves_Selectors_ResourceHierarchySelector {
+  /** A list of folder resource names (or IDs) to include in the resource hierarchy selector. Resources contained within these folders are selected for the rollout wave. (AI-inferred) */
   includedFolders?: string[] | Computed<string[]>;
+  /** The list of organization IDs to include in the rollout wave's resource hierarchy selector. Only the resources within these organizations are targeted by the wave. (AI-inferred) */
   includedOrganizations?: string[] | Computed<string[]>;
+  /** A list of GCP project identifiers to include in the resource hierarchy selector. The rollout plan will apply to resources in these projects. (AI-inferred) */
   includedProjects?: string[] | Computed<string[]>;
 }
 
@@ -29,6 +37,7 @@ export interface RolloutPlan_Waves_Selectors {
 }
 
 export interface RolloutPlan_Waves_Validation_TimeBasedValidationMetadata {
+  /** The duration to wait as part of time-based validation, represented as a string. (AI-inferred) */
   waitDuration?: string | Computed<string>;
 }
 
@@ -39,9 +48,11 @@ export interface RolloutPlan_Waves_Validation {
 
 export interface RolloutPlan_Waves {
   displayName?: string | Computed<string>;
+  /** The wave number, represented as a string, indicating the sequential order of the wave within the rollout plan. (AI-inferred) */
   number?: string | Computed<string>;
   orchestrationOptions?: RolloutPlan_Waves_OrchestrationOptions | Computed<RolloutPlan_Waves_OrchestrationOptions>;
   selectors?: RolloutPlan_Waves_Selectors[] | Computed<RolloutPlan_Waves_Selectors[]>;
+  /** Configures the validation procedure for this wave, specifying how the rollout verifies the health and readiness of the instances in the wave before advancing to the next wave. (AI-inferred) */
   validation?: RolloutPlan_Waves_Validation | Computed<RolloutPlan_Waves_Validation>;
 }
 

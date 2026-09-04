@@ -14,19 +14,26 @@ type SecurityProfile_CustomMirroringProfile struct {
 }
 
 type SecurityProfile_ThreatPreventionProfile_AntivirusOverrides struct {
-	Action   any
+	// The action taken when this rule matches, e.g. allow or deny. (AI-inferred)
+	Action any
+	// The network protocol this rule matches. (AI-inferred)
 	Protocol any
 }
 
 type SecurityProfile_ThreatPreventionProfile_SeverityOverrides struct {
-	Action   any
+	// The action taken when this rule matches, e.g. allow or deny. (AI-inferred)
+	Action any
+	// How serious this finding or threat is. (AI-inferred)
 	Severity any
 }
 
 type SecurityProfile_ThreatPreventionProfile_ThreatOverrides struct {
-	Action   any
+	// The action taken when this rule matches, e.g. allow or deny. (AI-inferred)
+	Action any
+	// An identifier for the specific threat signature this applies to. (AI-inferred)
 	ThreatId any
-	Type     any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type SecurityProfile_ThreatPreventionProfile struct {
@@ -39,9 +46,12 @@ type SecurityProfile_ThreatPreventionProfile struct {
 }
 
 type SecurityProfile_UrlFilteringProfile_UrlFilters struct {
+	// Whether matching traffic is allowed or denied. (AI-inferred)
 	FilteringAction any
-	Priority        any
-	Urls            any
+	// The relative priority of this rule -- lower numbers are evaluated first. (AI-inferred)
+	Priority any
+	// The URL(s) this applies to. (AI-inferred)
+	Urls any
 }
 
 type SecurityProfile_UrlFilteringProfile struct {

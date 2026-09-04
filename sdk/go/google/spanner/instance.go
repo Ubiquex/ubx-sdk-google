@@ -4,26 +4,38 @@ package spanner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimits struct {
-	MaxNodes           any
+	// The maximum number of nodes autoscaling is allowed to scale up to. (AI-inferred)
+	MaxNodes any
+	// The maximum number of processing units autoscaling is allowed to scale up to. (AI-inferred)
 	MaxProcessingUnits any
-	MinNodes           any
+	// The minimum number of nodes autoscaling is allowed to scale down to. (AI-inferred)
+	MinNodes any
+	// The minimum number of processing units autoscaling is allowed to scale down to. (AI-inferred)
 	MinProcessingUnits any
 }
 
 type Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides struct {
-	AutoscalingLimits                                  any
+	// The minimum and maximum bounds this instance is allowed to autoscale within. (AI-inferred)
+	AutoscalingLimits any
+	// The target high-priority CPU utilization percentage autoscaling aims to maintain. (AI-inferred)
 	AutoscalingTargetHighPriorityCpuUtilizationPercent any
-	AutoscalingTargetTotalCpuUtilizationPercent        any
-	DisableHighPriorityCpuAutoscaling                  any
-	DisableTotalCpuAutoscaling                         any
+	// The target total CPU utilization percentage autoscaling aims to maintain. (AI-inferred)
+	AutoscalingTargetTotalCpuUtilizationPercent any
+	// Whether autoscaling based on high-priority CPU utilization is disabled. (AI-inferred)
+	DisableHighPriorityCpuAutoscaling any
+	// Whether autoscaling based on total CPU utilization is disabled. (AI-inferred)
+	DisableTotalCpuAutoscaling any
 }
 
 type Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection struct {
+	// The Google Cloud region this applies to. (AI-inferred)
 	Location any
 }
 
 type Instance_AutoscalingConfig_AsymmetricAutoscalingOptions struct {
-	Overrides        any
+	// Configuration values that override this instance's own inherited defaults. (AI-inferred)
+	Overrides any
+	// Restricts an operation to replica(s) matching a specific selector. (AI-inferred)
 	ReplicaSelection any
 }
 
@@ -55,8 +67,11 @@ type Instance_FreeInstanceMetadata struct {
 }
 
 type Instance_Instance_ReplicaComputeCapacity struct {
-	NodeCount        any
-	ProcessingUnits  any
+	// The number of nodes provisioned for this instance. (AI-inferred)
+	NodeCount any
+	// The number of processing units provisioned for this instance. (AI-inferred)
+	ProcessingUnits any
+	// Restricts an operation to replica(s) matching a specific selector. (AI-inferred)
 	ReplicaSelection any
 }
 

@@ -15,8 +15,11 @@ type DeviceSession_AndroidDevice struct {
 }
 
 type DeviceSession_StateHistories struct {
-	EventTime    any
+	// The real timestamp when this device session or test execution entered its own current state. (AI-inferred)
+	EventTime any
+	// The real, current lifecycle state (e.g. `ACTIVE`, `EXPIRED`, `FINISHED`) of this device session. (AI-inferred)
 	SessionState any
+	// Real, additional detail explaining this device session's or test execution's own current state. (AI-inferred)
 	StateMessage any
 }
 

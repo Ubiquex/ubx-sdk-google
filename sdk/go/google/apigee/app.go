@@ -4,24 +4,36 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type App_Attributes struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type App_Credentials_ApiProducts struct {
+	// A reference to the API product this applies to. (AI-inferred)
 	Apiproduct any
-	Status     any
+	// The current status of this resource. (AI-inferred)
+	Status any
 }
 
 type App_Credentials struct {
-	ApiProducts    any
-	Attributes     any
-	ConsumerKey    any
+	// The API product(s) this applies to. (AI-inferred)
+	ApiProducts any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Attributes any
+	// The API key issued to this app for calling APIs. (AI-inferred)
+	ConsumerKey any
+	// The secret paired with `consumer_key` for OAuth authentication. (AI-inferred)
 	ConsumerSecret any
-	ExpiresAt      any
-	IssuedAt       any
-	Scopes         any
-	Status         any
+	// When this resource expires. (AI-inferred)
+	ExpiresAt any
+	// When this certificate was issued. (AI-inferred)
+	IssuedAt any
+	// The OAuth scope(s) requested. (AI-inferred)
+	Scopes any
+	// The current status of this resource. (AI-inferred)
+	Status any
 }
 
 var App_AttributesFields = ubx.FieldMap{

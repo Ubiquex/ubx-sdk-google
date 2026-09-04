@@ -21,7 +21,9 @@ type Node_BootDiskConfig struct {
 }
 
 type Node_DataDisks struct {
-	Mode       any
+	// The real access mode (`READ_WRITE` or `READ_ONLY`) this data disk is attached to the TPU node with. (AI-inferred)
+	Mode any
+	// The real Compute Engine disk this TPU node's own data disk is created from or attached to. (AI-inferred)
 	SourceDisk any
 }
 
@@ -39,13 +41,17 @@ type Node_NetworkConfig struct {
 }
 
 type Node_NetworkEndpoints_AccessConfig struct {
+	// The real, assigned external (public) IP address for this TPU node's own network endpoint. (AI-inferred)
 	ExternalIp any
 }
 
 type Node_NetworkEndpoints struct {
+	// Real, external-access configuration (such as the assigned `external_ip`) for this TPU node's own network endpoint. (AI-inferred)
 	AccessConfig any
-	IpAddress    any
-	Port         any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The real network port this TPU node's own network endpoint listens on. (AI-inferred)
+	Port any
 }
 
 type Node_SchedulingConfig struct {
@@ -70,10 +76,14 @@ type Node_ShieldedInstanceConfig struct {
 }
 
 type Node_Symptoms struct {
-	CreateTime  any
-	Details     any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Real, additional detail text describing this detected TPU node symptom. (AI-inferred)
+	Details any
+	// The real, detected category of issue (e.g. `OUT_OF_MEMORY`, `HBM_OUT_OF_MEMORY`) affecting this TPU node. (AI-inferred)
 	SymptomType any
-	WorkerId    any
+	// The real, specific TPU worker this symptom was detected on, within a multi-worker TPU node. (AI-inferred)
+	WorkerId any
 }
 
 type Node_UpcomingMaintenance struct {

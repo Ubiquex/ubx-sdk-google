@@ -2,17 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers {
+  /** The type of blocker preventing the intended capability. Possible values: INCOMPATIBLE_METROS, NOT_AVAILABLE, NO_INTERCONNECTS, NO_INTERCONNECTS_IN_METRO_AND_ZONE, OTHER, UNSPECIFIED. (AI-inferred) */
   blockerType?: string | Computed<string>;
+  /** A URL to documentation explaining why the intended capability is blocked. (AI-inferred) */
   documentationLink?: string | Computed<string>;
+  /** A human-readable explanation of why the intended topology capability is blocked. (AI-inferred) */
   explanation?: string | Computed<string>;
+  /** List of facility names that are blocking the intended topology capability for this interconnect group. (AI-inferred) */
   facilities?: string[] | Computed<string[]>;
+  /** The list of interconnect names that are blocking the intended topology capability for this interconnect group. (AI-inferred) */
   interconnects?: string[] | Computed<string[]>;
+  /** List of metro names (geographic locations) that block the intended topology capability from being achieved. (AI-inferred) */
   metros?: string[] | Computed<string[]>;
+  /** A list of zones in which the intended topology capability is blocked or unavailable, as part of a capability blocker. (AI-inferred) */
   zones?: string[] | Computed<string[]>;
 }
 
 export interface InterconnectGroup_Configured_TopologyCapability {
+  /** A list of reasons that prevent the interconnect group's intended topology capability from being realized. This computed field is empty when the intended capability is fully supported, and provides details on any issues otherwise. (AI-inferred) */
   intendedCapabilityBlockers?: InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers[] | Computed<InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers[]>;
+  /** The supported service level agreement (SLA) for this topology capability. Possible values are: NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL, UNSPECIFIED. (AI-inferred) */
   supportedSla?: string | Computed<string>;
 }
 
@@ -22,6 +31,7 @@ export interface InterconnectGroup_Configured {
 }
 
 export interface InterconnectGroup_Intent {
+  /** Specifies the topology capability level for the interconnect group, indicating the required service level. Valid values are: NO_SLA (no service level agreement), PRODUCTION_CRITICAL (production workloads requiring high reliability), PRODUCTION_NON_CRITICAL (production workloads without critical reliability requirements), and UNSPECIFIED (value not set). (AI-inferred) */
   topologyCapability?: string | Computed<string>;
 }
 
@@ -41,10 +51,12 @@ export interface InterconnectGroup_PhysicalStructure_Metros_Facilities {
 
 export interface InterconnectGroup_PhysicalStructure_Metros {
   facilities?: InterconnectGroup_PhysicalStructure_Metros_Facilities[] | Computed<InterconnectGroup_PhysicalStructure_Metros_Facilities[]>;
+  /** The metropolitan area where the interconnect group's physical structure is located, such as 'london' or 'sydney'. (AI-inferred) */
   metro?: string | Computed<string>;
 }
 
 export interface InterconnectGroup_PhysicalStructure {
+  /** The metropolitan areas where the physical structure of the interconnect group is located. This computed field provides the list of metros supported by the physical infrastructure. (AI-inferred) */
   metros?: InterconnectGroup_PhysicalStructure_Metros[] | Computed<InterconnectGroup_PhysicalStructure_Metros[]>;
 }
 

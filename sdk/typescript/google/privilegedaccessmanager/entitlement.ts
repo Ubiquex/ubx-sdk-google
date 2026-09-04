@@ -9,12 +9,16 @@ export interface Entitlement_AdditionalNotificationTargets {
 }
 
 export interface Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers {
+  /** The principal(s) this applies to. (AI-inferred) */
   principals?: string[] | Computed<string[]>;
 }
 
 export interface Entitlement_ApprovalWorkflow_ManualApprovals_Steps {
+  /** The number of approval(s) still required before this grant can be activated. (AI-inferred) */
   approvalsNeeded?: number | Computed<number>;
+  /** Email address(es) notified when an approval decision is needed. (AI-inferred) */
   approverEmailRecipients?: string[] | Computed<string[]>;
+  /** The principal(s) authorized to approve this grant. (AI-inferred) */
   approvers?: Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers[] | Computed<Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers[]>;
 }
 
@@ -31,7 +35,9 @@ export interface Entitlement_ApprovalWorkflow {
 }
 
 export interface Entitlement_PrivilegedAccess_GcpIamAccess_RoleBindings {
+  /** A Common Expression Language (CEL) condition that must hold for this rule to apply. (AI-inferred) */
   conditionExpression?: string | Computed<string>;
+  /** The IAM role this grant provides temporary access to. (AI-inferred) */
   role?: string | Computed<string>;
 }
 

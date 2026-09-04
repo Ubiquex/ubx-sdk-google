@@ -39,6 +39,7 @@ type Engine_ChatEngineMetadata struct {
 }
 
 type Engine_CmekConfig_SingleRegionKeys struct {
+	// The Cloud KMS key used to encrypt this resource's own data. (AI-inferred)
 	KmsKey any
 }
 

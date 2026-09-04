@@ -4,8 +4,10 @@ package notebooks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_GceSetup_AcceleratorConfigs struct {
+	// The number of CPU core(s) allocated. (AI-inferred)
 	CoreCount any
-	Type      any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Instance_GceSetup_BootDisk struct {
@@ -32,10 +34,15 @@ type Instance_GceSetup_ContainerImage struct {
 }
 
 type Instance_GceSetup_DataDisks struct {
-	DiskEncryption   any
-	DiskSizeGb       any
-	DiskType         any
-	KmsKey           any
+	// How this disk is encrypted, e.g. with a Google-managed or customer-managed key. (AI-inferred)
+	DiskEncryption any
+	// The size of this disk, in gibibytes. (AI-inferred)
+	DiskSizeGb any
+	// The Persistent Disk type used, e.g. `pd-ssd` or `pd-standard`. (AI-inferred)
+	DiskType any
+	// A reference to the Cloud KMS key used to encrypt this resource. (AI-inferred)
+	KmsKey any
+	// The resource policy/policies (e.g. scheduled snapshots) applied to this resource. (AI-inferred)
 	ResourcePolicies any
 }
 
@@ -47,14 +54,19 @@ type Instance_GceSetup_GpuDriverConfig struct {
 }
 
 type Instance_GceSetup_NetworkInterfaces_AccessConfigs struct {
+	// The externally reachable IP address assigned to this resource. (AI-inferred)
 	ExternalIp any
 }
 
 type Instance_GceSetup_NetworkInterfaces struct {
+	// Network access configuration for this instance. (AI-inferred)
 	AccessConfigs any
-	Network       any
-	NicType       any
-	Subnet        any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The network interface type used, e.g. `VIRTIO_NET` or `GVNIC`. (AI-inferred)
+	NicType any
+	// A reference to the subnet this applies to. (AI-inferred)
+	Subnet any
 }
 
 type Instance_GceSetup_ReservationAffinity struct {
@@ -67,7 +79,9 @@ type Instance_GceSetup_ReservationAffinity struct {
 }
 
 type Instance_GceSetup_ServiceAccounts struct {
-	Email  any
+	// The service account email this instance runs as. (AI-inferred)
+	Email any
+	// The OAuth scope(s) granted to this instance. (AI-inferred)
 	Scopes any
 }
 
@@ -131,15 +145,24 @@ type Instance_GceSetup struct {
 }
 
 type Instance_UpgradeHistory struct {
-	Action         any
+	// The action to perform. (AI-inferred)
+	Action any
+	// The container image this instance runs. (AI-inferred)
 	ContainerImage any
-	CreateTime     any
-	Framework      any
-	Snapshot       any
-	State          any
-	TargetVersion  any
-	Version        any
-	VmImage        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The ML framework this environment provides. (AI-inferred)
+	Framework any
+	// A reference to the disk snapshot this resource is created from. (AI-inferred)
+	Snapshot any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The version this resource is upgraded or reset to. (AI-inferred)
+	TargetVersion any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
+	// The VM image this instance boots from. (AI-inferred)
+	VmImage any
 }
 
 var Instance_GceSetup_AcceleratorConfigsFields = ubx.FieldMap{

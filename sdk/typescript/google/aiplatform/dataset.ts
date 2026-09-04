@@ -7,15 +7,25 @@ export interface Dataset_EncryptionSpec {
 }
 
 export interface Dataset_SavedQueries {
+  /** Restricts this saved query to annotations matching the given filter expression. (AI-inferred) */
   annotationFilter?: string | Computed<string>;
+  /** Output only. How many distinct annotation specs (labels) this saved query's own annotations use. (AI-inferred) */
   annotationSpecCount?: number | Computed<number>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: unknown | Computed<unknown>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The ML problem type (e.g. classification, object detection) this saved query's own annotations are structured for. (AI-inferred) */
   problemType?: string | Computed<string>;
+  /** Whether this saved query's own annotations are structured in a way AutoML training can consume directly. (AI-inferred) */
   supportAutomlTraining?: boolean | Computed<boolean>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 

@@ -2,256 +2,414 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Job_Config_AdBreaks {
+  /** Where in the input this segment/edit starts. (AI-inferred) */
   startTimeOffset?: string | Computed<string>;
 }
 
 export interface Job_Config_EditList {
+  /** Where in the input this segment/edit ends. (AI-inferred) */
   endTimeOffset?: string | Computed<string>;
+  /** The input file(s) for this job. (AI-inferred) */
   inputs?: string[] | Computed<string[]>;
+  /** A reference to the encryption key this uses. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Where in the input this segment/edit starts. (AI-inferred) */
   startTimeOffset?: string | Computed<string>;
 }
 
 export interface Job_Config_ElementaryStreams_AudioStream_Mapping {
+  /** The MP4 atom used to identify the encryption key. (AI-inferred) */
   atomKey?: string | Computed<string>;
+  /** The audio gain adjustment, in decibels. (AI-inferred) */
   gainDb?: number | Computed<number>;
+  /** The source audio channel this mapping reads from. (AI-inferred) */
   inputChannel?: number | Computed<number>;
+  /** A reference to the input this applies to. (AI-inferred) */
   inputKey?: string | Computed<string>;
+  /** The specific track within the input this applies to. (AI-inferred) */
   inputTrack?: number | Computed<number>;
+  /** The destination audio channel this mapping writes to. (AI-inferred) */
   outputChannel?: number | Computed<number>;
 }
 
 export interface Job_Config_ElementaryStreams_AudioStream {
+  /** The target bitrate, in bits per second. (AI-inferred) */
   bitrateBps?: number | Computed<number>;
+  /** The number of audio channels. (AI-inferred) */
   channelCount?: number | Computed<number>;
+  /** The spatial arrangement of audio channels, e.g. stereo or 5.1 surround. (AI-inferred) */
   channelLayout?: string[] | Computed<string[]>;
+  /** The audio or video codec used, e.g. `h264` or `aac`. (AI-inferred) */
   codec?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** How input stream(s) are mapped into this output stream. (AI-inferred) */
   mapping?: Job_Config_ElementaryStreams_AudioStream_Mapping[] | Computed<Job_Config_ElementaryStreams_AudioStream_Mapping[]>;
+  /** The audio sample rate, in Hz. (AI-inferred) */
   sampleRateHertz?: number | Computed<number>;
 }
 
 export interface Job_Config_ElementaryStreams_TextStream_Mapping {
+  /** The MP4 atom used to identify the encryption key. (AI-inferred) */
   atomKey?: string | Computed<string>;
+  /** A reference to the input this applies to. (AI-inferred) */
   inputKey?: string | Computed<string>;
+  /** The specific track within the input this applies to. (AI-inferred) */
   inputTrack?: number | Computed<number>;
 }
 
 export interface Job_Config_ElementaryStreams_TextStream {
+  /** The audio or video codec used, e.g. `h264` or `aac`. (AI-inferred) */
   codec?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** How input stream(s) are mapped into this output stream. (AI-inferred) */
   mapping?: Job_Config_ElementaryStreams_TextStream_Mapping[] | Computed<Job_Config_ElementaryStreams_TextStream_Mapping[]>;
 }
 
 export interface Job_Config_ElementaryStreams_VideoStream_H264 {
+  /** Whether the encoder is allowed to use an open Group of Pictures structure, rather than requiring closed GOPs. (AI-inferred) */
   allowOpenGop?: boolean | Computed<boolean>;
+  /** The strength of adaptive quantization applied during encoding, trading bitrate efficiency for encoding complexity. (AI-inferred) */
   aqStrength?: number | Computed<number>;
+  /** How many consecutive B-frames the encoder may use between reference frames. (AI-inferred) */
   bFrameCount?: number | Computed<number>;
+  /** Whether B-frames may reference other B-frames, forming a hierarchical prediction structure. (AI-inferred) */
   bPyramid?: boolean | Computed<boolean>;
+  /** The target bitrate, in bits per second. (AI-inferred) */
   bitrateBps?: number | Computed<number>;
+  /** The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred) */
   crfLevel?: number | Computed<number>;
+  /** Whether encoding runs in two passes -- the first analyzes the content, the second encodes using that analysis for better quality. (AI-inferred) */
   enableTwoPass?: boolean | Computed<boolean>;
+  /** The entropy coding method used, e.g. CABAC or CAVLC. (AI-inferred) */
   entropyCoder?: string | Computed<string>;
+  /** The output video frame rate, in frames per second. (AI-inferred) */
   frameRate?: number | Computed<number>;
+  /** How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred) */
   frameRateConversionStrategy?: string | Computed<string>;
+  /** The target duration of each Group of Pictures. (AI-inferred) */
   gopDuration?: string | Computed<string>;
+  /** The target number of frames in each Group of Pictures. (AI-inferred) */
   gopFrameCount?: number | Computed<number>;
+  /** The output height, in pixels. (AI-inferred) */
   heightPixels?: number | Computed<number>;
+  /** Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred) */
   hlg?: unknown | Computed<unknown>;
+  /** The pixel format of the output video, e.g. `yuv420p`. (AI-inferred) */
   pixelFormat?: string | Computed<string>;
+  /** A named preset bundling a full job configuration, as a shortcut for setting individual fields. (AI-inferred) */
   preset?: string | Computed<string>;
+  /** The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred) */
   profile?: string | Computed<string>;
+  /** How the encoder controls bitrate, e.g. constant or variable. (AI-inferred) */
   rateControlMode?: string | Computed<string>;
+  /** Configures standard-dynamic-range video output. (AI-inferred) */
   sdr?: unknown | Computed<unknown>;
+  /** An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred) */
   tune?: string | Computed<string>;
+  /** The initial fullness of the Video Buffering Verifier model, in bits. (AI-inferred) */
   vbvFullnessBits?: number | Computed<number>;
+  /** The size of the Video Buffering Verifier buffer model, in bits, constraining short-term bitrate variation. (AI-inferred) */
   vbvSizeBits?: number | Computed<number>;
+  /** The output width, in pixels. (AI-inferred) */
   widthPixels?: number | Computed<number>;
 }
 
 export interface Job_Config_ElementaryStreams_VideoStream_H265 {
+  /** Whether the encoder is allowed to use an open Group of Pictures structure, rather than requiring closed GOPs. (AI-inferred) */
   allowOpenGop?: boolean | Computed<boolean>;
+  /** The strength of adaptive quantization applied during encoding, trading bitrate efficiency for encoding complexity. (AI-inferred) */
   aqStrength?: number | Computed<number>;
+  /** How many consecutive B-frames the encoder may use between reference frames. (AI-inferred) */
   bFrameCount?: number | Computed<number>;
+  /** Whether B-frames may reference other B-frames, forming a hierarchical prediction structure. (AI-inferred) */
   bPyramid?: boolean | Computed<boolean>;
+  /** The target bitrate, in bits per second. (AI-inferred) */
   bitrateBps?: number | Computed<number>;
+  /** The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred) */
   crfLevel?: number | Computed<number>;
+  /** Whether encoding runs in two passes -- the first analyzes the content, the second encodes using that analysis for better quality. (AI-inferred) */
   enableTwoPass?: boolean | Computed<boolean>;
+  /** The output video frame rate, in frames per second. (AI-inferred) */
   frameRate?: number | Computed<number>;
+  /** How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred) */
   frameRateConversionStrategy?: string | Computed<string>;
+  /** The target duration of each Group of Pictures. (AI-inferred) */
   gopDuration?: string | Computed<string>;
+  /** The target number of frames in each Group of Pictures. (AI-inferred) */
   gopFrameCount?: number | Computed<number>;
+  /** Configures HDR10 high-dynamic-range video output. (AI-inferred) */
   hdr10?: unknown | Computed<unknown>;
+  /** The output height, in pixels. (AI-inferred) */
   heightPixels?: number | Computed<number>;
+  /** Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred) */
   hlg?: unknown | Computed<unknown>;
+  /** The pixel format of the output video, e.g. `yuv420p`. (AI-inferred) */
   pixelFormat?: string | Computed<string>;
+  /** A named preset bundling a full job configuration, as a shortcut for setting individual fields. (AI-inferred) */
   preset?: string | Computed<string>;
+  /** The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred) */
   profile?: string | Computed<string>;
+  /** How the encoder controls bitrate, e.g. constant or variable. (AI-inferred) */
   rateControlMode?: string | Computed<string>;
+  /** Configures standard-dynamic-range video output. (AI-inferred) */
   sdr?: unknown | Computed<unknown>;
+  /** An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred) */
   tune?: string | Computed<string>;
+  /** The initial fullness of the Video Buffering Verifier model, in bits. (AI-inferred) */
   vbvFullnessBits?: number | Computed<number>;
+  /** The size of the Video Buffering Verifier buffer model, in bits, constraining short-term bitrate variation. (AI-inferred) */
   vbvSizeBits?: number | Computed<number>;
+  /** The output width, in pixels. (AI-inferred) */
   widthPixels?: number | Computed<number>;
 }
 
 export interface Job_Config_ElementaryStreams_VideoStream_Vp9 {
+  /** The target bitrate, in bits per second. (AI-inferred) */
   bitrateBps?: number | Computed<number>;
+  /** The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred) */
   crfLevel?: number | Computed<number>;
+  /** The output video frame rate, in frames per second. (AI-inferred) */
   frameRate?: number | Computed<number>;
+  /** How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred) */
   frameRateConversionStrategy?: string | Computed<string>;
+  /** The target duration of each Group of Pictures. (AI-inferred) */
   gopDuration?: string | Computed<string>;
+  /** The target number of frames in each Group of Pictures. (AI-inferred) */
   gopFrameCount?: number | Computed<number>;
+  /** The output height, in pixels. (AI-inferred) */
   heightPixels?: number | Computed<number>;
+  /** Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred) */
   hlg?: unknown | Computed<unknown>;
+  /** The pixel format of the output video, e.g. `yuv420p`. (AI-inferred) */
   pixelFormat?: string | Computed<string>;
+  /** The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred) */
   profile?: string | Computed<string>;
+  /** How the encoder controls bitrate, e.g. constant or variable. (AI-inferred) */
   rateControlMode?: string | Computed<string>;
+  /** Configures standard-dynamic-range video output. (AI-inferred) */
   sdr?: unknown | Computed<unknown>;
+  /** The output width, in pixels. (AI-inferred) */
   widthPixels?: number | Computed<number>;
 }
 
 export interface Job_Config_ElementaryStreams_VideoStream {
+  /** Configures the output video codec as H.264/AVC. (AI-inferred) */
   h264?: Job_Config_ElementaryStreams_VideoStream_H264 | Computed<Job_Config_ElementaryStreams_VideoStream_H264>;
+  /** Configures the output video codec as H.265/HEVC. (AI-inferred) */
   h265?: Job_Config_ElementaryStreams_VideoStream_H265 | Computed<Job_Config_ElementaryStreams_VideoStream_H265>;
+  /** Configures the output video codec as VP9. (AI-inferred) */
   vp9?: Job_Config_ElementaryStreams_VideoStream_Vp9 | Computed<Job_Config_ElementaryStreams_VideoStream_Vp9>;
 }
 
 export interface Job_Config_ElementaryStreams {
+  /** Configuration for a single audio output stream. (AI-inferred) */
   audioStream?: Job_Config_ElementaryStreams_AudioStream | Computed<Job_Config_ElementaryStreams_AudioStream>;
+  /** A reference to the encryption key this uses. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Configuration for a single text/subtitle output stream. (AI-inferred) */
   textStream?: Job_Config_ElementaryStreams_TextStream | Computed<Job_Config_ElementaryStreams_TextStream>;
+  /** Configuration for a single video output stream. (AI-inferred) */
   videoStream?: Job_Config_ElementaryStreams_VideoStream | Computed<Job_Config_ElementaryStreams_VideoStream>;
 }
 
 export interface Job_Config_Encryptions_DrmSystems {
+  /** Encrypts output using the ClearKey DRM scheme. (AI-inferred) */
   clearkey?: unknown | Computed<unknown>;
+  /** Encrypts output using Apple's FairPlay DRM scheme. (AI-inferred) */
   fairplay?: unknown | Computed<unknown>;
+  /** Encrypts output using Microsoft's PlayReady DRM scheme. (AI-inferred) */
   playready?: unknown | Computed<unknown>;
+  /** Encrypts output using Google's Widevine DRM scheme. (AI-inferred) */
   widevine?: unknown | Computed<unknown>;
 }
 
 export interface Job_Config_Encryptions_MpegCenc {
+  /** Which encryption scheme is used. (AI-inferred) */
   scheme?: string | Computed<string>;
 }
 
 export interface Job_Config_Encryptions_SecretManagerKeySource {
+  /** The Secret Manager secret version holding the encryption key. (AI-inferred) */
   secretVersion?: string | Computed<string>;
 }
 
 export interface Job_Config_Encryptions {
+  /** Encrypts the HLS output using AES-128, the legacy HLS encryption scheme. (AI-inferred) */
   aes128?: unknown | Computed<unknown>;
+  /** The DRM system(s) (Widevine, FairPlay, PlayReady, ClearKey) this encryption configuration supports. (AI-inferred) */
   drmSystems?: Job_Config_Encryptions_DrmSystems | Computed<Job_Config_Encryptions_DrmSystems>;
+  /** An identifier for this resource, unique within its own containing job. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Encrypts output using the MPEG Common Encryption scheme, compatible with multiple DRM systems. (AI-inferred) */
   mpegCenc?: Job_Config_Encryptions_MpegCenc | Computed<Job_Config_Encryptions_MpegCenc>;
+  /** Encrypts output using Sample-AES, Apple's own per-sample HLS encryption scheme. (AI-inferred) */
   sampleAes?: unknown | Computed<unknown>;
+  /** Sources the encryption key from a Secret Manager secret. (AI-inferred) */
   secretManagerKeySource?: Job_Config_Encryptions_SecretManagerKeySource | Computed<Job_Config_Encryptions_SecretManagerKeySource>;
 }
 
 export interface Job_Config_Inputs_Attributes_TrackDefinitions {
+  /** Whether spoken language is automatically detected in the input audio. (AI-inferred) */
   detectLanguages?: boolean | Computed<boolean>;
+  /** Output only. The language(s) automatically detected in the input audio. (AI-inferred) */
   detectedLanguages?: string[] | Computed<string[]>;
+  /** The specific track within the input this applies to. (AI-inferred) */
   inputTrack?: number | Computed<number>;
+  /** The language(s) this applies to. (AI-inferred) */
   languages?: string[] | Computed<string[]>;
 }
 
 export interface Job_Config_Inputs_Attributes {
+  /** Defines the individual track(s) within an audio elementary stream, e.g. for later mapping into multi-channel output. (AI-inferred) */
   trackDefinitions?: Job_Config_Inputs_Attributes_TrackDefinitions[] | Computed<Job_Config_Inputs_Attributes_TrackDefinitions[]>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Audio {
+  /** Whether high-frequency audio content is boosted during loudness normalization. (AI-inferred) */
   highBoost?: boolean | Computed<boolean>;
+  /** Whether low-frequency audio content is boosted during loudness normalization. (AI-inferred) */
   lowBoost?: boolean | Computed<boolean>;
+  /** The target loudness level, in LUFS (Loudness Units Full Scale). (AI-inferred) */
   lufs?: number | Computed<number>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Color {
+  /** The brightness adjustment applied to the video. (AI-inferred) */
   brightness?: number | Computed<number>;
+  /** The contrast adjustment applied to the video. (AI-inferred) */
   contrast?: number | Computed<number>;
+  /** The color saturation adjustment applied to the video. (AI-inferred) */
   saturation?: number | Computed<number>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Crop {
+  /** The number of pixels cropped or positioned from the bottom edge. (AI-inferred) */
   bottomPixels?: number | Computed<number>;
+  /** The number of pixels cropped or positioned from the left edge. (AI-inferred) */
   leftPixels?: number | Computed<number>;
+  /** The number of pixels cropped or positioned from the right edge. (AI-inferred) */
   rightPixels?: number | Computed<number>;
+  /** The number of pixels cropped or positioned from the top edge. (AI-inferred) */
   topPixels?: number | Computed<number>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Deblock {
+  /** Whether this feature is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** How strongly this filter is applied. (AI-inferred) */
   strength?: number | Computed<number>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Deinterlace_Bwdif {
+  /** Whether deinterlacing is applied to every frame, rather than only frames detected as interlaced. (AI-inferred) */
   deinterlaceAllFrames?: boolean | Computed<boolean>;
+  /** Which operating mode this uses. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** Which field (top or bottom) is treated as first when deinterlacing. (AI-inferred) */
   parity?: string | Computed<string>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Deinterlace_Yadif {
+  /** Whether deinterlacing is applied to every frame, rather than only frames detected as interlaced. (AI-inferred) */
   deinterlaceAllFrames?: boolean | Computed<boolean>;
+  /** Disables spatial-domain interlacing detection, relying only on temporal detection. (AI-inferred) */
   disableSpatialInterlacing?: boolean | Computed<boolean>;
+  /** Which operating mode this uses. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** Which field (top or bottom) is treated as first when deinterlacing. (AI-inferred) */
   parity?: string | Computed<string>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Deinterlace {
+  /** Deinterlaces using the Bob Weaver Deinterlacing Filter algorithm. (AI-inferred) */
   bwdif?: Job_Config_Inputs_PreprocessingConfig_Deinterlace_Bwdif | Computed<Job_Config_Inputs_PreprocessingConfig_Deinterlace_Bwdif>;
+  /** Deinterlaces using the Yet Another DeInterlacing Filter algorithm. (AI-inferred) */
   yadif?: Job_Config_Inputs_PreprocessingConfig_Deinterlace_Yadif | Computed<Job_Config_Inputs_PreprocessingConfig_Deinterlace_Yadif>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig_Denoise {
+  /** How strongly this filter is applied. (AI-inferred) */
   strength?: number | Computed<number>;
+  /** An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred) */
   tune?: string | Computed<string>;
 }
 
 export interface Job_Config_Inputs_PreprocessingConfig {
+  /** Audio content or configuration. (AI-inferred) */
   audio?: Job_Config_Inputs_PreprocessingConfig_Audio | Computed<Job_Config_Inputs_PreprocessingConfig_Audio>;
+  /** Color adjustment configuration applied to the video. (AI-inferred) */
   color?: Job_Config_Inputs_PreprocessingConfig_Color | Computed<Job_Config_Inputs_PreprocessingConfig_Color>;
+  /** Configuration for cropping the input video before encoding. (AI-inferred) */
   crop?: Job_Config_Inputs_PreprocessingConfig_Crop | Computed<Job_Config_Inputs_PreprocessingConfig_Crop>;
+  /** Whether the deblocking filter is applied to reduce blocking artifacts. (AI-inferred) */
   deblock?: Job_Config_Inputs_PreprocessingConfig_Deblock | Computed<Job_Config_Inputs_PreprocessingConfig_Deblock>;
+  /** Configuration for converting interlaced input video to progressive scan. (AI-inferred) */
   deinterlace?: Job_Config_Inputs_PreprocessingConfig_Deinterlace | Computed<Job_Config_Inputs_PreprocessingConfig_Deinterlace>;
+  /** Configuration for reducing visual noise in the input video before encoding. (AI-inferred) */
   denoise?: Job_Config_Inputs_PreprocessingConfig_Denoise | Computed<Job_Config_Inputs_PreprocessingConfig_Denoise>;
+  /** Configuration for padding the video with borders, e.g. to change aspect ratio without cropping. (AI-inferred) */
   pad?: Job_Config_Inputs_PreprocessingConfig_Crop | Computed<Job_Config_Inputs_PreprocessingConfig_Crop>;
 }
 
 export interface Job_Config_Inputs {
+  /** Additional codec-specific configuration attribute(s). (AI-inferred) */
   attributes?: Job_Config_Inputs_Attributes | Computed<Job_Config_Inputs_Attributes>;
+  /** A reference to the encryption key this uses. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Configuration for filters (denoise, deblock, color, crop, pad, audio) applied before encoding. (AI-inferred) */
   preprocessingConfig?: Job_Config_Inputs_PreprocessingConfig | Computed<Job_Config_Inputs_PreprocessingConfig>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Job_Config_Manifests_Dash {
+  /** How output segments are referenced from the manifest, e.g. by separate files or byte ranges. (AI-inferred) */
   segmentReferenceScheme?: string | Computed<string>;
 }
 
 export interface Job_Config_Manifests {
+  /** Configures output for DASH (Dynamic Adaptive Streaming over HTTP) delivery. (AI-inferred) */
   dash?: Job_Config_Manifests_Dash | Computed<Job_Config_Manifests_Dash>;
+  /** The output file name. (AI-inferred) */
   fileName?: string | Computed<string>;
+  /** The output file(s) produced by combining specific elementary streams together. (AI-inferred) */
   muxStreams?: string[] | Computed<string[]>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_Config_MuxStreams_Fmp4 {
+  /** A specific fourcc codec tag to write into the output container. (AI-inferred) */
   codecTag?: string | Computed<string>;
 }
 
 export interface Job_Config_MuxStreams_SegmentSettings {
+  /** Whether each output segment is written as a separate file, rather than one continuous stream. (AI-inferred) */
   individualSegments?: boolean | Computed<boolean>;
+  /** The target duration of each output segment. (AI-inferred) */
   segmentDuration?: string | Computed<string>;
 }
 
 export interface Job_Config_MuxStreams {
+  /** The output file container format, e.g. `mp4` or `ts`. (AI-inferred) */
   container?: string | Computed<string>;
+  /** The individual audio/video/text stream(s) defined for this job, before being combined into output files. (AI-inferred) */
   elementaryStreams?: string[] | Computed<string[]>;
+  /** A reference to the encryption configuration this applies to. (AI-inferred) */
   encryptionId?: string | Computed<string>;
+  /** The output file name. (AI-inferred) */
   fileName?: string | Computed<string>;
+  /** Configures output using the fragmented MP4 container. (AI-inferred) */
   fmp4?: Job_Config_MuxStreams_Fmp4 | Computed<Job_Config_MuxStreams_Fmp4>;
+  /** A reference to the encryption key this uses. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Configuration for how output is divided into segments. (AI-inferred) */
   segmentSettings?: Job_Config_MuxStreams_SegmentSettings | Computed<Job_Config_MuxStreams_SegmentSettings>;
 }
 
@@ -261,36 +419,52 @@ export interface Job_Config_Output {
 }
 
 export interface Job_Config_Overlays_Animations_AnimationFade_Xy {
+  /** The horizontal position. (AI-inferred) */
   x?: number | Computed<number>;
+  /** The vertical position. (AI-inferred) */
   y?: number | Computed<number>;
 }
 
 export interface Job_Config_Overlays_Animations_AnimationFade {
+  /** Where in the input this segment/edit ends. (AI-inferred) */
   endTimeOffset?: string | Computed<string>;
+  /** Whether this animation fades in or fades out. (AI-inferred) */
   fadeType?: string | Computed<string>;
+  /** Where in the input this segment/edit starts. (AI-inferred) */
   startTimeOffset?: string | Computed<string>;
+  /** The x/y position coordinates. (AI-inferred) */
   xy?: Job_Config_Overlays_Animations_AnimationFade_Xy | Computed<Job_Config_Overlays_Animations_AnimationFade_Xy>;
 }
 
 export interface Job_Config_Overlays_Animations_AnimationStatic {
+  /** Where in the input this segment/edit starts. (AI-inferred) */
   startTimeOffset?: string | Computed<string>;
+  /** The x/y position coordinates. (AI-inferred) */
   xy?: Job_Config_Overlays_Animations_AnimationFade_Xy | Computed<Job_Config_Overlays_Animations_AnimationFade_Xy>;
 }
 
 export interface Job_Config_Overlays_Animations {
+  /** Marks the end of an animated overlay sequence. (AI-inferred) */
   animationEnd?: Job_Config_AdBreaks | Computed<Job_Config_AdBreaks>;
+  /** A fade-in/fade-out animation applied to an overlay. (AI-inferred) */
   animationFade?: Job_Config_Overlays_Animations_AnimationFade | Computed<Job_Config_Overlays_Animations_AnimationFade>;
+  /** A static (non-animated) overlay, shown for a fixed duration. (AI-inferred) */
   animationStatic?: Job_Config_Overlays_Animations_AnimationStatic | Computed<Job_Config_Overlays_Animations_AnimationStatic>;
 }
 
 export interface Job_Config_Overlays_Image {
+  /** The alpha (transparency) level applied to this overlay. (AI-inferred) */
   alpha?: number | Computed<number>;
+  /** The output video's own pixel dimensions. (AI-inferred) */
   resolution?: Job_Config_Overlays_Animations_AnimationFade_Xy | Computed<Job_Config_Overlays_Animations_AnimationFade_Xy>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Job_Config_Overlays {
+  /** The animation(s) applied to this overlay over the course of the output. (AI-inferred) */
   animations?: Job_Config_Overlays_Animations[] | Computed<Job_Config_Overlays_Animations[]>;
+  /** An image overlay applied to the video. (AI-inferred) */
   image?: Job_Config_Overlays_Image | Computed<Job_Config_Overlays_Image>;
 }
 
@@ -300,16 +474,27 @@ export interface Job_Config_PubsubDestination {
 }
 
 export interface Job_Config_SpriteSheets {
+  /** The number of columns in a sprite sheet. (AI-inferred) */
   columnCount?: number | Computed<number>;
+  /** Where in the input this segment/edit ends. (AI-inferred) */
   endTimeOffset?: string | Computed<string>;
+  /** The prefix applied to generated output file names. (AI-inferred) */
   filePrefix?: string | Computed<string>;
+  /** A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred) */
   format?: string | Computed<string>;
+  /** How often this recurring action happens. (AI-inferred) */
   interval?: string | Computed<string>;
+  /** The target output quality level. (AI-inferred) */
   quality?: number | Computed<number>;
+  /** The number of rows in a sprite sheet. (AI-inferred) */
   rowCount?: number | Computed<number>;
+  /** The height, in pixels, of each thumbnail in a sprite sheet. (AI-inferred) */
   spriteHeightPixels?: number | Computed<number>;
+  /** The width, in pixels, of each thumbnail in a sprite sheet. (AI-inferred) */
   spriteWidthPixels?: number | Computed<number>;
+  /** Where in the input this segment/edit starts. (AI-inferred) */
   startTimeOffset?: string | Computed<string>;
+  /** The total number of items. (AI-inferred) */
   totalCount?: number | Computed<number>;
 }
 

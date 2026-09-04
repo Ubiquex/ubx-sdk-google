@@ -8,32 +8,47 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Connection_AdminFilters_StringListValues:
+    # The literal value(s) making up this string list. (AI-inferred)
     list_values: Any = None
 
 @dataclasses.dataclass
 class Connection_AdminFilters:
+    # The field this admin-configured filter matches against. (AI-inferred)
     filter_key: Any = None
+    # The kind of value this filter compares against, e.g. a string or an integer. (AI-inferred)
     filter_type: Any = None
+    # This admin filter's own value, when its type is an integer. (AI-inferred)
     int_value: Any = None
+    # This admin filter's own value, when its type is a list of strings. (AI-inferred)
     string_list_values: Any = None
+    # This admin filter's own value, when its type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthConfig_AdditionalVariables_EncryptionKeyValue:
+    # The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
     kms_key_name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthConfig_AdditionalVariables_SecretValue:
+    # The specific Secret Manager secret version referenced. (AI-inferred)
     secret_version: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthConfig_AdditionalVariables:
+    # This configuration variable's own value, when its type is boolean. (AI-inferred)
     bool_value: Any = None
+    # This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred)
     encryption_key_value: Any = None
+    # This admin filter's own value, when its type is an integer. (AI-inferred)
     int_value: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
     secret_value: Any = None
+    # This admin filter's own value, when its type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
@@ -172,13 +187,18 @@ class Connection_ConnectorVersionInfraConfig:
 
 @dataclasses.dataclass
 class Connection_DestinationConfigs_Destinations:
+    # The hostname of this destination. (AI-inferred)
     host: Any = None
+    # The port this destination listens on. (AI-inferred)
     port: Any = None
+    # A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass
 class Connection_DestinationConfigs:
+    # The backend endpoint(s) traffic for this connection is routed to. (AI-inferred)
     destinations: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
@@ -323,7 +343,9 @@ class Connection_Status:
 
 @dataclasses.dataclass
 class Connection_TrafficShapingConfigs:
+    # How long this traffic shaping configuration applies for. (AI-inferred)
     duration: Any = None
+    # The maximum request volume allowed within this traffic shaping window. (AI-inferred)
     quota_limit: Any = None
 
 _Connection_AdminFilters_StringListValuesFields = {

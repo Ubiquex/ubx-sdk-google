@@ -26,6 +26,7 @@ class Backup_EncryptionInfo:
 
 @dataclasses.dataclass
 class Backup_InstancePartitions:
+    # A reference to the instance partition this applies to. (AI-inferred)
     instance_partition: Any = None
 
 _Backup_EncryptionInfo_EncryptionStatusFields = {

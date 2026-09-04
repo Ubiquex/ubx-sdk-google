@@ -16,8 +16,10 @@ type Template_FilterConfig_PiAndJailbreakFilterSettings struct {
 }
 
 type Template_FilterConfig_RaiSettings_RaiFilters struct {
+	// How aggressively this Responsible AI filter blocks content: `LOW_AND_ABOVE`, `MEDIUM_AND_ABOVE`, or `HIGH` confidence that the content matches `filter_type`. A lower confidence threshold blocks more content. (AI-inferred)
 	ConfidenceLevel any
-	FilterType      any
+	// The Responsible AI category this filter screens for: `SEXUALLY_EXPLICIT`, `HATE_SPEECH`, `HARASSMENT`, or `DANGEROUS` content. (AI-inferred)
+	FilterType any
 }
 
 type Template_FilterConfig_RaiSettings struct {

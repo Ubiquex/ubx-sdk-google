@@ -194,11 +194,14 @@ type V1beta2ManagedZoneConfig struct {
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.
 	Description any
 	// The DNS name of this managed zone, for instance "example.com.".
-	DnsName          any
-	DnssecConfig     any
+	DnsName any
+	// Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
+	DnssecConfig any
+	// Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
 	ForwardingConfig any
 	// Unique identifier for the resource; defined by the server (output only)
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any
@@ -207,10 +210,13 @@ type V1beta2ManagedZoneConfig struct {
 	// Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.
 	NameServerSet any
 	// Delegate your managed_zone to these virtual name servers; defined by the server (output only)
-	NameServers             any
-	PeeringConfig           any
+	NameServers any
+	// Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
+	PeeringConfig any
+	// Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
 	PrivateVisibilityConfig any
-	ReverseLookupConfig     any
+	// Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
+	ReverseLookupConfig any
 	// Contains information about Service Directory-backed zones.
 	ServiceDirectoryConfig any
 	// The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.
@@ -225,11 +231,14 @@ type V1beta2ManagedZoneAttrs struct {
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.
 	Description any
 	// The DNS name of this managed zone, for instance "example.com.".
-	DnsName          any
-	DnssecConfig     any
+	DnsName any
+	// Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
+	DnssecConfig any
+	// Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
 	ForwardingConfig any
 	// Unique identifier for the resource; defined by the server (output only)
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any
@@ -238,10 +247,13 @@ type V1beta2ManagedZoneAttrs struct {
 	// Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.
 	NameServerSet any
 	// Delegate your managed_zone to these virtual name servers; defined by the server (output only)
-	NameServers             any
-	PeeringConfig           any
+	NameServers any
+	// Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
+	PeeringConfig any
+	// Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
 	PrivateVisibilityConfig any
-	ReverseLookupConfig     any
+	// Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
+	ReverseLookupConfig any
 	// Contains information about Service Directory-backed zones.
 	ServiceDirectoryConfig any
 	// The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.

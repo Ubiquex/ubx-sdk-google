@@ -4,6 +4,7 @@ package oracledatabase
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudExadataInfrastructure_Properties_CustomerContacts struct {
+	// An email address associated with this resource. (AI-inferred)
 	Email any
 }
 

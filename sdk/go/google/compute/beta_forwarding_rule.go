@@ -178,7 +178,8 @@ type BetaForwardingRuleAttrs struct {
 	// The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The ports field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, or SCTP, and - It's applicable only to the following products: internal passthrough Network Load Balancers, backend service-based external passthrough Network Load Balancers, and internal protocol forwarding. - You can specify a list of up to five ports by number, separated by commas. The ports can be contiguous or discontiguous. For external forwarding rules, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol fields) if they share at least one port number. For internal forwarding rules within the same VPC network, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair if they share at least one port number. @pattern: \\d+(?:-\\d+)?
 	Ports any
 	// [Output Only] The PSC connection id of the PSC forwarding rule.
-	PscConnectionId     any
+	PscConnectionId any
+	// The current status of this forwarding rule's own Private Service Connect connection to its target service. (AI-inferred)
 	PscConnectionStatus any
 	// Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any

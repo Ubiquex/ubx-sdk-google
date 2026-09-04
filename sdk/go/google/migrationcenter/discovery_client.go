@@ -4,8 +4,11 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryClient_Errors struct {
-	Code    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 

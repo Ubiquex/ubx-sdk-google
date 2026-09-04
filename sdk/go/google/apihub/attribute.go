@@ -4,10 +4,14 @@ package apihub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Attribute_AllowedValues struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Immutable   any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
+	Immutable any
 }
 
 var Attribute_AllowedValuesFields = ubx.FieldMap{

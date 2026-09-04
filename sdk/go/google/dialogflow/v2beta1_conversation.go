@@ -580,25 +580,41 @@ var V2beta1Conversation_TelephonyConnectionInfoFields = ubx.FieldMap{
 }
 
 type V2beta1ConversationConfig struct {
-	ConversationProfile        any
-	ConversationStage          any
+	// A reference to the conversation profile this applies to. (AI-inferred)
+	ConversationProfile any
+	// The current stage of this conversation, e.g. whether a human or automated agent is handling it. (AI-inferred)
+	ConversationStage any
+	// The conversation profile this conversation started with. (AI-inferred)
 	InitialConversationProfile any
-	PhoneNumber                any
-	TelephonyConnectionInfo    any
+	// The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
+	PhoneNumber any
+	// Real, telephony-specific connection details for this conversation, when connected over a phone call. (AI-inferred)
+	TelephonyConnectionInfo any
 }
 
 type V2beta1ConversationAttrs struct {
-	ConversationProfile        any
-	ConversationStage          any
-	EndTime                    any
-	IngestedContextReferences  any
+	// A reference to the conversation profile this applies to. (AI-inferred)
+	ConversationProfile any
+	// The current stage of this conversation, e.g. whether a human or automated agent is handling it. (AI-inferred)
+	ConversationStage any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// The real context references this conversation was created with, keyed by their own identifiers. (AI-inferred)
+	IngestedContextReferences any
+	// The conversation profile this conversation started with. (AI-inferred)
 	InitialConversationProfile any
-	InitialGeneratorContexts   any
-	LifecycleState             any
-	Name                       any
-	PhoneNumber                any
-	StartTime                  any
-	TelephonyConnectionInfo    any
+	// The initial context values provided to each generator configured for this conversation. (AI-inferred)
+	InitialGeneratorContexts any
+	// The current lifecycle state of this conversation, e.g. in progress or completed. (AI-inferred)
+	LifecycleState any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
+	PhoneNumber any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// Real, telephony-specific connection details for this conversation, when connected over a phone call. (AI-inferred)
+	TelephonyConnectionInfo any
 }
 
 var V2beta1Conversation = ubx.ResourceBinding{

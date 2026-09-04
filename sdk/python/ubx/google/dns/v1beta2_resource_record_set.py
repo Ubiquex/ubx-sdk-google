@@ -187,6 +187,7 @@ _V1beta2ResourceRecordSet_RoutingPolicyFields = {
 
 @dataclasses.dataclass
 class V1beta2ResourceRecordSetConfig:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # For example, www.example.com.
     name: Any = None
@@ -203,6 +204,7 @@ class V1beta2ResourceRecordSetConfig:
 
 @dataclasses.dataclass
 class V1beta2ResourceRecordSetAttrs:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # For example, www.example.com.
     name: Any = None

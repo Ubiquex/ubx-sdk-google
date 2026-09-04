@@ -29,21 +29,26 @@ type AspectType_MetadataTemplate_Constraints struct {
 }
 
 type AspectType_MetadataTemplate_EnumValues struct {
+	// Whether this field is deprecated and should no longer be used. (AI-inferred)
 	Deprecated any
-	Index      any
-	Name       any
+	// The position of this item within its own containing sequence. (AI-inferred)
+	Index any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type AspectType_MetadataTemplate struct {
 	// Definition of the annotations of a field.
 	Annotations any
-	ArrayItems  any
+	// The schema each element of an array-typed field must satisfy. (AI-inferred)
+	ArrayItems any
 	// Definition of the constraints of a field.
 	Constraints any
 	// Optional. The list of values for an enum type. You must define it if the type is enum.
 	EnumValues any
 	// Optional. Index is used to encode Template messages. The value of index can range between 1 and 2,147,483,647. Index must be unique within all fields in a Template. (Nested Templates can reuse indexes). Once a Template is defined, the index cannot be changed, because it identifies the field in the actual storage format. Index is a mandatory field, but it is optional for top level fields, and map/array "values" definitions.
-	Index    any
+	Index any
+	// The schema a map-typed field's own values must satisfy. (AI-inferred)
 	MapItems any
 	// Required. The name of the field.
 	Name any

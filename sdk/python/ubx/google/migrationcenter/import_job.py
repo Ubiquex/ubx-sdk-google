@@ -8,39 +8,58 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors:
+    # Additional detail about this error. (AI-inferred)
     error_details: Any = None
+    # How serious this finding is. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
 class ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError:
+    # The row number this error occurred on. (AI-inferred)
     row_number: Any = None
 
 @dataclasses.dataclass
 class ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError:
+    # Detail about a failure while parsing an uploaded CSV file. (AI-inferred)
     csv_error: Any = None
+    # The path to this file. (AI-inferred)
     file_path: Any = None
 
 @dataclasses.dataclass
 class ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxError:
+    # The row number this error occurred on. (AI-inferred)
     row_number: Any = None
+    # The spreadsheet sheet this applies to. (AI-inferred)
     sheet: Any = None
 
 @dataclasses.dataclass
 class ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors:
+    # Detail about a failure while reading an uploaded archive file. (AI-inferred)
     archive_error: Any = None
+    # A human-readable name for this asset. (AI-inferred)
     asset_title: Any = None
+    # Detail about a failure while parsing an uploaded CSV file. (AI-inferred)
     csv_error: Any = None
+    # The error(s) encountered. (AI-inferred)
     errors: Any = None
+    # The row number this error occurred on. (AI-inferred)
     row_number: Any = None
+    # The name of this virtual machine. (AI-inferred)
     vm_name: Any = None
+    # A unique identifier for this virtual machine. (AI-inferred)
     vm_uuid: Any = None
+    # Detail about a failure while parsing an uploaded Excel file. (AI-inferred)
     xlsx_error: Any = None
 
 @dataclasses.dataclass
 class ImportJob_ExecutionReport_ExecutionErrors_FileValidations:
+    # The error(s) encountered while processing this file. (AI-inferred)
     file_errors: Any = None
+    # The name of this file. (AI-inferred)
     file_name: Any = None
+    # Whether this report is incomplete, e.g. due to processing errors on some assets. (AI-inferred)
     partial_report: Any = None
+    # The error(s) encountered on specific row(s) of this file. (AI-inferred)
     row_errors: Any = None
 
 @dataclasses.dataclass

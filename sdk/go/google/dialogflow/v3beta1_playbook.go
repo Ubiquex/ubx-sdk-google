@@ -504,39 +504,69 @@ var V3beta1Playbook_LlmModelSettingsFields = ubx.FieldMap{
 }
 
 type V3beta1PlaybookConfig struct {
-	CodeBlock                  any
-	DisplayName                any
-	Goal                       any
-	Handlers                   any
-	InputParameterDefinitions  any
-	Instruction                any
-	LlmModelSettings           any
-	Name                       any
+	// Custom code run inline as part of this fulfillment or tool. (AI-inferred)
+	CodeBlock any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A human-readable statement of what this playbook is meant to accomplish. (AI-inferred)
+	Goal any
+	// The event handler(s) defined here. (AI-inferred)
+	Handlers any
+	// The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
+	InputParameterDefinitions any
+	// An instruction given to the model or playbook. (AI-inferred)
+	Instruction any
+	// Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
+	LlmModelSettings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
 	OutputParameterDefinitions any
-	PlaybookType               any
-	ReferencedTools            any
-	SpeechSettings             any
+	// Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred)
+	PlaybookType any
+	// The tool(s) this playbook can invoke. (AI-inferred)
+	ReferencedTools any
+	// Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
+	SpeechSettings any
 }
 
 type V3beta1PlaybookAttrs struct {
-	CodeBlock                  any
-	CreateTime                 any
-	DisplayName                any
-	Goal                       any
-	Handlers                   any
-	InlineActions              any
-	InputParameterDefinitions  any
-	Instruction                any
-	LlmModelSettings           any
-	Name                       any
+	// Custom code run inline as part of this fulfillment or tool. (AI-inferred)
+	CodeBlock any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A human-readable statement of what this playbook is meant to accomplish. (AI-inferred)
+	Goal any
+	// The event handler(s) defined here. (AI-inferred)
+	Handlers any
+	// Action(s) defined directly within this step, rather than delegated to a referenced tool or playbook. (AI-inferred)
+	InlineActions any
+	// The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
+	InputParameterDefinitions any
+	// An instruction given to the model or playbook. (AI-inferred)
+	Instruction any
+	// Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
+	LlmModelSettings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
 	OutputParameterDefinitions any
-	PlaybookType               any
-	ReferencedFlows            any
-	ReferencedPlaybooks        any
-	ReferencedTools            any
-	SpeechSettings             any
-	TokenCount                 any
-	UpdateTime                 any
+	// Which kind of playbook this is, e.g. task-oriented or routing. (AI-inferred)
+	PlaybookType any
+	// The flow(s) this playbook or tool can invoke. (AI-inferred)
+	ReferencedFlows any
+	// The playbook(s) this playbook can invoke as a sub-task. (AI-inferred)
+	ReferencedPlaybooks any
+	// The tool(s) this playbook can invoke. (AI-inferred)
+	ReferencedTools any
+	// Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
+	SpeechSettings any
+	// How many tokens this content consumed. (AI-inferred)
+	TokenCount any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var V3beta1Playbook = ubx.ResourceBinding{

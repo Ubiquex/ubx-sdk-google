@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Key_Restrictions_AndroidKeyRestrictions_AllowedApplications {
+  /** The Android application's package name (e.g. `com.example.app`) this key is restricted to. (AI-inferred) */
   packageName?: string | Computed<string>;
+  /** The SHA-1 fingerprint of the Android app's signing certificate, restricting this key to builds signed with that certificate. (AI-inferred) */
   sha1Fingerprint?: string | Computed<string>;
 }
 
@@ -12,7 +14,9 @@ export interface Key_Restrictions_AndroidKeyRestrictions {
 }
 
 export interface Key_Restrictions_ApiTargets {
+  /** The specific method(s) of `service` this key is allowed to call; leaving this empty allows every method of `service`. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
+  /** The API service this key is restricted to, e.g. `translate.googleapis.com`. Required for an API target restriction to take effect. (AI-inferred) */
   service?: string | Computed<string>;
 }
 

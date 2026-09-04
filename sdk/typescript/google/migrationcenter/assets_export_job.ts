@@ -12,52 +12,75 @@ export interface AssetsExportJob_PerformanceData {
 }
 
 export interface AssetsExportJob_RecentExecutions_Result_Error {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri {
+  /** A reference to a specific file. (AI-inferred) */
   file?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile {
+  /** The number of columns found in this file. (AI-inferred) */
   columnsCount?: number | Computed<number>;
+  /** How many rows this file contains. (AI-inferred) */
   rowCount?: number | Computed<number>;
+  /** A time-limited, pre-authorized URI for downloading this file. (AI-inferred) */
   signedUri?: AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri | Computed<AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri>;
 }
 
 export interface AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFile {
+  /** A time-limited, pre-authorized URI for downloading this file. (AI-inferred) */
   signedUri?: AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri | Computed<AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri>;
 }
 
 export interface AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries {
+  /** The generated CSV report file. (AI-inferred) */
   csvOutputFile?: AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile | Computed<AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile>;
+  /** The size of this file, in bytes. (AI-inferred) */
   fileSizeBytes?: string | Computed<string>;
+  /** The generated Excel report file. (AI-inferred) */
   xlsxOutputFile?: AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFile | Computed<AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFile>;
 }
 
 export interface AssetsExportJob_RecentExecutions_Result_OutputFiles {
+  /** The entry/entries making up this collection. (AI-inferred) */
   entries?: AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries[] | Computed<AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries[]>;
 }
 
 export interface AssetsExportJob_RecentExecutions_Result_SignedUris {
+  /** Time-limited, pre-authorized URI(s) for downloading these file(s). (AI-inferred) */
   signedUris?: AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri[] | Computed<AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri[]>;
 }
 
 export interface AssetsExportJob_RecentExecutions_Result {
+  /** Error detail for this failed operation. (AI-inferred) */
   error?: AssetsExportJob_RecentExecutions_Result_Error | Computed<AssetsExportJob_RecentExecutions_Result_Error>;
+  /** The generated output file(s) produced by this report. (AI-inferred) */
   outputFiles?: AssetsExportJob_RecentExecutions_Result_OutputFiles | Computed<AssetsExportJob_RecentExecutions_Result_OutputFiles>;
+  /** Time-limited, pre-authorized URI(s) for downloading these file(s). (AI-inferred) */
   signedUris?: AssetsExportJob_RecentExecutions_Result_SignedUris | Computed<AssetsExportJob_RecentExecutions_Result_SignedUris>;
 }
 
 export interface AssetsExportJob_RecentExecutions {
+  /** When this event or operation ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** An identifier for this specific execution run. (AI-inferred) */
   executionId?: string | Computed<string>;
+  /** The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred) */
   expireTime?: string | Computed<string>;
+  /** How many assets were requested to be included in this report. (AI-inferred) */
   requestedAssetCount?: number | Computed<number>;
+  /** The result produced by this operation. (AI-inferred) */
   result?: AssetsExportJob_RecentExecutions_Result | Computed<AssetsExportJob_RecentExecutions_Result>;
+  /** When this event or operation started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 

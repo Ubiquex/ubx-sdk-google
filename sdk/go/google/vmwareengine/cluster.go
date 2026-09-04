@@ -4,17 +4,25 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds struct {
-	ScaleIn  any
+	// Configuration for automatically removing node(s) when utilization drops. (AI-inferred)
+	ScaleIn any
+	// Configuration for automatically adding node(s) when utilization rises. (AI-inferred)
 	ScaleOut any
 }
 
 type Cluster_AutoscalingSettings_AutoscalingPolicies struct {
+	// The utilization threshold(s) that trigger scaling based on consumed memory. (AI-inferred)
 	ConsumedMemoryThresholds any
-	CpuThresholds            any
-	GrantedMemoryThresholds  any
-	NodeTypeId               any
-	ScaleOutSize             any
-	StorageThresholds        any
+	// The utilization threshold(s) that trigger scaling based on CPU usage. (AI-inferred)
+	CpuThresholds any
+	// The utilization threshold(s) that trigger scaling based on granted memory. (AI-inferred)
+	GrantedMemoryThresholds any
+	// A reference to the node type this applies to. (AI-inferred)
+	NodeTypeId any
+	// The number of node(s) added each time this cluster scales out. (AI-inferred)
+	ScaleOutSize any
+	// The utilization threshold(s) that trigger scaling based on storage usage. (AI-inferred)
+	StorageThresholds any
 }
 
 type Cluster_AutoscalingSettings struct {
@@ -29,24 +37,36 @@ type Cluster_AutoscalingSettings struct {
 }
 
 type Cluster_DatastoreMountConfig_DatastoreNetwork struct {
+	// The number of active connection(s). (AI-inferred)
 	ConnectionCount any
-	Mtu             any
-	NetworkPeering  any
-	Subnet          any
+	// The maximum transmission unit size, in bytes, for this network. (AI-inferred)
+	Mtu any
+	// A reference to the network peering this applies to. (AI-inferred)
+	NetworkPeering any
+	// A reference to the subnet this applies to. (AI-inferred)
+	Subnet any
 }
 
 type Cluster_DatastoreMountConfig struct {
-	AccessMode       any
-	Datastore        any
+	// Whether this datastore is accessible for reading only or for reading and writing. (AI-inferred)
+	AccessMode any
+	// A reference to the datastore this applies to. (AI-inferred)
+	Datastore any
+	// The network hosting this datastore. (AI-inferred)
 	DatastoreNetwork any
-	FileShare        any
-	NfsVersion       any
-	Servers          any
+	// A single exported file share. (AI-inferred)
+	FileShare any
+	// The NFS protocol version this file share uses. (AI-inferred)
+	NfsVersion any
+	// The server(s) this applies to. (AI-inferred)
+	Servers any
 }
 
 type Cluster_NodeTypeConfigs struct {
+	// The number of CPU core(s) enabled per node, when overriding the node type's own default. (AI-inferred)
 	CustomCoreCount any
-	NodeCount       any
+	// The number of node(s) provisioned. (AI-inferred)
+	NodeCount any
 }
 
 type Cluster_StretchedClusterConfig struct {

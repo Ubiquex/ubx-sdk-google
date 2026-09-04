@@ -2,13 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NfsShare_AllowedClients {
+  /** Whether this NFS-allowed client is permitted to access device files on the share. (AI-inferred) */
   allowDev?: boolean | Computed<boolean>;
+  /** Whether this NFS-allowed client is permitted to use set-user-ID and set-group-ID bits on the share. (AI-inferred) */
   allowSuid?: boolean | Computed<boolean>;
+  /** The real CIDR range of client IP addresses this NFS share access rule applies to. (AI-inferred) */
   allowedClientsCidr?: string | Computed<string>;
+  /** The real mount access level (`READ` or `READ_WRITE`) this NFS-allowed client is granted. (AI-inferred) */
   mountPermissions?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real, exported NFS path clients matching this rule can mount. (AI-inferred) */
   nfsPath?: string | Computed<string>;
+  /** Whether this NFS-allowed client is exempt from root squashing, letting a client's own root user act as root on the share. (AI-inferred) */
   noRootSquash?: boolean | Computed<boolean>;
+  /** The real IP address this NFS share is served from. (AI-inferred) */
   shareIp?: string | Computed<string>;
 }
 

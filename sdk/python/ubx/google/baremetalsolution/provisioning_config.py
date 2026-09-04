@@ -8,89 +8,149 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProvisioningConfig_Instances_ClientNetwork:
+    # The real IP address to assign this instance on the referenced network. (AI-inferred)
     address: Any = None
+    # A real, already-provisioned Bare Metal Solution network to attach this instance to, instead of provisioning a new one. (AI-inferred)
     existing_network_id: Any = None
+    # The real identifier of the Bare Metal Solution network this instance's own network interface attaches to. (AI-inferred)
     network_id: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfaces:
+    # Whether this logical network interface is real, used as the instance's own default network gateway. (AI-inferred)
     default_gateway: Any = None
+    # A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
     id: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real network type (`CLIENT` or `PRIVATE`) this logical network interface attaches to. (AI-inferred)
     network_type: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Instances_LogicalInterfaces:
+    # The real, physical network interface index this logical interface configuration applies to. (AI-inferred)
     interface_index: Any = None
+    # The real, physical network attachments that make up one logical network interface on this instance. (AI-inferred)
     logical_network_interfaces: Any = None
+    # The real, client-assigned name for this logical network interface configuration. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Instances:
+    # Whether to enable account-wide network access for this Bare Metal Solution instance, rather than scoping it to a single client network. (AI-inferred)
     account_networks_enabled: Any = None
+    # Real, requested client-facing network configuration for this Bare Metal Solution instance. (AI-inferred)
     client_network: Any = None
+    # Whether to real, enable hyperthreading on this Bare Metal Solution instance's own CPU. (AI-inferred)
     hyperthreading: Any = None
+    # A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
     id: Any = None
+    # The real Bare Metal Solution server type (CPU/memory/storage configuration) to provision this instance as. (AI-inferred)
     instance_type: Any = None
+    # The real Cloud KMS key version used to encrypt this instance's own boot volume. (AI-inferred)
     kms_key_version: Any = None
+    # The real, logical network interfaces to configure on this Bare Metal Solution instance, each mapping to one or more physical `logical_network_interfaces`. (AI-inferred)
     logical_interfaces: Any = None
+    # The real, client-assigned name for this logical network interface configuration. (AI-inferred)
     name: Any = None
+    # The real VLAN configuration (`SINGLE_VLAN` or `MULTI_VLAN`) this instance's own logical interfaces use. (AI-inferred)
     network_config: Any = None
+    # The real, named network template this instance's own network configuration is provisioned from. (AI-inferred)
     network_template: Any = None
+    # The real operating system image to provision this Bare Metal Solution instance with. (AI-inferred)
     os_image: Any = None
+    # Real, requested private (internal) network configuration for this Bare Metal Solution instance. (AI-inferred)
     private_network: Any = None
+    # The real, existing SSH key names to authorize for access to this instance at provisioning time. (AI-inferred)
     ssh_key_names: Any = None
+    # A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred)
     user_note: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Networks_VlanAttachments:
+    # A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
     id: Any = None
+    # The real pairing key used to establish this VLAN attachment's own interconnection. (AI-inferred)
     pairing_key: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Networks:
+    # The real network bandwidth tier (e.g. `BW_10_GBPS`) requested for this Bare Metal Solution network. (AI-inferred)
     bandwidth: Any = None
+    # The real CIDR range requested for this Bare Metal Solution network. (AI-inferred)
     cidr: Any = None
+    # The real Google Cloud service this Bare Metal Solution network peers with. (AI-inferred)
     gcp_service: Any = None
+    # A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
     id: Any = None
+    # Whether to real, enable jumbo frames (larger MTU) on this Bare Metal Solution network. (AI-inferred)
     jumbo_frames_enabled: Any = None
+    # The real, client-assigned name for this logical network interface configuration. (AI-inferred)
     name: Any = None
+    # The real CIDR sizing tier requested for services on this Bare Metal Solution network, or `DISABLED` if none is needed. (AI-inferred)
     service_cidr: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred)
     user_note: Any = None
+    # The real VLAN attachment(s) connecting this Bare Metal Solution network to Google Cloud. (AI-inferred)
     vlan_attachments: Any = None
+    # Whether this VLAN attachment's own interconnect is real, provisioned in the same Google Cloud project as the Bare Metal Solution environment. (AI-inferred)
     vlan_same_project: Any = None
+    # The real virtual routing and forwarding (VRF) instance this Bare Metal Solution network is provisioned in. (AI-inferred)
     vrf: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Volumes_LunRanges:
+    # The real number of LUNs to provision at this `size_gb` within this LUN range. (AI-inferred)
     quantity: Any = None
+    # The real, per-LUN size, in GiB, requested within this LUN range. (AI-inferred)
     size_gb: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Volumes_NfsExports:
+    # Whether this NFS-allowed client is permitted to access device files on the share. (AI-inferred)
     allow_dev: Any = None
+    # Whether this NFS-allowed client is permitted to use set-user-ID and set-group-ID bits on the share. (AI-inferred)
     allow_suid: Any = None
+    # The real CIDR range requested for this Bare Metal Solution network. (AI-inferred)
     cidr: Any = None
+    # The real Bare Metal Solution machine ID this NFS export access rule applies to. (AI-inferred)
     machine_id: Any = None
+    # The real identifier of the Bare Metal Solution network this instance's own network interface attaches to. (AI-inferred)
     network_id: Any = None
+    # Whether this NFS-allowed client is exempt from root squashing, letting a client's own root user act as root on the share. (AI-inferred)
     no_root_squash: Any = None
+    # The real access level (`READ_ONLY` or `READ_WRITE`) this NFS export grants the referenced `machine_id`. (AI-inferred)
     permissions: Any = None
 
 @dataclasses.dataclass
 class ProvisioningConfig_Volumes:
+    # The real Google Cloud service this Bare Metal Solution network peers with. (AI-inferred)
     gcp_service: Any = None
+    # A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
     id: Any = None
+    # The real, requested LUN (logical unit number) ranges and sizing for a fibre-channel-attached Bare Metal Solution volume. (AI-inferred)
     lun_ranges: Any = None
+    # The real Bare Metal Solution machine IDs this volume should be attached to. (AI-inferred)
     machine_ids: Any = None
+    # The real, client-assigned name for this logical network interface configuration. (AI-inferred)
     name: Any = None
+    # The real, requested NFS export access rules for this Bare Metal Solution volume, when provisioned over NFS. (AI-inferred)
     nfs_exports: Any = None
+    # The real storage performance tier requested for this Bare Metal Solution volume. (AI-inferred)
     performance_tier: Any = None
+    # The real storage protocol (`PROTOCOL_FC` or `PROTOCOL_NFS`) requested for this Bare Metal Solution volume. (AI-inferred)
     protocol: Any = None
+    # The real, per-LUN size, in GiB, requested within this LUN range. (AI-inferred)
     size_gb: Any = None
+    # Whether real, automatic snapshotting is enabled for this Bare Metal Solution volume. (AI-inferred)
     snapshots_enabled: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred)
     user_note: Any = None
 
 _ProvisioningConfig_Instances_ClientNetworkFields = {

@@ -2,70 +2,111 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers {
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The IP protocol version this applies to. (AI-inferred) */
   ipProtocol?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The type of load balancer this internal target is, e.g. regional internal. (AI-inferred) */
   loadBalancerType?: string | Computed<string>;
+  /** The VPC network this private zone or policy is visible from. (AI-inferred) */
   networkUrl?: string | Computed<string>;
+  /** A network port number. (AI-inferred) */
   port?: string | Computed<string>;
+  /** The Google Cloud project this applies to. (AI-inferred) */
   project?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
 }
 
 export interface Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets {
+  /** The external IP address(es) a forwarding rule directs matching queries to. (AI-inferred) */
   externalEndpoints?: string[] | Computed<string[]>;
+  /** The internal load balancer(s) this record's own routing policy targets. (AI-inferred) */
   internalLoadBalancers?: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers[] | Computed<Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers[]>;
 }
 
 export interface Change_Additions_RoutingPolicy_Geo_Items {
+  /** The target(s) whose own health is checked before being included in routing responses. (AI-inferred) */
   healthCheckedTargets?: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets | Computed<Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The record data (RDATA) value(s) for this DNS record. (AI-inferred) */
   rrdatas?: string[] | Computed<string[]>;
+  /** The DNSSEC signature record data for this record set. (AI-inferred) */
   signatureRrdatas?: string[] | Computed<string[]>;
 }
 
 export interface Change_Additions_RoutingPolicy_Geo {
+  /** Whether traffic is restricted to healthy targets within the same region as the client, when using geo-routing. (AI-inferred) */
   enableFencing?: boolean | Computed<boolean>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: Change_Additions_RoutingPolicy_Geo_Items[] | Computed<Change_Additions_RoutingPolicy_Geo_Items[]>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface Change_Additions_RoutingPolicy_PrimaryBackup {
+  /** The fallback geo-routing policy applied when every primary target in this routing entry is unhealthy. (AI-inferred) */
   backupGeoTargets?: Change_Additions_RoutingPolicy_Geo | Computed<Change_Additions_RoutingPolicy_Geo>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The primary target(s) served while healthy, before falling back to backup targets. (AI-inferred) */
   primaryTargets?: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets | Computed<Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets>;
+  /** The fraction of traffic still routed to a target while it transitions out of rotation, rather than cutting over immediately. (AI-inferred) */
   trickleTraffic?: number | Computed<number>;
 }
 
 export interface Change_Additions_RoutingPolicy_Wrr_Items {
+  /** The target(s) whose own health is checked before being included in routing responses. (AI-inferred) */
   healthCheckedTargets?: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets | Computed<Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The record data (RDATA) value(s) for this DNS record. (AI-inferred) */
   rrdatas?: string[] | Computed<string[]>;
+  /** The DNSSEC signature record data for this record set. (AI-inferred) */
   signatureRrdatas?: string[] | Computed<string[]>;
+  /** The relative weight of this target in weighted round-robin routing -- higher values receive proportionally more traffic. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface Change_Additions_RoutingPolicy_Wrr {
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: Change_Additions_RoutingPolicy_Wrr_Items[] | Computed<Change_Additions_RoutingPolicy_Wrr_Items[]>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface Change_Additions_RoutingPolicy {
+  /** A routing policy entry keyed by the geographic origin of the query. (AI-inferred) */
   geo?: Change_Additions_RoutingPolicy_Geo | Computed<Change_Additions_RoutingPolicy_Geo>;
+  /** A reference to the health check used to determine target availability for routing. (AI-inferred) */
   healthCheck?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** A routing policy that serves primary targets while healthy, falling back to backup targets otherwise. (AI-inferred) */
   primaryBackup?: Change_Additions_RoutingPolicy_PrimaryBackup | Computed<Change_Additions_RoutingPolicy_PrimaryBackup>;
+  /** A weighted round-robin routing policy entry. (AI-inferred) */
   wrr?: Change_Additions_RoutingPolicy_Wrr | Computed<Change_Additions_RoutingPolicy_Wrr>;
 }
 
 export interface Change_Additions {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The DNS record name this applies to. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configures this record to return different answers based on the querying client, e.g. by geo or weighted round-robin. (AI-inferred) */
   routingPolicy?: Change_Additions_RoutingPolicy | Computed<Change_Additions_RoutingPolicy>;
+  /** The record data (RDATA) value(s) for this DNS record. (AI-inferred) */
   rrdatas?: string[] | Computed<string[]>;
+  /** The DNSSEC signature record data for this record set. (AI-inferred) */
   signatureRrdatas?: string[] | Computed<string[]>;
+  /** How long, in seconds, this record may be cached by resolvers. (AI-inferred) */
   ttl?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -190,6 +231,7 @@ export interface ChangeConfig {
   id?: string | Computed<string>;
   /** If the DNS queries for the zone will be served. */
   isServing?: boolean | Computed<boolean>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** The time that this operation was started by the server (output only). This is in RFC3339 text format. */
   startTime?: string | Computed<string>;
@@ -206,6 +248,7 @@ export interface ChangeAttrs {
   id: string;
   /** If the DNS queries for the zone will be served. */
   isServing: boolean;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** The time that this operation was started by the server (output only). This is in RFC3339 text format. */
   startTime: string;

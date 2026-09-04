@@ -8,17 +8,26 @@ type InterconnectAttachmentGroup_Attachments struct {
 }
 
 type InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockers struct {
-	Attachments       any
-	BlockerType       any
+	// List of interconnect attachments that are configured as intended blockers for the availability SLA. (AI-inferred)
+	Attachments any
+	// The type of blocker preventing the intended SLA from being met. Possible values include: BLOCKER_TYPE_UNSPECIFIED, INCOMPATIBLE_METROS, INCOMPATIBLE_REGIONS, MISSING_GLOBAL_ROUTING, NO_ATTACHMENTS, NO_ATTACHMENTS_IN_METRO_AND_ZONE, and OTHER. (AI-inferred)
+	BlockerType any
+	// A URL to documentation describing this intended SLA blocker. (AI-inferred)
 	DocumentationLink any
-	Explanation       any
-	Metros            any
-	Regions           any
-	Zones             any
+	// A human-readable explanation of the intended SLA blocker, describing why it might prevent meeting the availability SLA. (AI-inferred)
+	Explanation any
+	// List of metro locations that are excluded from the availability SLA, as they are considered blockers. (AI-inferred)
+	Metros any
+	// The list of regions designated as intended SLA blockers. These regions are excluded from the availability SLA calculation, so the SLA guarantee does not apply to attachments located in them. (AI-inferred)
+	Regions any
+	// A list of zone names that are intended to be treated as SLA blockers in the configured availability SLA. (AI-inferred)
+	Zones any
 }
 
 type InterconnectAttachmentGroup_Configured_AvailabilitySla struct {
-	EffectiveSla        any
+	// The effective Service Level Agreement (SLA) for the interconnect attachment group, computed by the provider. Possible values: EFFECTIVE_SLA_UNSPECIFIED, NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL. (AI-inferred)
+	EffectiveSla any
+	// Computed list of blockers that would prevent the configured availability SLA from being met. (AI-inferred)
 	IntendedSlaBlockers any
 }
 
@@ -28,30 +37,38 @@ type InterconnectAttachmentGroup_Configured struct {
 }
 
 type InterconnectAttachmentGroup_Intent struct {
+	// The availability SLA (service level agreement) for this interconnect attachment. Valid values are: AVAILABILITY_SLA_UNSPECIFIED, NO_SLA, PRODUCTION_CRITICAL, and PRODUCTION_NON_CRITICAL. (AI-inferred)
 	AvailabilitySla any
 }
 
 type InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_Zones struct {
 	Attachments any
-	Zone        any
+	// The availability zone within the facility, typically in the form `<region>-<zone>` (e.g., us-central1-a). (AI-inferred)
+	Zone any
 }
 
 type InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities struct {
+	// The name of the physical facility (data center) within the metro where the interconnect attachment is located. (AI-inferred)
 	Facility any
-	Zones    any
+	// A list of zones within the facility. Each zone represents an availability zone in the facility where the interconnect attachment group operates. (AI-inferred)
+	Zones any
 }
 
 type InterconnectAttachmentGroup_LogicalStructure_Regions_Metros struct {
+	// A list of physical data center facilities available in the metro for this interconnect attachment group. (AI-inferred)
 	Facilities any
-	Metro      any
+	// The name of a metropolitan area (metro) that is associated with a specific region in the logical structure of an Interconnect attachment group. (AI-inferred)
+	Metro any
 }
 
 type InterconnectAttachmentGroup_LogicalStructure_Regions struct {
 	Metros any
+	// The Google Cloud region for this logical structure entry. Must be a valid region name, e.g., 'us-central1'. (AI-inferred)
 	Region any
 }
 
 type InterconnectAttachmentGroup_LogicalStructure struct {
+	// A list of regions where the interconnect attachment group is available, along with the status of the group in each region. (AI-inferred)
 	Regions any
 }
 

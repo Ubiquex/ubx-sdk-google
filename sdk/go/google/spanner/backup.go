@@ -22,6 +22,7 @@ type Backup_EncryptionInfo struct {
 }
 
 type Backup_InstancePartitions struct {
+	// A reference to the instance partition this applies to. (AI-inferred)
 	InstancePartition any
 }
 

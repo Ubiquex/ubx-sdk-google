@@ -484,28 +484,48 @@ _V3beta1Page_TransitionRoutesFields = {
 
 @dataclasses.dataclass
 class V3beta1PageConfig:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred)
     entry_fulfillment: Any = None
+    # The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
     event_handlers: Any = None
+    # The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred)
     form: Any = None
+    # Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
     knowledge_connector_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The reusable transition route group(s) included on this page/flow. (AI-inferred)
     transition_route_groups: Any = None
+    # The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
     transition_routes: Any = None
 
 @dataclasses.dataclass
 class V3beta1PageAttrs:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred)
     entry_fulfillment: Any = None
+    # The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
     event_handlers: Any = None
+    # The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred)
     form: Any = None
+    # Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
     knowledge_connector_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The reusable transition route group(s) included on this page/flow. (AI-inferred)
     transition_route_groups: Any = None
+    # The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
     transition_routes: Any = None
 
 V3beta1Page = ubx.ResourceBinding(

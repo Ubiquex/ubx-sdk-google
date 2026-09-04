@@ -44,6 +44,7 @@ class Instance_MachineConfig:
 
 @dataclasses.dataclass
 class Instance_NetworkConfig_AuthorizedExternalNetworks:
+    # The IP address range, in CIDR notation, this applies to. (AI-inferred)
     cidr_range: Any = None
 
 @dataclasses.dataclass
@@ -61,10 +62,15 @@ class Instance_NetworkConfig:
 
 @dataclasses.dataclass
 class Instance_Nodes:
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # An IP address. (AI-inferred)
     ip: Any = None
+    # Whether this instance is a hot standby, ready to take over with minimal failover time. (AI-inferred)
     is_hot_standby: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The Compute Engine zone this applies to. (AI-inferred)
     zone_id: Any = None
 
 @dataclasses.dataclass
@@ -88,14 +94,20 @@ class Instance_ObservabilityConfig:
 
 @dataclasses.dataclass
 class Instance_PscInstanceConfig_PscAutoConnections:
+    # A reference to the consumer-side VPC network this connection uses. (AI-inferred)
     consumer_network: Any = None
+    # The current status of the consumer-side network connection. (AI-inferred)
     consumer_network_status: Any = None
+    # A reference to the consumer's own Google Cloud project. (AI-inferred)
     consumer_project: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class Instance_PscInstanceConfig_PscInterfaceConfigs:
+    # A reference to the network attachment this connection uses. (AI-inferred)
     network_attachment_resource: Any = None
 
 @dataclasses.dataclass

@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SavedQuery_LoggingQuery_SummaryFields {
+  /** A reference to a specific field. (AI-inferred) */
   field?: string | Computed<string>;
 }
 
@@ -17,32 +18,50 @@ export interface SavedQuery_LoggingQuery {
 }
 
 export interface SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunction {
+  /** The parameter(s) configuring this operation. (AI-inferred) */
   parameters?: unknown[] | Computed<unknown[]>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualField {
+  /** The source field(s) this virtual field is derived from. (AI-inferred) */
   underlyingFieldSources?: unknown[] | Computed<unknown[]>;
+  /** The computation type defining how this virtual field's own value is derived. (AI-inferred) */
   virtualFieldType?: string | Computed<string>;
 }
 
 export interface SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField {
+  /** An alternate name this field is also known by. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** Converts this field's own value to a different type. (AI-inferred) */
   cast?: string | Computed<string>;
+  /** A reference to a specific field. (AI-inferred) */
   field?: string | Computed<string>;
+  /** The transformation operation applied to this field. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** Extracts a value from this field using a regular expression. (AI-inferred) */
   regexExtraction?: string | Computed<string>;
+  /** The SQL aggregation function (e.g. `COUNT`, `SUM`) applied to this field. (AI-inferred) */
   sqlAggregationFunction?: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunction | Computed<SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunction>;
+  /** The unit values are rounded down to when this field is truncated. (AI-inferred) */
   truncationGranularity?: string | Computed<string>;
+  /** A field computed from other field(s), rather than read directly from the log entry. (AI-inferred) */
   virtualField?: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualField | Computed<SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualField>;
 }
 
 export interface SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources {
+  /** A reference to another field this alias resolves to. (AI-inferred) */
   aliasRef?: string | Computed<string>;
+  /** The data type of this analytics table column. (AI-inferred) */
   columnType?: string | Computed<string>;
+  /** A reference to a specific field. (AI-inferred) */
   field?: string | Computed<string>;
+  /** Whether this field's own value is parsed as JSON. (AI-inferred) */
   isJson?: boolean | Computed<boolean>;
+  /** The path to this field's own containing parent. (AI-inferred) */
   parentPath?: string | Computed<string>;
+  /** A field derived and exposed as a new, named column. (AI-inferred) */
   projectedField?: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField | Computed<SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField>;
 }
 
@@ -69,7 +88,9 @@ export interface SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter {
 }
 
 export interface SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBys {
+  /** Where this field's own value is read from, e.g. the log payload or its own labels. (AI-inferred) */
   fieldSource?: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources | Computed<SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources>;
+  /** Whether results are sorted ascending or descending. (AI-inferred) */
   sortOrderDirection?: string | Computed<string>;
 }
 

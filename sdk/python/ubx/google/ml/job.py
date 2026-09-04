@@ -80,12 +80,19 @@ class Job_TrainingInput_EvaluatorConfig:
 
 @dataclasses.dataclass
 class Job_TrainingInput_Hyperparameters_Params:
+    # The candidate string value(s) considered for this categorical hyperparameter. (AI-inferred)
     categorical_values: Any = None
+    # The candidate numeric value(s) considered for this discrete hyperparameter. (AI-inferred)
     discrete_values: Any = None
+    # The maximum value allowed. (AI-inferred)
     max_value: Any = None
+    # The minimum value allowed. (AI-inferred)
     min_value: Any = None
+    # The name of a hyperparameter being tuned. (AI-inferred)
     parameter_name: Any = None
+    # How this hyperparameter's own search space is scaled, e.g. linearly or logarithmically. (AI-inferred)
     scale_type: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -186,20 +193,32 @@ class Job_TrainingOutput_BuiltInAlgorithmOutput:
 
 @dataclasses.dataclass
 class Job_TrainingOutput_Trials_AllMetrics:
+    # The value of the objective metric this trial achieved. (AI-inferred)
     objective_value: Any = None
+    # The training step this metric was reported at. (AI-inferred)
     training_step: Any = None
 
 @dataclasses.dataclass
 class Job_TrainingOutput_Trials:
+    # The full set of metric(s) reported for this trial. (AI-inferred)
     all_metrics: Any = None
+    # The output produced by a built-in training algorithm. (AI-inferred)
     built_in_algorithm_output: Any = None
+    # When this event or window ended. (AI-inferred)
     end_time: Any = None
+    # The metric value reported at the conclusion of this trial. (AI-inferred)
     final_metric: Any = None
+    # The hyperparameter tuning configuration for this training job. (AI-inferred)
     hyperparameters: Any = None
+    # Whether this trial was stopped before completing all of its own training steps. (AI-inferred)
     is_trial_stopped_early: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
+    # The unique identifier of this hyperparameter tuning trial. (AI-inferred)
     trial_id: Any = None
+    # The URI(s) used to access this training job's own interactive web interface(s). (AI-inferred)
     web_access_uris: Any = None
 
 @dataclasses.dataclass

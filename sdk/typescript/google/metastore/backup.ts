@@ -7,18 +7,25 @@ export interface Backup_ServiceRevision_EncryptionConfig {
 }
 
 export interface Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_Consumers {
+  /** The real Google Cloud region this Private Service Connect consumer endpoint is created in. (AI-inferred) */
   endpointLocation?: string | Computed<string>;
+  /** The real, fully-qualified URI this Private Service Connect consumer endpoint is reachable at. (AI-inferred) */
   endpointUri?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig {
+  /** The real Private Service Connect consumer endpoint(s) allowed to reach this metastore's own network. (AI-inferred) */
   consumers?: Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_Consumers[] | Computed<Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_Consumers[]>;
 }
 
 export interface Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions {
+  /** Real, Hive metastore configuration property overrides applied to this specific auxiliary metastore version. (AI-inferred) */
   configOverrides?: Record<string, string> | Computed<Record<string, string>>;
+  /** Real network configuration (its own real `consumers`) for this metastore service revision or auxiliary version. (AI-inferred) */
   networkConfig?: Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig | Computed<Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig>;
+  /** The real Hive metastore software version this auxiliary version runs. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
@@ -67,20 +74,32 @@ export interface Backup_ServiceRevision_MetadataIntegration {
 }
 
 export interface Backup_ServiceRevision_MetadataManagementActivity_MetadataExports {
+  /** The real export format (`MYSQL` or `AVRO`) this metadata export was written in. (AI-inferred) */
   databaseDumpType?: string | Computed<string>;
+  /** The real Cloud Storage URI this metadata export was (or will be) written to. (AI-inferred) */
   destinationGcsUri?: string | Computed<string>;
+  /** The real timestamp when this metadata export or restore operation finished. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The real timestamp when this metadata export or restore operation started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The real, current state (`RUNNING`, `SUCCEEDED`, `FAILED`) of this metadata export or restore operation. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Backup_ServiceRevision_MetadataManagementActivity_Restores {
+  /** A reference to the real `google_metastore_metastore_backup` this restore operation restored from. (AI-inferred) */
   backup?: string | Computed<string>;
+  /** The real Cloud Storage location this restore operation's own source backup data was read from. (AI-inferred) */
   backupLocation?: string | Computed<string>;
+  /** Real, additional detail describing this restore operation's own outcome. (AI-inferred) */
   details?: string | Computed<string>;
+  /** The real timestamp when this metadata export or restore operation finished. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The real timestamp when this metadata export or restore operation started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The real, current state (`RUNNING`, `SUCCEEDED`, `FAILED`) of this metadata export or restore operation. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

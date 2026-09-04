@@ -4,8 +4,11 @@ package analyticshub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Listing_BigqueryDataset_EffectiveReplicas struct {
-	Location     any
+	// The real Google Cloud region this listing's own dataset replica is hosted in. (AI-inferred)
+	Location any
+	// Whether this replica is real, the primary (source of truth) copy of the shared dataset. (AI-inferred)
 	PrimaryState any
+	// The real, current availability (`READY_TO_USE` or `UNAVAILABLE`) of this dataset replica. (AI-inferred)
 	ReplicaState any
 }
 
@@ -19,8 +22,10 @@ type Listing_BigqueryDataset_RestrictedExportPolicy struct {
 }
 
 type Listing_BigqueryDataset_SelectedResources struct {
+	// The real, fully-qualified BigQuery routine (a stored procedure or function) this listing selectively shares, instead of an entire dataset. (AI-inferred)
 	Routine any
-	Table   any
+	// The real, fully-qualified BigQuery table this listing selectively shares, instead of an entire dataset. (AI-inferred)
+	Table any
 }
 
 type Listing_BigqueryDataset struct {

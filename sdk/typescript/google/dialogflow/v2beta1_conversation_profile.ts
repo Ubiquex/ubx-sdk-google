@@ -426,42 +426,76 @@ const V2beta1ConversationProfile_TtsConfigFields: FieldMap = {
 };
 
 export interface V2beta1ConversationProfileConfig {
+  /** Configures the automated (Dialogflow) agent connected to this conversation. (AI-inferred) */
   automatedAgentConfig?: V2beta1ConversationProfile_AutomatedAgentConfig | Computed<V2beta1ConversationProfile_AutomatedAgentConfig>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Configures real-time suggestions offered to a human agent handling this conversation. (AI-inferred) */
   humanAgentAssistantConfig?: V2beta1ConversationProfile_HumanAgentAssistantConfig | Computed<V2beta1ConversationProfile_HumanAgentAssistantConfig>;
+  /** Configures the external live-agent service this conversation hands off to. (AI-inferred) */
   humanAgentHandoffConfig?: V2beta1ConversationProfile_HumanAgentHandoffConfig | Computed<V2beta1ConversationProfile_HumanAgentHandoffConfig>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** Configures whether this conversation's own interaction logs are enabled. (AI-inferred) */
   loggingConfig?: V2beta1ConversationProfile_LoggingConfig | Computed<V2beta1ConversationProfile_LoggingConfig>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configures the Pub/Sub notification sent whenever a new message occurs in this conversation. (AI-inferred) */
   newMessageEventNotificationConfig?: V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig | Computed<V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig>;
+  /** Configures the Pub/Sub notification sent whenever a new speech recognition result occurs in this conversation. (AI-inferred) */
   newRecognitionResultNotificationConfig?: V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig | Computed<V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig>;
+  /** Configures the Pub/Sub notification sent on conversation lifecycle events. (AI-inferred) */
   notificationConfig?: V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig | Computed<V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig>;
+  /** A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred) */
   securitySettings?: string | Computed<string>;
+  /** Configures this conversation profile's own SIP (telephony) connection settings. (AI-inferred) */
   sipConfig?: V2beta1ConversationProfile_SipConfig | Computed<V2beta1ConversationProfile_SipConfig>;
+  /** Configures this conversation profile's own speech-to-text recognition settings. (AI-inferred) */
   sttConfig?: V2beta1ConversationProfile_SttConfig | Computed<V2beta1ConversationProfile_SttConfig>;
+  /** The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred) */
   timeZone?: string | Computed<string>;
+  /** Configures this conversation profile's own text-to-speech synthesis settings. (AI-inferred) */
   ttsConfig?: V2beta1ConversationProfile_TtsConfig | Computed<V2beta1ConversationProfile_TtsConfig>;
+  /** Whether this conversation profile uses bidirectional streaming for real-time audio. (AI-inferred) */
   useBidiStreaming?: boolean | Computed<boolean>;
 }
 
 export interface V2beta1ConversationProfileAttrs {
+  /** Configures the automated (Dialogflow) agent connected to this conversation. (AI-inferred) */
   automatedAgentConfig: V2beta1ConversationProfile_AutomatedAgentConfig;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Configures real-time suggestions offered to a human agent handling this conversation. (AI-inferred) */
   humanAgentAssistantConfig: V2beta1ConversationProfile_HumanAgentAssistantConfig;
+  /** Configures the external live-agent service this conversation hands off to. (AI-inferred) */
   humanAgentHandoffConfig: V2beta1ConversationProfile_HumanAgentHandoffConfig;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode: string;
+  /** Configures whether this conversation's own interaction logs are enabled. (AI-inferred) */
   loggingConfig: V2beta1ConversationProfile_LoggingConfig;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configures the Pub/Sub notification sent whenever a new message occurs in this conversation. (AI-inferred) */
   newMessageEventNotificationConfig: V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig;
+  /** Configures the Pub/Sub notification sent whenever a new speech recognition result occurs in this conversation. (AI-inferred) */
   newRecognitionResultNotificationConfig: V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig;
+  /** Configures the Pub/Sub notification sent on conversation lifecycle events. (AI-inferred) */
   notificationConfig: V2beta1ConversationProfile_HumanAgentAssistantConfig_NotificationConfig;
+  /** A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred) */
   securitySettings: string;
+  /** Configures this conversation profile's own SIP (telephony) connection settings. (AI-inferred) */
   sipConfig: V2beta1ConversationProfile_SipConfig;
+  /** Configures this conversation profile's own speech-to-text recognition settings. (AI-inferred) */
   sttConfig: V2beta1ConversationProfile_SttConfig;
+  /** The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred) */
   timeZone: string;
+  /** Configures this conversation profile's own text-to-speech synthesis settings. (AI-inferred) */
   ttsConfig: V2beta1ConversationProfile_TtsConfig;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
+  /** Whether this conversation profile uses bidirectional streaming for real-time audio. (AI-inferred) */
   useBidiStreaming: boolean;
 }
 

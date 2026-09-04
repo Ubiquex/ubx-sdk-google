@@ -2,16 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_Fields {
+  /** A reference to a specific field. (AI-inferred) */
   field?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections {
+  /** A reference to the source collection (e.g. a MongoDB collection) this applies to. (AI-inferred) */
   collection?: string | Computed<string>;
+  /** The field(s) making up this schema. (AI-inferred) */
   fields?: Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_Fields[] | Computed<Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_Fields[]>;
 }
 
 export interface Stream_BackfillAll_MongodbExcludedObjects_Databases {
+  /** The source collection(s) included or excluded by this filter. (AI-inferred) */
   collections?: Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections[] | Computed<Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections[]>;
+  /** The source database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
 }
 
@@ -21,24 +26,37 @@ export interface Stream_BackfillAll_MongodbExcludedObjects {
 }
 
 export interface Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumns {
+  /** The character set collation used for this column's own string comparisons. (AI-inferred) */
   collation?: string | Computed<string>;
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The data type of this column. (AI-inferred) */
   dataType?: string | Computed<string>;
+  /** The maximum length of this column's own value. (AI-inferred) */
   length?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** This column's own position within its own containing table, starting from 1. (AI-inferred) */
   ordinalPosition?: number | Computed<number>;
+  /** The total number of digits a numeric column may hold. (AI-inferred) */
   precision?: number | Computed<number>;
+  /** The column(s) making up this table's own primary key. (AI-inferred) */
   primaryKey?: boolean | Computed<boolean>;
+  /** The number of digits kept after the decimal point in a numeric column. (AI-inferred) */
   scale?: number | Computed<number>;
 }
 
 export interface Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables {
+  /** The MySQL column(s) making up this table. (AI-inferred) */
   mysqlColumns?: Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumns[] | Computed<Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumns[]>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases {
+  /** The source database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** The MySQL table(s) this applies to. (AI-inferred) */
   mysqlTables?: Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables[] | Computed<Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables[]>;
 }
 
@@ -48,24 +66,37 @@ export interface Stream_BackfillAll_MysqlExcludedObjects {
 }
 
 export interface Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumns {
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The data type of this column. (AI-inferred) */
   dataType?: string | Computed<string>;
+  /** The character encoding used for this column's own text data. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The maximum length of this column's own value. (AI-inferred) */
   length?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** This column's own position within its own containing table, starting from 1. (AI-inferred) */
   ordinalPosition?: number | Computed<number>;
+  /** The total number of digits a numeric column may hold. (AI-inferred) */
   precision?: number | Computed<number>;
+  /** The column(s) making up this table's own primary key. (AI-inferred) */
   primaryKey?: boolean | Computed<boolean>;
+  /** The number of digits kept after the decimal point in a numeric column. (AI-inferred) */
   scale?: number | Computed<number>;
 }
 
 export interface Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables {
+  /** The Oracle column(s) making up this table. (AI-inferred) */
   oracleColumns?: Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumns[] | Computed<Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumns[]>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_OracleExcludedObjects_OracleSchemas {
+  /** The Oracle table(s) this applies to. (AI-inferred) */
   oracleTables?: Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables[] | Computed<Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables[]>;
+  /** A reference to the source schema this applies to. (AI-inferred) */
   schema?: string | Computed<string>;
 }
 
@@ -75,23 +106,35 @@ export interface Stream_BackfillAll_OracleExcludedObjects {
 }
 
 export interface Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumns {
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The data type of this column. (AI-inferred) */
   dataType?: string | Computed<string>;
+  /** The maximum length of this column's own value. (AI-inferred) */
   length?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** This column's own position within its own containing table, starting from 1. (AI-inferred) */
   ordinalPosition?: number | Computed<number>;
+  /** The total number of digits a numeric column may hold. (AI-inferred) */
   precision?: number | Computed<number>;
+  /** The column(s) making up this table's own primary key. (AI-inferred) */
   primaryKey?: boolean | Computed<boolean>;
+  /** The number of digits kept after the decimal point in a numeric column. (AI-inferred) */
   scale?: number | Computed<number>;
 }
 
 export interface Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables {
+  /** The PostgreSQL column(s) making up this table. (AI-inferred) */
   postgresqlColumns?: Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumns[] | Computed<Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumns[]>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas {
+  /** The PostgreSQL table(s) this applies to. (AI-inferred) */
   postgresqlTables?: Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables[] | Computed<Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables[]>;
+  /** A reference to the source schema this applies to. (AI-inferred) */
   schema?: string | Computed<string>;
 }
 
@@ -101,13 +144,18 @@ export interface Stream_BackfillAll_PostgresqlExcludedObjects {
 }
 
 export interface Stream_BackfillAll_SaasExcludedObjects_Objects_Properties {
+  /** The column(s) making up this table's own primary key. (AI-inferred) */
   primaryKey?: boolean | Computed<boolean>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: unknown[] | Computed<unknown[]>;
+  /** The name of the MongoDB field this applies to. (AI-inferred) */
   propertyName?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_SaasExcludedObjects_Objects {
+  /** The name of the source object (table/collection) this applies to. (AI-inferred) */
   objectName?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Stream_BackfillAll_SaasExcludedObjects_Objects_Properties[] | Computed<Stream_BackfillAll_SaasExcludedObjects_Objects_Properties[]>;
 }
 
@@ -117,13 +165,18 @@ export interface Stream_BackfillAll_SaasExcludedObjects {
 }
 
 export interface Stream_BackfillAll_SalesforceExcludedObjects_Objects_Fields {
+  /** The data type of this column. (AI-inferred) */
   dataType?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Whether this Salesforce field may hold a null value. (AI-inferred) */
   nillable?: boolean | Computed<boolean>;
 }
 
 export interface Stream_BackfillAll_SalesforceExcludedObjects_Objects {
+  /** The field(s) making up this schema. (AI-inferred) */
   fields?: Stream_BackfillAll_SalesforceExcludedObjects_Objects_Fields[] | Computed<Stream_BackfillAll_SalesforceExcludedObjects_Objects_Fields[]>;
+  /** The name of the source object (table/collection) this applies to. (AI-inferred) */
   objectName?: string | Computed<string>;
 }
 
@@ -133,19 +186,27 @@ export interface Stream_BackfillAll_SalesforceExcludedObjects {
 }
 
 export interface Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_Columns {
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The data type of this column. (AI-inferred) */
   dataType?: string | Computed<string>;
+  /** Whether this column is part of the source table's own primary key. (AI-inferred) */
   isPrimaryKey?: boolean | Computed<boolean>;
+  /** This column's own position within its own containing table, starting from 1. (AI-inferred) */
   ordinalPosition?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables {
+  /** The column(s) making up this table. (AI-inferred) */
   columns?: Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_Columns[] | Computed<Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_Columns[]>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_SpannerExcludedObjects_Schemas {
+  /** A reference to the source schema this applies to. (AI-inferred) */
   schema?: string | Computed<string>;
+  /** The table(s) making up this schema. (AI-inferred) */
   tables?: Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables[] | Computed<Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables[]>;
 }
 
@@ -155,12 +216,16 @@ export interface Stream_BackfillAll_SpannerExcludedObjects {
 }
 
 export interface Stream_BackfillAll_SqlServerExcludedObjects_Schemas_Tables {
+  /** The column(s) making up this table. (AI-inferred) */
   columns?: Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumns[] | Computed<Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumns[]>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Stream_BackfillAll_SqlServerExcludedObjects_Schemas {
+  /** A reference to the source schema this applies to. (AI-inferred) */
   schema?: string | Computed<string>;
+  /** The table(s) making up this schema. (AI-inferred) */
   tables?: Stream_BackfillAll_SqlServerExcludedObjects_Schemas_Tables[] | Computed<Stream_BackfillAll_SqlServerExcludedObjects_Schemas_Tables[]>;
 }
 
@@ -267,80 +332,116 @@ export interface Stream_DestinationConfig {
 }
 
 export interface Stream_Errors {
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, string> | Computed<Record<string, string>>;
+  /** When this error occurred. (AI-inferred) */
   errorTime?: string | Computed<string>;
+  /** A unique identifier for this specific error occurrence. (AI-inferred) */
   errorUuid?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_CustomizationRules_BigqueryClustering {
+  /** The column(s) making up this table. (AI-inferred) */
   columns?: string[] | Computed<string[]>;
 }
 
 export interface Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartition {
+  /** The time granularity (e.g. day, hour) the destination table is partitioned at. (AI-inferred) */
   partitioningTimeGranularity?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartition {
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** Where this range ends. (AI-inferred) */
   end?: string | Computed<string>;
+  /** How often this recurring action happens. (AI-inferred) */
   interval?: string | Computed<string>;
+  /** Where this range starts. (AI-inferred) */
   start?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartition {
+  /** A reference to the specific column this applies to. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The time granularity (e.g. day, hour) the destination table is partitioned at. (AI-inferred) */
   partitioningTimeGranularity?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_CustomizationRules_BigqueryPartitioning {
+  /** Partitions the destination table by the time each row was ingested, rather than a source column's own value. (AI-inferred) */
   ingestionTimePartition?: Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartition | Computed<Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartition>;
+  /** Partitions the destination table by integer ranges of a specific column. (AI-inferred) */
   integerRangePartition?: Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartition | Computed<Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartition>;
+  /** Whether queries against the destination table must include a filter on the partitioning column. (AI-inferred) */
   requirePartitionFilter?: boolean | Computed<boolean>;
+  /** Partitions the destination table by a fixed time unit (e.g. day) derived from a source column's own value. (AI-inferred) */
   timeUnitPartition?: Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartition | Computed<Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartition>;
 }
 
 export interface Stream_RuleSets_CustomizationRules {
+  /** Configures the destination BigQuery table to be clustered by specific column(s). (AI-inferred) */
   bigqueryClustering?: Stream_RuleSets_CustomizationRules_BigqueryClustering | Computed<Stream_RuleSets_CustomizationRules_BigqueryClustering>;
+  /** Configures the destination BigQuery table to be partitioned, e.g. by ingestion time or a specific column. (AI-inferred) */
   bigqueryPartitioning?: Stream_RuleSets_CustomizationRules_BigqueryPartitioning | Computed<Stream_RuleSets_CustomizationRules_BigqueryPartitioning>;
 }
 
 export interface Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifier {
+  /** A reference to the source collection (e.g. a MongoDB collection) this applies to. (AI-inferred) */
   collection?: string | Computed<string>;
+  /** The source database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifier {
+  /** The source database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier {
+  /** A reference to the source schema this applies to. (AI-inferred) */
   schema?: string | Computed<string>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifier {
+  /** The name of the source object (table/collection) this applies to. (AI-inferred) */
   objectName?: string | Computed<string>;
 }
 
 export interface Stream_RuleSets_ObjectFilter_SourceObjectIdentifier {
+  /** Identifies a specific MongoDB database, collection, or field this applies to. (AI-inferred) */
   mongodbIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifier>;
+  /** Identifies a specific MySQL database or table this applies to. (AI-inferred) */
   mysqlIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifier>;
+  /** Identifies a specific Oracle schema or table this applies to. (AI-inferred) */
   oracleIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier>;
+  /** Identifies a specific PostgreSQL schema or table this applies to. (AI-inferred) */
   postgresqlIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier>;
+  /** Identifies a specific Salesforce object or field this applies to. (AI-inferred) */
   salesforceIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifier>;
+  /** Identifies a specific Spanner database or table this applies to. (AI-inferred) */
   spannerIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier>;
+  /** Identifies a specific SQL Server schema or table this applies to. (AI-inferred) */
   sqlServerIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier>;
 }
 
 export interface Stream_RuleSets_ObjectFilter {
+  /** Identifies the specific source object (table/collection) this applies to. (AI-inferred) */
   sourceObjectIdentifier?: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier | Computed<Stream_RuleSets_ObjectFilter_SourceObjectIdentifier>;
 }
 
 export interface Stream_RuleSets {
+  /** Rule(s) transforming how source schema objects are represented in the destination. (AI-inferred) */
   customizationRules?: Stream_RuleSets_CustomizationRules[] | Computed<Stream_RuleSets_CustomizationRules[]>;
+  /** Restricts this stream to specific source object(s), by inclusion or exclusion. (AI-inferred) */
   objectFilter?: Stream_RuleSets_ObjectFilter | Computed<Stream_RuleSets_ObjectFilter>;
 }
 

@@ -2,15 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKey {
+  /** An identifier for this key. (AI-inferred) */
   keyId?: string | Computed<string>;
+  /** A public key, PEM-encoded. (AI-inferred) */
   publicKeyPem?: string | Computed<string>;
+  /** The algorithm used to sign this key or attestation. (AI-inferred) */
   signatureAlgorithm?: string | Computed<string>;
 }
 
 export interface Attestor_UserOwnedGrafeasNote_PublicKeys {
+  /** The ASCII-armored PGP public key used to verify this attestation's own signature. (AI-inferred) */
   asciiArmoredPgpPublicKey?: string | Computed<string>;
+  /** A free-text comment about this resource. (AI-inferred) */
   comment?: string | Computed<string>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A public key in PKIX (X.509 SubjectPublicKeyInfo) format. (AI-inferred) */
   pkixPublicKey?: Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKey | Computed<Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKey>;
 }
 

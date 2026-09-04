@@ -16,6 +16,7 @@ export interface DbSystem_Properties_DbHome_Database_Properties_DatabaseManageme
 }
 
 export interface DbSystem_Properties_DbHome_Database_Properties_DbBackupConfig_BackupDestinationDetails {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

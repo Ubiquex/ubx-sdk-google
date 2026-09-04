@@ -2,63 +2,91 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GrpcRoute_Rules_Action_Destinations {
+  /** The name of the service this applies to. (AI-inferred) */
   serviceName?: string | Computed<string>;
+  /** The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface GrpcRoute_Rules_Action_FaultInjectionPolicy_Abort {
+  /** The HTTP status code returned. (AI-inferred) */
   httpStatus?: number | Computed<number>;
+  /** A percentage value. (AI-inferred) */
   percentage?: number | Computed<number>;
 }
 
 export interface GrpcRoute_Rules_Action_FaultInjectionPolicy_Delay {
+  /** A fixed delay duration applied to matching requests. (AI-inferred) */
   fixedDelay?: string | Computed<string>;
+  /** A percentage value. (AI-inferred) */
   percentage?: number | Computed<number>;
 }
 
 export interface GrpcRoute_Rules_Action_FaultInjectionPolicy {
+  /** Immediately fails matching requests with a fixed status code, for fault-injection testing. (AI-inferred) */
   abort?: GrpcRoute_Rules_Action_FaultInjectionPolicy_Abort | Computed<GrpcRoute_Rules_Action_FaultInjectionPolicy_Abort>;
+  /** Configuration for artificially delaying matching requests, for fault-injection testing. (AI-inferred) */
   delay?: GrpcRoute_Rules_Action_FaultInjectionPolicy_Delay | Computed<GrpcRoute_Rules_Action_FaultInjectionPolicy_Delay>;
 }
 
 export interface GrpcRoute_Rules_Action_RetryPolicy {
+  /** The maximum number of times a failed request is retried. (AI-inferred) */
   numRetries?: number | Computed<number>;
+  /** The condition(s) (e.g. specific status codes) under which a failed request is retried. (AI-inferred) */
   retryConditions?: string[] | Computed<string[]>;
 }
 
 export interface GrpcRoute_Rules_Action_StatefulSessionAffinity {
+  /** How long a session-affinity cookie remains valid. (AI-inferred) */
   cookieTtl?: string | Computed<string>;
 }
 
 export interface GrpcRoute_Rules_Action {
+  /** The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred) */
   destinations?: GrpcRoute_Rules_Action_Destinations[] | Computed<GrpcRoute_Rules_Action_Destinations[]>;
+  /** Configuration for artificially injecting delays or aborted requests, for resilience testing. (AI-inferred) */
   faultInjectionPolicy?: GrpcRoute_Rules_Action_FaultInjectionPolicy | Computed<GrpcRoute_Rules_Action_FaultInjectionPolicy>;
+  /** How long an idle connection is kept open before being closed. (AI-inferred) */
   idleTimeout?: string | Computed<string>;
+  /** Configuration for automatically retrying failed requests. (AI-inferred) */
   retryPolicy?: GrpcRoute_Rules_Action_RetryPolicy | Computed<GrpcRoute_Rules_Action_RetryPolicy>;
+  /** Configuration for consistently routing a client's own requests to the same backend, using a session cookie. (AI-inferred) */
   statefulSessionAffinity?: GrpcRoute_Rules_Action_StatefulSessionAffinity | Computed<GrpcRoute_Rules_Action_StatefulSessionAffinity>;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout?: string | Computed<string>;
 }
 
 export interface GrpcRoute_Rules_Matches_Headers {
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface GrpcRoute_Rules_Matches_Method {
+  /** Whether this path match is case-sensitive. (AI-inferred) */
   caseSensitive?: boolean | Computed<boolean>;
+  /** The gRPC method this rule matches. (AI-inferred) */
   grpcMethod?: string | Computed<string>;
+  /** The gRPC service this rule matches. (AI-inferred) */
   grpcService?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface GrpcRoute_Rules_Matches {
+  /** The HTTP header(s) this applies to. (AI-inferred) */
   headers?: GrpcRoute_Rules_Matches_Headers[] | Computed<GrpcRoute_Rules_Matches_Headers[]>;
+  /** The HTTP method this rule matches. (AI-inferred) */
   method?: GrpcRoute_Rules_Matches_Method | Computed<GrpcRoute_Rules_Matches_Method>;
 }
 
 export interface GrpcRoute_Rules {
+  /** The action taken when this rule matches. (AI-inferred) */
   action?: GrpcRoute_Rules_Action | Computed<GrpcRoute_Rules_Action>;
+  /** The match condition(s) this rule evaluates. (AI-inferred) */
   matches?: GrpcRoute_Rules_Matches[] | Computed<GrpcRoute_Rules_Matches[]>;
 }
 

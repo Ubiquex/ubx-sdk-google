@@ -4,16 +4,21 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Config_GrpcServices_FileDescriptorSet struct {
+	// The real, base64-encoded raw bytes of this source document (an OpenAPI spec, gRPC descriptor, or service config file). (AI-inferred)
 	Contents any
-	Path     any
+	// The real, relative file path this source document is identified by within the API config's own uploaded source bundle. (AI-inferred)
+	Path any
 }
 
 type Config_GrpcServices struct {
+	// The real, compiled Protocol Buffers FileDescriptorSet describing this gRPC service's own API surface. (AI-inferred)
 	FileDescriptorSet any
-	Source            any
+	// The real, additional source file(s) (such as gRPC service config) uploaded alongside a `file_descriptor_set` for a gRPC-backed API config. (AI-inferred)
+	Source any
 }
 
 type Config_OpenapiDocuments struct {
+	// The real, uploaded OpenAPI specification document this API config was created from. (AI-inferred)
 	Document any
 }
 

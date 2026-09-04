@@ -2,13 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VmwareNodePool_Config_Taints {
+  /** What happens to a pod that doesn't tolerate this taint. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The key of this taint or label. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value of this taint or label. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface VmwareNodePool_Config_VsphereConfig_Tags {
+  /** The category this belongs to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** A label attached to this resource. (AI-inferred) */
   tag?: string | Computed<string>;
 }
 
@@ -52,15 +57,22 @@ export interface VmwareNodePool_NodePoolAutoscaling {
 }
 
 export interface VmwareNodePool_Status_Conditions {
+  /** When this condition last changed from one status to another. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface VmwareNodePool_Status_Versions_Versions {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 

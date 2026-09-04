@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SemanticGovernancePolicy_McpTools:
+    # A reference to the MCP server this applies to. (AI-inferred)
     mcp_server: Any = None
+    # The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred)
     tools: Any = None
 
 _SemanticGovernancePolicy_McpToolsFields = {

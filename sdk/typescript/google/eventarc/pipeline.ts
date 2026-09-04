@@ -2,46 +2,66 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Pipeline_Destinations_AuthenticationConfig_GoogleOidc {
+  /** The intended recipient of this authentication token. (AI-inferred) */
   audience?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Pipeline_Destinations_AuthenticationConfig_OauthToken {
+  /** What this configuration's own scope covers. (AI-inferred) */
   scope?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Pipeline_Destinations_AuthenticationConfig {
+  /** Authenticates delivered requests using a Google-signed OIDC token. (AI-inferred) */
   googleOidc?: Pipeline_Destinations_AuthenticationConfig_GoogleOidc | Computed<Pipeline_Destinations_AuthenticationConfig_GoogleOidc>;
+  /** Authenticates delivered requests using an OAuth access token. (AI-inferred) */
   oauthToken?: Pipeline_Destinations_AuthenticationConfig_OauthToken | Computed<Pipeline_Destinations_AuthenticationConfig_OauthToken>;
 }
 
 export interface Pipeline_Destinations_HttpEndpoint {
+  /** The CEL expression mapping a source event into a CloudEvents-formatted message. (AI-inferred) */
   messageBindingTemplate?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Pipeline_Destinations_NetworkConfig {
+  /** A reference to the network attachment used to reach this private destination. (AI-inferred) */
   networkAttachment?: string | Computed<string>;
 }
 
 export interface Pipeline_Destinations_OutputPayloadFormat_Avro {
+  /** The literal content of this schema. (AI-inferred) */
   schemaDefinition?: string | Computed<string>;
 }
 
 export interface Pipeline_Destinations_OutputPayloadFormat {
+  /** Configuration for encoding this schema using Avro. (AI-inferred) */
   avro?: Pipeline_Destinations_OutputPayloadFormat_Avro | Computed<Pipeline_Destinations_OutputPayloadFormat_Avro>;
+  /** Configuration for encoding this schema using JSON. (AI-inferred) */
   json?: unknown | Computed<unknown>;
+  /** Configuration for encoding this schema using Protocol Buffers. (AI-inferred) */
   protobuf?: Pipeline_Destinations_OutputPayloadFormat_Avro | Computed<Pipeline_Destinations_OutputPayloadFormat_Avro>;
 }
 
 export interface Pipeline_Destinations {
+  /** Configuration for authenticating requests delivered to this destination. (AI-inferred) */
   authenticationConfig?: Pipeline_Destinations_AuthenticationConfig | Computed<Pipeline_Destinations_AuthenticationConfig>;
+  /** The HTTP endpoint events are delivered to. (AI-inferred) */
   httpEndpoint?: Pipeline_Destinations_HttpEndpoint | Computed<Pipeline_Destinations_HttpEndpoint>;
+  /** A reference to the message bus this applies to. (AI-inferred) */
   messageBus?: string | Computed<string>;
+  /** Configuration controlling how this destination is reached over the network. (AI-inferred) */
   networkConfig?: Pipeline_Destinations_NetworkConfig | Computed<Pipeline_Destinations_NetworkConfig>;
+  /** The format events are encoded in when delivered. (AI-inferred) */
   outputPayloadFormat?: Pipeline_Destinations_OutputPayloadFormat | Computed<Pipeline_Destinations_OutputPayloadFormat>;
+  /** A reference to the Pub/Sub topic this applies to. (AI-inferred) */
   topic?: string | Computed<string>;
+  /** A reference to the workflow this event triggers. (AI-inferred) */
   workflow?: string | Computed<string>;
 }
 
@@ -51,10 +71,12 @@ export interface Pipeline_LoggingConfig {
 }
 
 export interface Pipeline_Mediations_Transformation {
+  /** The CEL expression used to transform this event's own payload. (AI-inferred) */
   transformationTemplate?: string | Computed<string>;
 }
 
 export interface Pipeline_Mediations {
+  /** A transformation applied to this event before delivery. (AI-inferred) */
   transformation?: Pipeline_Mediations_Transformation | Computed<Pipeline_Mediations_Transformation>;
 }
 

@@ -158,21 +158,34 @@ _V3beta1Environment_WebhookConfigFields = {
 
 @dataclasses.dataclass
 class V3beta1EnvironmentConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for how test cases in this agent are run. (AI-inferred)
     test_cases_config: Any = None
+    # Per-version configuration, e.g. traffic percentage, making up this environment. (AI-inferred)
     version_configs: Any = None
+    # Configuration for how this tool or fulfillment calls its own webhook. (AI-inferred)
     webhook_config: Any = None
 
 @dataclasses.dataclass
 class V3beta1EnvironmentAttrs:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for how test cases in this agent are run. (AI-inferred)
     test_cases_config: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
+    # Per-version configuration, e.g. traffic percentage, making up this environment. (AI-inferred)
     version_configs: Any = None
+    # Configuration for how this tool or fulfillment calls its own webhook. (AI-inferred)
     webhook_config: Any = None
 
 V3beta1Environment = ubx.ResourceBinding(

@@ -4,7 +4,9 @@ package documentai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Processor_ProcessorVersionAliases struct {
-	Alias            any
+	// An alternate name this schema entity is also known by. (AI-inferred)
+	Alias any
+	// A reference to the specific processor version this applies to. (AI-inferred)
 	ProcessorVersion any
 }
 

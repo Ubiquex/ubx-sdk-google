@@ -2,11 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabels {
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_Inventories {
+  /** The short name of the operating system this applies to, e.g. `debian` or `windows`. (AI-inferred) */
   osShortName?: string | Computed<string>;
+  /** The operating system version this applies to. (AI-inferred) */
   osVersion?: string | Computed<string>;
 }
 
@@ -22,114 +25,175 @@ export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Pay
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Gcs {
+  /** The Cloud Storage bucket this resource is sourced from. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** The specific Cloud Storage object generation to use. (AI-inferred) */
   generation?: string | Computed<string>;
+  /** The Cloud Storage object this resource is sourced from. (AI-inferred) */
   object?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Remote {
+  /** A SHA-256 checksum verifying this resource's own content. (AI-inferred) */
   sha256Checksum?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File {
+  /** Whether package installation is allowed without verifying its own signature. (AI-inferred) */
   allowInsecure?: boolean | Computed<boolean>;
+  /** Sources this resource from a Cloud Storage object. (AI-inferred) */
   gcs?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Gcs | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Gcs>;
+  /** The destination path on the instance this resource is installed to. (AI-inferred) */
   localPath?: string | Computed<string>;
+  /** Sources this resource from a remote URL. (AI-inferred) */
   remote?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Remote | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Remote>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce {
+  /** The argument(s) passed to this command. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** A reference to a specific file. (AI-inferred) */
   file?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File>;
+  /** The interpreter used to run this script, e.g. `SHELL` or `POWERSHELL`. (AI-inferred) */
   interpreter?: string | Computed<string>;
+  /** The path this script's own output is written to. (AI-inferred) */
   outputFilePath?: string | Computed<string>;
+  /** The script content to run. (AI-inferred) */
   script?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec {
+  /** Whether this policy's own desired state is actively enforced, rather than only reported. (AI-inferred) */
   enforce?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce>;
+  /** A command used to check whether this resource's own desired state is already satisfied. (AI-inferred) */
   validate?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_File {
+  /** The literal content of this resource. (AI-inferred) */
   content?: string | Computed<string>;
+  /** A reference to a specific file. (AI-inferred) */
   file?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File>;
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The file permission(s) applied. (AI-inferred) */
   permissions?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Deb {
+  /** Whether package dependencies are automatically pulled in. (AI-inferred) */
   pullDeps?: boolean | Computed<boolean>;
+  /** Where this resource's own content is sourced from. (AI-inferred) */
   source?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Msi {
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: string[] | Computed<string[]>;
+  /** Where this resource's own content is sourced from. (AI-inferred) */
   source?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg {
+  /** Configuration for managing packages via APT (Debian/Ubuntu). (AI-inferred) */
   apt?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt>;
+  /** Configuration for installing a `.deb` package. (AI-inferred) */
   deb?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Deb | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Deb>;
+  /** Whether this resource should be present or absent on the target instance. (AI-inferred) */
   desiredState?: string | Computed<string>;
+  /** Configuration for installing a Googet package (Windows). (AI-inferred) */
   googet?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt>;
+  /** Configuration for installing an MSI package (Windows). (AI-inferred) */
   msi?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Msi | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Msi>;
+  /** Configuration for installing an RPM package. (AI-inferred) */
   rpm?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Deb | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Deb>;
+  /** Configuration for managing packages via YUM (RHEL/CentOS). (AI-inferred) */
   yum?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt>;
+  /** Configuration for managing packages via Zypper (SUSE). (AI-inferred) */
   zypper?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_Apt>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Apt {
+  /** The kind of APT repository archive, e.g. `DEB` or `DEB_SRC`. (AI-inferred) */
   archiveType?: string | Computed<string>;
+  /** The APT repository component(s) (e.g. `main`, `contrib`) to include. (AI-inferred) */
   components?: string[] | Computed<string[]>;
+  /** The APT repository distribution (e.g. `stable`) to use. (AI-inferred) */
   distribution?: string | Computed<string>;
+  /** The GPG key used to verify this repository's own packages. (AI-inferred) */
   gpgKey?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Goo {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Yum {
+  /** The base URL of this repository. (AI-inferred) */
   baseUrl?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The GPG key(s) used to verify this repository's own packages. (AI-inferred) */
   gpgKeys?: string[] | Computed<string[]>;
+  /** An identifier for this resource, unique within its own containing policy. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository {
+  /** Configuration for managing packages via APT (Debian/Ubuntu). (AI-inferred) */
   apt?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Apt | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Apt>;
+  /** Configuration for managing packages via Googet (Windows). (AI-inferred) */
   goo?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Goo | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Goo>;
+  /** Configuration for managing packages via YUM (RHEL/CentOS). (AI-inferred) */
   yum?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Yum | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Yum>;
+  /** Configuration for managing packages via Zypper (SUSE). (AI-inferred) */
   zypper?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Yum | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_Yum>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources {
+  /** Runs a script or executable as this resource's own action. (AI-inferred) */
   exec?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec>;
+  /** A reference to a specific file. (AI-inferred) */
   file?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_File | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_File>;
+  /** An identifier for this resource, unique within its own containing policy. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Configuration for managing a specific software package. (AI-inferred) */
   pkg?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg>;
+  /** Configuration for a package repository this instance should use. (AI-inferred) */
   repository?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups {
+  /** Restricts this policy to instance(s) matching specific OS short name/version. (AI-inferred) */
   inventoryFilters?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_Inventories[] | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_Inventories[]>;
+  /** The resource(s) this policy manages. (AI-inferred) */
   resources?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources[] | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources[]>;
 }
 
 export interface PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies {
+  /** Whether this policy is considered satisfied when no resource group matches the target instance. (AI-inferred) */
   allowNoResourceGroupMatch?: boolean | Computed<boolean>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** An identifier for this resource, unique within its own containing policy. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The file permission mode applied. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The resource group(s) making up this policy, each targeting a specific OS. (AI-inferred) */
   resourceGroups?: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups[] | Computed<PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups[]>;
 }
 
@@ -184,16 +248,21 @@ export interface PolicyOrchestrator_OrchestratedResource {
 }
 
 export interface PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelector {
+  /** The location(s) included in this policy's own scope. (AI-inferred) */
   includedLocations?: string[] | Computed<string[]>;
 }
 
 export interface PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelector {
+  /** The folder(s) included in this inventory/report. (AI-inferred) */
   includedFolders?: string[] | Computed<string[]>;
+  /** The project(s) included in this policy's own scope. (AI-inferred) */
   includedProjects?: string[] | Computed<string[]>;
 }
 
 export interface PolicyOrchestrator_OrchestrationScope_Selectors {
+  /** Restricts this policy's own scope to specific location(s). (AI-inferred) */
   locationSelector?: PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelector | Computed<PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelector>;
+  /** Restricts this policy's own scope based on resource hierarchy (organization, folder, project). (AI-inferred) */
   resourceHierarchySelector?: PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelector | Computed<PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelector>;
 }
 

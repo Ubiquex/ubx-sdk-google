@@ -31,7 +31,9 @@ class Actuation_ActuationOutput:
 
 @dataclasses.dataclass
 class Actuation_DeploymentOutput:
+    # The name of a Terraform output variable produced by this actuation's own deployment run. (AI-inferred)
     name: Any = None
+    # The Terraform type of this output variable's value (e.g. `string`, `list`). (AI-inferred)
     type: Any = None
 
 _Actuation_ActuationOutputFields = {

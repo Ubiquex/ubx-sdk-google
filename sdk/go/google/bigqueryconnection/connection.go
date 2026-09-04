@@ -80,15 +80,22 @@ type Connection_Configuration_Asset struct {
 }
 
 type Connection_Configuration_Authentication_Parameters_SecretValue struct {
-	Plaintext  any
+	// The literal secret value, accepted on write but never returned on read. (AI-inferred)
+	Plaintext any
+	// How this secret is stored/referenced, e.g. as a plaintext value versus a Secret Manager reference. (AI-inferred)
 	SecretType any
 }
 
 type Connection_Configuration_Authentication_Parameters struct {
-	BoolValue   any
+	// A boolean value, populated when this authentication parameter's own type is boolean. (AI-inferred)
+	BoolValue any
+	// A floating-point value, populated when this authentication parameter's own type is a double. (AI-inferred)
 	DoubleValue any
-	Int32Value  any
+	// An integer value, populated when this authentication parameter's own type is a 32-bit integer. (AI-inferred)
+	Int32Value any
+	// A secret value, populated when this authentication parameter must be kept confidential rather than stored/returned in plaintext. (AI-inferred)
 	SecretValue any
+	// A text value, populated when this authentication parameter's own type is a string. (AI-inferred)
 	StringValue any
 }
 

@@ -2,26 +2,38 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EndUserAuthentication_ConfigVariables_SecretValue {
+  /** This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred) */
   secretValue?: string | Computed<string>;
+  /** The specific Secret Manager secret version referenced. (AI-inferred) */
   secretVersion?: string | Computed<string>;
 }
 
 export interface EndUserAuthentication_ConfigVariables {
+  /** This configuration variable's own value, when its type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** This admin filter's own value, when its type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred) */
   secretValue?: EndUserAuthentication_ConfigVariables_SecretValue | Computed<EndUserAuthentication_ConfigVariables_SecretValue>;
+  /** This admin filter's own value, when its type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface EndUserAuthentication_DestinationConfigs_Destinations {
+  /** The hostname of this destination. (AI-inferred) */
   host?: string | Computed<string>;
+  /** The port this destination listens on. (AI-inferred) */
   port?: number | Computed<number>;
+  /** A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred) */
   serviceAttachment?: string | Computed<string>;
 }
 
 export interface EndUserAuthentication_DestinationConfigs {
+  /** The backend endpoint(s) traffic for this connection is routed to. (AI-inferred) */
   destinations?: EndUserAuthentication_DestinationConfigs_Destinations[] | Computed<EndUserAuthentication_DestinationConfigs_Destinations[]>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
@@ -131,7 +143,9 @@ export interface EndUserAuthentication_EndUserAuthenticationConfig {
 }
 
 export interface EndUserAuthentication_NotifyEndpointDestination_Endpoint_Headers {
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** This HTTP header's own value. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

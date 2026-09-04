@@ -54,15 +54,22 @@ class CompilationResult_CodeCompilationConfig:
 
 @dataclasses.dataclass
 class CompilationResult_CompilationErrors_ActionTarget:
+    # The database (BigQuery project) the errored action's own target table belongs to. (AI-inferred)
     database: Any = None
+    # The name of the errored action's own target table. (AI-inferred)
     name: Any = None
+    # The schema (BigQuery dataset) the errored action's own target table belongs to. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class CompilationResult_CompilationErrors:
+    # Identifies the specific Dataform action (table, view, or assertion) this compilation error occurred on. (AI-inferred)
     action_target: Any = None
+    # A human-readable description of the compilation error. (AI-inferred)
     message: Any = None
+    # The file path within the repository this compilation error occurred in. (AI-inferred)
     path: Any = None
+    # A stack trace showing where in the SQLX/JavaScript compilation this error was raised. (AI-inferred)
     stack: Any = None
 
 @dataclasses.dataclass

@@ -23,11 +23,14 @@ export interface Preview_ProviderConfig {
 }
 
 export interface Preview_TerraformBlueprint_ExternalValues_DeploymentSource {
+  /** The other deployment this external value is sourced from. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** The name of the specific Terraform output on the source deployment to use as this value. (AI-inferred) */
   outputName?: string | Computed<string>;
 }
 
 export interface Preview_TerraformBlueprint_ExternalValues {
+  /** References an output value from another Infrastructure Manager deployment, letting this preview's blueprint consume it as an input. (AI-inferred) */
   deploymentSource?: Preview_TerraformBlueprint_ExternalValues_DeploymentSource | Computed<Preview_TerraformBlueprint_ExternalValues_DeploymentSource>;
 }
 
@@ -41,6 +44,7 @@ export interface Preview_TerraformBlueprint_GitSource {
 }
 
 export interface Preview_TerraformBlueprint_InputValues {
+  /** The literal value passed for this Terraform input variable when the preview plan is computed. (AI-inferred) */
   inputValue?: unknown | Computed<unknown>;
 }
 
@@ -56,9 +60,13 @@ export interface Preview_TerraformBlueprint {
 }
 
 export interface Preview_TfErrors {
+  /** Structured detail for one error Terraform reported while computing this preview. (AI-inferred) */
   error?: Preview_ErrorStatus | Computed<Preview_ErrorStatus>;
+  /** A human-readable summary of why this Terraform preview operation failed. (AI-inferred) */
   errorDescription?: string | Computed<string>;
+  /** The HTTP status code returned by the underlying API call that failed, when the error originated from one. (AI-inferred) */
   httpResponseCode?: number | Computed<number>;
+  /** The Terraform resource address (e.g. `google_storage_bucket.my_bucket`) this error occurred on. (AI-inferred) */
   resourceAddress?: string | Computed<string>;
 }
 

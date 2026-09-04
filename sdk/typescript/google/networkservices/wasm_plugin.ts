@@ -11,18 +11,28 @@ export interface WasmPlugin_LogConfig {
 }
 
 export interface WasmPlugin_UsedBy {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface WasmPlugin_Versions {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The content digest identifying the specific plugin image version. (AI-inferred) */
   imageDigest?: string | Computed<string>;
+  /** The container image URI for this plugin. (AI-inferred) */
   imageUri?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Inline configuration data passed to this plugin. (AI-inferred) */
   pluginConfigData?: string | Computed<string>;
+  /** The content digest of this plugin's own configuration. (AI-inferred) */
   pluginConfigDigest?: string | Computed<string>;
+  /** A reference to this plugin's own configuration, stored externally. (AI-inferred) */
   pluginConfigUri?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 

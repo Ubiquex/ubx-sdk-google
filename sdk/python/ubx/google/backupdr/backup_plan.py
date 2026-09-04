@@ -8,34 +8,51 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BackupPlan_BackupRules_StandardSchedule_BackupWindow:
+    # The hour of the day this backup window ends at. (AI-inferred)
     end_hour_of_day: Any = None
+    # The hour of the day this backup window starts at. (AI-inferred)
     start_hour_of_day: Any = None
 
 @dataclasses.dataclass
 class BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonth:
+    # The day of the week this applies to. (AI-inferred)
     day_of_week: Any = None
+    # The week of the month this schedule runs on. (AI-inferred)
     week_of_month: Any = None
 
 @dataclasses.dataclass
 class BackupPlan_BackupRules_StandardSchedule:
+    # The time window backups produced by this rule are permitted to start within. (AI-inferred)
     backup_window: Any = None
+    # The day(s) of the month this schedule runs on. (AI-inferred)
     days_of_month: Any = None
+    # The day(s) of the week this schedule runs on. (AI-inferred)
     days_of_week: Any = None
+    # How often, in hours, this schedule recurs within its own window. (AI-inferred)
     hourly_frequency: Any = None
+    # The month(s) this schedule runs in. (AI-inferred)
     months: Any = None
+    # How often this backup rule recurs, e.g. hourly, daily, or monthly. (AI-inferred)
     recurrence_type: Any = None
+    # The time zone this schedule is evaluated in. (AI-inferred)
     time_zone: Any = None
+    # The specific weekday-of-month (e.g. the second Tuesday) this schedule runs on. (AI-inferred)
     week_day_of_month: Any = None
 
 @dataclasses.dataclass
 class BackupPlan_BackupRules:
+    # How many days a backup produced by this rule is retained for. (AI-inferred)
     backup_retention_days: Any = None
+    # A reference to the backup rule this applies to. (AI-inferred)
     rule_id: Any = None
+    # A recurrence schedule defined using standard time-based fields. (AI-inferred)
     standard_schedule: Any = None
 
 @dataclasses.dataclass
 class BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabels_Labels:
+    # The key of this attribute or label. (AI-inferred)
     key: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

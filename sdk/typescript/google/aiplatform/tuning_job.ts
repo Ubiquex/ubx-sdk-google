@@ -16,71 +16,101 @@ export interface TuningJob_Error {
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue {
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputs {
+  /** The judge model's own unparsed, raw response text. (AI-inferred) */
   rawOutput?: string[] | Computed<string[]>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput {
+  /** The raw, unparsed output(s) produced alongside this metric's own computed result. (AI-inferred) */
   rawOutputs?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputs | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputs>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult {
+  /** Free-form output produced by a custom-code or custom-parsed metric. (AI-inferred) */
   customOutput?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput>;
+  /** A human-readable explanation of this result. (AI-inferred) */
   explanation?: string | Computed<string>;
+  /** Which candidate the judge preferred: `BASELINE`, `CANDIDATE`, or `TIE`. (AI-inferred) */
   pairwiseChoice?: string | Computed<string>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResult {
+  /** Free-form output produced by a custom-code or custom-parsed metric. (AI-inferred) */
   customOutput?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput>;
+  /** A human-readable explanation of this result. (AI-inferred) */
   explanation?: string | Computed<string>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults {
+  /** Which summary statistic this aggregated result reports, e.g. `AVERAGE` or `PERCENTILE_P90`. (AI-inferred) */
   aggregationMetric?: string | Computed<string>;
+  /** The BLEU score computed for this result. (AI-inferred) */
   bleuMetricValue?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue>;
+  /** The result produced by running this metric's own caller-supplied evaluation code. (AI-inferred) */
   customCodeExecutionResult?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue>;
+  /** The exact-match score computed for this result. (AI-inferred) */
   exactMatchMetricValue?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue>;
+  /** The result of comparing two candidate responses against each other for this metric. (AI-inferred) */
   pairwiseMetricResult?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult>;
+  /** The result of scoring a single candidate response in isolation for this metric. (AI-inferred) */
   pointwiseMetricResult?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResult | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResult>;
+  /** The ROUGE score computed for this result. (AI-inferred) */
   rougeMetricValue?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySource {
+  /** The source URI this data is read from. (AI-inferred) */
   inputUri?: string | Computed<string>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSource {
+  /** The Cloud Storage URI(s) this applies to. (AI-inferred) */
   uris?: string[] | Computed<string[]>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset {
+  /** A BigQuery table or view this data is read from. (AI-inferred) */
   bigquerySource?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySource | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySource>;
+  /** A Cloud Storage location this data is read from. (AI-inferred) */
   gcsSource?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSource | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSource>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput {
+  /** The individual aggregated metric value(s) making up this output. (AI-inferred) */
   aggregationResults?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults[] | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults[]>;
+  /** A reference to the dataset this applies to. (AI-inferred) */
   dataset?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfo {
+  /** The Cloud Storage directory this operation's own output is written to. (AI-inferred) */
   gcsOutputDirectory?: string | Computed<string>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse {
+  /** The dataset-level result produced by aggregating per-instance evaluation results. (AI-inferred) */
   aggregationOutput?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput>;
+  /** Detail about where this operation's own output was written. (AI-inferred) */
   outputInfo?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfo | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfo>;
 }
 
 export interface TuningJob_EvaluateDatasetRuns {
+  /** An identifier for this specific training checkpoint. (AI-inferred) */
   checkpointId?: string | Computed<string>;
+  /** Error detail for this failed operation. (AI-inferred) */
   error?: TuningJob_Error | Computed<TuningJob_Error>;
+  /** The result produced by running this evaluation over the whole dataset. (AI-inferred) */
   evaluateDatasetResponse?: TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse | Computed<TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse>;
+  /** A reference to the evaluation run this applies to. (AI-inferred) */
   evaluationRun?: string | Computed<string>;
+  /** The name of the long-running operation tracking this task. (AI-inferred) */
   operationName?: string | Computed<string>;
 }
 
@@ -160,36 +190,55 @@ export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio {
+  /** The audio or video bit rate, in bits per second. (AI-inferred) */
   bitRate?: number | Computed<number>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The audio sample rate, in Hz. (AI-inferred) */
   sampleRate?: number | Computed<number>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The pixel dimensions or resolution class requested for generated image output. (AI-inferred) */
   imageSize?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** A schema describing this value's own expected structure. (AI-inferred) */
   schema?: unknown | Computed<unknown>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** How long this clip, window, or operation lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred) */
   gcsUri?: string | Computed<string>;
+  /** The pixel dimensions of this image or video. (AI-inferred) */
   resolution?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat {
+  /** Audio content or configuration. (AI-inferred) */
   audio?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio>;
+  /** Image content or configuration. (AI-inferred) */
   image?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text>;
+  /** Video content or configuration. (AI-inferred) */
   video?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video>;
 }
 
@@ -210,6 +259,7 @@ export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig
   example?: unknown | Computed<unknown>;
   /** Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type. */
   format?: string | Computed<string>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
   /** Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array. */
   maxItems?: string | Computed<string>;
@@ -263,21 +313,28 @@ export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig {
+  /** The name of the prebuilt Gemini voice to use for speech output. (AI-inferred) */
   voiceName?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred) */
   voiceSampleAudio?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig {
+  /** Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred) */
   prebuiltVoiceConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig>;
+  /** Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred) */
   replicatedVoiceConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs {
+  /** Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred) */
   speaker?: string | Computed<string>;
+  /** The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred) */
   voiceConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig>;
 }
 
@@ -367,102 +424,154 @@ export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_DatasetCustomMetrics {
+  /** How per-instance scores for this metric are combined into a single dataset-level result, e.g. average or sum. (AI-inferred) */
   aggregationFunction?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpec {
+  /** Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred) */
   useEffectiveOrder?: boolean | Computed<boolean>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpec {
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpec {
+  /** The function within the supplied custom code that computes this metric. (AI-inferred) */
   evaluationFunction?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec {
+  /** The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred) */
   metricSpecName?: string | Computed<string>;
+  /** Configuration parameters specific to this metric's own computation. (AI-inferred) */
   metricSpecParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig {
+  /** The function within the supplied custom code that parses the judge model's own response. (AI-inferred) */
   parsingFunction?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig {
+  /** Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred) */
   customCodeParserConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec {
+  /** Configuration for the model used by this job. (AI-inferred) */
   modelConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig>;
+  /** The template used to construct the prompt sent to the model. (AI-inferred) */
   promptTemplate?: string | Computed<string>;
+  /** The kind of content generated rubrics should assess. (AI-inferred) */
   rubricContentType?: string | Computed<string>;
+  /** A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred) */
   rubricTypeOntology?: string[] | Computed<string[]>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec {
+  /** Extra, metric-specific configuration beyond the standard fields. (AI-inferred) */
   additionalConfig?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Configuration for the judge model used to automatically score this evaluation. (AI-inferred) */
   judgeAutoraterConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred) */
   predefinedRubricGenerationSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** How the judge model's own raw response text is parsed into a final score. (AI-inferred) */
   resultParserConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig>;
+  /** Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred) */
   rubricGenerationSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec>;
+  /** A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred) */
   rubricGroupKey?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRange {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The upper bound. (AI-inferred) */
   max?: number | Computed<number>;
+  /** The lower bound. (AI-inferred) */
   min?: number | Computed<number>;
+  /** A single step within this run or sequence. (AI-inferred) */
   step?: number | Computed<number>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata {
+  /** Additional, metric-specific metadata beyond the standard fields. (AI-inferred) */
   otherMetadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The minimum and maximum values this metric's own score can take. (AI-inferred) */
   scoreRange?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRange | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRange>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig {
+  /** Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred) */
   returnRawOutput?: boolean | Computed<boolean>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec {
+  /** The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred) */
   baselineResponseFieldName?: string | Computed<string>;
+  /** The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred) */
   candidateResponseFieldName?: string | Computed<string>;
+  /** Configuration for the shape of a custom-formatted metric output. (AI-inferred) */
   customOutputFormatConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpec {
+  /** Configuration for the shape of a custom-formatted metric output. (AI-inferred) */
   customOutputFormatConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpec {
+  /** Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred) */
   rougeType?: string | Computed<string>;
+  /** Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred) */
   splitSummaries?: boolean | Computed<boolean>;
+  /** Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred) */
   useStemmer?: boolean | Computed<boolean>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics {
+  /** Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred) */
   aggregationMetrics?: string[] | Computed<string[]>;
+  /** Configuration for computing the BLEU text-similarity metric. (AI-inferred) */
   bleuSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpec>;
+  /** Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred) */
   computationBasedMetricSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpec>;
+  /** Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred) */
   customCodeExecutionSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpec>;
+  /** Configuration for computing an exact-string-match metric. (AI-inferred) */
   exactMatchSpec?: unknown | Computed<unknown>;
+  /** Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred) */
   llmBasedMetricSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata>;
+  /** Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred) */
   pairwiseMetricSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec>;
+  /** Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred) */
   pointwiseMetricSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpec>;
+  /** Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred) */
   predefinedMetricSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred) */
   rougeSpec?: TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpec | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpec>;
 }
 
@@ -512,9 +621,13 @@ export interface TuningJob_SupervisedTuningSpec {
 }
 
 export interface TuningJob_TunedModel_Checkpoints {
+  /** An identifier for this specific training checkpoint. (AI-inferred) */
   checkpointId?: string | Computed<string>;
+  /** The endpoint this call is directed to. (AI-inferred) */
   endpoint?: string | Computed<string>;
+  /** The training epoch this checkpoint was saved at. (AI-inferred) */
   epoch?: string | Computed<string>;
+  /** A single step within this run or sequence. (AI-inferred) */
   step?: string | Computed<string>;
 }
 
@@ -528,8 +641,11 @@ export interface TuningJob_TunedModel {
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_ScoreVariancePerExampleDistribution_Buckets {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The lower bound of this range. (AI-inferred) */
   left?: number | Computed<number>;
+  /** The upper bound of this range. (AI-inferred) */
   right?: number | Computed<number>;
 }
 
@@ -553,108 +669,166 @@ export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_Score
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription_Words {
+  /** The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   endOffset?: string | Computed<string>;
+  /** The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   startOffset?: string | Computed<string>;
+  /** A single transcribed word. (AI-inferred) */
   word?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription {
+  /** Which speaker a transcribed segment is attributed to, when speaker diarization is enabled. (AI-inferred) */
   speakerLabel?: string | Computed<string>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: string | Computed<string>;
+  /** The individual word(s) making up this transcript segment. (AI-inferred) */
   words?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription_Words[] | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription_Words[]>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_CodeExecutionResult {
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The result of this operation, e.g. whether it succeeded. (AI-inferred) */
   outcome?: string | Computed<string>;
+  /** The output produced by this operation. (AI-inferred) */
   output?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_ExecutableCode {
+  /** A machine-readable code identifying this outcome or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The language this content is in or should be processed as, typically a BCP-47 code. (AI-inferred) */
   language?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FileData {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The URI of a previously uploaded file this Part references. (AI-inferred) */
   fileUri?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall_PartialArgs {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** A JSONPath expression selecting a location within a JSON document. (AI-inferred) */
   jsonPath?: string | Computed<string>;
+  /** Represents an explicit JSON `null`, populated when this field's own type is null. (AI-inferred) */
   nullValue?: string | Computed<string>;
+  /** A numeric value, populated when this field's own type is a number. (AI-inferred) */
   numberValue?: number | Computed<number>;
+  /** A text value, populated when this field's own type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred) */
   willContinue?: boolean | Computed<boolean>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall {
+  /** The argument value(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The function-call arguments accumulated so far, while the model is still streaming them incrementally. (AI-inferred) */
   partialArgs?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall_PartialArgs[] | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall_PartialArgs[]>;
+  /** Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred) */
   willContinue?: boolean | Computed<boolean>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts_InlineData {
+  /** The raw, embedded bytes of this inline content. (AI-inferred) */
   data?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts {
+  /** A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred) */
   fileData?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FileData | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FileData>;
+  /** Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred) */
   inlineData?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts_InlineData | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts_InlineData>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse {
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred) */
   parts?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts[] | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts[]>;
+  /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Configuration for when and how this job is scheduled to run. (AI-inferred) */
   scheduling?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_MediaResolution {
+  /** The severity or intensity level of this setting. (AI-inferred) */
   level?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_VideoMetadata {
+  /** The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   endOffset?: string | Computed<string>;
+  /** The frame rate, in frames per second, video input is sampled at. (AI-inferred) */
   fps?: number | Computed<number>;
+  /** The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   startOffset?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts {
+  /** Enables Gemini to transcribe spoken audio to text as part of its response. (AI-inferred) */
   audioTranscription?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription>;
+  /** The output of running a preceding `executable_code` block. (AI-inferred) */
   codeExecutionResult?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_CodeExecutionResult | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_CodeExecutionResult>;
+  /** Code the model generated for the tool-hosted interpreter to run, when code execution is enabled. (AI-inferred) */
   executableCode?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_ExecutableCode | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_ExecutableCode>;
+  /** A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred) */
   fileData?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FileData | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FileData>;
+  /** A request from the model, inside its own response, to invoke a specific function the caller declared -- the caller executes it and returns the result via a matching `function_response`. (AI-inferred) */
   functionCall?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall>;
+  /** The caller-supplied result of a previously requested `function_call`, returned to the model in a following turn. (AI-inferred) */
   functionResponse?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse>;
+  /** Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred) */
   inlineData?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts_InlineData | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts_InlineData>;
+  /** The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred) */
   mediaResolution?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_MediaResolution | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_MediaResolution>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: string | Computed<string>;
+  /** A step of the model's own intermediate reasoning, surfaced when extended thinking is enabled. (AI-inferred) */
   thought?: boolean | Computed<boolean>;
+  /** An opaque signature validating a `thought` block as genuinely produced by the model, so it can be safely replayed in a later turn. (AI-inferred) */
   thoughtSignature?: string | Computed<string>;
+  /** Configuration controlling how video input is sampled, e.g. frame rate and clipping. (AI-inferred) */
   videoMetadata?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_VideoMetadata | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_VideoMetadata>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion {
+  /** The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred) */
   parts?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts[] | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts[]>;
+  /** Who this Content is attributed to in the conversation: `user` or `model`. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions {
+  /** A single candidate completion. (AI-inferred) */
   completion?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
 export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples {
+  /** The candidate completion(s) recorded for this example. (AI-inferred) */
   completions?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions[] | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions[]>;
+  /** The message content making up this example. (AI-inferred) */
   contents?: TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion[] | Computed<TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion[]>;
 }
 
@@ -682,8 +856,11 @@ export interface TuningJob_TuningDataStats_PreferenceOptimizationDataStats {
 }
 
 export interface TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistribution_Buckets {
+  /** How many of this item there are. (AI-inferred) */
   count?: number | Computed<number>;
+  /** The lower bound of this range. (AI-inferred) */
   left?: number | Computed<number>;
+  /** The upper bound of this range. (AI-inferred) */
   right?: number | Computed<number>;
 }
 

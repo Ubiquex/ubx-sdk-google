@@ -18,15 +18,22 @@ class BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationProperties:
 
 @dataclasses.dataclass
 class BackupPlanAssociation_RulesConfigInfo_LastBackupError:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class BackupPlanAssociation_RulesConfigInfo:
+    # Detail about the error encountered during the most recent backup attempt. (AI-inferred)
     last_backup_error: Any = None
+    # The outcome of the most recent backup attempt. (AI-inferred)
     last_backup_state: Any = None
+    # The consistency point in time of the most recent successful backup. (AI-inferred)
     last_successful_backup_consistency_time: Any = None
+    # A reference to the backup rule this applies to. (AI-inferred)
     rule_id: Any = None
 
 _BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields = {

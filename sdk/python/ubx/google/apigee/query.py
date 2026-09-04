@@ -8,10 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Query_Metrics:
+    # A reference to a key/certificate alias in a keystore. (AI-inferred)
     alias: Any = None
+    # The mathematical function applied to compute this value. (AI-inferred)
     function: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # How this condition's own operands are compared. (AI-inferred)
     operator: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -95,9 +100,11 @@ class QueryAttrs:
     name: Any = None
     # Valid values include: `csv` or `json`. Defaults to `json`. Note: Configure the delimiter for CSV output using the csvDelimiter property.
     output_format: Any = None
+    # The query parameter(s) this applies to. (AI-inferred)
     query_params: Any = None
     # Asynchronous Report ID.
     report_definition_id: Any = None
+    # The result produced by this operation. (AI-inferred)
     result: Any = None
     # ResultFileSize is available only after the query is completed.
     result_file_size: Any = None

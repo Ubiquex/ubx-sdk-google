@@ -2,227 +2,353 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EvaluationSet_AgentConfigs_Tools_ComputerUse {
+  /** If `true`, screens `computer_use` requests for prompt-injection attempts before acting on them. (AI-inferred) */
   enablePromptInjectionDetection?: boolean | Computed<boolean>;
+  /** Which surface the `computer_use` tool operates in -- e.g. `browser`, for a sandboxed web browser. (AI-inferred) */
   environment?: string | Computed<string>;
+  /** Built-in `computer_use` actions to disable, typically to hand those actions to a custom, caller-registered function instead. (AI-inferred) */
   excludedPredefinedFunctions?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_EnterpriseWebSearch {
+  /** The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred) */
   blockingConfidence?: string | Computed<string>;
+  /** Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred) */
   excludeDomains?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_ExaAiSearch {
+  /** The API key credential used to authenticate this tool's own external calls. (AI-inferred) */
   apiKey?: string | Computed<string>;
+  /** Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred) */
   customConfigs?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_Parameters {
+  /** Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred) */
   additionalProperties?: unknown | Computed<unknown>;
+  /** A list of schemas where a value must satisfy at least one to be valid. (AI-inferred) */
   anyOf?: unknown[] | Computed<unknown[]>;
+  /** The value used when this field is left unset. (AI-inferred) */
   default?: unknown | Computed<unknown>;
+  /** Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred) */
   defs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exact, closed set of values a `string`-typed schema allows. (AI-inferred) */
   enum?: string[] | Computed<string[]>;
+  /** A sample value illustrating this schema, for documentation purposes only -- not enforced as a constraint. (AI-inferred) */
   example?: unknown | Computed<unknown>;
+  /** A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred) */
   format?: string | Computed<string>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
+  /** The most elements an `array`-typed value may have. (AI-inferred) */
   maxItems?: string | Computed<string>;
+  /** The most characters a `string`-typed value may have. (AI-inferred) */
   maxLength?: string | Computed<string>;
+  /** The most properties an `object`-typed value may have. (AI-inferred) */
   maxProperties?: string | Computed<string>;
+  /** The largest value a `number`/`integer`-typed value may take. (AI-inferred) */
   maximum?: number | Computed<number>;
+  /** The fewest elements an `array`-typed value may have. (AI-inferred) */
   minItems?: string | Computed<string>;
+  /** The fewest characters a `string`-typed value may have. (AI-inferred) */
   minLength?: string | Computed<string>;
+  /** The fewest properties an `object`-typed value may have. (AI-inferred) */
   minProperties?: string | Computed<string>;
+  /** The smallest value a `number`/`integer`-typed value may take. (AI-inferred) */
   minimum?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** A regular expression a `string`-typed value must match. (AI-inferred) */
   pattern?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The order this schema's own `properties` should appear in when Gemini generates a structured response -- Gemini otherwise has no guaranteed field order for JSON output. (AI-inferred) */
   propertyOrdering?: string[] | Computed<string[]>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: string[] | Computed<string[]>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_FunctionDeclarations {
+  /** Controls how the model treats this function call -- e.g. whether it must wait for the result before continuing, or can proceed without blocking. (AI-inferred) */
   behavior?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_Parameters | Computed<EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_Parameters>;
+  /** The function's own parameter schema expressed as a plain JSON Schema document, an alternative to the structured `parameters` field. (AI-inferred) */
   parametersJsonSchema?: unknown | Computed<unknown>;
+  /** The response produced for this request. (AI-inferred) */
   response?: EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_Parameters | Computed<EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_Parameters>;
+  /** The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred) */
   responseJsonSchema?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_GoogleMaps_GroundingTypes {
+  /** Configuration for grounding responses in Google Maps place data specifically. (AI-inferred) */
   places?: unknown | Computed<unknown>;
+  /** Configuration for how requests are routed, e.g. to a specific region or backend. (AI-inferred) */
   routing?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_GoogleMaps {
+  /** Whether an interactive map widget is included alongside a Google Maps-grounded response. (AI-inferred) */
   enableWidget?: boolean | Computed<boolean>;
+  /** Which real-world grounding source(s) (e.g. web search, Maps) this configuration draws on. (AI-inferred) */
   groundingTypes?: EvaluationSet_AgentConfigs_Tools_GoogleMaps_GroundingTypes | Computed<EvaluationSet_AgentConfigs_Tools_GoogleMaps_GroundingTypes>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_GoogleSearch_SearchTypes {
+  /** Enables grounding via Google Image Search results. (AI-inferred) */
   imageSearch?: unknown | Computed<unknown>;
+  /** Enables grounding via Google Web Search results. (AI-inferred) */
   webSearch?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_GoogleSearch {
+  /** The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred) */
   blockingConfidence?: string | Computed<string>;
+  /** Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred) */
   excludeDomains?: string[] | Computed<string[]>;
+  /** Which kind(s) of web search results (image, web, or both) this grounding tool draws on. (AI-inferred) */
   searchTypes?: EvaluationSet_AgentConfigs_Tools_GoogleSearch_SearchTypes | Computed<EvaluationSet_AgentConfigs_Tools_GoogleSearch_SearchTypes>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig {
+  /** The minimum predicted-usefulness score, from `dynamic_retrieval_config`, at which grounding is triggered -- a lower threshold grounds more often. (AI-inferred) */
   dynamicThreshold?: number | Computed<number>;
+  /** Which operating mode this configuration uses. (AI-inferred) */
   mode?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval {
+  /** Controls when Google Search grounding actually triggers, based on how likely the model judges grounding to help. (AI-inferred) */
   dynamicRetrievalConfig?: EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig | Computed<EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_ParallelAiSearch {
+  /** The API key credential used to authenticate this tool's own external calls. (AI-inferred) */
   apiKey?: string | Computed<string>;
+  /** Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred) */
   customConfigs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Whether Google retains this request's own data beyond the immediate response, per the caller's own data-retention agreement. (AI-inferred) */
   enableDataRetention?: boolean | Computed<boolean>;
+  /** If `true`, Google discards this request's own data immediately after responding rather than retaining it at all. (AI-inferred) */
   enableZeroDataRetention?: boolean | Computed<boolean>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig {
+  /** The Secret Manager secret version holding the API key used to authenticate this call. (AI-inferred) */
   apiKeySecretVersion?: string | Computed<string>;
+  /** The literal API key value used to authenticate this tool's own external call. (AI-inferred) */
   apiKeyString?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth {
+  /** How the API key for this tool's own external service call is supplied. (AI-inferred) */
   apiKeyConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig {
+  /** The Secret Manager secret holding the API key used to authenticate this call. (AI-inferred) */
   apiKeySecret?: string | Computed<string>;
+  /** The literal API key value used to authenticate this tool's own external call. (AI-inferred) */
   apiKeyString?: string | Computed<string>;
+  /** Where in the HTTP request this credential is placed, e.g. a header or query parameter. (AI-inferred) */
   httpElementLocation?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig {
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig {
+  /** The Secret Manager secret holding this credential. (AI-inferred) */
   credentialSecret?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig {
+  /** An OAuth 2.0 access token used to authenticate this call. (AI-inferred) */
   accessToken?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig {
+  /** An OpenID Connect ID token used to authenticate this call. (AI-inferred) */
   idToken?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig {
+  /** How the API key for this tool's own external service call is supplied. (AI-inferred) */
   apiKeyConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig>;
+  /** Which authentication method this configuration uses, e.g. API key, OAuth, or OIDC. (AI-inferred) */
   authType?: string | Computed<string>;
+  /** Authenticates using a Google-managed service account, rather than a caller-supplied credential. (AI-inferred) */
   googleServiceAccountConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig>;
+  /** Authenticates using HTTP Basic authentication (username and password). (AI-inferred) */
   httpBasicAuthConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig>;
+  /** Authenticates using an OAuth 2.0 access token. (AI-inferred) */
   oauthConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig>;
+  /** Authenticates using an OpenID Connect ID token. (AI-inferred) */
   oidcConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ElasticSearchParams {
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: string | Computed<string>;
+  /** How many search results (hits) to request from the external search API. (AI-inferred) */
   numHits?: number | Computed<number>;
+  /** The Elasticsearch search template used to construct this query. (AI-inferred) */
   searchTemplate?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi {
+  /** Authentication credentials for calling this external API. (AI-inferred) */
   apiAuth?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth>;
+  /** Which external search API shape this configuration targets, e.g. `elastic_search_params` or `simple_search_params`. (AI-inferred) */
   apiSpec?: string | Computed<string>;
+  /** Authentication configuration for reaching this external resource. (AI-inferred) */
   authConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig>;
+  /** Parameters for querying an Elasticsearch-backed external search API. (AI-inferred) */
   elasticSearchParams?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ElasticSearchParams | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ElasticSearchParams>;
+  /** The endpoint this call is directed to. (AI-inferred) */
   endpoint?: string | Computed<string>;
+  /** Parameters for querying a simple, generic external search API, as an alternative to `elastic_search_params`. (AI-inferred) */
   simpleSearchParams?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch_DataStoreSpecs {
+  /** The Vertex AI Search data store this grounding query reads from, in the form `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`. (AI-inferred) */
   dataStore?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch {
+  /** Restricts a Vertex AI Search grounding query to specific data store(s) within the configured search app, rather than all of them. (AI-inferred) */
   dataStoreSpecs?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch_DataStoreSpecs[] | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch_DataStoreSpecs[]>;
+  /** The Vertex AI Search data store this applies to. (AI-inferred) */
   datastore?: string | Computed<string>;
+  /** The Vertex AI Search app (engine) this grounding query reads from. (AI-inferred) */
   engine?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The maximum number of results this query returns. (AI-inferred) */
   maxResults?: number | Computed<number>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagResources {
+  /** The RAG corpus this applies to, in the form `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`. (AI-inferred) */
   ragCorpus?: string | Computed<string>;
+  /** Specific file ID(s) within `rag_corpus` to restrict retrieval to, instead of the whole corpus. (AI-inferred) */
   ragFileIds?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter {
+  /** A filter expression restricting retrieval to chunks whose own metadata matches. (AI-inferred) */
   metadataFilter?: string | Computed<string>;
+  /** The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred) */
   vectorDistanceThreshold?: number | Computed<number>;
+  /** The minimum vector similarity a retrieved chunk must have to be included -- a higher threshold returns fewer, more relevant chunks. (AI-inferred) */
   vectorSimilarityThreshold?: number | Computed<number>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker {
+  /** The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred) */
   modelName?: string | Computed<string>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking {
+  /** Reranks retrieved results using a language model, rather than the dedicated rank service. (AI-inferred) */
   llmRanker?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker>;
+  /** Reranks retrieved results using Vertex AI's own dedicated semantic ranking model. (AI-inferred) */
   rankService?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig {
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter>;
+  /** Configuration for reranking retrieved results before returning them. (AI-inferred) */
   ranking?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking>;
+  /** Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred) */
   topK?: number | Computed<number>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore {
+  /** The RAG corpus/corpora (and optionally specific files within one corpus) this query retrieves from. (AI-inferred) */
   ragResources?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagResources[] | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagResources[]>;
+  /** Controls how many chunks are retrieved and how they're filtered/ranked for a RAG query. (AI-inferred) */
   ragRetrievalConfig?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig>;
+  /** The maximum number of top-ranked results to return from retrieval. (AI-inferred) */
   similarityTopK?: number | Computed<number>;
+  /** The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred) */
   vectorDistanceThreshold?: number | Computed<number>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools_Retrieval {
+  /** If `true`, suppresses source citations that would otherwise accompany a grounded response. (AI-inferred) */
   disableAttribution?: boolean | Computed<boolean>;
+  /** Configuration for grounding via a caller-specified external search API, rather than a Google-hosted one. (AI-inferred) */
   externalApi?: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi>;
+  /** Enables the model to ground its response in a Vertex AI Search data store. (AI-inferred) */
   vertexAiSearch?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch>;
+  /** Enables the model to ground its response in one or more Vertex AI RAG Engine corpora. (AI-inferred) */
   vertexRagStore?: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore>;
 }
 
 export interface EvaluationSet_AgentConfigs_Tools {
+  /** Enables the model to write and run code in a hosted interpreter as part of generating its response. (AI-inferred) */
   codeExecution?: unknown | Computed<unknown>;
+  /** Enables the model to control a browser, mobile, or desktop `environment` by issuing UI actions (click, type, scroll) as part of generating its response. (AI-inferred) */
   computerUse?: EvaluationSet_AgentConfigs_Tools_ComputerUse | Computed<EvaluationSet_AgentConfigs_Tools_ComputerUse>;
+  /** Enables grounding via an enterprise-scoped web search, as an alternative to open `google_search` grounding. (AI-inferred) */
   enterpriseWebSearch?: EvaluationSet_AgentConfigs_Tools_EnterpriseWebSearch | Computed<EvaluationSet_AgentConfigs_Tools_EnterpriseWebSearch>;
+  /** Enables grounding via the third-party Exa AI search tool, authenticated with `api_key`. (AI-inferred) */
   exaAiSearch?: EvaluationSet_AgentConfigs_Tools_ExaAiSearch | Computed<EvaluationSet_AgentConfigs_Tools_ExaAiSearch>;
+  /** The set of callable functions the model may invoke via `function_call`, each declared with a name, description, and parameter schema. (AI-inferred) */
   functionDeclarations?: EvaluationSet_AgentConfigs_Tools_FunctionDeclarations[] | Computed<EvaluationSet_AgentConfigs_Tools_FunctionDeclarations[]>;
+  /** Enables the model to ground its response in Google Maps place and location data. (AI-inferred) */
   googleMaps?: EvaluationSet_AgentConfigs_Tools_GoogleMaps | Computed<EvaluationSet_AgentConfigs_Tools_GoogleMaps>;
+  /** Enables the model to ground its response in live Google Search results. (AI-inferred) */
   googleSearch?: EvaluationSet_AgentConfigs_Tools_GoogleSearch | Computed<EvaluationSet_AgentConfigs_Tools_GoogleSearch>;
+  /** Enables the model to ground its response in live Google Search results, with configurable dynamic-retrieval behavior. (AI-inferred) */
   googleSearchRetrieval?: EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval | Computed<EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval>;
+  /** Enables grounding via the third-party Parallel AI search tool. (AI-inferred) */
   parallelAiSearch?: EvaluationSet_AgentConfigs_Tools_ParallelAiSearch | Computed<EvaluationSet_AgentConfigs_Tools_ParallelAiSearch>;
+  /** Enables the model to ground its response in a specified external or Vertex AI-hosted data source. (AI-inferred) */
   retrieval?: EvaluationSet_AgentConfigs_Tools_Retrieval | Computed<EvaluationSet_AgentConfigs_Tools_Retrieval>;
+  /** Enables the model to fetch and read the content of URLs it's given or discovers, to ground its response. (AI-inferred) */
   urlContext?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationSet_AgentConfigs {
+  /** The identifier of the agent this applies to. (AI-inferred) */
   agentId?: string | Computed<string>;
+  /** The kind of agent this is, e.g. which framework or platform it's built on. (AI-inferred) */
   agentType?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** An instruction given to the model or agent. (AI-inferred) */
   instruction?: string | Computed<string>;
+  /** The child agent(s) this agent delegates parts of a task to. (AI-inferred) */
   subAgents?: string[] | Computed<string[]>;
+  /** The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred) */
   tools?: EvaluationSet_AgentConfigs_Tools[] | Computed<EvaluationSet_AgentConfigs_Tools[]>;
 }
 

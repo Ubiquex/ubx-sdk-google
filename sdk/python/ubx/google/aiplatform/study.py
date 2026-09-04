@@ -28,60 +28,88 @@ class Study_StudySpec_DecayCurveStoppingSpec:
 
 @dataclasses.dataclass
 class Study_StudySpec_Metrics_SafetyConfig:
+    # The minimum fraction of trials that must be predicted safe before an unsafe trial is allowed to be tried anyway. (AI-inferred)
     desired_min_safe_trials_fraction: Any = None
+    # The metric value below which a trial is considered unsafe. (AI-inferred)
     safety_threshold: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Metrics:
+    # Whether this metric should be `MAXIMIZE`d or `MINIMIZE`d during tuning. (AI-inferred)
     goal: Any = None
+    # An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
     metric_id: Any = None
+    # Configuration for safe hyperparameter tuning, which avoids proposing trials predicted to badly underperform. (AI-inferred)
     safety_config: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters_CategoricalValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters_ConditionalParameterSpecs:
+    # The definition (type, range, or allowed values) of this hyperparameter. (AI-inferred)
     parameter_spec: Any = None
+    # The parent categorical value(s) that activate this conditional parameter. (AI-inferred)
     parent_categorical_values: Any = None
+    # The parent discrete value(s) that activate this conditional parameter. (AI-inferred)
     parent_discrete_values: Any = None
+    # The parent integer value(s) that activate this conditional parameter. (AI-inferred)
     parent_int_values: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters_DiscreteValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters_DoubleValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The largest value this parameter may take. (AI-inferred)
     max_value: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min_value: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters_IntegerValueSpec:
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The largest value this parameter may take. (AI-inferred)
     max_value: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min_value: Any = None
 
 @dataclasses.dataclass
 class Study_StudySpec_Parameters:
+    # Defines this hyperparameter as a categorical value, chosen from a fixed set of string options. (AI-inferred)
     categorical_value_spec: Any = None
+    # Sub-parameter(s) that only apply when this parameter takes specific value(s), for hyperparameter search spaces with conditional structure. (AI-inferred)
     conditional_parameter_specs: Any = None
+    # Defines this hyperparameter as a value chosen from a fixed, explicit list of numbers. (AI-inferred)
     discrete_value_spec: Any = None
+    # Defines this hyperparameter as a floating-point value within a `min_value`/`max_value` range. (AI-inferred)
     double_value_spec: Any = None
+    # Defines this hyperparameter as an integer value within a `min_value`/`max_value` range. (AI-inferred)
     integer_value_spec: Any = None
+    # The name of this hyperparameter, unique within its own study. (AI-inferred)
     parameter_id: Any = None
+    # How this hyperparameter's own search range is scaled when sampling, e.g. `UNIT_LINEAR_SCALE` or `UNIT_LOG_SCALE`. (AI-inferred)
     scale_type: Any = None
 
 @dataclasses.dataclass

@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Memory_Metadata:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # A floating-point value, populated when this field's own type is a double. (AI-inferred)
     double_value: Any = None
+    # A text value, populated when this field's own type is a string. (AI-inferred)
     string_value: Any = None
+    # A timestamp value, populated when this field's own type is a timestamp. (AI-inferred)
     timestamp_value: Any = None
 
 @dataclasses.dataclass
 class Memory_Topics:
+    # The label identifying this caller-defined memory topic. (AI-inferred)
     custom_memory_topic_label: Any = None
+    # One of Vertex AI's own predefined memory topics, e.g. `USER_PREFERENCES`. (AI-inferred)
     managed_memory_topic: Any = None
 
 _Memory_MetadataFields = {

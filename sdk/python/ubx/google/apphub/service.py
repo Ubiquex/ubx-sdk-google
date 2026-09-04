@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Service_Attributes_BusinessOwners:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The email address associated with this identity. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass
@@ -31,6 +33,7 @@ class Service_Attributes:
 
 @dataclasses.dataclass
 class Service_ServiceProperties_ExtendedMetadata:
+    # Additional, caller-defined structured metadata attached to this resource. (AI-inferred)
     metadata_struct: Any = None
 
 @dataclasses.dataclass

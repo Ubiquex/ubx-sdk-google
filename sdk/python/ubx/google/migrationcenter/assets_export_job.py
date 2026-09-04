@@ -18,52 +18,75 @@ class AssetsExportJob_PerformanceData:
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result_Error:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri:
+    # A reference to a specific file. (AI-inferred)
     file: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile:
+    # The number of columns found in this file. (AI-inferred)
     columns_count: Any = None
+    # How many rows this file contains. (AI-inferred)
     row_count: Any = None
+    # A time-limited, pre-authorized URI for downloading this file. (AI-inferred)
     signed_uri: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFile:
+    # A time-limited, pre-authorized URI for downloading this file. (AI-inferred)
     signed_uri: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries:
+    # The generated CSV report file. (AI-inferred)
     csv_output_file: Any = None
+    # The size of this file, in bytes. (AI-inferred)
     file_size_bytes: Any = None
+    # The generated Excel report file. (AI-inferred)
     xlsx_output_file: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result_OutputFiles:
+    # The entry/entries making up this collection. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result_SignedUris:
+    # Time-limited, pre-authorized URI(s) for downloading these file(s). (AI-inferred)
     signed_uris: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions_Result:
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # The generated output file(s) produced by this report. (AI-inferred)
     output_files: Any = None
+    # Time-limited, pre-authorized URI(s) for downloading these file(s). (AI-inferred)
     signed_uris: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJob_RecentExecutions:
+    # When this event or operation ended. (AI-inferred)
     end_time: Any = None
+    # An identifier for this specific execution run. (AI-inferred)
     execution_id: Any = None
+    # The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
     expire_time: Any = None
+    # How many assets were requested to be included in this report. (AI-inferred)
     requested_asset_count: Any = None
+    # The result produced by this operation. (AI-inferred)
     result: Any = None
+    # When this event or operation started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass

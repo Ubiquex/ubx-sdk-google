@@ -212,8 +212,11 @@ type Cluster_Autoscaling_AutoprovisioningNodePoolDefaults struct {
 }
 
 type Cluster_Autoscaling_ResourceLimits struct {
-	Maximum      any
-	Minimum      any
+	// The largest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Maximum any
+	// The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Minimum any
+	// Which kind of resource this applies to. (AI-inferred)
 	ResourceType any
 }
 
@@ -242,6 +245,7 @@ type Cluster_BinaryAuthorization struct {
 }
 
 type Cluster_Cluster_CompliancePostureConfig_ComplianceStandards struct {
+	// Configuration for the standard (non-Autopilot) cluster mode. (AI-inferred)
 	Standard any
 }
 
@@ -253,9 +257,12 @@ type Cluster_Cluster_CompliancePostureConfig struct {
 }
 
 type Cluster_Cluster_Conditions struct {
+	// A standard gRPC-style status code summarizing this outcome. (AI-inferred)
 	CanonicalCode any
-	Code          any
-	Message       any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// A human-readable description of this result or error. (AI-inferred)
+	Message any
 }
 
 type Cluster_Cluster_ConfidentialNodes struct {
@@ -277,7 +284,9 @@ type Cluster_Cluster_ControlPlaneEndpointsConfig_DnsEndpointConfig struct {
 }
 
 type Cluster_Cluster_ControlPlaneEndpointsConfig_IpEndpointsConfig_AuthorizedNetworksConfig_CidrBlocks struct {
-	CidrBlock   any
+	// An IP address range in CIDR notation. (AI-inferred)
+	CidrBlock any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
@@ -317,9 +326,12 @@ type Cluster_Cluster_ControlPlaneEndpointsConfig struct {
 }
 
 type Cluster_Cluster_DatabaseEncryption_LastOperationErrors struct {
+	// A human-readable description of the error. (AI-inferred)
 	ErrorMessage any
-	KeyName      any
-	Timestamp    any
+	// The name of this key. (AI-inferred)
+	KeyName any
+	// When this event occurred. (AI-inferred)
+	Timestamp any
 }
 
 type Cluster_Cluster_DatabaseEncryption struct {
@@ -369,13 +381,18 @@ type Cluster_Cluster_GkeAutoUpgradeConfig struct {
 }
 
 type Cluster_Cluster_IpAllocationPolicy_AdditionalIpRangesConfigs struct {
+	// The name(s) of the secondary IP range(s) used for pod IP addresses. (AI-inferred)
 	PodIpv4RangeNames any
-	Status            any
-	Subnetwork        any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type Cluster_Cluster_IpAllocationPolicy_AdditionalPodRangesConfig_PodRangeInfo struct {
-	RangeName   any
+	// The name of the secondary IP range this applies to. (AI-inferred)
+	RangeName any
+	// The observed or target resource utilization level. (AI-inferred)
 	Utilization any
 }
 
@@ -474,14 +491,19 @@ type Cluster_Cluster_MaintenancePolicy_Window_DailyMaintenanceWindow struct {
 }
 
 type Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions_MaintenanceExclusionOptions struct {
+	// What happens once this maintenance exclusion window's own end time is reached. (AI-inferred)
 	EndTimeBehavior any
-	Scope           any
+	// What this setting applies to. (AI-inferred)
+	Scope any
 }
 
 type Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions struct {
-	EndTime                     any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// Configuration for a maintenance exclusion window, e.g. its own scope. (AI-inferred)
 	MaintenanceExclusionOptions any
-	StartTime                   any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
 }
 
 type Cluster_Cluster_MaintenancePolicy_Window_RecurringMaintenanceWindow_DelayUntil struct {
@@ -670,20 +692,28 @@ type Cluster_Cluster_NetworkPolicy struct {
 }
 
 type Cluster_Cluster_NodeConfig_Accelerators_GpuDriverInstallationConfig struct {
+	// Which GPU driver version GKE installs, e.g. `LATEST` or `DEFAULT`. (AI-inferred)
 	GpuDriverVersion any
 }
 
 type Cluster_Cluster_NodeConfig_Accelerators_GpuSharingConfig struct {
-	GpuSharingStrategy     any
+	// How a shared GPU is divided among containers, e.g. `TIME_SHARING` or `MPS`. (AI-inferred)
+	GpuSharingStrategy any
+	// The maximum number of containers that may share a single physical GPU. (AI-inferred)
 	MaxSharedClientsPerGpu any
 }
 
 type Cluster_Cluster_NodeConfig_Accelerators struct {
-	AcceleratorCount            any
-	AcceleratorType             any
+	// How many accelerator (GPU/TPU) devices are attached per node. (AI-inferred)
+	AcceleratorCount any
+	// The accelerator (GPU/TPU) type attached to each node, e.g. `nvidia-tesla-t4`. (AI-inferred)
+	AcceleratorType any
+	// Whether and how GKE automatically installs the GPU driver on nodes with attached accelerators. (AI-inferred)
 	GpuDriverInstallationConfig any
-	GpuPartitionSize            any
-	GpuSharingConfig            any
+	// The fraction of a physical GPU allocated per partition, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
+	GpuPartitionSize any
+	// Configuration letting multiple containers share a single physical GPU, rather than each requiring a dedicated one. (AI-inferred)
+	GpuSharingConfig any
 }
 
 type Cluster_Cluster_NodeConfig_AdvancedMachineFeatures struct {
@@ -707,11 +737,14 @@ type Cluster_Cluster_NodeConfig_BootDisk struct {
 }
 
 type Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig struct {
+	// The Secret Manager secret version this value is sourced from. (AI-inferred)
 	SecretUri any
 }
 
 type Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig struct {
-	Fqdns                             any
+	// The fully qualified domain name(s) of the private registry/registries this certificate is trusted for. (AI-inferred)
+	Fqdns any
+	// A CA certificate sourced from Secret Manager, trusted for verifying a private container registry's own TLS certificate. (AI-inferred)
 	GcpSecretManagerCertificateConfig any
 }
 
@@ -723,31 +756,45 @@ type Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig str
 }
 
 type Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca struct {
+	// The Secret Manager secret version holding this certificate, in the form `projects/{project}/secrets/{secret}/versions/{version}`. (AI-inferred)
 	GcpSecretManagerSecretUri any
 }
 
 type Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Client struct {
+	// A TLS certificate. (AI-inferred)
 	Cert any
-	Key  any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
 }
 
 type Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Header struct {
-	Key   any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// The value of this key/value pair. (AI-inferred)
 	Value any
 }
 
 type Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts struct {
-	Ca           any
+	// The CA certificate used to verify the remote server's own identity. (AI-inferred)
+	Ca any
+	// The capability/capabilities this proxy or client supports. (AI-inferred)
 	Capabilities any
-	Client       any
-	DialTimeout  any
-	Header       any
-	Host         any
+	// Client-side TLS configuration. (AI-inferred)
+	Client any
+	// How long to wait when establishing this connection before giving up. (AI-inferred)
+	DialTimeout any
+	// An HTTP header sent with this request. (AI-inferred)
+	Header any
+	// The hostname this applies to. (AI-inferred)
+	Host any
+	// A path used in place of the default, for reaching this endpoint. (AI-inferred)
 	OverridePath any
 }
 
 type Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts struct {
-	Hosts  any
+	// The host(s) this configuration applies to. (AI-inferred)
+	Hosts any
+	// Server-side TLS configuration. (AI-inferred)
 	Server any
 }
 
@@ -985,14 +1032,19 @@ type Cluster_Cluster_NodeConfig_SandboxConfig struct {
 }
 
 type Cluster_Cluster_NodeConfig_SecondaryBootDisks struct {
+	// The disk image used for this node's own boot disk. (AI-inferred)
 	DiskImage any
-	Mode      any
+	// Which operating mode this configuration uses. (AI-inferred)
+	Mode any
 }
 
 type Cluster_Cluster_NodeConfig_SoleTenantConfig_NodeAffinities struct {
-	Key      any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// How this taint's own key/value is compared against a pod's own toleration, e.g. `Equal` or `Exists`. (AI-inferred)
 	Operator any
-	Values   any
+	// The value(s) making up this configuration. (AI-inferred)
+	Values any
 }
 
 type Cluster_Cluster_NodeConfig_SoleTenantConfig struct {
@@ -1008,9 +1060,12 @@ type Cluster_Cluster_NodeConfig_TaintConfig struct {
 }
 
 type Cluster_Cluster_NodeConfig_Taints struct {
+	// What happens to a pod that doesn't tolerate this taint, e.g. `NoSchedule` or `NoExecute`. (AI-inferred)
 	Effect any
-	Key    any
-	Value  any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// The value of this key/value pair. (AI-inferred)
+	Value any
 }
 
 type Cluster_Cluster_NodeConfig_WindowsNodeConfig struct {
@@ -1157,113 +1212,184 @@ type Cluster_Cluster_NodePoolDefaults struct {
 }
 
 type Cluster_Cluster_NodePools_Autoscaling struct {
-	Autoprovisioned   any
-	Enabled           any
-	LocationPolicy    any
-	MaxNodeCount      any
-	MinNodeCount      any
+	// Whether this node pool was created automatically by cluster autoscaling, rather than explicitly by the caller. (AI-inferred)
+	Autoprovisioned any
+	// Whether this feature or setting is turned on. (AI-inferred)
+	Enabled any
+	// How new nodes are distributed across zones when autoscaling, e.g. `BALANCED` or `ANY`. (AI-inferred)
+	LocationPolicy any
+	// The maximum number of nodes this node pool may scale up to. (AI-inferred)
+	MaxNodeCount any
+	// The minimum number of nodes this node pool scales down to. (AI-inferred)
+	MinNodeCount any
+	// The maximum total node count across all zones this node pool may scale up to. (AI-inferred)
 	TotalMaxNodeCount any
+	// The minimum total node count across all zones this node pool scales down to. (AI-inferred)
 	TotalMinNodeCount any
 }
 
 type Cluster_Cluster_NodePools_BestEffortProvisioning struct {
-	Enabled           any
+	// Whether this feature or setting is turned on. (AI-inferred)
+	Enabled any
+	// The minimum number of nodes that must be provisioned for best-effort provisioning to be considered successful. (AI-inferred)
 	MinProvisionNodes any
 }
 
 type Cluster_Cluster_NodePools_KubeletCertInfo struct {
+	// When this node's own bootstrap certificate (for nodes without a TPM) expires. (AI-inferred)
 	NonTpmBootstrapCertExpireTime any
-	TpmBootstrapCertExpireTime    any
+	// When this node's own TPM-backed bootstrap certificate expires. (AI-inferred)
+	TpmBootstrapCertExpireTime any
 }
 
 type Cluster_Cluster_NodePools_MaintenancePolicy_ExclusionUntilEndOfSupport struct {
-	Enabled   any
-	EndTime   any
+	// Whether this feature or setting is turned on. (AI-inferred)
+	Enabled any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// When this operation, run, or window started. (AI-inferred)
 	StartTime any
 }
 
 type Cluster_Cluster_NodePools_MaintenancePolicy struct {
+	// Excludes this cluster from automatic upgrades until its own current minor version reaches end of support. (AI-inferred)
 	ExclusionUntilEndOfSupport any
 }
 
 type Cluster_Cluster_NodePools_NetworkConfig_AdditionalNodeNetworkConfigs struct {
-	Network    any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
 	Subnetwork any
 }
 
 type Cluster_Cluster_NodePools_NetworkConfig_AdditionalPodNetworkConfigs struct {
-	MaxPodsPerNode    any
+	// The maximum number of pods schedulable on a single node in this node pool. (AI-inferred)
+	MaxPodsPerNode any
+	// A reference to the Compute Engine network attachment this cluster's own control plane connects through. (AI-inferred)
 	NetworkAttachment any
+	// The subnet secondary IP range used for pod IP addresses. (AI-inferred)
 	SecondaryPodRange any
-	Subnetwork        any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type Cluster_Cluster_NodePools_NetworkConfig struct {
-	AcceleratorNetworkProfile    any
+	// The network configuration profile applied to accelerator-attached network interfaces. (AI-inferred)
+	AcceleratorNetworkProfile any
+	// Additional VPC network interface(s) attached to each node, beyond the primary one. (AI-inferred)
 	AdditionalNodeNetworkConfigs any
-	AdditionalPodNetworkConfigs  any
-	CreatePodRange               any
-	EnablePrivateNodes           any
-	Network                      any
-	NetworkPerformanceConfig     any
-	NetworkTierConfig            any
-	PodCidrOverprovisionConfig   any
-	PodIpv4CidrBlock             any
-	PodIpv4RangeUtilization      any
-	PodRange                     any
-	Subnetwork                   any
+	// Additional pod network interface(s) attached to each node, for multi-networking scenarios. (AI-inferred)
+	AdditionalPodNetworkConfigs any
+	// Whether GKE automatically creates a new secondary IP range for pods, rather than using an existing one. (AI-inferred)
+	CreatePodRange any
+	// Whether nodes in this pool are assigned only internal IP addresses, with no direct public internet access. (AI-inferred)
+	EnablePrivateNodes any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// Configuration for the network bandwidth tier available to each node. (AI-inferred)
+	NetworkPerformanceConfig any
+	// Configuration for the network performance tier available to each node. (AI-inferred)
+	NetworkTierConfig any
+	// Configuration for whether a node's own pod IP range is sized larger than its `max_pods_per_node`, to leave room for pod churn. (AI-inferred)
+	PodCidrOverprovisionConfig any
+	// The pod IP address range assigned to this node, in CIDR notation. (AI-inferred)
+	PodIpv4CidrBlock any
+	// What fraction of this node's own pod IP address range is currently in use. (AI-inferred)
+	PodIpv4RangeUtilization any
+	// A reference to the secondary IP range used for pod addresses. (AI-inferred)
+	PodRange any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type Cluster_Cluster_NodePools_NodeDrainConfig struct {
-	GraceTerminationDuration         any
-	PdbTimeoutDuration               any
+	// How long a resource is given to terminate gracefully before being forcibly removed. (AI-inferred)
+	GraceTerminationDuration any
+	// How long to wait for a PodDisruptionBudget to allow eviction before proceeding anyway. (AI-inferred)
+	PdbTimeoutDuration any
+	// Whether PodDisruptionBudgets are honored when nodes in this pool are deleted. (AI-inferred)
 	RespectPdbDuringNodePoolDeletion any
 }
 
 type Cluster_Cluster_NodePools_PlacementPolicy struct {
-	PolicyName  any
+	// The name of the placement policy this applies. (AI-inferred)
+	PolicyName any
+	// The physical arrangement of TPU chips provisioned for this node pool, e.g. `2x2x1`. (AI-inferred)
 	TpuTopology any
-	Type        any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Cluster_Cluster_NodePools_UpdateInfo_BlueGreenInfo struct {
-	BlueInstanceGroupUrls     any
+	// Output only. The Compute Engine instance group URL(s) making up the original (blue) node pool during a blue/green upgrade. (AI-inferred)
+	BlueInstanceGroupUrls any
+	// Output only. When deletion of the old (blue) node pool began during a blue/green upgrade. (AI-inferred)
 	BluePoolDeletionStartTime any
-	GreenInstanceGroupUrls    any
-	GreenPoolVersion          any
-	Phase                     any
+	// Output only. The Compute Engine instance group URL(s) making up the new (green) node pool during a blue/green upgrade. (AI-inferred)
+	GreenInstanceGroupUrls any
+	// Output only. The node version running in the new (green) node pool during a blue/green upgrade. (AI-inferred)
+	GreenPoolVersion any
+	// The current phase of this operation or rollout. (AI-inferred)
+	Phase any
 }
 
 type Cluster_Cluster_NodePools_UpdateInfo struct {
+	// Output only. Detail about an in-progress or completed blue/green node pool upgrade. (AI-inferred)
 	BlueGreenInfo any
 }
 
 type Cluster_Cluster_NodePools struct {
-	AutopilotConfig        any
-	Autoscaling            any
+	// Configuration specific to Autopilot-mode node pools. (AI-inferred)
+	AutopilotConfig any
+	// Configuration for automatically resizing this node pool based on demand. (AI-inferred)
+	Autoscaling any
+	// Allows this node pool to start with fewer nodes than requested if full capacity isn't immediately available, rather than failing outright. (AI-inferred)
 	BestEffortProvisioning any
-	Conditions             any
-	Config                 any
-	Etag                   any
-	InitialNodeCount       any
-	InstanceGroupUrls      any
-	KubeletCertInfo        any
-	Locations              any
-	MaintenancePolicy      any
-	Management             any
-	MaxPodsConstraint      any
-	Name                   any
-	NetworkConfig          any
-	NodeDrainConfig        any
-	PlacementPolicy        any
-	PodIpv4CidrSize        any
-	QueuedProvisioning     any
-	SelfLink               any
-	Status                 any
-	StatusMessage          any
-	UpdateInfo             any
-	UpgradeSettings        any
-	Version                any
+	// The current condition(s) affecting this resource's own status. (AI-inferred)
+	Conditions any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// How many nodes this node pool starts with when first created. (AI-inferred)
+	InitialNodeCount any
+	// Output only. The Compute Engine instance group URL(s) backing this node pool. (AI-inferred)
+	InstanceGroupUrls any
+	// Detail about the kubelet's own TLS certificate for this node. (AI-inferred)
+	KubeletCertInfo any
+	// The zone(s) this resource is spread across. (AI-inferred)
+	Locations any
+	// Configuration for when automatic cluster maintenance is allowed to occur. (AI-inferred)
+	MaintenancePolicy any
+	// Configuration for automatic node repair and upgrade. (AI-inferred)
+	Management any
+	// The maximum number of pods schedulable on a single node in this node pool. (AI-inferred)
+	MaxPodsConstraint any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Networking configuration for this cluster or node pool. (AI-inferred)
+	NetworkConfig any
+	// Configuration for how nodes are gracefully drained before removal, e.g. during a scale-down or upgrade. (AI-inferred)
+	NodeDrainConfig any
+	// Configuration for how nodes are physically placed relative to each other, e.g. compact placement for low-latency networking. (AI-inferred)
+	PlacementPolicy any
+	// The size of the pod IP address range assigned to this node. (AI-inferred)
+	PodIpv4CidrSize any
+	// Uses Dynamic Workload Scheduler queued provisioning for this node pool, waiting for capacity to become available rather than failing immediately. (AI-inferred)
+	QueuedProvisioning any
+	// Output only. The fully qualified URL identifying this resource. (AI-inferred)
+	SelfLink any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// A human-readable description of this resource's own current status. (AI-inferred)
+	StatusMessage any
+	// Detail about an in-progress or completed update to this resource. (AI-inferred)
+	UpdateInfo any
+	// Configuration controlling how this node pool is upgraded, e.g. surge size and strategy. (AI-inferred)
+	UpgradeSettings any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Cluster_Cluster_NotificationConfig_Pubsub_Filter struct {

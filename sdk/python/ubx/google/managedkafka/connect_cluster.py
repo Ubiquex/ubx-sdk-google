@@ -15,8 +15,11 @@ class ConnectCluster_CapacityConfig:
 
 @dataclasses.dataclass
 class ConnectCluster_GcpConfig_AccessConfig_NetworkConfigs:
+    # Additional subnet(s), beyond `primary_subnet`, this Connect cluster is reachable from. (AI-inferred)
     additional_subnets: Any = None
+    # The DNS domain name(s) this Connect cluster is resolvable under from within the configured network. (AI-inferred)
     dns_domain_names: Any = None
+    # The primary subnet this Connect cluster is reachable from. (AI-inferred)
     primary_subnet: Any = None
 
 @dataclasses.dataclass

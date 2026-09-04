@@ -2,35 +2,50 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value {
+  /** Matches when the value contains this substring. (AI-inferred) */
   contains?: string | Computed<string>;
+  /** Matches only this exact value. (AI-inferred) */
   exact?: string | Computed<string>;
+  /** Whether this match is case-insensitive. (AI-inferred) */
   ignoreCase?: boolean | Computed<boolean>;
+  /** Matches values starting with this prefix. (AI-inferred) */
   prefix?: string | Computed<string>;
+  /** Matches values ending with this suffix. (AI-inferred) */
   suffix?: string | Computed<string>;
 }
 
 export interface ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value | Computed<ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value>;
 }
 
 export interface ExtensionBinding_MatchConditions_To_Destination_HeaderSet {
+  /** The HTTP header(s) this applies to. (AI-inferred) */
   headers?: ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers[] | Computed<ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers[]>;
 }
 
 export interface ExtensionBinding_MatchConditions_To_Destination {
+  /** A set of HTTP header match condition(s) that must all be satisfied. (AI-inferred) */
   headerSet?: ExtensionBinding_MatchConditions_To_Destination_HeaderSet | Computed<ExtensionBinding_MatchConditions_To_Destination_HeaderSet>;
+  /** The host(s) this rule applies to. (AI-inferred) */
   hosts?: ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value[] | Computed<ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value[]>;
+  /** The URL path(s) this rule matches. (AI-inferred) */
   paths?: ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value[] | Computed<ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value[]>;
+  /** The resource(s) this applies to. (AI-inferred) */
   resources?: ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value[] | Computed<ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value[]>;
 }
 
 export interface ExtensionBinding_MatchConditions_To {
+  /** The destination this traffic is routed to. (AI-inferred) */
   destination?: ExtensionBinding_MatchConditions_To_Destination | Computed<ExtensionBinding_MatchConditions_To_Destination>;
+  /** A destination explicitly excluded from this match. (AI-inferred) */
   notDestination?: ExtensionBinding_MatchConditions_To_Destination | Computed<ExtensionBinding_MatchConditions_To_Destination>;
 }
 
 export interface ExtensionBinding_MatchConditions {
+  /** The destination(s) this rule matches traffic to. (AI-inferred) */
   to?: ExtensionBinding_MatchConditions_To | Computed<ExtensionBinding_MatchConditions_To>;
 }
 

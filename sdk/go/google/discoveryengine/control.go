@@ -4,8 +4,10 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Control_BoostAction_InterpolationBoostSpec_ControlPoints struct {
+	// The value of this attribute. (AI-inferred)
 	AttributeValue any
-	BoostAmount    any
+	// How much to raise or lower a matching result's own ranking. (AI-inferred)
+	BoostAmount any
 }
 
 type Control_BoostAction_InterpolationBoostSpec struct {
@@ -33,19 +35,26 @@ type Control_BoostAction struct {
 }
 
 type Control_Conditions_ActiveTimeRange struct {
-	EndTime   any
+	// When this event or operation ended. (AI-inferred)
+	EndTime any
+	// When this event or operation started. (AI-inferred)
 	StartTime any
 }
 
 type Control_Conditions_QueryTerms struct {
+	// Matches only this exact, complete value. (AI-inferred)
 	FullMatch any
-	Value     any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Control_Conditions struct {
+	// The time range this schedule or configuration is currently active for. (AI-inferred)
 	ActiveTimeRange any
-	QueryRegex      any
-	QueryTerms      any
+	// A regular expression this query rule matches against. (AI-inferred)
+	QueryRegex any
+	// The individual term(s) making up this query. (AI-inferred)
+	QueryTerms any
 }
 
 type Control_FilterAction struct {

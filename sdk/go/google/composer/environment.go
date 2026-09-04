@@ -44,7 +44,9 @@ type Environment_Config_MaintenanceWindow struct {
 }
 
 type Environment_Config_MasterAuthorizedNetworksConfig_CidrBlocks struct {
-	CidrBlock   any
+	// A CIDR-notation IP range allowed to reach the environment's GKE master through HTTPS when `master_authorized_networks_config` is enabled. (AI-inferred)
+	CidrBlock any
+	// A human-readable label for this CIDR block, shown in the console alongside `cidr_block`. (AI-inferred)
 	DisplayName any
 }
 
@@ -184,8 +186,10 @@ type Environment_Config_WebServerConfig struct {
 }
 
 type Environment_Config_WebServerNetworkAccessControl_AllowedIpRanges struct {
+	// A human-readable note explaining why this IP range is allowed to reach the Airflow web server. (AI-inferred)
 	Description any
-	Value       any
+	// A CIDR-notation IP range permitted to access the environment's Airflow web UI. (AI-inferred)
+	Value any
 }
 
 type Environment_Config_WebServerNetworkAccessControl struct {

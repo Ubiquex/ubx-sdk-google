@@ -4,7 +4,9 @@ package speech
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PhraseSet_PhraseSet_Phrases struct {
+	// The real strength (a positive number, higher biases more strongly) this phrase should be boosted by during recognition. (AI-inferred)
 	Boost any
+	// The real, literal term this custom class item contributes to the class's own recognition bias. (AI-inferred)
 	Value any
 }
 

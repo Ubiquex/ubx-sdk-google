@@ -110,17 +110,23 @@ type TrainingPipeline_ModelToUpload_BaseModelSource struct {
 }
 
 type TrainingPipeline_ModelToUpload_Checkpoints struct {
+	// An identifier for this specific training checkpoint. (AI-inferred)
 	CheckpointId any
-	Epoch        any
-	Step         any
+	// The training epoch this checkpoint was saved at. (AI-inferred)
+	Epoch any
+	// A single step within this run or sequence. (AI-inferred)
+	Step any
 }
 
 type TrainingPipeline_ModelToUpload_ContainerSpec_Env struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type TrainingPipeline_ModelToUpload_ContainerSpec_GrpcPorts struct {
+	// The port number the container listens on. (AI-inferred)
 	ContainerPort any
 }
 
@@ -224,46 +230,74 @@ type TrainingPipeline_ModelToUpload_DataStats struct {
 }
 
 type TrainingPipeline_ModelToUpload_DeployedModels struct {
-	CheckpointId    any
+	// An identifier for this specific training checkpoint. (AI-inferred)
+	CheckpointId any
+	// The identifier this model was deployed under. (AI-inferred)
 	DeployedModelId any
-	Endpoint        any
+	// The endpoint this call is directed to. (AI-inferred)
+	Endpoint any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue       any
-	MinValue       any
-	OriginalMean   any
+	// The largest value this parameter may take. (AI-inferred)
+	MaxValue any
+	// The smallest value this parameter may take. (AI-inferred)
+	MinValue any
+	// The mean of this feature's own values before normalization. (AI-inferred)
+	OriginalMean any
+	// The standard deviation of this feature's own values before normalization. (AI-inferred)
 	OriginalStddev any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_Visualization struct {
+	// Attribution values below this percentile are clipped from the visualization. (AI-inferred)
 	ClipPercentLowerbound any
+	// Attribution values above this percentile are clipped from the visualization. (AI-inferred)
 	ClipPercentUpperbound any
-	ColorMap              any
-	OverlayType           any
-	Polarity              any
-	Type                  any
+	// The color scheme used to render attribution values in the visualization. (AI-inferred)
+	ColorMap any
+	// How the attribution visualization is overlaid on the original input image. (AI-inferred)
+	OverlayType any
+	// Whether the visualization highlights positive attributions, negative attributions, or both. (AI-inferred)
+	Polarity any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs struct {
+	// The name of the tensor giving the shape of a sparse input, when this input is represented sparsely. (AI-inferred)
 	DenseShapeTensorName any
-	EncodedBaselines     any
-	EncodedTensorName    any
-	Encoding             any
-	FeatureValueDomain   any
-	GroupName            any
-	IndexFeatureMapping  any
-	IndicesTensorName    any
-	InputBaselines       any
-	InputTensorName      any
-	Modality             any
-	Visualization        any
+	// The baseline value(s) for the encoded tensor, used as the reference point feature attributions are computed against. (AI-inferred)
+	EncodedBaselines any
+	// The name of the encoded (post-transformation) input tensor this metadata describes. (AI-inferred)
+	EncodedTensorName any
+	// How this input feature is encoded into its own model tensor, e.g. `BAG_OF_FEATURES` or `IDENTITY`. (AI-inferred)
+	Encoding any
+	// The real-world value range (min/max, or original mean/standard deviation if normalized) this input feature was drawn from. (AI-inferred)
+	FeatureValueDomain any
+	// Groups related input features together for combined feature-attribution reporting. (AI-inferred)
+	GroupName any
+	// The feature name corresponding to each index position in the input tensor -- required when `encoding` is a sparse/indicator encoding. (AI-inferred)
+	IndexFeatureMapping any
+	// The name of the tensor giving the indices of a sparse input's own non-zero values. (AI-inferred)
+	IndicesTensorName any
+	// The baseline value(s) for this input, used as the reference point feature attributions are computed against. (AI-inferred)
+	InputBaselines any
+	// The name of the model's own input tensor this metadata describes. (AI-inferred)
+	InputTensorName any
+	// The kind of data this input represents, e.g. `numeric`, `image`, or `text`. (AI-inferred)
+	Modality any
+	// How feature attributions for this input are rendered visually, e.g. for image inputs. (AI-inferred)
+	Visualization any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey   any
+	// The key identifying which display-name mapping to apply to this output's own values. (AI-inferred)
+	DisplayNameMappingKey any
+	// Maps output tensor index positions to their own human-readable display names. (AI-inferred)
 	IndexDisplayNameMapping any
-	OutputTensorName        any
+	// The name of the model's own output tensor this metadata describes. (AI-inferred)
+	OutputTensorName any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata struct {
@@ -313,7 +347,9 @@ type TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradien
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The standard deviation parameter of a Gaussian/normal distribution used for sampling. (AI-inferred)
 	Sigma any
 }
 
@@ -389,8 +425,10 @@ type TrainingPipeline_ModelToUpload_PredictSchemata struct {
 }
 
 type TrainingPipeline_ModelToUpload_SupportedExportFormats struct {
+	// Which artifact(s) (e.g. model binary, checkpoint) this model can be exported as. (AI-inferred)
 	ExportableContents any
-	Id                 any
+	// An identifier for this object. (AI-inferred)
+	Id any
 }
 
 type TrainingPipeline_ModelToUpload struct {

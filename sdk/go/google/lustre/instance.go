@@ -4,9 +4,12 @@ package lustre
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_AccessRulesOptions_AccessRules struct {
+	// The IP address range(s) this access rule grants access to. (AI-inferred)
 	IpAddressRanges any
-	Name            any
-	SquashMode      any
+	// A caller-chosen name for this access rule. (AI-inferred)
+	Name any
+	// How client root privileges are handled: `NO_SQUASH` (client root keeps root on the filesystem) or `ROOT_SQUASH` (client root is mapped to an unprivileged user). (AI-inferred)
+	SquashMode any
 }
 
 type Instance_AccessRulesOptions struct {
@@ -26,26 +29,38 @@ type Instance_DynamicTierOptions struct {
 }
 
 type Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate struct {
-	Day   any
+	// The day-of-month component of the end date. (AI-inferred)
+	Day any
+	// The month component of the end date. (AI-inferred)
 	Month any
-	Year  any
+	// The year component of the end date. (AI-inferred)
+	Year any
 }
 
 type Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time struct {
-	Hours   any
+	// The hour component of the time. (AI-inferred)
+	Hours any
+	// The minute component of the time. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of the time. (AI-inferred)
+	Nanos any
+	// The second component of the time. (AI-inferred)
 	Seconds any
 }
 
 type Instance_MaintenancePolicy_MaintenanceExclusionWindow struct {
-	EndDate   any
+	// The calendar date this maintenance exclusion window ends on. (AI-inferred)
+	EndDate any
+	// The calendar date this maintenance exclusion window begins on. (AI-inferred)
 	StartDate any
-	Time      any
+	// The time of day this maintenance exclusion window's own start/end dates apply from. (AI-inferred)
+	Time any
 }
 
 type Instance_MaintenancePolicy_WeeklyMaintenanceWindows struct {
+	// The day of the week this recurring maintenance window occurs on. (AI-inferred)
 	DayOfWeek any
+	// The UTC time of day this recurring maintenance window starts at. (AI-inferred)
 	StartTime any
 }
 

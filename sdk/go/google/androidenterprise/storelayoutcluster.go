@@ -4,8 +4,10 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Storelayoutcluster_Name struct {
+	// The real BCP-47 locale this store layout cluster's own localized `name` is written in. (AI-inferred)
 	Locale any
-	Text   any
+	// The real, localized display text for this store layout cluster's own name, in the paired `locale`. (AI-inferred)
+	Text any
 }
 
 var Storelayoutcluster_NameFields = ubx.FieldMap{

@@ -4,8 +4,10 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentResourcePool_DedicatedResources_AutoscalingMetricSpecs struct {
+	// The name of the metric this applies to. (AI-inferred)
 	MetricName any
-	Target     any
+	// The target value autoscaling tries to maintain for this metric. (AI-inferred)
+	Target any
 }
 
 type DeploymentResourcePool_DedicatedResources_MachineSpec_ReservationAffinity struct {

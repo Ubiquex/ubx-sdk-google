@@ -13,6 +13,7 @@ export interface AlphaNetworkAttachment_ConnectionEndpoints {
 }
 
 export interface AlphaNetworkAttachmentConfig {
+  /** Whether this network attachment accepts connection requests automatically or requires explicit acceptance. (AI-inferred) */
   connectionPreference?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -31,6 +32,7 @@ export interface AlphaNetworkAttachmentConfig {
 export interface AlphaNetworkAttachmentAttrs {
   /** Output only. [Output Only] An array of connections for all the producers connected to this network attachment. */
   connectionEndpoints: AlphaNetworkAttachment_ConnectionEndpoints[];
+  /** Whether this network attachment accepts connection requests automatically or requires explicit acceptance. (AI-inferred) */
   connectionPreference: string;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;

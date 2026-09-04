@@ -528,9 +528,11 @@ const BetaOrganizationSecurityPolicy_UserDefinedFieldsFields: FieldMap = {
 export interface BetaOrganizationSecurityPolicyConfig {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig?: BetaOrganizationSecurityPolicy_AdaptiveProtectionConfig | Computed<BetaOrganizationSecurityPolicy_AdaptiveProtectionConfig>;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig?: BetaOrganizationSecurityPolicy_AdvancedOptionsConfig | Computed<BetaOrganizationSecurityPolicy_AdvancedOptionsConfig>;
   /** A list of associations that belong to this policy. */
   associations?: BetaOrganizationSecurityPolicy_Associations[] | Computed<BetaOrganizationSecurityPolicy_Associations[]>;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig?: BetaOrganizationSecurityPolicy_DdosProtectionConfig | Computed<BetaOrganizationSecurityPolicy_DdosProtectionConfig>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -558,11 +560,13 @@ export interface BetaOrganizationSecurityPolicyConfig {
 export interface BetaOrganizationSecurityPolicyAttrs {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig: BetaOrganizationSecurityPolicy_AdaptiveProtectionConfig;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig: BetaOrganizationSecurityPolicy_AdvancedOptionsConfig;
   /** A list of associations that belong to this policy. */
   associations: BetaOrganizationSecurityPolicy_Associations[];
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig: BetaOrganizationSecurityPolicy_DdosProtectionConfig;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;

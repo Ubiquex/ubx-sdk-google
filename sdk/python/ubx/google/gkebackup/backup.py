@@ -26,7 +26,9 @@ class Backup_EncryptionKey:
 
 @dataclasses.dataclass
 class Backup_SelectedApplications_NamespacedNames:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The Kubernetes namespace this applies to. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
@@ -36,7 +38,9 @@ class Backup_SelectedApplications:
 
 @dataclasses.dataclass
 class Backup_SelectedNamespaceLabels_ResourceLabels:
+    # The key of this label or field. (AI-inferred)
     key: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

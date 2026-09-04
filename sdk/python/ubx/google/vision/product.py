@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Product_ProductLabels:
+    # The real, custom label key attached to this Vision Product Search product. (AI-inferred)
     key: Any = None
+    # The real value of this product label, paired with its own `key`. (AI-inferred)
     value: Any = None
 
 _Product_ProductLabelsFields = {

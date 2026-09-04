@@ -8,17 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Report_Metrics:
+    # The mathematical function applied to compute this value. (AI-inferred)
     function: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Report_Properties_Value:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Report_Properties:
+    # A named property of this object. (AI-inferred)
     property: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 _Report_MetricsFields = {

@@ -8,12 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Group_AdditionalGroupKeys:
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # A container grouping related external identifier(s) together. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class Group_DynamicGroupMetadata_Queries:
+    # The query evaluated to produce this result. (AI-inferred)
     query: Any = None
+    # The category of resource this applies to. (AI-inferred)
     resource_type: Any = None
 
 @dataclasses.dataclass

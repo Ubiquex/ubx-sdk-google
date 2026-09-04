@@ -9,8 +9,10 @@ type Guardrail_Action_GenerativeAnswer struct {
 }
 
 type Guardrail_Action_RespondImmediately_Responses struct {
+	// Whether this configuration is currently turned off. (AI-inferred)
 	Disabled any
-	Text     any
+	// The plain-text content. (AI-inferred)
+	Text any
 }
 
 type Guardrail_Action_RespondImmediately struct {
@@ -104,7 +106,9 @@ type Guardrail_LlmPromptSecurity struct {
 }
 
 type Guardrail_ModelSafety_SafetySettings struct {
-	Category  any
+	// The category this classification or setting applies to. (AI-inferred)
+	Category any
+	// The value that must be met or crossed for this to apply. (AI-inferred)
 	Threshold any
 }
 

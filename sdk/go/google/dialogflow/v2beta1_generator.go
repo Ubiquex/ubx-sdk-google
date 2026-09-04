@@ -484,36 +484,63 @@ var V2beta1Generator_ToolsetToolsFields = ubx.FieldMap{
 }
 
 type V2beta1GeneratorConfig struct {
-	AgentCoachingContext     any
-	CesAppSpecs              any
-	CesToolSpecs             any
-	Description              any
-	FreeFormContext          any
-	InferenceParameter       any
-	PublishedModel           any
+	// Real, additional context supplied to guide this generator's own agent-coaching suggestions. (AI-inferred)
+	AgentCoachingContext any
+	// The real CES (Conversational Experience Studio) app(s) this generator can call. (AI-inferred)
+	CesAppSpecs any
+	// The real CES (Conversational Experience Studio) tool(s) this generator can choose from. (AI-inferred)
+	CesToolSpecs any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Real, free-form background text supplied as additional context to this generator. (AI-inferred)
+	FreeFormContext any
+	// Real parameters (e.g. temperature, max output tokens) controlling this generator's own model inference. (AI-inferred)
+	InferenceParameter any
+	// A reference to the real, published foundation model this generator uses. (AI-inferred)
+	PublishedModel any
+	// Configures how this generator avoids repeating a suggestion already made earlier in the same conversation. (AI-inferred)
 	SuggestionDedupingConfig any
-	SummarizationContext     any
-	Tools                    any
-	ToolsetTools             any
-	TriggerEvent             any
+	// Real, additional context supplied to guide this generator's own summarization output. (AI-inferred)
+	SummarizationContext any
+	// The real tool(s) this generator may call. (AI-inferred)
+	Tools any
+	// The real tool(s), grouped as a toolset, this generator may call. (AI-inferred)
+	ToolsetTools any
+	// The real event that triggers this generator to run. (AI-inferred)
+	TriggerEvent any
 }
 
 type V2beta1GeneratorAttrs struct {
-	AgentCoachingContext     any
-	CesAppSpecs              any
-	CesToolSpecs             any
-	CreateTime               any
-	Description              any
-	FreeFormContext          any
-	InferenceParameter       any
-	Name                     any
-	PublishedModel           any
+	// Real, additional context supplied to guide this generator's own agent-coaching suggestions. (AI-inferred)
+	AgentCoachingContext any
+	// The real CES (Conversational Experience Studio) app(s) this generator can call. (AI-inferred)
+	CesAppSpecs any
+	// The real CES (Conversational Experience Studio) tool(s) this generator can choose from. (AI-inferred)
+	CesToolSpecs any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Real, free-form background text supplied as additional context to this generator. (AI-inferred)
+	FreeFormContext any
+	// Real parameters (e.g. temperature, max output tokens) controlling this generator's own model inference. (AI-inferred)
+	InferenceParameter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the real, published foundation model this generator uses. (AI-inferred)
+	PublishedModel any
+	// Configures how this generator avoids repeating a suggestion already made earlier in the same conversation. (AI-inferred)
 	SuggestionDedupingConfig any
-	SummarizationContext     any
-	Tools                    any
-	ToolsetTools             any
-	TriggerEvent             any
-	UpdateTime               any
+	// Real, additional context supplied to guide this generator's own summarization output. (AI-inferred)
+	SummarizationContext any
+	// The real tool(s) this generator may call. (AI-inferred)
+	Tools any
+	// The real tool(s), grouped as a toolset, this generator may call. (AI-inferred)
+	ToolsetTools any
+	// The real event that triggers this generator to run. (AI-inferred)
+	TriggerEvent any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var V2beta1Generator = ubx.ResourceBinding{

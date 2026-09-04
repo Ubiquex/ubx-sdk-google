@@ -8,12 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AssistantSession_Messages_Chunks:
+    # The plain-text content. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class AssistantSession_Messages:
+    # The retrieved content chunk(s) making up this result. (AI-inferred)
     chunks: Any = None
+    # When this event occurred. (AI-inferred)
     event_time: Any = None
+    # Who this content is attributed to, e.g. agent or end user. (AI-inferred)
     role: Any = None
 
 _AssistantSession_Messages_ChunksFields = {

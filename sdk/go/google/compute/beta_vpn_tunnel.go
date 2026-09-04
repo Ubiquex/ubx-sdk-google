@@ -59,7 +59,8 @@ var BetaVpnTunnel_ParamsFields = ubx.FieldMap{
 type BetaVpnTunnelConfig struct {
 	// Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
 	CapacityTier any
-	CipherSuite  any
+	// The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
+	CipherSuite any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// [Output Only] Detailed status message for the VPN tunnel.
@@ -110,7 +111,8 @@ type BetaVpnTunnelConfig struct {
 type BetaVpnTunnelAttrs struct {
 	// Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
 	CapacityTier any
-	CipherSuite  any
+	// The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
+	CipherSuite any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.

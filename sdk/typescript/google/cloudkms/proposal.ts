@@ -7,7 +7,9 @@ export interface Proposal_AddQuorumMember {
 }
 
 export interface Proposal_QuorumParameters_Challenges {
+  /** The cryptographic challenge value a quorum participant must sign to approve this proposal. (AI-inferred) */
   challenge?: string | Computed<string>;
+  /** The PEM-encoded public key used to verify a quorum participant's own signed response to `challenge`. (AI-inferred) */
   publicKeyPem?: string | Computed<string>;
 }
 

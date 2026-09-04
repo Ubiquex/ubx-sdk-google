@@ -8,389 +8,572 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_DeidentifyStats:
+    # How many values this job successfully transformed. (AI-inferred)
     transformation_count: Any = None
+    # How many values this job failed to transform. (AI-inferred)
     transformation_error_count: Any = None
+    # The total number of bytes this job transformed. (AI-inferred)
     transformed_bytes: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor:
+    # The blue color channel value. (AI-inferred)
     blue: Any = None
+    # The green color channel value. (AI-inferred)
     green: Any = None
+    # The red color channel value. (AI-inferred)
     red: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore:
+    # The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes:
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
+    # A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
     sensitivity_score: Any = None
+    # The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms:
+    # Applies this transformation to every detected info type, rather than a specific selected list. (AI-inferred)
     all_info_types: Any = None
+    # Applies this transformation to all detected text, rather than only specific info types. (AI-inferred)
     all_text: Any = None
+    # The RGB color used to redact matched regions in an image. (AI-inferred)
     redaction_color: Any = None
+    # Restricts this transformation to specific, named info type(s), rather than all of them. (AI-inferred)
     selected_info_types: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations:
+    # The transformation(s) to apply. (AI-inferred)
     transforms: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue:
+    # The day-of-month component of a date value. (AI-inferred)
     day: Any = None
+    # The month component of a date value. (AI-inferred)
     month: Any = None
+    # The year component of a date value. (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max:
+    # A `true`/`false` value, populated when this `Value`'s own type is boolean. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     boolean_value: Any = None
+    # A calendar date value (year/month/day), populated when this `Value`'s own type is a date. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     date_value: Any = None
+    # A day-of-the-week value (e.g. `MONDAY`), populated when this `Value`'s own type is a weekday. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     day_of_week_value: Any = None
+    # A floating-point number, populated when this `Value`'s own type is a float. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     float_value: Any = None
+    # A whole-number value, populated when this `Value`'s own type is an integer. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     integer_value: Any = None
+    # A text value, populated when this `Value`'s own type is a string. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     string_value: Any = None
+    # A time-of-day value (hour/minute/second), populated when this `Value`'s own type is a time and the date/timezone aren't significant. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     time_value: Any = None
+    # A full date-and-time value, populated when this `Value`'s own type is a timestamp. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
     timestamp_value: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets:
+    # The upper bound of this range. (AI-inferred)
     max: Any = None
+    # The lower bound of this range. (AI-inferred)
     min: Any = None
+    # The value substituted in place of the original. (AI-inferred)
     replacement_value: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig:
+    # The bucket range(s) making up this bucketing configuration. (AI-inferred)
     buckets: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore:
+    # How many characters at the start/end are left unmasked, before masking the rest. (AI-inferred)
     characters_to_skip: Any = None
+    # A predefined character set (e.g. punctuation) skipped over when applying this transformation. (AI-inferred)
     common_characters_to_ignore: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig:
+    # Character(s) skipped over (left as-is) when applying this transformation. (AI-inferred)
     characters_to_ignore: Any = None
+    # The character substituted in place of each masked character. (AI-inferred)
     masking_character: Any = None
+    # How many characters to mask, counting from the position `reverse_order` specifies. (AI-inferred)
     number_to_mask: Any = None
+    # Whether masking counts characters from the end of the value rather than the start. (AI-inferred)
     reverse_order: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context:
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped:
+    # The resource name of the Cloud KMS key used to unwrap `wrapped_key`. (AI-inferred)
     crypto_key_name: Any = None
+    # The crypto key's own bytes, encrypted (wrapped) by the Cloud KMS key named in `crypto_key_name`. (AI-inferred)
     wrapped_key: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped:
+    # The raw key bytes themselves. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey:
+    # A crypto key wrapped by Cloud KMS -- Sensitive Data Protection calls KMS to unwrap `wrapped_key` using `crypto_key_name` before use. (AI-inferred)
     kms_wrapped: Any = None
+    # A crypto key generated fresh, at random, for this request only -- never persisted or reusable afterward. (AI-inferred)
     transient: Any = None
+    # A crypto key supplied as raw, unencrypted bytes. Simpler than `kms_wrapped` but carries more risk of the key leaking, since Sensitive Data Protection never handles it wrapped. (AI-inferred)
     unwrapped: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig:
+    # Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
     context: Any = None
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
+    # The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
     surrogate_info_type: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig:
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig:
+    # A predefined character set (e.g. numeric, alphanumeric) the format-preserving encryption output is drawn from. (AI-inferred)
     common_alphabet: Any = None
+    # Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
     context: Any = None
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
+    # A caller-defined character set the format-preserving encryption output is drawn from, instead of a predefined `common_alphabet`. (AI-inferred)
     custom_alphabet: Any = None
+    # The number of distinct symbols the format-preserving encryption's own alphabet uses. (AI-inferred)
     radix: Any = None
+    # The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
     surrogate_info_type: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig:
+    # Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
     context: Any = None
+    # The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
     crypto_key: Any = None
+    # The most days a date may be shifted earlier. (AI-inferred)
     lower_bound_days: Any = None
+    # The most days a date may be shifted later. (AI-inferred)
     upper_bound_days: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig:
+    # The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
     bucket_size: Any = None
+    # The lowest value included in bucketing. (AI-inferred)
     lower_bound: Any = None
+    # The highest value included in bucketing. (AI-inferred)
     upper_bound: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig:
+    # The literal value to substitute in. (AI-inferred)
     new_value: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList:
+    # The literal words/phrases making up this `word_list`. (AI-inferred)
     words: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig:
+    # A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
     word_list: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig:
+    # Which component of the date/time value to keep, e.g. `YEAR` or `MONTH`. (AI-inferred)
     part_to_extract: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation:
+    # Groups numeric or date values into named ranges, replacing the original value with its own bucket label. (AI-inferred)
     bucketing_config: Any = None
+    # Replaces characters in a matching value with a fixed masking character, optionally leaving some characters unmasked. (AI-inferred)
     character_mask_config: Any = None
+    # De-identifies a value with a deterministic, reversible cryptographic transform -- the same input always produces the same output, letting values still be joined/grouped on after de-identification. (AI-inferred)
     crypto_deterministic_config: Any = None
+    # De-identifies a value by replacing it with a cryptographic hash, a one-way transform that can't be reversed. (AI-inferred)
     crypto_hash_config: Any = None
+    # De-identifies a value using format-preserving encryption (FFX mode) -- the output has the same format (length, character set) as the input. (AI-inferred)
     crypto_replace_ffx_fpe_config: Any = None
+    # De-identifies dates by shifting them a random, per-context number of days within a bounded range, preserving date arithmetic (like intervals between events) while hiding the real dates. (AI-inferred)
     date_shift_config: Any = None
+    # Groups numeric values into fixed-width ranges between `lower_bound` and `upper_bound`, each `bucket_size` wide. (AI-inferred)
     fixed_size_bucketing_config: Any = None
+    # De-identifies a value by removing it entirely, leaving no replacement. (AI-inferred)
     redact_config: Any = None
+    # De-identifies a value by replacing it with a fixed, generic replacement token. (AI-inferred)
     replace_config: Any = None
+    # De-identifies a value by replacing it with a value drawn from a supplied word list. (AI-inferred)
     replace_dictionary_config: Any = None
+    # De-identifies a value by replacing it with its own detected info type name (e.g. `[EMAIL_ADDRESS]`), rather than a fixed token. (AI-inferred)
     replace_with_info_type_config: Any = None
+    # De-identifies a date/time value by keeping only one component of it (e.g. just the year), discarding the rest. (AI-inferred)
     time_part_config: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
     primitive_transformation: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations:
+    # The transformation(s) making up this configuration. (AI-inferred)
     transformations: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions:
+    # A reference to the field this applies to. (AI-inferred)
     field: Any = None
+    # The comparison operator this condition uses. (AI-inferred)
     operator: Any = None
+    # The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions:
+    # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
+    # How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred)
     logical_operator: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition:
+    # The condition expression(s) making up this rule. (AI-inferred)
     expressions: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations:
+    # The condition that must hold for this rule to apply. (AI-inferred)
     condition: Any = None
+    # The field(s) this applies to. (AI-inferred)
     fields: Any = None
+    # De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred)
     info_type_transformations: Any = None
+    # A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
     primitive_transformation: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions:
+    # The condition that must hold for this rule to apply. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations:
+    # The transformation(s) applied to specific field(s) of a structured record. (AI-inferred)
     field_transformations: Any = None
+    # Condition(s) under which an entire structured record is suppressed (dropped) rather than transformed. (AI-inferred)
     record_suppressions: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_TransformationErrorHandling:
+    # On a transformation error, leaves the original value as-is rather than failing the request. (AI-inferred)
     leave_untransformed: Any = None
+    # On a transformation error, fails the whole request rather than leaving the value untransformed. (AI-inferred)
     throw_error: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig:
+    # The image redaction transformation(s) to apply. (AI-inferred)
     image_transformations: Any = None
+    # De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred)
     info_type_transformations: Any = None
+    # De-identification transformation(s) applied to structured (tabular) records, field by field. (AI-inferred)
     record_transformations: Any = None
+    # How a transformation error on one value is handled -- fail the whole request, or leave that one value untransformed. (AI-inferred)
     transformation_error_handling: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The de-identification transformation(s) to apply to matched content. (AI-inferred)
     deidentify_config: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails_RequestedOptions:
+    # A frozen copy of the de-identify template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred)
     snapshot_deidentify_template: Any = None
+    # A frozen copy of the image redaction template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred)
     snapshot_image_redact_template: Any = None
+    # A frozen copy of the structured de-identify template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred)
     snapshot_structured_deidentify_template: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails_DeidentifyDetails:
+    # Summary statistics for the de-identification action this job performed. (AI-inferred)
     deidentify_stats: Any = None
+    # The de-identification configuration that was requested for this job. (AI-inferred)
     requested_options: Any = None
 
 @dataclasses.dataclass
 class Job_ActionDetails:
+    # Detail about the de-identification action this job performed. (AI-inferred)
     deidentify_details: Any = None
 
 @dataclasses.dataclass
 class Job_Errors_Details:
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # Additional detail explaining this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result or error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Job_Errors:
+    # Additional detail explaining this result. (AI-inferred)
     details: Any = None
+    # Additional detail about this event. (AI-inferred)
     extra_info: Any = None
+    # The timestamp(s) recorded for this event. (AI-inferred)
     timestamps: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfig:
+    # A reference to the de-identify template defining how matched values are transformed. (AI-inferred)
     deidentify_template: Any = None
+    # A reference to the template defining how matched values within images are redacted. (AI-inferred)
     image_redact_template: Any = None
+    # A reference to the de-identify template applied specifically to structured (tabular) data. (AI-inferred)
     structured_deidentify_template: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table:
+    # The BigQuery dataset ID this applies to. (AI-inferred)
     dataset_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The BigQuery table ID this applies to. (AI-inferred)
     table_id: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig:
+    # A reference to the table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify:
+    # The Cloud Storage location de-identified output is written to. (AI-inferred)
     cloud_storage_output: Any = None
+    # Which file type(s) this de-identification action applies to. (AI-inferred)
     file_types_to_transform: Any = None
+    # The de-identification transformation(s) to apply. (AI-inferred)
     transformation_config: Any = None
+    # Where a detailed, per-value record of this job's own transformations is stored. (AI-inferred)
     transformation_details_storage_config: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSub:
+    # A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
     topic: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePath:
+    # A file or object path this configuration reads from or writes to. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig:
+    # The BigQuery schema findings are written under. (AI-inferred)
     output_schema: Any = None
+    # The Cloud Storage path data is written to or read from. (AI-inferred)
     storage_path: Any = None
+    # A reference to the table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings:
+    # Where and how this job's own output is written. (AI-inferred)
     output_config: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_Actions:
+    # Configuration for de-identifying discovered sensitive data as part of this action. (AI-inferred)
     deidentify: Any = None
+    # Sends a notification email to the project's own owners/editors when this job completes. (AI-inferred)
     job_notification_emails: Any = None
+    # Publishes a notification to a Pub/Sub topic when this job completes. (AI-inferred)
     pub_sub: Any = None
+    # Publishes this job's own findings as Data Catalog tags on the scanned resource. (AI-inferred)
     publish_findings_to_cloud_data_catalog: Any = None
+    # Publishes this job's own findings as Dataplex Catalog metadata on the scanned resource. (AI-inferred)
     publish_findings_to_dataplex_catalog: Any = None
+    # Publishes a summary of this job's own findings to Security Command Center. (AI-inferred)
     publish_summary_to_cscc: Any = None
+    # Publishes this job's own findings as Cloud Logging (Stackdriver) log entries. (AI-inferred)
     publish_to_stackdriver: Any = None
+    # Saves this job's own findings to a BigQuery table. (AI-inferred)
     save_findings: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex:
+    # For a regex with capture groups, which group number(s) the match applies to, instead of the whole match. (AI-inferred)
     group_indexes: Any = None
+    # A regular expression a `string`-typed value must match. (AI-inferred)
     pattern: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment:
+    # Sets a triggered finding's likelihood to this exact value, overriding whatever it would otherwise have been. (AI-inferred)
     fixed_likelihood: Any = None
+    # Shifts a triggered finding's likelihood up or down by this many levels, relative to whatever it would otherwise have been. (AI-inferred)
     relative_likelihood: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity:
+    # How many characters after a finding this hotword rule scans for a match. (AI-inferred)
     window_after: Any = None
+    # How many characters before a finding this hotword rule scans for a match. (AI-inferred)
     window_before: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule:
+    # A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
     hotword_regex: Any = None
+    # How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
     likelihood_adjustment: Any = None
+    # The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
     proximity: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules:
+    # A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
     hotword_rule: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary:
+    # A `gs://` Cloud Storage path this configuration reads from. (AI-inferred)
     cloud_storage_path: Any = None
+    # A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
     word_list: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch:
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel:
+    # Which label field(s) on a Google Drive file are inspected. (AI-inferred)
     label_fields_to_match: Any = None
+    # The identifier of the Google Drive label this applies to. (AI-inferred)
     label_id: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel:
+    # A globally unique identifier. (AI-inferred)
     guid: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType:
+    # Configuration for inspecting Google Drive file labels as part of this scan. (AI-inferred)
     google_drive_label: Any = None
+    # A Google Drive sensitivity label applied to a file, treated as a signal of the file's own real sensitivity. (AI-inferred)
     sensitivity_label: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression:
+    # A regular expression matching against metadata key names. (AI-inferred)
     key_regex: Any = None
+    # A regular expression matching against metadata values. (AI-inferred)
     value_regex: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredType:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes:
+    # The rule(s) that adjust match likelihood for this custom info type based on surrounding context. (AI-inferred)
     detection_rules: Any = None
+    # A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
     dictionary: Any = None
+    # Whether a match against this rule excludes the finding from results, or leaves it unaffected. (AI-inferred)
     exclusion_type: Any = None
+    # Reports a Google Drive file's own applied label(s) as findings, treating the label itself as sensitive information to detect. (AI-inferred)
     file_label_info_type: Any = None
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
+    # How confident Sensitive Data Protection is that this is a real match, from `VERY_UNLIKELY` to `VERY_LIKELY`. (AI-inferred)
     likelihood: Any = None
+    # A condition matching against a specific metadata key/value pair on the scanned object. (AI-inferred)
     metadata_key_value_expression: Any = None
+    # A regular expression this rule matches against. (AI-inferred)
     regex: Any = None
+    # A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
     sensitivity_score: Any = None
+    # A reference to a previously created custom info type (a stored dictionary or regex) to reuse here. (AI-inferred)
     stored_type: Any = None
+    # Marks de-identified content with a caller-defined info type name, so it can later be recognized and re-identified. (AI-inferred)
     surrogate_type: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits_MaxFindingsPerInfoType:
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
+    # The maximum number of findings to report before stopping. (AI-inferred)
     max_findings: Any = None
 
 @dataclasses.dataclass
@@ -404,61 +587,90 @@ class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits:
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_MinLikelihoodPerInfoType:
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
+    # The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
     min_likelihood: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType:
+    # Whether the redaction region fully contains the finding's own bounding box. (AI-inferred)
     encloses: Any = None
+    # Whether the finding's own bounding box lies entirely within the redaction region. (AI-inferred)
     fully_inside: Any = None
+    # Whether the redaction region and the finding's own bounding box share any area at all. (AI-inferred)
     overlaps: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings:
+    # How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
     image_containment_type: Any = None
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
     min_likelihood: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
     matching_type: Any = None
+    # The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
     min_likelihood: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule:
+    # Adjusts a finding's own likelihood based on whether related findings were also detected in an accompanying image. (AI-inferred)
     adjust_by_image_findings: Any = None
+    # Adjusts a finding's own likelihood based on whether other specific info types were also matched nearby. (AI-inferred)
     adjust_by_matching_info_types: Any = None
+    # How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
     likelihood_adjustment: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword:
+    # A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
     hotword_regex: Any = None
+    # The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
     proximity: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings:
+    # How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
     image_containment_type: Any = None
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule:
+    # A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
     dictionary: Any = None
+    # Excludes a finding when a specified hotword regex is found nearby, the inverse of a hotword likelihood-boosting rule. (AI-inferred)
     exclude_by_hotword: Any = None
+    # Excludes a finding based on whether related findings were also detected in an accompanying image. (AI-inferred)
     exclude_by_image_findings: Any = None
+    # Excludes findings that also match one of these other info types. (AI-inferred)
     exclude_info_types: Any = None
+    # How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
     matching_type: Any = None
+    # A regular expression this rule matches against. (AI-inferred)
     regex: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules:
+    # A rule that raises or lowers a finding's own likelihood, rather than excluding it outright. (AI-inferred)
     adjustment_rule: Any = None
+    # A rule that removes matching findings from the results entirely. (AI-inferred)
     exclusion_rule: Any = None
+    # A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
     hotword_rule: Any = None
 
 @dataclasses.dataclass
 class Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # The rule(s) making up this configuration. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
@@ -630,7 +842,9 @@ class Job_InspectDetails_Result_HybridStats:
 
 @dataclasses.dataclass
 class Job_InspectDetails_Result_InfoTypeStats:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
 
 @dataclasses.dataclass
@@ -655,15 +869,22 @@ class Job_InspectDetails:
 
 @dataclasses.dataclass
 class Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_BucketValues:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets:
+    # The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
     bucket_size: Any = None
+    # How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_value_count: Any = None
+    # The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_values: Any = None
+    # The lower bound of this value-frequency histogram bucket. (AI-inferred)
     value_frequency_lower_bound: Any = None
+    # The upper bound of this value-frequency histogram bucket. (AI-inferred)
     value_frequency_upper_bound: Any = None
 
 @dataclasses.dataclass
@@ -673,15 +894,22 @@ class Job_RiskDetails_CategoricalStatsResult:
 
 @dataclasses.dataclass
 class Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram_BucketValues:
+    # The estimated probability of re-identifying an individual from this equivalence class. (AI-inferred)
     estimated_probability: Any = None
+    # The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
     quasi_ids_values: Any = None
 
 @dataclasses.dataclass
 class Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram:
+    # The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
     bucket_size: Any = None
+    # How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_value_count: Any = None
+    # The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_values: Any = None
+    # The upper bound of re-identification probability this histogram bucket covers. (AI-inferred)
     max_probability: Any = None
+    # The lower bound of re-identification probability this histogram bucket covers. (AI-inferred)
     min_probability: Any = None
 
 @dataclasses.dataclass
@@ -691,15 +919,22 @@ class Job_RiskDetails_DeltaPresenceEstimationResult:
 
 @dataclasses.dataclass
 class Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets_BucketValues:
+    # How many records fall into this equivalence class -- records sharing the same combination of quasi-identifier values. (AI-inferred)
     equivalence_class_size: Any = None
+    # The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
     quasi_ids_values: Any = None
 
 @dataclasses.dataclass
 class Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets:
+    # The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
     bucket_size: Any = None
+    # How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_value_count: Any = None
+    # The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_values: Any = None
+    # The lower bound of this equivalence-class-size histogram bucket. (AI-inferred)
     equivalence_class_size_lower_bound: Any = None
+    # The upper bound of this equivalence-class-size histogram bucket. (AI-inferred)
     equivalence_class_size_upper_bound: Any = None
 
 @dataclasses.dataclass
@@ -709,15 +944,22 @@ class Job_RiskDetails_KAnonymityResult:
 
 @dataclasses.dataclass
 class Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram_BucketValues:
+    # The estimated minimum number of individuals in the broader population who could share this equivalence class's own quasi-identifier values. (AI-inferred)
     estimated_anonymity: Any = None
+    # The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
     quasi_ids_values: Any = None
 
 @dataclasses.dataclass
 class Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram:
+    # The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
     bucket_size: Any = None
+    # How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_value_count: Any = None
+    # The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_values: Any = None
+    # The upper bound of estimated anonymity this histogram bucket covers. (AI-inferred)
     max_anonymity: Any = None
+    # The lower bound of estimated anonymity this histogram bucket covers. (AI-inferred)
     min_anonymity: Any = None
 
 @dataclasses.dataclass
@@ -727,17 +969,26 @@ class Job_RiskDetails_KMapEstimationResult:
 
 @dataclasses.dataclass
 class Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets_BucketValues:
+    # How many records fall into this equivalence class -- records sharing the same combination of quasi-identifier values. (AI-inferred)
     equivalence_class_size: Any = None
+    # How many distinct sensitive values appear within this equivalence class. (AI-inferred)
     num_distinct_sensitive_values: Any = None
+    # The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
     quasi_ids_values: Any = None
+    # The most frequently occurring sensitive value(s) within this equivalence class. (AI-inferred)
     top_sensitive_values: Any = None
 
 @dataclasses.dataclass
 class Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets:
+    # The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
     bucket_size: Any = None
+    # How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_value_count: Any = None
+    # The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
     bucket_values: Any = None
+    # The lower bound of this sensitive-value-frequency histogram bucket. (AI-inferred)
     sensitive_value_frequency_lower_bound: Any = None
+    # The upper bound of this sensitive-value-frequency histogram bucket. (AI-inferred)
     sensitive_value_frequency_upper_bound: Any = None
 
 @dataclasses.dataclass
@@ -761,20 +1012,29 @@ class Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsC
 
 @dataclasses.dataclass
 class Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIds:
+    # A caller-defined tag attached to this info type or finding. (AI-inferred)
     custom_tag: Any = None
+    # A reference to the field this applies to. (AI-inferred)
     field: Any = None
 
 @dataclasses.dataclass
 class Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables:
+    # The field(s) treated as quasi-identifiers -- not directly identifying on their own, but potentially identifying in combination -- for a k-anonymity or l-diversity risk analysis. (AI-inferred)
     quasi_ids: Any = None
+    # How common this value's own equivalence class is within the dataset, for a risk analysis. (AI-inferred)
     relative_frequency: Any = None
+    # A reference to the table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_QuasiIds:
+    # A caller-defined tag attached to this info type or finding. (AI-inferred)
     custom_tag: Any = None
+    # A reference to the field this applies to. (AI-inferred)
     field: Any = None
+    # A value the risk analysis inferred rather than observed directly. (AI-inferred)
     inferred: Any = None
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
 
 @dataclasses.dataclass

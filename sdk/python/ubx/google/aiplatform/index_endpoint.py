@@ -8,84 +8,133 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_AutomaticResources:
+    # The maximum number of machine replicas this job may scale up to. (AI-inferred)
     max_replica_count: Any = None
+    # The minimum number of machine replicas this job scales down to. (AI-inferred)
     min_replica_count: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecs:
+    # The name of the metric this applies to. (AI-inferred)
     metric_name: Any = None
+    # The target value autoscaling tries to maintain for this metric. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinity:
+    # A key identifying this entry. (AI-inferred)
     key: Any = None
+    # Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
     reservation_affinity_type: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec:
+    # How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
     accelerator_type: Any = None
+    # The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
     gpu_partition_size: Any = None
+    # The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
     machine_type: Any = None
+    # Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
     reservation_affinity: Any = None
+    # The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
     tpu_topology: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_DedicatedResources:
+    # The metric(s) (e.g. CPU utilization) autoscaling bases its own replica-count decisions on, and each one's target value. (AI-inferred)
     autoscaling_metric_specs: Any = None
+    # The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
     machine_spec: Any = None
+    # The maximum number of machine replicas this job may scale up to. (AI-inferred)
     max_replica_count: Any = None
+    # The minimum number of machine replicas this job scales down to. (AI-inferred)
     min_replica_count: Any = None
+    # The minimum number of replicas that must be ready before this deployment is considered available. (AI-inferred)
     required_replica_count: Any = None
+    # Whether this deployment runs on lower-cost Spot VMs, which can be preempted, rather than standard on-demand capacity. (AI-inferred)
     spot: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProvider:
+    # The JWT issuer(s) whose tokens are accepted for authenticating to this deployed index. (AI-inferred)
     allowed_issuers: Any = None
+    # The intended audience value(s) a JWT must carry to be accepted for authenticating to this deployed index. (AI-inferred)
     audiences: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig:
+    # The identity provider trusted to issue authentication tokens for this deployed index. (AI-inferred)
     auth_provider: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpoints:
+    # The IP address this Private Service Connect endpoint resolves to for index queries. (AI-inferred)
     match_address: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_PrivateEndpoints:
+    # The gRPC address this deployed index's own private endpoint is reachable at. (AI-inferred)
     match_grpc_address: Any = None
+    # The Private Service Connect endpoint(s) Vertex AI automatically provisioned for this deployed index. (AI-inferred)
     psc_automated_endpoints: Any = None
+    # The Private Service Connect service attachment backing this deployment's own private endpoints. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes_PscAutomationConfigs:
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
     forwarding_rule: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class IndexEndpoint_DeployedIndexes:
+    # Lets Vertex AI automatically manage compute resources for this deployment, as an alternative to `dedicated_resources`. (AI-inferred)
     automatic_resources: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Reserves dedicated compute resources (machine type, replica count, autoscaling) for this deployment, as an alternative to `automatic_resources`. (AI-inferred)
     dedicated_resources: Any = None
+    # Authentication requirements callers must satisfy to query this deployed index. (AI-inferred)
     deployed_index_auth_config: Any = None
+    # Which deployment group this deployed index belongs to, for routing/isolation purposes. (AI-inferred)
     deployment_group: Any = None
+    # The service tier this index was deployed at, e.g. `STORAGE`. (AI-inferred)
     deployment_tier: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether individual prediction requests to this deployment are logged. (AI-inferred)
     enable_access_logging: Any = None
+    # Whether individual datapoint upsert operations against this deployed index are logged. (AI-inferred)
     enable_datapoint_upsert_logging: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The position of this item within its own containing sequence. (AI-inferred)
     index: Any = None
+    # Output only. When this deployed index was last synced with its own source index. (AI-inferred)
     index_sync_time: Any = None
+    # The private network endpoint URIs this deployment is reachable at. (AI-inferred)
     private_endpoints: Any = None
+    # Configuration requesting Vertex AI automatically provision Private Service Connect endpoints for this deployed index. (AI-inferred)
     psc_automation_configs: Any = None
+    # The VPC IP range(s) reserved for this deployed index's own use. (AI-inferred)
     reserved_ip_ranges: Any = None
 
 @dataclasses.dataclass

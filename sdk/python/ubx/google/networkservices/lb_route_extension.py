@@ -8,27 +8,43 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LbRouteExtension_ExtensionChains_Extensions:
+    # The `:authority` (Host) value this rule matches or sets. (AI-inferred)
     authority: Any = None
+    # Whether traffic is allowed through when this check itself fails to run, rather than being blocked. (AI-inferred)
     fail_open: Any = None
+    # Additional caller-defined attribute(s) forwarded alongside this request. (AI-inferred)
     forward_attributes: Any = None
+    # The header(s) forwarded from the original request. (AI-inferred)
     forward_headers: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Whether this extension only observes traffic, without modifying it. (AI-inferred)
     observability_mode: Any = None
+    # Whether the request body is streamed or buffered when sent to this extension. (AI-inferred)
     request_body_send_mode: Any = None
+    # Whether the response body is streamed or buffered when sent to this extension. (AI-inferred)
     response_body_send_mode: Any = None
+    # A reference to the backend service this routes traffic to. (AI-inferred)
     service: Any = None
+    # The event type(s) this plugin can respond to, e.g. request headers or response body. (AI-inferred)
     supported_events: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class LbRouteExtension_ExtensionChains_MatchCondition:
+    # A Common Expression Language expression evaluated to determine whether this rule applies. (AI-inferred)
     cel_expression: Any = None
 
 @dataclasses.dataclass
 class LbRouteExtension_ExtensionChains:
+    # Additional plugin(s) or extension(s) applied to this traffic. (AI-inferred)
     extensions: Any = None
+    # The condition that must hold for this rule to apply. (AI-inferred)
     match_condition: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 _LbRouteExtension_ExtensionChains_ExtensionsFields = {

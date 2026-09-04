@@ -4,90 +4,150 @@ package baremetalsolution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProvisioningConfig_Instances_ClientNetwork struct {
-	Address           any
+	// The real IP address to assign this instance on the referenced network. (AI-inferred)
+	Address any
+	// A real, already-provisioned Bare Metal Solution network to attach this instance to, instead of provisioning a new one. (AI-inferred)
 	ExistingNetworkId any
-	NetworkId         any
+	// The real identifier of the Bare Metal Solution network this instance's own network interface attaches to. (AI-inferred)
+	NetworkId any
 }
 
 type ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfaces struct {
+	// Whether this logical network interface is real, used as the instance's own default network gateway. (AI-inferred)
 	DefaultGateway any
-	Id             any
-	IpAddress      any
-	Network        any
-	NetworkType    any
+	// A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
+	Id any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The real network type (`CLIENT` or `PRIVATE`) this logical network interface attaches to. (AI-inferred)
+	NetworkType any
 }
 
 type ProvisioningConfig_Instances_LogicalInterfaces struct {
-	InterfaceIndex           any
+	// The real, physical network interface index this logical interface configuration applies to. (AI-inferred)
+	InterfaceIndex any
+	// The real, physical network attachments that make up one logical network interface on this instance. (AI-inferred)
 	LogicalNetworkInterfaces any
-	Name                     any
+	// The real, client-assigned name for this logical network interface configuration. (AI-inferred)
+	Name any
 }
 
 type ProvisioningConfig_Instances struct {
+	// Whether to enable account-wide network access for this Bare Metal Solution instance, rather than scoping it to a single client network. (AI-inferred)
 	AccountNetworksEnabled any
-	ClientNetwork          any
-	Hyperthreading         any
-	Id                     any
-	InstanceType           any
-	KmsKeyVersion          any
-	LogicalInterfaces      any
-	Name                   any
-	NetworkConfig          any
-	NetworkTemplate        any
-	OsImage                any
-	PrivateNetwork         any
-	SshKeyNames            any
-	UserNote               any
+	// Real, requested client-facing network configuration for this Bare Metal Solution instance. (AI-inferred)
+	ClientNetwork any
+	// Whether to real, enable hyperthreading on this Bare Metal Solution instance's own CPU. (AI-inferred)
+	Hyperthreading any
+	// A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
+	Id any
+	// The real Bare Metal Solution server type (CPU/memory/storage configuration) to provision this instance as. (AI-inferred)
+	InstanceType any
+	// The real Cloud KMS key version used to encrypt this instance's own boot volume. (AI-inferred)
+	KmsKeyVersion any
+	// The real, logical network interfaces to configure on this Bare Metal Solution instance, each mapping to one or more physical `logical_network_interfaces`. (AI-inferred)
+	LogicalInterfaces any
+	// The real, client-assigned name for this logical network interface configuration. (AI-inferred)
+	Name any
+	// The real VLAN configuration (`SINGLE_VLAN` or `MULTI_VLAN`) this instance's own logical interfaces use. (AI-inferred)
+	NetworkConfig any
+	// The real, named network template this instance's own network configuration is provisioned from. (AI-inferred)
+	NetworkTemplate any
+	// The real operating system image to provision this Bare Metal Solution instance with. (AI-inferred)
+	OsImage any
+	// Real, requested private (internal) network configuration for this Bare Metal Solution instance. (AI-inferred)
+	PrivateNetwork any
+	// The real, existing SSH key names to authorize for access to this instance at provisioning time. (AI-inferred)
+	SshKeyNames any
+	// A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred)
+	UserNote any
 }
 
 type ProvisioningConfig_Networks_VlanAttachments struct {
-	Id         any
+	// A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
+	Id any
+	// The real pairing key used to establish this VLAN attachment's own interconnection. (AI-inferred)
 	PairingKey any
 }
 
 type ProvisioningConfig_Networks struct {
-	Bandwidth          any
-	Cidr               any
-	GcpService         any
-	Id                 any
+	// The real network bandwidth tier (e.g. `BW_10_GBPS`) requested for this Bare Metal Solution network. (AI-inferred)
+	Bandwidth any
+	// The real CIDR range requested for this Bare Metal Solution network. (AI-inferred)
+	Cidr any
+	// The real Google Cloud service this Bare Metal Solution network peers with. (AI-inferred)
+	GcpService any
+	// A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
+	Id any
+	// Whether to real, enable jumbo frames (larger MTU) on this Bare Metal Solution network. (AI-inferred)
 	JumboFramesEnabled any
-	Name               any
-	ServiceCidr        any
-	Type               any
-	UserNote           any
-	VlanAttachments    any
-	VlanSameProject    any
-	Vrf                any
+	// The real, client-assigned name for this logical network interface configuration. (AI-inferred)
+	Name any
+	// The real CIDR sizing tier requested for services on this Bare Metal Solution network, or `DISABLED` if none is needed. (AI-inferred)
+	ServiceCidr any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred)
+	UserNote any
+	// The real VLAN attachment(s) connecting this Bare Metal Solution network to Google Cloud. (AI-inferred)
+	VlanAttachments any
+	// Whether this VLAN attachment's own interconnect is real, provisioned in the same Google Cloud project as the Bare Metal Solution environment. (AI-inferred)
+	VlanSameProject any
+	// The real virtual routing and forwarding (VRF) instance this Bare Metal Solution network is provisioned in. (AI-inferred)
+	Vrf any
 }
 
 type ProvisioningConfig_Volumes_LunRanges struct {
+	// The real number of LUNs to provision at this `size_gb` within this LUN range. (AI-inferred)
 	Quantity any
-	SizeGb   any
+	// The real, per-LUN size, in GiB, requested within this LUN range. (AI-inferred)
+	SizeGb any
 }
 
 type ProvisioningConfig_Volumes_NfsExports struct {
-	AllowDev     any
-	AllowSuid    any
-	Cidr         any
-	MachineId    any
-	NetworkId    any
+	// Whether this NFS-allowed client is permitted to access device files on the share. (AI-inferred)
+	AllowDev any
+	// Whether this NFS-allowed client is permitted to use set-user-ID and set-group-ID bits on the share. (AI-inferred)
+	AllowSuid any
+	// The real CIDR range requested for this Bare Metal Solution network. (AI-inferred)
+	Cidr any
+	// The real Bare Metal Solution machine ID this NFS export access rule applies to. (AI-inferred)
+	MachineId any
+	// The real identifier of the Bare Metal Solution network this instance's own network interface attaches to. (AI-inferred)
+	NetworkId any
+	// Whether this NFS-allowed client is exempt from root squashing, letting a client's own root user act as root on the share. (AI-inferred)
 	NoRootSquash any
-	Permissions  any
+	// The real access level (`READ_ONLY` or `READ_WRITE`) this NFS export grants the referenced `machine_id`. (AI-inferred)
+	Permissions any
 }
 
 type ProvisioningConfig_Volumes struct {
-	GcpService       any
-	Id               any
-	LunRanges        any
-	MachineIds       any
-	Name             any
-	NfsExports       any
-	PerformanceTier  any
-	Protocol         any
-	SizeGb           any
+	// The real Google Cloud service this Bare Metal Solution network peers with. (AI-inferred)
+	GcpService any
+	// A real, client-assigned identifier for this instance within the provisioning request. (AI-inferred)
+	Id any
+	// The real, requested LUN (logical unit number) ranges and sizing for a fibre-channel-attached Bare Metal Solution volume. (AI-inferred)
+	LunRanges any
+	// The real Bare Metal Solution machine IDs this volume should be attached to. (AI-inferred)
+	MachineIds any
+	// The real, client-assigned name for this logical network interface configuration. (AI-inferred)
+	Name any
+	// The real, requested NFS export access rules for this Bare Metal Solution volume, when provisioned over NFS. (AI-inferred)
+	NfsExports any
+	// The real storage performance tier requested for this Bare Metal Solution volume. (AI-inferred)
+	PerformanceTier any
+	// The real storage protocol (`PROTOCOL_FC` or `PROTOCOL_NFS`) requested for this Bare Metal Solution volume. (AI-inferred)
+	Protocol any
+	// The real, per-LUN size, in GiB, requested within this LUN range. (AI-inferred)
+	SizeGb any
+	// Whether real, automatic snapshotting is enabled for this Bare Metal Solution volume. (AI-inferred)
 	SnapshotsEnabled any
-	Type             any
-	UserNote         any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// A real, free-text note the requester attaches to this instance provisioning request. (AI-inferred)
+	UserNote any
 }
 
 var ProvisioningConfig_Instances_ClientNetworkFields = ubx.FieldMap{

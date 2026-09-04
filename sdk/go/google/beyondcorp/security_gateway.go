@@ -4,10 +4,12 @@ package beyondcorp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityGateway_Hubs_InternetGateway struct {
+	// The public IP address(es) assigned to this hub's own internet gateway for outbound traffic. (AI-inferred)
 	AssignedIps any
 }
 
 type SecurityGateway_Hubs struct {
+	// Configuration for this hub's own outbound internet gateway. (AI-inferred)
 	InternetGateway any
 }
 

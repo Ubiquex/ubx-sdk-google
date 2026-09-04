@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AlertPolicy_AlertStrategy_NotificationChannelStrategy {
+  /** The notification channel(s) alerted when this policy fires. (AI-inferred) */
   notificationChannelNames?: string[] | Computed<string[]>;
+  /** How often notifications are re-sent while this alert remains open. (AI-inferred) */
   renotifyInterval?: string | Computed<string>;
 }
 
@@ -23,110 +25,170 @@ export interface AlertPolicy_AlertStrategy {
 }
 
 export interface AlertPolicy_Conditions_ConditionAbsent_Aggregations {
+  /** The time interval time series data points are grouped into before aggregation. (AI-inferred) */
   alignmentPeriod?: string | Computed<string>;
+  /** How values are combined across multiple time series. (AI-inferred) */
   crossSeriesReducer?: string | Computed<string>;
+  /** The field(s) time series data is grouped by before aggregation. (AI-inferred) */
   groupByFields?: string[] | Computed<string[]>;
+  /** How data points within each individual time series are aligned. (AI-inferred) */
   perSeriesAligner?: string | Computed<string>;
 }
 
 export interface AlertPolicy_Conditions_ConditionAbsent_Trigger {
+  /** How many of this item there are. (AI-inferred) */
   count?: number | Computed<number>;
+  /** A percentage value. (AI-inferred) */
   percent?: number | Computed<number>;
 }
 
 export interface AlertPolicy_Conditions_ConditionAbsent {
+  /** The aggregation step(s) applied to the queried time series data. (AI-inferred) */
   aggregations?: AlertPolicy_Conditions_ConditionAbsent_Aggregations[] | Computed<AlertPolicy_Conditions_ConditionAbsent_Aggregations[]>;
+  /** How long a condition must remain true before this alert fires. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The condition that must be satisfied across time series for this alert to fire. (AI-inferred) */
   trigger?: AlertPolicy_Conditions_ConditionAbsent_Trigger | Computed<AlertPolicy_Conditions_ConditionAbsent_Trigger>;
 }
 
 export interface AlertPolicy_Conditions_ConditionMatchedLog {
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** Rule(s) extracting label values from matching log entries. (AI-inferred) */
   labelExtractors?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface AlertPolicy_Conditions_ConditionMonitoringQueryLanguage {
+  /** How long a condition must remain true before this alert fires. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** How missing data is treated when evaluating this condition. (AI-inferred) */
   evaluationMissingData?: string | Computed<string>;
+  /** The query evaluated to produce this result. (AI-inferred) */
   query?: string | Computed<string>;
+  /** The condition that must be satisfied across time series for this alert to fire. (AI-inferred) */
   trigger?: AlertPolicy_Conditions_ConditionAbsent_Trigger | Computed<AlertPolicy_Conditions_ConditionAbsent_Trigger>;
 }
 
 export interface AlertPolicy_Conditions_ConditionPrometheusQueryLanguage {
+  /** The name of the alert rule this applies to. (AI-inferred) */
   alertRule?: string | Computed<string>;
+  /** Whether validation of the referenced metric is skipped. (AI-inferred) */
   disableMetricValidation?: boolean | Computed<boolean>;
+  /** How long a condition must remain true before this alert fires. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** How often this SQL condition is evaluated. (AI-inferred) */
   evaluationInterval?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The query evaluated to produce this result. (AI-inferred) */
   query?: string | Computed<string>;
+  /** The rule group this alert rule belongs to. (AI-inferred) */
   ruleGroup?: string | Computed<string>;
 }
 
 export interface AlertPolicy_Conditions_ConditionSql_BooleanTest {
+  /** A reference to a specific column. (AI-inferred) */
   column?: string | Computed<string>;
 }
 
 export interface AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTime {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface AlertPolicy_Conditions_ConditionSql_Daily {
+  /** How long this query is allowed to run before timing out. (AI-inferred) */
   executionTime?: AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTime | Computed<AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTime>;
+  /** How often this schedule recurs. (AI-inferred) */
   periodicity?: number | Computed<number>;
 }
 
 export interface AlertPolicy_Conditions_ConditionSql_Hourly {
+  /** The number of minutes past the hour this schedule runs at. (AI-inferred) */
   minuteOffset?: number | Computed<number>;
+  /** How often this schedule recurs. (AI-inferred) */
   periodicity?: number | Computed<number>;
 }
 
 export interface AlertPolicy_Conditions_ConditionSql_Minutes {
+  /** How often this schedule recurs. (AI-inferred) */
   periodicity?: number | Computed<number>;
 }
 
 export interface AlertPolicy_Conditions_ConditionSql_RowCountTest {
+  /** The comparison operator used to evaluate this threshold, e.g. `COMPARISON_GT`. (AI-inferred) */
   comparison?: string | Computed<string>;
+  /** The value that must be crossed for this condition to trigger. (AI-inferred) */
   threshold?: string | Computed<string>;
 }
 
 export interface AlertPolicy_Conditions_ConditionSql {
+  /** A condition that evaluates a boolean-valued log query. (AI-inferred) */
   booleanTest?: AlertPolicy_Conditions_ConditionSql_BooleanTest | Computed<AlertPolicy_Conditions_ConditionSql_BooleanTest>;
+  /** Runs this schedule once per day. (AI-inferred) */
   daily?: AlertPolicy_Conditions_ConditionSql_Daily | Computed<AlertPolicy_Conditions_ConditionSql_Daily>;
+  /** Runs this schedule once per hour. (AI-inferred) */
   hourly?: AlertPolicy_Conditions_ConditionSql_Hourly | Computed<AlertPolicy_Conditions_ConditionSql_Hourly>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: AlertPolicy_Conditions_ConditionSql_Minutes | Computed<AlertPolicy_Conditions_ConditionSql_Minutes>;
+  /** The query evaluated to produce this result. (AI-inferred) */
   query?: string | Computed<string>;
+  /** A condition that evaluates the number of rows returned by a SQL query. (AI-inferred) */
   rowCountTest?: AlertPolicy_Conditions_ConditionSql_RowCountTest | Computed<AlertPolicy_Conditions_ConditionSql_RowCountTest>;
 }
 
 export interface AlertPolicy_Conditions_ConditionThreshold_ForecastOptions {
+  /** How far into the future this forecast condition projects. (AI-inferred) */
   forecastHorizon?: string | Computed<string>;
 }
 
 export interface AlertPolicy_Conditions_ConditionThreshold {
+  /** The aggregation step(s) applied to the queried time series data. (AI-inferred) */
   aggregations?: AlertPolicy_Conditions_ConditionAbsent_Aggregations[] | Computed<AlertPolicy_Conditions_ConditionAbsent_Aggregations[]>;
+  /** The comparison operator used to evaluate this threshold, e.g. `COMPARISON_GT`. (AI-inferred) */
   comparison?: string | Computed<string>;
+  /** The aggregation step(s) applied to the denominator time series, when computing a ratio. (AI-inferred) */
   denominatorAggregations?: AlertPolicy_Conditions_ConditionAbsent_Aggregations[] | Computed<AlertPolicy_Conditions_ConditionAbsent_Aggregations[]>;
+  /** The filter selecting the denominator time series, when computing a ratio. (AI-inferred) */
   denominatorFilter?: string | Computed<string>;
+  /** How long a condition must remain true before this alert fires. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** How missing data is treated when evaluating this condition. (AI-inferred) */
   evaluationMissingData?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** Configuration for a forecast-based alerting condition. (AI-inferred) */
   forecastOptions?: AlertPolicy_Conditions_ConditionThreshold_ForecastOptions | Computed<AlertPolicy_Conditions_ConditionThreshold_ForecastOptions>;
+  /** The value that must be crossed for this condition to trigger. (AI-inferred) */
   thresholdValue?: number | Computed<number>;
+  /** The condition that must be satisfied across time series for this alert to fire. (AI-inferred) */
   trigger?: AlertPolicy_Conditions_ConditionAbsent_Trigger | Computed<AlertPolicy_Conditions_ConditionAbsent_Trigger>;
 }
 
 export interface AlertPolicy_Conditions {
+  /** A condition that triggers when expected data stops arriving. (AI-inferred) */
   conditionAbsent?: AlertPolicy_Conditions_ConditionAbsent | Computed<AlertPolicy_Conditions_ConditionAbsent>;
+  /** A condition that triggers when a log entry matches a specified filter. (AI-inferred) */
   conditionMatchedLog?: AlertPolicy_Conditions_ConditionMatchedLog | Computed<AlertPolicy_Conditions_ConditionMatchedLog>;
+  /** A condition defined using Monitoring Query Language (MQL). (AI-inferred) */
   conditionMonitoringQueryLanguage?: AlertPolicy_Conditions_ConditionMonitoringQueryLanguage | Computed<AlertPolicy_Conditions_ConditionMonitoringQueryLanguage>;
+  /** A condition defined using PromQL. (AI-inferred) */
   conditionPrometheusQueryLanguage?: AlertPolicy_Conditions_ConditionPrometheusQueryLanguage | Computed<AlertPolicy_Conditions_ConditionPrometheusQueryLanguage>;
+  /** A condition defined using a SQL query. (AI-inferred) */
   conditionSql?: AlertPolicy_Conditions_ConditionSql | Computed<AlertPolicy_Conditions_ConditionSql>;
+  /** A condition that triggers when a metric crosses a defined threshold. (AI-inferred) */
   conditionThreshold?: AlertPolicy_Conditions_ConditionThreshold | Computed<AlertPolicy_Conditions_ConditionThreshold>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -138,7 +200,9 @@ export interface AlertPolicy_CreationRecord {
 }
 
 export interface AlertPolicy_Documentation_Links {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 

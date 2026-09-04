@@ -8,55 +8,81 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDate:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # The month component of a date. (AI-inferred)
     month: Any = None
+    # The year component of a date. (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows:
+    # The date this applies through. (AI-inferred)
     end_date: Any = None
+    # The time of day this applies through. (AI-inferred)
     end_time: Any = None
+    # The date this applies from. (AI-inferred)
     start_date: Any = None
+    # The time of day this applies from. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindows:
+    # The day(s) of the week this recurring window applies to. (AI-inferred)
     days_of_week: Any = None
+    # The time of day this applies through. (AI-inferred)
     end_time: Any = None
+    # The time of day this applies from. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Rules_RolloutRestriction_TimeWindows:
+    # A specific, non-recurring date/time range this maintenance window applies to. (AI-inferred)
     one_time_windows: Any = None
+    # The time zone this schedule or window is interpreted in. (AI-inferred)
     time_zone: Any = None
+    # A recurring weekly time window this configuration applies during. (AI-inferred)
     weekly_windows: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Rules_RolloutRestriction:
+    # The action(s) this hook or job performs. (AI-inferred)
     actions: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # Which source(s) (e.g. a user action, an automation rule) are allowed to trigger this operation. (AI-inferred)
     invokers: Any = None
+    # The time window(s) this configuration applies during. (AI-inferred)
     time_windows: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Rules:
+    # Constraints on when or how a rollout is allowed to proceed. (AI-inferred)
     rollout_restriction: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Selectors_DeliveryPipeline:
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
 
 @dataclasses.dataclass
 class DeployPolicy_Selectors:
+    # A reference to the delivery pipeline this applies to. (AI-inferred)
     delivery_pipeline: Any = None
+    # A reference to the target this applies to. (AI-inferred)
     target: Any = None
 
 _DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDateFields = {

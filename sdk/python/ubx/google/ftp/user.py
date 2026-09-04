@@ -8,15 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class User_StorageDirectoryMappings:
+    # The real Cloud Storage bucket this FTP user's own storage directory mapping points at. (AI-inferred)
     bucket: Any = None
+    # The real object key prefix within `bucket` this storage directory mapping scopes the FTP user's access to. (AI-inferred)
     bucket_prefix: Any = None
+    # The real, virtual FTP directory path this storage directory mapping exposes to the user. (AI-inferred)
     directory: Any = None
+    # The real access level (`READ_ONLY` or `READ_WRITE`) this storage directory mapping grants the FTP user. (AI-inferred)
     permission: Any = None
 
 @dataclasses.dataclass
 class User_UserCredentials:
+    # A real, client-assigned name identifying this FTP user credential. (AI-inferred)
     credential_name: Any = None
+    # The real credential type (currently only `PUBLIC_KEY`) this FTP user credential uses. (AI-inferred)
     credential_type: Any = None
+    # The real, raw SSH public key body authorized for this FTP user credential. (AI-inferred)
     ssh_public_key_body: Any = None
 
 _User_StorageDirectoryMappingsFields = {

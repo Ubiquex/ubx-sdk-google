@@ -4,6 +4,7 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityMappingStore_CmekConfig_SingleRegionKeys struct {
+	// The Cloud KMS key used to encrypt this resource's own data. (AI-inferred)
 	KmsKey any
 }
 

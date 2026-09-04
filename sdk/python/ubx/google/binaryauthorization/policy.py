@@ -8,99 +8,142 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_ImageAllowlist:
+    # A glob pattern of container image URL(s) exempt from attestation requirements. (AI-inferred)
     allow_pattern: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheck:
+    # The maximum age, in days, an image may have been uploaded and still pass this check. (AI-inferred)
     max_upload_age_days: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeys:
+    # A public key, PEM-encoded. (AI-inferred)
     public_key_pem: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet:
+    # The public key(s) this applies to. (AI-inferred)
     public_keys: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A set of public key(s), any one of which may satisfy this check. (AI-inferred)
     public_key_set: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck:
+    # The Sigstore authority/authorities trusted to verify this check's own signatures. (AI-inferred)
     sigstore_authorities: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeys:
+    # An identifier for this key. (AI-inferred)
     key_id: Any = None
+    # A public key, PEM-encoded. (AI-inferred)
     public_key_pem: Any = None
+    # The algorithm used to sign this key or attestation. (AI-inferred)
     signature_algorithm: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet:
+    # The PKIX public key(s) this applies to. (AI-inferred)
     pkix_public_keys: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A set of PKIX public key(s), any one of which may satisfy this check. (AI-inferred)
     pkix_public_key_set: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck:
+    # The authenticator(s) permitted to sign attestation(s) satisfying this check. (AI-inferred)
     attestation_authenticators: Any = None
+    # The project(s) whose own Container Analysis occurrences are trusted as attestation sources. (AI-inferred)
     container_analysis_attestation_projects: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSource:
+    # The project(s) whose own Container Analysis occurrences are trusted as attestation sources. (AI-inferred)
     container_analysis_attestation_projects: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules:
+    # Where the attestation(s) evaluated by this check are sourced from. (AI-inferred)
     attestation_source: Any = None
+    # Whether the image must have been built from a specific, allow-listed build configuration. (AI-inferred)
     config_based_build_required: Any = None
+    # Caller-defined constraint(s) this policy enforces. (AI-inferred)
     custom_constraints: Any = None
+    # The build system trusted to produce this image's own provenance. (AI-inferred)
     trusted_builder: Any = None
+    # The source repository URL pattern(s) trusted to have produced this image. (AI-inferred)
     trusted_source_repo_patterns: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_SlsaCheck:
+    # The rule(s) making up this policy. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheck:
+    # The source directory pattern(s) trusted to have produced this image. (AI-inferred)
     trusted_dir_patterns: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheck:
+    # The known CVE identifier(s) explicitly permitted, even though they would otherwise fail this check. (AI-inferred)
     allowed_cves: Any = None
+    # The known CVE identifier(s) that cause this check to fail if present. (AI-inferred)
     blocked_cves: Any = None
+    # The project(s) whose own Container Analysis occurrences are trusted as vulnerability data sources. (AI-inferred)
     container_analysis_vulnerability_projects: Any = None
+    # The highest severity of fixable vulnerability an image is permitted to contain. (AI-inferred)
     maximum_fixable_severity: Any = None
+    # The highest severity of unfixable vulnerability an image is permitted to contain. (AI-inferred)
     maximum_unfixable_severity: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Checks:
+    # Whether every image is denied, with no exceptions. (AI-inferred)
     always_deny: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The container image URL pattern(s) exempt from this policy's own checks. (AI-inferred)
     image_allowlist: Any = None
+    # Verifies the image was built recently enough, within a configured age limit. (AI-inferred)
     image_freshness_check: Any = None
+    # Verifies the image was signed by a trusted Sigstore identity. (AI-inferred)
     sigstore_signature_check: Any = None
+    # Verifies the image carries a valid Simple Signing format attestation. (AI-inferred)
     simple_signing_attestation_check: Any = None
+    # Verifies the image's own SLSA provenance meets a required build level. (AI-inferred)
     slsa_check: Any = None
+    # Verifies the image was built from a trusted source directory. (AI-inferred)
     trusted_directory_check: Any = None
+    # Verifies the image's own known vulnerabilities stay within configured severity limits. (AI-inferred)
     vulnerability_check: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets_Scope:
+    # The Kubernetes namespace this applies to. (AI-inferred)
     kubernetes_namespace: Any = None
+    # The Kubernetes service account this applies to. (AI-inferred)
     kubernetes_service_account: Any = None
 
 @dataclasses.dataclass
 class Policy_GkePolicy_CheckSets:
+    # The check(s) an image must satisfy for this policy to allow it. (AI-inferred)
     checks: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The container image URL pattern(s) exempt from this policy's own checks. (AI-inferred)
     image_allowlist: Any = None
+    # What this configuration's own scope covers. (AI-inferred)
     scope: Any = None
 
 @dataclasses.dataclass

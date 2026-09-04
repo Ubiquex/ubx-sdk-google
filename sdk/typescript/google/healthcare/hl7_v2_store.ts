@@ -2,55 +2,81 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Hl7V2Store_NotificationConfigs {
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** A reference to the Pub/Sub topic notifications are published to. (AI-inferred) */
   pubsubTopic?: string | Computed<string>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_Segment {
+  /** The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred) */
   maxOccurs?: number | Computed<number>;
+  /** The minimum number of times this HL7v2 field/segment must occur. (AI-inferred) */
   minOccurs?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members {
+  /** A reference to the consent group this applies to. (AI-inferred) */
   group?: unknown | Computed<unknown>;
+  /** A single HL7v2 message segment. (AI-inferred) */
   segment?: Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_Segment | Computed<Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_Segment>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs {
+  /** The specific option selected from a set of alternatives. (AI-inferred) */
   choice?: boolean | Computed<boolean>;
+  /** The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred) */
   maxOccurs?: number | Computed<number>;
+  /** The principal(s) this applies to. (AI-inferred) */
   members?: Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members[] | Computed<Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members[]>;
+  /** The minimum number of times this HL7v2 field/segment must occur. (AI-inferred) */
   minOccurs?: number | Computed<number>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Schemas_Version {
+  /** A reference to a field within the HL7v2 message header (MSH) segment. (AI-inferred) */
   mshField?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Schemas {
+  /** Schema configuration for parsing HL7v2 message types. (AI-inferred) */
   messageSchemaConfigs?: Record<string, Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs> | Computed<Record<string, Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs>>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: Hl7V2Store_ParserConfig_Schema_Schemas_Version[] | Computed<Hl7V2Store_ParserConfig_Schema_Schemas_Version[]>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Types_Type_Fields {
+  /** The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred) */
   maxOccurs?: number | Computed<number>;
+  /** The minimum number of times this HL7v2 field/segment must occur. (AI-inferred) */
   minOccurs?: number | Computed<number>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to the destination table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Types_Type {
+  /** The field(s) this applies to. (AI-inferred) */
   fields?: Hl7V2Store_ParserConfig_Schema_Types_Type_Fields[] | Computed<Hl7V2Store_ParserConfig_Schema_Types_Type_Fields[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The base data type this schema element represents. (AI-inferred) */
   primitive?: string | Computed<string>;
 }
 
 export interface Hl7V2Store_ParserConfig_Schema_Types {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: Hl7V2Store_ParserConfig_Schema_Types_Type[] | Computed<Hl7V2Store_ParserConfig_Schema_Types_Type[]>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: Hl7V2Store_ParserConfig_Schema_Schemas_Version[] | Computed<Hl7V2Store_ParserConfig_Schema_Schemas_Version[]>;
 }
 

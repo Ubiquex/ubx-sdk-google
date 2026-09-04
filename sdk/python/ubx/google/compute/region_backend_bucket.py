@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegionBackendBucket_CdnPolicy_BypassCacheOnRequestHeaders:
+    # The name of the request header to match. If this header is present in a request, the CDN bypasses the cache for that request. (AI-inferred)
     header_name: Any = None
 
 @dataclasses.dataclass
@@ -19,7 +20,9 @@ class RegionBackendBucket_CdnPolicy_CacheKeyPolicy:
 
 @dataclasses.dataclass
 class RegionBackendBucket_CdnPolicy_NegativeCachingPolicy:
+    # The HTTP status code for which the negative caching TTL applies. This defines which response status codes will be cached negatively with the specified TTL. (AI-inferred)
     code: Any = None
+    # The TTL (in seconds) for caching responses with the corresponding status code. (AI-inferred)
     ttl: Any = None
 
 @dataclasses.dataclass
@@ -56,6 +59,7 @@ class RegionBackendBucket_Params:
 
 @dataclasses.dataclass
 class RegionBackendBucket_UsedBy:
+    # The URL of the resource that is currently using this backend bucket. This is the full reference to the using resource, such as a URL map or load balancer. (AI-inferred)
     reference: Any = None
 
 _RegionBackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields = {

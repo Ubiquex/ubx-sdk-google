@@ -187,6 +187,7 @@ export interface AlphaRegionMultiMigConfig {
   name?: string | Computed<string>;
   /** Resource policies message for a multi-MIG. Specifies the workload policy configuration of the multi-MIG. */
   resourcePolicies?: AlphaRegionMultiMig_ResourcePolicies | Computed<AlphaRegionMultiMig_ResourcePolicies>;
+  /** The current operational state of this regional multi-MIG, as a structured status object. (AI-inferred) */
   status?: AlphaRegionMultiMig_Status | Computed<AlphaRegionMultiMig_Status>;
 }
 
@@ -207,6 +208,7 @@ export interface AlphaRegionMultiMigAttrs {
   resourcePolicies: AlphaRegionMultiMig_ResourcePolicies;
   /** Output only. [Output only] Server-defined URL for the resource. */
   selfLink: string;
+  /** The current operational state of this regional multi-MIG, as a structured status object. (AI-inferred) */
   status: AlphaRegionMultiMig_Status;
 }
 

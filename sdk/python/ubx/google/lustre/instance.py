@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_AccessRulesOptions_AccessRules:
+    # The IP address range(s) this access rule grants access to. (AI-inferred)
     ip_address_ranges: Any = None
+    # A caller-chosen name for this access rule. (AI-inferred)
     name: Any = None
+    # How client root privileges are handled: `NO_SQUASH` (client root keeps root on the filesystem) or `ROOT_SQUASH` (client root is mapped to an unprivileged user). (AI-inferred)
     squash_mode: Any = None
 
 @dataclasses.dataclass
@@ -30,26 +33,38 @@ class Instance_DynamicTierOptions:
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate:
+    # The day-of-month component of the end date. (AI-inferred)
     day: Any = None
+    # The month component of the end date. (AI-inferred)
     month: Any = None
+    # The year component of the end date. (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time:
+    # The hour component of the time. (AI-inferred)
     hours: Any = None
+    # The minute component of the time. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of the time. (AI-inferred)
     nanos: Any = None
+    # The second component of the time. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_MaintenanceExclusionWindow:
+    # The calendar date this maintenance exclusion window ends on. (AI-inferred)
     end_date: Any = None
+    # The calendar date this maintenance exclusion window begins on. (AI-inferred)
     start_date: Any = None
+    # The time of day this maintenance exclusion window's own start/end dates apply from. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_WeeklyMaintenanceWindows:
+    # The day of the week this recurring maintenance window occurs on. (AI-inferred)
     day_of_week: Any = None
+    # The UTC time of day this recurring maintenance window starts at. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass

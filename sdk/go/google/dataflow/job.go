@@ -16,85 +16,146 @@ type Job_Environment_DebugOptions struct {
 }
 
 type Job_Environment_WorkerPools_AutoscalingSettings struct {
-	Algorithm     any
+	// The autoscaling algorithm used, e.g. throughput-based. (AI-inferred)
+	Algorithm any
+	// The maximum number of workers this job's own autoscaling may scale up to. (AI-inferred)
 	MaxNumWorkers any
 }
 
 type Job_Environment_WorkerPools_DataDisks struct {
-	DiskType   any
+	// The disk type provisioned for each worker. (AI-inferred)
+	DiskType any
+	// The filesystem path this disk is mounted at. (AI-inferred)
 	MountPoint any
-	SizeGb     any
+	// The size, in GB. (AI-inferred)
+	SizeGb any
 }
 
 type Job_Environment_WorkerPools_Packages struct {
+	// The Google Cloud region this job runs in. (AI-inferred)
 	Location any
-	Name     any
-	Sha256   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A SHA-256 hash of this content. (AI-inferred)
+	Sha256 any
 }
 
 type Job_Environment_WorkerPools_SdkHarnessContainerImages struct {
-	Capabilities              any
-	ContainerImage            any
-	EnvironmentId             any
+	// The capability/capabilities this SDK harness supports. (AI-inferred)
+	Capabilities any
+	// The container image used for the worker harness. (AI-inferred)
+	ContainerImage any
+	// An identifier for this job's own execution environment. (AI-inferred)
+	EnvironmentId any
+	// Whether each SDK harness container is pinned to a single CPU core. (AI-inferred)
 	UseSingleCorePerContainer any
 }
 
 type Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettings struct {
-	BaseUrl            any
-	ReportingEnabled   any
-	ServicePath        any
+	// The base URL this applies to. (AI-inferred)
+	BaseUrl any
+	// Whether usage/diagnostic reporting is enabled for this job. (AI-inferred)
+	ReportingEnabled any
+	// The API endpoint this service is reached at. (AI-inferred)
+	ServicePath any
+	// The API endpoint the managed shuffle service is reached at. (AI-inferred)
 	ShuffleServicePath any
-	TempStoragePrefix  any
-	WorkerId           any
+	// The Cloud Storage path prefix used for this job's own temporary files. (AI-inferred)
+	TempStoragePrefix any
+	// An identifier for this specific worker. (AI-inferred)
+	WorkerId any
 }
 
 type Job_Environment_WorkerPools_TaskrunnerSettings struct {
-	Alsologtostderr          any
-	BaseTaskDir              any
-	BaseUrl                  any
-	CommandlinesFileName     any
-	ContinueOnException      any
-	DataflowApiVersion       any
-	HarnessCommand           any
-	LanguageHint             any
-	LogDir                   any
-	LogToSerialconsole       any
-	LogUploadLocation        any
-	OauthScopes              any
-	ParallelWorkerSettings   any
+	// Whether log output is also written to stderr, in addition to its own normal destination. (AI-inferred)
+	Alsologtostderr any
+	// The base directory task-related files are written under on each worker. (AI-inferred)
+	BaseTaskDir any
+	// The base URL this applies to. (AI-inferred)
+	BaseUrl any
+	// The name of the file recording command lines executed on this worker. (AI-inferred)
+	CommandlinesFileName any
+	// Whether the pipeline continues processing after an unhandled exception, rather than failing the job. (AI-inferred)
+	ContinueOnException any
+	// The Dataflow API version this job was submitted against. (AI-inferred)
+	DataflowApiVersion any
+	// The command used to launch the worker harness. (AI-inferred)
+	HarnessCommand any
+	// A hint indicating which SDK language this job was authored in. (AI-inferred)
+	LanguageHint any
+	// The directory worker logs are written to. (AI-inferred)
+	LogDir any
+	// Whether worker startup logs are also written to the VM's own serial console. (AI-inferred)
+	LogToSerialconsole any
+	// The Cloud Storage location worker logs are uploaded to. (AI-inferred)
+	LogUploadLocation any
+	// The OAuth scope(s) granted to each worker's own service account. (AI-inferred)
+	OauthScopes any
+	// Configuration for the workers that execute this job's own parallel processing steps. (AI-inferred)
+	ParallelWorkerSettings any
+	// The main class launched to run the streaming worker harness. (AI-inferred)
 	StreamingWorkerMainClass any
-	TaskGroup                any
-	TaskUser                 any
-	TempStoragePrefix        any
-	VmId                     any
-	WorkflowFileName         any
+	// The task group this worker belongs to. (AI-inferred)
+	TaskGroup any
+	// The user account tasks run as on this worker. (AI-inferred)
+	TaskUser any
+	// The Cloud Storage path prefix used for this job's own temporary files. (AI-inferred)
+	TempStoragePrefix any
+	// An identifier for this specific worker VM. (AI-inferred)
+	VmId any
+	// The name of the file describing this job's own workflow graph. (AI-inferred)
+	WorkflowFileName any
 }
 
 type Job_Environment_WorkerPools struct {
-	AutoscalingSettings            any
-	DataDisks                      any
-	DefaultPackageSet              any
-	DiskProvisionedIops            any
+	// Configuration for automatically resizing this job's own worker pool based on load. (AI-inferred)
+	AutoscalingSettings any
+	// The additional persistent disk(s) attached to each worker. (AI-inferred)
+	DataDisks any
+	// The default set of SDK package(s) staged for this job. (AI-inferred)
+	DefaultPackageSet any
+	// The provisioned IOPS for the worker's own disk, when using a disk type that supports configuring it. (AI-inferred)
+	DiskProvisionedIops any
+	// The provisioned throughput, in MiB/s, for the worker's own disk. (AI-inferred)
 	DiskProvisionedThroughputMibps any
-	DiskSizeGb                     any
-	DiskSourceImage                any
-	DiskType                       any
-	IpConfiguration                any
-	Kind                           any
-	MachineType                    any
-	Metadata                       any
-	Network                        any
-	NumThreadsPerWorker            any
-	NumWorkers                     any
-	OnHostMaintenance              any
-	Packages                       any
-	PoolArgs                       any
-	SdkHarnessContainerImages      any
-	Subnetwork                     any
-	TaskrunnerSettings             any
-	TeardownPolicy                 any
-	WorkerHarnessContainerImage    any
-	Zone                           any
+	// The size, in GB, of each worker's own disk. (AI-inferred)
+	DiskSizeGb any
+	// The source image used for each worker's own boot disk. (AI-inferred)
+	DiskSourceImage any
+	// The disk type provisioned for each worker. (AI-inferred)
+	DiskType any
+	// Whether workers are assigned public IP addresses, or only internal ones. (AI-inferred)
+	IpConfiguration any
+	// The kind of pipeline step or value this is. (AI-inferred)
+	Kind any
+	// The Compute Engine machine type provisioned for each worker. (AI-inferred)
+	MachineType any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// How many threads run per worker. (AI-inferred)
+	NumThreadsPerWorker any
+	// The number of workers this job runs with. (AI-inferred)
+	NumWorkers any
+	// How the worker's own VM behaves during a host maintenance event, e.g. live migration versus terminate. (AI-inferred)
+	OnHostMaintenance any
+	// The SDK package(s) staged for this job. (AI-inferred)
+	Packages any
+	// Additional, worker-pool-type-specific arguments. (AI-inferred)
+	PoolArgs any
+	// The container image(s) used for the SDK harness process(es) on each worker. (AI-inferred)
+	SdkHarnessContainerImages any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
+	// Configuration for the process that manages task execution on each worker. (AI-inferred)
+	TaskrunnerSettings any
+	// Whether worker VMs are torn down when the job completes or fails. (AI-inferred)
+	TeardownPolicy any
+	// The container image used for the worker harness process. (AI-inferred)
+	WorkerHarnessContainerImage any
+	// The Compute Engine zone workers are provisioned in. (AI-inferred)
+	Zone any
 }
 
 type Job_Environment struct {
@@ -141,6 +202,7 @@ type Job_Environment struct {
 }
 
 type Job_ExecutionInfo_Stages struct {
+	// The name of this pipeline step. (AI-inferred)
 	StepName any
 }
 
@@ -150,36 +212,51 @@ type Job_ExecutionInfo struct {
 }
 
 type Job_JobMetadata_BigTableDetails struct {
+	// An identifier for this specific instance. (AI-inferred)
 	InstanceId any
-	ProjectId  any
-	TableId    any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
+	// A reference to the BigQuery table this applies to. (AI-inferred)
+	TableId any
 }
 
 type Job_JobMetadata_BigqueryDetails struct {
-	Dataset   any
+	// A reference to the dataset this applies to. (AI-inferred)
+	Dataset any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
-	Query     any
-	Table     any
+	// The query text or expression. (AI-inferred)
+	Query any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Job_JobMetadata_DatastoreDetails struct {
+	// The namespace this applies to. (AI-inferred)
 	Namespace any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
 }
 
 type Job_JobMetadata_FileDetails struct {
+	// A file path pattern, e.g. matching multiple input files with a wildcard. (AI-inferred)
 	FilePattern any
 }
 
 type Job_JobMetadata_PubsubDetails struct {
+	// A reference to the Pub/Sub subscription this applies to. (AI-inferred)
 	Subscription any
-	Topic        any
+	// A reference to the Pub/Sub topic this applies to. (AI-inferred)
+	Topic any
 }
 
 type Job_JobMetadata_SdkVersion_Bugs struct {
+	// How serious this log entry or finding is. (AI-inferred)
 	Severity any
-	Type     any
-	Uri      any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Job_JobMetadata_SdkVersion struct {
@@ -194,9 +271,12 @@ type Job_JobMetadata_SdkVersion struct {
 }
 
 type Job_JobMetadata_SpannerDetails struct {
+	// The identifier of the database this applies to. (AI-inferred)
 	DatabaseId any
+	// An identifier for this specific instance. (AI-inferred)
 	InstanceId any
-	ProjectId  any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
 }
 
 type Job_JobMetadata struct {
@@ -219,56 +299,92 @@ type Job_JobMetadata struct {
 }
 
 type Job_PipelineDescription_DisplayData struct {
-	BoolValue      any
-	DurationValue  any
-	FloatValue     any
-	Int64Value     any
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
+	BoolValue any
+	// A value expressed as a duration. (AI-inferred)
+	DurationValue any
+	// A floating-point value, populated when this field's own type is a float. (AI-inferred)
+	FloatValue any
+	// A 64-bit integer value, populated when this field's own type is an integer. (AI-inferred)
+	Int64Value any
+	// A fully qualified Java class name, populated when this field's own type is a class reference. (AI-inferred)
 	JavaClassValue any
-	Key            any
-	Label          any
-	Namespace      any
-	ShortStrValue  any
-	StrValue       any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// A human-readable label for this item. (AI-inferred)
+	Label any
+	// The namespace this applies to. (AI-inferred)
+	Namespace any
+	// A short text value. (AI-inferred)
+	ShortStrValue any
+	// A text value. (AI-inferred)
+	StrValue any
+	// A timestamp value, populated when this field's own type is a timestamp. (AI-inferred)
 	TimestampValue any
-	Url            any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage_ComponentSource struct {
-	Name                          any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The pipeline transform or collection this element was originally part of, before optimization. (AI-inferred)
 	OriginalTransformOrCollection any
-	UserName                      any
+	// The user account this applies to. (AI-inferred)
+	UserName any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage_ComponentTransform struct {
-	Name              any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The pipeline transform this element was originally part of, before optimization. (AI-inferred)
 	OriginalTransform any
-	UserName          any
+	// The user account this applies to. (AI-inferred)
+	UserName any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage_InputSource struct {
-	Name                          any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The pipeline transform or collection this element was originally part of, before optimization. (AI-inferred)
 	OriginalTransformOrCollection any
-	SizeBytes                     any
-	UserName                      any
+	// The size, in bytes. (AI-inferred)
+	SizeBytes any
+	// The user account this applies to. (AI-inferred)
+	UserName any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage struct {
-	ComponentSource    any
+	// The pipeline component this element reads from. (AI-inferred)
+	ComponentSource any
+	// The pipeline transform this element belongs to. (AI-inferred)
 	ComponentTransform any
-	Id                 any
-	InputSource        any
-	Kind               any
-	Name               any
-	OutputSource       any
-	PrerequisiteStage  any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The source this pipeline reads its own input from. (AI-inferred)
+	InputSource any
+	// The kind of pipeline step or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The destination this pipeline writes its own output to. (AI-inferred)
+	OutputSource any
+	// The execution stage that must complete before this one begins. (AI-inferred)
+	PrerequisiteStage any
 }
 
 type Job_PipelineDescription_OriginalPipelineTransform struct {
-	DisplayData          any
-	Id                   any
-	InputCollectionName  any
-	Kind                 any
-	Name                 any
+	// Human-readable key/value detail describing this pipeline component, shown in the Dataflow console. (AI-inferred)
+	DisplayData any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The name of the input collection this transform reads from. (AI-inferred)
+	InputCollectionName any
+	// The kind of pipeline step or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The name of the output collection this transform writes to. (AI-inferred)
 	OutputCollectionName any
 }
 
@@ -284,19 +400,30 @@ type Job_PipelineDescription struct {
 }
 
 type Job_RuntimeUpdatableParams_Schedules_Parameters struct {
+	// The target CPU utilization autoscaling aims to maintain. (AI-inferred)
 	CpuUtilizationTarget any
-	LatencyTarget        any
-	MaxWorkerCount       any
-	MinWorkerCount       any
+	// The target end-to-end processing latency for this streaming pipeline. (AI-inferred)
+	LatencyTarget any
+	// The maximum number of workers this job's own autoscaling may scale up to. (AI-inferred)
+	MaxWorkerCount any
+	// The minimum number of workers this job's own autoscaling scales down to. (AI-inferred)
+	MinWorkerCount any
 }
 
 type Job_RuntimeUpdatableParams_Schedules struct {
-	Crontab    any
-	Duration   any
-	Name       any
+	// The cron schedule expression this applies to. (AI-inferred)
+	Crontab any
+	// How long this applies for. (AI-inferred)
+	Duration any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
 	Parameters any
-	Priority   any
-	TimeZone   any
+	// The relative priority of this item. (AI-inferred)
+	Priority any
+	// The time zone this schedule is interpreted in. (AI-inferred)
+	TimeZone any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
 	UpdateTime any
 }
 
@@ -323,14 +450,20 @@ type Job_ServiceResources struct {
 }
 
 type Job_StageStates struct {
-	CurrentStateTime    any
-	ExecutionStageName  any
+	// When this job entered its own current state. (AI-inferred)
+	CurrentStateTime any
+	// The name of this pipeline execution stage. (AI-inferred)
+	ExecutionStageName any
+	// The current status of this pipeline execution stage. (AI-inferred)
 	ExecutionStageState any
 }
 
 type Job_Steps struct {
-	Kind       any
-	Name       any
+	// The kind of pipeline step or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
 	Properties any
 }
 

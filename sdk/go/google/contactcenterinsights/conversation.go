@@ -36,8 +36,10 @@ type Conversation_DataSource_GcsSource struct {
 }
 
 type Conversation_DataSource_TurnLevelAudios struct {
+	// The total duration of this conversation's own audio recording. (AI-inferred)
 	AudioDuration any
-	AudioGcsUri   any
+	// The Cloud Storage URI of this conversation's own audio recording. (AI-inferred)
+	AudioGcsUri any
 }
 
 type Conversation_DataSource struct {
@@ -52,69 +54,102 @@ type Conversation_DataSource struct {
 }
 
 type Conversation_DialogflowIntents struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary struct {
+	// This segment's own position within the full transcript. (AI-inferred)
 	TranscriptIndex any
-	WordIndex       any
+	// This word's own position within the transcript. (AI-inferred)
+	WordIndex any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment struct {
+	// The overall strength of sentiment detected, regardless of positive/negative direction. (AI-inferred)
 	Magnitude any
-	Score     any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData struct {
+	// An identifier for this specific entity mention, unique within its own conversation. (AI-inferred)
 	EntityUniqueId any
-	Sentiment      any
-	Type           any
+	// The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
+	Sentiment any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData struct {
+	// An identifier for this specific intent match, unique within its own conversation. (AI-inferred)
 	IntentUniqueId any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Issue       any
-	Score       any
+	// A reference to the detected issue this applies to. (AI-inferred)
+	Issue any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData struct {
+	// Detail assigning this conversation to a specific issue category. (AI-inferred)
 	IssueAssignment any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData struct {
-	DisplayName   any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the phrase matcher this applies to. (AI-inferred)
 	PhraseMatcher any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations struct {
-	AnnotationEndBoundary   any
+	// Where this annotation ends within its own containing transcript or audio. (AI-inferred)
+	AnnotationEndBoundary any
+	// Where this annotation starts within its own containing transcript or audio. (AI-inferred)
 	AnnotationStartBoundary any
-	ChannelTag              any
-	EntityMentionData       any
-	HoldData                any
-	IntentMatchData         any
-	InterruptionData        any
-	IssueMatchData          any
-	PhraseMatchData         any
-	SentimentData           any
-	SilenceData             any
+	// Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
+	ChannelTag any
+	// Detail about a named entity mentioned in this conversation. (AI-inferred)
+	EntityMentionData any
+	// Detail about a hold event within this conversation. (AI-inferred)
+	HoldData any
+	// Detail about an intent matched during this conversation turn. (AI-inferred)
+	IntentMatchData any
+	// Detail about a participant interrupting another during this conversation. (AI-inferred)
+	InterruptionData any
+	// Detail about an issue detected during this conversation. (AI-inferred)
+	IssueMatchData any
+	// Detail about a phrase matcher rule that matched during this conversation. (AI-inferred)
+	PhraseMatchData any
+	// Detailed sentiment analysis result for this conversation segment. (AI-inferred)
+	SentimentData any
+	// Detail about a period of silence detected in this conversation's own audio. (AI-inferred)
+	SilenceData any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Entities struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Metadata    any
-	Salience    any
-	Sentiment   any
-	Type        any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// How central this entity is to the overall content, relative to other mentioned entities. (AI-inferred)
+	Salience any
+	// The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
+	Sentiment any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Intents struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
+	// An identifier for this resource. (AI-inferred)
+	Id any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_IssueModelResult struct {
@@ -125,62 +160,101 @@ type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_IssueModelR
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue struct {
-	BoolValue       any
-	Key             any
-	NaValue         any
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
+	BoolValue any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred)
+	NaValue any
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
 	NormalizedScore any
-	NumValue        any
-	PotentialScore  any
-	Score           any
-	SkipValue       any
-	StrValue        any
+	// A numeric value. (AI-inferred)
+	NumValue any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// Marks this QA answer as skipped, rather than providing a real value. (AI-inferred)
+	SkipValue any
+	// A text value. (AI-inferred)
+	StrValue any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources struct {
+	// The literal value of this answer. (AI-inferred)
 	AnswerValue any
-	SourceType  any
+	// The kind of source this data came from. (AI-inferred)
+	SourceType any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers struct {
+	// The source content a generated answer was grounded in. (AI-inferred)
 	AnswerSources any
-	AnswerValue   any
-	Conversation  any
-	QaQuestion    any
-	QuestionBody  any
-	Tags          any
+	// The literal value of this answer. (AI-inferred)
+	AnswerValue any
+	// A reference to the conversation this applies to. (AI-inferred)
+	Conversation any
+	// A reference to the QA scorecard question this applies to. (AI-inferred)
+	QaQuestion any
+	// The full text/body of this question. (AI-inferred)
+	QuestionBody any
+	// The label(s) attached to this resource. (AI-inferred)
+	Tags any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults struct {
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
 	NormalizedScore any
-	PotentialScore  any
-	Score           any
-	Tag             any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// A label attached to this resource. (AI-inferred)
+	Tag any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources struct {
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
 	NormalizedScore any
-	PotentialScore  any
-	QaTagResults    any
-	Score           any
-	SourceType      any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
+	QaTagResults any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// The kind of source this data came from. (AI-inferred)
+	SourceType any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults struct {
-	AgentId             any
-	Conversation        any
-	CreateTime          any
-	Name                any
-	NormalizedScore     any
-	PotentialScore      any
-	QaAnswers           any
+	// An identifier for the human or virtual agent this applies to. (AI-inferred)
+	AgentId any
+	// A reference to the conversation this applies to. (AI-inferred)
+	Conversation any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
+	NormalizedScore any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// The answer(s) recorded for this QA scorecard evaluation. (AI-inferred)
+	QaAnswers any
+	// A reference to the specific version of the QA scorecard used for this evaluation. (AI-inferred)
 	QaScorecardRevision any
-	QaTagResults        any
-	Score               any
-	ScoreSources        any
+	// Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
+	QaTagResults any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// The source(s) contributing to this computed score. (AI-inferred)
+	ScoreSources any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Sentiments struct {
-	ChannelTag    any
+	// Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
+	ChannelTag any
+	// Detailed sentiment analysis result for this conversation segment. (AI-inferred)
 	SentimentData any
 }
 
@@ -298,28 +372,47 @@ type Conversation_LatestSummary struct {
 }
 
 type Conversation_QualityMetadata_AgentInfo struct {
-	AgentId                  any
-	AgentType                any
-	DeploymentDisplayName    any
-	DeploymentId             any
-	DisplayName              any
-	DispositionCode          any
+	// An identifier for the human or virtual agent this applies to. (AI-inferred)
+	AgentId any
+	// Whether this participant is a human agent or a virtual (Dialogflow) agent. (AI-inferred)
+	AgentType any
+	// A human-readable name for this deployment. (AI-inferred)
+	DeploymentDisplayName any
+	// An identifier for this deployment. (AI-inferred)
+	DeploymentId any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A caller-defined code categorizing the outcome of this conversation. (AI-inferred)
+	DispositionCode any
+	// The display name of the sub-agent the conversation started with. (AI-inferred)
 	EntrySubagentDisplayName any
-	EntrySubagentId          any
-	Location                 any
-	Team                     any
-	Teams                    any
-	VersionDisplayName       any
-	VersionId                any
+	// An identifier for the sub-agent the conversation started with. (AI-inferred)
+	EntrySubagentId any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// A reference to the team this applies to. (AI-inferred)
+	Team any
+	// The team(s) this applies to. (AI-inferred)
+	Teams any
+	// A human-readable name for this version. (AI-inferred)
+	VersionDisplayName any
+	// An identifier for this version. (AI-inferred)
+	VersionId any
 }
 
 type Conversation_QualityMetadata_FeedbackLabels struct {
-	CreateTime      any
-	Label           any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable label for this item. (AI-inferred)
+	Label any
+	// A reference to the specific resource this label was applied within. (AI-inferred)
 	LabeledResource any
-	Name            any
-	QaAnswerLabel   any
-	UpdateTime      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A human-readable label for this QA scorecard answer option. (AI-inferred)
+	QaAnswerLabel any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Conversation_QualityMetadata struct {
@@ -336,148 +429,234 @@ type Conversation_QualityMetadata struct {
 }
 
 type Conversation_RuntimeAnnotations_AnswerFeedback struct {
-	Clicked          any
+	// Whether the end user clicked on this suggestion. (AI-inferred)
+	Clicked any
+	// How accurate a QA answer was judged to be. (AI-inferred)
 	CorrectnessLevel any
-	Displayed        any
+	// Whether this suggestion was actually shown to the agent. (AI-inferred)
+	Displayed any
 }
 
 type Conversation_RuntimeAnnotations_ArticleSuggestion struct {
+	// A numeric score reflecting how confident this detection or match is. (AI-inferred)
 	ConfidenceScore any
-	Metadata        any
-	QueryRecord     any
-	Source          any
-	Title           any
-	Uri             any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// A reference to the stored record of this query. (AI-inferred)
+	QueryRecord any
+	// The source this data or configuration is read from. (AI-inferred)
+	Source any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSession struct {
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Metadata any
 }
 
 type Conversation_RuntimeAnnotations_CesEndSessionAnnotation struct {
+	// A record of the conversation session ending. (AI-inferred)
 	EndSession any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransfer struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
+	// The agent this transfer moves the conversation to. (AI-inferred)
 	TargetAgent any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob struct {
-	Data     any
+	// The literal data payload. (AI-inferred)
+	Data any
+	// The IANA MIME type of this content. (AI-inferred)
 	MimeType any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId  any
+	// An identifier for the tool this applies to. (AI-inferred)
+	ToolId any
+	// A reference to the toolset this applies to. (AI-inferred)
 	Toolset any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall struct {
-	AgentName        any
-	Args             any
-	DisplayName      any
-	Id               any
+	// The display name of the agent this applies to. (AI-inferred)
+	AgentName any
+	// The argument(s) passed to this call. (AI-inferred)
+	Args any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// A reference to the tool call this response corresponds to. (AI-inferred)
 	ParentToolCallId any
-	Tool             any
-	ToolsetTool      any
+	// A reference to the tool this applies to. (AI-inferred)
+	Tool any
+	// A reference to a specific tool within a toolset. (AI-inferred)
+	ToolsetTool any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponse struct {
-	AgentName        any
-	DisplayName      any
-	Id               any
+	// The display name of the agent this applies to. (AI-inferred)
+	AgentName any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// A reference to the tool call this response corresponds to. (AI-inferred)
 	ParentToolCallId any
-	Response         any
-	Tool             any
-	ToolsetTool      any
+	// The response produced for this request. (AI-inferred)
+	Response any
+	// A reference to the tool this applies to. (AI-inferred)
+	Tool any
+	// A reference to a specific tool within a toolset. (AI-inferred)
+	ToolsetTool any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks struct {
-	AgentTransfer    any
-	Blob             any
+	// A record of the conversation being transferred to another agent. (AI-inferred)
+	AgentTransfer any
+	// Raw binary content. (AI-inferred)
+	Blob any
+	// The default value(s) for this resource's own declared variables. (AI-inferred)
 	DefaultVariables any
-	Image            any
-	Payload          any
-	Text             any
-	ToolCall         any
-	ToolResponse     any
-	Transcript       any
+	// Image content. (AI-inferred)
+	Image any
+	// A custom, integration-specific payload. (AI-inferred)
+	Payload any
+	// The plain-text content. (AI-inferred)
+	Text any
+	// A request from the agent to invoke a tool. (AI-inferred)
+	ToolCall any
+	// The result returned from invoking a tool. (AI-inferred)
+	ToolResponse any
+	// The transcribed text of this conversation. (AI-inferred)
+	Transcript any
+	// The variable(s) whose own value changed as a result of this event. (AI-inferred)
 	UpdatedVariables any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages struct {
-	Chunks    any
+	// The retrieved content chunk(s) making up this result. (AI-inferred)
+	Chunks any
+	// When this event occurred. (AI-inferred)
 	EventTime any
-	Role      any
+	// Who this content is attributed to, e.g. agent or end user. (AI-inferred)
+	Role any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpan struct {
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
+	// The nested sub-operation(s) recorded under this trace span. (AI-inferred)
 	ChildSpans any
-	Duration   any
-	EndTime    any
-	Name       any
-	StartTime  any
+	// How long this event, segment, or conversation lasted. (AI-inferred)
+	Duration any
+	// When this event, segment, or conversation ended. (AI-inferred)
+	EndTime any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// When this event, segment, or conversation started. (AI-inferred)
+	StartTime any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation struct {
+	// The message(s) making up this conversation. (AI-inferred)
 	Messages any
+	// The top-level trace span this operation's own execution is recorded under. (AI-inferred)
 	RootSpan any
 }
 
 type Conversation_RuntimeAnnotations_DialogflowInteraction struct {
-	Confidence         any
+	// How confident this detection or match is. (AI-inferred)
+	Confidence any
+	// The Dialogflow intent matched during this conversation turn. (AI-inferred)
 	DialogflowIntentId any
 }
 
 type Conversation_RuntimeAnnotations_FaqAnswer struct {
-	Answer          any
+	// The answer text returned for this query. (AI-inferred)
+	Answer any
+	// A numeric score reflecting how confident this detection or match is. (AI-inferred)
 	ConfidenceScore any
-	Metadata        any
-	QueryRecord     any
-	Question        any
-	Source          any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// A reference to the stored record of this query. (AI-inferred)
+	QueryRecord any
+	// The QA scorecard question text. (AI-inferred)
+	Question any
+	// The source this data or configuration is read from. (AI-inferred)
+	Source any
 }
 
 type Conversation_RuntimeAnnotations_SmartComposeSuggestion struct {
+	// A numeric score reflecting how confident this detection or match is. (AI-inferred)
 	ConfidenceScore any
-	Metadata        any
-	QueryRecord     any
-	Suggestion      any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// A reference to the stored record of this query. (AI-inferred)
+	QueryRecord any
+	// A suggestion generated for the agent. (AI-inferred)
+	Suggestion any
 }
 
 type Conversation_RuntimeAnnotations_SmartReply struct {
+	// A numeric score reflecting how confident this detection or match is. (AI-inferred)
 	ConfidenceScore any
-	Metadata        any
-	QueryRecord     any
-	Reply           any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// A reference to the stored record of this query. (AI-inferred)
+	QueryRecord any
+	// A response message. (AI-inferred)
+	Reply any
 }
 
 type Conversation_RuntimeAnnotations_UserInput struct {
+	// The display name of the generator that produced this content. (AI-inferred)
 	GeneratorName any
-	Query         any
-	QuerySource   any
+	// The query text or expression. (AI-inferred)
+	Query any
+	// Which data source this query was run against. (AI-inferred)
+	QuerySource any
 }
 
 type Conversation_RuntimeAnnotations struct {
-	AnnotationId                        any
-	AnswerFeedback                      any
-	ArticleSuggestion                   any
-	CesEndSessionAnnotation             any
-	CesTurnAnnotation                   any
+	// An identifier for this annotation. (AI-inferred)
+	AnnotationId any
+	// End-user or agent feedback on the quality of a generated answer. (AI-inferred)
+	AnswerFeedback any
+	// A suggested knowledge-base article surfaced to the agent during the conversation. (AI-inferred)
+	ArticleSuggestion any
+	// An annotation marking where a CES (Customer Engagement Suite) agent session ended. (AI-inferred)
+	CesEndSessionAnnotation any
+	// An annotation carrying CES (Customer Engagement Suite) agent detail for one conversation turn. (AI-inferred)
+	CesTurnAnnotation any
+	// A generated summary of the conversation, suggested to the agent. (AI-inferred)
 	ConversationSummarizationSuggestion any
-	CreateTime                          any
-	DialogflowInteraction               any
-	EndBoundary                         any
-	FaqAnswer                           any
-	SmartComposeSuggestion              any
-	SmartReply                          any
-	StartBoundary                       any
-	UserInput                           any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Detail about a Dialogflow-driven interaction within this conversation. (AI-inferred)
+	DialogflowInteraction any
+	// Where this range ends. (AI-inferred)
+	EndBoundary any
+	// A suggested answer sourced from a connected FAQ document. (AI-inferred)
+	FaqAnswer any
+	// A suggested reply completion offered to the agent while typing. (AI-inferred)
+	SmartComposeSuggestion any
+	// A suggested full reply offered to the agent. (AI-inferred)
+	SmartReply any
+	// Where this range starts. (AI-inferred)
+	StartBoundary any
+	// The end user's own input for this turn. (AI-inferred)
+	UserInput any
 }
 
 type Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata struct {
+	// Whether this smart reply suggestion is drawn from the caller's own approved allowlist. (AI-inferred)
 	SmartReplyAllowlistCovered any
 }
 
@@ -569,32 +748,51 @@ type Conversation_Transcript_TranscriptSegments_Parts struct {
 }
 
 type Conversation_Transcript_TranscriptSegments_SegmentParticipant struct {
-	DialogflowParticipant     any
+	// Detail identifying a Dialogflow virtual agent participant. (AI-inferred)
+	DialogflowParticipant any
+	// The display name of the Dialogflow virtual agent participant. (AI-inferred)
 	DialogflowParticipantName any
-	ObfuscatedExternalUserId  any
-	Role                      any
-	UserId                    any
+	// An anonymized identifier for the end user, consistent across their own conversations but not directly identifying. (AI-inferred)
+	ObfuscatedExternalUserId any
+	// Who this content is attributed to, e.g. agent or end user. (AI-inferred)
+	Role any
+	// An identifier for the end user this applies to. (AI-inferred)
+	UserId any
 }
 
 type Conversation_Transcript_TranscriptSegments_Words struct {
-	Confidence  any
-	EndOffset   any
+	// How confident this detection or match is. (AI-inferred)
+	Confidence any
+	// The ending position this range covers. (AI-inferred)
+	EndOffset any
+	// The starting position this range covers. (AI-inferred)
 	StartOffset any
-	Word        any
+	// A single transcribed word. (AI-inferred)
+	Word any
 }
 
 type Conversation_Transcript_TranscriptSegments struct {
-	ChannelTag                any
-	Confidence                any
+	// Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
+	ChannelTag any
+	// How confident this detection or match is. (AI-inferred)
+	Confidence any
+	// Metadata Dialogflow attached to this conversation segment. (AI-inferred)
 	DialogflowSegmentMetadata any
-	LanguageCode              any
-	MessageTime               any
-	Parts                     any
-	SegmentParticipant        any
-	Sentiment                 any
-	Text                      any
-	TurnLevelAudio            any
-	Words                     any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// When this message was sent. (AI-inferred)
+	MessageTime any
+	Parts       any
+	// The participant this conversation segment is attributed to. (AI-inferred)
+	SegmentParticipant any
+	// The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
+	Sentiment any
+	// The plain-text content. (AI-inferred)
+	Text any
+	// The audio segment corresponding to this specific conversation turn. (AI-inferred)
+	TurnLevelAudio any
+	// The individual word(s) making up this transcript segment. (AI-inferred)
+	Words any
 }
 
 type Conversation_Transcript struct {

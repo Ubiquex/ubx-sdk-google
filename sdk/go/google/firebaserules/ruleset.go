@@ -9,9 +9,12 @@ type Ruleset_Metadata struct {
 }
 
 type Ruleset_Source_Files struct {
-	Content     any
+	// The raw text content of this Rules source file (Firestore/Realtime Database/Cloud Storage security rules syntax). (AI-inferred)
+	Content any
+	// A checksum/version identifier for this file's own content, used to detect whether the file changed between requests. (AI-inferred)
 	Fingerprint any
-	Name        any
+	// A file name, unique within this Ruleset's own source, used for diagnostic messages when a rule fails to compile. (AI-inferred)
+	Name any
 }
 
 type Ruleset_Source struct {

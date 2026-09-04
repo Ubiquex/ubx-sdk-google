@@ -4,6 +4,7 @@ package identitytoolkit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InboundSamlConfig_IdpConfig_IdpCertificates struct {
+	// The X.509 certificate, in PEM format. (AI-inferred)
 	X509Certificate any
 }
 
@@ -19,7 +20,9 @@ type InboundSamlConfig_IdpConfig struct {
 }
 
 type InboundSamlConfig_SpConfig_SpCertificates struct {
-	ExpiresAt       any
+	// When this certificate expires. (AI-inferred)
+	ExpiresAt any
+	// The X.509 certificate, in PEM format. (AI-inferred)
 	X509Certificate any
 }
 

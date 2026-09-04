@@ -4,7 +4,9 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportConfig_GroupPreferencesetAssignments struct {
-	Group         any
+	// A reference to the asset group this applies to. (AI-inferred)
+	Group any
+	// A reference to the preference set this report was generated with. (AI-inferred)
 	PreferenceSet any
 }
 

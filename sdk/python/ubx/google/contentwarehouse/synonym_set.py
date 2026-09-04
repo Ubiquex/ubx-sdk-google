@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SynonymSet_Synonyms:
+    # The real, individual synonym words that make up one entry in a `google_contentwarehouse_synonym_set`. (AI-inferred)
     words: Any = None
 
 _SynonymSet_SynonymsFields = {

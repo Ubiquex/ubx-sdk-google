@@ -4,22 +4,35 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Bucket_Acl_ProjectTeam struct {
+	// The numeric identifier of the associated Google Cloud project. (AI-inferred)
 	ProjectNumber any
-	Team          any
+	// The team associated with this entity. (AI-inferred)
+	Team any
 }
 
 type Bucket_Acl struct {
-	Bucket      any
-	Domain      any
-	Email       any
-	Entity      any
-	EntityId    any
-	Etag        any
-	Id          any
-	Kind        any
+	// A reference to the Cloud Storage bucket this applies to. (AI-inferred)
+	Bucket any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// An email address associated with this entity. (AI-inferred)
+	Email any
+	// The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred)
+	Entity any
+	// The unique identifier of this entity. (AI-inferred)
+	EntityId any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The category of this resource. (AI-inferred)
+	Kind any
+	// The project team role associated with this entity. (AI-inferred)
 	ProjectTeam any
-	Role        any
-	SelfLink    any
+	// The access role granted, e.g. `READER` or `OWNER`. (AI-inferred)
+	Role any
+	// The API URL identifying this resource. (AI-inferred)
+	SelfLink any
 }
 
 type Bucket_Autoclass struct {
@@ -39,9 +52,13 @@ type Bucket_Billing struct {
 }
 
 type Bucket_Cors struct {
-	MaxAgeSeconds  any
-	Method         any
-	Origin         any
+	// The maximum time, in seconds, a cached response may be reused. (AI-inferred)
+	MaxAgeSeconds any
+	// The HTTP method(s) this applies to. (AI-inferred)
+	Method any
+	// The origin(s) this CORS rule permits requests from. (AI-inferred)
+	Origin any
+	// The HTTP response header(s) exposed by this CORS rule. (AI-inferred)
 	ResponseHeader any
 }
 
@@ -51,19 +68,32 @@ type Bucket_CustomPlacementConfig struct {
 }
 
 type Bucket_DefaultObjectAcl struct {
-	Bucket      any
-	Domain      any
-	Email       any
-	Entity      any
-	EntityId    any
-	Etag        any
-	Generation  any
-	Id          any
-	Kind        any
-	Object      any
+	// A reference to the Cloud Storage bucket this applies to. (AI-inferred)
+	Bucket any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// An email address associated with this entity. (AI-inferred)
+	Email any
+	// The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred)
+	Entity any
+	// The unique identifier of this entity. (AI-inferred)
+	EntityId any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// The specific object generation this applies to. (AI-inferred)
+	Generation any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The category of this resource. (AI-inferred)
+	Kind any
+	// A reference to the Cloud Storage object this applies to. (AI-inferred)
+	Object any
+	// The project team role associated with this entity. (AI-inferred)
 	ProjectTeam any
-	Role        any
-	SelfLink    any
+	// The access role granted, e.g. `READER` or `OWNER`. (AI-inferred)
+	Role any
+	// The API URL identifying this resource. (AI-inferred)
+	SelfLink any
 }
 
 type Bucket_Encryption_CustomerManagedEncryptionEnforcementConfig struct {
@@ -111,8 +141,10 @@ type Bucket_IpFilter_PublicNetworkSource struct {
 }
 
 type Bucket_IpFilter_VpcNetworkSources struct {
+	// The IP address range(s), in CIDR notation, permitted to access this bucket. (AI-inferred)
 	AllowedIpCidrRanges any
-	Network             any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
 }
 
 type Bucket_IpFilter struct {
@@ -129,29 +161,47 @@ type Bucket_IpFilter struct {
 }
 
 type Bucket_Lifecycle_Rule_Action struct {
+	// The Cloud Storage class this object or bucket uses. (AI-inferred)
 	StorageClass any
-	Type         any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Bucket_Lifecycle_Rule_Condition struct {
-	Age                     any
-	CreatedBefore           any
-	CustomTimeBefore        any
-	DaysSinceCustomTime     any
+	// The age, in days, an object must reach for this condition to match. (AI-inferred)
+	Age any
+	// Matches object(s) created before this date. (AI-inferred)
+	CreatedBefore any
+	// Matches object(s) whose own custom time is before this date. (AI-inferred)
+	CustomTimeBefore any
+	// The number of days since an object's own custom time for this condition to match. (AI-inferred)
+	DaysSinceCustomTime any
+	// The number of days since an object became noncurrent for this condition to match. (AI-inferred)
 	DaysSinceNoncurrentTime any
-	IsLive                  any
-	MatchesPattern          any
-	MatchesPrefix           any
-	MatchesStorageClass     any
-	MatchesSuffix           any
-	NoncurrentTimeBefore    any
-	NumNewerVersions        any
-	SizeAboveBytes          any
-	SizeBelowBytes          any
+	// Whether this condition matches only live (non-archived) object versions. (AI-inferred)
+	IsLive any
+	// A glob pattern object names must match for this rule to apply. (AI-inferred)
+	MatchesPattern any
+	// The object name prefix(es) this rule matches. (AI-inferred)
+	MatchesPrefix any
+	// The storage class(es) this rule matches. (AI-inferred)
+	MatchesStorageClass any
+	// The object name suffix(es) this rule matches. (AI-inferred)
+	MatchesSuffix any
+	// Matches object(s) that became noncurrent before this date. (AI-inferred)
+	NoncurrentTimeBefore any
+	// The number of newer version(s) an object must have for this condition to match. (AI-inferred)
+	NumNewerVersions any
+	// Matches object(s) larger than this size, in bytes. (AI-inferred)
+	SizeAboveBytes any
+	// Matches object(s) smaller than this size, in bytes. (AI-inferred)
+	SizeBelowBytes any
 }
 
 type Bucket_Lifecycle_Rule struct {
-	Action    any
+	// The action to take when this rule's own condition is satisfied. (AI-inferred)
+	Action any
+	// The condition that must be satisfied for this rule to apply. (AI-inferred)
 	Condition any
 }
 

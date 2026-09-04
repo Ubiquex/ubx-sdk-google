@@ -29,14 +29,20 @@ class Toolset_ConnectorToolset_AuthConfig:
 
 @dataclasses.dataclass
 class Toolset_ConnectorToolset_ConnectorActions_EntityOperation:
+    # The identifier of the entity this operation applies to. (AI-inferred)
     entity_id: Any = None
+    # Which action this performs, e.g. create, update, or delete. (AI-inferred)
     operation: Any = None
 
 @dataclasses.dataclass
 class Toolset_ConnectorToolset_ConnectorActions:
+    # The identifier of the connector action this tool invokes. (AI-inferred)
     connection_action_id: Any = None
+    # A structured create/update/delete action performed against an entity in the connected external system. (AI-inferred)
     entity_operation: Any = None
+    # The input field(s) this tool or operation accepts. (AI-inferred)
     input_fields: Any = None
+    # The output field(s) this tool or operation returns. (AI-inferred)
     output_fields: Any = None
 
 @dataclasses.dataclass
@@ -102,7 +108,9 @@ class Toolset_McpToolset_ServiceDirectoryConfig:
 
 @dataclasses.dataclass
 class Toolset_McpToolset_TlsConfig_CaCerts:
+    # A TLS certificate. (AI-inferred)
     cert: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
@@ -112,37 +120,63 @@ class Toolset_McpToolset_TlsConfig:
 
 @dataclasses.dataclass
 class Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema:
+    # Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
     additional_properties: Any = None
+    # A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
     any_of: Any = None
+    # The value used when this field is left unset. (AI-inferred)
     default: Any = None
+    # Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
     defs: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
     enum: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The most elements an `array`-typed value may have. (AI-inferred)
     max_items: Any = None
+    # The largest value a `number`/`integer`-typed value may take. (AI-inferred)
     maximum: Any = None
+    # The fewest elements an `array`-typed value may have. (AI-inferred)
     min_items: Any = None
+    # The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
     minimum: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred)
     prefix_items: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # Whether every element of an array-typed value must be distinct. (AI-inferred)
     unique_items: Any = None
 
 @dataclasses.dataclass
 class Toolset_McpToolset_ToolOverrides_Snapshot:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The schema describing this tool's own expected input. (AI-inferred)
     input_schema: Any = None
+    # The schema describing this tool's own expected output. (AI-inferred)
     output_schema: Any = None
 
 @dataclasses.dataclass
 class Toolset_McpToolset_ToolOverrides:
+    # A caller-chosen description presented to the model in place of this item's own default description. (AI-inferred)
     description_override: Any = None
+    # A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred)
     name_override: Any = None
+    # A frozen copy of this resource's own content at a specific point in time. (AI-inferred)
     snapshot: Any = None
+    # A reference to a single tool. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass

@@ -8,36 +8,58 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DocumentSchema_PropertyDefinitions_EnumTypeOptions:
+    # The real, closed set of values an enum-typed document schema property is allowed to take. (AI-inferred)
     possible_values: Any = None
+    # Whether Document AI Warehouse should real, skip validating a property's value against its own `possible_values` at write time. (AI-inferred)
     validation_check_disabled: Any = None
 
 @dataclasses.dataclass
 class DocumentSchema_PropertyDefinitions_PropertyTypeOptions:
+    # The real, nested sub-property definitions that make up a map-typed document schema property. (AI-inferred)
     property_definitions: Any = None
 
 @dataclasses.dataclass
 class DocumentSchema_PropertyDefinitions_SchemaSources:
+    # The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred)
     name: Any = None
+    # The real Document AI processor type (e.g. an invoice or contract parser) this schema property is sourced from. (AI-inferred)
     processor_type: Any = None
 
 @dataclasses.dataclass
 class DocumentSchema_PropertyDefinitions:
+    # Real, additional type-specific configuration for a document schema property definition whose declared type is date-time. (AI-inferred)
     date_time_type_options: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Real, additional type-specific configuration for a document schema property definition whose declared type is a closed enumeration, including its own `possible_values`. (AI-inferred)
     enum_type_options: Any = None
+    # Real, additional type-specific configuration for a document schema property definition whose declared type is a floating-point number. (AI-inferred)
     float_type_options: Any = None
+    # Real, additional type-specific configuration for a document schema property definition whose declared type is an integer. (AI-inferred)
     integer_type_options: Any = None
+    # Whether documents can be real, filtered by this schema property's own value in a search query. (AI-inferred)
     is_filterable: Any = None
+    # Whether this schema property is real, treated as document metadata rather than extracted document content. (AI-inferred)
     is_metadata: Any = None
+    # Whether this schema property is real, allowed to hold more than one value on a single document. (AI-inferred)
     is_repeatable: Any = None
+    # Whether every document conforming to this schema must real, supply a value for this property. (AI-inferred)
     is_required: Any = None
+    # Whether this schema property's own value is real, indexed for full-text or structured search. (AI-inferred)
     is_searchable: Any = None
+    # Real, additional type-specific configuration for a document schema property definition whose declared type is a map of named sub-fields. (AI-inferred)
     map_type_options: Any = None
+    # The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred)
     name: Any = None
+    # The real, type-specific configuration (matching this property definition's own declared type) governing how its values are validated and stored. (AI-inferred)
     property_type_options: Any = None
+    # How real, heavily this property's own value is weighted when ranking documents for retrieval-oriented search. (AI-inferred)
     retrieval_importance: Any = None
+    # The real Document AI processor(s) or source(s) this schema property definition was generated from or is linked to. (AI-inferred)
     schema_sources: Any = None
+    # Real, additional type-specific configuration for a document schema property definition whose declared type is plain text. (AI-inferred)
     text_type_options: Any = None
+    # Real, additional type-specific configuration for a document schema property definition whose declared type is a timestamp. (AI-inferred)
     timestamp_type_options: Any = None
 
 _DocumentSchema_PropertyDefinitions_EnumTypeOptionsFields = {

@@ -8,43 +8,66 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Document_Fields_ArrayValue:
+    # The value(s) making up this array. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Document_Fields_FunctionValue:
+    # The argument(s) passed to this function call. (AI-inferred)
     args: Any = None
+    # The name of this function. (AI-inferred)
     name: Any = None
+    # Named option(s) passed to this function call. (AI-inferred)
     options: Any = None
 
 @dataclasses.dataclass
 class Document_Fields_GeoPointValue:
+    # The geographic coordinate's own latitude, in degrees. (AI-inferred)
     latitude: Any = None
+    # The geographic coordinate's own longitude, in degrees. (AI-inferred)
     longitude: Any = None
 
 @dataclasses.dataclass
 class Document_Fields_MapValue:
+    # The key/value pair(s) making up this map. (AI-inferred)
     fields: Any = None
 
 @dataclasses.dataclass
 class Document_Fields_PipelineValue:
+    # The ordered stage(s) making up this pipeline. (AI-inferred)
     stages: Any = None
 
 @dataclasses.dataclass
 class Document_Fields:
+    # This field's own value, when its type is an array. (AI-inferred)
     array_value: Any = None
+    # This field's own value, when its type is a boolean. (AI-inferred)
     boolean_value: Any = None
+    # This field's own value, when its type is raw bytes, base64-encoded. (AI-inferred)
     bytes_value: Any = None
+    # This field's own value, when its type is a floating-point number. (AI-inferred)
     double_value: Any = None
+    # This field's own value, when it references another field by its dotted path. (AI-inferred)
     field_reference_value: Any = None
+    # This field's own value, when it's the result of a Firestore pipeline function call. (AI-inferred)
     function_value: Any = None
+    # This field's own value, when its type is a geographic coordinate (latitude/longitude). (AI-inferred)
     geo_point_value: Any = None
+    # This field's own value, when its type is a 64-bit integer. (AI-inferred)
     integer_value: Any = None
+    # This field's own value, when its type is a nested map of key/value pairs. (AI-inferred)
     map_value: Any = None
+    # This field's own value, when it's explicitly null. (AI-inferred)
     null_value: Any = None
+    # This field's own value, when it's the result of a Firestore aggregation pipeline. (AI-inferred)
     pipeline_value: Any = None
+    # This field's own value, when it references another document, by its full resource name. (AI-inferred)
     reference_value: Any = None
+    # This field's own value, when its type is a string. (AI-inferred)
     string_value: Any = None
+    # This field's own value, when its type is a point in time. (AI-inferred)
     timestamp_value: Any = None
+    # This field's own value, when it references a pipeline variable by name. (AI-inferred)
     variable_reference_value: Any = None
 
 _Document_Fields_ArrayValueFields = {

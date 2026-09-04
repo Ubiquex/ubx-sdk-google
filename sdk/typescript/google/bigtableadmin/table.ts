@@ -16,174 +16,250 @@ export interface Table_ChangeStreamConfig {
 }
 
 export interface Table_ClusterStates_EncryptionInfo_EncryptionStatus {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Table_ClusterStates_EncryptionInfo {
+  /** Output only. Whether this cluster's own customer-managed encryption key is currently accessible and working. (AI-inferred) */
   encryptionStatus?: Table_ClusterStates_EncryptionInfo_EncryptionStatus | Computed<Table_ClusterStates_EncryptionInfo_EncryptionStatus>;
+  /** Whether this data is encrypted with a Google-managed or customer-managed key. (AI-inferred) */
   encryptionType?: string | Computed<string>;
+  /** The specific Cloud KMS key version currently used to encrypt this resource's own data. (AI-inferred) */
   kmsKeyVersion?: string | Computed<string>;
 }
 
 export interface Table_ClusterStates {
+  /** Output only. The current encryption status of this cluster's own data. (AI-inferred) */
   encryptionInfo?: Table_ClusterStates_EncryptionInfo[] | Computed<Table_ClusterStates_EncryptionInfo[]>;
+  /** The current replication status of this cluster relative to the rest of the instance. (AI-inferred) */
   replicationState?: string | Computed<string>;
 }
 
 export interface Table_ColumnFamilies_GcRule_Intersection {
+  /** The rule(s) making up this configuration. (AI-inferred) */
   rules?: unknown[] | Computed<unknown[]>;
 }
 
 export interface Table_ColumnFamilies_GcRule {
+  /** Defines this aggregate as computing the intersection of set-valued inputs. (AI-inferred) */
   intersection?: Table_ColumnFamilies_GcRule_Intersection | Computed<Table_ColumnFamilies_GcRule_Intersection>;
+  /** The maximum age a cell version may reach before being eligible for garbage collection. (AI-inferred) */
   maxAge?: string | Computed<string>;
+  /** The maximum number of cell versions kept per column before older ones are garbage collected. (AI-inferred) */
   maxNumVersions?: number | Computed<number>;
+  /** Defines this aggregate as computing the union of set-valued inputs. (AI-inferred) */
   union?: Table_ColumnFamilies_GcRule_Intersection | Computed<Table_ColumnFamilies_GcRule_Intersection>;
 }
 
 export interface Table_ColumnFamilies_Stats {
+  /** Output only. The average number of stored cell versions per column, across this table. (AI-inferred) */
   averageCellsPerColumn?: number | Computed<number>;
+  /** Output only. The average number of columns per row, across this table. (AI-inferred) */
   averageColumnsPerRow?: number | Computed<number>;
+  /** Output only. The logical (uncompressed) size of this table's own data, in bytes. (AI-inferred) */
   logicalDataBytes?: string | Computed<string>;
+  /** Output only. The logical size of this table's own data stored on HDD, in bytes. (AI-inferred) */
   logicalDataHddBytes?: string | Computed<string>;
+  /** Output only. The logical size of this table's own data stored on SSD, in bytes. (AI-inferred) */
   logicalDataSsdBytes?: string | Computed<string>;
 }
 
 export interface Table_ColumnFamilies_ValueType_AggregateType {
+  /** Defines this column as storing a HyperLogLog++ sketch, for approximate distinct-count aggregation. (AI-inferred) */
   hllppUniqueCount?: unknown | Computed<unknown>;
+  /** The type of value this aggregate/encoding accepts as input. (AI-inferred) */
   inputType?: unknown | Computed<unknown>;
+  /** Defines this aggregate as computing the maximum of its own input values. (AI-inferred) */
   max?: unknown | Computed<unknown>;
+  /** Defines this aggregate as computing the minimum of its own input values. (AI-inferred) */
   min?: unknown | Computed<unknown>;
+  /** The kind of state this represents. (AI-inferred) */
   stateType?: unknown | Computed<unknown>;
+  /** Defines this aggregate as computing the sum of its own input values. (AI-inferred) */
   sum?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_ArrayType {
+  /** The type of each element in an array-typed column. (AI-inferred) */
   elementType?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_BoolType {
+  /** How this value is encoded into raw Bigtable bytes. (AI-inferred) */
   encoding?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_BytesType_Encoding_Raw {
+  /** Whether embedded null bytes in delimited encoding are escaped, rather than treated as a delimiter. (AI-inferred) */
   escapeNulls?: boolean | Computed<boolean>;
 }
 
 export interface Table_ColumnFamilies_ValueType_BytesType_Encoding {
+  /** Uses the raw, unencoded bytes directly, with no type-specific encoding applied. (AI-inferred) */
   raw?: Table_ColumnFamilies_ValueType_BytesType_Encoding_Raw | Computed<Table_ColumnFamilies_ValueType_BytesType_Encoding_Raw>;
 }
 
 export interface Table_ColumnFamilies_ValueType_BytesType {
+  /** How this value is encoded into raw Bigtable bytes. (AI-inferred) */
   encoding?: Table_ColumnFamilies_ValueType_BytesType_Encoding | Computed<Table_ColumnFamilies_ValueType_BytesType_Encoding>;
 }
 
 export interface Table_ColumnFamilies_ValueType_EnumType {
+  /** The name of this enum type. (AI-inferred) */
   enumName?: string | Computed<string>;
+  /** A reference to the schema bundle (e.g. protocol buffer definitions) this configuration uses. (AI-inferred) */
   schemaBundleId?: string | Computed<string>;
 }
 
 export interface Table_ColumnFamilies_ValueType_Int32Type_Encoding {
+  /** Encodes this value as fixed-width, big-endian bytes. (AI-inferred) */
   bigEndianBytes?: unknown | Computed<unknown>;
+  /** Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred) */
   orderedCodeBytes?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_Int32Type {
+  /** How this value is encoded into raw Bigtable bytes. (AI-inferred) */
   encoding?: Table_ColumnFamilies_ValueType_Int32Type_Encoding | Computed<Table_ColumnFamilies_ValueType_Int32Type_Encoding>;
 }
 
 export interface Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytes {
+  /** Defines this column's own value as raw bytes. (AI-inferred) */
   bytesType?: Table_ColumnFamilies_ValueType_BytesType | Computed<Table_ColumnFamilies_ValueType_BytesType>;
 }
 
 export interface Table_ColumnFamilies_ValueType_Int64Type_Encoding {
+  /** Encodes this value as fixed-width, big-endian bytes. (AI-inferred) */
   bigEndianBytes?: Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytes | Computed<Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytes>;
+  /** Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred) */
   orderedCodeBytes?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_Int64Type {
+  /** How this value is encoded into raw Bigtable bytes. (AI-inferred) */
   encoding?: Table_ColumnFamilies_ValueType_Int64Type_Encoding | Computed<Table_ColumnFamilies_ValueType_Int64Type_Encoding>;
 }
 
 export interface Table_ColumnFamilies_ValueType_MapType {
+  /** The type of a map type's own key. (AI-inferred) */
   keyType?: unknown | Computed<unknown>;
+  /** The type of a map type's own value, or an aggregate's own accumulated value. (AI-inferred) */
   valueType?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_ProtoType {
+  /** The name of the protocol buffer message type this value is encoded as. (AI-inferred) */
   messageName?: string | Computed<string>;
+  /** A reference to the schema bundle (e.g. protocol buffer definitions) this configuration uses. (AI-inferred) */
   schemaBundleId?: string | Computed<string>;
 }
 
 export interface Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8Bytes {
+  /** The character used to escape embedded delimiter or null bytes in delimited encoding. (AI-inferred) */
   nullEscapeChar?: string | Computed<string>;
 }
 
 export interface Table_ColumnFamilies_ValueType_StringType_Encoding {
+  /** Encodes this value as UTF-8 bytes. (AI-inferred) */
   utf8Bytes?: Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8Bytes | Computed<Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8Bytes>;
+  /** Uses the raw bytes directly, interpreted as UTF-8 text. (AI-inferred) */
   utf8Raw?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_StringType {
+  /** How this value is encoded into raw Bigtable bytes. (AI-inferred) */
   encoding?: Table_ColumnFamilies_ValueType_StringType_Encoding | Computed<Table_ColumnFamilies_ValueType_StringType_Encoding>;
 }
 
 export interface Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytes {
+  /** The byte sequence separating encoded values. (AI-inferred) */
   delimiter?: string | Computed<string>;
 }
 
 export interface Table_ColumnFamilies_ValueType_StructType_Encoding {
+  /** Encodes this value as raw bytes followed by a delimiter character. (AI-inferred) */
   delimitedBytes?: Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytes | Computed<Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytes>;
+  /** Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred) */
   orderedCodeBytes?: unknown | Computed<unknown>;
+  /** Marks this rule as a leaf condition, rather than a union/intersection of further sub-rules. (AI-inferred) */
   singleton?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_StructType_Fields {
+  /** The name of this struct field. (AI-inferred) */
   fieldName?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: unknown | Computed<unknown>;
 }
 
 export interface Table_ColumnFamilies_ValueType_StructType {
+  /** How this value is encoded into raw Bigtable bytes. (AI-inferred) */
   encoding?: Table_ColumnFamilies_ValueType_StructType_Encoding | Computed<Table_ColumnFamilies_ValueType_StructType_Encoding>;
+  /** The field(s) making up this struct type. (AI-inferred) */
   fields?: Table_ColumnFamilies_ValueType_StructType_Fields[] | Computed<Table_ColumnFamilies_ValueType_StructType_Fields[]>;
 }
 
 export interface Table_ColumnFamilies_ValueType_TimestampType_Encoding {
+  /** Encodes a timestamp as a 64-bit integer count of microseconds since the Unix epoch. (AI-inferred) */
   unixMicrosInt64?: Table_ColumnFamilies_ValueType_Int64Type_Encoding | Computed<Table_ColumnFamilies_ValueType_Int64Type_Encoding>;
 }
 
 export interface Table_ColumnFamilies_ValueType_TimestampType {
+  /** How this value is encoded into raw Bigtable bytes. (AI-inferred) */
   encoding?: Table_ColumnFamilies_ValueType_TimestampType_Encoding | Computed<Table_ColumnFamilies_ValueType_TimestampType_Encoding>;
 }
 
 export interface Table_ColumnFamilies_ValueType {
+  /** Defines this column as storing a running aggregate (e.g. sum, max) computed automatically as new values are written. (AI-inferred) */
   aggregateType?: Table_ColumnFamilies_ValueType_AggregateType | Computed<Table_ColumnFamilies_ValueType_AggregateType>;
+  /** Defines this column's own value as an array of another type. (AI-inferred) */
   arrayType?: Table_ColumnFamilies_ValueType_ArrayType | Computed<Table_ColumnFamilies_ValueType_ArrayType>;
+  /** Defines this column's own value as a boolean. (AI-inferred) */
   boolType?: Table_ColumnFamilies_ValueType_BoolType | Computed<Table_ColumnFamilies_ValueType_BoolType>;
+  /** Defines this column's own value as raw bytes. (AI-inferred) */
   bytesType?: Table_ColumnFamilies_ValueType_BytesType | Computed<Table_ColumnFamilies_ValueType_BytesType>;
+  /** Defines this column's own value as a calendar date. (AI-inferred) */
   dateType?: unknown | Computed<unknown>;
+  /** Defines this column's own value as one of a fixed set of named integer values. (AI-inferred) */
   enumType?: Table_ColumnFamilies_ValueType_EnumType | Computed<Table_ColumnFamilies_ValueType_EnumType>;
+  /** Defines this column's own value as a 32-bit floating-point number. (AI-inferred) */
   float32Type?: unknown | Computed<unknown>;
+  /** Defines this column's own value as a 64-bit floating-point number. (AI-inferred) */
   float64Type?: unknown | Computed<unknown>;
+  /** Defines this column's own value as geospatial data. (AI-inferred) */
   geographyType?: unknown | Computed<unknown>;
+  /** Defines this column's own value as a 32-bit integer. (AI-inferred) */
   int32Type?: Table_ColumnFamilies_ValueType_Int32Type | Computed<Table_ColumnFamilies_ValueType_Int32Type>;
+  /** Defines this column's own value as a 64-bit integer. (AI-inferred) */
   int64Type?: Table_ColumnFamilies_ValueType_Int64Type | Computed<Table_ColumnFamilies_ValueType_Int64Type>;
+  /** Defines this column's own value as a map from keys to values. (AI-inferred) */
   mapType?: Table_ColumnFamilies_ValueType_MapType | Computed<Table_ColumnFamilies_ValueType_MapType>;
+  /** Defines this column's own value as a protocol buffer message. (AI-inferred) */
   protoType?: Table_ColumnFamilies_ValueType_ProtoType | Computed<Table_ColumnFamilies_ValueType_ProtoType>;
+  /** Defines this column's own value as a string. (AI-inferred) */
   stringType?: Table_ColumnFamilies_ValueType_StringType | Computed<Table_ColumnFamilies_ValueType_StringType>;
+  /** Defines this column's own value as a struct with named fields. (AI-inferred) */
   structType?: Table_ColumnFamilies_ValueType_StructType | Computed<Table_ColumnFamilies_ValueType_StructType>;
+  /** Defines this column's own value as a timestamp. (AI-inferred) */
   timestampType?: Table_ColumnFamilies_ValueType_TimestampType | Computed<Table_ColumnFamilies_ValueType_TimestampType>;
 }
 
 export interface Table_ColumnFamilies {
+  /** The garbage-collection rule determining which stored cell versions in this column family are automatically deleted. (AI-inferred) */
   gcRule?: Table_ColumnFamilies_GcRule | Computed<Table_ColumnFamilies_GcRule>;
+  /** Statistics about this resource. (AI-inferred) */
   stats?: Table_ColumnFamilies_Stats | Computed<Table_ColumnFamilies_Stats>;
+  /** The type of a map type's own value, or an aggregate's own accumulated value. (AI-inferred) */
   valueType?: Table_ColumnFamilies_ValueType | Computed<Table_ColumnFamilies_ValueType>;
 }
 
 export interface Table_InitialSplits {
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
@@ -208,26 +284,44 @@ export interface Table_RestoreInfo {
 }
 
 export interface Table_RowKeySchema_Fields_Type {
+  /** Defines this column as storing a running aggregate (e.g. sum, max) computed automatically as new values are written. (AI-inferred) */
   aggregateType?: Table_ColumnFamilies_ValueType_AggregateType | Computed<Table_ColumnFamilies_ValueType_AggregateType>;
+  /** Defines this column's own value as an array of another type. (AI-inferred) */
   arrayType?: Table_ColumnFamilies_ValueType_ArrayType | Computed<Table_ColumnFamilies_ValueType_ArrayType>;
+  /** Defines this column's own value as a boolean. (AI-inferred) */
   boolType?: Table_ColumnFamilies_ValueType_BoolType | Computed<Table_ColumnFamilies_ValueType_BoolType>;
+  /** Defines this column's own value as raw bytes. (AI-inferred) */
   bytesType?: Table_ColumnFamilies_ValueType_BytesType | Computed<Table_ColumnFamilies_ValueType_BytesType>;
+  /** Defines this column's own value as a calendar date. (AI-inferred) */
   dateType?: unknown | Computed<unknown>;
+  /** Defines this column's own value as one of a fixed set of named integer values. (AI-inferred) */
   enumType?: Table_ColumnFamilies_ValueType_EnumType | Computed<Table_ColumnFamilies_ValueType_EnumType>;
+  /** Defines this column's own value as a 32-bit floating-point number. (AI-inferred) */
   float32Type?: unknown | Computed<unknown>;
+  /** Defines this column's own value as a 64-bit floating-point number. (AI-inferred) */
   float64Type?: unknown | Computed<unknown>;
+  /** Defines this column's own value as geospatial data. (AI-inferred) */
   geographyType?: unknown | Computed<unknown>;
+  /** Defines this column's own value as a 32-bit integer. (AI-inferred) */
   int32Type?: Table_ColumnFamilies_ValueType_Int32Type | Computed<Table_ColumnFamilies_ValueType_Int32Type>;
+  /** Defines this column's own value as a 64-bit integer. (AI-inferred) */
   int64Type?: Table_ColumnFamilies_ValueType_Int64Type | Computed<Table_ColumnFamilies_ValueType_Int64Type>;
+  /** Defines this column's own value as a map from keys to values. (AI-inferred) */
   mapType?: Table_ColumnFamilies_ValueType_MapType | Computed<Table_ColumnFamilies_ValueType_MapType>;
+  /** Defines this column's own value as a protocol buffer message. (AI-inferred) */
   protoType?: Table_ColumnFamilies_ValueType_ProtoType | Computed<Table_ColumnFamilies_ValueType_ProtoType>;
+  /** Defines this column's own value as a string. (AI-inferred) */
   stringType?: Table_ColumnFamilies_ValueType_StringType | Computed<Table_ColumnFamilies_ValueType_StringType>;
+  /** Defines this column's own value as a struct with named fields. (AI-inferred) */
   structType?: unknown | Computed<unknown>;
+  /** Defines this column's own value as a timestamp. (AI-inferred) */
   timestampType?: Table_ColumnFamilies_ValueType_TimestampType | Computed<Table_ColumnFamilies_ValueType_TimestampType>;
 }
 
 export interface Table_RowKeySchema_Fields {
+  /** The name of this struct field. (AI-inferred) */
   fieldName?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: Table_RowKeySchema_Fields_Type | Computed<Table_RowKeySchema_Fields_Type>;
 }
 

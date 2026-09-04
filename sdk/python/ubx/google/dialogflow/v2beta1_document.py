@@ -34,29 +34,50 @@ _V2beta1Document_LatestReloadStatusFields = {
 
 @dataclasses.dataclass
 class V2beta1DocumentConfig:
+    # The real, raw content of this document, when provided inline rather than by reference. (AI-inferred)
     content: Any = None
+    # The URI this document's own real content is read from. (AI-inferred)
     content_uri: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether this document is automatically re-imported whenever its own source content changes. (AI-inferred)
     enable_auto_reload: Any = None
+    # The real type(s) of knowledge this document provides, e.g. FAQ or extractive question answering. (AI-inferred)
     knowledge_types: Any = None
+    # The real outcome of this document's own most recent reload attempt. (AI-inferred)
     latest_reload_status: Any = None
+    # Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
     metadata: Any = None
+    # The real MIME type of this document's own content, e.g. text/html or text/csv. (AI-inferred)
     mime_type: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # This document's own real content, provided directly as bytes rather than by reference. (AI-inferred)
     raw_content: Any = None
 
 @dataclasses.dataclass
 class V2beta1DocumentAttrs:
+    # The real, raw content of this document, when provided inline rather than by reference. (AI-inferred)
     content: Any = None
+    # The URI this document's own real content is read from. (AI-inferred)
     content_uri: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether this document is automatically re-imported whenever its own source content changes. (AI-inferred)
     enable_auto_reload: Any = None
+    # The real type(s) of knowledge this document provides, e.g. FAQ or extractive question answering. (AI-inferred)
     knowledge_types: Any = None
+    # The real outcome of this document's own most recent reload attempt. (AI-inferred)
     latest_reload_status: Any = None
+    # Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
     metadata: Any = None
+    # The real MIME type of this document's own content, e.g. text/html or text/csv. (AI-inferred)
     mime_type: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # This document's own real content, provided directly as bytes rather than by reference. (AI-inferred)
     raw_content: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 V2beta1Document = ubx.ResourceBinding(

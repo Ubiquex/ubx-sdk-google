@@ -4,26 +4,40 @@ package apihub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Plugin_ActionsConfig struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// How this plugin action is triggered, e.g. manually or on a schedule. (AI-inferred)
 	TriggerMode any
 }
 
 type Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptions struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
+	// An identifier for this resource. (AI-inferred)
+	Id any
 }
 
 type Plugin_ConfigTemplate_AdditionalConfigTemplate struct {
-	Description        any
-	EnumOptions        any
-	Id                 any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The allowed option(s) for an enum-typed custom attribute. (AI-inferred)
+	EnumOptions any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The allowed option(s) for a multi-select enum-typed custom attribute. (AI-inferred)
 	MultiSelectOptions any
-	Required           any
-	ValidationRegex    any
-	ValueType          any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
+	// A regular expression this custom attribute's own value must match. (AI-inferred)
+	ValidationRegex any
+	// The data type of this custom attribute's own value. (AI-inferred)
+	ValueType any
 }
 
 type Plugin_ConfigTemplate_AuthConfigTemplate_ServiceAccount struct {
@@ -56,10 +70,14 @@ type Plugin_HostingService struct {
 }
 
 type Plugin_Type_EnumValues_Values struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Immutable   any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
+	Immutable any
 }
 
 type Plugin_Type_EnumValues struct {

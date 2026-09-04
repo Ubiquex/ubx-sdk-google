@@ -4,149 +4,223 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfig struct {
+	// How many revision passes the memory bank considers per candidate memory before consolidating it. (AI-inferred)
 	RevisionsPerCandidateCount any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_Words struct {
-	EndOffset   any
+	// The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
+	EndOffset any
+	// The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
 	StartOffset any
-	Word        any
+	// A single transcribed word. (AI-inferred)
+	Word any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription struct {
+	// Which speaker a transcribed segment is attributed to, when speaker diarization is enabled. (AI-inferred)
 	SpeakerLabel any
-	Text         any
-	Words        any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// The individual word(s) making up this transcript segment. (AI-inferred)
+	Words any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResult struct {
-	Id      any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The result of this operation, e.g. whether it succeeded. (AI-inferred)
 	Outcome any
-	Output  any
+	// The output produced by this operation. (AI-inferred)
+	Output any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCode struct {
-	Code     any
-	Id       any
+	// A machine-readable code identifying this outcome or error. (AI-inferred)
+	Code any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The language this content is in or should be processed as, typically a BCP-47 code. (AI-inferred)
 	Language any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	FileUri     any
-	MimeType    any
+	// The URI of a previously uploaded file this Part references. (AI-inferred)
+	FileUri any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgs struct {
-	BoolValue    any
-	JsonPath     any
-	NullValue    any
-	NumberValue  any
-	StringValue  any
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
+	BoolValue any
+	// A JSONPath expression selecting a location within a JSON document. (AI-inferred)
+	JsonPath any
+	// Represents an explicit JSON `null`, populated when this field's own type is null. (AI-inferred)
+	NullValue any
+	// A numeric value, populated when this field's own type is a number. (AI-inferred)
+	NumberValue any
+	// A text value, populated when this field's own type is a string. (AI-inferred)
+	StringValue any
+	// Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
 	WillContinue any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall struct {
-	Args         any
-	Id           any
-	Name         any
-	PartialArgs  any
+	// The argument value(s) passed to this call. (AI-inferred)
+	Args any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The function-call arguments accumulated so far, while the model is still streaming them incrementally. (AI-inferred)
+	PartialArgs any
+	// Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
 	WillContinue any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData struct {
-	Data        any
+	// The raw, embedded bytes of this inline content. (AI-inferred)
+	Data any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	MimeType    any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts struct {
-	FileData   any
+	// A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
+	FileData any
+	// Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
 	InlineData any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse struct {
-	Id         any
-	Name       any
-	Parts      any
-	Response   any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
+	Parts any
+	// The response produced for this request. (AI-inferred)
+	Response any
+	// Configuration for when and how this job is scheduled to run. (AI-inferred)
 	Scheduling any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolution struct {
+	// The severity or intensity level of this setting. (AI-inferred)
 	Level any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadata struct {
-	EndOffset   any
-	Fps         any
+	// The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
+	EndOffset any
+	// The frame rate, in frames per second, video input is sampled at. (AI-inferred)
+	Fps any
+	// The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
 	StartOffset any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts struct {
-	AudioTranscription  any
+	// Enables Gemini to transcribe spoken audio to text as part of its response. (AI-inferred)
+	AudioTranscription any
+	// The output of running a preceding `executable_code` block. (AI-inferred)
 	CodeExecutionResult any
-	ExecutableCode      any
-	FileData            any
-	FunctionCall        any
-	FunctionResponse    any
-	InlineData          any
-	MediaResolution     any
-	Text                any
-	Thought             any
-	ThoughtSignature    any
-	VideoMetadata       any
+	// Code the model generated for the tool-hosted interpreter to run, when code execution is enabled. (AI-inferred)
+	ExecutableCode any
+	// A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
+	FileData any
+	// A request from the model, inside its own response, to invoke a specific function the caller declared -- the caller executes it and returns the result via a matching `function_response`. (AI-inferred)
+	FunctionCall any
+	// The caller-supplied result of a previously requested `function_call`, returned to the model in a following turn. (AI-inferred)
+	FunctionResponse any
+	// Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
+	InlineData any
+	// The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred)
+	MediaResolution any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// A step of the model's own intermediate reasoning, surfaced when extended thinking is enabled. (AI-inferred)
+	Thought any
+	// An opaque signature validating a `thought` block as genuinely produced by the model, so it can be safely replayed in a later turn. (AI-inferred)
+	ThoughtSignature any
+	// Configuration controlling how video input is sampled, e.g. frame rate and clipping. (AI-inferred)
+	VideoMetadata any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content struct {
+	// The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
 	Parts any
-	Role  any
+	// Who this Content is attributed to in the conversation: `user` or `model`. (AI-inferred)
+	Role any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events struct {
+	// The content of this message or resource. (AI-inferred)
 	Content any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource struct {
+	// The event(s) recorded during this run. (AI-inferred)
 	Events any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_Topics struct {
+	// The label identifying this caller-defined memory topic. (AI-inferred)
 	CustomMemoryTopicLabel any
-	ManagedMemoryTopic     any
+	// One of Vertex AI's own predefined memory topics, e.g. `USER_PREFERENCES`. (AI-inferred)
+	ManagedMemoryTopic any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories struct {
-	Fact   any
+	// A single, discrete piece of information recorded as a memory. (AI-inferred)
+	Fact any
+	// The topic(s) this applies to. (AI-inferred)
 	Topics any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples struct {
+	// The source conversation this generated-memories example was derived from. (AI-inferred)
 	ConversationSource any
-	GeneratedMemories  any
+	// The memory/memories this example expects to be generated from `conversation_source`. (AI-inferred)
+	GeneratedMemories any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopic struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Label       any
+	// A human-readable label for this item. (AI-inferred)
+	Label any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopic struct {
+	// Which predefined memory topic this is. (AI-inferred)
 	ManagedTopicEnum any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics struct {
-	CustomMemoryTopic  any
+	// A caller-defined memory topic, identified by its own label, as an alternative to a predefined `managed_memory_topic`. (AI-inferred)
+	CustomMemoryTopic any
+	// One of Vertex AI's own predefined memory topics, e.g. `USER_PREFERENCES`. (AI-inferred)
 	ManagedMemoryTopic any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs struct {
-	ConsolidationConfig            any
+	// Configuration for how the memory bank merges related memories into a single, consolidated one. (AI-inferred)
+	ConsolidationConfig any
+	// If `true`, the memory bank stores structured facts only, without also generating natural-language memory summaries. (AI-inferred)
 	DisableNaturalLanguageMemories any
-	EnableThirdPersonMemories      any
-	GenerateMemoriesExamples       any
-	MemoryTopics                   any
-	ScopeKeys                      any
+	// Whether the memory bank generates memories phrased in the third person, e.g. "the user prefers...", rather than the first person. (AI-inferred)
+	EnableThirdPersonMemories any
+	// Example conversation-to-memory pairs used to steer how the memory bank generates memories. (AI-inferred)
+	GenerateMemoriesExamples any
+	// The topic(s) the memory bank organizes generated memories under. (AI-inferred)
+	MemoryTopics any
+	// The key(s) memories are scoped/partitioned by, e.g. per-user or per-session. (AI-inferred)
+	ScopeKeys any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRule struct {
@@ -245,7 +319,9 @@ type ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig struct {
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_Env struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -264,8 +340,11 @@ type ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe struct {
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain        any
+	// The domain this configuration or resource applies to. (AI-inferred)
+	Domain any
+	// The VPC network this resource is deployed into. (AI-inferred)
 	TargetNetwork any
+	// The Google Cloud project this resource targets. (AI-inferred)
 	TargetProject any
 }
 
@@ -277,12 +356,16 @@ type ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig struct {
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRef struct {
-	Secret  any
+	// A reference to the Secret Manager secret this uses. (AI-inferred)
+	Secret any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_SecretEnv struct {
-	Name      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to a Secret Manager secret and version. (AI-inferred)
 	SecretRef any
 }
 

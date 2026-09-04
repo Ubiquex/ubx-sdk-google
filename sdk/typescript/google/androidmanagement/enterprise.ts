@@ -31,26 +31,38 @@ export interface Enterprise_Logo {
 }
 
 export interface Enterprise_SigninDetails_GoogleAuthenticationOptions {
+  /** Whether Google authentication is real, `OPTIONAL` or `REQUIRED` at device sign-in for this enterprise. (AI-inferred) */
   authenticationRequirement?: string | Computed<string>;
 }
 
 export interface Enterprise_SigninDetails {
+  /** Whether personal use of a fully-managed device is real, allowed, disallowed, or disallowed with no user profile at all. (AI-inferred) */
   allowPersonalUsage?: string | Computed<string>;
+  /** Whether this sign-in detail is real, the enterprise's own current default sign-in configuration. (AI-inferred) */
   defaultStatus?: string | Computed<string>;
+  /** Real Google authentication requirements applied at device sign-in for this enterprise. (AI-inferred) */
   googleAuthenticationOptions?: Enterprise_SigninDetails_GoogleAuthenticationOptions | Computed<Enterprise_SigninDetails_GoogleAuthenticationOptions>;
+  /** The real, generated QR code content for this sign-in detail, used to enroll a device via this specific sign-in configuration. (AI-inferred) */
   qrCode?: string | Computed<string>;
+  /** The real enrollment token associated with this sign-in detail. (AI-inferred) */
   signinEnrollmentToken?: string | Computed<string>;
+  /** The real URL a device is directed to for user authentication under this sign-in detail. (AI-inferred) */
   signinUrl?: string | Computed<string>;
+  /** A real, client-supplied tag distinguishing this sign-in detail's own enrollment token from others on the same enterprise. (AI-inferred) */
   tokenTag?: string | Computed<string>;
 }
 
 export interface Enterprise_TermsAndConditions_Content {
+  /** The real, default-language text of this terms-and-conditions content, shown when no `localized_messages` entry matches the user's own locale. (AI-inferred) */
   defaultMessage?: string | Computed<string>;
+  /** Real, per-locale translations of this terms-and-conditions content. (AI-inferred) */
   localizedMessages?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Enterprise_TermsAndConditions {
+  /** The real, localized text content of this enterprise's own terms and conditions. (AI-inferred) */
   content?: Enterprise_TermsAndConditions_Content | Computed<Enterprise_TermsAndConditions_Content>;
+  /** A real, short header/title shown above this terms-and-conditions content. (AI-inferred) */
   header?: Enterprise_TermsAndConditions_Content | Computed<Enterprise_TermsAndConditions_Content>;
 }
 

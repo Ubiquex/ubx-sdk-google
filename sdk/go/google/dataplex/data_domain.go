@@ -4,8 +4,11 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataDomain_Contacts_Identities struct {
-	ContactId   any
+	// An identifier for a contact associated with this resource. (AI-inferred)
+	ContactId any
+	// The name of a contact associated with this resource. (AI-inferred)
 	ContactName any
+	// The role a contact plays with respect to this resource, e.g. owner or steward. (AI-inferred)
 	ContactRole any
 }
 

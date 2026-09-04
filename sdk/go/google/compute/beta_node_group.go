@@ -92,6 +92,7 @@ type BetaNodeGroupConfig struct {
 	AutoscalingPolicy any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// An opaque, server-generated value that changes whenever this resource is updated, used to detect concurrent modification on write. (AI-inferred)
 	Fingerprint any
 	// An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
 	LocationHint any
@@ -115,6 +116,7 @@ type BetaNodeGroupAttrs struct {
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
+	// An opaque, server-generated value that changes whenever this resource is updated, used to detect concurrent modification on write. (AI-inferred)
 	Fingerprint any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
@@ -137,7 +139,8 @@ type BetaNodeGroupAttrs struct {
 	// The share setting for reservations and sole tenancy node groups.
 	ShareSettings any
 	// Output only. [Output Only] The total number of nodes in the node group.
-	Size   any
+	Size any
+	// The current operational status of this sole-tenant node group, e.g. whether it is still being created. (AI-inferred)
 	Status any
 	// Output only. [Output Only] The name of the zone where the node group resides, such as us-central1-a.
 	Zone any

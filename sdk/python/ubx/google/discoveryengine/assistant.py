@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Assistant_CustomerPolicy_BannedPhrases:
+    # Whether accented characters are treated as equivalent to their unaccented form when matching. (AI-inferred)
     ignore_diacritics: Any = None
+    # How this rule's own pattern is matched against the input. (AI-inferred)
     match_type: Any = None
+    # A word or phrase this rule matches. (AI-inferred)
     phrase: Any = None
 
 @dataclasses.dataclass
@@ -30,11 +33,14 @@ class Assistant_CustomerPolicy:
 
 @dataclasses.dataclass
 class Assistant_EnabledTools_ToolInfo:
+    # A human-readable name for this tool. (AI-inferred)
     tool_display_name: Any = None
+    # The name of the tool invoked. (AI-inferred)
     tool_name: Any = None
 
 @dataclasses.dataclass
 class Assistant_EnabledTools:
+    # Detail about the tool this action invoked. (AI-inferred)
     tool_info: Any = None
 
 @dataclasses.dataclass

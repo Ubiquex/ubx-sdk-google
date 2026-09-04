@@ -22,8 +22,10 @@ type PrivateCloud_Hcx struct {
 }
 
 type PrivateCloud_ManagementCluster_NodeTypeConfigs struct {
+	// The number of CPU core(s) enabled per node, when overriding the node type's own default. (AI-inferred)
 	CustomCoreCount any
-	NodeCount       any
+	// The number of node(s) provisioned. (AI-inferred)
+	NodeCount any
 }
 
 type PrivateCloud_ManagementCluster_StretchedClusterConfig struct {

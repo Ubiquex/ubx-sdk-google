@@ -4,13 +4,18 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Document_AclInfo_Readers_Principals struct {
+	// An identifier for this entity in an external system. (AI-inferred)
 	ExternalEntityId any
-	GroupId          any
-	UserId           any
+	// An identifier for the group this belongs to. (AI-inferred)
+	GroupId any
+	// An identifier for the end user this applies to. (AI-inferred)
+	UserId any
 }
 
 type Document_AclInfo_Readers struct {
-	IdpWide    any
+	// Whether this configuration applies across the whole identity provider, rather than a specific scope. (AI-inferred)
+	IdpWide any
+	// The identity/identities this permission applies to. (AI-inferred)
 	Principals any
 }
 
@@ -29,8 +34,11 @@ type Document_Content struct {
 }
 
 type Document_IndexStatus_ErrorSamples struct {
-	Code    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 

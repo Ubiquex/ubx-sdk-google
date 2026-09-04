@@ -9,7 +9,9 @@ export interface Connector_ClientCache {
 }
 
 export interface Connector_Source_Files {
+  /** The literal content of this field. (AI-inferred) */
   content?: string | Computed<string>;
+  /** A file or resource path. (AI-inferred) */
   path?: string | Computed<string>;
 }
 

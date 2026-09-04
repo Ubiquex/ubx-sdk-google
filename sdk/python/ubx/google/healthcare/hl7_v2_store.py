@@ -8,55 +8,81 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Hl7V2Store_NotificationConfigs:
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
     pubsub_topic: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_Segment:
+    # The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred)
     max_occurs: Any = None
+    # The minimum number of times this HL7v2 field/segment must occur. (AI-inferred)
     min_occurs: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members:
+    # A reference to the consent group this applies to. (AI-inferred)
     group: Any = None
+    # A single HL7v2 message segment. (AI-inferred)
     segment: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs:
+    # The specific option selected from a set of alternatives. (AI-inferred)
     choice: Any = None
+    # The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred)
     max_occurs: Any = None
+    # The principal(s) this applies to. (AI-inferred)
     members: Any = None
+    # The minimum number of times this HL7v2 field/segment must occur. (AI-inferred)
     min_occurs: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Schemas_Version:
+    # A reference to a field within the HL7v2 message header (MSH) segment. (AI-inferred)
     msh_field: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Schemas:
+    # Schema configuration for parsing HL7v2 message types. (AI-inferred)
     message_schema_configs: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Types_Type_Fields:
+    # The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred)
     max_occurs: Any = None
+    # The minimum number of times this HL7v2 field/segment must occur. (AI-inferred)
     min_occurs: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the destination table this applies to. (AI-inferred)
     table: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Types_Type:
+    # The field(s) this applies to. (AI-inferred)
     fields: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The base data type this schema element represents. (AI-inferred)
     primitive: Any = None
 
 @dataclasses.dataclass
 class Hl7V2Store_ParserConfig_Schema_Types:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass

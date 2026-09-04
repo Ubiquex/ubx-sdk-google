@@ -2,82 +2,120 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigs {
+  /** The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred) */
   exemptedMembers?: string[] | Computed<string[]>;
+  /** Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred) */
   logType?: string | Computed<string>;
 }
 
 export interface RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs {
+  /** Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred) */
   auditLogConfigs?: RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigs[] | Computed<RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigs[]>;
+  /** The real Google Cloud service this document's own embedded IAM audit log configuration applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface RuleSet_Rules_Actions_AccessControl_Policy_Bindings_Condition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The real Common Expression Language (CEL) expression text of this document IAM policy binding's own condition. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The real, human-readable source location of this document IAM policy binding's own condition expression, used for error reporting. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface RuleSet_Rules_Actions_AccessControl_Policy_Bindings {
+  /** The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred) */
   condition?: RuleSet_Rules_Actions_AccessControl_Policy_Bindings_Condition | Computed<RuleSet_Rules_Actions_AccessControl_Policy_Bindings_Condition>;
+  /** The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred) */
   members?: string[] | Computed<string[]>;
+  /** The real IAM role this document-level policy binding grants. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface RuleSet_Rules_Actions_AccessControl_Policy {
+  /** Real, proposed IAM audit logging configuration this access-control action applies alongside its own policy bindings. (AI-inferred) */
   auditConfigs?: RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs[] | Computed<RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs[]>;
+  /** The list of `google.iam.v1.Policy` bindings, each granting a `role` to a set of `members`, optionally scoped by a `condition`. (AI-inferred) */
   bindings?: RuleSet_Rules_Actions_AccessControl_Policy_Bindings[] | Computed<RuleSet_Rules_Actions_AccessControl_Policy_Bindings[]>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** A real identifier for the specific version of this document schema, processor, or content that produced the element. (AI-inferred) */
   version?: number | Computed<number>;
 }
 
 export interface RuleSet_Rules_Actions_AccessControl {
+  /** The real operation (`ADD_POLICY_BINDING`, `REMOVE_POLICY_BINDING`, `REPLACE_POLICY_BINDING`) this access-control action performs. (AI-inferred) */
   operationType?: string | Computed<string>;
+  /** The real IAM policy (or policy fragment) this access-control action applies to the matching document. (AI-inferred) */
   policy?: RuleSet_Rules_Actions_AccessControl_Policy | Computed<RuleSet_Rules_Actions_AccessControl_Policy>;
 }
 
 export interface RuleSet_Rules_Actions_AddToFolder {
+  /** The real, target folder ID(s) an `add_to_folder`/`remove_from_folder_action` rule action operates on. (AI-inferred) */
   folders?: string[] | Computed<string[]>;
 }
 
 export interface RuleSet_Rules_Actions_DataUpdate {
+  /** The real, named property values a `data_update` rule action writes onto the matching document. (AI-inferred) */
   entries?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface RuleSet_Rules_Actions_DataValidation {
+  /** The real, named property conditions a `data_validation` rule action checks the matching document against. (AI-inferred) */
   conditions?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface RuleSet_Rules_Actions_DeleteDocumentAction {
+  /** Whether a `delete_document_action` real, permanently deletes the matching document rather than moving it to a recoverable trash state. (AI-inferred) */
   enableHardDelete?: boolean | Computed<boolean>;
 }
 
 export interface RuleSet_Rules_Actions_PublishToPubSub {
+  /** The real message payload(s) a `publish_to_pub_sub` rule action publishes. (AI-inferred) */
   messages?: string[] | Computed<string[]>;
+  /** The real Pub/Sub topic a `publish_to_pub_sub` rule action publishes its own messages to. (AI-inferred) */
   topicId?: string | Computed<string>;
 }
 
 export interface RuleSet_Rules_Actions_RemoveFromFolderAction {
+  /** The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** The real, target folder ID a `remove_from_folder_action` removes the matching document from. (AI-inferred) */
   folder?: string | Computed<string>;
 }
 
 export interface RuleSet_Rules_Actions {
+  /** A real rule action that adds, removes, or replaces an IAM policy binding on the matching document. (AI-inferred) */
   accessControl?: RuleSet_Rules_Actions_AccessControl | Computed<RuleSet_Rules_Actions_AccessControl>;
+  /** A real, stable identifier for this specific action within its own parent rule. (AI-inferred) */
   actionId?: string | Computed<string>;
+  /** A real rule action that adds the matching document to one or more `folders`. (AI-inferred) */
   addToFolder?: RuleSet_Rules_Actions_AddToFolder | Computed<RuleSet_Rules_Actions_AddToFolder>;
+  /** A real rule action that writes new property `entries` onto the matching document. (AI-inferred) */
   dataUpdate?: RuleSet_Rules_Actions_DataUpdate | Computed<RuleSet_Rules_Actions_DataUpdate>;
+  /** A real rule action that checks the matching document's own properties against a set of `conditions`, failing the rule if they don't hold. (AI-inferred) */
   dataValidation?: RuleSet_Rules_Actions_DataValidation | Computed<RuleSet_Rules_Actions_DataValidation>;
+  /** A real rule action that deletes the matching document, optionally with `enable_hard_delete` for permanent deletion. (AI-inferred) */
   deleteDocumentAction?: RuleSet_Rules_Actions_DeleteDocumentAction | Computed<RuleSet_Rules_Actions_DeleteDocumentAction>;
+  /** A real rule action that publishes one or more `messages` to a Pub/Sub `topic_id` when the rule matches. (AI-inferred) */
   publishToPubSub?: RuleSet_Rules_Actions_PublishToPubSub | Computed<RuleSet_Rules_Actions_PublishToPubSub>;
+  /** A real rule action that removes the matching document from a specific `folder`. (AI-inferred) */
   removeFromFolderAction?: RuleSet_Rules_Actions_RemoveFromFolderAction | Computed<RuleSet_Rules_Actions_RemoveFromFolderAction>;
 }
 
 export interface RuleSet_Rules {
+  /** The real, ordered action(s) a matching `google_contentwarehouse_rule_set` rule runs when its own `condition` and `trigger_type` match. (AI-inferred) */
   actions?: RuleSet_Rules_Actions[] | Computed<RuleSet_Rules_Actions[]>;
+  /** The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A real, stable identifier for this rule within its own parent rule set. (AI-inferred) */
   ruleId?: string | Computed<string>;
+  /** The real document lifecycle event (`ON_CREATE`, `ON_UPDATE`, `ON_CREATE_LINK`, `ON_DELETE_LINK`) that evaluates this rule. (AI-inferred) */
   triggerType?: string | Computed<string>;
 }
 

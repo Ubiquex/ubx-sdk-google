@@ -9,7 +9,9 @@ export interface ManagementServer_ManagementUri {
 }
 
 export interface ManagementServer_Networks {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** Whether this connection uses VPC peering or another connectivity mode. (AI-inferred) */
   peeringMode?: string | Computed<string>;
 }
 

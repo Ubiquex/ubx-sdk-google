@@ -8,54 +8,76 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_ComputeResources_Config_NewFlexStartInstances:
+    # The machine type this instance runs as. (AI-inferred)
     machine_type: Any = None
+    # The maximum amount of time this may run for. (AI-inferred)
     max_duration: Any = None
+    # The Compute Engine zone this applies to. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
 class Cluster_ComputeResources_Config_NewOnDemandInstances:
+    # The machine type this instance runs as. (AI-inferred)
     machine_type: Any = None
+    # The Compute Engine zone this applies to. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
 class Cluster_ComputeResources_Config_NewReservedInstances:
+    # A reference to the capacity reservation this applies to. (AI-inferred)
     reservation: Any = None
 
 @dataclasses.dataclass
 class Cluster_ComputeResources_Config_NewSpotInstances:
+    # The machine type this instance runs as. (AI-inferred)
     machine_type: Any = None
+    # What happens to this instance when its own reservation or duration ends. (AI-inferred)
     termination_action: Any = None
+    # The Compute Engine zone this applies to. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
 class Cluster_ComputeResources_Config:
+    # Provisions new instance(s) using Compute Engine Flex-start. (AI-inferred)
     new_flex_start_instances: Any = None
+    # Provisions new instance(s) using standard on-demand pricing. (AI-inferred)
     new_on_demand_instances: Any = None
+    # Provisions new instance(s) using an existing capacity reservation. (AI-inferred)
     new_reserved_instances: Any = None
+    # Provisions new instance(s) using Spot pricing. (AI-inferred)
     new_spot_instances: Any = None
 
 @dataclasses.dataclass
 class Cluster_ComputeResources:
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
 
 @dataclasses.dataclass
 class Cluster_NetworkResources_Config_ExistingNetwork:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class Cluster_NetworkResources_Config_NewNetwork:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
 
 @dataclasses.dataclass
 class Cluster_NetworkResources_Config:
+    # References an already-existing VPC network, rather than creating a new one. (AI-inferred)
     existing_network: Any = None
+    # Creates a new VPC network as part of this cluster. (AI-inferred)
     new_network: Any = None
 
 @dataclasses.dataclass
 class Cluster_NetworkResources:
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # A reference to the VPC network resource this cluster's compute, storage, and networking are provisioned in. (AI-inferred)
     network: Any = None
 
 @dataclasses.dataclass
@@ -67,11 +89,14 @@ class Cluster_Orchestrator_Slurm_LoginNodes_BootDisk:
 
 @dataclasses.dataclass
 class Cluster_Orchestrator_Slurm_LoginNodes_Instances:
+    # A reference to the underlying instance. (AI-inferred)
     instance: Any = None
 
 @dataclasses.dataclass
 class Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigs:
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The local path this file system is mounted at. (AI-inferred)
     local_mount: Any = None
 
 @dataclasses.dataclass
@@ -99,22 +124,33 @@ class Cluster_Orchestrator_Slurm_LoginNodes:
 
 @dataclasses.dataclass
 class Cluster_Orchestrator_Slurm_NodeSets_ComputeInstance:
+    # Configuration for this instance's own boot disk. (AI-inferred)
     boot_disk: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The script run when this instance starts up. (AI-inferred)
     startup_script: Any = None
 
 @dataclasses.dataclass
 class Cluster_Orchestrator_Slurm_NodeSets:
+    # An identifier for this compute resource. (AI-inferred)
     compute_id: Any = None
+    # Configuration for a Compute Engine VM instance within this cluster. (AI-inferred)
     compute_instance: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The maximum number of dynamically provisioned node(s) this can scale up to. (AI-inferred)
     max_dynamic_node_count: Any = None
+    # The fixed number of node(s) provisioned, when not dynamically scaled. (AI-inferred)
     static_node_count: Any = None
+    # Storage resource(s) provisioned as part of this cluster. (AI-inferred)
     storage_configs: Any = None
 
 @dataclasses.dataclass
 class Cluster_Orchestrator_Slurm_Partitions:
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The identifier(s) of the node set(s) this applies to. (AI-inferred)
     node_set_ids: Any = None
 
 @dataclasses.dataclass
@@ -139,67 +175,99 @@ class Cluster_Orchestrator:
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Bucket:
+    # A reference to the Cloud Storage bucket this applies to. (AI-inferred)
     bucket: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_ExistingFilestore:
+    # Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred)
     filestore: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_ExistingLustre:
+    # Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred)
     lustre: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_NewBucket_Autoclass:
+    # Whether this feature is turned on. (AI-inferred)
     enabled: Any = None
+    # The storage class an object transitions to at the end of its own lifecycle. (AI-inferred)
     terminal_storage_class: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_NewBucket_HierarchicalNamespace:
+    # Whether this feature is turned on. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_NewBucket:
+    # Automatically selects the most cost-effective storage class for each object, based on its own access pattern. (AI-inferred)
     autoclass: Any = None
+    # A reference to the Cloud Storage bucket this applies to. (AI-inferred)
     bucket: Any = None
+    # Enables a folder-like hierarchical namespace for this bucket, rather than a flat one. (AI-inferred)
     hierarchical_namespace: Any = None
+    # The Cloud Storage class this object or bucket uses. (AI-inferred)
     storage_class: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_NewFilestore_FileShares:
+    # The provisioned capacity, in gibibytes. (AI-inferred)
     capacity_gb: Any = None
+    # A single exported file share within this Filestore instance. (AI-inferred)
     file_share: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_NewFilestore:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The exported file share(s) within this Filestore instance. (AI-inferred)
     file_shares: Any = None
+    # Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred)
     filestore: Any = None
+    # The network protocol used. (AI-inferred)
     protocol: Any = None
+    # The service tier this resource is provisioned at. (AI-inferred)
     tier: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config_NewLustre:
+    # The provisioned capacity, in gibibytes. (AI-inferred)
     capacity_gb: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The name of this file system. (AI-inferred)
     filesystem: Any = None
+    # Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred)
     lustre: Any = None
+    # The throughput provisioned per unit of storage capacity. (AI-inferred)
     per_unit_storage_throughput: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources_Config:
+    # References an already-existing Cloud Storage bucket, rather than creating a new one. (AI-inferred)
     existing_bucket: Any = None
+    # References an already-existing Filestore instance, rather than creating a new one. (AI-inferred)
     existing_filestore: Any = None
+    # References an already-existing Managed Lustre instance, rather than creating a new one. (AI-inferred)
     existing_lustre: Any = None
+    # Creates a new Cloud Storage bucket as part of this cluster. (AI-inferred)
     new_bucket: Any = None
+    # Creates a new Filestore instance as part of this cluster. (AI-inferred)
     new_filestore: Any = None
+    # Creates a new Managed Lustre instance as part of this cluster. (AI-inferred)
     new_lustre: Any = None
 
 @dataclasses.dataclass
 class Cluster_StorageResources:
+    # A reference to the Cloud Storage bucket this applies to. (AI-inferred)
     bucket: Any = None
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred)
     filestore: Any = None
+    # Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred)
     lustre: Any = None
 
 _Cluster_ComputeResources_Config_NewFlexStartInstancesFields = {

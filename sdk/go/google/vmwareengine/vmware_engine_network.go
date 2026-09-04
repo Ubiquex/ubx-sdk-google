@@ -4,8 +4,10 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VmwareEngineNetwork_VpcNetworks struct {
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
 	Network any
-	Type    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type VmwareEngineNetworkConfig struct {

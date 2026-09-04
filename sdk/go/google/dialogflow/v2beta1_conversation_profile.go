@@ -428,43 +428,77 @@ var V2beta1ConversationProfile_TtsConfigFields = ubx.FieldMap{
 }
 
 type V2beta1ConversationProfileConfig struct {
-	AutomatedAgentConfig                   any
-	DisplayName                            any
-	HumanAgentAssistantConfig              any
-	HumanAgentHandoffConfig                any
-	LanguageCode                           any
-	LoggingConfig                          any
-	Name                                   any
-	NewMessageEventNotificationConfig      any
+	// Configures the automated (Dialogflow) agent connected to this conversation. (AI-inferred)
+	AutomatedAgentConfig any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configures real-time suggestions offered to a human agent handling this conversation. (AI-inferred)
+	HumanAgentAssistantConfig any
+	// Configures the external live-agent service this conversation hands off to. (AI-inferred)
+	HumanAgentHandoffConfig any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// Configures whether this conversation's own interaction logs are enabled. (AI-inferred)
+	LoggingConfig any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configures the Pub/Sub notification sent whenever a new message occurs in this conversation. (AI-inferred)
+	NewMessageEventNotificationConfig any
+	// Configures the Pub/Sub notification sent whenever a new speech recognition result occurs in this conversation. (AI-inferred)
 	NewRecognitionResultNotificationConfig any
-	NotificationConfig                     any
-	SecuritySettings                       any
-	SipConfig                              any
-	SttConfig                              any
-	TimeZone                               any
-	TtsConfig                              any
-	UseBidiStreaming                       any
+	// Configures the Pub/Sub notification sent on conversation lifecycle events. (AI-inferred)
+	NotificationConfig any
+	// A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
+	SecuritySettings any
+	// Configures this conversation profile's own SIP (telephony) connection settings. (AI-inferred)
+	SipConfig any
+	// Configures this conversation profile's own speech-to-text recognition settings. (AI-inferred)
+	SttConfig any
+	// The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
+	TimeZone any
+	// Configures this conversation profile's own text-to-speech synthesis settings. (AI-inferred)
+	TtsConfig any
+	// Whether this conversation profile uses bidirectional streaming for real-time audio. (AI-inferred)
+	UseBidiStreaming any
 }
 
 type V2beta1ConversationProfileAttrs struct {
-	AutomatedAgentConfig                   any
-	CreateTime                             any
-	DisplayName                            any
-	HumanAgentAssistantConfig              any
-	HumanAgentHandoffConfig                any
-	LanguageCode                           any
-	LoggingConfig                          any
-	Name                                   any
-	NewMessageEventNotificationConfig      any
+	// Configures the automated (Dialogflow) agent connected to this conversation. (AI-inferred)
+	AutomatedAgentConfig any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configures real-time suggestions offered to a human agent handling this conversation. (AI-inferred)
+	HumanAgentAssistantConfig any
+	// Configures the external live-agent service this conversation hands off to. (AI-inferred)
+	HumanAgentHandoffConfig any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// Configures whether this conversation's own interaction logs are enabled. (AI-inferred)
+	LoggingConfig any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configures the Pub/Sub notification sent whenever a new message occurs in this conversation. (AI-inferred)
+	NewMessageEventNotificationConfig any
+	// Configures the Pub/Sub notification sent whenever a new speech recognition result occurs in this conversation. (AI-inferred)
 	NewRecognitionResultNotificationConfig any
-	NotificationConfig                     any
-	SecuritySettings                       any
-	SipConfig                              any
-	SttConfig                              any
-	TimeZone                               any
-	TtsConfig                              any
-	UpdateTime                             any
-	UseBidiStreaming                       any
+	// Configures the Pub/Sub notification sent on conversation lifecycle events. (AI-inferred)
+	NotificationConfig any
+	// A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
+	SecuritySettings any
+	// Configures this conversation profile's own SIP (telephony) connection settings. (AI-inferred)
+	SipConfig any
+	// Configures this conversation profile's own speech-to-text recognition settings. (AI-inferred)
+	SttConfig any
+	// The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
+	TimeZone any
+	// Configures this conversation profile's own text-to-speech synthesis settings. (AI-inferred)
+	TtsConfig any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
+	// Whether this conversation profile uses bidirectional streaming for real-time audio. (AI-inferred)
+	UseBidiStreaming any
 }
 
 var V2beta1ConversationProfile = ubx.ResourceBinding{

@@ -4,80 +4,127 @@ package ces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Version_Snapshot_Agents_AfterAgentCallbacks struct {
-	Description               any
-	Disabled                  any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Whether the agent may call this tool on its own initiative, rather than only in direct response to an explicit user request. (AI-inferred)
 	ProactiveExecutionEnabled any
-	PythonCode                any
+	// Custom Python logic run inline as part of this tool or condition. (AI-inferred)
+	PythonCode any
 }
 
 type Version_Snapshot_Agents_ModelSettings struct {
-	Model       any
+	// The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
+	Model any
+	// Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred)
 	Temperature any
 }
 
 type Version_Snapshot_Agents_RemoteDialogflowAgent struct {
-	Agent                               any
-	EnvironmentId                       any
-	FlowId                              any
-	InputVariableMapping                any
-	LanguageCodeVariable                any
-	OutputVariableMapping               any
+	// A reference to the agent this applies to. (AI-inferred)
+	Agent any
+	// The Dialogflow CX environment this remote agent runs in. (AI-inferred)
+	EnvironmentId any
+	// The Dialogflow CX flow this remote agent starts in. (AI-inferred)
+	FlowId any
+	// Maps this app's own variable(s) into the remote Dialogflow agent's own session parameters. (AI-inferred)
+	InputVariableMapping any
+	// The app variable supplying the language code passed to the remote Dialogflow agent. (AI-inferred)
+	LanguageCodeVariable any
+	// Maps the remote Dialogflow agent's own session parameters back into this app's own variable(s). (AI-inferred)
+	OutputVariableMapping any
+	// Whether the remote Dialogflow agent's own barge-in/interruption settings are honored, rather than this app's own defaults. (AI-inferred)
 	RespectResponseInterruptionSettings any
 }
 
 type Version_Snapshot_Agents_Toolsets struct {
+	// The identifier(s) of the tool(s) this applies to. (AI-inferred)
 	ToolIds any
+	// A reference to the toolset this belongs to. (AI-inferred)
 	Toolset any
 }
 
 type Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionCondition struct {
+	// The expression text. (AI-inferred)
 	Expression any
 }
 
 type Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeCondition struct {
+	// Custom Python logic run inline as part of this tool or condition. (AI-inferred)
 	PythonCode any
 }
 
 type Version_Snapshot_Agents_TransferRules_DeterministicTransfer struct {
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
 	ExpressionCondition any
+	// A Python expression that must evaluate truthy for this to apply. (AI-inferred)
 	PythonCodeCondition any
 }
 
 type Version_Snapshot_Agents_TransferRules_DisablePlannerTransfer struct {
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
 	ExpressionCondition any
 }
 
 type Version_Snapshot_Agents_TransferRules struct {
-	ChildAgent             any
-	DeterministicTransfer  any
-	Direction              any
+	// A reference to a sub-agent this agent may transfer the conversation to. (AI-inferred)
+	ChildAgent any
+	// Whether this agent transfer happens automatically, without the model deciding whether to invoke it. (AI-inferred)
+	DeterministicTransfer any
+	// Which direction this applies in. (AI-inferred)
+	Direction any
+	// Whether the model is prevented from transferring the conversation to another agent on its own initiative. (AI-inferred)
 	DisablePlannerTransfer any
 }
 
 type Version_Snapshot_Agents struct {
-	AfterAgentCallbacks   any
-	AfterModelCallbacks   any
-	AfterToolCallbacks    any
-	BeforeAgentCallbacks  any
-	BeforeModelCallbacks  any
-	BeforeToolCallbacks   any
-	ChildAgents           any
-	CreateTime            any
-	Description           any
-	DisplayName           any
-	Etag                  any
-	GeneratedSummary      any
-	Guardrails            any
-	Instruction           any
-	LlmAgent              any
-	ModelSettings         any
-	Name                  any
+	// Custom code run after this agent finishes handling a turn. (AI-inferred)
+	AfterAgentCallbacks any
+	// Custom code run after the underlying model produces a response, before it's returned. (AI-inferred)
+	AfterModelCallbacks any
+	// Custom code run after a tool call completes, before its own result is used. (AI-inferred)
+	AfterToolCallbacks any
+	// Custom code run before this agent starts handling a turn. (AI-inferred)
+	BeforeAgentCallbacks any
+	// Custom code run before the underlying model is called, letting the request be inspected or modified. (AI-inferred)
+	BeforeModelCallbacks any
+	// Custom code run before a tool is called, letting the call be inspected, modified, or skipped. (AI-inferred)
+	BeforeToolCallbacks any
+	// The sub-agent(s) this agent may delegate parts of a conversation to. (AI-inferred)
+	ChildAgents any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// The generated answer text, summarized from retrieved source content. (AI-inferred)
+	GeneratedSummary any
+	// The guardrail(s) applied to this agent. (AI-inferred)
+	Guardrails any
+	// An instruction given to the model or agent. (AI-inferred)
+	Instruction any
+	// Configures this as an LLM-driven agent, with its own model, prompt, and tools. (AI-inferred)
+	LlmAgent any
+	// Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
+	ModelSettings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configures this agent to delegate the conversation to a separate, existing Dialogflow CX agent. (AI-inferred)
 	RemoteDialogflowAgent any
-	Tools                 any
-	Toolsets              any
-	TransferRules         any
-	UpdateTime            any
-	ValidationErrors      any
+	// The tool(s) available to this agent. (AI-inferred)
+	Tools any
+	// The toolset(s) available to this agent. (AI-inferred)
+	Toolsets any
+	// The rule(s) governing when this agent transfers the conversation to another agent. (AI-inferred)
+	TransferRules any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
+	// Output only. Configuration problem(s) found when this resource was last validated. (AI-inferred)
+	ValidationErrors any
 }
 
 type Version_Snapshot_App_AudioProcessingConfig_AmbientSoundConfig struct {
@@ -99,12 +146,18 @@ type Version_Snapshot_App_AudioProcessingConfig_BargeInConfig struct {
 }
 
 type Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigs struct {
+	// The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred)
 	ConsentAudioGcsUri any
-	Instruction        any
-	Model              any
-	SpeakingRate       any
-	Voice              any
-	VoiceSampleGcsUri  any
+	// An instruction given to the model or agent. (AI-inferred)
+	Instruction any
+	// The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
+	Model any
+	// The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred)
+	SpeakingRate any
+	// Configuration for which synthesized voice this agent uses. (AI-inferred)
+	Voice any
+	// The Cloud Storage URI of an audio sample used to clone a custom voice. (AI-inferred)
+	VoiceSampleGcsUri any
 }
 
 type Version_Snapshot_App_AudioProcessingConfig struct {
@@ -128,7 +181,9 @@ type Version_Snapshot_App_ClientCertificateSettings struct {
 }
 
 type Version_Snapshot_App_DataStoreSettings_Engines struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
@@ -346,31 +401,53 @@ type Version_Snapshot_App_LoggingSettings struct {
 }
 
 type Version_Snapshot_App_PredefinedVariableDeclarations_Schema struct {
+	// Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
 	AdditionalProperties any
-	AnyOf                any
-	Default              any
-	Defs                 any
-	Description          any
-	Enum                 any
-	Items                any
-	MaxItems             any
-	Maximum              any
-	MinItems             any
-	Minimum              any
-	Nullable             any
-	PrefixItems          any
-	Properties           any
-	Ref                  any
-	Required             any
-	Title                any
-	Type                 any
-	UniqueItems          any
+	// A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
+	AnyOf any
+	// The value used when this field is left unset. (AI-inferred)
+	Default any
+	// Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
+	Defs any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
+	Enum any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
+	// The most elements an `array`-typed value may have. (AI-inferred)
+	MaxItems any
+	// The largest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Maximum any
+	// The fewest elements an `array`-typed value may have. (AI-inferred)
+	MinItems any
+	// The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Minimum any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred)
+	PrefixItems any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// Whether every element of an array-typed value must be distinct. (AI-inferred)
+	UniqueItems any
 }
 
 type Version_Snapshot_App_PredefinedVariableDeclarations struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
-	Schema      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A schema describing this value's own expected structure. (AI-inferred)
+	Schema any
 }
 
 type Version_Snapshot_App_TimeZoneSettings struct {
@@ -443,519 +520,816 @@ type Version_Snapshot_App struct {
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_AgentTransfer struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
+	// The agent this transfer moves the conversation to. (AI-inferred)
 	TargetAgent any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_Blob struct {
-	Data     any
+	// The literal data payload. (AI-inferred)
+	Data any
+	// The IANA MIME type of this content. (AI-inferred)
 	MimeType any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId  any
+	// An identifier for this tool, unique within its own containing toolset. (AI-inferred)
+	ToolId any
+	// A reference to the toolset this belongs to. (AI-inferred)
 	Toolset any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_ToolCall struct {
-	Args        any
+	// The argument(s) passed to this call. (AI-inferred)
+	Args any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Tool        any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// A reference to a single tool. (AI-inferred)
+	Tool any
+	// A reference to a specific tool within a toolset. (AI-inferred)
 	ToolsetTool any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_ToolResponse struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Response    any
-	Tool        any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The response produced for this request. (AI-inferred)
+	Response any
+	// A reference to a single tool. (AI-inferred)
+	Tool any
+	// A reference to a specific tool within a toolset. (AI-inferred)
 	ToolsetTool any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks struct {
-	AgentTransfer    any
-	Blob             any
+	// Transfers the conversation to another agent. (AI-inferred)
+	AgentTransfer any
+	// Raw binary content. (AI-inferred)
+	Blob any
+	// The default value(s) for this app's own declared variables. (AI-inferred)
 	DefaultVariables any
-	Image            any
-	Payload          any
-	Text             any
-	ToolCall         any
-	ToolResponse     any
-	Transcript       any
+	// Image content. (AI-inferred)
+	Image any
+	// A custom, integration-specific payload. (AI-inferred)
+	Payload any
+	// The plain-text content. (AI-inferred)
+	Text any
+	// A request from the model to invoke a specific tool. (AI-inferred)
+	ToolCall any
+	// The result returned from invoking a tool. (AI-inferred)
+	ToolResponse any
+	// The transcribed text of spoken audio. (AI-inferred)
+	Transcript any
+	// The variable(s) whose own value changed as a result of this event. (AI-inferred)
 	UpdatedVariables any
 }
 
 type Version_Snapshot_Examples_Messages struct {
-	Chunks    any
+	// The retrieved content chunk(s) making up this result. (AI-inferred)
+	Chunks any
+	// When this event occurred. (AI-inferred)
 	EventTime any
-	Role      any
+	// Who this content is attributed to, e.g. `user` or `model`. (AI-inferred)
+	Role any
 }
 
 type Version_Snapshot_Examples struct {
-	CreateTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	EntryAgent  any
-	Etag        any
-	Invalid     any
-	Messages    any
-	Name        any
-	UpdateTime  any
+	// The agent this example conversation begins with. (AI-inferred)
+	EntryAgent any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Whether this example is currently flagged as invalid, e.g. after a referenced resource was removed. (AI-inferred)
+	Invalid any
+	// The message(s) making up this conversation or example. (AI-inferred)
+	Messages any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Version_Snapshot_Guardrails_Action_GenerativeAnswer struct {
+	// The prompt text sent to the model. (AI-inferred)
 	Prompt any
 }
 
 type Version_Snapshot_Guardrails_Action_RespondImmediately_Responses struct {
+	// Whether this configuration is currently turned off. (AI-inferred)
 	Disabled any
-	Text     any
+	// The plain-text content. (AI-inferred)
+	Text any
 }
 
 type Version_Snapshot_Guardrails_Action_RespondImmediately struct {
+	// The response message(s) to choose from. (AI-inferred)
 	Responses any
 }
 
 type Version_Snapshot_Guardrails_Action_TransferAgent struct {
+	// A reference to the agent this applies to. (AI-inferred)
 	Agent any
 }
 
 type Version_Snapshot_Guardrails_Action struct {
-	GenerativeAnswer   any
+	// Responds by generating an answer with the model, rather than a fixed response. (AI-inferred)
+	GenerativeAnswer any
+	// Responds directly with a fixed message, bypassing the model. (AI-inferred)
 	RespondImmediately any
-	TransferAgent      any
+	// Responds by transferring the conversation to another agent. (AI-inferred)
+	TransferAgent any
 }
 
 type Version_Snapshot_Guardrails_CodeCallback struct {
-	AfterAgentCallback  any
-	AfterModelCallback  any
+	// Custom code run after the agent finishes handling a turn. (AI-inferred)
+	AfterAgentCallback any
+	// Custom code run after the underlying model produces a response. (AI-inferred)
+	AfterModelCallback any
+	// Custom code run before the agent starts handling a turn. (AI-inferred)
 	BeforeAgentCallback any
+	// Custom code run before the underlying model is called. (AI-inferred)
 	BeforeModelCallback any
 }
 
 type Version_Snapshot_Guardrails_ContentFilter struct {
-	BannedContents                any
+	// The word/phrase(s) this filter blocks. (AI-inferred)
+	BannedContents any
+	// The word/phrase(s) this filter blocks from the agent's own responses. (AI-inferred)
 	BannedContentsInAgentResponse any
-	BannedContentsInUserInput     any
-	DisregardDiacritics           any
-	MatchType                     any
+	// The word/phrase(s) this filter blocks from user input. (AI-inferred)
+	BannedContentsInUserInput any
+	// Whether accented characters are treated as equivalent to their unaccented form when matching. (AI-inferred)
+	DisregardDiacritics any
+	// How banned content is matched: `SIMPLE_STRING_MATCH`, `WORD_BOUNDARY_STRING_MATCH`, or `REGEXP_MATCH`. (AI-inferred)
+	MatchType any
 }
 
 type Version_Snapshot_Guardrails_LlmPolicy struct {
-	AllowShortUtterance     any
-	FailOpen                any
+	// Whether very short spoken input is accepted, rather than treated as noise. (AI-inferred)
+	AllowShortUtterance any
+	// Whether this check allows the request through when the check itself fails to run, rather than blocking it. (AI-inferred)
+	FailOpen any
+	// The maximum number of prior messages kept as context for the conversation. (AI-inferred)
 	MaxConversationMessages any
-	ModelSettings           any
-	PolicyScope             any
-	Prompt                  any
+	// Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
+	ModelSettings any
+	// What this policy applies to. (AI-inferred)
+	PolicyScope any
+	// The prompt text sent to the model. (AI-inferred)
+	Prompt any
 }
 
 type Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettings struct {
+	// The default prompt template used to instruct the security check. (AI-inferred)
 	DefaultPromptTemplate any
 }
 
 type Version_Snapshot_Guardrails_LlmPromptSecurity struct {
-	CustomPolicy    any
+	// A caller-defined policy overriding the guardrail's own default behavior. (AI-inferred)
+	CustomPolicy any
+	// The guardrail's own default configuration, used when no custom policy is set. (AI-inferred)
 	DefaultSettings any
-	FailOpen        any
+	// Whether this check allows the request through when the check itself fails to run, rather than blocking it. (AI-inferred)
+	FailOpen any
 }
 
 type Version_Snapshot_Guardrails_ModelSafety_SafetySettings struct {
-	Category  any
+	// The category this classification or setting applies to. (AI-inferred)
+	Category any
+	// The value that must be met or crossed for this to apply. (AI-inferred)
 	Threshold any
 }
 
 type Version_Snapshot_Guardrails_ModelSafety struct {
+	// Per-category safety threshold(s) applied to model output. (AI-inferred)
 	SafetySettings any
 }
 
 type Version_Snapshot_Guardrails struct {
-	Action            any
-	CodeCallback      any
-	ContentFilter     any
-	CreateTime        any
-	Description       any
-	DisplayName       any
-	Enabled           any
-	Etag              any
-	LlmPolicy         any
+	// The action to perform. (AI-inferred)
+	Action any
+	// Runs custom code at a specific point in the agent's own lifecycle, as this guardrail's own action. (AI-inferred)
+	CodeCallback any
+	// Blocks matching content from user input and/or agent responses. (AI-inferred)
+	ContentFilter any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether this guardrail is currently turned on. (AI-inferred)
+	Enabled any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// A guardrail enforced by having a judge model evaluate whether content complies with a caller-defined policy. (AI-inferred)
+	LlmPolicy any
+	// Screens for prompt injection and jailbreak attempts using a security-focused model check. (AI-inferred)
 	LlmPromptSecurity any
-	ModelSafety       any
-	Name              any
-	UpdateTime        any
+	// Applies the underlying model's own built-in content safety filters. (AI-inferred)
+	ModelSafety any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Version_Snapshot_Tools_AgentTool struct {
-	Agent       any
+	// A reference to the agent this applies to. (AI-inferred)
+	Agent any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Version_Snapshot_Tools_ClientFunction struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
-	Parameters  any
-	Response    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
+	// The response produced for this request. (AI-inferred)
+	Response any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_Action_EntityOperation struct {
-	EntityId  any
+	// The identifier of the entity this operation applies to. (AI-inferred)
+	EntityId any
+	// Which action this performs, e.g. create, update, or delete. (AI-inferred)
 	Operation any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_Action struct {
+	// The identifier of the connector action this tool invokes. (AI-inferred)
 	ConnectionActionId any
-	EntityOperation    any
-	InputFields        any
-	OutputFields       any
+	// A structured create/update/delete action performed against an entity in the connected external system. (AI-inferred)
+	EntityOperation any
+	// The input field(s) this tool or operation accepts. (AI-inferred)
+	InputFields any
+	// The output field(s) this tool or operation returns. (AI-inferred)
+	OutputFields any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfig struct {
+	// An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
 	OauthToken any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfig struct {
+	// The private key used to sign the authentication JWT. (AI-inferred)
 	ClientKey any
-	Issuer    any
-	Subject   any
+	// The JWT issuer identity presented when authenticating. (AI-inferred)
+	Issuer any
+	// The JWT subject identity presented when authenticating. (AI-inferred)
+	Subject any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_AuthConfig struct {
-	Oauth2AuthCodeConfig  any
+	// Authenticates using the OAuth 2.0 authorization code grant. (AI-inferred)
+	Oauth2AuthCodeConfig any
+	// Authenticates using the OAuth 2.0 JWT bearer grant, signing a JWT with a private key rather than an interactive login. (AI-inferred)
 	Oauth2JwtBearerConfig any
 }
 
 type Version_Snapshot_Tools_ConnectorTool struct {
-	Action      any
-	AuthConfig  any
-	Connection  any
+	// The action to perform. (AI-inferred)
+	Action any
+	// Authentication configuration for reaching this external resource. (AI-inferred)
+	AuthConfig any
+	// A reference to the connector connection this tool uses. (AI-inferred)
+	Connection any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints struct {
+	// The attribute value at this control point. (AI-inferred)
 	AttributeValue any
-	BoostAmount    any
+	// The boost applied at this control point. (AI-inferred)
+	BoostAmount any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec struct {
-	AttributeType     any
-	ControlPoints     any
-	FieldName         any
+	// The kind of attribute this boost rule keys on. (AI-inferred)
+	AttributeType any
+	// The mapping between an attribute's own value and its resulting boost amount, defining the boost curve. (AI-inferred)
+	ControlPoints any
+	// The name of the field this applies to. (AI-inferred)
+	FieldName any
+	// How boost values are interpolated between control points, e.g. linear. (AI-inferred)
 	InterpolationType any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs struct {
-	Boost            any
+	// How much to raise or lower a matching result's own ranking. (AI-inferred)
+	Boost any
+	// A boost rule computed from a continuous field value, rather than a fixed amount. (AI-inferred)
 	BoostControlSpec any
-	Condition        any
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
+	Condition any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec struct {
+	// Rule(s) boosting or burying specific search results when their own condition matches. (AI-inferred)
 	ConditionBoostSpecs any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs struct {
+	// The data store(s) this tool queries. (AI-inferred)
 	DataStores any
-	Spec       any
+	// The specification defining this resource's own behavior. (AI-inferred)
+	Spec any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig struct {
-	Collection            any
+	// The set of resources this configuration applies to. (AI-inferred)
+	Collection any
+	// A human-readable name for this collection, shown in the console. (AI-inferred)
 	CollectionDisplayName any
-	DataSource            any
+	// Which external data source this applies to. (AI-inferred)
+	DataSource any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore struct {
-	ConnectorConfig        any
-	CreateTime             any
-	DisplayName            any
+	// Configuration for connecting this tool to an external enterprise system via a Google Cloud connector (e.g. Salesforce, ServiceNow). (AI-inferred)
+	ConnectorConfig any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// How documents in this data store are processed for grounding. (AI-inferred)
 	DocumentProcessingMode any
-	Name                   any
-	Type                   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_DataStoreSource struct {
+	// A reference to the Vertex AI Search data store this tool queries. (AI-inferred)
 	DataStore any
-	Filter    any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_EngineSource struct {
+	// The data store(s) included under this search app. (AI-inferred)
 	DataStoreSources any
-	Engine           any
-	Filter           any
+	// A reference to the Vertex AI Search app (engine) this queries. (AI-inferred)
+	Engine any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfig struct {
-	Disabled       any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// How strictly generated answers must be grounded in retrieved source content. (AI-inferred)
 	GroundingLevel any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig struct {
-	Disabled      any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
 	ModelSettings any
-	Prompt        any
+	// The prompt text sent to the model. (AI-inferred)
+	Prompt any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig struct {
+	// Whether source snippets are included alongside a generated answer. (AI-inferred)
 	EnableSnippets any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs struct {
-	GroundingConfig     any
-	ModalityType        any
-	RewriterConfig      any
-	SnippetsConfig      any
+	// Configuration for how strictly generated answers must be grounded in retrieved source content. (AI-inferred)
+	GroundingConfig any
+	// Which modality (text, audio, etc.) this applies to. (AI-inferred)
+	ModalityType any
+	// Configuration for automatically rewriting the user's own query before retrieval, to improve search results. (AI-inferred)
+	RewriterConfig any
+	// Configuration for including source snippets alongside a generated answer. (AI-inferred)
+	SnippetsConfig any
+	// Configuration for how retrieved search results are summarized into a generated answer. (AI-inferred)
 	SummarizationConfig any
 }
 
 type Version_Snapshot_Tools_DataStoreTool struct {
-	BoostSpecs              any
-	DataStoreSource         any
-	Description             any
-	EngineSource            any
+	// Rule(s) boosting or burying specific search results. (AI-inferred)
+	BoostSpecs any
+	// Configures this tool to query a specific data store directly. (AI-inferred)
+	DataStoreSource any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Configures this tool to query through a Vertex AI Search app (engine), which may span multiple data stores. (AI-inferred)
+	EngineSource any
+	// Whether a caller-supplied search filter parameter is always included in queries, or never. (AI-inferred)
 	FilterParameterBehavior any
-	ModalityConfigs         any
-	Name                    any
+	// Per-modality (text, voice) configuration for how this data store tool's own results are presented. (AI-inferred)
+	ModalityConfigs any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Version_Snapshot_Tools_FileSearchTool struct {
-	CorpusType  any
+	// Whether the file corpus this tool searches is `USER_OWNED` or `FULLY_MANAGED` by the platform. (AI-inferred)
+	CorpusType any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	FileCorpus  any
-	Name        any
+	// A reference to the file corpus this tool searches. (AI-inferred)
+	FileCorpus any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Version_Snapshot_Tools_GoogleSearchTool_PromptConfig struct {
-	TextPrompt  any
+	// The prompt text used when responding in text. (AI-inferred)
+	TextPrompt any
+	// The prompt text used when responding by voice. (AI-inferred)
 	VoicePrompt any
 }
 
 type Version_Snapshot_Tools_GoogleSearchTool struct {
-	ContextUrls      any
-	Description      any
-	ExcludeDomains   any
-	Name             any
+	// URL(s) whose own content is fetched and used as additional search context. (AI-inferred)
+	ContextUrls any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Domain(s) excluded from this tool's own search results. (AI-inferred)
+	ExcludeDomains any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Domain(s) this tool's own search results are preferentially drawn from. (AI-inferred)
 	PreferredDomains any
-	PromptConfig     any
+	// Per-modality prompt text guiding how this tool's own results are presented. (AI-inferred)
+	PromptConfig any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig struct {
+	// The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred)
 	ApiKeySecretVersion any
-	KeyName             any
-	RequestLocation     any
+	// The name of the API key parameter. (AI-inferred)
+	KeyName any
+	// Where in the request the credential is placed, e.g. a header or query parameter. (AI-inferred)
+	RequestLocation any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig struct {
+	// A token used to authenticate this request. (AI-inferred)
 	Token any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig struct {
-	ClientId            any
+	// The OAuth client ID used to authenticate. (AI-inferred)
+	ClientId any
+	// The Secret Manager secret version holding the OAuth client secret. (AI-inferred)
 	ClientSecretVersion any
-	OauthGrantType      any
-	Scopes              any
-	TokenEndpoint       any
+	// Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred)
+	OauthGrantType any
+	// The OAuth scope(s) requested. (AI-inferred)
+	Scopes any
+	// The OAuth token endpoint URL used to obtain an access token. (AI-inferred)
+	TokenEndpoint any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig struct {
-	Scopes         any
+	// The OAuth scope(s) requested. (AI-inferred)
+	Scopes any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication struct {
-	ApiKeyConfig                  any
-	BearerTokenConfig             any
-	OauthConfig                   any
-	ServiceAccountAuthConfig      any
+	// Authenticates using a static API key. (AI-inferred)
+	ApiKeyConfig any
+	// Authenticates using a static bearer token. (AI-inferred)
+	BearerTokenConfig any
+	// Authenticates using OAuth 2.0. (AI-inferred)
+	OauthConfig any
+	// Authenticates using a Google Cloud service account's own identity token. (AI-inferred)
+	ServiceAccountAuthConfig any
+	// Authenticates using this service's own service agent identity token. (AI-inferred)
 	ServiceAgentIdTokenAuthConfig any
 }
 
 type Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig struct {
+	// A reference to the Service Directory service this is reached through. (AI-inferred)
 	Service any
 }
 
 type Version_Snapshot_Tools_McpTool_TlsConfig_CaCerts struct {
-	Cert        any
+	// A TLS certificate. (AI-inferred)
+	Cert any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
 type Version_Snapshot_Tools_McpTool_TlsConfig struct {
+	// The CA certificate(s) trusted for this TLS connection. (AI-inferred)
 	CaCerts any
 }
 
 type Version_Snapshot_Tools_McpTool struct {
-	ApiAuthentication      any
-	CustomHeaders          any
-	Description            any
-	InputSchema            any
-	Name                   any
-	NameOverride           any
-	OutputSchema           any
-	ServerAddress          any
+	// Authentication configuration for calling this tool's own external API. (AI-inferred)
+	ApiAuthentication any
+	// Additional caller-defined HTTP header(s) sent with this request. (AI-inferred)
+	CustomHeaders any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The schema describing this tool's own expected input. (AI-inferred)
+	InputSchema any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred)
+	NameOverride any
+	// The schema describing this tool's own expected output. (AI-inferred)
+	OutputSchema any
+	// The address of the server this connects to. (AI-inferred)
+	ServerAddress any
+	// Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
 	ServiceDirectoryConfig any
-	State                  any
-	TlsConfig              any
+	// The current status of this resource. (AI-inferred)
+	State any
+	// TLS/SSL configuration for this connection. (AI-inferred)
+	TlsConfig any
 }
 
 type Version_Snapshot_Tools_OpenApiTool struct {
-	ApiAuthentication      any
-	Description            any
-	IgnoreUnknownFields    any
-	Name                   any
-	OpenApiSchema          any
+	// Authentication configuration for calling this tool's own external API. (AI-inferred)
+	ApiAuthentication any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred)
+	IgnoreUnknownFields any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Defines this tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSchema any
+	// Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
 	ServiceDirectoryConfig any
-	TlsConfig              any
-	Url                    any
+	// TLS/SSL configuration for this connection. (AI-inferred)
+	TlsConfig any
+	// The URL this tool calls. (AI-inferred)
+	Url any
 }
 
 type Version_Snapshot_Tools_PythonFunction struct {
-	Description            any
-	Name                   any
-	PythonCode             any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Custom Python logic run inline as part of this tool or condition. (AI-inferred)
+	PythonCode any
+	// Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
 	ServiceDirectoryConfig any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Examples    any
-	Id          any
-	InputModes  any
-	Name        any
+	// Example(s) illustrating expected behavior. (AI-inferred)
+	Examples any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The input modality/modalities (text, audio, etc.) this supports. (AI-inferred)
+	InputModes any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The output modality/modalities (text, audio, etc.) this supports. (AI-inferred)
 	OutputModes any
-	Tags        any
+	// Free-form label(s) attached to this resource. (AI-inferred)
+	Tags any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces struct {
+	// The communication protocol this interface accepts requests over. (AI-inferred)
 	ProtocolBinding any
+	// The protocol version this interface implements. (AI-inferred)
 	ProtocolVersion any
-	Tenant          any
-	Url             any
+	// A reference to the tenant this applies to. (AI-inferred)
+	Tenant any
+	// The URL this tool calls. (AI-inferred)
+	Url any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool_AgentCard struct {
-	Description         any
-	Name                any
-	Skills              any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The skill(s) the remote agent advertises being able to perform. (AI-inferred)
+	Skills any
+	// The transport/interface(s) (e.g. HTTP, gRPC) the remote agent supports being called over. (AI-inferred)
 	SupportedInterfaces any
-	Version             any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool struct {
-	AgentCard   any
+	// The A2A agent card describing the remote agent's own identity, capabilities, and supported interfaces. (AI-inferred)
+	AgentCard any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Version_Snapshot_Tools_SystemTool struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Version_Snapshot_Tools_ToolFakeConfig struct {
-	CodeBlock      any
+	// Custom code run inline. (AI-inferred)
+	CodeBlock any
+	// Whether this tool returns its own configured fake response instead of calling the real backend. (AI-inferred)
 	EnableFakeMode any
 }
 
 type Version_Snapshot_Tools_WidgetTool_DataMapping struct {
-	FieldMappings  any
-	Mode           any
+	// Maps a source field name to the widget's own display field. (AI-inferred)
+	FieldMappings any
+	// Which mode this widget's own data mapping uses: `FIELD_MAPPING` or `PYTHON_SCRIPT`. (AI-inferred)
+	Mode any
+	// A Python function implementing this tool's own logic. (AI-inferred)
 	PythonFunction any
-	PythonScript   any
+	// Custom Python code computing this widget's own data mapping. (AI-inferred)
+	PythonScript any
+	// The tool this widget's own data is sourced from. (AI-inferred)
 	SourceToolName any
 }
 
 type Version_Snapshot_Tools_WidgetTool_TextResponseConfig struct {
-	StaticText              any
+	// A fixed text string used as-is. (AI-inferred)
+	StaticText any
+	// An instruction guiding the model in generating the widget's own text fallback. (AI-inferred)
 	TextResponseInstruction any
-	Type                    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Version_Snapshot_Tools_WidgetTool struct {
-	DataMapping        any
-	Description        any
-	Name               any
-	Parameters         any
+	// Configuration for mapping this widget's own backing data into its display fields. (AI-inferred)
+	DataMapping any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
+	// Configuration for the text fallback shown when this widget can't be rendered. (AI-inferred)
 	TextResponseConfig any
-	UiConfig           any
-	WidgetType         any
+	// Widget-type-specific display configuration. (AI-inferred)
+	UiConfig any
+	// Which kind of widget this is, e.g. `PRODUCT_CAROUSEL` or `APPOINTMENT_SCHEDULER`. (AI-inferred)
+	WidgetType any
 }
 
 type Version_Snapshot_Tools struct {
-	AgentTool        any
-	ClientFunction   any
-	ConnectorTool    any
-	CreateTime       any
-	DataStoreTool    any
-	DisplayName      any
-	Etag             any
-	ExecutionType    any
-	FileSearchTool   any
+	// A tool that invokes another agent as a callable sub-routine. (AI-inferred)
+	AgentTool any
+	// A tool implemented by the calling client application, rather than a server-side backend. (AI-inferred)
+	ClientFunction any
+	// A tool that invokes an action on an external enterprise system via a Google Cloud connector. (AI-inferred)
+	ConnectorTool any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A tool that retrieves grounding content from a Vertex AI Search data store or search app. (AI-inferred)
+	DataStoreTool any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// How this tool is executed, e.g. synchronously or asynchronously. (AI-inferred)
+	ExecutionType any
+	// A tool that searches over a corpus of uploaded files for grounding content. (AI-inferred)
+	FileSearchTool any
+	// The generated answer text, summarized from retrieved source content. (AI-inferred)
 	GeneratedSummary any
+	// A tool that grounds responses in live Google Search results. (AI-inferred)
 	GoogleSearchTool any
-	McpTool          any
-	Name             any
-	OpenApiTool      any
-	PythonFunction   any
-	RemoteAgentTool  any
-	SystemTool       any
-	Timeout          any
-	ToolFakeConfig   any
-	UpdateTime       any
-	WidgetTool       any
+	// A tool exposed by a connected Model Context Protocol (MCP) server. (AI-inferred)
+	McpTool any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A tool defined by an OpenAPI specification document, calling a plain HTTPS API. (AI-inferred)
+	OpenApiTool any
+	// A Python function implementing this tool's own logic. (AI-inferred)
+	PythonFunction any
+	// A tool that invokes a separate, independently hosted agent over the Agent-to-Agent (A2A) protocol. (AI-inferred)
+	RemoteAgentTool any
+	// One of the platform's own built-in system tools. (AI-inferred)
+	SystemTool any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
+	// Configuration for returning a fixed, fake response from this tool instead of calling its own real backend, for testing. (AI-inferred)
+	ToolFakeConfig any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
+	// A tool that renders an interactive UI widget (e.g. a product carousel) in the conversation. (AI-inferred)
+	WidgetTool any
 }
 
 type Version_Snapshot_Toolsets_ConnectorToolset struct {
-	AuthConfig       any
-	Connection       any
+	// Authentication configuration for reaching this external resource. (AI-inferred)
+	AuthConfig any
+	// A reference to the connector connection this tool uses. (AI-inferred)
+	Connection any
+	// The connector action(s) exposed as tools by this toolset. (AI-inferred)
 	ConnectorActions any
 }
 
 type Version_Snapshot_Toolsets_McpToolset_ToolOverrides_Snapshot struct {
-	Description  any
-	InputSchema  any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The schema describing this tool's own expected input. (AI-inferred)
+	InputSchema any
+	// The schema describing this tool's own expected output. (AI-inferred)
 	OutputSchema any
 }
 
 type Version_Snapshot_Toolsets_McpToolset_ToolOverrides struct {
+	// A caller-chosen description presented to the model in place of this item's own default description. (AI-inferred)
 	DescriptionOverride any
-	NameOverride        any
-	Snapshot            any
-	Tool                any
+	// A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred)
+	NameOverride any
+	// A frozen copy of this resource's own content at a specific point in time. (AI-inferred)
+	Snapshot any
+	// A reference to a single tool. (AI-inferred)
+	Tool any
 }
 
 type Version_Snapshot_Toolsets_McpToolset struct {
-	ApiAuthentication      any
-	CustomHeaders          any
-	ServerAddress          any
+	// Authentication configuration for calling this tool's own external API. (AI-inferred)
+	ApiAuthentication any
+	// Additional caller-defined HTTP header(s) sent with this request. (AI-inferred)
+	CustomHeaders any
+	// The address of the server this connects to. (AI-inferred)
+	ServerAddress any
+	// Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
 	ServiceDirectoryConfig any
-	TlsConfig              any
-	ToolOverrides          any
+	// TLS/SSL configuration for this connection. (AI-inferred)
+	TlsConfig any
+	// Caller overrides (e.g. name, description) applied to specific tools exposed by this toolset. (AI-inferred)
+	ToolOverrides any
 }
 
 type Version_Snapshot_Toolsets_OpenApiToolset struct {
-	ApiAuthentication      any
-	IgnoreUnknownFields    any
-	OpenApiSchema          any
+	// Authentication configuration for calling this tool's own external API. (AI-inferred)
+	ApiAuthentication any
+	// Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred)
+	IgnoreUnknownFields any
+	// Defines this tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSchema any
+	// Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
 	ServiceDirectoryConfig any
-	TlsConfig              any
-	Url                    any
+	// TLS/SSL configuration for this connection. (AI-inferred)
+	TlsConfig any
+	// The URL this tool calls. (AI-inferred)
+	Url any
 }
 
 type Version_Snapshot_Toolsets struct {
+	// A toolset made up of action(s) from a single connected external system. (AI-inferred)
 	ConnectorToolset any
-	CreateTime       any
-	Description      any
-	DisplayName      any
-	Etag             any
-	ExecutionType    any
-	McpToolset       any
-	Name             any
-	OpenApiToolset   any
-	Timeout          any
-	ToolFakeConfig   any
-	UpdateTime       any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// How this tool is executed, e.g. synchronously or asynchronously. (AI-inferred)
+	ExecutionType any
+	// A toolset made up of the tools exposed by a connected MCP server. (AI-inferred)
+	McpToolset any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A toolset made up of the operations defined in an OpenAPI specification document. (AI-inferred)
+	OpenApiToolset any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
+	// Configuration for returning a fixed, fake response from this tool instead of calling its own real backend, for testing. (AI-inferred)
+	ToolFakeConfig any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Version_Snapshot struct {

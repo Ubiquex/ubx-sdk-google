@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DeploymentResourcePool_DedicatedResources_AutoscalingMetricSpecs {
+  /** The name of the metric this applies to. (AI-inferred) */
   metricName?: string | Computed<string>;
+  /** The target value autoscaling tries to maintain for this metric. (AI-inferred) */
   target?: number | Computed<number>;
 }
 

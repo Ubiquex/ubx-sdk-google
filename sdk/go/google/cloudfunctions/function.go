@@ -82,9 +82,12 @@ type Function_BuildConfig struct {
 }
 
 type Function_EventTrigger_EventFilters struct {
+	// A single custom attribute. (AI-inferred)
 	Attribute any
-	Operator  any
-	Value     any
+	// How this condition's own operands are compared. (AI-inferred)
+	Operator any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Function_EventTrigger struct {
@@ -109,28 +112,41 @@ type Function_EventTrigger struct {
 }
 
 type Function_ServiceConfig_DirectVpcNetworkInterface struct {
-	Network    any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
 	Subnetwork any
-	Tags       any
+	// The label(s) or tag(s) attached to this resource. (AI-inferred)
+	Tags any
 }
 
 type Function_ServiceConfig_SecretEnvironmentVariables struct {
-	Key       any
+	// The key of this attribute or label. (AI-inferred)
+	Key any
+	// The identifier of the associated Google Cloud project. (AI-inferred)
 	ProjectId any
-	Secret    any
-	Version   any
+	// A reference to the secret this applies to. (AI-inferred)
+	Secret any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Function_ServiceConfig_SecretVolumes_Versions struct {
-	Path    any
+	// A file or resource path. (AI-inferred)
+	Path any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
 type Function_ServiceConfig_SecretVolumes struct {
+	// The path this volume is mounted at inside the container. (AI-inferred)
 	MountPath any
+	// The identifier of the associated Google Cloud project. (AI-inferred)
 	ProjectId any
-	Secret    any
-	Versions  any
+	// A reference to the secret this applies to. (AI-inferred)
+	Secret any
+	// The version(s) this applies to. (AI-inferred)
+	Versions any
 }
 
 type Function_ServiceConfig struct {
@@ -179,9 +195,12 @@ type Function_ServiceConfig struct {
 }
 
 type Function_StateMessages struct {
-	Message  any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// How serious this condition is. (AI-inferred)
 	Severity any
-	Type     any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Function_UpgradeInfo struct {

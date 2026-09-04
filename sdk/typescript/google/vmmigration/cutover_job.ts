@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CutoverJob_ComputeEngineDisksTargetDetails_Disks {
+  /** The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred) */
   diskUri?: string | Computed<string>;
+  /** The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred) */
   sourceDiskNumber?: number | Computed<number>;
 }
 
@@ -21,7 +23,9 @@ export interface CutoverJob_ComputeEngineDisksTargetDetails {
 }
 
 export interface CutoverJob_ComputeEngineTargetDetails_AdaptationModifiers {
+  /** A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred) */
   modifier?: string | Computed<string>;
+  /** The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -33,8 +37,11 @@ export interface CutoverJob_ComputeEngineTargetDetails_AppliedLicense {
 }
 
 export interface CutoverJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities {
+  /** The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -55,10 +62,15 @@ export interface CutoverJob_ComputeEngineTargetDetails_Encryption {
 }
 
 export interface CutoverJob_ComputeEngineTargetDetails_NetworkInterfaces {
+  /** The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   externalIp?: string | Computed<string>;
+  /** The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   internalIp?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred) */
   networkTier?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
@@ -125,58 +137,93 @@ export interface CutoverJob_Error {
 }
 
 export interface CutoverJob_Steps_FinalSync_Steps_Replicating {
+  /** The real, measured average replication throughput, in bytes per second, over the last 30 minutes. (AI-inferred) */
   lastThirtyMinutesAverageBytesPerSecond?: string | Computed<string>;
+  /** The real, measured average replication throughput, in bytes per second, over the last 2 minutes. (AI-inferred) */
   lastTwoMinutesAverageBytesPerSecond?: string | Computed<string>;
+  /** The real number of bytes already replicated to Google Cloud so far in the current replication cycle. (AI-inferred) */
   replicatedBytes?: string | Computed<string>;
+  /** The real total number of bytes that need to be replicated to Google Cloud for the current replication cycle to complete. (AI-inferred) */
   totalBytes?: string | Computed<string>;
 }
 
 export interface CutoverJob_Steps_FinalSync_Steps {
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real, detailed progress for VM Migration's initializing-replication step, the phase before the first full data sync begins. (AI-inferred) */
   initializingReplication?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's post-processing step, the cleanup and finalization work after replication data has landed. (AI-inferred) */
   postProcessing?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own active data-replication step. (AI-inferred) */
   replicating?: CutoverJob_Steps_FinalSync_Steps_Replicating | Computed<CutoverJob_Steps_FinalSync_Steps_Replicating>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface CutoverJob_Steps_FinalSync_Warnings_ActionItem {
+  /** The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** A real, human-readable status or error message for this migration step. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface CutoverJob_Steps_FinalSync_Warnings_HelpLinks {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A real URL pointing to more information about this migration warning or error. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface CutoverJob_Steps_FinalSync_Warnings {
+  /** Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred) */
   actionItem?: CutoverJob_Steps_FinalSync_Warnings_ActionItem | Computed<CutoverJob_Steps_FinalSync_Warnings_ActionItem>;
+  /** The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred) */
   code?: string | Computed<string>;
+  /** Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred) */
   helpLinks?: CutoverJob_Steps_FinalSync_Warnings_HelpLinks[] | Computed<CutoverJob_Steps_FinalSync_Warnings_HelpLinks[]>;
+  /** The real, human-readable text of one migration warning. (AI-inferred) */
   warningMessage?: CutoverJob_Steps_FinalSync_Warnings_ActionItem | Computed<CutoverJob_Steps_FinalSync_Warnings_ActionItem>;
+  /** The real timestamp when this migration warning was raised. (AI-inferred) */
   warningTime?: string | Computed<string>;
 }
 
 export interface CutoverJob_Steps_FinalSync {
+  /** The real, sequential number of the current replication cycle for this migrating VM, incrementing each time a new sync cycle starts. (AI-inferred) */
   cycleNumber?: number | Computed<number>;
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The real error, if any, that caused this migration step or job to fail. (AI-inferred) */
   error?: CutoverJob_Error | Computed<CutoverJob_Error>;
+  /** The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Output only. The real, measured completion percentage (0-100) of the current migration step. (AI-inferred) */
   progressPercent?: number | Computed<number>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The real, current state of this migration job, step, or resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred) */
   steps?: CutoverJob_Steps_FinalSync_Steps[] | Computed<CutoverJob_Steps_FinalSync_Steps[]>;
+  /** The real total time this migration job has spent paused, across every pause since it started. (AI-inferred) */
   totalPauseDuration?: string | Computed<string>;
+  /** Real, non-fatal warnings raised during this migration job, each with its own `warning_message`, severity, and `action_item`. (AI-inferred) */
   warnings?: CutoverJob_Steps_FinalSync_Warnings[] | Computed<CutoverJob_Steps_FinalSync_Warnings[]>;
 }
 
 export interface CutoverJob_Steps {
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real, detailed progress for VM Migration's own final-sync step, the last data sync performed immediately before cutover. (AI-inferred) */
   finalSync?: CutoverJob_Steps_FinalSync | Computed<CutoverJob_Steps_FinalSync>;
+  /** Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred) */
   instantiatingMigratedVm?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred) */
   preparingVmDisks?: unknown | Computed<unknown>;
+  /** The real, previous replication cycle for this migrating VM, kept for reference alongside the current one. (AI-inferred) */
   previousReplicationCycle?: CutoverJob_Steps_FinalSync | Computed<CutoverJob_Steps_FinalSync>;
+  /** Real, detailed progress for VM Migration's own step shutting down the source VM as part of a cutover. (AI-inferred) */
   shuttingDownSourceVm?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 

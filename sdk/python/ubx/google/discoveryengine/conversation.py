@@ -8,66 +8,94 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary_SafetyAttributes:
+    # The category/categories this applies to. (AI-inferred)
     categories: Any = None
+    # The score(s) computed for this result. (AI-inferred)
     scores: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_Sources:
+    # This reference's own position within its own containing list. (AI-inferred)
     reference_index: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations:
+    # The ending position this range covers. (AI-inferred)
     end_index: Any = None
+    # The source(s) this content is drawn from. (AI-inferred)
     sources: Any = None
+    # The starting position this range covers. (AI-inferred)
     start_index: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata:
+    # The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred)
     citations: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContents:
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # An identifier for the specific page this applies to. (AI-inferred)
     page_identifier: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary_SummaryWithMetadata_References:
+    # The text content of this retrieved chunk. (AI-inferred)
     chunk_contents: Any = None
+    # A reference to the document this applies to. (AI-inferred)
     document: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary_SummaryWithMetadata:
+    # Detail about which source(s) support specific claims in the generated answer. (AI-inferred)
     citation_metadata: Any = None
+    # The source reference(s) supporting this content. (AI-inferred)
     references: Any = None
+    # A generated summary of the content. (AI-inferred)
     summary: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply_Summary:
+    # The safety classification(s) detected in this content. (AI-inferred)
     safety_attributes: Any = None
+    # Why summary generation was skipped, when it was. (AI-inferred)
     summary_skipped_reasons: Any = None
+    # The plain-text content of the generated summary. (AI-inferred)
     summary_text: Any = None
+    # The generated summary along with supporting citation and source metadata. (AI-inferred)
     summary_with_metadata: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Reply:
+    # A generated summary of the content. (AI-inferred)
     summary: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_UserInput_Context:
+    # The document currently being processed or displayed. (AI-inferred)
     active_document: Any = None
+    # The document(s) supplying context for this request. (AI-inferred)
     context_documents: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_UserInput:
+    # Additional context supplied for this request. (AI-inferred)
     context: Any = None
+    # The input provided to this operation. (AI-inferred)
     input: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A single response message. (AI-inferred)
     reply: Any = None
+    # The end user's own input for this turn. (AI-inferred)
     user_input: Any = None
 
 _Conversation_Messages_Reply_Summary_SafetyAttributesFields = {

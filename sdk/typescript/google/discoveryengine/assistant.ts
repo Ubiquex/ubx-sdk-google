@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Assistant_CustomerPolicy_BannedPhrases {
+  /** Whether accented characters are treated as equivalent to their unaccented form when matching. (AI-inferred) */
   ignoreDiacritics?: boolean | Computed<boolean>;
+  /** How this rule's own pattern is matched against the input. (AI-inferred) */
   matchType?: string | Computed<string>;
+  /** A word or phrase this rule matches. (AI-inferred) */
   phrase?: string | Computed<string>;
 }
 
@@ -24,11 +27,14 @@ export interface Assistant_CustomerPolicy {
 }
 
 export interface Assistant_EnabledTools_ToolInfo {
+  /** A human-readable name for this tool. (AI-inferred) */
   toolDisplayName?: string | Computed<string>;
+  /** The name of the tool invoked. (AI-inferred) */
   toolName?: string | Computed<string>;
 }
 
 export interface Assistant_EnabledTools {
+  /** Detail about the tool this action invoked. (AI-inferred) */
   toolInfo?: Assistant_EnabledTools_ToolInfo[] | Computed<Assistant_EnabledTools_ToolInfo[]>;
 }
 

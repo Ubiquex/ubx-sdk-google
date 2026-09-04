@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecuritySetting_AudioExportSettings {
+  /** The filename pattern exported conversation audio is saved under. (AI-inferred) */
   audioExportPattern?: string | Computed<string>;
+  /** The audio file format, e.g. `MP3` or `OGG_OPUS`. (AI-inferred) */
   audioFormat?: string | Computed<string>;
+  /** Whether sensitive data detected in exported conversation audio is redacted. (AI-inferred) */
   enableAudioRedaction?: boolean | Computed<boolean>;
+  /** The Cloud Storage bucket this applies to. (AI-inferred) */
   gcsBucket?: string | Computed<string>;
+  /** Whether synthesized speech audio is saved for later playback/reuse, rather than discarded after use. (AI-inferred) */
   storeTtsAudio?: boolean | Computed<boolean>;
 }
 
 export interface SecuritySetting_InsightsExportSettings {
+  /** Whether conversation data is exported to Conversational Insights for analysis. (AI-inferred) */
   enableInsightsExport?: boolean | Computed<boolean>;
 }
 
@@ -26,30 +32,52 @@ const SecuritySetting_InsightsExportSettingsFields: FieldMap = {
 };
 
 export interface SecuritySettingConfig {
+  /** Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred) */
   audioExportSettings?: SecuritySetting_AudioExportSettings | Computed<SecuritySetting_AudioExportSettings>;
+  /** A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred) */
   deidentifyTemplate?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Configuration for exporting conversation data to Conversational Insights. (AI-inferred) */
   insightsExportSettings?: SecuritySetting_InsightsExportSettings | Computed<SecuritySetting_InsightsExportSettings>;
+  /** A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred) */
   inspectTemplate?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Which category/categories of stored data this purge request removes. (AI-inferred) */
   purgeDataTypes?: string[] | Computed<string[]>;
+  /** How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred) */
   redactionScope?: string | Computed<string>;
+  /** How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred) */
   redactionStrategy?: string | Computed<string>;
+  /** How long conversation data is retained before automatic deletion. (AI-inferred) */
   retentionStrategy?: string | Computed<string>;
+  /** How many days conversation data is retained before automatic deletion. (AI-inferred) */
   retentionWindowDays?: number | Computed<number>;
 }
 
 export interface SecuritySettingAttrs {
+  /** Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred) */
   audioExportSettings: SecuritySetting_AudioExportSettings;
+  /** A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred) */
   deidentifyTemplate: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Configuration for exporting conversation data to Conversational Insights. (AI-inferred) */
   insightsExportSettings: SecuritySetting_InsightsExportSettings;
+  /** A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred) */
   inspectTemplate: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Which category/categories of stored data this purge request removes. (AI-inferred) */
   purgeDataTypes: string[];
+  /** How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred) */
   redactionScope: string;
+  /** How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred) */
   redactionStrategy: string;
+  /** How long conversation data is retained before automatic deletion. (AI-inferred) */
   retentionStrategy: string;
+  /** How many days conversation data is retained before automatic deletion. (AI-inferred) */
   retentionWindowDays: number;
 }
 

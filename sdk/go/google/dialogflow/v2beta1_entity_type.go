@@ -14,21 +14,33 @@ var V2beta1EntityType_EntitiesFields = ubx.FieldMap{
 }
 
 type V2beta1EntityTypeConfig struct {
-	AutoExpansionMode     any
-	DisplayName           any
+	// Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
+	AutoExpansionMode any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
 	EnableFuzzyExtraction any
-	Entities              any
-	Kind                  any
-	Name                  any
+	// The entity/entities extracted or referenced. (AI-inferred)
+	Entities any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type V2beta1EntityTypeAttrs struct {
-	AutoExpansionMode     any
-	DisplayName           any
+	// Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
+	AutoExpansionMode any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
 	EnableFuzzyExtraction any
-	Entities              any
-	Kind                  any
-	Name                  any
+	// The entity/entities extracted or referenced. (AI-inferred)
+	Entities any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 var V2beta1EntityType = ubx.ResourceBinding{

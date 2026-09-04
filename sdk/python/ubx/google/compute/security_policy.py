@@ -8,20 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs:
+    # If true, the threshold is applied to each unique value (e.g., each source IP) independently, instead of aggregating all traffic together. (AI-inferred)
     enable_each_unique_value: Any = None
+    # The type of traffic granularity. Valid values are `HTTP_HEADER_HOST` (group traffic by the HTTP Host header), `HTTP_PATH` (group traffic by the HTTP request path), and `UNSPECIFIED_TYPE` (default, unspecified). (AI-inferred)
     type: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs:
+    # The minimum confidence score (between 0 and 1) that adaptive protection requires before automatically deploying mitigation rules for layer 7 DDoS defense. (AI-inferred)
     auto_deploy_confidence_threshold: Any = None
+    # The number of seconds that the auto-deploy system waits before automatically deploying the mitigation rules. If not set, the default value is 3600 seconds. (AI-inferred)
     auto_deploy_expiration_sec: Any = None
     auto_deploy_impacted_baseline_threshold: Any = None
+    # Specifies the traffic load threshold in requests per second that triggers automatic deployment of Layer 7 DDoS adaptive protection. When traffic exceeds this threshold and other conditions are met, Google Cloud Armor may automatically enable mitigation. (AI-inferred)
     auto_deploy_load_threshold: Any = None
+    # The absolute queries per second (QPS) threshold that triggers detection of a layer 7 DDoS attack. (AI-inferred)
     detection_absolute_qps: Any = None
+    # The load threshold in requests per second that triggers detection of a potential DDoS attack by the layer 7 adaptive protection. Exceeding this threshold causes the system to start monitoring traffic for attack indicators. (AI-inferred)
     detection_load_threshold: Any = None
+    # Detection threshold in queries per second (QPS) relative to the baseline traffic level for triggering adaptive protection. A value greater than 1 indicates a multiple of the baseline QPS. (AI-inferred)
     detection_relative_to_baseline_qps: Any = None
     name: Any = None
+    # A list of traffic granularity configurations for the threshold. Each configuration defines a traffic type (such as SOURCE_IP or USER_AGENT) and a value to specify the granularity of traffic to which the threshold applies. (AI-inferred)
     traffic_granularity_configs: Any = None
 
 @dataclasses.dataclass
@@ -46,7 +55,9 @@ class SecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig:
 @dataclasses.dataclass
 class SecurityPolicy_AdvancedOptionsConfig:
     json_custom_config: Any = None
+    # Controls the JSON payload parsing mode for the security policy. Possible values: DISABLED (no JSON parsing), STANDARD (standard JSON parsing), or STANDARD_WITH_GRAPHQL (standard JSON plus GraphQL parsing). (AI-inferred)
     json_parsing: Any = None
+    # Specifies the log level for the security policy, controlling how much detail is logged. Valid values are NORMAL and VERBOSE. (AI-inferred)
     log_level: Any = None
     # The maximum request size chosen by the customer with Waf enabled. Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case insensitive.
     request_body_inspection_size: Any = None
@@ -55,19 +66,25 @@ class SecurityPolicy_AdvancedOptionsConfig:
 
 @dataclasses.dataclass
 class SecurityPolicy_Associations:
+    # The ID of the resource (e.g., backend service or target instance) to which the security policy is attached. (AI-inferred)
     attachment_id: Any = None
+    # The display name of the security policy association. This is a user-defined name used to identify the association. (AI-inferred)
     display_name: Any = None
     excluded_folders: Any = None
+    # A list of project IDs or project numbers to exclude from this security policy association. This is used when the security policy is associated with a parent resource such as an organization or folder, to prevent the policy from applying to the specified projects. (AI-inferred)
     excluded_projects: Any = None
     name: Any = None
+    # The ID of the security policy that is being associated. (AI-inferred)
     security_policy_id: Any = None
     short_name: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_DdosProtectionConfig:
+    # Configures the adaptive protection mode for DDoS attacks. Allowed values are DISABLED, ENABLED, PREVIEW, and UNSPECIFIED_ADAPTIVE_PROTECTION (the default, which uses the provider's unspecified behavior). (AI-inferred)
     ddos_adaptive_protection: Any = None
     # DDoS Protection for Network Load Balancers (and VMs with public IPs) builds DDoS mitigations that minimize collateral damage. It quantifies this as the fraction of a non-abuse baseline that's inadvertently blocked. Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will not be deployed. Using a lower value will prioritize keeping collateral damage low, possibly at the cost of its effectiveness in rate limiting some or all of the attack. It should typically be unset, so Advanced DDoS (and Adaptive Protection) uses the best mitigation it can find. Setting the threshold is advised if there are logs for false positive detections with high collateral damage, and will cause Advanced DDoS to attempt to find a less aggressive rule that satisfies the constraint. If a suitable rule cannot be found, the system falls back to either no mitigation for smaller attacks or broader network throttles for larger ones.
     ddos_impacted_baseline_threshold: Any = None
+    # Specifies the Google Cloud Armor DDoS protection tier for this security policy. Valid values are ADVANCED, ADVANCED_PREVIEW, and STANDARD. (AI-inferred)
     ddos_protection: Any = None
 
 @dataclasses.dataclass
@@ -77,27 +94,37 @@ class SecurityPolicy_RecaptchaOptionsConfig:
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds:
+    # The name of the header to add to the request. For example, 'X-Frame-Options'. (AI-inferred)
     header_name: Any = None
+    # The value of the request header to add. This is the literal string value that will be sent with the header. (AI-inferred)
     header_value: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_HeaderAction:
+    # A list of request headers to be added to matching requests. Each object specifies a header name and its value. (AI-inferred)
     request_headers_to_adds: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_Match_Config:
+    # List of source IP address ranges (in CIDR notation) that the rule uses to match traffic. (AI-inferred)
     src_ip_ranges: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_Match_Expr:
+    # A human-readable description of the expression, used to document the purpose or intent of the match condition. (AI-inferred)
     description: Any = None
+    # The CEL expression that defines the match condition for the security policy rule. This expression is evaluated against incoming requests to determine if the rule applies. (AI-inferred)
     expression: Any = None
+    # Optional string that identifies the source location (e.g., file and line) of the CEL expression, used for error reporting and debugging. (AI-inferred)
     location: Any = None
+    # The title for the match expression, providing a human-readable name to identify the expression in the security policy rule. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions:
+    # A list of site keys to be used for validating reCAPTCHA action tokens. (AI-inferred)
     action_token_site_keys: Any = None
+    # Specifies a list of reCAPTCHA site keys used to verify session tokens for this rule. (AI-inferred)
     session_token_site_keys: Any = None
 
 @dataclasses.dataclass
@@ -106,92 +133,143 @@ class SecurityPolicy_Rules_Match_ExprOptions:
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_Match:
+    # The match configuration for the rule, which defines the traffic to match using parameters such as source IP ranges, versioned expression, and layer 4 configs. (AI-inferred)
     config: Any = None
+    # The expr block defines a match expression in Common Expression Language (CEL) that is evaluated against incoming requests. If the expression evaluates to true, the rule is applied. (AI-inferred)
     expr: Any = None
     expr_options: Any = None
+    # The version of the expression to use for the match rule. Currently, only 'SRC_IPS_V1' is supported, which matches on source IP addresses. (AI-inferred)
     versioned_expr: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_NetworkMatch_UserDefinedFields:
+    # Identifies the user-defined field to match in network traffic. (AI-inferred)
     name: Any = None
+    # A list of string values to match against the referenced user-defined field. The rule matches when the field value is equal to one of these values. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_NetworkMatch:
+    # List of destination IP ranges (in CIDR format) that this network match rule applies to. Each entry can be an IPv4 or IPv6 CIDR block, e.g., '192.0.2.0/24' or '2001:db8::/32'. Traffic whose destination IP falls within any of these ranges will match the rule. (AI-inferred)
     dest_ip_ranges: Any = None
+    # An optional list of destination ports to match. Each element may be a single port number (e.g., '80') or a range of ports (e.g., '80-90'). If not specified, all destination ports are matched. (AI-inferred)
     dest_ports: Any = None
+    # A list of IP protocols that the rule matches. Traffic must use one of the specified protocols to match the rule; if omitted, the rule matches all IP protocols. (AI-inferred)
     ip_protocols: Any = None
+    # List of source Autonomous System Numbers (ASNs) that the source IP address of the request must belong to for the rule to match. (AI-inferred)
     src_asns: Any = None
+    # A list of source IP address ranges in CIDR notation that incoming traffic must match for the rule to apply. (AI-inferred)
     src_ip_ranges: Any = None
+    # A list of source ports or port ranges (e.g., '80' or '80-90') to match in the network rule. (AI-inferred)
     src_ports: Any = None
+    # List of source region codes (two-letter ISO 3166 alpha-2 country codes) used to match requests based on the geographic location of the source IP address. (AI-inferred)
     src_region_codes: Any = None
+    # A list of user-defined fields for matching network traffic. Each object contains a field name and optional values to match against. (AI-inferred)
     user_defined_fields: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestCookiesToExclude:
+    # The match operator to use for the cookie, such as CONTAINS, ENDS_WITH, EQUALS, EQUALS_ANY, or STARTS_WITH. (AI-inferred)
     op: Any = None
+    # The value of the request cookie to exclude. (AI-inferred)
     val: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions:
+    # A list of request cookies to exclude from the preconfigured WAF rule evaluation. Each object defines a cookie to be ignored when the rule inspects incoming requests. (AI-inferred)
     request_cookies_to_exclude: Any = None
+    # Specifies a list of request headers to exclude from the preconfigured WAF rule evaluation. When configured, these headers are not inspected by the WAF rules, helping to avoid false positives. (AI-inferred)
     request_headers_to_exclude: Any = None
+    # A list of request query parameters to exclude from evaluation by the preconfigured WAF rule. Each object defines a query parameter that should be ignored when the rule is applied. (AI-inferred)
     request_query_params_to_exclude: Any = None
+    # A list of request URIs to exclude from matching the preconfigured WAF rule. Each item defines a specific URI that should be excluded from evaluation, so requests to these URIs will not be blocked or flagged by this rule. (AI-inferred)
     request_uris_to_exclude: Any = None
+    # The list of specific rule IDs to exclude from the preconfigured WAF configuration. These are the target rules that the exclusion applies to. (AI-inferred)
     target_rule_ids: Any = None
+    # The name of the predefined WAF rule set that this exclusion applies to. (AI-inferred)
     target_rule_set: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_PreconfiguredWafConfig:
+    # A list of exclusions for the preconfigured WAF configuration. Each exclusion defines rules or rule sets that are excluded from the managed preconfigured WAF rules. (AI-inferred)
     exclusions: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_RateLimitOptions_BanThreshold:
+    # The number of requests that must be exceeded to trigger the ban threshold. (AI-inferred)
     count: Any = None
+    # The time interval in seconds during which the number of requests (count) is evaluated to determine if the ban threshold is exceeded. For example, an interval_sec of 60 means the count must be exceeded within a 60-second rolling window. (AI-inferred)
     interval_sec: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs:
+    # The name of the key to enforce rate limiting on, such as the header name or cookie name, as specified by the corresponding enforce_on_key_type field. (AI-inferred)
     enforce_on_key_name: Any = None
+    # The type of request key to enforce rate limiting on. Valid values include: ALL, ASN, HTTP_COOKIE, HTTP_HEADER, HTTP_PATH, IP, REGION_CODE, SNI, TLS_JA3_FINGERPRINT, TLS_JA4_FINGERPRINT, USER_IP, XFF_IP. (AI-inferred)
     enforce_on_key_type: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions:
+    # The target URL to redirect to when the rate limit is exceeded. Required when the redirect type is EXTERNAL_302. (AI-inferred)
     target: Any = None
+    # The type of redirect to use when the rate limit is exceeded. Possible values are EXTERNAL_302, which redirects to an external URL, and GOOGLE_RECAPTCHA, which presents a Google reCAPTCHA challenge. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules_RateLimitOptions:
+    # The duration in seconds that a client is banned when the rule action is 'rate_based_ban'. (AI-inferred)
     ban_duration_sec: Any = None
+    # The threshold that triggers a temporary ban for an IP address that has exceeded the rate limit. It includes a count of requests and an interval in seconds over which the count is measured. (AI-inferred)
     ban_threshold: Any = None
+    # Action to take for requests that are within the configured rate limit (i.e., do not exceed the threshold). (AI-inferred)
     conform_action: Any = None
+    # The key type on which the rate limit is enforced. Valid values are ALL, ASN, HTTP_COOKIE, HTTP_HEADER, HTTP_PATH, IP, REGION_CODE, SNI, TLS_JA3_FINGERPRINT, TLS_JA4_FINGERPRINT, USER_IP, and XFF_IP. (AI-inferred)
     enforce_on_key: Any = None
+    # A list of configurations that specify the keys on which to enforce the rate limit. Each configuration includes a key type (e.g., IP, HTTP_HEADER, HTTP_COOKIE) and can optionally define exclusions for the rate limit. (AI-inferred)
     enforce_on_key_configs: Any = None
+    # The name of the key to enforce the rate limit on, used when the enforceOnKey field requires a key name (e.g., the HTTP header name when enforceOnKey is HTTP_HEADER). (AI-inferred)
     enforce_on_key_name: Any = None
+    # Action to take when the rate limit threshold is exceeded. Valid values are 'deny(403)' and 'rateBasedBan'. (AI-inferred)
     exceed_action: Any = None
+    # Options for the redirect action taken when requests exceed the rate limit threshold. Used when the exceed action is set to redirect, specifying the redirect type and target URL. (AI-inferred)
     exceed_redirect_options: Any = None
+    # An object defining the request threshold that triggers rate limiting. It specifies the number of requests (count) allowed within a given time interval (interval_sec). (AI-inferred)
     rate_limit_threshold: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_Rules:
+    # The action to take when a request matches the rule. (AI-inferred)
     action: Any = None
     description: Any = None
+    # The header_action block configures the request headers to add or remove for requests that match this security policy rule. (AI-inferred)
     header_action: Any = None
+    # The type of the resource. Always 'compute#securityPolicyRule'. (AI-inferred)
     kind: Any = None
+    # The match block configures the request criteria that trigger the rule. It can contain either a config block for source IP ranges or an expr block for a CEL expression, depending on the policy version. (AI-inferred)
     match: Any = None
+    # Defines the network match criteria for a security policy rule, specifying conditions such as source and destination IP ranges, IP protocols, and ports that determine when the rule applies. (AI-inferred)
     network_match: Any = None
+    # Configuration block for preconfigured WAF (Web Application Firewall) rules. This block contains exclusions that allow selectively disabling specific preconfigured WAF rules or parts of them for this security policy rule. (AI-inferred)
     preconfigured_waf_config: Any = None
+    # If true, the rule is in preview mode, meaning the action is not enforced but traffic is logged for testing. (AI-inferred)
     preview: Any = None
+    # The priority of this rule. Rules are evaluated in order from lowest to highest value (i.e., lower numbers have higher precedence). The priority must be an integer between 0 and 2147483647. (AI-inferred)
     priority: Any = None
+    # This block configures the rate limiting behavior for the rule, including parameters like the threshold and enforcement key. (AI-inferred)
     rate_limit_options: Any = None
+    # Configuration for the redirect action to take when this rule matches. Contains settings such as redirect type and target. (AI-inferred)
     redirect_options: Any = None
 
 @dataclasses.dataclass
 class SecurityPolicy_UserDefinedFields:
+    # The base protocol or address family on which this user-defined field operates. Valid values are IPV4, IPV6, TCP, and UDP. (AI-inferred)
     base: Any = None
+    # The mask that identifies the field to extract from the request or response, such as an HTTP header name when base is 'request'. (AI-inferred)
     mask: Any = None
     name: Any = None
+    # The byte offset from the start of the selected base (e.g., TCP header) where the user-defined field begins. Offsets are zero-based; an offset of 0 refers to the first byte. (AI-inferred)
     offset: Any = None
+    # Specifies the fixed length in bytes to extract from the base (e.g., TCP or UDP header) when defining a user-defined field by size. This is mutually exclusive with 'match' and is used to capture a fixed-size portion of the packet. (AI-inferred)
     size: Any = None
 
 _SecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigsFields = {
@@ -480,6 +558,7 @@ class SecurityPolicyConfig:
     advanced_options_config: Any = None
     # A list of associations that belong to this policy.
     associations: Any = None
+    # Configuration for DDoS protection on the security policy, containing the protection class. This field is computed and output-only, so it cannot be set in configuration. (AI-inferred)
     ddos_protection_config: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -491,6 +570,7 @@ class SecurityPolicyConfig:
     labels: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
+    # Configuration for reCAPTCHA options in the security policy. This field is computed, meaning it is populated by the API and cannot be set manually. (AI-inferred)
     recaptcha_options_config: Any = None
     # A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
     rules: Any = None
@@ -510,6 +590,7 @@ class SecurityPolicyAttrs:
     associations: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None
+    # Configuration for DDoS protection on the security policy, containing the protection class. This field is computed and output-only, so it cannot be set in configuration. (AI-inferred)
     ddos_protection_config: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -527,6 +608,7 @@ class SecurityPolicyAttrs:
     name: Any = None
     # Output only. [Output Only] The parent of the security policy.
     parent: Any = None
+    # Configuration for reCAPTCHA options in the security policy. This field is computed, meaning it is populated by the API and cannot be set manually. (AI-inferred)
     recaptcha_options_config: Any = None
     # Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
     region: Any = None

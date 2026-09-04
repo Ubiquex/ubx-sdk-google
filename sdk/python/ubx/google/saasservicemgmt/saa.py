@@ -8,10 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Saa_Conditions:
+    # The real timestamp when this SaaS offering's own condition last changed status. (AI-inferred)
     last_transition_time: Any = None
+    # A real, human-readable explanation for this condition's own current status. (AI-inferred)
     message: Any = None
+    # A real, short, machine-readable reason code for this condition's own current status. (AI-inferred)
     reason: Any = None
+    # The real, current status (`STATUS_TRUE`, `STATUS_FALSE`, `STATUS_UNKNOWN`) of this condition. (AI-inferred)
     status: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -25,6 +30,7 @@ class Saa_Error:
 
 @dataclasses.dataclass
 class Saa_Locations:
+    # The real, declared name of this SaaS offering's own available deployment location, or of a repricing/entitlement parameter. (AI-inferred)
     name: Any = None
 
 _Saa_ErrorFields = {

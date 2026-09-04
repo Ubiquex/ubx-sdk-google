@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloneJob_ComputeEngineDisksTargetDetails_Disks:
+    # The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred)
     disk_uri: Any = None
+    # The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred)
     source_disk_number: Any = None
 
 @dataclasses.dataclass
@@ -27,7 +29,9 @@ class CloneJob_ComputeEngineDisksTargetDetails:
 
 @dataclasses.dataclass
 class CloneJob_ComputeEngineTargetDetails_AdaptationModifiers:
+    # A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred)
     modifier: Any = None
+    # The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -39,8 +43,11 @@ class CloneJob_ComputeEngineTargetDetails_AppliedLicense:
 
 @dataclasses.dataclass
 class CloneJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities:
+    # The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred)
     key: Any = None
+    # The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred)
     operator: Any = None
+    # The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -61,10 +68,15 @@ class CloneJob_ComputeEngineTargetDetails_Encryption:
 
 @dataclasses.dataclass
 class CloneJob_ComputeEngineTargetDetails_NetworkInterfaces:
+    # The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred)
     external_ip: Any = None
+    # The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred)
     internal_ip: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred)
     network_tier: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
@@ -131,10 +143,15 @@ class CloneJob_Error:
 
 @dataclasses.dataclass
 class CloneJob_Steps:
+    # Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred)
     adapting_os: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred)
     instantiating_migrated_vm: Any = None
+    # Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred)
     preparing_vm_disks: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 _CloneJob_ComputeEngineDisksTargetDetails_DisksFields = {

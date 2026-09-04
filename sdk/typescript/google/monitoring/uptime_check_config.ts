@@ -2,18 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UptimeCheckConfig_ContentMatchers_JsonPathMatcher {
+  /** How the value at a JSON path is matched against an expected value. (AI-inferred) */
   jsonMatcher?: string | Computed<string>;
+  /** The JSON path this rule applies to. (AI-inferred) */
   jsonPath?: string | Computed<string>;
 }
 
 export interface UptimeCheckConfig_ContentMatchers {
+  /** The literal content of this field. (AI-inferred) */
   content?: string | Computed<string>;
+  /** Configuration for matching a value at a specific JSON path. (AI-inferred) */
   jsonPathMatcher?: UptimeCheckConfig_ContentMatchers_JsonPathMatcher | Computed<UptimeCheckConfig_ContentMatchers_JsonPathMatcher>;
+  /** How this value is matched against an expected pattern. (AI-inferred) */
   matcher?: string | Computed<string>;
 }
 
 export interface UptimeCheckConfig_HttpCheck_AcceptedResponseStatusCodes {
+  /** The class of HTTP status codes (e.g. `4xx`) this uptime check matches. (AI-inferred) */
   statusClass?: string | Computed<string>;
+  /** The specific HTTP status code this uptime check matches. (AI-inferred) */
   statusValue?: number | Computed<number>;
 }
 
@@ -66,11 +73,17 @@ export interface UptimeCheckConfig_HttpCheck {
 }
 
 export interface UptimeCheckConfig_InternalCheckers {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The Google Cloud zone this applies to. (AI-inferred) */
   gcpZone?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The project ID of the peered project this applies to. (AI-inferred) */
   peerProjectId?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

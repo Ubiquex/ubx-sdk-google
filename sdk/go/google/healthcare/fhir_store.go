@@ -39,100 +39,146 @@ type FhirStore_NotificationConfig struct {
 }
 
 type FhirStore_NotificationConfigs struct {
-	PubsubTopic                  any
-	SendFullResource             any
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
+	PubsubTopic any
+	// Whether the full resource content is included in the notification, rather than just its own reference. (AI-inferred)
+	SendFullResource any
+	// Whether the resource's own prior content is included in the notification when it's deleted. (AI-inferred)
 	SendPreviousResourceOnDelete any
 }
 
 type FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfig struct {
+	// How long, in milliseconds, this consent or resource remains valid. (AI-inferred)
 	ExpirationMs any
-	Type         any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig struct {
+	// Partitions BigQuery export by each resource's own last-updated time. (AI-inferred)
 	LastUpdatedPartitionConfig any
-	RecursiveStructureDepth    any
-	SchemaType                 any
+	// The maximum nesting depth allowed when parsing recursive HL7v2 structures. (AI-inferred)
+	RecursiveStructureDepth any
+	// Which schema representation this parser uses. (AI-inferred)
+	SchemaType any
 }
 
 type FhirStore_StreamConfigs_BigqueryDestination struct {
-	DatasetUri       any
-	Force            any
-	SchemaConfig     any
+	// A reference to the dataset this applies to. (AI-inferred)
+	DatasetUri any
+	// Whether this operation proceeds even if it would otherwise be blocked by a safety check. (AI-inferred)
+	Force any
+	// Configuration for how HL7v2 messages are parsed against a schema. (AI-inferred)
+	SchemaConfig any
+	// Whether export output overwrites, appends to, or requires an empty destination table. (AI-inferred)
 	WriteDisposition any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList struct {
+	// The DICOM tag(s) this applies to. (AI-inferred)
 	Tags any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom struct {
-	FilterProfile   any
-	KeepList        any
-	RemoveList      any
+	// A predefined profile determining which resource types/fields this filter includes. (AI-inferred)
+	FilterProfile any
+	// The field(s) explicitly kept, with everything else removed. (AI-inferred)
+	KeepList any
+	// The field(s) explicitly removed, with everything else kept. (AI-inferred)
+	RemoveList any
+	// Whether resource ID fields are excluded from de-identification. (AI-inferred)
 	SkipIdRedaction any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataList struct {
+	// The action to perform. (AI-inferred)
 	Action any
-	Paths  any
+	// The path(s) this applies to. (AI-inferred)
+	Paths any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir struct {
+	// Whether unspecified FHIR extension(s) are kept by default, rather than stripped. (AI-inferred)
 	DefaultKeepExtensions any
-	FieldMetadataList     any
+	// Per-field de-identification configuration, one entry per targeted field. (AI-inferred)
+	FieldMetadataList any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Image struct {
+	// How free-text fields are redacted during de-identification. (AI-inferred)
 	TextRedactionMode any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfig struct {
+	// The character substituted in place of each masked character. (AI-inferred)
 	MaskingCharacter any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrapped struct {
-	CryptoKey  any
+	// The encryption key used for this cryptographic transformation. (AI-inferred)
+	CryptoKey any
+	// The crypto key's own bytes, encrypted by a Cloud KMS key. (AI-inferred)
 	WrappedKey any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig struct {
-	CryptoKey  any
+	// The encryption key used for this cryptographic transformation. (AI-inferred)
+	CryptoKey any
+	// A crypto key wrapped by Cloud KMS. (AI-inferred)
 	KmsWrapped any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations struct {
-	CharacterMaskConfig       any
-	CryptoHashConfig          any
-	DateShiftConfig           any
-	InfoTypes                 any
-	RedactConfig              any
+	// Replaces characters in a matching value with a fixed masking character. (AI-inferred)
+	CharacterMaskConfig any
+	// De-identifies a value by replacing it with a cryptographic hash. (AI-inferred)
+	CryptoHashConfig any
+	// De-identifies dates by shifting them a random, per-context number of days. (AI-inferred)
+	DateShiftConfig any
+	// The info type(s) this applies to. (AI-inferred)
+	InfoTypes any
+	// De-identifies a value by removing it entirely. (AI-inferred)
+	RedactConfig any
+	// De-identifies a value by replacing it with its own detected info type name. (AI-inferred)
 	ReplaceWithInfoTypeConfig any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text struct {
+	// Further de-identification transformation(s) applied on top of the primary configuration. (AI-inferred)
 	AdditionalTransformations any
-	ExcludeInfoTypes          any
-	Transformations           any
+	// Info type(s) excluded from de-identification, even if they'd otherwise match. (AI-inferred)
+	ExcludeInfoTypes any
+	// The transformation(s) applied to matching data. (AI-inferred)
+	Transformations any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config struct {
-	Dicom                     any
-	Fhir                      any
-	Image                     any
-	Text                      any
+	// Configuration specific to DICOM (medical imaging) data. (AI-inferred)
+	Dicom any
+	// Configuration specific to FHIR (structured clinical) data. (AI-inferred)
+	Fhir any
+	// Configuration specific to image data within DICOM instances. (AI-inferred)
+	Image any
+	// The plain-text content. (AI-inferred)
+	Text any
+	// Whether processing happens within the resource's own region, rather than a multi-region location. (AI-inferred)
 	UseRegionalDataProcessing any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination struct {
+	// The configuration for this resource. (AI-inferred)
 	Config any
-	Store  any
+	// A reference to the data store this applies to. (AI-inferred)
+	Store any
 }
 
 type FhirStore_StreamConfigs struct {
-	BigqueryDestination          any
+	// The BigQuery table this operation's own output is written to. (AI-inferred)
+	BigqueryDestination any
+	// The destination store de-identified output is written to. (AI-inferred)
 	DeidentifiedStoreDestination any
-	ResourceTypes                any
+	// The FHIR resource type(s) this applies to. (AI-inferred)
+	ResourceTypes any
 }
 
 type FhirStore_ValidationConfig struct {

@@ -22,6 +22,7 @@ export interface Table_CloneDefinition_BaseTableReference {
 }
 
 export interface Table_CloneDefinition {
+  /** A reference to the underlying base table. (AI-inferred) */
   baseTableReference?: Table_CloneDefinition_BaseTableReference | Computed<Table_CloneDefinition_BaseTableReference>;
   /** Required. The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format. */
   cloneTime?: string | Computed<string>;
@@ -72,26 +73,41 @@ export interface Table_ExternalDataConfiguration_AvroOptions {
 }
 
 export interface Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfig {
+  /** The fully qualified name of the protocol buffer message type this data is encoded as. (AI-inferred) */
   protoMessageName?: string | Computed<string>;
+  /** A reference to the schema bundle (e.g. a set of `.proto` definitions) this configuration uses. (AI-inferred) */
   schemaBundleId?: string | Computed<string>;
 }
 
 export interface Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns {
+  /** The text encoding this field's own byte values should be interpreted with. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The name of the field this applies to. (AI-inferred) */
   fieldName?: string | Computed<string>;
+  /** Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred) */
   onlyReadLatest?: boolean | Computed<boolean>;
+  /** Configuration for reading data encoded as protocol buffer messages. (AI-inferred) */
   protoConfig?: Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfig | Computed<Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfig>;
+  /** The Bigtable column qualifier, in its own raw encoded (byte) form. (AI-inferred) */
   qualifierEncoded?: string | Computed<string>;
+  /** The Bigtable column qualifier, decoded as a string. (AI-inferred) */
   qualifierString?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies {
+  /** The column(s) this applies to. (AI-inferred) */
   columns?: Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns[] | Computed<Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns[]>;
+  /** The text encoding this field's own byte values should be interpreted with. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The Bigtable column family this applies to. (AI-inferred) */
   familyId?: string | Computed<string>;
+  /** Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred) */
   onlyReadLatest?: boolean | Computed<boolean>;
+  /** Configuration for reading data encoded as protocol buffer messages. (AI-inferred) */
   protoConfig?: Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfig | Computed<Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfig>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -162,56 +178,86 @@ export interface Table_ExternalDataConfiguration_ParquetOptions {
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields_Categories {
+  /** The literal name(s) this applies to. (AI-inferred) */
   names?: string[] | Computed<string[]>;
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfo {
+  /** The data governance tag(s) applied to this column. (AI-inferred) */
   dataGovernanceTags?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields_DataPolicies {
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields_DataPolicyList {
+  /** Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred) */
   dataPolicies?: Table_ExternalDataConfiguration_Schema_Fields_DataPolicies[] | Computed<Table_ExternalDataConfiguration_Schema_Fields_DataPolicies[]>;
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo {
+  /** Whether a generated column's own value is computed asynchronously after write, rather than synchronously. (AI-inferred) */
   asynchronous?: boolean | Computed<boolean>;
+  /** The SQL expression computing this generated column's own value. (AI-inferred) */
   generationExpression?: string | Computed<string>;
+  /** Whether a generated column's own computed value is physically stored, rather than recomputed on each read. (AI-inferred) */
   stored?: boolean | Computed<boolean>;
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn {
+  /** Detail about a generated column's own computation. (AI-inferred) */
   generatedExpressionInfo?: Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo | Computed<Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo>;
+  /** Whether this column's own value is stored, virtual (computed on read), or not generated at all. (AI-inferred) */
   generatedMode?: string | Computed<string>;
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields_RangeElementType {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Table_ExternalDataConfiguration_Schema_Fields {
+  /** The set of category labels this applies to. (AI-inferred) */
   categories?: Table_ExternalDataConfiguration_Schema_Fields_Categories | Computed<Table_ExternalDataConfiguration_Schema_Fields_Categories>;
+  /** The collation (locale-aware string comparison rule) applied to a `STRING`-typed field, e.g. `und:ci` for case-insensitive comparison, or empty for the default case-sensitive comparison. (AI-inferred) */
   collation?: string | Computed<string>;
+  /** Detail about the data governance tag(s) associated with this column. (AI-inferred) */
   dataGovernanceTagsInfo?: Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfo | Computed<Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfo>;
+  /** Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred) */
   dataPolicies?: Table_ExternalDataConfiguration_Schema_Fields_DataPolicies[] | Computed<Table_ExternalDataConfiguration_Schema_Fields_DataPolicies[]>;
+  /** The data policies (e.g. dynamic data masking rules) applied to this column. (AI-inferred) */
   dataPolicyList?: Table_ExternalDataConfiguration_Schema_Fields_DataPolicyList | Computed<Table_ExternalDataConfiguration_Schema_Fields_DataPolicyList>;
+  /** A SQL expression computing this column's own default value when none is supplied on insert. (AI-inferred) */
   defaultValueExpression?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred) */
   fields?: unknown[] | Computed<unknown[]>;
+  /** The native type definition of this column in the external system it's federated from. (AI-inferred) */
   foreignTypeDefinition?: string | Computed<string>;
+  /** A column whose own value is computed from other columns, rather than stored directly. (AI-inferred) */
   generatedColumn?: Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn | Computed<Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn>;
+  /** The most characters a `string`-typed value may have. (AI-inferred) */
   maxLength?: string | Computed<string>;
+  /** Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Data Catalog policy tag(s) governing access to this column. (AI-inferred) */
   policyTags?: Table_ExternalDataConfiguration_Schema_Fields_Categories | Computed<Table_ExternalDataConfiguration_Schema_Fields_Categories>;
+  /** For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred) */
   precision?: string | Computed<string>;
+  /** The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred) */
   rangeElementType?: Table_ExternalDataConfiguration_Schema_Fields_RangeElementType | Computed<Table_ExternalDataConfiguration_Schema_Fields_RangeElementType>;
+  /** How values are rounded when they exceed this `NUMERIC`/`BIGNUMERIC` field's own scale. (AI-inferred) */
   roundingMode?: string | Computed<string>;
+  /** For a `NUMERIC`/`BIGNUMERIC` field, how many digits are kept after the decimal point. (AI-inferred) */
   scale?: string | Computed<string>;
+  /** The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred) */
   timestampPrecision?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -318,35 +364,56 @@ export interface Table_MaterializedViewStatus {
 }
 
 export interface Table_Model_ModelOptions {
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: string[] | Computed<string[]>;
+  /** The loss function optimized during training. (AI-inferred) */
   lossType?: string | Computed<string>;
+  /** The kind of ML model this is, e.g. `LINEAR_REG` or `KMEANS`. (AI-inferred) */
   modelType?: string | Computed<string>;
 }
 
 export interface Table_Model_TrainingRuns_IterationResults {
+  /** How long this operation took, in milliseconds. (AI-inferred) */
   durationMs?: string | Computed<string>;
+  /** The loss value computed on the evaluation (held-out) dataset. (AI-inferred) */
   evalLoss?: number | Computed<number>;
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: number | Computed<number>;
+  /** The step size used to update model weights during training. (AI-inferred) */
   learnRate?: number | Computed<number>;
+  /** The loss value computed on the training dataset. (AI-inferred) */
   trainingLoss?: number | Computed<number>;
 }
 
 export interface Table_Model_TrainingRuns_TrainingOptions {
+  /** Whether training stops automatically once further iterations no longer improve the evaluation metric. (AI-inferred) */
   earlyStop?: boolean | Computed<boolean>;
+  /** The L1 regularization strength applied during training. (AI-inferred) */
   l1Reg?: number | Computed<number>;
+  /** The L2 regularization strength applied during training. (AI-inferred) */
   l2Reg?: number | Computed<number>;
+  /** The step size used to update model weights during training. (AI-inferred) */
   learnRate?: number | Computed<number>;
+  /** How the learning rate changes over training, e.g. fixed or line-search. (AI-inferred) */
   learnRateStrategy?: string | Computed<string>;
+  /** The initial learning rate used when line-search learning rate strategy is selected. (AI-inferred) */
   lineSearchInitLearnRate?: number | Computed<number>;
+  /** The maximum number of training iterations. (AI-inferred) */
   maxIteration?: string | Computed<string>;
+  /** The minimum relative improvement in loss required to continue training another iteration. (AI-inferred) */
   minRelProgress?: number | Computed<number>;
+  /** Whether training resumes from a previous model's own learned weights, rather than starting from scratch. (AI-inferred) */
   warmStart?: boolean | Computed<boolean>;
 }
 
 export interface Table_Model_TrainingRuns {
+  /** The per-iteration result(s) recorded during model training. (AI-inferred) */
   iterationResults?: Table_Model_TrainingRuns_IterationResults[] | Computed<Table_Model_TrainingRuns_IterationResults[]>;
+  /** When this operation started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current status of this resource or operation. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The hyperparameter(s) and other setting(s) used to train this model. (AI-inferred) */
   trainingOptions?: Table_Model_TrainingRuns_TrainingOptions | Computed<Table_Model_TrainingRuns_TrainingOptions>;
 }
 
@@ -358,6 +425,7 @@ export interface Table_Model {
 }
 
 export interface Table_PartitionDefinition_PartitionedColumn {
+  /** A reference to a specific field. (AI-inferred) */
   field?: string | Computed<string>;
 }
 
@@ -383,6 +451,7 @@ export interface Table_RangePartitioning {
 }
 
 export interface Table_SnapshotDefinition {
+  /** A reference to the underlying base table. (AI-inferred) */
   baseTableReference?: Table_CloneDefinition_BaseTableReference | Computed<Table_CloneDefinition_BaseTableReference>;
   /** Required. The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format. */
   snapshotTime?: string | Computed<string>;
@@ -398,13 +467,18 @@ export interface Table_StreamingBuffer {
 }
 
 export interface Table_TableConstraints_ForeignKeys_ColumnReferences {
+  /** The column being referenced. (AI-inferred) */
   referencedColumn?: string | Computed<string>;
+  /** The column that references another table/column. (AI-inferred) */
   referencingColumn?: string | Computed<string>;
 }
 
 export interface Table_TableConstraints_ForeignKeys {
+  /** The column(s) this foreign key or constraint references. (AI-inferred) */
   columnReferences?: Table_TableConstraints_ForeignKeys_ColumnReferences[] | Computed<Table_TableConstraints_ForeignKeys_ColumnReferences[]>;
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The table being referenced. (AI-inferred) */
   referencedTable?: Table_CloneDefinition_BaseTableReference | Computed<Table_CloneDefinition_BaseTableReference>;
 }
 
@@ -429,6 +503,7 @@ export interface Table_TableReplicationInfo {
   replicationIntervalMs?: string | Computed<string>;
   /** Optional. Output only. Replication status of configured replication. */
   replicationStatus?: string | Computed<string>;
+  /** The table this job's own input is read from. (AI-inferred) */
   sourceTable?: Table_CloneDefinition_BaseTableReference | Computed<Table_CloneDefinition_BaseTableReference>;
 }
 
@@ -444,7 +519,9 @@ export interface Table_TimePartitioning {
 }
 
 export interface Table_View_ForeignDefinitions {
+  /** Which SQL dialect this query is written in, e.g. GoogleSQL or legacy SQL. (AI-inferred) */
   dialect?: string | Computed<string>;
+  /** The SQL query text. (AI-inferred) */
   query?: string | Computed<string>;
 }
 
@@ -491,7 +568,9 @@ export interface Table_View_PrivacyPolicy {
 }
 
 export interface Table_View_UserDefinedFunctionResources {
+  /** Routine logic supplied directly as inline source code, rather than referencing an external definition. (AI-inferred) */
   inlineCode?: string | Computed<string>;
+  /** A URI identifying this external resource. (AI-inferred) */
   resourceUri?: string | Computed<string>;
 }
 
@@ -1091,6 +1170,7 @@ export interface TableConfig {
   expirationTime?: string | Computed<string>;
   /** Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties. */
   externalCatalogTableOptions?: Table_ExternalCatalogTableOptions | Computed<Table_ExternalCatalogTableOptions>;
+  /** Configuration for reading this table's own data from an external source, rather than BigQuery-managed storage. (AI-inferred) */
   externalDataConfiguration?: Table_ExternalDataConfiguration | Computed<Table_ExternalDataConfiguration>;
   /** Optional. A descriptive name for this table. */
   friendlyName?: string | Computed<string>;
@@ -1106,25 +1186,31 @@ export interface TableConfig {
   materializedViewStatus?: Table_MaterializedViewStatus | Computed<Table_MaterializedViewStatus>;
   /** Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type. */
   maxStaleness?: string | Computed<string>;
+  /** A reference to the model this applies to. (AI-inferred) */
   model?: Table_Model | Computed<Table_Model>;
   /** The partitioning information, which includes managed table, external table and metastore partitioned table partition information. */
   partitionDefinition?: Table_PartitionDefinition | Computed<Table_PartitionDefinition>;
+  /** Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred) */
   rangePartitioning?: Table_RangePartitioning | Computed<Table_RangePartitioning>;
   /** Optional. If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. */
   requirePartitionFilter?: boolean | Computed<boolean>;
   /** [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production". */
   resourceTags?: Record<string, string> | Computed<Record<string, string>>;
+  /** The restriction(s) applied to this data. (AI-inferred) */
   restrictions?: Table_ExternalDataConfiguration_Schema_Fields_RangeElementType | Computed<Table_ExternalDataConfiguration_Schema_Fields_RangeElementType>;
   /** Schema of a table */
   schema?: Table_ExternalDataConfiguration_Schema | Computed<Table_ExternalDataConfiguration_Schema>;
   /** Information about base table and snapshot time of the snapshot. */
   snapshotDefinition?: Table_SnapshotDefinition | Computed<Table_SnapshotDefinition>;
+  /** Statistics about rows recently streamed into this table that haven't yet been written to permanent storage. (AI-inferred) */
   streamingBuffer?: Table_StreamingBuffer | Computed<Table_StreamingBuffer>;
   /** The TableConstraints defines the primary key and foreign key. */
   tableConstraints?: Table_TableConstraints | Computed<Table_TableConstraints>;
+  /** A reference to a specific BigQuery table. (AI-inferred) */
   tableReference?: Table_CloneDefinition_BaseTableReference | Computed<Table_CloneDefinition_BaseTableReference>;
   /** Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv` */
   tableReplicationInfo?: Table_TableReplicationInfo | Computed<Table_TableReplicationInfo>;
+  /** Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred) */
   timePartitioning?: Table_TimePartitioning | Computed<Table_TimePartitioning>;
   /** Describes the definition of a logical view. */
   view?: Table_View | Computed<Table_View>;
@@ -1153,6 +1239,7 @@ export interface TableAttrs {
   expirationTime: string;
   /** Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties. */
   externalCatalogTableOptions: Table_ExternalCatalogTableOptions;
+  /** Configuration for reading this table's own data from an external source, rather than BigQuery-managed storage. (AI-inferred) */
   externalDataConfiguration: Table_ExternalDataConfiguration;
   /** Optional. A descriptive name for this table. */
   friendlyName: string;
@@ -1174,6 +1261,7 @@ export interface TableAttrs {
   materializedViewStatus: Table_MaterializedViewStatus;
   /** Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type. */
   maxStaleness: string;
+  /** A reference to the model this applies to. (AI-inferred) */
   model: Table_Model;
   /** Output only. Number of logical bytes that are less than 90 days old. */
   numActiveLogicalBytes: string;
@@ -1203,6 +1291,7 @@ export interface TableAttrs {
   numTotalPhysicalBytes: string;
   /** The partitioning information, which includes managed table, external table and metastore partitioned table partition information. */
   partitionDefinition: Table_PartitionDefinition;
+  /** Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred) */
   rangePartitioning: Table_RangePartitioning;
   /** Optional. Output only. Table references of all replicas currently active on the table. */
   replicas: Table_CloneDefinition_BaseTableReference[];
@@ -1210,6 +1299,7 @@ export interface TableAttrs {
   requirePartitionFilter: boolean;
   /** [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production". */
   resourceTags: Record<string, string>;
+  /** The restriction(s) applied to this data. (AI-inferred) */
   restrictions: Table_ExternalDataConfiguration_Schema_Fields_RangeElementType;
   /** Schema of a table */
   schema: Table_ExternalDataConfiguration_Schema;
@@ -1217,12 +1307,15 @@ export interface TableAttrs {
   selfLink: string;
   /** Information about base table and snapshot time of the snapshot. */
   snapshotDefinition: Table_SnapshotDefinition;
+  /** Statistics about rows recently streamed into this table that haven't yet been written to permanent storage. (AI-inferred) */
   streamingBuffer: Table_StreamingBuffer;
   /** The TableConstraints defines the primary key and foreign key. */
   tableConstraints: Table_TableConstraints;
+  /** A reference to a specific BigQuery table. (AI-inferred) */
   tableReference: Table_CloneDefinition_BaseTableReference;
   /** Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv` */
   tableReplicationInfo: Table_TableReplicationInfo;
+  /** Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred) */
   timePartitioning: Table_TimePartitioning;
   /** Output only. Describes the table type. The following values are supported: * `TABLE`: A normal BigQuery table. * `VIEW`: A virtual table defined by a SQL query. * `EXTERNAL`: A table that references data stored in an external storage system, such as Google Cloud Storage. * `MATERIALIZED_VIEW`: A precomputed view defined by a SQL query. * `SNAPSHOT`: An immutable BigQuery table that preserves the contents of a base table at a particular time. See additional information on [table snapshots](https://cloud.google.com/bigquery/docs/table-snapshots-intro). The default value is `TABLE`. */
   type: string;

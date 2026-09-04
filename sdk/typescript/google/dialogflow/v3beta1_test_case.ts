@@ -886,23 +886,38 @@ const V3beta1TestCase_TestConfigFields: FieldMap = {
 };
 
 export interface V3beta1TestCaseConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The outcome of the most recent run of this test case. (AI-inferred) */
   lastTestResult?: V3beta1TestCase_LastTestResult | Computed<V3beta1TestCase_LastTestResult>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Free-text notes attached to this resource. (AI-inferred) */
   notes?: string | Computed<string>;
+  /** Free-form label(s) attached to this resource. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
+  /** The expected conversation turn(s) this test case verifies. (AI-inferred) */
   testCaseConversationTurns?: V3beta1TestCase_LastTestResult_ConversationTurns[] | Computed<V3beta1TestCase_LastTestResult_ConversationTurns[]>;
+  /** Configuration for this test run. (AI-inferred) */
   testConfig?: V3beta1TestCase_TestConfig | Computed<V3beta1TestCase_TestConfig>;
 }
 
 export interface V3beta1TestCaseAttrs {
+  /** When this resource was created. (AI-inferred) */
   creationTime: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The outcome of the most recent run of this test case. (AI-inferred) */
   lastTestResult: V3beta1TestCase_LastTestResult;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Free-text notes attached to this resource. (AI-inferred) */
   notes: string;
+  /** Free-form label(s) attached to this resource. (AI-inferred) */
   tags: string[];
+  /** The expected conversation turn(s) this test case verifies. (AI-inferred) */
   testCaseConversationTurns: V3beta1TestCase_LastTestResult_ConversationTurns[];
+  /** Configuration for this test run. (AI-inferred) */
   testConfig: V3beta1TestCase_TestConfig;
 }
 

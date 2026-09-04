@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagedFolder_RapidCacheConfig_Policies:
+    # Whether this bucket ingests written objects for rapid analytics access as they land. (AI-inferred)
     ingest_on_write: Any = None
+    # The identifier of the rapid storage cache this applies to. (AI-inferred)
     rapid_cache_id: Any = None
 
 @dataclasses.dataclass

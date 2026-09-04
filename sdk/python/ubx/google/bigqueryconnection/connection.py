@@ -84,15 +84,22 @@ class Connection_Configuration_Asset:
 
 @dataclasses.dataclass
 class Connection_Configuration_Authentication_Parameters_SecretValue:
+    # The literal secret value, accepted on write but never returned on read. (AI-inferred)
     plaintext: Any = None
+    # How this secret is stored/referenced, e.g. as a plaintext value versus a Secret Manager reference. (AI-inferred)
     secret_type: Any = None
 
 @dataclasses.dataclass
 class Connection_Configuration_Authentication_Parameters:
+    # A boolean value, populated when this authentication parameter's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # A floating-point value, populated when this authentication parameter's own type is a double. (AI-inferred)
     double_value: Any = None
+    # An integer value, populated when this authentication parameter's own type is a 32-bit integer. (AI-inferred)
     int32_value: Any = None
+    # A secret value, populated when this authentication parameter must be kept confidential rather than stored/returned in plaintext. (AI-inferred)
     secret_value: Any = None
+    # A text value, populated when this authentication parameter's own type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass

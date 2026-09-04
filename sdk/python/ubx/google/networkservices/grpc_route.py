@@ -8,63 +8,91 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Action_Destinations:
+    # The name of the service this applies to. (AI-inferred)
     service_name: Any = None
+    # The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Action_FaultInjectionPolicy_Abort:
+    # The HTTP status code returned. (AI-inferred)
     http_status: Any = None
+    # A percentage value. (AI-inferred)
     percentage: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Action_FaultInjectionPolicy_Delay:
+    # A fixed delay duration applied to matching requests. (AI-inferred)
     fixed_delay: Any = None
+    # A percentage value. (AI-inferred)
     percentage: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Action_FaultInjectionPolicy:
+    # Immediately fails matching requests with a fixed status code, for fault-injection testing. (AI-inferred)
     abort: Any = None
+    # Configuration for artificially delaying matching requests, for fault-injection testing. (AI-inferred)
     delay: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Action_RetryPolicy:
+    # The maximum number of times a failed request is retried. (AI-inferred)
     num_retries: Any = None
+    # The condition(s) (e.g. specific status codes) under which a failed request is retried. (AI-inferred)
     retry_conditions: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Action_StatefulSessionAffinity:
+    # How long a session-affinity cookie remains valid. (AI-inferred)
     cookie_ttl: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Action:
+    # The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
     destinations: Any = None
+    # Configuration for artificially injecting delays or aborted requests, for resilience testing. (AI-inferred)
     fault_injection_policy: Any = None
+    # How long an idle connection is kept open before being closed. (AI-inferred)
     idle_timeout: Any = None
+    # Configuration for automatically retrying failed requests. (AI-inferred)
     retry_policy: Any = None
+    # Configuration for consistently routing a client's own requests to the same backend, using a session cookie. (AI-inferred)
     stateful_session_affinity: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Matches_Headers:
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Matches_Method:
+    # Whether this path match is case-sensitive. (AI-inferred)
     case_sensitive: Any = None
+    # The gRPC method this rule matches. (AI-inferred)
     grpc_method: Any = None
+    # The gRPC service this rule matches. (AI-inferred)
     grpc_service: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules_Matches:
+    # The HTTP header(s) this applies to. (AI-inferred)
     headers: Any = None
+    # The HTTP method this rule matches. (AI-inferred)
     method: Any = None
 
 @dataclasses.dataclass
 class GrpcRoute_Rules:
+    # The action taken when this rule matches. (AI-inferred)
     action: Any = None
+    # The match condition(s) this rule evaluates. (AI-inferred)
     matches: Any = None
 
 _GrpcRoute_Rules_Action_DestinationsFields = {

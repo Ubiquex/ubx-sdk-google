@@ -40,7 +40,9 @@ export interface Organization_AddonsConfig {
 }
 
 export interface Organization_Properties_Property {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

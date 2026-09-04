@@ -2,20 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BigQueryExportConfig {
+  /** A reference to the BigQuery dataset this applies to. (AI-inferred) */
   dataset?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface BigQueryExportAttrs {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A reference to the BigQuery dataset this applies to. (AI-inferred) */
   dataset: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter: string;
+  /** The identity that most recently modified this resource. (AI-inferred) */
   mostRecentEditor: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The identity this applies to. (AI-inferred) */
   principal: string;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

@@ -11,13 +11,18 @@ export interface BareMetalNodePool_NodePoolConfig_KubeletConfig {
 }
 
 export interface BareMetalNodePool_NodePoolConfig_NodeConfigs {
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The IP address of this node. (AI-inferred) */
   nodeIp?: string | Computed<string>;
 }
 
 export interface BareMetalNodePool_NodePoolConfig_Taints {
+  /** What happens to a pod that doesn't tolerate this taint. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The key of this taint or label. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value of this taint or label. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -35,15 +40,22 @@ export interface BareMetalNodePool_NodePoolConfig {
 }
 
 export interface BareMetalNodePool_Status_Conditions {
+  /** When this condition last changed from one status to another. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface BareMetalNodePool_Status_Versions_Versions {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 

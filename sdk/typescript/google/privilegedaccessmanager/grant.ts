@@ -14,7 +14,9 @@ export interface Grant_Justification {
 }
 
 export interface Grant_PrivilegedAccess_GcpIamAccess_RoleBindings {
+  /** A Common Expression Language (CEL) condition that must hold for this rule to apply. (AI-inferred) */
   conditionExpression?: string | Computed<string>;
+  /** The IAM role this grant provides temporary access to. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
@@ -33,40 +35,60 @@ export interface Grant_PrivilegedAccess {
 }
 
 export interface Grant_Timeline_Events_ActivationFailed_Error {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Grant_Timeline_Events_ActivationFailed {
+  /** Detail about an error that occurred. (AI-inferred) */
   error?: Grant_Timeline_Events_ActivationFailed_Error | Computed<Grant_Timeline_Events_ActivationFailed_Error>;
 }
 
 export interface Grant_Timeline_Events_Approved {
+  /** The identity that performed this action. (AI-inferred) */
   actor?: string | Computed<string>;
+  /** A human-readable justification supplied for this action. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface Grant_Timeline_Events_Requested {
+  /** The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred) */
   expireTime?: string | Computed<string>;
 }
 
 export interface Grant_Timeline_Events_Scheduled {
+  /** The time this grant is scheduled to automatically activate. (AI-inferred) */
   scheduledActivationTime?: string | Computed<string>;
 }
 
 export interface Grant_Timeline_Events {
+  /** When this grant was activated. (AI-inferred) */
   activated?: unknown | Computed<unknown>;
+  /** When activation of this grant failed. (AI-inferred) */
   activationFailed?: Grant_Timeline_Events_ActivationFailed | Computed<Grant_Timeline_Events_ActivationFailed>;
+  /** When this grant was approved. (AI-inferred) */
   approved?: Grant_Timeline_Events_Approved | Computed<Grant_Timeline_Events_Approved>;
+  /** When this grant was denied. (AI-inferred) */
   denied?: Grant_Timeline_Events_Approved | Computed<Grant_Timeline_Events_Approved>;
+  /** When this grant's own access ended. (AI-inferred) */
   ended?: unknown | Computed<unknown>;
+  /** When this event occurred. (AI-inferred) */
   eventTime?: string | Computed<string>;
+  /** When this grant expired without being activated. (AI-inferred) */
   expired?: unknown | Computed<unknown>;
+  /** When this grant was last modified by a process outside Privileged Access Manager. (AI-inferred) */
   externallyModified?: unknown | Computed<unknown>;
+  /** When this grant was requested. (AI-inferred) */
   requested?: Grant_Timeline_Events_Requested | Computed<Grant_Timeline_Events_Requested>;
+  /** When this grant's own access was revoked before its natural expiration. (AI-inferred) */
   revoked?: Grant_Timeline_Events_Approved | Computed<Grant_Timeline_Events_Approved>;
+  /** When this grant's own activation is scheduled to occur. (AI-inferred) */
   scheduled?: Grant_Timeline_Events_Scheduled | Computed<Grant_Timeline_Events_Scheduled>;
+  /** When this grant's own request was withdrawn by its requester. (AI-inferred) */
   withdrawn?: unknown | Computed<unknown>;
 }
 

@@ -112,8 +112,11 @@ type Version_Deployment_Container struct {
 }
 
 type Version_Deployment_Files struct {
-	MimeType  any
-	Sha1Sum   any
+	// The MIME type of this file's own content. (AI-inferred)
+	MimeType any
+	// A SHA-1 checksum of this file's own content. (AI-inferred)
+	Sha1Sum any
+	// The Cloud Storage URL this file's own content is read from. (AI-inferred)
 	SourceUrl any
 }
 
@@ -152,8 +155,11 @@ type Version_Entrypoint struct {
 }
 
 type Version_ErrorHandlers struct {
-	ErrorCode  any
-	MimeType   any
+	// The error condition this custom error handler responds to. (AI-inferred)
+	ErrorCode any
+	// The MIME type of this file's own content. (AI-inferred)
+	MimeType any
+	// Configuration for serving a matching URL as a static file. (AI-inferred)
 	StaticFile any
 }
 
@@ -165,28 +171,44 @@ type Version_FlexibleRuntimeSettings struct {
 }
 
 type Version_Handlers_ApiEndpoint struct {
+	// The path to the script handling this request. (AI-inferred)
 	ScriptPath any
 }
 
 type Version_Handlers_StaticFiles struct {
+	// Whether application code is permitted to read this file at runtime. (AI-inferred)
 	ApplicationReadable any
-	Expiration          any
-	HttpHeaders         any
-	MimeType            any
-	Path                any
+	// How long a cached response for this handler may be reused. (AI-inferred)
+	Expiration any
+	// The HTTP header(s) included in the response. (AI-inferred)
+	HttpHeaders any
+	// The MIME type of this file's own content. (AI-inferred)
+	MimeType any
+	// A file or resource path. (AI-inferred)
+	Path any
+	// Whether a request is only served if a matching static file actually exists. (AI-inferred)
 	RequireMatchingFile any
-	UploadPathRegex     any
+	// The regular expression matching local file path(s) to include in this deployment. (AI-inferred)
+	UploadPathRegex any
 }
 
 type Version_Handlers struct {
-	ApiEndpoint              any
-	AuthFailAction           any
-	Login                    any
+	// Routes requests for this handler to the App Engine APIs endpoint. (AI-inferred)
+	ApiEndpoint any
+	// What happens when a request fails this handler's own authentication requirement. (AI-inferred)
+	AuthFailAction any
+	// The login requirement enforced for requests matching this handler. (AI-inferred)
+	Login any
+	// The HTTP status code used when redirecting requests to HTTPS. (AI-inferred)
 	RedirectHttpResponseCode any
-	Script                   any
-	SecurityLevel            any
-	StaticFiles              any
-	UrlRegex                 any
+	// The script handling requests that match this URL pattern. (AI-inferred)
+	Script any
+	// Whether this handler requires, optionally allows, or never uses HTTPS. (AI-inferred)
+	SecurityLevel any
+	// Configuration for serving matching URL(s) as static file(s). (AI-inferred)
+	StaticFiles any
+	// The regular expression this handler's own URL pattern matches against. (AI-inferred)
+	UrlRegex any
 }
 
 type Version_HealthCheck struct {
@@ -207,7 +229,9 @@ type Version_HealthCheck struct {
 }
 
 type Version_Libraries struct {
-	Name    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the specific version this applies to. (AI-inferred)
 	Version any
 }
 
@@ -266,8 +290,11 @@ type Version_ReadinessCheck struct {
 }
 
 type Version_Resources_Volumes struct {
-	Name       any
-	SizeGb     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The size of this resource, in gibibytes. (AI-inferred)
+	SizeGb any
+	// The kind of storage volume mounted, e.g. `tmpfs`. (AI-inferred)
 	VolumeType any
 }
 

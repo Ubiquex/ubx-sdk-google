@@ -7,7 +7,9 @@ export interface BackupPlan_BackupConfig_EncryptionKey {
 }
 
 export interface BackupPlan_BackupConfig_SelectedApplications_NamespacedNames {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Kubernetes namespace this applies to. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
@@ -17,7 +19,9 @@ export interface BackupPlan_BackupConfig_SelectedApplications {
 }
 
 export interface BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabels {
+  /** The key of this label or field. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -51,27 +55,40 @@ export interface BackupPlan_BackupConfig {
 }
 
 export interface BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeek {
+  /** The day(s) of the week this schedule runs on. (AI-inferred) */
   daysOfWeek?: string[] | Computed<string[]>;
 }
 
 export interface BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDate {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month component of a date. (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year component of a date. (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTime {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows {
+  /** Runs this schedule once per day. (AI-inferred) */
   daily?: boolean | Computed<boolean>;
+  /** The day(s) of the week this schedule runs on. (AI-inferred) */
   daysOfWeek?: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeek | Computed<BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeek>;
+  /** How long this operation is allowed to run before timing out. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** Runs this schedule exactly once, on the specified date. (AI-inferred) */
   singleOccurrenceDate?: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDate | Computed<BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDate>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTime | Computed<BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTime>;
 }
 

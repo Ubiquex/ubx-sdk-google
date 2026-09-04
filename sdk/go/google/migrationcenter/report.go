@@ -4,8 +4,11 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Report_Summary_AllAssetsStats_CoreCountHistogram_Buckets struct {
-	Count      any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// The lower bound of this range. (AI-inferred)
 	LowerBound any
+	// The upper bound of this range. (AI-inferred)
 	UpperBound any
 }
 
@@ -22,7 +25,9 @@ type Report_Summary_AllAssetsStats_MemoryUtilizationChart struct {
 }
 
 type Report_Summary_AllAssetsStats_OperatingSystem_DataPoints struct {
+	// A human-readable label for this item. (AI-inferred)
 	Label any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -57,113 +62,173 @@ type Report_Summary_AllAssetsStats struct {
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries struct {
+	// A machine-readable code identifying this result. (AI-inferred)
 	Code any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations struct {
+	// How many assets were successfully allocated a sizing recommendation. (AI-inferred)
 	AllocatedAssetCount any
-	MachineSeries       any
+	// The recommended machine series for this asset. (AI-inferred)
+	MachineSeries any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding struct {
-	AllocatedAssetCount      any
-	AllocatedDiskTypes       any
-	AllocatedRegions         any
+	// How many assets were successfully allocated a sizing recommendation. (AI-inferred)
+	AllocatedAssetCount any
+	// The disk type(s) recommended for allocated assets. (AI-inferred)
+	AllocatedDiskTypes any
+	// The region(s) allocated assets are recommended to run in. (AI-inferred)
+	AllocatedRegions any
+	// The machine series allocated to each asset, and its own relative share. (AI-inferred)
 	MachineSeriesAllocations any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences_MachinePreferences struct {
+	// The machine series considered when generating sizing recommendations. (AI-inferred)
 	AllowedMachineSeries any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences struct {
-	LicenseType        any
+	// Whether this asset's own OS license is bring-your-own or Google-provided. (AI-inferred)
+	LicenseType any
+	// Preference(s) shaping which machine type(s) are recommended. (AI-inferred)
 	MachinePreferences any
+	// The recommended Persistent Disk type. (AI-inferred)
 	PersistentDiskType any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_RegionPreferences struct {
+	// The region(s) preferred for allocation. (AI-inferred)
 	PreferredRegions any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypes struct {
+	// The name of this node. (AI-inferred)
 	NodeName any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences struct {
-	CommitmentPlan        any
-	CpuOvercommitRatio    any
+	// The committed-use discount term considered for cost estimation, e.g. 1-year or 3-year. (AI-inferred)
+	CommitmentPlan any
+	// The ratio of virtual to physical CPU cores assumed when estimating consolidated capacity. (AI-inferred)
+	CpuOvercommitRatio any
+	// How host maintenance events are handled for this recommended machine, e.g. live migration versus terminate. (AI-inferred)
 	HostMaintenancePolicy any
-	NodeTypes             any
+	// The sole-tenant node type(s) considered for this recommendation. (AI-inferred)
+	NodeTypes any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferences struct {
-	CommitmentPlan                       any
-	CpuOvercommitRatio                   any
-	MemoryOvercommitRatio                any
+	// The committed-use discount term considered for cost estimation, e.g. 1-year or 3-year. (AI-inferred)
+	CommitmentPlan any
+	// The ratio of virtual to physical CPU cores assumed when estimating consolidated capacity. (AI-inferred)
+	CpuOvercommitRatio any
+	// The ratio of virtual to physical memory assumed when estimating consolidated capacity. (AI-inferred)
+	MemoryOvercommitRatio any
+	// The assumed ratio of storage savings from deduplication and compression. (AI-inferred)
 	StorageDeduplicationCompressionRatio any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences struct {
-	CommitmentPlan             any
-	ComputeEnginePreferences   any
-	RegionPreferences          any
+	// The committed-use discount term considered for cost estimation, e.g. 1-year or 3-year. (AI-inferred)
+	CommitmentPlan any
+	// Preference(s) shaping Compute Engine sizing recommendations. (AI-inferred)
+	ComputeEnginePreferences any
+	// Preference(s) shaping which region(s) are recommended. (AI-inferred)
+	RegionPreferences any
+	// Which strategy is used to size recommended machines, e.g. matching observed utilization versus matching current specs. (AI-inferred)
 	SizingOptimizationStrategy any
-	SoleTenancyPreferences     any
-	TargetProduct              any
-	VmwareEnginePreferences    any
+	// Preference(s) shaping sole-tenant node sizing recommendations. (AI-inferred)
+	SoleTenancyPreferences any
+	// The Google Cloud product this asset is being sized for migration to. (AI-inferred)
+	TargetProduct any
+	// Preference(s) shaping VMware Engine sizing recommendations. (AI-inferred)
+	VmwareEnginePreferences any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute struct {
+	// The ISO 4217 currency code cost estimates are expressed in. (AI-inferred)
 	CurrencyCode any
-	Nanos        any
-	Units        any
+	// The sub-second, nanosecond component of a value. (AI-inferred)
+	Nanos any
+	// The unit this measurement is expressed in. (AI-inferred)
+	Units any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocations struct {
+	// How many assets were successfully allocated a sizing recommendation. (AI-inferred)
 	AllocatedAssetCount any
-	Node                any
-	NodeCount           any
+	// A reference to the sole-tenant node this applies to. (AI-inferred)
+	Node any
+	// How many nodes this applies to. (AI-inferred)
+	NodeCount any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding struct {
+	// How many assets were successfully allocated a sizing recommendation. (AI-inferred)
 	AllocatedAssetCount any
-	AllocatedRegions    any
-	NodeAllocations     any
+	// The region(s) allocated assets are recommended to run in. (AI-inferred)
+	AllocatedRegions any
+	// How assets are allocated across sole-tenant node(s). (AI-inferred)
+	NodeAllocations any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocations struct {
+	// How many assets were successfully allocated a sizing recommendation. (AI-inferred)
 	AllocatedAssetCount any
-	NodeCount           any
-	VmwareNode          any
+	// How many nodes this applies to. (AI-inferred)
+	NodeCount any
+	// The VMware node type considered for this recommendation. (AI-inferred)
+	VmwareNode any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding struct {
+	// How many assets were successfully allocated a sizing recommendation. (AI-inferred)
 	AllocatedAssetCount any
-	AllocatedRegions    any
-	NodeAllocations     any
+	// The region(s) allocated assets are recommended to run in. (AI-inferred)
+	AllocatedRegions any
+	// How assets are allocated across sole-tenant node(s). (AI-inferred)
+	NodeAllocations any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings struct {
-	ComputeEngineFinding     any
-	Description              any
-	DisplayName              any
-	MachinePreferences       any
-	MonthlyCostCompute       any
+	// A recommendation for migrating this asset to Compute Engine. (AI-inferred)
+	ComputeEngineFinding any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Preference(s) shaping which machine type(s) are recommended. (AI-inferred)
+	MachinePreferences any
+	// The estimated monthly compute cost. (AI-inferred)
+	MonthlyCostCompute any
+	// The estimated monthly network egress cost. (AI-inferred)
 	MonthlyCostNetworkEgress any
-	MonthlyCostOsLicense     any
-	MonthlyCostOther         any
-	MonthlyCostStorage       any
-	MonthlyCostTotal         any
-	SoleTenantFinding        any
-	VmwareEngineFinding      any
+	// The estimated monthly OS licensing cost. (AI-inferred)
+	MonthlyCostOsLicense any
+	// Estimated monthly cost not otherwise categorized. (AI-inferred)
+	MonthlyCostOther any
+	// The estimated monthly storage cost. (AI-inferred)
+	MonthlyCostStorage any
+	// The total estimated monthly cost, summed across all categories. (AI-inferred)
+	MonthlyCostTotal any
+	// A recommendation for migrating this asset to a sole-tenant node. (AI-inferred)
+	SoleTenantFinding any
+	// A recommendation for migrating this asset to Google Cloud VMware Engine. (AI-inferred)
+	VmwareEngineFinding any
 }
 
 type Report_Summary_GroupFindings struct {
-	AssetAggregateStats   any
-	Description           any
-	DisplayName           any
+	// Summary statistics computed across a group of assets. (AI-inferred)
+	AssetAggregateStats any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// How many assets appear in more than one group. (AI-inferred)
 	OverlappingAssetCount any
+	// The sizing/cost finding(s) computed for each preference set considered. (AI-inferred)
 	PreferenceSetFindings any
 }
 

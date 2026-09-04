@@ -13,9 +13,12 @@ type Repo_MirrorConfig struct {
 }
 
 type Repo_PubsubConfigs struct {
-	MessageFormat       any
+	// The encoding of the Pub/Sub messages this repository publishes on push: `PROTOBUF` (a serialized `SourceRepoEvent` protocol buffer) or `JSON` (the same event as a JSON string). (AI-inferred)
+	MessageFormat any
+	// The service account Cloud Source Repositories uses to publish to `topic`. Must be in the same project as this Pub/Sub config and needs `iam.serviceAccounts.actAs` granted to the caller; defaults to the project's Compute Engine default service account when unset. (AI-inferred)
 	ServiceAccountEmail any
-	Topic               any
+	// The Pub/Sub topic push events are published to, in the form `projects/{project}/topics/{topic}`. (AI-inferred)
+	Topic any
 }
 
 var Repo_MirrorConfigFields = ubx.FieldMap{

@@ -50,16 +50,23 @@ type CompilationResult_CodeCompilationConfig struct {
 }
 
 type CompilationResult_CompilationErrors_ActionTarget struct {
+	// The database (BigQuery project) the errored action's own target table belongs to. (AI-inferred)
 	Database any
-	Name     any
-	Schema   any
+	// The name of the errored action's own target table. (AI-inferred)
+	Name any
+	// The schema (BigQuery dataset) the errored action's own target table belongs to. (AI-inferred)
+	Schema any
 }
 
 type CompilationResult_CompilationErrors struct {
+	// Identifies the specific Dataform action (table, view, or assertion) this compilation error occurred on. (AI-inferred)
 	ActionTarget any
-	Message      any
-	Path         any
-	Stack        any
+	// A human-readable description of the compilation error. (AI-inferred)
+	Message any
+	// The file path within the repository this compilation error occurred in. (AI-inferred)
+	Path any
+	// A stack trace showing where in the SQLX/JavaScript compilation this error was raised. (AI-inferred)
+	Stack any
 }
 
 type CompilationResult_DataEncryptionState struct {

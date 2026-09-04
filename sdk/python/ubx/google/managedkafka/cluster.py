@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_BrokerDetails:
+    # Output only. This broker's own index within the cluster. (AI-inferred)
     broker_index: Any = None
+    # Output only. This broker's own Kafka node ID. (AI-inferred)
     node_id: Any = None
+    # Output only. The availability zone (rack) this broker runs in, used for rack-aware replica placement. (AI-inferred)
     rack: Any = None
 
 @dataclasses.dataclass
@@ -21,6 +24,7 @@ class Cluster_CapacityConfig:
 
 @dataclasses.dataclass
 class Cluster_GcpConfig_AccessConfig_NetworkConfigs:
+    # The subnet this cluster is reachable from. (AI-inferred)
     subnet: Any = None
 
 @dataclasses.dataclass
@@ -42,6 +46,7 @@ class Cluster_RebalanceConfig:
 
 @dataclasses.dataclass
 class Cluster_TlsConfig_TrustConfig_CasConfigs:
+    # The Certificate Authority Service CA pool trusted for validating client TLS certificates. (AI-inferred)
     ca_pool: Any = None
 
 @dataclasses.dataclass

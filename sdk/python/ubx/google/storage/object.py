@@ -8,29 +8,47 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Object_Acl_ProjectTeam:
+    # The numeric identifier of the associated Google Cloud project. (AI-inferred)
     project_number: Any = None
+    # The team associated with this entity. (AI-inferred)
     team: Any = None
 
 @dataclasses.dataclass
 class Object_Acl:
+    # A reference to the Cloud Storage bucket this applies to. (AI-inferred)
     bucket: Any = None
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # An email address associated with this entity. (AI-inferred)
     email: Any = None
+    # The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred)
     entity: Any = None
+    # The unique identifier of this entity. (AI-inferred)
     entity_id: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # The specific object generation this applies to. (AI-inferred)
     generation: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The category of this resource. (AI-inferred)
     kind: Any = None
+    # A reference to the Cloud Storage object this applies to. (AI-inferred)
     object: Any = None
+    # The project team role associated with this entity. (AI-inferred)
     project_team: Any = None
+    # The access role granted, e.g. `READER` or `OWNER`. (AI-inferred)
     role: Any = None
+    # The API URL identifying this resource. (AI-inferred)
     self_link: Any = None
 
 @dataclasses.dataclass
 class Object_Contexts_Custom:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

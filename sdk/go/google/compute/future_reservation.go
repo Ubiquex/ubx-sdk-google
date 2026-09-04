@@ -4,11 +4,14 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FutureReservation_AggregateReservation_InUseResources_Accelerator struct {
+	// The number of accelerators of the specified type that are currently in use by this aggregate reservation. (AI-inferred)
 	AcceleratorCount any
-	AcceleratorType  any
+	// The type of accelerator (e.g., GPU) associated with the in-use resources in the aggregate future reservation. (AI-inferred)
+	AcceleratorType any
 }
 
 type FutureReservation_AggregateReservation_InUseResources struct {
+	// The accelerator-specific configuration for a resource in the aggregate reservation's in-use resources list. It defines the accelerator type and count to be reserved. (AI-inferred)
 	Accelerator any
 }
 
@@ -52,6 +55,7 @@ type FutureReservation_ResourceMetadata struct {
 }
 
 type FutureReservation_ShareSettings_ProjectMap struct {
+	// The ID of the Google Cloud project to share the future reservation with. (AI-inferred)
 	ProjectId any
 }
 
@@ -63,8 +67,10 @@ type FutureReservation_ShareSettings struct {
 }
 
 type FutureReservation_SpecificSkuProperties_InstanceProperties_LocalSsds struct {
+	// The size of the local SSD in GB. Each local SSD is 375 GB by default. (AI-inferred)
 	DiskSizeGb any
-	Interface  any
+	// The interface to use for attaching the local SSD. Valid values are `NVME` and `SCSI`. (AI-inferred)
+	Interface any
 }
 
 type FutureReservation_SpecificSkuProperties_InstanceProperties struct {
@@ -108,16 +114,19 @@ type FutureReservation_Status_ExistingMatchingUsageInfo struct {
 type FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow struct {
 	// A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
 	Duration any
-	EndTime  any
+	// The end time of the time window during which the future reservation is active, in RFC3339 UTC format. (AI-inferred)
+	EndTime any
 	// Start time of the Future Reservation. The start_time is an RFC3339 string.
 	StartTime any
 }
 
 type FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs struct {
 	// The share setting for reservations and sole tenancy node groups.
-	ShareSettings         any
+	ShareSettings any
+	// Specifies the configuration for a specific SKU future reservation, including details like machine type and the total number of resources to reserve. (AI-inferred)
 	SpecificSkuProperties any
-	TimeWindow            any
+	// The time window for the future reservation, specifying the start and end times during which the reservation is active. (AI-inferred)
+	TimeWindow any
 }
 
 type FutureReservation_Status_LastKnownGoodState struct {
@@ -395,8 +404,10 @@ type FutureReservationConfig struct {
 	AutoCreatedReservationsDuration any
 	// Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
 	AutoDeleteAutoCreatedReservations any
-	CommitmentInfo                    any
-	ConfidentialComputeType           any
+	// Information about the commitment that this future reservation is associated with. This field is output-only and may be absent if the reservation is not tied to a commitment. (AI-inferred)
+	CommitmentInfo any
+	// The confidential compute type for the future reservation. Possible values are `CONFIDENTIAL_COMPUTE_TYPE_TDX` (Intel Trust Domain Extensions) and `CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED`. (AI-inferred)
+	ConfidentialComputeType any
 	// Type of the deployment requested as part of future reservation.
 	DeploymentType any
 	// An optional description of this resource. Provide this property when you create the future reservation.
@@ -425,12 +436,14 @@ type FutureReservationConfig struct {
 	ShareSettings any
 	// Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation.
 	SpecificReservationRequired any
-	SpecificSkuProperties       any
+	// Output-only object containing the properties of the specific SKU (e.g., machine type, minimum CPU platform) reserved by this future reservation. (AI-inferred)
+	SpecificSkuProperties any
 	// [Output only] Represents status related to the future reservation.
 	Status any
 	// Storage pool properties for the future reservation.
 	StoragePoolProperties any
-	TimeWindow            any
+	// The time window during which the future reservation is active, defining the start and end times for the reserved capacity. (AI-inferred)
+	TimeWindow any
 }
 
 type FutureReservationAttrs struct {
@@ -442,8 +455,10 @@ type FutureReservationAttrs struct {
 	AutoCreatedReservationsDuration any
 	// Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
 	AutoDeleteAutoCreatedReservations any
-	CommitmentInfo                    any
-	ConfidentialComputeType           any
+	// Information about the commitment that this future reservation is associated with. This field is output-only and may be absent if the reservation is not tied to a commitment. (AI-inferred)
+	CommitmentInfo any
+	// The confidential compute type for the future reservation. Possible values are `CONFIDENTIAL_COMPUTE_TYPE_TDX` (Intel Trust Domain Extensions) and `CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED`. (AI-inferred)
+	ConfidentialComputeType any
 	// Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format.
 	CreationTimestamp any
 	// Type of the deployment requested as part of future reservation.
@@ -482,12 +497,14 @@ type FutureReservationAttrs struct {
 	ShareSettings any
 	// Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation.
 	SpecificReservationRequired any
-	SpecificSkuProperties       any
+	// Output-only object containing the properties of the specific SKU (e.g., machine type, minimum CPU platform) reserved by this future reservation. (AI-inferred)
+	SpecificSkuProperties any
 	// [Output only] Represents status related to the future reservation.
 	Status any
 	// Storage pool properties for the future reservation.
 	StoragePoolProperties any
-	TimeWindow            any
+	// The time window during which the future reservation is active, defining the start and end times for the reserved capacity. (AI-inferred)
+	TimeWindow any
 	// Output only. [Output Only] URL of the Zone where this future reservation resides.
 	Zone any
 }

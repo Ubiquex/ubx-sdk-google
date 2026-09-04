@@ -4,53 +4,82 @@ package ces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Example_Messages_Chunks_AgentTransfer struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
+	// The agent this transfer moves the conversation to. (AI-inferred)
 	TargetAgent any
 }
 
 type Example_Messages_Chunks_Blob struct {
-	Data     any
+	// The literal data payload. (AI-inferred)
+	Data any
+	// The IANA MIME type of this content. (AI-inferred)
 	MimeType any
 }
 
 type Example_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId  any
+	// An identifier for this tool, unique within its own containing toolset. (AI-inferred)
+	ToolId any
+	// A reference to the toolset this belongs to. (AI-inferred)
 	Toolset any
 }
 
 type Example_Messages_Chunks_ToolCall struct {
-	Args        any
+	// The argument(s) passed to this call. (AI-inferred)
+	Args any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Tool        any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// A reference to a single tool. (AI-inferred)
+	Tool any
+	// A reference to a specific tool within a toolset. (AI-inferred)
 	ToolsetTool any
 }
 
 type Example_Messages_Chunks_ToolResponse struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Response    any
-	Tool        any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The response produced for this request. (AI-inferred)
+	Response any
+	// A reference to a single tool. (AI-inferred)
+	Tool any
+	// A reference to a specific tool within a toolset. (AI-inferred)
 	ToolsetTool any
 }
 
 type Example_Messages_Chunks struct {
-	AgentTransfer    any
-	Blob             any
+	// Transfers the conversation to another agent. (AI-inferred)
+	AgentTransfer any
+	// Raw binary content. (AI-inferred)
+	Blob any
+	// The default value(s) for this app's own declared variables. (AI-inferred)
 	DefaultVariables any
-	Image            any
-	Payload          any
-	Text             any
-	ToolCall         any
-	ToolResponse     any
-	Transcript       any
+	// Image content. (AI-inferred)
+	Image any
+	// A custom, integration-specific payload. (AI-inferred)
+	Payload any
+	// The plain-text content. (AI-inferred)
+	Text any
+	// A request from the model to invoke a specific tool. (AI-inferred)
+	ToolCall any
+	// The result returned from invoking a tool. (AI-inferred)
+	ToolResponse any
+	// The transcribed text of spoken audio. (AI-inferred)
+	Transcript any
+	// The variable(s) whose own value changed as a result of this event. (AI-inferred)
 	UpdatedVariables any
 }
 
 type Example_Messages struct {
-	Chunks    any
+	// The retrieved content chunk(s) making up this result. (AI-inferred)
+	Chunks any
+	// When this event occurred. (AI-inferred)
 	EventTime any
-	Role      any
+	// Who this content is attributed to, e.g. `user` or `model`. (AI-inferred)
+	Role any
 }
 
 var Example_Messages_Chunks_AgentTransferFields = ubx.FieldMap{

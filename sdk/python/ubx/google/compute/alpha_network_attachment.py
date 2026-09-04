@@ -19,6 +19,7 @@ class AlphaNetworkAttachment_ConnectionEndpoints:
 
 @dataclasses.dataclass
 class AlphaNetworkAttachmentConfig:
+    # Whether this network attachment accepts connection requests automatically or requires explicit acceptance. (AI-inferred)
     connection_preference: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -37,6 +38,7 @@ class AlphaNetworkAttachmentConfig:
 class AlphaNetworkAttachmentAttrs:
     # Output only. [Output Only] An array of connections for all the producers connected to this network attachment.
     connection_endpoints: Any = None
+    # Whether this network attachment accepts connection requests automatically or requires explicit acceptance. (AI-inferred)
     connection_preference: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None

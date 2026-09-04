@@ -2,11 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityProfilesV2_ProfileAssessmentConfigs_Include {
+  /** The kind of gateway (e.g. proxy or shared flow) this applies to. (AI-inferred) */
   gatewayTypes?: string[] | Computed<string[]>;
 }
 
 export interface SecurityProfilesV2_ProfileAssessmentConfigs {
+  /** Whether this item is included. (AI-inferred) */
   include?: SecurityProfilesV2_ProfileAssessmentConfigs_Include | Computed<SecurityProfilesV2_ProfileAssessmentConfigs_Include>;
+  /** The relative weight of this item. (AI-inferred) */
   weight?: string | Computed<string>;
 }
 

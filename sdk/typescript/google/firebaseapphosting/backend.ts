@@ -9,10 +9,12 @@ export interface Backend_Codebase {
 }
 
 export interface Backend_ManagedResources_RunService {
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface Backend_ManagedResources {
+  /** A reference to the Cloud Run service this backend deploys to. (AI-inferred) */
   runService?: Backend_ManagedResources_RunService | Computed<Backend_ManagedResources_RunService>;
 }
 

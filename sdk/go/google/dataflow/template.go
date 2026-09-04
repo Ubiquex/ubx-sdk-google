@@ -45,25 +45,41 @@ type Template_Environment struct {
 }
 
 type Template_Metadata_Parameters_EnumOptions struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Label       any
-	Value       any
+	// A human-readable label for this item. (AI-inferred)
+	Label any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Template_Metadata_Parameters struct {
-	CustomMetadata      any
-	DefaultValue        any
-	EnumOptions         any
-	GroupName           any
-	HelpText            any
-	HiddenUi            any
-	IsOptional          any
-	Label               any
-	Name                any
-	ParamType           any
-	ParentName          any
+	// Additional caller-defined key/value metadata attached to this resource. (AI-inferred)
+	CustomMetadata any
+	// The value used when this parameter is left unset. (AI-inferred)
+	DefaultValue any
+	// The allowed option(s) for an enum-typed parameter. (AI-inferred)
+	EnumOptions any
+	// The name of the group this belongs to. (AI-inferred)
+	GroupName any
+	// Human-readable guidance text for this parameter. (AI-inferred)
+	HelpText any
+	// Whether this parameter is hidden from the console UI. (AI-inferred)
+	HiddenUi any
+	// Whether this parameter may be left unset. (AI-inferred)
+	IsOptional any
+	// A human-readable label for this item. (AI-inferred)
+	Label any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The data type of this parameter. (AI-inferred)
+	ParamType any
+	// The name of the parent element this belongs to. (AI-inferred)
+	ParentName any
+	// The value(s) that activate the parent trigger this depends on. (AI-inferred)
 	ParentTriggerValues any
-	Regexes             any
+	// The regular expression(s) this rule matches against. (AI-inferred)
+	Regexes any
 }
 
 type Template_Metadata struct {

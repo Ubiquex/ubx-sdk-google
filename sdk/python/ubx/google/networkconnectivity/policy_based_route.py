@@ -29,8 +29,11 @@ class PolicyBasedRoute_VirtualMachine:
 
 @dataclasses.dataclass
 class PolicyBasedRoute_Warnings:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # The literal content of this field. (AI-inferred)
     data: Any = None
+    # A human-readable description of a non-fatal warning. (AI-inferred)
     warning_message: Any = None
 
 _PolicyBasedRoute_FilterFields = {

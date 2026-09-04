@@ -4,15 +4,21 @@ package workflowexecutions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Execution_Error_StackTrace_Elements_Position struct {
+	// The real, zero-based column number this stack trace position points at. (AI-inferred)
 	Column any
+	// The real number of characters this stack trace position spans. (AI-inferred)
 	Length any
-	Line   any
+	// The real, one-based line number this stack trace position points at. (AI-inferred)
+	Line any
 }
 
 type Execution_Error_StackTrace_Elements struct {
+	// The real, source-code position (line, column, length) this stack trace element points at. (AI-inferred)
 	Position any
-	Routine  any
-	Step     any
+	// The real, named workflow step or subworkflow this stack trace element was executing in. (AI-inferred)
+	Routine any
+	// The real, named step within the `routine` this stack trace element points at. (AI-inferred)
+	Step any
 }
 
 type Execution_Error_StackTrace struct {
@@ -37,8 +43,10 @@ type Execution_StateError struct {
 }
 
 type Execution_Status_CurrentSteps struct {
+	// The real, named workflow step or subworkflow this stack trace element was executing in. (AI-inferred)
 	Routine any
-	Step    any
+	// The real, named step within the `routine` this stack trace element points at. (AI-inferred)
+	Step any
 }
 
 type Execution_Status struct {

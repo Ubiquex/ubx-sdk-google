@@ -2,130 +2,204 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface HttpRoute_Rules_Action_CorsPolicy {
+  /** Whether the CORS response allows credentialed (cookie-bearing) cross-origin requests. (AI-inferred) */
   allowCredentials?: boolean | Computed<boolean>;
+  /** The request header(s) the CORS policy allows. (AI-inferred) */
   allowHeaders?: string[] | Computed<string[]>;
+  /** The HTTP method(s) the CORS policy allows. (AI-inferred) */
   allowMethods?: string[] | Computed<string[]>;
+  /** Regular expression(s) matching origins the CORS policy allows. (AI-inferred) */
   allowOriginRegexes?: string[] | Computed<string[]>;
+  /** The origin(s) the CORS policy allows. (AI-inferred) */
   allowOrigins?: string[] | Computed<string[]>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** The response header(s) the CORS policy exposes to the calling origin. (AI-inferred) */
   exposeHeaders?: string[] | Computed<string[]>;
+  /** How long, in seconds, the CORS preflight response may be cached by the browser. (AI-inferred) */
   maxAge?: string | Computed<string>;
 }
 
 export interface HttpRoute_Rules_Action_Destinations_RequestHeaderModifier {
+  /** Adds this header if not already present. (AI-inferred) */
   add?: Record<string, string> | Computed<Record<string, string>>;
+  /** Removes this header before forwarding. (AI-inferred) */
   remove?: string[] | Computed<string[]>;
+  /** Sets this header, overwriting any existing value. (AI-inferred) */
   set?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface HttpRoute_Rules_Action_Destinations {
+  /** Header modification(s) applied to the request before forwarding. (AI-inferred) */
   requestHeaderModifier?: HttpRoute_Rules_Action_Destinations_RequestHeaderModifier | Computed<HttpRoute_Rules_Action_Destinations_RequestHeaderModifier>;
+  /** Header modification(s) applied to the response before returning it to the client. (AI-inferred) */
   responseHeaderModifier?: HttpRoute_Rules_Action_Destinations_RequestHeaderModifier | Computed<HttpRoute_Rules_Action_Destinations_RequestHeaderModifier>;
+  /** The name of the service this applies to. (AI-inferred) */
   serviceName?: string | Computed<string>;
+  /** The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface HttpRoute_Rules_Action_DirectResponse {
+  /** A fixed response body, as raw bytes. (AI-inferred) */
   bytesBody?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   status?: number | Computed<number>;
+  /** A fixed response body, as a plain string. (AI-inferred) */
   stringBody?: string | Computed<string>;
 }
 
 export interface HttpRoute_Rules_Action_FaultInjectionPolicy_Abort {
+  /** The HTTP status code returned. (AI-inferred) */
   httpStatus?: number | Computed<number>;
+  /** A percentage value. (AI-inferred) */
   percentage?: number | Computed<number>;
 }
 
 export interface HttpRoute_Rules_Action_FaultInjectionPolicy_Delay {
+  /** A fixed delay duration applied to matching requests. (AI-inferred) */
   fixedDelay?: string | Computed<string>;
+  /** A percentage value. (AI-inferred) */
   percentage?: number | Computed<number>;
 }
 
 export interface HttpRoute_Rules_Action_FaultInjectionPolicy {
+  /** Immediately fails matching requests with a fixed status code, for fault-injection testing. (AI-inferred) */
   abort?: HttpRoute_Rules_Action_FaultInjectionPolicy_Abort | Computed<HttpRoute_Rules_Action_FaultInjectionPolicy_Abort>;
+  /** Configuration for artificially delaying matching requests, for fault-injection testing. (AI-inferred) */
   delay?: HttpRoute_Rules_Action_FaultInjectionPolicy_Delay | Computed<HttpRoute_Rules_Action_FaultInjectionPolicy_Delay>;
 }
 
 export interface HttpRoute_Rules_Action_Redirect {
+  /** The host this request is redirected to. (AI-inferred) */
   hostRedirect?: string | Computed<string>;
+  /** Whether matching requests are redirected from HTTP to HTTPS. (AI-inferred) */
   httpsRedirect?: boolean | Computed<boolean>;
+  /** The path this request is redirected to. (AI-inferred) */
   pathRedirect?: string | Computed<string>;
+  /** The port this request is redirected to. (AI-inferred) */
   portRedirect?: number | Computed<number>;
+  /** The prefix substituted in place of the matched path prefix. (AI-inferred) */
   prefixRewrite?: string | Computed<string>;
+  /** The HTTP status code returned in this direct response. (AI-inferred) */
   responseCode?: string | Computed<string>;
+  /** Whether the query string is dropped from the URL before redirecting. (AI-inferred) */
   stripQuery?: boolean | Computed<boolean>;
 }
 
 export interface HttpRoute_Rules_Action_RequestMirrorPolicy {
+  /** The destination this traffic is routed to. (AI-inferred) */
   destination?: HttpRoute_Rules_Action_Destinations | Computed<HttpRoute_Rules_Action_Destinations>;
+  /** The percentage of matching traffic also sent to a mirrored destination, in addition to its own real destination. (AI-inferred) */
   mirrorPercent?: number | Computed<number>;
 }
 
 export interface HttpRoute_Rules_Action_RetryPolicy {
+  /** The maximum number of times a failed request is retried. (AI-inferred) */
   numRetries?: number | Computed<number>;
+  /** The timeout applied to each individual retry attempt. (AI-inferred) */
   perTryTimeout?: string | Computed<string>;
+  /** The condition(s) (e.g. specific status codes) under which a failed request is retried. (AI-inferred) */
   retryConditions?: string[] | Computed<string[]>;
 }
 
 export interface HttpRoute_Rules_Action_StatefulSessionAffinity {
+  /** How long a session-affinity cookie remains valid. (AI-inferred) */
   cookieTtl?: string | Computed<string>;
 }
 
 export interface HttpRoute_Rules_Action_UrlRewrite {
+  /** Rewrites the `Host` header before forwarding to the backend. (AI-inferred) */
   hostRewrite?: string | Computed<string>;
+  /** Rewrites the matched path prefix before forwarding to the backend. (AI-inferred) */
   pathPrefixRewrite?: string | Computed<string>;
 }
 
 export interface HttpRoute_Rules_Action {
+  /** Cross-Origin Resource Sharing configuration applied to matching requests. (AI-inferred) */
   corsPolicy?: HttpRoute_Rules_Action_CorsPolicy | Computed<HttpRoute_Rules_Action_CorsPolicy>;
+  /** The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred) */
   destinations?: HttpRoute_Rules_Action_Destinations[] | Computed<HttpRoute_Rules_Action_Destinations[]>;
+  /** Responds directly with a fixed status code and body, rather than routing to a backend. (AI-inferred) */
   directResponse?: HttpRoute_Rules_Action_DirectResponse | Computed<HttpRoute_Rules_Action_DirectResponse>;
+  /** Configuration for artificially injecting delays or aborted requests, for resilience testing. (AI-inferred) */
   faultInjectionPolicy?: HttpRoute_Rules_Action_FaultInjectionPolicy | Computed<HttpRoute_Rules_Action_FaultInjectionPolicy>;
+  /** How long an idle connection is kept open before being closed. (AI-inferred) */
   idleTimeout?: string | Computed<string>;
+  /** Redirects matching requests to a different host, path, or port. (AI-inferred) */
   redirect?: HttpRoute_Rules_Action_Redirect | Computed<HttpRoute_Rules_Action_Redirect>;
+  /** Header modification(s) applied to the request before forwarding. (AI-inferred) */
   requestHeaderModifier?: HttpRoute_Rules_Action_Destinations_RequestHeaderModifier | Computed<HttpRoute_Rules_Action_Destinations_RequestHeaderModifier>;
+  /** Configuration for sending a copy of matching traffic to a separate destination, without affecting the real response. (AI-inferred) */
   requestMirrorPolicy?: HttpRoute_Rules_Action_RequestMirrorPolicy | Computed<HttpRoute_Rules_Action_RequestMirrorPolicy>;
+  /** Header modification(s) applied to the response before returning it to the client. (AI-inferred) */
   responseHeaderModifier?: HttpRoute_Rules_Action_Destinations_RequestHeaderModifier | Computed<HttpRoute_Rules_Action_Destinations_RequestHeaderModifier>;
+  /** Configuration for automatically retrying failed requests. (AI-inferred) */
   retryPolicy?: HttpRoute_Rules_Action_RetryPolicy | Computed<HttpRoute_Rules_Action_RetryPolicy>;
+  /** Configuration for consistently routing a client's own requests to the same backend, using a session cookie. (AI-inferred) */
   statefulSessionAffinity?: HttpRoute_Rules_Action_StatefulSessionAffinity | Computed<HttpRoute_Rules_Action_StatefulSessionAffinity>;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout?: string | Computed<string>;
+  /** Rewrites the request's own host and/or path before forwarding to the backend. (AI-inferred) */
   urlRewrite?: HttpRoute_Rules_Action_UrlRewrite | Computed<HttpRoute_Rules_Action_UrlRewrite>;
 }
 
 export interface HttpRoute_Rules_Matches_Headers_RangeMatch {
+  /** Where this range ends. (AI-inferred) */
   end?: number | Computed<number>;
+  /** Where this range starts. (AI-inferred) */
   start?: number | Computed<number>;
 }
 
 export interface HttpRoute_Rules_Matches_Headers {
+  /** Matches only this exact value. (AI-inferred) */
   exactMatch?: string | Computed<string>;
+  /** An HTTP header this applies to. (AI-inferred) */
   header?: string | Computed<string>;
+  /** Whether this match condition's own result is inverted. (AI-inferred) */
   invertMatch?: boolean | Computed<boolean>;
+  /** Matches values starting with this prefix. (AI-inferred) */
   prefixMatch?: string | Computed<string>;
+  /** Matches based only on whether this header is present, regardless of its own value. (AI-inferred) */
   presentMatch?: boolean | Computed<boolean>;
+  /** Matches when the value falls within this numeric range. (AI-inferred) */
   rangeMatch?: HttpRoute_Rules_Matches_Headers_RangeMatch | Computed<HttpRoute_Rules_Matches_Headers_RangeMatch>;
+  /** Matches values against this regular expression. (AI-inferred) */
   regexMatch?: string | Computed<string>;
+  /** Matches values ending with this suffix. (AI-inferred) */
   suffixMatch?: string | Computed<string>;
 }
 
 export interface HttpRoute_Rules_Matches_QueryParameters {
+  /** Matches only this exact value. (AI-inferred) */
   exactMatch?: string | Computed<string>;
+  /** Matches based only on whether this header is present, regardless of its own value. (AI-inferred) */
   presentMatch?: boolean | Computed<boolean>;
+  /** A single query parameter this rule matches against. (AI-inferred) */
   queryParameter?: string | Computed<string>;
+  /** Matches values against this regular expression. (AI-inferred) */
   regexMatch?: string | Computed<string>;
 }
 
 export interface HttpRoute_Rules_Matches {
+  /** Matches only this exact, complete path. (AI-inferred) */
   fullPathMatch?: string | Computed<string>;
+  /** The HTTP header(s) this applies to. (AI-inferred) */
   headers?: HttpRoute_Rules_Matches_Headers[] | Computed<HttpRoute_Rules_Matches_Headers[]>;
+  /** Whether this match is case-insensitive. (AI-inferred) */
   ignoreCase?: boolean | Computed<boolean>;
+  /** Matches values starting with this prefix. (AI-inferred) */
   prefixMatch?: string | Computed<string>;
+  /** The query parameter(s) this rule matches against. (AI-inferred) */
   queryParameters?: HttpRoute_Rules_Matches_QueryParameters[] | Computed<HttpRoute_Rules_Matches_QueryParameters[]>;
+  /** Matches values against this regular expression. (AI-inferred) */
   regexMatch?: string | Computed<string>;
 }
 
 export interface HttpRoute_Rules {
+  /** The action taken when this rule matches. (AI-inferred) */
   action?: HttpRoute_Rules_Action | Computed<HttpRoute_Rules_Action>;
+  /** The match condition(s) this rule evaluates. (AI-inferred) */
   matches?: HttpRoute_Rules_Matches[] | Computed<HttpRoute_Rules_Matches[]>;
 }
 

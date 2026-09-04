@@ -2,29 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Cname {
+  /** The record data expected for this validation to succeed. (AI-inferred) */
   expectedData?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The record data actually observed for this domain. (AI-inferred) */
   resolvedData?: string[] | Computed<string[]>;
 }
 
 export interface Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Ips {
+  /** Whether this DNS record currently resolves to the expected value. (AI-inferred) */
   resolved?: string[] | Computed<string[]>;
+  /** Whether this certificate is actively serving traffic. (AI-inferred) */
   serving?: string[] | Computed<string[]>;
+  /** Whether this certificate is served on non-standard port(s). (AI-inferred) */
   servingOnAltPorts?: string[] | Computed<string[]>;
 }
 
 export interface Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting {
+  /** The CNAME target this DNS record must point to. (AI-inferred) */
   cname?: Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Cname | Computed<Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Cname>;
+  /** The IP address(es) this applies to. (AI-inferred) */
   ips?: Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Ips | Computed<Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Ips>;
+  /** The issue(s) detected during troubleshooting. (AI-inferred) */
   issues?: string[] | Computed<string[]>;
 }
 
 export interface Certificate_Managed_AuthorizationAttemptInfo {
+  /** When this validation attempt was made. (AI-inferred) */
   attemptTime?: string | Computed<string>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** Why this validation attempt failed. (AI-inferred) */
   failureReason?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Diagnostic detail helping to explain this resource's own current state. (AI-inferred) */
   troubleshooting?: Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting | Computed<Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting>;
 }
 
@@ -67,6 +82,7 @@ export interface Certificate_SelfManaged {
 }
 
 export interface Certificate_UsedBy {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

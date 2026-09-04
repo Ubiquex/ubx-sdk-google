@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Federation_BackendMetastores {
+  /** The real backend metastore type (e.g. Dataproc Metastore, BigQuery) this federation member represents. (AI-inferred) */
   metastoreType?: string | Computed<string>;
+  /** The real, fully-qualified resource name of this federation's own backend metastore member. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

@@ -8,36 +8,52 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimits:
+    # The maximum number of nodes this cluster's own autoscaling may scale up to. (AI-inferred)
     max_serve_nodes: Any = None
+    # The minimum number of nodes this cluster's own autoscaling scales down to. (AI-inferred)
     min_serve_nodes: Any = None
 
 @dataclasses.dataclass
 class Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargets:
+    # The target CPU utilization percentage this cluster's own autoscaling aims to maintain. (AI-inferred)
     cpu_utilization_percent: Any = None
+    # Output only. How much storage, in GiB, is used per node in this cluster. (AI-inferred)
     storage_utilization_gib_per_node: Any = None
 
 @dataclasses.dataclass
 class Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig:
+    # The minimum and maximum node count this cluster's own autoscaling may scale between. (AI-inferred)
     autoscaling_limits: Any = None
+    # The target utilization metric(s) (e.g. CPU) this cluster's own autoscaling aims to maintain. (AI-inferred)
     autoscaling_targets: Any = None
 
 @dataclasses.dataclass
 class Instance_Clusters_ClusterConfig:
+    # Autoscaling configuration for this cluster. (AI-inferred)
     cluster_autoscaling_config: Any = None
 
 @dataclasses.dataclass
 class Instance_Clusters_EncryptionConfig:
+    # The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
     kms_key_name: Any = None
 
 @dataclasses.dataclass
 class Instance_Clusters:
+    # Configuration for a single cluster within this instance. (AI-inferred)
     cluster_config: Any = None
+    # The default storage media (SSD or HDD) for clusters in this instance. (AI-inferred)
     default_storage_type: Any = None
+    # Configuration for encrypting this cluster's own data with a customer-managed key. (AI-inferred)
     encryption_config: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A multiplier applied to this cluster's own effective node count, for higher-throughput node configurations. (AI-inferred)
     node_scaling_factor: Any = None
+    # The fixed number of nodes provisioned for this cluster, when autoscaling isn't used. (AI-inferred)
     serve_nodes: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

@@ -16,8 +16,11 @@ export interface PersistentResource_Error {
 }
 
 export interface PersistentResource_PscInterfaceConfig_DnsPeeringConfigs {
+  /** The domain this configuration or resource applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** The VPC network this resource is deployed into. (AI-inferred) */
   targetNetwork?: string | Computed<string>;
+  /** The Google Cloud project this resource targets. (AI-inferred) */
   targetProject?: string | Computed<string>;
 }
 
@@ -29,36 +32,55 @@ export interface PersistentResource_PscInterfaceConfig {
 }
 
 export interface PersistentResource_ResourcePools_AutoscalingSpec {
+  /** The maximum number of machine replicas this job may scale up to. (AI-inferred) */
   maxReplicaCount?: string | Computed<string>;
+  /** The minimum number of machine replicas this job scales down to. (AI-inferred) */
   minReplicaCount?: string | Computed<string>;
 }
 
 export interface PersistentResource_ResourcePools_DiskSpec {
+  /** The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred) */
   bootDiskSizeGb?: number | Computed<number>;
+  /** The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred) */
   bootDiskType?: string | Computed<string>;
 }
 
 export interface PersistentResource_ResourcePools_MachineSpec_ReservationAffinity {
+  /** A key identifying this entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred) */
   reservationAffinityType?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface PersistentResource_ResourcePools_MachineSpec {
+  /** How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
+  /** The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred) */
   reservationAffinity?: PersistentResource_ResourcePools_MachineSpec_ReservationAffinity | Computed<PersistentResource_ResourcePools_MachineSpec_ReservationAffinity>;
+  /** The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred) */
   tpuTopology?: string | Computed<string>;
 }
 
 export interface PersistentResource_ResourcePools {
+  /** Autoscaling configuration for this resource pool. (AI-inferred) */
   autoscalingSpec?: PersistentResource_ResourcePools_AutoscalingSpec | Computed<PersistentResource_ResourcePools_AutoscalingSpec>;
+  /** The boot disk configuration provisioned for this job's own machine(s). (AI-inferred) */
   diskSpec?: PersistentResource_ResourcePools_DiskSpec | Computed<PersistentResource_ResourcePools_DiskSpec>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The machine type, accelerator, and count provisioned to run this job. (AI-inferred) */
   machineSpec?: PersistentResource_ResourcePools_MachineSpec | Computed<PersistentResource_ResourcePools_MachineSpec>;
+  /** How many machine replicas this job runs. (AI-inferred) */
   replicaCount?: string | Computed<string>;
+  /** Output only. How many replicas in this resource pool are currently in use. (AI-inferred) */
   usedReplicaCount?: string | Computed<string>;
 }
 

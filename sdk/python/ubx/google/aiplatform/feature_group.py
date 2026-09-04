@@ -26,6 +26,7 @@ class FeatureGroup_BigQuery:
     entity_id_columns: Any = None
     # Optional. Set if the data source is not a time-series.
     static_data_source: Any = None
+    # Configuration for reading this feature group's own data as a time series from BigQuery. (AI-inferred)
     time_series: Any = None
 
 _FeatureGroup_BigQuery_BigQuerySourceFields = {

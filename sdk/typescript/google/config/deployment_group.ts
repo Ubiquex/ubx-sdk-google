@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DeploymentGroup_DeploymentUnits {
+  /** The other deployment unit(s) within this group that must apply successfully before this one. (AI-inferred) */
   dependencies?: string[] | Computed<string[]>;
+  /** The underlying Infrastructure Manager deployment this unit corresponds to. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** A caller-chosen identifier for this deployment unit, unique within its own deployment group. (AI-inferred) */
   id?: string | Computed<string>;
 }
 

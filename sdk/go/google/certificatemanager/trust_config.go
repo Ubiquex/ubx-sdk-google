@@ -4,12 +4,15 @@ package certificatemanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrustConfig_AllowlistedCertificates struct {
+	// The certificate, PEM-encoded. (AI-inferred)
 	PemCertificate any
 }
 
 type TrustConfig_SpiffeTrustStores struct {
+	// The intermediate CA certificate(s) chained below the root. (AI-inferred)
 	IntermediateCas any
-	TrustAnchors    any
+	// The root CA certificate(s) this trust configuration trusts. (AI-inferred)
+	TrustAnchors any
 }
 
 var TrustConfig_AllowlistedCertificatesFields = ubx.FieldMap{

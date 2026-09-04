@@ -4,7 +4,9 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventSubscription_Destinations_Endpoint_Headers struct {
-	Key   any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// This HTTP header's own value. (AI-inferred)
 	Value any
 }
 
@@ -16,21 +18,30 @@ type EventSubscription_Destinations_Endpoint struct {
 }
 
 type EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValue struct {
+	// The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
 	KmsKeyName any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValue struct {
+	// The specific Secret Manager secret version referenced. (AI-inferred)
 	SecretVersion any
 }
 
 type EventSubscription_Destinations_Pubsub_ConfigVariables struct {
-	BoolValue          any
+	// This configuration variable's own value, when its type is boolean. (AI-inferred)
+	BoolValue any
+	// This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred)
 	EncryptionKeyValue any
-	IntValue           any
-	Key                any
-	SecretValue        any
-	StringValue        any
+	// This admin filter's own value, when its type is an integer. (AI-inferred)
+	IntValue any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
+	SecretValue any
+	// This admin filter's own value, when its type is a string. (AI-inferred)
+	StringValue any
 }
 
 type EventSubscription_Destinations_Pubsub struct {

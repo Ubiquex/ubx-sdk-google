@@ -8,24 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UnitKind_Dependencies:
+    # A real, local alias this unit uses to refer to a dependency, distinct from the dependency's own real resource name. (AI-inferred)
     alias: Any = None
+    # A reference to the real `google_saasservicemgmt_unit_kind` this dependency's own units are drawn from. (AI-inferred)
     unit_kind: Any = None
 
 @dataclasses.dataclass
 class UnitKind_InputVariableMappings_From:
+    # The real, named dependency this input variable mapping's own `from` side reads from. (AI-inferred)
     dependency: Any = None
+    # The real, named output variable exposed by this mapping's own `dependency`, whose value feeds the mapped input. (AI-inferred)
     output_variable: Any = None
 
 @dataclasses.dataclass
 class UnitKind_InputVariableMappings_To:
+    # The real, named dependency this input variable mapping's own `from` side reads from. (AI-inferred)
     dependency: Any = None
+    # Whether this mapped input variable is real, excluded from the criteria App Lifecycle Manager uses to look up matching existing units. (AI-inferred)
     ignore_for_lookup: Any = None
+    # The real, named input variable on this unit kind that receives the mapped value. (AI-inferred)
     input_variable: Any = None
 
 @dataclasses.dataclass
 class UnitKind_InputVariableMappings:
+    # The real, source side of an input variable mapping, referencing a dependency's own output variable. (AI-inferred)
     from_: Any = None
+    # The real, destination side of an input variable mapping, naming which of this unit kind's own input variables receives the mapped value. (AI-inferred)
     to: Any = None
+    # The real, named input variable this default value applies to. (AI-inferred)
     variable: Any = None
 
 _UnitKind_DependenciesFields = {

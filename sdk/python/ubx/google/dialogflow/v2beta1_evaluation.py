@@ -896,23 +896,38 @@ _V2beta1Evaluation_SummarizationMetricsFields = {
 
 @dataclasses.dataclass
 class V2beta1EvaluationConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The real, current status of this evaluation run. (AI-inferred)
     evaluation_status: Any = None
+    # Configures how a generator's own output is scored during this evaluation. (AI-inferred)
     generator_evaluation_config: Any = None
+    # The generator this evaluation run started from. (AI-inferred)
     initial_generator: Any = None
+    # The real, computed accuracy metrics for this evaluation's own summarization output. (AI-inferred)
     summarization_metrics: Any = None
 
 @dataclasses.dataclass
 class V2beta1EvaluationAttrs:
+    # When this evaluation run completed. (AI-inferred)
     complete_time: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The real, current status of this evaluation run. (AI-inferred)
     evaluation_status: Any = None
+    # Configures how a generator's own output is scored during this evaluation. (AI-inferred)
     generator_evaluation_config: Any = None
+    # The generator this evaluation run started from. (AI-inferred)
     initial_generator: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
     satisfies_pzi: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
     satisfies_pzs: Any = None
+    # The real, computed accuracy metrics for this evaluation's own summarization output. (AI-inferred)
     summarization_metrics: Any = None
 
 V2beta1Evaluation = ubx.ResourceBinding(

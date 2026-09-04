@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeploymentGroup_DeploymentUnits:
+    # The other deployment unit(s) within this group that must apply successfully before this one. (AI-inferred)
     dependencies: Any = None
+    # The underlying Infrastructure Manager deployment this unit corresponds to. (AI-inferred)
     deployment: Any = None
+    # A caller-chosen identifier for this deployment unit, unique within its own deployment group. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass

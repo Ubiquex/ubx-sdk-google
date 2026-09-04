@@ -2,23 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TcpRoute_Rules_Action_Destinations {
+  /** The name of the service this applies to. (AI-inferred) */
   serviceName?: string | Computed<string>;
+  /** The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface TcpRoute_Rules_Action {
+  /** The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred) */
   destinations?: TcpRoute_Rules_Action_Destinations[] | Computed<TcpRoute_Rules_Action_Destinations[]>;
+  /** How long an idle connection is kept open before being closed. (AI-inferred) */
   idleTimeout?: string | Computed<string>;
+  /** The destination traffic was originally routed to, before mirroring or redirection. (AI-inferred) */
   originalDestination?: boolean | Computed<boolean>;
 }
 
 export interface TcpRoute_Rules_Matches {
+  /** The network address this applies to. (AI-inferred) */
   address?: string | Computed<string>;
+  /** A network port number. (AI-inferred) */
   port?: string | Computed<string>;
 }
 
 export interface TcpRoute_Rules {
+  /** The action taken when this rule matches. (AI-inferred) */
   action?: TcpRoute_Rules_Action | Computed<TcpRoute_Rules_Action>;
+  /** The match condition(s) this rule evaluates. (AI-inferred) */
   matches?: TcpRoute_Rules_Matches[] | Computed<TcpRoute_Rules_Matches[]>;
 }
 

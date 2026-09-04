@@ -4,26 +4,37 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Apiproduct_Attributes struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type Apiproduct_GraphqlOperationGroup_OperationConfigs_Operations struct {
-	Operation      any
+	// The specific action being performed. (AI-inferred)
+	Operation any
+	// The kind of operation(s) this applies to. (AI-inferred)
 	OperationTypes any
 }
 
 type Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota struct {
+	// How often this recurs. (AI-inferred)
 	Interval any
-	Limit    any
+	// The maximum amount allowed. (AI-inferred)
+	Limit any
+	// The unit of time this quota is measured over, e.g. minute or day. (AI-inferred)
 	TimeUnit any
 }
 
 type Apiproduct_GraphqlOperationGroup_OperationConfigs struct {
-	ApiSource  any
+	// The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
+	ApiSource any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
+	// The operation(s) this rule applies to. (AI-inferred)
 	Operations any
-	Quota      any
+	// The maximum usage allowed within a defined period. (AI-inferred)
+	Quota any
 }
 
 type Apiproduct_GraphqlOperationGroup struct {
@@ -34,11 +45,16 @@ type Apiproduct_GraphqlOperationGroup struct {
 }
 
 type Apiproduct_GrpcOperationGroup_OperationConfigs struct {
-	ApiSource  any
+	// The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
+	ApiSource any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
-	Methods    any
-	Quota      any
-	Service    any
+	// The HTTP method(s) this applies to. (AI-inferred)
+	Methods any
+	// The maximum usage allowed within a defined period. (AI-inferred)
+	Quota any
+	// A reference to the backend service this applies to. (AI-inferred)
+	Service any
 }
 
 type Apiproduct_GrpcOperationGroup struct {
@@ -47,15 +63,22 @@ type Apiproduct_GrpcOperationGroup struct {
 }
 
 type Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperations struct {
-	Methods  any
-	Model    any
+	// The HTTP method(s) this applies to. (AI-inferred)
+	Methods any
+	// The name of the LLM model this applies to. (AI-inferred)
+	Model any
+	// A reference to the resource this applies to. (AI-inferred)
 	Resource any
 }
 
 type Apiproduct_LlmOperationGroup_OperationConfigs struct {
-	ApiSource     any
-	Attributes    any
+	// The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
+	ApiSource any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Attributes any
+	// The LLM operation(s) (e.g. tokens consumed) this quota tracks. (AI-inferred)
 	LlmOperations any
+	// The maximum number of LLM tokens allowed within this quota period. (AI-inferred)
 	LlmTokenQuota any
 }
 
@@ -65,15 +88,21 @@ type Apiproduct_LlmOperationGroup struct {
 }
 
 type Apiproduct_OperationGroup_OperationConfigs_Operations struct {
-	Methods  any
+	// The HTTP method(s) this applies to. (AI-inferred)
+	Methods any
+	// A reference to the resource this applies to. (AI-inferred)
 	Resource any
 }
 
 type Apiproduct_OperationGroup_OperationConfigs struct {
-	ApiSource  any
+	// The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
+	ApiSource any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
+	// The operation(s) this rule applies to. (AI-inferred)
 	Operations any
-	Quota      any
+	// The maximum usage allowed within a defined period. (AI-inferred)
+	Quota any
 }
 
 type Apiproduct_OperationGroup struct {
@@ -84,14 +113,19 @@ type Apiproduct_OperationGroup struct {
 }
 
 type Apiproduct_PayloadOperationGroup_OperationConfigs_Operations struct {
+	// The specific action being performed. (AI-inferred)
 	Operation any
 }
 
 type Apiproduct_PayloadOperationGroup_OperationConfigs struct {
-	ApiSource  any
+	// The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
+	ApiSource any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
+	// The operation(s) this rule applies to. (AI-inferred)
 	Operations any
-	Quota      any
+	// The maximum usage allowed within a defined period. (AI-inferred)
+	Quota any
 }
 
 type Apiproduct_PayloadOperationGroup struct {

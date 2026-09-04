@@ -892,24 +892,39 @@ var V2beta1Evaluation_SummarizationMetricsFields = ubx.FieldMap{
 }
 
 type V2beta1EvaluationConfig struct {
-	DisplayName               any
-	EvaluationStatus          any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The real, current status of this evaluation run. (AI-inferred)
+	EvaluationStatus any
+	// Configures how a generator's own output is scored during this evaluation. (AI-inferred)
 	GeneratorEvaluationConfig any
-	InitialGenerator          any
-	SummarizationMetrics      any
+	// The generator this evaluation run started from. (AI-inferred)
+	InitialGenerator any
+	// The real, computed accuracy metrics for this evaluation's own summarization output. (AI-inferred)
+	SummarizationMetrics any
 }
 
 type V2beta1EvaluationAttrs struct {
-	CompleteTime              any
-	CreateTime                any
-	DisplayName               any
-	EvaluationStatus          any
+	// When this evaluation run completed. (AI-inferred)
+	CompleteTime any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The real, current status of this evaluation run. (AI-inferred)
+	EvaluationStatus any
+	// Configures how a generator's own output is scored during this evaluation. (AI-inferred)
 	GeneratorEvaluationConfig any
-	InitialGenerator          any
-	Name                      any
-	SatisfiesPzi              any
-	SatisfiesPzs              any
-	SummarizationMetrics      any
+	// The generator this evaluation run started from. (AI-inferred)
+	InitialGenerator any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
+	SatisfiesPzi any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
+	SatisfiesPzs any
+	// The real, computed accuracy metrics for this evaluation's own summarization output. (AI-inferred)
+	SummarizationMetrics any
 }
 
 var V2beta1Evaluation = ubx.ResourceBinding{

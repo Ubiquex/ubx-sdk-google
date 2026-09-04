@@ -8,17 +8,26 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Feature_MonitoringStatsAnomalies_FeatureStatsAnomaly:
+    # The deviation threshold that was crossed to trigger this anomaly. (AI-inferred)
     anomaly_detection_threshold: Any = None
+    # A URI with further detail about this detected anomaly. (AI-inferred)
     anomaly_uri: Any = None
+    # How far this feature's own current value distribution has deviated from its baseline. (AI-inferred)
     distribution_deviation: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # A URI with the full statistics this anomaly was detected from. (AI-inferred)
     stats_uri: Any = None
 
 @dataclasses.dataclass
 class Feature_MonitoringStatsAnomalies:
+    # Detail about one detected anomaly in this feature's own statistics. (AI-inferred)
     feature_stats_anomaly: Any = None
+    # Which kind of analysis produced this result, e.g. `IMPORT_FEATURE_ANALYSIS` or `SNAPSHOT_ANALYSIS`. (AI-inferred)
     objective: Any = None
 
 @dataclasses.dataclass

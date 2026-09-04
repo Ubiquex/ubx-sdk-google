@@ -2,22 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Hub_RoutingVpcs {
+  /** Whether this filter is required for new site-to-site data transfer spokes. (AI-inferred) */
   requiredForNewSiteToSiteDataTransferSpokes?: boolean | Computed<boolean>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Hub_SpokeSummary_SpokeStateCounts {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Hub_SpokeSummary_SpokeStateReasonCounts {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** A machine-readable code explaining why this resource is in its own current state. (AI-inferred) */
   stateReasonCode?: string | Computed<string>;
 }
 
 export interface Hub_SpokeSummary_SpokeTypeCounts {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The kind of resource this spoke represents, e.g. VPN tunnel or VPC network. (AI-inferred) */
   spokeType?: string | Computed<string>;
 }
 

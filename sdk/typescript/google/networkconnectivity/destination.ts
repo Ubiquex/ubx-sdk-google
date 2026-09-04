@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Destination_Endpoints {
+  /** The BGP Autonomous System Number this applies to. (AI-inferred) */
   asn?: string | Computed<string>;
+  /** The cloud service provider this hybrid connection reaches. (AI-inferred) */
   csp?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Destination_StateTimeline_States {
+  /** When this configuration took effect. (AI-inferred) */
   effectiveTime?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

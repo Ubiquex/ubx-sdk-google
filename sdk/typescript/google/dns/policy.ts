@@ -2,13 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Policy_AlternativeNameServerConfig_TargetNameServers {
+  /** Whether forwarded queries are sent over the public internet or a private network path. (AI-inferred) */
   forwardingPath?: string | Computed<string>;
+  /** An IPv4 address. (AI-inferred) */
   ipv4Address?: string | Computed<string>;
+  /** An IPv6 address. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface Policy_AlternativeNameServerConfig {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified. */
   targetNameServers?: Policy_AlternativeNameServerConfig_TargetNameServers[] | Computed<Policy_AlternativeNameServerConfig_TargetNameServers[]>;
@@ -17,16 +22,21 @@ export interface Policy_AlternativeNameServerConfig {
 export interface Policy_Dns64Config_Scope {
   /** Controls whether DNS64 is enabled globally for all networks bound to the policy. */
   allQueries?: boolean | Computed<boolean>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface Policy_Dns64Config {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** What this configuration's own visibility is scoped to. (AI-inferred) */
   scope?: Policy_Dns64Config_Scope | Computed<Policy_Dns64Config_Scope>;
 }
 
 export interface Policy_Networks {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The VPC network this private zone or policy is visible from. (AI-inferred) */
   networkUrl?: string | Computed<string>;
 }
 
@@ -66,6 +76,7 @@ const Policy_NetworksFields: FieldMap = {
 };
 
 export interface PolicyConfig {
+  /** Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred) */
   alternativeNameServerConfig?: Policy_AlternativeNameServerConfig | Computed<Policy_AlternativeNameServerConfig>;
   /** A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function. */
   description?: string | Computed<string>;
@@ -77,6 +88,7 @@ export interface PolicyConfig {
   enableLogging?: boolean | Computed<boolean>;
   /** Unique identifier for the resource; defined by the server (output only). */
   id?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** User-assigned name for this policy. */
   name?: string | Computed<string>;
@@ -85,6 +97,7 @@ export interface PolicyConfig {
 }
 
 export interface PolicyAttrs {
+  /** Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred) */
   alternativeNameServerConfig: Policy_AlternativeNameServerConfig;
   /** A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function. */
   description: string;
@@ -96,6 +109,7 @@ export interface PolicyAttrs {
   enableLogging: boolean;
   /** Unique identifier for the resource; defined by the server (output only). */
   id: string;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** User-assigned name for this policy. */
   name: string;

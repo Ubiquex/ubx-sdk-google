@@ -4,22 +4,30 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Hub_RoutingVpcs struct {
+	// Whether this filter is required for new site-to-site data transfer spokes. (AI-inferred)
 	RequiredForNewSiteToSiteDataTransferSpokes any
-	Uri                                        any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Hub_SpokeSummary_SpokeStateCounts struct {
+	// How many of this item there are. (AI-inferred)
 	Count any
+	// The current lifecycle state of this resource. (AI-inferred)
 	State any
 }
 
 type Hub_SpokeSummary_SpokeStateReasonCounts struct {
-	Count           any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// A machine-readable code explaining why this resource is in its own current state. (AI-inferred)
 	StateReasonCode any
 }
 
 type Hub_SpokeSummary_SpokeTypeCounts struct {
-	Count     any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// The kind of resource this spoke represents, e.g. VPN tunnel or VPC network. (AI-inferred)
 	SpokeType any
 }
 

@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataAsset_AccessGroupConfigs {
+  /** The IAM role(s) granted. (AI-inferred) */
   iamRoles?: string[] | Computed<string[]>;
 }
 

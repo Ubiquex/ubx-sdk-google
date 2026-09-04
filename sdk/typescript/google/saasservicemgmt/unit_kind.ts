@@ -2,24 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UnitKind_Dependencies {
+  /** A real, local alias this unit uses to refer to a dependency, distinct from the dependency's own real resource name. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** A reference to the real `google_saasservicemgmt_unit_kind` this dependency's own units are drawn from. (AI-inferred) */
   unitKind?: string | Computed<string>;
 }
 
 export interface UnitKind_InputVariableMappings_From {
+  /** The real, named dependency this input variable mapping's own `from` side reads from. (AI-inferred) */
   dependency?: string | Computed<string>;
+  /** The real, named output variable exposed by this mapping's own `dependency`, whose value feeds the mapped input. (AI-inferred) */
   outputVariable?: string | Computed<string>;
 }
 
 export interface UnitKind_InputVariableMappings_To {
+  /** The real, named dependency this input variable mapping's own `from` side reads from. (AI-inferred) */
   dependency?: string | Computed<string>;
+  /** Whether this mapped input variable is real, excluded from the criteria App Lifecycle Manager uses to look up matching existing units. (AI-inferred) */
   ignoreForLookup?: boolean | Computed<boolean>;
+  /** The real, named input variable on this unit kind that receives the mapped value. (AI-inferred) */
   inputVariable?: string | Computed<string>;
 }
 
 export interface UnitKind_InputVariableMappings {
+  /** The real, source side of an input variable mapping, referencing a dependency's own output variable. (AI-inferred) */
   from?: UnitKind_InputVariableMappings_From | Computed<UnitKind_InputVariableMappings_From>;
+  /** The real, destination side of an input variable mapping, naming which of this unit kind's own input variables receives the mapped value. (AI-inferred) */
   to?: UnitKind_InputVariableMappings_To | Computed<UnitKind_InputVariableMappings_To>;
+  /** The real, named input variable this default value applies to. (AI-inferred) */
   variable?: string | Computed<string>;
 }
 

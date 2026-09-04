@@ -18,7 +18,9 @@ class ImageImport_DiskImageTargetDefaults_Encryption:
 
 @dataclasses.dataclass
 class ImageImport_DiskImageTargetDefaults_OsAdaptationParameters_AdaptationModifiers:
+    # A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred)
     modifier: Any = None
+    # The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -62,10 +64,15 @@ class ImageImport_MachineImageTargetDefaults_MachineImageParametersOverrides:
 
 @dataclasses.dataclass
 class ImageImport_MachineImageTargetDefaults_NetworkInterfaces:
+    # The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred)
     external_ip: Any = None
+    # The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred)
     internal_ip: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred)
     network_tier: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
@@ -117,49 +124,78 @@ class ImageImport_MachineImageTargetDefaults:
 
 @dataclasses.dataclass
 class ImageImport_RecentImageImportJobs_Errors:
+    # The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
     code: Any = None
+    # Real, structured detail data attached to a migration error, giving more specific context than its own `message` alone. (AI-inferred)
     details: Any = None
+    # A real, human-readable status or error message for this migration step. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class ImageImport_RecentImageImportJobs_Steps:
+    # Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred)
     adapting_os: Any = None
+    # Real, detailed progress for VM Migration's own step creating the final Compute Engine image or machine image, for an image import job. (AI-inferred)
     creating_image: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's own initial setup step, before real data transfer begins. (AI-inferred)
     initializing: Any = None
+    # Real, detailed progress for VM Migration's own step loading the source image's files ahead of import. (AI-inferred)
     loading_source_files: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class ImageImport_RecentImageImportJobs_Warnings_ActionItem:
+    # The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred)
     locale: Any = None
+    # A real, human-readable status or error message for this migration step. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class ImageImport_RecentImageImportJobs_Warnings_HelpLinks:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A real URL pointing to more information about this migration warning or error. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class ImageImport_RecentImageImportJobs_Warnings:
+    # Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred)
     action_item: Any = None
+    # The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
     code: Any = None
+    # Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred)
     help_links: Any = None
+    # The real, human-readable text of one migration warning. (AI-inferred)
     warning_message: Any = None
+    # The real timestamp when this migration warning was raised. (AI-inferred)
     warning_time: Any = None
 
 @dataclasses.dataclass
 class ImageImport_RecentImageImportJobs:
+    # The real Cloud Storage URI of the image file this VM Migration image import job is importing from. (AI-inferred)
     cloud_storage_uri: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The real Google Cloud resource(s) (such as a Compute Engine image) this image import job created. (AI-inferred)
     created_resources: Any = None
+    # Real, target-side configuration for importing the source image as a standalone Compute Engine disk image. (AI-inferred)
     disk_image_target_details: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real errors, if any, that occurred while running this image import job. (AI-inferred)
     errors: Any = None
+    # Real, target-side configuration for importing the source image as a Compute Engine machine image (a full VM template) rather than a plain disk image. (AI-inferred)
     machine_image_target_details: Any = None
+    # The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred)
     name: Any = None
+    # The real, current state of this migration job, step, or resource. (AI-inferred)
     state: Any = None
+    # The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred)
     steps: Any = None
+    # Real, non-fatal warnings raised during this migration job, each with its own `warning_message`, severity, and `action_item`. (AI-inferred)
     warnings: Any = None
 
 _ImageImport_DiskImageTargetDefaults_DataDiskImageImportFields = {

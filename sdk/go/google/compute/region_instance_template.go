@@ -26,79 +26,128 @@ type RegionInstanceTemplate_Properties_ConfidentialInstanceConfig struct {
 }
 
 type RegionInstanceTemplate_Properties_Disks_DiskEncryptionKey struct {
-	KmsKeyName           any
+	// The resource name of the Cloud KMS key used to encrypt the disk. This is a customer-managed encryption key (CMEK). (AI-inferred)
+	KmsKeyName any
+	// The service account used for the KMS encryption operation on the disk. If not specified, the Compute Engine default service account is used. (AI-inferred)
 	KmsKeyServiceAccount any
-	RawKey               any
-	RsaEncryptedKey      any
-	Sha256               any
+	// The raw 256-bit disk encryption key, provided in base64 format, used to encrypt the disk attached to the instance template. (AI-inferred)
+	RawKey any
+	// The RSA-encrypted customer-supplied encryption key, used as an alternative to raw_key to protect the key in transit. The key is a 256-bit key encoded in RFC 4648 base64, wrapped with the RSA public key provided by Google. (AI-inferred)
+	RsaEncryptedKey any
+	// The SHA256 hash of the customer-supplied encryption key used to encrypt the disk. This is computed automatically from the raw_key and is used for key verification. (AI-inferred)
+	Sha256 any
 }
 
 type RegionInstanceTemplate_Properties_Disks_GuestOsFeatures struct {
+	// The type of guest OS feature. Possible values include: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
 	Type any
 }
 
 type RegionInstanceTemplate_Properties_Disks_InitializeParams struct {
-	Architecture                any
-	Description                 any
-	DiskName                    any
-	DiskSizeGb                  any
-	DiskType                    any
-	EnableConfidentialCompute   any
-	Labels                      any
-	Licenses                    any
-	OnUpdateAction              any
-	ProvisionedIops             any
-	ProvisionedThroughput       any
-	ReplicaZones                any
-	ResourceManagerTags         any
-	ResourcePolicies            any
-	SourceImage                 any
-	SourceImageEncryptionKey    any
-	SourceSnapshot              any
+	// The architecture of the disk, indicating the CPU type. Allowed values are ARCHITECTURE_UNSPECIFIED (default), ARM64, or X86_64. (AI-inferred)
+	Architecture any
+	Description  any
+	DiskName     any
+	// The size of the boot disk, in gigabytes (GB), for the disk initialization parameters. (AI-inferred)
+	DiskSizeGb any
+	// The type of disk to use. Can be specified as a full or partial URL to a disk type resource, such as 'pd-ssd' or 'zones/us-east1-a/diskTypes/pd-standard'. (AI-inferred)
+	DiskType any
+	// Enables Confidential Compute for the disk created by this initialization parameter. (AI-inferred)
+	EnableConfidentialCompute any
+	// A map of key/value pairs to label the disk. Labels can be used to organize and identify the disk. (AI-inferred)
+	Labels any
+	// A list of license URLs to apply to the disk image. Overrides licenses inherited from the source image. (AI-inferred)
+	Licenses any
+	// Specifies the action to take on this disk when the instance template is updated. Valid values are RECREATE_DISK (always recreate the disk), RECREATE_DISK_IF_SOURCE_CHANGED (recreate only if the source image or snapshot changes), and USE_EXISTING_DISK (preserve the existing disk). (AI-inferred)
+	OnUpdateAction any
+	// The number of provisioned IOPS (input/output operations per second) for the disk, specified as a string. This is used for disk types that support performance provisioning. (AI-inferred)
+	ProvisionedIops any
+	// The provisioned throughput of the disk in MB/s, used to configure performance for supported disk types. Only applicable to hyperdisk-balanced and hyperdisk-throughput disks. (AI-inferred)
+	ProvisionedThroughput any
+	// The zones that the regional persistent disk should be replicated across. This is required for regional persistent disks (when the disk type is regional). (AI-inferred)
+	ReplicaZones any
+	// Resource manager tags to be applied to the disk. These are key-value pairs used for organizing and controlling access to resources. (AI-inferred)
+	ResourceManagerTags any
+	// List of resource policy self-links (e.g., snapshot schedule policies) to be attached to the disk. (AI-inferred)
+	ResourcePolicies any
+	// The source image to use for this disk. Can be a full image URL, self link, or image name in the same project or a shared image family. (AI-inferred)
+	SourceImage any
+	// The customer-supplied encryption key used to decrypt the source image when creating the disk. This is required if the source image is encrypted with a customer-managed key. (AI-inferred)
+	SourceImageEncryptionKey any
+	SourceSnapshot           any
+	// The customer-supplied encryption key used to decrypt the source snapshot when creating this disk. This is required if the source snapshot is encrypted with a customer-supplied key. (AI-inferred)
 	SourceSnapshotEncryptionKey any
-	StoragePool                 any
+	// The URL of the storage pool in which the disk is created. If not specified, the default storage pool is used. (AI-inferred)
+	StoragePool any
 }
 
 type RegionInstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_Dbs struct {
-	Content  any
+	// The base64-encoded content of the database (db) file for the Shielded VM initial state. (AI-inferred)
+	Content any
+	// The file type of the database file, indicating how the content is encoded. Allowed values are BIN (binary), X509 (certificate), and UNDEFINED. (AI-inferred)
 	FileType any
 }
 
 type RegionInstanceTemplate_Properties_Disks_ShieldedInstanceInitialState struct {
-	Dbs  any
+	// The list of database certificates (DBs) for the shielded instance initial state. Each object in the list specifies a base64-encoded certificate content and its file type. (AI-inferred)
+	Dbs any
+	// A list of DBX (denied boot) binaries to include in the shielded instance initial state. Each object contains the file content and type (e.g., BINARY or X509). (AI-inferred)
 	Dbxs any
+	// A list of key exchange keys (KEKs) for the shielded VM initial state. Each item is an object representing a key entry within the shielded instance initial state. (AI-inferred)
 	Keks any
-	Pk   any
+	// The Platform Key (PK) certificate used by Secure Boot to verify the boot loader and OS kernel. This object contains the certificate content and its file type. (AI-inferred)
+	Pk any
 }
 
 type RegionInstanceTemplate_Properties_Disks struct {
-	Architecture                 any
-	AutoDelete                   any
-	Boot                         any
-	DeviceName                   any
-	DiskEncryptionKey            any
-	DiskSizeGb                   any
-	ForceAttach                  any
-	GuestOsFeatures              any
-	Index                        any
-	InitializeParams             any
-	Interface                    any
-	Kind                         any
-	Licenses                     any
-	Mode                         any
-	SavedState                   any
+	// The CPU architecture for the disk. Allowed values are ARM64 and X86_64. ARCHITECTURE_UNSPECIFIED means the architecture is not explicitly set. (AI-inferred)
+	Architecture any
+	// Whether the disk should be automatically deleted when the instance to which it is attached is deleted. (AI-inferred)
+	AutoDelete any
+	// Indicates whether this disk is used as a boot disk. Only one disk in a template can be marked as boot. (AI-inferred)
+	Boot any
+	// The device name of the disk as seen by the guest OS. This name can be used to reference the disk from within the instance, for example when mounting. If not specified, a default device name is assigned by Google Compute Engine. (AI-inferred)
+	DeviceName any
+	// The customer-supplied encryption key used to encrypt the disk. This can include a raw base64-encoded key, an RSA-encrypted key, or a reference to a Cloud KMS key. (AI-inferred)
+	DiskEncryptionKey any
+	// The size of the disk in gigabytes. If not specified, the disk size is taken from the source image. (AI-inferred)
+	DiskSizeGb any
+	// If true, allows the disk to be attached even if it is already attached to another instance. (AI-inferred)
+	ForceAttach any
+	// Specifies a list of features that must be enabled on the guest operating system for this disk. This is commonly used to enable UEFI boot or multi-queue SCSI for bootable images. (AI-inferred)
+	GuestOsFeatures any
+	// The zero-based index of the disk, where index 0 is reserved for the boot disk and subsequent disks are numbered sequentially in the instance's disk list. (AI-inferred)
+	Index            any
+	InitializeParams any
+	// The disk interface type. Valid values are 'NVME' and 'SCSI', which determine the protocol used to communicate with the attached disk. (AI-inferred)
+	Interface any
+	// The type of the resource. For attached disks in instance templates, this is always 'compute#attachedDisk'. (AI-inferred)
+	Kind any
+	// A list of license URIs associated with the disk, typically inherited from the source image and used to identify applicable software licenses. (AI-inferred)
+	Licenses any
+	// The disk mode, either READ_ONLY or READ_WRITE. Specifies whether the disk is attached as read-only or read-write. (AI-inferred)
+	Mode any
+	// Indicates the saved state of the disk. Valid values are `PRESERVED` to preserve the disk state and `DISK_SAVED_STATE_UNSPECIFIED` for the default unspecified state. (AI-inferred)
+	SavedState any
+	// This block configures the initial trusted state of the shielded instance for this disk, including integrity measurements used to verify the boot chain. It is only supported for the boot disk of a shielded VM instance. (AI-inferred)
 	ShieldedInstanceInitialState any
-	Source                       any
-	Type                         any
+	// The URL or name of the source disk to use for this disk. This is used when creating a disk from an existing persistent disk. (AI-inferred)
+	Source any
+	// The type of disk. Valid values are PERSISTENT and SCRATCH. (AI-inferred)
+	Type any
 }
 
 type RegionInstanceTemplate_Properties_GuestAccelerators struct {
+	// Specifies the number of accelerator cards of the specified type to attach to the instance. (AI-inferred)
 	AcceleratorCount any
-	AcceleratorType  any
+	// The type of accelerator (GPU) to attach to the instance. Specify the accelerator type as a full or partial URL, for example 'nvidia-tesla-t4' or 'projects/project/zones/zone/acceleratorTypes/nvidia-tesla-t4'. (AI-inferred)
+	AcceleratorType any
 }
 
 type RegionInstanceTemplate_Properties_Metadata_Items struct {
-	Key   any
+	// The key of this metadata entry. Each item in the metadata is a key-value pair. (AI-inferred)
+	Key any
+	// The value of the metadata item, paired with the associated key in the instance template's metadata. (AI-inferred)
 	Value any
 }
 
@@ -112,49 +161,77 @@ type RegionInstanceTemplate_Properties_Metadata struct {
 }
 
 type RegionInstanceTemplate_Properties_NetworkInterfaces_AccessConfigs struct {
-	ExternalIpv6             any
+	// The external IPv6 address to assign to the instance's network interface access config. If not specified, an IPv6 address is automatically allocated when IPv6 is enabled on the network. (AI-inferred)
+	ExternalIpv6 any
+	// The length, in bits, of the external IPv6 prefix associated with this access configuration. (AI-inferred)
 	ExternalIpv6PrefixLength any
-	Kind                     any
-	Name                     any
-	NatIp                    any
-	NetworkTier              any
-	PublicPtrDomainName      any
-	SecurityPolicy           any
-	SetPublicPtr             any
-	Type                     any
+	// The kind of the access config, which is always 'compute#accessConfig'. (AI-inferred)
+	Kind any
+	Name any
+	// The external IP address to assign to the instance's network interface. If unset, an ephemeral external IP is assigned automatically. (AI-inferred)
+	NatIp any
+	// The network tier to assign to this access config. Valid values are PREMIUM, STANDARD, FIXED_STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD. If unspecified, defaults to PREMIUM. (AI-inferred)
+	NetworkTier any
+	// Sets a custom PTR (reverse DNS) record for the external IP address of this access config. When specified, the instance's public IP will resolve to this domain name in reverse DNS lookups. (AI-inferred)
+	PublicPtrDomainName any
+	// The Google Cloud Armor security policy to apply to this access config. Specify the security policy name or URL. (AI-inferred)
+	SecurityPolicy any
+	// Specifies whether a public DNS PTR record should be created for the external IP address assigned to this access config. (AI-inferred)
+	SetPublicPtr any
+	// The type of access configuration. Valid values are ONE_TO_ONE_NAT for external NAT (IPv4) and DIRECT_IPV6 for direct IPv6 access. (AI-inferred)
+	Type any
 }
 
 type RegionInstanceTemplate_Properties_NetworkInterfaces_AliasIpRanges struct {
-	IpCidrRange         any
+	// The IP CIDR range for the alias IP. This range must be within the primary or secondary IP ranges of the subnetwork. (AI-inferred)
+	IpCidrRange any
+	// The name of a subnetwork secondary IP range from which to allocate an IP address range. If not specified, the primary IP range of the subnetwork is used. (AI-inferred)
 	SubnetworkRangeName any
 }
 
 type RegionInstanceTemplate_Properties_NetworkInterfaces struct {
-	AccessConfigs            any
-	AliasIpRanges            any
-	AliasIpv6Ranges          any
-	EnableVpcScopedDns       any
-	Fingerprint              any
-	IgmpQuery                any
+	// List of access configurations for this network interface, used to assign external IP addresses. Each access config can specify a NAT IP and network tier. (AI-inferred)
+	AccessConfigs any
+	// A list of alias IP ranges for this network interface. Each alias IP range specifies an IP range (in CIDR format) to assign to this interface and optionally a subnetwork secondary range name. (AI-inferred)
+	AliasIpRanges   any
+	AliasIpv6Ranges any
+	// Enables VPC-scoped DNS on this network interface. When set to true, the instance uses the VPC's DNS settings to resolve internal hostnames. (AI-inferred)
+	EnableVpcScopedDns any
+	Fingerprint        any
+	// Controls whether IGMP query is enabled on this network interface and which version is used. Valid values are IGMP_QUERY_DISABLED (no IGMP query) and IGMP_QUERY_V2 (enable IGMPv2 query). (AI-inferred)
+	IgmpQuery any
+	// The prefix length in bits for the internal IPv6 range assigned to the network interface. When set, this determines the size of the IPv6 subnet; the only supported value is /96. (AI-inferred)
 	InternalIpv6PrefixLength any
-	Ipv6AccessConfigs        any
-	Ipv6AccessType           any
-	Ipv6Address              any
-	Kind                     any
-	Name                     any
-	Network                  any
-	NetworkAttachment        any
-	NetworkIp                any
-	NicType                  any
-	ParentNicName            any
-	QueueCount               any
-	ServiceClassId           any
-	StackType                any
-	Subnetwork               any
-	Vlan                     any
+	// A list of IPv6 access configurations for the network interface. Each configuration specifies the external IPv6 address and network tier. (AI-inferred)
+	Ipv6AccessConfigs any
+	// The access type for IPv6 addresses on this network interface. Valid values are EXTERNAL (default) and INTERNAL. (AI-inferred)
+	Ipv6AccessType any
+	Ipv6Address    any
+	// The resource type, always compute#networkInterface for network interface resources. (AI-inferred)
+	Kind any
+	Name any
+	// The name or self_link of the network to attach this interface to. (AI-inferred)
+	Network any
+	// The URL of the network attachment resource that this network interface should be attached to. When set, the interface connects to a VPC via the specified network attachment. (AI-inferred)
+	NetworkAttachment any
+	// The private IPv4 address to assign to the interface. If not specified, an ephemeral address is automatically allocated from the subnet. (AI-inferred)
+	NetworkIp any
+	// The type of network interface controller (NIC) to attach. Allowed values: GVNIC, IDPF, IRDMA, MRDMA, UNSPECIFIED_NIC_TYPE, VIRTIO_NET. (AI-inferred)
+	NicType       any
+	ParentNicName any
+	// The number of queues for this network interface. If not specified, the number of queues is automatically selected based on the machine type. (AI-inferred)
+	QueueCount     any
+	ServiceClassId any
+	// The stack type for the network interface. Valid values are IPV4_IPV6 (dual-stack), IPV4_ONLY, and IPV6_ONLY. (AI-inferred)
+	StackType any
+	// The name or self-link of the subnetwork to attach this network interface to. Must be in the same region as the instance template. (AI-inferred)
+	Subnetwork any
+	// The VLAN ID to associate with this network interface when using a network attachment. Required if network_attachment is specified. (AI-inferred)
+	Vlan any
 }
 
 type RegionInstanceTemplate_Properties_NetworkPerformanceConfig struct {
+	// Specifies the tier for total egress bandwidth for the instance. Allowed values are DEFAULT and TIER_1. (AI-inferred)
 	TotalEgressBandwidthTier any
 }
 
@@ -182,9 +259,12 @@ type RegionInstanceTemplate_Properties_Scheduling_GracefulShutdown struct {
 }
 
 type RegionInstanceTemplate_Properties_Scheduling_NodeAffinities struct {
-	Key      any
+	// The key for the node affinity label, used to match instances to node groups. (AI-inferred)
+	Key any
+	// Specifies the operator for the node affinity. Possible values are IN (match the given values), NOT_IN (do not match the given values), and OPERATOR_UNSPECIFIED. (AI-inferred)
 	Operator any
-	Values   any
+	// Specifies the values of the node affinity key. These are the actual label values used to match nodes. (AI-inferred)
+	Values any
 }
 
 type RegionInstanceTemplate_Properties_Scheduling_OnInstanceStopAction struct {
@@ -230,7 +310,9 @@ type RegionInstanceTemplate_Properties_Scheduling struct {
 }
 
 type RegionInstanceTemplate_Properties_ServiceAccounts struct {
-	Email  any
+	// The email address of the service account to assign to the instance. If not specified, the default Compute Engine service account is used. (AI-inferred)
+	Email any
+	// The list of OAuth scopes to be granted to the service account. These scopes determine the API access permissions for the instance. (AI-inferred)
 	Scopes any
 }
 
@@ -251,7 +333,8 @@ type RegionInstanceTemplate_Properties_Tags struct {
 }
 
 type RegionInstanceTemplate_Properties_WorkloadIdentityConfig struct {
-	Identity                   any
+	Identity any
+	// Enables the identity certificate for the workload identity configuration. When set to true, the instance template will use an identity certificate, which is typically used with Google Kubernetes Engine to provide a stable identity for workloads. (AI-inferred)
 	IdentityCertificateEnabled any
 }
 
@@ -298,14 +381,18 @@ type RegionInstanceTemplate_Properties struct {
 	// A set of Shielded Instance options.
 	ShieldedInstanceConfig any
 	// A set of instance tags.
-	Tags                   any
+	Tags any
+	// Configures the workload identity settings for the instance template, enabling workload identity on instances created from it. (AI-inferred)
 	WorkloadIdentityConfig any
 }
 
 type RegionInstanceTemplate_SourceInstanceParams_DiskConfigs struct {
-	AutoDelete      any
-	CustomImage     any
-	DeviceName      any
+	// Whether the disk should be automatically deleted when the instance is deleted. Set to true to delete the disk along with the instance, or false to retain it. (AI-inferred)
+	AutoDelete  any
+	CustomImage any
+	// The device name to assign to the disk, used to identify the disk inside the instance. (AI-inferred)
+	DeviceName any
+	// Specifies how the disk is instantiated from the source instance in a region instance template. Valid values are: ATTACH_READ_ONLY (attach the disk as read-only), BLANK (create an empty disk), CUSTOM_IMAGE (use a custom image), DEFAULT (use the default behavior), DO_NOT_INCLUDE (omit the disk from the template), SOURCE_IMAGE (use the source instance's boot image), and SOURCE_IMAGE_FAMILY (use the source image family). (AI-inferred)
 	InstantiateFrom any
 }
 
@@ -710,7 +797,8 @@ type RegionInstanceTemplateConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name       any
+	Name any
+	// The computed properties of the region instance template, containing the effective instance configuration such as machine type, disks, network interfaces, metadata, and scheduling options. This field is output-only and reflects the actual properties used by the template. (AI-inferred)
 	Properties any
 	// The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance
 	SourceInstance any
@@ -728,7 +816,8 @@ type RegionInstanceTemplateAttrs struct {
 	// Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
 	Kind any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name       any
+	Name any
+	// The computed properties of the region instance template, containing the effective instance configuration such as machine type, disks, network interfaces, metadata, and scheduling options. This field is output-only and reflects the actual properties used by the template. (AI-inferred)
 	Properties any
 	// Output only. [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
 	Region any

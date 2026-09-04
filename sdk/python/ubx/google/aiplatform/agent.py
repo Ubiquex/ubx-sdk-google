@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Agent_Tools:
+    # HTTP header(s) sent with this tool's own external calls. (AI-inferred)
     headers: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The URL this tool calls. (AI-inferred)
     url: Any = None
 
 _Agent_ToolsFields = {

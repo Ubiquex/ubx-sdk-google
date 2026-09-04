@@ -7,131 +7,212 @@ export interface WorkflowTemplate_EncryptionConfig {
 }
 
 export interface WorkflowTemplate_Jobs_FlinkJob_LoggingConfig {
+  /** Per-package logging level override(s) for this job's own driver process. (AI-inferred) */
   driverLogLevels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface WorkflowTemplate_Jobs_FlinkJob {
+  /** The argument(s) passed to this job. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** Additional `.jar` file(s) made available to this job's own classpath. (AI-inferred) */
   jarFileUris?: string[] | Computed<string[]>;
+  /** Per-package logging level configuration. (AI-inferred) */
   loggingConfig?: WorkflowTemplate_Jobs_FlinkJob_LoggingConfig | Computed<WorkflowTemplate_Jobs_FlinkJob_LoggingConfig>;
+  /** The fully qualified name of the driver class for this Hadoop/Spark job. (AI-inferred) */
   mainClass?: string | Computed<string>;
+  /** The URI of the `.jar` file containing this job's own main class. (AI-inferred) */
   mainJarFileUri?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
+  /** The Cloud Storage URI of a Flink savepoint to resume this job from. (AI-inferred) */
   savepointUri?: string | Computed<string>;
 }
 
 export interface WorkflowTemplate_Jobs_HadoopJob {
+  /** Archive file(s) (`.jar`, `.tar`, `.tar.gz`, `.tgz`, or `.zip`) made available to this job's own working directory. (AI-inferred) */
   archiveUris?: string[] | Computed<string[]>;
+  /** The argument(s) passed to this job. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** File(s) made available to this job's own working directory. (AI-inferred) */
   fileUris?: string[] | Computed<string[]>;
+  /** Additional `.jar` file(s) made available to this job's own classpath. (AI-inferred) */
   jarFileUris?: string[] | Computed<string[]>;
+  /** Per-package logging level configuration. (AI-inferred) */
   loggingConfig?: WorkflowTemplate_Jobs_FlinkJob_LoggingConfig | Computed<WorkflowTemplate_Jobs_FlinkJob_LoggingConfig>;
+  /** The fully qualified name of the driver class for this Hadoop/Spark job. (AI-inferred) */
   mainClass?: string | Computed<string>;
+  /** The URI of the `.jar` file containing this job's own main class. (AI-inferred) */
   mainJarFileUri?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface WorkflowTemplate_Jobs_HiveJob_QueryList {
+  /** The SQL query/queries to run. (AI-inferred) */
   queries?: string[] | Computed<string[]>;
 }
 
 export interface WorkflowTemplate_Jobs_HiveJob {
+  /** Whether the workflow continues to subsequent steps if this step fails, rather than aborting the whole workflow. (AI-inferred) */
   continueOnFailure?: boolean | Computed<boolean>;
+  /** Additional `.jar` file(s) made available to this job's own classpath. (AI-inferred) */
   jarFileUris?: string[] | Computed<string[]>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
+  /** The URI of a file containing the SQL query to run. (AI-inferred) */
   queryFileUri?: string | Computed<string>;
+  /** A list of SQL query strings to run, as an alternative to `query_file_uri`. (AI-inferred) */
   queryList?: WorkflowTemplate_Jobs_HiveJob_QueryList | Computed<WorkflowTemplate_Jobs_HiveJob_QueryList>;
+  /** Variable(s) substituted into the Pig/Hive script before execution. (AI-inferred) */
   scriptVariables?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface WorkflowTemplate_Jobs_PigJob {
+  /** Whether the workflow continues to subsequent steps if this step fails, rather than aborting the whole workflow. (AI-inferred) */
   continueOnFailure?: boolean | Computed<boolean>;
+  /** Additional `.jar` file(s) made available to this job's own classpath. (AI-inferred) */
   jarFileUris?: string[] | Computed<string[]>;
+  /** Per-package logging level configuration. (AI-inferred) */
   loggingConfig?: WorkflowTemplate_Jobs_FlinkJob_LoggingConfig | Computed<WorkflowTemplate_Jobs_FlinkJob_LoggingConfig>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
+  /** The URI of a file containing the SQL query to run. (AI-inferred) */
   queryFileUri?: string | Computed<string>;
+  /** A list of SQL query strings to run, as an alternative to `query_file_uri`. (AI-inferred) */
   queryList?: WorkflowTemplate_Jobs_HiveJob_QueryList | Computed<WorkflowTemplate_Jobs_HiveJob_QueryList>;
+  /** Variable(s) substituted into the Pig/Hive script before execution. (AI-inferred) */
   scriptVariables?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface WorkflowTemplate_Jobs_PrestoJob {
+  /** Network tag(s) applied to each instance's own underlying Compute Engine VM. (AI-inferred) */
   clientTags?: string[] | Computed<string[]>;
+  /** Whether the workflow continues to subsequent steps if this step fails, rather than aborting the whole workflow. (AI-inferred) */
   continueOnFailure?: boolean | Computed<boolean>;
+  /** Per-package logging level configuration. (AI-inferred) */
   loggingConfig?: WorkflowTemplate_Jobs_FlinkJob_LoggingConfig | Computed<WorkflowTemplate_Jobs_FlinkJob_LoggingConfig>;
+  /** The format job output is written in. (AI-inferred) */
   outputFormat?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
+  /** The URI of a file containing the SQL query to run. (AI-inferred) */
   queryFileUri?: string | Computed<string>;
+  /** A list of SQL query strings to run, as an alternative to `query_file_uri`. (AI-inferred) */
   queryList?: WorkflowTemplate_Jobs_HiveJob_QueryList | Computed<WorkflowTemplate_Jobs_HiveJob_QueryList>;
 }
 
 export interface WorkflowTemplate_Jobs_PysparkJob {
+  /** Archive file(s) (`.jar`, `.tar`, `.tar.gz`, `.tgz`, or `.zip`) made available to this job's own working directory. (AI-inferred) */
   archiveUris?: string[] | Computed<string[]>;
+  /** The argument(s) passed to this job. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** File(s) made available to this job's own working directory. (AI-inferred) */
   fileUris?: string[] | Computed<string[]>;
+  /** Additional `.jar` file(s) made available to this job's own classpath. (AI-inferred) */
   jarFileUris?: string[] | Computed<string[]>;
+  /** Per-package logging level configuration. (AI-inferred) */
   loggingConfig?: WorkflowTemplate_Jobs_FlinkJob_LoggingConfig | Computed<WorkflowTemplate_Jobs_FlinkJob_LoggingConfig>;
+  /** The URI of the Python file containing this job's own main entry point. (AI-inferred) */
   mainPythonFileUri?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
+  /** Additional Python file(s) made available to this job's own execution. (AI-inferred) */
   pythonFileUris?: string[] | Computed<string[]>;
 }
 
 export interface WorkflowTemplate_Jobs_Scheduling {
+  /** The maximum number of instance failures tolerated per hour before this instance group is considered unhealthy. (AI-inferred) */
   maxFailuresPerHour?: number | Computed<number>;
+  /** The maximum total number of instance failures tolerated before this instance group is considered unhealthy. (AI-inferred) */
   maxFailuresTotal?: number | Computed<number>;
 }
 
 export interface WorkflowTemplate_Jobs_SparkRjob {
+  /** Archive file(s) (`.jar`, `.tar`, `.tar.gz`, `.tgz`, or `.zip`) made available to this job's own working directory. (AI-inferred) */
   archiveUris?: string[] | Computed<string[]>;
+  /** The argument(s) passed to this job. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** File(s) made available to this job's own working directory. (AI-inferred) */
   fileUris?: string[] | Computed<string[]>;
+  /** Per-package logging level configuration. (AI-inferred) */
   loggingConfig?: WorkflowTemplate_Jobs_FlinkJob_LoggingConfig | Computed<WorkflowTemplate_Jobs_FlinkJob_LoggingConfig>;
+  /** The URI of the R file containing this job's own main entry point. (AI-inferred) */
   mainRfileUri?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface WorkflowTemplate_Jobs_SparkSqlJob {
+  /** Additional `.jar` file(s) made available to this job's own classpath. (AI-inferred) */
   jarFileUris?: string[] | Computed<string[]>;
+  /** Per-package logging level configuration. (AI-inferred) */
   loggingConfig?: WorkflowTemplate_Jobs_FlinkJob_LoggingConfig | Computed<WorkflowTemplate_Jobs_FlinkJob_LoggingConfig>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, string> | Computed<Record<string, string>>;
+  /** The URI of a file containing the SQL query to run. (AI-inferred) */
   queryFileUri?: string | Computed<string>;
+  /** A list of SQL query strings to run, as an alternative to `query_file_uri`. (AI-inferred) */
   queryList?: WorkflowTemplate_Jobs_HiveJob_QueryList | Computed<WorkflowTemplate_Jobs_HiveJob_QueryList>;
+  /** Variable(s) substituted into the Pig/Hive script before execution. (AI-inferred) */
   scriptVariables?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface WorkflowTemplate_Jobs {
+  /** Configures this job to run a Flink application. (AI-inferred) */
   flinkJob?: WorkflowTemplate_Jobs_FlinkJob | Computed<WorkflowTemplate_Jobs_FlinkJob>;
+  /** Configures this job to run a Hadoop MapReduce application. (AI-inferred) */
   hadoopJob?: WorkflowTemplate_Jobs_HadoopJob | Computed<WorkflowTemplate_Jobs_HadoopJob>;
+  /** Configures this job to run a Hive query. (AI-inferred) */
   hiveJob?: WorkflowTemplate_Jobs_HiveJob | Computed<WorkflowTemplate_Jobs_HiveJob>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Configures this job to run a Pig script. (AI-inferred) */
   pigJob?: WorkflowTemplate_Jobs_PigJob | Computed<WorkflowTemplate_Jobs_PigJob>;
+  /** The workflow step(s) that must complete before this step begins. (AI-inferred) */
   prerequisiteStepIds?: string[] | Computed<string[]>;
+  /** Configures this job to run a Presto query. (AI-inferred) */
   prestoJob?: WorkflowTemplate_Jobs_PrestoJob | Computed<WorkflowTemplate_Jobs_PrestoJob>;
+  /** Configures this job to run a PySpark application. (AI-inferred) */
   pysparkJob?: WorkflowTemplate_Jobs_PysparkJob | Computed<WorkflowTemplate_Jobs_PysparkJob>;
+  /** Configuration for automatic retry and failure handling. (AI-inferred) */
   scheduling?: WorkflowTemplate_Jobs_Scheduling | Computed<WorkflowTemplate_Jobs_Scheduling>;
+  /** Configures this job to run a Spark application. (AI-inferred) */
   sparkJob?: WorkflowTemplate_Jobs_HadoopJob | Computed<WorkflowTemplate_Jobs_HadoopJob>;
+  /** Configures this job to run a SparkR application. (AI-inferred) */
   sparkRjob?: WorkflowTemplate_Jobs_SparkRjob | Computed<WorkflowTemplate_Jobs_SparkRjob>;
+  /** Configures this job to run a Spark SQL query. (AI-inferred) */
   sparkSqlJob?: WorkflowTemplate_Jobs_SparkSqlJob | Computed<WorkflowTemplate_Jobs_SparkSqlJob>;
+  /** An identifier for this workflow step, unique within its own template. (AI-inferred) */
   stepId?: string | Computed<string>;
+  /** Configures this job to run a Trino query. (AI-inferred) */
   trinoJob?: WorkflowTemplate_Jobs_PrestoJob | Computed<WorkflowTemplate_Jobs_PrestoJob>;
 }
 
 export interface WorkflowTemplate_Parameters_Validation_Regex {
+  /** The regular expression(s) this rule matches against. (AI-inferred) */
   regexes?: string[] | Computed<string[]>;
 }
 
 export interface WorkflowTemplate_Parameters_Validation_Values {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface WorkflowTemplate_Parameters_Validation {
+  /** A regular expression this rule matches against. (AI-inferred) */
   regex?: WorkflowTemplate_Parameters_Validation_Regex | Computed<WorkflowTemplate_Parameters_Validation_Regex>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: WorkflowTemplate_Parameters_Validation_Values | Computed<WorkflowTemplate_Parameters_Validation_Values>;
 }
 
 export interface WorkflowTemplate_Parameters {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The field(s) making up this configuration. (AI-inferred) */
   fields?: string[] | Computed<string[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Constraint(s) this parameter's own value must satisfy. (AI-inferred) */
   validation?: WorkflowTemplate_Parameters_Validation | Computed<WorkflowTemplate_Parameters_Validation>;
 }
 
@@ -148,98 +229,152 @@ export interface WorkflowTemplate_Placement_ManagedCluster_Config_AutoscalingCon
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators {
+  /** How many accelerator (GPU) devices are attached per instance. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The full URI of the accelerator type attached. (AI-inferred) */
   acceleratorTypeUri?: string | Computed<string>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs {
+  /** The size, in GB, of this disk. (AI-inferred) */
   diskSizeGb?: number | Computed<number>;
+  /** The disk type provisioned, e.g. `pd-ssd`. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** The provisioned IOPS for this disk, when using a disk type that supports configuring it. (AI-inferred) */
   provisionedIops?: string | Computed<string>;
+  /** The provisioned throughput for this disk, when using a disk type that supports configuring it. (AI-inferred) */
   provisionedThroughput?: string | Computed<string>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig {
+  /** Additional persistent disk(s) attached to each instance, beyond the boot disk. (AI-inferred) */
   attachedDiskConfigs?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs[] | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs[]>;
+  /** The provisioned IOPS for the boot disk, when using a disk type that supports configuring it. (AI-inferred) */
   bootDiskProvisionedIops?: string | Computed<string>;
+  /** The provisioned throughput for the boot disk, when using a disk type that supports configuring it. (AI-inferred) */
   bootDiskProvisionedThroughput?: string | Computed<string>;
+  /** The size, in GB, of each instance's own boot disk. (AI-inferred) */
   bootDiskSizeGb?: number | Computed<number>;
+  /** The boot disk type provisioned for each instance, e.g. `pd-ssd`. (AI-inferred) */
   bootDiskType?: string | Computed<string>;
+  /** The interface local SSDs are attached over, e.g. `NVME` or `SCSI`. (AI-inferred) */
   localSsdInterface?: string | Computed<string>;
+  /** How many local SSD disks are attached. (AI-inferred) */
   numLocalSsds?: number | Computed<number>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList {
+  /** Configuration for each instance's own attached disk(s). (AI-inferred) */
   diskConfig?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig>;
+  /** The machine type(s) this applies to. (AI-inferred) */
   machineTypes?: string[] | Computed<string[]>;
+  /** The relative preference order of this option -- lower values are preferred first. (AI-inferred) */
   rank?: number | Computed<number>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults {
+  /** The Compute Engine machine type provisioned for each instance. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The number of VM instances this applies to. (AI-inferred) */
   vmCount?: number | Computed<number>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix {
+  /** The number of instances always provisioned as standard (non-Spot), before any additional Spot capacity mix applies. (AI-inferred) */
   standardCapacityBase?: number | Computed<number>;
+  /** The percentage of capacity above `standard_capacity_base` provisioned as standard (non-Spot), rather than Spot. (AI-inferred) */
   standardCapacityPercentAboveBase?: number | Computed<number>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy {
+  /** The machine type(s) considered for this instance group's own flexible provisioning. (AI-inferred) */
   instanceMachineTypes?: Record<string, string> | Computed<Record<string, string>>;
+  /** The ranked machine type option(s) considered when provisioning instances for this group. (AI-inferred) */
   instanceSelectionList?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList[] | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList[]>;
+  /** Output only. Which machine type(s) were actually selected when provisioning this instance group. (AI-inferred) */
   instanceSelectionResults?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults[] | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults[]>;
+  /** Configures a mix of standard and Spot/preemptible instances within this group. (AI-inferred) */
   provisioningModelMix?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences {
+  /** An identifier for this specific instance. (AI-inferred) */
   instanceId?: string | Computed<string>;
+  /** The name of this instance. (AI-inferred) */
   instanceName?: string | Computed<string>;
+  /** The public ECIES key used to encrypt sensitive job parameters. (AI-inferred) */
   publicEciesKey?: string | Computed<string>;
+  /** A public key used for encryption or authentication. (AI-inferred) */
   publicKey?: string | Computed<string>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig {
+  /** The name of the underlying Compute Engine managed instance group. (AI-inferred) */
   instanceGroupManagerName?: string | Computed<string>;
+  /** The URI of the underlying Compute Engine managed instance group. (AI-inferred) */
   instanceGroupManagerUri?: string | Computed<string>;
+  /** The name of the Compute Engine instance template used for this instance group. (AI-inferred) */
   instanceTemplateName?: string | Computed<string>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig {
+  /** The fraction of instances that must successfully register before cluster creation is considered complete. (AI-inferred) */
   requiredRegistrationFraction?: number | Computed<number>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig {
+  /** The accelerator (GPU) device(s) attached to each instance. (AI-inferred) */
   accelerators?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators[] | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators[]>;
+  /** Configuration for each instance's own attached disk(s). (AI-inferred) */
   diskConfig?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig>;
+  /** The custom image URI used for this cluster's own instances. (AI-inferred) */
   imageUri?: string | Computed<string>;
+  /** Configures a mix of machine types and provisioning models for this instance group, to improve availability and cost. (AI-inferred) */
   instanceFlexibilityPolicy?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy>;
+  /** The name(s) of the instance(s) this applies to. (AI-inferred) */
   instanceNames?: string[] | Computed<string[]>;
+  /** Reference(s) to specific instance(s). (AI-inferred) */
   instanceReferences?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences[] | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences[]>;
+  /** Whether this instance is preemptible/spot, rather than standard on-demand. (AI-inferred) */
   isPreemptible?: boolean | Computed<boolean>;
+  /** The full URI of the machine type provisioned. (AI-inferred) */
   machineTypeUri?: string | Computed<string>;
+  /** Configuration for the underlying Compute Engine managed instance group backing this cluster's own instance group. (AI-inferred) */
   managedGroupConfig?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig>;
+  /** The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred) */
   minCpuPlatform?: string | Computed<string>;
+  /** The minimum number of instances required for cluster creation to succeed. (AI-inferred) */
   minNumInstances?: number | Computed<number>;
+  /** How many instances this group has. (AI-inferred) */
   numInstances?: number | Computed<number>;
+  /** Whether instances in this group are `PREEMPTIBLE`, `SPOT`, or non-preemptible. (AI-inferred) */
   preemptibility?: string | Computed<string>;
+  /** Configuration for how many instances must be running before the cluster is considered started. (AI-inferred) */
   startupConfig?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup {
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for a Dataproc node group -- a shared pool of instances usable across clusters. (AI-inferred) */
   nodeGroupConfig?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig>;
+  /** The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups {
+  /** A reference to the node group this applies to. (AI-inferred) */
   nodeGroup?: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup>;
+  /** A caller-chosen identifier for this node group, unique within its own cluster. (AI-inferred) */
   nodeGroupId?: string | Computed<string>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfig_Metrics {
+  /** Caller-specified metric(s) used to override the default autoscaling signal. (AI-inferred) */
   metricOverrides?: string[] | Computed<string[]>;
+  /** Which source (e.g. Hadoop YARN, Spark) autoscaling metrics are drawn from. (AI-inferred) */
   metricSource?: string | Computed<string>;
 }
 
@@ -333,36 +468,55 @@ export interface WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConf
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling {
+  /** The maximum number of nodes this group may scale up to. (AI-inferred) */
   maxNodeCount?: number | Computed<number>;
+  /** The minimum number of nodes this group scales down to. (AI-inferred) */
   minNodeCount?: number | Computed<number>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators {
+  /** How many accelerator (GPU) devices are attached per instance. (AI-inferred) */
   acceleratorCount?: string | Computed<string>;
+  /** The accelerator (GPU) type attached, e.g. `nvidia-tesla-t4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The fraction of a physical GPU allocated per partition, when GPU partitioning is used. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config {
+  /** The accelerator (GPU) device(s) attached to each instance. (AI-inferred) */
   accelerators?: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators[] | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators[]>;
+  /** The Cloud KMS key used to encrypt each instance's own boot disk. (AI-inferred) */
   bootDiskKmsKey?: string | Computed<string>;
+  /** How many local SSD disks are attached to each instance. (AI-inferred) */
   localSsdCount?: number | Computed<number>;
+  /** The Compute Engine machine type provisioned for each instance. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred) */
   minCpuPlatform?: string | Computed<string>;
+  /** Whether each instance is preemptible, lower cost but reclaimable at any time. (AI-inferred) */
   preemptible?: boolean | Computed<boolean>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** Whether each instance runs as a Spot VM, lower cost but reclaimable at any time. (AI-inferred) */
   spot?: boolean | Computed<boolean>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig {
+  /** Configuration for automatically resizing this cluster's own worker instance group(s) based on load. (AI-inferred) */
   autoscaling?: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling>;
+  /** The configuration for this resource. (AI-inferred) */
   config?: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config>;
+  /** The zone(s) this resource is spread across. (AI-inferred) */
   locations?: string[] | Computed<string[]>;
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget {
+  /** A reference to the node pool this applies to, for a GKE-based Dataproc cluster. (AI-inferred) */
   nodePool?: string | Computed<string>;
+  /** Configuration for a GKE node pool backing this Dataproc-on-GKE cluster. (AI-inferred) */
   nodePoolConfig?: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig | Computed<WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig>;
+  /** The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
 }
 
@@ -376,7 +530,9 @@ export interface WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConf
 }
 
 export interface WorkflowTemplate_Placement_ManagedCluster_Config_InitializationActions {
+  /** The Pig/Hive/Presto script file to execute. (AI-inferred) */
   executableFile?: string | Computed<string>;
+  /** How long this workflow template's own execution may run before being cancelled. (AI-inferred) */
   executionTimeout?: string | Computed<string>;
 }
 
@@ -1224,6 +1380,7 @@ export interface WorkflowTemplateConfig {
   dagTimeout?: string | Computed<string>;
   /** Encryption settings for encrypting workflow template job arguments. */
   encryptionConfig?: WorkflowTemplate_EncryptionConfig | Computed<WorkflowTemplate_EncryptionConfig>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
   /** Required. The Directed Acyclic Graph of Jobs to submit. */
   jobs?: WorkflowTemplate_Jobs[] | Computed<WorkflowTemplate_Jobs[]>;
@@ -1244,6 +1401,7 @@ export interface WorkflowTemplateAttrs {
   dagTimeout: string;
   /** Encryption settings for encrypting workflow template job arguments. */
   encryptionConfig: WorkflowTemplate_EncryptionConfig;
+  /** An identifier for this resource. (AI-inferred) */
   id: string;
   /** Required. The Directed Acyclic Graph of Jobs to submit. */
   jobs: WorkflowTemplate_Jobs[];

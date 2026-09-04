@@ -76,8 +76,11 @@ export interface Deployment_ChannelProfile {
 }
 
 export interface Deployment_ExperimentConfig_VersionRelease_TrafficAllocations {
+  /** A reference to the app version this applies to. (AI-inferred) */
   appVersion?: string | Computed<string>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The percentage of traffic this version receives. (AI-inferred) */
   trafficPercentage?: number | Computed<number>;
 }
 

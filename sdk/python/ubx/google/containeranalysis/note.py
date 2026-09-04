@@ -23,13 +23,18 @@ class Note_Build:
 
 @dataclasses.dataclass
 class Note_Compliance_CisBenchmark:
+    # The compliance benchmark profile level this check belongs to, e.g. Level 1 or Level 2. (AI-inferred)
     profile_level: Any = None
+    # How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
 class Note_Compliance_Version:
+    # The compliance benchmark document this check is defined in. (AI-inferred)
     benchmark_document: Any = None
+    # A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
     cpe_uri: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -38,6 +43,7 @@ class Note_Compliance:
     cis_benchmark: Any = None
     # A description about this compliance check.
     description: Any = None
+    # The consequence of this vulnerability if exploited. (AI-inferred)
     impact: Any = None
     # A rationale for the existence of this compliance check.
     rationale: Any = None
@@ -78,25 +84,39 @@ class Note_Image:
 
 @dataclasses.dataclass
 class Note_Package_Digest:
+    # The hash algorithm used, e.g. `SHA256`. (AI-inferred)
     algo: Any = None
+    # The raw bytes of this digest. (AI-inferred)
     digest_bytes: Any = None
 
 @dataclasses.dataclass
 class Note_Package_Distribution_LatestVersion:
+    # The package version's own epoch, used to order versions when the upstream numbering scheme changed. (AI-inferred)
     epoch: Any = None
+    # The fully qualified name of this package or resource. (AI-inferred)
     full_name: Any = None
+    # Whether this version range's own boundary is inclusive. (AI-inferred)
     inclusive: Any = None
+    # The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The specific revision of this source this applies to. (AI-inferred)
     revision: Any = None
 
 @dataclasses.dataclass
 class Note_Package_Distribution:
+    # The CPU architecture this applies to, e.g. `x86_64`. (AI-inferred)
     architecture: Any = None
+    # A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
     cpe_uri: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The most recent version of this package. (AI-inferred)
     latest_version: Any = None
+    # The maintainer of this package. (AI-inferred)
     maintainer: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
@@ -133,7 +153,9 @@ class Note_Package:
 
 @dataclasses.dataclass
 class Note_RelatedUrl:
+    # A human-readable label for this item. (AI-inferred)
     label: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
@@ -145,14 +167,20 @@ class Note_SbomReference:
 
 @dataclasses.dataclass
 class Note_Upgrade_Distributions:
+    # How this vulnerability or finding is classified. (AI-inferred)
     classification: Any = None
+    # A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
     cpe_uri: Any = None
+    # The CVE identifier for this vulnerability. (AI-inferred)
     cve: Any = None
+    # How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
 class Note_Upgrade_WindowsUpdate_Categories:
+    # An identifier for the category this belongs to. (AI-inferred)
     category_id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -208,7 +236,9 @@ class Note_Vulnerability_CvssV2:
     confidentiality_impact: Any = None
     # Exploit Maturity (E). Defined in CVSS v4.
     exploit_maturity: Any = None
+    # A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred)
     exploitability_score: Any = None
+    # A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred)
     impact_score: Any = None
     # Integrity Impact (I). Defined in CVSS v2, v3.
     integrity_impact: Any = None
@@ -233,47 +263,76 @@ class Note_Vulnerability_CvssV2:
 
 @dataclasses.dataclass
 class Note_Vulnerability_CvssV3:
+    # How difficult a successful exploit of this vulnerability is to execute, per CVSS. (AI-inferred)
     attack_complexity: Any = None
     # Base Metrics Represents the intrinsic characteristics of a vulnerability that are constant over time and across user environments.
     attack_vector: Any = None
+    # The impact to system availability if this vulnerability is exploited, per CVSS. (AI-inferred)
     availability_impact: Any = None
     # The base score is a function of the base metric scores.
     base_score: Any = None
+    # The impact to data confidentiality if this vulnerability is exploited, per CVSS. (AI-inferred)
     confidentiality_impact: Any = None
+    # A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred)
     exploitability_score: Any = None
+    # A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred)
     impact_score: Any = None
+    # The impact to data integrity if this vulnerability is exploited, per CVSS. (AI-inferred)
     integrity_impact: Any = None
+    # What level of privilege an attacker needs to exploit this vulnerability, per CVSS. (AI-inferred)
     privileges_required: Any = None
+    # What this occurrence's own analysis covers. (AI-inferred)
     scope: Any = None
+    # Whether exploiting this vulnerability requires interaction from a user other than the attacker, per CVSS. (AI-inferred)
     user_interaction: Any = None
 
 @dataclasses.dataclass
 class Note_Vulnerability_Details:
+    # The CPE URI of the package version affected by this vulnerability. (AI-inferred)
     affected_cpe_uri: Any = None
+    # The name of the package affected by this vulnerability. (AI-inferred)
     affected_package: Any = None
+    # The end of the version range affected by this vulnerability. (AI-inferred)
     affected_version_end: Any = None
+    # The start of the version range affected by this vulnerability. (AI-inferred)
     affected_version_start: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The CPE URI of the package version that fixes this vulnerability. (AI-inferred)
     fixed_cpe_uri: Any = None
+    # The name of the package that fixes this vulnerability. (AI-inferred)
     fixed_package: Any = None
+    # The version that fixes this vulnerability. (AI-inferred)
     fixed_version: Any = None
+    # Whether this note or occurrence has been superseded and should be treated as no longer current. (AI-inferred)
     is_obsolete: Any = None
+    # The package manager/ecosystem this package belongs to, e.g. `DEBIAN` or `NPM`. (AI-inferred)
     package_type: Any = None
+    # A human-readable name for this vulnerability's own severity level. (AI-inferred)
     severity_name: Any = None
+    # The source this build's own materials were drawn from. (AI-inferred)
     source: Any = None
+    # When this source note was last updated. (AI-inferred)
     source_update_time: Any = None
+    # The vendor of this package or software. (AI-inferred)
     vendor: Any = None
 
 @dataclasses.dataclass
 class Note_Vulnerability_WindowsDetails_FixingKbs:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Note_Vulnerability_WindowsDetails:
+    # A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
     cpe_uri: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The Windows Knowledge Base article(s) that fix this vulnerability. (AI-inferred)
     fixing_kbs: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -308,8 +367,11 @@ class Note_VulnerabilityAssessment_Assessment_Justification:
 
 @dataclasses.dataclass
 class Note_VulnerabilityAssessment_Assessment_Remediations:
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # The category of fix available for this vulnerability, e.g. a package update or workaround. (AI-inferred)
     remediation_type: Any = None
+    # A URI with guidance on remediating this vulnerability. (AI-inferred)
     remediation_uri: Any = None
 
 @dataclasses.dataclass
@@ -759,6 +821,7 @@ class NoteConfig:
     attestation: Any = None
     # Note holding the version of the provider's builder and the signature of the provenance message in the build details occurrence.
     build: Any = None
+    # Detail about this resource's own compliance check result. (AI-inferred)
     compliance: Any = None
     # Output only. The time this note was created. This field can be used as a filter in list requests.
     create_time: Any = None
@@ -766,6 +829,7 @@ class NoteConfig:
     deployment: Any = None
     # A note that indicates a type of analysis a provider would perform. This note exists in a provider's project. A `Discovery` occurrence is created in a consumer's project at the start of analysis.
     discovery: Any = None
+    # An attestation wrapped in the Dead Simple Signing Envelope (DSSE) format. (AI-inferred)
     dsse_attestation: Any = None
     # Time of expiration for this note. Empty if note does not expire.
     expiration_time: Any = None
@@ -806,6 +870,7 @@ class NoteAttrs:
     attestation: Any = None
     # Note holding the version of the provider's builder and the signature of the provenance message in the build details occurrence.
     build: Any = None
+    # Detail about this resource's own compliance check result. (AI-inferred)
     compliance: Any = None
     # Output only. The time this note was created. This field can be used as a filter in list requests.
     create_time: Any = None
@@ -813,6 +878,7 @@ class NoteAttrs:
     deployment: Any = None
     # A note that indicates a type of analysis a provider would perform. This note exists in a provider's project. A `Discovery` occurrence is created in a consumer's project at the start of analysis.
     discovery: Any = None
+    # An attestation wrapped in the Dead Simple Signing Envelope (DSSE) format. (AI-inferred)
     dsse_attestation: Any = None
     # Time of expiration for this note. Empty if note does not expire.
     expiration_time: Any = None

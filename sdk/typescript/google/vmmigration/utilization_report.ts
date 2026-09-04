@@ -11,35 +11,59 @@ export interface UtilizationReport_Error {
 }
 
 export interface UtilizationReport_Vms_Utilization {
+  /** The real, average CPU utilization percentage measured for this VM over the report's own observation window. (AI-inferred) */
   cpuAveragePercent?: number | Computed<number>;
+  /** The real, peak CPU utilization percentage measured for this VM over the report's own observation window. (AI-inferred) */
   cpuMaxPercent?: number | Computed<number>;
+  /** The real, average disk I/O throughput, in kilobits per second, measured for this VM. (AI-inferred) */
   diskIoRateAverageKbps?: string | Computed<string>;
+  /** The real, peak disk I/O throughput, in kilobits per second, measured for this VM. (AI-inferred) */
   diskIoRateMaxKbps?: string | Computed<string>;
+  /** The real, average memory utilization percentage measured for this VM over the report's own observation window. (AI-inferred) */
   memoryAveragePercent?: number | Computed<number>;
+  /** The real, peak memory utilization percentage measured for this VM over the report's own observation window. (AI-inferred) */
   memoryMaxPercent?: number | Computed<number>;
+  /** The real, average network throughput, in kilobits per second, measured for this VM. (AI-inferred) */
   networkThroughputAverageKbps?: string | Computed<string>;
+  /** The real, peak network throughput, in kilobits per second, measured for this VM. (AI-inferred) */
   networkThroughputMaxKbps?: string | Computed<string>;
 }
 
 export interface UtilizationReport_Vms_VmwareVmDetails {
+  /** The real, detected CPU architecture (e.g. `VM_ARCHITECTURE_X86_FAMILY`) of this source VM. (AI-inferred) */
   architecture?: string | Computed<string>;
+  /** Which real boot mode (BIOS or EFI) the migrated VM instance is configured to use. (AI-inferred) */
   bootOption?: string | Computed<string>;
+  /** The real, total committed storage, in MiB, allocated to this VM's own disks in the source environment. (AI-inferred) */
   committedStorageMb?: string | Computed<string>;
+  /** The real number of virtual CPUs configured on this source VM. (AI-inferred) */
   cpuCount?: number | Computed<number>;
+  /** A real, human-readable description of the vCenter datacenter this VM was discovered in. (AI-inferred) */
   datacenterDescription?: string | Computed<string>;
+  /** The real, source-side identifier of the vCenter datacenter this VM was discovered in. (AI-inferred) */
   datacenterId?: string | Computed<string>;
+  /** The real number of disks attached to this source VM. (AI-inferred) */
   diskCount?: number | Computed<number>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The real, detected guest operating system description (e.g. from VMware Tools) reported for this VM. (AI-inferred) */
   guestDescription?: string | Computed<string>;
+  /** The real amount of memory, in MiB, configured on this source VM. (AI-inferred) */
   memoryMb?: number | Computed<number>;
+  /** The real, current power state (`ON`, `OFF`, `SUSPENDED`) of this source VM at the time it was inventoried. (AI-inferred) */
   powerState?: string | Computed<string>;
+  /** The real, source-side UUID uniquely identifying this VM within its own VMware environment. (AI-inferred) */
   uuid?: string | Computed<string>;
+  /** The real, source-side identifier of this VM within its own source environment. (AI-inferred) */
   vmId?: string | Computed<string>;
 }
 
 export interface UtilizationReport_Vms {
+  /** Real, measured resource utilization (CPU, memory, disk I/O, network) for one source VM in this utilization report. (AI-inferred) */
   utilization?: UtilizationReport_Vms_Utilization | Computed<UtilizationReport_Vms_Utilization>;
+  /** The real, source-side identifier of this VM within its own source environment. (AI-inferred) */
   vmId?: string | Computed<string>;
+  /** Real, VMware-specific inventory details (CPU, memory, disks, datacenter) for this VM, when the source environment is VMware. (AI-inferred) */
   vmwareVmDetails?: UtilizationReport_Vms_VmwareVmDetails | Computed<UtilizationReport_Vms_VmwareVmDetails>;
 }
 

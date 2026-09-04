@@ -478,28 +478,48 @@ const V3beta1Page_TransitionRoutesFields: FieldMap = {
 };
 
 export interface V3beta1PageConfig {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: V3beta1Page_AdvancedSettings | Computed<V3beta1Page_AdvancedSettings>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred) */
   entryFulfillment?: V3beta1Page_EntryFulfillment | Computed<V3beta1Page_EntryFulfillment>;
+  /** The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred) */
   eventHandlers?: V3beta1Page_EventHandlers[] | Computed<V3beta1Page_EventHandlers[]>;
+  /** The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred) */
   form?: V3beta1Page_Form | Computed<V3beta1Page_Form>;
+  /** Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred) */
   knowledgeConnectorSettings?: V3beta1Page_KnowledgeConnectorSettings | Computed<V3beta1Page_KnowledgeConnectorSettings>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The reusable transition route group(s) included on this page/flow. (AI-inferred) */
   transitionRouteGroups?: string[] | Computed<string[]>;
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes?: V3beta1Page_TransitionRoutes[] | Computed<V3beta1Page_TransitionRoutes[]>;
 }
 
 export interface V3beta1PageAttrs {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings: V3beta1Page_AdvancedSettings;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred) */
   entryFulfillment: V3beta1Page_EntryFulfillment;
+  /** The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred) */
   eventHandlers: V3beta1Page_EventHandlers[];
+  /** The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred) */
   form: V3beta1Page_Form;
+  /** Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred) */
   knowledgeConnectorSettings: V3beta1Page_KnowledgeConnectorSettings;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The reusable transition route group(s) included on this page/flow. (AI-inferred) */
   transitionRouteGroups: string[];
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes: V3beta1Page_TransitionRoutes[];
 }
 

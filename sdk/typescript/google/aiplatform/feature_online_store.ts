@@ -20,6 +20,7 @@ export interface FeatureOnlineStore_Bigtable_BigtableMetadata {
 }
 
 export interface FeatureOnlineStore_Bigtable {
+  /** Autoscaling configuration for the Bigtable instance backing this online serving store. (AI-inferred) */
   autoScaling?: FeatureOnlineStore_Bigtable_AutoScaling | Computed<FeatureOnlineStore_Bigtable_AutoScaling>;
   /** Metadata of the Bigtable instance. This is used by direct read access to the Bigtable in tenant project. */
   bigtableMetadata?: FeatureOnlineStore_Bigtable_BigtableMetadata | Computed<FeatureOnlineStore_Bigtable_BigtableMetadata>;
@@ -30,11 +31,17 @@ export interface FeatureOnlineStore_Bigtable {
 }
 
 export interface FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfig_PscAutomationConfigs {
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** A reference to the forwarding rule directing traffic to this resource. (AI-inferred) */
   forwardingRule?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
@@ -125,6 +132,7 @@ const FeatureOnlineStore_EncryptionSpecFields: FieldMap = {
 };
 
 export interface FeatureOnlineStoreConfig {
+  /** Configuration for the Bigtable instance backing this online serving store. (AI-inferred) */
   bigtable?: FeatureOnlineStore_Bigtable | Computed<FeatureOnlineStore_Bigtable>;
   /** The dedicated serving endpoint for this FeatureOnlineStore. Only need to set when you choose Optimized storage type. Public endpoint is provisioned by default. */
   dedicatedServingEndpoint?: FeatureOnlineStore_DedicatedServingEndpoint | Computed<FeatureOnlineStore_DedicatedServingEndpoint>;
@@ -141,6 +149,7 @@ export interface FeatureOnlineStoreConfig {
 }
 
 export interface FeatureOnlineStoreAttrs {
+  /** Configuration for the Bigtable instance backing this online serving store. (AI-inferred) */
   bigtable: FeatureOnlineStore_Bigtable;
   /** Output only. Timestamp when this FeatureOnlineStore was created. */
   createTime: string;

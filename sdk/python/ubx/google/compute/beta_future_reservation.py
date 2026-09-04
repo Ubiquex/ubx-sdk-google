@@ -432,6 +432,7 @@ class BetaFutureReservationConfig:
     # Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
     auto_delete_auto_created_reservations: Any = None
     commitment_info: Any = None
+    # The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
     confidential_compute_type: Any = None
     # Type of the deployment requested as part of future reservation.
     deployment_type: Any = None
@@ -466,6 +467,7 @@ class BetaFutureReservationConfig:
     status: Any = None
     # Storage pool properties for the future reservation.
     storage_pool_properties: Any = None
+    # The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred)
     time_window: Any = None
 
 @dataclasses.dataclass
@@ -481,6 +483,7 @@ class BetaFutureReservationAttrs:
     # Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
     auto_delete_auto_created_reservations: Any = None
     commitment_info: Any = None
+    # The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
     confidential_compute_type: Any = None
     # Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format.
     creation_timestamp: Any = None
@@ -525,6 +528,7 @@ class BetaFutureReservationAttrs:
     status: Any = None
     # Storage pool properties for the future reservation.
     storage_pool_properties: Any = None
+    # The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred)
     time_window: Any = None
     # Output only. [Output Only] URL of the Zone where this future reservation resides.
     zone: Any = None

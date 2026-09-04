@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EkmConnection_ServiceResolvers_ServerCertificates:
+    # The certificate's own issuer (the certificate authority that signed it). (AI-inferred)
     issuer: Any = None
+    # The timestamp after which this certificate is no longer valid. (AI-inferred)
     not_after_time: Any = None
+    # The timestamp before which this certificate isn't yet valid. (AI-inferred)
     not_before_time: Any = None
+    # Whether Cloud KMS was able to parse this certificate's own fields. (AI-inferred)
     parsed: Any = None
+    # The certificate's own raw bytes, in DER encoding. (AI-inferred)
     raw_der: Any = None
+    # The certificate's own serial number, as assigned by its issuer. (AI-inferred)
     serial_number: Any = None
+    # A SHA-256 hash of the certificate's own raw bytes, usable to verify it wasn't tampered with. (AI-inferred)
     sha256_fingerprint: Any = None
+    # The certificate's own subject (the entity it identifies). (AI-inferred)
     subject: Any = None
+    # Additional DNS names this certificate is also valid for, beyond its primary subject. (AI-inferred)
     subject_alternative_dns_names: Any = None
 
 @dataclasses.dataclass
 class EkmConnection_ServiceResolvers:
+    # A filter expression restricting which of the resolved external key manager endpoints this resolver considers eligible. (AI-inferred)
     endpoint_filter: Any = None
+    # The hostname of the external key manager service this resolver connects to. (AI-inferred)
     hostname: Any = None
+    # The TLS certificate(s) trusted for verifying the external key manager's own identity. (AI-inferred)
     server_certificates: Any = None
+    # The Service Directory service used to resolve the external key manager's own real network address. (AI-inferred)
     service_directory_service: Any = None
 
 _EkmConnection_ServiceResolvers_ServerCertificatesFields = {

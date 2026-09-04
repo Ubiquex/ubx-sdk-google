@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Trial_FinalMeasurement_Metrics {
+  /** The name of the metric being reported. (AI-inferred) */
   metric?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
@@ -16,9 +18,13 @@ export interface Trial_FinalMeasurement {
 }
 
 export interface Trial_Parameters {
+  /** A floating-point value. (AI-inferred) */
   floatValue?: number | Computed<number>;
+  /** An integer value. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** The name of a hyperparameter being tuned. (AI-inferred) */
   parameter?: string | Computed<string>;
+  /** A string value. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 

@@ -4,6 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackendBucket_CdnPolicy_BypassCacheOnRequestHeaders struct {
+	// The name of the request header to bypass the cache for. (AI-inferred)
 	HeaderName any
 }
 
@@ -15,8 +16,10 @@ type BackendBucket_CdnPolicy_CacheKeyPolicy struct {
 }
 
 type BackendBucket_CdnPolicy_NegativeCachingPolicy struct {
+	// The HTTP status code that this negative caching policy applies to. (AI-inferred)
 	Code any
-	Ttl  any
+	// Time-to-live in seconds for the cached response for the specified HTTP status code. This defines how long the negative cache entry persists. (AI-inferred)
+	Ttl any
 }
 
 type BackendBucket_CdnPolicy struct {
@@ -52,6 +55,7 @@ type BackendBucket_Params struct {
 }
 
 type BackendBucket_UsedBy struct {
+	// The reference URL of the resource that uses this backend bucket, such as a URL map. (AI-inferred)
 	Reference any
 }
 

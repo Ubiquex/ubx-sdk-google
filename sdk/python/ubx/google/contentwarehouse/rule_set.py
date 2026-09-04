@@ -8,82 +8,120 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigs:
+    # The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred)
     exempted_members: Any = None
+    # Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred)
     log_type: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs:
+    # Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred)
     audit_log_configs: Any = None
+    # The real Google Cloud service this document's own embedded IAM audit log configuration applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_AccessControl_Policy_Bindings_Condition:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The real Common Expression Language (CEL) expression text of this document IAM policy binding's own condition. (AI-inferred)
     expression: Any = None
+    # The real, human-readable source location of this document IAM policy binding's own condition expression, used for error reporting. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_AccessControl_Policy_Bindings:
+    # The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
     condition: Any = None
+    # The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred)
     members: Any = None
+    # The real IAM role this document-level policy binding grants. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_AccessControl_Policy:
+    # Real, proposed IAM audit logging configuration this access-control action applies alongside its own policy bindings. (AI-inferred)
     audit_configs: Any = None
+    # The list of `google.iam.v1.Policy` bindings, each granting a `role` to a set of `members`, optionally scoped by a `condition`. (AI-inferred)
     bindings: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # A real identifier for the specific version of this document schema, processor, or content that produced the element. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_AccessControl:
+    # The real operation (`ADD_POLICY_BINDING`, `REMOVE_POLICY_BINDING`, `REPLACE_POLICY_BINDING`) this access-control action performs. (AI-inferred)
     operation_type: Any = None
+    # The real IAM policy (or policy fragment) this access-control action applies to the matching document. (AI-inferred)
     policy: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_AddToFolder:
+    # The real, target folder ID(s) an `add_to_folder`/`remove_from_folder_action` rule action operates on. (AI-inferred)
     folders: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_DataUpdate:
+    # The real, named property values a `data_update` rule action writes onto the matching document. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_DataValidation:
+    # The real, named property conditions a `data_validation` rule action checks the matching document against. (AI-inferred)
     conditions: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_DeleteDocumentAction:
+    # Whether a `delete_document_action` real, permanently deletes the matching document rather than moving it to a recoverable trash state. (AI-inferred)
     enable_hard_delete: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_PublishToPubSub:
+    # The real message payload(s) a `publish_to_pub_sub` rule action publishes. (AI-inferred)
     messages: Any = None
+    # The real Pub/Sub topic a `publish_to_pub_sub` rule action publishes its own messages to. (AI-inferred)
     topic_id: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions_RemoveFromFolderAction:
+    # The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
     condition: Any = None
+    # The real, target folder ID a `remove_from_folder_action` removes the matching document from. (AI-inferred)
     folder: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules_Actions:
+    # A real rule action that adds, removes, or replaces an IAM policy binding on the matching document. (AI-inferred)
     access_control: Any = None
+    # A real, stable identifier for this specific action within its own parent rule. (AI-inferred)
     action_id: Any = None
+    # A real rule action that adds the matching document to one or more `folders`. (AI-inferred)
     add_to_folder: Any = None
+    # A real rule action that writes new property `entries` onto the matching document. (AI-inferred)
     data_update: Any = None
+    # A real rule action that checks the matching document's own properties against a set of `conditions`, failing the rule if they don't hold. (AI-inferred)
     data_validation: Any = None
+    # A real rule action that deletes the matching document, optionally with `enable_hard_delete` for permanent deletion. (AI-inferred)
     delete_document_action: Any = None
+    # A real rule action that publishes one or more `messages` to a Pub/Sub `topic_id` when the rule matches. (AI-inferred)
     publish_to_pub_sub: Any = None
+    # A real rule action that removes the matching document from a specific `folder`. (AI-inferred)
     remove_from_folder_action: Any = None
 
 @dataclasses.dataclass
 class RuleSet_Rules:
+    # The real, ordered action(s) a matching `google_contentwarehouse_rule_set` rule runs when its own `condition` and `trigger_type` match. (AI-inferred)
     actions: Any = None
+    # The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
     condition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A real, stable identifier for this rule within its own parent rule set. (AI-inferred)
     rule_id: Any = None
+    # The real document lifecycle event (`ON_CREATE`, `ON_UPDATE`, `ON_CREATE_LINK`, `ON_DELETE_LINK`) that evaluates this rule. (AI-inferred)
     trigger_type: Any = None
 
 _RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigsFields = {

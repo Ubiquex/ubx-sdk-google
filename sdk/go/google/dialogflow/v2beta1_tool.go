@@ -202,30 +202,51 @@ var V2beta1Tool_OpenApiSpecFields = ubx.FieldMap{
 }
 
 type V2beta1ToolConfig struct {
+	// Configures whether this tool's own real action(s) require explicit confirmation before running. (AI-inferred)
 	ActionConfirmationRequirement any
-	ConnectorSpec                 any
-	Description                   any
-	DisplayName                   any
-	ExtensionSpec                 any
-	FunctionSpec                  any
-	OpenApiSpec                   any
-	ToolKey                       any
+	// The specification of a connector (an external API or service) a generator can call. (AI-inferred)
+	ConnectorSpec any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The specification of an extension a generator can invoke. (AI-inferred)
+	ExtensionSpec any
+	// Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
+	FunctionSpec any
+	// Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSpec any
+	// The real, caller-supplied key identifying which of this playbook's own tools an action invokes. (AI-inferred)
+	ToolKey any
 }
 
 type V2beta1ToolAttrs struct {
+	// Configures whether this tool's own real action(s) require explicit confirmation before running. (AI-inferred)
 	ActionConfirmationRequirement any
-	ConnectorSpec                 any
-	CreateTime                    any
-	Description                   any
-	DisplayName                   any
-	ExtensionSpec                 any
-	FunctionSpec                  any
-	Name                          any
-	OpenApiSpec                   any
-	SatisfiesPzi                  any
-	SatisfiesPzs                  any
-	ToolKey                       any
-	UpdateTime                    any
+	// The specification of a connector (an external API or service) a generator can call. (AI-inferred)
+	ConnectorSpec any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The specification of an extension a generator can invoke. (AI-inferred)
+	ExtensionSpec any
+	// Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
+	FunctionSpec any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSpec any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
+	SatisfiesPzi any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
+	SatisfiesPzs any
+	// The real, caller-supplied key identifying which of this playbook's own tools an action invokes. (AI-inferred)
+	ToolKey any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var V2beta1Tool = ubx.ResourceBinding{

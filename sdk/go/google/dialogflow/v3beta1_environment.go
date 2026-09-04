@@ -154,22 +154,35 @@ var V3beta1Environment_WebhookConfigFields = ubx.FieldMap{
 }
 
 type V3beta1EnvironmentConfig struct {
-	Description     any
-	DisplayName     any
-	Name            any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for how test cases in this agent are run. (AI-inferred)
 	TestCasesConfig any
-	VersionConfigs  any
-	WebhookConfig   any
+	// Per-version configuration, e.g. traffic percentage, making up this environment. (AI-inferred)
+	VersionConfigs any
+	// Configuration for how this tool or fulfillment calls its own webhook. (AI-inferred)
+	WebhookConfig any
 }
 
 type V3beta1EnvironmentAttrs struct {
-	Description     any
-	DisplayName     any
-	Name            any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for how test cases in this agent are run. (AI-inferred)
 	TestCasesConfig any
-	UpdateTime      any
-	VersionConfigs  any
-	WebhookConfig   any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
+	// Per-version configuration, e.g. traffic percentage, making up this environment. (AI-inferred)
+	VersionConfigs any
+	// Configuration for how this tool or fulfillment calls its own webhook. (AI-inferred)
+	WebhookConfig any
 }
 
 var V3beta1Environment = ubx.ResourceBinding{

@@ -4,6 +4,7 @@ package securesourcemanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BranchRule_RequiredStatusChecks struct {
+	// The name of the status check that must report success before a pull request targeting a protected branch can be merged, matching the check's own reported context/name. (AI-inferred)
 	Context any
 }
 

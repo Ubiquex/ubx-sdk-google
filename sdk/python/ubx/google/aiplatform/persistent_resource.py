@@ -22,8 +22,11 @@ class PersistentResource_Error:
 
 @dataclasses.dataclass
 class PersistentResource_PscInterfaceConfig_DnsPeeringConfigs:
+    # The domain this configuration or resource applies to. (AI-inferred)
     domain: Any = None
+    # The VPC network this resource is deployed into. (AI-inferred)
     target_network: Any = None
+    # The Google Cloud project this resource targets. (AI-inferred)
     target_project: Any = None
 
 @dataclasses.dataclass
@@ -35,36 +38,55 @@ class PersistentResource_PscInterfaceConfig:
 
 @dataclasses.dataclass
 class PersistentResource_ResourcePools_AutoscalingSpec:
+    # The maximum number of machine replicas this job may scale up to. (AI-inferred)
     max_replica_count: Any = None
+    # The minimum number of machine replicas this job scales down to. (AI-inferred)
     min_replica_count: Any = None
 
 @dataclasses.dataclass
 class PersistentResource_ResourcePools_DiskSpec:
+    # The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred)
     boot_disk_size_gb: Any = None
+    # The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred)
     boot_disk_type: Any = None
 
 @dataclasses.dataclass
 class PersistentResource_ResourcePools_MachineSpec_ReservationAffinity:
+    # A key identifying this entry. (AI-inferred)
     key: Any = None
+    # Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
     reservation_affinity_type: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class PersistentResource_ResourcePools_MachineSpec:
+    # How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
     accelerator_type: Any = None
+    # The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
     gpu_partition_size: Any = None
+    # The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
     machine_type: Any = None
+    # Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
     reservation_affinity: Any = None
+    # The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
     tpu_topology: Any = None
 
 @dataclasses.dataclass
 class PersistentResource_ResourcePools:
+    # Autoscaling configuration for this resource pool. (AI-inferred)
     autoscaling_spec: Any = None
+    # The boot disk configuration provisioned for this job's own machine(s). (AI-inferred)
     disk_spec: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
     machine_spec: Any = None
+    # How many machine replicas this job runs. (AI-inferred)
     replica_count: Any = None
+    # Output only. How many replicas in this resource pool are currently in use. (AI-inferred)
     used_replica_count: Any = None
 
 @dataclasses.dataclass

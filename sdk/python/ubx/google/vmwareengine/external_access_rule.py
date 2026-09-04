@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExternalAccessRule_DestinationIpRanges:
+    # The externally reachable IP address assigned to this resource. (AI-inferred)
     external_address: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The IP address range, in CIDR notation, this applies to. (AI-inferred)
     ip_address_range: Any = None
 
 _ExternalAccessRule_DestinationIpRangesFields = {

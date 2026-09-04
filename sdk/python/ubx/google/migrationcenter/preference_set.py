@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeries:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
 
 @dataclasses.dataclass
@@ -31,6 +32,7 @@ class PreferenceSet_VirtualMachinePreferences_RegionPreferences:
 
 @dataclasses.dataclass
 class PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypes:
+    # The name of this node. (AI-inferred)
     node_name: Any = None
 
 @dataclasses.dataclass

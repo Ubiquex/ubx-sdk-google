@@ -34,8 +34,11 @@ export interface Metric_BucketOptions {
 }
 
 export interface Metric_MetricDescriptor_Labels {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The key of this label or attribute. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The data type of this field's own value. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 

@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MigratingVm_AwsSourceVmDetails_Disks:
+    # The real, source-side index identifying which of the source VM's disks this migration status entry describes. (AI-inferred)
     disk_number: Any = None
+    # The real, provisioned size, in GiB, of a migrated disk. (AI-inferred)
     size_gb: Any = None
+    # The real, source-side volume identifier of one disk on an AWS-sourced migrating VM. (AI-inferred)
     volume_id: Any = None
 
 @dataclasses.dataclass
@@ -34,8 +37,11 @@ class MigratingVm_AwsSourceVmDetails:
 
 @dataclasses.dataclass
 class MigratingVm_AzureSourceVmDetails_Disks:
+    # The real, source-side disk identifier of one disk on an Azure-sourced migrating VM. (AI-inferred)
     disk_id: Any = None
+    # The real, source-side index identifying which of the source VM's disks this migration status entry describes. (AI-inferred)
     disk_number: Any = None
+    # The real, provisioned size, in GiB, of a migrated disk. (AI-inferred)
     size_gb: Any = None
 
 @dataclasses.dataclass
@@ -53,19 +59,27 @@ class MigratingVm_AzureSourceVmDetails:
 
 @dataclasses.dataclass
 class MigratingVm_ComputeEngineDisksTargetDefaults_Disks_Encryption:
+    # The real Cloud KMS key used to encrypt this migrated resource's data at rest. (AI-inferred)
     kms_key: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_ComputeEngineDisksTargetDefaults_Disks_VmAttachmentDetails:
+    # The real device name a migrated disk is attached to the target VM instance under. (AI-inferred)
     device_name: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_ComputeEngineDisksTargetDefaults_Disks:
+    # Real, extra Compute Engine labels to apply to the migrated VM or disk beyond whatever VM Migration applies automatically. (AI-inferred)
     additional_labels: Any = None
+    # The real, target-side name to assign to a migrated disk in Google Cloud. (AI-inferred)
     disk_name: Any = None
+    # The real Compute Engine disk type (e.g. `pd-ssd`, `pd-standard`) to use for a migrated disk. (AI-inferred)
     disk_type: Any = None
+    # Real encryption configuration (e.g. the `kms_key` to use) applied to a migrated disk or VM. (AI-inferred)
     encryption: Any = None
+    # The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred)
     source_disk_number: Any = None
+    # Real, target-side details describing how a migrated disk attaches to its VM instance (device name, boot disk status). (AI-inferred)
     vm_attachment_details: Any = None
 
 @dataclasses.dataclass
@@ -88,8 +102,11 @@ class MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_BootDiskDefa
 
 @dataclasses.dataclass
 class MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeScheduling_NodeAffinities:
+    # The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred)
     key: Any = None
+    # The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred)
     operator: Any = None
+    # The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -105,10 +122,15 @@ class MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSched
 
 @dataclasses.dataclass
 class MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfaces:
+    # The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred)
     external_ip: Any = None
+    # The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred)
     internal_ip: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred)
     network_tier: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
@@ -161,7 +183,9 @@ class MigratingVm_ComputeEngineDisksTargetDefaults:
 
 @dataclasses.dataclass
 class MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiers:
+    # A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred)
     modifier: Any = None
+    # The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -237,35 +261,53 @@ class MigratingVm_CurrentSyncInfo_Error:
 
 @dataclasses.dataclass
 class MigratingVm_CurrentSyncInfo_Steps_Replicating:
+    # The real, measured average replication throughput, in bytes per second, over the last 30 minutes. (AI-inferred)
     last_thirty_minutes_average_bytes_per_second: Any = None
+    # The real, measured average replication throughput, in bytes per second, over the last 2 minutes. (AI-inferred)
     last_two_minutes_average_bytes_per_second: Any = None
+    # The real number of bytes already replicated to Google Cloud so far in the current replication cycle. (AI-inferred)
     replicated_bytes: Any = None
+    # The real total number of bytes that need to be replicated to Google Cloud for the current replication cycle to complete. (AI-inferred)
     total_bytes: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_CurrentSyncInfo_Steps:
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's initializing-replication step, the phase before the first full data sync begins. (AI-inferred)
     initializing_replication: Any = None
+    # Real, detailed progress for VM Migration's post-processing step, the cleanup and finalization work after replication data has landed. (AI-inferred)
     post_processing: Any = None
+    # Real, detailed progress for VM Migration's own active data-replication step. (AI-inferred)
     replicating: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_CurrentSyncInfo_Warnings_ActionItem:
+    # The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred)
     locale: Any = None
+    # A real, human-readable status or error message for this migration step. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_CurrentSyncInfo_Warnings_HelpLinks:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A real URL pointing to more information about this migration warning or error. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_CurrentSyncInfo_Warnings:
+    # Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred)
     action_item: Any = None
+    # The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
     code: Any = None
+    # Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred)
     help_links: Any = None
+    # The real, human-readable text of one migration warning. (AI-inferred)
     warning_message: Any = None
+    # The real timestamp when this migration warning was raised. (AI-inferred)
     warning_time: Any = None
 
 @dataclasses.dataclass
@@ -319,95 +361,161 @@ class MigratingVm_Policy:
 
 @dataclasses.dataclass
 class MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_Disks:
+    # The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred)
     disk_uri: Any = None
+    # The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred)
     source_disk_number: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetails:
+    # The real Compute Engine resource URI of the migrated VM instance. (AI-inferred)
     vm_uri: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails:
+    # The real, target-side disk configuration for a migrated VM's own disks. (AI-inferred)
     disks: Any = None
+    # Real, target-side migration configuration for the source VM's own individual disks. (AI-inferred)
     disks_target_details: Any = None
+    # Real, target-side configuration for the migrated VM instance itself, distinct from its individual disks. (AI-inferred)
     vm_target_details: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_RecentCloneJobs_ComputeEngineTargetDetails:
+    # Real, fine-grained adjustments applied during OS adaptation for specific guest OS quirks encountered on the source VM. (AI-inferred)
     adaptation_modifiers: Any = None
+    # Extra real Google Cloud licenses to attach to the migrated VM, beyond whatever license VM Migration infers automatically from the source OS. (AI-inferred)
     additional_licenses: Any = None
+    # The real license type VM Migration actually applied to the migrated VM, after resolving any requested `license_type`. (AI-inferred)
     applied_license: Any = None
+    # Real settings and progress for converting the source VM's own boot mode (e.g. BIOS to UEFI) during migration. (AI-inferred)
     boot_conversion: Any = None
+    # Which real boot mode (BIOS or EFI) the migrated VM instance is configured to use. (AI-inferred)
     boot_option: Any = None
+    # Real Compute Engine scheduling configuration (host maintenance behavior, restart policy, node affinity) for the migrated VM instance. (AI-inferred)
     compute_scheduling: Any = None
+    # The real, additional Compute Engine zones a migrated disk is replicated to, for a regional persistent disk. (AI-inferred)
     disk_replica_zones: Any = None
+    # The real Compute Engine disk type (e.g. `pd-ssd`, `pd-standard`) to use for a migrated disk. (AI-inferred)
     disk_type: Any = None
+    # Whether Shielded VM integrity monitoring is real, enabled on the migrated VM instance. (AI-inferred)
     enable_integrity_monitoring: Any = None
+    # Whether a Shielded VM virtual Trusted Platform Module is real, enabled on the migrated VM instance. (AI-inferred)
     enable_vtpm: Any = None
+    # Real encryption configuration (e.g. the `kms_key` to use) applied to a migrated disk or VM. (AI-inferred)
     encryption: Any = None
+    # The real hostname to assign to the migrated VM instance. (AI-inferred)
     hostname: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # Which real licensing model applies to the migrated VM: the source's own existing license (BYOL) or a new Google Cloud-provided one (PAYG). (AI-inferred)
     license_type: Any = None
+    # The real target Compute Engine machine type (e.g. `e2-standard-4`) to use for the migrated VM instance. (AI-inferred)
     machine_type: Any = None
+    # The real target Compute Engine machine type series (e.g. `e2`, `n2`) to select a machine type from, when an exact `machine_type` isn't pinned. (AI-inferred)
     machine_type_series: Any = None
+    # Real Compute Engine instance metadata key/value pairs to apply to the migrated VM instance. (AI-inferred)
     metadata: Any = None
+    # The real, target-side network interface configuration for the migrated VM instance. (AI-inferred)
     network_interfaces: Any = None
+    # Real Compute Engine network tags to apply to the migrated VM instance, used to match firewall rules and routes. (AI-inferred)
     network_tags: Any = None
+    # The real Google Cloud project ID this migration resource applies to. (AI-inferred)
     project: Any = None
+    # Whether Shielded VM Secure Boot is real, enabled on the migrated VM instance. (AI-inferred)
     secure_boot: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # A reference to the real Compute Engine storage pool a migrated disk should be provisioned from. (AI-inferred)
     storage_pool: Any = None
+    # The real, target-side name to assign to the migrated VM instance in Google Cloud. (AI-inferred)
     vm_name: Any = None
+    # The real Compute Engine zone the migrated VM instance or disk is created in. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_RecentCloneJobs_Steps:
+    # Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred)
     adapting_os: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred)
     instantiating_migrated_vm: Any = None
+    # Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred)
     preparing_vm_disks: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_RecentCloneJobs:
+    # Real, target-side Compute Engine disk configuration (type, size, name) for a migrated disk. (AI-inferred)
     compute_engine_disks_target_details: Any = None
+    # Real, target-side Compute Engine configuration (machine type, zone, network, disks) the source VM migrates into. (AI-inferred)
     compute_engine_target_details: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # The real error, if any, that caused this migration step or job to fail. (AI-inferred)
     error: Any = None
+    # The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred)
     name: Any = None
+    # The real, current state of this migration job, step, or resource. (AI-inferred)
     state: Any = None
+    # The real timestamp when this resource most recently entered its current `state`. (AI-inferred)
     state_time: Any = None
+    # The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred)
     steps: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_RecentCutoverJobs_Steps:
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's own final-sync step, the last data sync performed immediately before cutover. (AI-inferred)
     final_sync: Any = None
+    # Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred)
     instantiating_migrated_vm: Any = None
+    # Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred)
     preparing_vm_disks: Any = None
+    # The real, previous replication cycle for this migrating VM, kept for reference alongside the current one. (AI-inferred)
     previous_replication_cycle: Any = None
+    # Real, detailed progress for VM Migration's own step shutting down the source VM as part of a cutover. (AI-inferred)
     shutting_down_source_vm: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_RecentCutoverJobs:
+    # Real, target-side Compute Engine disk configuration (type, size, name) for a migrated disk. (AI-inferred)
     compute_engine_disks_target_details: Any = None
+    # Real, target-side Compute Engine configuration (machine type, zone, network, disks) the source VM migrates into. (AI-inferred)
     compute_engine_target_details: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # The real error, if any, that caused this migration step or job to fail. (AI-inferred)
     error: Any = None
+    # The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred)
     name: Any = None
+    # Output only. The real, measured completion percentage (0-100) of the current migration step. (AI-inferred)
     progress_percent: Any = None
+    # The real, current state of this migration job, step, or resource. (AI-inferred)
     state: Any = None
+    # Real, additional detail explaining this migrating VM's own current cutover job state. (AI-inferred)
     state_message: Any = None
+    # The real timestamp when this resource most recently entered its current `state`. (AI-inferred)
     state_time: Any = None
+    # The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred)
     steps: Any = None
 
 @dataclasses.dataclass
 class MigratingVm_VmwareSourceVmDetails_Disks:
+    # The real, source-side index identifying which of the source VM's disks this migration status entry describes. (AI-inferred)
     disk_number: Any = None
+    # The real, source-side disk label of one disk on a VMware-sourced migrating VM. (AI-inferred)
     label: Any = None
+    # The real, provisioned size, in GiB, of a migrated disk. (AI-inferred)
     size_gb: Any = None
 
 @dataclasses.dataclass

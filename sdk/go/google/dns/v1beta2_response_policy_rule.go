@@ -212,7 +212,8 @@ type V1beta2ResponsePolicyRuleConfig struct {
 	// Answer this query with a behavior rather than DNS data.
 	Behavior any
 	// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
-	DnsName   any
+	DnsName any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind      any
 	LocalData any
 	// An identifier for this rule. Must be unique with the ResponsePolicy.
@@ -223,7 +224,8 @@ type V1beta2ResponsePolicyRuleAttrs struct {
 	// Answer this query with a behavior rather than DNS data.
 	Behavior any
 	// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
-	DnsName   any
+	DnsName any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind      any
 	LocalData any
 	// An identifier for this rule. Must be unique with the ResponsePolicy.

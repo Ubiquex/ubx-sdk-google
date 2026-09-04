@@ -30,6 +30,7 @@ export interface WireGroup_WireProperties {
 }
 
 export interface WireGroup_Wires_Endpoints {
+  /** The URL of the Compute Engine interconnect used by this endpoint. (AI-inferred) */
   interconnect?: string | Computed<string>;
   vlanTag?: number | Computed<number>;
 }

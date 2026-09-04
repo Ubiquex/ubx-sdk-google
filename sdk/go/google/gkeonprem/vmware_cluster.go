@@ -9,6 +9,7 @@ type VmwareCluster_AntiAffinityGroups struct {
 }
 
 type VmwareCluster_Authorization_AdminUsers struct {
+	// The username used to authenticate. (AI-inferred)
 	Username any
 }
 
@@ -84,10 +85,14 @@ type VmwareCluster_LoadBalancer_ManualLbConfig struct {
 }
 
 type VmwareCluster_LoadBalancer_MetalLbConfig_AddressPools struct {
-	Addresses     any
+	// The IP address(es) this applies to. (AI-inferred)
+	Addresses any
+	// Whether known problematic IP addresses are avoided when allocating this pool. (AI-inferred)
 	AvoidBuggyIps any
-	ManualAssign  any
-	Pool          any
+	// Whether IP addresses are manually assigned, rather than allocated from a pool. (AI-inferred)
+	ManualAssign any
+	// A reference to the node pool this applies to. (AI-inferred)
+	Pool any
 }
 
 type VmwareCluster_LoadBalancer_MetalLbConfig struct {
@@ -96,13 +101,18 @@ type VmwareCluster_LoadBalancer_MetalLbConfig struct {
 }
 
 type VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips struct {
+	// The hostname of this node. (AI-inferred)
 	Hostname any
-	Ip       any
+	// An IP address. (AI-inferred)
+	Ip any
 }
 
 type VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks struct {
+	// The default gateway IP address for this network. (AI-inferred)
 	Gateway any
-	Ips     any
+	// The IP address(es) this applies to. (AI-inferred)
+	Ips any
+	// The subnet mask for this network. (AI-inferred)
 	Netmask any
 }
 
@@ -178,15 +188,22 @@ type VmwareCluster_NetworkConfig struct {
 }
 
 type VmwareCluster_Status_Conditions struct {
+	// When this condition last changed from one status to another. (AI-inferred)
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	State              any
-	Type               any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type VmwareCluster_Status_Versions_Versions struct {
-	Count   any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
@@ -217,11 +234,16 @@ type VmwareCluster_UpgradePolicy struct {
 }
 
 type VmwareCluster_ValidationCheck_Status_Result struct {
-	Category    any
+	// The category this belongs to. (AI-inferred)
+	Category any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Details     any
-	Reason      any
-	State       any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type VmwareCluster_ValidationCheck_Status struct {

@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Version_References {
+  /** The name of the referenced schema or resource. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The schema subject this reference points to. (AI-inferred) */
   subject?: string | Computed<string>;
+  /** The specific version of the referenced schema. (AI-inferred) */
   version?: number | Computed<number>;
 }
 

@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InstantSnapshotGroup_ResourceStatus_SourceInfo {
+  /** The consistency group that the source of this instant snapshot group belongs to, if any. This is a computed output field. (AI-inferred) */
   consistencyGroup?: string | Computed<string>;
+  /** Output only. The identifier of the consistency group associated with this instant snapshot group, used to coordinate group-consistent operations. (AI-inferred) */
   consistencyGroupId?: string | Computed<string>;
 }
 
@@ -32,6 +34,7 @@ export interface InstantSnapshotGroupConfig {
   /** Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   resourceStatus?: InstantSnapshotGroup_ResourceStatus | Computed<InstantSnapshotGroup_ResourceStatus>;
+  /** The self-link of the consistency group (resource policy) used as the source for the instant snapshots in this group. This field is computed and output only, populated when the group is associated with a consistency group. (AI-inferred) */
   sourceConsistencyGroup?: string | Computed<string>;
 }
 
@@ -53,6 +56,7 @@ export interface InstantSnapshotGroupAttrs {
   selfLink: string;
   /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
   selfLinkWithId: string;
+  /** The self-link of the consistency group (resource policy) used as the source for the instant snapshots in this group. This field is computed and output only, populated when the group is associated with a consistency group. (AI-inferred) */
   sourceConsistencyGroup: string;
   /** Output only. [Output Only] */
   status: string;

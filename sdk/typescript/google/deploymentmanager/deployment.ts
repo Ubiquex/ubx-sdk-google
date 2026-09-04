@@ -2,57 +2,85 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Deployment_Labels {
+  /** The key of this metadata entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Deployment_Operation_Error_Errors_DebugInfo {
+  /** Additional detail about this result. (AI-inferred) */
   detail?: string | Computed<string>;
+  /** The individual frame(s) making up this stack trace. (AI-inferred) */
   stackEntries?: string[] | Computed<string[]>;
 }
 
 export interface Deployment_Operation_Error_Errors_ErrorDetails_ErrorInfo {
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** Metadata entries associated with this resource. (AI-inferred) */
   metadatas?: Record<string, string> | Computed<Record<string, string>>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface Deployment_Operation_Error_Errors_ErrorDetails_Help_Links {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface Deployment_Operation_Error_Errors_ErrorDetails_Help {
+  /** Related link(s) for this resource. (AI-inferred) */
   links?: Deployment_Operation_Error_Errors_ErrorDetails_Help_Links[] | Computed<Deployment_Operation_Error_Errors_ErrorDetails_Help_Links[]>;
 }
 
 export interface Deployment_Operation_Error_Errors_ErrorDetails_LocalizedMessage {
+  /** The locale this localized content is expressed in. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Deployment_Operation_Error_Errors_ErrorDetails_QuotaInfo {
+  /** The dimension(s) this quota is tracked across, e.g. region. (AI-inferred) */
   dimensions?: Record<string, string> | Computed<Record<string, string>>;
+  /** The quota limit that will take effect at a future date. (AI-inferred) */
   futureLimit?: number | Computed<number>;
+  /** The maximum amount allowed. (AI-inferred) */
   limit?: number | Computed<number>;
+  /** The name of the quota this limit applies to. (AI-inferred) */
   limitName?: string | Computed<string>;
+  /** The name of the metric this applies to. (AI-inferred) */
   metricName?: string | Computed<string>;
+  /** The current status of this feature rollout. (AI-inferred) */
   rolloutStatus?: string | Computed<string>;
 }
 
 export interface Deployment_Operation_Error_Errors_ErrorDetails {
+  /** Structured detail about an error that occurred. (AI-inferred) */
   errorInfo?: Deployment_Operation_Error_Errors_ErrorDetails_ErrorInfo | Computed<Deployment_Operation_Error_Errors_ErrorDetails_ErrorInfo>;
+  /** Guidance for resolving this error. (AI-inferred) */
   help?: Deployment_Operation_Error_Errors_ErrorDetails_Help | Computed<Deployment_Operation_Error_Errors_ErrorDetails_Help>;
+  /** A human-readable error message, localized for the caller. (AI-inferred) */
   localizedMessage?: Deployment_Operation_Error_Errors_ErrorDetails_LocalizedMessage | Computed<Deployment_Operation_Error_Errors_ErrorDetails_LocalizedMessage>;
+  /** Detail about the quota this operation is subject to. (AI-inferred) */
   quotaInfo?: Deployment_Operation_Error_Errors_ErrorDetails_QuotaInfo | Computed<Deployment_Operation_Error_Errors_ErrorDetails_QuotaInfo>;
 }
 
 export interface Deployment_Operation_Error_Errors {
+  /** The argument(s) passed to this operation. (AI-inferred) */
   arguments?: string[] | Computed<string[]>;
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: string | Computed<string>;
+  /** Additional detail intended for debugging. (AI-inferred) */
   debugInfo?: Deployment_Operation_Error_Errors_DebugInfo | Computed<Deployment_Operation_Error_Errors_DebugInfo>;
+  /** Additional structured detail about the error. (AI-inferred) */
   errorDetails?: Deployment_Operation_Error_Errors_ErrorDetails[] | Computed<Deployment_Operation_Error_Errors_ErrorDetails[]>;
+  /** The Google Cloud region or zone this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -74,14 +102,20 @@ export interface Deployment_Operation_GetVersionOperationMetadata_InlineSbomInfo
 }
 
 export interface Deployment_Operation_GetVersionOperationMetadata {
+  /** Software bill-of-materials information embedded in this resource. (AI-inferred) */
   inlineSbomInfo?: Deployment_Operation_GetVersionOperationMetadata_InlineSbomInfo | Computed<Deployment_Operation_GetVersionOperationMetadata_InlineSbomInfo>;
 }
 
 export interface Deployment_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatus {
+  /** The number of VM instance(s) successfully created by this bulk operation. (AI-inferred) */
   createdVmCount?: number | Computed<number>;
+  /** The number of VM instance(s) deleted by this bulk operation. (AI-inferred) */
   deletedVmCount?: number | Computed<number>;
+  /** The number of VM instance(s) this bulk operation failed to create. (AI-inferred) */
   failedToCreateVmCount?: number | Computed<number>;
+  /** The current status of this resource. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The total number of VM instance(s) this bulk operation targets. (AI-inferred) */
   targetVmCount?: number | Computed<number>;
 }
 
@@ -100,13 +134,18 @@ export interface Deployment_Operation_SetAutoscalerLinkOperationMetadata {
 }
 
 export interface Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations {
+  /** Detail about an error that occurred. (AI-inferred) */
   error?: Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error | Computed<Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
@@ -118,8 +157,11 @@ export interface Deployment_Operation_SetCommonInstanceMetadataOperationMetadata
 }
 
 export interface Deployment_Operation_Warnings {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: string | Computed<string>;
+  /** The literal content of this field. (AI-inferred) */
   data?: Deployment_Labels[] | Computed<Deployment_Labels[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -134,7 +176,9 @@ export interface Deployment_Operation {
   endTime?: string | Computed<string>;
   /** [Output Only] If errors are generated during processing of the operation, this field will be populated. */
   error?: Deployment_Operation_Error | Computed<Deployment_Operation_Error>;
+  /** Metadata specific to a firewall policy rule operation. (AI-inferred) */
   firewallPolicyRuleOperationMetadata?: Deployment_Operation_FirewallPolicyRuleOperationMetadata | Computed<Deployment_Operation_FirewallPolicyRuleOperationMetadata>;
+  /** Metadata specific to a get-version operation. (AI-inferred) */
   getVersionOperationMetadata?: Deployment_Operation_GetVersionOperationMetadata | Computed<Deployment_Operation_GetVersionOperationMetadata>;
   /** [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`. */
   httpErrorMessage?: string | Computed<string>;
@@ -144,6 +188,7 @@ export interface Deployment_Operation {
   id?: string | Computed<string>;
   /** [Output Only] The time that this operation was requested. This value is in RFC3339 text format. */
   insertTime?: string | Computed<string>;
+  /** Metadata specific to a bulk instance-insert operation. (AI-inferred) */
   instancesBulkInsertOperationMetadata?: Deployment_Operation_InstancesBulkInsertOperationMetadata | Computed<Deployment_Operation_InstancesBulkInsertOperationMetadata>;
   /** Output only. [Output Only] Type of the resource. Always `compute#operation` for Operation resources. */
   kind?: string | Computed<string>;
@@ -161,7 +206,9 @@ export interface Deployment_Operation {
   selfLink?: string | Computed<string>;
   /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
   selfLinkWithId?: string | Computed<string>;
+  /** Metadata specific to a set-autoscaler-link operation. (AI-inferred) */
   setAutoscalerLinkOperationMetadata?: Deployment_Operation_SetAutoscalerLinkOperationMetadata | Computed<Deployment_Operation_SetAutoscalerLinkOperationMetadata>;
+  /** Metadata specific to a set-common-instance-metadata operation. (AI-inferred) */
   setCommonInstanceMetadataOperationMetadata?: Deployment_Operation_SetCommonInstanceMetadataOperationMetadata | Computed<Deployment_Operation_SetCommonInstanceMetadataOperationMetadata>;
   /** [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format. */
   startTime?: string | Computed<string>;
@@ -187,11 +234,14 @@ export interface Deployment_Target_Config {
 }
 
 export interface Deployment_Target_Imports {
+  /** The literal content of this field. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Deployment_Target {
+  /** The configuration for this resource. (AI-inferred) */
   config?: Deployment_Target_Config | Computed<Deployment_Target_Config>;
   /** Specifies any files to import for this configuration. This can be used to import templates or other files. For example, you might import a text file in order to use the file in a template. */
   imports?: Deployment_Target_Imports[] | Computed<Deployment_Target_Imports[]>;
@@ -468,6 +518,7 @@ export interface DeploymentConfig {
   description?: string | Computed<string>;
   /** Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment. */
   fingerprint?: string | Computed<string>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
   /** Output only. Creation timestamp in RFC3339 text format. */
   insertTime?: string | Computed<string>;
@@ -481,7 +532,9 @@ export interface DeploymentConfig {
   operation?: Deployment_Operation | Computed<Deployment_Operation>;
   /** Output only. Server defined URL for the resource. */
   selfLink?: string | Computed<string>;
+  /** A reference to the resource this operation targets. (AI-inferred) */
   target?: Deployment_Target | Computed<Deployment_Target>;
+  /** The update being applied to this resource. (AI-inferred) */
   update?: Deployment_Update | Computed<Deployment_Update>;
   /** Output only. Update timestamp in RFC3339 text format. */
   updateTime?: string | Computed<string>;
@@ -492,6 +545,7 @@ export interface DeploymentAttrs {
   description: string;
   /** Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment. */
   fingerprint: string;
+  /** A unique identifier for this resource. (AI-inferred) */
   id: string;
   /** Output only. Creation timestamp in RFC3339 text format. */
   insertTime: string;
@@ -505,7 +559,9 @@ export interface DeploymentAttrs {
   operation: Deployment_Operation;
   /** Output only. Server defined URL for the resource. */
   selfLink: string;
+  /** A reference to the resource this operation targets. (AI-inferred) */
   target: Deployment_Target;
+  /** The update being applied to this resource. (AI-inferred) */
   update: Deployment_Update;
   /** Output only. Update timestamp in RFC3339 text format. */
   updateTime: string;

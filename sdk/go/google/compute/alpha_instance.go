@@ -1130,8 +1130,10 @@ type AlphaInstanceConfig struct {
 	// A list of the type and count of accelerator cards attached to the instance.
 	GuestAccelerators any
 	// Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
-	Hostname              any
-	Identity              any
+	Hostname any
+	// Whether this instance has a Trusted Platform Module (TPM)-backed identity. (AI-inferred)
+	Identity any
+	// Whether an identity certificate is enabled for this instance's own TPM-backed identity. (AI-inferred)
 	IdentityCertificate   any
 	InstanceEncryptionKey any
 	// KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
@@ -1153,7 +1155,8 @@ type AlphaInstanceConfig struct {
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
-	NetworkInterfaces        any
+	NetworkInterfaces any
+	// Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
 	NetworkPerformanceConfig any
 	// Additional instance params.
 	Params any
@@ -1191,7 +1194,8 @@ type AlphaInstanceConfig struct {
 	// A set of instance tags.
 	Tags any
 	// Upcoming Maintenance notification information.
-	UpcomingMaintenance    any
+	UpcomingMaintenance any
+	// Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
 	WorkloadIdentityConfig any
 }
 
@@ -1223,8 +1227,10 @@ type AlphaInstanceAttrs struct {
 	// Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
 	Hostname any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id                    any
-	Identity              any
+	Id any
+	// Whether this instance has a Trusted Platform Module (TPM)-backed identity. (AI-inferred)
+	Identity any
+	// Whether an identity certificate is enabled for this instance's own TPM-backed identity. (AI-inferred)
 	IdentityCertificate   any
 	InstanceEncryptionKey any
 	// KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
@@ -1254,7 +1260,8 @@ type AlphaInstanceAttrs struct {
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
-	NetworkInterfaces        any
+	NetworkInterfaces any
+	// Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
 	NetworkPerformanceConfig any
 	// Additional instance params.
 	Params any
@@ -1308,7 +1315,8 @@ type AlphaInstanceAttrs struct {
 	// A set of instance tags.
 	Tags any
 	// Upcoming Maintenance notification information.
-	UpcomingMaintenance    any
+	UpcomingMaintenance any
+	// Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
 	WorkloadIdentityConfig any
 	// Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Zone any

@@ -195,75 +195,124 @@ export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_Pipelin
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Execution {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A human-readable title for this schema. (AI-inferred) */
   schemaTitle?: string | Computed<string>;
+  /** The version of this schema. (AI-inferred) */
   schemaVersion?: string | Computed<string>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetail {
+  /** The main container job(s) that failed during this task's own execution. (AI-inferred) */
   failedMainJobs?: string[] | Computed<string[]>;
+  /** The pre-caching-check job(s) that failed during this task's own execution. (AI-inferred) */
   failedPreCachingCheckJobs?: string[] | Computed<string[]>;
+  /** A reference to this task's own main container job. (AI-inferred) */
   mainJob?: string | Computed<string>;
+  /** A reference to this task's own pre-caching-check job. (AI-inferred) */
   preCachingCheckJob?: string | Computed<string>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetail {
+  /** The job(s) that failed during this task's own execution. (AI-inferred) */
   failedJobs?: string[] | Computed<string[]>;
+  /** A reference to the underlying job. (AI-inferred) */
   job?: string | Computed<string>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail {
+  /** Detail specific to a task executed as a container. (AI-inferred) */
   containerDetail?: Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetail | Computed<Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetail>;
+  /** Detail specific to a task executed as a custom training job. (AI-inferred) */
   customJobDetail?: Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetail | Computed<Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetail>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_Artifacts {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A human-readable title for this schema. (AI-inferred) */
   schemaTitle?: string | Computed<string>;
+  /** The version of this schema. (AI-inferred) */
   schemaVersion?: string | Computed<string>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs {
+  /** The pipeline artifact(s) making up this input or output. (AI-inferred) */
   artifacts?: Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_Artifacts[] | Computed<Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_Artifacts[]>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatus {
+  /** Error detail for this failed operation. (AI-inferred) */
   error?: Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_Status | Computed<Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_Status>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Error detail for this failed operation. (AI-inferred) */
   error?: Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_Status | Computed<Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_Status>;
+  /** Detail about this task's own concrete execution. (AI-inferred) */
   execution?: Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Execution | Computed<Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Execution>;
+  /** Detail about the underlying compute (container job or custom job) that executed this task. (AI-inferred) */
   executorDetail?: Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail | Computed<Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail>;
+  /** The input(s) to this operation. (AI-inferred) */
   inputs?: Record<string, Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs> | Computed<Record<string, Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs>>;
+  /** The output(s) produced by this operation. (AI-inferred) */
   outputs?: Record<string, Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs> | Computed<Record<string, Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs>>;
+  /** A reference to this task's own parent task in the pipeline DAG. (AI-inferred) */
   parentTaskId?: string | Computed<string>;
+  /** The history of status changes this pipeline task has gone through. (AI-inferred) */
   pipelineTaskStatus?: Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatus[] | Computed<Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatus[]>;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
+  /** An identifier for this pipeline task, unique within its own pipeline run. (AI-inferred) */
   taskId?: string | Computed<string>;
+  /** The name of this pipeline task, as defined in the pipeline template. (AI-inferred) */
   taskName?: string | Computed<string>;
+  /** A globally unique name for this pipeline task, disambiguating tasks with the same `task_name` across loop/condition iterations. (AI-inferred) */
   taskUniqueName?: string | Computed<string>;
 }
 
@@ -277,8 +326,11 @@ export interface Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail {
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfig_DnsPeeringConfigs {
+  /** The domain this configuration or resource applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** The VPC network this resource is deployed into. (AI-inferred) */
   targetNetwork?: string | Computed<string>;
+  /** The Google Cloud project this resource targets. (AI-inferred) */
   targetProject?: string | Computed<string>;
 }
 
@@ -290,12 +342,16 @@ export interface Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfi
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_InputArtifacts {
+  /** A reference to the specific pipeline artifact this applies to. (AI-inferred) */
   artifactId?: string | Computed<string>;
 }
 
 export interface Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_Parameters {
+  /** A floating-point value, populated when this field's own type is a double. (AI-inferred) */
   doubleValue?: number | Computed<number>;
+  /** An integer value, populated when this field's own type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** A text value, populated when this field's own type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 

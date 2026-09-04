@@ -23,8 +23,11 @@ type CustomJob_JobSpec_BaseOutputDirectory struct {
 }
 
 type CustomJob_JobSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain        any
+	// The domain this configuration or resource applies to. (AI-inferred)
+	Domain any
+	// The VPC network this resource is deployed into. (AI-inferred)
 	TargetNetwork any
+	// The Google Cloud project this resource targets. (AI-inferred)
 	TargetProject any
 }
 
@@ -49,66 +52,102 @@ type CustomJob_JobSpec_Scheduling struct {
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_Env struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec struct {
-	Args     any
-	Command  any
-	Env      any
+	// The argument value(s) passed to this call. (AI-inferred)
+	Args any
+	// The container entrypoint command and argument(s) to run. (AI-inferred)
+	Command any
+	// Environment variable(s) set for this job's own execution. (AI-inferred)
+	Env any
+	// The container image URI to run. (AI-inferred)
 	ImageUri any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_DiskSpec struct {
+	// The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred)
 	BootDiskSizeGb any
-	BootDiskType   any
+	// The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred)
+	BootDiskType any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_LustreMounts struct {
-	Filesystem   any
-	InstanceIp   any
-	MountPoint   any
+	// The filesystem identifier to mount. (AI-inferred)
+	Filesystem any
+	// The IP address of the filesystem instance to mount. (AI-inferred)
+	InstanceIp any
+	// The filesystem path this volume is mounted at. (AI-inferred)
+	MountPoint any
+	// An identifier for this mounted volume, unique within its own job. (AI-inferred)
 	VolumeHandle any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity struct {
-	Key                     any
+	// A key identifying this entry. (AI-inferred)
+	Key any
+	// Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
 	ReservationAffinityType any
-	Values                  any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec struct {
-	AcceleratorCount    any
-	AcceleratorType     any
-	GpuPartitionSize    any
-	MachineType         any
+	// How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
+	AcceleratorCount any
+	// The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
+	AcceleratorType any
+	// The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
+	GpuPartitionSize any
+	// The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
+	MachineType any
+	// Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
 	ReservationAffinity any
-	TpuTopology         any
+	// The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
+	TpuTopology any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_NfsMounts struct {
+	// The filesystem path this volume is mounted at. (AI-inferred)
 	MountPoint any
-	Path       any
-	Server     any
+	// A file or object path. (AI-inferred)
+	Path any
+	// The server hostname or IP address to connect to. (AI-inferred)
+	Server any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpec struct {
-	Args             any
-	Env              any
+	// The argument value(s) passed to this call. (AI-inferred)
+	Args any
+	// Environment variable(s) set for this job's own execution. (AI-inferred)
+	Env any
+	// The prebuilt Vertex AI executor image this Python package runs on top of. (AI-inferred)
 	ExecutorImageUri any
-	PackageUris      any
-	PythonModule     any
+	// The Cloud Storage URI(s) of the Python package(s) (e.g. a `.tar.gz` sdist) to install and run. (AI-inferred)
+	PackageUris any
+	// The Python module to execute as this worker's own entry point. (AI-inferred)
+	PythonModule any
 }
 
 type CustomJob_JobSpec_WorkerPoolSpecs struct {
-	ContainerSpec     any
-	DiskSpec          any
-	LustreMounts      any
-	MachineSpec       any
-	NfsMounts         any
+	// The container image and command this worker pool runs. (AI-inferred)
+	ContainerSpec any
+	// The boot disk configuration provisioned for this job's own machine(s). (AI-inferred)
+	DiskSpec any
+	// Managed Lustre filesystem(s) mounted into this job's own worker containers. (AI-inferred)
+	LustreMounts any
+	// The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
+	MachineSpec any
+	// NFS filesystem(s) mounted into this job's own worker containers. (AI-inferred)
+	NfsMounts any
+	// A Python package (rather than a container image) this worker pool runs, using a prebuilt executor image. (AI-inferred)
 	PythonPackageSpec any
-	ReplicaCount      any
+	// How many machine replicas this job runs. (AI-inferred)
+	ReplicaCount any
 }
 
 type CustomJob_JobSpec struct {

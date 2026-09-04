@@ -18,20 +18,32 @@ _V2beta1EntityType_EntitiesFields = {
 
 @dataclasses.dataclass
 class V2beta1EntityTypeConfig:
+    # Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
     auto_expansion_mode: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
     enable_fuzzy_extraction: Any = None
+    # The entity/entities extracted or referenced. (AI-inferred)
     entities: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class V2beta1EntityTypeAttrs:
+    # Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
     auto_expansion_mode: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
     enable_fuzzy_extraction: Any = None
+    # The entity/entities extracted or referenced. (AI-inferred)
     entities: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 V2beta1EntityType = ubx.ResourceBinding(

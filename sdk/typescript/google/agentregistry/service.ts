@@ -9,7 +9,9 @@ export interface Service_AgentSpec {
 }
 
 export interface Service_Interfaces {
+  /** The communication protocol this interface accepts requests over: `JSONRPC`, `GRPC`, or `HTTP_JSON`. Tells Agent Registry which wire format to use when routing traffic to the interface's own `url`. (AI-inferred) */
   protocolBinding?: string | Computed<string>;
+  /** The target URL Agent Registry sends requests to for this interface, for example `https://api.example.com/v1/data`. (AI-inferred) */
   url?: string | Computed<string>;
 }
 

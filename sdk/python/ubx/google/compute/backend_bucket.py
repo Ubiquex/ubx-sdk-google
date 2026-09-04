@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BackendBucket_CdnPolicy_BypassCacheOnRequestHeaders:
+    # The name of the request header to bypass the cache for. (AI-inferred)
     header_name: Any = None
 
 @dataclasses.dataclass
@@ -19,7 +20,9 @@ class BackendBucket_CdnPolicy_CacheKeyPolicy:
 
 @dataclasses.dataclass
 class BackendBucket_CdnPolicy_NegativeCachingPolicy:
+    # The HTTP status code that this negative caching policy applies to. (AI-inferred)
     code: Any = None
+    # Time-to-live in seconds for the cached response for the specified HTTP status code. This defines how long the negative cache entry persists. (AI-inferred)
     ttl: Any = None
 
 @dataclasses.dataclass
@@ -56,6 +59,7 @@ class BackendBucket_Params:
 
 @dataclasses.dataclass
 class BackendBucket_UsedBy:
+    # The reference URL of the resource that uses this backend bucket, such as a URL map. (AI-inferred)
     reference: Any = None
 
 _BackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields = {

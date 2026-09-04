@@ -15,129 +15,205 @@ class CertificateAuthority_AccessUrls:
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_AuthorityKeyId:
+    # An identifier for this key. (AI-inferred)
     key_id: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_CertFingerprint:
+    # A SHA-256 hash of this content. (AI-inferred)
     sha256_hash: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_PublicKey:
+    # A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
     format: Any = None
+    # The key material for this key pair. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId:
+    # The numeric component(s) making up an object identifier. (AI-inferred)
     object_id_path: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes:
+    # An X.509 object identifier (OID). (AI-inferred)
     object_id: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence:
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject:
+    # The Common Name field of this certificate's own subject. (AI-inferred)
     common_name: Any = None
+    # The two-letter country code in this certificate's own subject. (AI-inferred)
     country_code: Any = None
+    # The locality (city) field in this certificate's own subject. (AI-inferred)
     locality: Any = None
+    # The organization field in this certificate's own subject. (AI-inferred)
     organization: Any = None
+    # The organizational unit field in this certificate's own subject. (AI-inferred)
     organizational_unit: Any = None
+    # The postal code field in this certificate's own subject. (AI-inferred)
     postal_code: Any = None
+    # The state/province field in this certificate's own subject. (AI-inferred)
     province: Any = None
+    # The subject expressed as a raw sequence of Relative Distinguished Names. (AI-inferred)
     rdn_sequence: Any = None
+    # The street address field in this certificate's own subject. (AI-inferred)
     street_address: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSans:
+    # Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
     critical: Any = None
+    # An X.509 object identifier (OID). (AI-inferred)
     object_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName:
+    # Caller-defined Subject Alternative Name(s) beyond the standard DNS/email/IP/URI types. (AI-inferred)
     custom_sans: Any = None
+    # The DNS name(s) this certificate is valid for. (AI-inferred)
     dns_names: Any = None
+    # The email address(es) this certificate is valid for. (AI-inferred)
     email_addresses: Any = None
+    # The IP address(es) this certificate is valid for. (AI-inferred)
     ip_addresses: Any = None
+    # The URI(s) this certificate is valid for. (AI-inferred)
     uris: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_SubjectDescription:
+    # This certificate's own serial number, in hexadecimal. (AI-inferred)
     hex_serial_number: Any = None
+    # How long this certificate remains valid for, from issuance. (AI-inferred)
     lifetime: Any = None
+    # The timestamp after which this certificate is no longer valid. (AI-inferred)
     not_after_time: Any = None
+    # The timestamp before which this certificate isn't yet valid. (AI-inferred)
     not_before_time: Any = None
+    # The identity this certificate identifies. (AI-inferred)
     subject: Any = None
+    # Additional identity/identities this certificate is also valid for, beyond its own primary subject. (AI-inferred)
     subject_alt_name: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptions:
+    # Whether this certificate is itself a CA certificate, authorized to sign other certificates. (AI-inferred)
     is_ca: Any = None
+    # The maximum number of intermediate CA certificates permitted below this one in a certificate chain. (AI-inferred)
     max_issuer_path_length: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsage:
+    # Whether this certificate is authorized to sign other certificates. (AI-inferred)
     cert_sign: Any = None
+    # Whether this certificate is authorized for non-repudiation (content commitment). (AI-inferred)
     content_commitment: Any = None
+    # Whether this certificate is authorized to sign certificate revocation lists. (AI-inferred)
     crl_sign: Any = None
+    # Whether this certificate is authorized for direct data encipherment. (AI-inferred)
     data_encipherment: Any = None
+    # Whether this certificate's own key agreement usage is restricted to deciphering only. (AI-inferred)
     decipher_only: Any = None
+    # Whether this certificate is authorized for digital signatures. (AI-inferred)
     digital_signature: Any = None
+    # Whether this certificate's own key agreement usage is restricted to enciphering only. (AI-inferred)
     encipher_only: Any = None
+    # Whether this certificate is authorized for key agreement. (AI-inferred)
     key_agreement: Any = None
+    # Whether this certificate is authorized for key encipherment. (AI-inferred)
     key_encipherment: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsage:
+    # Whether this certificate is authorized for TLS client authentication. (AI-inferred)
     client_auth: Any = None
+    # Whether this certificate is authorized for code signing. (AI-inferred)
     code_signing: Any = None
+    # Whether this certificate is authorized for email protection (S/MIME). (AI-inferred)
     email_protection: Any = None
+    # Whether this certificate is authorized for OCSP response signing. (AI-inferred)
     ocsp_signing: Any = None
+    # Whether this certificate is authorized for TLS server authentication. (AI-inferred)
     server_auth: Any = None
+    # Whether this certificate is authorized for trusted timestamping. (AI-inferred)
     time_stamping: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage:
+    # The core X.509 Key Usage bit(s) (e.g. digital signature, key encipherment) this certificate is authorized for. (AI-inferred)
     base_key_usage: Any = None
+    # The extended (application-specific) key usage purpose(s) this certificate is authorized for, e.g. server or client authentication. (AI-inferred)
     extended_key_usage: Any = None
+    # Extended key usage object identifier(s) not recognized as one of the standard, named purposes. (AI-inferred)
     unknown_extended_key_usages: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraints:
+    # Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
     critical: Any = None
+    # DNS name(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
     excluded_dns_names: Any = None
+    # Email address(es) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
     excluded_email_addresses: Any = None
+    # IP address range(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
     excluded_ip_ranges: Any = None
+    # URI(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred)
     excluded_uris: Any = None
+    # DNS name(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
     permitted_dns_names: Any = None
+    # Email address(es) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
     permitted_email_addresses: Any = None
+    # IP address range(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
     permitted_ip_ranges: Any = None
+    # URI(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred)
     permitted_uris: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions_X509Description:
+    # Additional, caller-defined X.509 extension(s) included in this certificate. (AI-inferred)
     additional_extensions: Any = None
+    # The OCSP responder URL(s) included in the Authority Information Access extension. (AI-inferred)
     aia_ocsp_servers: Any = None
+    # CA-specific certificate options, e.g. whether this certificate itself may sign other CA certificates. (AI-inferred)
     ca_options: Any = None
+    # The X.509 Key Usage extension, defining what cryptographic operations this certificate is authorized for. (AI-inferred)
     key_usage: Any = None
+    # Restrictions on the namespace(s) (DNS, email, IP, URI) a CA is permitted to issue certificates for. (AI-inferred)
     name_constraints: Any = None
+    # The certificate policy object identifier(s) this certificate asserts compliance with. (AI-inferred)
     policy_ids: Any = None
 
 @dataclasses.dataclass
 class CertificateAuthority_CaCertificateDescriptions:
+    # The URL(s), included in the Authority Information Access extension, where the issuing CA certificate can be downloaded. (AI-inferred)
     aia_issuing_certificate_urls: Any = None
+    # The X.509 Authority Key Identifier extension, identifying the key used to sign this certificate. (AI-inferred)
     authority_key_id: Any = None
+    # A cryptographic fingerprint of this certificate. (AI-inferred)
     cert_fingerprint: Any = None
+    # The URL(s) where this certificate's own revocation list (CRL) can be downloaded. (AI-inferred)
     crl_distribution_points: Any = None
+    # The public key of this certificate or key pair. (AI-inferred)
     public_key: Any = None
+    # A human-readable description of this certificate's own subject. (AI-inferred)
     subject_description: Any = None
+    # The X.509 Subject Key Identifier extension, identifying this certificate's own public key. (AI-inferred)
     subject_key_id: Any = None
+    # A digest of the to-be-signed portion of this certificate. (AI-inferred)
     tbs_certificate_digest: Any = None
+    # A structured description of this certificate's own X.509 fields. (AI-inferred)
     x509_description: Any = None
 
 @dataclasses.dataclass

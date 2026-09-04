@@ -38,7 +38,9 @@ class Entry_BigqueryTableSpec:
 
 @dataclasses.dataclass
 class Entry_BusinessContext_Contacts_People:
+    # A structured label categorizing this business term or its usage. (AI-inferred)
     designation: Any = None
+    # An email address associated with this entry. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass
@@ -146,9 +148,13 @@ class Entry_DatabaseTableSpec_DataplexTable_DataplexSpec:
 
 @dataclasses.dataclass
 class Entry_DatabaseTableSpec_DataplexTable_ExternalTables:
+    # A reference to the linked Data Catalog entry. (AI-inferred)
     data_catalog_entry: Any = None
+    # The fully qualified name identifying this entry within its own source system. (AI-inferred)
     fully_qualified_name: Any = None
+    # A reference to the underlying Google Cloud resource this entry represents. (AI-inferred)
     google_cloud_resource: Any = None
+    # The external system this entry originates from. (AI-inferred)
     system: Any = None
 
 @dataclasses.dataclass
@@ -198,14 +204,20 @@ class Entry_FilesetSpec:
 
 @dataclasses.dataclass
 class Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestamps:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
     expire_time: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Entry_GcsFilesetSpec_SampleGcsFileSpecs:
+    # The path to this file within its own source system. (AI-inferred)
     file_path: Any = None
+    # Creation and modification timestamps read from Cloud Storage object metadata. (AI-inferred)
     gcs_timestamps: Any = None
+    # The size of this object, in bytes. (AI-inferred)
     size_bytes: Any = None
 
 @dataclasses.dataclass
@@ -217,31 +229,48 @@ class Entry_GcsFilesetSpec:
 
 @dataclasses.dataclass
 class Entry_GraphSpec_EdgeTables_DestinationNodeReference:
+    # The column(s) identifying an edge's own source and destination nodes. (AI-inferred)
     edge_table_columns: Any = None
+    # An alternate name this graph node is also known by. (AI-inferred)
     node_alias: Any = None
+    # The column(s) identifying this graph node's own key. (AI-inferred)
     node_table_columns: Any = None
 
 @dataclasses.dataclass
 class Entry_GraphSpec_EdgeTables_LabelAndProperties_Properties:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Entry_GraphSpec_EdgeTables_LabelAndProperties:
+    # A human-readable label for this entry. (AI-inferred)
     label: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
 
 @dataclasses.dataclass
 class Entry_GraphSpec_EdgeTables:
+    # An alternate name this entry is also known by. (AI-inferred)
     alias: Any = None
+    # The source system this entry's own data originates from. (AI-inferred)
     data_source: Any = None
+    # A reference to the node this edge points to. (AI-inferred)
     destination_node_reference: Any = None
+    # The column whose own values are used as dynamic labels for this graph element. (AI-inferred)
     dynamic_label_column: Any = None
+    # The column whose own values populate dynamic properties for this graph element. (AI-inferred)
     dynamic_properties_column: Any = None
+    # The key(s) identifying element(s) within this schema. (AI-inferred)
     element_keys: Any = None
+    # The source data this process consumed. (AI-inferred)
     input_source: Any = None
+    # The category of this schema element. (AI-inferred)
     kind: Any = None
+    # The label and associated key/value properties assigned to this graph element. (AI-inferred)
     label_and_properties: Any = None
+    # A reference to the node this edge originates from. (AI-inferred)
     source_node_reference: Any = None
 
 @dataclasses.dataclass
@@ -307,8 +336,11 @@ class Entry_RoutineSpec_BigqueryRoutineSpec:
 
 @dataclasses.dataclass
 class Entry_RoutineSpec_RoutineArguments:
+    # Whether this field is `REQUIRED`, `NULLABLE`, or `REPEATED`. (AI-inferred)
     mode: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -328,20 +360,32 @@ class Entry_RoutineSpec:
 
 @dataclasses.dataclass
 class Entry_Schema_Columns_LookerColumnSpec:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Entry_Schema_Columns:
+    # A reference to a specific column. (AI-inferred)
     column: Any = None
+    # The value used when none is explicitly provided. (AI-inferred)
     default_value: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The garbage-collection rule applied to this Bigtable column family. (AI-inferred)
     gc_rule: Any = None
+    # The strongest indexing level detected for this column. (AI-inferred)
     highest_indexing_type: Any = None
+    # Metadata specific to a column sourced from Looker. (AI-inferred)
     looker_column_spec: Any = None
+    # Whether this field is `REQUIRED`, `NULLABLE`, or `REPEATED`. (AI-inferred)
     mode: Any = None
+    # This column's own position within its containing schema. (AI-inferred)
     ordinal_position: Any = None
+    # The data type of elements within this range-typed field. (AI-inferred)
     range_element_type: Any = None
+    # The nested column(s) contained within this column. (AI-inferred)
     subcolumns: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -351,9 +395,13 @@ class Entry_Schema:
 
 @dataclasses.dataclass
 class Entry_ServiceSpec_CloudBigtableInstanceSpec_CloudBigtableClusterSpecs:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the resource this entry represents. (AI-inferred)
     linked_resource: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     location: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -368,13 +416,18 @@ class Entry_ServiceSpec:
 
 @dataclasses.dataclass
 class Entry_SpannerTableSpec_ForeignKeys_ColumnMappings:
+    # A reference to a specific column. (AI-inferred)
     column: Any = None
+    # The column this reference points to. (AI-inferred)
     reference_column: Any = None
 
 @dataclasses.dataclass
 class Entry_SpannerTableSpec_ForeignKeys:
+    # The mapping of source column(s) to this lineage process's own inputs and outputs. (AI-inferred)
     column_mappings: Any = None
+    # A reference to the Data Catalog entry this applies to. (AI-inferred)
     entry: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -400,13 +453,18 @@ class Entry_SqlDatabaseSystemSpec:
 
 @dataclasses.dataclass
 class Entry_UsageSignal_CommonUsageWithinTimeRange:
+    # The number of times this resource has been viewed. (AI-inferred)
     view_count: Any = None
 
 @dataclasses.dataclass
 class Entry_UsageSignal_UsageWithinTimeRange:
+    # The total number of times this task was cancelled. (AI-inferred)
     total_cancellations: Any = None
+    # The total number of times this task completed successfully. (AI-inferred)
     total_completions: Any = None
+    # The cumulative execution time, in milliseconds, across all successful completions of this task. (AI-inferred)
     total_execution_time_for_completions_millis: Any = None
+    # The total number of times this task failed. (AI-inferred)
     total_failures: Any = None
 
 @dataclasses.dataclass

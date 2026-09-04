@@ -13,17 +13,26 @@ class OnlineEvaluator_CloudObservability_OpenTelemetry:
 
 @dataclasses.dataclass
 class OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration:
+    # How the observed value is compared against this filter's own threshold, e.g. `GREATER_OR_EQUAL`. (AI-inferred)
     comparison_operator: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_CloudObservability_SessionScope_Filter:
+    # How long this clip, window, or operation lasts. (AI-inferred)
     duration: Any = None
+    # Restricts this online evaluator's own observability scope to failed model calls. (AI-inferred)
     model_call_errors: Any = None
+    # Restricts this online evaluator's own observability scope to model calls. (AI-inferred)
     model_calls: Any = None
+    # Restricts this online evaluator's own observability scope to failed tool calls. (AI-inferred)
     tool_call_errors: Any = None
+    # Restricts this online evaluator's own observability scope to tool calls. (AI-inferred)
     tool_calls: Any = None
+    # The total token count (input plus output) this filter compares against its own threshold. (AI-inferred)
     total_token_usage: Any = None
+    # Restricts this online evaluator's own observability scope to user conversation turns. (AI-inferred)
     user_turns: Any = None
 
 @dataclasses.dataclass
@@ -40,7 +49,9 @@ class OnlineEvaluator_CloudObservability_SessionScope:
 
 @dataclasses.dataclass
 class OnlineEvaluator_CloudObservability_TraceScope_Filter:
+    # How long this clip, window, or operation lasts. (AI-inferred)
     duration: Any = None
+    # The total token count (input plus output) this filter compares against its own threshold. (AI-inferred)
     total_token_usage: Any = None
 
 @dataclasses.dataclass
@@ -75,278 +86,437 @@ class OnlineEvaluator_Config:
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_BleuSpec:
+    # Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred)
     use_effective_order: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_ComputationBasedMetricSpec:
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_CustomCodeExecutionSpec:
+    # The function within the supplied custom code that computes this metric. (AI-inferred)
     evaluation_function: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints:
+    # BCP-47 language codes (e.g. `en-US`) this configuration applies to. (AI-inferred)
     language_codes: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig:
+    # Domain-specific words or phrases to bias transcription toward recognizing correctly. (AI-inferred)
     adaptation_phrases: Any = None
+    # A caller-supplied vocabulary of domain-specific terms to improve transcription accuracy for. (AI-inferred)
     custom_vocabulary: Any = None
+    # Whether transcription identifies and labels individual speakers. (AI-inferred)
     diarization: Any = None
+    # Whether the spoken language is auto-detected, rather than specified explicitly. (AI-inferred)
     language_auto: Any = None
+    # BCP-47 language codes (e.g. `en-US`) this configuration applies to. (AI-inferred)
     language_codes: Any = None
+    # Candidate language(s) to bias transcription or generation toward, when the language isn't specified explicitly. (AI-inferred)
     language_hints: Any = None
+    # Which operating mode this configuration uses. (AI-inferred)
     mode: Any = None
+    # Whether individual words in a transcript include their own timestamps. (AI-inferred)
     word_timestamp: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptions:
+    # The compression level applied to generated image output -- higher values mean better quality at a larger file size. (AI-inferred)
     compression_quality: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # Format and compression settings for generated image output. (AI-inferred)
     image_output_options: Any = None
+    # The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
     image_size: Any = None
+    # Whether generated images may depict people, and if so, which categories are allowed. (AI-inferred)
     person_generation: Any = None
+    # Real, identifiable people generated image output is allowed to depict, when person generation is otherwise restricted. (AI-inferred)
     prominent_people: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio:
+    # The audio or video bit rate, in bits per second. (AI-inferred)
     bit_rate: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The audio sample rate, in Hz. (AI-inferred)
     sample_rate: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
     image_size: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # A schema describing this value's own expected structure. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # How long this clip, window, or operation lasts. (AI-inferred)
     duration: Any = None
+    # A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
     gcs_uri: Any = None
+    # The pixel dimensions of this image or video. (AI-inferred)
     resolution: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat:
+    # Audio content or configuration. (AI-inferred)
     audio: Any = None
+    # Image content or configuration. (AI-inferred)
     image: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # Video content or configuration. (AI-inferred)
     video: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchema:
+    # Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
     additional_properties: Any = None
+    # A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
     any_of: Any = None
+    # The value used when this field is left unset. (AI-inferred)
     default: Any = None
+    # Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
     defs: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
     enum: Any = None
+    # A sample value illustrating this schema, for documentation purposes only -- not enforced as a constraint. (AI-inferred)
     example: Any = None
+    # A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
     format: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The most elements an `array`-typed value may have. (AI-inferred)
     max_items: Any = None
+    # The most characters a `string`-typed value may have. (AI-inferred)
     max_length: Any = None
+    # The most properties an `object`-typed value may have. (AI-inferred)
     max_properties: Any = None
+    # The largest value a `number`/`integer`-typed value may take. (AI-inferred)
     maximum: Any = None
+    # The fewest elements an `array`-typed value may have. (AI-inferred)
     min_items: Any = None
+    # The fewest characters a `string`-typed value may have. (AI-inferred)
     min_length: Any = None
+    # The fewest properties an `object`-typed value may have. (AI-inferred)
     min_properties: Any = None
+    # The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
     minimum: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # A regular expression a `string`-typed value must match. (AI-inferred)
     pattern: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # The order this schema's own `properties` should appear in when Gemini generates a structured response -- Gemini otherwise has no guaranteed field order for JSON output. (AI-inferred)
     property_ordering: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoMode:
+    # Which factor (e.g. quality, cost, or latency) automatic model routing should prioritize. (AI-inferred)
     model_routing_preference: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualMode:
+    # The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred)
     model_name: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig:
+    # Lets Vertex AI automatically choose which underlying model handles this request, e.g. by cost/latency/quality tradeoff. (AI-inferred)
     auto_mode: Any = None
+    # Pins this request to a specific, caller-chosen model rather than letting Vertex AI route it automatically. (AI-inferred)
     manual_mode: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig:
+    # The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
     voice_name: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
     voice_sample_audio: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig:
+    # Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
     prebuilt_voice_config: Any = None
+    # Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
     replicated_voice_config: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs:
+    # Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
     speaker: Any = None
+    # The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
     voice_config: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig:
+    # The per-speaker voice assignments making up a `multi_speaker_voice_config`. (AI-inferred)
     speaker_voice_configs: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig:
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # Assigns distinct synthesized voices to different speakers in a multi-speaker audio response. (AI-inferred)
     multi_speaker_voice_config: Any = None
+    # The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
     voice_config: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfig:
+    # Whether the model's own intermediate reasoning steps are included in the response, not just the final answer. (AI-inferred)
     include_thoughts: Any = None
+    # The maximum number of tokens the model may spend on internal reasoning before responding. (AI-inferred)
     thinking_budget: Any = None
+    # How much internal reasoning effort the model applies before responding, e.g. `minimal` through `high` -- a coarser control than `thinking_budget`. (AI-inferred)
     thinking_level: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig:
+    # Whether transcribed segments include their own timestamps. (AI-inferred)
     audio_timestamp: Any = None
+    # Configuration for how audio is transcribed, e.g. custom vocabulary and diarization settings. (AI-inferred)
     audio_transcription_config: Any = None
+    # How many independent response candidates to generate for this request. (AI-inferred)
     candidate_count: Any = None
+    # Whether Gemini adapts its tone to the emotional content of the conversation, and may decline to respond when a reply isn't warranted. (AI-inferred)
     enable_affective_dialog: Any = None
+    # Penalizes tokens proportionally to how often they've already appeared in the response so far, reducing repetition. (AI-inferred)
     frequency_penalty: Any = None
+    # Configuration for image generation, when the model produces image output. (AI-inferred)
     image_config: Any = None
+    # How many of the most likely tokens, and their log-probabilities, to return alongside each generated token. (AI-inferred)
     logprobs: Any = None
+    # The maximum number of tokens the response may contain. (AI-inferred)
     max_output_tokens: Any = None
+    # The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred)
     media_resolution: Any = None
+    # Penalizes tokens that have already appeared at all in the response so far, encouraging the model to introduce new topics. (AI-inferred)
     presence_penalty: Any = None
+    # The structural format the response should be returned in. (AI-inferred)
     response_format: Any = None
+    # The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred)
     response_json_schema: Any = None
+    # Whether the response includes per-token log-probabilities. (AI-inferred)
     response_logprobs: Any = None
+    # The MIME type the response should be formatted as, e.g. `application/json` for structured output. (AI-inferred)
     response_mime_type: Any = None
+    # Which output modalities (e.g. text, image, audio) the model may use in its response. (AI-inferred)
     response_modalities: Any = None
+    # The JSON Schema the response's own structured output must conform to. (AI-inferred)
     response_schema: Any = None
+    # Controls whether the model to use is chosen automatically or fixed manually. (AI-inferred)
     routing_config: Any = None
+    # A fixed random seed for sampling, making otherwise-random generation more reproducible across calls. (AI-inferred)
     seed: Any = None
+    # Configuration controlling how Gemini synthesizes spoken audio in its response. (AI-inferred)
     speech_config: Any = None
+    # Text sequence(s) that, if generated, cause the model to stop producing further output. (AI-inferred)
     stop_sequences: Any = None
+    # Controls the randomness of token sampling -- higher values produce more varied, less predictable output. (AI-inferred)
     temperature: Any = None
+    # Configuration for the model's own extended, internal reasoning ('thinking') before producing a final response. (AI-inferred)
     thinking_config: Any = None
+    # Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
     top_k: Any = None
+    # Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred)
     top_p: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig:
+    # The judge model used to automatically score outputs against this metric, when the metric is model-based rather than computed directly. (AI-inferred)
     autorater_model: Any = None
+    # Whether this rubric's own pass/fail evaluation is inverted. (AI-inferred)
     flip_enabled: Any = None
+    # The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred)
     generation_config: Any = None
+    # How many samples are drawn when computing this metric. (AI-inferred)
     sampling_count: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpec:
+    # The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
     metric_spec_name: Any = None
+    # Configuration parameters specific to this metric's own computation. (AI-inferred)
     metric_spec_parameters: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig:
+    # The function within the supplied custom code that parses the judge model's own response. (AI-inferred)
     parsing_function: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig:
+    # Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred)
     custom_code_parser_config: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_RubricGenerationSpec:
+    # Configuration for the model used by this job. (AI-inferred)
     model_config: Any = None
+    # The template used to construct the prompt sent to the model. (AI-inferred)
     prompt_template: Any = None
+    # The kind of content generated rubrics should assess. (AI-inferred)
     rubric_content_type: Any = None
+    # A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
     rubric_type_ontology: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec:
+    # Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
     additional_config: Any = None
+    # Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
     judge_autorater_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
     predefined_rubric_generation_spec: Any = None
+    # How the judge model's own raw response text is parsed into a final score. (AI-inferred)
     result_parser_config: Any = None
+    # Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
     rubric_generation_spec: Any = None
+    # A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
     rubric_group_key: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_Metadata_ScoreRange:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The upper bound. (AI-inferred)
     max: Any = None
+    # The lower bound. (AI-inferred)
     min: Any = None
+    # A single step within this run or sequence. (AI-inferred)
     step: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_Metadata:
+    # Additional, metric-specific metadata beyond the standard fields. (AI-inferred)
     other_metadata: Any = None
+    # The minimum and maximum values this metric's own score can take. (AI-inferred)
     score_range: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec_CustomOutputFormatConfig:
+    # Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred)
     return_raw_output: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec:
+    # The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred)
     baseline_response_field_name: Any = None
+    # The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred)
     candidate_response_field_name: Any = None
+    # Configuration for the shape of a custom-formatted metric output. (AI-inferred)
     custom_output_format_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_PointwiseMetricSpec:
+    # Configuration for the shape of a custom-formatted metric output. (AI-inferred)
     custom_output_format_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_RougeSpec:
+    # Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred)
     rouge_type: Any = None
+    # Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred)
     split_summaries: Any = None
+    # Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred)
     use_stemmer: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric:
+    # Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred)
     aggregation_metrics: Any = None
+    # Configuration for computing the BLEU text-similarity metric. (AI-inferred)
     bleu_spec: Any = None
+    # Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
     computation_based_metric_spec: Any = None
+    # Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred)
     custom_code_execution_spec: Any = None
+    # Configuration for computing an exact-string-match metric. (AI-inferred)
     exact_match_spec: Any = None
+    # Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
     llm_based_metric_spec: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred)
     pairwise_metric_spec: Any = None
+    # Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred)
     pointwise_metric_spec: Any = None
+    # Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
     predefined_metric_spec: Any = None
+    # Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred)
     rouge_spec: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources:
+    # The metric this result was computed for. (AI-inferred)
     metric: Any = None
+    # The full resource name of the metric this applies to. (AI-inferred)
     metric_resource_name: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_StateDetails:
+    # The message content. (AI-inferred)
     message: Any = None
 
 _OnlineEvaluator_CloudObservability_OpenTelemetryFields = {

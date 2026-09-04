@@ -254,6 +254,7 @@ const BetaResourcePolicy_WorkloadPolicyFields: FieldMap = {
 };
 
 export interface BetaResourcePolicyConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
   /** Resource policy for disk consistency groups. */
   diskConsistencyGroupPolicy?: unknown | Computed<unknown>;
@@ -274,6 +275,7 @@ export interface BetaResourcePolicyConfig {
 export interface BetaResourcePolicyAttrs {
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
   /** Resource policy for disk consistency groups. */
   diskConsistencyGroupPolicy: unknown;
@@ -287,6 +289,7 @@ export interface BetaResourcePolicyAttrs {
   kind: string;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
+  /** The Google Cloud region this resource policy applies to. (AI-inferred) */
   region: string;
   /** Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification. */
   resourceStatus: BetaResourcePolicy_ResourceStatus;

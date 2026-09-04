@@ -4,21 +4,30 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rateplan_ConsumptionPricingRates_Fee struct {
+	// The ISO 4217 currency code monetary values are expressed in. (AI-inferred)
 	CurrencyCode any
-	Nanos        any
-	Units        any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The unit this measurement is expressed in. (AI-inferred)
+	Units any
 }
 
 type Rateplan_ConsumptionPricingRates struct {
-	End   any
-	Fee   any
+	// Where this range ends. (AI-inferred)
+	End any
+	// A monetary charge applied. (AI-inferred)
+	Fee any
+	// Where this range starts. (AI-inferred)
 	Start any
 }
 
 type Rateplan_RevenueShareRates struct {
-	End             any
+	// Where this range ends. (AI-inferred)
+	End any
+	// The percentage of a resource shared with another entity. (AI-inferred)
 	SharePercentage any
-	Start           any
+	// Where this range starts. (AI-inferred)
+	Start any
 }
 
 var Rateplan_ConsumptionPricingRates_FeeFields = ubx.FieldMap{

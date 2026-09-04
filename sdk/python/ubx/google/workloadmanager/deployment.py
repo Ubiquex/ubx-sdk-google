@@ -74,6 +74,7 @@ class Deployment_SapSystemS4Config_Location:
     dns_zone: Any = None
     # Optional. DNS zone name suffix.
     dns_zone_name_suffix: Any = None
+    # How the deployed S/4HANA VMs reach the internet: `ALLOW_EXTERNAL_IP` (assign each VM a public IP) or `CONFIGURE_NAT` (route outbound traffic through Cloud NAT instead). (AI-inferred)
     internet_access: Any = None
     # Optional. Network project.
     network_project: Any = None
@@ -90,6 +91,7 @@ class Deployment_SapSystemS4Config_Location:
 
 @dataclasses.dataclass
 class Deployment_SapSystemS4Config:
+    # If `true`, Workload Manager is allowed to stop the SAP S/4HANA VM(s) to apply an update that requires a restart, rather than failing the update in place. (AI-inferred)
     allow_stopping_for_update: Any = None
     # Ansible runner service account. Let customers bring their own service account for the Ansible runner.
     ansible_runner_service_account: Any = None
@@ -229,6 +231,7 @@ class Deployment_SqlServerWorkload:
 
 @dataclasses.dataclass
 class Deployment_TerraformVariables:
+    # The value passed for this Terraform input variable when Workload Manager runs the generated deployment configuration. (AI-inferred)
     input_value: Any = None
 
 _Deployment_SapSystemS4Config_AppFields = {

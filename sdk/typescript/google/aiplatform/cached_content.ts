@@ -2,98 +2,152 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CachedContent_Contents_Parts_AudioTranscription_Words {
+  /** The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   endOffset?: string | Computed<string>;
+  /** The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   startOffset?: string | Computed<string>;
+  /** A single transcribed word. (AI-inferred) */
   word?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts_AudioTranscription {
+  /** Which speaker a transcribed segment is attributed to, when speaker diarization is enabled. (AI-inferred) */
   speakerLabel?: string | Computed<string>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: string | Computed<string>;
+  /** The individual word(s) making up this transcript segment. (AI-inferred) */
   words?: CachedContent_Contents_Parts_AudioTranscription_Words[] | Computed<CachedContent_Contents_Parts_AudioTranscription_Words[]>;
 }
 
 export interface CachedContent_Contents_Parts_CodeExecutionResult {
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The result of this operation, e.g. whether it succeeded. (AI-inferred) */
   outcome?: string | Computed<string>;
+  /** The output produced by this operation. (AI-inferred) */
   output?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts_ExecutableCode {
+  /** A machine-readable code identifying this outcome or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The language this content is in or should be processed as, typically a BCP-47 code. (AI-inferred) */
   language?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts_FileData {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The URI of a previously uploaded file this Part references. (AI-inferred) */
   fileUri?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts_FunctionCall_PartialArgs {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** A JSONPath expression selecting a location within a JSON document. (AI-inferred) */
   jsonPath?: string | Computed<string>;
+  /** Represents an explicit JSON `null`, populated when this field's own type is null. (AI-inferred) */
   nullValue?: string | Computed<string>;
+  /** A numeric value, populated when this field's own type is a number. (AI-inferred) */
   numberValue?: number | Computed<number>;
+  /** A text value, populated when this field's own type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred) */
   willContinue?: boolean | Computed<boolean>;
 }
 
 export interface CachedContent_Contents_Parts_FunctionCall {
+  /** The argument value(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The function-call arguments accumulated so far, while the model is still streaming them incrementally. (AI-inferred) */
   partialArgs?: CachedContent_Contents_Parts_FunctionCall_PartialArgs[] | Computed<CachedContent_Contents_Parts_FunctionCall_PartialArgs[]>;
+  /** Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred) */
   willContinue?: boolean | Computed<boolean>;
 }
 
 export interface CachedContent_Contents_Parts_FunctionResponse_Parts_InlineData {
+  /** The raw, embedded bytes of this inline content. (AI-inferred) */
   data?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts_FunctionResponse_Parts {
+  /** A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred) */
   fileData?: CachedContent_Contents_Parts_FileData | Computed<CachedContent_Contents_Parts_FileData>;
+  /** Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred) */
   inlineData?: CachedContent_Contents_Parts_FunctionResponse_Parts_InlineData | Computed<CachedContent_Contents_Parts_FunctionResponse_Parts_InlineData>;
 }
 
 export interface CachedContent_Contents_Parts_FunctionResponse {
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred) */
   parts?: CachedContent_Contents_Parts_FunctionResponse_Parts[] | Computed<CachedContent_Contents_Parts_FunctionResponse_Parts[]>;
+  /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Configuration for when and how this job is scheduled to run. (AI-inferred) */
   scheduling?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts_MediaResolution {
+  /** The severity or intensity level of this setting. (AI-inferred) */
   level?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts_VideoMetadata {
+  /** The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   endOffset?: string | Computed<string>;
+  /** The frame rate, in frames per second, video input is sampled at. (AI-inferred) */
   fps?: number | Computed<number>;
+  /** The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   startOffset?: string | Computed<string>;
 }
 
 export interface CachedContent_Contents_Parts {
+  /** Enables Gemini to transcribe spoken audio to text as part of its response. (AI-inferred) */
   audioTranscription?: CachedContent_Contents_Parts_AudioTranscription | Computed<CachedContent_Contents_Parts_AudioTranscription>;
+  /** The output of running a preceding `executable_code` block. (AI-inferred) */
   codeExecutionResult?: CachedContent_Contents_Parts_CodeExecutionResult | Computed<CachedContent_Contents_Parts_CodeExecutionResult>;
+  /** Code the model generated for the tool-hosted interpreter to run, when code execution is enabled. (AI-inferred) */
   executableCode?: CachedContent_Contents_Parts_ExecutableCode | Computed<CachedContent_Contents_Parts_ExecutableCode>;
+  /** A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred) */
   fileData?: CachedContent_Contents_Parts_FileData | Computed<CachedContent_Contents_Parts_FileData>;
+  /** A request from the model, inside its own response, to invoke a specific function the caller declared -- the caller executes it and returns the result via a matching `function_response`. (AI-inferred) */
   functionCall?: CachedContent_Contents_Parts_FunctionCall | Computed<CachedContent_Contents_Parts_FunctionCall>;
+  /** The caller-supplied result of a previously requested `function_call`, returned to the model in a following turn. (AI-inferred) */
   functionResponse?: CachedContent_Contents_Parts_FunctionResponse | Computed<CachedContent_Contents_Parts_FunctionResponse>;
+  /** Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred) */
   inlineData?: CachedContent_Contents_Parts_FunctionResponse_Parts_InlineData | Computed<CachedContent_Contents_Parts_FunctionResponse_Parts_InlineData>;
+  /** The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred) */
   mediaResolution?: CachedContent_Contents_Parts_MediaResolution | Computed<CachedContent_Contents_Parts_MediaResolution>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: string | Computed<string>;
+  /** A step of the model's own intermediate reasoning, surfaced when extended thinking is enabled. (AI-inferred) */
   thought?: boolean | Computed<boolean>;
+  /** An opaque signature validating a `thought` block as genuinely produced by the model, so it can be safely replayed in a later turn. (AI-inferred) */
   thoughtSignature?: string | Computed<string>;
+  /** Configuration controlling how video input is sampled, e.g. frame rate and clipping. (AI-inferred) */
   videoMetadata?: CachedContent_Contents_Parts_VideoMetadata | Computed<CachedContent_Contents_Parts_VideoMetadata>;
 }
 
 export interface CachedContent_Contents {
+  /** The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred) */
   parts?: CachedContent_Contents_Parts[] | Computed<CachedContent_Contents_Parts[]>;
+  /** Who this Content is attributed to in the conversation: `user` or `model`. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
@@ -133,218 +187,338 @@ export interface CachedContent_ToolConfig {
 }
 
 export interface CachedContent_Tools_ComputerUse {
+  /** If `true`, screens `computer_use` requests for prompt-injection attempts before acting on them. (AI-inferred) */
   enablePromptInjectionDetection?: boolean | Computed<boolean>;
+  /** Which surface the `computer_use` tool operates in -- e.g. `browser`, for a sandboxed web browser. (AI-inferred) */
   environment?: string | Computed<string>;
+  /** Built-in `computer_use` actions to disable, typically to hand those actions to a custom, caller-registered function instead. (AI-inferred) */
   excludedPredefinedFunctions?: string[] | Computed<string[]>;
 }
 
 export interface CachedContent_Tools_EnterpriseWebSearch {
+  /** The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred) */
   blockingConfidence?: string | Computed<string>;
+  /** Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred) */
   excludeDomains?: string[] | Computed<string[]>;
 }
 
 export interface CachedContent_Tools_ExaAiSearch {
+  /** The API key credential used to authenticate this tool's own external calls. (AI-inferred) */
   apiKey?: string | Computed<string>;
+  /** Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred) */
   customConfigs?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface CachedContent_Tools_FunctionDeclarations_Parameters {
+  /** Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred) */
   additionalProperties?: unknown | Computed<unknown>;
+  /** A list of schemas where a value must satisfy at least one to be valid. (AI-inferred) */
   anyOf?: unknown[] | Computed<unknown[]>;
+  /** The value used when this field is left unset. (AI-inferred) */
   default?: unknown | Computed<unknown>;
+  /** Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred) */
   defs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exact, closed set of values a `string`-typed schema allows. (AI-inferred) */
   enum?: string[] | Computed<string[]>;
+  /** A sample value illustrating this schema, for documentation purposes only -- not enforced as a constraint. (AI-inferred) */
   example?: unknown | Computed<unknown>;
+  /** A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred) */
   format?: string | Computed<string>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
+  /** The most elements an `array`-typed value may have. (AI-inferred) */
   maxItems?: string | Computed<string>;
+  /** The most characters a `string`-typed value may have. (AI-inferred) */
   maxLength?: string | Computed<string>;
+  /** The most properties an `object`-typed value may have. (AI-inferred) */
   maxProperties?: string | Computed<string>;
+  /** The largest value a `number`/`integer`-typed value may take. (AI-inferred) */
   maximum?: number | Computed<number>;
+  /** The fewest elements an `array`-typed value may have. (AI-inferred) */
   minItems?: string | Computed<string>;
+  /** The fewest characters a `string`-typed value may have. (AI-inferred) */
   minLength?: string | Computed<string>;
+  /** The fewest properties an `object`-typed value may have. (AI-inferred) */
   minProperties?: string | Computed<string>;
+  /** The smallest value a `number`/`integer`-typed value may take. (AI-inferred) */
   minimum?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** A regular expression a `string`-typed value must match. (AI-inferred) */
   pattern?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The order this schema's own `properties` should appear in when Gemini generates a structured response -- Gemini otherwise has no guaranteed field order for JSON output. (AI-inferred) */
   propertyOrdering?: string[] | Computed<string[]>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: string[] | Computed<string[]>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_FunctionDeclarations {
+  /** Controls how the model treats this function call -- e.g. whether it must wait for the result before continuing, or can proceed without blocking. (AI-inferred) */
   behavior?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: CachedContent_Tools_FunctionDeclarations_Parameters | Computed<CachedContent_Tools_FunctionDeclarations_Parameters>;
+  /** The function's own parameter schema expressed as a plain JSON Schema document, an alternative to the structured `parameters` field. (AI-inferred) */
   parametersJsonSchema?: unknown | Computed<unknown>;
+  /** The response produced for this request. (AI-inferred) */
   response?: CachedContent_Tools_FunctionDeclarations_Parameters | Computed<CachedContent_Tools_FunctionDeclarations_Parameters>;
+  /** The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred) */
   responseJsonSchema?: unknown | Computed<unknown>;
 }
 
 export interface CachedContent_Tools_GoogleMaps_GroundingTypes {
+  /** Configuration for grounding responses in Google Maps place data specifically. (AI-inferred) */
   places?: unknown | Computed<unknown>;
+  /** Configuration for how requests are routed, e.g. to a specific region or backend. (AI-inferred) */
   routing?: unknown | Computed<unknown>;
 }
 
 export interface CachedContent_Tools_GoogleMaps {
+  /** Whether an interactive map widget is included alongside a Google Maps-grounded response. (AI-inferred) */
   enableWidget?: boolean | Computed<boolean>;
+  /** Which real-world grounding source(s) (e.g. web search, Maps) this configuration draws on. (AI-inferred) */
   groundingTypes?: CachedContent_Tools_GoogleMaps_GroundingTypes | Computed<CachedContent_Tools_GoogleMaps_GroundingTypes>;
 }
 
 export interface CachedContent_Tools_GoogleSearch_SearchTypes {
+  /** Enables grounding via Google Image Search results. (AI-inferred) */
   imageSearch?: unknown | Computed<unknown>;
+  /** Enables grounding via Google Web Search results. (AI-inferred) */
   webSearch?: unknown | Computed<unknown>;
 }
 
 export interface CachedContent_Tools_GoogleSearch {
+  /** The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred) */
   blockingConfidence?: string | Computed<string>;
+  /** Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred) */
   excludeDomains?: string[] | Computed<string[]>;
+  /** Which kind(s) of web search results (image, web, or both) this grounding tool draws on. (AI-inferred) */
   searchTypes?: CachedContent_Tools_GoogleSearch_SearchTypes | Computed<CachedContent_Tools_GoogleSearch_SearchTypes>;
 }
 
 export interface CachedContent_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig {
+  /** The minimum predicted-usefulness score, from `dynamic_retrieval_config`, at which grounding is triggered -- a lower threshold grounds more often. (AI-inferred) */
   dynamicThreshold?: number | Computed<number>;
+  /** Which operating mode this configuration uses. (AI-inferred) */
   mode?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_GoogleSearchRetrieval {
+  /** Controls when Google Search grounding actually triggers, based on how likely the model judges grounding to help. (AI-inferred) */
   dynamicRetrievalConfig?: CachedContent_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig | Computed<CachedContent_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig>;
 }
 
 export interface CachedContent_Tools_ParallelAiSearch {
+  /** The API key credential used to authenticate this tool's own external calls. (AI-inferred) */
   apiKey?: string | Computed<string>;
+  /** Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred) */
   customConfigs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Whether Google retains this request's own data beyond the immediate response, per the caller's own data-retention agreement. (AI-inferred) */
   enableDataRetention?: boolean | Computed<boolean>;
+  /** If `true`, Google discards this request's own data immediately after responding rather than retaining it at all. (AI-inferred) */
   enableZeroDataRetention?: boolean | Computed<boolean>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig {
+  /** The Secret Manager secret version holding the API key used to authenticate this call. (AI-inferred) */
   apiKeySecretVersion?: string | Computed<string>;
+  /** The literal API key value used to authenticate this tool's own external call. (AI-inferred) */
   apiKeyString?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_ApiAuth {
+  /** How the API key for this tool's own external service call is supplied. (AI-inferred) */
   apiKeyConfig?: CachedContent_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig | Computed<CachedContent_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig {
+  /** The Secret Manager secret holding the API key used to authenticate this call. (AI-inferred) */
   apiKeySecret?: string | Computed<string>;
+  /** The literal API key value used to authenticate this tool's own external call. (AI-inferred) */
   apiKeyString?: string | Computed<string>;
+  /** Where in the HTTP request this credential is placed, e.g. a header or query parameter. (AI-inferred) */
   httpElementLocation?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig {
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig {
+  /** The Secret Manager secret holding this credential. (AI-inferred) */
   credentialSecret?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig {
+  /** An OAuth 2.0 access token used to authenticate this call. (AI-inferred) */
   accessToken?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig {
+  /** An OpenID Connect ID token used to authenticate this call. (AI-inferred) */
   idToken?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_AuthConfig {
+  /** How the API key for this tool's own external service call is supplied. (AI-inferred) */
   apiKeyConfig?: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig | Computed<CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig>;
+  /** Which authentication method this configuration uses, e.g. API key, OAuth, or OIDC. (AI-inferred) */
   authType?: string | Computed<string>;
+  /** Authenticates using a Google-managed service account, rather than a caller-supplied credential. (AI-inferred) */
   googleServiceAccountConfig?: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig | Computed<CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig>;
+  /** Authenticates using HTTP Basic authentication (username and password). (AI-inferred) */
   httpBasicAuthConfig?: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig | Computed<CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig>;
+  /** Authenticates using an OAuth 2.0 access token. (AI-inferred) */
   oauthConfig?: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig | Computed<CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig>;
+  /** Authenticates using an OpenID Connect ID token. (AI-inferred) */
   oidcConfig?: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig | Computed<CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi_ElasticSearchParams {
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: string | Computed<string>;
+  /** How many search results (hits) to request from the external search API. (AI-inferred) */
   numHits?: number | Computed<number>;
+  /** The Elasticsearch search template used to construct this query. (AI-inferred) */
   searchTemplate?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_ExternalApi {
+  /** Authentication credentials for calling this external API. (AI-inferred) */
   apiAuth?: CachedContent_Tools_Retrieval_ExternalApi_ApiAuth | Computed<CachedContent_Tools_Retrieval_ExternalApi_ApiAuth>;
+  /** Which external search API shape this configuration targets, e.g. `elastic_search_params` or `simple_search_params`. (AI-inferred) */
   apiSpec?: string | Computed<string>;
+  /** Authentication configuration for reaching this external resource. (AI-inferred) */
   authConfig?: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig | Computed<CachedContent_Tools_Retrieval_ExternalApi_AuthConfig>;
+  /** Parameters for querying an Elasticsearch-backed external search API. (AI-inferred) */
   elasticSearchParams?: CachedContent_Tools_Retrieval_ExternalApi_ElasticSearchParams | Computed<CachedContent_Tools_Retrieval_ExternalApi_ElasticSearchParams>;
+  /** The endpoint this call is directed to. (AI-inferred) */
   endpoint?: string | Computed<string>;
+  /** Parameters for querying a simple, generic external search API, as an alternative to `elastic_search_params`. (AI-inferred) */
   simpleSearchParams?: unknown | Computed<unknown>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexAiSearch_DataStoreSpecs {
+  /** The Vertex AI Search data store this grounding query reads from, in the form `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`. (AI-inferred) */
   dataStore?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexAiSearch {
+  /** Restricts a Vertex AI Search grounding query to specific data store(s) within the configured search app, rather than all of them. (AI-inferred) */
   dataStoreSpecs?: CachedContent_Tools_Retrieval_VertexAiSearch_DataStoreSpecs[] | Computed<CachedContent_Tools_Retrieval_VertexAiSearch_DataStoreSpecs[]>;
+  /** The Vertex AI Search data store this applies to. (AI-inferred) */
   datastore?: string | Computed<string>;
+  /** The Vertex AI Search app (engine) this grounding query reads from. (AI-inferred) */
   engine?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The maximum number of results this query returns. (AI-inferred) */
   maxResults?: number | Computed<number>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexRagStore_RagResources {
+  /** The RAG corpus this applies to, in the form `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`. (AI-inferred) */
   ragCorpus?: string | Computed<string>;
+  /** Specific file ID(s) within `rag_corpus` to restrict retrieval to, instead of the whole corpus. (AI-inferred) */
   ragFileIds?: string[] | Computed<string[]>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter {
+  /** A filter expression restricting retrieval to chunks whose own metadata matches. (AI-inferred) */
   metadataFilter?: string | Computed<string>;
+  /** The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred) */
   vectorDistanceThreshold?: number | Computed<number>;
+  /** The minimum vector similarity a retrieved chunk must have to be included -- a higher threshold returns fewer, more relevant chunks. (AI-inferred) */
   vectorSimilarityThreshold?: number | Computed<number>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker {
+  /** The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred) */
   modelName?: string | Computed<string>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking {
+  /** Reranks retrieved results using a language model, rather than the dedicated rank service. (AI-inferred) */
   llmRanker?: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker | Computed<CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker>;
+  /** Reranks retrieved results using Vertex AI's own dedicated semantic ranking model. (AI-inferred) */
   rankService?: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker | Computed<CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig {
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter | Computed<CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter>;
+  /** Configuration for reranking retrieved results before returning them. (AI-inferred) */
   ranking?: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking | Computed<CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking>;
+  /** Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred) */
   topK?: number | Computed<number>;
 }
 
 export interface CachedContent_Tools_Retrieval_VertexRagStore {
+  /** The RAG corpus/corpora (and optionally specific files within one corpus) this query retrieves from. (AI-inferred) */
   ragResources?: CachedContent_Tools_Retrieval_VertexRagStore_RagResources[] | Computed<CachedContent_Tools_Retrieval_VertexRagStore_RagResources[]>;
+  /** Controls how many chunks are retrieved and how they're filtered/ranked for a RAG query. (AI-inferred) */
   ragRetrievalConfig?: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig | Computed<CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig>;
+  /** The maximum number of top-ranked results to return from retrieval. (AI-inferred) */
   similarityTopK?: number | Computed<number>;
+  /** The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred) */
   vectorDistanceThreshold?: number | Computed<number>;
 }
 
 export interface CachedContent_Tools_Retrieval {
+  /** If `true`, suppresses source citations that would otherwise accompany a grounded response. (AI-inferred) */
   disableAttribution?: boolean | Computed<boolean>;
+  /** Configuration for grounding via a caller-specified external search API, rather than a Google-hosted one. (AI-inferred) */
   externalApi?: CachedContent_Tools_Retrieval_ExternalApi | Computed<CachedContent_Tools_Retrieval_ExternalApi>;
+  /** Enables the model to ground its response in a Vertex AI Search data store. (AI-inferred) */
   vertexAiSearch?: CachedContent_Tools_Retrieval_VertexAiSearch | Computed<CachedContent_Tools_Retrieval_VertexAiSearch>;
+  /** Enables the model to ground its response in one or more Vertex AI RAG Engine corpora. (AI-inferred) */
   vertexRagStore?: CachedContent_Tools_Retrieval_VertexRagStore | Computed<CachedContent_Tools_Retrieval_VertexRagStore>;
 }
 
 export interface CachedContent_Tools {
+  /** Enables the model to write and run code in a hosted interpreter as part of generating its response. (AI-inferred) */
   codeExecution?: unknown | Computed<unknown>;
+  /** Enables the model to control a browser, mobile, or desktop `environment` by issuing UI actions (click, type, scroll) as part of generating its response. (AI-inferred) */
   computerUse?: CachedContent_Tools_ComputerUse | Computed<CachedContent_Tools_ComputerUse>;
+  /** Enables grounding via an enterprise-scoped web search, as an alternative to open `google_search` grounding. (AI-inferred) */
   enterpriseWebSearch?: CachedContent_Tools_EnterpriseWebSearch | Computed<CachedContent_Tools_EnterpriseWebSearch>;
+  /** Enables grounding via the third-party Exa AI search tool, authenticated with `api_key`. (AI-inferred) */
   exaAiSearch?: CachedContent_Tools_ExaAiSearch | Computed<CachedContent_Tools_ExaAiSearch>;
+  /** The set of callable functions the model may invoke via `function_call`, each declared with a name, description, and parameter schema. (AI-inferred) */
   functionDeclarations?: CachedContent_Tools_FunctionDeclarations[] | Computed<CachedContent_Tools_FunctionDeclarations[]>;
+  /** Enables the model to ground its response in Google Maps place and location data. (AI-inferred) */
   googleMaps?: CachedContent_Tools_GoogleMaps | Computed<CachedContent_Tools_GoogleMaps>;
+  /** Enables the model to ground its response in live Google Search results. (AI-inferred) */
   googleSearch?: CachedContent_Tools_GoogleSearch | Computed<CachedContent_Tools_GoogleSearch>;
+  /** Enables the model to ground its response in live Google Search results, with configurable dynamic-retrieval behavior. (AI-inferred) */
   googleSearchRetrieval?: CachedContent_Tools_GoogleSearchRetrieval | Computed<CachedContent_Tools_GoogleSearchRetrieval>;
+  /** Enables grounding via the third-party Parallel AI search tool. (AI-inferred) */
   parallelAiSearch?: CachedContent_Tools_ParallelAiSearch | Computed<CachedContent_Tools_ParallelAiSearch>;
+  /** Enables the model to ground its response in a specified external or Vertex AI-hosted data source. (AI-inferred) */
   retrieval?: CachedContent_Tools_Retrieval | Computed<CachedContent_Tools_Retrieval>;
+  /** Enables the model to fetch and read the content of URLs it's given or discovers, to ground its response. (AI-inferred) */
   urlContext?: unknown | Computed<unknown>;
 }
 

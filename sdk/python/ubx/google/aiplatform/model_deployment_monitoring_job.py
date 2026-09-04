@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_BigqueryTables:
+    # The full path of the BigQuery table this applies to. (AI-inferred)
     bigquery_table_path: Any = None
+    # Whether this logged data comes from `TRAINING` or `SERVING`. (AI-inferred)
     log_source: Any = None
+    # Whether this logged data is a `PREDICT` or `EXPLAIN` request/response. (AI-inferred)
     log_type: Any = None
+    # The schema version request/response log rows in this BigQuery table are written in. (AI-inferred)
     request_response_logging_schema_version: Any = None
 
 @dataclasses.dataclass
@@ -46,66 +50,94 @@ class ModelDeploymentMonitoringJob_LoggingSamplingStrategy:
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Bigquery:
+    # The destination URI this data is written to. (AI-inferred)
     output_uri: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Gcs:
+    # The destination URI prefix output files are written under. (AI-inferred)
     output_uri_prefix: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline:
+    # Configuration for reading from or writing to BigQuery. (AI-inferred)
     bigquery: Any = None
+    # Configuration for reading from or writing to Cloud Storage. (AI-inferred)
     gcs: Any = None
+    # The file format predictions are stored in, e.g. `JSONL` or `BIGQUERY`. (AI-inferred)
     prediction_format: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig:
+    # Whether feature-attribution explanations are computed as part of this monitoring objective. (AI-inferred)
     enable_feature_attributes: Any = None
+    # The reference data feature-attribution drift is measured against. (AI-inferred)
     explanation_baseline: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds:
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig:
+    # Per-feature drift alert thresholds for feature-attribution scores, keyed by feature name. (AI-inferred)
     attribution_score_drift_thresholds: Any = None
+    # The drift alert threshold applied to any feature without its own entry in `drift_thresholds`. (AI-inferred)
     default_drift_threshold: Any = None
+    # Per-feature drift alert thresholds, keyed by feature name. (AI-inferred)
     drift_thresholds: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySource:
+    # The source URI this data is read from. (AI-inferred)
     input_uri: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSource:
+    # The Cloud Storage URI(s) this applies to. (AI-inferred)
     uris: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset:
+    # A BigQuery table or view this data is read from. (AI-inferred)
     bigquery_source: Any = None
+    # The file format the source data is stored in. (AI-inferred)
     data_format: Any = None
+    # A reference to the dataset this applies to. (AI-inferred)
     dataset: Any = None
+    # A Cloud Storage location this data is read from. (AI-inferred)
     gcs_source: Any = None
+    # How training data is sampled for request/response logging, e.g. a fixed random rate. (AI-inferred)
     logging_sampling_strategy: Any = None
+    # The name of the field in the training dataset holding the ground-truth label. (AI-inferred)
     target_field: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfig:
+    # Per-feature training-serving skew alert thresholds for feature-attribution scores, keyed by feature name. (AI-inferred)
     attribution_score_skew_thresholds: Any = None
+    # The training-serving skew alert threshold applied to any feature without its own entry in `skew_thresholds`. (AI-inferred)
     default_skew_threshold: Any = None
+    # Per-feature training-serving skew alert thresholds, keyed by feature name. (AI-inferred)
     skew_thresholds: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig:
+    # Configuration for computing feature-attribution explanations as part of this monitoring objective. (AI-inferred)
     explanation_config: Any = None
+    # Configuration for detecting drift between this model's own serving-time predictions and its training-time baseline. (AI-inferred)
     prediction_drift_detection_config: Any = None
+    # The dataset used as the training-time baseline this monitoring job compares serving traffic against. (AI-inferred)
     training_dataset: Any = None
+    # Configuration for detecting skew between this model's own training data and its serving-time predictions. (AI-inferred)
     training_prediction_skew_detection_config: Any = None
 
 @dataclasses.dataclass
 class ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs:
+    # The identifier this model was deployed under. (AI-inferred)
     deployed_model_id: Any = None
+    # Configuration for what this monitoring job actually checks -- drift, skew, and/or explanation attribution. (AI-inferred)
     objective_config: Any = None
 
 @dataclasses.dataclass

@@ -15,12 +15,16 @@ export interface WorkloadIdentityPool_InlineCertificateIssuanceConfig {
 }
 
 export interface WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCas {
+  /** The certificate, in PEM format. (AI-inferred) */
   pemCertificate?: string | Computed<string>;
 }
 
 export interface WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles {
+  /** The intermediate certificate authority certificate(s) in this trust bundle. (AI-inferred) */
   intermediateCas?: WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCas[] | Computed<WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCas[]>;
+  /** The root certificate authority certificate(s) this trust bundle is anchored to. (AI-inferred) */
   trustAnchors?: WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCas[] | Computed<WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCas[]>;
+  /** Whether this trust bundle also trusts Google's own default shared certificate authorities, in addition to the explicitly listed ones. (AI-inferred) */
   trustDefaultSharedCa?: boolean | Computed<boolean>;
 }
 

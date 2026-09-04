@@ -13,7 +13,9 @@ class Proposal_AddQuorumMember:
 
 @dataclasses.dataclass
 class Proposal_QuorumParameters_Challenges:
+    # The cryptographic challenge value a quorum participant must sign to approve this proposal. (AI-inferred)
     challenge: Any = None
+    # The PEM-encoded public key used to verify a quorum participant's own signed response to `challenge`. (AI-inferred)
     public_key_pem: Any = None
 
 @dataclasses.dataclass

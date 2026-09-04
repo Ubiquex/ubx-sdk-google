@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Key_Restrictions_AndroidKeyRestrictions_AllowedApplications:
+    # The Android application's package name (e.g. `com.example.app`) this key is restricted to. (AI-inferred)
     package_name: Any = None
+    # The SHA-1 fingerprint of the Android app's signing certificate, restricting this key to builds signed with that certificate. (AI-inferred)
     sha1_fingerprint: Any = None
 
 @dataclasses.dataclass
@@ -18,7 +20,9 @@ class Key_Restrictions_AndroidKeyRestrictions:
 
 @dataclasses.dataclass
 class Key_Restrictions_ApiTargets:
+    # The specific method(s) of `service` this key is allowed to call; leaving this empty allows every method of `service`. (AI-inferred)
     methods: Any = None
+    # The API service this key is restricted to, e.g. `translate.googleapis.com`. Required for an API target restriction to take effect. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass

@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Listing_BigqueryDataset_EffectiveReplicas {
+  /** The real Google Cloud region this listing's own dataset replica is hosted in. (AI-inferred) */
   location?: string | Computed<string>;
+  /** Whether this replica is real, the primary (source of truth) copy of the shared dataset. (AI-inferred) */
   primaryState?: string | Computed<string>;
+  /** The real, current availability (`READY_TO_USE` or `UNAVAILABLE`) of this dataset replica. (AI-inferred) */
   replicaState?: string | Computed<string>;
 }
 
@@ -17,7 +20,9 @@ export interface Listing_BigqueryDataset_RestrictedExportPolicy {
 }
 
 export interface Listing_BigqueryDataset_SelectedResources {
+  /** The real, fully-qualified BigQuery routine (a stored procedure or function) this listing selectively shares, instead of an entire dataset. (AI-inferred) */
   routine?: string | Computed<string>;
+  /** The real, fully-qualified BigQuery table this listing selectively shares, instead of an entire dataset. (AI-inferred) */
   table?: string | Computed<string>;
 }
 

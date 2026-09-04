@@ -8,13 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkstationConfig_AllowedPorts:
+    # The first value in this range. (AI-inferred)
     first: Any = None
+    # The last value in this range. (AI-inferred)
     last: Any = None
 
 @dataclasses.dataclass
 class WorkstationConfig_Conditions:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -41,28 +46,42 @@ class WorkstationConfig_EncryptionKey:
 
 @dataclasses.dataclass
 class WorkstationConfig_EphemeralDirectories_GcePd:
+    # The Persistent Disk type used, e.g. `pd-ssd` or `pd-balanced`. (AI-inferred)
     disk_type: Any = None
+    # Whether this volume is mounted read-only. (AI-inferred)
     read_only: Any = None
+    # The disk image this resource is created from. (AI-inferred)
     source_image: Any = None
+    # The disk snapshot this resource is created from. (AI-inferred)
     source_snapshot: Any = None
 
 @dataclasses.dataclass
 class WorkstationConfig_EphemeralDirectories:
+    # Configures this persistent disk using a standard Compute Engine persistent disk. (AI-inferred)
     gce_pd: Any = None
+    # The path this volume is mounted at inside the container. (AI-inferred)
     mount_path: Any = None
 
 @dataclasses.dataclass
 class WorkstationConfig_Host_GceInstance_Accelerators:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class WorkstationConfig_Host_GceInstance_BoostConfigs:
+    # The hardware accelerator(s) (e.g. GPUs) attached to this workstation. (AI-inferred)
     accelerators: Any = None
+    # The size of the boot disk, in gibibytes. (AI-inferred)
     boot_disk_size_gb: Any = None
+    # Whether nested virtualization is enabled inside this workstation. (AI-inferred)
     enable_nested_virtualization: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The machine type this workstation runs as. (AI-inferred)
     machine_type: Any = None
+    # The number of workstation(s) kept ready in this pool. (AI-inferred)
     pool_size: Any = None
 
 @dataclasses.dataclass
@@ -123,31 +142,48 @@ class WorkstationConfig_Host:
 
 @dataclasses.dataclass
 class WorkstationConfig_PersistentDirectories_GceHd:
+    # How long a workstation is kept in an archived state before it's deleted. (AI-inferred)
     archive_timeout: Any = None
+    # The maximum size, in gibibytes, this disk is allowed to grow to. (AI-inferred)
     max_size_gb: Any = None
+    # What happens to this persistent disk's own data after the workstation using it is deleted. (AI-inferred)
     reclaim_policy: Any = None
+    # The size of this resource, in gibibytes. (AI-inferred)
     size_gb: Any = None
+    # The disk snapshot this resource is created from. (AI-inferred)
     source_snapshot: Any = None
 
 @dataclasses.dataclass
 class WorkstationConfig_PersistentDirectories_GcePd:
+    # How long a workstation is kept in an archived state before it's deleted. (AI-inferred)
     archive_timeout: Any = None
+    # The Persistent Disk type used, e.g. `pd-ssd` or `pd-balanced`. (AI-inferred)
     disk_type: Any = None
+    # The file system type used to format this disk. (AI-inferred)
     fs_type: Any = None
+    # The maximum size, in gibibytes, this disk is allowed to grow to. (AI-inferred)
     max_size_gb: Any = None
+    # What happens to this persistent disk's own data after the workstation using it is deleted. (AI-inferred)
     reclaim_policy: Any = None
+    # The size of this resource, in gibibytes. (AI-inferred)
     size_gb: Any = None
+    # The disk snapshot this resource is created from. (AI-inferred)
     source_snapshot: Any = None
 
 @dataclasses.dataclass
 class WorkstationConfig_PersistentDirectories:
+    # Configures this persistent disk using a Compute Engine hyperdisk. (AI-inferred)
     gce_hd: Any = None
+    # Configures this persistent disk using a standard Compute Engine persistent disk. (AI-inferred)
     gce_pd: Any = None
+    # The path this volume is mounted at inside the container. (AI-inferred)
     mount_path: Any = None
 
 @dataclasses.dataclass
 class WorkstationConfig_ReadinessChecks:
+    # A file or resource path. (AI-inferred)
     path: Any = None
+    # The port number this applies to. (AI-inferred)
     port: Any = None
 
 _WorkstationConfig_AllowedPortsFields = {

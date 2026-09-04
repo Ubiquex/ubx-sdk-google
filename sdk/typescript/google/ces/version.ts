@@ -2,79 +2,126 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Version_Snapshot_Agents_AfterAgentCallbacks {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** Whether the agent may call this tool on its own initiative, rather than only in direct response to an explicit user request. (AI-inferred) */
   proactiveExecutionEnabled?: boolean | Computed<boolean>;
+  /** Custom Python logic run inline as part of this tool or condition. (AI-inferred) */
   pythonCode?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Agents_ModelSettings {
+  /** The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred) */
   model?: string | Computed<string>;
+  /** Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred) */
   temperature?: number | Computed<number>;
 }
 
 export interface Version_Snapshot_Agents_RemoteDialogflowAgent {
+  /** A reference to the agent this applies to. (AI-inferred) */
   agent?: string | Computed<string>;
+  /** The Dialogflow CX environment this remote agent runs in. (AI-inferred) */
   environmentId?: string | Computed<string>;
+  /** The Dialogflow CX flow this remote agent starts in. (AI-inferred) */
   flowId?: string | Computed<string>;
+  /** Maps this app's own variable(s) into the remote Dialogflow agent's own session parameters. (AI-inferred) */
   inputVariableMapping?: Record<string, string> | Computed<Record<string, string>>;
+  /** The app variable supplying the language code passed to the remote Dialogflow agent. (AI-inferred) */
   languageCodeVariable?: string | Computed<string>;
+  /** Maps the remote Dialogflow agent's own session parameters back into this app's own variable(s). (AI-inferred) */
   outputVariableMapping?: Record<string, string> | Computed<Record<string, string>>;
+  /** Whether the remote Dialogflow agent's own barge-in/interruption settings are honored, rather than this app's own defaults. (AI-inferred) */
   respectResponseInterruptionSettings?: boolean | Computed<boolean>;
 }
 
 export interface Version_Snapshot_Agents_Toolsets {
+  /** The identifier(s) of the tool(s) this applies to. (AI-inferred) */
   toolIds?: string[] | Computed<string[]>;
+  /** A reference to the toolset this belongs to. (AI-inferred) */
   toolset?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionCondition {
+  /** The expression text. (AI-inferred) */
   expression?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeCondition {
+  /** Custom Python logic run inline as part of this tool or condition. (AI-inferred) */
   pythonCode?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Agents_TransferRules_DeterministicTransfer {
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   expressionCondition?: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionCondition | Computed<Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionCondition>;
+  /** A Python expression that must evaluate truthy for this to apply. (AI-inferred) */
   pythonCodeCondition?: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeCondition | Computed<Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeCondition>;
 }
 
 export interface Version_Snapshot_Agents_TransferRules_DisablePlannerTransfer {
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   expressionCondition?: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionCondition | Computed<Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionCondition>;
 }
 
 export interface Version_Snapshot_Agents_TransferRules {
+  /** A reference to a sub-agent this agent may transfer the conversation to. (AI-inferred) */
   childAgent?: string | Computed<string>;
+  /** Whether this agent transfer happens automatically, without the model deciding whether to invoke it. (AI-inferred) */
   deterministicTransfer?: Version_Snapshot_Agents_TransferRules_DeterministicTransfer | Computed<Version_Snapshot_Agents_TransferRules_DeterministicTransfer>;
+  /** Which direction this applies in. (AI-inferred) */
   direction?: string | Computed<string>;
+  /** Whether the model is prevented from transferring the conversation to another agent on its own initiative. (AI-inferred) */
   disablePlannerTransfer?: Version_Snapshot_Agents_TransferRules_DisablePlannerTransfer | Computed<Version_Snapshot_Agents_TransferRules_DisablePlannerTransfer>;
 }
 
 export interface Version_Snapshot_Agents {
+  /** Custom code run after this agent finishes handling a turn. (AI-inferred) */
   afterAgentCallbacks?: Version_Snapshot_Agents_AfterAgentCallbacks[] | Computed<Version_Snapshot_Agents_AfterAgentCallbacks[]>;
+  /** Custom code run after the underlying model produces a response, before it's returned. (AI-inferred) */
   afterModelCallbacks?: Version_Snapshot_Agents_AfterAgentCallbacks[] | Computed<Version_Snapshot_Agents_AfterAgentCallbacks[]>;
+  /** Custom code run after a tool call completes, before its own result is used. (AI-inferred) */
   afterToolCallbacks?: Version_Snapshot_Agents_AfterAgentCallbacks[] | Computed<Version_Snapshot_Agents_AfterAgentCallbacks[]>;
+  /** Custom code run before this agent starts handling a turn. (AI-inferred) */
   beforeAgentCallbacks?: Version_Snapshot_Agents_AfterAgentCallbacks[] | Computed<Version_Snapshot_Agents_AfterAgentCallbacks[]>;
+  /** Custom code run before the underlying model is called, letting the request be inspected or modified. (AI-inferred) */
   beforeModelCallbacks?: Version_Snapshot_Agents_AfterAgentCallbacks[] | Computed<Version_Snapshot_Agents_AfterAgentCallbacks[]>;
+  /** Custom code run before a tool is called, letting the call be inspected, modified, or skipped. (AI-inferred) */
   beforeToolCallbacks?: Version_Snapshot_Agents_AfterAgentCallbacks[] | Computed<Version_Snapshot_Agents_AfterAgentCallbacks[]>;
+  /** The sub-agent(s) this agent may delegate parts of a conversation to. (AI-inferred) */
   childAgents?: string[] | Computed<string[]>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** The generated answer text, summarized from retrieved source content. (AI-inferred) */
   generatedSummary?: string | Computed<string>;
+  /** The guardrail(s) applied to this agent. (AI-inferred) */
   guardrails?: string[] | Computed<string[]>;
+  /** An instruction given to the model or agent. (AI-inferred) */
   instruction?: string | Computed<string>;
+  /** Configures this as an LLM-driven agent, with its own model, prompt, and tools. (AI-inferred) */
   llmAgent?: unknown | Computed<unknown>;
+  /** Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred) */
   modelSettings?: Version_Snapshot_Agents_ModelSettings | Computed<Version_Snapshot_Agents_ModelSettings>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configures this agent to delegate the conversation to a separate, existing Dialogflow CX agent. (AI-inferred) */
   remoteDialogflowAgent?: Version_Snapshot_Agents_RemoteDialogflowAgent | Computed<Version_Snapshot_Agents_RemoteDialogflowAgent>;
+  /** The tool(s) available to this agent. (AI-inferred) */
   tools?: string[] | Computed<string[]>;
+  /** The toolset(s) available to this agent. (AI-inferred) */
   toolsets?: Version_Snapshot_Agents_Toolsets[] | Computed<Version_Snapshot_Agents_Toolsets[]>;
+  /** The rule(s) governing when this agent transfers the conversation to another agent. (AI-inferred) */
   transferRules?: Version_Snapshot_Agents_TransferRules[] | Computed<Version_Snapshot_Agents_TransferRules[]>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
+  /** Output only. Configuration problem(s) found when this resource was last validated. (AI-inferred) */
   validationErrors?: string[] | Computed<string[]>;
 }
 
@@ -97,11 +144,17 @@ export interface Version_Snapshot_App_AudioProcessingConfig_BargeInConfig {
 }
 
 export interface Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigs {
+  /** The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred) */
   consentAudioGcsUri?: string | Computed<string>;
+  /** An instruction given to the model or agent. (AI-inferred) */
   instruction?: string | Computed<string>;
+  /** The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred) */
   model?: string | Computed<string>;
+  /** The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred) */
   speakingRate?: number | Computed<number>;
+  /** Configuration for which synthesized voice this agent uses. (AI-inferred) */
   voice?: string | Computed<string>;
+  /** The Cloud Storage URI of an audio sample used to clone a custom voice. (AI-inferred) */
   voiceSampleGcsUri?: string | Computed<string>;
 }
 
@@ -126,7 +179,9 @@ export interface Version_Snapshot_App_ClientCertificateSettings {
 }
 
 export interface Version_Snapshot_App_DataStoreSettings_Engines {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -344,30 +399,52 @@ export interface Version_Snapshot_App_LoggingSettings {
 }
 
 export interface Version_Snapshot_App_PredefinedVariableDeclarations_Schema {
+  /** Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred) */
   additionalProperties?: unknown | Computed<unknown>;
+  /** A list of schemas where a value must satisfy at least one to be valid. (AI-inferred) */
   anyOf?: unknown[] | Computed<unknown[]>;
+  /** The value used when this field is left unset. (AI-inferred) */
   default?: unknown | Computed<unknown>;
+  /** Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred) */
   defs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exact, closed set of values a `string`-typed schema allows. (AI-inferred) */
   enum?: string[] | Computed<string[]>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
+  /** The most elements an `array`-typed value may have. (AI-inferred) */
   maxItems?: string | Computed<string>;
+  /** The largest value a `number`/`integer`-typed value may take. (AI-inferred) */
   maximum?: number | Computed<number>;
+  /** The fewest elements an `array`-typed value may have. (AI-inferred) */
   minItems?: string | Computed<string>;
+  /** The smallest value a `number`/`integer`-typed value may take. (AI-inferred) */
   minimum?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred) */
   prefixItems?: unknown[] | Computed<unknown[]>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: string[] | Computed<string[]>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** Whether every element of an array-typed value must be distinct. (AI-inferred) */
   uniqueItems?: boolean | Computed<boolean>;
 }
 
 export interface Version_Snapshot_App_PredefinedVariableDeclarations {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A schema describing this value's own expected structure. (AI-inferred) */
   schema?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
 }
 
@@ -441,518 +518,815 @@ export interface Version_Snapshot_App {
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks_AgentTransfer {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The agent this transfer moves the conversation to. (AI-inferred) */
   targetAgent?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks_Blob {
+  /** The literal data payload. (AI-inferred) */
   data?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool {
+  /** An identifier for this tool, unique within its own containing toolset. (AI-inferred) */
   toolId?: string | Computed<string>;
+  /** A reference to the toolset this belongs to. (AI-inferred) */
   toolset?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks_ToolCall {
+  /** The argument(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
+  /** A reference to a specific tool within a toolset. (AI-inferred) */
   toolsetTool?: Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool | Computed<Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks_ToolResponse {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
+  /** A reference to a specific tool within a toolset. (AI-inferred) */
   toolsetTool?: Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool | Computed<Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks {
+  /** Transfers the conversation to another agent. (AI-inferred) */
   agentTransfer?: Version_Snapshot_Examples_Messages_Chunks_AgentTransfer | Computed<Version_Snapshot_Examples_Messages_Chunks_AgentTransfer>;
+  /** Raw binary content. (AI-inferred) */
   blob?: Version_Snapshot_Examples_Messages_Chunks_Blob | Computed<Version_Snapshot_Examples_Messages_Chunks_Blob>;
+  /** The default value(s) for this app's own declared variables. (AI-inferred) */
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Image content. (AI-inferred) */
   image?: Version_Snapshot_Examples_Messages_Chunks_Blob | Computed<Version_Snapshot_Examples_Messages_Chunks_Blob>;
+  /** A custom, integration-specific payload. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
+  /** A request from the model to invoke a specific tool. (AI-inferred) */
   toolCall?: Version_Snapshot_Examples_Messages_Chunks_ToolCall | Computed<Version_Snapshot_Examples_Messages_Chunks_ToolCall>;
+  /** The result returned from invoking a tool. (AI-inferred) */
   toolResponse?: Version_Snapshot_Examples_Messages_Chunks_ToolResponse | Computed<Version_Snapshot_Examples_Messages_Chunks_ToolResponse>;
+  /** The transcribed text of spoken audio. (AI-inferred) */
   transcript?: string | Computed<string>;
+  /** The variable(s) whose own value changed as a result of this event. (AI-inferred) */
   updatedVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Version_Snapshot_Examples_Messages {
+  /** The retrieved content chunk(s) making up this result. (AI-inferred) */
   chunks?: Version_Snapshot_Examples_Messages_Chunks[] | Computed<Version_Snapshot_Examples_Messages_Chunks[]>;
+  /** When this event occurred. (AI-inferred) */
   eventTime?: string | Computed<string>;
+  /** Who this content is attributed to, e.g. `user` or `model`. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Examples {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The agent this example conversation begins with. (AI-inferred) */
   entryAgent?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Whether this example is currently flagged as invalid, e.g. after a referenced resource was removed. (AI-inferred) */
   invalid?: boolean | Computed<boolean>;
+  /** The message(s) making up this conversation or example. (AI-inferred) */
   messages?: Version_Snapshot_Examples_Messages[] | Computed<Version_Snapshot_Examples_Messages[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_Action_GenerativeAnswer {
+  /** The prompt text sent to the model. (AI-inferred) */
   prompt?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_Action_RespondImmediately_Responses {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_Action_RespondImmediately {
+  /** The response message(s) to choose from. (AI-inferred) */
   responses?: Version_Snapshot_Guardrails_Action_RespondImmediately_Responses[] | Computed<Version_Snapshot_Guardrails_Action_RespondImmediately_Responses[]>;
 }
 
 export interface Version_Snapshot_Guardrails_Action_TransferAgent {
+  /** A reference to the agent this applies to. (AI-inferred) */
   agent?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_Action {
+  /** Responds by generating an answer with the model, rather than a fixed response. (AI-inferred) */
   generativeAnswer?: Version_Snapshot_Guardrails_Action_GenerativeAnswer | Computed<Version_Snapshot_Guardrails_Action_GenerativeAnswer>;
+  /** Responds directly with a fixed message, bypassing the model. (AI-inferred) */
   respondImmediately?: Version_Snapshot_Guardrails_Action_RespondImmediately | Computed<Version_Snapshot_Guardrails_Action_RespondImmediately>;
+  /** Responds by transferring the conversation to another agent. (AI-inferred) */
   transferAgent?: Version_Snapshot_Guardrails_Action_TransferAgent | Computed<Version_Snapshot_Guardrails_Action_TransferAgent>;
 }
 
 export interface Version_Snapshot_Guardrails_CodeCallback {
+  /** Custom code run after the agent finishes handling a turn. (AI-inferred) */
   afterAgentCallback?: Version_Snapshot_Agents_AfterAgentCallbacks | Computed<Version_Snapshot_Agents_AfterAgentCallbacks>;
+  /** Custom code run after the underlying model produces a response. (AI-inferred) */
   afterModelCallback?: Version_Snapshot_Agents_AfterAgentCallbacks | Computed<Version_Snapshot_Agents_AfterAgentCallbacks>;
+  /** Custom code run before the agent starts handling a turn. (AI-inferred) */
   beforeAgentCallback?: Version_Snapshot_Agents_AfterAgentCallbacks | Computed<Version_Snapshot_Agents_AfterAgentCallbacks>;
+  /** Custom code run before the underlying model is called. (AI-inferred) */
   beforeModelCallback?: Version_Snapshot_Agents_AfterAgentCallbacks | Computed<Version_Snapshot_Agents_AfterAgentCallbacks>;
 }
 
 export interface Version_Snapshot_Guardrails_ContentFilter {
+  /** The word/phrase(s) this filter blocks. (AI-inferred) */
   bannedContents?: string[] | Computed<string[]>;
+  /** The word/phrase(s) this filter blocks from the agent's own responses. (AI-inferred) */
   bannedContentsInAgentResponse?: string[] | Computed<string[]>;
+  /** The word/phrase(s) this filter blocks from user input. (AI-inferred) */
   bannedContentsInUserInput?: string[] | Computed<string[]>;
+  /** Whether accented characters are treated as equivalent to their unaccented form when matching. (AI-inferred) */
   disregardDiacritics?: boolean | Computed<boolean>;
+  /** How banned content is matched: `SIMPLE_STRING_MATCH`, `WORD_BOUNDARY_STRING_MATCH`, or `REGEXP_MATCH`. (AI-inferred) */
   matchType?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_LlmPolicy {
+  /** Whether very short spoken input is accepted, rather than treated as noise. (AI-inferred) */
   allowShortUtterance?: boolean | Computed<boolean>;
+  /** Whether this check allows the request through when the check itself fails to run, rather than blocking it. (AI-inferred) */
   failOpen?: boolean | Computed<boolean>;
+  /** The maximum number of prior messages kept as context for the conversation. (AI-inferred) */
   maxConversationMessages?: number | Computed<number>;
+  /** Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred) */
   modelSettings?: Version_Snapshot_Agents_ModelSettings | Computed<Version_Snapshot_Agents_ModelSettings>;
+  /** What this policy applies to. (AI-inferred) */
   policyScope?: string | Computed<string>;
+  /** The prompt text sent to the model. (AI-inferred) */
   prompt?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettings {
+  /** The default prompt template used to instruct the security check. (AI-inferred) */
   defaultPromptTemplate?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_LlmPromptSecurity {
+  /** A caller-defined policy overriding the guardrail's own default behavior. (AI-inferred) */
   customPolicy?: Version_Snapshot_Guardrails_LlmPolicy | Computed<Version_Snapshot_Guardrails_LlmPolicy>;
+  /** The guardrail's own default configuration, used when no custom policy is set. (AI-inferred) */
   defaultSettings?: Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettings | Computed<Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettings>;
+  /** Whether this check allows the request through when the check itself fails to run, rather than blocking it. (AI-inferred) */
   failOpen?: boolean | Computed<boolean>;
 }
 
 export interface Version_Snapshot_Guardrails_ModelSafety_SafetySettings {
+  /** The category this classification or setting applies to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** The value that must be met or crossed for this to apply. (AI-inferred) */
   threshold?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Guardrails_ModelSafety {
+  /** Per-category safety threshold(s) applied to model output. (AI-inferred) */
   safetySettings?: Version_Snapshot_Guardrails_ModelSafety_SafetySettings[] | Computed<Version_Snapshot_Guardrails_ModelSafety_SafetySettings[]>;
 }
 
 export interface Version_Snapshot_Guardrails {
+  /** The action to perform. (AI-inferred) */
   action?: Version_Snapshot_Guardrails_Action | Computed<Version_Snapshot_Guardrails_Action>;
+  /** Runs custom code at a specific point in the agent's own lifecycle, as this guardrail's own action. (AI-inferred) */
   codeCallback?: Version_Snapshot_Guardrails_CodeCallback | Computed<Version_Snapshot_Guardrails_CodeCallback>;
+  /** Blocks matching content from user input and/or agent responses. (AI-inferred) */
   contentFilter?: Version_Snapshot_Guardrails_ContentFilter | Computed<Version_Snapshot_Guardrails_ContentFilter>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether this guardrail is currently turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** A guardrail enforced by having a judge model evaluate whether content complies with a caller-defined policy. (AI-inferred) */
   llmPolicy?: Version_Snapshot_Guardrails_LlmPolicy | Computed<Version_Snapshot_Guardrails_LlmPolicy>;
+  /** Screens for prompt injection and jailbreak attempts using a security-focused model check. (AI-inferred) */
   llmPromptSecurity?: Version_Snapshot_Guardrails_LlmPromptSecurity | Computed<Version_Snapshot_Guardrails_LlmPromptSecurity>;
+  /** Applies the underlying model's own built-in content safety filters. (AI-inferred) */
   modelSafety?: Version_Snapshot_Guardrails_ModelSafety | Computed<Version_Snapshot_Guardrails_ModelSafety>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_AgentTool {
+  /** A reference to the agent this applies to. (AI-inferred) */
   agent?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_ClientFunction {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
+  /** The response produced for this request. (AI-inferred) */
   response?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
 }
 
 export interface Version_Snapshot_Tools_ConnectorTool_Action_EntityOperation {
+  /** The identifier of the entity this operation applies to. (AI-inferred) */
   entityId?: string | Computed<string>;
+  /** Which action this performs, e.g. create, update, or delete. (AI-inferred) */
   operation?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_ConnectorTool_Action {
+  /** The identifier of the connector action this tool invokes. (AI-inferred) */
   connectionActionId?: string | Computed<string>;
+  /** A structured create/update/delete action performed against an entity in the connected external system. (AI-inferred) */
   entityOperation?: Version_Snapshot_Tools_ConnectorTool_Action_EntityOperation | Computed<Version_Snapshot_Tools_ConnectorTool_Action_EntityOperation>;
+  /** The input field(s) this tool or operation accepts. (AI-inferred) */
   inputFields?: string[] | Computed<string[]>;
+  /** The output field(s) this tool or operation returns. (AI-inferred) */
   outputFields?: string[] | Computed<string[]>;
 }
 
 export interface Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfig {
+  /** An OAuth 2.0 access token used to authenticate this call. (AI-inferred) */
   oauthToken?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfig {
+  /** The private key used to sign the authentication JWT. (AI-inferred) */
   clientKey?: string | Computed<string>;
+  /** The JWT issuer identity presented when authenticating. (AI-inferred) */
   issuer?: string | Computed<string>;
+  /** The JWT subject identity presented when authenticating. (AI-inferred) */
   subject?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_ConnectorTool_AuthConfig {
+  /** Authenticates using the OAuth 2.0 authorization code grant. (AI-inferred) */
   oauth2AuthCodeConfig?: Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfig | Computed<Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfig>;
+  /** Authenticates using the OAuth 2.0 JWT bearer grant, signing a JWT with a private key rather than an interactive login. (AI-inferred) */
   oauth2JwtBearerConfig?: Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfig | Computed<Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfig>;
 }
 
 export interface Version_Snapshot_Tools_ConnectorTool {
+  /** The action to perform. (AI-inferred) */
   action?: Version_Snapshot_Tools_ConnectorTool_Action | Computed<Version_Snapshot_Tools_ConnectorTool_Action>;
+  /** Authentication configuration for reaching this external resource. (AI-inferred) */
   authConfig?: Version_Snapshot_Tools_ConnectorTool_AuthConfig | Computed<Version_Snapshot_Tools_ConnectorTool_AuthConfig>;
+  /** A reference to the connector connection this tool uses. (AI-inferred) */
   connection?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints {
+  /** The attribute value at this control point. (AI-inferred) */
   attributeValue?: string | Computed<string>;
+  /** The boost applied at this control point. (AI-inferred) */
   boostAmount?: number | Computed<number>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec {
+  /** The kind of attribute this boost rule keys on. (AI-inferred) */
   attributeType?: string | Computed<string>;
+  /** The mapping between an attribute's own value and its resulting boost amount, defining the boost curve. (AI-inferred) */
   controlPoints?: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints[] | Computed<Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints[]>;
+  /** The name of the field this applies to. (AI-inferred) */
   fieldName?: string | Computed<string>;
+  /** How boost values are interpolated between control points, e.g. linear. (AI-inferred) */
   interpolationType?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs {
+  /** How much to raise or lower a matching result's own ranking. (AI-inferred) */
   boost?: number | Computed<number>;
+  /** A boost rule computed from a continuous field value, rather than a fixed amount. (AI-inferred) */
   boostControlSpec?: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec | Computed<Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec>;
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   condition?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec {
+  /** Rule(s) boosting or burying specific search results when their own condition matches. (AI-inferred) */
   conditionBoostSpecs?: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs[] | Computed<Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs[]>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_BoostSpecs {
+  /** The data store(s) this tool queries. (AI-inferred) */
   dataStores?: string[] | Computed<string[]>;
+  /** The specification defining this resource's own behavior. (AI-inferred) */
   spec?: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec[] | Computed<Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec[]>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig {
+  /** The set of resources this configuration applies to. (AI-inferred) */
   collection?: string | Computed<string>;
+  /** A human-readable name for this collection, shown in the console. (AI-inferred) */
   collectionDisplayName?: string | Computed<string>;
+  /** Which external data source this applies to. (AI-inferred) */
   dataSource?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore {
+  /** Configuration for connecting this tool to an external enterprise system via a Google Cloud connector (e.g. Salesforce, ServiceNow). (AI-inferred) */
   connectorConfig?: Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig | Computed<Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** How documents in this data store are processed for grounding. (AI-inferred) */
   documentProcessingMode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_DataStoreSource {
+  /** A reference to the Vertex AI Search data store this tool queries. (AI-inferred) */
   dataStore?: Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore | Computed<Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_EngineSource {
+  /** The data store(s) included under this search app. (AI-inferred) */
   dataStoreSources?: Version_Snapshot_Tools_DataStoreTool_DataStoreSource[] | Computed<Version_Snapshot_Tools_DataStoreTool_DataStoreSource[]>;
+  /** A reference to the Vertex AI Search app (engine) this queries. (AI-inferred) */
   engine?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfig {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** How strictly generated answers must be grounded in retrieved source content. (AI-inferred) */
   groundingLevel?: number | Computed<number>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred) */
   modelSettings?: Version_Snapshot_Agents_ModelSettings | Computed<Version_Snapshot_Agents_ModelSettings>;
+  /** The prompt text sent to the model. (AI-inferred) */
   prompt?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig {
+  /** Whether source snippets are included alongside a generated answer. (AI-inferred) */
   enableSnippets?: boolean | Computed<boolean>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_ModalityConfigs {
+  /** Configuration for how strictly generated answers must be grounded in retrieved source content. (AI-inferred) */
   groundingConfig?: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfig | Computed<Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfig>;
+  /** Which modality (text, audio, etc.) this applies to. (AI-inferred) */
   modalityType?: string | Computed<string>;
+  /** Configuration for automatically rewriting the user's own query before retrieval, to improve search results. (AI-inferred) */
   rewriterConfig?: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig | Computed<Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig>;
+  /** Configuration for including source snippets alongside a generated answer. (AI-inferred) */
   snippetsConfig?: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig | Computed<Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig>;
+  /** Configuration for how retrieved search results are summarized into a generated answer. (AI-inferred) */
   summarizationConfig?: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig | Computed<Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool {
+  /** Rule(s) boosting or burying specific search results. (AI-inferred) */
   boostSpecs?: Version_Snapshot_Tools_DataStoreTool_BoostSpecs[] | Computed<Version_Snapshot_Tools_DataStoreTool_BoostSpecs[]>;
+  /** Configures this tool to query a specific data store directly. (AI-inferred) */
   dataStoreSource?: Version_Snapshot_Tools_DataStoreTool_DataStoreSource | Computed<Version_Snapshot_Tools_DataStoreTool_DataStoreSource>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Configures this tool to query through a Vertex AI Search app (engine), which may span multiple data stores. (AI-inferred) */
   engineSource?: Version_Snapshot_Tools_DataStoreTool_EngineSource | Computed<Version_Snapshot_Tools_DataStoreTool_EngineSource>;
+  /** Whether a caller-supplied search filter parameter is always included in queries, or never. (AI-inferred) */
   filterParameterBehavior?: string | Computed<string>;
+  /** Per-modality (text, voice) configuration for how this data store tool's own results are presented. (AI-inferred) */
   modalityConfigs?: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs[] | Computed<Version_Snapshot_Tools_DataStoreTool_ModalityConfigs[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_FileSearchTool {
+  /** Whether the file corpus this tool searches is `USER_OWNED` or `FULLY_MANAGED` by the platform. (AI-inferred) */
   corpusType?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A reference to the file corpus this tool searches. (AI-inferred) */
   fileCorpus?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_GoogleSearchTool_PromptConfig {
+  /** The prompt text used when responding in text. (AI-inferred) */
   textPrompt?: string | Computed<string>;
+  /** The prompt text used when responding by voice. (AI-inferred) */
   voicePrompt?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_GoogleSearchTool {
+  /** URL(s) whose own content is fetched and used as additional search context. (AI-inferred) */
   contextUrls?: string[] | Computed<string[]>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Domain(s) excluded from this tool's own search results. (AI-inferred) */
   excludeDomains?: string[] | Computed<string[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Domain(s) this tool's own search results are preferentially drawn from. (AI-inferred) */
   preferredDomains?: string[] | Computed<string[]>;
+  /** Per-modality prompt text guiding how this tool's own results are presented. (AI-inferred) */
   promptConfig?: Version_Snapshot_Tools_GoogleSearchTool_PromptConfig | Computed<Version_Snapshot_Tools_GoogleSearchTool_PromptConfig>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig {
+  /** The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred) */
   apiKeySecretVersion?: string | Computed<string>;
+  /** The name of the API key parameter. (AI-inferred) */
   keyName?: string | Computed<string>;
+  /** Where in the request the credential is placed, e.g. a header or query parameter. (AI-inferred) */
   requestLocation?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig {
+  /** A token used to authenticate this request. (AI-inferred) */
   token?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig {
+  /** The OAuth client ID used to authenticate. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** The Secret Manager secret version holding the OAuth client secret. (AI-inferred) */
   clientSecretVersion?: string | Computed<string>;
+  /** Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred) */
   oauthGrantType?: string | Computed<string>;
+  /** The OAuth scope(s) requested. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
+  /** The OAuth token endpoint URL used to obtain an access token. (AI-inferred) */
   tokenEndpoint?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig {
+  /** The OAuth scope(s) requested. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_ApiAuthentication {
+  /** Authenticates using a static API key. (AI-inferred) */
   apiKeyConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig>;
+  /** Authenticates using a static bearer token. (AI-inferred) */
   bearerTokenConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig>;
+  /** Authenticates using OAuth 2.0. (AI-inferred) */
   oauthConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig>;
+  /** Authenticates using a Google Cloud service account's own identity token. (AI-inferred) */
   serviceAccountAuthConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig>;
+  /** Authenticates using this service's own service agent identity token. (AI-inferred) */
   serviceAgentIdTokenAuthConfig?: unknown | Computed<unknown>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig {
+  /** A reference to the Service Directory service this is reached through. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_TlsConfig_CaCerts {
+  /** A TLS certificate. (AI-inferred) */
   cert?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_McpTool_TlsConfig {
+  /** The CA certificate(s) trusted for this TLS connection. (AI-inferred) */
   caCerts?: Version_Snapshot_Tools_McpTool_TlsConfig_CaCerts[] | Computed<Version_Snapshot_Tools_McpTool_TlsConfig_CaCerts[]>;
 }
 
 export interface Version_Snapshot_Tools_McpTool {
+  /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
   apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  /** Additional caller-defined HTTP header(s) sent with this request. (AI-inferred) */
   customHeaders?: Record<string, string> | Computed<Record<string, string>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The schema describing this tool's own expected input. (AI-inferred) */
   inputSchema?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred) */
   nameOverride?: string | Computed<string>;
+  /** The schema describing this tool's own expected output. (AI-inferred) */
   outputSchema?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
+  /** The address of the server this connects to. (AI-inferred) */
   serverAddress?: string | Computed<string>;
+  /** Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred) */
   serviceDirectoryConfig?: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig | Computed<Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** TLS/SSL configuration for this connection. (AI-inferred) */
   tlsConfig?: Version_Snapshot_Tools_McpTool_TlsConfig | Computed<Version_Snapshot_Tools_McpTool_TlsConfig>;
 }
 
 export interface Version_Snapshot_Tools_OpenApiTool {
+  /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
   apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred) */
   ignoreUnknownFields?: boolean | Computed<boolean>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Defines this tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSchema?: string | Computed<string>;
+  /** Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred) */
   serviceDirectoryConfig?: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig | Computed<Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig>;
+  /** TLS/SSL configuration for this connection. (AI-inferred) */
   tlsConfig?: Version_Snapshot_Tools_McpTool_TlsConfig | Computed<Version_Snapshot_Tools_McpTool_TlsConfig>;
+  /** The URL this tool calls. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_PythonFunction {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Custom Python logic run inline as part of this tool or condition. (AI-inferred) */
   pythonCode?: string | Computed<string>;
+  /** Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred) */
   serviceDirectoryConfig?: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig | Computed<Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig>;
 }
 
 export interface Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Example(s) illustrating expected behavior. (AI-inferred) */
   examples?: string[] | Computed<string[]>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The input modality/modalities (text, audio, etc.) this supports. (AI-inferred) */
   inputModes?: string[] | Computed<string[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The output modality/modalities (text, audio, etc.) this supports. (AI-inferred) */
   outputModes?: string[] | Computed<string[]>;
+  /** Free-form label(s) attached to this resource. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
 }
 
 export interface Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces {
+  /** The communication protocol this interface accepts requests over. (AI-inferred) */
   protocolBinding?: string | Computed<string>;
+  /** The protocol version this interface implements. (AI-inferred) */
   protocolVersion?: string | Computed<string>;
+  /** A reference to the tenant this applies to. (AI-inferred) */
   tenant?: string | Computed<string>;
+  /** The URL this tool calls. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_RemoteAgentTool_AgentCard {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The skill(s) the remote agent advertises being able to perform. (AI-inferred) */
   skills?: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills[] | Computed<Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills[]>;
+  /** The transport/interface(s) (e.g. HTTP, gRPC) the remote agent supports being called over. (AI-inferred) */
   supportedInterfaces?: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces[] | Computed<Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces[]>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_RemoteAgentTool {
+  /** The A2A agent card describing the remote agent's own identity, capabilities, and supported interfaces. (AI-inferred) */
   agentCard?: Version_Snapshot_Tools_RemoteAgentTool_AgentCard | Computed<Version_Snapshot_Tools_RemoteAgentTool_AgentCard>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_SystemTool {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_ToolFakeConfig {
+  /** Custom code run inline. (AI-inferred) */
   codeBlock?: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeCondition | Computed<Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeCondition>;
+  /** Whether this tool returns its own configured fake response instead of calling the real backend. (AI-inferred) */
   enableFakeMode?: boolean | Computed<boolean>;
 }
 
 export interface Version_Snapshot_Tools_WidgetTool_DataMapping {
+  /** Maps a source field name to the widget's own display field. (AI-inferred) */
   fieldMappings?: Record<string, string> | Computed<Record<string, string>>;
+  /** Which mode this widget's own data mapping uses: `FIELD_MAPPING` or `PYTHON_SCRIPT`. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** A Python function implementing this tool's own logic. (AI-inferred) */
   pythonFunction?: Version_Snapshot_Tools_PythonFunction | Computed<Version_Snapshot_Tools_PythonFunction>;
+  /** Custom Python code computing this widget's own data mapping. (AI-inferred) */
   pythonScript?: string | Computed<string>;
+  /** The tool this widget's own data is sourced from. (AI-inferred) */
   sourceToolName?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_WidgetTool_TextResponseConfig {
+  /** A fixed text string used as-is. (AI-inferred) */
   staticText?: string | Computed<string>;
+  /** An instruction guiding the model in generating the widget's own text fallback. (AI-inferred) */
   textResponseInstruction?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools_WidgetTool {
+  /** Configuration for mapping this widget's own backing data into its display fields. (AI-inferred) */
   dataMapping?: Version_Snapshot_Tools_WidgetTool_DataMapping | Computed<Version_Snapshot_Tools_WidgetTool_DataMapping>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
+  /** Configuration for the text fallback shown when this widget can't be rendered. (AI-inferred) */
   textResponseConfig?: Version_Snapshot_Tools_WidgetTool_TextResponseConfig | Computed<Version_Snapshot_Tools_WidgetTool_TextResponseConfig>;
+  /** Widget-type-specific display configuration. (AI-inferred) */
   uiConfig?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Which kind of widget this is, e.g. `PRODUCT_CAROUSEL` or `APPOINTMENT_SCHEDULER`. (AI-inferred) */
   widgetType?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Tools {
+  /** A tool that invokes another agent as a callable sub-routine. (AI-inferred) */
   agentTool?: Version_Snapshot_Tools_AgentTool | Computed<Version_Snapshot_Tools_AgentTool>;
+  /** A tool implemented by the calling client application, rather than a server-side backend. (AI-inferred) */
   clientFunction?: Version_Snapshot_Tools_ClientFunction | Computed<Version_Snapshot_Tools_ClientFunction>;
+  /** A tool that invokes an action on an external enterprise system via a Google Cloud connector. (AI-inferred) */
   connectorTool?: Version_Snapshot_Tools_ConnectorTool | Computed<Version_Snapshot_Tools_ConnectorTool>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A tool that retrieves grounding content from a Vertex AI Search data store or search app. (AI-inferred) */
   dataStoreTool?: Version_Snapshot_Tools_DataStoreTool | Computed<Version_Snapshot_Tools_DataStoreTool>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** How this tool is executed, e.g. synchronously or asynchronously. (AI-inferred) */
   executionType?: string | Computed<string>;
+  /** A tool that searches over a corpus of uploaded files for grounding content. (AI-inferred) */
   fileSearchTool?: Version_Snapshot_Tools_FileSearchTool | Computed<Version_Snapshot_Tools_FileSearchTool>;
+  /** The generated answer text, summarized from retrieved source content. (AI-inferred) */
   generatedSummary?: string | Computed<string>;
+  /** A tool that grounds responses in live Google Search results. (AI-inferred) */
   googleSearchTool?: Version_Snapshot_Tools_GoogleSearchTool | Computed<Version_Snapshot_Tools_GoogleSearchTool>;
+  /** A tool exposed by a connected Model Context Protocol (MCP) server. (AI-inferred) */
   mcpTool?: Version_Snapshot_Tools_McpTool | Computed<Version_Snapshot_Tools_McpTool>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A tool defined by an OpenAPI specification document, calling a plain HTTPS API. (AI-inferred) */
   openApiTool?: Version_Snapshot_Tools_OpenApiTool | Computed<Version_Snapshot_Tools_OpenApiTool>;
+  /** A Python function implementing this tool's own logic. (AI-inferred) */
   pythonFunction?: Version_Snapshot_Tools_PythonFunction | Computed<Version_Snapshot_Tools_PythonFunction>;
+  /** A tool that invokes a separate, independently hosted agent over the Agent-to-Agent (A2A) protocol. (AI-inferred) */
   remoteAgentTool?: Version_Snapshot_Tools_RemoteAgentTool | Computed<Version_Snapshot_Tools_RemoteAgentTool>;
+  /** One of the platform's own built-in system tools. (AI-inferred) */
   systemTool?: Version_Snapshot_Tools_SystemTool | Computed<Version_Snapshot_Tools_SystemTool>;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout?: string | Computed<string>;
+  /** Configuration for returning a fixed, fake response from this tool instead of calling its own real backend, for testing. (AI-inferred) */
   toolFakeConfig?: Version_Snapshot_Tools_ToolFakeConfig | Computed<Version_Snapshot_Tools_ToolFakeConfig>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
+  /** A tool that renders an interactive UI widget (e.g. a product carousel) in the conversation. (AI-inferred) */
   widgetTool?: Version_Snapshot_Tools_WidgetTool | Computed<Version_Snapshot_Tools_WidgetTool>;
 }
 
 export interface Version_Snapshot_Toolsets_ConnectorToolset {
+  /** Authentication configuration for reaching this external resource. (AI-inferred) */
   authConfig?: Version_Snapshot_Tools_ConnectorTool_AuthConfig | Computed<Version_Snapshot_Tools_ConnectorTool_AuthConfig>;
+  /** A reference to the connector connection this tool uses. (AI-inferred) */
   connection?: string | Computed<string>;
+  /** The connector action(s) exposed as tools by this toolset. (AI-inferred) */
   connectorActions?: Version_Snapshot_Tools_ConnectorTool_Action[] | Computed<Version_Snapshot_Tools_ConnectorTool_Action[]>;
 }
 
 export interface Version_Snapshot_Toolsets_McpToolset_ToolOverrides_Snapshot {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The schema describing this tool's own expected input. (AI-inferred) */
   inputSchema?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
+  /** The schema describing this tool's own expected output. (AI-inferred) */
   outputSchema?: Version_Snapshot_App_PredefinedVariableDeclarations_Schema | Computed<Version_Snapshot_App_PredefinedVariableDeclarations_Schema>;
 }
 
 export interface Version_Snapshot_Toolsets_McpToolset_ToolOverrides {
+  /** A caller-chosen description presented to the model in place of this item's own default description. (AI-inferred) */
   descriptionOverride?: string | Computed<string>;
+  /** A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred) */
   nameOverride?: string | Computed<string>;
+  /** A frozen copy of this resource's own content at a specific point in time. (AI-inferred) */
   snapshot?: Version_Snapshot_Toolsets_McpToolset_ToolOverrides_Snapshot | Computed<Version_Snapshot_Toolsets_McpToolset_ToolOverrides_Snapshot>;
+  /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Toolsets_McpToolset {
+  /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
   apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  /** Additional caller-defined HTTP header(s) sent with this request. (AI-inferred) */
   customHeaders?: Record<string, string> | Computed<Record<string, string>>;
+  /** The address of the server this connects to. (AI-inferred) */
   serverAddress?: string | Computed<string>;
+  /** Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred) */
   serviceDirectoryConfig?: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig | Computed<Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig>;
+  /** TLS/SSL configuration for this connection. (AI-inferred) */
   tlsConfig?: Version_Snapshot_Tools_McpTool_TlsConfig | Computed<Version_Snapshot_Tools_McpTool_TlsConfig>;
+  /** Caller overrides (e.g. name, description) applied to specific tools exposed by this toolset. (AI-inferred) */
   toolOverrides?: Version_Snapshot_Toolsets_McpToolset_ToolOverrides[] | Computed<Version_Snapshot_Toolsets_McpToolset_ToolOverrides[]>;
 }
 
 export interface Version_Snapshot_Toolsets_OpenApiToolset {
+  /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
   apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  /** Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred) */
   ignoreUnknownFields?: boolean | Computed<boolean>;
+  /** Defines this tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSchema?: string | Computed<string>;
+  /** Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred) */
   serviceDirectoryConfig?: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig | Computed<Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig>;
+  /** TLS/SSL configuration for this connection. (AI-inferred) */
   tlsConfig?: Version_Snapshot_Tools_McpTool_TlsConfig | Computed<Version_Snapshot_Tools_McpTool_TlsConfig>;
+  /** The URL this tool calls. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_Toolsets {
+  /** A toolset made up of action(s) from a single connected external system. (AI-inferred) */
   connectorToolset?: Version_Snapshot_Toolsets_ConnectorToolset | Computed<Version_Snapshot_Toolsets_ConnectorToolset>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** How this tool is executed, e.g. synchronously or asynchronously. (AI-inferred) */
   executionType?: string | Computed<string>;
+  /** A toolset made up of the tools exposed by a connected MCP server. (AI-inferred) */
   mcpToolset?: Version_Snapshot_Toolsets_McpToolset | Computed<Version_Snapshot_Toolsets_McpToolset>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A toolset made up of the operations defined in an OpenAPI specification document. (AI-inferred) */
   openApiToolset?: Version_Snapshot_Toolsets_OpenApiToolset | Computed<Version_Snapshot_Toolsets_OpenApiToolset>;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout?: string | Computed<string>;
+  /** Configuration for returning a fixed, fake response from this tool instead of calling its own real backend, for testing. (AI-inferred) */
   toolFakeConfig?: Version_Snapshot_Tools_ToolFakeConfig | Computed<Version_Snapshot_Tools_ToolFakeConfig>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 

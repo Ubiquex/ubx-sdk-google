@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Processor_ProcessorVersionAliases:
+    # An alternate name this schema entity is also known by. (AI-inferred)
     alias: Any = None
+    # A reference to the specific processor version this applies to. (AI-inferred)
     processor_version: Any = None
 
 @dataclasses.dataclass

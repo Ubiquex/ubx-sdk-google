@@ -11,7 +11,9 @@ type Model_DefaultVersion_AcceleratorConfig struct {
 }
 
 type Model_DefaultVersion_AutoScaling_Metrics struct {
-	Name   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The value this metric is being optimized toward. (AI-inferred)
 	Target any
 }
 
@@ -25,11 +27,14 @@ type Model_DefaultVersion_AutoScaling struct {
 }
 
 type Model_DefaultVersion_Container_Env struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type Model_DefaultVersion_Container_Ports struct {
+	// The port number the training container listens on. (AI-inferred)
 	ContainerPort any
 }
 

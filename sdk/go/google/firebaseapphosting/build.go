@@ -4,12 +4,18 @@ package firebaseapphosting
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Build_Config_EffectiveEnv struct {
-	Availability   any
-	Origin         any
+	// Whether this record is currently reachable. (AI-inferred)
+	Availability any
+	// The origin this rewrite or header rule applies to. (AI-inferred)
+	Origin any
+	// The name of the file this content originates from. (AI-inferred)
 	OriginFileName any
-	Secret         any
-	Value          any
-	Variable       any
+	// A reference to the secret this applies to. (AI-inferred)
+	Secret any
+	// The literal value of this field. (AI-inferred)
+	Value any
+	// A named environment variable made available to this build or run. (AI-inferred)
+	Variable any
 }
 
 type Build_Config_RunConfig struct {
@@ -35,15 +41,21 @@ type Build_Config struct {
 }
 
 type Build_Errors_Error struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Build_Errors struct {
+	// A reference to the underlying Google Cloud resource. (AI-inferred)
 	CloudResource any
-	Error         any
-	ErrorSource   any
+	// Detail about an error that occurred. (AI-inferred)
+	Error any
+	// Which layer of the system produced this error. (AI-inferred)
+	ErrorSource any
 }
 
 type Build_Source_Archive_Author struct {

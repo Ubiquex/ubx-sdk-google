@@ -4,42 +4,66 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_AllocationPolicy_Instances_Policy_Accelerators struct {
-	Count             any
-	DriverVersion     any
+	// The real number of accelerators of this `type` to attach to each instance. (AI-inferred)
+	Count any
+	// The real GPU driver version to install for this accelerator, when `install_gpu_drivers` requests automatic installation. (AI-inferred)
+	DriverVersion any
+	// Whether Batch should automatically install GPU drivers on the managed instance, when its own machine type or accelerators require them. (AI-inferred)
 	InstallGpuDrivers any
-	Type              any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_AllocationPolicy_Instances_Policy_BootDisk struct {
+	// The real disk interface (e.g. `NVME`, `SCSI`) to attach a Batch-managed instance's boot or data disk with. (AI-inferred)
 	DiskInterface any
-	Image         any
-	SizeGb        any
-	Snapshot      any
-	Type          any
+	// A real Compute Engine image or image family to boot a Batch-managed instance's boot disk from. (AI-inferred)
+	Image any
+	// The real, provisioned size, in GiB, of this disk. (AI-inferred)
+	SizeGb any
+	// A real Compute Engine disk snapshot to create this Batch-managed instance's boot disk from, instead of an `image`. (AI-inferred)
+	Snapshot any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_AllocationPolicy_Instances_Policy_Disks struct {
-	DeviceName   any
+	// The real device name a Batch-managed instance's disk is attached under, referenced by the job's own `volumes` mount configuration. (AI-inferred)
+	DeviceName any
+	// A real, already-existing Compute Engine disk to attach to a Batch-managed instance, instead of creating a `new_disk`. (AI-inferred)
 	ExistingDisk any
-	NewDisk      any
+	// Real configuration for a new disk Batch should create and attach to each managed instance for this job. (AI-inferred)
+	NewDisk any
 }
 
 type Job_AllocationPolicy_Instances_Policy struct {
-	Accelerators      any
-	BootDisk          any
-	Disks             any
-	MachineType       any
-	MinCpuPlatform    any
+	// The real GPU accelerator(s) to attach to each Batch-managed instance for this job. (AI-inferred)
+	Accelerators any
+	// Real, custom boot disk configuration for a Batch-managed instance, overriding whatever the source image would otherwise default to. (AI-inferred)
+	BootDisk any
+	// Real, additional persistent or local disks to attach to each Batch-managed instance for this job. (AI-inferred)
+	Disks any
+	// The real Compute Engine machine type (e.g. `e2-standard-4`) to use for the Batch job's own managed instances. (AI-inferred)
+	MachineType any
+	// The real minimum CPU platform (e.g. `Intel Cascade Lake`) required for the Batch job's own managed instances. (AI-inferred)
+	MinCpuPlatform any
+	// The real Compute Engine provisioning model (`STANDARD`, `SPOT`, `PREEMPTIBLE`, etc.) to use for the Batch job's own managed instances. (AI-inferred)
 	ProvisioningModel any
-	Reservation       any
+	// A real Compute Engine reservation to consume capacity from for the Batch job's own managed instances. (AI-inferred)
+	Reservation any
 }
 
 type Job_AllocationPolicy_Instances struct {
+	// Whether to block project-wide SSH keys from accessing the Batch-managed Compute Engine instances, restricting SSH to keys set on the instance itself. (AI-inferred)
 	BlockProjectSshKeys any
-	InstallGpuDrivers   any
-	InstallOpsAgent     any
-	InstanceTemplate    any
-	Policy              any
+	// Whether Batch should automatically install GPU drivers on the managed instance, when its own machine type or accelerators require them. (AI-inferred)
+	InstallGpuDrivers any
+	// Whether Batch should automatically install the Ops Agent on the managed instance for logging and monitoring. (AI-inferred)
+	InstallOpsAgent any
+	// A real, existing Compute Engine instance template to base the Batch job's own managed instances on, instead of Batch's own default instance configuration. (AI-inferred)
+	InstanceTemplate any
+	// The real instance provisioning policy (machine type, disks, accelerators, provisioning model) Batch applies to the compute instances it creates for this job. (AI-inferred)
+	Policy any
 }
 
 type Job_AllocationPolicy_Location struct {
@@ -48,10 +72,14 @@ type Job_AllocationPolicy_Location struct {
 }
 
 type Job_AllocationPolicy_Network_NetworkInterfaces struct {
-	Network             any
-	NicType             any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The real network interface card type (e.g. `GVNIC`) to use for the Batch job's own managed instances. (AI-inferred)
+	NicType any
+	// Whether the Batch job's own managed instances should have no external (public) IP address. (AI-inferred)
 	NoExternalIpAddress any
-	Subnetwork          any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type Job_AllocationPolicy_Network struct {
@@ -77,7 +105,8 @@ type Job_AllocationPolicy struct {
 	// Describe instances that can be created by this AllocationPolicy. Only instances[0] is supported now.
 	Instances any
 	// Custom labels to apply to the job and all the Compute Engine resources that both are created by this allocation policy and support labels. Use labels to group and describe the resources they are applied to. Batch automatically applies predefined labels and supports multiple `labels` fields for each job, which each let you apply custom labels to various resources. Label names that start with "goog-" or "google-" are reserved for predefined labels. For more information about labels with Batch, see [Organize resources using labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
-	Labels   any
+	Labels any
+	// A real, requested Compute Engine zone or region for the Batch job's own managed instances, when not left to Batch's own automatic selection. (AI-inferred)
 	Location any
 	// NetworkPolicy describes VM instance network configurations.
 	Network any
@@ -104,37 +133,54 @@ type Job_LogsPolicy struct {
 }
 
 type Job_Notifications_Message struct {
-	NewJobState  any
+	// The real job state (e.g. `SUCCEEDED`, `FAILED`) this notification message fires for, when notifying on job-level state changes. (AI-inferred)
+	NewJobState any
+	// The real task state (e.g. `SUCCEEDED`, `FAILED`) this notification message fires for, when notifying on task-level state changes. (AI-inferred)
 	NewTaskState any
-	Type         any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_Notifications struct {
-	Message     any
+	// Real configuration for one Pub/Sub notification message this Batch job publishes on a matching job or task state change. (AI-inferred)
+	Message any
+	// The real Pub/Sub topic this Batch job publishes its own status-change notifications to. (AI-inferred)
 	PubsubTopic any
 }
 
 type Job_Status_StatusEvents_TaskExecution struct {
+	// The real process exit code a Batch task's runnable finished with. (AI-inferred)
 	ExitCode any
 }
 
 type Job_Status_StatusEvents struct {
-	Description   any
-	EventTime     any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The real timestamp when this status event occurred. (AI-inferred)
+	EventTime any
+	// Real, detailed execution result (such as `exit_code`) for the task this status event describes. (AI-inferred)
 	TaskExecution any
-	TaskState     any
-	Type          any
+	// The real, current state of this Batch task. (AI-inferred)
+	TaskState any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_Status_TaskGroups_Instances struct {
-	BootDisk          any
-	MachineType       any
+	// Real, custom boot disk configuration for a Batch-managed instance, overriding whatever the source image would otherwise default to. (AI-inferred)
+	BootDisk any
+	// The real Compute Engine machine type (e.g. `e2-standard-4`) to use for the Batch job's own managed instances. (AI-inferred)
+	MachineType any
+	// The real Compute Engine provisioning model (`STANDARD`, `SPOT`, `PREEMPTIBLE`, etc.) to use for the Batch job's own managed instances. (AI-inferred)
 	ProvisioningModel any
-	TaskPack          any
+	// The real number of tasks Batch is packing onto this specific managed instance. (AI-inferred)
+	TaskPack any
 }
 
 type Job_Status_TaskGroups struct {
-	Counts    any
+	// Real, per-state counts of the tasks in this task group (e.g. how many are `RUNNING`, `SUCCEEDED`, `FAILED`). (AI-inferred)
+	Counts any
+	// Real, per-instance status information for the Compute Engine instances running this Batch job's tasks. (AI-inferred)
 	Instances any
 }
 
@@ -150,104 +196,163 @@ type Job_Status struct {
 }
 
 type Job_TaskGroups_TaskEnvironments_EncryptedVariables struct {
+	// The real, Cloud KMS-encrypted ciphertext of an `encrypted_variables` entry's own value. (AI-inferred)
 	CipherText any
-	KeyName    any
+	// The real Cloud KMS key used to encrypt (and, at task run time, decrypt) an `encrypted_variables` entry's own value. (AI-inferred)
+	KeyName any
 }
 
 type Job_TaskGroups_TaskEnvironments struct {
+	// Environment variables whose real values are supplied pre-encrypted (`cipher_text` plus the Cloud KMS `key_name` used to encrypt them), decrypted by Batch before the task runs. (AI-inferred)
 	EncryptedVariables any
-	SecretVariables    any
-	Variables          any
+	// Environment variables whose real values are fetched from Secret Manager by reference at task run time, rather than being stored directly in the job's own config. (AI-inferred)
+	SecretVariables any
+	// Real, plain (unencrypted) environment variables made available to this task environment. (AI-inferred)
+	Variables any
 }
 
 type Job_TaskGroups_TaskSpec_ComputeResource struct {
+	// The real boot disk size, in MiB, allocated to each task. (AI-inferred)
 	BootDiskMib any
-	CpuMilli    any
-	MemoryMib   any
+	// The real number of CPU milli-cores (1/1000th of a CPU core) allocated to each task. (AI-inferred)
+	CpuMilli any
+	// The real amount of memory, in MiB, allocated to each task. (AI-inferred)
+	MemoryMib any
 }
 
 type Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionCondition struct {
+	// The real process exit code(s) that trigger this lifecycle policy's own `action`. (AI-inferred)
 	ExitCodes any
 }
 
 type Job_TaskGroups_TaskSpec_LifecyclePolicies struct {
-	Action          any
+	// The real action Batch takes (`RETRY_TASK` or `FAIL_TASK`) when this lifecycle policy's own `action_condition` matches. (AI-inferred)
+	Action any
+	// The real condition (a set of matching `exit_codes`) that triggers this lifecycle policy's own `action`. (AI-inferred)
 	ActionCondition any
 }
 
 type Job_TaskGroups_TaskSpec_Runnables_Barrier struct {
+	// A real, unique name for this task group within the Batch job. (AI-inferred)
 	Name any
 }
 
 type Job_TaskGroups_TaskSpec_Runnables_Container struct {
+	// Whether to block this container's own access to external (internet) networking. (AI-inferred)
 	BlockExternalNetwork any
-	Commands             any
+	// The real command and arguments this container runnable runs, overriding the image's own default entrypoint/command if `entrypoint` isn't also set. (AI-inferred)
+	Commands any
+	// Whether to use image streaming to start this container faster, pulling the image lazily as it's read rather than fully in advance. (AI-inferred)
 	EnableImageStreaming any
-	Entrypoint           any
-	ImageUri             any
-	Options              any
-	Password             any
-	Username             any
-	Volumes              any
+	// The real entrypoint to run inside this container, overriding the image's own default. (AI-inferred)
+	Entrypoint any
+	// The real container image URI (e.g. from Artifact Registry or Docker Hub) this runnable runs. (AI-inferred)
+	ImageUri any
+	// Real, additional flags passed directly to the container runtime when starting this container runnable. (AI-inferred)
+	Options any
+	// The real password used to authenticate to the container registry this runnable's image is pulled from. (AI-inferred)
+	Password any
+	// The real username used to authenticate to the container registry this runnable's image is pulled from. (AI-inferred)
+	Username any
+	// Real volume mount paths inside this container, mapping the task's own `volumes` into the container's own filesystem. (AI-inferred)
+	Volumes any
 }
 
 type Job_TaskGroups_TaskSpec_Runnables_Script struct {
+	// The real, on-disk path to a script file this script runnable executes. (AI-inferred)
 	Path any
+	// The real, inline shell script text this script runnable executes. (AI-inferred)
 	Text any
 }
 
 type Job_TaskGroups_TaskSpec_Runnables struct {
-	AlwaysRun        any
-	Background       any
-	Barrier          any
-	Container        any
-	DisplayName      any
-	Environment      any
+	// Whether this runnable runs regardless of whether an earlier runnable in the same task failed. (AI-inferred)
+	AlwaysRun any
+	// Whether this runnable runs in the background (not blocking the task's own progression to the next runnable) rather than to completion. (AI-inferred)
+	Background any
+	// A real synchronization point in a task's own runnable sequence, used to coordinate multiple concurrently-running tasks. (AI-inferred)
+	Barrier any
+	// Real configuration for a container-based runnable, specifying the image and how to run it. (AI-inferred)
+	Container any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Real, plain environment variables (and `secret_variables`) available to every runnable in this task's own spec. (AI-inferred)
+	Environment any
+	// Whether Batch should treat this runnable as successful regardless of its own real process exit status. (AI-inferred)
 	IgnoreExitStatus any
-	Labels           any
-	Script           any
-	Timeout          any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// Real configuration for a script-based runnable, given either as a file `path` or inline `text`. (AI-inferred)
+	Script any
+	// The real maximum duration this specific runnable is allowed to run before Batch terminates it. (AI-inferred)
+	Timeout any
 }
 
 type Job_TaskGroups_TaskSpec_Volumes_Gcs struct {
+	// The real, remote path (a Cloud Storage bucket path or NFS export path) this volume mounts from. (AI-inferred)
 	RemotePath any
 }
 
 type Job_TaskGroups_TaskSpec_Volumes_Nfs struct {
+	// The real, remote path (a Cloud Storage bucket path or NFS export path) this volume mounts from. (AI-inferred)
 	RemotePath any
-	Server     any
+	// The real NFS server address this volume mounts from. (AI-inferred)
+	Server any
 }
 
 type Job_TaskGroups_TaskSpec_Volumes struct {
-	DeviceName   any
-	Gcs          any
+	// The real device name a Batch-managed instance's disk is attached under, referenced by the job's own `volumes` mount configuration. (AI-inferred)
+	DeviceName any
+	// Real Cloud Storage bucket configuration for a volume mounted via Cloud Storage FUSE. (AI-inferred)
+	Gcs any
+	// Real, additional mount flags passed to the volume's own mount command. (AI-inferred)
 	MountOptions any
-	MountPath    any
-	Nfs          any
+	// The real, on-instance path this volume is mounted at, visible to every runnable in the task. (AI-inferred)
+	MountPath any
+	// Real NFS server configuration for a volume mounted over NFS. (AI-inferred)
+	Nfs any
 }
 
 type Job_TaskGroups_TaskSpec struct {
-	ComputeResource   any
-	Environment       any
-	Environments      any
+	// The real CPU and memory resources (`cpu_milli`, `memory_mib`, `boot_disk_mib`) each task in this task group is allocated. (AI-inferred)
+	ComputeResource any
+	// Real, plain environment variables (and `secret_variables`) available to every runnable in this task's own spec. (AI-inferred)
+	Environment any
+	// Real, plain environment variables set for this specific runnable, layered on top of the task spec's own `environment`. (AI-inferred)
+	Environments any
+	// Real rules controlling how Batch responds (e.g. `RETRY_TASK`, `FAIL_TASK`) when a task's own runnable exits with a matching `action_condition`. (AI-inferred)
 	LifecyclePolicies any
-	MaxRetryCount     any
-	MaxRunDuration    any
-	Runnables         any
-	Volumes           any
+	// The real maximum number of times Batch retries a failed task in this task group before giving up. (AI-inferred)
+	MaxRetryCount any
+	// The real maximum duration a single task in this task group is allowed to run before Batch terminates it. (AI-inferred)
+	MaxRunDuration any
+	// The real, ordered sequence of scripts and/or containers each task in this task group executes. (AI-inferred)
+	Runnables any
+	// Real volume mount paths inside this container, mapping the task's own `volumes` into the container's own filesystem. (AI-inferred)
+	Volumes any
 }
 
 type Job_TaskGroups struct {
-	Name             any
-	Parallelism      any
-	PermissiveSsh    any
+	// A real, unique name for this task group within the Batch job. (AI-inferred)
+	Name any
+	// The real maximum number of tasks in this task group that Batch runs concurrently. (AI-inferred)
+	Parallelism any
+	// Whether to allow SSH access into a Batch-managed instance from any source, rather than restricting it. (AI-inferred)
+	PermissiveSsh any
+	// Whether Batch should populate `/etc/hosts` with entries for every task's own container or VM, letting tasks address each other by hostname. (AI-inferred)
 	RequireHostsFile any
-	RunAsNonRoot     any
+	// Whether Batch should run this task group's own runnables as a non-root user rather than root. (AI-inferred)
+	RunAsNonRoot any
+	// The real order Batch uses to schedule this task group's own tasks (`AS_SOON_AS_POSSIBLE` or `IN_ORDER`). (AI-inferred)
 	SchedulingPolicy any
-	TaskCount        any
+	// The real total number of tasks to run in this task group. (AI-inferred)
+	TaskCount any
+	// The real maximum number of this task group's own tasks Batch packs onto a single Compute Engine instance. (AI-inferred)
 	TaskCountPerNode any
+	// Real, per-task-group sets of environment variables (including `encrypted_variables`/`secret_variables`) available to override per task. (AI-inferred)
 	TaskEnvironments any
-	TaskSpec         any
+	// The real specification (compute resources, runnables, retry and lifecycle policy) every task in this task group runs with. (AI-inferred)
+	TaskSpec any
 }
 
 var Job_AllocationPolicy_Instances_Policy_AcceleratorsFields = ubx.FieldMap{

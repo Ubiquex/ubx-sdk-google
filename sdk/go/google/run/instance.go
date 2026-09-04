@@ -13,127 +13,194 @@ type Instance_BinaryAuthorization struct {
 }
 
 type Instance_Conditions struct {
-	ExecutionReason    any
-	InstanceReason     any
+	// Output only. Why this execution is in its current state, e.g. why it failed. (AI-inferred)
+	ExecutionReason any
+	// Output only. Why this instance is in its current state, e.g. why it isn't serving traffic. (AI-inferred)
+	InstanceReason any
+	// Output only. When this condition last changed from one status to another. (AI-inferred)
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	RevisionReason     any
-	Severity           any
-	State              any
-	Type               any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// Output only. A short, machine-readable identifier for why this condition holds. (AI-inferred)
+	Reason any
+	// Output only. Why this revision is in its current state, e.g. why it failed to become ready. (AI-inferred)
+	RevisionReason any
+	// Output only. How serious this condition is, e.g. whether it's merely informational or actively blocking the resource from being ready. (AI-inferred)
+	Severity any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Instance_ContainerStatuses struct {
+	// The content digest of the container image actually deployed. (AI-inferred)
 	ImageDigest any
-	Name        any
+	// The name identifying this container, revision, execution, or resource. (AI-inferred)
+	Name any
 }
 
 type Instance_Containers_BuildInfo struct {
+	// The name of the function to invoke, when deploying from source as a Cloud Run function. (AI-inferred)
 	FunctionTarget any
+	// Where this source code is located. (AI-inferred)
 	SourceLocation any
 }
 
 type Instance_Containers_Env_ValueSource_SecretKeyRef struct {
-	Secret  any
+	// The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred)
+	Secret any
+	// The version identifier of this resource or revision. (AI-inferred)
 	Version any
 }
 
 type Instance_Containers_Env_ValueSource struct {
+	// References a specific key within a Secret Manager secret. (AI-inferred)
 	SecretKeyRef any
 }
 
 type Instance_Containers_Env struct {
-	Name        any
-	Value       any
+	// The name identifying this container, revision, execution, or resource. (AI-inferred)
+	Name any
+	// The literal value of this environment variable or setting. (AI-inferred)
+	Value any
+	// Where this value is sourced from, e.g. a Secret Manager secret. (AI-inferred)
 	ValueSource any
 }
 
 type Instance_Containers_LivenessProbe_Grpc struct {
-	Port    any
+	// The TCP port this applies to. (AI-inferred)
+	Port any
+	// The gRPC health-check service name this probe calls, when using a `grpc` probe. (AI-inferred)
 	Service any
 }
 
 type Instance_Containers_LivenessProbe_HttpGet_HttpHeaders struct {
-	Name  any
+	// The name identifying this container, revision, execution, or resource. (AI-inferred)
+	Name any
+	// The literal value of this environment variable or setting. (AI-inferred)
 	Value any
 }
 
 type Instance_Containers_LivenessProbe_HttpGet struct {
+	// Extra HTTP headers this `http_get` probe sends with its request. (AI-inferred)
 	HttpHeaders any
-	Path        any
-	Port        any
+	// The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred)
+	Path any
+	// The TCP port this applies to. (AI-inferred)
+	Port any
 }
 
 type Instance_Containers_LivenessProbe_TcpSocket struct {
+	// The TCP port this applies to. (AI-inferred)
 	Port any
 }
 
 type Instance_Containers_LivenessProbe struct {
-	FailureThreshold    any
-	Grpc                any
-	HttpGet             any
+	// How many consecutive probe failures are tolerated before the container is considered unhealthy and Cloud Run acts on it. (AI-inferred)
+	FailureThreshold any
+	// Configures this probe to call the container's own gRPC health-check service, rather than an HTTP or TCP check. (AI-inferred)
+	Grpc any
+	// Configures this probe to send an HTTP GET request to the container, treating a 2xx/3xx response as healthy. (AI-inferred)
+	HttpGet any
+	// How long Cloud Run waits after the container starts before running this probe for the first time. (AI-inferred)
 	InitialDelaySeconds any
-	PeriodSeconds       any
-	TcpSocket           any
-	TimeoutSeconds      any
+	// How often, in seconds, this probe runs. (AI-inferred)
+	PeriodSeconds any
+	// Configures this probe to simply check the container's port is accepting TCP connections, without sending any application-level request. (AI-inferred)
+	TcpSocket any
+	// How long this probe waits for a response before treating the attempt as a failure. (AI-inferred)
+	TimeoutSeconds any
 }
 
 type Instance_Containers_Ports struct {
+	// The port the container listens on. (AI-inferred)
 	ContainerPort any
-	Name          any
+	// The name identifying this container, revision, execution, or resource. (AI-inferred)
+	Name any
 }
 
 type Instance_Containers_Resources struct {
-	CpuIdle         any
-	Limits          any
+	// Whether CPU is only allocated while actively handling requests, rather than continuously. (AI-inferred)
+	CpuIdle any
+	// The maximum resource amount(s) (CPU, memory) this container may use. (AI-inferred)
+	Limits any
+	// Whether extra CPU is temporarily allocated during container startup, to reduce cold-start latency. (AI-inferred)
 	StartupCpuBoost any
 }
 
 type Instance_Containers_SourceCode_CloudStorageSource struct {
-	Bucket     any
+	// The Cloud Storage bucket this volume mount is backed by. (AI-inferred)
+	Bucket any
+	// A number incremented each time this resource is significantly modified. (AI-inferred)
 	Generation any
-	Object     any
+	// The Cloud Storage object this applies to. (AI-inferred)
+	Object any
 }
 
 type Instance_Containers_SourceCode_InlinedSource_Sources struct {
-	Content  any
+	// The literal content of this configuration value. (AI-inferred)
+	Content any
+	// The name of this file. (AI-inferred)
 	Filename any
 }
 
 type Instance_Containers_SourceCode_InlinedSource struct {
+	// The source(s) this build reads from. (AI-inferred)
 	Sources any
 }
 
 type Instance_Containers_SourceCode struct {
+	// The Cloud Storage location of the source code for this build. (AI-inferred)
 	CloudStorageSource any
-	InlinedSource      any
+	// Source code provided directly inline, rather than referencing an external location. (AI-inferred)
+	InlinedSource any
 }
 
 type Instance_Containers_VolumeMounts struct {
+	// The path within the container this volume is mounted at. (AI-inferred)
 	MountPath any
-	Name      any
-	SubPath   any
+	// The name identifying this container, revision, execution, or resource. (AI-inferred)
+	Name any
+	// A specific subdirectory within the volume to mount, rather than its own root. (AI-inferred)
+	SubPath any
 }
 
 type Instance_Containers struct {
-	Args            any
-	BaseImageUri    any
-	BuildInfo       any
-	Command         any
-	DependsOn       any
-	Env             any
-	Image           any
-	LivenessProbe   any
-	Name            any
-	Ports           any
-	ReadinessProbe  any
-	Resources       any
+	// The argument(s) passed to the container's own command. (AI-inferred)
+	Args any
+	// The base image this container was built from, tracked for automatic base image update. (AI-inferred)
+	BaseImageUri any
+	// Detail about how this revision's own image was built. (AI-inferred)
+	BuildInfo any
+	// The container entrypoint command, overriding the image's own default. (AI-inferred)
+	Command any
+	// The container(s) that must be healthy before this one starts. (AI-inferred)
+	DependsOn any
+	// Environment variable(s) set in the container. (AI-inferred)
+	Env any
+	// The container image reference to run. (AI-inferred)
+	Image any
+	// A probe determining whether the container is still running correctly, restarting it if not. (AI-inferred)
+	LivenessProbe any
+	// The name identifying this container, revision, execution, or resource. (AI-inferred)
+	Name any
+	// The port(s) this container exposes. (AI-inferred)
+	Ports any
+	// A probe determining whether the container is ready to receive traffic. (AI-inferred)
+	ReadinessProbe any
+	// The compute resource requirement(s) (CPU, memory) for this container. (AI-inferred)
+	Resources any
+	// Configuration for launching this container within an isolated sandbox environment. (AI-inferred)
 	SandboxLauncher any
-	SourceCode      any
-	StartupProbe    any
-	VolumeMounts    any
-	WorkingDir      any
+	// The source code this build was produced from. (AI-inferred)
+	SourceCode any
+	// A probe determining whether the container has finished starting up, before liveness/readiness probes begin. (AI-inferred)
+	StartupProbe any
+	// The volume(s) mounted into this container. (AI-inferred)
+	VolumeMounts any
+	// The working directory the container's own entrypoint runs from. (AI-inferred)
+	WorkingDir any
 }
 
 type Instance_NodeSelector struct {
@@ -142,51 +209,75 @@ type Instance_NodeSelector struct {
 }
 
 type Instance_Volumes_CloudSqlInstance struct {
+	// The instance(s) this applies to. (AI-inferred)
 	Instances any
 }
 
 type Instance_Volumes_EmptyDir struct {
-	Medium    any
+	// The storage medium backing this volume. (AI-inferred)
+	Medium any
+	// The maximum size this ephemeral volume may grow to. (AI-inferred)
 	SizeLimit any
 }
 
 type Instance_Volumes_Gcs struct {
-	Bucket       any
+	// The Cloud Storage bucket this volume mount is backed by. (AI-inferred)
+	Bucket any
+	// Additional mount option(s) applied to this volume. (AI-inferred)
 	MountOptions any
-	ReadOnly     any
+	// Whether this volume mount is mounted read-only, preventing the container from writing to it. (AI-inferred)
+	ReadOnly any
 }
 
 type Instance_Volumes_Nfs struct {
-	Path     any
+	// The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred)
+	Path any
+	// Whether this volume mount is mounted read-only, preventing the container from writing to it. (AI-inferred)
 	ReadOnly any
-	Server   any
+	// The server hostname or address this connects to. (AI-inferred)
+	Server any
 }
 
 type Instance_Volumes_Secret_Items struct {
-	Mode    any
-	Path    any
+	// The file permission mode applied. (AI-inferred)
+	Mode any
+	// The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred)
+	Path any
+	// The version identifier of this resource or revision. (AI-inferred)
 	Version any
 }
 
 type Instance_Volumes_Secret struct {
+	// The default file permission mode applied to files in this volume. (AI-inferred)
 	DefaultMode any
-	Items       any
-	Secret      any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
+	// The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred)
+	Secret any
 }
 
 type Instance_Volumes struct {
+	// The Cloud SQL instance(s) this service connects to. (AI-inferred)
 	CloudSqlInstance any
-	EmptyDir         any
-	Gcs              any
-	Name             any
-	Nfs              any
-	Secret           any
+	// An ephemeral volume backed by local storage, cleared when the instance stops. (AI-inferred)
+	EmptyDir any
+	// Configuration for a volume backed by a Cloud Storage bucket. (AI-inferred)
+	Gcs any
+	// The name identifying this container, revision, execution, or resource. (AI-inferred)
+	Name any
+	// Configuration for a volume backed by an NFS file share. (AI-inferred)
+	Nfs any
+	// The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred)
+	Secret any
 }
 
 type Instance_VpcAccess_NetworkInterfaces struct {
-	Network    any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
 	Subnetwork any
-	Tags       any
+	// The traffic tag(s) applied to this revision. (AI-inferred)
+	Tags any
 }
 
 type Instance_VpcAccess struct {
@@ -482,6 +573,7 @@ var Instance_VpcAccessFields = ubx.FieldMap{
 }
 
 type InstanceConfig struct {
+	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
 	Annotations any
 	// Settings for Binary Authorization feature.
 	BinaryAuthorization any
@@ -511,7 +603,8 @@ type InstanceConfig struct {
 	Ingress any
 	// Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
 	InvokerIamDisabled any
-	Labels             any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
 	// The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, `GA` is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if `ALPHA` is provided as input, but only `BETA` and `GA`-level features are used, this field will be `BETA` on output.
 	LaunchStage any
 	// The fully qualified name of this Instance. In `CreateInstanceRequest`, this field is ignored, and instead composed from `CreateInstanceRequest.parent` and `CreateInstanceRequest.instance_id`.
@@ -519,7 +612,8 @@ type InstanceConfig struct {
 	// Hardware constraints configuration.
 	NodeSelector any
 	// Optional. Restart policy for the Instance.
-	RestartPolicy  any
+	RestartPolicy any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 	// Defines a status condition for a resource.
 	TerminalCondition any
@@ -530,6 +624,7 @@ type InstanceConfig struct {
 }
 
 type InstanceAttrs struct {
+	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
 	Annotations any
 	// Settings for Binary Authorization feature.
 	BinaryAuthorization any
@@ -573,7 +668,8 @@ type InstanceAttrs struct {
 	Ingress any
 	// Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
 	InvokerIamDisabled any
-	Labels             any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
 	// Output only. Email address of the last authenticated modifier.
 	LastModifier any
 	// The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, `GA` is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if `ALPHA` is provided as input, but only `BETA` and `GA`-level features are used, this field will be `BETA` on output.
@@ -591,7 +687,8 @@ type InstanceAttrs struct {
 	// Optional. Restart policy for the Instance.
 	RestartPolicy any
 	// Output only. Reserved for future use.
-	SatisfiesPzs   any
+	SatisfiesPzs any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 	// Defines a status condition for a resource.
 	TerminalCondition any

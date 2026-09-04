@@ -68,36 +68,55 @@ export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio {
+  /** The audio or video bit rate, in bits per second. (AI-inferred) */
   bitRate?: number | Computed<number>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The audio sample rate, in Hz. (AI-inferred) */
   sampleRate?: number | Computed<number>;
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The pixel dimensions or resolution class requested for generated image output. (AI-inferred) */
   imageSize?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** A schema describing this value's own expected structure. (AI-inferred) */
   schema?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** How long this clip, window, or operation lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred) */
   gcsUri?: string | Computed<string>;
+  /** The pixel dimensions of this image or video. (AI-inferred) */
   resolution?: string | Computed<string>;
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat {
+  /** Audio content or configuration. (AI-inferred) */
   audio?: EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio | Computed<EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio>;
+  /** Image content or configuration. (AI-inferred) */
   image?: EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image | Computed<EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text | Computed<EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text>;
+  /** Video content or configuration. (AI-inferred) */
   video?: EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video | Computed<EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video>;
 }
 
@@ -118,6 +137,7 @@ export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig
   example?: unknown | Computed<unknown>;
   /** Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type. */
   format?: string | Computed<string>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
   /** Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array. */
   maxItems?: string | Computed<string>;
@@ -171,21 +191,28 @@ export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig {
+  /** The name of the prebuilt Gemini voice to use for speech output. (AI-inferred) */
   voiceName?: string | Computed<string>;
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred) */
   voiceSampleAudio?: string | Computed<string>;
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig {
+  /** Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred) */
   prebuiltVoiceConfig?: EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig | Computed<EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig>;
+  /** Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred) */
   replicatedVoiceConfig?: EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig | Computed<EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig>;
 }
 
 export interface EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs {
+  /** Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred) */
   speaker?: string | Computed<string>;
+  /** The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred) */
   voiceConfig?: EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig | Computed<EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig>;
 }
 

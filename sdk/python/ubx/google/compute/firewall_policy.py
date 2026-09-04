@@ -8,59 +8,93 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallPolicy_Associations:
+    # The full resource name of the folder or organization that this firewall policy is associated with. (AI-inferred)
     attachment_target: Any = None
     display_name: Any = None
+    # The unique ID of the firewall policy to associate with the target. (AI-inferred)
     firewall_policy_id: Any = None
     name: Any = None
+    # A short, unique identifier for the association within the firewall policy, used for display and management purposes. (AI-inferred)
     short_name: Any = None
 
 @dataclasses.dataclass
 class FirewallPolicy_PacketMirroringRules_Match_Layer4Configs:
+    # The IP protocol to match. Accepts protocol names such as tcp, udp, icmp, esp, ah, ipip, sctp, a numeric IP protocol number, or 'all' to match any protocol. (AI-inferred)
     ip_protocol: Any = None
+    # Specifies the list of destination port numbers or ranges to match for this layer4 configuration. Each entry is a string, e.g., '80' or '8000-9000'. If omitted, the rule matches all ports. (AI-inferred)
     ports: Any = None
 
 @dataclasses.dataclass
 class FirewallPolicy_PacketMirroringRules_Match_SrcSecureTags:
+    # The name of the Secure Tag value to match in the source of the packet. This is the full resource name, such as `tagValues/123456789`. (AI-inferred)
     name: Any = None
+    # The state of the secure tag, indicating whether it is currently effective or ineffective. Allowed values are 'EFFECTIVE' and 'INEFFECTIVE'. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class FirewallPolicy_PacketMirroringRules_Match:
+    # List of destination address groups that define the destination IP addresses to match in the packet mirroring rule. (AI-inferred)
     dest_address_groups: Any = None
+    # A list of destination fully qualified domain names (FQDNs) used by the match criteria for packet mirroring rules. Traffic mirrored by the rule must be destined to one of the specified FQDNs. (AI-inferred)
     dest_fqdns: Any = None
+    # A list of destination IP address ranges in CIDR format. Traffic whose destination IP falls within any of these ranges matches this packet mirroring rule. (AI-inferred)
     dest_ip_ranges: Any = None
+    # Specifies the network context of the destination traffic that this rule matches. Valid values are INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
     dest_network_context: Any = None
+    # The destination network type to match for packet mirroring. The allowed values are: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
     dest_network_type: Any = None
+    # A list of destination region codes (for example, 'us-central1') that the packet mirroring rule matches on. The rule applies only to packets with a destination in one of the specified regions. (AI-inferred)
     dest_region_codes: Any = None
+    # A list of threat intelligence feeds to match against the destination IP address of the traffic. (AI-inferred)
     dest_threat_intelligences: Any = None
+    # A list of layer 4 configurations used to match packets based on protocol and port. Each configuration specifies the IP protocol (such as TCP, UDP, ICMP) and an optional list of destination ports, allowing the firewall policy rule to apply to specific traffic types. (AI-inferred)
     layer4_configs: Any = None
+    # A list of full resource URLs to network address groups used as the source address match. Packets from sources that belong to these groups are mirrored. (AI-inferred)
     src_address_groups: Any = None
+    # The list of fully qualified domain names (FQDNs) that the rule uses as the source match condition. Traffic originating from these FQDNs matches the rule. (AI-inferred)
     src_fqdns: Any = None
+    # A list of source IP address ranges in CIDR notation that the packet mirroring rule matches on. If specified, the rule only applies to traffic originating from these ranges. (AI-inferred)
     src_ip_ranges: Any = None
+    # Specifies the source network context for matching traffic. Allowed values are: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
     src_network_context: Any = None
+    # The type of source network that the rule matches. Valid values are INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
     src_network_type: Any = None
+    # List of source CIDR networks to match. Traffic from any of these source IP ranges will match the rule and be mirrored. Each entry must be a valid CIDR block, for example: '10.0.0.0/8'. (AI-inferred)
     src_networks: Any = None
+    # Specifies the list of source region codes (e.g., 'us-central1', 'europe-west1') from which traffic must originate for the rule to apply. (AI-inferred)
     src_region_codes: Any = None
+    # List of secure tags used to match source resources for this packet mirroring rule. Traffic originating from any resource carrying one of these tags will be mirrored. (AI-inferred)
     src_secure_tags: Any = None
+    # A list of threat intelligence sources used to match the source IP address of traffic. If specified, the rule applies only to traffic whose source IP is identified by one of the listed threat intelligence feeds. (AI-inferred)
     src_threat_intelligences: Any = None
 
 @dataclasses.dataclass
 class FirewallPolicy_PacketMirroringRules:
     action: Any = None
+    # An optional user-defined description for this packet mirroring rule within the firewall policy. (AI-inferred)
     description: Any = None
+    # Specifies the direction of traffic to which this packet mirroring rule applies. Valid values are 'INGRESS' and 'EGRESS'. (AI-inferred)
     direction: Any = None
+    # Whether this packet mirroring rule is disabled. When set to true, the rule is not enforced. (AI-inferred)
     disabled: Any = None
     enable_logging: Any = None
     kind: Any = None
+    # The match criteria that specify which network traffic is subject to this packet mirroring rule. (AI-inferred)
     match: Any = None
+    # The priority of this packet mirroring rule. Lower values are evaluated first. Must be an integer between 0 and 65535. (AI-inferred)
     priority: Any = None
+    # The name of the packet mirroring rule. This is a user-provided name used to identify the rule in the firewall policy. (AI-inferred)
     rule_name: Any = None
     rule_tuple_count: Any = None
     security_profile_group: Any = None
+    # List of forwarding rule URLs that are the target of the packet mirroring rule. Traffic sent to these forwarding rules is mirrored to the collector. (AI-inferred)
     target_forwarding_rules: Any = None
     target_resources: Any = None
+    # A list of secure tags that identify the target instances whose traffic will be mirrored by this packet mirroring rule. (AI-inferred)
     target_secure_tags: Any = None
+    # A list of service accounts that the rule targets. Instances with any of these service accounts will have their traffic affected by this packet mirroring rule. If not specified, the rule applies to all instances. (AI-inferred)
     target_service_accounts: Any = None
+    # The type of target to which the packet mirroring rule applies. Valid values are INSTANCES and INTERNAL_MANAGED_LB. (AI-inferred)
     target_type: Any = None
     tls_inspect: Any = None
 

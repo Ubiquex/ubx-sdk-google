@@ -2,23 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NodeTemplate_Accelerators {
+  /** The number of accelerators of the specified type to attach to nodes created from this node template. This field is part of the accelerators block, which also specifies the accelerator type. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The type of accelerator (GPU) to attach to the node, such as 'nvidia-tesla-a100'. This should be a valid accelerator type identifier supported by Compute Engine. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
 }
 
 export interface NodeTemplate_Disks {
+  /** The number of disks of the specified type to attach to the node template. (AI-inferred) */
   diskCount?: number | Computed<number>;
   diskSizeGb?: number | Computed<number>;
+  /** The type of disk to attach to the node, such as 'local-ssd'. Defaults to 'local-ssd'. (AI-inferred) */
   diskType?: string | Computed<string>;
 }
 
 export interface NodeTemplate_NodeTypeFlexibility {
+  /** The number of virtual CPUs to allocate for the node template. Provide a specific integer value as a string (e.g., "8") or use "any" to allow flexible selection based on available resources. (AI-inferred) */
   cpus?: string | Computed<string>;
   localSsd?: string | Computed<string>;
+  /** Specifies the amount of memory (in MB) that the flexible node type must have. This is used to define a custom node type for the node template. (AI-inferred) */
   memory?: string | Computed<string>;
 }
 
 export interface NodeTemplate_ServerBinding {
+  /** Specifies the server binding type for the node template, controlling whether the node can be restarted on any server or only on a minimal set of servers. Valid values are RESTART_NODE_ON_ANY_SERVER, RESTART_NODE_ON_MINIMAL_SERVERS, or SERVER_BINDING_TYPE_UNSPECIFIED. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -44,11 +51,13 @@ const NodeTemplate_ServerBindingFields: FieldMap = {
 };
 
 export interface NodeTemplateConfig {
+  /** A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred) */
   accelerators?: NodeTemplate_Accelerators[] | Computed<NodeTemplate_Accelerators[]>;
   /** CPU overcommit. */
   cpuOvercommitType?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred) */
   disks?: NodeTemplate_Disks[] | Computed<NodeTemplate_Disks[]>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
@@ -56,11 +65,14 @@ export interface NodeTemplateConfig {
   nodeAffinityLabels?: Record<string, string> | Computed<Record<string, string>>;
   /** The node type to use for nodes group that are created from this template. */
   nodeType?: string | Computed<string>;
+  /** Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred) */
   nodeTypeFlexibility?: NodeTemplate_NodeTypeFlexibility | Computed<NodeTemplate_NodeTypeFlexibility>;
+  /** The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred) */
   serverBinding?: NodeTemplate_ServerBinding | Computed<NodeTemplate_ServerBinding>;
 }
 
 export interface NodeTemplateAttrs {
+  /** A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred) */
   accelerators: NodeTemplate_Accelerators[];
   /** CPU overcommit. */
   cpuOvercommitType: string;
@@ -68,6 +80,7 @@ export interface NodeTemplateAttrs {
   creationTimestamp: string;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred) */
   disks: NodeTemplate_Disks[];
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
@@ -79,11 +92,13 @@ export interface NodeTemplateAttrs {
   nodeAffinityLabels: Record<string, string>;
   /** The node type to use for nodes group that are created from this template. */
   nodeType: string;
+  /** Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred) */
   nodeTypeFlexibility: NodeTemplate_NodeTypeFlexibility;
   /** Output only. [Output Only] The name of the region where the node template resides, such as us-central1. */
   region: string;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred) */
   serverBinding: NodeTemplate_ServerBinding;
   /** Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING. */
   status: string;

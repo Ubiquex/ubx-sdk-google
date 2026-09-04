@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Version_NluSettings {
+  /** The minimum confidence an intent match must reach to be accepted, below which it's treated as no match. (AI-inferred) */
   classificationThreshold?: number | Computed<number>;
+  /** Which mode this agent's own NLU model is trained with. (AI-inferred) */
   modelTrainingMode?: string | Computed<string>;
+  /** Which underlying model architecture this uses. (AI-inferred) */
   modelType?: string | Computed<string>;
 }
 
@@ -14,18 +17,28 @@ const Version_NluSettingsFields: FieldMap = {
 };
 
 export interface VersionConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings?: Version_NluSettings | Computed<Version_NluSettings>;
 }
 
 export interface VersionAttrs {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings: Version_NluSettings;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state: string;
 }
 

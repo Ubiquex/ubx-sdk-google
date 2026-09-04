@@ -66,6 +66,7 @@ const V1beta2Policy_NetworksFields: FieldMap = {
 };
 
 export interface V1beta2PolicyConfig {
+  /** Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred) */
   alternativeNameServerConfig?: V1beta2Policy_AlternativeNameServerConfig | Computed<V1beta2Policy_AlternativeNameServerConfig>;
   /** A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function. */
   description?: string | Computed<string>;
@@ -77,6 +78,7 @@ export interface V1beta2PolicyConfig {
   enableLogging?: boolean | Computed<boolean>;
   /** Unique identifier for the resource; defined by the server (output only). */
   id?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** User-assigned name for this policy. */
   name?: string | Computed<string>;
@@ -85,6 +87,7 @@ export interface V1beta2PolicyConfig {
 }
 
 export interface V1beta2PolicyAttrs {
+  /** Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred) */
   alternativeNameServerConfig: V1beta2Policy_AlternativeNameServerConfig;
   /** A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function. */
   description: string;
@@ -96,6 +99,7 @@ export interface V1beta2PolicyAttrs {
   enableLogging: boolean;
   /** Unique identifier for the resource; defined by the server (output only). */
   id: string;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** User-assigned name for this policy. */
   name: string;

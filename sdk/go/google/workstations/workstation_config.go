@@ -4,13 +4,18 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkstationConfig_AllowedPorts struct {
+	// The first value in this range. (AI-inferred)
 	First any
-	Last  any
+	// The last value in this range. (AI-inferred)
+	Last any
 }
 
 type WorkstationConfig_Conditions struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
@@ -37,29 +42,43 @@ type WorkstationConfig_EncryptionKey struct {
 }
 
 type WorkstationConfig_EphemeralDirectories_GcePd struct {
-	DiskType       any
-	ReadOnly       any
-	SourceImage    any
+	// The Persistent Disk type used, e.g. `pd-ssd` or `pd-balanced`. (AI-inferred)
+	DiskType any
+	// Whether this volume is mounted read-only. (AI-inferred)
+	ReadOnly any
+	// The disk image this resource is created from. (AI-inferred)
+	SourceImage any
+	// The disk snapshot this resource is created from. (AI-inferred)
 	SourceSnapshot any
 }
 
 type WorkstationConfig_EphemeralDirectories struct {
-	GcePd     any
+	// Configures this persistent disk using a standard Compute Engine persistent disk. (AI-inferred)
+	GcePd any
+	// The path this volume is mounted at inside the container. (AI-inferred)
 	MountPath any
 }
 
 type WorkstationConfig_Host_GceInstance_Accelerators struct {
+	// How many of this item there are. (AI-inferred)
 	Count any
-	Type  any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type WorkstationConfig_Host_GceInstance_BoostConfigs struct {
-	Accelerators               any
-	BootDiskSizeGb             any
+	// The hardware accelerator(s) (e.g. GPUs) attached to this workstation. (AI-inferred)
+	Accelerators any
+	// The size of the boot disk, in gibibytes. (AI-inferred)
+	BootDiskSizeGb any
+	// Whether nested virtualization is enabled inside this workstation. (AI-inferred)
 	EnableNestedVirtualization any
-	Id                         any
-	MachineType                any
-	PoolSize                   any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The machine type this workstation runs as. (AI-inferred)
+	MachineType any
+	// The number of workstation(s) kept ready in this pool. (AI-inferred)
+	PoolSize any
 }
 
 type WorkstationConfig_Host_GceInstance_ConfidentialInstanceConfig struct {
@@ -119,31 +138,48 @@ type WorkstationConfig_Host struct {
 }
 
 type WorkstationConfig_PersistentDirectories_GceHd struct {
+	// How long a workstation is kept in an archived state before it's deleted. (AI-inferred)
 	ArchiveTimeout any
-	MaxSizeGb      any
-	ReclaimPolicy  any
-	SizeGb         any
+	// The maximum size, in gibibytes, this disk is allowed to grow to. (AI-inferred)
+	MaxSizeGb any
+	// What happens to this persistent disk's own data after the workstation using it is deleted. (AI-inferred)
+	ReclaimPolicy any
+	// The size of this resource, in gibibytes. (AI-inferred)
+	SizeGb any
+	// The disk snapshot this resource is created from. (AI-inferred)
 	SourceSnapshot any
 }
 
 type WorkstationConfig_PersistentDirectories_GcePd struct {
+	// How long a workstation is kept in an archived state before it's deleted. (AI-inferred)
 	ArchiveTimeout any
-	DiskType       any
-	FsType         any
-	MaxSizeGb      any
-	ReclaimPolicy  any
-	SizeGb         any
+	// The Persistent Disk type used, e.g. `pd-ssd` or `pd-balanced`. (AI-inferred)
+	DiskType any
+	// The file system type used to format this disk. (AI-inferred)
+	FsType any
+	// The maximum size, in gibibytes, this disk is allowed to grow to. (AI-inferred)
+	MaxSizeGb any
+	// What happens to this persistent disk's own data after the workstation using it is deleted. (AI-inferred)
+	ReclaimPolicy any
+	// The size of this resource, in gibibytes. (AI-inferred)
+	SizeGb any
+	// The disk snapshot this resource is created from. (AI-inferred)
 	SourceSnapshot any
 }
 
 type WorkstationConfig_PersistentDirectories struct {
-	GceHd     any
-	GcePd     any
+	// Configures this persistent disk using a Compute Engine hyperdisk. (AI-inferred)
+	GceHd any
+	// Configures this persistent disk using a standard Compute Engine persistent disk. (AI-inferred)
+	GcePd any
+	// The path this volume is mounted at inside the container. (AI-inferred)
 	MountPath any
 }
 
 type WorkstationConfig_ReadinessChecks struct {
+	// A file or resource path. (AI-inferred)
 	Path any
+	// The port number this applies to. (AI-inferred)
 	Port any
 }
 

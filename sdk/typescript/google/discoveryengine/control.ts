@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Control_BoostAction_InterpolationBoostSpec_ControlPoints {
+  /** The value of this attribute. (AI-inferred) */
   attributeValue?: string | Computed<string>;
+  /** How much to raise or lower a matching result's own ranking. (AI-inferred) */
   boostAmount?: number | Computed<number>;
 }
 
@@ -31,18 +33,25 @@ export interface Control_BoostAction {
 }
 
 export interface Control_Conditions_ActiveTimeRange {
+  /** When this event or operation ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** When this event or operation started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface Control_Conditions_QueryTerms {
+  /** Matches only this exact, complete value. (AI-inferred) */
   fullMatch?: boolean | Computed<boolean>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Control_Conditions {
+  /** The time range this schedule or configuration is currently active for. (AI-inferred) */
   activeTimeRange?: Control_Conditions_ActiveTimeRange[] | Computed<Control_Conditions_ActiveTimeRange[]>;
+  /** A regular expression this query rule matches against. (AI-inferred) */
   queryRegex?: string | Computed<string>;
+  /** The individual term(s) making up this query. (AI-inferred) */
   queryTerms?: Control_Conditions_QueryTerms[] | Computed<Control_Conditions_QueryTerms[]>;
 }
 

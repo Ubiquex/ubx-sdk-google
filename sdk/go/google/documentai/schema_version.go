@@ -4,23 +4,34 @@ package documentai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemaVersion_Schema_EntityTypes_EnumValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type SchemaVersion_Schema_EntityTypes_Properties struct {
-	DisplayName    any
-	Method         any
-	Name           any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The specific action being performed. (AI-inferred)
+	Method any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// How many times this entity type may occur within a document, e.g. optional or required. (AI-inferred)
 	OccurrenceType any
-	ValueType      any
+	// The data type of this property's own value. (AI-inferred)
+	ValueType any
 }
 
 type SchemaVersion_Schema_EntityTypes struct {
-	BaseTypes   any
+	// The parent entity type(s) this entity type inherits fields from. (AI-inferred)
+	BaseTypes any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	EnumValues  any
-	Name        any
-	Properties  any
+	// The set of named values this enum-typed property is restricted to. (AI-inferred)
+	EnumValues any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
 }
 
 type SchemaVersion_Schema_Metadata struct {

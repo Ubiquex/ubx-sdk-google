@@ -13,98 +13,152 @@ class Cluster_Config_AutoscalingConfig:
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators:
+    # How many accelerator (GPU) devices are attached per instance. (AI-inferred)
     accelerator_count: Any = None
+    # The full URI of the accelerator type attached. (AI-inferred)
     accelerator_type_uri: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs:
+    # The size, in GB, of this disk. (AI-inferred)
     disk_size_gb: Any = None
+    # The disk type provisioned, e.g. `pd-ssd`. (AI-inferred)
     disk_type: Any = None
+    # The provisioned IOPS for this disk, when using a disk type that supports configuring it. (AI-inferred)
     provisioned_iops: Any = None
+    # The provisioned throughput for this disk, when using a disk type that supports configuring it. (AI-inferred)
     provisioned_throughput: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig:
+    # Additional persistent disk(s) attached to each instance, beyond the boot disk. (AI-inferred)
     attached_disk_configs: Any = None
+    # The provisioned IOPS for the boot disk, when using a disk type that supports configuring it. (AI-inferred)
     boot_disk_provisioned_iops: Any = None
+    # The provisioned throughput for the boot disk, when using a disk type that supports configuring it. (AI-inferred)
     boot_disk_provisioned_throughput: Any = None
+    # The size, in GB, of each instance's own boot disk. (AI-inferred)
     boot_disk_size_gb: Any = None
+    # The boot disk type provisioned for each instance, e.g. `pd-ssd`. (AI-inferred)
     boot_disk_type: Any = None
+    # The interface local SSDs are attached over, e.g. `NVME` or `SCSI`. (AI-inferred)
     local_ssd_interface: Any = None
+    # How many local SSD disks are attached. (AI-inferred)
     num_local_ssds: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList:
+    # Configuration for each instance's own attached disk(s). (AI-inferred)
     disk_config: Any = None
+    # The machine type(s) this applies to. (AI-inferred)
     machine_types: Any = None
+    # The relative preference order of this option -- lower values are preferred first. (AI-inferred)
     rank: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults:
+    # The Compute Engine machine type provisioned for each instance. (AI-inferred)
     machine_type: Any = None
+    # The number of VM instances this applies to. (AI-inferred)
     vm_count: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix:
+    # The number of instances always provisioned as standard (non-Spot), before any additional Spot capacity mix applies. (AI-inferred)
     standard_capacity_base: Any = None
+    # The percentage of capacity above `standard_capacity_base` provisioned as standard (non-Spot), rather than Spot. (AI-inferred)
     standard_capacity_percent_above_base: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy:
+    # The machine type(s) considered for this instance group's own flexible provisioning. (AI-inferred)
     instance_machine_types: Any = None
+    # The ranked machine type option(s) considered when provisioning instances for this group. (AI-inferred)
     instance_selection_list: Any = None
+    # Output only. Which machine type(s) were actually selected when provisioning this instance group. (AI-inferred)
     instance_selection_results: Any = None
+    # Configures a mix of standard and Spot/preemptible instances within this group. (AI-inferred)
     provisioning_model_mix: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences:
+    # An identifier for this specific instance. (AI-inferred)
     instance_id: Any = None
+    # The name of this instance. (AI-inferred)
     instance_name: Any = None
+    # The public ECIES key used to encrypt sensitive job parameters. (AI-inferred)
     public_ecies_key: Any = None
+    # A public key used for encryption or authentication. (AI-inferred)
     public_key: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig:
+    # The name of the underlying Compute Engine managed instance group. (AI-inferred)
     instance_group_manager_name: Any = None
+    # The URI of the underlying Compute Engine managed instance group. (AI-inferred)
     instance_group_manager_uri: Any = None
+    # The name of the Compute Engine instance template used for this instance group. (AI-inferred)
     instance_template_name: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig:
+    # The fraction of instances that must successfully register before cluster creation is considered complete. (AI-inferred)
     required_registration_fraction: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig:
+    # The accelerator (GPU) device(s) attached to each instance. (AI-inferred)
     accelerators: Any = None
+    # Configuration for each instance's own attached disk(s). (AI-inferred)
     disk_config: Any = None
+    # The custom image URI used for this cluster's own instances. (AI-inferred)
     image_uri: Any = None
+    # Configures a mix of machine types and provisioning models for this instance group, to improve availability and cost. (AI-inferred)
     instance_flexibility_policy: Any = None
+    # The name(s) of the instance(s) this applies to. (AI-inferred)
     instance_names: Any = None
+    # Reference(s) to specific instance(s). (AI-inferred)
     instance_references: Any = None
+    # Whether this instance is preemptible/spot, rather than standard on-demand. (AI-inferred)
     is_preemptible: Any = None
+    # The full URI of the machine type provisioned. (AI-inferred)
     machine_type_uri: Any = None
+    # Configuration for the underlying Compute Engine managed instance group backing this cluster's own instance group. (AI-inferred)
     managed_group_config: Any = None
+    # The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred)
     min_cpu_platform: Any = None
+    # The minimum number of instances required for cluster creation to succeed. (AI-inferred)
     min_num_instances: Any = None
+    # How many instances this group has. (AI-inferred)
     num_instances: Any = None
+    # Whether instances in this group are `PREEMPTIBLE`, `SPOT`, or non-preemptible. (AI-inferred)
     preemptibility: Any = None
+    # Configuration for how many instances must be running before the cluster is considered started. (AI-inferred)
     startup_config: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups_NodeGroup:
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for a Dataproc node group -- a shared pool of instances usable across clusters. (AI-inferred)
     node_group_config: Any = None
+    # The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred)
     roles: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_AuxiliaryNodeGroups:
+    # A reference to the node group this applies to. (AI-inferred)
     node_group: Any = None
+    # A caller-chosen identifier for this node group, unique within its own cluster. (AI-inferred)
     node_group_id: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_DataprocMetricConfig_Metrics:
+    # Caller-specified metric(s) used to override the default autoscaling signal. (AI-inferred)
     metric_overrides: Any = None
+    # Which source (e.g. Hadoop YARN, Spark) autoscaling metrics are drawn from. (AI-inferred)
     metric_source: Any = None
 
 @dataclasses.dataclass
@@ -198,36 +252,55 @@ class Cluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTarget:
 
 @dataclasses.dataclass
 class Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling:
+    # The maximum number of nodes this group may scale up to. (AI-inferred)
     max_node_count: Any = None
+    # The minimum number of nodes this group scales down to. (AI-inferred)
     min_node_count: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators:
+    # How many accelerator (GPU) devices are attached per instance. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU) type attached, e.g. `nvidia-tesla-t4`. (AI-inferred)
     accelerator_type: Any = None
+    # The fraction of a physical GPU allocated per partition, when GPU partitioning is used. (AI-inferred)
     gpu_partition_size: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config:
+    # The accelerator (GPU) device(s) attached to each instance. (AI-inferred)
     accelerators: Any = None
+    # The Cloud KMS key used to encrypt each instance's own boot disk. (AI-inferred)
     boot_disk_kms_key: Any = None
+    # How many local SSD disks are attached to each instance. (AI-inferred)
     local_ssd_count: Any = None
+    # The Compute Engine machine type provisioned for each instance. (AI-inferred)
     machine_type: Any = None
+    # The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred)
     min_cpu_platform: Any = None
+    # Whether each instance is preemptible, lower cost but reclaimable at any time. (AI-inferred)
     preemptible: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # Whether each instance runs as a Spot VM, lower cost but reclaimable at any time. (AI-inferred)
     spot: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig:
+    # Configuration for automatically resizing this cluster's own worker instance group(s) based on load. (AI-inferred)
     autoscaling: Any = None
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # The zone(s) this resource is spread across. (AI-inferred)
     locations: Any = None
 
 @dataclasses.dataclass
 class Cluster_Config_GkeClusterConfig_NodePoolTarget:
+    # A reference to the node pool this applies to, for a GKE-based Dataproc cluster. (AI-inferred)
     node_pool: Any = None
+    # Configuration for a GKE node pool backing this Dataproc-on-GKE cluster. (AI-inferred)
     node_pool_config: Any = None
+    # The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred)
     roles: Any = None
 
 @dataclasses.dataclass
@@ -241,7 +314,9 @@ class Cluster_Config_GkeClusterConfig:
 
 @dataclasses.dataclass
 class Cluster_Config_InitializationActions:
+    # The Pig/Hive/Presto script file to execute. (AI-inferred)
     executable_file: Any = None
+    # How long this workflow template's own execution may run before being cancelled. (AI-inferred)
     execution_timeout: Any = None
 
 @dataclasses.dataclass

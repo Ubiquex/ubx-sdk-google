@@ -2,15 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface Instance_MaintenancePolicy_WeeklyMaintenanceWindow {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: string | Computed<string>;
+  /** How long this operation ran for. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime | Computed<Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime>;
 }
 
@@ -37,7 +44,9 @@ export interface Instance_MaintenanceSchedule {
 }
 
 export interface Instance_Nodes {
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The Compute Engine zone this applies to. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
@@ -53,10 +62,15 @@ export interface Instance_PersistenceConfig {
 }
 
 export interface Instance_ServerCaCerts {
+  /** The certificate presented for this connection. (AI-inferred) */
   cert?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred) */
   expireTime?: string | Computed<string>;
+  /** This certificate's own serial number. (AI-inferred) */
   serialNumber?: string | Computed<string>;
+  /** A SHA-1 fingerprint of this certificate. (AI-inferred) */
   sha1Fingerprint?: string | Computed<string>;
 }
 

@@ -16,27 +16,36 @@ type CaPool_IssuancePolicy_AllowedIssuanceModes struct {
 }
 
 type CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurve struct {
+	// The algorithm used to sign this certificate. (AI-inferred)
 	SignatureAlgorithm any
 }
 
 type CaPool_IssuancePolicy_AllowedKeyTypes_Rsa struct {
+	// The maximum RSA key modulus size, in bits, accepted for a certificate request. (AI-inferred)
 	MaxModulusSize any
+	// The minimum RSA key modulus size, in bits, accepted for a certificate request. (AI-inferred)
 	MinModulusSize any
 }
 
 type CaPool_IssuancePolicy_AllowedKeyTypes struct {
+	// Configures this key as an elliptic-curve key, on the specified curve. (AI-inferred)
 	EllipticCurve any
-	Rsa           any
+	// Configures this key as an RSA key, with the specified modulus size. (AI-inferred)
+	Rsa any
 }
 
 type CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectId struct {
+	// The numeric component(s) making up an object identifier. (AI-inferred)
 	ObjectIdPath any
 }
 
 type CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions struct {
+	// Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
 	Critical any
+	// An X.509 object identifier (OID). (AI-inferred)
 	ObjectId any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type CaPool_IssuancePolicy_BaselineValues_CaOptions struct {

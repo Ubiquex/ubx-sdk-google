@@ -30,30 +30,51 @@ var V2beta1Document_LatestReloadStatusFields = ubx.FieldMap{
 }
 
 type V2beta1DocumentConfig struct {
-	Content            any
-	ContentUri         any
-	DisplayName        any
-	EnableAutoReload   any
-	KnowledgeTypes     any
+	// The real, raw content of this document, when provided inline rather than by reference. (AI-inferred)
+	Content any
+	// The URI this document's own real content is read from. (AI-inferred)
+	ContentUri any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether this document is automatically re-imported whenever its own source content changes. (AI-inferred)
+	EnableAutoReload any
+	// The real type(s) of knowledge this document provides, e.g. FAQ or extractive question answering. (AI-inferred)
+	KnowledgeTypes any
+	// The real outcome of this document's own most recent reload attempt. (AI-inferred)
 	LatestReloadStatus any
-	Metadata           any
-	MimeType           any
-	Name               any
-	RawContent         any
+	// Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
+	Metadata any
+	// The real MIME type of this document's own content, e.g. text/html or text/csv. (AI-inferred)
+	MimeType any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// This document's own real content, provided directly as bytes rather than by reference. (AI-inferred)
+	RawContent any
 }
 
 type V2beta1DocumentAttrs struct {
-	Content            any
-	ContentUri         any
-	DisplayName        any
-	EnableAutoReload   any
-	KnowledgeTypes     any
+	// The real, raw content of this document, when provided inline rather than by reference. (AI-inferred)
+	Content any
+	// The URI this document's own real content is read from. (AI-inferred)
+	ContentUri any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether this document is automatically re-imported whenever its own source content changes. (AI-inferred)
+	EnableAutoReload any
+	// The real type(s) of knowledge this document provides, e.g. FAQ or extractive question answering. (AI-inferred)
+	KnowledgeTypes any
+	// The real outcome of this document's own most recent reload attempt. (AI-inferred)
 	LatestReloadStatus any
-	Metadata           any
-	MimeType           any
-	Name               any
-	RawContent         any
-	State              any
+	// Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
+	Metadata any
+	// The real MIME type of this document's own content, e.g. text/html or text/csv. (AI-inferred)
+	MimeType any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// This document's own real content, provided directly as bytes rather than by reference. (AI-inferred)
+	RawContent any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 var V2beta1Document = ubx.ResourceBinding{

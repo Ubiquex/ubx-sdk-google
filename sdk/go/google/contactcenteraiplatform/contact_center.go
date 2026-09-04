@@ -11,16 +11,24 @@ type ContactCenter_AdminUser struct {
 }
 
 type ContactCenter_Critical_PeakHours_EndTime struct {
-	Hours   any
+	// The hour-of-day component (0-23) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
+	Hours any
+	// The minute-of-hour component (0-59) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred)
+	Nanos any
+	// The second-of-minute component (0-60, allowing a leap second) of a `google.type.TimeOfDay`/`DateTime`, or the whole-unit component of a `google.protobuf.Duration`/`Timestamp` paired with that same message's own `nanos`. (AI-inferred)
 	Seconds any
 }
 
 type ContactCenter_Critical_PeakHours struct {
-	Days      any
-	Duration  any
-	EndTime   any
+	// The real day(s) of the week this peak-hours window applies to. (AI-inferred)
+	Days any
+	// The real duration of this contact center's own peak usage window. (AI-inferred)
+	Duration any
+	// The real time of day this peak-hours window ends. (AI-inferred)
+	EndTime any
+	// The real time of day this peak-hours window starts. (AI-inferred)
 	StartTime any
 }
 
@@ -40,7 +48,9 @@ type ContactCenter_InstanceConfig struct {
 }
 
 type ContactCenter_PrivateAccess_EgressSettings struct {
-	Name                   any
+	// The real, named private-access egress setting this contact center's own network configuration applies. (AI-inferred)
+	Name any
+	// The real Private Service Connect service attachment name(s) this contact center's own egress traffic is routed through. (AI-inferred)
 	ServiceAttachmentNames any
 }
 
@@ -187,7 +197,8 @@ type ContactCenterConfig struct {
 	// Required. A user friendly name for the ContactCenter.
 	DisplayName any
 	// LINT.IfChange First Channel to receive the updates. Meant to dev/test instances
-	Early         any
+	Early any
+	// Output only. Real, computed feature configuration and entitlements active for this contact center instance. (AI-inferred)
 	FeatureConfig any
 	// Message storing the instance configuration.
 	InstanceConfig any
@@ -229,7 +240,8 @@ type ContactCenterAttrs struct {
 	// LINT.IfChange First Channel to receive the updates. Meant to dev/test instances
 	Early any
 	// Output only. Timestamp in UTC of when this resource is considered expired.
-	ExpireTime    any
+	ExpireTime any
+	// Output only. Real, computed feature configuration and entitlements active for this contact center instance. (AI-inferred)
 	FeatureConfig any
 	// Message storing the instance configuration.
 	InstanceConfig any

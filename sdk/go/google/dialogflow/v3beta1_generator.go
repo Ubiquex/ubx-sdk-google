@@ -64,21 +64,33 @@ var V3beta1Generator_PromptTextFields = ubx.FieldMap{
 }
 
 type V3beta1GeneratorConfig struct {
-	DisplayName      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
 	LlmModelSettings any
-	ModelParameter   any
-	Name             any
-	Placeholders     any
-	PromptText       any
+	// A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
+	ModelParameter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
+	Placeholders any
+	// The prompt text played or displayed to the user. (AI-inferred)
+	PromptText any
 }
 
 type V3beta1GeneratorAttrs struct {
-	DisplayName      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
 	LlmModelSettings any
-	ModelParameter   any
-	Name             any
-	Placeholders     any
-	PromptText       any
+	// A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
+	ModelParameter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
+	Placeholders any
+	// The prompt text played or displayed to the user. (AI-inferred)
+	PromptText any
 }
 
 var V3beta1Generator = ubx.ResourceBinding{

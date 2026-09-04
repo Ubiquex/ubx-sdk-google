@@ -96,7 +96,9 @@ export interface GoldengateConnection_Properties_DatabricksConnectionProperties 
 }
 
 export interface GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributes {
+  /** The key of this metadata entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -332,8 +334,11 @@ export interface GoldengateConnection_Properties_JavaMessageServiceConnectionPro
 }
 
 export interface GoldengateConnection_Properties_KafkaConnectionProperties_BootstrapServers {
+  /** The hostname this applies to. (AI-inferred) */
   host?: string | Computed<string>;
+  /** The port number this applies to. (AI-inferred) */
   port?: number | Computed<number>;
+  /** The private IP address assigned to this resource. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
 }
 

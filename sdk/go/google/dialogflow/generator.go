@@ -4,23 +4,32 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Generator_LlmModelSettings struct {
-	Model      any
+	// The name of the model this applies to. (AI-inferred)
+	Model any
+	// The prompt text played or displayed to the user. (AI-inferred)
 	PromptText any
 }
 
 type Generator_ModelParameter struct {
+	// The maximum number of tokens the model may generate. (AI-inferred)
 	MaxDecodeSteps any
-	Temperature    any
-	TopK           any
-	TopP           any
+	// Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred)
+	Temperature any
+	// Restricts sampling to the K most probable next tokens at each step. (AI-inferred)
+	TopK any
+	// Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred)
+	TopP any
 }
 
 type Generator_Placeholders struct {
-	Id   any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
 }
 
 type Generator_PromptText struct {
+	// The plain-text content of this response message. (AI-inferred)
 	Text any
 }
 
@@ -46,21 +55,33 @@ var Generator_PromptTextFields = ubx.FieldMap{
 }
 
 type GeneratorConfig struct {
-	DisplayName      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
 	LlmModelSettings any
-	ModelParameter   any
-	Name             any
-	Placeholders     any
-	PromptText       any
+	// A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
+	ModelParameter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
+	Placeholders any
+	// The prompt text played or displayed to the user. (AI-inferred)
+	PromptText any
 }
 
 type GeneratorAttrs struct {
-	DisplayName      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
 	LlmModelSettings any
-	ModelParameter   any
-	Name             any
-	Placeholders     any
-	PromptText       any
+	// A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
+	ModelParameter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
+	Placeholders any
+	// The prompt text played or displayed to the user. (AI-inferred)
+	PromptText any
 }
 
 var Generator = ubx.ResourceBinding{

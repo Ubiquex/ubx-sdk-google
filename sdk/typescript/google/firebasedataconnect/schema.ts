@@ -2,32 +2,47 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Schema_Datasources_HttpGraphql {
+  /** How long this operation is allowed to run before timing out. (AI-inferred) */
   timeout?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Schema_Datasources_Postgresql_CloudSql {
+  /** The Cloud SQL edition this instance runs, e.g. Enterprise or Enterprise Plus. (AI-inferred) */
   edition?: string | Computed<string>;
+  /** A reference to the underlying database instance. (AI-inferred) */
   instance?: string | Computed<string>;
 }
 
 export interface Schema_Datasources_Postgresql {
+  /** Configuration for connecting to a Cloud SQL database. (AI-inferred) */
   cloudSql?: Schema_Datasources_Postgresql_CloudSql | Computed<Schema_Datasources_Postgresql_CloudSql>;
+  /** A reference to the database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** Whether this resource is temporary and not intended to persist. (AI-inferred) */
   ephemeral?: boolean | Computed<boolean>;
+  /** The GraphQL schema defining this service's own data model. (AI-inferred) */
   schema?: string | Computed<string>;
+  /** How schema change(s) are applied to the underlying database. (AI-inferred) */
   schemaMigration?: string | Computed<string>;
+  /** How strictly the schema is validated against the underlying database before deployment. (AI-inferred) */
   schemaValidation?: string | Computed<string>;
+  /** Whether this schema is not yet linked to a data source. (AI-inferred) */
   unlinked?: boolean | Computed<boolean>;
 }
 
 export interface Schema_Datasources {
+  /** Configuration for exposing this connector's own operations over HTTP GraphQL. (AI-inferred) */
   httpGraphql?: Schema_Datasources_HttpGraphql | Computed<Schema_Datasources_HttpGraphql>;
+  /** Configuration specific to a PostgreSQL data source. (AI-inferred) */
   postgresql?: Schema_Datasources_Postgresql | Computed<Schema_Datasources_Postgresql>;
 }
 
 export interface Schema_Source_Files {
+  /** The literal content of this field. (AI-inferred) */
   content?: string | Computed<string>;
+  /** A file or resource path. (AI-inferred) */
   path?: string | Computed<string>;
 }
 

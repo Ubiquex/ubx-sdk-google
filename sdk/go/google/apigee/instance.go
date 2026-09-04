@@ -11,14 +11,20 @@ type Instance_AccessLoggingConfig struct {
 }
 
 type Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTime struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type Instance_MaintenanceUpdatePolicy_MaintenanceWindows struct {
-	Day       any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// When this event or window started. (AI-inferred)
 	StartTime any
 }
 

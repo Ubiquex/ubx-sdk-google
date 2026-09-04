@@ -2,75 +2,109 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpoint {
+  /** A reference to the forwarding rule this applies to. (AI-inferred) */
   forwardingRule?: string | Computed<string>;
 }
 
 export interface ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources {
+  /** A reference to the access level this applies to. (AI-inferred) */
   accessLevel?: string | Computed<string>;
+  /** A reference to the Private Service Connect endpoint this applies to. (AI-inferred) */
   pscEndpoint?: ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpoint | Computed<ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpoint>;
+  /** A reference to the resource this applies to. (AI-inferred) */
   resource?: string | Computed<string>;
 }
 
 export interface ServicePerimeter_Spec_EgressPolicies_EgressFrom {
+  /** The identity/identities this rule applies to. (AI-inferred) */
   identities?: string[] | Computed<string[]>;
+  /** The category of identity/identities this rule applies to, e.g. any identity or a specific list. (AI-inferred) */
   identityType?: string | Computed<string>;
+  /** Whether access is restricted based on the request's own network source. (AI-inferred) */
   sourceRestriction?: string | Computed<string>;
+  /** The source(s) this rule matches traffic from. (AI-inferred) */
   sources?: ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources[] | Computed<ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources[]>;
 }
 
 export interface ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectors {
+  /** The specific API method this rule applies to. (AI-inferred) */
   method?: string | Computed<string>;
+  /** The specific IAM permission this rule applies to. (AI-inferred) */
   permission?: string | Computed<string>;
 }
 
 export interface ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations {
+  /** The specific API method(s) or permission(s) this rule applies to. (AI-inferred) */
   methodSelectors?: ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectors[] | Computed<ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectors[]>;
+  /** The name of the Google Cloud service this applies to. (AI-inferred) */
   serviceName?: string | Computed<string>;
 }
 
 export interface ServicePerimeter_Spec_EgressPolicies_EgressTo {
+  /** External (non-Google-Cloud) resource(s) this rule applies to. (AI-inferred) */
   externalResources?: string[] | Computed<string[]>;
+  /** The API operation(s) this rule applies to. (AI-inferred) */
   operations?: ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations[] | Computed<ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations[]>;
+  /** The resource(s) this rule applies to. (AI-inferred) */
   resources?: string[] | Computed<string[]>;
+  /** The IAM role(s) this restriction applies to. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
 }
 
 export interface ServicePerimeter_Spec_EgressPolicies {
+  /** The source(s) this egress rule applies to. (AI-inferred) */
   egressFrom?: ServicePerimeter_Spec_EgressPolicies_EgressFrom | Computed<ServicePerimeter_Spec_EgressPolicies_EgressFrom>;
+  /** The destination(s) this egress rule permits access to. (AI-inferred) */
   egressTo?: ServicePerimeter_Spec_EgressPolicies_EgressTo | Computed<ServicePerimeter_Spec_EgressPolicies_EgressTo>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface ServicePerimeter_Spec_IngressPolicies_IngressFrom {
+  /** The identity/identities this rule applies to. (AI-inferred) */
   identities?: string[] | Computed<string[]>;
+  /** The category of identity/identities this rule applies to, e.g. any identity or a specific list. (AI-inferred) */
   identityType?: string | Computed<string>;
+  /** The source(s) this rule matches traffic from. (AI-inferred) */
   sources?: ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources[] | Computed<ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources[]>;
 }
 
 export interface ServicePerimeter_Spec_IngressPolicies_IngressTo {
+  /** The API operation(s) this rule applies to. (AI-inferred) */
   operations?: ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations[] | Computed<ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations[]>;
+  /** The resource(s) this rule applies to. (AI-inferred) */
   resources?: string[] | Computed<string[]>;
+  /** The IAM role(s) this restriction applies to. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
 }
 
 export interface ServicePerimeter_Spec_IngressPolicies {
+  /** The source(s) this ingress rule applies to. (AI-inferred) */
   ingressFrom?: ServicePerimeter_Spec_IngressPolicies_IngressFrom | Computed<ServicePerimeter_Spec_IngressPolicies_IngressFrom>;
+  /** The destination(s) this ingress rule permits access to. (AI-inferred) */
   ingressTo?: ServicePerimeter_Spec_IngressPolicies_IngressTo | Computed<ServicePerimeter_Spec_IngressPolicies_IngressTo>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeader {
+  /** A key identifying this entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers {
+  /** Whether an identifying header is added to requests as they pass through this configuration. (AI-inferred) */
   addRequestHeader?: ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeader | Computed<ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeader>;
 }
 
 export interface ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns {
+  /** Additional modifier(s) refining how this rule is evaluated. (AI-inferred) */
   modifiers?: ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers[] | Computed<ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers[]>;
+  /** A regular expression a `string`-typed value must match. (AI-inferred) */
   pattern?: string | Computed<string>;
+  /** The Google Cloud service this rule applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 

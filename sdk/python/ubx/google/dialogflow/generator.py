@@ -8,23 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Generator_LlmModelSettings:
+    # The name of the model this applies to. (AI-inferred)
     model: Any = None
+    # The prompt text played or displayed to the user. (AI-inferred)
     prompt_text: Any = None
 
 @dataclasses.dataclass
 class Generator_ModelParameter:
+    # The maximum number of tokens the model may generate. (AI-inferred)
     max_decode_steps: Any = None
+    # Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred)
     temperature: Any = None
+    # Restricts sampling to the K most probable next tokens at each step. (AI-inferred)
     top_k: Any = None
+    # Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred)
     top_p: Any = None
 
 @dataclasses.dataclass
 class Generator_Placeholders:
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Generator_PromptText:
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 _Generator_LlmModelSettingsFields = {
@@ -50,20 +59,32 @@ _Generator_PromptTextFields = {
 
 @dataclasses.dataclass
 class GeneratorConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
     model_parameter: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
     placeholders: Any = None
+    # The prompt text played or displayed to the user. (AI-inferred)
     prompt_text: Any = None
 
 @dataclasses.dataclass
 class GeneratorAttrs:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
     model_parameter: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
     placeholders: Any = None
+    # The prompt text played or displayed to the user. (AI-inferred)
     prompt_text: Any = None
 
 Generator = ubx.ResourceBinding(

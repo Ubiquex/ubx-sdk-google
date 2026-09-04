@@ -206,29 +206,50 @@ _V2beta1Tool_OpenApiSpecFields = {
 
 @dataclasses.dataclass
 class V2beta1ToolConfig:
+    # Configures whether this tool's own real action(s) require explicit confirmation before running. (AI-inferred)
     action_confirmation_requirement: Any = None
+    # The specification of a connector (an external API or service) a generator can call. (AI-inferred)
     connector_spec: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The specification of an extension a generator can invoke. (AI-inferred)
     extension_spec: Any = None
+    # Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
     function_spec: Any = None
+    # Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_spec: Any = None
+    # The real, caller-supplied key identifying which of this playbook's own tools an action invokes. (AI-inferred)
     tool_key: Any = None
 
 @dataclasses.dataclass
 class V2beta1ToolAttrs:
+    # Configures whether this tool's own real action(s) require explicit confirmation before running. (AI-inferred)
     action_confirmation_requirement: Any = None
+    # The specification of a connector (an external API or service) a generator can call. (AI-inferred)
     connector_spec: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The specification of an extension a generator can invoke. (AI-inferred)
     extension_spec: Any = None
+    # Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
     function_spec: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_spec: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
     satisfies_pzi: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
     satisfies_pzs: Any = None
+    # The real, caller-supplied key identifying which of this playbook's own tools an action invokes. (AI-inferred)
     tool_key: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 V2beta1Tool = ubx.ResourceBinding(

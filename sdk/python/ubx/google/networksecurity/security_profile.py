@@ -18,18 +18,25 @@ class SecurityProfile_CustomMirroringProfile:
 
 @dataclasses.dataclass
 class SecurityProfile_ThreatPreventionProfile_AntivirusOverrides:
+    # The action taken when this rule matches, e.g. allow or deny. (AI-inferred)
     action: Any = None
+    # The network protocol this rule matches. (AI-inferred)
     protocol: Any = None
 
 @dataclasses.dataclass
 class SecurityProfile_ThreatPreventionProfile_SeverityOverrides:
+    # The action taken when this rule matches, e.g. allow or deny. (AI-inferred)
     action: Any = None
+    # How serious this finding or threat is. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
 class SecurityProfile_ThreatPreventionProfile_ThreatOverrides:
+    # The action taken when this rule matches, e.g. allow or deny. (AI-inferred)
     action: Any = None
+    # An identifier for the specific threat signature this applies to. (AI-inferred)
     threat_id: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -43,8 +50,11 @@ class SecurityProfile_ThreatPreventionProfile:
 
 @dataclasses.dataclass
 class SecurityProfile_UrlFilteringProfile_UrlFilters:
+    # Whether matching traffic is allowed or denied. (AI-inferred)
     filtering_action: Any = None
+    # The relative priority of this rule -- lower numbers are evaluated first. (AI-inferred)
     priority: Any = None
+    # The URL(s) this applies to. (AI-inferred)
     urls: Any = None
 
 @dataclasses.dataclass

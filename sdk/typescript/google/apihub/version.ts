@@ -2,9 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Version_Accreditation_EnumValues_Values {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether this custom attribute's own value can't be changed after creation. (AI-inferred) */
   immutable?: boolean | Computed<boolean>;
 }
 
@@ -37,15 +41,22 @@ export interface Version_Documentation {
 }
 
 export interface Version_SourceMetadata_PluginInstanceActionSource {
+  /** An identifier for this action, unique within its own containing plugin. (AI-inferred) */
   actionId?: string | Computed<string>;
+  /** A reference to the plugin instance this applies to. (AI-inferred) */
   pluginInstance?: string | Computed<string>;
 }
 
 export interface Version_SourceMetadata {
+  /** When the original, externally-sourced resource was created. (AI-inferred) */
   originalResourceCreateTime?: string | Computed<string>;
+  /** The identifier of the original, externally-sourced resource this was imported from. (AI-inferred) */
   originalResourceId?: string | Computed<string>;
+  /** When the original, externally-sourced resource was last updated. (AI-inferred) */
   originalResourceUpdateTime?: string | Computed<string>;
+  /** Where this plugin action's own definition is sourced from. (AI-inferred) */
   pluginInstanceActionSource?: Version_SourceMetadata_PluginInstanceActionSource | Computed<Version_SourceMetadata_PluginInstanceActionSource>;
+  /** The kind of source this data came from. (AI-inferred) */
   sourceType?: string | Computed<string>;
 }
 

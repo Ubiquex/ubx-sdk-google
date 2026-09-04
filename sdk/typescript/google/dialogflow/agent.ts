@@ -2,85 +2,123 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Agent_AdvancedSettings_AudioExportGcsDestination {
+  /** The URI of an audio clip this response instructs the client to play. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Agent_AdvancedSettings_DtmfSettings {
+  /** Whether this setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred) */
   endpointingTimeoutDuration?: string | Computed<string>;
+  /** The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred) */
   finishDigit?: string | Computed<string>;
+  /** The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred) */
   interdigitTimeoutDuration?: string | Computed<string>;
+  /** The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred) */
   maxDigits?: number | Computed<number>;
 }
 
 export interface Agent_AdvancedSettings_LoggingSettings {
+  /** Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred) */
   enableConsentBasedRedaction?: boolean | Computed<boolean>;
+  /** Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred) */
   enableInteractionLogging?: boolean | Computed<boolean>;
+  /** Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred) */
   enableStackdriverLogging?: boolean | Computed<boolean>;
 }
 
 export interface Agent_AdvancedSettings_SpeechSettings {
+  /** How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred) */
   endpointerSensitivity?: number | Computed<number>;
+  /** Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred) */
   models?: Record<string, string> | Computed<Record<string, string>>;
+  /** How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred) */
   noSpeechTimeout?: string | Computed<string>;
+  /** Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred) */
   useTimeoutBasedEndpointing?: boolean | Computed<boolean>;
 }
 
 export interface Agent_AdvancedSettings {
+  /** The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred) */
   audioExportGcsDestination?: Agent_AdvancedSettings_AudioExportGcsDestination | Computed<Agent_AdvancedSettings_AudioExportGcsDestination>;
+  /** Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred) */
   dtmfSettings?: Agent_AdvancedSettings_DtmfSettings | Computed<Agent_AdvancedSettings_DtmfSettings>;
+  /** Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred) */
   loggingSettings?: Agent_AdvancedSettings_LoggingSettings | Computed<Agent_AdvancedSettings_LoggingSettings>;
+  /** Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred) */
   speechSettings?: Agent_AdvancedSettings_SpeechSettings | Computed<Agent_AdvancedSettings_SpeechSettings>;
 }
 
 export interface Agent_AnswerFeedbackSettings {
+  /** Whether end users can submit feedback on generated answers. (AI-inferred) */
   enableAnswerFeedback?: boolean | Computed<boolean>;
 }
 
 export interface Agent_ClientCertificateSettings {
+  /** The passphrase protecting this private key. (AI-inferred) */
   passphrase?: string | Computed<string>;
+  /** The private key used to authenticate. (AI-inferred) */
   privateKey?: string | Computed<string>;
+  /** The SSL/TLS certificate used for this connection. (AI-inferred) */
   sslCertificate?: string | Computed<string>;
 }
 
 export interface Agent_GenAppBuilderSettings {
+  /** A reference to the search or data engine this applies to. (AI-inferred) */
   engine?: string | Computed<string>;
 }
 
 export interface Agent_GitIntegrationSettings_GithubSettings {
+  /** An OAuth 2.0 access token used to authenticate this call. (AI-inferred) */
   accessToken?: string | Computed<string>;
+  /** The branch(es) of a source repository this integration tracks. (AI-inferred) */
   branches?: string[] | Computed<string[]>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The URI of the source repository this integration syncs with. (AI-inferred) */
   repositoryUri?: string | Computed<string>;
+  /** The source repository branch this integration keeps in sync with. (AI-inferred) */
   trackingBranch?: string | Computed<string>;
 }
 
 export interface Agent_GitIntegrationSettings {
+  /** Configuration for syncing this agent's own definition with a GitHub repository specifically. (AI-inferred) */
   githubSettings?: Agent_GitIntegrationSettings_GithubSettings | Computed<Agent_GitIntegrationSettings_GithubSettings>;
 }
 
 export interface Agent_PersonalizationSettings {
+  /** Default metadata about the end user, merged into each new session unless overridden. (AI-inferred) */
   defaultEndUserMetadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Agent_SpeechToTextSettings {
+  /** Whether speech recognition is biased toward this agent's own phrases and entities. (AI-inferred) */
   enableSpeechAdaptation?: boolean | Computed<boolean>;
 }
 
 export interface Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_Voice {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The preferred voice gender for synthesized speech, e.g. `FEMALE`, `MALE`, or `NEUTRAL`. (AI-inferred) */
   ssmlGender?: string | Computed<string>;
 }
 
 export interface Agent_TextToSpeechSettings_SynthesizeSpeechConfigs {
+  /** Audio effects profile(s) (e.g. for a specific speaker/headphone type) applied to synthesized speech. (AI-inferred) */
   effectsProfileId?: string[] | Computed<string[]>;
+  /** The pitch adjustment applied to synthesized speech. (AI-inferred) */
   pitch?: number | Computed<number>;
+  /** The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred) */
   speakingRate?: number | Computed<number>;
+  /** Configuration for which synthesized voice this agent uses. (AI-inferred) */
   voice?: Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_Voice | Computed<Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_Voice>;
+  /** The volume adjustment, in decibels, applied to synthesized speech. (AI-inferred) */
   volumeGainDb?: number | Computed<number>;
 }
 
 export interface Agent_TextToSpeechSettings {
+  /** Per-language configuration for how this agent's own text-to-speech output sounds. (AI-inferred) */
   synthesizeSpeechConfigs?: Record<string, Agent_TextToSpeechSettings_SynthesizeSpeechConfigs> | Computed<Record<string, Agent_TextToSpeechSettings_SynthesizeSpeechConfigs>>;
 }
 
@@ -196,54 +234,100 @@ const Agent_TextToSpeechSettingsFields: FieldMap = {
 };
 
 export interface AgentConfig {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: Agent_AdvancedSettings | Computed<Agent_AdvancedSettings>;
+  /** Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred) */
   answerFeedbackSettings?: Agent_AnswerFeedbackSettings | Computed<Agent_AnswerFeedbackSettings>;
+  /** The URI of an image representing this agent in the console and integrations. (AI-inferred) */
   avatarUri?: string | Computed<string>;
+  /** TLS client certificate configuration for mutual-TLS authentication. (AI-inferred) */
   clientCertificateSettings?: Agent_ClientCertificateSettings | Computed<Agent_ClientCertificateSettings>;
+  /** The language this agent responds in when no other language is specified or detected. (AI-inferred) */
   defaultLanguageCode?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred) */
   enableMultiLanguageTraining?: boolean | Computed<boolean>;
+  /** Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred) */
   enableSpellCorrection?: boolean | Computed<boolean>;
+  /** Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred) */
   enableStackdriverLogging?: boolean | Computed<boolean>;
+  /** Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred) */
   genAppBuilderSettings?: Agent_GenAppBuilderSettings | Computed<Agent_GenAppBuilderSettings>;
+  /** Configuration for syncing this agent's own definition with a Git repository. (AI-inferred) */
   gitIntegrationSettings?: Agent_GitIntegrationSettings | Computed<Agent_GitIntegrationSettings>;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked?: boolean | Computed<boolean>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for personalizing agent behavior per end user. (AI-inferred) */
   personalizationSettings?: Agent_PersonalizationSettings | Computed<Agent_PersonalizationSettings>;
+  /** A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred) */
   securitySettings?: string | Computed<string>;
+  /** Configuration for this agent's own speech-to-text behavior. (AI-inferred) */
   speechToTextSettings?: Agent_SpeechToTextSettings | Computed<Agent_SpeechToTextSettings>;
+  /** The flow the conversation begins in. (AI-inferred) */
   startFlow?: string | Computed<string>;
+  /** The playbook the conversation begins in. (AI-inferred) */
   startPlaybook?: string | Computed<string>;
+  /** The additional language(s), beyond the default, this agent can converse in. (AI-inferred) */
   supportedLanguageCodes?: string[] | Computed<string[]>;
+  /** Configuration for this agent's own text-to-speech behavior. (AI-inferred) */
   textToSpeechSettings?: Agent_TextToSpeechSettings | Computed<Agent_TextToSpeechSettings>;
+  /** The time zone this applies to, e.g. `America/Los_Angeles`. (AI-inferred) */
   timeZone?: string | Computed<string>;
 }
 
 export interface AgentAttrs {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings: Agent_AdvancedSettings;
+  /** Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred) */
   answerFeedbackSettings: Agent_AnswerFeedbackSettings;
+  /** The URI of an image representing this agent in the console and integrations. (AI-inferred) */
   avatarUri: string;
+  /** TLS client certificate configuration for mutual-TLS authentication. (AI-inferred) */
   clientCertificateSettings: Agent_ClientCertificateSettings;
+  /** The language this agent responds in when no other language is specified or detected. (AI-inferred) */
   defaultLanguageCode: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred) */
   enableMultiLanguageTraining: boolean;
+  /** Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred) */
   enableSpellCorrection: boolean;
+  /** Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred) */
   enableStackdriverLogging: boolean;
+  /** Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred) */
   genAppBuilderSettings: Agent_GenAppBuilderSettings;
+  /** Configuration for syncing this agent's own definition with a Git repository. (AI-inferred) */
   gitIntegrationSettings: Agent_GitIntegrationSettings;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked: boolean;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configuration for personalizing agent behavior per end user. (AI-inferred) */
   personalizationSettings: Agent_PersonalizationSettings;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred) */
   satisfiesPzi: boolean;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred) */
   satisfiesPzs: boolean;
+  /** A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred) */
   securitySettings: string;
+  /** Configuration for this agent's own speech-to-text behavior. (AI-inferred) */
   speechToTextSettings: Agent_SpeechToTextSettings;
+  /** The flow the conversation begins in. (AI-inferred) */
   startFlow: string;
+  /** The playbook the conversation begins in. (AI-inferred) */
   startPlaybook: string;
+  /** The additional language(s), beyond the default, this agent can converse in. (AI-inferred) */
   supportedLanguageCodes: string[];
+  /** Configuration for this agent's own text-to-speech behavior. (AI-inferred) */
   textToSpeechSettings: Agent_TextToSpeechSettings;
+  /** The time zone this applies to, e.g. `America/Los_Angeles`. (AI-inferred) */
   timeZone: string;
 }
 

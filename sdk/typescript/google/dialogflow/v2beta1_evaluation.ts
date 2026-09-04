@@ -890,23 +890,38 @@ const V2beta1Evaluation_SummarizationMetricsFields: FieldMap = {
 };
 
 export interface V2beta1EvaluationConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The real, current status of this evaluation run. (AI-inferred) */
   evaluationStatus?: V2beta1Evaluation_EvaluationStatus | Computed<V2beta1Evaluation_EvaluationStatus>;
+  /** Configures how a generator's own output is scored during this evaluation. (AI-inferred) */
   generatorEvaluationConfig?: V2beta1Evaluation_GeneratorEvaluationConfig | Computed<V2beta1Evaluation_GeneratorEvaluationConfig>;
+  /** The generator this evaluation run started from. (AI-inferred) */
   initialGenerator?: V2beta1Evaluation_InitialGenerator | Computed<V2beta1Evaluation_InitialGenerator>;
+  /** The real, computed accuracy metrics for this evaluation's own summarization output. (AI-inferred) */
   summarizationMetrics?: V2beta1Evaluation_SummarizationMetrics | Computed<V2beta1Evaluation_SummarizationMetrics>;
 }
 
 export interface V2beta1EvaluationAttrs {
+  /** When this evaluation run completed. (AI-inferred) */
   completeTime: string;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The real, current status of this evaluation run. (AI-inferred) */
   evaluationStatus: V2beta1Evaluation_EvaluationStatus;
+  /** Configures how a generator's own output is scored during this evaluation. (AI-inferred) */
   generatorEvaluationConfig: V2beta1Evaluation_GeneratorEvaluationConfig;
+  /** The generator this evaluation run started from. (AI-inferred) */
   initialGenerator: V2beta1Evaluation_InitialGenerator;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred) */
   satisfiesPzi: boolean;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred) */
   satisfiesPzs: boolean;
+  /** The real, computed accuracy metrics for this evaluation's own summarization output. (AI-inferred) */
   summarizationMetrics: V2beta1Evaluation_SummarizationMetrics;
 }
 

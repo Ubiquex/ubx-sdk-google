@@ -428,6 +428,7 @@ export interface AlphaFutureReservationConfig {
   /** Full or partial URL of an existing future reservation to indicate intent for reserving capacity in the same cluster as the colocation resource. */
   colocationResource?: string | Computed<string>;
   commitmentInfo?: AlphaFutureReservation_CommitmentInfo | Computed<AlphaFutureReservation_CommitmentInfo>;
+  /** The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred) */
   confidentialComputeType?: string | Computed<string>;
   /** Type of the deployment requested as part of future reservation. */
   deploymentType?: string | Computed<string>;
@@ -462,6 +463,7 @@ export interface AlphaFutureReservationConfig {
   status?: AlphaFutureReservation_Status | Computed<AlphaFutureReservation_Status>;
   /** Storage pool properties for the future reservation. */
   storagePoolProperties?: AlphaFutureReservation_StoragePoolProperties | Computed<AlphaFutureReservation_StoragePoolProperties>;
+  /** The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred) */
   timeWindow?: AlphaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow | Computed<AlphaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow>;
 }
 
@@ -479,6 +481,7 @@ export interface AlphaFutureReservationAttrs {
   /** Full or partial URL of an existing future reservation to indicate intent for reserving capacity in the same cluster as the colocation resource. */
   colocationResource: string;
   commitmentInfo: AlphaFutureReservation_CommitmentInfo;
+  /** The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred) */
   confidentialComputeType: string;
   /** Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format. */
   creationTimestamp: string;
@@ -523,6 +526,7 @@ export interface AlphaFutureReservationAttrs {
   status: AlphaFutureReservation_Status;
   /** Storage pool properties for the future reservation. */
   storagePoolProperties: AlphaFutureReservation_StoragePoolProperties;
+  /** The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred) */
   timeWindow: AlphaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow;
   /** Output only. [Output Only] URL of the Zone where this future reservation resides. */
   zone: string;

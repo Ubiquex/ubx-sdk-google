@@ -48,14 +48,20 @@ export interface ReleaseConfig_CodeCompilationConfig {
 }
 
 export interface ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatus {
+  /** The error's own numeric status code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional structured detail about the error. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of the error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface ReleaseConfig_RecentScheduledReleaseRecords {
+  /** The compilation result produced by this scheduled release run, if it succeeded. (AI-inferred) */
   compilationResult?: string | Computed<string>;
+  /** The error this scheduled release run failed with, if it didn't succeed. (AI-inferred) */
   errorStatus?: ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatus | Computed<ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatus>;
+  /** When this scheduled release run occurred. (AI-inferred) */
   releaseTime?: string | Computed<string>;
 }
 

@@ -2,9 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Agent_AfterAgentCallbacks {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** Whether the agent may call this tool on its own initiative, rather than only in direct response to an explicit user request. (AI-inferred) */
   proactiveExecutionEnabled?: boolean | Computed<boolean>;
+  /** Custom Python logic run inline as part of this tool or condition. (AI-inferred) */
   pythonCode?: string | Computed<string>;
 }
 
@@ -33,31 +37,42 @@ export interface Agent_RemoteDialogflowAgent {
 }
 
 export interface Agent_Toolsets {
+  /** The identifier(s) of the tool(s) this applies to. (AI-inferred) */
   toolIds?: string[] | Computed<string[]>;
+  /** A reference to the toolset this belongs to. (AI-inferred) */
   toolset?: string | Computed<string>;
 }
 
 export interface Agent_TransferRules_DeterministicTransfer_ExpressionCondition {
+  /** The expression text. (AI-inferred) */
   expression?: string | Computed<string>;
 }
 
 export interface Agent_TransferRules_DeterministicTransfer_PythonCodeCondition {
+  /** Custom Python logic run inline as part of this tool or condition. (AI-inferred) */
   pythonCode?: string | Computed<string>;
 }
 
 export interface Agent_TransferRules_DeterministicTransfer {
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   expressionCondition?: Agent_TransferRules_DeterministicTransfer_ExpressionCondition | Computed<Agent_TransferRules_DeterministicTransfer_ExpressionCondition>;
+  /** A Python expression that must evaluate truthy for this to apply. (AI-inferred) */
   pythonCodeCondition?: Agent_TransferRules_DeterministicTransfer_PythonCodeCondition | Computed<Agent_TransferRules_DeterministicTransfer_PythonCodeCondition>;
 }
 
 export interface Agent_TransferRules_DisablePlannerTransfer {
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   expressionCondition?: Agent_TransferRules_DeterministicTransfer_ExpressionCondition | Computed<Agent_TransferRules_DeterministicTransfer_ExpressionCondition>;
 }
 
 export interface Agent_TransferRules {
+  /** A reference to a sub-agent this agent may transfer the conversation to. (AI-inferred) */
   childAgent?: string | Computed<string>;
+  /** Whether this agent transfer happens automatically, without the model deciding whether to invoke it. (AI-inferred) */
   deterministicTransfer?: Agent_TransferRules_DeterministicTransfer | Computed<Agent_TransferRules_DeterministicTransfer>;
+  /** Which direction this applies in. (AI-inferred) */
   direction?: string | Computed<string>;
+  /** Whether the model is prevented from transferring the conversation to another agent on its own initiative. (AI-inferred) */
   disablePlannerTransfer?: Agent_TransferRules_DisablePlannerTransfer | Computed<Agent_TransferRules_DisablePlannerTransfer>;
 }
 

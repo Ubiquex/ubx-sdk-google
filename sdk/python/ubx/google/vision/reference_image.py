@@ -8,12 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReferenceImage_BoundingPolys_NormalizedVertices:
+    # The horizontal coordinate of one vertex in a bounding polygon. (AI-inferred)
     x: Any = None
+    # The vertical coordinate of one vertex in a bounding polygon. (AI-inferred)
     y: Any = None
 
 @dataclasses.dataclass
 class ReferenceImage_BoundingPolys:
+    # The real polygon vertices bounding the product within this reference image, normalized to `[0, 1]` relative to the image's own dimensions. (AI-inferred)
     normalized_vertices: Any = None
+    # The real polygon vertices bounding the product within this reference image, in the image's own real pixel coordinate space. (AI-inferred)
     vertices: Any = None
 
 _ReferenceImage_BoundingPolys_NormalizedVerticesFields = {

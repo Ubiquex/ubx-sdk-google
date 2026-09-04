@@ -76,13 +76,20 @@ type Job_TrainingInput_EvaluatorConfig struct {
 }
 
 type Job_TrainingInput_Hyperparameters_Params struct {
+	// The candidate string value(s) considered for this categorical hyperparameter. (AI-inferred)
 	CategoricalValues any
-	DiscreteValues    any
-	MaxValue          any
-	MinValue          any
-	ParameterName     any
-	ScaleType         any
-	Type              any
+	// The candidate numeric value(s) considered for this discrete hyperparameter. (AI-inferred)
+	DiscreteValues any
+	// The maximum value allowed. (AI-inferred)
+	MaxValue any
+	// The minimum value allowed. (AI-inferred)
+	MinValue any
+	// The name of a hyperparameter being tuned. (AI-inferred)
+	ParameterName any
+	// How this hyperparameter's own search space is scaled, e.g. linearly or logarithmically. (AI-inferred)
+	ScaleType any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_TrainingInput_Hyperparameters struct {
@@ -182,21 +189,33 @@ type Job_TrainingOutput_BuiltInAlgorithmOutput struct {
 }
 
 type Job_TrainingOutput_Trials_AllMetrics struct {
+	// The value of the objective metric this trial achieved. (AI-inferred)
 	ObjectiveValue any
-	TrainingStep   any
+	// The training step this metric was reported at. (AI-inferred)
+	TrainingStep any
 }
 
 type Job_TrainingOutput_Trials struct {
-	AllMetrics             any
+	// The full set of metric(s) reported for this trial. (AI-inferred)
+	AllMetrics any
+	// The output produced by a built-in training algorithm. (AI-inferred)
 	BuiltInAlgorithmOutput any
-	EndTime                any
-	FinalMetric            any
-	Hyperparameters        any
-	IsTrialStoppedEarly    any
-	StartTime              any
-	State                  any
-	TrialId                any
-	WebAccessUris          any
+	// When this event or window ended. (AI-inferred)
+	EndTime any
+	// The metric value reported at the conclusion of this trial. (AI-inferred)
+	FinalMetric any
+	// The hyperparameter tuning configuration for this training job. (AI-inferred)
+	Hyperparameters any
+	// Whether this trial was stopped before completing all of its own training steps. (AI-inferred)
+	IsTrialStoppedEarly any
+	// When this event or window started. (AI-inferred)
+	StartTime any
+	// The current status of this resource. (AI-inferred)
+	State any
+	// The unique identifier of this hyperparameter tuning trial. (AI-inferred)
+	TrialId any
+	// The URI(s) used to access this training job's own interactive web interface(s). (AI-inferred)
+	WebAccessUris any
 }
 
 type Job_TrainingOutput struct {

@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Acl_AclEntries:
+    # The host this ACL entry applies to; Google Cloud Managed Service for Apache Kafka requires this be the wildcard `*`. (AI-inferred)
     host: Any = None
+    # The Kafka operation this ACL entry grants or denies, e.g. `READ`, `WRITE`, or `ALL`. (AI-inferred)
     operation: Any = None
+    # Whether this ACL entry `ALLOW`s or `DENY`s the matching operation. (AI-inferred)
     permission_type: Any = None
+    # The identity this ACL entry applies to, in the form `User:{email}`, or `User:*` for any principal. (AI-inferred)
     principal: Any = None
 
 _Acl_AclEntriesFields = {

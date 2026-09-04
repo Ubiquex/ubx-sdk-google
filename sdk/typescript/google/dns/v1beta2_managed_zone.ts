@@ -193,10 +193,13 @@ export interface V1beta2ManagedZoneConfig {
   description?: string | Computed<string>;
   /** The DNS name of this managed zone, for instance "example.com.". */
   dnsName?: string | Computed<string>;
+  /** Configuration for signing this zone's own records with DNSSEC. (AI-inferred) */
   dnssecConfig?: V1beta2ManagedZone_DnssecConfig | Computed<V1beta2ManagedZone_DnssecConfig>;
+  /** Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred) */
   forwardingConfig?: V1beta2ManagedZone_ForwardingConfig | Computed<V1beta2ManagedZone_ForwardingConfig>;
   /** Unique identifier for the resource; defined by the server (output only) */
   id?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** User labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
@@ -206,8 +209,11 @@ export interface V1beta2ManagedZoneConfig {
   nameServerSet?: string | Computed<string>;
   /** Delegate your managed_zone to these virtual name servers; defined by the server (output only) */
   nameServers?: string[] | Computed<string[]>;
+  /** Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred) */
   peeringConfig?: V1beta2ManagedZone_PeeringConfig | Computed<V1beta2ManagedZone_PeeringConfig>;
+  /** Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred) */
   privateVisibilityConfig?: V1beta2ManagedZone_PrivateVisibilityConfig | Computed<V1beta2ManagedZone_PrivateVisibilityConfig>;
+  /** Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred) */
   reverseLookupConfig?: V1beta2ManagedZone_ReverseLookupConfig | Computed<V1beta2ManagedZone_ReverseLookupConfig>;
   /** Contains information about Service Directory-backed zones. */
   serviceDirectoryConfig?: V1beta2ManagedZone_ServiceDirectoryConfig | Computed<V1beta2ManagedZone_ServiceDirectoryConfig>;
@@ -224,10 +230,13 @@ export interface V1beta2ManagedZoneAttrs {
   description: string;
   /** The DNS name of this managed zone, for instance "example.com.". */
   dnsName: string;
+  /** Configuration for signing this zone's own records with DNSSEC. (AI-inferred) */
   dnssecConfig: V1beta2ManagedZone_DnssecConfig;
+  /** Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred) */
   forwardingConfig: V1beta2ManagedZone_ForwardingConfig;
   /** Unique identifier for the resource; defined by the server (output only) */
   id: string;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** User labels. */
   labels: Record<string, string>;
@@ -237,8 +246,11 @@ export interface V1beta2ManagedZoneAttrs {
   nameServerSet: string;
   /** Delegate your managed_zone to these virtual name servers; defined by the server (output only) */
   nameServers: string[];
+  /** Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred) */
   peeringConfig: V1beta2ManagedZone_PeeringConfig;
+  /** Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred) */
   privateVisibilityConfig: V1beta2ManagedZone_PrivateVisibilityConfig;
+  /** Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred) */
   reverseLookupConfig: V1beta2ManagedZone_ReverseLookupConfig;
   /** Contains information about Service Directory-backed zones. */
   serviceDirectoryConfig: V1beta2ManagedZone_ServiceDirectoryConfig;

@@ -8,22 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfig:
+    # Whether this text match is case-sensitive. (AI-inferred)
     case_sensitive: Any = None
 
 @dataclasses.dataclass
 class PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config:
+    # Configures this phrase matcher to require an exact text match. (AI-inferred)
     exact_match_config: Any = None
+    # Configures this phrase matcher to match using a regular expression. (AI-inferred)
     regex_match_config: Any = None
 
 @dataclasses.dataclass
 class PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules:
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # Whether this condition's own result is inverted. (AI-inferred)
     negated: Any = None
+    # The query text or expression. (AI-inferred)
     query: Any = None
 
 @dataclasses.dataclass
 class PhraseMatcher_PhraseMatchRuleGroups:
+    # The rule(s) making up this phrase matcher. (AI-inferred)
     phrase_match_rules: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 _PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfigFields = {

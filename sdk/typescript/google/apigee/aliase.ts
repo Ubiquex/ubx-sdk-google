@@ -2,16 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Aliase_CertsInfo_CertInfo {
+  /** The X.509 Basic Constraints extension, indicating whether this certificate is a CA. (AI-inferred) */
   basicConstraints?: string | Computed<string>;
+  /** When this certificate expires. (AI-inferred) */
   expiryDate?: string | Computed<string>;
+  /** Whether this certificate is currently valid (not expired, not revoked). (AI-inferred) */
   isValid?: string | Computed<string>;
+  /** The issuer identity of this certificate. (AI-inferred) */
   issuer?: string | Computed<string>;
+  /** The public key of this certificate or key pair. (AI-inferred) */
   publicKey?: string | Computed<string>;
+  /** This certificate's own serial number. (AI-inferred) */
   serialNumber?: string | Computed<string>;
+  /** The name of the algorithm used to sign this certificate. (AI-inferred) */
   sigAlgName?: string | Computed<string>;
+  /** The subject identity of this certificate. (AI-inferred) */
   subject?: string | Computed<string>;
+  /** Additional identity/identities (e.g. DNS names) this certificate is also valid for. (AI-inferred) */
   subjectAlternativeNames?: string[] | Computed<string[]>;
+  /** When this certificate becomes valid. (AI-inferred) */
   validFrom?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: number | Computed<number>;
 }
 
@@ -32,6 +43,7 @@ export interface AliaseConfig {
 export interface AliaseAttrs {
   /** Resource ID for this alias. Values must match the regular expression `[^/]{1,255}`. */
   alias: string;
+  /** Detail about the certificate(s) associated with this keystore/alias. (AI-inferred) */
   certsInfo: Aliase_CertsInfo;
   /** The HTTP Content-Type header value specifying the content type of the body. */
   contentType: string;

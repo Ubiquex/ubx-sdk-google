@@ -11,20 +11,26 @@ type Membership_PreferredMemberKey struct {
 }
 
 type Membership_Roles_ExpiryDetail struct {
+	// The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
 	ExpireTime any
 }
 
 type Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluation struct {
+	// The current status of this resource. (AI-inferred)
 	State any
 }
 
 type Membership_Roles_RestrictionEvaluations struct {
+	// The result of evaluating this group's own membership restriction expression. (AI-inferred)
 	MemberRestrictionEvaluation any
 }
 
 type Membership_Roles struct {
-	ExpiryDetail           any
-	Name                   any
+	// Additional detail about why this credential is expiring or expired. (AI-inferred)
+	ExpiryDetail any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The result(s) of evaluating this group's own membership restriction(s). (AI-inferred)
 	RestrictionEvaluations any
 }
 

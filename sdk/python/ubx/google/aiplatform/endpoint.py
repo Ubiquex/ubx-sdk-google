@@ -13,198 +13,307 @@ class Endpoint_ClientConnectionConfig:
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_AutomaticResources:
+    # The maximum number of machine replicas this job may scale up to. (AI-inferred)
     max_replica_count: Any = None
+    # The minimum number of machine replicas this job scales down to. (AI-inferred)
     min_replica_count: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecs:
+    # The name of the metric this applies to. (AI-inferred)
     metric_name: Any = None
+    # The target value autoscaling tries to maintain for this metric. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinity:
+    # A key identifying this entry. (AI-inferred)
     key: Any = None
+    # Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
     reservation_affinity_type: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_DedicatedResources_MachineSpec:
+    # How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
     accelerator_type: Any = None
+    # The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
     gpu_partition_size: Any = None
+    # The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
     machine_type: Any = None
+    # Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
     reservation_affinity: Any = None
+    # The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
     tpu_topology: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_DedicatedResources:
+    # The metric(s) (e.g. CPU utilization) autoscaling bases its own replica-count decisions on, and each one's target value. (AI-inferred)
     autoscaling_metric_specs: Any = None
+    # The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
     machine_spec: Any = None
+    # The maximum number of machine replicas this job may scale up to. (AI-inferred)
     max_replica_count: Any = None
+    # The minimum number of machine replicas this job scales down to. (AI-inferred)
     min_replica_count: Any = None
+    # The minimum number of replicas that must be ready before this deployment is considered available. (AI-inferred)
     required_replica_count: Any = None
+    # Whether this deployment runs on lower-cost Spot VMs, which can be preempted, rather than standard on-demand capacity. (AI-inferred)
     spot: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomain:
+    # The largest value this parameter may take. (AI-inferred)
     max_value: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min_value: Any = None
+    # The mean of this feature's own values before normalization. (AI-inferred)
     original_mean: Any = None
+    # The standard deviation of this feature's own values before normalization. (AI-inferred)
     original_stddev: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_Visualization:
+    # Attribution values below this percentile are clipped from the visualization. (AI-inferred)
     clip_percent_lowerbound: Any = None
+    # Attribution values above this percentile are clipped from the visualization. (AI-inferred)
     clip_percent_upperbound: Any = None
+    # The color scheme used to render attribution values in the visualization. (AI-inferred)
     color_map: Any = None
+    # How the attribution visualization is overlaid on the original input image. (AI-inferred)
     overlay_type: Any = None
+    # Whether the visualization highlights positive attributions, negative attributions, or both. (AI-inferred)
     polarity: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs:
+    # The name of the tensor giving the shape of a sparse input, when this input is represented sparsely. (AI-inferred)
     dense_shape_tensor_name: Any = None
+    # The baseline value(s) for the encoded tensor, used as the reference point feature attributions are computed against. (AI-inferred)
     encoded_baselines: Any = None
+    # The name of the encoded (post-transformation) input tensor this metadata describes. (AI-inferred)
     encoded_tensor_name: Any = None
+    # How this input feature is encoded into its own model tensor, e.g. `BAG_OF_FEATURES` or `IDENTITY`. (AI-inferred)
     encoding: Any = None
+    # The real-world value range (min/max, or original mean/standard deviation if normalized) this input feature was drawn from. (AI-inferred)
     feature_value_domain: Any = None
+    # Groups related input features together for combined feature-attribution reporting. (AI-inferred)
     group_name: Any = None
+    # The feature name corresponding to each index position in the input tensor -- required when `encoding` is a sparse/indicator encoding. (AI-inferred)
     index_feature_mapping: Any = None
+    # The name of the tensor giving the indices of a sparse input's own non-zero values. (AI-inferred)
     indices_tensor_name: Any = None
+    # The baseline value(s) for this input, used as the reference point feature attributions are computed against. (AI-inferred)
     input_baselines: Any = None
+    # The name of the model's own input tensor this metadata describes. (AI-inferred)
     input_tensor_name: Any = None
+    # The kind of data this input represents, e.g. `numeric`, `image`, or `text`. (AI-inferred)
     modality: Any = None
+    # How feature attributions for this input are rendered visually, e.g. for image inputs. (AI-inferred)
     visualization: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Metadata_Outputs:
+    # The key identifying which display-name mapping to apply to this output's own values. (AI-inferred)
     display_name_mapping_key: Any = None
+    # Maps output tensor index positions to their own human-readable display names. (AI-inferred)
     index_display_name_mapping: Any = None
+    # The name of the model's own output tensor this metadata describes. (AI-inferred)
     output_tensor_name: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Metadata:
+    # The URI of the schema describing this explanation's own feature-attribution output format. (AI-inferred)
     feature_attributions_schema_uri: Any = None
+    # The input(s) to this operation. (AI-inferred)
     inputs: Any = None
+    # The name of the input feature Integrated Gradients/XRAI treats as the model's own latent embedding space, for embedding-based explanations. (AI-inferred)
     latent_space_source: Any = None
+    # The output(s) produced by this operation. (AI-inferred)
     outputs: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSource:
+    # The Cloud Storage URI(s) this applies to. (AI-inferred)
     uris: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource:
+    # The file format the source data is stored in. (AI-inferred)
     data_format: Any = None
+    # A Cloud Storage location this data is read from. (AI-inferred)
     gcs_source: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_Presets:
+    # The kind of data this input represents, e.g. `numeric`, `image`, or `text`. (AI-inferred)
     modality: Any = None
+    # The query strategy to use, e.g. `PRECISE` or `FAST`. (AI-inferred)
     query: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples:
+    # The Cloud Storage location of the example dataset used for example-based explanations. (AI-inferred)
     example_gcs_source: Any = None
+    # Fine-grained configuration for the nearest-neighbor search index backing example-based explanations. (AI-inferred)
     nearest_neighbor_search_config: Any = None
+    # How many nearest-neighbor examples to return per prediction. (AI-inferred)
     neighbor_count: Any = None
+    # A named, predefined configuration bundle, as a shortcut for setting individual fields. (AI-inferred)
     presets: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfig:
+    # The maximum Gaussian blur strength applied when constructing a blurred baseline. (AI-inferred)
     max_blur_sigma: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The standard deviation parameter of a Gaussian/normal distribution used for sampling. (AI-inferred)
     sigma: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma:
+    # The standard deviation of Gaussian noise SmoothGrad adds to each sampled copy of the input. (AI-inferred)
     noise_sigma: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig:
+    # Per-feature noise standard deviation(s) applied by SmoothGrad, when different features need different noise levels. (AI-inferred)
     feature_noise_sigma: Any = None
+    # The standard deviation of Gaussian noise SmoothGrad adds to each sampled copy of the input. (AI-inferred)
     noise_sigma: Any = None
+    # How many noisy copies of the input SmoothGrad averages over. (AI-inferred)
     noisy_sample_count: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution:
+    # Configures Integrated Gradients/XRAI to use a progressively blurred version of the input as its own baseline, rather than a black image. (AI-inferred)
     blur_baseline_config: Any = None
+    # Configures SmoothGrad noise averaging, reducing visual noise in the resulting attribution by averaging over several noisy copies of the input. (AI-inferred)
     smooth_grad_config: Any = None
+    # How many steps this job or trial ran for. (AI-inferred)
     step_count: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttribution:
+    # How many feature-permutation paths Sampled Shapley samples to approximate attributions. (AI-inferred)
     path_count: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec_Parameters:
+    # Configures example-based explanations -- returning the training examples most similar to a given prediction, instead of a feature-attribution score. (AI-inferred)
     examples: Any = None
+    # Computes feature attributions using the Integrated Gradients method, integrating the model's own gradient along a path from a baseline input to the actual input. (AI-inferred)
     integrated_gradients_attribution: Any = None
+    # Restricts explanations to specific output index/indices, instead of every model output. (AI-inferred)
     output_indices: Any = None
+    # Computes feature attributions using the Sampled Shapley method, approximating Shapley values by sampling feature permutations. (AI-inferred)
     sampled_shapley_attribution: Any = None
+    # Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
     top_k: Any = None
+    # Computes feature attributions for image inputs using the XRAI method, an Integrated-Gradients variant that groups pixels into coherent regions. (AI-inferred)
     xrai_attribution: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_ExplanationSpec:
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_FasterDeploymentConfig:
+    # Whether this deployment uses a faster, lower-fidelity rollout path suited for quick experimentation. (AI-inferred)
     fast_tryout_enabled: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_PrivateEndpoints:
+    # The private URI for sending explanation requests to this deployment. (AI-inferred)
     explain_http_uri: Any = None
+    # The private URI for health-checking this deployment. (AI-inferred)
     health_http_uri: Any = None
+    # The private URI for sending prediction requests to this deployment. (AI-inferred)
     predict_http_uri: Any = None
+    # The Private Service Connect service attachment backing this deployment's own private endpoints. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculation:
+    # The smaller model used to propose draft tokens for speculative decoding. (AI-inferred)
     draft_model: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculation:
+    # The n-gram length used to propose candidate tokens for speculative decoding. (AI-inferred)
     ngram_size: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_SpeculativeDecodingSpec:
+    # Uses a smaller, faster draft model to propose candidate tokens for the main model to verify. (AI-inferred)
     draft_model_speculation: Any = None
+    # Uses n-gram matching against recent output, rather than a separate draft model, to propose candidate tokens for speculative decoding. (AI-inferred)
     ngram_speculation: Any = None
+    # How many candidate tokens are drafted ahead per speculative decoding step. (AI-inferred)
     speculative_token_count: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels_Status:
+    # Output only. How many replicas of this deployment are currently ready to serve traffic. (AI-inferred)
     available_replica_count: Any = None
+    # Output only. When this resource was last updated. (AI-inferred)
     last_update_time: Any = None
+    # The message content. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Endpoint_DeployedModels:
+    # Lets Vertex AI automatically manage compute resources for this deployment, as an alternative to `dedicated_resources`. (AI-inferred)
     automatic_resources: Any = None
+    # An identifier for this specific training checkpoint. (AI-inferred)
     checkpoint_id: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Reserves dedicated compute resources (machine type, replica count, autoscaling) for this deployment, as an alternative to `automatic_resources`. (AI-inferred)
     dedicated_resources: Any = None
+    # If `true`, suppresses the deployed container's own stdout/stderr from being written to Cloud Logging. (AI-inferred)
     disable_container_logging: Any = None
+    # If `true`, skips generating feature-attribution explanations for predictions from this deployment, even if `explanation_spec` is configured. (AI-inferred)
     disable_explanations: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether individual prediction requests to this deployment are logged. (AI-inferred)
     enable_access_logging: Any = None
+    # Configuration for how Vertex AI computes feature-attribution explanations for predictions from this deployment. (AI-inferred)
     explanation_spec: Any = None
+    # Configuration trading a longer initial rollout for faster subsequent scale-up, or vice versa. (AI-inferred)
     faster_deployment_config: Any = None
+    # A reference to the corresponding model resource on a connected Google Distributed Cloud environment. (AI-inferred)
     gdc_connected_model: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # A reference to the model this applies to. (AI-inferred)
     model: Any = None
+    # The specific version of the model this applies to. (AI-inferred)
     model_version_id: Any = None
+    # The private network endpoint URIs this deployment is reachable at. (AI-inferred)
     private_endpoints: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # A reference to the shared deployment resource pool this model is co-located on, when it isn't deployed with its own dedicated resources. (AI-inferred)
     shared_resources: Any = None
+    # Configuration for speculative decoding, which drafts several candidate tokens ahead using a cheaper method and verifies them with the main model, to speed up generation. (AI-inferred)
     speculative_decoding_spec: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # Output only. Labels Vertex AI itself attaches to this resource, distinct from user-provided `labels`. (AI-inferred)
     system_labels: Any = None
 
 @dataclasses.dataclass
@@ -243,11 +352,17 @@ class Endpoint_PredictRequestResponseLoggingConfig:
 
 @dataclasses.dataclass
 class Endpoint_PrivateServiceConnectConfig_PscAutomationConfigs:
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
     forwarding_rule: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

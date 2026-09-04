@@ -58,21 +58,34 @@ const ResourceValueConfig_RequestsFields: FieldMap = {
 };
 
 export interface ResourceValueConfigConfig {
+  /** Optional. The requested amounts of compute resources. Keys are resource names (e.g., "cpu", "memory"). Values are quantities (e.g., "250m", "512Mi"). (AI-inferred) */
   requests?: ResourceValueConfig_Requests[] | Computed<ResourceValueConfig_Requests[]>;
 }
 
 export interface ResourceValueConfigAttrs {
+  /** The real cloud provider this lookup is scoped to. (AI-inferred) */
   cloudProvider: string;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Optional. The requested amounts of compute resources. Keys are resource names (e.g., "cpu", "memory"). Values are quantities (e.g., "250m", "512Mi"). (AI-inferred) */
   requests: ResourceValueConfig_Requests[];
+  /** The real label selector used to match resources for this object. (AI-inferred) */
   resourceLabelsSelector: Record<string, string>;
+  /** The canonical resource type name in the format of a resource type as defined by [AIP-123](https://google.aip.dev/123). For example, `"compute.googleapis.com/Instance"`. Optional. (AI-inferred) */
   resourceType: string;
+  /** The real, assigned business-value rating of this resource. (AI-inferred) */
   resourceValue: string;
+  /** The Topology Manager aligns resources in following scopes: * container * pod The default scope is 'container' if unspecified. See https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/#topology-manager-scopes (AI-inferred) */
   scope: string;
+  /** The real Sensitive Data Protection (DLP) mapping applied to this resource. (AI-inferred) */
   sensitiveDataProtectionMapping: ResourceValueConfig_Requests_ResourceValueConfig_SensitiveDataProtectionMapping;
+  /** The real resource-manager tag values applied to this object. (AI-inferred) */
   tagValues: string[];
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

@@ -206,6 +206,7 @@ class V1beta1BudgetAttrs:
     etag: Any = None
     # Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
     name: Any = None
+    # Who has full access to this budget's own data, in conjunction with the caller's own real IAM permissions, e.g. billing-account-level or project-level. (AI-inferred)
     ownership_scope: Any = None
     # Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
     threshold_rules: Any = None

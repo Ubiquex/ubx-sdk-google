@@ -4,22 +4,30 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TlsRoute_Rules_Action_Destinations struct {
+	// The name of the service this applies to. (AI-inferred)
 	ServiceName any
-	Weight      any
+	// The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
+	Weight any
 }
 
 type TlsRoute_Rules_Action struct {
+	// The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
 	Destinations any
-	IdleTimeout  any
+	// How long an idle connection is kept open before being closed. (AI-inferred)
+	IdleTimeout any
 }
 
 type TlsRoute_Rules_Matches struct {
-	Alpn    any
+	// The Application-Layer Protocol Negotiation identifier(s) offered during TLS handshake. (AI-inferred)
+	Alpn any
+	// The TLS Server Name Indication value this endpoint expects. (AI-inferred)
 	SniHost any
 }
 
 type TlsRoute_Rules struct {
-	Action  any
+	// The action taken when this rule matches. (AI-inferred)
+	Action any
+	// The match condition(s) this rule evaluates. (AI-inferred)
 	Matches any
 }
 

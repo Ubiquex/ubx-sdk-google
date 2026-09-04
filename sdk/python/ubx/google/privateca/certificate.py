@@ -25,16 +25,21 @@ class Certificate_CertificateDescription_PublicKey:
 
 @dataclasses.dataclass
 class Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId:
+    # The numeric component(s) making up an object identifier. (AI-inferred)
     object_id_path: Any = None
 
 @dataclasses.dataclass
 class Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence_Attributes:
+    # An X.509 object identifier (OID). (AI-inferred)
     object_id: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Certificate_CertificateDescription_SubjectDescription_Subject_RdnSequence:
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
 
 @dataclasses.dataclass
@@ -60,8 +65,11 @@ class Certificate_CertificateDescription_SubjectDescription_Subject:
 
 @dataclasses.dataclass
 class Certificate_CertificateDescription_SubjectDescription_SubjectAltName_CustomSans:
+    # Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
     critical: Any = None
+    # An X.509 object identifier (OID). (AI-inferred)
     object_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

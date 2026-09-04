@@ -38,6 +38,7 @@ export interface Instance_MachineConfig {
 }
 
 export interface Instance_NetworkConfig_AuthorizedExternalNetworks {
+  /** The IP address range, in CIDR notation, this applies to. (AI-inferred) */
   cidrRange?: string | Computed<string>;
 }
 
@@ -55,10 +56,15 @@ export interface Instance_NetworkConfig {
 }
 
 export interface Instance_Nodes {
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** An IP address. (AI-inferred) */
   ip?: string | Computed<string>;
+  /** Whether this instance is a hot standby, ready to take over with minimal failover time. (AI-inferred) */
   isHotStandby?: boolean | Computed<boolean>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The Compute Engine zone this applies to. (AI-inferred) */
   zoneId?: string | Computed<string>;
 }
 
@@ -82,14 +88,20 @@ export interface Instance_ObservabilityConfig {
 }
 
 export interface Instance_PscInstanceConfig_PscAutoConnections {
+  /** A reference to the consumer-side VPC network this connection uses. (AI-inferred) */
   consumerNetwork?: string | Computed<string>;
+  /** The current status of the consumer-side network connection. (AI-inferred) */
   consumerNetworkStatus?: string | Computed<string>;
+  /** A reference to the consumer's own Google Cloud project. (AI-inferred) */
   consumerProject?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface Instance_PscInstanceConfig_PscInterfaceConfigs {
+  /** A reference to the network attachment this connection uses. (AI-inferred) */
   networkAttachmentResource?: string | Computed<string>;
 }
 

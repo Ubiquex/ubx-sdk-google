@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkflowConfig_InvocationConfig_IncludedTargets:
+    # The database (BigQuery project) this included target table belongs to. (AI-inferred)
     database: Any = None
+    # The name of this included target table. (AI-inferred)
     name: Any = None
+    # The schema (BigQuery dataset) this included target table belongs to. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
@@ -31,14 +34,20 @@ class WorkflowConfig_InvocationConfig:
 
 @dataclasses.dataclass
 class WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatus:
+    # The error's own numeric status code. (AI-inferred)
     code: Any = None
+    # Additional structured detail about the error. (AI-inferred)
     details: Any = None
+    # A human-readable description of the error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class WorkflowConfig_RecentScheduledExecutionRecords:
+    # The error this scheduled workflow execution failed with, if it didn't succeed. (AI-inferred)
     error_status: Any = None
+    # When this scheduled workflow execution occurred. (AI-inferred)
     execution_time: Any = None
+    # The workflow invocation this scheduled execution produced. (AI-inferred)
     workflow_invocation: Any = None
 
 _WorkflowConfig_InvocationConfig_IncludedTargetsFields = {

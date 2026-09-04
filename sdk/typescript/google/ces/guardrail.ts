@@ -7,7 +7,9 @@ export interface Guardrail_Action_GenerativeAnswer {
 }
 
 export interface Guardrail_Action_RespondImmediately_Responses {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
@@ -102,7 +104,9 @@ export interface Guardrail_LlmPromptSecurity {
 }
 
 export interface Guardrail_ModelSafety_SafetySettings {
+  /** The category this classification or setting applies to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** The value that must be met or crossed for this to apply. (AI-inferred) */
   threshold?: string | Computed<string>;
 }
 

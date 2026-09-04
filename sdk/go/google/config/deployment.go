@@ -4,8 +4,10 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployment_DeleteResults_Outputs struct {
+	// Whether this Terraform output value is marked sensitive and should be redacted from logs and the console. (AI-inferred)
 	Sensitive any
-	Value     any
+	// The output value produced when this deployment's own resources were deleted. (AI-inferred)
+	Value any
 }
 
 type Deployment_DeleteResults struct {
@@ -23,11 +25,14 @@ type Deployment_ProviderConfig struct {
 }
 
 type Deployment_TerraformBlueprint_ExternalValues_DeploymentSource struct {
+	// The other deployment this external value is sourced from. (AI-inferred)
 	Deployment any
+	// The name of the specific Terraform output on the source deployment to use as this value. (AI-inferred)
 	OutputName any
 }
 
 type Deployment_TerraformBlueprint_ExternalValues struct {
+	// References an output value from another Infrastructure Manager deployment, letting this blueprint consume it as an input. (AI-inferred)
 	DeploymentSource any
 }
 
@@ -41,6 +46,7 @@ type Deployment_TerraformBlueprint_GitSource struct {
 }
 
 type Deployment_TerraformBlueprint_InputValues struct {
+	// The literal value passed for this Terraform input variable when the blueprint is applied. (AI-inferred)
 	InputValue any
 }
 
@@ -56,16 +62,23 @@ type Deployment_TerraformBlueprint struct {
 }
 
 type Deployment_TfErrors_Error struct {
-	Code    any
+	// The error's own numeric status code. (AI-inferred)
+	Code any
+	// Additional structured detail about the error, in whatever shape Terraform's own error reporting supplied. (AI-inferred)
 	Details any
+	// A human-readable description of the error. (AI-inferred)
 	Message any
 }
 
 type Deployment_TfErrors struct {
-	Error            any
+	// Structured detail for one error Terraform reported while applying this deployment's own blueprint. (AI-inferred)
+	Error any
+	// A human-readable summary of why this Terraform operation failed. (AI-inferred)
 	ErrorDescription any
+	// The HTTP status code returned by the underlying API call that failed, when the error originated from one. (AI-inferred)
 	HttpResponseCode any
-	ResourceAddress  any
+	// The Terraform resource address (e.g. `google_storage_bucket.my_bucket`) this error occurred on. (AI-inferred)
+	ResourceAddress any
 }
 
 var Deployment_DeleteResults_OutputsFields = ubx.FieldMap{

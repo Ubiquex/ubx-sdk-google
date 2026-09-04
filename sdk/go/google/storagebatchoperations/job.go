@@ -4,16 +4,21 @@ package storagebatchoperations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_BucketList_Buckets_Manifest struct {
+	// The Cloud Storage location of the manifest file listing the objects this job applies to. (AI-inferred)
 	ManifestLocation any
 }
 
 type Job_BucketList_Buckets_PrefixList struct {
+	// The object name prefix(es) this job's own transformation applies to. (AI-inferred)
 	IncludedObjectPrefixes any
 }
 
 type Job_BucketList_Buckets struct {
-	Bucket     any
-	Manifest   any
+	// The Cloud Storage bucket this batch job's own transformation applies to. (AI-inferred)
+	Bucket any
+	// Selects this bucket's own target objects from an explicit manifest file, rather than a prefix match. (AI-inferred)
+	Manifest any
+	// Selects this bucket's own target objects by object-name prefix, rather than an explicit manifest. (AI-inferred)
 	PrefixList any
 }
 
@@ -47,13 +52,18 @@ type Job_DeleteObject struct {
 }
 
 type Job_ErrorSummaries_ErrorLogEntries struct {
+	// Detail explaining why this specific object failed. (AI-inferred)
 	ErrorDetails any
-	ObjectUri    any
+	// The `gs://` URI of the object that failed. (AI-inferred)
+	ObjectUri any
 }
 
 type Job_ErrorSummaries struct {
-	ErrorCode       any
-	ErrorCount      any
+	// The gRPC-style status code shared by every error grouped under this summary, e.g. `PERMISSION_DENIED`. (AI-inferred)
+	ErrorCode any
+	// How many objects failed with this exact error code. (AI-inferred)
+	ErrorCount any
+	// A sample of the individual object failures grouped under this error summary. (AI-inferred)
 	ErrorLogEntries any
 }
 
@@ -140,8 +150,10 @@ type Job_RewriteObject struct {
 }
 
 type Job_SetObjectAcls_AccessControlsUpdates_Grants struct {
+	// The grantee (user, group, or project) this ACL grant applies to. (AI-inferred)
 	Entity any
-	Role   any
+	// The access role granted to `entity`, e.g. `READER` or `OWNER`. (AI-inferred)
+	Role any
 }
 
 type Job_SetObjectAcls_AccessControlsUpdates struct {
@@ -157,6 +169,7 @@ type Job_SetObjectAcls struct {
 }
 
 type Job_UpdateObjectCustomContext_CustomContextUpdates_Updates struct {
+	// The value this batch job sets for the matching custom metadata key on each target object. (AI-inferred)
 	Value any
 }
 

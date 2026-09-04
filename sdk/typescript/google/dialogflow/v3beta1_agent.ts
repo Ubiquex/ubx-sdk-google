@@ -228,56 +228,104 @@ const V3beta1Agent_TextToSpeechSettingsFields: FieldMap = {
 };
 
 export interface V3beta1AgentConfig {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: V3beta1Agent_AdvancedSettings | Computed<V3beta1Agent_AdvancedSettings>;
+  /** Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred) */
   answerFeedbackSettings?: V3beta1Agent_AnswerFeedbackSettings | Computed<V3beta1Agent_AnswerFeedbackSettings>;
+  /** The URI of an image representing this agent in the console and integrations. (AI-inferred) */
   avatarUri?: string | Computed<string>;
+  /** Configures whether this conversation profile's own conversation data is exported to BigQuery. (AI-inferred) */
   bigqueryExportSettings?: V3beta1Agent_BigqueryExportSettings | Computed<V3beta1Agent_BigqueryExportSettings>;
+  /** TLS client certificate configuration for mutual-TLS authentication. (AI-inferred) */
   clientCertificateSettings?: V3beta1Agent_ClientCertificateSettings | Computed<V3beta1Agent_ClientCertificateSettings>;
+  /** The language this agent responds in when no other language is specified or detected. (AI-inferred) */
   defaultLanguageCode?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred) */
   enableMultiLanguageTraining?: boolean | Computed<boolean>;
+  /** Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred) */
   enableSpellCorrection?: boolean | Computed<boolean>;
+  /** Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred) */
   enableStackdriverLogging?: boolean | Computed<boolean>;
+  /** Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred) */
   genAppBuilderSettings?: V3beta1Agent_GenAppBuilderSettings | Computed<V3beta1Agent_GenAppBuilderSettings>;
+  /** Configuration for syncing this agent's own definition with a Git repository. (AI-inferred) */
   gitIntegrationSettings?: V3beta1Agent_GitIntegrationSettings | Computed<V3beta1Agent_GitIntegrationSettings>;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked?: boolean | Computed<boolean>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for personalizing agent behavior per end user. (AI-inferred) */
   personalizationSettings?: V3beta1Agent_PersonalizationSettings | Computed<V3beta1Agent_PersonalizationSettings>;
+  /** A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred) */
   securitySettings?: string | Computed<string>;
+  /** Configuration for this agent's own speech-to-text behavior. (AI-inferred) */
   speechToTextSettings?: V3beta1Agent_SpeechToTextSettings | Computed<V3beta1Agent_SpeechToTextSettings>;
+  /** The flow the conversation begins in. (AI-inferred) */
   startFlow?: string | Computed<string>;
+  /** The playbook the conversation begins in. (AI-inferred) */
   startPlaybook?: string | Computed<string>;
+  /** The additional language(s), beyond the default, this agent can converse in. (AI-inferred) */
   supportedLanguageCodes?: string[] | Computed<string[]>;
+  /** Configuration for this agent's own text-to-speech behavior. (AI-inferred) */
   textToSpeechSettings?: V3beta1Agent_TextToSpeechSettings | Computed<V3beta1Agent_TextToSpeechSettings>;
+  /** The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred) */
   timeZone?: string | Computed<string>;
 }
 
 export interface V3beta1AgentAttrs {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings: V3beta1Agent_AdvancedSettings;
+  /** Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred) */
   answerFeedbackSettings: V3beta1Agent_AnswerFeedbackSettings;
+  /** The URI of an image representing this agent in the console and integrations. (AI-inferred) */
   avatarUri: string;
+  /** Configures whether this conversation profile's own conversation data is exported to BigQuery. (AI-inferred) */
   bigqueryExportSettings: V3beta1Agent_BigqueryExportSettings;
+  /** TLS client certificate configuration for mutual-TLS authentication. (AI-inferred) */
   clientCertificateSettings: V3beta1Agent_ClientCertificateSettings;
+  /** The language this agent responds in when no other language is specified or detected. (AI-inferred) */
   defaultLanguageCode: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred) */
   enableMultiLanguageTraining: boolean;
+  /** Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred) */
   enableSpellCorrection: boolean;
+  /** Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred) */
   enableStackdriverLogging: boolean;
+  /** Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred) */
   genAppBuilderSettings: V3beta1Agent_GenAppBuilderSettings;
+  /** Configuration for syncing this agent's own definition with a Git repository. (AI-inferred) */
   gitIntegrationSettings: V3beta1Agent_GitIntegrationSettings;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked: boolean;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configuration for personalizing agent behavior per end user. (AI-inferred) */
   personalizationSettings: V3beta1Agent_PersonalizationSettings;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred) */
   satisfiesPzi: boolean;
+  /** Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred) */
   satisfiesPzs: boolean;
+  /** A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred) */
   securitySettings: string;
+  /** Configuration for this agent's own speech-to-text behavior. (AI-inferred) */
   speechToTextSettings: V3beta1Agent_SpeechToTextSettings;
+  /** The flow the conversation begins in. (AI-inferred) */
   startFlow: string;
+  /** The playbook the conversation begins in. (AI-inferred) */
   startPlaybook: string;
+  /** The additional language(s), beyond the default, this agent can converse in. (AI-inferred) */
   supportedLanguageCodes: string[];
+  /** Configuration for this agent's own text-to-speech behavior. (AI-inferred) */
   textToSpeechSettings: V3beta1Agent_TextToSpeechSettings;
+  /** The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred) */
   timeZone: string;
 }
 

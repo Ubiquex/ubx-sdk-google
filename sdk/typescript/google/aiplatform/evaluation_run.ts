@@ -89,36 +89,55 @@ export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio {
+  /** The audio or video bit rate, in bits per second. (AI-inferred) */
   bitRate?: number | Computed<number>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The audio sample rate, in Hz. (AI-inferred) */
   sampleRate?: number | Computed<number>;
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The pixel dimensions or resolution class requested for generated image output. (AI-inferred) */
   imageSize?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** A schema describing this value's own expected structure. (AI-inferred) */
   schema?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** How long this clip, window, or operation lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred) */
   gcsUri?: string | Computed<string>;
+  /** The pixel dimensions of this image or video. (AI-inferred) */
   resolution?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat {
+  /** Audio content or configuration. (AI-inferred) */
   audio?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio>;
+  /** Image content or configuration. (AI-inferred) */
   image?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text>;
+  /** Video content or configuration. (AI-inferred) */
   video?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video>;
 }
 
@@ -139,6 +158,7 @@ export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig
   example?: unknown | Computed<unknown>;
   /** Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type. */
   format?: string | Computed<string>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
   /** Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array. */
   maxItems?: string | Computed<string>;
@@ -192,21 +212,28 @@ export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig {
+  /** The name of the prebuilt Gemini voice to use for speech output. (AI-inferred) */
   voiceName?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred) */
   voiceSampleAudio?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig {
+  /** Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred) */
   prebuiltVoiceConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig>;
+  /** Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred) */
   replicatedVoiceConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig>;
 }
 
 export interface EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs {
+  /** Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred) */
   speaker?: string | Computed<string>;
+  /** The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred) */
   voiceConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig>;
 }
 
@@ -314,174 +341,265 @@ export interface EvaluationRun_EvaluationConfig_CloudLoggingConfig {
 }
 
 export interface EvaluationRun_EvaluationConfig_DatasetCustomMetrics {
+  /** How per-instance scores for this metric are combined into a single dataset-level result, e.g. average or sum. (AI-inferred) */
   aggregationFunction?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_LossAnalysisConfig {
+  /** Identifies which candidate response this applies to. (AI-inferred) */
   candidate?: string | Computed<string>;
+  /** The metric this result was computed for. (AI-inferred) */
   metric?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec {
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec {
+  /** The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred) */
   metricSpecName?: string | Computed<string>;
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec {
+  /** The full resource name of the metric this applies to. (AI-inferred) */
   metricResourceName?: string | Computed<string>;
+  /** Configuration for the model used by this job. (AI-inferred) */
   modelConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig>;
+  /** The template used to construct the prompt sent to the model. (AI-inferred) */
   promptTemplate?: string | Computed<string>;
+  /** The kind of content generated rubrics should assess. (AI-inferred) */
   rubricContentType?: string | Computed<string>;
+  /** A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred) */
   rubricTypeOntology?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec {
+  /** Extra, metric-specific configuration beyond the standard fields. (AI-inferred) */
   additionalConfig?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Configuration for the judge model used to automatically score this evaluation. (AI-inferred) */
   judgeAutoraterConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred) */
   predefinedRubricGenerationSpec?: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred) */
   rubricGenerationSpec?: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec>;
+  /** A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred) */
   rubricGroupKey?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpec {
+  /** Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred) */
   useEffectiveOrder?: boolean | Computed<boolean>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpec {
+  /** The function within the supplied custom code that computes this metric. (AI-inferred) */
   evaluationFunction?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig {
+  /** The judge model used to automatically score outputs against this metric, when the metric is model-based rather than computed directly. (AI-inferred) */
   autoraterModel?: string | Computed<string>;
+  /** Whether this rubric's own pass/fail evaluation is inverted. (AI-inferred) */
   flipEnabled?: boolean | Computed<boolean>;
+  /** The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred) */
   generationConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig>;
+  /** How many samples are drawn when computing this metric. (AI-inferred) */
   samplingCount?: number | Computed<number>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec {
+  /** The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred) */
   metricSpecName?: string | Computed<string>;
+  /** Configuration parameters specific to this metric's own computation. (AI-inferred) */
   metricSpecParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig {
+  /** The function within the supplied custom code that parses the judge model's own response. (AI-inferred) */
   parsingFunction?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig {
+  /** Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred) */
   customCodeParserConfig?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpec {
+  /** Configuration for the model used by this job. (AI-inferred) */
   modelConfig?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig>;
+  /** The template used to construct the prompt sent to the model. (AI-inferred) */
   promptTemplate?: string | Computed<string>;
+  /** The kind of content generated rubrics should assess. (AI-inferred) */
   rubricContentType?: string | Computed<string>;
+  /** A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred) */
   rubricTypeOntology?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec {
+  /** Extra, metric-specific configuration beyond the standard fields. (AI-inferred) */
   additionalConfig?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Configuration for the judge model used to automatically score this evaluation. (AI-inferred) */
   judgeAutoraterConfig?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred) */
   predefinedRubricGenerationSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** How the judge model's own raw response text is parsed into a final score. (AI-inferred) */
   resultParserConfig?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig>;
+  /** Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred) */
   rubricGenerationSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpec>;
+  /** A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred) */
   rubricGroupKey?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRange {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The upper bound. (AI-inferred) */
   max?: number | Computed<number>;
+  /** The lower bound. (AI-inferred) */
   min?: number | Computed<number>;
+  /** A single step within this run or sequence. (AI-inferred) */
   step?: number | Computed<number>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata {
+  /** Additional, metric-specific metadata beyond the standard fields. (AI-inferred) */
   otherMetadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The minimum and maximum values this metric's own score can take. (AI-inferred) */
   scoreRange?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRange | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRange>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig {
+  /** Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred) */
   returnRawOutput?: boolean | Computed<boolean>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec {
+  /** The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred) */
   baselineResponseFieldName?: string | Computed<string>;
+  /** The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred) */
   candidateResponseFieldName?: string | Computed<string>;
+  /** Configuration for the shape of a custom-formatted metric output. (AI-inferred) */
   customOutputFormatConfig?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpec {
+  /** Configuration for the shape of a custom-formatted metric output. (AI-inferred) */
   customOutputFormatConfig?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpec {
+  /** Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred) */
   rougeType?: string | Computed<string>;
+  /** Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred) */
   splitSummaries?: boolean | Computed<boolean>;
+  /** Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred) */
   useStemmer?: boolean | Computed<boolean>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_MetricConfig {
+  /** Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred) */
   aggregationMetrics?: string[] | Computed<string[]>;
+  /** Configuration for computing the BLEU text-similarity metric. (AI-inferred) */
   bleuSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpec>;
+  /** Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred) */
   computationBasedMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec>;
+  /** Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred) */
   customCodeExecutionSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpec>;
+  /** Configuration for computing an exact-string-match metric. (AI-inferred) */
   exactMatchSpec?: unknown | Computed<unknown>;
+  /** Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred) */
   llmBasedMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata>;
+  /** Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred) */
   pairwiseMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec>;
+  /** Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred) */
   pointwiseMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpec>;
+  /** Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred) */
   predefinedMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred) */
   rougeSpec?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpec>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_Property {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content {
+  /** A named property of this object. (AI-inferred) */
   property?: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_Property | Computed<EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_Property>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics {
+  /** The content of this message or resource. (AI-inferred) */
   content?: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content | Computed<EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content>;
+  /** How heavily this rubric criterion is weighted in the overall verdict: `HIGH`, `MEDIUM`, or `LOW`. (AI-inferred) */
   importance?: string | Computed<string>;
+  /** An identifier for this rubric criterion, unique within its own containing set. (AI-inferred) */
   rubricId?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics {
+  /** The individual rubric criteria used to judge a response. (AI-inferred) */
   rubrics?: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics[] | Computed<EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics[]>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec {
+  /** Rubric criteria supplied directly in the request, rather than referenced from a predefined group. (AI-inferred) */
   inlineRubrics?: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics | Computed<EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics>;
+  /** Configuration for the judge model used to automatically score this evaluation. (AI-inferred) */
   judgeAutoraterConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred) */
   rubricGenerationSpec?: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec>;
+  /** A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred) */
   rubricGroupKey?: string | Computed<string>;
 }
 
 export interface EvaluationRun_EvaluationConfig_Metrics {
+  /** Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred) */
   computationBasedMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec>;
+  /** Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred) */
   llmBasedMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec>;
+  /** The metric this result was computed for. (AI-inferred) */
   metric?: string | Computed<string>;
+  /** The configuration for how this metric is computed. (AI-inferred) */
   metricConfig?: EvaluationRun_EvaluationConfig_Metrics_MetricConfig | Computed<EvaluationRun_EvaluationConfig_Metrics_MetricConfig>;
+  /** The full resource name of the metric this applies to. (AI-inferred) */
   metricResourceName?: string | Computed<string>;
+  /** Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred) */
   predefinedMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** Computes this metric by judging the response against a set of rubric criteria, rather than a single score. (AI-inferred) */
   rubricBasedMetricSpec?: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec>;
 }
 
@@ -510,8 +628,11 @@ export interface EvaluationRun_EvaluationConfig_PromptTemplate {
 }
 
 export interface EvaluationRun_EvaluationConfig_RubricConfigs {
+  /** Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred) */
   predefinedRubricGenerationSpec?: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred) */
   rubricGenerationSpec?: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec | Computed<EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec>;
+  /** A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred) */
   rubricGroupKey?: string | Computed<string>;
 }
 
@@ -551,227 +672,344 @@ export interface EvaluationRun_EvaluationResults {
 }
 
 export interface EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfig {
+  /** A reference to the Gemini agent to run for this evaluation. (AI-inferred) */
   geminiAgent?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInput {
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: Record<string, string> | Computed<Record<string, string>>;
+  /** The initial key/value state the agent's own session starts with. (AI-inferred) */
   sessionState?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The identifier of the simulated user for this evaluation session. (AI-inferred) */
   userId?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfig {
+  /** The maximum number of conversation turns the user simulator runs before ending the session. (AI-inferred) */
   maxTurn?: number | Computed<number>;
+  /** Configuration for the model used by this job. (AI-inferred) */
   modelConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig>;
+  /** The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred) */
   modelName?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_AgentRunConfig {
+  /** A reference to the Agent Engine resource to run for this evaluation. (AI-inferred) */
   agentEngine?: string | Computed<string>;
+  /** Configuration for running a Gemini-based agent for this evaluation. (AI-inferred) */
   geminiAgentConfig?: EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfig | Computed<EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfig>;
+  /** The initial conversation session state passed to the agent when it's run for this evaluation. (AI-inferred) */
   sessionInput?: EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInput | Computed<EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInput>;
+  /** Configuration for a simulated user that converses with the agent under evaluation, rather than replaying a fixed script. (AI-inferred) */
   userSimulatorConfig?: EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfig | Computed<EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfig>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUse {
+  /** If `true`, screens `computer_use` requests for prompt-injection attempts before acting on them. (AI-inferred) */
   enablePromptInjectionDetection?: boolean | Computed<boolean>;
+  /** Which surface the `computer_use` tool operates in -- e.g. `browser`, for a sandboxed web browser. (AI-inferred) */
   environment?: string | Computed<string>;
+  /** Built-in `computer_use` actions to disable, typically to hand those actions to a custom, caller-registered function instead. (AI-inferred) */
   excludedPredefinedFunctions?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearch {
+  /** The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred) */
   blockingConfidence?: string | Computed<string>;
+  /** Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred) */
   excludeDomains?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearch {
+  /** The API key credential used to authenticate this tool's own external calls. (AI-inferred) */
   apiKey?: string | Computed<string>;
+  /** Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred) */
   customConfigs?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarations {
+  /** Controls how the model treats this function call -- e.g. whether it must wait for the result before continuing, or can proceed without blocking. (AI-inferred) */
   behavior?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchema | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchema>;
+  /** The function's own parameter schema expressed as a plain JSON Schema document, an alternative to the structured `parameters` field. (AI-inferred) */
   parametersJsonSchema?: unknown | Computed<unknown>;
+  /** The response produced for this request. (AI-inferred) */
   response?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchema | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchema>;
+  /** The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred) */
   responseJsonSchema?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypes {
+  /** Configuration for grounding responses in Google Maps place data specifically. (AI-inferred) */
   places?: unknown | Computed<unknown>;
+  /** Configuration for how requests are routed, e.g. to a specific region or backend. (AI-inferred) */
   routing?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps {
+  /** Whether an interactive map widget is included alongside a Google Maps-grounded response. (AI-inferred) */
   enableWidget?: boolean | Computed<boolean>;
+  /** Which real-world grounding source(s) (e.g. web search, Maps) this configuration draws on. (AI-inferred) */
   groundingTypes?: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypes | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypes>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypes {
+  /** Enables grounding via Google Image Search results. (AI-inferred) */
   imageSearch?: unknown | Computed<unknown>;
+  /** Enables grounding via Google Web Search results. (AI-inferred) */
   webSearch?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch {
+  /** The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred) */
   blockingConfidence?: string | Computed<string>;
+  /** Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred) */
   excludeDomains?: string[] | Computed<string[]>;
+  /** Which kind(s) of web search results (image, web, or both) this grounding tool draws on. (AI-inferred) */
   searchTypes?: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypes | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypes>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig {
+  /** The minimum predicted-usefulness score, from `dynamic_retrieval_config`, at which grounding is triggered -- a lower threshold grounds more often. (AI-inferred) */
   dynamicThreshold?: number | Computed<number>;
+  /** Which operating mode this configuration uses. (AI-inferred) */
   mode?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval {
+  /** Controls when Google Search grounding actually triggers, based on how likely the model judges grounding to help. (AI-inferred) */
   dynamicRetrievalConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearch {
+  /** The API key credential used to authenticate this tool's own external calls. (AI-inferred) */
   apiKey?: string | Computed<string>;
+  /** Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred) */
   customConfigs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Whether Google retains this request's own data beyond the immediate response, per the caller's own data-retention agreement. (AI-inferred) */
   enableDataRetention?: boolean | Computed<boolean>;
+  /** If `true`, Google discards this request's own data immediately after responding rather than retaining it at all. (AI-inferred) */
   enableZeroDataRetention?: boolean | Computed<boolean>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig {
+  /** The Secret Manager secret version holding the API key used to authenticate this call. (AI-inferred) */
   apiKeySecretVersion?: string | Computed<string>;
+  /** The literal API key value used to authenticate this tool's own external call. (AI-inferred) */
   apiKeyString?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth {
+  /** How the API key for this tool's own external service call is supplied. (AI-inferred) */
   apiKeyConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig {
+  /** The Secret Manager secret holding the API key used to authenticate this call. (AI-inferred) */
   apiKeySecret?: string | Computed<string>;
+  /** The literal API key value used to authenticate this tool's own external call. (AI-inferred) */
   apiKeyString?: string | Computed<string>;
+  /** Where in the HTTP request this credential is placed, e.g. a header or query parameter. (AI-inferred) */
   httpElementLocation?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig {
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig {
+  /** The Secret Manager secret holding this credential. (AI-inferred) */
   credentialSecret?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig {
+  /** An OAuth 2.0 access token used to authenticate this call. (AI-inferred) */
   accessToken?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig {
+  /** An OpenID Connect ID token used to authenticate this call. (AI-inferred) */
   idToken?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig {
+  /** How the API key for this tool's own external service call is supplied. (AI-inferred) */
   apiKeyConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig>;
+  /** Which authentication method this configuration uses, e.g. API key, OAuth, or OIDC. (AI-inferred) */
   authType?: string | Computed<string>;
+  /** Authenticates using a Google-managed service account, rather than a caller-supplied credential. (AI-inferred) */
   googleServiceAccountConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig>;
+  /** Authenticates using HTTP Basic authentication (username and password). (AI-inferred) */
   httpBasicAuthConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig>;
+  /** Authenticates using an OAuth 2.0 access token. (AI-inferred) */
   oauthConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig>;
+  /** Authenticates using an OpenID Connect ID token. (AI-inferred) */
   oidcConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParams {
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: string | Computed<string>;
+  /** How many search results (hits) to request from the external search API. (AI-inferred) */
   numHits?: number | Computed<number>;
+  /** The Elasticsearch search template used to construct this query. (AI-inferred) */
   searchTemplate?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi {
+  /** Authentication credentials for calling this external API. (AI-inferred) */
   apiAuth?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth>;
+  /** Which external search API shape this configuration targets, e.g. `elastic_search_params` or `simple_search_params`. (AI-inferred) */
   apiSpec?: string | Computed<string>;
+  /** Authentication configuration for reaching this external resource. (AI-inferred) */
   authConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig>;
+  /** Parameters for querying an Elasticsearch-backed external search API. (AI-inferred) */
   elasticSearchParams?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParams | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParams>;
+  /** The endpoint this call is directed to. (AI-inferred) */
   endpoint?: string | Computed<string>;
+  /** Parameters for querying a simple, generic external search API, as an alternative to `elastic_search_params`. (AI-inferred) */
   simpleSearchParams?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecs {
+  /** The Vertex AI Search data store this grounding query reads from, in the form `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`. (AI-inferred) */
   dataStore?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch {
+  /** Restricts a Vertex AI Search grounding query to specific data store(s) within the configured search app, rather than all of them. (AI-inferred) */
   dataStoreSpecs?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecs[] | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecs[]>;
+  /** The Vertex AI Search data store this applies to. (AI-inferred) */
   datastore?: string | Computed<string>;
+  /** The Vertex AI Search app (engine) this grounding query reads from. (AI-inferred) */
   engine?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The maximum number of results this query returns. (AI-inferred) */
   maxResults?: number | Computed<number>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResources {
+  /** The RAG corpus this applies to, in the form `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`. (AI-inferred) */
   ragCorpus?: string | Computed<string>;
+  /** Specific file ID(s) within `rag_corpus` to restrict retrieval to, instead of the whole corpus. (AI-inferred) */
   ragFileIds?: string[] | Computed<string[]>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter {
+  /** A filter expression restricting retrieval to chunks whose own metadata matches. (AI-inferred) */
   metadataFilter?: string | Computed<string>;
+  /** The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred) */
   vectorDistanceThreshold?: number | Computed<number>;
+  /** The minimum vector similarity a retrieved chunk must have to be included -- a higher threshold returns fewer, more relevant chunks. (AI-inferred) */
   vectorSimilarityThreshold?: number | Computed<number>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking {
+  /** Reranks retrieved results using a language model, rather than the dedicated rank service. (AI-inferred) */
   llmRanker?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualMode | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualMode>;
+  /** Reranks retrieved results using Vertex AI's own dedicated semantic ranking model. (AI-inferred) */
   rankService?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualMode | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualMode>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig {
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter>;
+  /** Configuration for reranking retrieved results before returning them. (AI-inferred) */
   ranking?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking>;
+  /** Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred) */
   topK?: number | Computed<number>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore {
+  /** The RAG corpus/corpora (and optionally specific files within one corpus) this query retrieves from. (AI-inferred) */
   ragResources?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResources[] | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResources[]>;
+  /** Controls how many chunks are retrieved and how they're filtered/ranked for a RAG query. (AI-inferred) */
   ragRetrievalConfig?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig>;
+  /** The maximum number of top-ranked results to return from retrieval. (AI-inferred) */
   similarityTopK?: number | Computed<number>;
+  /** The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred) */
   vectorDistanceThreshold?: number | Computed<number>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval {
+  /** If `true`, suppresses source citations that would otherwise accompany a grounded response. (AI-inferred) */
   disableAttribution?: boolean | Computed<boolean>;
+  /** Configuration for grounding via a caller-specified external search API, rather than a Google-hosted one. (AI-inferred) */
   externalApi?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi>;
+  /** Enables the model to ground its response in a Vertex AI Search data store. (AI-inferred) */
   vertexAiSearch?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch>;
+  /** Enables the model to ground its response in one or more Vertex AI RAG Engine corpora. (AI-inferred) */
   vertexRagStore?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents_Tools {
+  /** Enables the model to write and run code in a hosted interpreter as part of generating its response. (AI-inferred) */
   codeExecution?: unknown | Computed<unknown>;
+  /** Enables the model to control a browser, mobile, or desktop `environment` by issuing UI actions (click, type, scroll) as part of generating its response. (AI-inferred) */
   computerUse?: EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUse | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUse>;
+  /** Enables grounding via an enterprise-scoped web search, as an alternative to open `google_search` grounding. (AI-inferred) */
   enterpriseWebSearch?: EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearch | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearch>;
+  /** Enables grounding via the third-party Exa AI search tool, authenticated with `api_key`. (AI-inferred) */
   exaAiSearch?: EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearch | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearch>;
+  /** The set of callable functions the model may invoke via `function_call`, each declared with a name, description, and parameter schema. (AI-inferred) */
   functionDeclarations?: EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarations[] | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarations[]>;
+  /** Enables the model to ground its response in Google Maps place and location data. (AI-inferred) */
   googleMaps?: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps>;
+  /** Enables the model to ground its response in live Google Search results. (AI-inferred) */
   googleSearch?: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch>;
+  /** Enables the model to ground its response in live Google Search results, with configurable dynamic-retrieval behavior. (AI-inferred) */
   googleSearchRetrieval?: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval>;
+  /** Enables grounding via the third-party Parallel AI search tool. (AI-inferred) */
   parallelAiSearch?: EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearch | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearch>;
+  /** Enables the model to ground its response in a specified external or Vertex AI-hosted data source. (AI-inferred) */
   retrieval?: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval | Computed<EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval>;
+  /** Enables the model to fetch and read the content of URLs it's given or discovers, to ground its response. (AI-inferred) */
   urlContext?: unknown | Computed<unknown>;
 }
 
 export interface EvaluationRun_InferenceConfigs_Agents {
+  /** The identifier of the agent this applies to. (AI-inferred) */
   agentId?: string | Computed<string>;
+  /** The kind of agent this is, e.g. which framework or platform it's built on. (AI-inferred) */
   agentType?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** An instruction given to the model or agent. (AI-inferred) */
   instruction?: string | Computed<string>;
+  /** The child agent(s) this agent delegates parts of a task to. (AI-inferred) */
   subAgents?: string[] | Computed<string[]>;
+  /** The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred) */
   tools?: EvaluationRun_InferenceConfigs_Agents_Tools[] | Computed<EvaluationRun_InferenceConfigs_Agents_Tools[]>;
 }
 
 export interface EvaluationRun_InferenceConfigs {
+  /** Configuration for running the agent under evaluation to produce responses, rather than using pre-recorded ones. (AI-inferred) */
   agentRunConfig?: EvaluationRun_InferenceConfigs_AgentRunConfig | Computed<EvaluationRun_InferenceConfigs_AgentRunConfig>;
+  /** The agent(s) involved in this evaluation, keyed by their own identifier. (AI-inferred) */
   agents?: Record<string, EvaluationRun_InferenceConfigs_Agents> | Computed<Record<string, EvaluationRun_InferenceConfigs_Agents>>;
+  /** The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred) */
   generationConfig?: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig | Computed<EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig>;
+  /** A reference to the model this applies to. (AI-inferred) */
   model?: string | Computed<string>;
+  /** How many evaluation instances are processed concurrently. (AI-inferred) */
   parallelism?: number | Computed<number>;
+  /** The template used to construct the prompt sent to the model. (AI-inferred) */
   promptTemplate?: EvaluationRun_EvaluationConfig_PromptTemplate | Computed<EvaluationRun_EvaluationConfig_PromptTemplate>;
 }
 

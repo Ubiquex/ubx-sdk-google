@@ -15,14 +15,20 @@ class Database_EncryptionConfig:
 
 @dataclasses.dataclass
 class Database_EncryptionInfo_EncryptionStatus:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Database_EncryptionInfo:
+    # The current status of encryption for this resource. (AI-inferred)
     encryption_status: Any = None
+    # The kind of encryption applied to this resource, e.g. Google-managed or customer-managed. (AI-inferred)
     encryption_type: Any = None
+    # The specific Cloud KMS key version used to encrypt this resource. (AI-inferred)
     kms_key_version: Any = None
 
 @dataclasses.dataclass

@@ -4,14 +4,20 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecuritySetting_AudioExportSettings struct {
-	AudioExportPattern   any
-	AudioFormat          any
+	// The filename pattern exported conversation audio is saved under. (AI-inferred)
+	AudioExportPattern any
+	// The audio file format, e.g. `MP3` or `OGG_OPUS`. (AI-inferred)
+	AudioFormat any
+	// Whether sensitive data detected in exported conversation audio is redacted. (AI-inferred)
 	EnableAudioRedaction any
-	GcsBucket            any
-	StoreTtsAudio        any
+	// The Cloud Storage bucket this applies to. (AI-inferred)
+	GcsBucket any
+	// Whether synthesized speech audio is saved for later playback/reuse, rather than discarded after use. (AI-inferred)
+	StoreTtsAudio any
 }
 
 type SecuritySetting_InsightsExportSettings struct {
+	// Whether conversation data is exported to Conversational Insights for analysis. (AI-inferred)
 	EnableInsightsExport any
 }
 
@@ -28,31 +34,53 @@ var SecuritySetting_InsightsExportSettingsFields = ubx.FieldMap{
 }
 
 type SecuritySettingConfig struct {
-	AudioExportSettings    any
-	DeidentifyTemplate     any
-	DisplayName            any
+	// Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
+	AudioExportSettings any
+	// A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
+	DeidentifyTemplate any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
 	InsightsExportSettings any
-	InspectTemplate        any
-	Name                   any
-	PurgeDataTypes         any
-	RedactionScope         any
-	RedactionStrategy      any
-	RetentionStrategy      any
-	RetentionWindowDays    any
+	// A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
+	InspectTemplate any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Which category/categories of stored data this purge request removes. (AI-inferred)
+	PurgeDataTypes any
+	// How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
+	RedactionScope any
+	// How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
+	RedactionStrategy any
+	// How long conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionStrategy any
+	// How many days conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionWindowDays any
 }
 
 type SecuritySettingAttrs struct {
-	AudioExportSettings    any
-	DeidentifyTemplate     any
-	DisplayName            any
+	// Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
+	AudioExportSettings any
+	// A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
+	DeidentifyTemplate any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
 	InsightsExportSettings any
-	InspectTemplate        any
-	Name                   any
-	PurgeDataTypes         any
-	RedactionScope         any
-	RedactionStrategy      any
-	RetentionStrategy      any
-	RetentionWindowDays    any
+	// A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
+	InspectTemplate any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Which category/categories of stored data this purge request removes. (AI-inferred)
+	PurgeDataTypes any
+	// How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
+	RedactionScope any
+	// How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
+	RedactionStrategy any
+	// How long conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionStrategy any
+	// How many days conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionWindowDays any
 }
 
 var SecuritySetting = ubx.ResourceBinding{

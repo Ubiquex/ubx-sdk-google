@@ -2,280 +2,428 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Session_Turns_DetailedAnswer_Citations_Sources {
+  /** An identifier for this reference. (AI-inferred) */
   referenceId?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_Citations {
+  /** The ending position this range covers. (AI-inferred) */
   endIndex?: string | Computed<string>;
+  /** The source(s) this content is drawn from. (AI-inferred) */
   sources?: Session_Turns_DetailedAnswer_Citations_Sources[] | Computed<Session_Turns_DetailedAnswer_Citations_Sources[]>;
+  /** The starting position this range covers. (AI-inferred) */
   startIndex?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_GroundingSupports {
+  /** The ending position this range covers. (AI-inferred) */
   endIndex?: string | Computed<string>;
+  /** Whether this content must pass a grounding check before being returned. (AI-inferred) */
   groundingCheckRequired?: boolean | Computed<boolean>;
+  /** How well this generated content is supported by the retrieved source material. (AI-inferred) */
   groundingScore?: number | Computed<number>;
+  /** The source(s) this content is drawn from. (AI-inferred) */
   sources?: Session_Turns_DetailedAnswer_Citations_Sources[] | Computed<Session_Turns_DetailedAnswer_Citations_Sources[]>;
+  /** The starting position this range covers. (AI-inferred) */
   startIndex?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfo {
+  /** Whether this example illustrates desired (rather than undesired) behavior. (AI-inferred) */
   positive?: boolean | Computed<boolean>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_QueryUnderstandingInfo {
+  /** Detail about how this query was automatically classified, e.g. its own intent. (AI-inferred) */
   queryClassificationInfo?: Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfo[] | Computed<Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfo[]>;
 }
 
 export interface Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadata {
+  /** A reference to the document this applies to. (AI-inferred) */
   document?: string | Computed<string>;
+  /** An identifier for the specific page this applies to. (AI-inferred) */
   pageIdentifier?: string | Computed<string>;
+  /** Arbitrary structured data associated with this document. (AI-inferred) */
   structData?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_References_ChunkInfo {
+  /** A reference to the specific content chunk this applies to. (AI-inferred) */
   chunk?: string | Computed<string>;
+  /** The content of this message or resource. (AI-inferred) */
   content?: string | Computed<string>;
+  /** Metadata describing this document. (AI-inferred) */
   documentMetadata?: Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadata | Computed<Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadata>;
+  /** How relevant this result is judged to be to the query. (AI-inferred) */
   relevanceScore?: number | Computed<number>;
 }
 
 export interface Session_Turns_DetailedAnswer_References_StructuredDocumentInfo {
+  /** A reference to the document this applies to. (AI-inferred) */
   document?: string | Computed<string>;
+  /** Arbitrary structured data associated with this document. (AI-inferred) */
   structData?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContents {
+  /** The content of this message or resource. (AI-inferred) */
   content?: string | Computed<string>;
+  /** An identifier for the specific page this applies to. (AI-inferred) */
   pageIdentifier?: string | Computed<string>;
+  /** How relevant this result is judged to be to the query. (AI-inferred) */
   relevanceScore?: number | Computed<number>;
 }
 
 export interface Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo {
+  /** The text content of this retrieved chunk. (AI-inferred) */
   chunkContents?: Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContents[] | Computed<Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContents[]>;
+  /** A reference to the document this applies to. (AI-inferred) */
   document?: string | Computed<string>;
+  /** Arbitrary structured data associated with this document. (AI-inferred) */
   structData?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_References {
+  /** Detail about a retrieved content chunk used to ground this answer. (AI-inferred) */
   chunkInfo?: Session_Turns_DetailedAnswer_References_ChunkInfo | Computed<Session_Turns_DetailedAnswer_References_ChunkInfo>;
+  /** Detail about a document's own structured (non-plain-text) content. (AI-inferred) */
   structuredDocumentInfo?: Session_Turns_DetailedAnswer_References_StructuredDocumentInfo | Computed<Session_Turns_DetailedAnswer_References_StructuredDocumentInfo>;
+  /** Detail about a document's own unstructured (plain-text) content. (AI-inferred) */
   unstructuredDocumentInfo?: Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo | Computed<Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo>;
 }
 
 export interface Session_Turns_DetailedAnswer_SafetyRatings {
+  /** Whether this content was blocked by a safety or policy check. (AI-inferred) */
   blocked?: boolean | Computed<boolean>;
+  /** The category this belongs to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** The likelihood this classification is correct. (AI-inferred) */
   probability?: string | Computed<string>;
+  /** A numeric score reflecting the likelihood this classification is correct. (AI-inferred) */
   probabilityScore?: number | Computed<number>;
+  /** How serious this finding is. (AI-inferred) */
   severity?: string | Computed<string>;
+  /** A numeric score reflecting how serious this finding is. (AI-inferred) */
   severityScore?: number | Computed<number>;
 }
 
 export interface Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfo {
+  /** A reference to the specific content chunk this applies to. (AI-inferred) */
   chunk?: string | Computed<string>;
+  /** The content of this message or resource. (AI-inferred) */
   content?: string | Computed<string>;
+  /** How relevant this result is judged to be to the query. (AI-inferred) */
   relevanceScore?: number | Computed<number>;
 }
 
 export interface Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfo {
+  /** A short excerpt of matching content. (AI-inferred) */
   snippet?: string | Computed<string>;
+  /** Whether a snippet was successfully generated for this result. (AI-inferred) */
   snippetStatus?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults {
+  /** Detail about a retrieved content chunk used to ground this answer. (AI-inferred) */
   chunkInfo?: Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfo[] | Computed<Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfo[]>;
+  /** A reference to the document this applies to. (AI-inferred) */
   document?: string | Computed<string>;
+  /** Detail about how this snippet was extracted and its own relevance. (AI-inferred) */
   snippetInfo?: Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfo[] | Computed<Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfo[]>;
+  /** Arbitrary structured data associated with this document. (AI-inferred) */
   structData?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_Steps_Actions_Observation {
+  /** The result(s) returned by this search. (AI-inferred) */
   searchResults?: Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults[] | Computed<Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults[]>;
 }
 
 export interface Session_Turns_DetailedAnswer_Steps_Actions_SearchAction {
+  /** The search query text. (AI-inferred) */
   query?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer_Steps_Actions {
+  /** The result observed after running a tool or action. (AI-inferred) */
   observation?: Session_Turns_DetailedAnswer_Steps_Actions_Observation | Computed<Session_Turns_DetailedAnswer_Steps_Actions_Observation>;
+  /** An action representing a search query executed as part of answering. (AI-inferred) */
   searchAction?: Session_Turns_DetailedAnswer_Steps_Actions_SearchAction | Computed<Session_Turns_DetailedAnswer_Steps_Actions_SearchAction>;
 }
 
 export interface Session_Turns_DetailedAnswer_Steps {
+  /** The action(s) taken as part of this agent step. (AI-inferred) */
   actions?: Session_Turns_DetailedAnswer_Steps_Actions[] | Computed<Session_Turns_DetailedAnswer_Steps_Actions[]>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The current status of this resource or operation. (AI-inferred) */
   state?: string | Computed<string>;
+  /** A step of the model's own intermediate reasoning. (AI-inferred) */
   thought?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAnswer {
+  /** Why answer generation was skipped for this query, when it was. (AI-inferred) */
   answerSkippedReasons?: string[] | Computed<string[]>;
+  /** The plain-text content of the generated answer. (AI-inferred) */
   answerText?: string | Computed<string>;
+  /** The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred) */
   citations?: Session_Turns_DetailedAnswer_Citations[] | Computed<Session_Turns_DetailedAnswer_Citations[]>;
+  /** When this operation completed. (AI-inferred) */
   completeTime?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** How well this generated content is supported by the retrieved source material. (AI-inferred) */
   groundingScore?: number | Computed<number>;
+  /** The specific source span(s) supporting a claim in the generated answer. (AI-inferred) */
   groundingSupports?: Session_Turns_DetailedAnswer_GroundingSupports[] | Computed<Session_Turns_DetailedAnswer_GroundingSupports[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Detail about how this query was interpreted before retrieval. (AI-inferred) */
   queryUnderstandingInfo?: Session_Turns_DetailedAnswer_QueryUnderstandingInfo | Computed<Session_Turns_DetailedAnswer_QueryUnderstandingInfo>;
+  /** The source reference(s) supporting this content. (AI-inferred) */
   references?: Session_Turns_DetailedAnswer_References[] | Computed<Session_Turns_DetailedAnswer_References[]>;
+  /** Suggested follow-up question(s) related to this query. (AI-inferred) */
   relatedQuestions?: string[] | Computed<string[]>;
+  /** The safety rating(s) assessed for this content, per category. (AI-inferred) */
   safetyRatings?: Session_Turns_DetailedAnswer_SafetyRatings[] | Computed<Session_Turns_DetailedAnswer_SafetyRatings[]>;
+  /** The current status of this resource or operation. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The ordered step(s) making up this process. (AI-inferred) */
   steps?: Session_Turns_DetailedAnswer_Steps[] | Computed<Session_Turns_DetailedAnswer_Steps[]>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResult {
+  /** The phrase(s) blocked from appearing in generated content. (AI-inferred) */
   bannedPhrases?: string[] | Computed<string[]>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_Error {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult {
+  /** Error detail for this failed operation. (AI-inferred) */
   error?: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_Error | Computed<Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_Error>;
+  /** Detail about a Model Armor policy violation detected in this content. (AI-inferred) */
   modelArmorViolation?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults {
+  /** The outcome of checking this content against the configured banned-phrase policy. (AI-inferred) */
   bannedPhraseEnforcementResult?: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResult | Computed<Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResult>;
+  /** The outcome of checking this content against Model Armor's own safety policies. (AI-inferred) */
   modelArmorEnforcementResult?: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult | Computed<Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult {
+  /** The outcome of evaluating this content against the configured safety/content policies. (AI-inferred) */
   policyResults?: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults[] | Computed<Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults[]>;
+  /** The final determination reached. (AI-inferred) */
   verdict?: string | Computed<string>;
+  /** Which policy or check flagged this violation. (AI-inferred) */
   violationSource?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDate {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month component of a date. (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year component of a date. (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations {
+  /** The ending position this range covers. (AI-inferred) */
   endIndex?: number | Computed<number>;
+  /** The license this content is distributed under. (AI-inferred) */
   license?: string | Computed<string>;
+  /** When this document was published. (AI-inferred) */
   publicationDate?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDate | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDate>;
+  /** The starting position this range covers. (AI-inferred) */
   startIndex?: number | Computed<number>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata {
+  /** The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred) */
   citations?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations[] | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations[]>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResult {
+  /** The result of this operation. (AI-inferred) */
   outcome?: string | Computed<string>;
+  /** The output produced by this operation. (AI-inferred) */
   output?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCode {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_File {
+  /** An identifier for this specific file. (AI-inferred) */
   fileId?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineData {
+  /** The literal data payload. (AI-inferred) */
   data?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content {
+  /** The output of running a preceding block of generated code. (AI-inferred) */
   codeExecutionResult?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResult | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResult>;
+  /** Code generated by the model for the tool-hosted interpreter to run. (AI-inferred) */
   executableCode?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCode | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCode>;
+  /** A reference to a specific file. (AI-inferred) */
   file?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_File | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_File>;
+  /** Media content embedded directly, as raw bytes plus a MIME type. (AI-inferred) */
   inlineData?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineData | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineData>;
+  /** Who this content is attributed to, e.g. user or model. (AI-inferred) */
   role?: string | Computed<string>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
+  /** A step of the model's own intermediate reasoning. (AI-inferred) */
   thought?: boolean | Computed<boolean>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadata {
+  /** A reference to the document this applies to. (AI-inferred) */
   document?: string | Computed<string>;
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** The language this content is in. (AI-inferred) */
   language?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** An identifier for the specific page this applies to. (AI-inferred) */
   pageIdentifier?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References {
   chunkMetadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A short excerpt of code. (AI-inferred) */
   codeSnippet?: string | Computed<string>;
+  /** The content of this message or resource. (AI-inferred) */
   content?: string | Computed<string>;
+  /** Metadata describing this document. (AI-inferred) */
   documentMetadata?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadata | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadata>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_Segments {
+  /** The ending position this range covers. (AI-inferred) */
   endIndex?: string | Computed<string>;
+  /** How well this generated content is supported by the retrieved source material. (AI-inferred) */
   groundingScore?: number | Computed<number>;
+  /** The reference index/indices this citation points to. (AI-inferred) */
   referenceIndices?: number[] | Computed<number[]>;
+  /** The starting position this range covers. (AI-inferred) */
   startIndex?: string | Computed<string>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegments {
+  /** An identifier for this specific content item. (AI-inferred) */
   contentId?: string | Computed<string>;
+  /** The reference index/indices this citation points to. (AI-inferred) */
   referenceIndices?: number[] | Computed<number[]>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata {
+  /** The source reference(s) supporting this content. (AI-inferred) */
   references?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References[] | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References[]>;
+  /** The segment(s) making up this content. (AI-inferred) */
   segments?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_Segments[] | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_Segments[]>;
+  /** Visually distinct region(s) (e.g. a table or figure) identified within this document. (AI-inferred) */
   visualSegments?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegments[] | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegments[]>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies_GroundedContent {
+  /** Detail about which source(s) support specific claims in the generated answer. (AI-inferred) */
   citationMetadata?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata>;
+  /** The content of this message or resource. (AI-inferred) */
   content?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content>;
+  /** Detail linking specific spans of generated text back to their own supporting source content. (AI-inferred) */
   textGroundingMetadata?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer_Replies {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Content that has been verified as grounded in the retrieved source material. (AI-inferred) */
   groundedContent?: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent | Computed<Session_Turns_DetailedAssistAnswer_Replies_GroundedContent>;
 }
 
 export interface Session_Turns_DetailedAssistAnswer {
+  /** Why assistance was skipped for this request, when it was. (AI-inferred) */
   assistSkippedReasons?: string[] | Computed<string[]>;
+  /** The outcome of checking this content against the caller's own custom policy. (AI-inferred) */
   customerPolicyEnforcementResult?: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult | Computed<Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The reply/replies making up this response. (AI-inferred) */
   replies?: Session_Turns_DetailedAssistAnswer_Replies[] | Computed<Session_Turns_DetailedAssistAnswer_Replies[]>;
+  /** The current status of this resource or operation. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Session_Turns_Query {
+  /** An identifier for this specific query. (AI-inferred) */
   queryId?: string | Computed<string>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Session_Turns {
+  /** The generated answer text. (AI-inferred) */
   answer?: string | Computed<string>;
+  /** The full, structured answer response, including citations and supporting detail. (AI-inferred) */
   detailedAnswer?: Session_Turns_DetailedAnswer | Computed<Session_Turns_DetailedAnswer>;
+  /** The full, structured assistance response, including citations and supporting detail. (AI-inferred) */
   detailedAssistAnswer?: Session_Turns_DetailedAssistAnswer | Computed<Session_Turns_DetailedAssistAnswer>;
+  /** Whether this configuration is currently active and serving. (AI-inferred) */
   live?: boolean | Computed<boolean>;
+  /** The search query text. (AI-inferred) */
   query?: Session_Turns_Query | Computed<Session_Turns_Query>;
+  /** Configuration for how this query is processed. (AI-inferred) */
   queryConfig?: Record<string, string> | Computed<Record<string, string>>;
 }
 

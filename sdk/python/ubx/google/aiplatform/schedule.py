@@ -201,75 +201,124 @@ class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_PipelineContext:
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Execution:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A human-readable title for this schema. (AI-inferred)
     schema_title: Any = None
+    # The version of this schema. (AI-inferred)
     schema_version: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetail:
+    # The main container job(s) that failed during this task's own execution. (AI-inferred)
     failed_main_jobs: Any = None
+    # The pre-caching-check job(s) that failed during this task's own execution. (AI-inferred)
     failed_pre_caching_check_jobs: Any = None
+    # A reference to this task's own main container job. (AI-inferred)
     main_job: Any = None
+    # A reference to this task's own pre-caching-check job. (AI-inferred)
     pre_caching_check_job: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetail:
+    # The job(s) that failed during this task's own execution. (AI-inferred)
     failed_jobs: Any = None
+    # A reference to the underlying job. (AI-inferred)
     job: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail:
+    # Detail specific to a task executed as a container. (AI-inferred)
     container_detail: Any = None
+    # Detail specific to a task executed as a custom training job. (AI-inferred)
     custom_job_detail: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_Artifacts:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A human-readable title for this schema. (AI-inferred)
     schema_title: Any = None
+    # The version of this schema. (AI-inferred)
     schema_version: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs:
+    # The pipeline artifact(s) making up this input or output. (AI-inferred)
     artifacts: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatus:
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # Detail about this task's own concrete execution. (AI-inferred)
     execution: Any = None
+    # Detail about the underlying compute (container job or custom job) that executed this task. (AI-inferred)
     executor_detail: Any = None
+    # The input(s) to this operation. (AI-inferred)
     inputs: Any = None
+    # The output(s) produced by this operation. (AI-inferred)
     outputs: Any = None
+    # A reference to this task's own parent task in the pipeline DAG. (AI-inferred)
     parent_task_id: Any = None
+    # The history of status changes this pipeline task has gone through. (AI-inferred)
     pipeline_task_status: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
+    # An identifier for this pipeline task, unique within its own pipeline run. (AI-inferred)
     task_id: Any = None
+    # The name of this pipeline task, as defined in the pipeline template. (AI-inferred)
     task_name: Any = None
+    # A globally unique name for this pipeline task, disambiguating tasks with the same `task_name` across loop/condition iterations. (AI-inferred)
     task_unique_name: Any = None
 
 @dataclasses.dataclass
@@ -283,8 +332,11 @@ class Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail:
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfig_DnsPeeringConfigs:
+    # The domain this configuration or resource applies to. (AI-inferred)
     domain: Any = None
+    # The VPC network this resource is deployed into. (AI-inferred)
     target_network: Any = None
+    # The Google Cloud project this resource targets. (AI-inferred)
     target_project: Any = None
 
 @dataclasses.dataclass
@@ -296,12 +348,16 @@ class Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfig:
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_InputArtifacts:
+    # A reference to the specific pipeline artifact this applies to. (AI-inferred)
     artifact_id: Any = None
 
 @dataclasses.dataclass
 class Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_Parameters:
+    # A floating-point value, populated when this field's own type is a double. (AI-inferred)
     double_value: Any = None
+    # An integer value, populated when this field's own type is an integer. (AI-inferred)
     int_value: Any = None
+    # A text value, populated when this field's own type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass

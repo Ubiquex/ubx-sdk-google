@@ -2,62 +2,101 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceConnectionMap_ConsumerPscConfigs {
+  /** The project the consuming instance belongs to. (AI-inferred) */
   consumerInstanceProject?: string | Computed<string>;
+  /** Whether access to this endpoint is restricted to its own region, rather than global. (AI-inferred) */
   disableGlobalAccess?: boolean | Computed<boolean>;
+  /** Whether this applies to IPv4 or IPv6. (AI-inferred) */
   ipVersion?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The identifier of the producer-side instance backing this connection. (AI-inferred) */
   producerInstanceId?: string | Computed<string>;
+  /** Metadata describing the producer-side instance backing this connection. (AI-inferred) */
   producerInstanceMetadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the Google Cloud project this applies to. (AI-inferred) */
   project?: string | Computed<string>;
+  /** The mapping of endpoint IP addresses to the service attachment(s) they connect to. (AI-inferred) */
   serviceAttachmentIpAddressMap?: Record<string, string> | Computed<Record<string, string>>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus {
+  /** Detail about an error that occurred. (AI-inferred) */
   error?: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error | Computed<ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error>;
+  /** The fully qualified domain name this applies to. (AI-inferred) */
   fqdn?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface ServiceConnectionMap_ConsumerPscConnections_ErrorInfo {
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** Additional structured metadata about this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface ServiceConnectionMap_ConsumerPscConnections {
+  /** The current status of automated DNS record creation for this connection. (AI-inferred) */
   dnsAutomationStatus?: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus | Computed<ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus>;
+  /** Detail about an error that occurred. (AI-inferred) */
   error?: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error | Computed<ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error>;
+  /** Structured detail about an error that occurred. (AI-inferred) */
   errorInfo?: ServiceConnectionMap_ConsumerPscConnections_ErrorInfo | Computed<ServiceConnectionMap_ConsumerPscConnections_ErrorInfo>;
+  /** The category of error that occurred. (AI-inferred) */
   errorType?: string | Computed<string>;
+  /** A reference to the forwarding rule this applies to. (AI-inferred) */
   forwardingRule?: string | Computed<string>;
+  /** A reference to the underlying Compute Engine operation. (AI-inferred) */
   gceOperation?: string | Computed<string>;
+  /** An IP address. (AI-inferred) */
   ip?: string | Computed<string>;
+  /** Whether this applies to IPv4 or IPv6. (AI-inferred) */
   ipVersion?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The identifier of the producer-side instance backing this connection. (AI-inferred) */
   producerInstanceId?: string | Computed<string>;
+  /** Metadata describing the producer-side instance backing this connection. (AI-inferred) */
   producerInstanceMetadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the Google Cloud project this applies to. (AI-inferred) */
   project?: string | Computed<string>;
+  /** The unique identifier of this Private Service Connect connection. (AI-inferred) */
   pscConnectionId?: string | Computed<string>;
+  /** A reference to the specific subnetwork selected for this connection. (AI-inferred) */
   selectedSubnetwork?: string | Computed<string>;
+  /** A reference to the service attachment this connects to. (AI-inferred) */
   serviceAttachmentUri?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpec {
+  /** The DNS suffix this configuration applies to. (AI-inferred) */
   dnsSuffix?: string | Computed<string>;
+  /** The hostname this applies to. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** The time-to-live applied to this DNS record. (AI-inferred) */
   ttl?: string | Computed<string>;
 }
 
 export interface ServiceConnectionMap_ProducerPscConfigs {
+  /** Configuration for automatically creating DNS record(s) for this Private Service Connect connection. (AI-inferred) */
   automatedDnsCreationSpec?: ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpec | Computed<ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpec>;
+  /** A reference to the service attachment this connects to. (AI-inferred) */
   serviceAttachmentUri?: string | Computed<string>;
 }
 

@@ -721,48 +721,88 @@ const V2beta1Intent_TrainingPhrasesFields: FieldMap = {
 };
 
 export interface V2beta1IntentConfig {
+  /** The specific action, exposed by `tool`, being invoked. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The real messaging platform(s) this intent's own default responses render for. (AI-inferred) */
   defaultResponsePlatforms?: string[] | Computed<string[]>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred) */
   endInteraction?: boolean | Computed<boolean>;
+  /** The real custom event name(s) that can trigger this intent directly, without matching user input. (AI-inferred) */
   events?: string[] | Computed<string[]>;
+  /** The real context(s) that must be active for this intent to be matched. (AI-inferred) */
   inputContextNames?: string[] | Computed<string[]>;
+  /** Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred) */
   isFallback?: boolean | Computed<boolean>;
+  /** Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred) */
   liveAgentHandoff?: boolean | Computed<boolean>;
+  /** The response message(s) this fulfillment returns. (AI-inferred) */
   messages?: V2beta1Intent_Messages[] | Computed<V2beta1Intent_Messages[]>;
+  /** Whether machine-learning-based matching is disabled for this intent, restricting it to exact phrase matches. (AI-inferred) */
   mlDisabled?: boolean | Computed<boolean>;
+  /** Whether machine-learning-based matching is enabled for this intent. Deprecated in favor of `ml_disabled`. (AI-inferred) */
   mlEnabled?: boolean | Computed<boolean>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real context(s) this intent activates once matched. (AI-inferred) */
   outputContexts?: V2beta1Intent_OutputContexts[] | Computed<V2beta1Intent_OutputContexts[]>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: V2beta1Intent_Parameters[] | Computed<V2beta1Intent_Parameters[]>;
+  /** A reference to this intent's own direct parent, when this intent is itself a follow-up intent. (AI-inferred) */
   parentFollowupIntentName?: string | Computed<string>;
+  /** The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** Whether matching this intent clears all previously active contexts. (AI-inferred) */
   resetContexts?: boolean | Computed<boolean>;
+  /** Example user utterances used to train this intent's own recognition. (AI-inferred) */
   trainingPhrases?: V2beta1Intent_TrainingPhrases[] | Computed<V2beta1Intent_TrainingPhrases[]>;
+  /** Whether a webhook is enabled for this intent, and whether it is required for slot filling. (AI-inferred) */
   webhookState?: string | Computed<string>;
 }
 
 export interface V2beta1IntentAttrs {
+  /** The specific action, exposed by `tool`, being invoked. (AI-inferred) */
   action: string;
+  /** The real messaging platform(s) this intent's own default responses render for. (AI-inferred) */
   defaultResponsePlatforms: string[];
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred) */
   endInteraction: boolean;
+  /** The real custom event name(s) that can trigger this intent directly, without matching user input. (AI-inferred) */
   events: string[];
+  /** The real, direct follow-up intent(s) nested under this intent. (AI-inferred) */
   followupIntentInfo: V2beta1Intent_FollowupIntentInfo[];
+  /** The real context(s) that must be active for this intent to be matched. (AI-inferred) */
   inputContextNames: string[];
+  /** Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred) */
   isFallback: boolean;
+  /** Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred) */
   liveAgentHandoff: boolean;
+  /** The response message(s) this fulfillment returns. (AI-inferred) */
   messages: V2beta1Intent_Messages[];
+  /** Whether machine-learning-based matching is disabled for this intent, restricting it to exact phrase matches. (AI-inferred) */
   mlDisabled: boolean;
+  /** Whether machine-learning-based matching is enabled for this intent. Deprecated in favor of `ml_disabled`. (AI-inferred) */
   mlEnabled: boolean;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The real context(s) this intent activates once matched. (AI-inferred) */
   outputContexts: V2beta1Intent_OutputContexts[];
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters: V2beta1Intent_Parameters[];
+  /** A reference to this intent's own direct parent, when this intent is itself a follow-up intent. (AI-inferred) */
   parentFollowupIntentName: string;
+  /** The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred) */
   priority: number;
+  /** Whether matching this intent clears all previously active contexts. (AI-inferred) */
   resetContexts: boolean;
+  /** A reference to the top-level intent at the root of this intent's own follow-up chain. (AI-inferred) */
   rootFollowupIntentName: string;
+  /** Example user utterances used to train this intent's own recognition. (AI-inferred) */
   trainingPhrases: V2beta1Intent_TrainingPhrases[];
+  /** Whether a webhook is enabled for this intent, and whether it is required for slot filling. (AI-inferred) */
   webhookState: string;
 }
 

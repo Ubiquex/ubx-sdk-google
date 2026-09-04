@@ -8,23 +8,35 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Repository_CleanupPolicies_Condition:
+    # Matches versions newer than this duration. (AI-inferred)
     newer_than: Any = None
+    # Matches versions older than this duration. (AI-inferred)
     older_than: Any = None
+    # Restricts this policy to package names starting with one of these prefixes. (AI-inferred)
     package_name_prefixes: Any = None
+    # Restricts this policy to versions whose tags start with one of these prefixes. (AI-inferred)
     tag_prefixes: Any = None
+    # Restricts this policy to versions that are `TAGGED`, `UNTAGGED`, or either. (AI-inferred)
     tag_state: Any = None
+    # Restricts this policy to version names starting with one of these prefixes. (AI-inferred)
     version_name_prefixes: Any = None
 
 @dataclasses.dataclass
 class Repository_CleanupPolicies_MostRecentVersions:
+    # How many of the most recent versions to keep per matching package. (AI-inferred)
     keep_count: Any = None
+    # Restricts this keep-most-recent rule to package names starting with one of these prefixes. (AI-inferred)
     package_name_prefixes: Any = None
 
 @dataclasses.dataclass
 class Repository_CleanupPolicies:
+    # What this cleanup policy does to matching versions: `KEEP` or `DELETE`. (AI-inferred)
     action: Any = None
+    # The criteria a package version must match for this cleanup policy to apply. (AI-inferred)
     condition: Any = None
+    # A caller-chosen identifier for this cleanup policy, unique within its own repository. (AI-inferred)
     id: Any = None
+    # A cleanup policy variant that keeps only the N most recent versions per package, rather than matching by age or tag. (AI-inferred)
     most_recent_versions: Any = None
 
 @dataclasses.dataclass
@@ -111,8 +123,11 @@ class Repository_RemoteRepositoryConfig:
 
 @dataclasses.dataclass
 class Repository_VirtualRepositoryConfig_UpstreamPolicies:
+    # A caller-chosen identifier for this upstream policy, unique within its own virtual repository. (AI-inferred)
     id: Any = None
+    # The order this upstream is checked in relative to the virtual repository's other upstreams -- lower values are checked first. (AI-inferred)
     priority: Any = None
+    # The upstream repository this policy references. (AI-inferred)
     repository: Any = None
 
 @dataclasses.dataclass

@@ -4,10 +4,14 @@ package cloudcontrolspartner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Customer_CustomerOnboardingState_OnboardingSteps struct {
+	// The real, current completion status (`PENDING`, `SUCCEEDED`, `FAILED`, `NOT_APPLICABLE`) of this customer onboarding step. (AI-inferred)
 	CompletionState any
-	CompletionTime  any
-	StartTime       any
-	Step            any
+	// The real timestamp when this customer onboarding step completed, if it has. (AI-inferred)
+	CompletionTime any
+	// The real timestamp when this customer onboarding step started. (AI-inferred)
+	StartTime any
+	// The real, specific onboarding step (`KAJ_ENROLLMENT` or `CUSTOMER_ENVIRONMENT`) this status entry describes. (AI-inferred)
+	Step any
 }
 
 type Customer_CustomerOnboardingState struct {

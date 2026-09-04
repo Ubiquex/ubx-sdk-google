@@ -8,47 +8,68 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Routine_Arguments_DataType_StructType_Fields:
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Routine_Arguments_DataType_StructType:
+    # The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
     fields: Any = None
 
 @dataclasses.dataclass
 class Routine_Arguments_DataType:
+    # The type of each element in an `ARRAY`-typed value. (AI-inferred)
     array_element_type: Any = None
+    # The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
     range_element_type: Any = None
+    # The field(s) making up a `STRUCT`-typed value. (AI-inferred)
     struct_type: Any = None
+    # The base data type this schema node represents, e.g. `STRING` or `STRUCT`. (AI-inferred)
     type_kind: Any = None
 
 @dataclasses.dataclass
 class Routine_Arguments_TableType_Columns_Type_StructType:
+    # The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
     fields: Any = None
 
 @dataclasses.dataclass
 class Routine_Arguments_TableType_Columns_Type:
+    # The type of each element in an `ARRAY`-typed value. (AI-inferred)
     array_element_type: Any = None
+    # The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
     range_element_type: Any = None
+    # The field(s) making up a `STRUCT`-typed value. (AI-inferred)
     struct_type: Any = None
+    # The base data type this schema node represents, e.g. `STRING` or `STRUCT`. (AI-inferred)
     type_kind: Any = None
 
 @dataclasses.dataclass
 class Routine_Arguments_TableType_Columns:
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Routine_Arguments_TableType:
+    # The column(s) this applies to. (AI-inferred)
     columns: Any = None
 
 @dataclasses.dataclass
 class Routine_Arguments:
+    # Whether this routine argument is a fixed type or takes any type (`ANY_TYPE`). (AI-inferred)
     argument_kind: Any = None
+    # The data type of this value or column. (AI-inferred)
     data_type: Any = None
+    # Whether this routine is a user-defined aggregate function. (AI-inferred)
     is_aggregate: Any = None
+    # Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred)
     mode: Any = None
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # Whether this table is a standard table, view, materialized view, or external table. (AI-inferred)
     table_type: Any = None
 
 @dataclasses.dataclass

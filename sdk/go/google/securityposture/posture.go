@@ -4,108 +4,163 @@ package securityposture
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Posture_PolicySets_Policies_ComplianceStandards struct {
-	Control  any
+	// A reference to a specific compliance control within a standard. (AI-inferred)
+	Control any
+	// A reference to the compliance standard this maps to. (AI-inferred)
 	Standard any
 }
 
 type Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// A boolean expression evaluated to determine whether this rule applies. (AI-inferred)
+	Expression any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypes struct {
+	// Whether this item is included in the applied policy. (AI-inferred)
 	Included any
 }
 
 type Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Values struct {
+	// The set of values permitted by this constraint. (AI-inferred)
 	AllowedValues any
-	DeniedValues  any
+	// The set of values explicitly disallowed by this constraint. (AI-inferred)
+	DeniedValues any
 }
 
 type Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules struct {
-	AllowAll      any
-	Condition     any
-	DenyAll       any
-	Enforce       any
-	Parameters    any
+	// Whether every value is permitted, with no restriction. (AI-inferred)
+	AllowAll any
+	// The condition that must be satisfied for this rule to apply. (AI-inferred)
+	Condition any
+	// Whether every value is disallowed, with no exceptions. (AI-inferred)
+	DenyAll any
+	// Whether this constraint's own rule is actively enforced, rather than only evaluated. (AI-inferred)
+	Enforce any
+	// The parameter(s) configuring this policy or module. (AI-inferred)
+	Parameters any
+	// The resource type(s) this constraint applies to. (AI-inferred)
 	ResourceTypes any
-	Values        any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint struct {
+	// A reference to a predefined Organization Policy constraint. (AI-inferred)
 	CannedConstraintId any
-	PolicyRules        any
+	// The rule(s) making up this Organization Policy. (AI-inferred)
+	PolicyRules any
 }
 
 type Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraint struct {
-	ActionType    any
-	Condition     any
-	Description   any
-	DisplayName   any
-	MethodTypes   any
-	Name          any
+	// Whether this rule allows or denies the matching action. (AI-inferred)
+	ActionType any
+	// The condition that must be satisfied for this rule to apply. (AI-inferred)
+	Condition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The API method type(s) (e.g. `CREATE`, `UPDATE`) this custom constraint evaluates. (AI-inferred)
+	MethodTypes any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The resource type(s) this constraint applies to. (AI-inferred)
 	ResourceTypes any
-	UpdateTime    any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom struct {
+	// A caller-defined Organization Policy constraint. (AI-inferred)
 	CustomConstraint any
-	PolicyRules      any
+	// The rule(s) making up this Organization Policy. (AI-inferred)
+	PolicyRules any
 }
 
 type Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_Properties struct {
-	Name            any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The Common Expression Language (CEL) expression evaluated by this custom constraint. (AI-inferred)
 	ValueExpression any
 }
 
 type Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput struct {
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
 	Properties any
 }
 
 type Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelector struct {
+	// The resource type(s) this constraint applies to. (AI-inferred)
 	ResourceTypes any
 }
 
 type Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config struct {
-	CustomOutput     any
-	Description      any
-	Predicate        any
-	Recommendation   any
+	// Additional, custom output data returned alongside this finding. (AI-inferred)
+	CustomOutput any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The condition evaluated against a resource for this constraint. (AI-inferred)
+	Predicate any
+	// Guidance for resolving this finding. (AI-inferred)
+	Recommendation any
+	// Restricts this policy to resource(s) matching a specific type. (AI-inferred)
 	ResourceSelector any
-	Severity         any
+	// How serious this finding is. (AI-inferred)
+	Severity any
 }
 
 type Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule struct {
-	Config                any
-	DisplayName           any
-	Id                    any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// Whether this Security Health Analytics module is enabled, disabled, or inherited. (AI-inferred)
 	ModuleEnablementState any
 }
 
 type Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModule struct {
+	// Whether this Security Health Analytics module is enabled, disabled, or inherited. (AI-inferred)
 	ModuleEnablementState any
-	ModuleName            any
+	// The name of the Security Health Analytics module this applies to. (AI-inferred)
+	ModuleName any
 }
 
 type Posture_PolicySets_Policies_Constraint struct {
-	OrgPolicyConstraint                 any
-	OrgPolicyConstraintCustom           any
+	// A reference to a built-in Organization Policy constraint enforced by this posture. (AI-inferred)
+	OrgPolicyConstraint any
+	// A caller-defined Organization Policy constraint enforced by this posture. (AI-inferred)
+	OrgPolicyConstraintCustom any
+	// A caller-defined Security Health Analytics detector module. (AI-inferred)
 	SecurityHealthAnalyticsCustomModule any
-	SecurityHealthAnalyticsModule       any
+	// A built-in Security Health Analytics detector module. (AI-inferred)
+	SecurityHealthAnalyticsModule any
 }
 
 type Posture_PolicySets_Policies struct {
+	// The compliance standard(s) (and their own control IDs) this policy maps to. (AI-inferred)
 	ComplianceStandards any
-	Constraint          any
-	Description         any
-	PolicyId            any
+	// A reference to the constraint this policy enforces. (AI-inferred)
+	Constraint any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A reference to the policy this applies to. (AI-inferred)
+	PolicyId any
 }
 
 type Posture_PolicySets struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Policies    any
+	// The policy/policies making up this posture. (AI-inferred)
+	Policies any
+	// A reference to the policy set this applies to. (AI-inferred)
 	PolicySetId any
 }
 

@@ -17,35 +17,59 @@ class UtilizationReport_Error:
 
 @dataclasses.dataclass
 class UtilizationReport_Vms_Utilization:
+    # The real, average CPU utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
     cpu_average_percent: Any = None
+    # The real, peak CPU utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
     cpu_max_percent: Any = None
+    # The real, average disk I/O throughput, in kilobits per second, measured for this VM. (AI-inferred)
     disk_io_rate_average_kbps: Any = None
+    # The real, peak disk I/O throughput, in kilobits per second, measured for this VM. (AI-inferred)
     disk_io_rate_max_kbps: Any = None
+    # The real, average memory utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
     memory_average_percent: Any = None
+    # The real, peak memory utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
     memory_max_percent: Any = None
+    # The real, average network throughput, in kilobits per second, measured for this VM. (AI-inferred)
     network_throughput_average_kbps: Any = None
+    # The real, peak network throughput, in kilobits per second, measured for this VM. (AI-inferred)
     network_throughput_max_kbps: Any = None
 
 @dataclasses.dataclass
 class UtilizationReport_Vms_VmwareVmDetails:
+    # The real, detected CPU architecture (e.g. `VM_ARCHITECTURE_X86_FAMILY`) of this source VM. (AI-inferred)
     architecture: Any = None
+    # Which real boot mode (BIOS or EFI) the migrated VM instance is configured to use. (AI-inferred)
     boot_option: Any = None
+    # The real, total committed storage, in MiB, allocated to this VM's own disks in the source environment. (AI-inferred)
     committed_storage_mb: Any = None
+    # The real number of virtual CPUs configured on this source VM. (AI-inferred)
     cpu_count: Any = None
+    # A real, human-readable description of the vCenter datacenter this VM was discovered in. (AI-inferred)
     datacenter_description: Any = None
+    # The real, source-side identifier of the vCenter datacenter this VM was discovered in. (AI-inferred)
     datacenter_id: Any = None
+    # The real number of disks attached to this source VM. (AI-inferred)
     disk_count: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The real, detected guest operating system description (e.g. from VMware Tools) reported for this VM. (AI-inferred)
     guest_description: Any = None
+    # The real amount of memory, in MiB, configured on this source VM. (AI-inferred)
     memory_mb: Any = None
+    # The real, current power state (`ON`, `OFF`, `SUSPENDED`) of this source VM at the time it was inventoried. (AI-inferred)
     power_state: Any = None
+    # The real, source-side UUID uniquely identifying this VM within its own VMware environment. (AI-inferred)
     uuid: Any = None
+    # The real, source-side identifier of this VM within its own source environment. (AI-inferred)
     vm_id: Any = None
 
 @dataclasses.dataclass
 class UtilizationReport_Vms:
+    # Real, measured resource utilization (CPU, memory, disk I/O, network) for one source VM in this utilization report. (AI-inferred)
     utilization: Any = None
+    # The real, source-side identifier of this VM within its own source environment. (AI-inferred)
     vm_id: Any = None
+    # Real, VMware-specific inventory details (CPU, memory, disks, datacenter) for this VM, when the source environment is VMware. (AI-inferred)
     vmware_vm_details: Any = None
 
 _UtilizationReport_ErrorFields = {

@@ -8,41 +8,65 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Job_AllocationPolicy_Instances_Policy_Accelerators:
+    # The real number of accelerators of this `type` to attach to each instance. (AI-inferred)
     count: Any = None
+    # The real GPU driver version to install for this accelerator, when `install_gpu_drivers` requests automatic installation. (AI-inferred)
     driver_version: Any = None
+    # Whether Batch should automatically install GPU drivers on the managed instance, when its own machine type or accelerators require them. (AI-inferred)
     install_gpu_drivers: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_AllocationPolicy_Instances_Policy_BootDisk:
+    # The real disk interface (e.g. `NVME`, `SCSI`) to attach a Batch-managed instance's boot or data disk with. (AI-inferred)
     disk_interface: Any = None
+    # A real Compute Engine image or image family to boot a Batch-managed instance's boot disk from. (AI-inferred)
     image: Any = None
+    # The real, provisioned size, in GiB, of this disk. (AI-inferred)
     size_gb: Any = None
+    # A real Compute Engine disk snapshot to create this Batch-managed instance's boot disk from, instead of an `image`. (AI-inferred)
     snapshot: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_AllocationPolicy_Instances_Policy_Disks:
+    # The real device name a Batch-managed instance's disk is attached under, referenced by the job's own `volumes` mount configuration. (AI-inferred)
     device_name: Any = None
+    # A real, already-existing Compute Engine disk to attach to a Batch-managed instance, instead of creating a `new_disk`. (AI-inferred)
     existing_disk: Any = None
+    # Real configuration for a new disk Batch should create and attach to each managed instance for this job. (AI-inferred)
     new_disk: Any = None
 
 @dataclasses.dataclass
 class Job_AllocationPolicy_Instances_Policy:
+    # The real GPU accelerator(s) to attach to each Batch-managed instance for this job. (AI-inferred)
     accelerators: Any = None
+    # Real, custom boot disk configuration for a Batch-managed instance, overriding whatever the source image would otherwise default to. (AI-inferred)
     boot_disk: Any = None
+    # Real, additional persistent or local disks to attach to each Batch-managed instance for this job. (AI-inferred)
     disks: Any = None
+    # The real Compute Engine machine type (e.g. `e2-standard-4`) to use for the Batch job's own managed instances. (AI-inferred)
     machine_type: Any = None
+    # The real minimum CPU platform (e.g. `Intel Cascade Lake`) required for the Batch job's own managed instances. (AI-inferred)
     min_cpu_platform: Any = None
+    # The real Compute Engine provisioning model (`STANDARD`, `SPOT`, `PREEMPTIBLE`, etc.) to use for the Batch job's own managed instances. (AI-inferred)
     provisioning_model: Any = None
+    # A real Compute Engine reservation to consume capacity from for the Batch job's own managed instances. (AI-inferred)
     reservation: Any = None
 
 @dataclasses.dataclass
 class Job_AllocationPolicy_Instances:
+    # Whether to block project-wide SSH keys from accessing the Batch-managed Compute Engine instances, restricting SSH to keys set on the instance itself. (AI-inferred)
     block_project_ssh_keys: Any = None
+    # Whether Batch should automatically install GPU drivers on the managed instance, when its own machine type or accelerators require them. (AI-inferred)
     install_gpu_drivers: Any = None
+    # Whether Batch should automatically install the Ops Agent on the managed instance for logging and monitoring. (AI-inferred)
     install_ops_agent: Any = None
+    # A real, existing Compute Engine instance template to base the Batch job's own managed instances on, instead of Batch's own default instance configuration. (AI-inferred)
     instance_template: Any = None
+    # The real instance provisioning policy (machine type, disks, accelerators, provisioning model) Batch applies to the compute instances it creates for this job. (AI-inferred)
     policy: Any = None
 
 @dataclasses.dataclass
@@ -52,9 +76,13 @@ class Job_AllocationPolicy_Location:
 
 @dataclasses.dataclass
 class Job_AllocationPolicy_Network_NetworkInterfaces:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real network interface card type (e.g. `GVNIC`) to use for the Batch job's own managed instances. (AI-inferred)
     nic_type: Any = None
+    # Whether the Batch job's own managed instances should have no external (public) IP address. (AI-inferred)
     no_external_ip_address: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
@@ -82,6 +110,7 @@ class Job_AllocationPolicy:
     instances: Any = None
     # Custom labels to apply to the job and all the Compute Engine resources that both are created by this allocation policy and support labels. Use labels to group and describe the resources they are applied to. Batch automatically applies predefined labels and supports multiple `labels` fields for each job, which each let you apply custom labels to various resources. Label names that start with "goog-" or "google-" are reserved for predefined labels. For more information about labels with Batch, see [Organize resources using labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
     labels: Any = None
+    # A real, requested Compute Engine zone or region for the Batch job's own managed instances, when not left to Batch's own automatic selection. (AI-inferred)
     location: Any = None
     # NetworkPolicy describes VM instance network configurations.
     network: Any = None
@@ -108,37 +137,54 @@ class Job_LogsPolicy:
 
 @dataclasses.dataclass
 class Job_Notifications_Message:
+    # The real job state (e.g. `SUCCEEDED`, `FAILED`) this notification message fires for, when notifying on job-level state changes. (AI-inferred)
     new_job_state: Any = None
+    # The real task state (e.g. `SUCCEEDED`, `FAILED`) this notification message fires for, when notifying on task-level state changes. (AI-inferred)
     new_task_state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Notifications:
+    # Real configuration for one Pub/Sub notification message this Batch job publishes on a matching job or task state change. (AI-inferred)
     message: Any = None
+    # The real Pub/Sub topic this Batch job publishes its own status-change notifications to. (AI-inferred)
     pubsub_topic: Any = None
 
 @dataclasses.dataclass
 class Job_Status_StatusEvents_TaskExecution:
+    # The real process exit code a Batch task's runnable finished with. (AI-inferred)
     exit_code: Any = None
 
 @dataclasses.dataclass
 class Job_Status_StatusEvents:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The real timestamp when this status event occurred. (AI-inferred)
     event_time: Any = None
+    # Real, detailed execution result (such as `exit_code`) for the task this status event describes. (AI-inferred)
     task_execution: Any = None
+    # The real, current state of this Batch task. (AI-inferred)
     task_state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Job_Status_TaskGroups_Instances:
+    # Real, custom boot disk configuration for a Batch-managed instance, overriding whatever the source image would otherwise default to. (AI-inferred)
     boot_disk: Any = None
+    # The real Compute Engine machine type (e.g. `e2-standard-4`) to use for the Batch job's own managed instances. (AI-inferred)
     machine_type: Any = None
+    # The real Compute Engine provisioning model (`STANDARD`, `SPOT`, `PREEMPTIBLE`, etc.) to use for the Batch job's own managed instances. (AI-inferred)
     provisioning_model: Any = None
+    # The real number of tasks Batch is packing onto this specific managed instance. (AI-inferred)
     task_pack: Any = None
 
 @dataclasses.dataclass
 class Job_Status_TaskGroups:
+    # Real, per-state counts of the tasks in this task group (e.g. how many are `RUNNING`, `SUCCEEDED`, `FAILED`). (AI-inferred)
     counts: Any = None
+    # Real, per-instance status information for the Compute Engine instances running this Batch job's tasks. (AI-inferred)
     instances: Any = None
 
 @dataclasses.dataclass
@@ -154,103 +200,162 @@ class Job_Status:
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskEnvironments_EncryptedVariables:
+    # The real, Cloud KMS-encrypted ciphertext of an `encrypted_variables` entry's own value. (AI-inferred)
     cipher_text: Any = None
+    # The real Cloud KMS key used to encrypt (and, at task run time, decrypt) an `encrypted_variables` entry's own value. (AI-inferred)
     key_name: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskEnvironments:
+    # Environment variables whose real values are supplied pre-encrypted (`cipher_text` plus the Cloud KMS `key_name` used to encrypt them), decrypted by Batch before the task runs. (AI-inferred)
     encrypted_variables: Any = None
+    # Environment variables whose real values are fetched from Secret Manager by reference at task run time, rather than being stored directly in the job's own config. (AI-inferred)
     secret_variables: Any = None
+    # Real, plain (unencrypted) environment variables made available to this task environment. (AI-inferred)
     variables: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_ComputeResource:
+    # The real boot disk size, in MiB, allocated to each task. (AI-inferred)
     boot_disk_mib: Any = None
+    # The real number of CPU milli-cores (1/1000th of a CPU core) allocated to each task. (AI-inferred)
     cpu_milli: Any = None
+    # The real amount of memory, in MiB, allocated to each task. (AI-inferred)
     memory_mib: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionCondition:
+    # The real process exit code(s) that trigger this lifecycle policy's own `action`. (AI-inferred)
     exit_codes: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_LifecyclePolicies:
+    # The real action Batch takes (`RETRY_TASK` or `FAIL_TASK`) when this lifecycle policy's own `action_condition` matches. (AI-inferred)
     action: Any = None
+    # The real condition (a set of matching `exit_codes`) that triggers this lifecycle policy's own `action`. (AI-inferred)
     action_condition: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_Runnables_Barrier:
+    # A real, unique name for this task group within the Batch job. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_Runnables_Container:
+    # Whether to block this container's own access to external (internet) networking. (AI-inferred)
     block_external_network: Any = None
+    # The real command and arguments this container runnable runs, overriding the image's own default entrypoint/command if `entrypoint` isn't also set. (AI-inferred)
     commands: Any = None
+    # Whether to use image streaming to start this container faster, pulling the image lazily as it's read rather than fully in advance. (AI-inferred)
     enable_image_streaming: Any = None
+    # The real entrypoint to run inside this container, overriding the image's own default. (AI-inferred)
     entrypoint: Any = None
+    # The real container image URI (e.g. from Artifact Registry or Docker Hub) this runnable runs. (AI-inferred)
     image_uri: Any = None
+    # Real, additional flags passed directly to the container runtime when starting this container runnable. (AI-inferred)
     options: Any = None
+    # The real password used to authenticate to the container registry this runnable's image is pulled from. (AI-inferred)
     password: Any = None
+    # The real username used to authenticate to the container registry this runnable's image is pulled from. (AI-inferred)
     username: Any = None
+    # Real volume mount paths inside this container, mapping the task's own `volumes` into the container's own filesystem. (AI-inferred)
     volumes: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_Runnables_Script:
+    # The real, on-disk path to a script file this script runnable executes. (AI-inferred)
     path: Any = None
+    # The real, inline shell script text this script runnable executes. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_Runnables:
+    # Whether this runnable runs regardless of whether an earlier runnable in the same task failed. (AI-inferred)
     always_run: Any = None
+    # Whether this runnable runs in the background (not blocking the task's own progression to the next runnable) rather than to completion. (AI-inferred)
     background: Any = None
+    # A real synchronization point in a task's own runnable sequence, used to coordinate multiple concurrently-running tasks. (AI-inferred)
     barrier: Any = None
+    # Real configuration for a container-based runnable, specifying the image and how to run it. (AI-inferred)
     container: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Real, plain environment variables (and `secret_variables`) available to every runnable in this task's own spec. (AI-inferred)
     environment: Any = None
+    # Whether Batch should treat this runnable as successful regardless of its own real process exit status. (AI-inferred)
     ignore_exit_status: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # Real configuration for a script-based runnable, given either as a file `path` or inline `text`. (AI-inferred)
     script: Any = None
+    # The real maximum duration this specific runnable is allowed to run before Batch terminates it. (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_Volumes_Gcs:
+    # The real, remote path (a Cloud Storage bucket path or NFS export path) this volume mounts from. (AI-inferred)
     remote_path: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_Volumes_Nfs:
+    # The real, remote path (a Cloud Storage bucket path or NFS export path) this volume mounts from. (AI-inferred)
     remote_path: Any = None
+    # The real NFS server address this volume mounts from. (AI-inferred)
     server: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec_Volumes:
+    # The real device name a Batch-managed instance's disk is attached under, referenced by the job's own `volumes` mount configuration. (AI-inferred)
     device_name: Any = None
+    # Real Cloud Storage bucket configuration for a volume mounted via Cloud Storage FUSE. (AI-inferred)
     gcs: Any = None
+    # Real, additional mount flags passed to the volume's own mount command. (AI-inferred)
     mount_options: Any = None
+    # The real, on-instance path this volume is mounted at, visible to every runnable in the task. (AI-inferred)
     mount_path: Any = None
+    # Real NFS server configuration for a volume mounted over NFS. (AI-inferred)
     nfs: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups_TaskSpec:
+    # The real CPU and memory resources (`cpu_milli`, `memory_mib`, `boot_disk_mib`) each task in this task group is allocated. (AI-inferred)
     compute_resource: Any = None
+    # Real, plain environment variables (and `secret_variables`) available to every runnable in this task's own spec. (AI-inferred)
     environment: Any = None
+    # Real, plain environment variables set for this specific runnable, layered on top of the task spec's own `environment`. (AI-inferred)
     environments: Any = None
+    # Real rules controlling how Batch responds (e.g. `RETRY_TASK`, `FAIL_TASK`) when a task's own runnable exits with a matching `action_condition`. (AI-inferred)
     lifecycle_policies: Any = None
+    # The real maximum number of times Batch retries a failed task in this task group before giving up. (AI-inferred)
     max_retry_count: Any = None
+    # The real maximum duration a single task in this task group is allowed to run before Batch terminates it. (AI-inferred)
     max_run_duration: Any = None
+    # The real, ordered sequence of scripts and/or containers each task in this task group executes. (AI-inferred)
     runnables: Any = None
+    # Real volume mount paths inside this container, mapping the task's own `volumes` into the container's own filesystem. (AI-inferred)
     volumes: Any = None
 
 @dataclasses.dataclass
 class Job_TaskGroups:
+    # A real, unique name for this task group within the Batch job. (AI-inferred)
     name: Any = None
+    # The real maximum number of tasks in this task group that Batch runs concurrently. (AI-inferred)
     parallelism: Any = None
+    # Whether to allow SSH access into a Batch-managed instance from any source, rather than restricting it. (AI-inferred)
     permissive_ssh: Any = None
+    # Whether Batch should populate `/etc/hosts` with entries for every task's own container or VM, letting tasks address each other by hostname. (AI-inferred)
     require_hosts_file: Any = None
+    # Whether Batch should run this task group's own runnables as a non-root user rather than root. (AI-inferred)
     run_as_non_root: Any = None
+    # The real order Batch uses to schedule this task group's own tasks (`AS_SOON_AS_POSSIBLE` or `IN_ORDER`). (AI-inferred)
     scheduling_policy: Any = None
+    # The real total number of tasks to run in this task group. (AI-inferred)
     task_count: Any = None
+    # The real maximum number of this task group's own tasks Batch packs onto a single Compute Engine instance. (AI-inferred)
     task_count_per_node: Any = None
+    # Real, per-task-group sets of environment variables (including `encrypted_variables`/`secret_variables`) available to override per task. (AI-inferred)
     task_environments: Any = None
+    # The real specification (compute resources, runnables, retry and lifecycle policy) every task in this task group runs with. (AI-inferred)
     task_spec: Any = None
 
 _Job_AllocationPolicy_Instances_Policy_AcceleratorsFields = {

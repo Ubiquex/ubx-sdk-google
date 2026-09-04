@@ -4,8 +4,10 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SemanticGovernancePolicy_McpTools struct {
+	// A reference to the MCP server this applies to. (AI-inferred)
 	McpServer any
-	Tools     any
+	// The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred)
+	Tools any
 }
 
 var SemanticGovernancePolicy_McpToolsFields = ubx.FieldMap{

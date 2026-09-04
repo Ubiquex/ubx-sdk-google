@@ -2,26 +2,38 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomTargetType_CustomActions_IncludeSkaffoldModules_Git {
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** A reference to the source repository. (AI-inferred) */
   repo?: string | Computed<string>;
 }
 
 export interface CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo {
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** A reference to the source repository. (AI-inferred) */
   repository?: string | Computed<string>;
 }
 
 export interface CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage {
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The source this data or configuration is read from. (AI-inferred) */
   source?: string | Computed<string>;
 }
 
 export interface CustomTargetType_CustomActions_IncludeSkaffoldModules {
+  /** The configuration(s) making up this resource. (AI-inferred) */
   configs?: string[] | Computed<string[]>;
+  /** Configuration for reading this deployment's own manifests from a Git repository. (AI-inferred) */
   git?: CustomTargetType_CustomActions_IncludeSkaffoldModules_Git | Computed<CustomTargetType_CustomActions_IncludeSkaffoldModules_Git>;
+  /** A reference to the Cloud Build-connected repository this reads from. (AI-inferred) */
   googleCloudBuildRepo?: CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo | Computed<CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo>;
+  /** Configuration for reading this deployment's own manifests from Cloud Storage. (AI-inferred) */
   googleCloudStorage?: CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage | Computed<CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage>;
 }
 

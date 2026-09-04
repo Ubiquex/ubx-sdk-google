@@ -9,6 +9,7 @@ type EntryType_Authorization struct {
 }
 
 type EntryType_RequiredAspects struct {
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 

@@ -4,83 +4,125 @@ package clouddeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentCondition struct {
+	// The target(s) referenced by this pipeline that don't actually exist. (AI-inferred)
 	MissingTargets any
-	Status         any
-	UpdateTime     any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsList struct {
+	// The target this rollout, job, or promotion is directed to. (AI-inferred)
 	DestinationTargetId any
-	SourceTargetId      any
+	// The target this rollout, job, or promotion originates from. (AI-inferred)
+	SourceTargetId any
 }
 
 type Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition struct {
+	// When the next scheduled automatic promotion will occur. (AI-inferred)
 	NextPromotionTime any
-	TargetsList       any
+	// The target(s) making up this multi-target rollout. (AI-inferred)
+	TargetsList any
 }
 
 type Automation_Rules_AdvanceRolloutRule_Condition struct {
-	TargetsPresentCondition      any
+	// Whether every target referenced by this pipeline's own stages actually exists. (AI-inferred)
+	TargetsPresentCondition any
+	// Whether a scheduled, time-based automatic promotion is configured and its own current status. (AI-inferred)
 	TimedPromoteReleaseCondition any
 }
 
 type Automation_Rules_AdvanceRolloutRule struct {
-	Condition    any
-	Id           any
+	// The current status of a specific health/readiness check on this resource. (AI-inferred)
+	Condition any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// The rollout phase(s) this automation rule triggers from. (AI-inferred)
 	SourcePhases any
-	Wait         any
+	// How long to pause before proceeding. (AI-inferred)
+	Wait any
 }
 
 type Automation_Rules_PromoteReleaseRule struct {
-	Condition           any
-	DestinationPhase    any
+	// The current status of a specific health/readiness check on this resource. (AI-inferred)
+	Condition any
+	// The rollout phase this promotion or advance targets. (AI-inferred)
+	DestinationPhase any
+	// The target this rollout, job, or promotion is directed to. (AI-inferred)
 	DestinationTargetId any
-	Id                  any
-	Wait                any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// How long to pause before proceeding. (AI-inferred)
+	Wait any
 }
 
 type Automation_Rules_RepairRolloutRule_RepairPhases_Retry struct {
-	Attempts    any
+	// How many times this job is retried before being considered failed. (AI-inferred)
+	Attempts any
+	// How the delay between retry attempts grows, e.g. linear or exponential. (AI-inferred)
 	BackoffMode any
-	Wait        any
+	// How long to pause before proceeding. (AI-inferred)
+	Wait any
 }
 
 type Automation_Rules_RepairRolloutRule_RepairPhases_Rollback struct {
-	DestinationPhase                any
+	// The rollout phase this promotion or advance targets. (AI-inferred)
+	DestinationPhase any
+	// Whether automatic rollback is skipped if another rollout is already pending for this same release. (AI-inferred)
 	DisableRollbackIfRolloutPending any
 }
 
 type Automation_Rules_RepairRolloutRule_RepairPhases struct {
-	Retry    any
+	// Configuration for automatically retrying a failed job or phase. (AI-inferred)
+	Retry any
+	// Configuration for automatically rolling back to the previous stable revision on failure. (AI-inferred)
 	Rollback any
 }
 
 type Automation_Rules_RepairRolloutRule struct {
-	Condition    any
-	Id           any
-	Jobs         any
-	Phases       any
+	// The current status of a specific health/readiness check on this resource. (AI-inferred)
+	Condition any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// The job(s) making up this phase or rule. (AI-inferred)
+	Jobs any
+	// The ordered phase(s) making up this rollout or automation rule. (AI-inferred)
+	Phases any
+	// The ordered repair action(s) (e.g. retry, rollback) attempted when a rollout fails. (AI-inferred)
 	RepairPhases any
 }
 
 type Automation_Rules_TimedPromoteReleaseRule struct {
-	Condition           any
-	DestinationPhase    any
+	// The current status of a specific health/readiness check on this resource. (AI-inferred)
+	Condition any
+	// The rollout phase this promotion or advance targets. (AI-inferred)
+	DestinationPhase any
+	// The target this rollout, job, or promotion is directed to. (AI-inferred)
 	DestinationTargetId any
-	Id                  any
-	Schedule            any
-	TimeZone            any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// A recurrence schedule, e.g. in cron syntax. (AI-inferred)
+	Schedule any
+	// The time zone this schedule or window is interpreted in. (AI-inferred)
+	TimeZone any
 }
 
 type Automation_Rules struct {
-	AdvanceRolloutRule      any
-	PromoteReleaseRule      any
-	RepairRolloutRule       any
+	// An automation rule that automatically advances a rollout to its own next phase once its current phase succeeds. (AI-inferred)
+	AdvanceRolloutRule any
+	// An automation rule that automatically promotes a release to its own next target once conditions are met. (AI-inferred)
+	PromoteReleaseRule any
+	// An automation rule that automatically attempts to repair a failed rollout, e.g. by retrying or rolling back. (AI-inferred)
+	RepairRolloutRule any
+	// An automation rule that automatically promotes a release at a specific scheduled time. (AI-inferred)
 	TimedPromoteReleaseRule any
 }
 
 type Automation_Selector_Targets struct {
-	Id     any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
 	Labels any
 }
 

@@ -48,26 +48,44 @@ _V3beta1Intent_TrainingPhrasesFields = {
 
 @dataclasses.dataclass
 class V3beta1IntentConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The DTMF digit pattern this matches against. (AI-inferred)
     dtmf_pattern: Any = None
+    # Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
     is_fallback: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
     priority: Any = None
+    # Example user utterances used to train this intent's own recognition. (AI-inferred)
     training_phrases: Any = None
 
 @dataclasses.dataclass
 class V3beta1IntentAttrs:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The DTMF digit pattern this matches against. (AI-inferred)
     dtmf_pattern: Any = None
+    # Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
     is_fallback: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
     priority: Any = None
+    # Example user utterances used to train this intent's own recognition. (AI-inferred)
     training_phrases: Any = None
 
 V3beta1Intent = ubx.ResourceBinding(

@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomClass_CustomClass_Items {
+  /** The real, literal term this custom class item contributes to the class's own recognition bias. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

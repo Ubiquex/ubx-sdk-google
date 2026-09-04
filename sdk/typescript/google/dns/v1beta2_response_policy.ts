@@ -28,6 +28,7 @@ export interface V1beta2ResponsePolicyConfig {
   gkeClusters?: V1beta2ResponsePolicy_GkeClusters[] | Computed<V1beta2ResponsePolicy_GkeClusters[]>;
   /** Unique identifier for the resource; defined by the server (output only). */
   id?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** User labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
@@ -44,6 +45,7 @@ export interface V1beta2ResponsePolicyAttrs {
   gkeClusters: V1beta2ResponsePolicy_GkeClusters[];
   /** Unique identifier for the resource; defined by the server (output only). */
   id: string;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** User labels. */
   labels: Record<string, string>;

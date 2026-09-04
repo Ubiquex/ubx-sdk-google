@@ -4,9 +4,13 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModelDeploymentMonitoringJob_BigqueryTables struct {
-	BigqueryTablePath                   any
-	LogSource                           any
-	LogType                             any
+	// The full path of the BigQuery table this applies to. (AI-inferred)
+	BigqueryTablePath any
+	// Whether this logged data comes from `TRAINING` or `SERVING`. (AI-inferred)
+	LogSource any
+	// Whether this logged data is a `PREDICT` or `EXPLAIN` request/response. (AI-inferred)
+	LogType any
+	// The schema version request/response log rows in this BigQuery table are written in. (AI-inferred)
 	RequestResponseLoggingSchemaVersion any
 }
 
@@ -42,66 +46,94 @@ type ModelDeploymentMonitoringJob_LoggingSamplingStrategy struct {
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Bigquery struct {
+	// The destination URI this data is written to. (AI-inferred)
 	OutputUri any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Gcs struct {
+	// The destination URI prefix output files are written under. (AI-inferred)
 	OutputUriPrefix any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline struct {
-	Bigquery         any
-	Gcs              any
+	// Configuration for reading from or writing to BigQuery. (AI-inferred)
+	Bigquery any
+	// Configuration for reading from or writing to Cloud Storage. (AI-inferred)
+	Gcs any
+	// The file format predictions are stored in, e.g. `JSONL` or `BIGQUERY`. (AI-inferred)
 	PredictionFormat any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig struct {
+	// Whether feature-attribution explanations are computed as part of this monitoring objective. (AI-inferred)
 	EnableFeatureAttributes any
-	ExplanationBaseline     any
+	// The reference data feature-attribution drift is measured against. (AI-inferred)
+	ExplanationBaseline any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds struct {
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig struct {
+	// Per-feature drift alert thresholds for feature-attribution scores, keyed by feature name. (AI-inferred)
 	AttributionScoreDriftThresholds any
-	DefaultDriftThreshold           any
-	DriftThresholds                 any
+	// The drift alert threshold applied to any feature without its own entry in `drift_thresholds`. (AI-inferred)
+	DefaultDriftThreshold any
+	// Per-feature drift alert thresholds, keyed by feature name. (AI-inferred)
+	DriftThresholds any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySource struct {
+	// The source URI this data is read from. (AI-inferred)
 	InputUri any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSource struct {
+	// The Cloud Storage URI(s) this applies to. (AI-inferred)
 	Uris any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset struct {
-	BigquerySource          any
-	DataFormat              any
-	Dataset                 any
-	GcsSource               any
+	// A BigQuery table or view this data is read from. (AI-inferred)
+	BigquerySource any
+	// The file format the source data is stored in. (AI-inferred)
+	DataFormat any
+	// A reference to the dataset this applies to. (AI-inferred)
+	Dataset any
+	// A Cloud Storage location this data is read from. (AI-inferred)
+	GcsSource any
+	// How training data is sampled for request/response logging, e.g. a fixed random rate. (AI-inferred)
 	LoggingSamplingStrategy any
-	TargetField             any
+	// The name of the field in the training dataset holding the ground-truth label. (AI-inferred)
+	TargetField any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfig struct {
+	// Per-feature training-serving skew alert thresholds for feature-attribution scores, keyed by feature name. (AI-inferred)
 	AttributionScoreSkewThresholds any
-	DefaultSkewThreshold           any
-	SkewThresholds                 any
+	// The training-serving skew alert threshold applied to any feature without its own entry in `skew_thresholds`. (AI-inferred)
+	DefaultSkewThreshold any
+	// Per-feature training-serving skew alert thresholds, keyed by feature name. (AI-inferred)
+	SkewThresholds any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig struct {
-	ExplanationConfig                     any
-	PredictionDriftDetectionConfig        any
-	TrainingDataset                       any
+	// Configuration for computing feature-attribution explanations as part of this monitoring objective. (AI-inferred)
+	ExplanationConfig any
+	// Configuration for detecting drift between this model's own serving-time predictions and its training-time baseline. (AI-inferred)
+	PredictionDriftDetectionConfig any
+	// The dataset used as the training-time baseline this monitoring job compares serving traffic against. (AI-inferred)
+	TrainingDataset any
+	// Configuration for detecting skew between this model's own training data and its serving-time predictions. (AI-inferred)
 	TrainingPredictionSkewDetectionConfig any
 }
 
 type ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs struct {
+	// The identifier this model was deployed under. (AI-inferred)
 	DeployedModelId any
+	// Configuration for what this monitoring job actually checks -- drift, skew, and/or explanation attribution. (AI-inferred)
 	ObjectiveConfig any
 }
 

@@ -2,12 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResponsePolicy_GkeClusters {
+  /** The GKE cluster this private zone's own visibility is scoped to. (AI-inferred) */
   gkeClusterName?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface ResponsePolicy_Networks {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The VPC network this private zone or policy is visible from. (AI-inferred) */
   networkUrl?: string | Computed<string>;
 }
 
@@ -28,6 +32,7 @@ export interface ResponsePolicyConfig {
   gkeClusters?: ResponsePolicy_GkeClusters[] | Computed<ResponsePolicy_GkeClusters[]>;
   /** Unique identifier for the resource; defined by the server (output only). */
   id?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** User labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
@@ -44,6 +49,7 @@ export interface ResponsePolicyAttrs {
   gkeClusters: ResponsePolicy_GkeClusters[];
   /** Unique identifier for the resource; defined by the server (output only). */
   id: string;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** User labels. */
   labels: Record<string, string>;

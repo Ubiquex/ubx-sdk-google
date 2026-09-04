@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PhraseSet_PhraseSet_Phrases {
+  /** The real strength (a positive number, higher biases more strongly) this phrase should be boosted by during recognition. (AI-inferred) */
   boost?: number | Computed<number>;
+  /** The real, literal term this custom class item contributes to the class's own recognition bias. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

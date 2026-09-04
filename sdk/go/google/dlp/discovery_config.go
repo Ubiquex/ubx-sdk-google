@@ -4,78 +4,112 @@ package dlp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryConfig_Actions_ExportData_ProfileTable struct {
+	// The BigQuery dataset ID this applies to. (AI-inferred)
 	DatasetId any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
-	TableId   any
+	// The BigQuery table ID this applies to. (AI-inferred)
+	TableId any
 }
 
 type DiscoveryConfig_Actions_ExportData struct {
-	ProfileTable        any
+	// The destination BigQuery table this job's own data profile is written to. (AI-inferred)
+	ProfileTable any
+	// The destination BigQuery table a sample of this job's own findings is written to. (AI-inferred)
 	SampleFindingsTable any
 }
 
 type DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_Conditions struct {
-	MinimumRiskScore        any
+	// The minimum overall risk score a profile must reach for this condition to be satisfied. (AI-inferred)
+	MinimumRiskScore any
+	// The minimum sensitivity score a profile must reach for this condition to be satisfied. (AI-inferred)
 	MinimumSensitivityScore any
 }
 
 type DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions struct {
-	Conditions      any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
+	Conditions any
+	// How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred)
 	LogicalOperator any
 }
 
 type DiscoveryConfig_Actions_PubSubNotification_PubsubCondition struct {
+	// The condition expression(s) making up this rule. (AI-inferred)
 	Expressions any
 }
 
 type DiscoveryConfig_Actions_PubSubNotification struct {
+	// How much detail the published notification includes, e.g. the full table profile versus just the resource name. (AI-inferred)
 	DetailOfMessage any
-	Event           any
+	// Which kind of event triggers this notification, e.g. a new or changed profile. (AI-inferred)
+	Event any
+	// Restricts which discovery events actually trigger a Pub/Sub notification. (AI-inferred)
 	PubsubCondition any
-	Topic           any
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
+	Topic any
 }
 
 type DiscoveryConfig_Actions_PublishToDataplexCatalog struct {
+	// Treats this identified quasi-identifier combination as lower risk than its own raw k-anonymity value would otherwise suggest. (AI-inferred)
 	LowerDataRiskToLow any
 }
 
 type DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScore struct {
+	// The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
 	Score any
 }
 
 type DiscoveryConfig_Actions_TagResources_TagConditions_Tag struct {
+	// A tag value, namespaced to disambiguate it from identically-named values in other tag systems. (AI-inferred)
 	NamespacedValue any
 }
 
 type DiscoveryConfig_Actions_TagResources_TagConditions struct {
+	// A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
 	SensitivityScore any
-	Tag              any
+	// A tag applied to matching resources. (AI-inferred)
+	Tag any
 }
 
 type DiscoveryConfig_Actions_TagResources struct {
-	LowerDataRiskToLow      any
+	// Treats this identified quasi-identifier combination as lower risk than its own raw k-anonymity value would otherwise suggest. (AI-inferred)
+	LowerDataRiskToLow any
+	// Which profile generation(s) (e.g. new versus updated) trigger tagging. (AI-inferred)
 	ProfileGenerationsToTag any
-	TagConditions           any
+	// The condition(s) under which a specific tag is applied. (AI-inferred)
+	TagConditions any
 }
 
 type DiscoveryConfig_Actions struct {
-	ExportData               any
-	PubSubNotification       any
-	PublishToChronicle       any
+	// Exports this job's own results to a destination table. (AI-inferred)
+	ExportData any
+	// Publishes a Pub/Sub notification when this discovery event occurs. (AI-inferred)
+	PubSubNotification any
+	// Publishes this discovery event to Google Security Operations (Chronicle). (AI-inferred)
+	PublishToChronicle any
+	// Publishes this discovery event's own findings as Dataplex Catalog metadata. (AI-inferred)
 	PublishToDataplexCatalog any
-	PublishToScc             any
-	TagResources             any
+	// Publishes this discovery event to Security Command Center. (AI-inferred)
+	PublishToScc any
+	// Tags matching resources based on their own discovery/profiling results. (AI-inferred)
+	TagResources any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Errors_Details struct {
-	Code    any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// Additional detail explaining this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result or error. (AI-inferred)
 	Message any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Errors struct {
-	Details    any
-	ExtraInfo  any
+	// Additional detail explaining this result. (AI-inferred)
+	Details any
+	// Additional detail about this event. (AI-inferred)
+	ExtraInfo any
+	// The timestamp(s) recorded for this event. (AI-inferred)
 	Timestamps any
 }
 
@@ -120,273 +154,388 @@ type DiscoveryConfig_DiscoveryConfig_ProcessingLocation struct {
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadence struct {
+	// How often this recurs. (AI-inferred)
 	Frequency any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence struct {
+	// How often this recurs. (AI-inferred)
 	Frequency any
-	Types     any
+	// The info type(s) this applies to. (AI-inferred)
+	Types any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence struct {
+	// How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred)
 	InspectTemplateModifiedCadence any
-	RefreshFrequency               any
-	SchemaModifiedCadence          any
-	TableModifiedCadence           any
+	// How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred)
+	RefreshFrequency any
+	// How often changes to a resource's own schema are picked up by this discovery scan. (AI-inferred)
+	SchemaModifiedCadence any
+	// How often a modified BigQuery table is re-scanned. (AI-inferred)
+	TableModifiedCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditions struct {
-	MinAge      any
+	// The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
+	MinAge any
+	// The minimum number of rows a table must have to be included in this discovery scan. (AI-inferred)
 	MinRowCount any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_Types struct {
+	// The info type(s) this applies to. (AI-inferred)
 	Types any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions struct {
-	CreatedAfter   any
-	OrConditions   any
+	// Restricts this scan to resources created after this timestamp. (AI-inferred)
+	CreatedAfter any
+	// A set of conditions where at least one, rather than all, must be satisfied. (AI-inferred)
+	OrConditions any
+	// Which BigQuery table type(s) this scan includes, e.g. all types or only supported ones. (AI-inferred)
 	TypeCollection any
-	Types          any
+	// The info type(s) this applies to. (AI-inferred)
+	Types any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_Patterns struct {
+	// A regular expression restricting this scan to matching BigQuery dataset IDs. (AI-inferred)
 	DatasetIdRegex any
+	// A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
 	ProjectIdRegex any
-	TableIdRegex   any
+	// A regular expression restricting this scan to matching BigQuery table IDs. (AI-inferred)
+	TableIdRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes struct {
+	// The name pattern(s) resources are matched against for this configuration. (AI-inferred)
 	Patterns any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables struct {
+	// Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
 	IncludeRegexes any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter struct {
-	OtherTables    any
+	// Applies to every BigQuery table not otherwise explicitly matched. (AI-inferred)
+	OtherTables any
+	// A reference to a specific BigQuery table. (AI-inferred)
 	TableReference any
-	Tables         any
+	// The table(s) this applies to. (AI-inferred)
+	Tables any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget struct {
-	Cadence    any
+	// How often this discovery target is re-scanned for new or modified resources. (AI-inferred)
+	Cadence any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
 	Conditions any
-	Disabled   any
-	Filter     any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Conditions struct {
+	// Restricts this discovery scan to Cloud SQL instances running the given database engine(s). (AI-inferred)
 	DatabaseEngines any
-	Types           any
+	// The info type(s) this applies to. (AI-inferred)
+	Types any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_Patterns struct {
-	DatabaseRegex             any
+	// A regular expression restricting this scan to matching database names. (AI-inferred)
+	DatabaseRegex any
+	// A regular expression restricting this scan to matching database resource names. (AI-inferred)
 	DatabaseResourceNameRegex any
-	InstanceRegex             any
-	ProjectIdRegex            any
+	// A regular expression restricting this scan to matching instance names. (AI-inferred)
+	InstanceRegex any
+	// A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
+	ProjectIdRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes struct {
+	// The name pattern(s) resources are matched against for this configuration. (AI-inferred)
 	Patterns any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection struct {
+	// Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
 	IncludeRegexes any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReference struct {
-	Database         any
+	// The database this applies to. (AI-inferred)
+	Database any
+	// A reference to a specific database resource. (AI-inferred)
 	DatabaseResource any
-	Instance         any
-	ProjectId        any
+	// The instance this applies to. (AI-inferred)
+	Instance any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter struct {
-	Collection                any
+	// The set of resources this configuration applies to. (AI-inferred)
+	Collection any
+	// A reference to a specific database instance and database. (AI-inferred)
 	DatabaseResourceReference any
-	Others                    any
+	// A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
+	Others any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadence struct {
+	// How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred)
 	InspectTemplateModifiedCadence any
-	RefreshFrequency               any
-	SchemaModifiedCadence          any
+	// How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred)
+	RefreshFrequency any
+	// How often changes to a resource's own schema are picked up by this discovery scan. (AI-inferred)
+	SchemaModifiedCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget struct {
-	Conditions        any
-	Disabled          any
-	Filter            any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
+	Conditions any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// How often this discovery scan re-runs to find newly created resources. (AI-inferred)
 	GenerationCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditions struct {
+	// Which Cloud Storage bucket-level attribute(s) (e.g. IAM policy, encryption type) are included in this bucket's own profile. (AI-inferred)
 	IncludedBucketAttributes any
+	// Which Cloud Storage object-level attribute(s) are included in this bucket's own profile. (AI-inferred)
 	IncludedObjectAttributes any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions struct {
+	// Criteria a Cloud Storage bucket must meet to be included in this discovery scan. (AI-inferred)
 	CloudStorageConditions any
-	CreatedAfter           any
-	MinAge                 any
+	// Restricts this scan to resources created after this timestamp. (AI-inferred)
+	CreatedAfter any
+	// The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
+	MinAge any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReference struct {
+	// The name of the Cloud Storage bucket this applies to. (AI-inferred)
 	BucketName any
-	ProjectId  any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegex struct {
+	// A regular expression restricting this discovery scan to matching Cloud Storage bucket names. (AI-inferred)
 	BucketNameRegex any
-	ProjectIdRegex  any
+	// A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
+	ProjectIdRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns struct {
+	// A regular expression restricting this scan to matching Cloud Storage bucket names. (AI-inferred)
 	CloudStorageRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes struct {
+	// The name pattern(s) resources are matched against for this configuration. (AI-inferred)
 	Patterns any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFilters struct {
-	NamespacedTagKey   any
+	// A tag key, namespaced to disambiguate it from identically-named keys in other tag systems. (AI-inferred)
+	NamespacedTagKey any
+	// A tag value, namespaced to disambiguate it from identically-named values in other tag systems. (AI-inferred)
 	NamespacedTagValue any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags struct {
+	// Restricts this discovery scan to resources carrying specific tag key/value pair(s). (AI-inferred)
 	TagFilters any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection struct {
+	// Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
 	IncludeRegexes any
-	IncludeTags    any
+	// Restricts this discovery scan to resources carrying specific tag(s). (AI-inferred)
+	IncludeTags any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter struct {
+	// A reference to a specific Cloud Storage bucket. (AI-inferred)
 	CloudStorageResourceReference any
-	Collection                    any
-	Others                        any
+	// The set of resources this configuration applies to. (AI-inferred)
+	Collection any
+	// A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
+	Others any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence struct {
+	// How often newly modified inspect templates are picked up and applied to this discovery scan. (AI-inferred)
 	InspectTemplateModifiedCadence any
-	RefreshFrequency               any
+	// How often this discovery scan re-scans already-discovered resources for changes. (AI-inferred)
+	RefreshFrequency any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget struct {
-	Conditions        any
-	Disabled          any
-	Filter            any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
+	Conditions any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// How often this discovery scan re-runs to find newly created resources. (AI-inferred)
 	GenerationCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditions struct {
-	BucketTypes          any
+	// Restricts this discovery scan to specific Amazon S3 storage bucket type(s). (AI-inferred)
+	BucketTypes any
+	// Restricts this discovery scan to Amazon S3 objects in the given storage class(es). (AI-inferred)
 	ObjectStorageClasses any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions struct {
+	// Criteria an Amazon S3 bucket must meet to be included in this discovery scan. (AI-inferred)
 	AmazonS3BucketConditions any
-	MinAge                   any
+	// The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
+	MinAge any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceType struct {
+	// Which external data source this applies to. (AI-inferred)
 	DataSource any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegex struct {
+	// A regular expression restricting this scan to matching AWS account IDs. (AI-inferred)
 	AccountIdRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex struct {
+	// A regular expression restricting this scan to matching AWS account(s). (AI-inferred)
 	AwsAccountRegex any
+	// A regular expression restricting this discovery scan to matching Cloud Storage bucket names. (AI-inferred)
 	BucketNameRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns struct {
+	// A regular expression restricting this scan to matching Amazon S3 bucket names. (AI-inferred)
 	AmazonS3BucketRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes struct {
+	// The name pattern(s) resources are matched against for this configuration. (AI-inferred)
 	Patterns any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection struct {
+	// Regular expression pattern(s) a resource's own name must match to be included in this scan. (AI-inferred)
 	IncludeRegexes any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccount struct {
+	// An AWS account identifier. (AI-inferred)
 	AccountId any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket struct {
+	// The AWS account this applies to. (AI-inferred)
 	AwsAccount any
+	// The name of the Cloud Storage bucket this applies to. (AI-inferred)
 	BucketName any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource struct {
+	// A specific Amazon S3 bucket this applies to. (AI-inferred)
 	AmazonS3Bucket any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter struct {
-	Collection     any
-	Others         any
+	// The set of resources this configuration applies to. (AI-inferred)
+	Collection any
+	// A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
+	Others any
+	// Restricts this discovery target to one specific, explicitly named resource, rather than a pattern match. (AI-inferred)
 	SingleResource any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget struct {
-	Conditions        any
-	DataSourceType    any
-	Disabled          any
-	Filter            any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
+	Conditions any
+	// The kind of external, non-Google-Cloud data source this discovery target scans. (AI-inferred)
+	DataSourceType any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// How often this discovery scan re-runs to find newly created resources. (AI-inferred)
 	GenerationCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Conditions struct {
+	// Restricts this scan to resources created after this timestamp. (AI-inferred)
 	CreatedAfter any
-	MinAge       any
+	// The minimum age a resource must have reached before this discovery scan considers it. (AI-inferred)
+	MinAge any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_Patterns struct {
+	// A regular expression restricting this discovery scan to matching project IDs. (AI-inferred)
 	ProjectIdRegex any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes struct {
+	// The name pattern(s) resources are matched against for this configuration. (AI-inferred)
 	Patterns any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection struct {
+	// Regular expression pattern(s) restricting this scan to matching Vertex AI dataset names. (AI-inferred)
 	VertexDatasetRegexes any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReference struct {
+	// The resource name of the Vertex AI dataset this applies to. (AI-inferred)
 	DatasetResourceName any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter struct {
-	Collection                     any
-	Others                         any
+	// The set of resources this configuration applies to. (AI-inferred)
+	Collection any
+	// A catch-all configuration applied to any resource not matched by a more specific rule. (AI-inferred)
+	Others any
+	// A reference to a specific Vertex AI dataset. (AI-inferred)
 	VertexDatasetResourceReference any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget struct {
-	Conditions        any
-	Disabled          any
-	Filter            any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
+	Conditions any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// How often this discovery scan re-runs to find newly created resources. (AI-inferred)
 	GenerationCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets struct {
-	BigQueryTarget      any
-	CloudSqlTarget      any
-	CloudStorageTarget  any
-	OtherCloudTarget    any
-	SecretsTarget       any
+	// Configures this discovery scan to profile BigQuery tables. (AI-inferred)
+	BigQueryTarget any
+	// Configures this discovery scan to profile Cloud SQL databases. (AI-inferred)
+	CloudSqlTarget any
+	// Configures this discovery scan to profile Cloud Storage buckets. (AI-inferred)
+	CloudStorageTarget any
+	// Configures this discovery scan to profile resources in a non-Google-Cloud environment, e.g. Amazon S3. (AI-inferred)
+	OtherCloudTarget any
+	// Configures this discovery scan to profile detected secrets/credentials. (AI-inferred)
+	SecretsTarget any
+	// Configures this discovery scan to profile Vertex AI datasets. (AI-inferred)
 	VertexDatasetTarget any
 }
 

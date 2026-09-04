@@ -8,15 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKey:
+    # An identifier for this key. (AI-inferred)
     key_id: Any = None
+    # A public key, PEM-encoded. (AI-inferred)
     public_key_pem: Any = None
+    # The algorithm used to sign this key or attestation. (AI-inferred)
     signature_algorithm: Any = None
 
 @dataclasses.dataclass
 class Attestor_UserOwnedGrafeasNote_PublicKeys:
+    # The ASCII-armored PGP public key used to verify this attestation's own signature. (AI-inferred)
     ascii_armored_pgp_public_key: Any = None
+    # A free-text comment about this resource. (AI-inferred)
     comment: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # A public key in PKIX (X.509 SubjectPublicKeyInfo) format. (AI-inferred)
     pkix_public_key: Any = None
 
 @dataclasses.dataclass

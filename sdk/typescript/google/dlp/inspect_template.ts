@@ -2,98 +2,140 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex {
+  /** For a regex with capture groups, which group number(s) the match applies to, instead of the whole match. (AI-inferred) */
   groupIndexes?: number[] | Computed<number[]>;
+  /** A regular expression a `string`-typed value must match. (AI-inferred) */
   pattern?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment {
+  /** Sets a triggered finding's likelihood to this exact value, overriding whatever it would otherwise have been. (AI-inferred) */
   fixedLikelihood?: string | Computed<string>;
+  /** Shifts a triggered finding's likelihood up or down by this many levels, relative to whatever it would otherwise have been. (AI-inferred) */
   relativeLikelihood?: number | Computed<number>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity {
+  /** How many characters after a finding this hotword rule scans for a match. (AI-inferred) */
   windowAfter?: number | Computed<number>;
+  /** How many characters before a finding this hotword rule scans for a match. (AI-inferred) */
   windowBefore?: number | Computed<number>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule {
+  /** A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred) */
   hotwordRegex?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
+  /** How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred) */
   likelihoodAdjustment?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment>;
+  /** The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred) */
   proximity?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules {
+  /** A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred) */
   hotwordRule?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_CloudStoragePath {
+  /** A file or object path this configuration reads from or writes to. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordList {
+  /** The literal words/phrases making up this `word_list`. (AI-inferred) */
   words?: string[] | Computed<string[]>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary {
+  /** A `gs://` Cloud Storage path this configuration reads from. (AI-inferred) */
   cloudStoragePath?: InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_CloudStoragePath | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_CloudStoragePath>;
+  /** A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred) */
   wordList?: InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordList | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordList>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch {
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel {
+  /** Which label field(s) on a Google Drive file are inspected. (AI-inferred) */
   labelFieldsToMatch?: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch[] | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch[]>;
+  /** The identifier of the Google Drive label this applies to. (AI-inferred) */
   labelId?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel {
+  /** A globally unique identifier. (AI-inferred) */
   guid?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType {
+  /** Configuration for inspecting Google Drive file labels as part of this scan. (AI-inferred) */
   googleDriveLabel?: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel>;
+  /** A Google Drive sensitivity label applied to a file, treated as a signal of the file's own real sensitivity. (AI-inferred) */
   sensitivityLabel?: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore {
+  /** The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred) */
   score?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_InfoType {
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred) */
   sensitivityScore?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore>;
+  /** The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression {
+  /** A regular expression matching against metadata key names. (AI-inferred) */
   keyRegex?: string | Computed<string>;
+  /** A regular expression matching against metadata values. (AI-inferred) */
   valueRegex?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes_StoredType {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_CustomInfoTypes {
+  /** The rule(s) that adjust match likelihood for this custom info type based on surrounding context. (AI-inferred) */
   detectionRules?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules[] | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules[]>;
+  /** A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred) */
   dictionary?: InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary>;
+  /** Whether a match against this rule excludes the finding from results, or leaves it unaffected. (AI-inferred) */
   exclusionType?: string | Computed<string>;
+  /** Reports a Google Drive file's own applied label(s) as findings, treating the label itself as sensitive information to detect. (AI-inferred) */
   fileLabelInfoType?: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType>;
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType>;
+  /** How confident Sensitive Data Protection is that this is a real match, from `VERY_UNLIKELY` to `VERY_LIKELY`. (AI-inferred) */
   likelihood?: string | Computed<string>;
+  /** A condition matching against a specific metadata key/value pair on the scanned object. (AI-inferred) */
   metadataKeyValueExpression?: InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression>;
+  /** A regular expression this rule matches against. (AI-inferred) */
   regex?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
+  /** A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred) */
   sensitivityScore?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore>;
+  /** A reference to a previously created custom info type (a stored dictionary or regex) to reuse here. (AI-inferred) */
   storedType?: InspectTemplate_InspectConfig_CustomInfoTypes_StoredType | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_StoredType>;
+  /** Marks de-identified content with a caller-defined info type name, so it can later be recognized and re-identified. (AI-inferred) */
   surrogateType?: unknown | Computed<unknown>;
 }
 
 export interface InspectTemplate_InspectConfig_Limits_MaxFindingsPerInfoType {
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType>;
+  /** The maximum number of findings to report before stopping. (AI-inferred) */
   maxFindings?: number | Computed<number>;
 }
 
@@ -107,65 +149,95 @@ export interface InspectTemplate_InspectConfig_Limits {
 }
 
 export interface InspectTemplate_InspectConfig_MinLikelihoodPerInfoType {
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType>;
+  /** The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred) */
   minLikelihood?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType {
+  /** Whether the redaction region fully contains the finding's own bounding box. (AI-inferred) */
   encloses?: unknown | Computed<unknown>;
+  /** Whether the finding's own bounding box lies entirely within the redaction region. (AI-inferred) */
   fullyInside?: unknown | Computed<unknown>;
+  /** Whether the redaction region and the finding's own bounding box share any area at all. (AI-inferred) */
   overlaps?: unknown | Computed<unknown>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings {
+  /** How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred) */
   imageContainmentType?: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType>;
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[] | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[]>;
+  /** The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred) */
   minLikelihood?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[] | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[]>;
+  /** How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred) */
   matchingType?: string | Computed<string>;
+  /** The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred) */
   minLikelihood?: string | Computed<string>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule {
+  /** Adjusts a finding's own likelihood based on whether related findings were also detected in an accompanying image. (AI-inferred) */
   adjustByImageFindings?: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings>;
+  /** Adjusts a finding's own likelihood based on whether other specific info types were also matched nearby. (AI-inferred) */
   adjustByMatchingInfoTypes?: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes>;
+  /** How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred) */
   likelihoodAdjustment?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword {
+  /** A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred) */
   hotwordRegex?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
+  /** The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred) */
   proximity?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings {
+  /** How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred) */
   imageContainmentType?: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType>;
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[] | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[]>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[] | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[]>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule {
+  /** A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred) */
   dictionary?: InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary>;
+  /** Excludes a finding when a specified hotword regex is found nearby, the inverse of a hotword likelihood-boosting rule. (AI-inferred) */
   excludeByHotword?: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword>;
+  /** Excludes a finding based on whether related findings were also detected in an accompanying image. (AI-inferred) */
   excludeByImageFindings?: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings>;
+  /** Excludes findings that also match one of these other info types. (AI-inferred) */
   excludeInfoTypes?: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes>;
+  /** How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred) */
   matchingType?: string | Computed<string>;
+  /** A regular expression this rule matches against. (AI-inferred) */
   regex?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet_Rules {
+  /** A rule that raises or lowers a finding's own likelihood, rather than excluding it outright. (AI-inferred) */
   adjustmentRule?: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule>;
+  /** A rule that removes matching findings from the results entirely. (AI-inferred) */
   exclusionRule?: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule | Computed<InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule>;
+  /** A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred) */
   hotwordRule?: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule>;
 }
 
 export interface InspectTemplate_InspectConfig_RuleSet {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[] | Computed<InspectTemplate_InspectConfig_CustomInfoTypes_InfoType[]>;
+  /** The rule(s) making up this configuration. (AI-inferred) */
   rules?: InspectTemplate_InspectConfig_RuleSet_Rules[] | Computed<InspectTemplate_InspectConfig_RuleSet_Rules[]>;
 }
 

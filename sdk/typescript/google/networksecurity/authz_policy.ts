@@ -14,79 +14,114 @@ export interface AuthzPolicy_CustomProvider {
 }
 
 export interface AuthzPolicy_HttpRules_From_NotSources_IpBlocks {
+  /** The number of characters or bytes this applies to. (AI-inferred) */
   length?: number | Computed<number>;
+  /** Matches values starting with this prefix. (AI-inferred) */
   prefix?: string | Computed<string>;
 }
 
 export interface AuthzPolicy_HttpRules_From_NotSources_Principals_Principal {
+  /** Matches when the value contains this substring. (AI-inferred) */
   contains?: string | Computed<string>;
+  /** Matches only this exact value. (AI-inferred) */
   exact?: string | Computed<string>;
+  /** Whether this match is case-insensitive. (AI-inferred) */
   ignoreCase?: boolean | Computed<boolean>;
+  /** Matches values starting with this prefix. (AI-inferred) */
   prefix?: string | Computed<string>;
+  /** Matches values ending with this suffix. (AI-inferred) */
   suffix?: string | Computed<string>;
 }
 
 export interface AuthzPolicy_HttpRules_From_NotSources_Principals {
+  /** The identity this rule matches against. (AI-inferred) */
   principal?: AuthzPolicy_HttpRules_From_NotSources_Principals_Principal | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals_Principal>;
+  /** Criteria for selecting which caller identities this rule matches. (AI-inferred) */
   principalSelector?: string | Computed<string>;
 }
 
 export interface AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSet {
+  /** The identifier(s) this applies to. (AI-inferred) */
   ids?: string[] | Computed<string[]>;
 }
 
 export interface AuthzPolicy_HttpRules_From_NotSources_Resources {
+  /** The service account this principal is identified by. (AI-inferred) */
   iamServiceAccount?: AuthzPolicy_HttpRules_From_NotSources_Principals_Principal | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals_Principal>;
+  /** The Resource Manager tag value(s) this rule matches resources against. (AI-inferred) */
   tagValueIdSet?: AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSet | Computed<AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSet>;
 }
 
 export interface AuthzPolicy_HttpRules_From_NotSources {
+  /** The IP address range(s) this rule matches. (AI-inferred) */
   ipBlocks?: AuthzPolicy_HttpRules_From_NotSources_IpBlocks[] | Computed<AuthzPolicy_HttpRules_From_NotSources_IpBlocks[]>;
+  /** The identity/identities this rule matches against. (AI-inferred) */
   principals?: AuthzPolicy_HttpRules_From_NotSources_Principals[] | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals[]>;
+  /** The resource(s) this rule applies to. (AI-inferred) */
   resources?: AuthzPolicy_HttpRules_From_NotSources_Resources[] | Computed<AuthzPolicy_HttpRules_From_NotSources_Resources[]>;
 }
 
 export interface AuthzPolicy_HttpRules_From {
+  /** Source(s) explicitly excluded from this rule's own match, even if they'd otherwise match. (AI-inferred) */
   notSources?: AuthzPolicy_HttpRules_From_NotSources[] | Computed<AuthzPolicy_HttpRules_From_NotSources[]>;
+  /** The source(s) this rule matches traffic from. (AI-inferred) */
   sources?: AuthzPolicy_HttpRules_From_NotSources[] | Computed<AuthzPolicy_HttpRules_From_NotSources[]>;
 }
 
 export interface AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_Headers {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value this matches against. (AI-inferred) */
   value?: AuthzPolicy_HttpRules_From_NotSources_Principals_Principal | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals_Principal>;
 }
 
 export interface AuthzPolicy_HttpRules_To_NotOperations_HeaderSet {
+  /** The HTTP header(s) this rule matches against. (AI-inferred) */
   headers?: AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_Headers[] | Computed<AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_Headers[]>;
 }
 
 export interface AuthzPolicy_HttpRules_To_NotOperations_Mcp_Methods {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Additional parameter(s) for this rule. (AI-inferred) */
   params?: AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[] | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[]>;
 }
 
 export interface AuthzPolicy_HttpRules_To_NotOperations_Mcp {
+  /** Whether default protocol methods are automatically allowed, in addition to any explicitly listed. (AI-inferred) */
   baseProtocolMethodsOption?: string | Computed<string>;
+  /** The gRPC/HTTP method(s) this rule matches. (AI-inferred) */
   methods?: AuthzPolicy_HttpRules_To_NotOperations_Mcp_Methods[] | Computed<AuthzPolicy_HttpRules_To_NotOperations_Mcp_Methods[]>;
 }
 
 export interface AuthzPolicy_HttpRules_To_NotOperations {
+  /** A set of HTTP header match condition(s) that must all be satisfied. (AI-inferred) */
   headerSet?: AuthzPolicy_HttpRules_To_NotOperations_HeaderSet | Computed<AuthzPolicy_HttpRules_To_NotOperations_HeaderSet>;
+  /** The host(s) this rule applies to. (AI-inferred) */
   hosts?: AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[] | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[]>;
+  /** Configuration for exposing a Model Context Protocol server through this gateway. (AI-inferred) */
   mcp?: AuthzPolicy_HttpRules_To_NotOperations_Mcp | Computed<AuthzPolicy_HttpRules_To_NotOperations_Mcp>;
+  /** The gRPC/HTTP method(s) this rule matches. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
+  /** The URL path(s) this rule matches. (AI-inferred) */
   paths?: AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[] | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[]>;
+  /** The TLS Server Name Indication value(s) this rule matches. (AI-inferred) */
   snis?: AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[] | Computed<AuthzPolicy_HttpRules_From_NotSources_Principals_Principal[]>;
 }
 
 export interface AuthzPolicy_HttpRules_To {
+  /** Operation(s) explicitly excluded from this rule's own match, even if they'd otherwise match. (AI-inferred) */
   notOperations?: AuthzPolicy_HttpRules_To_NotOperations[] | Computed<AuthzPolicy_HttpRules_To_NotOperations[]>;
+  /** The operation(s) this rule matches. (AI-inferred) */
   operations?: AuthzPolicy_HttpRules_To_NotOperations[] | Computed<AuthzPolicy_HttpRules_To_NotOperations[]>;
 }
 
 export interface AuthzPolicy_HttpRules {
+  /** The source(s) this rule matches traffic from. (AI-inferred) */
   from?: AuthzPolicy_HttpRules_From | Computed<AuthzPolicy_HttpRules_From>;
+  /** The destination(s) this rule matches traffic to. (AI-inferred) */
   to?: AuthzPolicy_HttpRules_To | Computed<AuthzPolicy_HttpRules_To>;
+  /** An additional condition that must hold for this rule to apply. (AI-inferred) */
   when?: string | Computed<string>;
 }
 

@@ -15,9 +15,12 @@ type Bucket_CmekSettings struct {
 }
 
 type Bucket_IndexConfigs struct {
+	// Output only. The timestamp when this resource was created. (AI-inferred)
 	CreateTime any
-	FieldPath  any
-	Type       any
+	// The path to this field within its own containing record. (AI-inferred)
+	FieldPath any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 var Bucket_CmekSettingsFields = ubx.FieldMap{

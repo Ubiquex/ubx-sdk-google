@@ -8,83 +8,125 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentCondition:
+    # The target(s) referenced by this pipeline that don't actually exist. (AI-inferred)
     missing_targets: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsList:
+    # The target this rollout, job, or promotion is directed to. (AI-inferred)
     destination_target_id: Any = None
+    # The target this rollout, job, or promotion originates from. (AI-inferred)
     source_target_id: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition:
+    # When the next scheduled automatic promotion will occur. (AI-inferred)
     next_promotion_time: Any = None
+    # The target(s) making up this multi-target rollout. (AI-inferred)
     targets_list: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_AdvanceRolloutRule_Condition:
+    # Whether every target referenced by this pipeline's own stages actually exists. (AI-inferred)
     targets_present_condition: Any = None
+    # Whether a scheduled, time-based automatic promotion is configured and its own current status. (AI-inferred)
     timed_promote_release_condition: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_AdvanceRolloutRule:
+    # The current status of a specific health/readiness check on this resource. (AI-inferred)
     condition: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # The rollout phase(s) this automation rule triggers from. (AI-inferred)
     source_phases: Any = None
+    # How long to pause before proceeding. (AI-inferred)
     wait: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_PromoteReleaseRule:
+    # The current status of a specific health/readiness check on this resource. (AI-inferred)
     condition: Any = None
+    # The rollout phase this promotion or advance targets. (AI-inferred)
     destination_phase: Any = None
+    # The target this rollout, job, or promotion is directed to. (AI-inferred)
     destination_target_id: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # How long to pause before proceeding. (AI-inferred)
     wait: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_RepairRolloutRule_RepairPhases_Retry:
+    # How many times this job is retried before being considered failed. (AI-inferred)
     attempts: Any = None
+    # How the delay between retry attempts grows, e.g. linear or exponential. (AI-inferred)
     backoff_mode: Any = None
+    # How long to pause before proceeding. (AI-inferred)
     wait: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_RepairRolloutRule_RepairPhases_Rollback:
+    # The rollout phase this promotion or advance targets. (AI-inferred)
     destination_phase: Any = None
+    # Whether automatic rollback is skipped if another rollout is already pending for this same release. (AI-inferred)
     disable_rollback_if_rollout_pending: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_RepairRolloutRule_RepairPhases:
+    # Configuration for automatically retrying a failed job or phase. (AI-inferred)
     retry: Any = None
+    # Configuration for automatically rolling back to the previous stable revision on failure. (AI-inferred)
     rollback: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_RepairRolloutRule:
+    # The current status of a specific health/readiness check on this resource. (AI-inferred)
     condition: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # The job(s) making up this phase or rule. (AI-inferred)
     jobs: Any = None
+    # The ordered phase(s) making up this rollout or automation rule. (AI-inferred)
     phases: Any = None
+    # The ordered repair action(s) (e.g. retry, rollback) attempted when a rollout fails. (AI-inferred)
     repair_phases: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules_TimedPromoteReleaseRule:
+    # The current status of a specific health/readiness check on this resource. (AI-inferred)
     condition: Any = None
+    # The rollout phase this promotion or advance targets. (AI-inferred)
     destination_phase: Any = None
+    # The target this rollout, job, or promotion is directed to. (AI-inferred)
     destination_target_id: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # A recurrence schedule, e.g. in cron syntax. (AI-inferred)
     schedule: Any = None
+    # The time zone this schedule or window is interpreted in. (AI-inferred)
     time_zone: Any = None
 
 @dataclasses.dataclass
 class Automation_Rules:
+    # An automation rule that automatically advances a rollout to its own next phase once its current phase succeeds. (AI-inferred)
     advance_rollout_rule: Any = None
+    # An automation rule that automatically promotes a release to its own next target once conditions are met. (AI-inferred)
     promote_release_rule: Any = None
+    # An automation rule that automatically attempts to repair a failed rollout, e.g. by retrying or rolling back. (AI-inferred)
     repair_rollout_rule: Any = None
+    # An automation rule that automatically promotes a release at a specific scheduled time. (AI-inferred)
     timed_promote_release_rule: Any = None
 
 @dataclasses.dataclass
 class Automation_Selector_Targets:
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
 
 @dataclasses.dataclass

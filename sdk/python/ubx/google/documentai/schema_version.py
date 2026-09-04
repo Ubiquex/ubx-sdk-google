@@ -8,22 +8,33 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SchemaVersion_Schema_EntityTypes_EnumValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class SchemaVersion_Schema_EntityTypes_Properties:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The specific action being performed. (AI-inferred)
     method: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # How many times this entity type may occur within a document, e.g. optional or required. (AI-inferred)
     occurrence_type: Any = None
+    # The data type of this property's own value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class SchemaVersion_Schema_EntityTypes:
+    # The parent entity type(s) this entity type inherits fields from. (AI-inferred)
     base_types: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The set of named values this enum-typed property is restricted to. (AI-inferred)
     enum_values: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
 
 @dataclasses.dataclass

@@ -26,24 +26,40 @@ _V3beta1EntityType_ExcludedPhrasesFields = {
 
 @dataclasses.dataclass
 class V3beta1EntityTypeConfig:
+    # Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
     auto_expansion_mode: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
     enable_fuzzy_extraction: Any = None
+    # The entity/entities extracted or referenced. (AI-inferred)
     entities: Any = None
+    # Phrase(s) explicitly excluded from matching this entity, even if they'd otherwise qualify. (AI-inferred)
     excluded_phrases: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
     redact: Any = None
 
 @dataclasses.dataclass
 class V3beta1EntityTypeAttrs:
+    # Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
     auto_expansion_mode: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether entity extraction tolerates minor spelling/pronunciation variations, rather than requiring an exact match. (AI-inferred)
     enable_fuzzy_extraction: Any = None
+    # The entity/entities extracted or referenced. (AI-inferred)
     entities: Any = None
+    # Phrase(s) explicitly excluded from matching this entity, even if they'd otherwise qualify. (AI-inferred)
     excluded_phrases: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
     redact: Any = None
 
 V3beta1EntityType = ubx.ResourceBinding(

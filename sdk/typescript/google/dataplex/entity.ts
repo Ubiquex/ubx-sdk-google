@@ -57,15 +57,22 @@ export interface Entity_Format {
 }
 
 export interface Entity_Schema_Fields {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The field(s) making up this schema or aspect. (AI-inferred) */
   fields?: unknown[] | Computed<unknown[]>;
+  /** Whether this schema field is nullable, required, or repeated. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Entity_Schema_PartitionFields {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

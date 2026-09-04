@@ -4,71 +4,112 @@ package dns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers struct {
-	IpAddress        any
-	IpProtocol       any
-	Kind             any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The IP protocol version this applies to. (AI-inferred)
+	IpProtocol any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The type of load balancer this internal target is, e.g. regional internal. (AI-inferred)
 	LoadBalancerType any
-	NetworkUrl       any
-	Port             any
-	Project          any
-	Region           any
+	// The VPC network this private zone or policy is visible from. (AI-inferred)
+	NetworkUrl any
+	// A network port number. (AI-inferred)
+	Port any
+	// The Google Cloud project this applies to. (AI-inferred)
+	Project any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets struct {
-	ExternalEndpoints     any
+	// The external IP address(es) a forwarding rule directs matching queries to. (AI-inferred)
+	ExternalEndpoints any
+	// The internal load balancer(s) this record's own routing policy targets. (AI-inferred)
 	InternalLoadBalancers any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items struct {
+	// The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
 	HealthCheckedTargets any
-	Kind                 any
-	Location             any
-	Rrdatas              any
-	SignatureRrdatas     any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// The record data (RDATA) value(s) for this DNS record. (AI-inferred)
+	Rrdatas any
+	// The DNSSEC signature record data for this record set. (AI-inferred)
+	SignatureRrdatas any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo struct {
+	// Whether traffic is restricted to healthy targets within the same region as the client, when using geo-routing. (AI-inferred)
 	EnableFencing any
-	Items         any
-	Kind          any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_PrimaryBackup struct {
+	// The fallback geo-routing policy applied when every primary target in this routing entry is unhealthy. (AI-inferred)
 	BackupGeoTargets any
-	Kind             any
-	PrimaryTargets   any
-	TrickleTraffic   any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The primary target(s) served while healthy, before falling back to backup targets. (AI-inferred)
+	PrimaryTargets any
+	// The fraction of traffic still routed to a target while it transitions out of rotation, rather than cutting over immediately. (AI-inferred)
+	TrickleTraffic any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr_Items struct {
+	// The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
 	HealthCheckedTargets any
-	Kind                 any
-	Rrdatas              any
-	SignatureRrdatas     any
-	Weight               any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The record data (RDATA) value(s) for this DNS record. (AI-inferred)
+	Rrdatas any
+	// The DNSSEC signature record data for this record set. (AI-inferred)
+	SignatureRrdatas any
+	// The relative weight of this target in weighted round-robin routing -- higher values receive proportionally more traffic. (AI-inferred)
+	Weight any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr struct {
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
 	Items any
-	Kind  any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy struct {
-	Geo           any
-	HealthCheck   any
-	Kind          any
+	// A routing policy entry keyed by the geographic origin of the query. (AI-inferred)
+	Geo any
+	// A reference to the health check used to determine target availability for routing. (AI-inferred)
+	HealthCheck any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// A routing policy that serves primary targets while healthy, falling back to backup targets otherwise. (AI-inferred)
 	PrimaryBackup any
-	Wrr           any
+	// A weighted round-robin routing policy entry. (AI-inferred)
+	Wrr any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas struct {
-	Kind             any
-	Name             any
-	RoutingPolicy    any
-	Rrdatas          any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The DNS record name this applies to. (AI-inferred)
+	Name any
+	// Configures this record to return different answers based on the querying client, e.g. by geo or weighted round-robin. (AI-inferred)
+	RoutingPolicy any
+	// The record data (RDATA) value(s) for this DNS record. (AI-inferred)
+	Rrdatas any
+	// The DNSSEC signature record data for this record set. (AI-inferred)
 	SignatureRrdatas any
-	Ttl              any
-	Type             any
+	// How long, in seconds, this record may be cached by resolvers. (AI-inferred)
+	Ttl any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type ResponsePolicyRule_LocalData struct {
@@ -200,8 +241,10 @@ type ResponsePolicyRuleConfig struct {
 	// Answer this query with a behavior rather than DNS data.
 	Behavior any
 	// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
-	DnsName   any
-	Kind      any
+	DnsName any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// Static record data returned directly, rather than resolved from a health-checked target. (AI-inferred)
 	LocalData any
 	// An identifier for this rule. Must be unique with the ResponsePolicy.
 	RuleName any
@@ -211,8 +254,10 @@ type ResponsePolicyRuleAttrs struct {
 	// Answer this query with a behavior rather than DNS data.
 	Behavior any
 	// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
-	DnsName   any
-	Kind      any
+	DnsName any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// Static record data returned directly, rather than resolved from a health-checked target. (AI-inferred)
 	LocalData any
 	// An identifier for this rule. Must be unique with the ResponsePolicy.
 	RuleName any

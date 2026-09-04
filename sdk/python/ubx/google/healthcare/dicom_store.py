@@ -15,19 +15,27 @@ class DicomStore_NotificationConfig:
 
 @dataclasses.dataclass
 class DicomStore_NotificationConfigs:
+    # A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
     pubsub_topic: Any = None
 
 @dataclasses.dataclass
 class DicomStore_StreamConfigs_BigqueryDestination:
+    # Whether this operation proceeds even if it would otherwise be blocked by a safety check. (AI-inferred)
     force: Any = None
+    # Whether the source store's own resources are included, in addition to the destination's. (AI-inferred)
     include_source_store: Any = None
+    # Whether the parsed message schema is flattened into a single-level structure. (AI-inferred)
     schema_flattened: Any = None
+    # The message schema, expressed as JSON. (AI-inferred)
     schema_json: Any = None
+    # A reference to the BigQuery table this applies to. (AI-inferred)
     table_uri: Any = None
+    # Whether export output overwrites, appends to, or requires an empty destination table. (AI-inferred)
     write_disposition: Any = None
 
 @dataclasses.dataclass
 class DicomStore_StreamConfigs:
+    # The BigQuery table this operation's own output is written to. (AI-inferred)
     bigquery_destination: Any = None
 
 _DicomStore_NotificationConfigFields = {

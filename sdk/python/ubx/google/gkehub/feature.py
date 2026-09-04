@@ -25,16 +25,24 @@ class Feature_Spec_Configmanagement_Binauthz:
 
 @dataclasses.dataclass
 class Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides_Containers:
+    # The name of this container. (AI-inferred)
     container_name: Any = None
+    # The maximum CPU this container may use. (AI-inferred)
     cpu_limit: Any = None
+    # The CPU amount reserved for this container. (AI-inferred)
     cpu_request: Any = None
+    # The maximum memory this container may use. (AI-inferred)
     memory_limit: Any = None
+    # The memory amount reserved for this container. (AI-inferred)
     memory_request: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides:
+    # The container(s) making up this deployment. (AI-inferred)
     containers: Any = None
+    # The name of this Kubernetes Deployment. (AI-inferred)
     deployment_name: Any = None
+    # The Kubernetes namespace this Deployment runs in. (AI-inferred)
     deployment_namespace: Any = None
 
 @dataclasses.dataclass
@@ -142,90 +150,145 @@ class Feature_Spec_Configmanagement:
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_AzureadConfig:
+    # The OAuth/OIDC client ID used to authenticate. (AI-inferred)
     client_id: Any = None
+    # The OAuth/OIDC client secret used to authenticate. (AI-inferred)
     client_secret: Any = None
+    # The client secret, encrypted for storage. (AI-inferred)
     encrypted_client_secret: Any = None
+    # How group membership is formatted in the identity provider's own claims. (AI-inferred)
     group_format: Any = None
+    # The redirect URI `kubectl` uses to complete the OIDC login flow. (AI-inferred)
     kubectl_redirect_uri: Any = None
+    # A reference to the tenant this applies to. (AI-inferred)
     tenant: Any = None
+    # The OIDC claim holding the user's own identifier. (AI-inferred)
     user_claim: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_GoogleConfig:
+    # Whether this feature is turned off. (AI-inferred)
     disable: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_LdapConfig_Group:
+    # The LDAP base distinguished name searches start from. (AI-inferred)
     base_dn: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The LDAP attribute used as the user's own unique identifier. (AI-inferred)
     id_attribute: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_LdapConfig_Server:
+    # The base64-encoded CA certificate trusted for verifying this server's own TLS certificate. (AI-inferred)
     certificate_authority_data: Any = None
+    # How this cluster connects back to Google Cloud, e.g. directly or via a proxy. (AI-inferred)
     connection_type: Any = None
+    # The hostname of the identity provider server. (AI-inferred)
     host: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentials:
+    # A distinguished name. (AI-inferred)
     dn: Any = None
+    # The password, encrypted for storage. (AI-inferred)
     encrypted_password: Any = None
+    # The password used to authenticate. (AI-inferred)
     password: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount:
+    # Username/password credentials used for a simple LDAP bind. (AI-inferred)
     simple_bind_credentials: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_LdapConfig_User:
+    # The LDAP base distinguished name searches start from. (AI-inferred)
     base_dn: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The LDAP attribute used as the user's own unique identifier. (AI-inferred)
     id_attribute: Any = None
+    # The LDAP attribute presented to the user as their own login name. (AI-inferred)
     login_attribute: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_LdapConfig:
+    # A reference to the group this applies to. (AI-inferred)
     group: Any = None
+    # The server hostname or address this connects to. (AI-inferred)
     server: Any = None
+    # The service account credentials used to bind to this LDAP directory for authentication. (AI-inferred)
     service_account: Any = None
+    # A reference to the user this applies to. (AI-inferred)
     user: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_OidcConfig:
+    # The base64-encoded CA certificate trusted for verifying this server's own TLS certificate. (AI-inferred)
     certificate_authority_data: Any = None
+    # The OAuth/OIDC client ID used to authenticate. (AI-inferred)
     client_id: Any = None
+    # The OAuth/OIDC client secret used to authenticate. (AI-inferred)
     client_secret: Any = None
+    # Whether a proxy is deployed to let the Cloud Console reach this cluster's own private control plane. (AI-inferred)
     deploy_cloud_console_proxy: Any = None
+    # Whether short-lived access tokens are issued for authenticating to this cluster. (AI-inferred)
     enable_access_token: Any = None
+    # The client secret, encrypted for storage. (AI-inferred)
     encrypted_client_secret: Any = None
+    # Additional caller-defined parameter(s) passed to the identity provider. (AI-inferred)
     extra_params: Any = None
+    # A prefix prepended to group names sourced from the identity provider. (AI-inferred)
     group_prefix: Any = None
+    # The OIDC claim holding a user's own group membership. (AI-inferred)
     groups_claim: Any = None
+    # The OIDC issuer URL for this identity provider. (AI-inferred)
     issuer_uri: Any = None
+    # The redirect URI `kubectl` uses to complete the OIDC login flow. (AI-inferred)
     kubectl_redirect_uri: Any = None
+    # The OAuth scope(s) requested. (AI-inferred)
     scopes: Any = None
+    # The OIDC claim holding the user's own identifier. (AI-inferred)
     user_claim: Any = None
+    # A prefix prepended to usernames sourced from the identity provider. (AI-inferred)
     user_prefix: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods_SamlConfig:
+    # How claims in the identity provider's own token map to Kubernetes user/group attributes. (AI-inferred)
     attribute_mapping: Any = None
+    # A prefix prepended to group names sourced from the identity provider. (AI-inferred)
     group_prefix: Any = None
+    # The LDAP attribute holding a user's own group membership. (AI-inferred)
     groups_attribute: Any = None
+    # The certificate(s) trusted for verifying SAML assertions from this identity provider. (AI-inferred)
     identity_provider_certificates: Any = None
+    # An identifier for this identity provider. (AI-inferred)
     identity_provider_id: Any = None
+    # The single sign-on URL for this SAML identity provider. (AI-inferred)
     identity_provider_sso_uri: Any = None
+    # The LDAP attribute holding the user's own identifier. (AI-inferred)
     user_attribute: Any = None
+    # A prefix prepended to usernames sourced from the identity provider. (AI-inferred)
     user_prefix: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Identityservice_AuthMethods:
+    # Configuration for authenticating using Microsoft Entra ID (Azure AD). (AI-inferred)
     azuread_config: Any = None
+    # Configuration for authenticating using Google identity. (AI-inferred)
     google_config: Any = None
+    # Configuration for authenticating against an LDAP directory. (AI-inferred)
     ldap_config: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for authenticating using OpenID Connect. (AI-inferred)
     oidc_config: Any = None
+    # The proxy this connection routes through. (AI-inferred)
     proxy: Any = None
+    # Configuration for authenticating using SAML. (AI-inferred)
     saml_config: Any = None
 
 @dataclasses.dataclass
@@ -256,31 +319,45 @@ class Feature_Spec_Origin:
 
 @dataclasses.dataclass
 class Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits:
+    # The CPU amount requested or allocated. (AI-inferred)
     cpu: Any = None
+    # The memory amount requested or allocated. (AI-inferred)
     memory: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources:
+    # The maximum resource amount(s) allowed. (AI-inferred)
     limits: Any = None
+    # The resource amount(s) reserved for this container. (AI-inferred)
     requests: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerations:
+    # What happens to a pod that doesn't tolerate this taint. (AI-inferred)
     effect: Any = None
+    # A key identifying this entry. (AI-inferred)
     key: Any = None
+    # How this taint's own key/value is compared against a toleration. (AI-inferred)
     operator: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs:
+    # The compute resource requirement(s) for this container. (AI-inferred)
     container_resources: Any = None
+    # Constraint(s) preferring or requiring pods to be scheduled near other specific pods. (AI-inferred)
     pod_affinity: Any = None
+    # Constraint(s) preferring or requiring pods to be scheduled away from other specific pods. (AI-inferred)
     pod_anti_affinity: Any = None
+    # The taint(s) this pod tolerates, allowing it to be scheduled onto otherwise-repelling nodes. (AI-inferred)
     pod_tolerations: Any = None
+    # How many replicas this deployment runs. (AI-inferred)
     replica_count: Any = None
 
 @dataclasses.dataclass
 class Feature_Spec_Policycontroller_PolicyControllerHubConfig_PolicyContent_Bundles:
+    # The Kubernetes namespace(s) excluded from this policy. (AI-inferred)
     exempted_namespaces: Any = None
 
 @dataclasses.dataclass
@@ -381,18 +458,25 @@ class Feature_State_Clusterupgrade_Ignored:
 
 @dataclasses.dataclass
 class Feature_State_Clusterupgrade_Upgrades_Status:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Clusterupgrade_Upgrades_Upgrade:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Clusterupgrade_Upgrades:
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # Configuration for automatically upgrading this component. (AI-inferred)
     upgrade: Any = None
 
 @dataclasses.dataclass
@@ -437,25 +521,36 @@ class Feature_State_Configmanagement_ConfigSyncState_DeploymentState:
 
 @dataclasses.dataclass
 class Feature_State_Configmanagement_ConfigSyncState_Errors:
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvk:
+    # A reference to the group this applies to. (AI-inferred)
     group: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources:
+    # The Kubernetes Group/Version/Kind of this resource. (AI-inferred)
     resource_gvk: Any = None
+    # The name of this Kubernetes resource. (AI-inferred)
     resource_name: Any = None
+    # The Kubernetes namespace this resource belongs to. (AI-inferred)
     resource_namespace: Any = None
+    # The path this configuration was sourced from. (AI-inferred)
     source_path: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # The resource(s) associated with this error. (AI-inferred)
     error_resources: Any = None
 
 @dataclasses.dataclass
@@ -588,7 +683,9 @@ class Feature_State_Metering:
 
 @dataclasses.dataclass
 class Feature_State_Policycontroller_ComponentStates:
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -611,8 +708,11 @@ class Feature_State_Policycontroller:
 
 @dataclasses.dataclass
 class Feature_State_Rbacrolebindingactuation_RbacrolebindingStates:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
@@ -622,32 +722,47 @@ class Feature_State_Rbacrolebindingactuation:
 
 @dataclasses.dataclass
 class Feature_State_Servicemesh_AnalysisMessages_MessageBase_Type:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Servicemesh_AnalysisMessages_MessageBase:
+    # A URL to further documentation about this. (AI-inferred)
     documentation_url: Any = None
+    # The severity or intensity level of this setting. (AI-inferred)
     level: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Servicemesh_AnalysisMessages:
+    # The argument(s) passed to this command. (AI-inferred)
     args: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The base message template used for this notification. (AI-inferred)
     message_base: Any = None
+    # The path(s) to the Kubernetes manifest(s) this applies to. (AI-inferred)
     resource_paths: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Servicemesh_Conditions:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A URL to further documentation about this. (AI-inferred)
     documentation_link: Any = None
+    # How serious this finding is. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
 class Feature_State_Servicemesh_ControlPlaneManagement_Details:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
 
 @dataclasses.dataclass

@@ -4,38 +4,57 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackendService_Backends_CustomMetrics struct {
-	DryRun         any
+	DryRun any
+	// The maximum ratio of the custom metric's actual value to its target value. If a backend's metric exceeds this ratio, the load balancer considers it over-utilized and stops sending it new requests. (AI-inferred)
 	MaxUtilization any
-	Name           any
+	// The name of the custom metric used for load balancing this backend. (AI-inferred)
+	Name any
 }
 
 type BackendService_Backends_OrchestrationInfo struct {
+	// The URI of the resource being orchestrated by this backend, such as an Instance Group Manager. (AI-inferred)
 	ResourceUri any
 }
 
 type BackendService_Backends struct {
-	BalancingMode                  any
-	CapacityScaler                 any
-	CustomMetrics                  any
-	Description                    any
-	Failover                       any
-	Group                          any
-	MaxConnections                 any
-	MaxConnectionsPerEndpoint      any
-	MaxConnectionsPerInstance      any
-	MaxInFlightRequests            any
+	// Specifies the balancing mode for this backend, which determines how traffic is distributed among instances. Valid values are CONNECTION (based on connection count), UTILIZATION (based on CPU utilization), RATE (based on requests per second), IN_FLIGHT (based on in-flight requests), and CUSTOM_METRICS (based on custom metrics). (AI-inferred)
+	BalancingMode any
+	// The capacity scaler for this backend, a floating-point value between 0 and 1. It determines the fraction of traffic that this backend will receive, with 1 (default) meaning full capacity. (AI-inferred)
+	CapacityScaler any
+	CustomMetrics  any
+	Description    any
+	// If true, this backend is used only as a failover backend, meaning it receives traffic only when all other backends in the service are unhealthy. (AI-inferred)
+	Failover any
+	// The fully-qualified URL of a zonal or regional instance group, network endpoint group (NEG), or other backend resource that serves traffic for this backend service. This is required for each backend. (AI-inferred)
+	Group any
+	// Maximum number of connections to the backend. This applies when the balancing mode is CONNECTION and is used to determine backend capacity. (AI-inferred)
+	MaxConnections any
+	// The maximum number of simultaneous connections allowed per backend endpoint (e.g., per instance in an instance group). This field is used when the backend's balancing mode is 'CONNECTION' and the protocol is TCP or UDP; a value of 0 indicates no limit. (AI-inferred)
+	MaxConnectionsPerEndpoint any
+	MaxConnectionsPerInstance any
+	// The maximum number of simultaneous in-flight requests allowed for this backend. If not set, the default is 1024. (AI-inferred)
+	MaxInFlightRequests any
+	// The maximum number of simultaneous (in-flight) requests allowed per backend endpoint. This setting can be used to protect endpoints from being overwhelmed by concurrent requests. (AI-inferred)
 	MaxInFlightRequestsPerEndpoint any
+	// The maximum number of outstanding (in-flight) requests that a single backend instance can receive. This setting limits the number of simultaneous requests to an instance, helping to prevent overload in the backend service. (AI-inferred)
 	MaxInFlightRequestsPerInstance any
-	MaxRate                        any
-	MaxRatePerEndpoint             any
-	MaxRatePerInstance             any
-	MaxUtilization                 any
-	OrchestrationInfo              any
-	Preference                     any
-	TrafficDuration                any
+	// The maximum requests per second (RPS) that the backend can handle. Used only when the backend's balancing mode is RATE. (AI-inferred)
+	MaxRate any
+	// The maximum number of requests per second (RPS) that each endpoint (instance) in this backend is allowed to handle. This setting is used for capacity-based load balancing and applies only when the backend service's load balancing protocol supports rate-based distribution. (AI-inferred)
+	MaxRatePerEndpoint any
+	// The maximum rate (in requests per second) that each instance in the backend instance group is allowed to receive. This setting is used when the balancing mode is RATE. (AI-inferred)
+	MaxRatePerInstance any
+	// The maximum utilization threshold for the backend, expressed as a fraction. This is used when the backend's balancing mode is set to UTILIZATION, and the backend is considered at capacity when its utilization reaches this value. (AI-inferred)
+	MaxUtilization    any
+	OrchestrationInfo any
+	// Specifies the preference of this backend within the backend service. This field is used by load balancing policies that differentiate between preferred and default backends. Allowed values are DEFAULT, PREFERENCE_UNSPECIFIED, and PREFERRED. (AI-inferred)
+	Preference any
+	// Specifies whether the backend is expected to handle long-lived or short-lived traffic. Allowed values are LONG, SHORT, and TRAFFIC_DURATION_UNSPECIFIED. (AI-inferred)
+	TrafficDuration any
 }
 
 type BackendService_CdnPolicy_BypassCacheOnRequestHeaders struct {
+	// The name of the request header that, when present in the request, triggers bypassing the cache. The header name must be a valid HTTP header name. (AI-inferred)
 	HeaderName any
 }
 
@@ -57,8 +76,10 @@ type BackendService_CdnPolicy_CacheKeyPolicy struct {
 }
 
 type BackendService_CdnPolicy_NegativeCachingPolicy struct {
+	// HTTP status code for which negative caching is applied (e.g., 404, 405, 500). (AI-inferred)
 	Code any
-	Ttl  any
+	// The TTL (in seconds) for which to cache responses with the corresponding status code in the negative caching policy. (AI-inferred)
+	Ttl any
 }
 
 type BackendService_CdnPolicy struct {
@@ -163,7 +184,8 @@ type BackendService_HaPolicy_Leader_NetworkEndpoint struct {
 
 type BackendService_HaPolicy_Leader struct {
 	// A fully-qualified URL (starting with https://www.googleapis.com/) of the zonal Network Endpoint Group (NEG) with `GCE_VM_IP` endpoints that the leader is attached to. The leader's backendGroup must already be specified as a backend of this backend service. Removing a backend that is designated as the leader's backendGroup is not permitted.
-	BackendGroup    any
+	BackendGroup any
+	// The network endpoint to be designated as the leader in the high-availability policy. This object identifies the specific endpoint that holds the leader role. (AI-inferred)
 	NetworkEndpoint any
 }
 
@@ -185,17 +207,21 @@ type BackendService_Iap struct {
 }
 
 type BackendService_LocalityLbPolicies_CustomPolicy struct {
+	// The data to be passed to the custom policy, as a string. (AI-inferred)
 	Data any
 	Name any
 }
 
 type BackendService_LocalityLbPolicies_Policy struct {
+	// The name of the load balancing policy. Must be one of: INVALID_LB_POLICY, LEAST_REQUEST, MAGLEV, ORIGINAL_DESTINATION, RANDOM, RING_HASH, ROUND_ROBIN, WEIGHTED_GCP_RENDEZVOUS, WEIGHTED_MAGLEV, WEIGHTED_ROUND_ROBIN. (AI-inferred)
 	Name any
 }
 
 type BackendService_LocalityLbPolicies struct {
+	// Configuration for a custom load balancing policy applied to a specific locality. This object defines a user-defined policy where a built-in policy is not used. (AI-inferred)
 	CustomPolicy any
-	Policy       any
+	// Configuration for the locality load balancing policy. This object defines the standard load balancing algorithm and its optional settings within a locality LB policy. (AI-inferred)
+	Policy any
 }
 
 type BackendService_LogConfig struct {
@@ -221,6 +247,7 @@ type BackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinity struct {
 }
 
 type BackendService_NetworkPassThroughLbTrafficPolicy struct {
+	// Configures zonal affinity for the load balancer, which influences whether traffic is steered to backends in the same zone as the client. (AI-inferred)
 	ZonalAffinity any
 }
 
@@ -275,11 +302,14 @@ type BackendService_SecuritySettings struct {
 }
 
 type BackendService_Subsetting struct {
+	// The subsetting policy for this backend service. Allowed values are `CONSISTENT_HASH_SUBSETTING` and `NONE`. (AI-inferred)
 	Policy any
 }
 
 type BackendService_TlsSettings_SubjectAltNames struct {
-	DnsName                   any
+	// The DNS name to be included in the subject alternative names for TLS validation. This is used when the backend service’s TLS settings specify a DNS SAN. (AI-inferred)
+	DnsName any
+	// A uniform resource identifier (URI) to be used as a subject alternative name for the backend service's TLS certificate. (AI-inferred)
 	UniformResourceIdentifier any
 }
 
@@ -295,6 +325,7 @@ type BackendService_TlsSettings struct {
 }
 
 type BackendService_UsedBy struct {
+	// The URL of the resource that references (uses) this backend service. (AI-inferred)
 	Reference any
 }
 
@@ -620,7 +651,8 @@ type BackendServiceConfig struct {
 	FailoverPolicy any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
 	Fingerprint any
-	HaPolicy    any
+	// The high availability (HA) policy for the backend service, which can include an HA mode (e.g., ACTIVE or INACTIVE) controlling cross-region failover behavior. (AI-inferred)
+	HaPolicy any
 	// The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy.
 	HealthChecks any
 	// Identity-Aware Proxy
@@ -644,7 +676,8 @@ type BackendServiceConfig struct {
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
-	Network                           any
+	Network any
+	// The network pass-through load balancer traffic policy for this backend service. This field is output-only and populated by the API with the effective traffic handling configuration for pass-through load balancers. (AI-inferred)
 	NetworkPassThroughLbTrafficPolicy any
 	// A message containing information about the resource or system that manages the backend service.
 	OrchestrationInfo any
@@ -675,7 +708,8 @@ type BackendServiceConfig struct {
 	// Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing, Internal HTTP(S) load balancing and Traffic Director.
 	Subsetting any
 	// The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
-	TimeoutSec  any
+	TimeoutSec any
+	// Settings for authenticating the backend service with a client certificate. (AI-inferred)
 	TlsSettings any
 }
 
@@ -718,7 +752,8 @@ type BackendServiceAttrs struct {
 	FailoverPolicy any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
 	Fingerprint any
-	HaPolicy    any
+	// The high availability (HA) policy for the backend service, which can include an HA mode (e.g., ACTIVE or INACTIVE) controlling cross-region failover behavior. (AI-inferred)
+	HaPolicy any
 	// The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy.
 	HealthChecks any
 	// Identity-Aware Proxy
@@ -744,7 +779,8 @@ type BackendServiceAttrs struct {
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
-	Network                           any
+	Network any
+	// The network pass-through load balancer traffic policy for this backend service. This field is output-only and populated by the API with the effective traffic handling configuration for pass-through load balancers. (AI-inferred)
 	NetworkPassThroughLbTrafficPolicy any
 	// A message containing information about the resource or system that manages the backend service.
 	OrchestrationInfo any
@@ -777,7 +813,8 @@ type BackendServiceAttrs struct {
 	// Subsetting configuration for this BackendService. Currently this is applicable only for Internal TCP/UDP load balancing, Internal HTTP(S) load balancing and Traffic Director.
 	Subsetting any
 	// The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
-	TimeoutSec  any
+	TimeoutSec any
+	// Settings for authenticating the backend service with a client certificate. (AI-inferred)
 	TlsSettings any
 	// Output only. [Output Only] List of resources referencing given backend service.
 	UsedBy any

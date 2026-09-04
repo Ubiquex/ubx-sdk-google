@@ -2,16 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GlobalPublicDelegatedPrefix_PublicDelegatedSubPrefixs {
+  /** The prefix length (in bits) of the sub-prefixes that can be allocated from this public delegated sub-prefix. This value is an integer representing the CIDR mask length. (AI-inferred) */
   allocatablePrefixLength?: number | Computed<number>;
+  /** The project ID to which this sub-prefix is delegated. The specified project is allowed to use this prefix range. (AI-inferred) */
   delegateeProject?: string | Computed<string>;
   description?: string | Computed<string>;
+  /** Enables enhanced IPv4 allocation for this public delegated sub-prefix. This feature allows the sub-prefix to be used with Cloud NAT and internal load balancing. (AI-inferred) */
   enableEnhancedIpv4Allocation?: boolean | Computed<boolean>;
+  /** The IP address range of this sub-prefix, in CIDR notation (e.g., '192.0.2.0/24'). (AI-inferred) */
   ipCidrRange?: string | Computed<string>;
+  /** The access type for this IPv6 sub-prefix, indicating whether it is used for external (public) traffic or internal (private) traffic. Allowed values: EXTERNAL or INTERNAL. (AI-inferred) */
   ipv6AccessType?: string | Computed<string>;
+  /** Whether this sub-prefix is a single IP address (true) or a CIDR prefix (false). (AI-inferred) */
   isAddress?: boolean | Computed<boolean>;
+  /** The mode of the sub-prefix, specifying the type of resources that can be created from it. Possible values are DELEGATION, EXTERNAL_IPV6_FORWARDING_RULE_CREATION, EXTERNAL_IPV6_SUBNETWORK_CREATION, and INTERNAL_IPV6_SUBNETWORK_CREATION. (AI-inferred) */
   mode?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** The region where this public delegated sub-prefix is located. The sub-prefix can only be used within this region. (AI-inferred) */
   region?: string | Computed<string>;
+  /** The status of the public delegated sub-prefix, indicating whether it is currently active or inactive. Valid values are ACTIVE and INACTIVE. (AI-inferred) */
   status?: string | Computed<string>;
 }
 

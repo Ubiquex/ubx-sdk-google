@@ -8,18 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UptimeCheckConfig_ContentMatchers_JsonPathMatcher:
+    # How the value at a JSON path is matched against an expected value. (AI-inferred)
     json_matcher: Any = None
+    # The JSON path this rule applies to. (AI-inferred)
     json_path: Any = None
 
 @dataclasses.dataclass
 class UptimeCheckConfig_ContentMatchers:
+    # The literal content of this field. (AI-inferred)
     content: Any = None
+    # Configuration for matching a value at a specific JSON path. (AI-inferred)
     json_path_matcher: Any = None
+    # How this value is matched against an expected pattern. (AI-inferred)
     matcher: Any = None
 
 @dataclasses.dataclass
 class UptimeCheckConfig_HttpCheck_AcceptedResponseStatusCodes:
+    # The class of HTTP status codes (e.g. `4xx`) this uptime check matches. (AI-inferred)
     status_class: Any = None
+    # The specific HTTP status code this uptime check matches. (AI-inferred)
     status_value: Any = None
 
 @dataclasses.dataclass
@@ -72,11 +79,17 @@ class UptimeCheckConfig_HttpCheck:
 
 @dataclasses.dataclass
 class UptimeCheckConfig_InternalCheckers:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The Google Cloud zone this applies to. (AI-inferred)
     gcp_zone: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The project ID of the peered project this applies to. (AI-inferred)
     peer_project_id: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

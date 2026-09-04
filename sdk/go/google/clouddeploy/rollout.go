@@ -42,80 +42,121 @@ type Rollout_Metadata struct {
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_Container struct {
-	Args    any
+	// The command-line argument(s) passed to the container. (AI-inferred)
+	Args any
+	// The container entrypoint command to run, overriding the image's own default. (AI-inferred)
 	Command any
-	Env     any
-	Image   any
+	// Environment variable(s) set in the container. (AI-inferred)
+	Env any
+	// The container image reference to run. (AI-inferred)
+	Image any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task struct {
+	// A single container's own configuration. (AI-inferred)
 	Container any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks struct {
+	// How often this check or action recurs. (AI-inferred)
 	Frequency any
-	Id        any
-	Task      any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// A single unit of work within this job. (AI-inferred)
+	Task any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecks struct {
+	// The Cloud Monitoring alert policy/policies this check watches. (AI-inferred)
 	AlertPolicies any
-	Id            any
-	Labels        any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud struct {
+	// Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred)
 	AlertPolicyChecks any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob struct {
+	// Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred)
 	CustomChecks any
-	Duration     any
-	GoogleCloud  any
+	// How long this phase, wait, or window lasts. (AI-inferred)
+	Duration any
+	// Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred)
+	GoogleCloud any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob struct {
+	// The action(s) this hook or job performs. (AI-inferred)
 	Actions any
-	Tasks   any
+	// The task(s) making up this job. (AI-inferred)
+	Tasks any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJob struct {
+	// The task(s) making up this job. (AI-inferred)
 	Tasks any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs struct {
+	// A job that advances a child rollout to its own next phase, as part of a multi-target rollout. (AI-inferred)
 	AdvanceChildRolloutJob any
-	AnalysisJob            any
-	CreateChildRolloutJob  any
-	DeployJob              any
-	Id                     any
-	JobRun                 any
-	PostdeployJob          any
-	PredeployJob           any
-	SkipMessage            any
-	State                  any
-	VerifyJob              any
+	// A job that runs automated analysis (e.g. metrics-based) on a rollout phase before promoting it. (AI-inferred)
+	AnalysisJob any
+	// A job that creates a child rollout targeting a specific destination, as part of a multi-target rollout. (AI-inferred)
+	CreateChildRolloutJob any
+	// The job that performs the actual deployment for this phase. (AI-inferred)
+	DeployJob any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// A record of one execution of a job. (AI-inferred)
+	JobRun any
+	// A job that runs custom actions after this phase's own deployment completes. (AI-inferred)
+	PostdeployJob any
+	// A job that runs custom actions before this phase's own deployment starts. (AI-inferred)
+	PredeployJob any
+	// A human-readable reason this job was skipped, when it was. (AI-inferred)
+	SkipMessage any
+	// The current status of this job or resource. (AI-inferred)
+	State any
+	// A job that runs verification tests against this phase's own deployment before it's considered successful. (AI-inferred)
+	VerifyJob any
 }
 
 type Rollout_Phases_ChildRolloutJobs struct {
+	// The job(s) that advance this rollout to its own next phase. (AI-inferred)
 	AdvanceRolloutJobs any
-	CreateRolloutJobs  any
+	// The job(s) that create a new rollout. (AI-inferred)
+	CreateRolloutJobs any
 }
 
 type Rollout_Phases_DeploymentJobs struct {
-	AnalysisJob   any
-	DeployJob     any
+	// A job that runs automated analysis (e.g. metrics-based) on a rollout phase before promoting it. (AI-inferred)
+	AnalysisJob any
+	// The job that performs the actual deployment for this phase. (AI-inferred)
+	DeployJob any
+	// A job that runs custom actions after this phase's own deployment completes. (AI-inferred)
 	PostdeployJob any
-	PredeployJob  any
-	VerifyJob     any
+	// A job that runs custom actions before this phase's own deployment starts. (AI-inferred)
+	PredeployJob any
+	// A job that runs verification tests against this phase's own deployment before it's considered successful. (AI-inferred)
+	VerifyJob any
 }
 
 type Rollout_Phases struct {
+	// The job(s) that create or advance child rollouts, as part of a multi-target rollout. (AI-inferred)
 	ChildRolloutJobs any
-	DeploymentJobs   any
-	Id               any
-	SkipMessage      any
-	State            any
+	// The job(s) that perform the actual deployment for this phase. (AI-inferred)
+	DeploymentJobs any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// A human-readable reason this job was skipped, when it was. (AI-inferred)
+	SkipMessage any
+	// The current status of this job or resource. (AI-inferred)
+	State any
 }
 
 var Rollout_Metadata_AutomationFields = ubx.FieldMap{

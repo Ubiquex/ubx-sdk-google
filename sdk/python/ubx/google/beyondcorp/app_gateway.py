@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppGateway_AllocatedConnections:
+    # The port on the app gateway's own ingress this allocated connection listens on. (AI-inferred)
     ingress_port: Any = None
+    # The Private Service Connect URI backing this allocated connection. (AI-inferred)
     psc_uri: Any = None
 
 @dataclasses.dataclass

@@ -4,12 +4,16 @@ package cloudidentity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Group_AdditionalGroupKeys struct {
-	Id        any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// A container grouping related external identifier(s) together. (AI-inferred)
 	Namespace any
 }
 
 type Group_DynamicGroupMetadata_Queries struct {
-	Query        any
+	// The query evaluated to produce this result. (AI-inferred)
+	Query any
+	// The category of resource this applies to. (AI-inferred)
 	ResourceType any
 }
 

@@ -8,20 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VpnTunnel_CipherSuite_Phase1:
+    # List of Diffie-Hellman group identifiers used during IKE phase 1 negotiation for the VPN tunnel cipher suite. (AI-inferred)
     dh: Any = None
+    # List of encryption algorithms used for IKE phase 1 negotiation. These algorithms define the encryption methods permitted during the initial IPsec/IKE key exchange. (AI-inferred)
     encryption: Any = None
+    # The list of integrity algorithms permitted for IKE phase 1 negotiation. Supported values include SHA1, SHA256, SHA384, and SHA512; if left empty, the default set of algorithms is used. (AI-inferred)
     integrity: Any = None
+    # The list of allowed Pseudo-Random Function (PRF) algorithms for the IKE phase 1 proposal, used for key derivation during the IKE handshake. (AI-inferred)
     prf: Any = None
 
 @dataclasses.dataclass
 class VpnTunnel_CipherSuite_Phase2:
+    # A list of acceptable encryption algorithms for Phase 2 of the IKE negotiation. (AI-inferred)
     encryption: Any = None
+    # A list of integrity algorithms to be used for the IPsec phase 2 proposal in the VPN tunnel. The tunnel negotiates using one of the listed algorithms to ensure data integrity. (AI-inferred)
     integrity: Any = None
+    # Specifies the Diffie-Hellman groups allowed for Perfect Forward Secrecy (PFS) during Phase 2 of the IKE negotiation. (AI-inferred)
     pfs: Any = None
 
 @dataclasses.dataclass
 class VpnTunnel_CipherSuite:
+    # The phase1 object defines the IKE Phase 1 (ISAKMP SA) settings for the VPN tunnel's cipher suite, including the encryption, integrity, and DH group algorithms used during the initial key exchange. (AI-inferred)
     phase1: Any = None
+    # Settings for IPsec Phase 2 (IKE Quick Mode), including encryption and integrity algorithms, within the cipher suite for the VPN tunnel. (AI-inferred)
     phase2: Any = None
 
 @dataclasses.dataclass
@@ -61,6 +70,7 @@ _VpnTunnel_ParamsFields = {
 
 @dataclasses.dataclass
 class VpnTunnelConfig:
+    # The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred)
     cipher_suite: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -110,6 +120,7 @@ class VpnTunnelConfig:
 
 @dataclasses.dataclass
 class VpnTunnelAttrs:
+    # The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred)
     cipher_suite: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None

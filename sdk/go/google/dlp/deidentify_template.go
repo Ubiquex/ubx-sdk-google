@@ -4,29 +4,41 @@ package dlp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor struct {
-	Blue  any
+	// The blue color channel value. (AI-inferred)
+	Blue any
+	// The green color channel value. (AI-inferred)
 	Green any
-	Red   any
+	// The red color channel value. (AI-inferred)
+	Red any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore struct {
+	// The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
 	Score any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes struct {
-	Name             any
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
+	Name any
+	// A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
 	SensitivityScore any
-	Version          any
+	// The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred)
+	Version any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes struct {
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
 	InfoTypes any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms struct {
-	AllInfoTypes      any
-	AllText           any
-	RedactionColor    any
+	// Applies this transformation to every detected info type, rather than a specific selected list. (AI-inferred)
+	AllInfoTypes any
+	// Applies this transformation to all detected text, rather than only specific info types. (AI-inferred)
+	AllText any
+	// The RGB color used to redact matched regions in an image. (AI-inferred)
+	RedactionColor any
+	// Restricts this transformation to specific, named info type(s), rather than all of them. (AI-inferred)
 	SelectedInfoTypes any
 }
 
@@ -36,135 +48,202 @@ type DeidentifyTemplate_DeidentifyConfig_ImageTransformations struct {
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue struct {
-	Day   any
+	// The day-of-month component of a date value. (AI-inferred)
+	Day any
+	// The month component of a date value. (AI-inferred)
 	Month any
-	Year  any
+	// The year component of a date value. (AI-inferred)
+	Year any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max struct {
-	BooleanValue   any
-	DateValue      any
+	// A `true`/`false` value, populated when this `Value`'s own type is boolean. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	BooleanValue any
+	// A calendar date value (year/month/day), populated when this `Value`'s own type is a date. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	DateValue any
+	// A day-of-the-week value (e.g. `MONDAY`), populated when this `Value`'s own type is a weekday. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
 	DayOfWeekValue any
-	FloatValue     any
-	IntegerValue   any
-	StringValue    any
-	TimeValue      any
+	// A floating-point number, populated when this `Value`'s own type is a float. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	FloatValue any
+	// A whole-number value, populated when this `Value`'s own type is an integer. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	IntegerValue any
+	// A text value, populated when this `Value`'s own type is a string. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	StringValue any
+	// A time-of-day value (hour/minute/second), populated when this `Value`'s own type is a time and the date/timezone aren't significant. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	TimeValue any
+	// A full date-and-time value, populated when this `Value`'s own type is a timestamp. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
 	TimestampValue any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets struct {
-	Max              any
-	Min              any
+	// The upper bound of this range. (AI-inferred)
+	Max any
+	// The lower bound of this range. (AI-inferred)
+	Min any
+	// The value substituted in place of the original. (AI-inferred)
 	ReplacementValue any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig struct {
+	// The bucket range(s) making up this bucketing configuration. (AI-inferred)
 	Buckets any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore struct {
-	CharactersToSkip         any
+	// How many characters at the start/end are left unmasked, before masking the rest. (AI-inferred)
+	CharactersToSkip any
+	// A predefined character set (e.g. punctuation) skipped over when applying this transformation. (AI-inferred)
 	CommonCharactersToIgnore any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig struct {
+	// Character(s) skipped over (left as-is) when applying this transformation. (AI-inferred)
 	CharactersToIgnore any
-	MaskingCharacter   any
-	NumberToMask       any
-	ReverseOrder       any
+	// The character substituted in place of each masked character. (AI-inferred)
+	MaskingCharacter any
+	// How many characters to mask, counting from the position `reverse_order` specifies. (AI-inferred)
+	NumberToMask any
+	// Whether masking counts characters from the end of the value rather than the start. (AI-inferred)
+	ReverseOrder any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context struct {
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
 	Name any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped struct {
+	// The resource name of the Cloud KMS key used to unwrap `wrapped_key`. (AI-inferred)
 	CryptoKeyName any
-	WrappedKey    any
+	// The crypto key's own bytes, encrypted (wrapped) by the Cloud KMS key named in `crypto_key_name`. (AI-inferred)
+	WrappedKey any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped struct {
+	// The raw key bytes themselves. (AI-inferred)
 	Key any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey struct {
+	// A crypto key wrapped by Cloud KMS -- Sensitive Data Protection calls KMS to unwrap `wrapped_key` using `crypto_key_name` before use. (AI-inferred)
 	KmsWrapped any
-	Transient  any
-	Unwrapped  any
+	// A crypto key generated fresh, at random, for this request only -- never persisted or reusable afterward. (AI-inferred)
+	Transient any
+	// A crypto key supplied as raw, unencrypted bytes. Simpler than `kms_wrapped` but carries more risk of the key leaking, since Sensitive Data Protection never handles it wrapped. (AI-inferred)
+	Unwrapped any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig struct {
-	Context           any
-	CryptoKey         any
+	// Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
+	Context any
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
+	CryptoKey any
+	// The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
 	SurrogateInfoType any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig struct {
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
 	CryptoKey any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig struct {
-	CommonAlphabet    any
-	Context           any
-	CryptoKey         any
-	CustomAlphabet    any
-	Radix             any
+	// A predefined character set (e.g. numeric, alphanumeric) the format-preserving encryption output is drawn from. (AI-inferred)
+	CommonAlphabet any
+	// Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
+	Context any
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
+	CryptoKey any
+	// A caller-defined character set the format-preserving encryption output is drawn from, instead of a predefined `common_alphabet`. (AI-inferred)
+	CustomAlphabet any
+	// The number of distinct symbols the format-preserving encryption's own alphabet uses. (AI-inferred)
+	Radix any
+	// The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
 	SurrogateInfoType any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig struct {
-	Context        any
-	CryptoKey      any
+	// Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
+	Context any
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
+	CryptoKey any
+	// The most days a date may be shifted earlier. (AI-inferred)
 	LowerBoundDays any
+	// The most days a date may be shifted later. (AI-inferred)
 	UpperBoundDays any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig struct {
+	// The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
 	BucketSize any
+	// The lowest value included in bucketing. (AI-inferred)
 	LowerBound any
+	// The highest value included in bucketing. (AI-inferred)
 	UpperBound any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig struct {
+	// The literal value to substitute in. (AI-inferred)
 	NewValue any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList struct {
+	// The literal words/phrases making up this `word_list`. (AI-inferred)
 	Words any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig struct {
+	// A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
 	WordList any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig struct {
+	// Which component of the date/time value to keep, e.g. `YEAR` or `MONTH`. (AI-inferred)
 	PartToExtract any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation struct {
-	BucketingConfig           any
-	CharacterMaskConfig       any
+	// Groups numeric or date values into named ranges, replacing the original value with its own bucket label. (AI-inferred)
+	BucketingConfig any
+	// Replaces characters in a matching value with a fixed masking character, optionally leaving some characters unmasked. (AI-inferred)
+	CharacterMaskConfig any
+	// De-identifies a value with a deterministic, reversible cryptographic transform -- the same input always produces the same output, letting values still be joined/grouped on after de-identification. (AI-inferred)
 	CryptoDeterministicConfig any
-	CryptoHashConfig          any
+	// De-identifies a value by replacing it with a cryptographic hash, a one-way transform that can't be reversed. (AI-inferred)
+	CryptoHashConfig any
+	// De-identifies a value using format-preserving encryption (FFX mode) -- the output has the same format (length, character set) as the input. (AI-inferred)
 	CryptoReplaceFfxFpeConfig any
-	DateShiftConfig           any
-	FixedSizeBucketingConfig  any
-	RedactConfig              any
-	ReplaceConfig             any
-	ReplaceDictionaryConfig   any
+	// De-identifies dates by shifting them a random, per-context number of days within a bounded range, preserving date arithmetic (like intervals between events) while hiding the real dates. (AI-inferred)
+	DateShiftConfig any
+	// Groups numeric values into fixed-width ranges between `lower_bound` and `upper_bound`, each `bucket_size` wide. (AI-inferred)
+	FixedSizeBucketingConfig any
+	// De-identifies a value by removing it entirely, leaving no replacement. (AI-inferred)
+	RedactConfig any
+	// De-identifies a value by replacing it with a fixed, generic replacement token. (AI-inferred)
+	ReplaceConfig any
+	// De-identifies a value by replacing it with a value drawn from a supplied word list. (AI-inferred)
+	ReplaceDictionaryConfig any
+	// De-identifies a value by replacing it with its own detected info type name (e.g. `[EMAIL_ADDRESS]`), rather than a fixed token. (AI-inferred)
 	ReplaceWithInfoTypeConfig any
-	TimePartConfig            any
+	// De-identifies a date/time value by keeping only one component of it (e.g. just the year), discarding the rest. (AI-inferred)
+	TimePartConfig any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations struct {
-	InfoTypes               any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
+	// A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
 	PrimitiveTransformation any
 }
 
@@ -174,32 +253,44 @@ type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations struct {
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions struct {
-	Field    any
+	// A reference to the field this applies to. (AI-inferred)
+	Field any
+	// The comparison operator this condition uses. (AI-inferred)
 	Operator any
-	Value    any
+	// The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
+	Value any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions struct {
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
 	Conditions any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions struct {
-	Conditions      any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
+	Conditions any
+	// How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred)
 	LogicalOperator any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition struct {
+	// The condition expression(s) making up this rule. (AI-inferred)
 	Expressions any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations struct {
-	Condition               any
-	Fields                  any
+	// The condition that must hold for this rule to apply. (AI-inferred)
+	Condition any
+	// The field(s) this applies to. (AI-inferred)
+	Fields any
+	// De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred)
 	InfoTypeTransformations any
+	// A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
 	PrimitiveTransformation any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions struct {
+	// The condition that must hold for this rule to apply. (AI-inferred)
 	Condition any
 }
 

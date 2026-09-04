@@ -4,9 +4,12 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Version_NluSettings struct {
+	// The minimum confidence an intent match must reach to be accepted, below which it's treated as no match. (AI-inferred)
 	ClassificationThreshold any
-	ModelTrainingMode       any
-	ModelType               any
+	// Which mode this agent's own NLU model is trained with. (AI-inferred)
+	ModelTrainingMode any
+	// Which underlying model architecture this uses. (AI-inferred)
+	ModelType any
 }
 
 var Version_NluSettingsFields = ubx.FieldMap{
@@ -16,19 +19,29 @@ var Version_NluSettingsFields = ubx.FieldMap{
 }
 
 type VersionConfig struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
 	NluSettings any
 }
 
 type VersionAttrs struct {
-	CreateTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
 	NluSettings any
-	State       any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 var Version = ubx.ResourceBinding{

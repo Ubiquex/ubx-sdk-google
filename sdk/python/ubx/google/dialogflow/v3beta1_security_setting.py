@@ -32,30 +32,52 @@ _V3beta1SecuritySetting_InsightsExportSettingsFields = {
 
 @dataclasses.dataclass
 class V3beta1SecuritySettingConfig:
+    # Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
     audio_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
     deidentify_template: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
     insights_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
     inspect_template: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Which category/categories of stored data this purge request removes. (AI-inferred)
     purge_data_types: Any = None
+    # How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
     redaction_scope: Any = None
+    # How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
     redaction_strategy: Any = None
+    # How long conversation data is retained before automatic deletion. (AI-inferred)
     retention_strategy: Any = None
+    # How many days conversation data is retained before automatic deletion. (AI-inferred)
     retention_window_days: Any = None
 
 @dataclasses.dataclass
 class V3beta1SecuritySettingAttrs:
+    # Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
     audio_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
     deidentify_template: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
     insights_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
     inspect_template: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Which category/categories of stored data this purge request removes. (AI-inferred)
     purge_data_types: Any = None
+    # How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
     redaction_scope: Any = None
+    # How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
     redaction_strategy: Any = None
+    # How long conversation data is retained before automatic deletion. (AI-inferred)
     retention_strategy: Any = None
+    # How many days conversation data is retained before automatic deletion. (AI-inferred)
     retention_window_days: Any = None
 
 V3beta1SecuritySetting = ubx.ResourceBinding(

@@ -34,16 +34,24 @@ export interface Entitlement_CommitmentSettings {
 }
 
 export interface Entitlement_Entitlement_Parameters_Value {
+  /** This entitlement parameter's own value, when its declared type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** This entitlement parameter's own value, when its declared type is a floating-point number. (AI-inferred) */
   doubleValue?: number | Computed<number>;
+  /** This entitlement parameter's own value, when its declared type is a 64-bit integer. (AI-inferred) */
   int64Value?: string | Computed<string>;
+  /** This entitlement parameter's own value, when its declared type is a structured protobuf message. (AI-inferred) */
   protoValue?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** This entitlement parameter's own value, when its declared type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface Entitlement_Entitlement_Parameters {
+  /** Whether this entitlement parameter is real, editable by the reseller after the entitlement is created. (AI-inferred) */
   editable?: boolean | Computed<boolean>;
+  /** The real, declared name of this entitlement parameter. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real, decimal percentage value applied by this margin adjustment, or the real value of a typed entitlement parameter. (AI-inferred) */
   value?: Entitlement_Entitlement_Parameters_Value | Computed<Entitlement_Entitlement_Parameters_Value>;
 }
 

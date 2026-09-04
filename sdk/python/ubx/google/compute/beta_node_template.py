@@ -50,11 +50,13 @@ _BetaNodeTemplate_ServerBindingFields = {
 
 @dataclasses.dataclass
 class BetaNodeTemplateConfig:
+    # The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred)
     accelerators: Any = None
     # CPU overcommit.
     cpu_overcommit_type: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # The disk configuration nodes created from this template provision. (AI-inferred)
     disks: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
@@ -62,11 +64,14 @@ class BetaNodeTemplateConfig:
     node_affinity_labels: Any = None
     # The node type to use for nodes group that are created from this template.
     node_type: Any = None
+    # A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred)
     node_type_flexibility: Any = None
+    # Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred)
     server_binding: Any = None
 
 @dataclasses.dataclass
 class BetaNodeTemplateAttrs:
+    # The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred)
     accelerators: Any = None
     # CPU overcommit.
     cpu_overcommit_type: Any = None
@@ -74,6 +79,7 @@ class BetaNodeTemplateAttrs:
     creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # The disk configuration nodes created from this template provision. (AI-inferred)
     disks: Any = None
     # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
@@ -85,11 +91,13 @@ class BetaNodeTemplateAttrs:
     node_affinity_labels: Any = None
     # The node type to use for nodes group that are created from this template.
     node_type: Any = None
+    # A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred)
     node_type_flexibility: Any = None
     # Output only. [Output Only] The name of the region where the node template resides, such as us-central1.
     region: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None
+    # Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred)
     server_binding: Any = None
     # Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
     status: Any = None

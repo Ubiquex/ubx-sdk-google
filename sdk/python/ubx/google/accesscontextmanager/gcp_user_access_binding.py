@@ -17,39 +17,55 @@ class GcpUserAccessBinding_Principal:
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_RestrictedClientApplications:
+    # The OAuth client ID this restriction applies to. (AI-inferred)
     client_id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings:
+    # How long a session may remain inactive before requiring re-authentication. (AI-inferred)
     max_inactivity: Any = None
+    # How long a session remains valid before requiring re-authentication. (AI-inferred)
     session_length: Any = None
+    # Whether session length limits are enforced. (AI-inferred)
     session_length_enabled: Any = None
+    # How the user re-authenticates when their own session expires. (AI-inferred)
     session_reauth_method: Any = None
+    # Whether the OIDC token's own `max_age` claim is honored when evaluating session freshness. (AI-inferred)
     use_oidc_max_age: Any = None
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings:
+    # The access level(s) this applies to. (AI-inferred)
     access_levels: Any = None
+    # Configuration for session length and re-authentication requirements. (AI-inferred)
     session_settings: Any = None
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope:
+    # Restricts this rule to a specific client application. (AI-inferred)
     restricted_client_application: Any = None
+    # A reference to the project this restriction applies to. (AI-inferred)
     restricted_project: Any = None
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings_Scope:
+    # Restricts this rule to a specific client scope. (AI-inferred)
     client_scope: Any = None
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings:
+    # The settings currently in effect for this session. (AI-inferred)
     active_settings: Any = None
+    # Settings evaluated but not yet enforced, letting the effect of a policy change be previewed first. (AI-inferred)
     dry_run_settings: Any = None
+    # What this configuration's own scope covers. (AI-inferred)
     scope: Any = None
 
 _GcpUserAccessBinding_PrincipalFields = {

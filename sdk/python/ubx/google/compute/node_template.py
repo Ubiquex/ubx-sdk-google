@@ -8,23 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NodeTemplate_Accelerators:
+    # The number of accelerators of the specified type to attach to nodes created from this node template. This field is part of the accelerators block, which also specifies the accelerator type. (AI-inferred)
     accelerator_count: Any = None
+    # The type of accelerator (GPU) to attach to the node, such as 'nvidia-tesla-a100'. This should be a valid accelerator type identifier supported by Compute Engine. (AI-inferred)
     accelerator_type: Any = None
 
 @dataclasses.dataclass
 class NodeTemplate_Disks:
+    # The number of disks of the specified type to attach to the node template. (AI-inferred)
     disk_count: Any = None
     disk_size_gb: Any = None
+    # The type of disk to attach to the node, such as 'local-ssd'. Defaults to 'local-ssd'. (AI-inferred)
     disk_type: Any = None
 
 @dataclasses.dataclass
 class NodeTemplate_NodeTypeFlexibility:
+    # The number of virtual CPUs to allocate for the node template. Provide a specific integer value as a string (e.g., "8") or use "any" to allow flexible selection based on available resources. (AI-inferred)
     cpus: Any = None
     local_ssd: Any = None
+    # Specifies the amount of memory (in MB) that the flexible node type must have. This is used to define a custom node type for the node template. (AI-inferred)
     memory: Any = None
 
 @dataclasses.dataclass
 class NodeTemplate_ServerBinding:
+    # Specifies the server binding type for the node template, controlling whether the node can be restarted on any server or only on a minimal set of servers. Valid values are RESTART_NODE_ON_ANY_SERVER, RESTART_NODE_ON_MINIMAL_SERVERS, or SERVER_BINDING_TYPE_UNSPECIFIED. (AI-inferred)
     type: Any = None
 
 _NodeTemplate_AcceleratorsFields = {
@@ -50,11 +57,13 @@ _NodeTemplate_ServerBindingFields = {
 
 @dataclasses.dataclass
 class NodeTemplateConfig:
+    # A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred)
     accelerators: Any = None
     # CPU overcommit.
     cpu_overcommit_type: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred)
     disks: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
@@ -62,11 +71,14 @@ class NodeTemplateConfig:
     node_affinity_labels: Any = None
     # The node type to use for nodes group that are created from this template.
     node_type: Any = None
+    # Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred)
     node_type_flexibility: Any = None
+    # The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred)
     server_binding: Any = None
 
 @dataclasses.dataclass
 class NodeTemplateAttrs:
+    # A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred)
     accelerators: Any = None
     # CPU overcommit.
     cpu_overcommit_type: Any = None
@@ -74,6 +86,7 @@ class NodeTemplateAttrs:
     creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred)
     disks: Any = None
     # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
@@ -85,11 +98,13 @@ class NodeTemplateAttrs:
     node_affinity_labels: Any = None
     # The node type to use for nodes group that are created from this template.
     node_type: Any = None
+    # Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred)
     node_type_flexibility: Any = None
     # Output only. [Output Only] The name of the region where the node template resides, such as us-central1.
     region: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None
+    # The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred)
     server_binding: Any = None
     # Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
     status: Any = None

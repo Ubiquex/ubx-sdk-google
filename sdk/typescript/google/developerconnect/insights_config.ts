@@ -2,23 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysis {
+  /** The Google Cloud project the tracked Artifact Analysis data belongs to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface InsightsConfig_ArtifactConfigs_GoogleArtifactRegistry {
+  /** The Artifact Registry package this artifact config tracks. (AI-inferred) */
   artifactRegistryPackage?: string | Computed<string>;
+  /** The Google Cloud project the tracked Artifact Registry package belongs to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface InsightsConfig_ArtifactConfigs {
+  /** Identifies an artifact tracked via Google Artifact Analysis, for correlating vulnerability/provenance data into insights. (AI-inferred) */
   googleArtifactAnalysis?: InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysis | Computed<InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysis>;
+  /** Identifies an artifact tracked via Artifact Registry. (AI-inferred) */
   googleArtifactRegistry?: InsightsConfig_ArtifactConfigs_GoogleArtifactRegistry | Computed<InsightsConfig_ArtifactConfigs_GoogleArtifactRegistry>;
+  /** The URI identifying this artifact, when tracked by reference rather than by a specific registry integration. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface InsightsConfig_Errors {
+  /** The error's own numeric status code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional structured detail about the error. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of the error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -28,32 +37,47 @@ export interface InsightsConfig_Projects {
 }
 
 export interface InsightsConfig_RuntimeConfigs_AppHubService {
+  /** The App Hub service resource this runtime config links to. (AI-inferred) */
   apphubService?: string | Computed<string>;
+  /** The App Hub-assigned criticality level of this service. (AI-inferred) */
   criticality?: string | Computed<string>;
+  /** The App Hub-assigned environment (e.g. production, staging) this service runs in. (AI-inferred) */
   environment?: string | Computed<string>;
 }
 
 export interface InsightsConfig_RuntimeConfigs_AppHubWorkload {
+  /** The App Hub-assigned criticality level of this workload. (AI-inferred) */
   criticality?: string | Computed<string>;
+  /** The App Hub-assigned environment (e.g. production, staging) this workload runs in. (AI-inferred) */
   environment?: string | Computed<string>;
+  /** The App Hub workload resource this runtime config links to. (AI-inferred) */
   workload?: string | Computed<string>;
 }
 
 export interface InsightsConfig_RuntimeConfigs_GkeWorkload {
+  /** The GKE cluster this workload runs in. (AI-inferred) */
   cluster?: string | Computed<string>;
+  /** The GKE Deployment resource this runtime config links to. (AI-inferred) */
   deployment?: string | Computed<string>;
 }
 
 export interface InsightsConfig_RuntimeConfigs_GoogleCloudRun {
+  /** The URI of the Cloud Run service this runtime config links to. (AI-inferred) */
   serviceUri?: string | Computed<string>;
 }
 
 export interface InsightsConfig_RuntimeConfigs {
+  /** Identifies the App Hub service this application is deployed as, for correlating runtime insights. (AI-inferred) */
   appHubService?: InsightsConfig_RuntimeConfigs_AppHubService | Computed<InsightsConfig_RuntimeConfigs_AppHubService>;
+  /** Identifies the App Hub workload this application is deployed as, for correlating runtime insights. (AI-inferred) */
   appHubWorkload?: InsightsConfig_RuntimeConfigs_AppHubWorkload | Computed<InsightsConfig_RuntimeConfigs_AppHubWorkload>;
+  /** Identifies the GKE deployment this application runs as, for correlating runtime insights. (AI-inferred) */
   gkeWorkload?: InsightsConfig_RuntimeConfigs_GkeWorkload | Computed<InsightsConfig_RuntimeConfigs_GkeWorkload>;
+  /** Identifies the Cloud Run service this application runs as, for correlating runtime insights. (AI-inferred) */
   googleCloudRun?: InsightsConfig_RuntimeConfigs_GoogleCloudRun | Computed<InsightsConfig_RuntimeConfigs_GoogleCloudRun>;
+  /** Whether this runtime has been successfully `LINKED` to its own source repository, or is `UNLINKED`. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The URI of the runtime resource this config tracks. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 

@@ -2,11 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FutureReservation_AggregateReservation_InUseResources_Accelerator {
+  /** The number of accelerators of the specified type that are currently in use by this aggregate reservation. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The type of accelerator (e.g., GPU) associated with the in-use resources in the aggregate future reservation. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
 }
 
 export interface FutureReservation_AggregateReservation_InUseResources {
+  /** The accelerator-specific configuration for a resource in the aggregate reservation's in-use resources list. It defines the accelerator type and count to be reserved. (AI-inferred) */
   accelerator?: FutureReservation_AggregateReservation_InUseResources_Accelerator | Computed<FutureReservation_AggregateReservation_InUseResources_Accelerator>;
 }
 
@@ -50,6 +53,7 @@ export interface FutureReservation_ResourceMetadata {
 }
 
 export interface FutureReservation_ShareSettings_ProjectMap {
+  /** The ID of the Google Cloud project to share the future reservation with. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
@@ -61,7 +65,9 @@ export interface FutureReservation_ShareSettings {
 }
 
 export interface FutureReservation_SpecificSkuProperties_InstanceProperties_LocalSsds {
+  /** The size of the local SSD in GB. Each local SSD is 375 GB by default. (AI-inferred) */
   diskSizeGb?: string | Computed<string>;
+  /** The interface to use for attaching the local SSD. Valid values are `NVME` and `SCSI`. (AI-inferred) */
   interface?: string | Computed<string>;
 }
 
@@ -106,6 +112,7 @@ export interface FutureReservation_Status_ExistingMatchingUsageInfo {
 export interface FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow {
   /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
   duration?: FutureReservation_AutoCreatedReservationsDuration | Computed<FutureReservation_AutoCreatedReservationsDuration>;
+  /** The end time of the time window during which the future reservation is active, in RFC3339 UTC format. (AI-inferred) */
   endTime?: string | Computed<string>;
   /** Start time of the Future Reservation. The start_time is an RFC3339 string. */
   startTime?: string | Computed<string>;
@@ -114,7 +121,9 @@ export interface FutureReservation_Status_LastKnownGoodState_FutureReservationSp
 export interface FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs {
   /** The share setting for reservations and sole tenancy node groups. */
   shareSettings?: FutureReservation_ShareSettings | Computed<FutureReservation_ShareSettings>;
+  /** Specifies the configuration for a specific SKU future reservation, including details like machine type and the total number of resources to reserve. (AI-inferred) */
   specificSkuProperties?: FutureReservation_SpecificSkuProperties | Computed<FutureReservation_SpecificSkuProperties>;
+  /** The time window for the future reservation, specifying the start and end times during which the reservation is active. (AI-inferred) */
   timeWindow?: FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow | Computed<FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow>;
 }
 
@@ -393,7 +402,9 @@ export interface FutureReservationConfig {
   autoCreatedReservationsDuration?: FutureReservation_AutoCreatedReservationsDuration | Computed<FutureReservation_AutoCreatedReservationsDuration>;
   /** Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false. */
   autoDeleteAutoCreatedReservations?: boolean | Computed<boolean>;
+  /** Information about the commitment that this future reservation is associated with. This field is output-only and may be absent if the reservation is not tied to a commitment. (AI-inferred) */
   commitmentInfo?: FutureReservation_CommitmentInfo | Computed<FutureReservation_CommitmentInfo>;
+  /** The confidential compute type for the future reservation. Possible values are `CONFIDENTIAL_COMPUTE_TYPE_TDX` (Intel Trust Domain Extensions) and `CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED`. (AI-inferred) */
   confidentialComputeType?: string | Computed<string>;
   /** Type of the deployment requested as part of future reservation. */
   deploymentType?: string | Computed<string>;
@@ -423,11 +434,13 @@ export interface FutureReservationConfig {
   shareSettings?: FutureReservation_ShareSettings | Computed<FutureReservation_ShareSettings>;
   /** Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation. */
   specificReservationRequired?: boolean | Computed<boolean>;
+  /** Output-only object containing the properties of the specific SKU (e.g., machine type, minimum CPU platform) reserved by this future reservation. (AI-inferred) */
   specificSkuProperties?: FutureReservation_SpecificSkuProperties | Computed<FutureReservation_SpecificSkuProperties>;
   /** [Output only] Represents status related to the future reservation. */
   status?: FutureReservation_Status | Computed<FutureReservation_Status>;
   /** Storage pool properties for the future reservation. */
   storagePoolProperties?: FutureReservation_StoragePoolProperties | Computed<FutureReservation_StoragePoolProperties>;
+  /** The time window during which the future reservation is active, defining the start and end times for the reserved capacity. (AI-inferred) */
   timeWindow?: FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow | Computed<FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow>;
 }
 
@@ -440,7 +453,9 @@ export interface FutureReservationAttrs {
   autoCreatedReservationsDuration: FutureReservation_AutoCreatedReservationsDuration;
   /** Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false. */
   autoDeleteAutoCreatedReservations: boolean;
+  /** Information about the commitment that this future reservation is associated with. This field is output-only and may be absent if the reservation is not tied to a commitment. (AI-inferred) */
   commitmentInfo: FutureReservation_CommitmentInfo;
+  /** The confidential compute type for the future reservation. Possible values are `CONFIDENTIAL_COMPUTE_TYPE_TDX` (Intel Trust Domain Extensions) and `CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED`. (AI-inferred) */
   confidentialComputeType: string;
   /** Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format. */
   creationTimestamp: string;
@@ -480,11 +495,13 @@ export interface FutureReservationAttrs {
   shareSettings: FutureReservation_ShareSettings;
   /** Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation. */
   specificReservationRequired: boolean;
+  /** Output-only object containing the properties of the specific SKU (e.g., machine type, minimum CPU platform) reserved by this future reservation. (AI-inferred) */
   specificSkuProperties: FutureReservation_SpecificSkuProperties;
   /** [Output only] Represents status related to the future reservation. */
   status: FutureReservation_Status;
   /** Storage pool properties for the future reservation. */
   storagePoolProperties: FutureReservation_StoragePoolProperties;
+  /** The time window during which the future reservation is active, defining the start and end times for the reserved capacity. (AI-inferred) */
   timeWindow: FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow;
   /** Output only. [Output Only] URL of the Zone where this future reservation resides. */
   zone: string;

@@ -4,9 +4,12 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRules struct {
-	MatchResponseCodes   any
+	// A list of HTTP status codes that this error response rule matches. When a backend returns one of these response codes, the custom error response is used. For example, "404" or "500". (AI-inferred)
+	MatchResponseCodes any
+	// The HTTP status code that the URL Map should return to the client when the error occurs. The value must be between 100 and 599. If not specified, the original error code is returned. (AI-inferred)
 	OverrideResponseCode any
-	Path                 any
+	// The path to the custom error page for this error response rule. This is typically a relative URL path (e.g., '/custom-error.html') that serves the error response from the backend or a static content bucket. (AI-inferred)
+	Path any
 }
 
 type RegionUrlMap_DefaultCustomErrorResponsePolicy struct {
@@ -41,8 +44,10 @@ type RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtl struct {
 }
 
 type RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicy struct {
+	// HTTP status code for which the negative caching policy applies. (AI-inferred)
 	Code any
-	Ttl  any
+	// The duration for which a negative cache entry is retained. This is a Duration object containing 'seconds' and 'nanos' fields. (AI-inferred)
+	Ttl any
 }
 
 type RegionUrlMap_DefaultRouteAction_CachePolicy struct {
@@ -143,22 +148,32 @@ type RegionUrlMap_DefaultRouteAction_UrlRewrite struct {
 }
 
 type RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd struct {
-	HeaderName  any
+	// The name of the HTTP header to add to the request. Must be a valid header name, typically containing only letters, digits, and hyphens (e.g., 'X-Forwarded-For'). (AI-inferred)
+	HeaderName any
+	// The value of the request header to add. This value is sent to the backend service along with the header name. (AI-inferred)
 	HeaderValue any
-	Replace     any
+	// If true, the header value replaces an existing header with the same name. If false, the header is added as an additional header. (AI-inferred)
+	Replace any
 }
 
 type RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction struct {
-	RequestHeadersToAdd     any
-	RequestHeadersToRemove  any
-	ResponseHeadersToAdd    any
+	// The list of headers to be added to the request before it is forwarded to the backend service for this weighted backend service configuration. (AI-inferred)
+	RequestHeadersToAdd any
+	// A list of HTTP request header names to remove from the request before forwarding to the backend service. (AI-inferred)
+	RequestHeadersToRemove any
+	// A list of response headers to add, with each item specifying a header name and value. These headers are added to HTTP responses sent to the client when the request is served by this weighted backend service. (AI-inferred)
+	ResponseHeadersToAdd any
+	// Specifies a list of response header names to remove before sending the response back to the client. (AI-inferred)
 	ResponseHeadersToRemove any
 }
 
 type RegionUrlMap_DefaultRouteAction_WeightedBackendServices struct {
+	// The name of the backend service that receives traffic for this weighted backend service entry. (AI-inferred)
 	BackendService any
-	HeaderAction   any
-	Weight         any
+	// Defines the header modifications to apply to requests and responses for the corresponding weighted backend service in the region URL map. (AI-inferred)
+	HeaderAction any
+	// Specifies the relative weight for this backend service. Traffic is distributed proportionally to the weights of all backend services in the weighted_backend_services list. (AI-inferred)
+	Weight any
 }
 
 type RegionUrlMap_DefaultRouteAction struct {
@@ -199,93 +214,148 @@ type RegionUrlMap_DefaultUrlRedirect struct {
 
 type RegionUrlMap_HostRules struct {
 	Description any
-	Hosts       any
+	// The list of host patterns to match. The request's Host header must match one of these patterns (e.g., 'example.com' or '*.example.com') for this host rule to apply. (AI-inferred)
+	Hosts any
+	// The name of the path matcher to use for this host rule. This must match the name of a path matcher defined in the region URL map's path_matchers list. (AI-inferred)
 	PathMatcher any
 }
 
 type RegionUrlMap_PathMatchers_PathRules struct {
+	// The custom error response policy for this path rule. It defines how to customize responses for specific HTTP error codes, such as the error page content and response code to serve. (AI-inferred)
 	CustomErrorResponsePolicy any
-	Paths                     any
-	RouteAction               any
-	Service                   any
-	UrlRedirect               any
+	// List of path patterns to match against the incoming request path. Each path can contain a single trailing * wildcard. If the request path matches any of these patterns, the specified route action is applied. (AI-inferred)
+	Paths any
+	// Specifies the route action to take for requests that match this path rule, such as forwarding to a backend service, configuring weighted backend services, URL rewrite, or setting timeouts. (AI-inferred)
+	RouteAction any
+	// The backend service or backend bucket to use when the path matches this rule. Specify the self_link or name of a regional backend service or backend bucket. (AI-inferred)
+	Service any
+	// Specifies a redirect for requests that match this path rule. When set, matched requests are redirected according to the configured redirect behavior instead of being forwarded to a backend service. (AI-inferred)
+	UrlRedirect any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch struct {
-	RangeEnd   any
+	// The inclusive end of the integer range used to match a header value. The header value must be less than or equal to this number to match. (AI-inferred)
+	RangeEnd any
+	// The start of the range (inclusive) to match for the header value. (AI-inferred)
 	RangeStart any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches struct {
-	ExactMatch   any
-	HeaderName   any
-	InvertMatch  any
-	PrefixMatch  any
+	// Specifies the exact header value that must match for the request to satisfy the match condition. (AI-inferred)
+	ExactMatch any
+	// The name of the HTTP header to match. (AI-inferred)
+	HeaderName any
+	// If set to true, the match condition is inverted, meaning the request matches when the header value does NOT equal the specified value. For example, with invert_match true and a specified value of 'foo', the match succeeds only if the header value is not 'foo'. (AI-inferred)
+	InvertMatch any
+	// Specifies a prefix match for the header value. The header value must start with this prefix. (AI-inferred)
+	PrefixMatch any
+	// When set to true, the match is successful only if the header is present. This is an alternative to using exact_match, prefix_match, suffix_match, and regex_match. (AI-inferred)
 	PresentMatch any
-	RangeMatch   any
-	RegexMatch   any
-	SuffixMatch  any
+	// Defines an inclusive numeric range that the header value must fall within to match. The object contains integer fields rangeStart and rangeEnd. (AI-inferred)
+	RangeMatch any
+	// The regular expression pattern that the value of the header must match for the match rule to apply. It is used to match the header value against a regular expression, as an alternative to exact matching. (AI-inferred)
+	RegexMatch any
+	// The suffix that the header value must end with for the match to be considered successful. The match is case-sensitive. (AI-inferred)
+	SuffixMatch any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels struct {
-	Name  any
+	// The key of the metadata filter label. This specifies the label name to match against when filtering requests. For example, in a filter label 'env=prod', the name is 'env'. (AI-inferred)
+	Name any
+	// The value of the metadata filter label. This value is matched against the corresponding metadata header value (e.g., x-goog-meta- prefixed header) for the request, and the request is considered matched when the header value equals this value. (AI-inferred)
 	Value any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters struct {
-	FilterLabels        any
+	// Specifies a list of metadata label filters, each containing a key (name) and value (value), used to match incoming request metadata for this routing rule. (AI-inferred)
+	FilterLabels any
+	// Specifies how the filter labels are combined: MATCH_ALL requires all specified labels to match, MATCH_ANY requires at least one to match, and NOT_SET indicates the field is not configured. (AI-inferred)
 	FilterMatchCriteria any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches struct {
-	ExactMatch   any
-	Name         any
+	// The exact value to match against the query parameter's value. The match rule is satisfied only when the query parameter value equals this string exactly. (AI-inferred)
+	ExactMatch any
+	// The name of the query parameter to match. (AI-inferred)
+	Name any
+	// When set to true, the match requires the query parameter to be present in the request, regardless of its value. (AI-inferred)
 	PresentMatch any
-	RegexMatch   any
+	// The regular expression (RE2 syntax) that the query parameter value must match. This is mutually exclusive with exact_match. (AI-inferred)
+	RegexMatch any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules struct {
-	FullPathMatch         any
-	HeaderMatches         any
-	IgnoreCase            any
-	MetadataFilters       any
-	PathTemplateMatch     any
-	PrefixMatch           any
+	// Specifies the full request path that must exactly match for this match rule to apply. This is an exact match on the entire path, as opposed to prefix or regex matching. (AI-inferred)
+	FullPathMatch any
+	// Defines a list of HTTP header match conditions. The request must satisfy all specified header conditions for the match rule to be considered a match. (AI-inferred)
+	HeaderMatches any
+	// Indicates whether to ignore case when matching the request path. When set to true, the match is case-insensitive. (AI-inferred)
+	IgnoreCase any
+	// A list of metadata filters that requests must match. Each filter specifies a list of labels and a match criterion (MATCH_ALL or MATCH_ANY) to determine whether all or any labels must match. (AI-inferred)
+	MetadataFilters any
+	// Specifies a path template to match against the request path. The template can include variables in curly braces (e.g., /users/{id}) that match any value in that segment, enabling flexible path-based routing. (AI-inferred)
+	PathTemplateMatch any
+	// Specifies the prefix of the request path to match. The path must begin with this prefix, and the match is case-sensitive. (AI-inferred)
+	PrefixMatch any
+	// A list of query parameter match criteria for this match rule. Each entry specifies a query parameter name and value to match, with an optional exactMatch flag to control whether the match is exact or uses regular expressions. (AI-inferred)
 	QueryParameterMatches any
-	RegexMatch            any
+	// A regular expression that the entire request path must match. This is used to determine if the route rule applies. (AI-inferred)
+	RegexMatch any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules struct {
+	// The custom_error_response_policy block configures custom error responses for this route rule, allowing you to define custom error pages or redirects for specific HTTP error codes returned by the load balancer. (AI-inferred)
 	CustomErrorResponsePolicy any
-	Description               any
-	HeaderAction              any
-	MatchRules                any
-	Priority                  any
-	RouteAction               any
-	Service                   any
-	UrlRedirect               any
+	// An optional, human-readable description of this route rule. (AI-inferred)
+	Description any
+	// Defines the header actions for this route rule, including adding and removing request and response headers. (AI-inferred)
+	HeaderAction any
+	// List of match rules that define the conditions under which incoming requests are matched to this route rule. Each match rule can specify path matching criteria (such as full path, prefix, or regex), header and query parameter matches, and case sensitivity. (AI-inferred)
+	MatchRules any
+	// The priority for this route rule, as an integer from 0 to 2147483647. Lower values are evaluated first, and priorities must be unique within the path matcher. (AI-inferred)
+	Priority any
+	// The action to be performed when a request matches this route rule, which may include URL rewriting, routing to weighted backend services, or other routing policies. (AI-inferred)
+	RouteAction any
+	// The full or partial URL (or name) of the backend service to which traffic matching this rule is routed. (AI-inferred)
+	Service any
+	// A block that defines a URL redirect action for this route rule. When specified, requests matching this rule are redirected to the URL specified by the redirect parameters. If url_redirect is set, neither the service nor the urlRewrite action may be set for the same rule. (AI-inferred)
+	UrlRedirect any
 }
 
 type RegionUrlMap_PathMatchers struct {
+	// Defines the default custom error response policy for this path matcher, controlling how errors from backend services are customized, such as serving a custom error page or redirecting. If this policy is not set, the URL map's default custom error response policy is used. (AI-inferred)
 	DefaultCustomErrorResponsePolicy any
-	DefaultRouteAction               any
-	DefaultService                   any
-	DefaultUrlRedirect               any
-	Description                      any
-	HeaderAction                     any
-	Name                             any
-	PathRules                        any
-	RouteRules                       any
+	// The default route action for the path matcher, applied when no path rule matches the request. (AI-inferred)
+	DefaultRouteAction any
+	// The default BackendService that receives traffic for this path matcher when the request path does not match any pathRule. Specify the full or partial URL to a BackendService resource. (AI-inferred)
+	DefaultService any
+	// Default redirect configuration for requests that don't match any path rules in this path matcher. When set, unmatched requests are redirected according to this object instead of being forwarded to a default service. (AI-inferred)
+	DefaultUrlRedirect any
+	// An optional description of the path matcher. (AI-inferred)
+	Description any
+	// Configures the request header modifications (additions or removals) applied to requests that match this path matcher, before they are forwarded to the backend service. (AI-inferred)
+	HeaderAction any
+	// The name of the path matcher. (AI-inferred)
+	Name any
+	// Path rules within a path matcher. Each rule contains a list of paths and the corresponding service (backend) to which traffic matching those paths should be routed. (AI-inferred)
+	PathRules any
+	// List of route rules that define how requests are matched and routed to backend services within the path matcher. Each route rule specifies match criteria and a corresponding service. (AI-inferred)
+	RouteRules any
 }
 
 type RegionUrlMap_Tests struct {
+	// An optional description for a test case in the URL map, used to provide additional context or document the test's purpose. (AI-inferred)
 	Description                  any
 	ExpectedOutputUrl            any
 	ExpectedRedirectResponseCode any
-	Headers                      any
-	Host                         any
-	Path                         any
-	Service                      any
+	// A list of HTTP request headers that must be present for the URL map test to match. Each item in the list is an object with a header name and value. (AI-inferred)
+	Headers any
+	// The hostname or host pattern to match in the test request for validating URL map routing rules. (AI-inferred)
+	Host any
+	// The URL path to be used in the test request. For example, '/path'. (AI-inferred)
+	Path any
+	// A reference to the backend service that the test expects to handle requests for the specified host and path. (AI-inferred)
+	Service any
 }
 
 var RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields = ubx.FieldMap{
@@ -695,7 +765,8 @@ var RegionUrlMap_TestsFields = ubx.FieldMap{
 type RegionUrlMapConfig struct {
 	// Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
 	DefaultCustomErrorResponsePolicy any
-	DefaultRouteAction               any
+	// Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred)
+	DefaultRouteAction any
 	// The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
 	DefaultService any
 	// Specifies settings for an HTTP redirect.
@@ -725,7 +796,8 @@ type RegionUrlMapAttrs struct {
 	CreationTimestamp any
 	// Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
 	DefaultCustomErrorResponsePolicy any
-	DefaultRouteAction               any
+	// Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred)
+	DefaultRouteAction any
 	// The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
 	DefaultService any
 	// Specifies settings for an HTTP redirect.

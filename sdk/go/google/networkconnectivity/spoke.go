@@ -4,6 +4,7 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Spoke_Gateway_IpRangeReservations struct {
+	// The IP address range, in CIDR notation, this applies to. (AI-inferred)
 	IpRange any
 }
 
@@ -55,7 +56,9 @@ type Spoke_LinkedProducerVpcNetwork struct {
 }
 
 type Spoke_LinkedRouterApplianceInstances_Instances struct {
-	IpAddress      any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// A reference to the virtual machine this applies to. (AI-inferred)
 	VirtualMachine any
 }
 
@@ -92,8 +95,11 @@ type Spoke_LinkedVpcNetwork struct {
 }
 
 type Spoke_Reasons struct {
-	Code        any
-	Message     any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// Additional detail intended for the end user. (AI-inferred)
 	UserDetails any
 }
 
@@ -178,7 +184,8 @@ type SpokeConfig struct {
 	Labels any
 	// A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.
 	LinkedInterconnectAttachments any
-	LinkedProducerVpcNetwork      any
+	// A reference to the producer's own linked VPC network. (AI-inferred)
+	LinkedProducerVpcNetwork any
 	// A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke.
 	LinkedRouterApplianceInstances any
 	// An existing VPC network.
@@ -208,7 +215,8 @@ type SpokeAttrs struct {
 	Labels any
 	// A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.
 	LinkedInterconnectAttachments any
-	LinkedProducerVpcNetwork      any
+	// A reference to the producer's own linked VPC network. (AI-inferred)
+	LinkedProducerVpcNetwork any
 	// A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke.
 	LinkedRouterApplianceInstances any
 	// An existing VPC network.

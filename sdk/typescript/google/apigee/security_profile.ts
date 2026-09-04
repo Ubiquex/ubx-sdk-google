@@ -2,16 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityProfile_Environments {
+  /** When this resource was attached. (AI-inferred) */
   attachTime?: string | Computed<string>;
+  /** A reference to the Apigee environment this applies to. (AI-inferred) */
   environment?: string | Computed<string>;
 }
 
 export interface SecurityProfile_ProfileConfig_Categories {
+  /** Configuration for detecting and mitigating API abuse. (AI-inferred) */
   abuse?: unknown | Computed<unknown>;
+  /** Authorization configuration for this connection. (AI-inferred) */
   authorization?: unknown | Computed<unknown>;
+  /** Cross-Origin Resource Sharing configuration. (AI-inferred) */
   cors?: unknown | Computed<unknown>;
+  /** Configuration for how requests/responses are transformed as they pass through this proxy. (AI-inferred) */
   mediation?: unknown | Computed<unknown>;
+  /** Configuration for mutual TLS authentication. (AI-inferred) */
   mtls?: unknown | Computed<unknown>;
+  /** Detail about a detected security threat. (AI-inferred) */
   threat?: unknown | Computed<unknown>;
 }
 
@@ -21,8 +29,11 @@ export interface SecurityProfile_ProfileConfig {
 }
 
 export interface SecurityProfile_ScoringConfigs {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The path to the field this abuse-detection score is read from. (AI-inferred) */
   scorePath?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 

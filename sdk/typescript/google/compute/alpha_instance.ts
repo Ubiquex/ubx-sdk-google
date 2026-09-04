@@ -1129,7 +1129,9 @@ export interface AlphaInstanceConfig {
   guestAccelerators?: AlphaInstance_GuestAccelerators[] | Computed<AlphaInstance_GuestAccelerators[]>;
   /** Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS. */
   hostname?: string | Computed<string>;
+  /** Whether this instance has a Trusted Platform Module (TPM)-backed identity. (AI-inferred) */
   identity?: string | Computed<string>;
+  /** Whether an identity certificate is enabled for this instance's own TPM-backed identity. (AI-inferred) */
   identityCertificate?: boolean | Computed<boolean>;
   instanceEncryptionKey?: AlphaInstance_Disks_DiskEncryptionKey | Computed<AlphaInstance_Disks_DiskEncryptionKey>;
   /** KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified. */
@@ -1152,6 +1154,7 @@ export interface AlphaInstanceConfig {
   name?: string | Computed<string>;
   /** An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance. */
   networkInterfaces?: AlphaInstance_NetworkInterfaces[] | Computed<AlphaInstance_NetworkInterfaces[]>;
+  /** Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred) */
   networkPerformanceConfig?: AlphaInstance_NetworkPerformanceConfig | Computed<AlphaInstance_NetworkPerformanceConfig>;
   /** Additional instance params. */
   params?: AlphaInstance_Params | Computed<AlphaInstance_Params>;
@@ -1190,6 +1193,7 @@ export interface AlphaInstanceConfig {
   tags?: AlphaInstance_Tags | Computed<AlphaInstance_Tags>;
   /** Upcoming Maintenance notification information. */
   upcomingMaintenance?: AlphaInstance_ResourceStatus_UpcomingMaintenance | Computed<AlphaInstance_ResourceStatus_UpcomingMaintenance>;
+  /** Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred) */
   workloadIdentityConfig?: AlphaInstance_WorkloadIdentityConfig | Computed<AlphaInstance_WorkloadIdentityConfig>;
 }
 
@@ -1222,7 +1226,9 @@ export interface AlphaInstanceAttrs {
   hostname: string;
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** Whether this instance has a Trusted Platform Module (TPM)-backed identity. (AI-inferred) */
   identity: string;
+  /** Whether an identity certificate is enabled for this instance's own TPM-backed identity. (AI-inferred) */
   identityCertificate: boolean;
   instanceEncryptionKey: AlphaInstance_Disks_DiskEncryptionKey;
   /** KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified. */
@@ -1253,6 +1259,7 @@ export interface AlphaInstanceAttrs {
   name: string;
   /** An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance. */
   networkInterfaces: AlphaInstance_NetworkInterfaces[];
+  /** Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred) */
   networkPerformanceConfig: AlphaInstance_NetworkPerformanceConfig;
   /** Additional instance params. */
   params: AlphaInstance_Params;
@@ -1307,6 +1314,7 @@ export interface AlphaInstanceAttrs {
   tags: AlphaInstance_Tags;
   /** Upcoming Maintenance notification information. */
   upcomingMaintenance: AlphaInstance_ResourceStatus_UpcomingMaintenance;
+  /** Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred) */
   workloadIdentityConfig: AlphaInstance_WorkloadIdentityConfig;
   /** Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   zone: string;

@@ -148,6 +148,7 @@ export interface AlphaWireGroupAttrs {
   reconciling: boolean;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** The server-defined, fully qualified URL for this exact resource, including its own numeric resource id. (AI-inferred) */
   selfLinkWithId: string;
   /** Service level details determined for the wire group configuration. */
   serviceLevel: AlphaWireGroup_ServiceLevel;

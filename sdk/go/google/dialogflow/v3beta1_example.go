@@ -562,28 +562,47 @@ var V3beta1Example_ActionsFields = ubx.FieldMap{
 }
 
 type V3beta1ExampleConfig struct {
-	Actions           any
+	// The action(s) taken by this step or event. (AI-inferred)
+	Actions any
+	// The current state of this conversation. (AI-inferred)
 	ConversationState any
-	Description       any
-	DisplayName       any
-	LanguageCode      any
-	Name              any
-	PlaybookInput     any
-	PlaybookOutput    any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The input parameter value(s) a playbook invocation was given. (AI-inferred)
+	PlaybookInput any
+	// The output parameter value(s) a playbook invocation produced. (AI-inferred)
+	PlaybookOutput any
 }
 
 type V3beta1ExampleAttrs struct {
-	Actions           any
+	// The action(s) taken by this step or event. (AI-inferred)
+	Actions any
+	// The current state of this conversation. (AI-inferred)
 	ConversationState any
-	CreateTime        any
-	Description       any
-	DisplayName       any
-	LanguageCode      any
-	Name              any
-	PlaybookInput     any
-	PlaybookOutput    any
-	TokenCount        any
-	UpdateTime        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The input parameter value(s) a playbook invocation was given. (AI-inferred)
+	PlaybookInput any
+	// The output parameter value(s) a playbook invocation produced. (AI-inferred)
+	PlaybookOutput any
+	// How many tokens this content consumed. (AI-inferred)
+	TokenCount any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var V3beta1Example = ubx.ResourceBinding{

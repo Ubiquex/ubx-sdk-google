@@ -8,256 +8,414 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobTemplate_Config_AdBreaks:
+    # Where in the input this segment/edit starts. (AI-inferred)
     start_time_offset: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_EditList:
+    # Where in the input this segment/edit ends. (AI-inferred)
     end_time_offset: Any = None
+    # The input file(s) for this job. (AI-inferred)
     inputs: Any = None
+    # A reference to the encryption key this uses. (AI-inferred)
     key: Any = None
+    # Where in the input this segment/edit starts. (AI-inferred)
     start_time_offset: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_AudioStream_Mapping:
+    # The MP4 atom used to identify the encryption key. (AI-inferred)
     atom_key: Any = None
+    # The audio gain adjustment, in decibels. (AI-inferred)
     gain_db: Any = None
+    # The source audio channel this mapping reads from. (AI-inferred)
     input_channel: Any = None
+    # A reference to the input this applies to. (AI-inferred)
     input_key: Any = None
+    # The specific track within the input this applies to. (AI-inferred)
     input_track: Any = None
+    # The destination audio channel this mapping writes to. (AI-inferred)
     output_channel: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_AudioStream:
+    # The target bitrate, in bits per second. (AI-inferred)
     bitrate_bps: Any = None
+    # The number of audio channels. (AI-inferred)
     channel_count: Any = None
+    # The spatial arrangement of audio channels, e.g. stereo or 5.1 surround. (AI-inferred)
     channel_layout: Any = None
+    # The audio or video codec used, e.g. `h264` or `aac`. (AI-inferred)
     codec: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # How input stream(s) are mapped into this output stream. (AI-inferred)
     mapping: Any = None
+    # The audio sample rate, in Hz. (AI-inferred)
     sample_rate_hertz: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_TextStream_Mapping:
+    # The MP4 atom used to identify the encryption key. (AI-inferred)
     atom_key: Any = None
+    # A reference to the input this applies to. (AI-inferred)
     input_key: Any = None
+    # The specific track within the input this applies to. (AI-inferred)
     input_track: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_TextStream:
+    # The audio or video codec used, e.g. `h264` or `aac`. (AI-inferred)
     codec: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # How input stream(s) are mapped into this output stream. (AI-inferred)
     mapping: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_VideoStream_H264:
+    # Whether the encoder is allowed to use an open Group of Pictures structure, rather than requiring closed GOPs. (AI-inferred)
     allow_open_gop: Any = None
+    # The strength of adaptive quantization applied during encoding, trading bitrate efficiency for encoding complexity. (AI-inferred)
     aq_strength: Any = None
+    # How many consecutive B-frames the encoder may use between reference frames. (AI-inferred)
     b_frame_count: Any = None
+    # Whether B-frames may reference other B-frames, forming a hierarchical prediction structure. (AI-inferred)
     b_pyramid: Any = None
+    # The target bitrate, in bits per second. (AI-inferred)
     bitrate_bps: Any = None
+    # The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred)
     crf_level: Any = None
+    # Whether encoding runs in two passes -- the first analyzes the content, the second encodes using that analysis for better quality. (AI-inferred)
     enable_two_pass: Any = None
+    # The entropy coding method used, e.g. CABAC or CAVLC. (AI-inferred)
     entropy_coder: Any = None
+    # The output video frame rate, in frames per second. (AI-inferred)
     frame_rate: Any = None
+    # How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred)
     frame_rate_conversion_strategy: Any = None
+    # The target duration of each Group of Pictures. (AI-inferred)
     gop_duration: Any = None
+    # The target number of frames in each Group of Pictures. (AI-inferred)
     gop_frame_count: Any = None
+    # The output height, in pixels. (AI-inferred)
     height_pixels: Any = None
+    # Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred)
     hlg: Any = None
+    # The pixel format of the output video, e.g. `yuv420p`. (AI-inferred)
     pixel_format: Any = None
+    # A named preset bundling a full job configuration, as a shortcut for setting individual fields. (AI-inferred)
     preset: Any = None
+    # The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred)
     profile: Any = None
+    # How the encoder controls bitrate, e.g. constant or variable. (AI-inferred)
     rate_control_mode: Any = None
+    # Configures standard-dynamic-range video output. (AI-inferred)
     sdr: Any = None
+    # An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred)
     tune: Any = None
+    # The initial fullness of the Video Buffering Verifier model, in bits. (AI-inferred)
     vbv_fullness_bits: Any = None
+    # The size of the Video Buffering Verifier buffer model, in bits, constraining short-term bitrate variation. (AI-inferred)
     vbv_size_bits: Any = None
+    # The output width, in pixels. (AI-inferred)
     width_pixels: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_VideoStream_H265:
+    # Whether the encoder is allowed to use an open Group of Pictures structure, rather than requiring closed GOPs. (AI-inferred)
     allow_open_gop: Any = None
+    # The strength of adaptive quantization applied during encoding, trading bitrate efficiency for encoding complexity. (AI-inferred)
     aq_strength: Any = None
+    # How many consecutive B-frames the encoder may use between reference frames. (AI-inferred)
     b_frame_count: Any = None
+    # Whether B-frames may reference other B-frames, forming a hierarchical prediction structure. (AI-inferred)
     b_pyramid: Any = None
+    # The target bitrate, in bits per second. (AI-inferred)
     bitrate_bps: Any = None
+    # The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred)
     crf_level: Any = None
+    # Whether encoding runs in two passes -- the first analyzes the content, the second encodes using that analysis for better quality. (AI-inferred)
     enable_two_pass: Any = None
+    # The output video frame rate, in frames per second. (AI-inferred)
     frame_rate: Any = None
+    # How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred)
     frame_rate_conversion_strategy: Any = None
+    # The target duration of each Group of Pictures. (AI-inferred)
     gop_duration: Any = None
+    # The target number of frames in each Group of Pictures. (AI-inferred)
     gop_frame_count: Any = None
+    # Configures HDR10 high-dynamic-range video output. (AI-inferred)
     hdr10: Any = None
+    # The output height, in pixels. (AI-inferred)
     height_pixels: Any = None
+    # Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred)
     hlg: Any = None
+    # The pixel format of the output video, e.g. `yuv420p`. (AI-inferred)
     pixel_format: Any = None
+    # A named preset bundling a full job configuration, as a shortcut for setting individual fields. (AI-inferred)
     preset: Any = None
+    # The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred)
     profile: Any = None
+    # How the encoder controls bitrate, e.g. constant or variable. (AI-inferred)
     rate_control_mode: Any = None
+    # Configures standard-dynamic-range video output. (AI-inferred)
     sdr: Any = None
+    # An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred)
     tune: Any = None
+    # The initial fullness of the Video Buffering Verifier model, in bits. (AI-inferred)
     vbv_fullness_bits: Any = None
+    # The size of the Video Buffering Verifier buffer model, in bits, constraining short-term bitrate variation. (AI-inferred)
     vbv_size_bits: Any = None
+    # The output width, in pixels. (AI-inferred)
     width_pixels: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_VideoStream_Vp9:
+    # The target bitrate, in bits per second. (AI-inferred)
     bitrate_bps: Any = None
+    # The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred)
     crf_level: Any = None
+    # The output video frame rate, in frames per second. (AI-inferred)
     frame_rate: Any = None
+    # How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred)
     frame_rate_conversion_strategy: Any = None
+    # The target duration of each Group of Pictures. (AI-inferred)
     gop_duration: Any = None
+    # The target number of frames in each Group of Pictures. (AI-inferred)
     gop_frame_count: Any = None
+    # The output height, in pixels. (AI-inferred)
     height_pixels: Any = None
+    # Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred)
     hlg: Any = None
+    # The pixel format of the output video, e.g. `yuv420p`. (AI-inferred)
     pixel_format: Any = None
+    # The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred)
     profile: Any = None
+    # How the encoder controls bitrate, e.g. constant or variable. (AI-inferred)
     rate_control_mode: Any = None
+    # Configures standard-dynamic-range video output. (AI-inferred)
     sdr: Any = None
+    # The output width, in pixels. (AI-inferred)
     width_pixels: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams_VideoStream:
+    # Configures the output video codec as H.264/AVC. (AI-inferred)
     h264: Any = None
+    # Configures the output video codec as H.265/HEVC. (AI-inferred)
     h265: Any = None
+    # Configures the output video codec as VP9. (AI-inferred)
     vp9: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_ElementaryStreams:
+    # Configuration for a single audio output stream. (AI-inferred)
     audio_stream: Any = None
+    # A reference to the encryption key this uses. (AI-inferred)
     key: Any = None
+    # Configuration for a single text/subtitle output stream. (AI-inferred)
     text_stream: Any = None
+    # Configuration for a single video output stream. (AI-inferred)
     video_stream: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Encryptions_DrmSystems:
+    # Encrypts output using the ClearKey DRM scheme. (AI-inferred)
     clearkey: Any = None
+    # Encrypts output using Apple's FairPlay DRM scheme. (AI-inferred)
     fairplay: Any = None
+    # Encrypts output using Microsoft's PlayReady DRM scheme. (AI-inferred)
     playready: Any = None
+    # Encrypts output using Google's Widevine DRM scheme. (AI-inferred)
     widevine: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Encryptions_MpegCenc:
+    # Which encryption scheme is used. (AI-inferred)
     scheme: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Encryptions_SecretManagerKeySource:
+    # The Secret Manager secret version holding the encryption key. (AI-inferred)
     secret_version: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Encryptions:
+    # Encrypts the HLS output using AES-128, the legacy HLS encryption scheme. (AI-inferred)
     aes128: Any = None
+    # The DRM system(s) (Widevine, FairPlay, PlayReady, ClearKey) this encryption configuration supports. (AI-inferred)
     drm_systems: Any = None
+    # An identifier for this resource, unique within its own containing job. (AI-inferred)
     id: Any = None
+    # Encrypts output using the MPEG Common Encryption scheme, compatible with multiple DRM systems. (AI-inferred)
     mpeg_cenc: Any = None
+    # Encrypts output using Sample-AES, Apple's own per-sample HLS encryption scheme. (AI-inferred)
     sample_aes: Any = None
+    # Sources the encryption key from a Secret Manager secret. (AI-inferred)
     secret_manager_key_source: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_Attributes_TrackDefinitions:
+    # Whether spoken language is automatically detected in the input audio. (AI-inferred)
     detect_languages: Any = None
+    # Output only. The language(s) automatically detected in the input audio. (AI-inferred)
     detected_languages: Any = None
+    # The specific track within the input this applies to. (AI-inferred)
     input_track: Any = None
+    # The language(s) this applies to. (AI-inferred)
     languages: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_Attributes:
+    # Defines the individual track(s) within an audio elementary stream, e.g. for later mapping into multi-channel output. (AI-inferred)
     track_definitions: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Audio:
+    # Whether high-frequency audio content is boosted during loudness normalization. (AI-inferred)
     high_boost: Any = None
+    # Whether low-frequency audio content is boosted during loudness normalization. (AI-inferred)
     low_boost: Any = None
+    # The target loudness level, in LUFS (Loudness Units Full Scale). (AI-inferred)
     lufs: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Color:
+    # The brightness adjustment applied to the video. (AI-inferred)
     brightness: Any = None
+    # The contrast adjustment applied to the video. (AI-inferred)
     contrast: Any = None
+    # The color saturation adjustment applied to the video. (AI-inferred)
     saturation: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Crop:
+    # The number of pixels cropped or positioned from the bottom edge. (AI-inferred)
     bottom_pixels: Any = None
+    # The number of pixels cropped or positioned from the left edge. (AI-inferred)
     left_pixels: Any = None
+    # The number of pixels cropped or positioned from the right edge. (AI-inferred)
     right_pixels: Any = None
+    # The number of pixels cropped or positioned from the top edge. (AI-inferred)
     top_pixels: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Deblock:
+    # Whether this feature is turned on. (AI-inferred)
     enabled: Any = None
+    # How strongly this filter is applied. (AI-inferred)
     strength: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Deinterlace_Bwdif:
+    # Whether deinterlacing is applied to every frame, rather than only frames detected as interlaced. (AI-inferred)
     deinterlace_all_frames: Any = None
+    # Which operating mode this uses. (AI-inferred)
     mode: Any = None
+    # Which field (top or bottom) is treated as first when deinterlacing. (AI-inferred)
     parity: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Deinterlace_Yadif:
+    # Whether deinterlacing is applied to every frame, rather than only frames detected as interlaced. (AI-inferred)
     deinterlace_all_frames: Any = None
+    # Disables spatial-domain interlacing detection, relying only on temporal detection. (AI-inferred)
     disable_spatial_interlacing: Any = None
+    # Which operating mode this uses. (AI-inferred)
     mode: Any = None
+    # Which field (top or bottom) is treated as first when deinterlacing. (AI-inferred)
     parity: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Deinterlace:
+    # Deinterlaces using the Bob Weaver Deinterlacing Filter algorithm. (AI-inferred)
     bwdif: Any = None
+    # Deinterlaces using the Yet Another DeInterlacing Filter algorithm. (AI-inferred)
     yadif: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig_Denoise:
+    # How strongly this filter is applied. (AI-inferred)
     strength: Any = None
+    # An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred)
     tune: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs_PreprocessingConfig:
+    # Audio content or configuration. (AI-inferred)
     audio: Any = None
+    # Color adjustment configuration applied to the video. (AI-inferred)
     color: Any = None
+    # Configuration for cropping the input video before encoding. (AI-inferred)
     crop: Any = None
+    # Whether the deblocking filter is applied to reduce blocking artifacts. (AI-inferred)
     deblock: Any = None
+    # Configuration for converting interlaced input video to progressive scan. (AI-inferred)
     deinterlace: Any = None
+    # Configuration for reducing visual noise in the input video before encoding. (AI-inferred)
     denoise: Any = None
+    # Configuration for padding the video with borders, e.g. to change aspect ratio without cropping. (AI-inferred)
     pad: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Inputs:
+    # Additional codec-specific configuration attribute(s). (AI-inferred)
     attributes: Any = None
+    # A reference to the encryption key this uses. (AI-inferred)
     key: Any = None
+    # Configuration for filters (denoise, deblock, color, crop, pad, audio) applied before encoding. (AI-inferred)
     preprocessing_config: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Manifests_Dash:
+    # How output segments are referenced from the manifest, e.g. by separate files or byte ranges. (AI-inferred)
     segment_reference_scheme: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Manifests:
+    # Configures output for DASH (Dynamic Adaptive Streaming over HTTP) delivery. (AI-inferred)
     dash: Any = None
+    # The output file name. (AI-inferred)
     file_name: Any = None
+    # The output file(s) produced by combining specific elementary streams together. (AI-inferred)
     mux_streams: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_MuxStreams_Fmp4:
+    # A specific fourcc codec tag to write into the output container. (AI-inferred)
     codec_tag: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_MuxStreams_SegmentSettings:
+    # Whether each output segment is written as a separate file, rather than one continuous stream. (AI-inferred)
     individual_segments: Any = None
+    # The target duration of each output segment. (AI-inferred)
     segment_duration: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_MuxStreams:
+    # The output file container format, e.g. `mp4` or `ts`. (AI-inferred)
     container: Any = None
+    # The individual audio/video/text stream(s) defined for this job, before being combined into output files. (AI-inferred)
     elementary_streams: Any = None
+    # A reference to the encryption configuration this applies to. (AI-inferred)
     encryption_id: Any = None
+    # The output file name. (AI-inferred)
     file_name: Any = None
+    # Configures output using the fragmented MP4 container. (AI-inferred)
     fmp4: Any = None
+    # A reference to the encryption key this uses. (AI-inferred)
     key: Any = None
+    # Configuration for how output is divided into segments. (AI-inferred)
     segment_settings: Any = None
 
 @dataclasses.dataclass
@@ -267,36 +425,52 @@ class JobTemplate_Config_Output:
 
 @dataclasses.dataclass
 class JobTemplate_Config_Overlays_Animations_AnimationFade_Xy:
+    # The horizontal position. (AI-inferred)
     x: Any = None
+    # The vertical position. (AI-inferred)
     y: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Overlays_Animations_AnimationFade:
+    # Where in the input this segment/edit ends. (AI-inferred)
     end_time_offset: Any = None
+    # Whether this animation fades in or fades out. (AI-inferred)
     fade_type: Any = None
+    # Where in the input this segment/edit starts. (AI-inferred)
     start_time_offset: Any = None
+    # The x/y position coordinates. (AI-inferred)
     xy: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Overlays_Animations_AnimationStatic:
+    # Where in the input this segment/edit starts. (AI-inferred)
     start_time_offset: Any = None
+    # The x/y position coordinates. (AI-inferred)
     xy: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Overlays_Animations:
+    # Marks the end of an animated overlay sequence. (AI-inferred)
     animation_end: Any = None
+    # A fade-in/fade-out animation applied to an overlay. (AI-inferred)
     animation_fade: Any = None
+    # A static (non-animated) overlay, shown for a fixed duration. (AI-inferred)
     animation_static: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Overlays_Image:
+    # The alpha (transparency) level applied to this overlay. (AI-inferred)
     alpha: Any = None
+    # The output video's own pixel dimensions. (AI-inferred)
     resolution: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class JobTemplate_Config_Overlays:
+    # The animation(s) applied to this overlay over the course of the output. (AI-inferred)
     animations: Any = None
+    # An image overlay applied to the video. (AI-inferred)
     image: Any = None
 
 @dataclasses.dataclass
@@ -306,16 +480,27 @@ class JobTemplate_Config_PubsubDestination:
 
 @dataclasses.dataclass
 class JobTemplate_Config_SpriteSheets:
+    # The number of columns in a sprite sheet. (AI-inferred)
     column_count: Any = None
+    # Where in the input this segment/edit ends. (AI-inferred)
     end_time_offset: Any = None
+    # The prefix applied to generated output file names. (AI-inferred)
     file_prefix: Any = None
+    # A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
     format: Any = None
+    # How often this recurring action happens. (AI-inferred)
     interval: Any = None
+    # The target output quality level. (AI-inferred)
     quality: Any = None
+    # The number of rows in a sprite sheet. (AI-inferred)
     row_count: Any = None
+    # The height, in pixels, of each thumbnail in a sprite sheet. (AI-inferred)
     sprite_height_pixels: Any = None
+    # The width, in pixels, of each thumbnail in a sprite sheet. (AI-inferred)
     sprite_width_pixels: Any = None
+    # Where in the input this segment/edit starts. (AI-inferred)
     start_time_offset: Any = None
+    # The total number of items. (AI-inferred)
     total_count: Any = None
 
 @dataclasses.dataclass

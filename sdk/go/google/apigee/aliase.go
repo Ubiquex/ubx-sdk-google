@@ -4,17 +4,28 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Aliase_CertsInfo_CertInfo struct {
-	BasicConstraints        any
-	ExpiryDate              any
-	IsValid                 any
-	Issuer                  any
-	PublicKey               any
-	SerialNumber            any
-	SigAlgName              any
-	Subject                 any
+	// The X.509 Basic Constraints extension, indicating whether this certificate is a CA. (AI-inferred)
+	BasicConstraints any
+	// When this certificate expires. (AI-inferred)
+	ExpiryDate any
+	// Whether this certificate is currently valid (not expired, not revoked). (AI-inferred)
+	IsValid any
+	// The issuer identity of this certificate. (AI-inferred)
+	Issuer any
+	// The public key of this certificate or key pair. (AI-inferred)
+	PublicKey any
+	// This certificate's own serial number. (AI-inferred)
+	SerialNumber any
+	// The name of the algorithm used to sign this certificate. (AI-inferred)
+	SigAlgName any
+	// The subject identity of this certificate. (AI-inferred)
+	Subject any
+	// Additional identity/identities (e.g. DNS names) this certificate is also valid for. (AI-inferred)
 	SubjectAlternativeNames any
-	ValidFrom               any
-	Version                 any
+	// When this certificate becomes valid. (AI-inferred)
+	ValidFrom any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Aliase_CertsInfo struct {
@@ -33,7 +44,8 @@ type AliaseConfig struct {
 
 type AliaseAttrs struct {
 	// Resource ID for this alias. Values must match the regular expression `[^/]{1,255}`.
-	Alias     any
+	Alias any
+	// Detail about the certificate(s) associated with this keystore/alias. (AI-inferred)
 	CertsInfo any
 	// The HTTP Content-Type header value specifying the content type of the body.
 	ContentType any

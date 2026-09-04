@@ -19,16 +19,24 @@ export interface Feature_Spec_Configmanagement_Binauthz {
 }
 
 export interface Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides_Containers {
+  /** The name of this container. (AI-inferred) */
   containerName?: string | Computed<string>;
+  /** The maximum CPU this container may use. (AI-inferred) */
   cpuLimit?: string | Computed<string>;
+  /** The CPU amount reserved for this container. (AI-inferred) */
   cpuRequest?: string | Computed<string>;
+  /** The maximum memory this container may use. (AI-inferred) */
   memoryLimit?: string | Computed<string>;
+  /** The memory amount reserved for this container. (AI-inferred) */
   memoryRequest?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides {
+  /** The container(s) making up this deployment. (AI-inferred) */
   containers?: Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides_Containers[] | Computed<Feature_Spec_Configmanagement_ConfigSync_DeploymentOverrides_Containers[]>;
+  /** The name of this Kubernetes Deployment. (AI-inferred) */
   deploymentName?: string | Computed<string>;
+  /** The Kubernetes namespace this Deployment runs in. (AI-inferred) */
   deploymentNamespace?: string | Computed<string>;
 }
 
@@ -136,90 +144,145 @@ export interface Feature_Spec_Configmanagement {
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_AzureadConfig {
+  /** The OAuth/OIDC client ID used to authenticate. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** The OAuth/OIDC client secret used to authenticate. (AI-inferred) */
   clientSecret?: string | Computed<string>;
+  /** The client secret, encrypted for storage. (AI-inferred) */
   encryptedClientSecret?: string | Computed<string>;
+  /** How group membership is formatted in the identity provider's own claims. (AI-inferred) */
   groupFormat?: string | Computed<string>;
+  /** The redirect URI `kubectl` uses to complete the OIDC login flow. (AI-inferred) */
   kubectlRedirectUri?: string | Computed<string>;
+  /** A reference to the tenant this applies to. (AI-inferred) */
   tenant?: string | Computed<string>;
+  /** The OIDC claim holding the user's own identifier. (AI-inferred) */
   userClaim?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_GoogleConfig {
+  /** Whether this feature is turned off. (AI-inferred) */
   disable?: boolean | Computed<boolean>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_LdapConfig_Group {
+  /** The LDAP base distinguished name searches start from. (AI-inferred) */
   baseDn?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The LDAP attribute used as the user's own unique identifier. (AI-inferred) */
   idAttribute?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_LdapConfig_Server {
+  /** The base64-encoded CA certificate trusted for verifying this server's own TLS certificate. (AI-inferred) */
   certificateAuthorityData?: string | Computed<string>;
+  /** How this cluster connects back to Google Cloud, e.g. directly or via a proxy. (AI-inferred) */
   connectionType?: string | Computed<string>;
+  /** The hostname of the identity provider server. (AI-inferred) */
   host?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentials {
+  /** A distinguished name. (AI-inferred) */
   dn?: string | Computed<string>;
+  /** The password, encrypted for storage. (AI-inferred) */
   encryptedPassword?: string | Computed<string>;
+  /** The password used to authenticate. (AI-inferred) */
   password?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount {
+  /** Username/password credentials used for a simple LDAP bind. (AI-inferred) */
   simpleBindCredentials?: Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentials | Computed<Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentials>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_LdapConfig_User {
+  /** The LDAP base distinguished name searches start from. (AI-inferred) */
   baseDn?: string | Computed<string>;
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The LDAP attribute used as the user's own unique identifier. (AI-inferred) */
   idAttribute?: string | Computed<string>;
+  /** The LDAP attribute presented to the user as their own login name. (AI-inferred) */
   loginAttribute?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_LdapConfig {
+  /** A reference to the group this applies to. (AI-inferred) */
   group?: Feature_Spec_Identityservice_AuthMethods_LdapConfig_Group | Computed<Feature_Spec_Identityservice_AuthMethods_LdapConfig_Group>;
+  /** The server hostname or address this connects to. (AI-inferred) */
   server?: Feature_Spec_Identityservice_AuthMethods_LdapConfig_Server | Computed<Feature_Spec_Identityservice_AuthMethods_LdapConfig_Server>;
+  /** The service account credentials used to bind to this LDAP directory for authentication. (AI-inferred) */
   serviceAccount?: Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount | Computed<Feature_Spec_Identityservice_AuthMethods_LdapConfig_ServiceAccount>;
+  /** A reference to the user this applies to. (AI-inferred) */
   user?: Feature_Spec_Identityservice_AuthMethods_LdapConfig_User | Computed<Feature_Spec_Identityservice_AuthMethods_LdapConfig_User>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_OidcConfig {
+  /** The base64-encoded CA certificate trusted for verifying this server's own TLS certificate. (AI-inferred) */
   certificateAuthorityData?: string | Computed<string>;
+  /** The OAuth/OIDC client ID used to authenticate. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** The OAuth/OIDC client secret used to authenticate. (AI-inferred) */
   clientSecret?: string | Computed<string>;
+  /** Whether a proxy is deployed to let the Cloud Console reach this cluster's own private control plane. (AI-inferred) */
   deployCloudConsoleProxy?: boolean | Computed<boolean>;
+  /** Whether short-lived access tokens are issued for authenticating to this cluster. (AI-inferred) */
   enableAccessToken?: boolean | Computed<boolean>;
+  /** The client secret, encrypted for storage. (AI-inferred) */
   encryptedClientSecret?: string | Computed<string>;
+  /** Additional caller-defined parameter(s) passed to the identity provider. (AI-inferred) */
   extraParams?: string | Computed<string>;
+  /** A prefix prepended to group names sourced from the identity provider. (AI-inferred) */
   groupPrefix?: string | Computed<string>;
+  /** The OIDC claim holding a user's own group membership. (AI-inferred) */
   groupsClaim?: string | Computed<string>;
+  /** The OIDC issuer URL for this identity provider. (AI-inferred) */
   issuerUri?: string | Computed<string>;
+  /** The redirect URI `kubectl` uses to complete the OIDC login flow. (AI-inferred) */
   kubectlRedirectUri?: string | Computed<string>;
+  /** The OAuth scope(s) requested. (AI-inferred) */
   scopes?: string | Computed<string>;
+  /** The OIDC claim holding the user's own identifier. (AI-inferred) */
   userClaim?: string | Computed<string>;
+  /** A prefix prepended to usernames sourced from the identity provider. (AI-inferred) */
   userPrefix?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods_SamlConfig {
+  /** How claims in the identity provider's own token map to Kubernetes user/group attributes. (AI-inferred) */
   attributeMapping?: Record<string, string> | Computed<Record<string, string>>;
+  /** A prefix prepended to group names sourced from the identity provider. (AI-inferred) */
   groupPrefix?: string | Computed<string>;
+  /** The LDAP attribute holding a user's own group membership. (AI-inferred) */
   groupsAttribute?: string | Computed<string>;
+  /** The certificate(s) trusted for verifying SAML assertions from this identity provider. (AI-inferred) */
   identityProviderCertificates?: string[] | Computed<string[]>;
+  /** An identifier for this identity provider. (AI-inferred) */
   identityProviderId?: string | Computed<string>;
+  /** The single sign-on URL for this SAML identity provider. (AI-inferred) */
   identityProviderSsoUri?: string | Computed<string>;
+  /** The LDAP attribute holding the user's own identifier. (AI-inferred) */
   userAttribute?: string | Computed<string>;
+  /** A prefix prepended to usernames sourced from the identity provider. (AI-inferred) */
   userPrefix?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Identityservice_AuthMethods {
+  /** Configuration for authenticating using Microsoft Entra ID (Azure AD). (AI-inferred) */
   azureadConfig?: Feature_Spec_Identityservice_AuthMethods_AzureadConfig | Computed<Feature_Spec_Identityservice_AuthMethods_AzureadConfig>;
+  /** Configuration for authenticating using Google identity. (AI-inferred) */
   googleConfig?: Feature_Spec_Identityservice_AuthMethods_GoogleConfig | Computed<Feature_Spec_Identityservice_AuthMethods_GoogleConfig>;
+  /** Configuration for authenticating against an LDAP directory. (AI-inferred) */
   ldapConfig?: Feature_Spec_Identityservice_AuthMethods_LdapConfig | Computed<Feature_Spec_Identityservice_AuthMethods_LdapConfig>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for authenticating using OpenID Connect. (AI-inferred) */
   oidcConfig?: Feature_Spec_Identityservice_AuthMethods_OidcConfig | Computed<Feature_Spec_Identityservice_AuthMethods_OidcConfig>;
+  /** The proxy this connection routes through. (AI-inferred) */
   proxy?: string | Computed<string>;
+  /** Configuration for authenticating using SAML. (AI-inferred) */
   samlConfig?: Feature_Spec_Identityservice_AuthMethods_SamlConfig | Computed<Feature_Spec_Identityservice_AuthMethods_SamlConfig>;
 }
 
@@ -250,31 +313,45 @@ export interface Feature_Spec_Origin {
 }
 
 export interface Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits {
+  /** The CPU amount requested or allocated. (AI-inferred) */
   cpu?: string | Computed<string>;
+  /** The memory amount requested or allocated. (AI-inferred) */
   memory?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources {
+  /** The maximum resource amount(s) allowed. (AI-inferred) */
   limits?: Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits | Computed<Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits>;
+  /** The resource amount(s) reserved for this container. (AI-inferred) */
   requests?: Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits | Computed<Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits>;
 }
 
 export interface Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerations {
+  /** What happens to a pod that doesn't tolerate this taint. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** A key identifying this entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** How this taint's own key/value is compared against a toleration. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs {
+  /** The compute resource requirement(s) for this container. (AI-inferred) */
   containerResources?: Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources | Computed<Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources>;
+  /** Constraint(s) preferring or requiring pods to be scheduled near other specific pods. (AI-inferred) */
   podAffinity?: string | Computed<string>;
+  /** Constraint(s) preferring or requiring pods to be scheduled away from other specific pods. (AI-inferred) */
   podAntiAffinity?: boolean | Computed<boolean>;
+  /** The taint(s) this pod tolerates, allowing it to be scheduled onto otherwise-repelling nodes. (AI-inferred) */
   podTolerations?: Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerations[] | Computed<Feature_Spec_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerations[]>;
+  /** How many replicas this deployment runs. (AI-inferred) */
   replicaCount?: string | Computed<string>;
 }
 
 export interface Feature_Spec_Policycontroller_PolicyControllerHubConfig_PolicyContent_Bundles {
+  /** The Kubernetes namespace(s) excluded from this policy. (AI-inferred) */
   exemptedNamespaces?: string[] | Computed<string[]>;
 }
 
@@ -375,18 +452,25 @@ export interface Feature_State_Clusterupgrade_Ignored {
 }
 
 export interface Feature_State_Clusterupgrade_Upgrades_Status {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Feature_State_Clusterupgrade_Upgrades_Upgrade {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Feature_State_Clusterupgrade_Upgrades {
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: Feature_State_Clusterupgrade_Upgrades_Status | Computed<Feature_State_Clusterupgrade_Upgrades_Status>;
+  /** Configuration for automatically upgrading this component. (AI-inferred) */
   upgrade?: Feature_State_Clusterupgrade_Upgrades_Upgrade | Computed<Feature_State_Clusterupgrade_Upgrades_Upgrade>;
 }
 
@@ -431,25 +515,36 @@ export interface Feature_State_Configmanagement_ConfigSyncState_DeploymentState 
 }
 
 export interface Feature_State_Configmanagement_ConfigSyncState_Errors {
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
 }
 
 export interface Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvk {
+  /** A reference to the group this applies to. (AI-inferred) */
   group?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources {
+  /** The Kubernetes Group/Version/Kind of this resource. (AI-inferred) */
   resourceGvk?: Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvk | Computed<Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvk>;
+  /** The name of this Kubernetes resource. (AI-inferred) */
   resourceName?: string | Computed<string>;
+  /** The Kubernetes namespace this resource belongs to. (AI-inferred) */
   resourceNamespace?: string | Computed<string>;
+  /** The path this configuration was sourced from. (AI-inferred) */
   sourcePath?: string | Computed<string>;
 }
 
 export interface Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The resource(s) associated with this error. (AI-inferred) */
   errorResources?: Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources[] | Computed<Feature_State_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources[]>;
 }
 
@@ -582,7 +677,9 @@ export interface Feature_State_Metering {
 }
 
 export interface Feature_State_Policycontroller_ComponentStates {
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
@@ -605,8 +702,11 @@ export interface Feature_State_Policycontroller {
 }
 
 export interface Feature_State_Rbacrolebindingactuation_RbacrolebindingStates {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
@@ -616,32 +716,47 @@ export interface Feature_State_Rbacrolebindingactuation {
 }
 
 export interface Feature_State_Servicemesh_AnalysisMessages_MessageBase_Type {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
 export interface Feature_State_Servicemesh_AnalysisMessages_MessageBase {
+  /** A URL to further documentation about this. (AI-inferred) */
   documentationUrl?: string | Computed<string>;
+  /** The severity or intensity level of this setting. (AI-inferred) */
   level?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: Feature_State_Servicemesh_AnalysisMessages_MessageBase_Type | Computed<Feature_State_Servicemesh_AnalysisMessages_MessageBase_Type>;
 }
 
 export interface Feature_State_Servicemesh_AnalysisMessages {
+  /** The argument(s) passed to this command. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The base message template used for this notification. (AI-inferred) */
   messageBase?: Feature_State_Servicemesh_AnalysisMessages_MessageBase | Computed<Feature_State_Servicemesh_AnalysisMessages_MessageBase>;
+  /** The path(s) to the Kubernetes manifest(s) this applies to. (AI-inferred) */
   resourcePaths?: string[] | Computed<string[]>;
 }
 
 export interface Feature_State_Servicemesh_Conditions {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** A URL to further documentation about this. (AI-inferred) */
   documentationLink?: string | Computed<string>;
+  /** How serious this finding is. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface Feature_State_Servicemesh_ControlPlaneManagement_Details {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
 }
 

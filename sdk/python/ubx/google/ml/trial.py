@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Trial_FinalMeasurement_Metrics:
+    # The name of the metric being reported. (AI-inferred)
     metric: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -22,9 +24,13 @@ class Trial_FinalMeasurement:
 
 @dataclasses.dataclass
 class Trial_Parameters:
+    # A floating-point value. (AI-inferred)
     float_value: Any = None
+    # An integer value. (AI-inferred)
     int_value: Any = None
+    # The name of a hyperparameter being tuned. (AI-inferred)
     parameter: Any = None
+    # A string value. (AI-inferred)
     string_value: Any = None
 
 _Trial_FinalMeasurement_MetricsFields = {

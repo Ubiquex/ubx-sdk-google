@@ -2,84 +2,133 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IndexEndpoint_DeployedIndexes_AutomaticResources {
+  /** The maximum number of machine replicas this job may scale up to. (AI-inferred) */
   maxReplicaCount?: number | Computed<number>;
+  /** The minimum number of machine replicas this job scales down to. (AI-inferred) */
   minReplicaCount?: number | Computed<number>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecs {
+  /** The name of the metric this applies to. (AI-inferred) */
   metricName?: string | Computed<string>;
+  /** The target value autoscaling tries to maintain for this metric. (AI-inferred) */
   target?: number | Computed<number>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinity {
+  /** A key identifying this entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred) */
   reservationAffinityType?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec {
+  /** How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
+  /** The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred) */
   reservationAffinity?: IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinity | Computed<IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinity>;
+  /** The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred) */
   tpuTopology?: string | Computed<string>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_DedicatedResources {
+  /** The metric(s) (e.g. CPU utilization) autoscaling bases its own replica-count decisions on, and each one's target value. (AI-inferred) */
   autoscalingMetricSpecs?: IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecs[] | Computed<IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecs[]>;
+  /** The machine type, accelerator, and count provisioned to run this job. (AI-inferred) */
   machineSpec?: IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec | Computed<IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec>;
+  /** The maximum number of machine replicas this job may scale up to. (AI-inferred) */
   maxReplicaCount?: number | Computed<number>;
+  /** The minimum number of machine replicas this job scales down to. (AI-inferred) */
   minReplicaCount?: number | Computed<number>;
+  /** The minimum number of replicas that must be ready before this deployment is considered available. (AI-inferred) */
   requiredReplicaCount?: number | Computed<number>;
+  /** Whether this deployment runs on lower-cost Spot VMs, which can be preempted, rather than standard on-demand capacity. (AI-inferred) */
   spot?: boolean | Computed<boolean>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProvider {
+  /** The JWT issuer(s) whose tokens are accepted for authenticating to this deployed index. (AI-inferred) */
   allowedIssuers?: string[] | Computed<string[]>;
+  /** The intended audience value(s) a JWT must carry to be accepted for authenticating to this deployed index. (AI-inferred) */
   audiences?: string[] | Computed<string[]>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig {
+  /** The identity provider trusted to issue authentication tokens for this deployed index. (AI-inferred) */
   authProvider?: IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProvider | Computed<IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProvider>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpoints {
+  /** The IP address this Private Service Connect endpoint resolves to for index queries. (AI-inferred) */
   matchAddress?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_PrivateEndpoints {
+  /** The gRPC address this deployed index's own private endpoint is reachable at. (AI-inferred) */
   matchGrpcAddress?: string | Computed<string>;
+  /** The Private Service Connect endpoint(s) Vertex AI automatically provisioned for this deployed index. (AI-inferred) */
   pscAutomatedEndpoints?: IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpoints[] | Computed<IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpoints[]>;
+  /** The Private Service Connect service attachment backing this deployment's own private endpoints. (AI-inferred) */
   serviceAttachment?: string | Computed<string>;
 }
 
 export interface IndexEndpoint_DeployedIndexes_PscAutomationConfigs {
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** A reference to the forwarding rule directing traffic to this resource. (AI-inferred) */
   forwardingRule?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface IndexEndpoint_DeployedIndexes {
+  /** Lets Vertex AI automatically manage compute resources for this deployment, as an alternative to `dedicated_resources`. (AI-inferred) */
   automaticResources?: IndexEndpoint_DeployedIndexes_AutomaticResources | Computed<IndexEndpoint_DeployedIndexes_AutomaticResources>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Reserves dedicated compute resources (machine type, replica count, autoscaling) for this deployment, as an alternative to `automatic_resources`. (AI-inferred) */
   dedicatedResources?: IndexEndpoint_DeployedIndexes_DedicatedResources | Computed<IndexEndpoint_DeployedIndexes_DedicatedResources>;
+  /** Authentication requirements callers must satisfy to query this deployed index. (AI-inferred) */
   deployedIndexAuthConfig?: IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig | Computed<IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig>;
+  /** Which deployment group this deployed index belongs to, for routing/isolation purposes. (AI-inferred) */
   deploymentGroup?: string | Computed<string>;
+  /** The service tier this index was deployed at, e.g. `STORAGE`. (AI-inferred) */
   deploymentTier?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether individual prediction requests to this deployment are logged. (AI-inferred) */
   enableAccessLogging?: boolean | Computed<boolean>;
+  /** Whether individual datapoint upsert operations against this deployed index are logged. (AI-inferred) */
   enableDatapointUpsertLogging?: boolean | Computed<boolean>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: string | Computed<string>;
+  /** Output only. When this deployed index was last synced with its own source index. (AI-inferred) */
   indexSyncTime?: string | Computed<string>;
+  /** The private network endpoint URIs this deployment is reachable at. (AI-inferred) */
   privateEndpoints?: IndexEndpoint_DeployedIndexes_PrivateEndpoints | Computed<IndexEndpoint_DeployedIndexes_PrivateEndpoints>;
+  /** Configuration requesting Vertex AI automatically provision Private Service Connect endpoints for this deployed index. (AI-inferred) */
   pscAutomationConfigs?: IndexEndpoint_DeployedIndexes_PscAutomationConfigs[] | Computed<IndexEndpoint_DeployedIndexes_PscAutomationConfigs[]>;
+  /** The VPC IP range(s) reserved for this deployed index's own use. (AI-inferred) */
   reservedIpRanges?: string[] | Computed<string[]>;
 }
 

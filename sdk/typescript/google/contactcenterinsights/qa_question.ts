@@ -2,11 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QaQuestion_AnswerChoices {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred) */
   naValue?: boolean | Computed<boolean>;
+  /** A numeric value. (AI-inferred) */
   numValue?: number | Computed<number>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
+  /** A text value. (AI-inferred) */
   strValue?: string | Computed<string>;
 }
 

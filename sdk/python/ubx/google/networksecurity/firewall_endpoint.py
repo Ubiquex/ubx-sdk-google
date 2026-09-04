@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallEndpoint_Associations:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
 
 @dataclasses.dataclass

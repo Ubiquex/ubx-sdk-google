@@ -584,24 +584,40 @@ _V2beta1Conversation_TelephonyConnectionInfoFields = {
 
 @dataclasses.dataclass
 class V2beta1ConversationConfig:
+    # A reference to the conversation profile this applies to. (AI-inferred)
     conversation_profile: Any = None
+    # The current stage of this conversation, e.g. whether a human or automated agent is handling it. (AI-inferred)
     conversation_stage: Any = None
+    # The conversation profile this conversation started with. (AI-inferred)
     initial_conversation_profile: Any = None
+    # The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
     phone_number: Any = None
+    # Real, telephony-specific connection details for this conversation, when connected over a phone call. (AI-inferred)
     telephony_connection_info: Any = None
 
 @dataclasses.dataclass
 class V2beta1ConversationAttrs:
+    # A reference to the conversation profile this applies to. (AI-inferred)
     conversation_profile: Any = None
+    # The current stage of this conversation, e.g. whether a human or automated agent is handling it. (AI-inferred)
     conversation_stage: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # The real context references this conversation was created with, keyed by their own identifiers. (AI-inferred)
     ingested_context_references: Any = None
+    # The conversation profile this conversation started with. (AI-inferred)
     initial_conversation_profile: Any = None
+    # The initial context values provided to each generator configured for this conversation. (AI-inferred)
     initial_generator_contexts: Any = None
+    # The current lifecycle state of this conversation, e.g. in progress or completed. (AI-inferred)
     lifecycle_state: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
     phone_number: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # Real, telephony-specific connection details for this conversation, when connected over a phone call. (AI-inferred)
     telephony_connection_info: Any = None
 
 V2beta1Conversation = ubx.ResourceBinding(

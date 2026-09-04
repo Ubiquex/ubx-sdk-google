@@ -122,19 +122,30 @@ _V2beta1Environment_TextToSpeechSettingsFields = {
 
 @dataclasses.dataclass
 class V2beta1EnvironmentConfig:
+    # The real version of the agent this evaluation was run against. (AI-inferred)
     agent_version: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred)
     fulfillment: Any = None
+    # Configuration for this agent's own text-to-speech behavior. (AI-inferred)
     text_to_speech_settings: Any = None
 
 @dataclasses.dataclass
 class V2beta1EnvironmentAttrs:
+    # The real version of the agent this evaluation was run against. (AI-inferred)
     agent_version: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred)
     fulfillment: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # Configuration for this agent's own text-to-speech behavior. (AI-inferred)
     text_to_speech_settings: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 V2beta1Environment = ubx.ResourceBinding(

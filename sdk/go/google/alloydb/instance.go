@@ -40,6 +40,7 @@ type Instance_MachineConfig struct {
 }
 
 type Instance_NetworkConfig_AuthorizedExternalNetworks struct {
+	// The IP address range, in CIDR notation, this applies to. (AI-inferred)
 	CidrRange any
 }
 
@@ -57,11 +58,16 @@ type Instance_NetworkConfig struct {
 }
 
 type Instance_Nodes struct {
-	Id           any
-	Ip           any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// An IP address. (AI-inferred)
+	Ip any
+	// Whether this instance is a hot standby, ready to take over with minimal failover time. (AI-inferred)
 	IsHotStandby any
-	State        any
-	ZoneId       any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The Compute Engine zone this applies to. (AI-inferred)
+	ZoneId any
 }
 
 type Instance_ObservabilityConfig struct {
@@ -84,14 +90,20 @@ type Instance_ObservabilityConfig struct {
 }
 
 type Instance_PscInstanceConfig_PscAutoConnections struct {
-	ConsumerNetwork       any
+	// A reference to the consumer-side VPC network this connection uses. (AI-inferred)
+	ConsumerNetwork any
+	// The current status of the consumer-side network connection. (AI-inferred)
 	ConsumerNetworkStatus any
-	ConsumerProject       any
-	IpAddress             any
-	Status                any
+	// A reference to the consumer's own Google Cloud project. (AI-inferred)
+	ConsumerProject any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The current status of this resource. (AI-inferred)
+	Status any
 }
 
 type Instance_PscInstanceConfig_PscInterfaceConfigs struct {
+	// A reference to the network attachment this connection uses. (AI-inferred)
 	NetworkAttachmentResource any
 }
 

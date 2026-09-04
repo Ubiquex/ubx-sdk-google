@@ -2,17 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LineageEvent_Links_DependencyInfo {
+  /** The kind of dependency the target has on the source: `EXACT_COPY` (the target's data is copied unchanged from the source) or `OTHER` (any other transformation). (AI-inferred) */
   dependencyType?: string | Computed<string>;
 }
 
 export interface LineageEvent_Links_Source {
+  /** The specific field(s) of the source entity this link traces data from, when the lineage is tracked at field level rather than whole-entity level. (AI-inferred) */
   field?: string[] | Computed<string[]>;
+  /** The fully qualified name identifying the source entity (e.g. a BigQuery table's own `project.dataset.table` path). (AI-inferred) */
   fullyQualifiedName?: string | Computed<string>;
 }
 
 export interface LineageEvent_Links {
+  /** Describes how the `target` entity in this link depends on the `source` entity -- e.g. whether the target is an exact copy of the source. (AI-inferred) */
   dependencyInfo?: LineageEvent_Links_DependencyInfo | Computed<LineageEvent_Links_DependencyInfo>;
+  /** A reference to the upstream entity data flowed from in this lineage link. (AI-inferred) */
   source?: LineageEvent_Links_Source | Computed<LineageEvent_Links_Source>;
+  /** A reference to the downstream entity data flowed to in this lineage link. (AI-inferred) */
   target?: LineageEvent_Links_Source | Computed<LineageEvent_Links_Source>;
 }
 

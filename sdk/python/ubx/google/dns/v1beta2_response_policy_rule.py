@@ -217,6 +217,7 @@ class V1beta2ResponsePolicyRuleConfig:
     behavior: Any = None
     # The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
     dns_name: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     local_data: Any = None
     # An identifier for this rule. Must be unique with the ResponsePolicy.
@@ -228,6 +229,7 @@ class V1beta2ResponsePolicyRuleAttrs:
     behavior: Any = None
     # The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
     dns_name: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     local_data: Any = None
     # An identifier for this rule. Must be unique with the ResponsePolicy.

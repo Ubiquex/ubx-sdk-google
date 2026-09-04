@@ -8,16 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SourceConfig:
+    # The fully qualified, canonical name of this resource. (AI-inferred)
     canonical_name: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class SourceAttrs:
+    # The fully qualified, canonical name of this resource. (AI-inferred)
     canonical_name: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 Source = ubx.ResourceBinding(

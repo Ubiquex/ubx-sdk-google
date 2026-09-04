@@ -4,14 +4,19 @@ package certificatemanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CertificateMap_GclbTargets_IpConfigs struct {
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
 	IpAddress any
-	Ports     any
+	// The port number(s) this applies to. (AI-inferred)
+	Ports any
 }
 
 type CertificateMap_GclbTargets struct {
-	IpConfigs        any
+	// Per-IP-address configuration for this certificate map entry. (AI-inferred)
+	IpConfigs any
+	// A reference to the target HTTPS proxy this certificate is attached to. (AI-inferred)
 	TargetHttpsProxy any
-	TargetSslProxy   any
+	// A reference to the target SSL proxy this certificate is attached to. (AI-inferred)
+	TargetSslProxy any
 }
 
 type CertificateMapConfig struct {

@@ -24,6 +24,7 @@ type Table_CloneDefinition_BaseTableReference struct {
 }
 
 type Table_CloneDefinition struct {
+	// A reference to the underlying base table. (AI-inferred)
 	BaseTableReference any
 	// Required. The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format.
 	CloneTime any
@@ -74,27 +75,42 @@ type Table_ExternalDataConfiguration_AvroOptions struct {
 }
 
 type Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfig struct {
+	// The fully qualified name of the protocol buffer message type this data is encoded as. (AI-inferred)
 	ProtoMessageName any
-	SchemaBundleId   any
+	// A reference to the schema bundle (e.g. a set of `.proto` definitions) this configuration uses. (AI-inferred)
+	SchemaBundleId any
 }
 
 type Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns struct {
-	Encoding         any
-	FieldName        any
-	OnlyReadLatest   any
-	ProtoConfig      any
+	// The text encoding this field's own byte values should be interpreted with. (AI-inferred)
+	Encoding any
+	// The name of the field this applies to. (AI-inferred)
+	FieldName any
+	// Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
+	OnlyReadLatest any
+	// Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
+	ProtoConfig any
+	// The Bigtable column qualifier, in its own raw encoded (byte) form. (AI-inferred)
 	QualifierEncoded any
-	QualifierString  any
-	Type             any
+	// The Bigtable column qualifier, decoded as a string. (AI-inferred)
+	QualifierString any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies struct {
-	Columns        any
-	Encoding       any
-	FamilyId       any
+	// The column(s) this applies to. (AI-inferred)
+	Columns any
+	// The text encoding this field's own byte values should be interpreted with. (AI-inferred)
+	Encoding any
+	// The Bigtable column family this applies to. (AI-inferred)
+	FamilyId any
+	// Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
 	OnlyReadLatest any
-	ProtoConfig    any
-	Type           any
+	// Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
+	ProtoConfig any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Table_ExternalDataConfiguration_BigtableOptions struct {
@@ -164,57 +180,87 @@ type Table_ExternalDataConfiguration_ParquetOptions struct {
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields_Categories struct {
+	// The literal name(s) this applies to. (AI-inferred)
 	Names any
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfo struct {
+	// The data governance tag(s) applied to this column. (AI-inferred)
 	DataGovernanceTags any
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields_DataPolicies struct {
+	// The field's own name, unique within its containing schema. (AI-inferred)
 	Name any
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields_DataPolicyList struct {
+	// Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
 	DataPolicies any
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo struct {
-	Asynchronous         any
+	// Whether a generated column's own value is computed asynchronously after write, rather than synchronously. (AI-inferred)
+	Asynchronous any
+	// The SQL expression computing this generated column's own value. (AI-inferred)
 	GenerationExpression any
-	Stored               any
+	// Whether a generated column's own computed value is physically stored, rather than recomputed on each read. (AI-inferred)
+	Stored any
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn struct {
+	// Detail about a generated column's own computation. (AI-inferred)
 	GeneratedExpressionInfo any
-	GeneratedMode           any
+	// Whether this column's own value is stored, virtual (computed on read), or not generated at all. (AI-inferred)
+	GeneratedMode any
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields_RangeElementType struct {
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Table_ExternalDataConfiguration_Schema_Fields struct {
-	Categories             any
-	Collation              any
+	// The set of category labels this applies to. (AI-inferred)
+	Categories any
+	// The collation (locale-aware string comparison rule) applied to a `STRING`-typed field, e.g. `und:ci` for case-insensitive comparison, or empty for the default case-sensitive comparison. (AI-inferred)
+	Collation any
+	// Detail about the data governance tag(s) associated with this column. (AI-inferred)
 	DataGovernanceTagsInfo any
-	DataPolicies           any
-	DataPolicyList         any
+	// Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
+	DataPolicies any
+	// The data policies (e.g. dynamic data masking rules) applied to this column. (AI-inferred)
+	DataPolicyList any
+	// A SQL expression computing this column's own default value when none is supplied on insert. (AI-inferred)
 	DefaultValueExpression any
-	Description            any
-	Fields                 any
-	ForeignTypeDefinition  any
-	GeneratedColumn        any
-	MaxLength              any
-	Mode                   any
-	Name                   any
-	PolicyTags             any
-	Precision              any
-	RangeElementType       any
-	RoundingMode           any
-	Scale                  any
-	TimestampPrecision     any
-	Type                   any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
+	Fields any
+	// The native type definition of this column in the external system it's federated from. (AI-inferred)
+	ForeignTypeDefinition any
+	// A column whose own value is computed from other columns, rather than stored directly. (AI-inferred)
+	GeneratedColumn any
+	// The most characters a `string`-typed value may have. (AI-inferred)
+	MaxLength any
+	// Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred)
+	Mode any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// The Data Catalog policy tag(s) governing access to this column. (AI-inferred)
+	PolicyTags any
+	// For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
+	Precision any
+	// The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
+	RangeElementType any
+	// How values are rounded when they exceed this `NUMERIC`/`BIGNUMERIC` field's own scale. (AI-inferred)
+	RoundingMode any
+	// For a `NUMERIC`/`BIGNUMERIC` field, how many digits are kept after the decimal point. (AI-inferred)
+	Scale any
+	// The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred)
+	TimestampPrecision any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Table_ExternalDataConfiguration_Schema_ForeignTypeInfo struct {
@@ -320,36 +366,57 @@ type Table_MaterializedViewStatus struct {
 }
 
 type Table_Model_ModelOptions struct {
-	Labels    any
-	LossType  any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The loss function optimized during training. (AI-inferred)
+	LossType any
+	// The kind of ML model this is, e.g. `LINEAR_REG` or `KMEANS`. (AI-inferred)
 	ModelType any
 }
 
 type Table_Model_TrainingRuns_IterationResults struct {
-	DurationMs   any
-	EvalLoss     any
-	Index        any
-	LearnRate    any
+	// How long this operation took, in milliseconds. (AI-inferred)
+	DurationMs any
+	// The loss value computed on the evaluation (held-out) dataset. (AI-inferred)
+	EvalLoss any
+	// The position of this item within its own containing sequence. (AI-inferred)
+	Index any
+	// The step size used to update model weights during training. (AI-inferred)
+	LearnRate any
+	// The loss value computed on the training dataset. (AI-inferred)
 	TrainingLoss any
 }
 
 type Table_Model_TrainingRuns_TrainingOptions struct {
-	EarlyStop               any
-	L1Reg                   any
-	L2Reg                   any
-	LearnRate               any
-	LearnRateStrategy       any
+	// Whether training stops automatically once further iterations no longer improve the evaluation metric. (AI-inferred)
+	EarlyStop any
+	// The L1 regularization strength applied during training. (AI-inferred)
+	L1Reg any
+	// The L2 regularization strength applied during training. (AI-inferred)
+	L2Reg any
+	// The step size used to update model weights during training. (AI-inferred)
+	LearnRate any
+	// How the learning rate changes over training, e.g. fixed or line-search. (AI-inferred)
+	LearnRateStrategy any
+	// The initial learning rate used when line-search learning rate strategy is selected. (AI-inferred)
 	LineSearchInitLearnRate any
-	MaxIteration            any
-	MinRelProgress          any
-	WarmStart               any
+	// The maximum number of training iterations. (AI-inferred)
+	MaxIteration any
+	// The minimum relative improvement in loss required to continue training another iteration. (AI-inferred)
+	MinRelProgress any
+	// Whether training resumes from a previous model's own learned weights, rather than starting from scratch. (AI-inferred)
+	WarmStart any
 }
 
 type Table_Model_TrainingRuns struct {
+	// The per-iteration result(s) recorded during model training. (AI-inferred)
 	IterationResults any
-	StartTime        any
-	State            any
-	TrainingOptions  any
+	// When this operation started. (AI-inferred)
+	StartTime any
+	// The current status of this resource or operation. (AI-inferred)
+	State any
+	// The hyperparameter(s) and other setting(s) used to train this model. (AI-inferred)
+	TrainingOptions any
 }
 
 type Table_Model struct {
@@ -360,6 +427,7 @@ type Table_Model struct {
 }
 
 type Table_PartitionDefinition_PartitionedColumn struct {
+	// A reference to a specific field. (AI-inferred)
 	Field any
 }
 
@@ -385,6 +453,7 @@ type Table_RangePartitioning struct {
 }
 
 type Table_SnapshotDefinition struct {
+	// A reference to the underlying base table. (AI-inferred)
 	BaseTableReference any
 	// Required. The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format.
 	SnapshotTime any
@@ -400,14 +469,19 @@ type Table_StreamingBuffer struct {
 }
 
 type Table_TableConstraints_ForeignKeys_ColumnReferences struct {
-	ReferencedColumn  any
+	// The column being referenced. (AI-inferred)
+	ReferencedColumn any
+	// The column that references another table/column. (AI-inferred)
 	ReferencingColumn any
 }
 
 type Table_TableConstraints_ForeignKeys struct {
+	// The column(s) this foreign key or constraint references. (AI-inferred)
 	ColumnReferences any
-	Name             any
-	ReferencedTable  any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// The table being referenced. (AI-inferred)
+	ReferencedTable any
 }
 
 type Table_TableConstraints_PrimaryKey struct {
@@ -431,7 +505,8 @@ type Table_TableReplicationInfo struct {
 	ReplicationIntervalMs any
 	// Optional. Output only. Replication status of configured replication.
 	ReplicationStatus any
-	SourceTable       any
+	// The table this job's own input is read from. (AI-inferred)
+	SourceTable any
 }
 
 type Table_TimePartitioning struct {
@@ -446,8 +521,10 @@ type Table_TimePartitioning struct {
 }
 
 type Table_View_ForeignDefinitions struct {
+	// Which SQL dialect this query is written in, e.g. GoogleSQL or legacy SQL. (AI-inferred)
 	Dialect any
-	Query   any
+	// The SQL query text. (AI-inferred)
+	Query any
 }
 
 type Table_View_PrivacyPolicy_AggregationThresholdPolicy struct {
@@ -493,7 +570,9 @@ type Table_View_PrivacyPolicy struct {
 }
 
 type Table_View_UserDefinedFunctionResources struct {
-	InlineCode  any
+	// Routine logic supplied directly as inline source code, rather than referencing an external definition. (AI-inferred)
+	InlineCode any
+	// A URI identifying this external resource. (AI-inferred)
 	ResourceUri any
 }
 
@@ -1093,7 +1172,8 @@ type TableConfig struct {
 	ExpirationTime any
 	// Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties.
 	ExternalCatalogTableOptions any
-	ExternalDataConfiguration   any
+	// Configuration for reading this table's own data from an external source, rather than BigQuery-managed storage. (AI-inferred)
+	ExternalDataConfiguration any
 	// Optional. A descriptive name for this table.
 	FriendlyName any
 	// The type of resource ID.
@@ -1108,26 +1188,32 @@ type TableConfig struct {
 	MaterializedViewStatus any
 	// Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type.
 	MaxStaleness any
-	Model        any
+	// A reference to the model this applies to. (AI-inferred)
+	Model any
 	// The partitioning information, which includes managed table, external table and metastore partitioned table partition information.
 	PartitionDefinition any
-	RangePartitioning   any
+	// Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
+	RangePartitioning any
 	// Optional. If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
 	RequirePartitionFilter any
 	// [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production".
 	ResourceTags any
+	// The restriction(s) applied to this data. (AI-inferred)
 	Restrictions any
 	// Schema of a table
 	Schema any
 	// Information about base table and snapshot time of the snapshot.
 	SnapshotDefinition any
-	StreamingBuffer    any
+	// Statistics about rows recently streamed into this table that haven't yet been written to permanent storage. (AI-inferred)
+	StreamingBuffer any
 	// The TableConstraints defines the primary key and foreign key.
 	TableConstraints any
-	TableReference   any
+	// A reference to a specific BigQuery table. (AI-inferred)
+	TableReference any
 	// Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv`
 	TableReplicationInfo any
-	TimePartitioning     any
+	// Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
+	TimePartitioning any
 	// Describes the definition of a logical view.
 	View any
 }
@@ -1155,7 +1241,8 @@ type TableAttrs struct {
 	ExpirationTime any
 	// Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties.
 	ExternalCatalogTableOptions any
-	ExternalDataConfiguration   any
+	// Configuration for reading this table's own data from an external source, rather than BigQuery-managed storage. (AI-inferred)
+	ExternalDataConfiguration any
 	// Optional. A descriptive name for this table.
 	FriendlyName any
 	// Output only. An opaque ID uniquely identifying the table.
@@ -1176,7 +1263,8 @@ type TableAttrs struct {
 	MaterializedViewStatus any
 	// Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type.
 	MaxStaleness any
-	Model        any
+	// A reference to the model this applies to. (AI-inferred)
+	Model any
 	// Output only. Number of logical bytes that are less than 90 days old.
 	NumActiveLogicalBytes any
 	// Output only. Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
@@ -1205,13 +1293,15 @@ type TableAttrs struct {
 	NumTotalPhysicalBytes any
 	// The partitioning information, which includes managed table, external table and metastore partitioned table partition information.
 	PartitionDefinition any
-	RangePartitioning   any
+	// Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
+	RangePartitioning any
 	// Optional. Output only. Table references of all replicas currently active on the table.
 	Replicas any
 	// Optional. If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
 	RequirePartitionFilter any
 	// [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production".
 	ResourceTags any
+	// The restriction(s) applied to this data. (AI-inferred)
 	Restrictions any
 	// Schema of a table
 	Schema any
@@ -1219,13 +1309,16 @@ type TableAttrs struct {
 	SelfLink any
 	// Information about base table and snapshot time of the snapshot.
 	SnapshotDefinition any
-	StreamingBuffer    any
+	// Statistics about rows recently streamed into this table that haven't yet been written to permanent storage. (AI-inferred)
+	StreamingBuffer any
 	// The TableConstraints defines the primary key and foreign key.
 	TableConstraints any
-	TableReference   any
+	// A reference to a specific BigQuery table. (AI-inferred)
+	TableReference any
 	// Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv`
 	TableReplicationInfo any
-	TimePartitioning     any
+	// Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
+	TimePartitioning any
 	// Output only. Describes the table type. The following values are supported: * `TABLE`: A normal BigQuery table. * `VIEW`: A virtual table defined by a SQL query. * `EXTERNAL`: A table that references data stored in an external storage system, such as Google Cloud Storage. * `MATERIALIZED_VIEW`: A precomputed view defined by a SQL query. * `SNAPSHOT`: An immutable BigQuery table that preserves the contents of a base table at a particular time. See additional information on [table snapshots](https://cloud.google.com/bigquery/docs/table-snapshots-intro). The default value is `TABLE`.
 	Type any
 	// Describes the definition of a logical view.

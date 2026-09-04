@@ -9,19 +9,26 @@ type Service_EncryptionConfig struct {
 }
 
 type Service_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_Consumers struct {
+	// The real Google Cloud region this Private Service Connect consumer endpoint is created in. (AI-inferred)
 	EndpointLocation any
-	EndpointUri      any
-	Subnetwork       any
+	// The real, fully-qualified URI this Private Service Connect consumer endpoint is reachable at. (AI-inferred)
+	EndpointUri any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type Service_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig struct {
+	// The real Private Service Connect consumer endpoint(s) allowed to reach this metastore's own network. (AI-inferred)
 	Consumers any
 }
 
 type Service_HiveMetastoreConfig_AuxiliaryVersions struct {
+	// Real, Hive metastore configuration property overrides applied to this specific auxiliary metastore version. (AI-inferred)
 	ConfigOverrides any
-	NetworkConfig   any
-	Version         any
+	// Real network configuration (its own real `consumers`) for this metastore service revision or auxiliary version. (AI-inferred)
+	NetworkConfig any
+	// The real Hive metastore software version this auxiliary version runs. (AI-inferred)
+	Version any
 }
 
 type Service_HiveMetastoreConfig_KerberosConfig_Keytab struct {
@@ -69,21 +76,33 @@ type Service_MetadataIntegration struct {
 }
 
 type Service_MetadataManagementActivity_MetadataExports struct {
-	DatabaseDumpType  any
+	// The real export format (`MYSQL` or `AVRO`) this metadata export was written in. (AI-inferred)
+	DatabaseDumpType any
+	// The real Cloud Storage URI this metadata export was (or will be) written to. (AI-inferred)
 	DestinationGcsUri any
-	EndTime           any
-	StartTime         any
-	State             any
+	// The real timestamp when this metadata export or restore operation finished. (AI-inferred)
+	EndTime any
+	// The real timestamp when this metadata export or restore operation started. (AI-inferred)
+	StartTime any
+	// The real, current state (`RUNNING`, `SUCCEEDED`, `FAILED`) of this metadata export or restore operation. (AI-inferred)
+	State any
 }
 
 type Service_MetadataManagementActivity_Restores struct {
-	Backup         any
+	// A reference to the real `google_metastore_metastore_backup` this restore operation restored from. (AI-inferred)
+	Backup any
+	// The real Cloud Storage location this restore operation's own source backup data was read from. (AI-inferred)
 	BackupLocation any
-	Details        any
-	EndTime        any
-	StartTime      any
-	State          any
-	Type           any
+	// Real, additional detail describing this restore operation's own outcome. (AI-inferred)
+	Details any
+	// The real timestamp when this metadata export or restore operation finished. (AI-inferred)
+	EndTime any
+	// The real timestamp when this metadata export or restore operation started. (AI-inferred)
+	StartTime any
+	// The real, current state (`RUNNING`, `SUCCEEDED`, `FAILED`) of this metadata export or restore operation. (AI-inferred)
+	State any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Service_MetadataManagementActivity struct {

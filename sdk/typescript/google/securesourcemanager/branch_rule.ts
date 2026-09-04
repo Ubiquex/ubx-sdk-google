@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BranchRule_RequiredStatusChecks {
+  /** The name of the status check that must report success before a pull request targeting a protected branch can be merged, matching the check's own reported context/name. (AI-inferred) */
   context?: string | Computed<string>;
 }
 

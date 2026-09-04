@@ -11,39 +11,55 @@ export interface GcpUserAccessBinding_Principal {
 }
 
 export interface GcpUserAccessBinding_RestrictedClientApplications {
+  /** The OAuth client ID this restriction applies to. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings {
+  /** How long a session may remain inactive before requiring re-authentication. (AI-inferred) */
   maxInactivity?: string | Computed<string>;
+  /** How long a session remains valid before requiring re-authentication. (AI-inferred) */
   sessionLength?: string | Computed<string>;
+  /** Whether session length limits are enforced. (AI-inferred) */
   sessionLengthEnabled?: boolean | Computed<boolean>;
+  /** How the user re-authenticates when their own session expires. (AI-inferred) */
   sessionReauthMethod?: string | Computed<string>;
+  /** Whether the OIDC token's own `max_age` claim is honored when evaluating session freshness. (AI-inferred) */
   useOidcMaxAge?: boolean | Computed<boolean>;
 }
 
 export interface GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings {
+  /** The access level(s) this applies to. (AI-inferred) */
   accessLevels?: string[] | Computed<string[]>;
+  /** Configuration for session length and re-authentication requirements. (AI-inferred) */
   sessionSettings?: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings | Computed<GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings>;
 }
 
 export interface GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope {
+  /** Restricts this rule to a specific client application. (AI-inferred) */
   restrictedClientApplication?: GcpUserAccessBinding_RestrictedClientApplications | Computed<GcpUserAccessBinding_RestrictedClientApplications>;
+  /** A reference to the project this restriction applies to. (AI-inferred) */
   restrictedProject?: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject | Computed<GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject>;
 }
 
 export interface GcpUserAccessBinding_ScopedAccessSettings_Scope {
+  /** Restricts this rule to a specific client scope. (AI-inferred) */
   clientScope?: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope | Computed<GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope>;
 }
 
 export interface GcpUserAccessBinding_ScopedAccessSettings {
+  /** The settings currently in effect for this session. (AI-inferred) */
   activeSettings?: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings | Computed<GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings>;
+  /** Settings evaluated but not yet enforced, letting the effect of a policy change be previewed first. (AI-inferred) */
   dryRunSettings?: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings | Computed<GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings>;
+  /** What this configuration's own scope covers. (AI-inferred) */
   scope?: GcpUserAccessBinding_ScopedAccessSettings_Scope | Computed<GcpUserAccessBinding_ScopedAccessSettings_Scope>;
 }
 

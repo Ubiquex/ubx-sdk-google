@@ -8,20 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValue:
+    # The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
     kms_key_name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValue:
+    # The specific Secret Manager secret version referenced. (AI-inferred)
     secret_version: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfig_AdditionalVariables:
+    # This configuration variable's own value, when its type is boolean. (AI-inferred)
     bool_value: Any = None
+    # This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred)
     encryption_key_value: Any = None
+    # This admin filter's own value, when its type is an integer. (AI-inferred)
     int_value: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
     secret_value: Any = None
+    # This admin filter's own value, when its type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
@@ -116,93 +125,148 @@ class CustomConnectorVersion_AuthConfig:
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLink:
+    # The OAuth client ID issued by the connected service. (AI-inferred)
     client_id: Any = None
+    # The OAuth client secret issued by the connected service. (AI-inferred)
     client_secret: Any = None
+    # Whether to use Proof Key for Code Exchange (PKCE) to secure the OAuth authorization code flow. (AI-inferred)
     enable_pkce: Any = None
+    # Whether to omit query parameters when constructing the authorization redirect URI. (AI-inferred)
     omit_query_params: Any = None
+    # The OAuth scope(s) requested during authorization. (AI-inferred)
     scopes: Any = None
+    # The authorization endpoint URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptions:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A unique identifier for this webhook subscription. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptions:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # Whether this option is selected by default. (AI-inferred)
     preselected: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig:
+    # Whether a value outside the predefined option list may also be entered. (AI-inferred)
     allow_custom_values: Any = None
+    # The selectable option(s) for this multi-select configuration field. (AI-inferred)
     multiple_select_options: Any = None
+    # The character used to separate multiple selected values. (AI-inferred)
     value_separator: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisons:
+    # This configuration variable's own value, when its type is boolean. (AI-inferred)
     bool_value: Any = None
+    # How the compared field's own value is evaluated, e.g. equals or contains. (AI-inferred)
     comparator: Any = None
+    # This admin filter's own value, when its type is an integer. (AI-inferred)
     int_value: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # This admin filter's own value, when its type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition:
+    # The individual field-level condition(s) making up this logical expression. (AI-inferred)
     field_comparisons: Any = None
+    # The nested condition(s) combined by this logical expression. (AI-inferred)
     logical_expressions: Any = None
+    # How the nested condition(s) are combined, e.g. `AND` or `OR`. (AI-inferred)
     logical_operator: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_Resource:
+    # A template describing the resource path this role grant applies to. (AI-inferred)
     path_template: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant:
+    # Guidance text shown to the user configuring this role grant. (AI-inferred)
     helper_text_template: Any = None
+    # The identity this role grant is issued to. (AI-inferred)
     principal: Any = None
+    # The resource this role grant applies to. (AI-inferred)
     resource: Any = None
+    # The role(s) granted. (AI-inferred)
     roles: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates:
+    # Configuration for the OAuth 2.0 authorization code flow used to obtain credentials. (AI-inferred)
     authorization_code_link: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The selectable option(s) for this enumerated configuration field. (AI-inferred)
     enum_options: Any = None
+    # Where this configuration field's own enumerated option list is sourced from. (AI-inferred)
     enum_source: Any = None
+    # Whether this configuration field is only shown under advanced/optional settings. (AI-inferred)
     is_advanced: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # Where this configuration field's own value is stored, e.g. inline or as a Secret Manager reference. (AI-inferred)
     location_type: Any = None
+    # Configuration for a field that accepts more than one selected value. (AI-inferred)
     multiple_select_config: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
+    # The condition that must be satisfied for this configuration field to apply. (AI-inferred)
     required_condition: Any = None
+    # Configuration for automatically granting a role needed by this connector. (AI-inferred)
     role_grant: Any = None
+    # Whether this configuration field is required, optional, or deprecated. (AI-inferred)
     state: Any = None
+    # A regular expression this configuration field's own value must match. (AI-inferred)
     validation_regex: Any = None
+    # The data type this configuration field's own value holds, e.g. string, integer, or boolean. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_AuthConfigTemplates:
+    # The identifier for this authentication configuration. (AI-inferred)
     auth_key: Any = None
+    # The kind of authentication this connection uses, e.g. `OAUTH2_AUTHORIZATION_CODE` or `USER_PASSWORD`. (AI-inferred)
     auth_type: Any = None
+    # The configuration field(s) this connector's own authentication method requires or accepts. (AI-inferred)
     config_variable_templates: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether this is the default authentication configuration for the connector. (AI-inferred)
     is_default: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_DestinationConfigs_Destinations:
+    # The hostname of this destination. (AI-inferred)
     host: Any = None
+    # The port this destination listens on. (AI-inferred)
     port: Any = None
+    # A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersion_DestinationConfigs:
+    # The backend endpoint(s) traffic for this connection is routed to. (AI-inferred)
     destinations: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass

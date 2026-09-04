@@ -29,7 +29,9 @@ class Environment_NodeConfig:
 
 @dataclasses.dataclass
 class Environment_Properties_Property:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -83,6 +85,7 @@ class EnvironmentConfig:
     display_name: Any = None
     # Optional. URI of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that the only supported scheme is "http". The port must be supplied. To remove a forward proxy setting, update the field to an empty value. Note: At this time, PUT operations to add forwardProxyUri to an existing environment fail if the environment has nodeConfig set up. To successfully add the forwardProxyUri setting in this case, include the NodeConfig details with the request.
     forward_proxy_uri: Any = None
+    # Whether this environment has flow hook(s) attached that run on every request. (AI-inferred)
     has_attached_flow_hooks: Any = None
     # Required. Name of the environment. Values must match the regular expression `^[.\\p{Alnum}-_]{1,255}$`
     name: Any = None
@@ -109,6 +112,7 @@ class EnvironmentAttrs:
     display_name: Any = None
     # Optional. URI of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that the only supported scheme is "http". The port must be supplied. To remove a forward proxy setting, update the field to an empty value. Note: At this time, PUT operations to add forwardProxyUri to an existing environment fail if the environment has nodeConfig set up. To successfully add the forwardProxyUri setting in this case, include the NodeConfig details with the request.
     forward_proxy_uri: Any = None
+    # Whether this environment has flow hook(s) attached that run on every request. (AI-inferred)
     has_attached_flow_hooks: Any = None
     # Output only. Last modification time of this environment as milliseconds since epoch.
     last_modified_at: Any = None

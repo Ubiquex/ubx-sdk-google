@@ -12,6 +12,7 @@ class V1beta1FeedbackEntryConfig:
     custom_metadata: Any = None
     # Required. The ID of the event within the session that the feedback relates to.
     event_id: Any = None
+    # The real label(s) categorizing this feedback entry. (AI-inferred)
     feedback_labels: Any = None
     # Optional. Qualitative free-form comments provided by the user.
     feedback_text: Any = None
@@ -34,6 +35,7 @@ class V1beta1FeedbackEntryAttrs:
     custom_metadata: Any = None
     # Required. The ID of the event within the session that the feedback relates to.
     event_id: Any = None
+    # The real label(s) categorizing this feedback entry. (AI-inferred)
     feedback_labels: Any = None
     # Optional. Qualitative free-form comments provided by the user.
     feedback_text: Any = None

@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Control_BoostAction_InterpolationBoostSpec_ControlPoints:
+    # The value of this attribute. (AI-inferred)
     attribute_value: Any = None
+    # How much to raise or lower a matching result's own ranking. (AI-inferred)
     boost_amount: Any = None
 
 @dataclasses.dataclass
@@ -37,18 +39,25 @@ class Control_BoostAction:
 
 @dataclasses.dataclass
 class Control_Conditions_ActiveTimeRange:
+    # When this event or operation ended. (AI-inferred)
     end_time: Any = None
+    # When this event or operation started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class Control_Conditions_QueryTerms:
+    # Matches only this exact, complete value. (AI-inferred)
     full_match: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Control_Conditions:
+    # The time range this schedule or configuration is currently active for. (AI-inferred)
     active_time_range: Any = None
+    # A regular expression this query rule matches against. (AI-inferred)
     query_regex: Any = None
+    # The individual term(s) making up this query. (AI-inferred)
     query_terms: Any = None
 
 @dataclasses.dataclass

@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EndpointPolicy_EndpointMatcher_MetadataLabelMatcher_MetadataLabels {
+  /** The name of the label this applies to. (AI-inferred) */
   labelName?: string | Computed<string>;
+  /** The value of the label this applies to. (AI-inferred) */
   labelValue?: string | Computed<string>;
 }
 

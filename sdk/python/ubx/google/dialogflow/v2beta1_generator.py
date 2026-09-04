@@ -488,35 +488,62 @@ _V2beta1Generator_ToolsetToolsFields = {
 
 @dataclasses.dataclass
 class V2beta1GeneratorConfig:
+    # Real, additional context supplied to guide this generator's own agent-coaching suggestions. (AI-inferred)
     agent_coaching_context: Any = None
+    # The real CES (Conversational Experience Studio) app(s) this generator can call. (AI-inferred)
     ces_app_specs: Any = None
+    # The real CES (Conversational Experience Studio) tool(s) this generator can choose from. (AI-inferred)
     ces_tool_specs: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Real, free-form background text supplied as additional context to this generator. (AI-inferred)
     free_form_context: Any = None
+    # Real parameters (e.g. temperature, max output tokens) controlling this generator's own model inference. (AI-inferred)
     inference_parameter: Any = None
+    # A reference to the real, published foundation model this generator uses. (AI-inferred)
     published_model: Any = None
+    # Configures how this generator avoids repeating a suggestion already made earlier in the same conversation. (AI-inferred)
     suggestion_deduping_config: Any = None
+    # Real, additional context supplied to guide this generator's own summarization output. (AI-inferred)
     summarization_context: Any = None
+    # The real tool(s) this generator may call. (AI-inferred)
     tools: Any = None
+    # The real tool(s), grouped as a toolset, this generator may call. (AI-inferred)
     toolset_tools: Any = None
+    # The real event that triggers this generator to run. (AI-inferred)
     trigger_event: Any = None
 
 @dataclasses.dataclass
 class V2beta1GeneratorAttrs:
+    # Real, additional context supplied to guide this generator's own agent-coaching suggestions. (AI-inferred)
     agent_coaching_context: Any = None
+    # The real CES (Conversational Experience Studio) app(s) this generator can call. (AI-inferred)
     ces_app_specs: Any = None
+    # The real CES (Conversational Experience Studio) tool(s) this generator can choose from. (AI-inferred)
     ces_tool_specs: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Real, free-form background text supplied as additional context to this generator. (AI-inferred)
     free_form_context: Any = None
+    # Real parameters (e.g. temperature, max output tokens) controlling this generator's own model inference. (AI-inferred)
     inference_parameter: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the real, published foundation model this generator uses. (AI-inferred)
     published_model: Any = None
+    # Configures how this generator avoids repeating a suggestion already made earlier in the same conversation. (AI-inferred)
     suggestion_deduping_config: Any = None
+    # Real, additional context supplied to guide this generator's own summarization output. (AI-inferred)
     summarization_context: Any = None
+    # The real tool(s) this generator may call. (AI-inferred)
     tools: Any = None
+    # The real tool(s), grouped as a toolset, this generator may call. (AI-inferred)
     toolset_tools: Any = None
+    # The real event that triggers this generator to run. (AI-inferred)
     trigger_event: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 V2beta1Generator = ubx.ResourceBinding(

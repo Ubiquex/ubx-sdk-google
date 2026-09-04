@@ -17,6 +17,7 @@ export interface VmwareAdminCluster_AntiAffinityGroups {
 }
 
 export interface VmwareAdminCluster_Authorization_ViewerUsers {
+  /** The username used to authenticate. (AI-inferred) */
   username?: string | Computed<string>;
 }
 
@@ -62,13 +63,18 @@ export interface VmwareAdminCluster_LoadBalancer_ManualLbConfig {
 }
 
 export interface VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips {
+  /** The hostname of this node. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** An IP address. (AI-inferred) */
   ip?: string | Computed<string>;
 }
 
 export interface VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks {
+  /** The default gateway IP address for this network. (AI-inferred) */
   gateway?: string | Computed<string>;
+  /** The IP address(es) this applies to. (AI-inferred) */
   ips?: VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips[] | Computed<VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips[]>;
+  /** The subnet mask for this network. (AI-inferred) */
   netmask?: string | Computed<string>;
 }
 
@@ -97,6 +103,7 @@ export interface VmwareAdminCluster_LoadBalancer_VipConfig {
 export interface VmwareAdminCluster_LoadBalancer {
   /** VmwareAdminF5BigIpConfig represents configuration parameters for an F5 BIG-IP load balancer. */
   f5Config?: VmwareAdminCluster_LoadBalancer_F5Config | Computed<VmwareAdminCluster_LoadBalancer_F5Config>;
+  /** Configuration for a manually (rather than automatically) provisioned load balancer. (AI-inferred) */
   manualLbConfig?: VmwareAdminCluster_LoadBalancer_ManualLbConfig | Computed<VmwareAdminCluster_LoadBalancer_ManualLbConfig>;
   /** VmwareAdminMetalLbConfig represents configuration parameters for a MetalLB load balancer. For admin clusters, currently no configurations is needed. */
   metalLbConfig?: VmwareAdminCluster_AddonNode_AutoResizeConfig | Computed<VmwareAdminCluster_AddonNode_AutoResizeConfig>;
@@ -143,31 +150,45 @@ export interface VmwareAdminCluster_NetworkConfig {
 }
 
 export interface VmwareAdminCluster_PlatformConfig_Bundles_Status_Conditions {
+  /** When this condition last changed from one status to another. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_Versions {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions {
+  /** The version(s) this applies to. (AI-inferred) */
   versions?: VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_Versions[] | Computed<VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_Versions[]>;
 }
 
 export interface VmwareAdminCluster_PlatformConfig_Bundles_Status {
+  /** The current condition(s) affecting this resource's own status. (AI-inferred) */
   conditions?: VmwareAdminCluster_PlatformConfig_Bundles_Status_Conditions[] | Computed<VmwareAdminCluster_PlatformConfig_Bundles_Status_Conditions[]>;
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
+  /** The version(s) this applies to. (AI-inferred) */
   versions?: VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions | Computed<VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions>;
 }
 
 export interface VmwareAdminCluster_PlatformConfig_Bundles {
+  /** The current status of this resource. (AI-inferred) */
   status?: VmwareAdminCluster_PlatformConfig_Bundles_Status | Computed<VmwareAdminCluster_PlatformConfig_Bundles_Status>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
@@ -197,10 +218,15 @@ export interface VmwareAdminCluster_Proxy {
 }
 
 export interface VmwareAdminCluster_ValidationCheck_Status_Result {
+  /** The category this belongs to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TestMatrice_ClientInfo_ClientInfoDetails:
+    # The real key of one entry in a key/value pair used by this test configuration. (AI-inferred)
     key: Any = None
+    # The real value of one entry in a key/value pair used by this test configuration. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -20,9 +22,13 @@ class TestMatrice_ClientInfo:
 
 @dataclasses.dataclass
 class TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevices:
+    # The real Firebase Test Lab catalog ID of an Android test device model (e.g. `Pixel8`). (AI-inferred)
     android_model_id: Any = None
+    # The real Firebase Test Lab catalog ID of an Android OS version to test against. (AI-inferred)
     android_version_id: Any = None
+    # The real device locale (language and region, e.g. `en_US`) to run this test under. (AI-inferred)
     locale: Any = None
+    # The real screen orientation (`portrait` or `landscape`) to run this test in. (AI-inferred)
     orientation: Any = None
 
 @dataclasses.dataclass
@@ -43,9 +49,13 @@ class TestMatrice_EnvironmentMatrix_AndroidMatrix:
 
 @dataclasses.dataclass
 class TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevices:
+    # The real Firebase Test Lab catalog ID of an iOS test device model. (AI-inferred)
     ios_model_id: Any = None
+    # The real Firebase Test Lab catalog ID of an iOS OS version to test against. (AI-inferred)
     ios_version_id: Any = None
+    # The real device locale (language and region, e.g. `en_US`) to run this test under. (AI-inferred)
     locale: Any = None
+    # The real screen orientation (`portrait` or `landscape`) to run this test in. (AI-inferred)
     orientation: Any = None
 
 @dataclasses.dataclass
@@ -64,7 +74,9 @@ class TestMatrice_EnvironmentMatrix:
 
 @dataclasses.dataclass
 class TestMatrice_ExtendedInvalidMatrixDetails:
+    # A real, human-readable explanation for why this test matrix's own invalid-matrix details were flagged. (AI-inferred)
     message: Any = None
+    # The real, specific reason this test matrix or test execution was flagged as invalid. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
@@ -101,209 +113,323 @@ class TestMatrice_ResultStorage:
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_Environment:
+    # The real Android device model, OS version, locale, and orientation this test execution ran against. (AI-inferred)
     android_device: Any = None
+    # The real iOS device model, OS version, and locale this test execution ran against. (AI-inferred)
     ios_device: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_Shard_TestTargetsForShard:
+    # The real, specific test class or method names to run, restricting an instrumentation test run to a subset of its full suite. (AI-inferred)
     test_targets: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_Shard:
+    # Firebase Test Lab's own real, estimated duration for this specific shard to complete. (AI-inferred)
     estimated_shard_duration: Any = None
+    # The real number of parallel shards to split this test run's targets across. (AI-inferred)
     num_shards: Any = None
+    # The real, zero-based index of this shard among a sharded test run's `num_shards` total shards. (AI-inferred)
     shard_index: Any = None
+    # The real subset of `test_targets` assigned to run on one specific shard, when a test run is manually sharded. (AI-inferred)
     test_targets_for_shard: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestDetails:
+    # A real, human-readable error message explaining why this test execution or issue occurred. (AI-inferred)
     error_message: Any = None
+    # Real, ordered, human-readable progress messages logged as this test execution ran. (AI-inferred)
     progress_messages: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_Apks:
+    # The real, split APK files Firebase Test Lab generates from an uploaded App Bundle for a specific device configuration. (AI-inferred)
     bundle_splits: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle:
+    # The real, split Android APK files (from an App Bundle) that together make up one installable build for a specific device configuration. (AI-inferred)
     apks: Any = None
+    # The real Cloud Storage location of the uploaded Android App Bundle this test run's `bundle_splits` were generated from. (AI-inferred)
     bundle_location: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualSharding:
+    # The real subset of `test_targets` assigned to run on one specific shard, when a test run is manually sharded. (AI-inferred)
     test_targets_for_shard: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartSharding:
+    # The real, target duration Firebase Test Lab aims for each shard to take, when using smart sharding. (AI-inferred)
     targeted_shard_duration: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformSharding:
+    # The real number of parallel shards to split this test run's targets across. (AI-inferred)
     num_shards: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption:
+    # Real, explicit shard-to-test-target assignments for this instrumentation test run. (AI-inferred)
     manual_sharding: Any = None
+    # Real, automatic sharding for this instrumentation test run, targeting a specific `targeted_shard_duration` per shard. (AI-inferred)
     smart_sharding: Any = None
+    # Real, automatic, even sharding of this instrumentation test run's targets across `num_shards` shards. (AI-inferred)
     uniform_sharding: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest:
+    # A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred)
     app_apk: Any = None
+    # A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred)
     app_bundle: Any = None
+    # The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred)
     app_package_id: Any = None
+    # Whether to real, run this Android instrumentation test using Android Test Orchestrator, which isolates each test in its own instrumentation instance. (AI-inferred)
     orchestrator_option: Any = None
+    # Real, chosen sharding strategy (`manual_sharding`, `smart_sharding`, or `uniform_sharding`) for this instrumentation test run. (AI-inferred)
     sharding_option: Any = None
+    # A reference to the real instrumentation test APK, uploaded to Cloud Storage, that exercises the app under test. (AI-inferred)
     test_apk: Any = None
+    # The real Android application ID (package name) of the instrumentation test APK. (AI-inferred)
     test_package_id: Any = None
+    # The real, fully-qualified class name of the instrumentation test runner to use for this test. (AI-inferred)
     test_runner_class: Any = None
+    # The real, specific test class or method names to run, restricting an instrumentation test run to a subset of its full suite. (AI-inferred)
     test_targets: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectives:
+    # The real type of Robo directive action to take on a matched UI element, e.g. `SINGLE_CLICK` or `ENTER_TEXT`. (AI-inferred)
     action_type: Any = None
+    # The real text value a Robo directive types into a matched UI element (for `ENTER_TEXT`-type actions). (AI-inferred)
     input_text: Any = None
+    # The real, fully-qualified resource name this reference points at. (AI-inferred)
     resource_name: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivity:
+    # The real Android intent action string (e.g. `android.intent.action.MAIN`) a starting intent specifies. (AI-inferred)
     action: Any = None
+    # The real Android intent category string(s) (e.g. `android.intent.category.LAUNCHER`) a starting intent specifies. (AI-inferred)
     categories: Any = None
+    # The real URI data an Android intent carries, for a starting intent that launches the app via a deep link. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents:
+    # Start the Robo test from the app's own real, declared launcher activity. (AI-inferred)
     launcher_activity: Any = None
+    # Start the Robo test without launching any activity, leaving the app in whatever state it's already in. (AI-inferred)
     no_activity: Any = None
+    # Start the Robo test from a specific, real named Android activity rather than the app's own default launcher. (AI-inferred)
     start_activity: Any = None
+    # The real maximum duration Firebase Test Lab allows this test or device session to run before it's forcibly stopped. (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest:
+    # A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred)
     app_apk: Any = None
+    # A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred)
     app_bundle: Any = None
+    # The real, specific Android activity the Robo crawler should start from, overriding the app's own default launcher activity. (AI-inferred)
     app_initial_activity: Any = None
+    # The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred)
     app_package_id: Any = None
+    # The real maximum depth of UI states the Robo crawler explores from the app's own starting screen. (AI-inferred)
     max_depth: Any = None
+    # The real maximum number of UI actions the Robo crawler takes during this test run. (AI-inferred)
     max_steps: Any = None
+    # Real, targeted instructions (like text to type into a specific field) that guide Firebase Test Lab's Robo crawler when it reaches matching UI elements. (AI-inferred)
     robo_directives: Any = None
+    # Which real Robo test strategy to use: standard automatic UI exploration, or a mode that starts from `robo_directives`/`starting_intents` instead. (AI-inferred)
     robo_mode: Any = None
+    # A real, recorded action script that guides Firebase Test Lab's Robo crawler through a specific app flow (like a login screen) instead of relying on automatic exploration alone. (AI-inferred)
     robo_script: Any = None
+    # Real Android intents Firebase Test Lab's Robo crawler should use to launch the app under test, instead of its default launcher activity. (AI-inferred)
     starting_intents: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_AndroidTestLoop:
+    # A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred)
     app_apk: Any = None
+    # A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred)
     app_bundle: Any = None
+    # The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred)
     app_package_id: Any = None
+    # Real, named labels identifying which Game Loop `scenarios` to run, as an alternative to specifying raw scenario numbers. (AI-inferred)
     scenario_labels: Any = None
+    # The real, numbered Game Loop scenario IDs to exercise for a Game Loop test, letting one app be tested across multiple distinct gameplay scenarios. (AI-inferred)
     scenarios: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_IosRoboTest:
+    # The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred)
     app_bundle_id: Any = None
+    # A reference to the real iOS `.ipa` app file under test, uploaded to Cloud Storage. (AI-inferred)
     app_ipa: Any = None
+    # A real, recorded action script that guides Firebase Test Lab's Robo crawler through a specific app flow (like a login screen) instead of relying on automatic exploration alone. (AI-inferred)
     robo_script: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_IosTestLoop:
+    # The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred)
     app_bundle_id: Any = None
+    # A reference to the real iOS `.ipa` app file under test, uploaded to Cloud Storage. (AI-inferred)
     app_ipa: Any = None
+    # The real, numbered Game Loop scenario IDs to exercise for a Game Loop test, letting one app be tested across multiple distinct gameplay scenarios. (AI-inferred)
     scenarios: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories:
+    # The real iOS bundle identifier this device configuration or test target applies to. (AI-inferred)
     bundle_id: Any = None
+    # The real content or configuration payload this test-run entry carries. (AI-inferred)
     content: Any = None
+    # The real, on-device file path a file should be pushed to or pulled from during a test run. (AI-inferred)
     device_path: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_IosTestSetup:
+    # Extra real iOS `.ipa` files to install onto the device alongside the app under test. (AI-inferred)
     additional_ipas: Any = None
+    # The real, named network condition profile (simulating a specific bandwidth/latency/packet-loss shape) to apply during the test run. (AI-inferred)
     network_profile: Any = None
+    # Real, on-device directory paths to pull files from after an iOS test run completes. (AI-inferred)
     pull_directories: Any = None
+    # Real local files to push onto the device's own filesystem before an iOS test run starts. (AI-inferred)
     push_files: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_IosXcTest:
+    # The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred)
     app_bundle_id: Any = None
+    # Whether this iOS XCTest run real, requires special app entitlements (like Sign in with Apple) that Firebase Test Lab must configure for. (AI-inferred)
     test_special_entitlements: Any = None
+    # A real, uploaded zip file containing the built iOS test bundle to run. (AI-inferred)
     tests_zip: Any = None
+    # The real Xcode version used to build (and run) this iOS test. (AI-inferred)
     xcode_version: Any = None
+    # A real, uploaded `.xctestrun` file describing how to run this iOS XCTest bundle. (AI-inferred)
     xctestrun: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_TestSetup_Account:
+    # Real, automatic Google account provisioning for this test run, requiring no explicit credentials. (AI-inferred)
     google_auto: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks:
+    # The real Google Cloud region this Firebase Test Lab device session or resource runs in. (AI-inferred)
     location: Any = None
+    # The real Android package name this device configuration, intent, or test target applies to. (AI-inferred)
     package_name: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFile:
+    # A real Android OBB expansion file to push onto the device before this test run starts. (AI-inferred)
     obb: Any = None
+    # The real, on-device file name an `obb_file` must be installed under for the app to find it. (AI-inferred)
     obb_file_name: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFile:
+    # The real content or configuration payload this test-run entry carries. (AI-inferred)
     content: Any = None
+    # The real, on-device file path a file should be pushed to or pulled from during a test run. (AI-inferred)
     device_path: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush:
+    # A real Android OBB expansion file to install onto the test device alongside the app under test. (AI-inferred)
     obb_file: Any = None
+    # A real, plain file to push onto the device's own filesystem before this test run starts. (AI-inferred)
     regular_file: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_TestSetup_Systrace:
+    # The real duration, in seconds, to capture systrace data for during this test run. (AI-inferred)
     duration_seconds: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification_TestSetup:
+    # Real, pre-authenticated Google account configuration to set up on the device before this test run starts. (AI-inferred)
     account: Any = None
+    # Extra real Android APKs to install onto the device alongside the app and test APK, for a test that depends on another app being present. (AI-inferred)
     additional_apks: Any = None
+    # Real, on-device directory paths Firebase Test Lab pulls files from after the test run completes, for later inspection. (AI-inferred)
     directories_to_pull: Any = None
+    # Whether Firebase Test Lab should real, skip automatically granting the app's own requested runtime permissions before the test starts. (AI-inferred)
     dont_autogrant_permissions: Any = None
+    # Real key/value environment variables passed into the instrumentation test run. (AI-inferred)
     environment_variables: Any = None
+    # Real local files Firebase Test Lab pushes onto the device's own filesystem before the test run starts. (AI-inferred)
     files_to_push: Any = None
+    # Real, additional APKs to install onto the device before this test run starts, beyond the app and test APKs themselves. (AI-inferred)
     initial_setup_apks: Any = None
+    # The real, named network condition profile (simulating a specific bandwidth/latency/packet-loss shape) to apply during the test run. (AI-inferred)
     network_profile: Any = None
+    # Real configuration for collecting an Android systrace during this test run. (AI-inferred)
     systrace: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_TestSpecification:
+    # Real configuration for an Android instrumentation test run: the test APK, runner class, and sharding options. (AI-inferred)
     android_instrumentation_test: Any = None
+    # Real configuration for an Android Robo test run: exploration depth/steps, starting activity, and directives. (AI-inferred)
     android_robo_test: Any = None
+    # Real configuration for an Android Game Loop test run: which `scenarios`/`scenario_labels` to exercise. (AI-inferred)
     android_test_loop: Any = None
+    # Whether to real, disable collection of performance metrics (CPU, memory, graphics) during this test run. (AI-inferred)
     disable_performance_metrics: Any = None
+    # Whether to real, disable video recording of this test run. (AI-inferred)
     disable_video_recording: Any = None
+    # Real configuration for an iOS Robo test run. (AI-inferred)
     ios_robo_test: Any = None
+    # Real configuration for an iOS Game Loop test run. (AI-inferred)
     ios_test_loop: Any = None
+    # Real, iOS-specific device setup (files to push/pull, additional IPAs) to apply before this test run starts. (AI-inferred)
     ios_test_setup: Any = None
+    # Real configuration for an iOS XCTest run: the `tests_zip`/`xctestrun` bundle and Xcode version. (AI-inferred)
     ios_xc_test: Any = None
+    # Real, shared Android device setup (files to push, account config, systrace) applied before this test run starts. (AI-inferred)
     test_setup: Any = None
+    # The real maximum duration Firebase Test Lab allows one individual test run to take before it's forcibly stopped. (AI-inferred)
     test_timeout: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions_ToolResultsStep:
+    # The real Tool Results execution ID this test execution's own results are recorded under. (AI-inferred)
     execution_id: Any = None
+    # The real Tool Results history ID this test execution's own results are recorded under. (AI-inferred)
     history_id: Any = None
+    # The real Google Cloud project ID this test matrix or device session runs under. (AI-inferred)
     project_id: Any = None
+    # The real Tool Results step ID this test execution's own results are recorded under. (AI-inferred)
     step_id: Any = None
 
 @dataclasses.dataclass
 class TestMatrice_TestExecutions:
+    # The real device and OS environment (Android or iOS) one test execution within this matrix ran against. (AI-inferred)
     environment: Any = None
+    # A real, stable identifier for this test resource. (AI-inferred)
     id: Any = None
+    # The real, parent test matrix ID this test execution belongs to. (AI-inferred)
     matrix_id: Any = None
+    # The real Google Cloud project ID this test matrix or device session runs under. (AI-inferred)
     project_id: Any = None
+    # Real sharding details (which shard, and its own estimated duration) for this specific test execution. (AI-inferred)
     shard: Any = None
+    # The real, current state (e.g. `RUNNING`, `FINISHED`, `ERROR`) of this test execution, or of a detected grant/status in this resource. (AI-inferred)
     state: Any = None
+    # Real, additional progress and error detail for this specific test execution. (AI-inferred)
     test_details: Any = None
+    # The real test type (instrumentation, Robo, Game Loop, XCTest) and its own configuration for this test execution. (AI-inferred)
     test_specification: Any = None
+    # The real timestamp this test execution was created or last updated at. (AI-inferred)
     timestamp: Any = None
+    # A reference to this test execution's own corresponding `google_toolresults_step`, where its detailed results are recorded. (AI-inferred)
     tool_results_step: Any = None
 
 _TestMatrice_ClientInfo_ClientInfoDetailsFields = {

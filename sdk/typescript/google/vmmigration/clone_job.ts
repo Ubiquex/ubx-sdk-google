@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CloneJob_ComputeEngineDisksTargetDetails_Disks {
+  /** The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred) */
   diskUri?: string | Computed<string>;
+  /** The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred) */
   sourceDiskNumber?: number | Computed<number>;
 }
 
@@ -21,7 +23,9 @@ export interface CloneJob_ComputeEngineDisksTargetDetails {
 }
 
 export interface CloneJob_ComputeEngineTargetDetails_AdaptationModifiers {
+  /** A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred) */
   modifier?: string | Computed<string>;
+  /** The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -33,8 +37,11 @@ export interface CloneJob_ComputeEngineTargetDetails_AppliedLicense {
 }
 
 export interface CloneJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities {
+  /** The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -55,10 +62,15 @@ export interface CloneJob_ComputeEngineTargetDetails_Encryption {
 }
 
 export interface CloneJob_ComputeEngineTargetDetails_NetworkInterfaces {
+  /** The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   externalIp?: string | Computed<string>;
+  /** The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   internalIp?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred) */
   networkTier?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
@@ -125,10 +137,15 @@ export interface CloneJob_Error {
 }
 
 export interface CloneJob_Steps {
+  /** Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred) */
   adaptingOs?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred) */
   instantiatingMigratedVm?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred) */
   preparingVmDisks?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 

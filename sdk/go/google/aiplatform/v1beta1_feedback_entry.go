@@ -7,7 +7,8 @@ type V1beta1FeedbackEntryConfig struct {
 	// Optional. Additional key-value metadata associated with the feedback.
 	CustomMetadata any
 	// Required. The ID of the event within the session that the feedback relates to.
-	EventId        any
+	EventId any
+	// The real label(s) categorizing this feedback entry. (AI-inferred)
 	FeedbackLabels any
 	// Optional. Qualitative free-form comments provided by the user.
 	FeedbackText any
@@ -29,7 +30,8 @@ type V1beta1FeedbackEntryAttrs struct {
 	// Optional. Additional key-value metadata associated with the feedback.
 	CustomMetadata any
 	// Required. The ID of the event within the session that the feedback relates to.
-	EventId        any
+	EventId any
+	// The real label(s) categorizing this feedback entry. (AI-inferred)
 	FeedbackLabels any
 	// Optional. Qualitative free-form comments provided by the user.
 	FeedbackText any

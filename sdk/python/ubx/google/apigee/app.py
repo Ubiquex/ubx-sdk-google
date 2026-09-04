@@ -8,23 +8,35 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class App_Attributes:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class App_Credentials_ApiProducts:
+    # A reference to the API product this applies to. (AI-inferred)
     apiproduct: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class App_Credentials:
+    # The API product(s) this applies to. (AI-inferred)
     api_products: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The API key issued to this app for calling APIs. (AI-inferred)
     consumer_key: Any = None
+    # The secret paired with `consumer_key` for OAuth authentication. (AI-inferred)
     consumer_secret: Any = None
+    # When this resource expires. (AI-inferred)
     expires_at: Any = None
+    # When this certificate was issued. (AI-inferred)
     issued_at: Any = None
+    # The OAuth scope(s) requested. (AI-inferred)
     scopes: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
 
 _App_AttributesFields = {

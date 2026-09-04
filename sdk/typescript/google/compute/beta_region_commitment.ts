@@ -431,6 +431,7 @@ export interface BetaRegionCommitmentConfig {
   customEndTimestamp?: string | Computed<string>;
   /** An optional description of the commitment. You can provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** The existing reservation resource(s) this commitment applies its own discount to. (AI-inferred) */
   existingReservations?: string[] | Computed<string[]>;
   /** Commitment for a particular license resource. */
   licenseResource?: BetaRegionCommitment_LicenseResource | Computed<BetaRegionCommitment_LicenseResource>;
@@ -469,6 +470,7 @@ export interface BetaRegionCommitmentAttrs {
   description: string;
   /** Output only. [Output Only] Commitment end time inRFC3339 text format. */
   endTimestamp: string;
+  /** The existing reservation resource(s) this commitment applies its own discount to. (AI-inferred) */
   existingReservations: string[];
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;

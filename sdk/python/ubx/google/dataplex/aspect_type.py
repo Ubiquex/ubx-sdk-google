@@ -33,14 +33,18 @@ class AspectType_MetadataTemplate_Constraints:
 
 @dataclasses.dataclass
 class AspectType_MetadataTemplate_EnumValues:
+    # Whether this field is deprecated and should no longer be used. (AI-inferred)
     deprecated: Any = None
+    # The position of this item within its own containing sequence. (AI-inferred)
     index: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class AspectType_MetadataTemplate:
     # Definition of the annotations of a field.
     annotations: Any = None
+    # The schema each element of an array-typed field must satisfy. (AI-inferred)
     array_items: Any = None
     # Definition of the constraints of a field.
     constraints: Any = None
@@ -48,6 +52,7 @@ class AspectType_MetadataTemplate:
     enum_values: Any = None
     # Optional. Index is used to encode Template messages. The value of index can range between 1 and 2,147,483,647. Index must be unique within all fields in a Template. (Nested Templates can reuse indexes). Once a Template is defined, the index cannot be changed, because it identifies the field in the actual storage format. Index is a mandatory field, but it is optional for top level fields, and map/array "values" definitions.
     index: Any = None
+    # The schema a map-typed field's own values must satisfy. (AI-inferred)
     map_items: Any = None
     # Required. The name of the field.
     name: Any = None

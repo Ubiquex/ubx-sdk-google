@@ -202,6 +202,7 @@ export interface V1beta2ChangeConfig {
   id?: string | Computed<string>;
   /** If the DNS queries for the zone will be served. */
   isServing?: boolean | Computed<boolean>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** The time that this operation was started by the server (output only). This is in RFC3339 text format. */
   startTime?: string | Computed<string>;
@@ -218,6 +219,7 @@ export interface V1beta2ChangeAttrs {
   id: string;
   /** If the DNS queries for the zone will be served. */
   isServing: boolean;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** The time that this operation was started by the server (output only). This is in RFC3339 text format. */
   startTime: string;

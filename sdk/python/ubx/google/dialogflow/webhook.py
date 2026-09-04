@@ -8,40 +8,63 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Webhook_GenericWebService_OauthConfig:
+    # The OAuth client ID used to authenticate. (AI-inferred)
     client_id: Any = None
+    # The OAuth client secret used to authenticate. (AI-inferred)
     client_secret: Any = None
+    # The OAuth scope(s) requested. (AI-inferred)
     scopes: Any = None
+    # The Secret Manager secret version holding the OAuth client secret, instead of storing it inline. (AI-inferred)
     secret_version_for_client_secret: Any = None
+    # The OAuth token endpoint URL used to obtain an access token. (AI-inferred)
     token_endpoint: Any = None
 
 @dataclasses.dataclass
 class Webhook_GenericWebService_SecretVersionsForRequestHeaders:
+    # A reference to a specific Secret Manager secret version. (AI-inferred)
     secret_version: Any = None
 
 @dataclasses.dataclass
 class Webhook_GenericWebService_ServiceAccountAuthConfig:
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Webhook_GenericWebService:
+    # Additional CA certificate(s) trusted when calling this webhook over HTTPS, beyond the standard public CA set. (AI-inferred)
     allowed_ca_certs: Any = None
+    # The HTTP method used to call this webhook, e.g. `POST`. (AI-inferred)
     http_method: Any = None
+    # Authenticates the webhook call using OAuth 2.0 client credentials. (AI-inferred)
     oauth_config: Any = None
+    # How session parameter values are mapped into the webhook's own request payload. (AI-inferred)
     parameter_mapping: Any = None
+    # The password used to authenticate. (AI-inferred)
     password: Any = None
+    # The literal request body template sent to the webhook. (AI-inferred)
     request_body: Any = None
+    # HTTP header(s) sent with the webhook request. (AI-inferred)
     request_headers: Any = None
+    # The Secret Manager secret version holding the username/password credential, instead of storing it inline. (AI-inferred)
     secret_version_for_username_password: Any = None
+    # Secret Manager secret version(s) supplying sensitive header values, instead of storing them inline. (AI-inferred)
     secret_versions_for_request_headers: Any = None
+    # Authenticates the webhook call using a Google Cloud service account's own identity token. (AI-inferred)
     service_account_auth_config: Any = None
+    # How Dialogflow's own service agent identity is presented when authenticating the webhook call. (AI-inferred)
     service_agent_auth: Any = None
+    # The URI of an audio clip this response instructs the client to play. (AI-inferred)
     uri: Any = None
+    # The username used to authenticate. (AI-inferred)
     username: Any = None
+    # Which webhook protocol this uses, e.g. a standard service call or a flexible one. (AI-inferred)
     webhook_type: Any = None
 
 @dataclasses.dataclass
 class Webhook_ServiceDirectory:
+    # Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
     generic_web_service: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
 
 _Webhook_GenericWebService_OauthConfigFields = {
@@ -100,20 +123,32 @@ _Webhook_ServiceDirectoryFields = {
 
 @dataclasses.dataclass
 class WebhookConfig:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
     generic_web_service: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the Service Directory service this webhook is reached through. (AI-inferred)
     service_directory: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class WebhookAttrs:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
     generic_web_service: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the Service Directory service this webhook is reached through. (AI-inferred)
     service_directory: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
 
 Webhook = ubx.ResourceBinding(

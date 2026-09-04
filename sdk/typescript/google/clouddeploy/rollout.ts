@@ -40,79 +40,120 @@ export interface Rollout_Metadata {
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_Container {
+  /** The command-line argument(s) passed to the container. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** The container entrypoint command to run, overriding the image's own default. (AI-inferred) */
   command?: string[] | Computed<string[]>;
+  /** Environment variable(s) set in the container. (AI-inferred) */
   env?: Record<string, string> | Computed<Record<string, string>>;
+  /** The container image reference to run. (AI-inferred) */
   image?: string | Computed<string>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task {
+  /** A single container's own configuration. (AI-inferred) */
   container?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_Container | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_Container>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks {
+  /** How often this check or action recurs. (AI-inferred) */
   frequency?: string | Computed<string>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A single unit of work within this job. (AI-inferred) */
   task?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecks {
+  /** The Cloud Monitoring alert policy/policies this check watches. (AI-inferred) */
   alertPolicies?: string[] | Computed<string[]>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud {
+  /** Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred) */
   alertPolicyChecks?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecks[] | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecks[]>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob {
+  /** Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred) */
   customChecks?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks[] | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks[]>;
+  /** How long this phase, wait, or window lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred) */
   googleCloud?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob {
+  /** The action(s) this hook or job performs. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
+  /** The task(s) making up this job. (AI-inferred) */
   tasks?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task[] | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task[]>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJob {
+  /** The task(s) making up this job. (AI-inferred) */
   tasks?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task[] | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task[]>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs {
+  /** A job that advances a child rollout to its own next phase, as part of a multi-target rollout. (AI-inferred) */
   advanceChildRolloutJob?: unknown | Computed<unknown>;
+  /** A job that runs automated analysis (e.g. metrics-based) on a rollout phase before promoting it. (AI-inferred) */
   analysisJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob>;
+  /** A job that creates a child rollout targeting a specific destination, as part of a multi-target rollout. (AI-inferred) */
   createChildRolloutJob?: unknown | Computed<unknown>;
+  /** The job that performs the actual deployment for this phase. (AI-inferred) */
   deployJob?: unknown | Computed<unknown>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A record of one execution of a job. (AI-inferred) */
   jobRun?: string | Computed<string>;
+  /** A job that runs custom actions after this phase's own deployment completes. (AI-inferred) */
   postdeployJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob>;
+  /** A job that runs custom actions before this phase's own deployment starts. (AI-inferred) */
   predeployJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob>;
+  /** A human-readable reason this job was skipped, when it was. (AI-inferred) */
   skipMessage?: string | Computed<string>;
+  /** The current status of this job or resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** A job that runs verification tests against this phase's own deployment before it's considered successful. (AI-inferred) */
   verifyJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJob | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJob>;
 }
 
 export interface Rollout_Phases_ChildRolloutJobs {
+  /** The job(s) that advance this rollout to its own next phase. (AI-inferred) */
   advanceRolloutJobs?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs[] | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs[]>;
+  /** The job(s) that create a new rollout. (AI-inferred) */
   createRolloutJobs?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs[] | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs[]>;
 }
 
 export interface Rollout_Phases_DeploymentJobs {
+  /** A job that runs automated analysis (e.g. metrics-based) on a rollout phase before promoting it. (AI-inferred) */
   analysisJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs>;
+  /** The job that performs the actual deployment for this phase. (AI-inferred) */
   deployJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs>;
+  /** A job that runs custom actions after this phase's own deployment completes. (AI-inferred) */
   postdeployJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs>;
+  /** A job that runs custom actions before this phase's own deployment starts. (AI-inferred) */
   predeployJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs>;
+  /** A job that runs verification tests against this phase's own deployment before it's considered successful. (AI-inferred) */
   verifyJob?: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs | Computed<Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs>;
 }
 
 export interface Rollout_Phases {
+  /** The job(s) that create or advance child rollouts, as part of a multi-target rollout. (AI-inferred) */
   childRolloutJobs?: Rollout_Phases_ChildRolloutJobs | Computed<Rollout_Phases_ChildRolloutJobs>;
+  /** The job(s) that perform the actual deployment for this phase. (AI-inferred) */
   deploymentJobs?: Rollout_Phases_DeploymentJobs | Computed<Rollout_Phases_DeploymentJobs>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A human-readable reason this job was skipped, when it was. (AI-inferred) */
   skipMessage?: string | Computed<string>;
+  /** The current status of this job or resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

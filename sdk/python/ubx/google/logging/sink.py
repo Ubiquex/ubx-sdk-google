@@ -15,11 +15,17 @@ class Sink_BigqueryOptions:
 
 @dataclasses.dataclass
 class Sink_Exclusions:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Whether this feature is turned off. (AI-inferred)
     disabled: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 _Sink_BigqueryOptionsFields = {

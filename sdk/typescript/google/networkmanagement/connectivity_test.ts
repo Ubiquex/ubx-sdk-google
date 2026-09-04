@@ -66,20 +66,29 @@ export interface ConnectivityTest_ProbingDetails_DestinationEgressLocation {
 }
 
 export interface ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentiles {
+  /** The measured latency for this probe, in microseconds. (AI-inferred) */
   latencyMicros?: string | Computed<string>;
+  /** A percentage value. (AI-inferred) */
   percent?: number | Computed<number>;
 }
 
 export interface ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency {
+  /** The distribution of measured latencies across percentiles for this test. (AI-inferred) */
   latencyPercentiles?: ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentiles[] | Computed<ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentiles[]>;
 }
 
 export interface ConnectivityTest_ProbingDetails_EdgeResponses {
+  /** The physical location traffic egressed Google's own network from. (AI-inferred) */
   destinationEgressLocation?: ConnectivityTest_ProbingDetails_DestinationEgressLocation | Computed<ConnectivityTest_ProbingDetails_DestinationEgressLocation>;
+  /** The router the packet was delivered to. (AI-inferred) */
   destinationRouter?: string | Computed<string>;
+  /** Latency statistics measured while probing this test's own live network path. (AI-inferred) */
   probingLatency?: ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency | Computed<ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency>;
+  /** The outcome of this operation. (AI-inferred) */
   result?: string | Computed<string>;
+  /** How many probe packets were sent during this live connectivity test. (AI-inferred) */
   sentProbeCount?: number | Computed<number>;
+  /** How many probe packets successfully reached their own destination during this live connectivity test. (AI-inferred) */
   successfulProbeCount?: number | Computed<number>;
 }
 
@@ -137,383 +146,646 @@ export interface ConnectivityTest_ProbingDetails {
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Abort {
+  /** Why this outcome occurred. (AI-inferred) */
   cause?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The project(s) the caller lacks sufficient permission to fully analyze. (AI-inferred) */
   projectsMissingPermission?: string[] | Computed<string[]>;
+  /** A reference to the specific resource this applies to. (AI-inferred) */
   resourceUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersion {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The App Engine environment this applies to. (AI-inferred) */
   environment?: string | Computed<string>;
+  /** The runtime environment this applies to. (AI-inferred) */
   runtime?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunction {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   versionId?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevision {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A reference to the service this applies to. (AI-inferred) */
   serviceUri?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
   workerPoolUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstance {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An external (public) IP address. (AI-inferred) */
   externalIp?: string | Computed<string>;
+  /** An internal (private) IP address. (AI-inferred) */
   internalIp?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Deliver {
+  /** Which category of Google-managed service this is. (AI-inferred) */
   googleServiceType?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The Google API this Private Service Connect endpoint targets. (AI-inferred) */
   pscGoogleApiTarget?: string | Computed<string>;
+  /** A reference to the specific resource this applies to. (AI-inferred) */
   resourceUri?: string | Computed<string>;
+  /** The Cloud Storage bucket this endpoint resolves to. (AI-inferred) */
   storageBucket?: string | Computed<string>;
+  /** The intended destination of this test or rule. (AI-inferred) */
   target?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnection {
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** The specific IP address selected for this endpoint, when more than one was possible. (AI-inferred) */
   selectedIpAddress?: string | Computed<string>;
+  /** The specific IP address range selected for this endpoint. (AI-inferred) */
   selectedIpRange?: string | Computed<string>;
+  /** A reference to the subnetwork this applies to. (AI-inferred) */
   subnetworkUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Drop {
+  /** Why this outcome occurred. (AI-inferred) */
   cause?: string | Computed<string>;
+  /** The geographic location code associated with the destination. (AI-inferred) */
   destinationGeolocationCode?: string | Computed<string>;
+  /** The destination IP address of the simulated packet at this step. (AI-inferred) */
   destinationIp?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A reference to the specific resource this applies to. (AI-inferred) */
   resourceUri?: string | Computed<string>;
+  /** The geographic location code associated with the source. (AI-inferred) */
   sourceGeolocationCode?: string | Computed<string>;
+  /** The source IP address of the simulated packet at this step. (AI-inferred) */
   sourceIp?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Firewall {
+  /** The action taken by this step or rule. (AI-inferred) */
   action?: string | Computed<string>;
+  /** Whether this rule or step applies to `INGRESS` or `EGRESS` traffic. (AI-inferred) */
   direction?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Which category of firewall rule matched, e.g. hierarchical or VPC. (AI-inferred) */
   firewallRuleType?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The policy that matched this step. (AI-inferred) */
   policy?: string | Computed<string>;
+  /** The relative priority of this policy -- lower numbers are evaluated first. (AI-inferred) */
   policyPriority?: number | Computed<number>;
+  /** A reference to the specific policy this applies to. (AI-inferred) */
   policyUri?: string | Computed<string>;
+  /** The relative priority of this item -- lower numbers are evaluated first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** The service account(s) this rule applies to. (AI-inferred) */
   targetServiceAccounts?: string[] | Computed<string[]>;
+  /** The network tag(s) this rule applies to. (AI-inferred) */
   targetTags?: string[] | Computed<string[]>;
+  /** The kind of target this forwarding rule directs traffic to. (AI-inferred) */
   targetType?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Forward {
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** A reference to the specific resource this applies to. (AI-inferred) */
   resourceUri?: string | Computed<string>;
+  /** The intended destination of this test or rule. (AI-inferred) */
   target?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRule {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether firewall rules allowing Envoy-based health checks are correctly configured. (AI-inferred) */
   envoyHealthCheckFirewallsConfigState?: string | Computed<string>;
+  /** The name of the load balancer this trace passed through. (AI-inferred) */
   loadBalancerName?: string | Computed<string>;
+  /** The port range this rule matched against. (AI-inferred) */
   matchedPortRange?: string | Computed<string>;
+  /** The protocol this rule matched against. (AI-inferred) */
   matchedProtocol?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The Google API this Private Service Connect endpoint targets. (AI-inferred) */
   pscGoogleApiTarget?: string | Computed<string>;
+  /** A reference to the Private Service Connect service attachment this traffic passed through. (AI-inferred) */
   pscServiceAttachmentUri?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** The intended destination of this test or rule. (AI-inferred) */
   target?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
+  /** A virtual IP address. (AI-inferred) */
   vip?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMaster {
+  /** The VPC network the GKE cluster this endpoint belongs to is attached to. (AI-inferred) */
   clusterNetworkUri?: string | Computed<string>;
+  /** A reference to the GKE cluster this endpoint belongs to. (AI-inferred) */
   clusterUri?: string | Computed<string>;
+  /** The DNS-resolvable endpoint this applies to. (AI-inferred) */
   dnsEndpoint?: string | Computed<string>;
+  /** An external (public) IP address. (AI-inferred) */
   externalIp?: string | Computed<string>;
+  /** An internal (private) IP address. (AI-inferred) */
   internalIp?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicy {
+  /** The action taken by this step or rule. (AI-inferred) */
   action?: string | Computed<string>;
+  /** Whether this rule or step applies to `INGRESS` or `EGRESS` traffic. (AI-inferred) */
   direction?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkipped {
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePod {
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** A reference to the GKE pod this applies to. (AI-inferred) */
   podUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleService {
+  /** Which category of Google-managed service this is. (AI-inferred) */
   googleServiceType?: string | Computed<string>;
+  /** The source IP address of the simulated packet at this step. (AI-inferred) */
   sourceIp?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnet {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Instance {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An external (public) IP address. (AI-inferred) */
   externalIp?: string | Computed<string>;
+  /** The network interface this applies to. (AI-inferred) */
   interface?: string | Computed<string>;
+  /** An internal (private) IP address. (AI-inferred) */
   internalIp?: string | Computed<string>;
+  /** The network tag(s) matched by this rule. (AI-inferred) */
   networkTags?: string[] | Computed<string[]>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** A reference to the Private Service Connect network attachment this traffic passed through. (AI-inferred) */
   pscNetworkAttachmentUri?: string | Computed<string>;
+  /** Whether the associated resource is currently running. (AI-inferred) */
   running?: boolean | Computed<boolean>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachment {
+  /** A reference to the Cloud Router this applies to. (AI-inferred) */
   cloudRouterUri?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the Interconnect this traffic routes through. (AI-inferred) */
   interconnectUri?: string | Computed<string>;
+  /** The IP address matched on the Layer 2 Interconnect attachment. (AI-inferred) */
   l2AttachmentMatchedIpAddress?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkipped {
+  /** IP range(s) excluded from NAT masquerading. (AI-inferred) */
   nonMasqueradeRange?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_Backends {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The firewall rule(s) correctly allowing health check traffic to this backend. (AI-inferred) */
   healthCheckAllowingFirewallRules?: string[] | Computed<string[]>;
+  /** The firewall rule(s) incorrectly blocking health check traffic to this backend. (AI-inferred) */
   healthCheckBlockingFirewallRules?: string[] | Computed<string[]>;
+  /** Whether firewall rules allow health check probes to reach this backend. (AI-inferred) */
   healthCheckFirewallState?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer {
+  /** The kind of backend this traffic is routed to, e.g. instance group or NEG. (AI-inferred) */
   backendType?: string | Computed<string>;
+  /** A reference to the specific backend traffic was routed to. (AI-inferred) */
   backendUri?: string | Computed<string>;
+  /** The backend(s) configured for this load balancer. (AI-inferred) */
   backends?: ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_Backends[] | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_Backends[]>;
+  /** A reference to the health check associated with this backend. (AI-inferred) */
   healthCheckUri?: string | Computed<string>;
+  /** The kind of load balancer this trace passed through, e.g. external HTTP(S). (AI-inferred) */
   loadBalancerType?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfo {
+  /** The backend bucket this load balancer routes matching traffic to. (AI-inferred) */
   backendBucketUri?: string | Computed<string>;
+  /** The backend service this load balancer routes matching traffic to. (AI-inferred) */
   backendServiceUri?: string | Computed<string>;
+  /** Whether firewall rules allowing health check traffic are correctly configured. (AI-inferred) */
   healthCheckFirewallsConfigState?: string | Computed<string>;
+  /** A reference to the health check associated with this backend. (AI-inferred) */
   healthCheckUri?: string | Computed<string>;
+  /** A reference to the instance group this endpoint belongs to. (AI-inferred) */
   instanceGroupUri?: string | Computed<string>;
+  /** A reference to the specific instance this endpoint resolves to. (AI-inferred) */
   instanceUri?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to the network endpoint group this applies to. (AI-inferred) */
   networkEndpointGroupUri?: string | Computed<string>;
+  /** The Google API this Private Service Connect endpoint targets. (AI-inferred) */
   pscGoogleApiTarget?: string | Computed<string>;
+  /** A reference to the Private Service Connect service attachment this traffic passed through. (AI-inferred) */
   pscServiceAttachmentUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Nat {
+  /** Which kind of Cloud NAT gateway handled this traffic, e.g. public or private. (AI-inferred) */
   cloudNatGatewayType?: string | Computed<string>;
+  /** The name of the NAT gateway that processed this packet. (AI-inferred) */
   natGatewayName?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The destination IP address after NAT was applied. (AI-inferred) */
   newDestinationIp?: string | Computed<string>;
+  /** The destination port after NAT was applied. (AI-inferred) */
   newDestinationPort?: number | Computed<number>;
+  /** The source IP address after NAT was applied. (AI-inferred) */
   newSourceIp?: string | Computed<string>;
+  /** The source port after NAT was applied. (AI-inferred) */
   newSourcePort?: number | Computed<number>;
+  /** The destination IP address before NAT was applied. (AI-inferred) */
   oldDestinationIp?: string | Computed<string>;
+  /** The destination port before NAT was applied. (AI-inferred) */
   oldDestinationPort?: number | Computed<number>;
+  /** The source IP address before NAT was applied. (AI-inferred) */
   oldSourceIp?: string | Computed<string>;
+  /** The source port before NAT was applied. (AI-inferred) */
   oldSourcePort?: number | Computed<number>;
+  /** The network protocol this applies to. (AI-inferred) */
   protocol?: string | Computed<string>;
+  /** A reference to the Cloud Router this applies to. (AI-inferred) */
   routerUri?: string | Computed<string>;
+  /** The numeric priority of the firewall rule that matched. (AI-inferred) */
   ruleNumber?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Network {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The IP address range this rule matched against. (AI-inferred) */
   matchedIpRange?: string | Computed<string>;
+  /** The subnet this step's own IP address matched. (AI-inferred) */
   matchedSubnetUri?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspection {
+  /** A reference to the Cloud Next-Generation Firewall security profile group applied. (AI-inferred) */
   securityProfileGroupUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnection {
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The destination IP address after NAT was applied. (AI-inferred) */
   newDestinationIp?: string | Computed<string>;
+  /** The destination port after NAT was applied. (AI-inferred) */
   newDestinationPort?: number | Computed<number>;
+  /** The source IP address after NAT was applied. (AI-inferred) */
   newSourceIp?: string | Computed<string>;
+  /** The source port after NAT was applied. (AI-inferred) */
   newSourcePort?: number | Computed<number>;
+  /** The destination IP address before NAT was applied. (AI-inferred) */
   oldDestinationIp?: string | Computed<string>;
+  /** The destination port before NAT was applied. (AI-inferred) */
   oldDestinationPort?: number | Computed<number>;
+  /** The source IP address before NAT was applied. (AI-inferred) */
   oldSourceIp?: string | Computed<string>;
+  /** The source port before NAT was applied. (AI-inferred) */
   oldSourcePort?: number | Computed<number>;
+  /** The network protocol this applies to. (AI-inferred) */
   protocol?: string | Computed<string>;
+  /** A reference to the subnet this applies to. (AI-inferred) */
   subnetUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisCluster {
+  /** The discovery endpoint IP address for this resource. (AI-inferred) */
   discoveryEndpointIpAddress?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** A secondary IP address for this endpoint. (AI-inferred) */
   secondaryEndpointIpAddress?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstance {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The primary IP address of this endpoint. (AI-inferred) */
   primaryEndpointIp?: string | Computed<string>;
+  /** The IP address of a database's own read replica endpoint. (AI-inferred) */
   readEndpointIp?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_Route {
+  /** The next hop URI advertised for this route. (AI-inferred) */
   advertisedRouteNextHopUri?: string | Computed<string>;
+  /** The router that advertised this route. (AI-inferred) */
   advertisedRouteSourceRouterUri?: string | Computed<string>;
+  /** The destination IP address range this rule matches. (AI-inferred) */
   destIpRange?: string | Computed<string>;
+  /** The destination port range(s) this rule matches. (AI-inferred) */
   destPortRanges?: string[] | Computed<string[]>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The network tag(s) on this instance. (AI-inferred) */
   instanceTags?: string[] | Computed<string[]>;
+  /** A reference to the Network Connectivity Center hub route this traffic followed. (AI-inferred) */
   nccHubRouteUri?: string | Computed<string>;
+  /** A reference to the Network Connectivity Center hub this traffic passed through. (AI-inferred) */
   nccHubUri?: string | Computed<string>;
+  /** A reference to the Network Connectivity Center spoke this traffic passed through. (AI-inferred) */
   nccSpokeUri?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** Where the packet was forwarded to next. (AI-inferred) */
   nextHop?: string | Computed<string>;
+  /** The VPC network the next hop belongs to. (AI-inferred) */
   nextHopNetworkUri?: string | Computed<string>;
+  /** The kind of next hop the packet was forwarded to, e.g. instance or VPN tunnel. (AI-inferred) */
   nextHopType?: string | Computed<string>;
+  /** A reference to the specific next hop the packet was forwarded to. (AI-inferred) */
   nextHopUri?: string | Computed<string>;
+  /** A human-readable name for the route this path originated from. (AI-inferred) */
   originatingRouteDisplayName?: string | Computed<string>;
+  /** A reference to the route this path originated from. (AI-inferred) */
   originatingRouteUri?: string | Computed<string>;
+  /** The relative priority of this item -- lower numbers are evaluated first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** The network protocol(s) this rule matches. (AI-inferred) */
   protocols?: string[] | Computed<string[]>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** The scope this route applies within, e.g. network-wide or NCC hub-wide. (AI-inferred) */
   routeScope?: string | Computed<string>;
+  /** The kind of route that matched, e.g. subnet, static, or peering. (AI-inferred) */
   routeType?: string | Computed<string>;
+  /** The source IP address range this rule matches. (AI-inferred) */
   srcIpRange?: string | Computed<string>;
+  /** The source port range(s) this rule matches. (AI-inferred) */
   srcPortRanges?: string[] | Computed<string[]>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnection {
+  /** The specific IP address selected for this endpoint, when more than one was possible. (AI-inferred) */
   selectedIpAddress?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNeg {
+  /** A reference to the network endpoint group this applies to. (AI-inferred) */
   negUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucket {
+  /** A reference to the Cloud Storage bucket this applies to. (AI-inferred) */
   bucket?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfo {
+  /** The resource type(s) this applies to. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGateway {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
+  /** A reference to the specific VPN tunnel this traffic passed through. (AI-inferred) */
   vpnTunnelUri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnel {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the VPC network this applies to. (AI-inferred) */
   networkUri?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A reference to the remote VPN or Interconnect gateway this traffic passed through. (AI-inferred) */
   remoteGateway?: string | Computed<string>;
+  /** The IP address of the remote VPN or Interconnect gateway. (AI-inferred) */
   remoteGatewayIp?: string | Computed<string>;
+  /** How this network's own routing is configured, e.g. regional or global dynamic routing. (AI-inferred) */
   routingType?: string | Computed<string>;
+  /** The source VPN or Interconnect gateway this traffic originated from. (AI-inferred) */
   sourceGateway?: string | Computed<string>;
+  /** The IP address of the source VPN or Interconnect gateway. (AI-inferred) */
   sourceGatewayIp?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces_Steps {
+  /** This trace step aborted, ending analysis without a definitive deliver/drop verdict. (AI-inferred) */
   abort?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Abort | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Abort>;
+  /** The App Engine service version this endpoint resolves to. (AI-inferred) */
   appEngineVersion?: ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersion | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersion>;
+  /** Whether this condition results in the packet being dropped. (AI-inferred) */
   causesDrop?: boolean | Computed<boolean>;
+  /** The Cloud Functions function this endpoint resolves to. (AI-inferred) */
   cloudFunction?: ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunction | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunction>;
+  /** The Cloud Run job this endpoint resolves to. (AI-inferred) */
   cloudRunJob?: ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob>;
+  /** The Cloud Run revision this endpoint resolves to. (AI-inferred) */
   cloudRunRevision?: ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevision | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevision>;
+  /** The Cloud SQL instance this endpoint resolves to. (AI-inferred) */
   cloudSqlInstance?: ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstance | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstance>;
+  /** The Datastream private connection this endpoint routes through. (AI-inferred) */
   datastreamPrivateConnection?: ConnectivityTest_Destination_AppEngineVersion | Computed<ConnectivityTest_Destination_AppEngineVersion>;
+  /** This trace step delivered the packet to its own final destination. (AI-inferred) */
   deliver?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Deliver | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Deliver>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The direct VPC egress configuration this serverless endpoint routes traffic through. (AI-inferred) */
   directVpcEgressConnection?: ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnection | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnection>;
+  /** The Database Migration Service private connection this endpoint routes through. (AI-inferred) */
   dmsPrivateConnection?: ConnectivityTest_Destination_AppEngineVersion | Computed<ConnectivityTest_Destination_AppEngineVersion>;
+  /** This trace step dropped the packet, ending analysis with a drop verdict. (AI-inferred) */
   drop?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Drop | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Drop>;
+  /** The source or destination endpoint being traced. (AI-inferred) */
   endpoint?: ConnectivityTest_ProbingDetails_EndpointInfo | Computed<ConnectivityTest_ProbingDetails_EndpointInfo>;
+  /** The firewall rule that matched this step. (AI-inferred) */
   firewall?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Firewall | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Firewall>;
+  /** This trace step forwarded the packet on to the next hop. (AI-inferred) */
   forward?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Forward | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Forward>;
+  /** The forwarding rule that matched this step. (AI-inferred) */
   forwardingRule?: ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRule | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRule>;
+  /** The GKE cluster control plane this endpoint resolves to. (AI-inferred) */
   gkeMaster?: ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMaster | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMaster>;
+  /** The GKE NetworkPolicy that matched this step. (AI-inferred) */
   gkeNetworkPolicy?: ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicy | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicy>;
+  /** Whether GKE NetworkPolicy evaluation was skipped for this step, and why. (AI-inferred) */
   gkeNetworkPolicySkipped?: ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkipped | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkipped>;
+  /** The GKE pod this endpoint resolves to. (AI-inferred) */
   gkePod?: ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePod | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePod>;
+  /** The Google-managed service this endpoint resolves to. (AI-inferred) */
   googleService?: ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleService | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleService>;
+  /** The hybrid subnet this endpoint belongs to, for a Google Distributed Cloud environment. (AI-inferred) */
   hybridSubnet?: ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnet | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnet>;
+  /** A reference to the Compute Engine instance this endpoint resolves to. (AI-inferred) */
   instance?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Instance | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Instance>;
+  /** The Interconnect attachment this traffic routes through. (AI-inferred) */
   interconnectAttachment?: ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachment | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachment>;
+  /** Whether IP masquerading (NAT) was skipped for this step, and why. (AI-inferred) */
   ipMasqueradingSkipped?: ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkipped | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkipped>;
+  /** Detail about the load balancer this trace passed through. (AI-inferred) */
   loadBalancer?: ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer>;
+  /** Detail about the specific backend a load balancer routed this trace to. (AI-inferred) */
   loadBalancerBackendInfo?: ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfo | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfo>;
+  /** Detail about NAT applied to this packet at this step. (AI-inferred) */
   nat?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Nat | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Nat>;
+  /** A reference to the VPC network this trace step's traffic traverses. (AI-inferred) */
   network?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Network | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Network>;
+  /** Detail about Cloud Next-Generation Firewall inspection applied to this packet. (AI-inferred) */
   ngfwPacketInspection?: ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspection | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspection>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** Detail about the proxy connection this traffic passed through. (AI-inferred) */
   proxyConnection?: ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnection | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnection>;
+  /** The Memorystore for Redis Cluster this endpoint resolves to. (AI-inferred) */
   redisCluster?: ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisCluster | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisCluster>;
+  /** The Memorystore for Redis instance this endpoint resolves to. (AI-inferred) */
   redisInstance?: ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstance | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstance>;
+  /** The route that matched this step. (AI-inferred) */
   route?: ConnectivityTest_ReachabilityDetails_Traces_Steps_Route | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_Route>;
+  /** Detail about a serverless resource's own external network connection. (AI-inferred) */
   serverlessExternalConnection?: ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnection | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnection>;
+  /** The serverless network endpoint group this traffic routed through. (AI-inferred) */
   serverlessNeg?: ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNeg | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNeg>;
+  /** The current status of this resource or step. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The Cloud Storage bucket this endpoint resolves to. (AI-inferred) */
   storageBucket?: ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucket | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucket>;
+  /** Detail about resource(s) the caller lacked sufficient permission to view during analysis. (AI-inferred) */
   viewerPermissionMissingInfo?: ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfo | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfo>;
+  /** The Serverless VPC Access connector this endpoint routes through. (AI-inferred) */
   vpcConnector?: ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob>;
+  /** A reference to the VPN gateway this traffic passed through. (AI-inferred) */
   vpnGateway?: ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGateway | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGateway>;
+  /** Detail about the VPN tunnel this traffic passed through. (AI-inferred) */
   vpnTunnel?: ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnel | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnel>;
 }
 
 export interface ConnectivityTest_ReachabilityDetails_Traces {
+  /** Detail identifying this trace's own source and destination endpoints. (AI-inferred) */
   endpointInfo?: ConnectivityTest_ProbingDetails_EndpointInfo | Computed<ConnectivityTest_ProbingDetails_EndpointInfo>;
+  /** The identifier of a related forward-direction trace, for a return-path trace. (AI-inferred) */
   forwardTraceId?: number | Computed<number>;
+  /** The ordered step(s) making up this trace. (AI-inferred) */
   steps?: ConnectivityTest_ReachabilityDetails_Traces_Steps[] | Computed<ConnectivityTest_ReachabilityDetails_Traces_Steps[]>;
 }
 

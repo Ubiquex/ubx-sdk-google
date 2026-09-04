@@ -20,15 +20,24 @@ type AutonomousDatabase_Properties_ConnectionStrings_AllConnectionStrings struct
 }
 
 type AutonomousDatabase_Properties_ConnectionStrings_Profiles struct {
-	ConsumerGroup     any
-	DisplayName       any
-	HostFormat        any
-	IsRegional        any
-	Protocol          any
-	SessionMode       any
-	SyntaxFormat      any
+	// The Oracle database service consumer group this connection uses. (AI-inferred)
+	ConsumerGroup any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether the connection string identifies the host by IP address or hostname. (AI-inferred)
+	HostFormat any
+	// Whether this resource spans multiple availability domains within its own region. (AI-inferred)
+	IsRegional any
+	// The network protocol used. (AI-inferred)
+	Protocol any
+	// Whether this connection is direct or routed through a shared session pool. (AI-inferred)
+	SessionMode any
+	// The format this connection string is expressed in, e.g. long or Easy Connect. (AI-inferred)
+	SyntaxFormat any
+	// Whether the client, the server, or both must authenticate via TLS for this connection. (AI-inferred)
 	TlsAuthentication any
-	Value             any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type AutonomousDatabase_Properties_ConnectionStrings struct {
@@ -66,6 +75,7 @@ type AutonomousDatabase_Properties_ConnectionUrls struct {
 }
 
 type AutonomousDatabase_Properties_CustomerContacts struct {
+	// An email address associated with this resource. (AI-inferred)
 	Email any
 }
 
@@ -77,8 +87,10 @@ type AutonomousDatabase_Properties_EncryptionKey struct {
 }
 
 type AutonomousDatabase_Properties_EncryptionKeyHistoryEntries struct {
+	// When this resource was activated. (AI-inferred)
 	ActivationTime any
-	EncryptionKey  any
+	// The key used to encrypt this resource. (AI-inferred)
+	EncryptionKey any
 }
 
 type AutonomousDatabase_Properties_LocalStandbyDb struct {
@@ -95,16 +107,23 @@ type AutonomousDatabase_Properties_LocalStandbyDb struct {
 }
 
 type AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type AutonomousDatabase_Properties_ScheduledOperationDetails struct {
+	// The day of the week this applies to. (AI-inferred)
 	DayOfWeek any
+	// When this event or window started. (AI-inferred)
 	StartTime any
-	StopTime  any
+	// When this event or window ended. (AI-inferred)
+	StopTime any
 }
 
 type AutonomousDatabase_Properties struct {

@@ -15,7 +15,9 @@ class Version_AcceleratorConfig:
 
 @dataclasses.dataclass
 class Version_AutoScaling_Metrics:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The value this metric is being optimized toward. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
@@ -29,11 +31,14 @@ class Version_AutoScaling:
 
 @dataclasses.dataclass
 class Version_Container_Env:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Version_Container_Ports:
+    # The port number the training container listens on. (AI-inferred)
     container_port: Any = None
 
 @dataclasses.dataclass

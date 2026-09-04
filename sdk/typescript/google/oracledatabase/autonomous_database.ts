@@ -18,14 +18,23 @@ export interface AutonomousDatabase_Properties_ConnectionStrings_AllConnectionSt
 }
 
 export interface AutonomousDatabase_Properties_ConnectionStrings_Profiles {
+  /** The Oracle database service consumer group this connection uses. (AI-inferred) */
   consumerGroup?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether the connection string identifies the host by IP address or hostname. (AI-inferred) */
   hostFormat?: string | Computed<string>;
+  /** Whether this resource spans multiple availability domains within its own region. (AI-inferred) */
   isRegional?: boolean | Computed<boolean>;
+  /** The network protocol used. (AI-inferred) */
   protocol?: string | Computed<string>;
+  /** Whether this connection is direct or routed through a shared session pool. (AI-inferred) */
   sessionMode?: string | Computed<string>;
+  /** The format this connection string is expressed in, e.g. long or Easy Connect. (AI-inferred) */
   syntaxFormat?: string | Computed<string>;
+  /** Whether the client, the server, or both must authenticate via TLS for this connection. (AI-inferred) */
   tlsAuthentication?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -64,6 +73,7 @@ export interface AutonomousDatabase_Properties_ConnectionUrls {
 }
 
 export interface AutonomousDatabase_Properties_CustomerContacts {
+  /** An email address associated with this resource. (AI-inferred) */
   email?: string | Computed<string>;
 }
 
@@ -75,7 +85,9 @@ export interface AutonomousDatabase_Properties_EncryptionKey {
 }
 
 export interface AutonomousDatabase_Properties_EncryptionKeyHistoryEntries {
+  /** When this resource was activated. (AI-inferred) */
   activationTime?: string | Computed<string>;
+  /** The key used to encrypt this resource. (AI-inferred) */
   encryptionKey?: AutonomousDatabase_Properties_EncryptionKey | Computed<AutonomousDatabase_Properties_EncryptionKey>;
 }
 
@@ -93,15 +105,22 @@ export interface AutonomousDatabase_Properties_LocalStandbyDb {
 }
 
 export interface AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface AutonomousDatabase_Properties_ScheduledOperationDetails {
+  /** The day of the week this applies to. (AI-inferred) */
   dayOfWeek?: string | Computed<string>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime | Computed<AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime>;
+  /** When this event or window ended. (AI-inferred) */
   stopTime?: AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime | Computed<AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime>;
 }
 

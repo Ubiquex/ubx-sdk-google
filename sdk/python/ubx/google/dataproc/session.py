@@ -141,8 +141,11 @@ class Session_RuntimeInfo_CurrentUsage:
 
 @dataclasses.dataclass
 class Session_RuntimeInfo_PropertiesInfo_AutotuningProperties:
+    # A note attached to this workflow step or job. (AI-inferred)
     annotation: Any = None
+    # The value this setting was overridden to. (AI-inferred)
     overridden_value: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -169,8 +172,11 @@ class Session_RuntimeInfo:
 
 @dataclasses.dataclass
 class Session_StateHistory:
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # A human-readable description of the current state. (AI-inferred)
     state_message: Any = None
+    # When this resource entered its own current state. (AI-inferred)
     state_start_time: Any = None
 
 _Session_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields = {

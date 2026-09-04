@@ -2,41 +2,65 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Job_AllocationPolicy_Instances_Policy_Accelerators {
+  /** The real number of accelerators of this `type` to attach to each instance. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The real GPU driver version to install for this accelerator, when `install_gpu_drivers` requests automatic installation. (AI-inferred) */
   driverVersion?: string | Computed<string>;
+  /** Whether Batch should automatically install GPU drivers on the managed instance, when its own machine type or accelerators require them. (AI-inferred) */
   installGpuDrivers?: boolean | Computed<boolean>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_AllocationPolicy_Instances_Policy_BootDisk {
+  /** The real disk interface (e.g. `NVME`, `SCSI`) to attach a Batch-managed instance's boot or data disk with. (AI-inferred) */
   diskInterface?: string | Computed<string>;
+  /** A real Compute Engine image or image family to boot a Batch-managed instance's boot disk from. (AI-inferred) */
   image?: string | Computed<string>;
+  /** The real, provisioned size, in GiB, of this disk. (AI-inferred) */
   sizeGb?: string | Computed<string>;
+  /** A real Compute Engine disk snapshot to create this Batch-managed instance's boot disk from, instead of an `image`. (AI-inferred) */
   snapshot?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_AllocationPolicy_Instances_Policy_Disks {
+  /** The real device name a Batch-managed instance's disk is attached under, referenced by the job's own `volumes` mount configuration. (AI-inferred) */
   deviceName?: string | Computed<string>;
+  /** A real, already-existing Compute Engine disk to attach to a Batch-managed instance, instead of creating a `new_disk`. (AI-inferred) */
   existingDisk?: string | Computed<string>;
+  /** Real configuration for a new disk Batch should create and attach to each managed instance for this job. (AI-inferred) */
   newDisk?: Job_AllocationPolicy_Instances_Policy_BootDisk | Computed<Job_AllocationPolicy_Instances_Policy_BootDisk>;
 }
 
 export interface Job_AllocationPolicy_Instances_Policy {
+  /** The real GPU accelerator(s) to attach to each Batch-managed instance for this job. (AI-inferred) */
   accelerators?: Job_AllocationPolicy_Instances_Policy_Accelerators[] | Computed<Job_AllocationPolicy_Instances_Policy_Accelerators[]>;
+  /** Real, custom boot disk configuration for a Batch-managed instance, overriding whatever the source image would otherwise default to. (AI-inferred) */
   bootDisk?: Job_AllocationPolicy_Instances_Policy_BootDisk | Computed<Job_AllocationPolicy_Instances_Policy_BootDisk>;
+  /** Real, additional persistent or local disks to attach to each Batch-managed instance for this job. (AI-inferred) */
   disks?: Job_AllocationPolicy_Instances_Policy_Disks[] | Computed<Job_AllocationPolicy_Instances_Policy_Disks[]>;
+  /** The real Compute Engine machine type (e.g. `e2-standard-4`) to use for the Batch job's own managed instances. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The real minimum CPU platform (e.g. `Intel Cascade Lake`) required for the Batch job's own managed instances. (AI-inferred) */
   minCpuPlatform?: string | Computed<string>;
+  /** The real Compute Engine provisioning model (`STANDARD`, `SPOT`, `PREEMPTIBLE`, etc.) to use for the Batch job's own managed instances. (AI-inferred) */
   provisioningModel?: string | Computed<string>;
+  /** A real Compute Engine reservation to consume capacity from for the Batch job's own managed instances. (AI-inferred) */
   reservation?: string | Computed<string>;
 }
 
 export interface Job_AllocationPolicy_Instances {
+  /** Whether to block project-wide SSH keys from accessing the Batch-managed Compute Engine instances, restricting SSH to keys set on the instance itself. (AI-inferred) */
   blockProjectSshKeys?: boolean | Computed<boolean>;
+  /** Whether Batch should automatically install GPU drivers on the managed instance, when its own machine type or accelerators require them. (AI-inferred) */
   installGpuDrivers?: boolean | Computed<boolean>;
+  /** Whether Batch should automatically install the Ops Agent on the managed instance for logging and monitoring. (AI-inferred) */
   installOpsAgent?: boolean | Computed<boolean>;
+  /** A real, existing Compute Engine instance template to base the Batch job's own managed instances on, instead of Batch's own default instance configuration. (AI-inferred) */
   instanceTemplate?: string | Computed<string>;
+  /** The real instance provisioning policy (machine type, disks, accelerators, provisioning model) Batch applies to the compute instances it creates for this job. (AI-inferred) */
   policy?: Job_AllocationPolicy_Instances_Policy | Computed<Job_AllocationPolicy_Instances_Policy>;
 }
 
@@ -46,9 +70,13 @@ export interface Job_AllocationPolicy_Location {
 }
 
 export interface Job_AllocationPolicy_Network_NetworkInterfaces {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real network interface card type (e.g. `GVNIC`) to use for the Batch job's own managed instances. (AI-inferred) */
   nicType?: string | Computed<string>;
+  /** Whether the Batch job's own managed instances should have no external (public) IP address. (AI-inferred) */
   noExternalIpAddress?: boolean | Computed<boolean>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
@@ -76,6 +104,7 @@ export interface Job_AllocationPolicy {
   instances?: Job_AllocationPolicy_Instances[] | Computed<Job_AllocationPolicy_Instances[]>;
   /** Custom labels to apply to the job and all the Compute Engine resources that both are created by this allocation policy and support labels. Use labels to group and describe the resources they are applied to. Batch automatically applies predefined labels and supports multiple `labels` fields for each job, which each let you apply custom labels to various resources. Label names that start with "goog-" or "google-" are reserved for predefined labels. For more information about labels with Batch, see [Organize resources using labels](https://cloud.google.com/batch/docs/organize-resources-using-labels). */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** A real, requested Compute Engine zone or region for the Batch job's own managed instances, when not left to Batch's own automatic selection. (AI-inferred) */
   location?: Job_AllocationPolicy_Location | Computed<Job_AllocationPolicy_Location>;
   /** NetworkPolicy describes VM instance network configurations. */
   network?: Job_AllocationPolicy_Network | Computed<Job_AllocationPolicy_Network>;
@@ -102,37 +131,54 @@ export interface Job_LogsPolicy {
 }
 
 export interface Job_Notifications_Message {
+  /** The real job state (e.g. `SUCCEEDED`, `FAILED`) this notification message fires for, when notifying on job-level state changes. (AI-inferred) */
   newJobState?: string | Computed<string>;
+  /** The real task state (e.g. `SUCCEEDED`, `FAILED`) this notification message fires for, when notifying on task-level state changes. (AI-inferred) */
   newTaskState?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_Notifications {
+  /** Real configuration for one Pub/Sub notification message this Batch job publishes on a matching job or task state change. (AI-inferred) */
   message?: Job_Notifications_Message | Computed<Job_Notifications_Message>;
+  /** The real Pub/Sub topic this Batch job publishes its own status-change notifications to. (AI-inferred) */
   pubsubTopic?: string | Computed<string>;
 }
 
 export interface Job_Status_StatusEvents_TaskExecution {
+  /** The real process exit code a Batch task's runnable finished with. (AI-inferred) */
   exitCode?: number | Computed<number>;
 }
 
 export interface Job_Status_StatusEvents {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The real timestamp when this status event occurred. (AI-inferred) */
   eventTime?: string | Computed<string>;
+  /** Real, detailed execution result (such as `exit_code`) for the task this status event describes. (AI-inferred) */
   taskExecution?: Job_Status_StatusEvents_TaskExecution | Computed<Job_Status_StatusEvents_TaskExecution>;
+  /** The real, current state of this Batch task. (AI-inferred) */
   taskState?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_Status_TaskGroups_Instances {
+  /** Real, custom boot disk configuration for a Batch-managed instance, overriding whatever the source image would otherwise default to. (AI-inferred) */
   bootDisk?: Job_AllocationPolicy_Instances_Policy_BootDisk | Computed<Job_AllocationPolicy_Instances_Policy_BootDisk>;
+  /** The real Compute Engine machine type (e.g. `e2-standard-4`) to use for the Batch job's own managed instances. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The real Compute Engine provisioning model (`STANDARD`, `SPOT`, `PREEMPTIBLE`, etc.) to use for the Batch job's own managed instances. (AI-inferred) */
   provisioningModel?: string | Computed<string>;
+  /** The real number of tasks Batch is packing onto this specific managed instance. (AI-inferred) */
   taskPack?: string | Computed<string>;
 }
 
 export interface Job_Status_TaskGroups {
+  /** Real, per-state counts of the tasks in this task group (e.g. how many are `RUNNING`, `SUCCEEDED`, `FAILED`). (AI-inferred) */
   counts?: Record<string, string> | Computed<Record<string, string>>;
+  /** Real, per-instance status information for the Compute Engine instances running this Batch job's tasks. (AI-inferred) */
   instances?: Job_Status_TaskGroups_Instances[] | Computed<Job_Status_TaskGroups_Instances[]>;
 }
 
@@ -148,103 +194,162 @@ export interface Job_Status {
 }
 
 export interface Job_TaskGroups_TaskEnvironments_EncryptedVariables {
+  /** The real, Cloud KMS-encrypted ciphertext of an `encrypted_variables` entry's own value. (AI-inferred) */
   cipherText?: string | Computed<string>;
+  /** The real Cloud KMS key used to encrypt (and, at task run time, decrypt) an `encrypted_variables` entry's own value. (AI-inferred) */
   keyName?: string | Computed<string>;
 }
 
 export interface Job_TaskGroups_TaskEnvironments {
+  /** Environment variables whose real values are supplied pre-encrypted (`cipher_text` plus the Cloud KMS `key_name` used to encrypt them), decrypted by Batch before the task runs. (AI-inferred) */
   encryptedVariables?: Job_TaskGroups_TaskEnvironments_EncryptedVariables | Computed<Job_TaskGroups_TaskEnvironments_EncryptedVariables>;
+  /** Environment variables whose real values are fetched from Secret Manager by reference at task run time, rather than being stored directly in the job's own config. (AI-inferred) */
   secretVariables?: Record<string, string> | Computed<Record<string, string>>;
+  /** Real, plain (unencrypted) environment variables made available to this task environment. (AI-inferred) */
   variables?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Job_TaskGroups_TaskSpec_ComputeResource {
+  /** The real boot disk size, in MiB, allocated to each task. (AI-inferred) */
   bootDiskMib?: string | Computed<string>;
+  /** The real number of CPU milli-cores (1/1000th of a CPU core) allocated to each task. (AI-inferred) */
   cpuMilli?: string | Computed<string>;
+  /** The real amount of memory, in MiB, allocated to each task. (AI-inferred) */
   memoryMib?: string | Computed<string>;
 }
 
 export interface Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionCondition {
+  /** The real process exit code(s) that trigger this lifecycle policy's own `action`. (AI-inferred) */
   exitCodes?: number[] | Computed<number[]>;
 }
 
 export interface Job_TaskGroups_TaskSpec_LifecyclePolicies {
+  /** The real action Batch takes (`RETRY_TASK` or `FAIL_TASK`) when this lifecycle policy's own `action_condition` matches. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The real condition (a set of matching `exit_codes`) that triggers this lifecycle policy's own `action`. (AI-inferred) */
   actionCondition?: Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionCondition | Computed<Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionCondition>;
 }
 
 export interface Job_TaskGroups_TaskSpec_Runnables_Barrier {
+  /** A real, unique name for this task group within the Batch job. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Job_TaskGroups_TaskSpec_Runnables_Container {
+  /** Whether to block this container's own access to external (internet) networking. (AI-inferred) */
   blockExternalNetwork?: boolean | Computed<boolean>;
+  /** The real command and arguments this container runnable runs, overriding the image's own default entrypoint/command if `entrypoint` isn't also set. (AI-inferred) */
   commands?: string[] | Computed<string[]>;
+  /** Whether to use image streaming to start this container faster, pulling the image lazily as it's read rather than fully in advance. (AI-inferred) */
   enableImageStreaming?: boolean | Computed<boolean>;
+  /** The real entrypoint to run inside this container, overriding the image's own default. (AI-inferred) */
   entrypoint?: string | Computed<string>;
+  /** The real container image URI (e.g. from Artifact Registry or Docker Hub) this runnable runs. (AI-inferred) */
   imageUri?: string | Computed<string>;
+  /** Real, additional flags passed directly to the container runtime when starting this container runnable. (AI-inferred) */
   options?: string | Computed<string>;
+  /** The real password used to authenticate to the container registry this runnable's image is pulled from. (AI-inferred) */
   password?: string | Computed<string>;
+  /** The real username used to authenticate to the container registry this runnable's image is pulled from. (AI-inferred) */
   username?: string | Computed<string>;
+  /** Real volume mount paths inside this container, mapping the task's own `volumes` into the container's own filesystem. (AI-inferred) */
   volumes?: string[] | Computed<string[]>;
 }
 
 export interface Job_TaskGroups_TaskSpec_Runnables_Script {
+  /** The real, on-disk path to a script file this script runnable executes. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The real, inline shell script text this script runnable executes. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Job_TaskGroups_TaskSpec_Runnables {
+  /** Whether this runnable runs regardless of whether an earlier runnable in the same task failed. (AI-inferred) */
   alwaysRun?: boolean | Computed<boolean>;
+  /** Whether this runnable runs in the background (not blocking the task's own progression to the next runnable) rather than to completion. (AI-inferred) */
   background?: boolean | Computed<boolean>;
+  /** A real synchronization point in a task's own runnable sequence, used to coordinate multiple concurrently-running tasks. (AI-inferred) */
   barrier?: Job_TaskGroups_TaskSpec_Runnables_Barrier | Computed<Job_TaskGroups_TaskSpec_Runnables_Barrier>;
+  /** Real configuration for a container-based runnable, specifying the image and how to run it. (AI-inferred) */
   container?: Job_TaskGroups_TaskSpec_Runnables_Container | Computed<Job_TaskGroups_TaskSpec_Runnables_Container>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Real, plain environment variables (and `secret_variables`) available to every runnable in this task's own spec. (AI-inferred) */
   environment?: Job_TaskGroups_TaskEnvironments | Computed<Job_TaskGroups_TaskEnvironments>;
+  /** Whether Batch should treat this runnable as successful regardless of its own real process exit status. (AI-inferred) */
   ignoreExitStatus?: boolean | Computed<boolean>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Real configuration for a script-based runnable, given either as a file `path` or inline `text`. (AI-inferred) */
   script?: Job_TaskGroups_TaskSpec_Runnables_Script | Computed<Job_TaskGroups_TaskSpec_Runnables_Script>;
+  /** The real maximum duration this specific runnable is allowed to run before Batch terminates it. (AI-inferred) */
   timeout?: string | Computed<string>;
 }
 
 export interface Job_TaskGroups_TaskSpec_Volumes_Gcs {
+  /** The real, remote path (a Cloud Storage bucket path or NFS export path) this volume mounts from. (AI-inferred) */
   remotePath?: string | Computed<string>;
 }
 
 export interface Job_TaskGroups_TaskSpec_Volumes_Nfs {
+  /** The real, remote path (a Cloud Storage bucket path or NFS export path) this volume mounts from. (AI-inferred) */
   remotePath?: string | Computed<string>;
+  /** The real NFS server address this volume mounts from. (AI-inferred) */
   server?: string | Computed<string>;
 }
 
 export interface Job_TaskGroups_TaskSpec_Volumes {
+  /** The real device name a Batch-managed instance's disk is attached under, referenced by the job's own `volumes` mount configuration. (AI-inferred) */
   deviceName?: string | Computed<string>;
+  /** Real Cloud Storage bucket configuration for a volume mounted via Cloud Storage FUSE. (AI-inferred) */
   gcs?: Job_TaskGroups_TaskSpec_Volumes_Gcs | Computed<Job_TaskGroups_TaskSpec_Volumes_Gcs>;
+  /** Real, additional mount flags passed to the volume's own mount command. (AI-inferred) */
   mountOptions?: string[] | Computed<string[]>;
+  /** The real, on-instance path this volume is mounted at, visible to every runnable in the task. (AI-inferred) */
   mountPath?: string | Computed<string>;
+  /** Real NFS server configuration for a volume mounted over NFS. (AI-inferred) */
   nfs?: Job_TaskGroups_TaskSpec_Volumes_Nfs | Computed<Job_TaskGroups_TaskSpec_Volumes_Nfs>;
 }
 
 export interface Job_TaskGroups_TaskSpec {
+  /** The real CPU and memory resources (`cpu_milli`, `memory_mib`, `boot_disk_mib`) each task in this task group is allocated. (AI-inferred) */
   computeResource?: Job_TaskGroups_TaskSpec_ComputeResource | Computed<Job_TaskGroups_TaskSpec_ComputeResource>;
+  /** Real, plain environment variables (and `secret_variables`) available to every runnable in this task's own spec. (AI-inferred) */
   environment?: Job_TaskGroups_TaskEnvironments | Computed<Job_TaskGroups_TaskEnvironments>;
+  /** Real, plain environment variables set for this specific runnable, layered on top of the task spec's own `environment`. (AI-inferred) */
   environments?: Record<string, string> | Computed<Record<string, string>>;
+  /** Real rules controlling how Batch responds (e.g. `RETRY_TASK`, `FAIL_TASK`) when a task's own runnable exits with a matching `action_condition`. (AI-inferred) */
   lifecyclePolicies?: Job_TaskGroups_TaskSpec_LifecyclePolicies[] | Computed<Job_TaskGroups_TaskSpec_LifecyclePolicies[]>;
+  /** The real maximum number of times Batch retries a failed task in this task group before giving up. (AI-inferred) */
   maxRetryCount?: number | Computed<number>;
+  /** The real maximum duration a single task in this task group is allowed to run before Batch terminates it. (AI-inferred) */
   maxRunDuration?: string | Computed<string>;
+  /** The real, ordered sequence of scripts and/or containers each task in this task group executes. (AI-inferred) */
   runnables?: Job_TaskGroups_TaskSpec_Runnables[] | Computed<Job_TaskGroups_TaskSpec_Runnables[]>;
+  /** Real volume mount paths inside this container, mapping the task's own `volumes` into the container's own filesystem. (AI-inferred) */
   volumes?: Job_TaskGroups_TaskSpec_Volumes[] | Computed<Job_TaskGroups_TaskSpec_Volumes[]>;
 }
 
 export interface Job_TaskGroups {
+  /** A real, unique name for this task group within the Batch job. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real maximum number of tasks in this task group that Batch runs concurrently. (AI-inferred) */
   parallelism?: string | Computed<string>;
+  /** Whether to allow SSH access into a Batch-managed instance from any source, rather than restricting it. (AI-inferred) */
   permissiveSsh?: boolean | Computed<boolean>;
+  /** Whether Batch should populate `/etc/hosts` with entries for every task's own container or VM, letting tasks address each other by hostname. (AI-inferred) */
   requireHostsFile?: boolean | Computed<boolean>;
+  /** Whether Batch should run this task group's own runnables as a non-root user rather than root. (AI-inferred) */
   runAsNonRoot?: boolean | Computed<boolean>;
+  /** The real order Batch uses to schedule this task group's own tasks (`AS_SOON_AS_POSSIBLE` or `IN_ORDER`). (AI-inferred) */
   schedulingPolicy?: string | Computed<string>;
+  /** The real total number of tasks to run in this task group. (AI-inferred) */
   taskCount?: string | Computed<string>;
+  /** The real maximum number of this task group's own tasks Batch packs onto a single Compute Engine instance. (AI-inferred) */
   taskCountPerNode?: string | Computed<string>;
+  /** Real, per-task-group sets of environment variables (including `encrypted_variables`/`secret_variables`) available to override per task. (AI-inferred) */
   taskEnvironments?: Job_TaskGroups_TaskEnvironments[] | Computed<Job_TaskGroups_TaskEnvironments[]>;
+  /** The real specification (compute resources, runnables, retry and lifecycle policy) every task in this task group runs with. (AI-inferred) */
   taskSpec?: Job_TaskGroups_TaskSpec | Computed<Job_TaskGroups_TaskSpec>;
 }
 

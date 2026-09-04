@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReportConfig_GroupPreferencesetAssignments {
+  /** A reference to the asset group this applies to. (AI-inferred) */
   group?: string | Computed<string>;
+  /** A reference to the preference set this report was generated with. (AI-inferred) */
   preferenceSet?: string | Computed<string>;
 }
 

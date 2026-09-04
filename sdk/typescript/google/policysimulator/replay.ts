@@ -2,32 +2,47 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigs {
+  /** The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred) */
   exemptedMembers?: string[] | Computed<string[]>;
+  /** Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred) */
   logType?: string | Computed<string>;
 }
 
 export interface Replay_Config_PolicyOverlay_AuditConfigs {
+  /** Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred) */
   auditLogConfigs?: Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigs[] | Computed<Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigs[]>;
+  /** The real Google Cloud service this audit log configuration applies to, or `allServices` for every service. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface Replay_Config_PolicyOverlay_Bindings_Condition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The real Common Expression Language (CEL) expression text of this policy rule's own `condition`. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The real, human-readable source location (file/line) of this CEL expression, used for error reporting. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface Replay_Config_PolicyOverlay_Bindings {
+  /** A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred) */
   condition?: Replay_Config_PolicyOverlay_Bindings_Condition | Computed<Replay_Config_PolicyOverlay_Bindings_Condition>;
+  /** The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred) */
   members?: string[] | Computed<string[]>;
+  /** The real IAM role this proposed policy binding grants. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface Replay_Config_PolicyOverlay {
+  /** Real, proposed IAM audit logging configuration overlaid for this policy simulation. (AI-inferred) */
   auditConfigs?: Replay_Config_PolicyOverlay_AuditConfigs[] | Computed<Replay_Config_PolicyOverlay_AuditConfigs[]>;
+  /** The list of `google.iam.v1.Policy` bindings, each granting a `role` to a set of `members`, optionally scoped by a `condition`. (AI-inferred) */
   bindings?: Replay_Config_PolicyOverlay_Bindings[] | Computed<Replay_Config_PolicyOverlay_Bindings[]>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** The real `google.iam.v1.Policy` schema version this proposed policy overlay is expressed in. (AI-inferred) */
   version?: number | Computed<number>;
 }
 

@@ -22,60 +22,88 @@ export interface Study_StudySpec_DecayCurveStoppingSpec {
 }
 
 export interface Study_StudySpec_Metrics_SafetyConfig {
+  /** The minimum fraction of trials that must be predicted safe before an unsafe trial is allowed to be tried anyway. (AI-inferred) */
   desiredMinSafeTrialsFraction?: number | Computed<number>;
+  /** The metric value below which a trial is considered unsafe. (AI-inferred) */
   safetyThreshold?: number | Computed<number>;
 }
 
 export interface Study_StudySpec_Metrics {
+  /** Whether this metric should be `MAXIMIZE`d or `MINIMIZE`d during tuning. (AI-inferred) */
   goal?: string | Computed<string>;
+  /** An identifier for this metric, unique within its own containing evaluation. (AI-inferred) */
   metricId?: string | Computed<string>;
+  /** Configuration for safe hyperparameter tuning, which avoids proposing trials predicted to badly underperform. (AI-inferred) */
   safetyConfig?: Study_StudySpec_Metrics_SafetyConfig | Computed<Study_StudySpec_Metrics_SafetyConfig>;
 }
 
 export interface Study_StudySpec_Parameters_CategoricalValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: number[] | Computed<number[]>;
 }
 
 export interface Study_StudySpec_Parameters_ConditionalParameterSpecs {
+  /** The definition (type, range, or allowed values) of this hyperparameter. (AI-inferred) */
   parameterSpec?: unknown | Computed<unknown>;
+  /** The parent categorical value(s) that activate this conditional parameter. (AI-inferred) */
   parentCategoricalValues?: Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues | Computed<Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues>;
+  /** The parent discrete value(s) that activate this conditional parameter. (AI-inferred) */
   parentDiscreteValues?: Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues | Computed<Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues>;
+  /** The parent integer value(s) that activate this conditional parameter. (AI-inferred) */
   parentIntValues?: Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues | Computed<Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues>;
 }
 
 export interface Study_StudySpec_Parameters_DiscreteValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: number | Computed<number>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: number[] | Computed<number[]>;
 }
 
 export interface Study_StudySpec_Parameters_DoubleValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: number | Computed<number>;
+  /** The largest value this parameter may take. (AI-inferred) */
   maxValue?: number | Computed<number>;
+  /** The smallest value this parameter may take. (AI-inferred) */
   minValue?: number | Computed<number>;
 }
 
 export interface Study_StudySpec_Parameters_IntegerValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** The largest value this parameter may take. (AI-inferred) */
   maxValue?: string | Computed<string>;
+  /** The smallest value this parameter may take. (AI-inferred) */
   minValue?: string | Computed<string>;
 }
 
 export interface Study_StudySpec_Parameters {
+  /** Defines this hyperparameter as a categorical value, chosen from a fixed set of string options. (AI-inferred) */
   categoricalValueSpec?: Study_StudySpec_Parameters_CategoricalValueSpec | Computed<Study_StudySpec_Parameters_CategoricalValueSpec>;
+  /** Sub-parameter(s) that only apply when this parameter takes specific value(s), for hyperparameter search spaces with conditional structure. (AI-inferred) */
   conditionalParameterSpecs?: Study_StudySpec_Parameters_ConditionalParameterSpecs[] | Computed<Study_StudySpec_Parameters_ConditionalParameterSpecs[]>;
+  /** Defines this hyperparameter as a value chosen from a fixed, explicit list of numbers. (AI-inferred) */
   discreteValueSpec?: Study_StudySpec_Parameters_DiscreteValueSpec | Computed<Study_StudySpec_Parameters_DiscreteValueSpec>;
+  /** Defines this hyperparameter as a floating-point value within a `min_value`/`max_value` range. (AI-inferred) */
   doubleValueSpec?: Study_StudySpec_Parameters_DoubleValueSpec | Computed<Study_StudySpec_Parameters_DoubleValueSpec>;
+  /** Defines this hyperparameter as an integer value within a `min_value`/`max_value` range. (AI-inferred) */
   integerValueSpec?: Study_StudySpec_Parameters_IntegerValueSpec | Computed<Study_StudySpec_Parameters_IntegerValueSpec>;
+  /** The name of this hyperparameter, unique within its own study. (AI-inferred) */
   parameterId?: string | Computed<string>;
+  /** How this hyperparameter's own search range is scaled when sampling, e.g. `UNIT_LINEAR_SCALE` or `UNIT_LOG_SCALE`. (AI-inferred) */
   scaleType?: string | Computed<string>;
 }
 

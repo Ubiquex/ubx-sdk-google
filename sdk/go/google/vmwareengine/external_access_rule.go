@@ -4,9 +4,12 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExternalAccessRule_DestinationIpRanges struct {
+	// The externally reachable IP address assigned to this resource. (AI-inferred)
 	ExternalAddress any
-	IpAddress       any
-	IpAddressRange  any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The IP address range, in CIDR notation, this applies to. (AI-inferred)
+	IpAddressRange any
 }
 
 var ExternalAccessRule_DestinationIpRangesFields = ubx.FieldMap{

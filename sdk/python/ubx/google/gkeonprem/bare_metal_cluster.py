@@ -18,7 +18,9 @@ class BareMetalCluster_ClusterOperations:
 
 @dataclasses.dataclass
 class BareMetalCluster_ControlPlane_ApiServerArgs:
+    # A command-line argument. (AI-inferred)
     argument: Any = None
+    # The value of this taint or label. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -32,13 +34,18 @@ class BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_Ku
 
 @dataclasses.dataclass
 class BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_NodeConfigs:
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The IP address of this node. (AI-inferred)
     node_ip: Any = None
 
 @dataclasses.dataclass
 class BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_Taints:
+    # What happens to a pod that doesn't tolerate this taint. (AI-inferred)
     effect: Any = None
+    # The key of this taint or label. (AI-inferred)
     key: Any = None
+    # The value of this taint or label. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -73,15 +80,22 @@ class BareMetalCluster_Fleet:
 
 @dataclasses.dataclass
 class BareMetalCluster_LoadBalancer_BgpLbConfig_AddressPools:
+    # The IP address(es) this applies to. (AI-inferred)
     addresses: Any = None
+    # Whether known problematic IP addresses are avoided when allocating this pool. (AI-inferred)
     avoid_buggy_ips: Any = None
+    # Whether IP addresses are manually assigned, rather than allocated from a pool. (AI-inferred)
     manual_assign: Any = None
+    # A reference to the node pool this applies to. (AI-inferred)
     pool: Any = None
 
 @dataclasses.dataclass
 class BareMetalCluster_LoadBalancer_BgpLbConfig_BgpPeerConfigs:
+    # The BGP Autonomous System Number this applies to. (AI-inferred)
     asn: Any = None
+    # The node(s) making up this cluster's own control plane. (AI-inferred)
     control_plane_nodes: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
 
 @dataclasses.dataclass
@@ -139,11 +153,14 @@ class BareMetalCluster_MaintenanceConfig:
 
 @dataclasses.dataclass
 class BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainedMachines:
+    # The IP address of this node. (AI-inferred)
     node_ip: Any = None
 
 @dataclasses.dataclass
 class BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainingMachines:
+    # The IP address of this node. (AI-inferred)
     node_ip: Any = None
+    # How many pods are scheduled on this node. (AI-inferred)
     pod_count: Any = None
 
 @dataclasses.dataclass
@@ -202,6 +219,7 @@ class BareMetalCluster_Proxy:
 
 @dataclasses.dataclass
 class BareMetalCluster_SecurityConfig_Authorization_AdminUsers:
+    # The username used to authenticate. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
@@ -216,15 +234,22 @@ class BareMetalCluster_SecurityConfig:
 
 @dataclasses.dataclass
 class BareMetalCluster_Status_Conditions:
+    # When this condition last changed from one status to another. (AI-inferred)
     last_transition_time: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class BareMetalCluster_Status_Versions_Versions:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -273,10 +298,15 @@ class BareMetalCluster_UpgradePolicy:
 
 @dataclasses.dataclass
 class BareMetalCluster_ValidationCheck_Status_Result:
+    # The category this belongs to. (AI-inferred)
     category: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

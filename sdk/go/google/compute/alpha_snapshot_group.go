@@ -27,10 +27,12 @@ type AlphaSnapshotGroupConfig struct {
 	// Optional. An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name       any
+	Name any
+	// Identifies the real resource this snapshot group was created from. (AI-inferred)
 	SourceInfo any
 	// Input field for the source instant snapshot group.
-	SourceInstantSnapshotGroup     any
+	SourceInstantSnapshotGroup any
+	// Identifies the real instant snapshot group this snapshot group was created from. (AI-inferred)
 	SourceInstantSnapshotGroupInfo any
 }
 
@@ -49,9 +51,11 @@ type AlphaSnapshotGroupAttrs struct {
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource's resource id.
 	SelfLinkWithId any
-	SourceInfo     any
+	// Identifies the real resource this snapshot group was created from. (AI-inferred)
+	SourceInfo any
 	// Input field for the source instant snapshot group.
-	SourceInstantSnapshotGroup     any
+	SourceInstantSnapshotGroup any
+	// Identifies the real instant snapshot group this snapshot group was created from. (AI-inferred)
 	SourceInstantSnapshotGroupInfo any
 	// Output only. [Output Only]
 	Status any

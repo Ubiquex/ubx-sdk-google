@@ -2,22 +2,33 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SchemaVersion_Schema_EntityTypes_EnumValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface SchemaVersion_Schema_EntityTypes_Properties {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The specific action being performed. (AI-inferred) */
   method?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** How many times this entity type may occur within a document, e.g. optional or required. (AI-inferred) */
   occurrenceType?: string | Computed<string>;
+  /** The data type of this property's own value. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface SchemaVersion_Schema_EntityTypes {
+  /** The parent entity type(s) this entity type inherits fields from. (AI-inferred) */
   baseTypes?: string[] | Computed<string[]>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The set of named values this enum-typed property is restricted to. (AI-inferred) */
   enumValues?: SchemaVersion_Schema_EntityTypes_EnumValues | Computed<SchemaVersion_Schema_EntityTypes_EnumValues>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: SchemaVersion_Schema_EntityTypes_Properties[] | Computed<SchemaVersion_Schema_EntityTypes_Properties[]>;
 }
 

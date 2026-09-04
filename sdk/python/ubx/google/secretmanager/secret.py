@@ -25,7 +25,9 @@ class Secret_Replication_Automatic:
 
 @dataclasses.dataclass
 class Secret_Replication_UserManaged_Replicas:
+    # The customer-managed encryption key (CMEK) configuration for this replica -- omit to use Google-managed encryption for this region instead. (AI-inferred)
     customer_managed_encryption: Any = None
+    # The region this secret is explicitly replicated to under user-managed replication, e.g. `us-central1`. (AI-inferred)
     location: Any = None
 
 @dataclasses.dataclass
@@ -67,6 +69,7 @@ class Secret_Rotation:
 
 @dataclasses.dataclass
 class Secret_Topics:
+    # The Pub/Sub topic Secret Manager publishes notifications to for events on this secret (e.g. new versions), in the form `projects/{project}/topics/{topic}`. (AI-inferred)
     name: Any = None
 
 _Secret_CustomerManagedEncryptionFields = {

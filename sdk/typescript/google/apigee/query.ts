@@ -2,10 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Query_Metrics {
+  /** A reference to a key/certificate alias in a keystore. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** The mathematical function applied to compute this value. (AI-inferred) */
   function?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** How this condition's own operands are compared. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -89,9 +94,11 @@ export interface QueryAttrs {
   name: string;
   /** Valid values include: `csv` or `json`. Defaults to `json`. Note: Configure the delimiter for CSV output using the csvDelimiter property. */
   outputFormat: string;
+  /** The query parameter(s) this applies to. (AI-inferred) */
   queryParams: Query_QueryParams;
   /** Asynchronous Report ID. */
   reportDefinitionId: string;
+  /** The result produced by this operation. (AI-inferred) */
   result: Query_Result;
   /** ResultFileSize is available only after the query is completed. */
   resultFileSize: string;

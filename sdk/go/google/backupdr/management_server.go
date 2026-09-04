@@ -11,7 +11,9 @@ type ManagementServer_ManagementUri struct {
 }
 
 type ManagementServer_Networks struct {
-	Network     any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// Whether this connection uses VPC peering or another connectivity mode. (AI-inferred)
 	PeeringMode any
 }
 

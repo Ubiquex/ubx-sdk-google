@@ -110,8 +110,11 @@ export interface Version_Deployment_Container {
 }
 
 export interface Version_Deployment_Files {
+  /** The MIME type of this file's own content. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** A SHA-1 checksum of this file's own content. (AI-inferred) */
   sha1Sum?: string | Computed<string>;
+  /** The Cloud Storage URL this file's own content is read from. (AI-inferred) */
   sourceUrl?: string | Computed<string>;
 }
 
@@ -150,8 +153,11 @@ export interface Version_Entrypoint {
 }
 
 export interface Version_ErrorHandlers {
+  /** The error condition this custom error handler responds to. (AI-inferred) */
   errorCode?: string | Computed<string>;
+  /** The MIME type of this file's own content. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** Configuration for serving a matching URL as a static file. (AI-inferred) */
   staticFile?: string | Computed<string>;
 }
 
@@ -163,27 +169,43 @@ export interface Version_FlexibleRuntimeSettings {
 }
 
 export interface Version_Handlers_ApiEndpoint {
+  /** The path to the script handling this request. (AI-inferred) */
   scriptPath?: string | Computed<string>;
 }
 
 export interface Version_Handlers_StaticFiles {
+  /** Whether application code is permitted to read this file at runtime. (AI-inferred) */
   applicationReadable?: boolean | Computed<boolean>;
+  /** How long a cached response for this handler may be reused. (AI-inferred) */
   expiration?: string | Computed<string>;
+  /** The HTTP header(s) included in the response. (AI-inferred) */
   httpHeaders?: Record<string, string> | Computed<Record<string, string>>;
+  /** The MIME type of this file's own content. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** A file or resource path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** Whether a request is only served if a matching static file actually exists. (AI-inferred) */
   requireMatchingFile?: boolean | Computed<boolean>;
+  /** The regular expression matching local file path(s) to include in this deployment. (AI-inferred) */
   uploadPathRegex?: string | Computed<string>;
 }
 
 export interface Version_Handlers {
+  /** Routes requests for this handler to the App Engine APIs endpoint. (AI-inferred) */
   apiEndpoint?: Version_Handlers_ApiEndpoint | Computed<Version_Handlers_ApiEndpoint>;
+  /** What happens when a request fails this handler's own authentication requirement. (AI-inferred) */
   authFailAction?: string | Computed<string>;
+  /** The login requirement enforced for requests matching this handler. (AI-inferred) */
   login?: string | Computed<string>;
+  /** The HTTP status code used when redirecting requests to HTTPS. (AI-inferred) */
   redirectHttpResponseCode?: string | Computed<string>;
+  /** The script handling requests that match this URL pattern. (AI-inferred) */
   script?: Version_Handlers_ApiEndpoint | Computed<Version_Handlers_ApiEndpoint>;
+  /** Whether this handler requires, optionally allows, or never uses HTTPS. (AI-inferred) */
   securityLevel?: string | Computed<string>;
+  /** Configuration for serving matching URL(s) as static file(s). (AI-inferred) */
   staticFiles?: Version_Handlers_StaticFiles | Computed<Version_Handlers_StaticFiles>;
+  /** The regular expression this handler's own URL pattern matches against. (AI-inferred) */
   urlRegex?: string | Computed<string>;
 }
 
@@ -205,7 +227,9 @@ export interface Version_HealthCheck {
 }
 
 export interface Version_Libraries {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to the specific version this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
@@ -264,8 +288,11 @@ export interface Version_ReadinessCheck {
 }
 
 export interface Version_Resources_Volumes {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The size of this resource, in gibibytes. (AI-inferred) */
   sizeGb?: number | Computed<number>;
+  /** The kind of storage volume mounted, e.g. `tmpfs`. (AI-inferred) */
   volumeType?: string | Computed<string>;
 }
 

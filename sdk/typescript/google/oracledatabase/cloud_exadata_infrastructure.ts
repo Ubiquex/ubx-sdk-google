@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CloudExadataInfrastructure_Properties_CustomerContacts {
+  /** An email address associated with this resource. (AI-inferred) */
   email?: string | Computed<string>;
 }
 

@@ -11,13 +11,17 @@ type Entitlement_AdditionalNotificationTargets struct {
 }
 
 type Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers struct {
+	// The principal(s) this applies to. (AI-inferred)
 	Principals any
 }
 
 type Entitlement_ApprovalWorkflow_ManualApprovals_Steps struct {
-	ApprovalsNeeded         any
+	// The number of approval(s) still required before this grant can be activated. (AI-inferred)
+	ApprovalsNeeded any
+	// Email address(es) notified when an approval decision is needed. (AI-inferred)
 	ApproverEmailRecipients any
-	Approvers               any
+	// The principal(s) authorized to approve this grant. (AI-inferred)
+	Approvers any
 }
 
 type Entitlement_ApprovalWorkflow_ManualApprovals struct {
@@ -33,8 +37,10 @@ type Entitlement_ApprovalWorkflow struct {
 }
 
 type Entitlement_PrivilegedAccess_GcpIamAccess_RoleBindings struct {
+	// A Common Expression Language (CEL) condition that must hold for this rule to apply. (AI-inferred)
 	ConditionExpression any
-	Role                any
+	// The IAM role this grant provides temporary access to. (AI-inferred)
+	Role any
 }
 
 type Entitlement_PrivilegedAccess_GcpIamAccess struct {

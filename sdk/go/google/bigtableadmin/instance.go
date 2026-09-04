@@ -4,37 +4,53 @@ package bigtableadmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimits struct {
+	// The maximum number of nodes this cluster's own autoscaling may scale up to. (AI-inferred)
 	MaxServeNodes any
+	// The minimum number of nodes this cluster's own autoscaling scales down to. (AI-inferred)
 	MinServeNodes any
 }
 
 type Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargets struct {
-	CpuUtilizationPercent        any
+	// The target CPU utilization percentage this cluster's own autoscaling aims to maintain. (AI-inferred)
+	CpuUtilizationPercent any
+	// Output only. How much storage, in GiB, is used per node in this cluster. (AI-inferred)
 	StorageUtilizationGibPerNode any
 }
 
 type Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig struct {
-	AutoscalingLimits  any
+	// The minimum and maximum node count this cluster's own autoscaling may scale between. (AI-inferred)
+	AutoscalingLimits any
+	// The target utilization metric(s) (e.g. CPU) this cluster's own autoscaling aims to maintain. (AI-inferred)
 	AutoscalingTargets any
 }
 
 type Instance_Clusters_ClusterConfig struct {
+	// Autoscaling configuration for this cluster. (AI-inferred)
 	ClusterAutoscalingConfig any
 }
 
 type Instance_Clusters_EncryptionConfig struct {
+	// The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
 	KmsKeyName any
 }
 
 type Instance_Clusters struct {
-	ClusterConfig      any
+	// Configuration for a single cluster within this instance. (AI-inferred)
+	ClusterConfig any
+	// The default storage media (SSD or HDD) for clusters in this instance. (AI-inferred)
 	DefaultStorageType any
-	EncryptionConfig   any
-	Location           any
-	Name               any
-	NodeScalingFactor  any
-	ServeNodes         any
-	State              any
+	// Configuration for encrypting this cluster's own data with a customer-managed key. (AI-inferred)
+	EncryptionConfig any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A multiplier applied to this cluster's own effective node count, for higher-throughput node configurations. (AI-inferred)
+	NodeScalingFactor any
+	// The fixed number of nodes provisioned for this cluster, when autoscaling isn't used. (AI-inferred)
+	ServeNodes any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type Instance_Instance struct {

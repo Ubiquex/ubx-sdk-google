@@ -4,45 +4,69 @@ package bigquery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dataset_Access_Condition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// A CEL expression that must evaluate `true` for this access grant to apply. (AI-inferred)
+	Expression any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type Dataset_Access_Dataset_Dataset struct {
+	// The BigQuery dataset ID this applies to. (AI-inferred)
 	DatasetId any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
 }
 
 type Dataset_Access_Dataset struct {
-	Dataset     any
+	// A reference to the dataset this applies to. (AI-inferred)
+	Dataset any
+	// Which resource type(s) this applies to. (AI-inferred)
 	TargetTypes any
 }
 
 type Dataset_Access_Routine struct {
+	// The BigQuery dataset ID this applies to. (AI-inferred)
 	DatasetId any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
+	// A reference to the routine this applies to. (AI-inferred)
 	RoutineId any
 }
 
 type Dataset_Access_View struct {
+	// The BigQuery dataset ID this applies to. (AI-inferred)
 	DatasetId any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
-	TableId   any
+	// The BigQuery table ID this applies to. (AI-inferred)
+	TableId any
 }
 
 type Dataset_Access struct {
-	Condition    any
-	Dataset      any
-	Domain       any
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
+	Condition any
+	// A reference to the dataset this applies to. (AI-inferred)
+	Dataset any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// Whether search history/results are grouped per end-user email, rather than aggregated across all users. (AI-inferred)
 	GroupByEmail any
-	IamMember    any
-	Role         any
-	Routine      any
+	// The IAM principal this applies to. (AI-inferred)
+	IamMember any
+	// The role this applies to. (AI-inferred)
+	Role any
+	// A reference to the routine this applies to. (AI-inferred)
+	Routine any
+	// A predefined IAM group (e.g. `allAuthenticatedUsers`) this grant applies to. (AI-inferred)
 	SpecialGroup any
-	UserByEmail  any
-	View         any
+	// The email of the user this applies to. (AI-inferred)
+	UserByEmail any
+	// Configuration or definition specific to a logical view. (AI-inferred)
+	View any
 }
 
 type Dataset_DefaultEncryptionConfiguration struct {
@@ -80,7 +104,9 @@ type Dataset_Restrictions struct {
 }
 
 type Dataset_Tags struct {
-	TagKey   any
+	// The Resource Manager tag key this applies to. (AI-inferred)
+	TagKey any
+	// The Resource Manager tag value this applies to. (AI-inferred)
 	TagValue any
 }
 
@@ -213,6 +239,7 @@ type DatasetConfig struct {
 	MaxTimeTravelHours any
 	// Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details.
 	ResourceTags any
+	// The restriction(s) applied to this data. (AI-inferred)
 	Restrictions any
 	// Optional. Updates storage_billing_model for the dataset.
 	StorageBillingModel any
@@ -267,6 +294,7 @@ type DatasetAttrs struct {
 	MaxTimeTravelHours any
 	// Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details.
 	ResourceTags any
+	// The restriction(s) applied to this data. (AI-inferred)
 	Restrictions any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any

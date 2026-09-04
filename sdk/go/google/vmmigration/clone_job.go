@@ -4,7 +4,9 @@ package vmmigration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloneJob_ComputeEngineDisksTargetDetails_Disks struct {
-	DiskUri          any
+	// The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred)
+	DiskUri any
+	// The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred)
 	SourceDiskNumber any
 }
 
@@ -23,8 +25,10 @@ type CloneJob_ComputeEngineDisksTargetDetails struct {
 }
 
 type CloneJob_ComputeEngineTargetDetails_AdaptationModifiers struct {
+	// A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred)
 	Modifier any
-	Value    any
+	// The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
+	Value any
 }
 
 type CloneJob_ComputeEngineTargetDetails_AppliedLicense struct {
@@ -35,9 +39,12 @@ type CloneJob_ComputeEngineTargetDetails_AppliedLicense struct {
 }
 
 type CloneJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities struct {
-	Key      any
+	// The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred)
+	Key any
+	// The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred)
 	Operator any
-	Values   any
+	// The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred)
+	Values any
 }
 
 type CloneJob_ComputeEngineTargetDetails_ComputeScheduling struct {
@@ -57,11 +64,16 @@ type CloneJob_ComputeEngineTargetDetails_Encryption struct {
 }
 
 type CloneJob_ComputeEngineTargetDetails_NetworkInterfaces struct {
-	ExternalIp  any
-	InternalIp  any
-	Network     any
+	// The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred)
+	ExternalIp any
+	// The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred)
+	InternalIp any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred)
 	NetworkTier any
-	Subnetwork  any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type CloneJob_ComputeEngineTargetDetails struct {
@@ -127,11 +139,16 @@ type CloneJob_Error struct {
 }
 
 type CloneJob_Steps struct {
-	AdaptingOs              any
-	EndTime                 any
+	// Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred)
+	AdaptingOs any
+	// The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
+	EndTime any
+	// Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred)
 	InstantiatingMigratedVm any
-	PreparingVmDisks        any
-	StartTime               any
+	// Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred)
+	PreparingVmDisks any
+	// The real timestamp when this migration step or cycle started. (AI-inferred)
+	StartTime any
 }
 
 var CloneJob_ComputeEngineDisksTargetDetails_DisksFields = ubx.FieldMap{

@@ -8,33 +8,46 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Index_Fields_SearchConfig_GeoSpec:
+    # Whether GeoJSON-format indexing is disabled for this geospatial field. (AI-inferred)
     geo_json_indexing_disabled: Any = None
 
 @dataclasses.dataclass
 class Index_Fields_SearchConfig_TextSpec_IndexSpecs:
+    # How this text index breaks the field's own value into searchable terms, e.g. `TOKENIZED`. (AI-inferred)
     index_type: Any = None
+    # How broadly this text index matches queries, e.g. `MATCH_GLOBALLY` for substring matches anywhere in the field. (AI-inferred)
     match_type: Any = None
 
 @dataclasses.dataclass
 class Index_Fields_SearchConfig_TextSpec:
+    # The individual text-indexing rule(s) applied to this field. (AI-inferred)
     index_specs: Any = None
 
 @dataclasses.dataclass
 class Index_Fields_SearchConfig:
+    # Configures this field as a geospatial search index. (AI-inferred)
     geo_spec: Any = None
+    # Configures this field as a full-text search index. (AI-inferred)
     text_spec: Any = None
 
 @dataclasses.dataclass
 class Index_Fields_VectorConfig:
+    # The number of dimensions the vectors stored in this field have. (AI-inferred)
     dimension: Any = None
+    # Uses a flat (exhaustive, brute-force) vector index structure, trading index build/update simplicity for scan-time cost at large scale. (AI-inferred)
     flat: Any = None
 
 @dataclasses.dataclass
 class Index_Fields:
+    # Indexes the contents of an array-typed field for `CONTAINS`-style membership queries. (AI-inferred)
     array_config: Any = None
+    # The document field this index entry covers, in dot notation. (AI-inferred)
     field_path: Any = None
+    # The sort direction this index supports for `field_path`: `ASCENDING` or `DESCENDING`. (AI-inferred)
     order: Any = None
+    # Configures `field_path` as a full-text or geo search index, rather than a standard ordered/array index. (AI-inferred)
     search_config: Any = None
+    # Configures this field as a vector similarity search index, for nearest-neighbor queries over embeddings. (AI-inferred)
     vector_config: Any = None
 
 @dataclasses.dataclass

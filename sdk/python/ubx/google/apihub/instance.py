@@ -8,74 +8,110 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_Actions_CurationConfig_CustomCuration:
+    # A reference to the curation this applies to. (AI-inferred)
     curation: Any = None
 
 @dataclasses.dataclass
 class Instance_Actions_CurationConfig:
+    # The kind of curation this performs. (AI-inferred)
     curation_type: Any = None
+    # Configures curation using a caller-supplied plugin, rather than a built-in curator. (AI-inferred)
     custom_curation: Any = None
 
 @dataclasses.dataclass
 class Instance_Actions_HubInstanceAction_LastExecution:
+    # When this operation ended. (AI-inferred)
     end_time: Any = None
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # The result produced by this operation. (AI-inferred)
     result: Any = None
+    # Additional metadata about this result. (AI-inferred)
     result_metadata: Any = None
+    # When this operation started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class Instance_Actions_HubInstanceAction:
+    # The current status of this plugin action's own most recent execution. (AI-inferred)
     current_execution_state: Any = None
+    # Detail about this plugin action's own most recent execution. (AI-inferred)
     last_execution: Any = None
 
 @dataclasses.dataclass
 class Instance_Actions_ResourceConfig:
+    # The kind of action this represents. (AI-inferred)
     action_type: Any = None
+    # A reference to the Pub/Sub topic this plugin publishes events to. (AI-inferred)
     pubsub_topic: Any = None
 
 @dataclasses.dataclass
 class Instance_Actions:
+    # An identifier for this action, unique within its own containing plugin. (AI-inferred)
     action_id: Any = None
+    # Configuration for how metadata is automatically curated (enriched, classified) for discovered APIs. (AI-inferred)
     curation_config: Any = None
+    # A reference to the plugin action this applies to. (AI-inferred)
     hub_instance_action: Any = None
+    # Configuration specific to this resource. (AI-inferred)
     resource_config: Any = None
+    # The cron expression this plugin action runs on. (AI-inferred)
     schedule_cron_expression: Any = None
+    # The time zone this schedule is interpreted in. (AI-inferred)
     schedule_time_zone: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Instance_AdditionalConfig_EnumValue:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
 class Instance_AdditionalConfig_MultiIntValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Instance_AdditionalConfig_MultiSelectValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Instance_AdditionalConfig_MultiStringValues:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Instance_AdditionalConfig_SecretValue:
+    # The Secret Manager secret version holding this credential. (AI-inferred)
     secret_version: Any = None
 
 @dataclasses.dataclass
 class Instance_AdditionalConfig:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # The selected value of an enum-typed custom attribute. (AI-inferred)
     enum_value: Any = None
+    # An integer value, populated when this field's own type is an integer. (AI-inferred)
     int_value: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # Multiple integer value(s) for this custom attribute. (AI-inferred)
     multi_int_values: Any = None
+    # The selected value(s) of a multi-select custom attribute. (AI-inferred)
     multi_select_values: Any = None
+    # Multiple string value(s) for this custom attribute. (AI-inferred)
     multi_string_values: Any = None
+    # A secret credential value. (AI-inferred)
     secret_value: Any = None
+    # A text value, populated when this field's own type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
@@ -121,9 +157,13 @@ class Instance_AuthConfig:
 
 @dataclasses.dataclass
 class Instance_SourceEnvironmentsConfig:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The environment this data was sourced from. (AI-inferred)
     source_environment: Any = None
+    # A URI identifying the source environment. (AI-inferred)
     source_environment_uri: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 _Instance_Actions_CurationConfig_CustomCurationFields = {

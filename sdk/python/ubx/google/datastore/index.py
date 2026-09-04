@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Index_Properties:
+    # Whether this composite index property is real, sorted `ASCENDING` or `DESCENDING`. (AI-inferred)
     direction: Any = None
+    # The real, indexed entity property name this composite index property covers. (AI-inferred)
     name: Any = None
 
 _Index_PropertiesFields = {

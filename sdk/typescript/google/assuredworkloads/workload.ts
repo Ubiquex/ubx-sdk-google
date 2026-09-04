@@ -40,13 +40,18 @@ export interface Workload_PartnerPermissions {
 }
 
 export interface Workload_ResourceSettings {
+  /** A human-readable name for this resource setting, shown in the console alongside the underlying `resource_id`. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The identifier of the resource this setting applies to -- a project ID for `CONSUMER_PROJECT`/`ENCRYPTION_KEYS_PROJECT`, or a KeyRing ID for `KEYRING`. (AI-inferred) */
   resourceId?: string | Computed<string>;
+  /** Which kind of resource this setting configures: `CONSUMER_PROJECT` or `CONSUMER_FOLDER` (the workload's own regulated project/folder), `ENCRYPTION_KEYS_PROJECT` (the project holding CMEK keys), or `KEYRING` (the KMS KeyRing itself). (AI-inferred) */
   resourceType?: string | Computed<string>;
 }
 
 export interface Workload_Resources {
+  /** Output only. The identifier of a resource Assured Workloads created as part of this workload (a project ID or KeyRing ID). (AI-inferred) */
   resourceId?: string | Computed<string>;
+  /** Output only. The kind of resource `resource_id` refers to: `CONSUMER_PROJECT`, `CONSUMER_FOLDER`, `ENCRYPTION_KEYS_PROJECT`, or `KEYRING`. (AI-inferred) */
   resourceType?: string | Computed<string>;
 }
 

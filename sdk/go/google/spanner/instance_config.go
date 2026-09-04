@@ -4,9 +4,12 @@ package spanner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceConfig_InstanceConfig_OptionalReplicas struct {
+	// The region designated as the default leader for this database's own leader-aware routing. (AI-inferred)
 	DefaultLeaderLocation any
-	Location              any
-	Type                  any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Location any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type InstanceConfig_InstanceConfig struct {

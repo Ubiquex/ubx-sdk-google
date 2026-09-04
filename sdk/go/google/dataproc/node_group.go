@@ -4,14 +4,20 @@ package dataproc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NodeGroup_NodeGroupConfig_Accelerators struct {
-	AcceleratorCount   any
+	// How many accelerator (GPU) devices are attached per instance. (AI-inferred)
+	AcceleratorCount any
+	// The full URI of the accelerator type attached. (AI-inferred)
 	AcceleratorTypeUri any
 }
 
 type NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs struct {
-	DiskSizeGb            any
-	DiskType              any
-	ProvisionedIops       any
+	// The size, in GB, of this disk. (AI-inferred)
+	DiskSizeGb any
+	// The disk type provisioned, e.g. `pd-ssd`. (AI-inferred)
+	DiskType any
+	// The provisioned IOPS for this disk, when using a disk type that supports configuring it. (AI-inferred)
+	ProvisionedIops any
+	// The provisioned throughput for this disk, when using a disk type that supports configuring it. (AI-inferred)
 	ProvisionedThroughput any
 }
 
@@ -33,14 +39,19 @@ type NodeGroup_NodeGroupConfig_DiskConfig struct {
 }
 
 type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList struct {
-	DiskConfig   any
+	// Configuration for each instance's own attached disk(s). (AI-inferred)
+	DiskConfig any
+	// The machine type(s) this applies to. (AI-inferred)
 	MachineTypes any
-	Rank         any
+	// The relative preference order of this option -- lower values are preferred first. (AI-inferred)
+	Rank any
 }
 
 type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults struct {
+	// The Compute Engine machine type provisioned for each instance. (AI-inferred)
 	MachineType any
-	VmCount     any
+	// The number of VM instances this applies to. (AI-inferred)
+	VmCount any
 }
 
 type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix struct {
@@ -62,10 +73,14 @@ type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy struct {
 }
 
 type NodeGroup_NodeGroupConfig_InstanceReferences struct {
-	InstanceId     any
-	InstanceName   any
+	// An identifier for this specific instance. (AI-inferred)
+	InstanceId any
+	// The name of this instance. (AI-inferred)
+	InstanceName any
+	// The public ECIES key used to encrypt sensitive job parameters. (AI-inferred)
 	PublicEciesKey any
-	PublicKey      any
+	// A public key used for encryption or authentication. (AI-inferred)
+	PublicKey any
 }
 
 type NodeGroup_NodeGroupConfig_ManagedGroupConfig struct {

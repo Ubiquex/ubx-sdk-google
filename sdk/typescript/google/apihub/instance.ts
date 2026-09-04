@@ -2,74 +2,110 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_Actions_CurationConfig_CustomCuration {
+  /** A reference to the curation this applies to. (AI-inferred) */
   curation?: string | Computed<string>;
 }
 
 export interface Instance_Actions_CurationConfig {
+  /** The kind of curation this performs. (AI-inferred) */
   curationType?: string | Computed<string>;
+  /** Configures curation using a caller-supplied plugin, rather than a built-in curator. (AI-inferred) */
   customCuration?: Instance_Actions_CurationConfig_CustomCuration | Computed<Instance_Actions_CurationConfig_CustomCuration>;
 }
 
 export interface Instance_Actions_HubInstanceAction_LastExecution {
+  /** When this operation ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The result produced by this operation. (AI-inferred) */
   result?: string | Computed<string>;
+  /** Additional metadata about this result. (AI-inferred) */
   resultMetadata?: string | Computed<string>;
+  /** When this operation started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface Instance_Actions_HubInstanceAction {
+  /** The current status of this plugin action's own most recent execution. (AI-inferred) */
   currentExecutionState?: string | Computed<string>;
+  /** Detail about this plugin action's own most recent execution. (AI-inferred) */
   lastExecution?: Instance_Actions_HubInstanceAction_LastExecution | Computed<Instance_Actions_HubInstanceAction_LastExecution>;
 }
 
 export interface Instance_Actions_ResourceConfig {
+  /** The kind of action this represents. (AI-inferred) */
   actionType?: string | Computed<string>;
+  /** A reference to the Pub/Sub topic this plugin publishes events to. (AI-inferred) */
   pubsubTopic?: string | Computed<string>;
 }
 
 export interface Instance_Actions {
+  /** An identifier for this action, unique within its own containing plugin. (AI-inferred) */
   actionId?: string | Computed<string>;
+  /** Configuration for how metadata is automatically curated (enriched, classified) for discovered APIs. (AI-inferred) */
   curationConfig?: Instance_Actions_CurationConfig | Computed<Instance_Actions_CurationConfig>;
+  /** A reference to the plugin action this applies to. (AI-inferred) */
   hubInstanceAction?: Instance_Actions_HubInstanceAction | Computed<Instance_Actions_HubInstanceAction>;
+  /** Configuration specific to this resource. (AI-inferred) */
   resourceConfig?: Instance_Actions_ResourceConfig | Computed<Instance_Actions_ResourceConfig>;
+  /** The cron expression this plugin action runs on. (AI-inferred) */
   scheduleCronExpression?: string | Computed<string>;
+  /** The time zone this schedule is interpreted in. (AI-inferred) */
   scheduleTimeZone?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Instance_AdditionalConfig_EnumValue {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface Instance_AdditionalConfig_MultiIntValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: number[] | Computed<number[]>;
 }
 
 export interface Instance_AdditionalConfig_MultiSelectValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: Instance_AdditionalConfig_EnumValue[] | Computed<Instance_AdditionalConfig_EnumValue[]>;
 }
 
 export interface Instance_AdditionalConfig_MultiStringValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Instance_AdditionalConfig_SecretValue {
+  /** The Secret Manager secret version holding this credential. (AI-inferred) */
   secretVersion?: string | Computed<string>;
 }
 
 export interface Instance_AdditionalConfig {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** The selected value of an enum-typed custom attribute. (AI-inferred) */
   enumValue?: Instance_AdditionalConfig_EnumValue | Computed<Instance_AdditionalConfig_EnumValue>;
+  /** An integer value, populated when this field's own type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Multiple integer value(s) for this custom attribute. (AI-inferred) */
   multiIntValues?: Instance_AdditionalConfig_MultiIntValues | Computed<Instance_AdditionalConfig_MultiIntValues>;
+  /** The selected value(s) of a multi-select custom attribute. (AI-inferred) */
   multiSelectValues?: Instance_AdditionalConfig_MultiSelectValues | Computed<Instance_AdditionalConfig_MultiSelectValues>;
+  /** Multiple string value(s) for this custom attribute. (AI-inferred) */
   multiStringValues?: Instance_AdditionalConfig_MultiStringValues | Computed<Instance_AdditionalConfig_MultiStringValues>;
+  /** A secret credential value. (AI-inferred) */
   secretValue?: Instance_AdditionalConfig_SecretValue | Computed<Instance_AdditionalConfig_SecretValue>;
+  /** A text value, populated when this field's own type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
@@ -115,9 +151,13 @@ export interface Instance_AuthConfig {
 }
 
 export interface Instance_SourceEnvironmentsConfig {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The environment this data was sourced from. (AI-inferred) */
   sourceEnvironment?: string | Computed<string>;
+  /** A URI identifying the source environment. (AI-inferred) */
   sourceEnvironmentUri?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 

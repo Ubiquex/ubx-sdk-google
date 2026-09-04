@@ -2,81 +2,124 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Config_Apis_Methods_Options {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Config_Apis_Methods {
+  /** The protocol buffer edition this file was written against. (AI-inferred) */
   edition?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Additional configuration option(s) for this element. (AI-inferred) */
   options?: Config_Apis_Methods_Options[] | Computed<Config_Apis_Methods_Options[]>;
+  /** Whether this method streams its own request, rather than sending it in a single message. (AI-inferred) */
   requestStreaming?: boolean | Computed<boolean>;
+  /** The fully qualified type URL of this method's own request message. (AI-inferred) */
   requestTypeUrl?: string | Computed<string>;
+  /** Whether this method streams its own response, rather than returning it in a single message. (AI-inferred) */
   responseStreaming?: boolean | Computed<boolean>;
+  /** The fully qualified type URL of this method's own response message. (AI-inferred) */
   responseTypeUrl?: string | Computed<string>;
+  /** Which protocol buffer syntax version this file uses. (AI-inferred) */
   syntax?: string | Computed<string>;
 }
 
 export interface Config_Apis_Mixins {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The root type or resource this hierarchy is anchored at. (AI-inferred) */
   root?: string | Computed<string>;
 }
 
 export interface Config_Apis_SourceContext {
+  /** The name of the source file this element is defined in. (AI-inferred) */
   fileName?: string | Computed<string>;
 }
 
 export interface Config_Apis {
+  /** The protocol buffer edition this file was written against. (AI-inferred) */
   edition?: string | Computed<string>;
+  /** The method(s) making up this service or interface. (AI-inferred) */
   methods?: Config_Apis_Methods[] | Computed<Config_Apis_Methods[]>;
+  /** Other API interface(s) whose own methods are mixed into this one. (AI-inferred) */
   mixins?: Config_Apis_Mixins[] | Computed<Config_Apis_Mixins[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Additional configuration option(s) for this element. (AI-inferred) */
   options?: Config_Apis_Methods_Options[] | Computed<Config_Apis_Methods_Options[]>;
+  /** Identifies the source file/location this element was defined in. (AI-inferred) */
   sourceContext?: Config_Apis_SourceContext | Computed<Config_Apis_SourceContext>;
+  /** Which protocol buffer syntax version this file uses. (AI-inferred) */
   syntax?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Config_Aspects_Rules {
+  /** The configuration for this resource. (AI-inferred) */
   config?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
 export interface Config_Aspects {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The rule(s) making up this policy. (AI-inferred) */
   rules?: Config_Aspects_Rules[] | Computed<Config_Aspects_Rules[]>;
+  /** The specification defining this resource's own behavior. (AI-inferred) */
   spec?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Config_Authentication_Providers_JwtLocations {
+  /** The cookie name this JWT location reads from. (AI-inferred) */
   cookie?: string | Computed<string>;
+  /** An HTTP header this applies to. (AI-inferred) */
   header?: string | Computed<string>;
+  /** The query text or expression. (AI-inferred) */
   query?: string | Computed<string>;
+  /** A required prefix a matching value must start with. (AI-inferred) */
   valuePrefix?: string | Computed<string>;
 }
 
 export interface Config_Authentication_Providers {
+  /** The intended audience value(s) a JWT must carry to authenticate to this API. (AI-inferred) */
   audiences?: string | Computed<string>;
+  /** The OAuth authorization endpoint URL. (AI-inferred) */
   authorizationUrl?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The JWT issuer identity trusted for this authentication provider. (AI-inferred) */
   issuer?: string | Computed<string>;
+  /** The URL of the JSON Web Key Set used to verify JWTs from this issuer. (AI-inferred) */
   jwksUri?: string | Computed<string>;
+  /** Where in the request a JWT may be found, e.g. a specific header or query parameter. (AI-inferred) */
   jwtLocations?: Config_Authentication_Providers_JwtLocations[] | Computed<Config_Authentication_Providers_JwtLocations[]>;
 }
 
 export interface Config_Authentication_Rules_Oauth {
+  /** The recommended OAuth scope(s) for calling this API. (AI-inferred) */
   canonicalScopes?: string | Computed<string>;
 }
 
 export interface Config_Authentication_Rules_Requirements {
+  /** The intended audience value(s) a JWT must carry to authenticate to this API. (AI-inferred) */
   audiences?: string | Computed<string>;
+  /** A reference to the authentication provider this applies to. (AI-inferred) */
   providerId?: string | Computed<string>;
 }
 
 export interface Config_Authentication_Rules {
+  /** Whether this method can be called without any authentication credential. (AI-inferred) */
   allowWithoutCredential?: boolean | Computed<boolean>;
+  /** OAuth 2.0 authentication requirement(s) for this method. (AI-inferred) */
   oauth?: Config_Authentication_Rules_Oauth | Computed<Config_Authentication_Rules_Oauth>;
+  /** The authentication/authorization requirement(s) this applies. (AI-inferred) */
   requirements?: Config_Authentication_Rules_Requirements[] | Computed<Config_Authentication_Rules_Requirements[]>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -88,16 +131,27 @@ export interface Config_Authentication {
 }
 
 export interface Config_Backend_Rules {
+  /** The network address this applies to. (AI-inferred) */
   address?: string | Computed<string>;
+  /** The maximum time, in seconds, this call may take before timing out. (AI-inferred) */
   deadline?: number | Computed<number>;
+  /** Whether authentication is disabled for this method. (AI-inferred) */
   disableAuth?: boolean | Computed<boolean>;
+  /** The expected audience claim value in JWTs from this issuer. (AI-inferred) */
   jwtAudience?: string | Computed<string>;
+  /** Which policy the client uses to distribute calls across backend replicas. (AI-inferred) */
   loadBalancingPolicy?: string | Computed<string>;
+  /** The minimum deadline, in seconds, callers may request for this method. (AI-inferred) */
   minDeadline?: number | Computed<number>;
+  /** The maximum time a long-running operation started by this method may take before timing out. (AI-inferred) */
   operationDeadline?: number | Computed<number>;
+  /** Configuration override(s) applied depending on which protocol (e.g. gRPC vs HTTP) the request arrived over. (AI-inferred) */
   overridesByRequestProtocol?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** How the URL path is translated into the backend request, e.g. appended or replaced. (AI-inferred) */
   pathTranslation?: string | Computed<string>;
+  /** The wire protocol this applies to. (AI-inferred) */
   protocol?: string | Computed<string>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -107,7 +161,9 @@ export interface Config_Backend {
 }
 
 export interface Config_Billing_ConsumerDestinations {
+  /** The metric(s) this configuration applies to. (AI-inferred) */
   metrics?: string[] | Computed<string[]>;
+  /** The resource type this monitoring data is associated with. (AI-inferred) */
   monitoredResource?: string | Computed<string>;
 }
 
@@ -117,10 +173,15 @@ export interface Config_Billing {
 }
 
 export interface Config_Context_Rules {
+  /** The protocol buffer extension(s) allowed in this method's own request message. (AI-inferred) */
   allowedRequestExtensions?: string[] | Computed<string[]>;
+  /** The protocol buffer extension(s) allowed in this method's own response message. (AI-inferred) */
   allowedResponseExtensions?: string[] | Computed<string[]>;
+  /** Interface(s) this service implements and exposes to callers. (AI-inferred) */
   provided?: string[] | Computed<string[]>;
+  /** Interface(s) this service depends on and requests be made available. (AI-inferred) */
   requested?: string[] | Computed<string[]>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -130,13 +191,18 @@ export interface Config_Context {
 }
 
 export interface Config_Control_MethodPolicies_RequestPolicies {
+  /** The IAM permission required to access this resource. (AI-inferred) */
   resourcePermission?: string | Computed<string>;
+  /** The resource type this permission or quota applies to. (AI-inferred) */
   resourceType?: string | Computed<string>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
 export interface Config_Control_MethodPolicies {
+  /** Policy/policies applied to requests for this API. (AI-inferred) */
   requestPolicies?: Config_Control_MethodPolicies_RequestPolicies[] | Computed<Config_Control_MethodPolicies_RequestPolicies[]>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -148,7 +214,9 @@ export interface Config_Control {
 }
 
 export interface Config_CustomError_Rules {
+  /** Whether this message type represents an error/exception, for client-library-generation purposes. (AI-inferred) */
   isErrorType?: boolean | Computed<boolean>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -160,15 +228,22 @@ export interface Config_CustomError {
 }
 
 export interface Config_Documentation_Pages {
+  /** The literal content of this value. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Nested documentation page(s) under this one. (AI-inferred) */
   subpages?: unknown[] | Computed<unknown[]>;
 }
 
 export interface Config_Documentation_Rules {
+  /** A human-readable explanation of why this element is deprecated and what to use instead. (AI-inferred) */
   deprecationDescription?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Word(s) excluded from the client-library-generation naming replacement rules. (AI-inferred) */
   disableReplacementWords?: string | Computed<string>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -192,42 +267,67 @@ export interface Config_Documentation {
 }
 
 export interface Config_Endpoints {
+  /** Alternate name(s) this also resolves under. (AI-inferred) */
   aliases?: string[] | Computed<string[]>;
+  /** Whether Cross-Origin Resource Sharing requests are allowed for this API. (AI-inferred) */
   allowCors?: boolean | Computed<boolean>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The destination this applies to. (AI-inferred) */
   target?: string | Computed<string>;
 }
 
 export interface Config_Enums_Enumvalue {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The field number assigned to this protocol buffer field. (AI-inferred) */
   number?: number | Computed<number>;
+  /** Additional configuration option(s) for this element. (AI-inferred) */
   options?: Config_Apis_Methods_Options[] | Computed<Config_Apis_Methods_Options[]>;
 }
 
 export interface Config_Enums {
+  /** The protocol buffer edition this file was written against. (AI-inferred) */
   edition?: string | Computed<string>;
+  /** A single named value within this enum type. (AI-inferred) */
   enumvalue?: Config_Enums_Enumvalue[] | Computed<Config_Enums_Enumvalue[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Additional configuration option(s) for this element. (AI-inferred) */
   options?: Config_Apis_Methods_Options[] | Computed<Config_Apis_Methods_Options[]>;
+  /** Identifies the source file/location this element was defined in. (AI-inferred) */
   sourceContext?: Config_Apis_SourceContext | Computed<Config_Apis_SourceContext>;
+  /** Which protocol buffer syntax version this file uses. (AI-inferred) */
   syntax?: string | Computed<string>;
 }
 
 export interface Config_Http_Rules_Custom {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The URL path pattern this method's own HTTP binding matches. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface Config_Http_Rules {
+  /** Additional URL path pattern(s) this method is also reachable at, beyond its own primary HTTP binding. (AI-inferred) */
   additionalBindings?: unknown[] | Computed<unknown[]>;
+  /** The message field mapped to the HTTP request body. (AI-inferred) */
   body?: string | Computed<string>;
+  /** A caller-defined HTTP binding, using a custom verb. (AI-inferred) */
   custom?: Config_Http_Rules_Custom | Computed<Config_Http_Rules_Custom>;
+  /** The HTTP `DELETE` binding for this method. (AI-inferred) */
   delete?: string | Computed<string>;
+  /** The HTTP `GET` binding for this method. (AI-inferred) */
   get?: string | Computed<string>;
+  /** The HTTP `PATCH` binding for this method. (AI-inferred) */
   patch?: string | Computed<string>;
+  /** The HTTP `POST` binding for this method. (AI-inferred) */
   post?: string | Computed<string>;
+  /** The HTTP `PUT` binding for this method. (AI-inferred) */
   put?: string | Computed<string>;
+  /** The message field the HTTP response body is mapped from. (AI-inferred) */
   responseBody?: string | Computed<string>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -239,7 +339,9 @@ export interface Config_Http {
 }
 
 export interface Config_Logging_ConsumerDestinations {
+  /** The log type(s) this monitored resource emits. (AI-inferred) */
   logs?: string[] | Computed<string[]>;
+  /** The resource type this monitoring data is associated with. (AI-inferred) */
   monitoredResource?: string | Computed<string>;
 }
 
@@ -251,45 +353,73 @@ export interface Config_Logging {
 }
 
 export interface Config_Logs_Labels {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The data type of this value. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface Config_Logs {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Config_Logs_Labels[] | Computed<Config_Logs_Labels[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Config_Metrics_Metadata {
+  /** How long data is delayed before being ingested into monitoring. (AI-inferred) */
   ingestDelay?: string | Computed<string>;
+  /** The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred) */
   launchStage?: string | Computed<string>;
+  /** How often this metric is sampled. (AI-inferred) */
   samplePeriod?: string | Computed<string>;
+  /** At which resource hierarchy level (e.g. project, organization) this metric's own time series is aggregated. (AI-inferred) */
   timeSeriesResourceHierarchyLevel?: string[] | Computed<string[]>;
 }
 
 export interface Config_Metrics {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Config_Logs_Labels[] | Computed<Config_Logs_Labels[]>;
+  /** The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred) */
   launchStage?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Config_Metrics_Metadata | Computed<Config_Metrics_Metadata>;
+  /** Whether this metric is a gauge, delta, or cumulative measurement. (AI-inferred) */
   metricKind?: string | Computed<string>;
+  /** The monitored resource type(s) this log or metric applies to. (AI-inferred) */
   monitoredResourceTypes?: string[] | Computed<string[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The unit this measurement is expressed in. (AI-inferred) */
   unit?: string | Computed<string>;
+  /** The data type of this value. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface Config_MonitoredResources {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Config_Logs_Labels[] | Computed<Config_Logs_Labels[]>;
+  /** The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred) */
   launchStage?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -301,103 +431,159 @@ export interface Config_Monitoring {
 }
 
 export interface Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGeneration {
+  /** Whether elements omitted from the public surface are still generated, marked internal, rather than skipped entirely. (AI-inferred) */
   generateOmittedAsInternal?: boolean | Computed<boolean>;
+  /** The method(s) making up this service or interface. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
 }
 
 export interface Config_Publishing_LibrarySettings_CppSettings_Common {
+  /** Where this data or traffic is sent. (AI-inferred) */
   destinations?: string[] | Computed<string[]>;
+  /** The URL of this API's own reference documentation. (AI-inferred) */
   referenceDocsUri?: string | Computed<string>;
+  /** Restricts generated client library surface to only a caller-specified subset of methods. (AI-inferred) */
   selectiveGapicGeneration?: Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGeneration | Computed<Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGeneration>;
 }
 
 export interface Config_Publishing_LibrarySettings_CppSettings {
+  /** Configuration shared across every client library language for this API. (AI-inferred) */
   common?: Config_Publishing_LibrarySettings_CppSettings_Common | Computed<Config_Publishing_LibrarySettings_CppSettings_Common>;
 }
 
 export interface Config_Publishing_LibrarySettings_DotnetSettings {
+  /** Configuration shared across every client library language for this API. (AI-inferred) */
   common?: Config_Publishing_LibrarySettings_CppSettings_Common | Computed<Config_Publishing_LibrarySettings_CppSettings_Common>;
+  /** Namespace(s) forced to use a specific alias in generated client libraries. (AI-inferred) */
   forcedNamespaceAliases?: string[] | Computed<string[]>;
+  /** Method signature(s) manually curated for this client library, overriding the automatically derived ones. (AI-inferred) */
   handwrittenSignatures?: string[] | Computed<string[]>;
+  /** Resource(s) excluded from automatic client library resource-name helper generation. (AI-inferred) */
   ignoredResources?: string[] | Computed<string[]>;
+  /** Resource(s) whose own generated client-library name differs from their real API resource name. (AI-inferred) */
   renamedResources?: Record<string, string> | Computed<Record<string, string>>;
+  /** Service(s) whose own generated client-library name differs from their real API service name. (AI-inferred) */
   renamedServices?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Config_Publishing_LibrarySettings_GoSettings {
+  /** Configuration shared across every client library language for this API. (AI-inferred) */
   common?: Config_Publishing_LibrarySettings_CppSettings_Common | Computed<Config_Publishing_LibrarySettings_CppSettings_Common>;
+  /** Service(s) whose own generated client-library name differs from their real API service name. (AI-inferred) */
   renamedServices?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Config_Publishing_LibrarySettings_JavaSettings {
+  /** Configuration shared across every client library language for this API. (AI-inferred) */
   common?: Config_Publishing_LibrarySettings_CppSettings_Common | Computed<Config_Publishing_LibrarySettings_CppSettings_Common>;
+  /** The package name generated client libraries use for this API. (AI-inferred) */
   libraryPackage?: string | Computed<string>;
+  /** The class name(s) generated client libraries use for this service, per language. (AI-inferred) */
   serviceClassNames?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Config_Publishing_LibrarySettings_PhpSettings {
+  /** Configuration shared across every client library language for this API. (AI-inferred) */
   common?: Config_Publishing_LibrarySettings_CppSettings_Common | Computed<Config_Publishing_LibrarySettings_CppSettings_Common>;
+  /** The package name generated client libraries use for this API. (AI-inferred) */
   libraryPackage?: string | Computed<string>;
 }
 
 export interface Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeatures {
+  /** Whether generated Python types follow idiomatic Python naming/structure conventions, rather than a direct proto mapping. (AI-inferred) */
   protobufPythonicTypesEnabled?: boolean | Computed<boolean>;
+  /** Whether the generated REST client library uses asynchronous I/O. (AI-inferred) */
   restAsyncIoEnabled?: boolean | Computed<boolean>;
+  /** Whether an unversioned convenience package is omitted from the generated client library. (AI-inferred) */
   unversionedPackageDisabled?: boolean | Computed<boolean>;
 }
 
 export interface Config_Publishing_LibrarySettings_PythonSettings {
+  /** Configuration shared across every client library language for this API. (AI-inferred) */
   common?: Config_Publishing_LibrarySettings_CppSettings_Common | Computed<Config_Publishing_LibrarySettings_CppSettings_Common>;
+  /** Client-library-generation features still marked experimental for this language. (AI-inferred) */
   experimentalFeatures?: Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeatures | Computed<Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeatures>;
 }
 
 export interface Config_Publishing_LibrarySettings {
+  /** Client library generation settings specific to C++. (AI-inferred) */
   cppSettings?: Config_Publishing_LibrarySettings_CppSettings | Computed<Config_Publishing_LibrarySettings_CppSettings>;
+  /** Client library generation settings specific to .NET. (AI-inferred) */
   dotnetSettings?: Config_Publishing_LibrarySettings_DotnetSettings | Computed<Config_Publishing_LibrarySettings_DotnetSettings>;
+  /** Client library generation settings specific to Go. (AI-inferred) */
   goSettings?: Config_Publishing_LibrarySettings_GoSettings | Computed<Config_Publishing_LibrarySettings_GoSettings>;
+  /** Client library generation settings specific to Java. (AI-inferred) */
   javaSettings?: Config_Publishing_LibrarySettings_JavaSettings | Computed<Config_Publishing_LibrarySettings_JavaSettings>;
+  /** The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred) */
   launchStage?: string | Computed<string>;
+  /** Client library generation settings specific to Node.js. (AI-inferred) */
   nodeSettings?: Config_Publishing_LibrarySettings_CppSettings | Computed<Config_Publishing_LibrarySettings_CppSettings>;
+  /** Client library generation settings specific to PHP. (AI-inferred) */
   phpSettings?: Config_Publishing_LibrarySettings_PhpSettings | Computed<Config_Publishing_LibrarySettings_PhpSettings>;
+  /** Client library generation settings specific to Python. (AI-inferred) */
   pythonSettings?: Config_Publishing_LibrarySettings_PythonSettings | Computed<Config_Publishing_LibrarySettings_PythonSettings>;
+  /** Whether enum values are serialized as numbers rather than names, in the REST transport. (AI-inferred) */
   restNumericEnums?: boolean | Computed<boolean>;
+  /** Client library generation settings specific to Ruby. (AI-inferred) */
   rubySettings?: Config_Publishing_LibrarySettings_CppSettings | Computed<Config_Publishing_LibrarySettings_CppSettings>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Config_Publishing_MethodSettings_Batching_BatchDescriptor {
+  /** The request field that holds the batched item(s). (AI-inferred) */
   batchedField?: string | Computed<string>;
+  /** Field(s) used to determine which of several possible message types this payload actually is. (AI-inferred) */
   discriminatorFields?: string[] | Computed<string[]>;
+  /** The response field holding an individual item, when the method returns multiple results per page. (AI-inferred) */
   subresponseField?: string | Computed<string>;
 }
 
 export interface Config_Publishing_MethodSettings_Batching_Thresholds {
+  /** How long to wait, at most, before flushing a batch even if it hasn't reached its own size limit. (AI-inferred) */
   delayThreshold?: string | Computed<string>;
+  /** The maximum number of elements allowed in a single batch. (AI-inferred) */
   elementCountLimit?: number | Computed<number>;
+  /** The number of elements that triggers flushing a batch early. (AI-inferred) */
   elementCountThreshold?: number | Computed<number>;
+  /** The maximum number of unacknowledged bytes allowed before flow control pauses further sends. (AI-inferred) */
   flowControlByteLimit?: number | Computed<number>;
+  /** The maximum number of unacknowledged elements allowed before flow control pauses further sends. (AI-inferred) */
   flowControlElementLimit?: number | Computed<number>;
+  /** What happens when a flow-control limit is exceeded, e.g. block or throw an error. (AI-inferred) */
   flowControlLimitExceededBehavior?: string | Computed<string>;
+  /** The maximum total request size, in bytes, allowed in a single batch. (AI-inferred) */
   requestByteLimit?: number | Computed<number>;
+  /** The total request size, in bytes, that triggers flushing a batch early. (AI-inferred) */
   requestByteThreshold?: string | Computed<string>;
 }
 
 export interface Config_Publishing_MethodSettings_Batching {
+  /** Configuration for how individual requests are automatically batched together into fewer underlying calls. (AI-inferred) */
   batchDescriptor?: Config_Publishing_MethodSettings_Batching_BatchDescriptor | Computed<Config_Publishing_MethodSettings_Batching_BatchDescriptor>;
+  /** The threshold value(s) that trigger this alert or action. (AI-inferred) */
   thresholds?: Config_Publishing_MethodSettings_Batching_Thresholds | Computed<Config_Publishing_MethodSettings_Batching_Thresholds>;
 }
 
 export interface Config_Publishing_MethodSettings_LongRunning {
+  /** How long to wait before the first poll of a long-running operation's own status. (AI-inferred) */
   initialPollDelay?: string | Computed<string>;
+  /** The maximum interval between polls of a long-running operation's own status. (AI-inferred) */
   maxPollDelay?: string | Computed<string>;
+  /** The factor the poll interval is multiplied by after each unsuccessful poll, for exponential backoff. (AI-inferred) */
   pollDelayMultiplier?: number | Computed<number>;
+  /** The maximum total time spent polling a long-running operation before giving up. (AI-inferred) */
   totalPollTimeout?: string | Computed<string>;
 }
 
 export interface Config_Publishing_MethodSettings {
+  /** Request field(s) the server automatically populates if the caller leaves them unset. (AI-inferred) */
   autoPopulatedFields?: string[] | Computed<string[]>;
+  /** Configuration for automatically batching client requests together for efficiency. (AI-inferred) */
   batching?: Config_Publishing_MethodSettings_Batching | Computed<Config_Publishing_MethodSettings_Batching>;
+  /** Configuration for this method's own long-running operation semantics, e.g. polling interval. (AI-inferred) */
   longRunning?: Config_Publishing_MethodSettings_LongRunning | Computed<Config_Publishing_MethodSettings_LongRunning>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -427,23 +613,38 @@ export interface Config_Publishing {
 }
 
 export interface Config_Quota_Limits {
+  /** The default quota limit applied when no more specific override exists. (AI-inferred) */
   defaultLimit?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** How long this applies for. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** The quota amount available at no charge, before billed usage begins. (AI-inferred) */
   freeTier?: string | Computed<string>;
+  /** The maximum quota limit an override may raise this metric to. (AI-inferred) */
   maxLimit?: string | Computed<string>;
+  /** A reference to the metric this applies to. (AI-inferred) */
   metric?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Which source (e.g. internal, external) this traffic originated from. (AI-inferred) */
   trafficSource?: string | Computed<string>;
+  /** The unit this measurement is expressed in. (AI-inferred) */
   unit?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Config_Quota_MetricRules {
+  /** Quota cost override(s) applied when this method is invoked by an AI agent, rather than a regular caller. (AI-inferred) */
   agenticMetricCosts?: Record<string, string> | Computed<Record<string, string>>;
+  /** How much quota each metric consumes per call to this method. (AI-inferred) */
   metricCosts?: Record<string, string> | Computed<Record<string, string>>;
+  /** Quota cost override(s) applied when this method is invoked by a regular (non-agent) caller. (AI-inferred) */
   nonagenticMetricCosts?: Record<string, string> | Computed<Record<string, string>>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -460,13 +661,18 @@ export interface Config_SourceInfo {
 }
 
 export interface Config_SystemParameters_Rules_Parameters {
+  /** The HTTP header name this JWT location reads from. (AI-inferred) */
   httpHeader?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The query parameter name this JWT location reads from. (AI-inferred) */
   urlQueryParameter?: string | Computed<string>;
 }
 
 export interface Config_SystemParameters_Rules {
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: Config_SystemParameters_Rules_Parameters[] | Computed<Config_SystemParameters_Rules_Parameters[]>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
 }
 
@@ -476,31 +682,51 @@ export interface Config_SystemParameters {
 }
 
 export interface Config_SystemTypes_Fields {
+  /** Whether this field is optional, required, or repeated. (AI-inferred) */
   cardinality?: string | Computed<string>;
+  /** The value used when this field is left unset. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** The name this field is serialized under in JSON, when different from its own proto field name. (AI-inferred) */
   jsonName?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The field number assigned to this protocol buffer field. (AI-inferred) */
   number?: number | Computed<number>;
+  /** Which `oneof` group this field belongs to, if any. (AI-inferred) */
   oneofIndex?: number | Computed<number>;
+  /** Additional configuration option(s) for this element. (AI-inferred) */
   options?: Config_Apis_Methods_Options[] | Computed<Config_Apis_Methods_Options[]>;
+  /** Whether repeated scalar field values are packed into a single, more compact encoding. (AI-inferred) */
   packed?: boolean | Computed<boolean>;
+  /** The fully qualified type URL of this message. (AI-inferred) */
   typeUrl?: string | Computed<string>;
 }
 
 export interface Config_SystemTypes {
+  /** The protocol buffer edition this file was written against. (AI-inferred) */
   edition?: string | Computed<string>;
+  /** The field(s) making up this message. (AI-inferred) */
   fields?: Config_SystemTypes_Fields[] | Computed<Config_SystemTypes_Fields[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The `oneof` group(s) defined in this message. (AI-inferred) */
   oneofs?: string[] | Computed<string[]>;
+  /** Additional configuration option(s) for this element. (AI-inferred) */
   options?: Config_Apis_Methods_Options[] | Computed<Config_Apis_Methods_Options[]>;
+  /** Identifies the source file/location this element was defined in. (AI-inferred) */
   sourceContext?: Config_Apis_SourceContext | Computed<Config_Apis_SourceContext>;
+  /** Which protocol buffer syntax version this file uses. (AI-inferred) */
   syntax?: string | Computed<string>;
 }
 
 export interface Config_Usage_Rules {
+  /** Whether calls without an API key are allowed for this method. (AI-inferred) */
   allowUnregisteredCalls?: boolean | Computed<boolean>;
+  /** A pattern selecting which API element(s) this rule applies to. (AI-inferred) */
   selector?: string | Computed<string>;
+  /** Whether Service Control checks (quota, auth, billing) are bypassed for this method. (AI-inferred) */
   skipServiceControl?: boolean | Computed<boolean>;
 }
 

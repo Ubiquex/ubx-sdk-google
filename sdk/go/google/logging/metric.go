@@ -36,9 +36,12 @@ type Metric_BucketOptions struct {
 }
 
 type Metric_MetricDescriptor_Labels struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Key         any
-	ValueType   any
+	// The key of this label or attribute. (AI-inferred)
+	Key any
+	// The data type of this field's own value. (AI-inferred)
+	ValueType any
 }
 
 type Metric_MetricDescriptor_Metadata struct {

@@ -17,6 +17,7 @@ class Tool_AgentTool:
 
 @dataclasses.dataclass
 class Tool_ClientFunction_Parameters:
+    # Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
     additional_properties: Any = None
     # Optional. The value should be validated against any (one or more) of the subschemas in the list.
     any_of: Any = None
@@ -28,6 +29,7 @@ class Tool_ClientFunction_Parameters:
     description: Any = None
     # Optional. Possible values of the element of primitive type with enum format. Examples: 1. We can define direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]} 2. We can define apartment number as : {type:INTEGER, format:enum, enum:["101", "201", "301"]}
     enum: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
     # Optional. Maximum number of the elements for Type.ARRAY.
     max_items: Any = None
@@ -119,29 +121,41 @@ class Tool_ConnectorTool:
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints:
+    # The attribute value at this control point. (AI-inferred)
     attribute_value: Any = None
+    # The boost applied at this control point. (AI-inferred)
     boost_amount: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec:
+    # The kind of attribute this boost rule keys on. (AI-inferred)
     attribute_type: Any = None
+    # The mapping between an attribute's own value and its resulting boost amount, defining the boost curve. (AI-inferred)
     control_points: Any = None
+    # The name of the field this applies to. (AI-inferred)
     field_name: Any = None
+    # How boost values are interpolated between control points, e.g. linear. (AI-inferred)
     interpolation_type: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs:
+    # How much to raise or lower a matching result's own ranking. (AI-inferred)
     boost: Any = None
+    # A boost rule computed from a continuous field value, rather than a fixed amount. (AI-inferred)
     boost_control_spec: Any = None
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_BoostSpecs_Spec:
+    # Rule(s) boosting or burying specific search results when their own condition matches. (AI-inferred)
     condition_boost_specs: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_BoostSpecs:
+    # The data store(s) this tool queries. (AI-inferred)
     data_stores: Any = None
+    # The specification defining this resource's own behavior. (AI-inferred)
     spec: Any = None
 
 @dataclasses.dataclass
@@ -186,30 +200,43 @@ class Tool_DataStoreTool_EngineSource:
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_ModalityConfigs_GroundingConfig:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # How strictly generated answers must be grounded in retrieved source content. (AI-inferred)
     grounding_level: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettings:
+    # The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
     model: Any = None
+    # Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred)
     temperature: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_ModalityConfigs_RewriterConfig:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
     model_settings: Any = None
+    # The prompt text sent to the model. (AI-inferred)
     prompt: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_ModalityConfigs_SnippetsConfig:
+    # Whether source snippets are included alongside a generated answer. (AI-inferred)
     enable_snippets: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_ModalityConfigs:
+    # Configuration for how strictly generated answers must be grounded in retrieved source content. (AI-inferred)
     grounding_config: Any = None
+    # Which modality (text, audio, etc.) this applies to. (AI-inferred)
     modality_type: Any = None
+    # Configuration for automatically rewriting the user's own query before retrieval, to improve search results. (AI-inferred)
     rewriter_config: Any = None
+    # Configuration for including source snippets alongside a generated answer. (AI-inferred)
     snippets_config: Any = None
+    # Configuration for how retrieved search results are summarized into a generated answer. (AI-inferred)
     summarization_config: Any = None
 
 @dataclasses.dataclass
@@ -316,7 +343,9 @@ class Tool_McpTool_ServiceDirectoryConfig:
 
 @dataclasses.dataclass
 class Tool_McpTool_TlsConfig_CaCerts:
+    # A TLS certificate. (AI-inferred)
     cert: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
@@ -381,19 +410,30 @@ class Tool_PythonFunction:
 
 @dataclasses.dataclass
 class Tool_RemoteAgentTool_AgentCard_Skills:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Example(s) illustrating expected behavior. (AI-inferred)
     examples: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The input modality/modalities (text, audio, etc.) this supports. (AI-inferred)
     input_modes: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The output modality/modalities (text, audio, etc.) this supports. (AI-inferred)
     output_modes: Any = None
+    # Free-form label(s) attached to this resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Tool_RemoteAgentTool_AgentCard_SupportedInterfaces:
+    # The communication protocol this interface accepts requests over. (AI-inferred)
     protocol_binding: Any = None
+    # The protocol version this interface implements. (AI-inferred)
     protocol_version: Any = None
+    # A reference to the tenant this applies to. (AI-inferred)
     tenant: Any = None
+    # The URL this tool calls. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass

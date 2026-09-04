@@ -96,21 +96,33 @@ var V3beta1Webhook_ServiceDirectoryFields = ubx.FieldMap{
 }
 
 type V3beta1WebhookConfig struct {
-	Disabled          any
-	DisplayName       any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
 	GenericWebService any
-	Name              any
-	ServiceDirectory  any
-	Timeout           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the Service Directory service this webhook is reached through. (AI-inferred)
+	ServiceDirectory any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
 }
 
 type V3beta1WebhookAttrs struct {
-	Disabled          any
-	DisplayName       any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
 	GenericWebService any
-	Name              any
-	ServiceDirectory  any
-	Timeout           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the Service Directory service this webhook is reached through. (AI-inferred)
+	ServiceDirectory any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
 }
 
 var V3beta1Webhook = ubx.ResourceBinding{

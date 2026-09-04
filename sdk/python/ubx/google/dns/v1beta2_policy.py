@@ -72,6 +72,7 @@ _V1beta2Policy_NetworksFields = {
 
 @dataclasses.dataclass
 class V1beta2PolicyConfig:
+    # Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
     alternative_name_server_config: Any = None
     # A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
     description: Any = None
@@ -83,6 +84,7 @@ class V1beta2PolicyConfig:
     enable_logging: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User-assigned name for this policy.
     name: Any = None
@@ -91,6 +93,7 @@ class V1beta2PolicyConfig:
 
 @dataclasses.dataclass
 class V1beta2PolicyAttrs:
+    # Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
     alternative_name_server_config: Any = None
     # A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
     description: Any = None
@@ -102,6 +105,7 @@ class V1beta2PolicyAttrs:
     enable_logging: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User-assigned name for this policy.
     name: Any = None

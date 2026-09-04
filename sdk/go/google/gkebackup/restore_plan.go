@@ -4,8 +4,10 @@ package gkebackup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKinds struct {
+	// A restore action grouped with the resource(s) it applies to. (AI-inferred)
 	ResourceGroup any
-	ResourceKind  any
+	// The Kubernetes resource kind this applies to. (AI-inferred)
+	ResourceKind any
 }
 
 type RestorePlan_RestoreConfig_ClusterResourceRestoreScope struct {
@@ -25,7 +27,9 @@ type RestorePlan_RestoreConfig_ExcludedNamespaces struct {
 }
 
 type RestorePlan_RestoreConfig_RestoreOrder_GroupKindDependencies struct {
-	Requiring  any
+	// Rule(s) that must ALL match for this restore action to apply, when combined via AND logic. (AI-inferred)
+	Requiring any
+	// Rule(s) any one of which must match for this restore action to apply, when combined via OR logic. (AI-inferred)
 	Satisfying any
 }
 
@@ -35,7 +39,9 @@ type RestorePlan_RestoreConfig_RestoreOrder struct {
 }
 
 type RestorePlan_RestoreConfig_SelectedApplications_NamespacedNames struct {
-	Name      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The Kubernetes namespace this applies to. (AI-inferred)
 	Namespace any
 }
 
@@ -45,34 +51,51 @@ type RestorePlan_RestoreConfig_SelectedApplications struct {
 }
 
 type RestorePlan_RestoreConfig_SubstitutionRules struct {
-	NewValue             any
+	// The value this field is set to after transformation. (AI-inferred)
+	NewValue any
+	// A regular expression the field's own original value must match for this transformation to apply. (AI-inferred)
 	OriginalValuePattern any
-	TargetGroupKinds     any
-	TargetJsonPath       any
-	TargetNamespaces     any
+	// The API group(s) and kind(s) this restore action targets. (AI-inferred)
+	TargetGroupKinds any
+	// The JSON path this transformation writes its own result to. (AI-inferred)
+	TargetJsonPath any
+	// The Kubernetes namespace(s) restored resources are placed into. (AI-inferred)
+	TargetNamespaces any
 }
 
 type RestorePlan_RestoreConfig_TransformationRules_FieldActions struct {
+	// The JSON path this transformation reads its own source value from. (AI-inferred)
 	FromPath any
-	Op       any
-	Path     any
-	Value    any
+	// The transformation operation applied, e.g. `add`, `remove`, or `replace`. (AI-inferred)
+	Op any
+	// A file or resource path. (AI-inferred)
+	Path any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type RestorePlan_RestoreConfig_TransformationRules_ResourceFilter struct {
+	// The API group(s) and kind(s) this filter matches. (AI-inferred)
 	GroupKinds any
-	JsonPath   any
+	// The JSON path this rule applies to. (AI-inferred)
+	JsonPath any
+	// The Kubernetes namespace(s) this applies to. (AI-inferred)
 	Namespaces any
 }
 
 type RestorePlan_RestoreConfig_TransformationRules struct {
-	Description    any
-	FieldActions   any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The transformation(s) applied to a specific field during restore. (AI-inferred)
+	FieldActions any
+	// Restricts a restore or backup action to matching Kubernetes resource(s). (AI-inferred)
 	ResourceFilter any
 }
 
 type RestorePlan_RestoreConfig_VolumeDataRestorePolicyBindings struct {
-	Policy     any
+	// The rule(s) restore actions must satisfy. (AI-inferred)
+	Policy any
+	// How this volume's own data is backed up, e.g. via a Persistent Disk snapshot. (AI-inferred)
 	VolumeType any
 }
 

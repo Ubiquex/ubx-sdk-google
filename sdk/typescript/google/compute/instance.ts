@@ -24,69 +24,116 @@ export interface Instance_ConfidentialInstanceConfig {
 }
 
 export interface Instance_Disks_DiskEncryptionKey {
+  /** The full resource name of the Cloud KMS key used to encrypt the disk, in the format projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}. This key is a customer-managed encryption key (CMEK) used for disk encryption. (AI-inferred) */
   kmsKeyName?: string | Computed<string>;
+  /** The service account being used for the encryption request for the given KMS key. If not specified, the instance's default service account is used. (AI-inferred) */
   kmsKeyServiceAccount?: string | Computed<string>;
+  /** The customer-supplied encryption key for the disk, provided as a base64-encoded 256-bit key. This is used to encrypt the disk when using customer-supplied encryption keys. (AI-inferred) */
   rawKey?: string | Computed<string>;
+  /** The base64-encoded RSA-encrypted version of the customer-supplied encryption key, encrypted using Google's public RSA key. This is provided as an alternative to the unencrypted raw_key for protecting the key during transmission. (AI-inferred) */
   rsaEncryptedKey?: string | Computed<string>;
+  /** The SHA256 hash of the customer-supplied encryption key (raw_key). This field is computed by Google and used to verify the key. (AI-inferred) */
   sha256?: string | Computed<string>;
 }
 
 export interface Instance_Disks_GuestOsFeatures {
+  /** Specifies the type of guest OS feature to enable. Valid values include BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, and WINDOWS. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Instance_Disks_InitializeParams {
+  /** The CPU architecture for the disk image. Valid values are ARCHITECTURE_UNSPECIFIED, ARM64, and X86_64. (AI-inferred) */
   architecture?: string | Computed<string>;
+  /** An optional description for the disk being initialized. (AI-inferred) */
   description?: string | Computed<string>;
   diskName?: string | Computed<string>;
+  /** Specifies the size of the disk in gigabytes. If not set, the default size of the underlying image is used. (AI-inferred) */
   diskSizeGb?: string | Computed<string>;
   diskType?: string | Computed<string>;
+  /** Enables Confidential Compute for this disk, which encrypts data in use and allows the disk to be used with confidential VM instances. (AI-inferred) */
   enableConfidentialCompute?: boolean | Computed<boolean>;
+  /** Labels to apply to the boot disk created from this initialize_params block. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** A list of license URIs to apply to this disk. This may be used to apply licenses that are not already present on the image. (AI-inferred) */
   licenses?: string[] | Computed<string[]>;
+  /** The update action to perform when the disk configuration changes. Supported values: RECREATE_DISK (recreate the disk on any update), RECREATE_DISK_IF_SOURCE_CHANGED (recreate only if the source image/snapshot changes), USE_EXISTING_DISK (keep the existing disk). (AI-inferred) */
   onUpdateAction?: string | Computed<string>;
+  /** The provisioned IOPS for the disk. This is applicable to disk types that support configurable IOPS, such as Hyperdisk or Extreme persistent disks. (AI-inferred) */
   provisionedIops?: string | Computed<string>;
+  /** The provisioned throughput, in MB/s, for the disk. Only applicable to disk types that support provisioned throughput, such as Hyperdisk. (AI-inferred) */
   provisionedThroughput?: string | Computed<string>;
+  /** The zones for a regional persistent disk. Provide exactly two zones to create a regional disk; if omitted, a zonal disk is created. (AI-inferred) */
   replicaZones?: string[] | Computed<string[]>;
+  /** A map of resource manager tags to apply to the disk. Keys must be in the format tagKeys/{tag_key_id} and values in the format tagValues/{tag_value_id}. (AI-inferred) */
   resourceManagerTags?: Record<string, string> | Computed<Record<string, string>>;
+  /** A list of self-links to resource policies (such as snapshot schedules) to apply to the disk when it is created. (AI-inferred) */
   resourcePolicies?: string[] | Computed<string[]>;
+  /** The source image to use for creating this disk. Can be a fully-qualified image URL, a project/image reference, or an image family name. (AI-inferred) */
   sourceImage?: string | Computed<string>;
+  /** Provides the customer-supplied encryption key used to decrypt the source image when creating a disk from an encrypted image. This block is only used if the source image is encrypted with a customer-supplied key. (AI-inferred) */
   sourceImageEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** The source snapshot used to create this disk. The disk will be initialized from the specified snapshot. (AI-inferred) */
   sourceSnapshot?: string | Computed<string>;
+  /** The customer-supplied encryption key used to decrypt the source snapshot, if it was created with a customer-managed encryption key. (AI-inferred) */
   sourceSnapshotEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** The URL of the storage pool in which to create the disk. If not specified, the default storage pool is used. (AI-inferred) */
   storagePool?: string | Computed<string>;
 }
 
 export interface Instance_Disks_ShieldedInstanceInitialState_Dbs {
+  /** The base64-encoded contents of the UEFI db (database) file for the shielded instance's initial state. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The file type of the database file. Valid values are BIN, UNDEFINED, and X509. (AI-inferred) */
   fileType?: string | Computed<string>;
 }
 
 export interface Instance_Disks_ShieldedInstanceInitialState {
+  /** The list of database certificates for the shielded instance initial state. Each object in the list represents a certificate with fields for content and file type. (AI-inferred) */
   dbs?: Instance_Disks_ShieldedInstanceInitialState_Dbs[] | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs[]>;
+  /** A list of DBX (forbidden signature database) entries for the shielded VM initial state. These entries specify the forbidden signatures that Secure Boot will deny during boot. (AI-inferred) */
   dbxs?: Instance_Disks_ShieldedInstanceInitialState_Dbs[] | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs[]>;
+  /** List of key exchange key (KEK) certificates used by the shielded instance's initial state. Each entry includes the certificate content and file type. (AI-inferred) */
   keks?: Instance_Disks_ShieldedInstanceInitialState_Dbs[] | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs[]>;
+  /** The platform key (PK) entry, containing the base64-encoded content and file type of the platform key certificate used for verified boot. (AI-inferred) */
   pk?: Instance_Disks_ShieldedInstanceInitialState_Dbs | Computed<Instance_Disks_ShieldedInstanceInitialState_Dbs>;
 }
 
 export interface Instance_Disks {
+  /** The CPU architecture of the disk. Must be one of: ARCHITECTURE_UNSPECIFIED, ARM64, or X86_64. This specifies whether the disk is compatible with ARM64 or x86_64 instances. (AI-inferred) */
   architecture?: string | Computed<string>;
+  /** If true, the disk will be automatically deleted when the instance is deleted. (AI-inferred) */
   autoDelete?: boolean | Computed<boolean>;
+  /** A boolean flag indicating whether this disk is the boot disk for the instance. Only one disk can be the boot disk. (AI-inferred) */
   boot?: boolean | Computed<boolean>;
+  /** The device name exposed to the instance for this disk. If not specified, Google Cloud assigns a default device name. This name is used to reference the disk inside the guest OS (e.g., as /dev/sdb). (AI-inferred) */
   deviceName?: string | Computed<string>;
+  /** Configuration for a customer-supplied encryption key (CSEK) to encrypt this disk. (AI-inferred) */
   diskEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
+  /** The size of the persistent disk in gigabytes (GB). If not set, the disk size is determined by the source image or the disk type's default. (AI-inferred) */
   diskSizeGb?: string | Computed<string>;
+  /** If true, the disk is attached to this instance even if it is already attached to another instance. Defaults to false. (AI-inferred) */
   forceAttach?: boolean | Computed<boolean>;
+  /** A list of guest OS features to enable for the disk. Each feature is an object with a `type` field, such as `UEFI_COMPATIBLE`, `SECURE_BOOT`, or `VIRTIO_SCSI_MULTIQUEUE`. (AI-inferred) */
   guestOsFeatures?: Instance_Disks_GuestOsFeatures[] | Computed<Instance_Disks_GuestOsFeatures[]>;
+  /** The zero-based index of the disk in the instance, where index 0 corresponds to the boot disk. This uniquely identifies the disk among all disks attached to the instance. (AI-inferred) */
   index?: number | Computed<number>;
+  /** This block is used to initialize a new disk from a source image or snapshot, specifying parameters such as the image, disk size, and disk type. (AI-inferred) */
   initializeParams?: Instance_Disks_InitializeParams | Computed<Instance_Disks_InitializeParams>;
+  /** The disk interface type to use for attaching this disk. Must be one of 'SCSI' or 'NVME'. (AI-inferred) */
   interface?: string | Computed<string>;
+  /** The kind of the disk resource, which is always 'compute#attachedDisk' for disks attached to an instance. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** List of license self-links (URLs) to apply to the disk. This is typically used when creating a boot disk from a custom image to specify the operating system licenses that apply, such as 'https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-10-buster'. (AI-inferred) */
   licenses?: string[] | Computed<string[]>;
+  /** The mode in which the disk is attached to the instance, either READ_ONLY or READ_WRITE. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** Specifies whether the disk's data is preserved when the instance is stopped. Use PRESERVED to keep the data, or DISK_SAVED_STATE_UNSPECIFIED for the default behavior. (AI-inferred) */
   savedState?: string | Computed<string>;
+  /** The shielded instance initial state for the disk, specifying the platform key (pk), key exchange key (kek), and database (db) that define the integrity policy for a Shielded VM instance booted from this disk. (AI-inferred) */
   shieldedInstanceInitialState?: Instance_Disks_ShieldedInstanceInitialState | Computed<Instance_Disks_ShieldedInstanceInitialState>;
+  /** A reference (URL or name) to the source disk, image, or snapshot used to create or attach this disk. (AI-inferred) */
   source?: string | Computed<string>;
+  /** The type of the disk, either PERSISTENT (persistent disk) or SCRATCH (local SSD). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -96,12 +143,16 @@ export interface Instance_DisplayDevice {
 }
 
 export interface Instance_GuestAccelerators {
+  /** The number of the guest accelerator cards of the specified type to attach to the instance. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The type of accelerator (GPU) to attach to the instance, specified by its name or a full/partial URL to the accelerator type resource. For example, 'nvidia-tesla-k80' or 'zones/us-central1-a/acceleratorTypes/nvidia-tesla-p100'. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
 }
 
 export interface Instance_Metadata_Items {
+  /** The metadata key for the instance metadata entry. This key, combined with the value, defines a key-value pair for custom instance metadata. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value for this metadata entry. This is the data associated with the metadata key on the instance. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -116,48 +167,80 @@ export interface Instance_Metadata {
 
 export interface Instance_NetworkInterfaces_AccessConfigs {
   externalIpv6?: string | Computed<string>;
+  /** The prefix length, in bits, of the external IPv6 address range assigned to this access configuration. It defines the network portion of the external IPv6 address. (AI-inferred) */
   externalIpv6PrefixLength?: number | Computed<number>;
+  /** The kind of the access config, always set to 'compute#accessConfig'. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of this access configuration. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The external IPv4 address assigned to the instance. Specify a static external IP (reserved) to assign it, or leave unset to have an ephemeral IP automatically assigned. (AI-inferred) */
   natIp?: string | Computed<string>;
+  /** The network tier assigned to the access config's external IP. Allowed values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD, which control the pricing and performance tier for the external IP. (AI-inferred) */
   networkTier?: string | Computed<string>;
+  /** Specifies a custom DNS PTR record for the public IP address of this access config. If not set, the default PTR record for the external IP is used. (AI-inferred) */
   publicPtrDomainName?: string | Computed<string>;
+  /** The name of the Cloud Armor security policy to apply to this access config. This field is only applicable if the access_config type is EXTERNAL_MANAGED. (AI-inferred) */
   securityPolicy?: string | Computed<string>;
+  /** Indicates whether a public DNS PTR record should be set for the external IP address associated with this access config. Set to true to enable public PTR record creation. (AI-inferred) */
   setPublicPtr?: boolean | Computed<boolean>;
+  /** The type of access configuration. Valid values are DIRECT_IPV6 for direct IPv6 access and ONE_TO_ONE_NAT for standard one-to-one NAT (external IP). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Instance_NetworkInterfaces_AliasIpRanges {
+  /** The IP CIDR range for this alias IP, specified in CIDR notation (e.g., '10.0.0.0/24'). (AI-inferred) */
   ipCidrRange?: string | Computed<string>;
+  /** The name of the subnetwork secondary range to use for this alias IP range. This range must have an internal IP address type. If not specified, the primary range of the subnetwork is used. (AI-inferred) */
   subnetworkRangeName?: string | Computed<string>;
 }
 
 export interface Instance_NetworkInterfaces {
+  /** Configures external IP addresses for this network interface. You can specify a static IP with `nat_ip`, or leave it unset to receive an ephemeral IP. (AI-inferred) */
   accessConfigs?: Instance_NetworkInterfaces_AccessConfigs[] | Computed<Instance_NetworkInterfaces_AccessConfigs[]>;
+  /** A list of alias IP ranges to assign to this network interface. Each alias IP range allows the instance to use additional internal IP addresses. Typically includes an IP CIDR range and optionally a subnetwork range name. (AI-inferred) */
   aliasIpRanges?: Instance_NetworkInterfaces_AliasIpRanges[] | Computed<Instance_NetworkInterfaces_AliasIpRanges[]>;
+  /** A list of IPv6 alias IP ranges to assign to this network interface. Each object defines an IPv6 CIDR range that the interface can use as an additional address. (AI-inferred) */
   aliasIpv6Ranges?: Instance_NetworkInterfaces_AliasIpRanges[] | Computed<Instance_NetworkInterfaces_AliasIpRanges[]>;
+  /** Enable VPC-scoped DNS for the network interface. When true, DNS queries from the instance are resolved using the VPC network's DNS configuration. (AI-inferred) */
   enableVpcScopedDns?: boolean | Computed<boolean>;
+  /** The fingerprint of the network interface, used for optimistic locking. (AI-inferred) */
   fingerprint?: string | Computed<string>;
+  /** Configures the IGMP query mode for this network interface. Possible values are IGMP_QUERY_DISABLED and IGMP_QUERY_V2. (AI-inferred) */
   igmpQuery?: string | Computed<string>;
   internalIpv6PrefixLength?: number | Computed<number>;
+  /** List of IPv6 access configurations for the network interface. Each configuration sets the external IPv6 address options, such as the network tier (e.g., PREMIUM or STANDARD) and optional public DNS domain name. (AI-inferred) */
   ipv6AccessConfigs?: Instance_NetworkInterfaces_AccessConfigs[] | Computed<Instance_NetworkInterfaces_AccessConfigs[]>;
+  /** The type of IPv6 access. Valid values are EXTERNAL and INTERNAL. EXTERNAL means the IPv6 address is publicly accessible, while INTERNAL means it is private to the VPC network. (AI-inferred) */
   ipv6AccessType?: string | Computed<string>;
+  /** The external IPv6 address assigned to this network interface. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
+  /** The kind of the network interface resource. It is always set to 'compute#networkInterface'. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name assigned to this network interface, such as 'nic0'. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The name or self_link of the VPC network to attach this interface to. If subnetwork is not set, this field is required; otherwise, the network is inferred from the subnetwork. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The URL of the network attachment that this network interface should use. This can be specified instead of network or subnetwork when the interface is attached to a Network Attachment. (AI-inferred) */
   networkAttachment?: string | Computed<string>;
+  /** The internal IPv4 address to assign to this network interface. If left unspecified, Compute Engine automatically assigns an ephemeral internal IP address. (AI-inferred) */
   networkIp?: string | Computed<string>;
+  /** The type of network interface controller (NIC) to use for this network interface. Allowed values: GVNIC, IDPF, IRDMA, MRDMA, UNSPECIFIED_NIC_TYPE, VIRTIO_NET. (AI-inferred) */
   nicType?: string | Computed<string>;
+  /** The name of the parent network interface that this interface is attached to or derived from, used in virtual NIC configurations (e.g., gVNIC). (AI-inferred) */
   parentNicName?: string | Computed<string>;
+  /** The number of queues to create for this network interface. This field is supported only for gVNIC NICs and is used to configure the number of queue pairs for the interface. (AI-inferred) */
   queueCount?: number | Computed<number>;
   serviceClassId?: string | Computed<string>;
+  /** The IP stack type for the network interface. Valid values are IPV4_IPV6 (dual-stack), IPV4_ONLY, or IPV6_ONLY. (AI-inferred) */
   stackType?: string | Computed<string>;
+  /** The name or self_link of the subnetwork to attach to this network interface. If not specified, the default subnetwork for the network is used. (AI-inferred) */
   subnetwork?: string | Computed<string>;
+  /** The VLAN ID used for this network interface, applicable when the interface is attached to a VLAN attachment. (AI-inferred) */
   vlan?: number | Computed<number>;
 }
 
 export interface Instance_NetworkPerformanceConfig {
+  /** The tier of total egress bandwidth for the instance. Valid values are DEFAULT (standard) and TIER_1 (higher bandwidth). (AI-inferred) */
   totalEgressBandwidthTier?: string | Computed<string>;
 }
 
@@ -261,6 +344,7 @@ export interface Instance_ResourceStatus_UpcomingMaintenance {
   maintenanceOnShutdown?: boolean | Computed<boolean>;
   /** The reasons for the maintenance. Only valid for vms. */
   maintenanceReasons?: string[] | Computed<string[]>;
+  /** The status of upcoming maintenance for the instance, indicating whether maintenance is ongoing, pending, or unknown. Possible values are ONGOING, PENDING, and UNKNOWN. (AI-inferred) */
   maintenanceStatus?: string | Computed<string>;
   /** Defines the type of maintenance. */
   type?: string | Computed<string>;
@@ -279,6 +363,7 @@ export interface Instance_ResourceStatus {
   physicalHostTopology?: Instance_ResourceStatus_PhysicalHostTopology | Computed<Instance_ResourceStatus_PhysicalHostTopology>;
   /** Reservation consumption information that the instance is consuming from. */
   reservationConsumptionInfo?: Instance_ResourceStatus_ReservationConsumptionInfo | Computed<Instance_ResourceStatus_ReservationConsumptionInfo>;
+  /** The scheduling configuration of the instance as reported by the API in the resource_status block. This includes computed values such as host error timeout seconds and node affinities. (AI-inferred) */
   scheduling?: Instance_ResourceStatus_Scheduling | Computed<Instance_ResourceStatus_Scheduling>;
   /** Specifies if the instance is in `PENDING_STOP` state or there is a programmed stop scheduled. */
   shutdownDetails?: Instance_ResourceStatus_ShutdownDetails | Computed<Instance_ResourceStatus_ShutdownDetails>;
@@ -294,8 +379,11 @@ export interface Instance_Scheduling_GracefulShutdown {
 }
 
 export interface Instance_Scheduling_NodeAffinities {
+  /** The key for the node affinity, which corresponds to a node label key in the Compute Engine environment. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The operator for the node affinity condition. Valid values are IN (matches when the node is in the specified values), NOT_IN (matches when the node is not in the specified values), and OPERATOR_UNSPECIFIED (unspecified). (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The list of values for the node affinity key. This field is required when the operator is IN or NOT_IN. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -342,7 +430,9 @@ export interface Instance_Scheduling {
 }
 
 export interface Instance_ServiceAccounts {
+  /** The email address of the service account to associate with the instance. (AI-inferred) */
   email?: string | Computed<string>;
+  /** List of OAuth 2.0 scopes that should be granted to the service account for accessing Google Cloud APIs. For example, 'https://www.googleapis.com/auth/compute.readonly' or 'https://www.googleapis.com/auth/cloud-platform'. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
 }
 
@@ -368,6 +458,7 @@ export interface Instance_Tags {
 }
 
 export interface Instance_WorkloadIdentityConfig {
+  /** The email address of the service account to attach to the instance for workload identity. This enables the instance to use workload identity federation. (AI-inferred) */
   identity?: string | Computed<string>;
   identityCertificateEnabled?: boolean | Computed<boolean>;
 }
@@ -805,6 +896,7 @@ export interface InstanceConfig {
   guestAccelerators?: Instance_GuestAccelerators[] | Computed<Instance_GuestAccelerators[]>;
   /** Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS. */
   hostname?: string | Computed<string>;
+  /** The customer-supplied encryption key used to encrypt the instance's boot disk. This field is computed and output-only. (AI-inferred) */
   instanceEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
   /** KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified. */
   keyRevocationActionType?: string | Computed<string>;
@@ -845,9 +937,11 @@ export interface InstanceConfig {
   shieldedInstanceIntegrityPolicy?: Instance_ShieldedInstanceIntegrityPolicy | Computed<Instance_ShieldedInstanceIntegrityPolicy>;
   /** Source machine image */
   sourceMachineImage?: string | Computed<string>;
+  /** The customer-supplied encryption key for the source machine image used to create the instance. This field is output-only and reflects the encryption key details of the source image. (AI-inferred) */
   sourceMachineImageEncryptionKey?: Instance_Disks_DiskEncryptionKey | Computed<Instance_Disks_DiskEncryptionKey>;
   /** A set of instance tags. */
   tags?: Instance_Tags | Computed<Instance_Tags>;
+  /** An output-only object containing the workload identity configuration for the instance, automatically computed and not user-settable. (AI-inferred) */
   workloadIdentityConfig?: Instance_WorkloadIdentityConfig | Computed<Instance_WorkloadIdentityConfig>;
 }
 
@@ -878,6 +972,7 @@ export interface InstanceAttrs {
   hostname: string;
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
+  /** The customer-supplied encryption key used to encrypt the instance's boot disk. This field is computed and output-only. (AI-inferred) */
   instanceEncryptionKey: Instance_Disks_DiskEncryptionKey;
   /** KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified. */
   keyRevocationActionType: string;
@@ -932,6 +1027,7 @@ export interface InstanceAttrs {
   shieldedInstanceIntegrityPolicy: Instance_ShieldedInstanceIntegrityPolicy;
   /** Source machine image */
   sourceMachineImage: string;
+  /** The customer-supplied encryption key for the source machine image used to create the instance. This field is output-only and reflects the encryption key details of the source image. (AI-inferred) */
   sourceMachineImageEncryptionKey: Instance_Disks_DiskEncryptionKey;
   /** Output only. [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity. */
   startRestricted: boolean;
@@ -941,6 +1037,7 @@ export interface InstanceAttrs {
   statusMessage: string;
   /** A set of instance tags. */
   tags: Instance_Tags;
+  /** An output-only object containing the workload identity configuration for the instance, automatically computed and not user-settable. (AI-inferred) */
   workloadIdentityConfig: Instance_WorkloadIdentityConfig;
   /** Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   zone: string;

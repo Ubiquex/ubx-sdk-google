@@ -4,10 +4,14 @@ package managedkafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Acl_AclEntries struct {
-	Host           any
-	Operation      any
+	// The host this ACL entry applies to; Google Cloud Managed Service for Apache Kafka requires this be the wildcard `*`. (AI-inferred)
+	Host any
+	// The Kafka operation this ACL entry grants or denies, e.g. `READ`, `WRITE`, or `ALL`. (AI-inferred)
+	Operation any
+	// Whether this ACL entry `ALLOW`s or `DENY`s the matching operation. (AI-inferred)
 	PermissionType any
-	Principal      any
+	// The identity this ACL entry applies to, in the form `User:{email}`, or `User:*` for any principal. (AI-inferred)
+	Principal any
 }
 
 var Acl_AclEntriesFields = ubx.FieldMap{

@@ -8,23 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TcpRoute_Rules_Action_Destinations:
+    # The name of the service this applies to. (AI-inferred)
     service_name: Any = None
+    # The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class TcpRoute_Rules_Action:
+    # The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
     destinations: Any = None
+    # How long an idle connection is kept open before being closed. (AI-inferred)
     idle_timeout: Any = None
+    # The destination traffic was originally routed to, before mirroring or redirection. (AI-inferred)
     original_destination: Any = None
 
 @dataclasses.dataclass
 class TcpRoute_Rules_Matches:
+    # The network address this applies to. (AI-inferred)
     address: Any = None
+    # A network port number. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class TcpRoute_Rules:
+    # The action taken when this rule matches. (AI-inferred)
     action: Any = None
+    # The match condition(s) this rule evaluates. (AI-inferred)
     matches: Any = None
 
 _TcpRoute_Rules_Action_DestinationsFields = {

@@ -44,11 +44,13 @@ const BetaNodeTemplate_ServerBindingFields: FieldMap = {
 };
 
 export interface BetaNodeTemplateConfig {
+  /** The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred) */
   accelerators?: BetaNodeTemplate_Accelerators[] | Computed<BetaNodeTemplate_Accelerators[]>;
   /** CPU overcommit. */
   cpuOvercommitType?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** The disk configuration nodes created from this template provision. (AI-inferred) */
   disks?: BetaNodeTemplate_Disks[] | Computed<BetaNodeTemplate_Disks[]>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
@@ -56,11 +58,14 @@ export interface BetaNodeTemplateConfig {
   nodeAffinityLabels?: Record<string, string> | Computed<Record<string, string>>;
   /** The node type to use for nodes group that are created from this template. */
   nodeType?: string | Computed<string>;
+  /** A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred) */
   nodeTypeFlexibility?: BetaNodeTemplate_NodeTypeFlexibility | Computed<BetaNodeTemplate_NodeTypeFlexibility>;
+  /** Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred) */
   serverBinding?: BetaNodeTemplate_ServerBinding | Computed<BetaNodeTemplate_ServerBinding>;
 }
 
 export interface BetaNodeTemplateAttrs {
+  /** The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred) */
   accelerators: BetaNodeTemplate_Accelerators[];
   /** CPU overcommit. */
   cpuOvercommitType: string;
@@ -68,6 +73,7 @@ export interface BetaNodeTemplateAttrs {
   creationTimestamp: string;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** The disk configuration nodes created from this template provision. (AI-inferred) */
   disks: BetaNodeTemplate_Disks[];
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
@@ -79,11 +85,13 @@ export interface BetaNodeTemplateAttrs {
   nodeAffinityLabels: Record<string, string>;
   /** The node type to use for nodes group that are created from this template. */
   nodeType: string;
+  /** A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred) */
   nodeTypeFlexibility: BetaNodeTemplate_NodeTypeFlexibility;
   /** Output only. [Output Only] The name of the region where the node template resides, such as us-central1. */
   region: string;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred) */
   serverBinding: BetaNodeTemplate_ServerBinding;
   /** Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING. */
   status: string;

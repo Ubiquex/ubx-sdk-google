@@ -116,19 +116,30 @@ const V2beta1Environment_TextToSpeechSettingsFields: FieldMap = {
 };
 
 export interface V2beta1EnvironmentConfig {
+  /** The real version of the agent this evaluation was run against. (AI-inferred) */
   agentVersion?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred) */
   fulfillment?: V2beta1Environment_Fulfillment | Computed<V2beta1Environment_Fulfillment>;
+  /** Configuration for this agent's own text-to-speech behavior. (AI-inferred) */
   textToSpeechSettings?: V2beta1Environment_TextToSpeechSettings | Computed<V2beta1Environment_TextToSpeechSettings>;
 }
 
 export interface V2beta1EnvironmentAttrs {
+  /** The real version of the agent this evaluation was run against. (AI-inferred) */
   agentVersion: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred) */
   fulfillment: V2beta1Environment_Fulfillment;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state: string;
+  /** Configuration for this agent's own text-to-speech behavior. (AI-inferred) */
   textToSpeechSettings: V2beta1Environment_TextToSpeechSettings;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

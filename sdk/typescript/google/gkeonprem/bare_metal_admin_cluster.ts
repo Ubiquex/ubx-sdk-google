@@ -12,7 +12,9 @@ export interface BareMetalAdminCluster_ClusterOperations {
 }
 
 export interface BareMetalAdminCluster_ControlPlane_ApiServerArgs {
+  /** A command-line argument. (AI-inferred) */
   argument?: string | Computed<string>;
+  /** The value of this taint or label. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -26,13 +28,18 @@ export interface BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_N
 }
 
 export interface BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_NodeConfigs {
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The IP address of this node. (AI-inferred) */
   nodeIp?: string | Computed<string>;
 }
 
 export interface BareMetalAdminCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_Taints {
+  /** What happens to a pod that doesn't tolerate this taint. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The key of this taint or label. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value of this taint or label. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -67,15 +74,22 @@ export interface BareMetalAdminCluster_Fleet {
 }
 
 export interface BareMetalAdminCluster_LoadBalancer_BgpLbConfig_AddressPools {
+  /** The IP address(es) this applies to. (AI-inferred) */
   addresses?: string[] | Computed<string[]>;
+  /** Whether known problematic IP addresses are avoided when allocating this pool. (AI-inferred) */
   avoidBuggyIps?: boolean | Computed<boolean>;
+  /** Whether IP addresses are manually assigned, rather than allocated from a pool. (AI-inferred) */
   manualAssign?: boolean | Computed<boolean>;
+  /** A reference to the node pool this applies to. (AI-inferred) */
   pool?: string | Computed<string>;
 }
 
 export interface BareMetalAdminCluster_LoadBalancer_BgpLbConfig_BgpPeerConfigs {
+  /** The BGP Autonomous System Number this applies to. (AI-inferred) */
   asn?: string | Computed<string>;
+  /** The node(s) making up this cluster's own control plane. (AI-inferred) */
   controlPlaneNodes?: string[] | Computed<string[]>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
 }
 
@@ -122,11 +136,14 @@ export interface BareMetalAdminCluster_MaintenanceConfig {
 }
 
 export interface BareMetalAdminCluster_MaintenanceStatus_MachineDrainStatus_DrainedMachines {
+  /** The IP address of this node. (AI-inferred) */
   nodeIp?: string | Computed<string>;
 }
 
 export interface BareMetalAdminCluster_MaintenanceStatus_MachineDrainStatus_DrainingMachines {
+  /** The IP address of this node. (AI-inferred) */
   nodeIp?: string | Computed<string>;
+  /** How many pods are scheduled on this node. (AI-inferred) */
   podCount?: number | Computed<number>;
 }
 
@@ -181,6 +198,7 @@ export interface BareMetalAdminCluster_Proxy {
 }
 
 export interface BareMetalAdminCluster_SecurityConfig_Authorization_AdminUsers {
+  /** The username used to authenticate. (AI-inferred) */
   username?: string | Computed<string>;
 }
 
@@ -195,15 +213,22 @@ export interface BareMetalAdminCluster_SecurityConfig {
 }
 
 export interface BareMetalAdminCluster_Status_Conditions {
+  /** When this condition last changed from one status to another. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface BareMetalAdminCluster_Status_Versions_Versions {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
@@ -245,10 +270,15 @@ export interface BareMetalAdminCluster_Storage {
 }
 
 export interface BareMetalAdminCluster_ValidationCheck_Status_Result {
+  /** The category this belongs to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

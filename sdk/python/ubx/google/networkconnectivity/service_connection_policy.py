@@ -32,31 +32,51 @@ class ServiceConnectionPolicy_PscConfig:
 
 @dataclasses.dataclass
 class ServiceConnectionPolicy_PscConnections_Error:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionPolicy_PscConnections_ErrorInfo:
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # Additional structured metadata about this resource. (AI-inferred)
     metadata: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionPolicy_PscConnections:
+    # The IP address on the consumer side of this connection. (AI-inferred)
     consumer_address: Any = None
+    # A reference to the consumer's own forwarding rule. (AI-inferred)
     consumer_forwarding_rule: Any = None
+    # The project the consuming resource belongs to. (AI-inferred)
     consumer_target_project: Any = None
+    # Detail about an error that occurred. (AI-inferred)
     error: Any = None
+    # Structured detail about an error that occurred. (AI-inferred)
     error_info: Any = None
+    # The category of error that occurred. (AI-inferred)
     error_type: Any = None
+    # A reference to the underlying Compute Engine operation. (AI-inferred)
     gce_operation: Any = None
+    # Whether this applies to IPv4 or IPv6. (AI-inferred)
     ip_version: Any = None
+    # The identifier of the producer-side instance backing this connection. (AI-inferred)
     producer_instance_id: Any = None
+    # Metadata describing the producer-side instance backing this connection. (AI-inferred)
     producer_instance_metadata: Any = None
+    # The unique identifier of this Private Service Connect connection. (AI-inferred)
     psc_connection_id: Any = None
+    # A reference to the specific subnetwork selected for this connection. (AI-inferred)
     selected_subnetwork: Any = None
+    # The class of managed service this connection belongs to. (AI-inferred)
     service_class: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 _ServiceConnectionPolicy_AutoCreatedSubnetInfoFields = {

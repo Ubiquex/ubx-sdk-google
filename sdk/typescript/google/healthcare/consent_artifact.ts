@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConsentArtifact_ConsentContentScreenshots {
+  /** A Cloud Storage object URI. (AI-inferred) */
   gcsUri?: string | Computed<string>;
+  /** The raw, unparsed byte content of this message. (AI-inferred) */
   rawBytes?: string | Computed<string>;
 }
 

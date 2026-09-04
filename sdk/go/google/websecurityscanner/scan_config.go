@@ -55,6 +55,7 @@ type ScanConfig_LatestRun_ErrorTrace struct {
 }
 
 type ScanConfig_LatestRun_WarningTraces struct {
+	// The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
 	Code any
 }
 

@@ -9,14 +9,20 @@ export interface Instance_AccessLoggingConfig {
 }
 
 export interface Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTime {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface Instance_MaintenanceUpdatePolicy_MaintenanceWindows {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: string | Computed<string>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTime | Computed<Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTime>;
 }
 

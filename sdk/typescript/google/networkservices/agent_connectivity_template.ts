@@ -46,6 +46,7 @@ export interface AgentConnectivityTemplateConfig {
   deploymentModel?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
+  /** Configuration for how this service's own outbound (egress) traffic is routed. (AI-inferred) */
   egressNetworkConfig?: AgentConnectivityTemplate_EgressNetworkConfig | Computed<AgentConnectivityTemplate_EgressNetworkConfig>;
   /** Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error. */
   etag?: string | Computed<string>;
@@ -68,6 +69,7 @@ export interface AgentConnectivityTemplateAttrs {
   deploymentModel: string;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description: string;
+  /** Configuration for how this service's own outbound (egress) traffic is routed. (AI-inferred) */
   egressNetworkConfig: AgentConnectivityTemplate_EgressNetworkConfig;
   /** Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error. */
   etag: string;

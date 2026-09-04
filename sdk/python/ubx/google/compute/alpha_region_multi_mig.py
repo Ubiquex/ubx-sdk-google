@@ -193,6 +193,7 @@ class AlphaRegionMultiMigConfig:
     name: Any = None
     # Resource policies message for a multi-MIG. Specifies the workload policy configuration of the multi-MIG.
     resource_policies: Any = None
+    # The current operational state of this regional multi-MIG, as a structured status object. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -213,6 +214,7 @@ class AlphaRegionMultiMigAttrs:
     resource_policies: Any = None
     # Output only. [Output only] Server-defined URL for the resource.
     self_link: Any = None
+    # The current operational state of this regional multi-MIG, as a structured status object. (AI-inferred)
     status: Any = None
 
 AlphaRegionMultiMig = ubx.ResourceBinding(

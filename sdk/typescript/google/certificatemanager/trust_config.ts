@@ -2,11 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TrustConfig_AllowlistedCertificates {
+  /** The certificate, PEM-encoded. (AI-inferred) */
   pemCertificate?: string | Computed<string>;
 }
 
 export interface TrustConfig_SpiffeTrustStores {
+  /** The intermediate CA certificate(s) chained below the root. (AI-inferred) */
   intermediateCas?: TrustConfig_AllowlistedCertificates[] | Computed<TrustConfig_AllowlistedCertificates[]>;
+  /** The root CA certificate(s) this trust configuration trusts. (AI-inferred) */
   trustAnchors?: TrustConfig_AllowlistedCertificates[] | Computed<TrustConfig_AllowlistedCertificates[]>;
 }
 

@@ -4,21 +4,34 @@ package cloudkms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EkmConnection_ServiceResolvers_ServerCertificates struct {
-	Issuer                     any
-	NotAfterTime               any
-	NotBeforeTime              any
-	Parsed                     any
-	RawDer                     any
-	SerialNumber               any
-	Sha256Fingerprint          any
-	Subject                    any
+	// The certificate's own issuer (the certificate authority that signed it). (AI-inferred)
+	Issuer any
+	// The timestamp after which this certificate is no longer valid. (AI-inferred)
+	NotAfterTime any
+	// The timestamp before which this certificate isn't yet valid. (AI-inferred)
+	NotBeforeTime any
+	// Whether Cloud KMS was able to parse this certificate's own fields. (AI-inferred)
+	Parsed any
+	// The certificate's own raw bytes, in DER encoding. (AI-inferred)
+	RawDer any
+	// The certificate's own serial number, as assigned by its issuer. (AI-inferred)
+	SerialNumber any
+	// A SHA-256 hash of the certificate's own raw bytes, usable to verify it wasn't tampered with. (AI-inferred)
+	Sha256Fingerprint any
+	// The certificate's own subject (the entity it identifies). (AI-inferred)
+	Subject any
+	// Additional DNS names this certificate is also valid for, beyond its primary subject. (AI-inferred)
 	SubjectAlternativeDnsNames any
 }
 
 type EkmConnection_ServiceResolvers struct {
-	EndpointFilter          any
-	Hostname                any
-	ServerCertificates      any
+	// A filter expression restricting which of the resolved external key manager endpoints this resolver considers eligible. (AI-inferred)
+	EndpointFilter any
+	// The hostname of the external key manager service this resolver connects to. (AI-inferred)
+	Hostname any
+	// The TLS certificate(s) trusted for verifying the external key manager's own identity. (AI-inferred)
+	ServerCertificates any
+	// The Service Directory service used to resolve the external key manager's own real network address. (AI-inferred)
 	ServiceDirectoryService any
 }
 

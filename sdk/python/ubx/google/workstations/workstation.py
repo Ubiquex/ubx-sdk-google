@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Workstation_PersistentDirectories:
+    # The path this volume is mounted at inside the container. (AI-inferred)
     mount_path: Any = None
+    # The size of this resource, in gibibytes. (AI-inferred)
     size_gb: Any = None
 
 @dataclasses.dataclass

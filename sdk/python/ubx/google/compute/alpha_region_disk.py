@@ -142,6 +142,7 @@ class AlphaRegionDiskConfig:
     replica_zones: Any = None
     # Resource policies applied to this disk for automatic snapshot creations.
     resource_policies: Any = None
+    # Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred)
     resource_status: Any = None
     # Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0.
     size_gb: Any = None
@@ -231,6 +232,7 @@ class AlphaRegionDiskAttrs:
     replica_zones: Any = None
     # Resource policies applied to this disk for automatic snapshot creations.
     resource_policies: Any = None
+    # Read-only, Google-populated runtime state for this resource, such as its own current physical host, not something a caller sets. (AI-inferred)
     resource_status: Any = None
     # Output only. Reserved for future use.
     satisfies_pzi: Any = None

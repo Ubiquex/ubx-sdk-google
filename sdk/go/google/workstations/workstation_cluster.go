@@ -4,8 +4,11 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkstationCluster_Conditions struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 

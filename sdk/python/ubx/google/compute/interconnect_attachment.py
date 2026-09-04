@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRanges:
+    # The maximum value of the range of allowed BGP peer ASN (Autonomous System Number) values. This defines the upper bound for the ASN range that can be configured for the BGP peer. (AI-inferred)
     max: Any = None
+    # The minimum (lower bound) of a BGP peer ASN range. The range is inclusive of this value. (AI-inferred)
     min: Any = None
 
 @dataclasses.dataclass
@@ -20,11 +22,14 @@ class InterconnectAttachment_ConfigurationConstraints:
 
 @dataclasses.dataclass
 class InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappings:
+    # The IP address of the appliance associated with the inner VLAN in this mapping. (AI-inferred)
     inner_appliance_ip_address: Any = None
+    # A list of inner VLAN tags that are mapped to an appliance in the L2 forwarding appliance mapping. These tags are used to classify traffic for routing to the specified appliance. (AI-inferred)
     inner_vlan_tags: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachment_L2Forwarding_ApplianceMappings:
+    # IP address of the appliance inside the customer's network, used for this VLAN attachment mapping. (AI-inferred)
     appliance_ip_address: Any = None
     inner_vlan_to_appliance_mappings: Any = None
     name: Any = None

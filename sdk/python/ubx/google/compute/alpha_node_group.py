@@ -99,6 +99,7 @@ class AlphaNodeGroupConfig:
     autoscaling_policy: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # An opaque, server-generated value that changes whenever this resource is updated, used to detect concurrent modification on write. (AI-inferred)
     fingerprint: Any = None
     # An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
     location_hint: Any = None
@@ -122,6 +123,7 @@ class AlphaNodeGroupAttrs:
     creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # An opaque, server-generated value that changes whenever this resource is updated, used to detect concurrent modification on write. (AI-inferred)
     fingerprint: Any = None
     # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
@@ -147,6 +149,7 @@ class AlphaNodeGroupAttrs:
     share_settings: Any = None
     # Output only. [Output Only] The total number of nodes in the node group.
     size: Any = None
+    # The current operational status of this sole-tenant node group, e.g. whether it is still being created. (AI-inferred)
     status: Any = None
     # Output only. [Output Only] The name of the zone where the node group resides, such as us-central1-a.
     zone: Any = None

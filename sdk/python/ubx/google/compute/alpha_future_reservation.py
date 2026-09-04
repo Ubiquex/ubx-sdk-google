@@ -434,6 +434,7 @@ class AlphaFutureReservationConfig:
     # Full or partial URL of an existing future reservation to indicate intent for reserving capacity in the same cluster as the colocation resource.
     colocation_resource: Any = None
     commitment_info: Any = None
+    # The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
     confidential_compute_type: Any = None
     # Type of the deployment requested as part of future reservation.
     deployment_type: Any = None
@@ -468,6 +469,7 @@ class AlphaFutureReservationConfig:
     status: Any = None
     # Storage pool properties for the future reservation.
     storage_pool_properties: Any = None
+    # The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred)
     time_window: Any = None
 
 @dataclasses.dataclass
@@ -485,6 +487,7 @@ class AlphaFutureReservationAttrs:
     # Full or partial URL of an existing future reservation to indicate intent for reserving capacity in the same cluster as the colocation resource.
     colocation_resource: Any = None
     commitment_info: Any = None
+    # The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
     confidential_compute_type: Any = None
     # Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format.
     creation_timestamp: Any = None
@@ -529,6 +532,7 @@ class AlphaFutureReservationAttrs:
     status: Any = None
     # Storage pool properties for the future reservation.
     storage_pool_properties: Any = None
+    # The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred)
     time_window: Any = None
     # Output only. [Output Only] URL of the Zone where this future reservation resides.
     zone: Any = None

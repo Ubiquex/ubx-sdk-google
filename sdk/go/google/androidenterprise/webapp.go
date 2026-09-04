@@ -4,6 +4,7 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Webapp_Icons struct {
+	// The real, base64-encoded image bytes for this web app's own icon. (AI-inferred)
 	ImageData any
 }
 

@@ -14,26 +14,35 @@ export interface CaPool_IssuancePolicy_AllowedIssuanceModes {
 }
 
 export interface CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurve {
+  /** The algorithm used to sign this certificate. (AI-inferred) */
   signatureAlgorithm?: string | Computed<string>;
 }
 
 export interface CaPool_IssuancePolicy_AllowedKeyTypes_Rsa {
+  /** The maximum RSA key modulus size, in bits, accepted for a certificate request. (AI-inferred) */
   maxModulusSize?: string | Computed<string>;
+  /** The minimum RSA key modulus size, in bits, accepted for a certificate request. (AI-inferred) */
   minModulusSize?: string | Computed<string>;
 }
 
 export interface CaPool_IssuancePolicy_AllowedKeyTypes {
+  /** Configures this key as an elliptic-curve key, on the specified curve. (AI-inferred) */
   ellipticCurve?: CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurve | Computed<CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurve>;
+  /** Configures this key as an RSA key, with the specified modulus size. (AI-inferred) */
   rsa?: CaPool_IssuancePolicy_AllowedKeyTypes_Rsa | Computed<CaPool_IssuancePolicy_AllowedKeyTypes_Rsa>;
 }
 
 export interface CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectId {
+  /** The numeric component(s) making up an object identifier. (AI-inferred) */
   objectIdPath?: number[] | Computed<number[]>;
 }
 
 export interface CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions {
+  /** Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred) */
   critical?: boolean | Computed<boolean>;
+  /** An X.509 object identifier (OID). (AI-inferred) */
   objectId?: CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectId | Computed<CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectId>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

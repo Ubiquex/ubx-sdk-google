@@ -32,9 +32,11 @@ class AlphaSnapshotGroupConfig:
     description: Any = None
     # Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
+    # Identifies the real resource this snapshot group was created from. (AI-inferred)
     source_info: Any = None
     # Input field for the source instant snapshot group.
     source_instant_snapshot_group: Any = None
+    # Identifies the real instant snapshot group this snapshot group was created from. (AI-inferred)
     source_instant_snapshot_group_info: Any = None
 
 @dataclasses.dataclass
@@ -53,9 +55,11 @@ class AlphaSnapshotGroupAttrs:
     self_link: Any = None
     # Output only. [Output Only] Server-defined URL for this resource's resource id.
     self_link_with_id: Any = None
+    # Identifies the real resource this snapshot group was created from. (AI-inferred)
     source_info: Any = None
     # Input field for the source instant snapshot group.
     source_instant_snapshot_group: Any = None
+    # Identifies the real instant snapshot group this snapshot group was created from. (AI-inferred)
     source_instant_snapshot_group_info: Any = None
     # Output only. [Output Only]
     status: Any = None

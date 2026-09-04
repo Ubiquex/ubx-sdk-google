@@ -40,8 +40,11 @@ class Metric_BucketOptions:
 
 @dataclasses.dataclass
 class Metric_MetricDescriptor_Labels:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The key of this label or attribute. (AI-inferred)
     key: Any = None
+    # The data type of this field's own value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass

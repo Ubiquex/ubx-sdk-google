@@ -2,13 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CertificateMap_GclbTargets_IpConfigs {
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The port number(s) this applies to. (AI-inferred) */
   ports?: number[] | Computed<number[]>;
 }
 
 export interface CertificateMap_GclbTargets {
+  /** Per-IP-address configuration for this certificate map entry. (AI-inferred) */
   ipConfigs?: CertificateMap_GclbTargets_IpConfigs[] | Computed<CertificateMap_GclbTargets_IpConfigs[]>;
+  /** A reference to the target HTTPS proxy this certificate is attached to. (AI-inferred) */
   targetHttpsProxy?: string | Computed<string>;
+  /** A reference to the target SSL proxy this certificate is attached to. (AI-inferred) */
   targetSslProxy?: string | Computed<string>;
 }
 

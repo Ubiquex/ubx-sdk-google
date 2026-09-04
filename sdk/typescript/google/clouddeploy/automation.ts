@@ -2,83 +2,125 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentCondition {
+  /** The target(s) referenced by this pipeline that don't actually exist. (AI-inferred) */
   missingTargets?: string[] | Computed<string[]>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: boolean | Computed<boolean>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsList {
+  /** The target this rollout, job, or promotion is directed to. (AI-inferred) */
   destinationTargetId?: string | Computed<string>;
+  /** The target this rollout, job, or promotion originates from. (AI-inferred) */
   sourceTargetId?: string | Computed<string>;
 }
 
 export interface Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition {
+  /** When the next scheduled automatic promotion will occur. (AI-inferred) */
   nextPromotionTime?: string | Computed<string>;
+  /** The target(s) making up this multi-target rollout. (AI-inferred) */
   targetsList?: Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsList[] | Computed<Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsList[]>;
 }
 
 export interface Automation_Rules_AdvanceRolloutRule_Condition {
+  /** Whether every target referenced by this pipeline's own stages actually exists. (AI-inferred) */
   targetsPresentCondition?: Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentCondition | Computed<Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentCondition>;
+  /** Whether a scheduled, time-based automatic promotion is configured and its own current status. (AI-inferred) */
   timedPromoteReleaseCondition?: Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition | Computed<Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition>;
 }
 
 export interface Automation_Rules_AdvanceRolloutRule {
+  /** The current status of a specific health/readiness check on this resource. (AI-inferred) */
   condition?: Automation_Rules_AdvanceRolloutRule_Condition | Computed<Automation_Rules_AdvanceRolloutRule_Condition>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The rollout phase(s) this automation rule triggers from. (AI-inferred) */
   sourcePhases?: string[] | Computed<string[]>;
+  /** How long to pause before proceeding. (AI-inferred) */
   wait?: string | Computed<string>;
 }
 
 export interface Automation_Rules_PromoteReleaseRule {
+  /** The current status of a specific health/readiness check on this resource. (AI-inferred) */
   condition?: Automation_Rules_AdvanceRolloutRule_Condition | Computed<Automation_Rules_AdvanceRolloutRule_Condition>;
+  /** The rollout phase this promotion or advance targets. (AI-inferred) */
   destinationPhase?: string | Computed<string>;
+  /** The target this rollout, job, or promotion is directed to. (AI-inferred) */
   destinationTargetId?: string | Computed<string>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** How long to pause before proceeding. (AI-inferred) */
   wait?: string | Computed<string>;
 }
 
 export interface Automation_Rules_RepairRolloutRule_RepairPhases_Retry {
+  /** How many times this job is retried before being considered failed. (AI-inferred) */
   attempts?: string | Computed<string>;
+  /** How the delay between retry attempts grows, e.g. linear or exponential. (AI-inferred) */
   backoffMode?: string | Computed<string>;
+  /** How long to pause before proceeding. (AI-inferred) */
   wait?: string | Computed<string>;
 }
 
 export interface Automation_Rules_RepairRolloutRule_RepairPhases_Rollback {
+  /** The rollout phase this promotion or advance targets. (AI-inferred) */
   destinationPhase?: string | Computed<string>;
+  /** Whether automatic rollback is skipped if another rollout is already pending for this same release. (AI-inferred) */
   disableRollbackIfRolloutPending?: boolean | Computed<boolean>;
 }
 
 export interface Automation_Rules_RepairRolloutRule_RepairPhases {
+  /** Configuration for automatically retrying a failed job or phase. (AI-inferred) */
   retry?: Automation_Rules_RepairRolloutRule_RepairPhases_Retry | Computed<Automation_Rules_RepairRolloutRule_RepairPhases_Retry>;
+  /** Configuration for automatically rolling back to the previous stable revision on failure. (AI-inferred) */
   rollback?: Automation_Rules_RepairRolloutRule_RepairPhases_Rollback | Computed<Automation_Rules_RepairRolloutRule_RepairPhases_Rollback>;
 }
 
 export interface Automation_Rules_RepairRolloutRule {
+  /** The current status of a specific health/readiness check on this resource. (AI-inferred) */
   condition?: Automation_Rules_AdvanceRolloutRule_Condition | Computed<Automation_Rules_AdvanceRolloutRule_Condition>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The job(s) making up this phase or rule. (AI-inferred) */
   jobs?: string[] | Computed<string[]>;
+  /** The ordered phase(s) making up this rollout or automation rule. (AI-inferred) */
   phases?: string[] | Computed<string[]>;
+  /** The ordered repair action(s) (e.g. retry, rollback) attempted when a rollout fails. (AI-inferred) */
   repairPhases?: Automation_Rules_RepairRolloutRule_RepairPhases[] | Computed<Automation_Rules_RepairRolloutRule_RepairPhases[]>;
 }
 
 export interface Automation_Rules_TimedPromoteReleaseRule {
+  /** The current status of a specific health/readiness check on this resource. (AI-inferred) */
   condition?: Automation_Rules_AdvanceRolloutRule_Condition | Computed<Automation_Rules_AdvanceRolloutRule_Condition>;
+  /** The rollout phase this promotion or advance targets. (AI-inferred) */
   destinationPhase?: string | Computed<string>;
+  /** The target this rollout, job, or promotion is directed to. (AI-inferred) */
   destinationTargetId?: string | Computed<string>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A recurrence schedule, e.g. in cron syntax. (AI-inferred) */
   schedule?: string | Computed<string>;
+  /** The time zone this schedule or window is interpreted in. (AI-inferred) */
   timeZone?: string | Computed<string>;
 }
 
 export interface Automation_Rules {
+  /** An automation rule that automatically advances a rollout to its own next phase once its current phase succeeds. (AI-inferred) */
   advanceRolloutRule?: Automation_Rules_AdvanceRolloutRule | Computed<Automation_Rules_AdvanceRolloutRule>;
+  /** An automation rule that automatically promotes a release to its own next target once conditions are met. (AI-inferred) */
   promoteReleaseRule?: Automation_Rules_PromoteReleaseRule | Computed<Automation_Rules_PromoteReleaseRule>;
+  /** An automation rule that automatically attempts to repair a failed rollout, e.g. by retrying or rolling back. (AI-inferred) */
   repairRolloutRule?: Automation_Rules_RepairRolloutRule | Computed<Automation_Rules_RepairRolloutRule>;
+  /** An automation rule that automatically promotes a release at a specific scheduled time. (AI-inferred) */
   timedPromoteReleaseRule?: Automation_Rules_TimedPromoteReleaseRule | Computed<Automation_Rules_TimedPromoteReleaseRule>;
 }
 
 export interface Automation_Selector_Targets {
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 

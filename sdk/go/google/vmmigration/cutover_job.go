@@ -4,7 +4,9 @@ package vmmigration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CutoverJob_ComputeEngineDisksTargetDetails_Disks struct {
-	DiskUri          any
+	// The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred)
+	DiskUri any
+	// The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred)
 	SourceDiskNumber any
 }
 
@@ -23,8 +25,10 @@ type CutoverJob_ComputeEngineDisksTargetDetails struct {
 }
 
 type CutoverJob_ComputeEngineTargetDetails_AdaptationModifiers struct {
+	// A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred)
 	Modifier any
-	Value    any
+	// The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
+	Value any
 }
 
 type CutoverJob_ComputeEngineTargetDetails_AppliedLicense struct {
@@ -35,9 +39,12 @@ type CutoverJob_ComputeEngineTargetDetails_AppliedLicense struct {
 }
 
 type CutoverJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities struct {
-	Key      any
+	// The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred)
+	Key any
+	// The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred)
 	Operator any
-	Values   any
+	// The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred)
+	Values any
 }
 
 type CutoverJob_ComputeEngineTargetDetails_ComputeScheduling struct {
@@ -57,11 +64,16 @@ type CutoverJob_ComputeEngineTargetDetails_Encryption struct {
 }
 
 type CutoverJob_ComputeEngineTargetDetails_NetworkInterfaces struct {
-	ExternalIp  any
-	InternalIp  any
-	Network     any
+	// The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred)
+	ExternalIp any
+	// The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred)
+	InternalIp any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred)
 	NetworkTier any
-	Subnetwork  any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type CutoverJob_ComputeEngineTargetDetails struct {
@@ -127,59 +139,94 @@ type CutoverJob_Error struct {
 }
 
 type CutoverJob_Steps_FinalSync_Steps_Replicating struct {
+	// The real, measured average replication throughput, in bytes per second, over the last 30 minutes. (AI-inferred)
 	LastThirtyMinutesAverageBytesPerSecond any
-	LastTwoMinutesAverageBytesPerSecond    any
-	ReplicatedBytes                        any
-	TotalBytes                             any
+	// The real, measured average replication throughput, in bytes per second, over the last 2 minutes. (AI-inferred)
+	LastTwoMinutesAverageBytesPerSecond any
+	// The real number of bytes already replicated to Google Cloud so far in the current replication cycle. (AI-inferred)
+	ReplicatedBytes any
+	// The real total number of bytes that need to be replicated to Google Cloud for the current replication cycle to complete. (AI-inferred)
+	TotalBytes any
 }
 
 type CutoverJob_Steps_FinalSync_Steps struct {
-	EndTime                 any
+	// The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
+	EndTime any
+	// Real, detailed progress for VM Migration's initializing-replication step, the phase before the first full data sync begins. (AI-inferred)
 	InitializingReplication any
-	PostProcessing          any
-	Replicating             any
-	StartTime               any
+	// Real, detailed progress for VM Migration's post-processing step, the cleanup and finalization work after replication data has landed. (AI-inferred)
+	PostProcessing any
+	// Real, detailed progress for VM Migration's own active data-replication step. (AI-inferred)
+	Replicating any
+	// The real timestamp when this migration step or cycle started. (AI-inferred)
+	StartTime any
 }
 
 type CutoverJob_Steps_FinalSync_Warnings_ActionItem struct {
-	Locale  any
+	// The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred)
+	Locale any
+	// A real, human-readable status or error message for this migration step. (AI-inferred)
 	Message any
 }
 
 type CutoverJob_Steps_FinalSync_Warnings_HelpLinks struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Url         any
+	// A real URL pointing to more information about this migration warning or error. (AI-inferred)
+	Url any
 }
 
 type CutoverJob_Steps_FinalSync_Warnings struct {
-	ActionItem     any
-	Code           any
-	HelpLinks      any
+	// Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred)
+	ActionItem any
+	// The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
+	Code any
+	// Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred)
+	HelpLinks any
+	// The real, human-readable text of one migration warning. (AI-inferred)
 	WarningMessage any
-	WarningTime    any
+	// The real timestamp when this migration warning was raised. (AI-inferred)
+	WarningTime any
 }
 
 type CutoverJob_Steps_FinalSync struct {
-	CycleNumber        any
-	EndTime            any
-	Error              any
-	Name               any
-	ProgressPercent    any
-	StartTime          any
-	State              any
-	Steps              any
+	// The real, sequential number of the current replication cycle for this migrating VM, incrementing each time a new sync cycle starts. (AI-inferred)
+	CycleNumber any
+	// The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
+	EndTime any
+	// The real error, if any, that caused this migration step or job to fail. (AI-inferred)
+	Error any
+	// The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred)
+	Name any
+	// Output only. The real, measured completion percentage (0-100) of the current migration step. (AI-inferred)
+	ProgressPercent any
+	// The real timestamp when this migration step or cycle started. (AI-inferred)
+	StartTime any
+	// The real, current state of this migration job, step, or resource. (AI-inferred)
+	State any
+	// The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred)
+	Steps any
+	// The real total time this migration job has spent paused, across every pause since it started. (AI-inferred)
 	TotalPauseDuration any
-	Warnings           any
+	// Real, non-fatal warnings raised during this migration job, each with its own `warning_message`, severity, and `action_item`. (AI-inferred)
+	Warnings any
 }
 
 type CutoverJob_Steps struct {
-	EndTime                  any
-	FinalSync                any
-	InstantiatingMigratedVm  any
-	PreparingVmDisks         any
+	// The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
+	EndTime any
+	// Real, detailed progress for VM Migration's own final-sync step, the last data sync performed immediately before cutover. (AI-inferred)
+	FinalSync any
+	// Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred)
+	InstantiatingMigratedVm any
+	// Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred)
+	PreparingVmDisks any
+	// The real, previous replication cycle for this migrating VM, kept for reference alongside the current one. (AI-inferred)
 	PreviousReplicationCycle any
-	ShuttingDownSourceVm     any
-	StartTime                any
+	// Real, detailed progress for VM Migration's own step shutting down the source VM as part of a cutover. (AI-inferred)
+	ShuttingDownSourceVm any
+	// The real timestamp when this migration step or cycle started. (AI-inferred)
+	StartTime any
 }
 
 var CutoverJob_ComputeEngineDisksTargetDetails_DisksFields = ubx.FieldMap{

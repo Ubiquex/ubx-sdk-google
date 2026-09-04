@@ -43,24 +43,40 @@ export interface Template_Environment {
 }
 
 export interface Template_Metadata_Parameters_EnumOptions {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Template_Metadata_Parameters {
+  /** Additional caller-defined key/value metadata attached to this resource. (AI-inferred) */
   customMetadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** The allowed option(s) for an enum-typed parameter. (AI-inferred) */
   enumOptions?: Template_Metadata_Parameters_EnumOptions[] | Computed<Template_Metadata_Parameters_EnumOptions[]>;
+  /** The name of the group this belongs to. (AI-inferred) */
   groupName?: string | Computed<string>;
+  /** Human-readable guidance text for this parameter. (AI-inferred) */
   helpText?: string | Computed<string>;
+  /** Whether this parameter is hidden from the console UI. (AI-inferred) */
   hiddenUi?: boolean | Computed<boolean>;
+  /** Whether this parameter may be left unset. (AI-inferred) */
   isOptional?: boolean | Computed<boolean>;
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The data type of this parameter. (AI-inferred) */
   paramType?: string | Computed<string>;
+  /** The name of the parent element this belongs to. (AI-inferred) */
   parentName?: string | Computed<string>;
+  /** The value(s) that activate the parent trigger this depends on. (AI-inferred) */
   parentTriggerValues?: string[] | Computed<string[]>;
+  /** The regular expression(s) this rule matches against. (AI-inferred) */
   regexes?: string[] | Computed<string[]>;
 }
 

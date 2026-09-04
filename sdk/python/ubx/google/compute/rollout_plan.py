@@ -8,24 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_OrchestrationOptions_Delays:
+    # Specifies the grouping delimiter for delay execution. Valid values: DELIMITER_BATCH (delay applies per batch), DELIMITER_LOCATION (delay applies per location), DELIMITER_UNSPECIFIED (no specific grouping). (AI-inferred)
     delimiter: Any = None
+    # The duration of the delay, specified as a string with a time unit (e.g., '30s' or '5m'). (AI-inferred)
     duration: Any = None
+    # The type of delay for this orchestration step. Allowed values are TYPE_MINIMUM (minimum delay), TYPE_OFFSET (offset delay), and TYPE_UNSPECIFIED (not specified). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_OrchestrationOptions:
     delays: Any = None
+    # The maximum number of locations (zones) that can be updated concurrently during this wave of the rollout. The value can be a fixed number or a percentage of the total locations, e.g., '5' or '25%'. (AI-inferred)
     max_concurrent_locations: Any = None
     max_concurrent_resources_per_location: Any = None
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_Selectors_LocationSelector:
+    # A list of Google Cloud locations (regions or zones) to include in this location selector. Resources in these locations will be selected for the rollout wave. (AI-inferred)
     included_locations: Any = None
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_Selectors_ResourceHierarchySelector:
+    # A list of folder resource names (or IDs) to include in the resource hierarchy selector. Resources contained within these folders are selected for the rollout wave. (AI-inferred)
     included_folders: Any = None
+    # The list of organization IDs to include in the rollout wave's resource hierarchy selector. Only the resources within these organizations are targeted by the wave. (AI-inferred)
     included_organizations: Any = None
+    # A list of GCP project identifiers to include in the resource hierarchy selector. The rollout plan will apply to resources in these projects. (AI-inferred)
     included_projects: Any = None
 
 @dataclasses.dataclass
@@ -35,6 +43,7 @@ class RolloutPlan_Waves_Selectors:
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_Validation_TimeBasedValidationMetadata:
+    # The duration to wait as part of time-based validation, represented as a string. (AI-inferred)
     wait_duration: Any = None
 
 @dataclasses.dataclass
@@ -45,9 +54,11 @@ class RolloutPlan_Waves_Validation:
 @dataclasses.dataclass
 class RolloutPlan_Waves:
     display_name: Any = None
+    # The wave number, represented as a string, indicating the sequential order of the wave within the rollout plan. (AI-inferred)
     number: Any = None
     orchestration_options: Any = None
     selectors: Any = None
+    # Configures the validation procedure for this wave, specifying how the rollout verifies the health and readiness of the instances in the wave before advancing to the next wave. (AI-inferred)
     validation: Any = None
 
 _RolloutPlan_Waves_OrchestrationOptions_DelaysFields = {

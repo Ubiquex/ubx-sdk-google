@@ -4,20 +4,29 @@ package memcache
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_InstanceMessages struct {
-	Code    any
+	// A machine-readable code identifying this instance-level advisory, e.g. `ZONE_DISTRIBUTION_UNBALANCED`. (AI-inferred)
+	Code any
+	// A human-readable description of this instance-level advisory. (AI-inferred)
 	Message any
 }
 
 type Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime struct {
-	Hours   any
+	// The hour component of the start time. (AI-inferred)
+	Hours any
+	// The minute component of the start time. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of the start time. (AI-inferred)
+	Nanos any
+	// The second component of the start time. (AI-inferred)
 	Seconds any
 }
 
 type Instance_MaintenancePolicy_WeeklyMaintenanceWindow struct {
-	Day       any
-	Duration  any
+	// The day of the week this recurring maintenance window occurs on. (AI-inferred)
+	Day any
+	// How long this recurring maintenance window lasts. (AI-inferred)
+	Duration any
+	// The time of day this recurring maintenance window starts at. (AI-inferred)
 	StartTime any
 }
 
@@ -42,19 +51,29 @@ type Instance_MaintenanceSchedule struct {
 }
 
 type Instance_MemcacheNodes_Parameters struct {
-	Id     any
+	// An identifier for this parameter set. (AI-inferred)
+	Id any
+	// The Memcached configuration parameters themselves, as key/value pairs. (AI-inferred)
 	Params any
 }
 
 type Instance_MemcacheNodes struct {
-	Host                any
+	// Output only. The hostname or IP address this Memcached node listens on. (AI-inferred)
+	Host any
+	// Output only. The full, exact Memcached server version running on this node. (AI-inferred)
 	MemcacheFullVersion any
-	MemcacheVersion     any
-	NodeId              any
-	Parameters          any
-	Port                any
-	State               any
-	Zone                any
+	// The Memcached protocol version this instance runs, e.g. `MEMCACHE_1_5`. (AI-inferred)
+	MemcacheVersion any
+	// Output only. An identifier for this node, unique within its own instance. (AI-inferred)
+	NodeId any
+	// Output only. The effective Memcached configuration parameters currently applied to this node. (AI-inferred)
+	Parameters any
+	// Output only. The port this Memcached node listens on. (AI-inferred)
+	Port any
+	// Output only. This node's own current lifecycle state, e.g. `READY` or `UPDATING`. (AI-inferred)
+	State any
+	// Output only. The zone this node is running in. (AI-inferred)
+	Zone any
 }
 
 type Instance_NodeConfig struct {
@@ -135,7 +154,8 @@ type InstanceConfig struct {
 	// Configuration for a Memcached Node.
 	NodeConfig any
 	// Required. Number of nodes in the Memcached instance.
-	NodeCount  any
+	NodeCount any
+	// The Memcached configuration parameters requested for this instance; may differ from `memcache_nodes.parameters` until every node has picked up the change. (AI-inferred)
 	Parameters any
 	// Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
 	ReservedIpRangeId any
@@ -177,7 +197,8 @@ type InstanceAttrs struct {
 	// Configuration for a Memcached Node.
 	NodeConfig any
 	// Required. Number of nodes in the Memcached instance.
-	NodeCount  any
+	NodeCount any
+	// The Memcached configuration parameters requested for this instance; may differ from `memcache_nodes.parameters` until every node has picked up the change. (AI-inferred)
 	Parameters any
 	// Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
 	ReservedIpRangeId any

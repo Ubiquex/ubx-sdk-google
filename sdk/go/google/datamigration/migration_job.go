@@ -18,7 +18,9 @@ type MigrationJob_DestinationDatabase struct {
 }
 
 type MigrationJob_DumpFlags_DumpFlags struct {
-	Name  any
+	// The name of this flag. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -42,13 +44,18 @@ type MigrationJob_MysqlHomogeneousConfig struct {
 }
 
 type MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifier struct {
+	// The name of the database this applies to. (AI-inferred)
 	Database any
-	Schema   any
-	Table    any
-	Type     any
+	// The name of the schema this applies to. (AI-inferred)
+	Schema any
+	// The name of the table this applies to. (AI-inferred)
+	Table any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs struct {
+	// Identifies a specific database object (schema, table, or column) this configuration applies to. (AI-inferred)
 	ObjectIdentifier any
 }
 
@@ -150,13 +157,18 @@ type MigrationJob_SqlserverHomogeneousMigrationJobConfig_DagConfig struct {
 }
 
 type MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptions struct {
-	CertPath    any
+	// The path to the certificate used to decrypt this backup. (AI-inferred)
+	CertPath any
+	// The password protecting the private key used to decrypt this backup. (AI-inferred)
 	PvkPassword any
-	PvkPath     any
+	// The path to the private key used to decrypt this backup. (AI-inferred)
+	PvkPath any
 }
 
 type MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups struct {
-	Database          any
+	// The name of the database this applies to. (AI-inferred)
+	Database any
+	// Configuration for decrypting an encrypted backup file. (AI-inferred)
 	EncryptionOptions any
 }
 

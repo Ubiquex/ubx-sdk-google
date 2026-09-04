@@ -65,7 +65,8 @@ type LicenseConfig struct {
 	RemovableFromDisk any
 	// Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
 	RequiredCoattachedLicenses any
-	ResourceRequirements       any
+	// The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred)
+	ResourceRequirements any
 	// If true, this license can only be used on VMs on sole tenant nodes.
 	SoleTenantOnly any
 	// If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
@@ -105,7 +106,8 @@ type LicenseAttrs struct {
 	RemovableFromDisk any
 	// Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
 	RequiredCoattachedLicenses any
-	ResourceRequirements       any
+	// The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred)
+	ResourceRequirements any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.

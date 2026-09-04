@@ -8,19 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses:
+    # The current revision of this cluster's own access control list policy. (AI-inferred)
     acl_policy_revision: Any = None
+    # The numeric revision identifier of this ACL policy. (AI-inferred)
     acl_policy_revision_number: Any = None
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class AclPolicy_ClusterAclPolicyAttachments:
+    # The status of this ACL policy revision as it propagates across shard(s). (AI-inferred)
     acl_policy_revision_statuses: Any = None
+    # A reference to the Redis cluster this applies to. (AI-inferred)
     cluster: Any = None
 
 @dataclasses.dataclass
 class AclPolicy_Rules:
+    # A single access control rule. (AI-inferred)
     rule: Any = None
+    # The username used to authenticate. (AI-inferred)
     username: Any = None
 
 _AclPolicy_RulesFields = {

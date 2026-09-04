@@ -4,76 +4,110 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tool_DataStoreSpec_DataStoreConnections struct {
-	DataStore              any
-	DataStoreType          any
+	// A reference to the Vertex AI Search data store this connection reads from. (AI-inferred)
+	DataStore any
+	// What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred)
+	DataStoreType any
+	// How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred)
 	DocumentProcessingMode any
 }
 
 type Tool_DataStoreSpec struct {
+	// The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred)
 	DataStoreConnections any
-	FallbackPrompt       any
+	// The prompt played when the caller's own input can't be matched to any expected value. (AI-inferred)
+	FallbackPrompt any
 }
 
 type Tool_FunctionSpec struct {
-	InputSchema  any
+	// The schema describing this tool's own expected input. (AI-inferred)
+	InputSchema any
+	// The schema describing this tool's own expected output. (AI-inferred)
 	OutputSchema any
 }
 
 type Tool_OpenApiSpec_Authentication_ApiKeyConfig struct {
-	ApiKey                 any
-	KeyName                any
-	RequestLocation        any
+	// The API key used to authenticate this call. (AI-inferred)
+	ApiKey any
+	// The name of the API key parameter. (AI-inferred)
+	KeyName any
+	// Where in the request a value (e.g. an API key) is placed, e.g. a header or query parameter. (AI-inferred)
+	RequestLocation any
+	// The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred)
 	SecretVersionForApiKey any
 }
 
 type Tool_OpenApiSpec_Authentication_BearerTokenConfig struct {
+	// The Secret Manager secret version holding the bearer token, instead of storing it inline. (AI-inferred)
 	SecretVersionForToken any
-	Token                 any
+	// A token used to authenticate or identify this request. (AI-inferred)
+	Token any
 }
 
 type Tool_OpenApiSpec_Authentication_OauthConfig struct {
-	ClientId                     any
-	ClientSecret                 any
-	OauthGrantType               any
-	Scopes                       any
+	// The OAuth client ID used to authenticate. (AI-inferred)
+	ClientId any
+	// The OAuth client secret used to authenticate. (AI-inferred)
+	ClientSecret any
+	// Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred)
+	OauthGrantType any
+	// The OAuth scope(s) requested. (AI-inferred)
+	Scopes any
+	// The Secret Manager secret version holding the OAuth client secret, instead of storing it inline. (AI-inferred)
 	SecretVersionForClientSecret any
-	TokenEndpoint                any
+	// The OAuth token endpoint URL used to obtain an access token. (AI-inferred)
+	TokenEndpoint any
 }
 
 type Tool_OpenApiSpec_Authentication_ServiceAccountAuthConfig struct {
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type Tool_OpenApiSpec_Authentication_ServiceAgentAuthConfig struct {
+	// How Dialogflow's own service agent identity is presented when authenticating the webhook call. (AI-inferred)
 	ServiceAgentAuth any
 }
 
 type Tool_OpenApiSpec_Authentication struct {
-	ApiKeyConfig             any
-	BearerTokenConfig        any
-	OauthConfig              any
+	// Configuration for authenticating using an API key. (AI-inferred)
+	ApiKeyConfig any
+	// Configuration for authenticating using a static bearer token. (AI-inferred)
+	BearerTokenConfig any
+	// Authenticates the webhook call using OAuth 2.0 client credentials. (AI-inferred)
+	OauthConfig any
+	// Authenticates the webhook call using a Google Cloud service account's own identity token. (AI-inferred)
 	ServiceAccountAuthConfig any
-	ServiceAgentAuthConfig   any
+	// Configuration for authenticating using Dialogflow's own service agent identity. (AI-inferred)
+	ServiceAgentAuthConfig any
 }
 
 type Tool_OpenApiSpec_ServiceDirectoryConfig struct {
+	// A reference to the service this applies to. (AI-inferred)
 	Service any
 }
 
 type Tool_OpenApiSpec_TlsConfig_CaCerts struct {
-	Cert        any
+	// A TLS certificate. (AI-inferred)
+	Cert any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
 type Tool_OpenApiSpec_TlsConfig struct {
+	// The CA certificate(s) trusted for this TLS connection. (AI-inferred)
 	CaCerts any
 }
 
 type Tool_OpenApiSpec struct {
-	Authentication         any
+	// The authentication method used for this call. (AI-inferred)
+	Authentication any
+	// Configuration for reaching this webhook via Service Directory, instead of a direct URL. (AI-inferred)
 	ServiceDirectoryConfig any
-	TextSchema             any
-	TlsConfig              any
+	// The schema describing this text value's own expected structure. (AI-inferred)
+	TextSchema any
+	// TLS/SSL configuration for this connection. (AI-inferred)
+	TlsConfig any
 }
 
 var Tool_DataStoreSpec_DataStoreConnectionsFields = ubx.FieldMap{
@@ -190,22 +224,35 @@ var Tool_OpenApiSpecFields = ubx.FieldMap{
 }
 
 type ToolConfig struct {
+	// Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
 	DataStoreSpec any
-	Description   any
-	DisplayName   any
-	FunctionSpec  any
-	Name          any
-	OpenApiSpec   any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
+	FunctionSpec any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSpec any
 }
 
 type ToolAttrs struct {
+	// Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
 	DataStoreSpec any
-	Description   any
-	DisplayName   any
-	FunctionSpec  any
-	Name          any
-	OpenApiSpec   any
-	ToolType      any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
+	FunctionSpec any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSpec any
+	// Which kind of tool this is, e.g. an OpenAPI-defined service, a function, or a data store. (AI-inferred)
+	ToolType any
 }
 
 var Tool = ubx.ResourceBinding{

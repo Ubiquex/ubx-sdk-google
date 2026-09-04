@@ -8,10 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UnitOperation_Conditions:
+    # The real timestamp when this SaaS offering's own condition last changed status. (AI-inferred)
     last_transition_time: Any = None
+    # A real, human-readable explanation for this condition's own current status. (AI-inferred)
     message: Any = None
+    # A real, short, machine-readable reason code for this condition's own current status. (AI-inferred)
     reason: Any = None
+    # The real, current status (`STATUS_TRUE`, `STATUS_FALSE`, `STATUS_UNKNOWN`) of this condition. (AI-inferred)
     status: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -21,8 +26,11 @@ class UnitOperation_FlagUpdate:
 
 @dataclasses.dataclass
 class UnitOperation_Provision_InputVariables:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The real, declared value of this input variable, matching its own `type`. (AI-inferred)
     value: Any = None
+    # The real, named input variable this default value applies to. (AI-inferred)
     variable: Any = None
 
 @dataclasses.dataclass

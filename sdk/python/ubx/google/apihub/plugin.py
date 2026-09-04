@@ -8,25 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Plugin_ActionsConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # How this plugin action is triggered, e.g. manually or on a schedule. (AI-inferred)
     trigger_mode: Any = None
 
 @dataclasses.dataclass
 class Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptions:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
 class Plugin_ConfigTemplate_AdditionalConfigTemplate:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The allowed option(s) for an enum-typed custom attribute. (AI-inferred)
     enum_options: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The allowed option(s) for a multi-select enum-typed custom attribute. (AI-inferred)
     multi_select_options: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
+    # A regular expression this custom attribute's own value must match. (AI-inferred)
     validation_regex: Any = None
+    # The data type of this custom attribute's own value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
@@ -60,9 +74,13 @@ class Plugin_HostingService:
 
 @dataclasses.dataclass
 class Plugin_Type_EnumValues_Values:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
     immutable: Any = None
 
 @dataclasses.dataclass

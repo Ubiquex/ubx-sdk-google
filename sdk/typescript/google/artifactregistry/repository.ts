@@ -2,23 +2,35 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Repository_CleanupPolicies_Condition {
+  /** Matches versions newer than this duration. (AI-inferred) */
   newerThan?: string | Computed<string>;
+  /** Matches versions older than this duration. (AI-inferred) */
   olderThan?: string | Computed<string>;
+  /** Restricts this policy to package names starting with one of these prefixes. (AI-inferred) */
   packageNamePrefixes?: string[] | Computed<string[]>;
+  /** Restricts this policy to versions whose tags start with one of these prefixes. (AI-inferred) */
   tagPrefixes?: string[] | Computed<string[]>;
+  /** Restricts this policy to versions that are `TAGGED`, `UNTAGGED`, or either. (AI-inferred) */
   tagState?: string | Computed<string>;
+  /** Restricts this policy to version names starting with one of these prefixes. (AI-inferred) */
   versionNamePrefixes?: string[] | Computed<string[]>;
 }
 
 export interface Repository_CleanupPolicies_MostRecentVersions {
+  /** How many of the most recent versions to keep per matching package. (AI-inferred) */
   keepCount?: number | Computed<number>;
+  /** Restricts this keep-most-recent rule to package names starting with one of these prefixes. (AI-inferred) */
   packageNamePrefixes?: string[] | Computed<string[]>;
 }
 
 export interface Repository_CleanupPolicies {
+  /** What this cleanup policy does to matching versions: `KEEP` or `DELETE`. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The criteria a package version must match for this cleanup policy to apply. (AI-inferred) */
   condition?: Repository_CleanupPolicies_Condition | Computed<Repository_CleanupPolicies_Condition>;
+  /** A caller-chosen identifier for this cleanup policy, unique within its own repository. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A cleanup policy variant that keeps only the N most recent versions per package, rather than matching by age or tag. (AI-inferred) */
   mostRecentVersions?: Repository_CleanupPolicies_MostRecentVersions | Computed<Repository_CleanupPolicies_MostRecentVersions>;
 }
 
@@ -105,8 +117,11 @@ export interface Repository_RemoteRepositoryConfig {
 }
 
 export interface Repository_VirtualRepositoryConfig_UpstreamPolicies {
+  /** A caller-chosen identifier for this upstream policy, unique within its own virtual repository. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The order this upstream is checked in relative to the virtual repository's other upstreams -- lower values are checked first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** The upstream repository this policy references. (AI-inferred) */
   repository?: string | Computed<string>;
 }
 

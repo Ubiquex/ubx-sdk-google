@@ -13,8 +13,11 @@ type Release_Blueprint struct {
 }
 
 type Release_InputVariableDefaults struct {
-	Type     any
-	Value    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The real, declared value of this input variable, matching its own `type`. (AI-inferred)
+	Value any
+	// The real, named input variable this default value applies to. (AI-inferred)
 	Variable any
 }
 

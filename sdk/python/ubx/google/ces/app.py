@@ -26,11 +26,17 @@ class App_AudioProcessingConfig_BargeInConfig:
 
 @dataclasses.dataclass
 class App_AudioProcessingConfig_SynthesizeSpeechConfigs:
+    # The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred)
     consent_audio_gcs_uri: Any = None
+    # An instruction given to the model or agent. (AI-inferred)
     instruction: Any = None
+    # The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
     model: Any = None
+    # The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred)
     speaking_rate: Any = None
+    # Configuration for which synthesized voice this agent uses. (AI-inferred)
     voice: Any = None
+    # The Cloud Storage URI of an audio sample used to clone a custom voice. (AI-inferred)
     voice_sample_gcs_uri: Any = None
 
 @dataclasses.dataclass
@@ -55,7 +61,9 @@ class App_ClientCertificateSettings:
 
 @dataclasses.dataclass
 class App_DataStoreSettings_Engines:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -280,30 +288,52 @@ class App_ModelSettings:
 
 @dataclasses.dataclass
 class App_PredefinedVariableDeclarations_Schema:
+    # Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
     additional_properties: Any = None
+    # A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
     any_of: Any = None
+    # The value used when this field is left unset. (AI-inferred)
     default: Any = None
+    # Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
     defs: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
     enum: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The most elements an `array`-typed value may have. (AI-inferred)
     max_items: Any = None
+    # The largest value a `number`/`integer`-typed value may take. (AI-inferred)
     maximum: Any = None
+    # The fewest elements an `array`-typed value may have. (AI-inferred)
     min_items: Any = None
+    # The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
     minimum: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred)
     prefix_items: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # Whether every element of an array-typed value must be distinct. (AI-inferred)
     unique_items: Any = None
 
 @dataclasses.dataclass
 class App_PredefinedVariableDeclarations:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A schema describing this value's own expected structure. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass

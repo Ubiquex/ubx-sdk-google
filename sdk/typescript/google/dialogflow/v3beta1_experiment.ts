@@ -158,38 +158,68 @@ const V3beta1Experiment_VariantsHistoryFields: FieldMap = {
 };
 
 export interface V3beta1ExperimentConfig {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The definition of this resource. (AI-inferred) */
   definition?: V3beta1Experiment_Definition | Computed<V3beta1Experiment_Definition>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** How long this experiment runs before automatically concluding. (AI-inferred) */
   experimentLength?: string | Computed<string>;
+  /** When this resource was last updated. (AI-inferred) */
   lastUpdateTime?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The result produced by this operation. (AI-inferred) */
   result?: V3beta1Experiment_Result | Computed<V3beta1Experiment_Result>;
+  /** Configuration for gradually shifting traffic to a new agent version. (AI-inferred) */
   rolloutConfig?: V3beta1Experiment_RolloutConfig | Computed<V3beta1Experiment_RolloutConfig>;
+  /** Why this rollout was halted, if it failed. (AI-inferred) */
   rolloutFailureReason?: string | Computed<string>;
+  /** The current progress of this gradual rollout. (AI-inferred) */
   rolloutState?: V3beta1Experiment_RolloutState | Computed<V3beta1Experiment_RolloutState>;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The history of variant configurations this experiment has run with over time. (AI-inferred) */
   variantsHistory?: V3beta1Experiment_VariantsHistory[] | Computed<V3beta1Experiment_VariantsHistory[]>;
 }
 
 export interface V3beta1ExperimentAttrs {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** The definition of this resource. (AI-inferred) */
   definition: V3beta1Experiment_Definition;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime: string;
+  /** How long this experiment runs before automatically concluding. (AI-inferred) */
   experimentLength: string;
+  /** When this resource was last updated. (AI-inferred) */
   lastUpdateTime: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The result produced by this operation. (AI-inferred) */
   result: V3beta1Experiment_Result;
+  /** Configuration for gradually shifting traffic to a new agent version. (AI-inferred) */
   rolloutConfig: V3beta1Experiment_RolloutConfig;
+  /** Why this rollout was halted, if it failed. (AI-inferred) */
   rolloutFailureReason: string;
+  /** The current progress of this gradual rollout. (AI-inferred) */
   rolloutState: V3beta1Experiment_RolloutState;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime: string;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state: string;
+  /** The history of variant configurations this experiment has run with over time. (AI-inferred) */
   variantsHistory: V3beta1Experiment_VariantsHistory[];
 }
 

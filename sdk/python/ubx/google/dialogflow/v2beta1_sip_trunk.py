@@ -65,19 +65,30 @@ _V2beta1SipTrunk_PeerHostnamesFields = {
 
 @dataclasses.dataclass
 class V2beta1SipTrunkConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The real hostname(s) this SIP trunk expects its own peer to present. (AI-inferred)
     expected_hostname: Any = None
+    # The real Google root certificate this SIP trunk uses to verify its own peer's TLS connection. (AI-inferred)
     google_root_cert_file: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The real hostname(s) of this SIP trunk's own peer endpoint(s). (AI-inferred)
     peer_hostnames: Any = None
 
 @dataclasses.dataclass
 class V2beta1SipTrunkAttrs:
+    # The real, current connection(s) this SIP trunk maintains. (AI-inferred)
     connections: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The real hostname(s) this SIP trunk expects its own peer to present. (AI-inferred)
     expected_hostname: Any = None
+    # The real Google root certificate this SIP trunk uses to verify its own peer's TLS connection. (AI-inferred)
     google_root_cert_file: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The real hostname(s) of this SIP trunk's own peer endpoint(s). (AI-inferred)
     peer_hostnames: Any = None
 
 V2beta1SipTrunk = ubx.ResourceBinding(

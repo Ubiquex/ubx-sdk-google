@@ -2,23 +2,35 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Policy_Alternate_Spec_Rules_Condition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A boolean expression evaluated to determine whether this rule applies. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface Policy_Alternate_Spec_Rules_Values {
+  /** The set of values permitted by this constraint. (AI-inferred) */
   allowedValues?: string[] | Computed<string[]>;
+  /** The set of values explicitly disallowed by this constraint. (AI-inferred) */
   deniedValues?: string[] | Computed<string[]>;
 }
 
 export interface Policy_Alternate_Spec_Rules {
+  /** Whether every value is permitted, with no restriction. (AI-inferred) */
   allowAll?: boolean | Computed<boolean>;
+  /** The condition that must be satisfied for this rule to apply. (AI-inferred) */
   condition?: Policy_Alternate_Spec_Rules_Condition | Computed<Policy_Alternate_Spec_Rules_Condition>;
+  /** Whether every value is disallowed, with no exceptions. (AI-inferred) */
   denyAll?: boolean | Computed<boolean>;
+  /** Whether this constraint's own rule is actively enforced, rather than only evaluated. (AI-inferred) */
   enforce?: boolean | Computed<boolean>;
+  /** The parameter(s) configuring this policy. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: Policy_Alternate_Spec_Rules_Values | Computed<Policy_Alternate_Spec_Rules_Values>;
 }
 

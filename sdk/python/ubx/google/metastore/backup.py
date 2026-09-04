@@ -13,18 +13,25 @@ class Backup_ServiceRevision_EncryptionConfig:
 
 @dataclasses.dataclass
 class Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_Consumers:
+    # The real Google Cloud region this Private Service Connect consumer endpoint is created in. (AI-inferred)
     endpoint_location: Any = None
+    # The real, fully-qualified URI this Private Service Connect consumer endpoint is reachable at. (AI-inferred)
     endpoint_uri: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig:
+    # The real Private Service Connect consumer endpoint(s) allowed to reach this metastore's own network. (AI-inferred)
     consumers: Any = None
 
 @dataclasses.dataclass
 class Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions:
+    # Real, Hive metastore configuration property overrides applied to this specific auxiliary metastore version. (AI-inferred)
     config_overrides: Any = None
+    # Real network configuration (its own real `consumers`) for this metastore service revision or auxiliary version. (AI-inferred)
     network_config: Any = None
+    # The real Hive metastore software version this auxiliary version runs. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -73,20 +80,32 @@ class Backup_ServiceRevision_MetadataIntegration:
 
 @dataclasses.dataclass
 class Backup_ServiceRevision_MetadataManagementActivity_MetadataExports:
+    # The real export format (`MYSQL` or `AVRO`) this metadata export was written in. (AI-inferred)
     database_dump_type: Any = None
+    # The real Cloud Storage URI this metadata export was (or will be) written to. (AI-inferred)
     destination_gcs_uri: Any = None
+    # The real timestamp when this metadata export or restore operation finished. (AI-inferred)
     end_time: Any = None
+    # The real timestamp when this metadata export or restore operation started. (AI-inferred)
     start_time: Any = None
+    # The real, current state (`RUNNING`, `SUCCEEDED`, `FAILED`) of this metadata export or restore operation. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Backup_ServiceRevision_MetadataManagementActivity_Restores:
+    # A reference to the real `google_metastore_metastore_backup` this restore operation restored from. (AI-inferred)
     backup: Any = None
+    # The real Cloud Storage location this restore operation's own source backup data was read from. (AI-inferred)
     backup_location: Any = None
+    # Real, additional detail describing this restore operation's own outcome. (AI-inferred)
     details: Any = None
+    # The real timestamp when this metadata export or restore operation finished. (AI-inferred)
     end_time: Any = None
+    # The real timestamp when this metadata export or restore operation started. (AI-inferred)
     start_time: Any = None
+    # The real, current state (`RUNNING`, `SUCCEEDED`, `FAILED`) of this metadata export or restore operation. (AI-inferred)
     state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

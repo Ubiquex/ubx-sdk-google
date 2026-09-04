@@ -2,22 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TlsRoute_Rules_Action_Destinations {
+  /** The name of the service this applies to. (AI-inferred) */
   serviceName?: string | Computed<string>;
+  /** The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface TlsRoute_Rules_Action {
+  /** The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred) */
   destinations?: TlsRoute_Rules_Action_Destinations[] | Computed<TlsRoute_Rules_Action_Destinations[]>;
+  /** How long an idle connection is kept open before being closed. (AI-inferred) */
   idleTimeout?: string | Computed<string>;
 }
 
 export interface TlsRoute_Rules_Matches {
+  /** The Application-Layer Protocol Negotiation identifier(s) offered during TLS handshake. (AI-inferred) */
   alpn?: string[] | Computed<string[]>;
+  /** The TLS Server Name Indication value this endpoint expects. (AI-inferred) */
   sniHost?: string[] | Computed<string[]>;
 }
 
 export interface TlsRoute_Rules {
+  /** The action taken when this rule matches. (AI-inferred) */
   action?: TlsRoute_Rules_Action | Computed<TlsRoute_Rules_Action>;
+  /** The match condition(s) this rule evaluates. (AI-inferred) */
   matches?: TlsRoute_Rules_Matches[] | Computed<TlsRoute_Rules_Matches[]>;
 }
 

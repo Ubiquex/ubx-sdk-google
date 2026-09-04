@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointPolicy_EndpointMatcher_MetadataLabelMatcher_MetadataLabels:
+    # The name of the label this applies to. (AI-inferred)
     label_name: Any = None
+    # The value of the label this applies to. (AI-inferred)
     label_value: Any = None
 
 @dataclasses.dataclass

@@ -36,17 +36,25 @@ type Entitlement_CommitmentSettings struct {
 }
 
 type Entitlement_Entitlement_Parameters_Value struct {
-	BoolValue   any
+	// This entitlement parameter's own value, when its declared type is boolean. (AI-inferred)
+	BoolValue any
+	// This entitlement parameter's own value, when its declared type is a floating-point number. (AI-inferred)
 	DoubleValue any
-	Int64Value  any
-	ProtoValue  any
+	// This entitlement parameter's own value, when its declared type is a 64-bit integer. (AI-inferred)
+	Int64Value any
+	// This entitlement parameter's own value, when its declared type is a structured protobuf message. (AI-inferred)
+	ProtoValue any
+	// This entitlement parameter's own value, when its declared type is a string. (AI-inferred)
 	StringValue any
 }
 
 type Entitlement_Entitlement_Parameters struct {
+	// Whether this entitlement parameter is real, editable by the reseller after the entitlement is created. (AI-inferred)
 	Editable any
-	Name     any
-	Value    any
+	// The real, declared name of this entitlement parameter. (AI-inferred)
+	Name any
+	// The real, decimal percentage value applied by this margin adjustment, or the real value of a typed entitlement parameter. (AI-inferred)
+	Value any
 }
 
 type Entitlement_Entitlement_ProvisionedService struct {

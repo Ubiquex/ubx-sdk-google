@@ -4,36 +4,58 @@ package contentwarehouse
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentSchema_PropertyDefinitions_EnumTypeOptions struct {
-	PossibleValues          any
+	// The real, closed set of values an enum-typed document schema property is allowed to take. (AI-inferred)
+	PossibleValues any
+	// Whether Document AI Warehouse should real, skip validating a property's value against its own `possible_values` at write time. (AI-inferred)
 	ValidationCheckDisabled any
 }
 
 type DocumentSchema_PropertyDefinitions_PropertyTypeOptions struct {
+	// The real, nested sub-property definitions that make up a map-typed document schema property. (AI-inferred)
 	PropertyDefinitions any
 }
 
 type DocumentSchema_PropertyDefinitions_SchemaSources struct {
-	Name          any
+	// The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred)
+	Name any
+	// The real Document AI processor type (e.g. an invoice or contract parser) this schema property is sourced from. (AI-inferred)
 	ProcessorType any
 }
 
 type DocumentSchema_PropertyDefinitions struct {
-	DateTimeTypeOptions  any
-	DisplayName          any
-	EnumTypeOptions      any
-	FloatTypeOptions     any
-	IntegerTypeOptions   any
-	IsFilterable         any
-	IsMetadata           any
-	IsRepeatable         any
-	IsRequired           any
-	IsSearchable         any
-	MapTypeOptions       any
-	Name                 any
-	PropertyTypeOptions  any
-	RetrievalImportance  any
-	SchemaSources        any
-	TextTypeOptions      any
+	// Real, additional type-specific configuration for a document schema property definition whose declared type is date-time. (AI-inferred)
+	DateTimeTypeOptions any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Real, additional type-specific configuration for a document schema property definition whose declared type is a closed enumeration, including its own `possible_values`. (AI-inferred)
+	EnumTypeOptions any
+	// Real, additional type-specific configuration for a document schema property definition whose declared type is a floating-point number. (AI-inferred)
+	FloatTypeOptions any
+	// Real, additional type-specific configuration for a document schema property definition whose declared type is an integer. (AI-inferred)
+	IntegerTypeOptions any
+	// Whether documents can be real, filtered by this schema property's own value in a search query. (AI-inferred)
+	IsFilterable any
+	// Whether this schema property is real, treated as document metadata rather than extracted document content. (AI-inferred)
+	IsMetadata any
+	// Whether this schema property is real, allowed to hold more than one value on a single document. (AI-inferred)
+	IsRepeatable any
+	// Whether every document conforming to this schema must real, supply a value for this property. (AI-inferred)
+	IsRequired any
+	// Whether this schema property's own value is real, indexed for full-text or structured search. (AI-inferred)
+	IsSearchable any
+	// Real, additional type-specific configuration for a document schema property definition whose declared type is a map of named sub-fields. (AI-inferred)
+	MapTypeOptions any
+	// The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred)
+	Name any
+	// The real, type-specific configuration (matching this property definition's own declared type) governing how its values are validated and stored. (AI-inferred)
+	PropertyTypeOptions any
+	// How real, heavily this property's own value is weighted when ranking documents for retrieval-oriented search. (AI-inferred)
+	RetrievalImportance any
+	// The real Document AI processor(s) or source(s) this schema property definition was generated from or is linked to. (AI-inferred)
+	SchemaSources any
+	// Real, additional type-specific configuration for a document schema property definition whose declared type is plain text. (AI-inferred)
+	TextTypeOptions any
+	// Real, additional type-specific configuration for a document schema property definition whose declared type is a timestamp. (AI-inferred)
 	TimestampTypeOptions any
 }
 

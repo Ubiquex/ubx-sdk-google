@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_GceSetup_AcceleratorConfigs {
+  /** The number of CPU core(s) allocated. (AI-inferred) */
   coreCount?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -30,10 +32,15 @@ export interface Instance_GceSetup_ContainerImage {
 }
 
 export interface Instance_GceSetup_DataDisks {
+  /** How this disk is encrypted, e.g. with a Google-managed or customer-managed key. (AI-inferred) */
   diskEncryption?: string | Computed<string>;
+  /** The size of this disk, in gibibytes. (AI-inferred) */
   diskSizeGb?: string | Computed<string>;
+  /** The Persistent Disk type used, e.g. `pd-ssd` or `pd-standard`. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** A reference to the Cloud KMS key used to encrypt this resource. (AI-inferred) */
   kmsKey?: string | Computed<string>;
+  /** The resource policy/policies (e.g. scheduled snapshots) applied to this resource. (AI-inferred) */
   resourcePolicies?: string[] | Computed<string[]>;
 }
 
@@ -45,13 +52,18 @@ export interface Instance_GceSetup_GpuDriverConfig {
 }
 
 export interface Instance_GceSetup_NetworkInterfaces_AccessConfigs {
+  /** The externally reachable IP address assigned to this resource. (AI-inferred) */
   externalIp?: string | Computed<string>;
 }
 
 export interface Instance_GceSetup_NetworkInterfaces {
+  /** Network access configuration for this instance. (AI-inferred) */
   accessConfigs?: Instance_GceSetup_NetworkInterfaces_AccessConfigs[] | Computed<Instance_GceSetup_NetworkInterfaces_AccessConfigs[]>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The network interface type used, e.g. `VIRTIO_NET` or `GVNIC`. (AI-inferred) */
   nicType?: string | Computed<string>;
+  /** A reference to the subnet this applies to. (AI-inferred) */
   subnet?: string | Computed<string>;
 }
 
@@ -65,7 +77,9 @@ export interface Instance_GceSetup_ReservationAffinity {
 }
 
 export interface Instance_GceSetup_ServiceAccounts {
+  /** The service account email this instance runs as. (AI-inferred) */
   email?: string | Computed<string>;
+  /** The OAuth scope(s) granted to this instance. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
 }
 
@@ -129,14 +143,23 @@ export interface Instance_GceSetup {
 }
 
 export interface Instance_UpgradeHistory {
+  /** The action to perform. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The container image this instance runs. (AI-inferred) */
   containerImage?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The ML framework this environment provides. (AI-inferred) */
   framework?: string | Computed<string>;
+  /** A reference to the disk snapshot this resource is created from. (AI-inferred) */
   snapshot?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The version this resource is upgraded or reset to. (AI-inferred) */
   targetVersion?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
+  /** The VM image this instance boots from. (AI-inferred) */
   vmImage?: string | Computed<string>;
 }
 

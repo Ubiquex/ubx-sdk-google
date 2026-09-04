@@ -4,8 +4,10 @@ package clouddeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Release_BuildArtifacts struct {
+	// The container image reference to run. (AI-inferred)
 	Image any
-	Tag   any
+	// A traffic tag applied to a specific revision. (AI-inferred)
+	Tag any
 }
 
 type Release_Condition_DockerVersionSupportedCondition struct {
@@ -55,63 +57,96 @@ type Release_Condition struct {
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_Git struct {
+	// A file or object path. (AI-inferred)
 	Path any
-	Ref  any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// A reference to the source repository. (AI-inferred)
 	Repo any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo struct {
-	Path       any
-	Ref        any
+	// A file or object path. (AI-inferred)
+	Path any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// A reference to the source repository. (AI-inferred)
 	Repository any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage struct {
-	Path   any
+	// A file or object path. (AI-inferred)
+	Path any
+	// The source this data or configuration is read from. (AI-inferred)
 	Source any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules struct {
-	Configs              any
-	Git                  any
+	// The configuration(s) making up this resource. (AI-inferred)
+	Configs any
+	// Configuration for reading this deployment's own manifests from a Git repository. (AI-inferred)
+	Git any
+	// A reference to the Cloud Build-connected repository this reads from. (AI-inferred)
 	GoogleCloudBuildRepo any
-	GoogleCloudStorage   any
+	// Configuration for reading this deployment's own manifests from Cloud Storage. (AI-inferred)
+	GoogleCloudStorage any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions struct {
-	DeployAction           any
+	// Which deploy action this job performs, e.g. `deploy` or `promote`. (AI-inferred)
+	DeployAction any
+	// Additional Skaffold configuration module(s) to include when rendering this release. (AI-inferred)
 	IncludeSkaffoldModules any
-	RenderAction           any
+	// Which render action this job performs. (AI-inferred)
+	RenderAction any
 }
 
 type Release_CustomTargetTypeSnapshots_Tasks_Deploy_Container struct {
-	Args    any
+	// The command-line argument(s) passed to the container. (AI-inferred)
+	Args any
+	// The container entrypoint command to run, overriding the image's own default. (AI-inferred)
 	Command any
-	Env     any
-	Image   any
+	// Environment variable(s) set in the container. (AI-inferred)
+	Env any
+	// The container image reference to run. (AI-inferred)
+	Image any
 }
 
 type Release_CustomTargetTypeSnapshots_Tasks_Deploy struct {
+	// A single container's own configuration. (AI-inferred)
 	Container any
 }
 
 type Release_CustomTargetTypeSnapshots_Tasks struct {
+	// Configuration for the deploy action itself. (AI-inferred)
 	Deploy any
+	// Configuration for the render action itself. (AI-inferred)
 	Render any
 }
 
 type Release_CustomTargetTypeSnapshots struct {
-	Annotations        any
-	CreateTime         any
-	CustomActions      any
+	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
+	Annotations any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Caller-defined action(s) run as part of this phase, beyond the built-in predeploy/postdeploy/verify hooks. (AI-inferred)
+	CustomActions any
+	// A reference to the custom target type this target uses. (AI-inferred)
 	CustomTargetTypeId any
-	Description        any
-	Etag               any
-	Labels             any
-	Name               any
-	Tasks              any
-	Uid                any
-	UpdateTime         any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The task(s) making up this job. (AI-inferred)
+	Tasks any
+	// Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
+	Uid any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Release_DeliveryPipelineSnapshot_Condition_PipelineReadyCondition struct {
@@ -147,128 +182,193 @@ type Release_DeliveryPipelineSnapshot_Condition struct {
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParameters struct {
+	// Label(s) a target must carry for this automation rule to apply to it. (AI-inferred)
 	MatchTargetLabels any
-	Values            any
+	// The value(s) making up this configuration. (AI-inferred)
+	Values any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks struct {
+	// How often this check or action recurs. (AI-inferred)
 	Frequency any
-	Id        any
-	Task      any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// A single unit of work within this job. (AI-inferred)
+	Task any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks struct {
+	// The Cloud Monitoring alert policy/policies this check watches. (AI-inferred)
 	AlertPolicies any
-	Id            any
-	Labels        any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud struct {
+	// Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred)
 	AlertPolicyChecks any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis struct {
+	// Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred)
 	CustomChecks any
-	Duration     any
-	GoogleCloud  any
+	// How long this phase, wait, or window lasts. (AI-inferred)
+	Duration any
+	// Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred)
+	GoogleCloud any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy struct {
+	// The action(s) this hook or job performs. (AI-inferred)
 	Actions any
-	Tasks   any
+	// The task(s) making up this job. (AI-inferred)
+	Tasks any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig struct {
+	// The task(s) making up this job. (AI-inferred)
 	Tasks any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment struct {
-	Analysis     any
-	Percentages  any
-	Postdeploy   any
-	Predeploy    any
-	Verify       any
+	// Configuration for automated analysis run against a rollout phase. (AI-inferred)
+	Analysis any
+	// The progressive traffic percentage step(s) this canary deployment advances through. (AI-inferred)
+	Percentages any
+	// Configuration for actions run after a phase's own deployment completes. (AI-inferred)
+	Postdeploy any
+	// Configuration for actions run before a phase's own deployment starts. (AI-inferred)
+	Predeploy any
+	// Configuration for verification tests run against a phase's own deployment. (AI-inferred)
+	Verify any
+	// Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
 	VerifyConfig any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs struct {
-	Analysis     any
-	Percentage   any
-	PhaseId      any
-	Postdeploy   any
-	Predeploy    any
-	Profiles     any
-	Verify       any
+	// Configuration for automated analysis run against a rollout phase. (AI-inferred)
+	Analysis any
+	// A percentage value. (AI-inferred)
+	Percentage any
+	// A reference to the phase this applies to. (AI-inferred)
+	PhaseId any
+	// Configuration for actions run after a phase's own deployment completes. (AI-inferred)
+	Postdeploy any
+	// Configuration for actions run before a phase's own deployment starts. (AI-inferred)
+	Predeploy any
+	// The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
+	Profiles any
+	// Configuration for verification tests run against a phase's own deployment. (AI-inferred)
+	Verify any
+	// Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
 	VerifyConfig any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment struct {
+	// Per-phase configuration overrides for a canary or custom deployment strategy. (AI-inferred)
 	PhaseConfigs any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun struct {
+	// Whether traffic is shifted automatically through the canary steps, without waiting for manual approval at each one. (AI-inferred)
 	AutomaticTrafficControl any
-	CanaryRevisionTags      any
-	PriorRevisionTags       any
-	StableRevisionTags      any
+	// Traffic tag(s) applied to the canary revision, for routing test traffic to it directly. (AI-inferred)
+	CanaryRevisionTags any
+	// Traffic tag(s) applied to the previous (stable) revision, for routing test traffic to it directly. (AI-inferred)
+	PriorRevisionTags any
+	// Traffic tag(s) applied to the stable (non-canary) revision, for routing test traffic to it directly. (AI-inferred)
+	StableRevisionTags any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations struct {
-	DestinationIds   any
+	// The target ID(s) this promotion/rollout is directed to. (AI-inferred)
+	DestinationIds any
+	// Whether the Kubernetes Service is updated to route production traffic as the canary progresses, rather than only the underlying workload. (AI-inferred)
 	PropagateService any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh struct {
-	Deployment            any
-	HttpRoute             any
-	PodSelectorLabel      any
-	RouteDestinations     any
-	RouteUpdateWaitTime   any
-	Service               any
+	// Configuration or detail about a specific deployment. (AI-inferred)
+	Deployment any
+	// The HTTP route resource splitting traffic between revisions for this canary deployment. (AI-inferred)
+	HttpRoute any
+	// The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
+	PodSelectorLabel any
+	// The destination(s) traffic is routed to as part of this canary deployment. (AI-inferred)
+	RouteDestinations any
+	// How long to wait after updating traffic routing before proceeding to the next step. (AI-inferred)
+	RouteUpdateWaitTime any
+	// A reference to the service this applies to. (AI-inferred)
+	Service any
+	// How long traffic is held on the stable revision after a canary is rolled back, before resuming normal routing. (AI-inferred)
 	StableCutbackDuration any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking struct {
-	Deployment                 any
+	// Configuration or detail about a specific deployment. (AI-inferred)
+	Deployment any
+	// Whether extra pod capacity is skipped when preparing this deployment, trading faster rollout for less headroom during the transition. (AI-inferred)
 	DisablePodOverprovisioning any
-	PodSelectorLabel           any
-	Service                    any
+	// The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
+	PodSelectorLabel any
+	// A reference to the service this applies to. (AI-inferred)
+	Service any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes struct {
+	// Configuration for routing canary traffic through a Kubernetes Gateway API-based service mesh. (AI-inferred)
 	GatewayServiceMesh any
-	ServiceNetworking  any
+	// Configuration for routing canary traffic using Cloud Service Mesh. (AI-inferred)
+	ServiceNetworking any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig struct {
-	CloudRun   any
+	// Configuration specific to deploying this target as a Cloud Run service. (AI-inferred)
+	CloudRun any
+	// Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred)
 	Kubernetes any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary struct {
-	CanaryDeployment       any
+	// Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
+	CanaryDeployment any
+	// A canary strategy using caller-defined percentage steps and phase configuration, rather than Cloud Deploy's own standard canary shape. (AI-inferred)
 	CustomCanaryDeployment any
-	RuntimeConfig          any
+	// Configuration specific to the runtime (GKE, Cloud Run, etc.) this target deploys to. (AI-inferred)
+	RuntimeConfig any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Standard struct {
-	Analysis     any
-	Postdeploy   any
-	Predeploy    any
-	Verify       any
+	// Configuration for automated analysis run against a rollout phase. (AI-inferred)
+	Analysis any
+	// Configuration for actions run after a phase's own deployment completes. (AI-inferred)
+	Postdeploy any
+	// Configuration for actions run before a phase's own deployment starts. (AI-inferred)
+	Predeploy any
+	// Configuration for verification tests run against a phase's own deployment. (AI-inferred)
+	Verify any
+	// Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
 	VerifyConfig any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy struct {
-	Canary   any
+	// Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
+	Canary any
+	// Configuration for the standard (non-canary, all-at-once) rollout strategy. (AI-inferred)
 	Standard any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages struct {
+	// Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred)
 	DeployParameters any
-	Profiles         any
-	Strategy         any
-	TargetId         any
+	// The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
+	Profiles any
+	// Which rollout strategy this release uses, e.g. standard or canary. (AI-inferred)
+	Strategy any
+	// A reference to the target this applies to. (AI-inferred)
+	TargetId any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline struct {
@@ -302,118 +402,182 @@ type Release_DeliveryPipelineSnapshot struct {
 }
 
 type Release_TargetArtifacts_PhaseArtifacts struct {
-	JobManifestsPath   any
-	ManifestPath       any
+	// The path within the release's own configuration where per-job Kubernetes manifests are found. (AI-inferred)
+	JobManifestsPath any
+	// The path within the release's own configuration where Kubernetes manifests are found. (AI-inferred)
+	ManifestPath any
+	// The path to the Skaffold configuration file used to render this release. (AI-inferred)
 	SkaffoldConfigPath any
 }
 
 type Release_TargetArtifacts struct {
-	ArtifactUri        any
-	ManifestPath       any
-	PhaseArtifacts     any
+	// The URI of a built artifact. (AI-inferred)
+	ArtifactUri any
+	// The path within the release's own configuration where Kubernetes manifests are found. (AI-inferred)
+	ManifestPath any
+	// Build artifact(s) produced specifically for this rollout phase. (AI-inferred)
+	PhaseArtifacts any
+	// The path to the Skaffold configuration file used to render this release. (AI-inferred)
 	SkaffoldConfigPath any
 }
 
 type Release_TargetRenders_Metadata_CloudRun struct {
-	Job        any
-	Revision   any
-	Service    any
+	// A reference to a single job. (AI-inferred)
+	Job any
+	// A specific revision of this resource. (AI-inferred)
+	Revision any
+	// A reference to the service this applies to. (AI-inferred)
+	Service any
+	// A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
 	WorkerPool any
 }
 
 type Release_TargetRenders_Metadata_Custom struct {
+	// The value(s) making up this configuration. (AI-inferred)
 	Values any
 }
 
 type Release_TargetRenders_Metadata_Kubernetes struct {
-	CanaryDeployment    any
-	Deployment          any
+	// Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
+	CanaryDeployment any
+	// Configuration or detail about a specific deployment. (AI-inferred)
+	Deployment any
+	// The Kubernetes namespace this deployment applies to. (AI-inferred)
 	KubernetesNamespace any
 }
 
 type Release_TargetRenders_Metadata struct {
-	CloudRun   any
-	Custom     any
+	// Configuration specific to deploying this target as a Cloud Run service. (AI-inferred)
+	CloudRun any
+	// A caller-defined configuration, as an alternative to a built-in option. (AI-inferred)
+	Custom any
+	// Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred)
 	Kubernetes any
 }
 
 type Release_TargetRenders struct {
-	FailureCause   any
+	// A machine-readable code identifying why this operation failed. (AI-inferred)
+	FailureCause any
+	// A human-readable description of why this operation failed. (AI-inferred)
 	FailureMessage any
-	Metadata       any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// A reference to the Cloud Build build that rendered this release. (AI-inferred)
 	RenderingBuild any
+	// The current status of rendering this release's own manifests. (AI-inferred)
 	RenderingState any
 }
 
 type Release_TargetSnapshots_AnthosCluster struct {
+	// A reference to the GKE Hub / Fleet membership this target deploys to. (AI-inferred)
 	Membership any
 }
 
 type Release_TargetSnapshots_AssociatedEntities_GkeClusters struct {
-	Cluster     any
+	// A reference to the GKE cluster this target deploys to. (AI-inferred)
+	Cluster any
+	// Uses a DNS-resolvable endpoint to reach this cluster, rather than a direct IP address. (AI-inferred)
 	DnsEndpoint any
-	InternalIp  any
-	ProxyUrl    any
+	// Whether this cluster is reached over its own internal (private) IP address, rather than a public one. (AI-inferred)
+	InternalIp any
+	// The URL of a proxy used to reach this cluster. (AI-inferred)
+	ProxyUrl any
 }
 
 type Release_TargetSnapshots_AssociatedEntities struct {
+	// The Anthos-registered cluster(s) this applies to. (AI-inferred)
 	AnthosClusters any
-	GkeClusters    any
+	// The GKE cluster(s) this applies to. (AI-inferred)
+	GkeClusters any
 }
 
 type Release_TargetSnapshots_CustomTarget struct {
+	// Defines a deployment target type beyond Cloud Deploy's own built-ins (GKE, Cloud Run, etc.), backed by caller-supplied render/deploy actions. (AI-inferred)
 	CustomTargetType any
 }
 
 type Release_TargetSnapshots_ExecutionConfigs_DefaultPool struct {
+	// The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
 	ArtifactStorage any
-	ServiceAccount  any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
 }
 
 type Release_TargetSnapshots_ExecutionConfigs_PrivatePool struct {
+	// The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
 	ArtifactStorage any
-	ServiceAccount  any
-	WorkerPool      any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
+	WorkerPool any
 }
 
 type Release_TargetSnapshots_ExecutionConfigs struct {
-	ArtifactStorage  any
-	DefaultPool      any
+	// The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
+	ArtifactStorage any
+	// Configuration for running jobs on Cloud Build's own default worker pool, rather than a private one. (AI-inferred)
+	DefaultPool any
+	// How long a job is allowed to run before being considered timed out. (AI-inferred)
 	ExecutionTimeout any
-	PrivatePool      any
-	ServiceAccount   any
-	Usages           any
-	Verbose          any
-	WorkerPool       any
+	// Configuration for running jobs on a private Cloud Build worker pool, rather than the default shared one. (AI-inferred)
+	PrivatePool any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// Which purpose(s) (render, deploy, verify) this execution environment configuration applies to. (AI-inferred)
+	Usages any
+	// Whether detailed, verbose output is produced for this operation. (AI-inferred)
+	Verbose any
+	// A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
+	WorkerPool any
 }
 
 type Release_TargetSnapshots_MultiTarget struct {
+	// The target ID(s) this applies to. (AI-inferred)
 	TargetIds any
 }
 
 type Release_TargetSnapshots_Run struct {
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
 	Location any
 }
 
 type Release_TargetSnapshots struct {
-	Annotations        any
-	AnthosCluster      any
+	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
+	Annotations any
+	// A reference to the Anthos-registered cluster this target deploys to. (AI-inferred)
+	AnthosCluster any
+	// Additional Kubernetes resources associated with this deployment, beyond the primary workload, that verification/rendering also considers. (AI-inferred)
 	AssociatedEntities any
-	CreateTime         any
-	CustomTarget       any
-	DeployParameters   any
-	Description        any
-	Etag               any
-	ExecutionConfigs   any
-	Gke                any
-	Labels             any
-	MultiTarget        any
-	Name               any
-	RequireApproval    any
-	Run                any
-	TargetId           any
-	Uid                any
-	UpdateTime         any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A reference to the custom target type this deployment uses. (AI-inferred)
+	CustomTarget any
+	// Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred)
+	DeployParameters any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Per-usage (render, deploy, verify) execution environment configuration for this target's own jobs. (AI-inferred)
+	ExecutionConfigs any
+	// Configuration specific to deploying this target to a GKE cluster. (AI-inferred)
+	Gke any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// Configuration for a rollout that deploys to more than one target as a coordinated group. (AI-inferred)
+	MultiTarget any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Whether this phase requires explicit human approval before proceeding. (AI-inferred)
+	RequireApproval any
+	// A reference to the Cloud Run service this applies to. (AI-inferred)
+	Run any
+	// A reference to the target this applies to. (AI-inferred)
+	TargetId any
+	// Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
+	Uid any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Release_ToolVersions struct {

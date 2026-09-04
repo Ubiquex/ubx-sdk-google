@@ -11,10 +11,12 @@ type Backend_Codebase struct {
 }
 
 type Backend_ManagedResources_RunService struct {
+	// A reference to the service this applies to. (AI-inferred)
 	Service any
 }
 
 type Backend_ManagedResources struct {
+	// A reference to the Cloud Run service this backend deploys to. (AI-inferred)
 	RunService any
 }
 

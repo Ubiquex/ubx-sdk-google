@@ -4,15 +4,22 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApimServiceExtension_Extensions struct {
-	FailOpen        any
-	Hostname        any
-	MatchCondition  any
-	Name            any
+	// Whether requests are allowed through when this check itself fails to run. (AI-inferred)
+	FailOpen any
+	// The hostname this applies to. (AI-inferred)
+	Hostname any
+	// The condition that must hold for this rule to apply. (AI-inferred)
+	MatchCondition any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The event type(s) this hook or plugin can respond to. (AI-inferred)
 	SupportedEvents any
 }
 
 type ApimServiceExtension_NetworkConfigs struct {
+	// The Google Cloud region this applies to. (AI-inferred)
 	Region any
+	// A reference to the subnet this applies to. (AI-inferred)
 	Subnet any
 }
 

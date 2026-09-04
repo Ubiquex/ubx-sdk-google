@@ -9,14 +9,20 @@ export interface Database_EncryptionConfig {
 }
 
 export interface Database_EncryptionInfo_EncryptionStatus {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Database_EncryptionInfo {
+  /** The current status of encryption for this resource. (AI-inferred) */
   encryptionStatus?: Database_EncryptionInfo_EncryptionStatus | Computed<Database_EncryptionInfo_EncryptionStatus>;
+  /** The kind of encryption applied to this resource, e.g. Google-managed or customer-managed. (AI-inferred) */
   encryptionType?: string | Computed<string>;
+  /** The specific Cloud KMS key version used to encrypt this resource. (AI-inferred) */
   kmsKeyVersion?: string | Computed<string>;
 }
 

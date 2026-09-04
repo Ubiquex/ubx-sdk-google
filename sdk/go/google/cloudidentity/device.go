@@ -23,44 +23,73 @@ type Device_AndroidSpecificAttributes struct {
 }
 
 type Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfo struct {
-	BrowserManagementState           any
-	BrowserVersion                   any
-	IsBuiltInDnsClientEnabled        any
-	IsBulkDataEntryAnalysisEnabled   any
-	IsChromeCleanupEnabled           any
-	IsChromeRemoteDesktopAppBlocked  any
-	IsFileDownloadAnalysisEnabled    any
-	IsFileUploadAnalysisEnabled      any
-	IsRealtimeUrlCheckEnabled        any
-	IsSecurityEventAnalysisEnabled   any
-	IsSiteIsolationEnabled           any
-	IsThirdPartyBlockingEnabled      any
+	// Whether this Chrome browser is managed, unmanaged, or pending enrollment. (AI-inferred)
+	BrowserManagementState any
+	// The version of Chrome this browser reports. (AI-inferred)
+	BrowserVersion any
+	// Whether Chrome's own built-in DNS client is enabled. (AI-inferred)
+	IsBuiltInDnsClientEnabled any
+	// Whether bulk data entry is analyzed for data loss prevention. (AI-inferred)
+	IsBulkDataEntryAnalysisEnabled any
+	// Whether the Chrome Cleanup Tool is enabled. (AI-inferred)
+	IsChromeCleanupEnabled any
+	// Whether the Chrome Remote Desktop app is blocked. (AI-inferred)
+	IsChromeRemoteDesktopAppBlocked any
+	// Whether downloaded files are analyzed for data loss prevention. (AI-inferred)
+	IsFileDownloadAnalysisEnabled any
+	// Whether uploaded files are analyzed for data loss prevention. (AI-inferred)
+	IsFileUploadAnalysisEnabled any
+	// Whether visited URLs are checked against threat intelligence in real time. (AI-inferred)
+	IsRealtimeUrlCheckEnabled any
+	// Whether browser security events are analyzed and reported. (AI-inferred)
+	IsSecurityEventAnalysisEnabled any
+	// Whether Chrome's own site isolation security feature is enabled. (AI-inferred)
+	IsSiteIsolationEnabled any
+	// Whether third-party software is blocked from injecting into Chrome. (AI-inferred)
+	IsThirdPartyBlockingEnabled any
+	// The condition under which a password-reuse warning is shown to the user. (AI-inferred)
 	PasswordProtectionWarningTrigger any
-	SafeBrowsingProtectionLevel      any
+	// The level of Safe Browsing protection applied, e.g. standard or enhanced. (AI-inferred)
+	SafeBrowsingProtectionLevel any
 }
 
 type Device_EndpointVerificationSpecificAttributes_BrowserAttributes struct {
-	ChromeBrowserInfo   any
-	ChromeProfileId     any
+	// Metadata reported by a managed Chrome browser. (AI-inferred)
+	ChromeBrowserInfo any
+	// The unique identifier of this Chrome profile. (AI-inferred)
+	ChromeProfileId any
+	// When this Chrome profile last synced. (AI-inferred)
 	LastProfileSyncTime any
 }
 
 type Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplate struct {
-	Id           any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The major version number this applies to. (AI-inferred)
 	MajorVersion any
+	// The minor version number this applies to. (AI-inferred)
 	MinorVersion any
 }
 
 type Device_EndpointVerificationSpecificAttributes_CertificateAttributes struct {
-	CertificateTemplate    any
-	Fingerprint            any
-	Issuer                 any
-	SerialNumber           any
-	Subject                any
-	Thumbprint             any
-	ValidationState        any
+	// The certificate template this device's own certificate was issued from. (AI-inferred)
+	CertificateTemplate any
+	// A cryptographic fingerprint of this certificate. (AI-inferred)
+	Fingerprint any
+	// The issuer identity of this certificate. (AI-inferred)
+	Issuer any
+	// This certificate's own serial number. (AI-inferred)
+	SerialNumber any
+	// The subject identity of this certificate. (AI-inferred)
+	Subject any
+	// A cryptographic thumbprint of this certificate. (AI-inferred)
+	Thumbprint any
+	// Whether this certificate has passed validation. (AI-inferred)
+	ValidationState any
+	// When this certificate's own validity period ends. (AI-inferred)
 	ValidityExpirationTime any
-	ValidityStartTime      any
+	// When this certificate's own validity period begins. (AI-inferred)
+	ValidityStartTime any
 }
 
 type Device_EndpointVerificationSpecificAttributes struct {

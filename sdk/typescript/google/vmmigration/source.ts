@@ -20,7 +20,9 @@ export interface Source_Aws_Error {
 }
 
 export interface Source_Aws_InventoryTagList {
+  /** The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

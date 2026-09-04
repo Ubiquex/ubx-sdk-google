@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Trial_FinalMeasurement_Metrics:
+    # An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
     metric_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -22,7 +24,9 @@ class Trial_FinalMeasurement:
 
 @dataclasses.dataclass
 class Trial_Parameters:
+    # The name of this hyperparameter, unique within its own study. (AI-inferred)
     parameter_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 _Trial_FinalMeasurement_MetricsFields = {

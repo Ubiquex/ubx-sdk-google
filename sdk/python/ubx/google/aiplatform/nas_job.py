@@ -22,21 +22,31 @@ class NasJob_Error:
 
 @dataclasses.dataclass
 class NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurement_Metrics:
+    # An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
     metric_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurement:
+    # How long this operation has been running, or took to complete. (AI-inferred)
     elapsed_duration: Any = None
+    # The metric value(s) recorded for this measurement. (AI-inferred)
     metrics: Any = None
+    # How many steps this job or trial ran for. (AI-inferred)
     step_count: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials:
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # The trial's own final, reported metric value(s) once it completed. (AI-inferred)
     final_measurement: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -65,8 +75,11 @@ class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSp
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfig_DnsPeeringConfigs:
+    # The domain this configuration or resource applies to. (AI-inferred)
     domain: Any = None
+    # The VPC network this resource is deployed into. (AI-inferred)
     target_network: Any = None
+    # The Google Cloud project this resource targets. (AI-inferred)
     target_project: Any = None
 
 @dataclasses.dataclass
@@ -91,65 +104,101 @@ class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSp
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec:
+    # The argument value(s) passed to this call. (AI-inferred)
     args: Any = None
+    # The container entrypoint command and argument(s) to run. (AI-inferred)
     command: Any = None
+    # Environment variable(s) set for this job's own execution. (AI-inferred)
     env: Any = None
+    # The container image URI to run. (AI-inferred)
     image_uri: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_DiskSpec:
+    # The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred)
     boot_disk_size_gb: Any = None
+    # The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred)
     boot_disk_type: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_LustreMounts:
+    # The filesystem identifier to mount. (AI-inferred)
     filesystem: Any = None
+    # The IP address of the filesystem instance to mount. (AI-inferred)
     instance_ip: Any = None
+    # The filesystem path this volume is mounted at. (AI-inferred)
     mount_point: Any = None
+    # An identifier for this mounted volume, unique within its own job. (AI-inferred)
     volume_handle: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity:
+    # A key identifying this entry. (AI-inferred)
     key: Any = None
+    # Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
     reservation_affinity_type: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpec:
+    # How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
     accelerator_type: Any = None
+    # The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
     gpu_partition_size: Any = None
+    # The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
     machine_type: Any = None
+    # Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
     reservation_affinity: Any = None
+    # The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
     tpu_topology: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_NfsMounts:
+    # The filesystem path this volume is mounted at. (AI-inferred)
     mount_point: Any = None
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # The server hostname or IP address to connect to. (AI-inferred)
     server: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_PythonPackageSpec:
+    # The argument value(s) passed to this call. (AI-inferred)
     args: Any = None
+    # Environment variable(s) set for this job's own execution. (AI-inferred)
     env: Any = None
+    # The prebuilt Vertex AI executor image this Python package runs on top of. (AI-inferred)
     executor_image_uri: Any = None
+    # The Cloud Storage URI(s) of the Python package(s) (e.g. a `.tar.gz` sdist) to install and run. (AI-inferred)
     package_uris: Any = None
+    # The Python module to execute as this worker's own entry point. (AI-inferred)
     python_module: Any = None
 
 @dataclasses.dataclass
 class NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs:
+    # The container image and command this worker pool runs. (AI-inferred)
     container_spec: Any = None
+    # The boot disk configuration provisioned for this job's own machine(s). (AI-inferred)
     disk_spec: Any = None
+    # Managed Lustre filesystem(s) mounted into this job's own worker containers. (AI-inferred)
     lustre_mounts: Any = None
+    # The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
     machine_spec: Any = None
+    # NFS filesystem(s) mounted into this job's own worker containers. (AI-inferred)
     nfs_mounts: Any = None
+    # A Python package (rather than a container image) this worker pool runs, using a prebuilt executor image. (AI-inferred)
     python_package_spec: Any = None
+    # How many machine replicas this job runs. (AI-inferred)
     replica_count: Any = None
 
 @dataclasses.dataclass

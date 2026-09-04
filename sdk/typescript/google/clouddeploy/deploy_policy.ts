@@ -2,55 +2,81 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDate {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month component of a date. (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year component of a date. (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows {
+  /** The date this applies through. (AI-inferred) */
   endDate?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDate | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDate>;
+  /** The time of day this applies through. (AI-inferred) */
   endTime?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime>;
+  /** The date this applies from. (AI-inferred) */
   startDate?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDate | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDate>;
+  /** The time of day this applies from. (AI-inferred) */
   startTime?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime>;
 }
 
 export interface DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindows {
+  /** The day(s) of the week this recurring window applies to. (AI-inferred) */
   daysOfWeek?: string[] | Computed<string[]>;
+  /** The time of day this applies through. (AI-inferred) */
   endTime?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime>;
+  /** The time of day this applies from. (AI-inferred) */
   startTime?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime>;
 }
 
 export interface DeployPolicy_Rules_RolloutRestriction_TimeWindows {
+  /** A specific, non-recurring date/time range this maintenance window applies to. (AI-inferred) */
   oneTimeWindows?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows[] | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows[]>;
+  /** The time zone this schedule or window is interpreted in. (AI-inferred) */
   timeZone?: string | Computed<string>;
+  /** A recurring weekly time window this configuration applies during. (AI-inferred) */
   weeklyWindows?: DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindows[] | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindows[]>;
 }
 
 export interface DeployPolicy_Rules_RolloutRestriction {
+  /** The action(s) this hook or job performs. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Which source(s) (e.g. a user action, an automation rule) are allowed to trigger this operation. (AI-inferred) */
   invokers?: string[] | Computed<string[]>;
+  /** The time window(s) this configuration applies during. (AI-inferred) */
   timeWindows?: DeployPolicy_Rules_RolloutRestriction_TimeWindows | Computed<DeployPolicy_Rules_RolloutRestriction_TimeWindows>;
 }
 
 export interface DeployPolicy_Rules {
+  /** Constraints on when or how a rollout is allowed to proceed. (AI-inferred) */
   rolloutRestriction?: DeployPolicy_Rules_RolloutRestriction | Computed<DeployPolicy_Rules_RolloutRestriction>;
 }
 
 export interface DeployPolicy_Selectors_DeliveryPipeline {
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface DeployPolicy_Selectors {
+  /** A reference to the delivery pipeline this applies to. (AI-inferred) */
   deliveryPipeline?: DeployPolicy_Selectors_DeliveryPipeline | Computed<DeployPolicy_Selectors_DeliveryPipeline>;
+  /** A reference to the target this applies to. (AI-inferred) */
   target?: DeployPolicy_Selectors_DeliveryPipeline | Computed<DeployPolicy_Selectors_DeliveryPipeline>;
 }
 

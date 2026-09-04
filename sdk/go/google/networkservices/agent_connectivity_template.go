@@ -47,7 +47,8 @@ type AgentConnectivityTemplateConfig struct {
 	// Required. The deployment model for the gateway.
 	DeploymentModel any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
-	Description         any
+	Description any
+	// Configuration for how this service's own outbound (egress) traffic is routed. (AI-inferred)
 	EgressNetworkConfig any
 	// Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
 	Etag any
@@ -69,7 +70,8 @@ type AgentConnectivityTemplateAttrs struct {
 	// Required. The deployment model for the gateway.
 	DeploymentModel any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
-	Description         any
+	Description any
+	// Configuration for how this service's own outbound (egress) traffic is routed. (AI-inferred)
 	EgressNetworkConfig any
 	// Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
 	Etag any

@@ -4,26 +4,37 @@ package apihub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Operation_Attributes_EnumValues_Values struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Immutable   any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
+	Immutable any
 }
 
 type Operation_Attributes_EnumValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Operation_Attributes_JsonValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Operation_Attributes struct {
-	Attribute    any
-	EnumValues   any
-	JsonValues   any
+	// A reference to the custom attribute this applies to. (AI-inferred)
+	Attribute any
+	// The selected value(s) of a multi-select enum-typed custom attribute. (AI-inferred)
+	EnumValues any
+	// JSON-typed value(s) for this custom attribute. (AI-inferred)
+	JsonValues any
+	// Multiple text value(s) for this custom attribute. (AI-inferred)
 	StringValues any
-	UriValues    any
+	// URI-typed value(s) for this custom attribute. (AI-inferred)
+	UriValues any
 }
 
 type Operation_Details_Documentation struct {
@@ -94,16 +105,23 @@ type Operation_Details struct {
 }
 
 type Operation_SourceMetadata_PluginInstanceActionSource struct {
-	ActionId       any
+	// An identifier for this action, unique within its own containing plugin. (AI-inferred)
+	ActionId any
+	// A reference to the plugin instance this applies to. (AI-inferred)
 	PluginInstance any
 }
 
 type Operation_SourceMetadata struct {
+	// When the original, externally-sourced resource was created. (AI-inferred)
 	OriginalResourceCreateTime any
-	OriginalResourceId         any
+	// The identifier of the original, externally-sourced resource this was imported from. (AI-inferred)
+	OriginalResourceId any
+	// When the original, externally-sourced resource was last updated. (AI-inferred)
 	OriginalResourceUpdateTime any
+	// Where this plugin action's own definition is sourced from. (AI-inferred)
 	PluginInstanceActionSource any
-	SourceType                 any
+	// The kind of source this data came from. (AI-inferred)
+	SourceType any
 }
 
 var Operation_Attributes_EnumValues_ValuesFields = ubx.FieldMap{

@@ -17,18 +17,28 @@ class WasmPlugin_LogConfig:
 
 @dataclasses.dataclass
 class WasmPlugin_UsedBy:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class WasmPlugin_Versions:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The content digest identifying the specific plugin image version. (AI-inferred)
     image_digest: Any = None
+    # The container image URI for this plugin. (AI-inferred)
     image_uri: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # Inline configuration data passed to this plugin. (AI-inferred)
     plugin_config_data: Any = None
+    # The content digest of this plugin's own configuration. (AI-inferred)
     plugin_config_digest: Any = None
+    # A reference to this plugin's own configuration, stored externally. (AI-inferred)
     plugin_config_uri: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 _WasmPlugin_LogConfigFields = {

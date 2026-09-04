@@ -4,57 +4,84 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Example_Actions_AgentUtterance struct {
+	// The plain-text content of this response message. (AI-inferred)
 	Text any
 }
 
 type Example_Actions_FlowInvocation struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Flow        any
-	FlowState   any
+	// A reference to the flow this applies to. (AI-inferred)
+	Flow any
+	// The current state of a flow invocation. (AI-inferred)
+	FlowState any
 }
 
 type Example_Actions_FlowTransition struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Flow        any
+	// A reference to the flow this applies to. (AI-inferred)
+	Flow any
 }
 
 type Example_Actions_PlaybookInvocation_PlaybookInput struct {
+	// A summary of the conversation so far, provided as context. (AI-inferred)
 	PrecedingConversationSummary any
 }
 
 type Example_Actions_PlaybookInvocation_PlaybookOutput struct {
+	// Output only. A summary of how this test run or evaluation went. (AI-inferred)
 	ExecutionSummary any
 }
 
 type Example_Actions_PlaybookInvocation struct {
-	DisplayName    any
-	Playbook       any
-	PlaybookInput  any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the playbook this applies to. (AI-inferred)
+	Playbook any
+	// The input parameter value(s) a playbook invocation was given. (AI-inferred)
+	PlaybookInput any
+	// The output parameter value(s) a playbook invocation produced. (AI-inferred)
 	PlaybookOutput any
-	PlaybookState  any
+	// The current state of a playbook invocation. (AI-inferred)
+	PlaybookState any
 }
 
 type Example_Actions_PlaybookTransition struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Playbook    any
+	// A reference to the playbook this applies to. (AI-inferred)
+	Playbook any
 }
 
 type Example_Actions_ToolUse struct {
-	Action                 any
-	DisplayName            any
-	InputActionParameters  any
+	// The specific action, exposed by `tool`, being invoked. (AI-inferred)
+	Action any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The parameter value(s) passed into this action when it's invoked. (AI-inferred)
+	InputActionParameters any
+	// The parameter value(s) this action's own execution is expected to produce. (AI-inferred)
 	OutputActionParameters any
-	Tool                   any
+	// The tool this fulfillment or response invokes. (AI-inferred)
+	Tool any
 }
 
 type Example_Actions struct {
-	AgentUtterance     any
-	FlowInvocation     any
-	FlowTransition     any
+	// A line spoken by the virtual agent, as recorded in a test case's own conversation turn. (AI-inferred)
+	AgentUtterance any
+	// A record of a flow being invoked during this conversation. (AI-inferred)
+	FlowInvocation any
+	// A record of the conversation moving from one flow/page to another. (AI-inferred)
+	FlowTransition any
+	// A record of a playbook being invoked during this conversation. (AI-inferred)
 	PlaybookInvocation any
+	// A record of the conversation moving into or out of a playbook. (AI-inferred)
 	PlaybookTransition any
-	ToolUse            any
-	UserUtterance      any
+	// A record of a tool being invoked during this conversation. (AI-inferred)
+	ToolUse any
+	// A line spoken by the end user, as recorded in a test case's own conversation turn. (AI-inferred)
+	UserUtterance any
 }
 
 var Example_Actions_AgentUtteranceFields = ubx.FieldMap{
@@ -148,28 +175,47 @@ var Example_ActionsFields = ubx.FieldMap{
 }
 
 type ExampleConfig struct {
-	Actions           any
+	// The action(s) taken by this step or event. (AI-inferred)
+	Actions any
+	// The current state of this conversation. (AI-inferred)
 	ConversationState any
-	Description       any
-	DisplayName       any
-	LanguageCode      any
-	Name              any
-	PlaybookInput     any
-	PlaybookOutput    any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The input parameter value(s) a playbook invocation was given. (AI-inferred)
+	PlaybookInput any
+	// The output parameter value(s) a playbook invocation produced. (AI-inferred)
+	PlaybookOutput any
 }
 
 type ExampleAttrs struct {
-	Actions           any
+	// The action(s) taken by this step or event. (AI-inferred)
+	Actions any
+	// The current state of this conversation. (AI-inferred)
 	ConversationState any
-	CreateTime        any
-	Description       any
-	DisplayName       any
-	LanguageCode      any
-	Name              any
-	PlaybookInput     any
-	PlaybookOutput    any
-	TokenCount        any
-	UpdateTime        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The input parameter value(s) a playbook invocation was given. (AI-inferred)
+	PlaybookInput any
+	// The output parameter value(s) a playbook invocation produced. (AI-inferred)
+	PlaybookOutput any
+	// How many tokens this content consumed. (AI-inferred)
+	TokenCount any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var Example = ubx.ResourceBinding{

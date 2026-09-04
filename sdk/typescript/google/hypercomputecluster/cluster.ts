@@ -2,54 +2,76 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_ComputeResources_Config_NewFlexStartInstances {
+  /** The machine type this instance runs as. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The maximum amount of time this may run for. (AI-inferred) */
   maxDuration?: string | Computed<string>;
+  /** The Compute Engine zone this applies to. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
 export interface Cluster_ComputeResources_Config_NewOnDemandInstances {
+  /** The machine type this instance runs as. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The Compute Engine zone this applies to. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
 export interface Cluster_ComputeResources_Config_NewReservedInstances {
+  /** A reference to the capacity reservation this applies to. (AI-inferred) */
   reservation?: string | Computed<string>;
 }
 
 export interface Cluster_ComputeResources_Config_NewSpotInstances {
+  /** The machine type this instance runs as. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** What happens to this instance when its own reservation or duration ends. (AI-inferred) */
   terminationAction?: string | Computed<string>;
+  /** The Compute Engine zone this applies to. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
 export interface Cluster_ComputeResources_Config {
+  /** Provisions new instance(s) using Compute Engine Flex-start. (AI-inferred) */
   newFlexStartInstances?: Cluster_ComputeResources_Config_NewFlexStartInstances | Computed<Cluster_ComputeResources_Config_NewFlexStartInstances>;
+  /** Provisions new instance(s) using standard on-demand pricing. (AI-inferred) */
   newOnDemandInstances?: Cluster_ComputeResources_Config_NewOnDemandInstances | Computed<Cluster_ComputeResources_Config_NewOnDemandInstances>;
+  /** Provisions new instance(s) using an existing capacity reservation. (AI-inferred) */
   newReservedInstances?: Cluster_ComputeResources_Config_NewReservedInstances | Computed<Cluster_ComputeResources_Config_NewReservedInstances>;
+  /** Provisions new instance(s) using Spot pricing. (AI-inferred) */
   newSpotInstances?: Cluster_ComputeResources_Config_NewSpotInstances | Computed<Cluster_ComputeResources_Config_NewSpotInstances>;
 }
 
 export interface Cluster_ComputeResources {
+  /** The configuration for this resource. (AI-inferred) */
   config?: Cluster_ComputeResources_Config | Computed<Cluster_ComputeResources_Config>;
 }
 
 export interface Cluster_NetworkResources_Config_ExistingNetwork {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface Cluster_NetworkResources_Config_NewNetwork {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
 }
 
 export interface Cluster_NetworkResources_Config {
+  /** References an already-existing VPC network, rather than creating a new one. (AI-inferred) */
   existingNetwork?: Cluster_NetworkResources_Config_ExistingNetwork | Computed<Cluster_NetworkResources_Config_ExistingNetwork>;
+  /** Creates a new VPC network as part of this cluster. (AI-inferred) */
   newNetwork?: Cluster_NetworkResources_Config_NewNetwork | Computed<Cluster_NetworkResources_Config_NewNetwork>;
 }
 
 export interface Cluster_NetworkResources {
+  /** The configuration for this resource. (AI-inferred) */
   config?: Cluster_NetworkResources_Config | Computed<Cluster_NetworkResources_Config>;
+  /** A reference to the VPC network resource this cluster's compute, storage, and networking are provisioned in. (AI-inferred) */
   network?: Cluster_NetworkResources_Config_ExistingNetwork | Computed<Cluster_NetworkResources_Config_ExistingNetwork>;
 }
 
@@ -61,11 +83,14 @@ export interface Cluster_Orchestrator_Slurm_LoginNodes_BootDisk {
 }
 
 export interface Cluster_Orchestrator_Slurm_LoginNodes_Instances {
+  /** A reference to the underlying instance. (AI-inferred) */
   instance?: string | Computed<string>;
 }
 
 export interface Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigs {
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The local path this file system is mounted at. (AI-inferred) */
   localMount?: string | Computed<string>;
 }
 
@@ -93,22 +118,33 @@ export interface Cluster_Orchestrator_Slurm_LoginNodes {
 }
 
 export interface Cluster_Orchestrator_Slurm_NodeSets_ComputeInstance {
+  /** Configuration for this instance's own boot disk. (AI-inferred) */
   bootDisk?: Cluster_Orchestrator_Slurm_LoginNodes_BootDisk | Computed<Cluster_Orchestrator_Slurm_LoginNodes_BootDisk>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The script run when this instance starts up. (AI-inferred) */
   startupScript?: string | Computed<string>;
 }
 
 export interface Cluster_Orchestrator_Slurm_NodeSets {
+  /** An identifier for this compute resource. (AI-inferred) */
   computeId?: string | Computed<string>;
+  /** Configuration for a Compute Engine VM instance within this cluster. (AI-inferred) */
   computeInstance?: Cluster_Orchestrator_Slurm_NodeSets_ComputeInstance | Computed<Cluster_Orchestrator_Slurm_NodeSets_ComputeInstance>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The maximum number of dynamically provisioned node(s) this can scale up to. (AI-inferred) */
   maxDynamicNodeCount?: string | Computed<string>;
+  /** The fixed number of node(s) provisioned, when not dynamically scaled. (AI-inferred) */
   staticNodeCount?: string | Computed<string>;
+  /** Storage resource(s) provisioned as part of this cluster. (AI-inferred) */
   storageConfigs?: Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigs[] | Computed<Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigs[]>;
 }
 
 export interface Cluster_Orchestrator_Slurm_Partitions {
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The identifier(s) of the node set(s) this applies to. (AI-inferred) */
   nodeSetIds?: string[] | Computed<string[]>;
 }
 
@@ -133,67 +169,99 @@ export interface Cluster_Orchestrator {
 }
 
 export interface Cluster_StorageResources_Bucket {
+  /** A reference to the Cloud Storage bucket this applies to. (AI-inferred) */
   bucket?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config_ExistingFilestore {
+  /** Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred) */
   filestore?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config_ExistingLustre {
+  /** Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred) */
   lustre?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config_NewBucket_Autoclass {
+  /** Whether this feature is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** The storage class an object transitions to at the end of its own lifecycle. (AI-inferred) */
   terminalStorageClass?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config_NewBucket_HierarchicalNamespace {
+  /** Whether this feature is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
 }
 
 export interface Cluster_StorageResources_Config_NewBucket {
+  /** Automatically selects the most cost-effective storage class for each object, based on its own access pattern. (AI-inferred) */
   autoclass?: Cluster_StorageResources_Config_NewBucket_Autoclass | Computed<Cluster_StorageResources_Config_NewBucket_Autoclass>;
+  /** A reference to the Cloud Storage bucket this applies to. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** Enables a folder-like hierarchical namespace for this bucket, rather than a flat one. (AI-inferred) */
   hierarchicalNamespace?: Cluster_StorageResources_Config_NewBucket_HierarchicalNamespace | Computed<Cluster_StorageResources_Config_NewBucket_HierarchicalNamespace>;
+  /** The Cloud Storage class this object or bucket uses. (AI-inferred) */
   storageClass?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config_NewFilestore_FileShares {
+  /** The provisioned capacity, in gibibytes. (AI-inferred) */
   capacityGb?: string | Computed<string>;
+  /** A single exported file share within this Filestore instance. (AI-inferred) */
   fileShare?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config_NewFilestore {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exported file share(s) within this Filestore instance. (AI-inferred) */
   fileShares?: Cluster_StorageResources_Config_NewFilestore_FileShares[] | Computed<Cluster_StorageResources_Config_NewFilestore_FileShares[]>;
+  /** Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred) */
   filestore?: string | Computed<string>;
+  /** The network protocol used. (AI-inferred) */
   protocol?: string | Computed<string>;
+  /** The service tier this resource is provisioned at. (AI-inferred) */
   tier?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config_NewLustre {
+  /** The provisioned capacity, in gibibytes. (AI-inferred) */
   capacityGb?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of this file system. (AI-inferred) */
   filesystem?: string | Computed<string>;
+  /** Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred) */
   lustre?: string | Computed<string>;
+  /** The throughput provisioned per unit of storage capacity. (AI-inferred) */
   perUnitStorageThroughput?: string | Computed<string>;
 }
 
 export interface Cluster_StorageResources_Config {
+  /** References an already-existing Cloud Storage bucket, rather than creating a new one. (AI-inferred) */
   existingBucket?: Cluster_StorageResources_Bucket | Computed<Cluster_StorageResources_Bucket>;
+  /** References an already-existing Filestore instance, rather than creating a new one. (AI-inferred) */
   existingFilestore?: Cluster_StorageResources_Config_ExistingFilestore | Computed<Cluster_StorageResources_Config_ExistingFilestore>;
+  /** References an already-existing Managed Lustre instance, rather than creating a new one. (AI-inferred) */
   existingLustre?: Cluster_StorageResources_Config_ExistingLustre | Computed<Cluster_StorageResources_Config_ExistingLustre>;
+  /** Creates a new Cloud Storage bucket as part of this cluster. (AI-inferred) */
   newBucket?: Cluster_StorageResources_Config_NewBucket | Computed<Cluster_StorageResources_Config_NewBucket>;
+  /** Creates a new Filestore instance as part of this cluster. (AI-inferred) */
   newFilestore?: Cluster_StorageResources_Config_NewFilestore | Computed<Cluster_StorageResources_Config_NewFilestore>;
+  /** Creates a new Managed Lustre instance as part of this cluster. (AI-inferred) */
   newLustre?: Cluster_StorageResources_Config_NewLustre | Computed<Cluster_StorageResources_Config_NewLustre>;
 }
 
 export interface Cluster_StorageResources {
+  /** A reference to the Cloud Storage bucket this applies to. (AI-inferred) */
   bucket?: Cluster_StorageResources_Bucket | Computed<Cluster_StorageResources_Bucket>;
+  /** The configuration for this resource. (AI-inferred) */
   config?: Cluster_StorageResources_Config | Computed<Cluster_StorageResources_Config>;
+  /** Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred) */
   filestore?: Cluster_StorageResources_Config_ExistingFilestore | Computed<Cluster_StorageResources_Config_ExistingFilestore>;
+  /** Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred) */
   lustre?: Cluster_StorageResources_Config_ExistingLustre | Computed<Cluster_StorageResources_Config_ExistingLustre>;
 }
 

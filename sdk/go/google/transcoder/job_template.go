@@ -4,257 +4,415 @@ package transcoder
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobTemplate_Config_AdBreaks struct {
+	// Where in the input this segment/edit starts. (AI-inferred)
 	StartTimeOffset any
 }
 
 type JobTemplate_Config_EditList struct {
-	EndTimeOffset   any
-	Inputs          any
-	Key             any
+	// Where in the input this segment/edit ends. (AI-inferred)
+	EndTimeOffset any
+	// The input file(s) for this job. (AI-inferred)
+	Inputs any
+	// A reference to the encryption key this uses. (AI-inferred)
+	Key any
+	// Where in the input this segment/edit starts. (AI-inferred)
 	StartTimeOffset any
 }
 
 type JobTemplate_Config_ElementaryStreams_AudioStream_Mapping struct {
-	AtomKey       any
-	GainDb        any
-	InputChannel  any
-	InputKey      any
-	InputTrack    any
+	// The MP4 atom used to identify the encryption key. (AI-inferred)
+	AtomKey any
+	// The audio gain adjustment, in decibels. (AI-inferred)
+	GainDb any
+	// The source audio channel this mapping reads from. (AI-inferred)
+	InputChannel any
+	// A reference to the input this applies to. (AI-inferred)
+	InputKey any
+	// The specific track within the input this applies to. (AI-inferred)
+	InputTrack any
+	// The destination audio channel this mapping writes to. (AI-inferred)
 	OutputChannel any
 }
 
 type JobTemplate_Config_ElementaryStreams_AudioStream struct {
-	BitrateBps      any
-	ChannelCount    any
-	ChannelLayout   any
-	Codec           any
-	DisplayName     any
-	LanguageCode    any
-	Mapping         any
+	// The target bitrate, in bits per second. (AI-inferred)
+	BitrateBps any
+	// The number of audio channels. (AI-inferred)
+	ChannelCount any
+	// The spatial arrangement of audio channels, e.g. stereo or 5.1 surround. (AI-inferred)
+	ChannelLayout any
+	// The audio or video codec used, e.g. `h264` or `aac`. (AI-inferred)
+	Codec any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// How input stream(s) are mapped into this output stream. (AI-inferred)
+	Mapping any
+	// The audio sample rate, in Hz. (AI-inferred)
 	SampleRateHertz any
 }
 
 type JobTemplate_Config_ElementaryStreams_TextStream_Mapping struct {
-	AtomKey    any
-	InputKey   any
+	// The MP4 atom used to identify the encryption key. (AI-inferred)
+	AtomKey any
+	// A reference to the input this applies to. (AI-inferred)
+	InputKey any
+	// The specific track within the input this applies to. (AI-inferred)
 	InputTrack any
 }
 
 type JobTemplate_Config_ElementaryStreams_TextStream struct {
-	Codec        any
-	DisplayName  any
+	// The audio or video codec used, e.g. `h264` or `aac`. (AI-inferred)
+	Codec any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
 	LanguageCode any
-	Mapping      any
+	// How input stream(s) are mapped into this output stream. (AI-inferred)
+	Mapping any
 }
 
 type JobTemplate_Config_ElementaryStreams_VideoStream_H264 struct {
-	AllowOpenGop                any
-	AqStrength                  any
-	BFrameCount                 any
-	BPyramid                    any
-	BitrateBps                  any
-	CrfLevel                    any
-	EnableTwoPass               any
-	EntropyCoder                any
-	FrameRate                   any
+	// Whether the encoder is allowed to use an open Group of Pictures structure, rather than requiring closed GOPs. (AI-inferred)
+	AllowOpenGop any
+	// The strength of adaptive quantization applied during encoding, trading bitrate efficiency for encoding complexity. (AI-inferred)
+	AqStrength any
+	// How many consecutive B-frames the encoder may use between reference frames. (AI-inferred)
+	BFrameCount any
+	// Whether B-frames may reference other B-frames, forming a hierarchical prediction structure. (AI-inferred)
+	BPyramid any
+	// The target bitrate, in bits per second. (AI-inferred)
+	BitrateBps any
+	// The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred)
+	CrfLevel any
+	// Whether encoding runs in two passes -- the first analyzes the content, the second encodes using that analysis for better quality. (AI-inferred)
+	EnableTwoPass any
+	// The entropy coding method used, e.g. CABAC or CAVLC. (AI-inferred)
+	EntropyCoder any
+	// The output video frame rate, in frames per second. (AI-inferred)
+	FrameRate any
+	// How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred)
 	FrameRateConversionStrategy any
-	GopDuration                 any
-	GopFrameCount               any
-	HeightPixels                any
-	Hlg                         any
-	PixelFormat                 any
-	Preset                      any
-	Profile                     any
-	RateControlMode             any
-	Sdr                         any
-	Tune                        any
-	VbvFullnessBits             any
-	VbvSizeBits                 any
-	WidthPixels                 any
+	// The target duration of each Group of Pictures. (AI-inferred)
+	GopDuration any
+	// The target number of frames in each Group of Pictures. (AI-inferred)
+	GopFrameCount any
+	// The output height, in pixels. (AI-inferred)
+	HeightPixels any
+	// Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred)
+	Hlg any
+	// The pixel format of the output video, e.g. `yuv420p`. (AI-inferred)
+	PixelFormat any
+	// A named preset bundling a full job configuration, as a shortcut for setting individual fields. (AI-inferred)
+	Preset any
+	// The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred)
+	Profile any
+	// How the encoder controls bitrate, e.g. constant or variable. (AI-inferred)
+	RateControlMode any
+	// Configures standard-dynamic-range video output. (AI-inferred)
+	Sdr any
+	// An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred)
+	Tune any
+	// The initial fullness of the Video Buffering Verifier model, in bits. (AI-inferred)
+	VbvFullnessBits any
+	// The size of the Video Buffering Verifier buffer model, in bits, constraining short-term bitrate variation. (AI-inferred)
+	VbvSizeBits any
+	// The output width, in pixels. (AI-inferred)
+	WidthPixels any
 }
 
 type JobTemplate_Config_ElementaryStreams_VideoStream_H265 struct {
-	AllowOpenGop                any
-	AqStrength                  any
-	BFrameCount                 any
-	BPyramid                    any
-	BitrateBps                  any
-	CrfLevel                    any
-	EnableTwoPass               any
-	FrameRate                   any
+	// Whether the encoder is allowed to use an open Group of Pictures structure, rather than requiring closed GOPs. (AI-inferred)
+	AllowOpenGop any
+	// The strength of adaptive quantization applied during encoding, trading bitrate efficiency for encoding complexity. (AI-inferred)
+	AqStrength any
+	// How many consecutive B-frames the encoder may use between reference frames. (AI-inferred)
+	BFrameCount any
+	// Whether B-frames may reference other B-frames, forming a hierarchical prediction structure. (AI-inferred)
+	BPyramid any
+	// The target bitrate, in bits per second. (AI-inferred)
+	BitrateBps any
+	// The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred)
+	CrfLevel any
+	// Whether encoding runs in two passes -- the first analyzes the content, the second encodes using that analysis for better quality. (AI-inferred)
+	EnableTwoPass any
+	// The output video frame rate, in frames per second. (AI-inferred)
+	FrameRate any
+	// How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred)
 	FrameRateConversionStrategy any
-	GopDuration                 any
-	GopFrameCount               any
-	Hdr10                       any
-	HeightPixels                any
-	Hlg                         any
-	PixelFormat                 any
-	Preset                      any
-	Profile                     any
-	RateControlMode             any
-	Sdr                         any
-	Tune                        any
-	VbvFullnessBits             any
-	VbvSizeBits                 any
-	WidthPixels                 any
+	// The target duration of each Group of Pictures. (AI-inferred)
+	GopDuration any
+	// The target number of frames in each Group of Pictures. (AI-inferred)
+	GopFrameCount any
+	// Configures HDR10 high-dynamic-range video output. (AI-inferred)
+	Hdr10 any
+	// The output height, in pixels. (AI-inferred)
+	HeightPixels any
+	// Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred)
+	Hlg any
+	// The pixel format of the output video, e.g. `yuv420p`. (AI-inferred)
+	PixelFormat any
+	// A named preset bundling a full job configuration, as a shortcut for setting individual fields. (AI-inferred)
+	Preset any
+	// The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred)
+	Profile any
+	// How the encoder controls bitrate, e.g. constant or variable. (AI-inferred)
+	RateControlMode any
+	// Configures standard-dynamic-range video output. (AI-inferred)
+	Sdr any
+	// An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred)
+	Tune any
+	// The initial fullness of the Video Buffering Verifier model, in bits. (AI-inferred)
+	VbvFullnessBits any
+	// The size of the Video Buffering Verifier buffer model, in bits, constraining short-term bitrate variation. (AI-inferred)
+	VbvSizeBits any
+	// The output width, in pixels. (AI-inferred)
+	WidthPixels any
 }
 
 type JobTemplate_Config_ElementaryStreams_VideoStream_Vp9 struct {
-	BitrateBps                  any
-	CrfLevel                    any
-	FrameRate                   any
+	// The target bitrate, in bits per second. (AI-inferred)
+	BitrateBps any
+	// The Constant Rate Factor quality level used for encoding -- lower values mean higher quality and larger output. (AI-inferred)
+	CrfLevel any
+	// The output video frame rate, in frames per second. (AI-inferred)
+	FrameRate any
+	// How the frame rate is converted when it differs from the input, e.g. by dropping/duplicating frames. (AI-inferred)
 	FrameRateConversionStrategy any
-	GopDuration                 any
-	GopFrameCount               any
-	HeightPixels                any
-	Hlg                         any
-	PixelFormat                 any
-	Profile                     any
-	RateControlMode             any
-	Sdr                         any
-	WidthPixels                 any
+	// The target duration of each Group of Pictures. (AI-inferred)
+	GopDuration any
+	// The target number of frames in each Group of Pictures. (AI-inferred)
+	GopFrameCount any
+	// The output height, in pixels. (AI-inferred)
+	HeightPixels any
+	// Configures Hybrid Log-Gamma high-dynamic-range video output. (AI-inferred)
+	Hlg any
+	// The pixel format of the output video, e.g. `yuv420p`. (AI-inferred)
+	PixelFormat any
+	// The codec profile used, constraining which encoding features are allowed for broader decoder compatibility. (AI-inferred)
+	Profile any
+	// How the encoder controls bitrate, e.g. constant or variable. (AI-inferred)
+	RateControlMode any
+	// Configures standard-dynamic-range video output. (AI-inferred)
+	Sdr any
+	// The output width, in pixels. (AI-inferred)
+	WidthPixels any
 }
 
 type JobTemplate_Config_ElementaryStreams_VideoStream struct {
+	// Configures the output video codec as H.264/AVC. (AI-inferred)
 	H264 any
+	// Configures the output video codec as H.265/HEVC. (AI-inferred)
 	H265 any
-	Vp9  any
+	// Configures the output video codec as VP9. (AI-inferred)
+	Vp9 any
 }
 
 type JobTemplate_Config_ElementaryStreams struct {
+	// Configuration for a single audio output stream. (AI-inferred)
 	AudioStream any
-	Key         any
-	TextStream  any
+	// A reference to the encryption key this uses. (AI-inferred)
+	Key any
+	// Configuration for a single text/subtitle output stream. (AI-inferred)
+	TextStream any
+	// Configuration for a single video output stream. (AI-inferred)
 	VideoStream any
 }
 
 type JobTemplate_Config_Encryptions_DrmSystems struct {
-	Clearkey  any
-	Fairplay  any
+	// Encrypts output using the ClearKey DRM scheme. (AI-inferred)
+	Clearkey any
+	// Encrypts output using Apple's FairPlay DRM scheme. (AI-inferred)
+	Fairplay any
+	// Encrypts output using Microsoft's PlayReady DRM scheme. (AI-inferred)
 	Playready any
-	Widevine  any
+	// Encrypts output using Google's Widevine DRM scheme. (AI-inferred)
+	Widevine any
 }
 
 type JobTemplate_Config_Encryptions_MpegCenc struct {
+	// Which encryption scheme is used. (AI-inferred)
 	Scheme any
 }
 
 type JobTemplate_Config_Encryptions_SecretManagerKeySource struct {
+	// The Secret Manager secret version holding the encryption key. (AI-inferred)
 	SecretVersion any
 }
 
 type JobTemplate_Config_Encryptions struct {
-	Aes128                 any
-	DrmSystems             any
-	Id                     any
-	MpegCenc               any
-	SampleAes              any
+	// Encrypts the HLS output using AES-128, the legacy HLS encryption scheme. (AI-inferred)
+	Aes128 any
+	// The DRM system(s) (Widevine, FairPlay, PlayReady, ClearKey) this encryption configuration supports. (AI-inferred)
+	DrmSystems any
+	// An identifier for this resource, unique within its own containing job. (AI-inferred)
+	Id any
+	// Encrypts output using the MPEG Common Encryption scheme, compatible with multiple DRM systems. (AI-inferred)
+	MpegCenc any
+	// Encrypts output using Sample-AES, Apple's own per-sample HLS encryption scheme. (AI-inferred)
+	SampleAes any
+	// Sources the encryption key from a Secret Manager secret. (AI-inferred)
 	SecretManagerKeySource any
 }
 
 type JobTemplate_Config_Inputs_Attributes_TrackDefinitions struct {
-	DetectLanguages   any
+	// Whether spoken language is automatically detected in the input audio. (AI-inferred)
+	DetectLanguages any
+	// Output only. The language(s) automatically detected in the input audio. (AI-inferred)
 	DetectedLanguages any
-	InputTrack        any
-	Languages         any
+	// The specific track within the input this applies to. (AI-inferred)
+	InputTrack any
+	// The language(s) this applies to. (AI-inferred)
+	Languages any
 }
 
 type JobTemplate_Config_Inputs_Attributes struct {
+	// Defines the individual track(s) within an audio elementary stream, e.g. for later mapping into multi-channel output. (AI-inferred)
 	TrackDefinitions any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Audio struct {
+	// Whether high-frequency audio content is boosted during loudness normalization. (AI-inferred)
 	HighBoost any
-	LowBoost  any
-	Lufs      any
+	// Whether low-frequency audio content is boosted during loudness normalization. (AI-inferred)
+	LowBoost any
+	// The target loudness level, in LUFS (Loudness Units Full Scale). (AI-inferred)
+	Lufs any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Color struct {
+	// The brightness adjustment applied to the video. (AI-inferred)
 	Brightness any
-	Contrast   any
+	// The contrast adjustment applied to the video. (AI-inferred)
+	Contrast any
+	// The color saturation adjustment applied to the video. (AI-inferred)
 	Saturation any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Crop struct {
+	// The number of pixels cropped or positioned from the bottom edge. (AI-inferred)
 	BottomPixels any
-	LeftPixels   any
-	RightPixels  any
-	TopPixels    any
+	// The number of pixels cropped or positioned from the left edge. (AI-inferred)
+	LeftPixels any
+	// The number of pixels cropped or positioned from the right edge. (AI-inferred)
+	RightPixels any
+	// The number of pixels cropped or positioned from the top edge. (AI-inferred)
+	TopPixels any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Deblock struct {
-	Enabled  any
+	// Whether this feature is turned on. (AI-inferred)
+	Enabled any
+	// How strongly this filter is applied. (AI-inferred)
 	Strength any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Deinterlace_Bwdif struct {
+	// Whether deinterlacing is applied to every frame, rather than only frames detected as interlaced. (AI-inferred)
 	DeinterlaceAllFrames any
-	Mode                 any
-	Parity               any
+	// Which operating mode this uses. (AI-inferred)
+	Mode any
+	// Which field (top or bottom) is treated as first when deinterlacing. (AI-inferred)
+	Parity any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Deinterlace_Yadif struct {
-	DeinterlaceAllFrames      any
+	// Whether deinterlacing is applied to every frame, rather than only frames detected as interlaced. (AI-inferred)
+	DeinterlaceAllFrames any
+	// Disables spatial-domain interlacing detection, relying only on temporal detection. (AI-inferred)
 	DisableSpatialInterlacing any
-	Mode                      any
-	Parity                    any
+	// Which operating mode this uses. (AI-inferred)
+	Mode any
+	// Which field (top or bottom) is treated as first when deinterlacing. (AI-inferred)
+	Parity any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Deinterlace struct {
+	// Deinterlaces using the Bob Weaver Deinterlacing Filter algorithm. (AI-inferred)
 	Bwdif any
+	// Deinterlaces using the Yet Another DeInterlacing Filter algorithm. (AI-inferred)
 	Yadif any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig_Denoise struct {
+	// How strongly this filter is applied. (AI-inferred)
 	Strength any
-	Tune     any
+	// An encoder tuning preset optimized for a specific content type, e.g. film or animation. (AI-inferred)
+	Tune any
 }
 
 type JobTemplate_Config_Inputs_PreprocessingConfig struct {
-	Audio       any
-	Color       any
-	Crop        any
-	Deblock     any
+	// Audio content or configuration. (AI-inferred)
+	Audio any
+	// Color adjustment configuration applied to the video. (AI-inferred)
+	Color any
+	// Configuration for cropping the input video before encoding. (AI-inferred)
+	Crop any
+	// Whether the deblocking filter is applied to reduce blocking artifacts. (AI-inferred)
+	Deblock any
+	// Configuration for converting interlaced input video to progressive scan. (AI-inferred)
 	Deinterlace any
-	Denoise     any
-	Pad         any
+	// Configuration for reducing visual noise in the input video before encoding. (AI-inferred)
+	Denoise any
+	// Configuration for padding the video with borders, e.g. to change aspect ratio without cropping. (AI-inferred)
+	Pad any
 }
 
 type JobTemplate_Config_Inputs struct {
-	Attributes          any
-	Key                 any
+	// Additional codec-specific configuration attribute(s). (AI-inferred)
+	Attributes any
+	// A reference to the encryption key this uses. (AI-inferred)
+	Key any
+	// Configuration for filters (denoise, deblock, color, crop, pad, audio) applied before encoding. (AI-inferred)
 	PreprocessingConfig any
-	Uri                 any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type JobTemplate_Config_Manifests_Dash struct {
+	// How output segments are referenced from the manifest, e.g. by separate files or byte ranges. (AI-inferred)
 	SegmentReferenceScheme any
 }
 
 type JobTemplate_Config_Manifests struct {
-	Dash       any
-	FileName   any
+	// Configures output for DASH (Dynamic Adaptive Streaming over HTTP) delivery. (AI-inferred)
+	Dash any
+	// The output file name. (AI-inferred)
+	FileName any
+	// The output file(s) produced by combining specific elementary streams together. (AI-inferred)
 	MuxStreams any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type JobTemplate_Config_MuxStreams_Fmp4 struct {
+	// A specific fourcc codec tag to write into the output container. (AI-inferred)
 	CodecTag any
 }
 
 type JobTemplate_Config_MuxStreams_SegmentSettings struct {
+	// Whether each output segment is written as a separate file, rather than one continuous stream. (AI-inferred)
 	IndividualSegments any
-	SegmentDuration    any
+	// The target duration of each output segment. (AI-inferred)
+	SegmentDuration any
 }
 
 type JobTemplate_Config_MuxStreams struct {
-	Container         any
+	// The output file container format, e.g. `mp4` or `ts`. (AI-inferred)
+	Container any
+	// The individual audio/video/text stream(s) defined for this job, before being combined into output files. (AI-inferred)
 	ElementaryStreams any
-	EncryptionId      any
-	FileName          any
-	Fmp4              any
-	Key               any
-	SegmentSettings   any
+	// A reference to the encryption configuration this applies to. (AI-inferred)
+	EncryptionId any
+	// The output file name. (AI-inferred)
+	FileName any
+	// Configures output using the fragmented MP4 container. (AI-inferred)
+	Fmp4 any
+	// A reference to the encryption key this uses. (AI-inferred)
+	Key any
+	// Configuration for how output is divided into segments. (AI-inferred)
+	SegmentSettings any
 }
 
 type JobTemplate_Config_Output struct {
@@ -263,37 +421,53 @@ type JobTemplate_Config_Output struct {
 }
 
 type JobTemplate_Config_Overlays_Animations_AnimationFade_Xy struct {
+	// The horizontal position. (AI-inferred)
 	X any
+	// The vertical position. (AI-inferred)
 	Y any
 }
 
 type JobTemplate_Config_Overlays_Animations_AnimationFade struct {
-	EndTimeOffset   any
-	FadeType        any
+	// Where in the input this segment/edit ends. (AI-inferred)
+	EndTimeOffset any
+	// Whether this animation fades in or fades out. (AI-inferred)
+	FadeType any
+	// Where in the input this segment/edit starts. (AI-inferred)
 	StartTimeOffset any
-	Xy              any
+	// The x/y position coordinates. (AI-inferred)
+	Xy any
 }
 
 type JobTemplate_Config_Overlays_Animations_AnimationStatic struct {
+	// Where in the input this segment/edit starts. (AI-inferred)
 	StartTimeOffset any
-	Xy              any
+	// The x/y position coordinates. (AI-inferred)
+	Xy any
 }
 
 type JobTemplate_Config_Overlays_Animations struct {
-	AnimationEnd    any
-	AnimationFade   any
+	// Marks the end of an animated overlay sequence. (AI-inferred)
+	AnimationEnd any
+	// A fade-in/fade-out animation applied to an overlay. (AI-inferred)
+	AnimationFade any
+	// A static (non-animated) overlay, shown for a fixed duration. (AI-inferred)
 	AnimationStatic any
 }
 
 type JobTemplate_Config_Overlays_Image struct {
-	Alpha      any
+	// The alpha (transparency) level applied to this overlay. (AI-inferred)
+	Alpha any
+	// The output video's own pixel dimensions. (AI-inferred)
 	Resolution any
-	Uri        any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type JobTemplate_Config_Overlays struct {
+	// The animation(s) applied to this overlay over the course of the output. (AI-inferred)
 	Animations any
-	Image      any
+	// An image overlay applied to the video. (AI-inferred)
+	Image any
 }
 
 type JobTemplate_Config_PubsubDestination struct {
@@ -302,17 +476,28 @@ type JobTemplate_Config_PubsubDestination struct {
 }
 
 type JobTemplate_Config_SpriteSheets struct {
-	ColumnCount        any
-	EndTimeOffset      any
-	FilePrefix         any
-	Format             any
-	Interval           any
-	Quality            any
-	RowCount           any
+	// The number of columns in a sprite sheet. (AI-inferred)
+	ColumnCount any
+	// Where in the input this segment/edit ends. (AI-inferred)
+	EndTimeOffset any
+	// The prefix applied to generated output file names. (AI-inferred)
+	FilePrefix any
+	// A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
+	Format any
+	// How often this recurring action happens. (AI-inferred)
+	Interval any
+	// The target output quality level. (AI-inferred)
+	Quality any
+	// The number of rows in a sprite sheet. (AI-inferred)
+	RowCount any
+	// The height, in pixels, of each thumbnail in a sprite sheet. (AI-inferred)
 	SpriteHeightPixels any
-	SpriteWidthPixels  any
-	StartTimeOffset    any
-	TotalCount         any
+	// The width, in pixels, of each thumbnail in a sprite sheet. (AI-inferred)
+	SpriteWidthPixels any
+	// Where in the input this segment/edit starts. (AI-inferred)
+	StartTimeOffset any
+	// The total number of items. (AI-inferred)
+	TotalCount any
 }
 
 type JobTemplate_Config struct {

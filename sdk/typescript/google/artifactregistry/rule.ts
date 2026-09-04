@@ -26,6 +26,7 @@ export interface RuleConfig {
   condition?: Rule_Condition | Computed<Rule_Condition>;
   /** The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`. */
   name?: string | Computed<string>;
+  /** The operation this rule applies to, e.g. `DOWNLOAD`. (AI-inferred) */
   operation?: string | Computed<string>;
   /** The package ID the rule applies to. If empty, this rule applies to all packages inside the repository. */
   packageId?: string | Computed<string>;
@@ -38,6 +39,7 @@ export interface RuleAttrs {
   condition: Rule_Condition;
   /** The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`. */
   name: string;
+  /** The operation this rule applies to, e.g. `DOWNLOAD`. (AI-inferred) */
   operation: string;
   /** The package ID the rule applies to. If empty, this rule applies to all packages inside the repository. */
   packageId: string;

@@ -4,8 +4,10 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trial_FinalMeasurement_Metrics struct {
+	// An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
 	MetricId any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Trial_FinalMeasurement struct {
@@ -18,8 +20,10 @@ type Trial_FinalMeasurement struct {
 }
 
 type Trial_Parameters struct {
+	// The name of this hyperparameter, unique within its own study. (AI-inferred)
 	ParameterId any
-	Value       any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 var Trial_FinalMeasurement_MetricsFields = ubx.FieldMap{

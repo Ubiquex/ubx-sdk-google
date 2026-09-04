@@ -40,16 +40,24 @@ class Entitlement_CommitmentSettings:
 
 @dataclasses.dataclass
 class Entitlement_Entitlement_Parameters_Value:
+    # This entitlement parameter's own value, when its declared type is boolean. (AI-inferred)
     bool_value: Any = None
+    # This entitlement parameter's own value, when its declared type is a floating-point number. (AI-inferred)
     double_value: Any = None
+    # This entitlement parameter's own value, when its declared type is a 64-bit integer. (AI-inferred)
     int64_value: Any = None
+    # This entitlement parameter's own value, when its declared type is a structured protobuf message. (AI-inferred)
     proto_value: Any = None
+    # This entitlement parameter's own value, when its declared type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
 class Entitlement_Entitlement_Parameters:
+    # Whether this entitlement parameter is real, editable by the reseller after the entitlement is created. (AI-inferred)
     editable: Any = None
+    # The real, declared name of this entitlement parameter. (AI-inferred)
     name: Any = None
+    # The real, decimal percentage value applied by this margin adjustment, or the real value of a typed entitlement parameter. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

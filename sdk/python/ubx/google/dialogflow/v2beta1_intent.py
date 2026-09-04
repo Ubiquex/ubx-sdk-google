@@ -727,48 +727,88 @@ _V2beta1Intent_TrainingPhrasesFields = {
 
 @dataclasses.dataclass
 class V2beta1IntentConfig:
+    # The specific action, exposed by `tool`, being invoked. (AI-inferred)
     action: Any = None
+    # The real messaging platform(s) this intent's own default responses render for. (AI-inferred)
     default_response_platforms: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
     end_interaction: Any = None
+    # The real custom event name(s) that can trigger this intent directly, without matching user input. (AI-inferred)
     events: Any = None
+    # The real context(s) that must be active for this intent to be matched. (AI-inferred)
     input_context_names: Any = None
+    # Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
     is_fallback: Any = None
+    # Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
     live_agent_handoff: Any = None
+    # The response message(s) this fulfillment returns. (AI-inferred)
     messages: Any = None
+    # Whether machine-learning-based matching is disabled for this intent, restricting it to exact phrase matches. (AI-inferred)
     ml_disabled: Any = None
+    # Whether machine-learning-based matching is enabled for this intent. Deprecated in favor of `ml_disabled`. (AI-inferred)
     ml_enabled: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The real context(s) this intent activates once matched. (AI-inferred)
     output_contexts: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # A reference to this intent's own direct parent, when this intent is itself a follow-up intent. (AI-inferred)
     parent_followup_intent_name: Any = None
+    # The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
     priority: Any = None
+    # Whether matching this intent clears all previously active contexts. (AI-inferred)
     reset_contexts: Any = None
+    # Example user utterances used to train this intent's own recognition. (AI-inferred)
     training_phrases: Any = None
+    # Whether a webhook is enabled for this intent, and whether it is required for slot filling. (AI-inferred)
     webhook_state: Any = None
 
 @dataclasses.dataclass
 class V2beta1IntentAttrs:
+    # The specific action, exposed by `tool`, being invoked. (AI-inferred)
     action: Any = None
+    # The real messaging platform(s) this intent's own default responses render for. (AI-inferred)
     default_response_platforms: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
     end_interaction: Any = None
+    # The real custom event name(s) that can trigger this intent directly, without matching user input. (AI-inferred)
     events: Any = None
+    # The real, direct follow-up intent(s) nested under this intent. (AI-inferred)
     followup_intent_info: Any = None
+    # The real context(s) that must be active for this intent to be matched. (AI-inferred)
     input_context_names: Any = None
+    # Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
     is_fallback: Any = None
+    # Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
     live_agent_handoff: Any = None
+    # The response message(s) this fulfillment returns. (AI-inferred)
     messages: Any = None
+    # Whether machine-learning-based matching is disabled for this intent, restricting it to exact phrase matches. (AI-inferred)
     ml_disabled: Any = None
+    # Whether machine-learning-based matching is enabled for this intent. Deprecated in favor of `ml_disabled`. (AI-inferred)
     ml_enabled: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The real context(s) this intent activates once matched. (AI-inferred)
     output_contexts: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # A reference to this intent's own direct parent, when this intent is itself a follow-up intent. (AI-inferred)
     parent_followup_intent_name: Any = None
+    # The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
     priority: Any = None
+    # Whether matching this intent clears all previously active contexts. (AI-inferred)
     reset_contexts: Any = None
+    # A reference to the top-level intent at the root of this intent's own follow-up chain. (AI-inferred)
     root_followup_intent_name: Any = None
+    # Example user utterances used to train this intent's own recognition. (AI-inferred)
     training_phrases: Any = None
+    # Whether a webhook is enabled for this intent, and whether it is required for slot filling. (AI-inferred)
     webhook_state: Any = None
 
 V2beta1Intent = ubx.ResourceBinding(

@@ -2,69 +2,109 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Service_Connectors_ClientCache {
+  /** Whether the entity's own identifier is included in this result. (AI-inferred) */
   entityIdIncluded?: boolean | Computed<boolean>;
+  /** Whether strict schema validation is enforced. (AI-inferred) */
   strictValidationEnabled?: boolean | Computed<boolean>;
 }
 
 export interface Service_Connectors_Source_Files {
+  /** The literal content of this field. (AI-inferred) */
   content?: string | Computed<string>;
+  /** A file or resource path. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface Service_Connectors_Source {
+  /** The file(s) making up this schema or connector. (AI-inferred) */
   files?: Service_Connectors_Source_Files[] | Computed<Service_Connectors_Source_Files[]>;
 }
 
 export interface Service_Connectors {
+  /** Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred) */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
+  /** Caching configuration applied on the client side. (AI-inferred) */
   clientCache?: Service_Connectors_ClientCache | Computed<Service_Connectors_ClientCache>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Output only. `true` while the backend is still working to bring this resource's actual state in line with its most recent requested change. (AI-inferred) */
   reconciling?: boolean | Computed<boolean>;
+  /** The GraphQL source document defining this schema or connector. (AI-inferred) */
   source?: Service_Connectors_Source | Computed<Service_Connectors_Source>;
+  /** Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred) */
   uid?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Service_Schemas_Datasources_HttpGraphql {
+  /** How long this operation is allowed to run before timing out. (AI-inferred) */
   timeout?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Service_Schemas_Datasources_Postgresql_CloudSql {
+  /** The Cloud SQL edition this instance runs, e.g. Enterprise or Enterprise Plus. (AI-inferred) */
   edition?: string | Computed<string>;
+  /** A reference to the underlying database instance. (AI-inferred) */
   instance?: string | Computed<string>;
 }
 
 export interface Service_Schemas_Datasources_Postgresql {
+  /** Configuration for connecting to a Cloud SQL database. (AI-inferred) */
   cloudSql?: Service_Schemas_Datasources_Postgresql_CloudSql | Computed<Service_Schemas_Datasources_Postgresql_CloudSql>;
+  /** A reference to the database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** Whether this resource is temporary and not intended to persist. (AI-inferred) */
   ephemeral?: boolean | Computed<boolean>;
+  /** The GraphQL schema defining this service's own data model. (AI-inferred) */
   schema?: string | Computed<string>;
+  /** How schema change(s) are applied to the underlying database. (AI-inferred) */
   schemaMigration?: string | Computed<string>;
+  /** How strictly the schema is validated against the underlying database before deployment. (AI-inferred) */
   schemaValidation?: string | Computed<string>;
+  /** Whether this schema is not yet linked to a data source. (AI-inferred) */
   unlinked?: boolean | Computed<boolean>;
 }
 
 export interface Service_Schemas_Datasources {
+  /** Configuration for exposing this connector's own operations over HTTP GraphQL. (AI-inferred) */
   httpGraphql?: Service_Schemas_Datasources_HttpGraphql | Computed<Service_Schemas_Datasources_HttpGraphql>;
+  /** Configuration specific to a PostgreSQL data source. (AI-inferred) */
   postgresql?: Service_Schemas_Datasources_Postgresql | Computed<Service_Schemas_Datasources_Postgresql>;
 }
 
 export interface Service_Schemas {
+  /** Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred) */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The data source(s) this service connects to. (AI-inferred) */
   datasources?: Service_Schemas_Datasources[] | Computed<Service_Schemas_Datasources[]>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Output only. `true` while the backend is still working to bring this resource's actual state in line with its most recent requested change. (AI-inferred) */
   reconciling?: boolean | Computed<boolean>;
+  /** The GraphQL source document defining this schema or connector. (AI-inferred) */
   source?: Service_Connectors_Source | Computed<Service_Connectors_Source>;
+  /** Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred) */
   uid?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 

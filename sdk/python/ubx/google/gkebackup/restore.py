@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Restore_Filter_ExclusionFilters_GroupKind:
+    # A restore action grouped with the resource(s) it applies to. (AI-inferred)
     resource_group: Any = None
+    # The Kubernetes resource kind this applies to. (AI-inferred)
     resource_kind: Any = None
 
 @dataclasses.dataclass
 class Restore_Filter_ExclusionFilters:
+    # The API group and kind identifying a Kubernetes resource type. (AI-inferred)
     group_kind: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The Kubernetes namespace this applies to. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
@@ -43,7 +49,9 @@ class Restore_RestoreConfig_ExcludedNamespaces:
 
 @dataclasses.dataclass
 class Restore_RestoreConfig_RestoreOrder_GroupKindDependencies:
+    # Rule(s) that must ALL match for this restore action to apply, when combined via AND logic. (AI-inferred)
     requiring: Any = None
+    # Rule(s) any one of which must match for this restore action to apply, when combined via OR logic. (AI-inferred)
     satisfying: Any = None
 
 @dataclasses.dataclass
@@ -53,7 +61,9 @@ class Restore_RestoreConfig_RestoreOrder:
 
 @dataclasses.dataclass
 class Restore_RestoreConfig_SelectedApplications_NamespacedNames:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The Kubernetes namespace this applies to. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
@@ -63,34 +73,51 @@ class Restore_RestoreConfig_SelectedApplications:
 
 @dataclasses.dataclass
 class Restore_RestoreConfig_SubstitutionRules:
+    # The value this field is set to after transformation. (AI-inferred)
     new_value: Any = None
+    # A regular expression the field's own original value must match for this transformation to apply. (AI-inferred)
     original_value_pattern: Any = None
+    # The API group(s) and kind(s) this restore action targets. (AI-inferred)
     target_group_kinds: Any = None
+    # The JSON path this transformation writes its own result to. (AI-inferred)
     target_json_path: Any = None
+    # The Kubernetes namespace(s) restored resources are placed into. (AI-inferred)
     target_namespaces: Any = None
 
 @dataclasses.dataclass
 class Restore_RestoreConfig_TransformationRules_FieldActions:
+    # The JSON path this transformation reads its own source value from. (AI-inferred)
     from_path: Any = None
+    # The transformation operation applied, e.g. `add`, `remove`, or `replace`. (AI-inferred)
     op: Any = None
+    # A file or resource path. (AI-inferred)
     path: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Restore_RestoreConfig_TransformationRules_ResourceFilter:
+    # The API group(s) and kind(s) this filter matches. (AI-inferred)
     group_kinds: Any = None
+    # The JSON path this rule applies to. (AI-inferred)
     json_path: Any = None
+    # The Kubernetes namespace(s) this applies to. (AI-inferred)
     namespaces: Any = None
 
 @dataclasses.dataclass
 class Restore_RestoreConfig_TransformationRules:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The transformation(s) applied to a specific field during restore. (AI-inferred)
     field_actions: Any = None
+    # Restricts a restore or backup action to matching Kubernetes resource(s). (AI-inferred)
     resource_filter: Any = None
 
 @dataclasses.dataclass
 class Restore_RestoreConfig_VolumeDataRestorePolicyBindings:
+    # The rule(s) restore actions must satisfy. (AI-inferred)
     policy: Any = None
+    # How this volume's own data is backed up, e.g. via a Persistent Disk snapshot. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
@@ -131,7 +158,9 @@ class Restore_TroubleshootingInfo:
 
 @dataclasses.dataclass
 class Restore_VolumeDataRestorePolicyOverrides:
+    # The rule(s) restore actions must satisfy. (AI-inferred)
     policy: Any = None
+    # The specific PersistentVolumeClaim(s) this restore action applies to. (AI-inferred)
     selected_pvcs: Any = None
 
 _Restore_Filter_ExclusionFilters_GroupKindFields = {

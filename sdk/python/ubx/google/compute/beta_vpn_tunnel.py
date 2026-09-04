@@ -63,6 +63,7 @@ _BetaVpnTunnel_ParamsFields = {
 class BetaVpnTunnelConfig:
     # Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
     capacity_tier: Any = None
+    # The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
     cipher_suite: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -114,6 +115,7 @@ class BetaVpnTunnelConfig:
 class BetaVpnTunnelAttrs:
     # Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
     capacity_tier: Any = None
+    # The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
     cipher_suite: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None

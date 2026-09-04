@@ -4,8 +4,10 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityFeedback_FeedbackContexts struct {
+	// A custom key/value attribute. (AI-inferred)
 	Attribute any
-	Values    any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 var SecurityFeedback_FeedbackContextsFields = ubx.FieldMap{

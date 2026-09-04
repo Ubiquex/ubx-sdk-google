@@ -11,6 +11,7 @@ export interface Tool_AgentTool {
 }
 
 export interface Tool_ClientFunction_Parameters {
+  /** Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred) */
   additionalProperties?: unknown | Computed<unknown>;
   /** Optional. The value should be validated against any (one or more) of the subschemas in the list. */
   anyOf?: unknown[] | Computed<unknown[]>;
@@ -22,6 +23,7 @@ export interface Tool_ClientFunction_Parameters {
   description?: string | Computed<string>;
   /** Optional. Possible values of the element of primitive type with enum format. Examples: 1. We can define direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]} 2. We can define apartment number as : {type:INTEGER, format:enum, enum:["101", "201", "301"]} */
   enum?: string[] | Computed<string[]>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
   /** Optional. Maximum number of the elements for Type.ARRAY. */
   maxItems?: string | Computed<string>;
@@ -113,29 +115,41 @@ export interface Tool_ConnectorTool {
 }
 
 export interface Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints {
+  /** The attribute value at this control point. (AI-inferred) */
   attributeValue?: string | Computed<string>;
+  /** The boost applied at this control point. (AI-inferred) */
   boostAmount?: number | Computed<number>;
 }
 
 export interface Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec {
+  /** The kind of attribute this boost rule keys on. (AI-inferred) */
   attributeType?: string | Computed<string>;
+  /** The mapping between an attribute's own value and its resulting boost amount, defining the boost curve. (AI-inferred) */
   controlPoints?: Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints[] | Computed<Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints[]>;
+  /** The name of the field this applies to. (AI-inferred) */
   fieldName?: string | Computed<string>;
+  /** How boost values are interpolated between control points, e.g. linear. (AI-inferred) */
   interpolationType?: string | Computed<string>;
 }
 
 export interface Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs {
+  /** How much to raise or lower a matching result's own ranking. (AI-inferred) */
   boost?: number | Computed<number>;
+  /** A boost rule computed from a continuous field value, rather than a fixed amount. (AI-inferred) */
   boostControlSpec?: Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec | Computed<Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec>;
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   condition?: string | Computed<string>;
 }
 
 export interface Tool_DataStoreTool_BoostSpecs_Spec {
+  /** Rule(s) boosting or burying specific search results when their own condition matches. (AI-inferred) */
   conditionBoostSpecs?: Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs[] | Computed<Tool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs[]>;
 }
 
 export interface Tool_DataStoreTool_BoostSpecs {
+  /** The data store(s) this tool queries. (AI-inferred) */
   dataStores?: string[] | Computed<string[]>;
+  /** The specification defining this resource's own behavior. (AI-inferred) */
   spec?: Tool_DataStoreTool_BoostSpecs_Spec[] | Computed<Tool_DataStoreTool_BoostSpecs_Spec[]>;
 }
 
@@ -180,30 +194,43 @@ export interface Tool_DataStoreTool_EngineSource {
 }
 
 export interface Tool_DataStoreTool_ModalityConfigs_GroundingConfig {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** How strictly generated answers must be grounded in retrieved source content. (AI-inferred) */
   groundingLevel?: number | Computed<number>;
 }
 
 export interface Tool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettings {
+  /** The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred) */
   model?: string | Computed<string>;
+  /** Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred) */
   temperature?: number | Computed<number>;
 }
 
 export interface Tool_DataStoreTool_ModalityConfigs_RewriterConfig {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred) */
   modelSettings?: Tool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettings | Computed<Tool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettings>;
+  /** The prompt text sent to the model. (AI-inferred) */
   prompt?: string | Computed<string>;
 }
 
 export interface Tool_DataStoreTool_ModalityConfigs_SnippetsConfig {
+  /** Whether source snippets are included alongside a generated answer. (AI-inferred) */
   enableSnippets?: boolean | Computed<boolean>;
 }
 
 export interface Tool_DataStoreTool_ModalityConfigs {
+  /** Configuration for how strictly generated answers must be grounded in retrieved source content. (AI-inferred) */
   groundingConfig?: Tool_DataStoreTool_ModalityConfigs_GroundingConfig | Computed<Tool_DataStoreTool_ModalityConfigs_GroundingConfig>;
+  /** Which modality (text, audio, etc.) this applies to. (AI-inferred) */
   modalityType?: string | Computed<string>;
+  /** Configuration for automatically rewriting the user's own query before retrieval, to improve search results. (AI-inferred) */
   rewriterConfig?: Tool_DataStoreTool_ModalityConfigs_RewriterConfig | Computed<Tool_DataStoreTool_ModalityConfigs_RewriterConfig>;
+  /** Configuration for including source snippets alongside a generated answer. (AI-inferred) */
   snippetsConfig?: Tool_DataStoreTool_ModalityConfigs_SnippetsConfig | Computed<Tool_DataStoreTool_ModalityConfigs_SnippetsConfig>;
+  /** Configuration for how retrieved search results are summarized into a generated answer. (AI-inferred) */
   summarizationConfig?: Tool_DataStoreTool_ModalityConfigs_RewriterConfig | Computed<Tool_DataStoreTool_ModalityConfigs_RewriterConfig>;
 }
 
@@ -310,7 +337,9 @@ export interface Tool_McpTool_ServiceDirectoryConfig {
 }
 
 export interface Tool_McpTool_TlsConfig_CaCerts {
+  /** A TLS certificate. (AI-inferred) */
   cert?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
@@ -375,19 +404,30 @@ export interface Tool_PythonFunction {
 }
 
 export interface Tool_RemoteAgentTool_AgentCard_Skills {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Example(s) illustrating expected behavior. (AI-inferred) */
   examples?: string[] | Computed<string[]>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The input modality/modalities (text, audio, etc.) this supports. (AI-inferred) */
   inputModes?: string[] | Computed<string[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The output modality/modalities (text, audio, etc.) this supports. (AI-inferred) */
   outputModes?: string[] | Computed<string[]>;
+  /** Free-form label(s) attached to this resource. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
 }
 
 export interface Tool_RemoteAgentTool_AgentCard_SupportedInterfaces {
+  /** The communication protocol this interface accepts requests over. (AI-inferred) */
   protocolBinding?: string | Computed<string>;
+  /** The protocol version this interface implements. (AI-inferred) */
   protocolVersion?: string | Computed<string>;
+  /** A reference to the tenant this applies to. (AI-inferred) */
   tenant?: string | Computed<string>;
+  /** The URL this tool calls. (AI-inferred) */
   url?: string | Computed<string>;
 }
 

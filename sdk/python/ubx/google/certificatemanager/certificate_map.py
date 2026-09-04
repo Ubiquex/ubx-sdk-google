@@ -8,13 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CertificateMap_GclbTargets_IpConfigs:
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The port number(s) this applies to. (AI-inferred)
     ports: Any = None
 
 @dataclasses.dataclass
 class CertificateMap_GclbTargets:
+    # Per-IP-address configuration for this certificate map entry. (AI-inferred)
     ip_configs: Any = None
+    # A reference to the target HTTPS proxy this certificate is attached to. (AI-inferred)
     target_https_proxy: Any = None
+    # A reference to the target SSL proxy this certificate is attached to. (AI-inferred)
     target_ssl_proxy: Any = None
 
 @dataclasses.dataclass

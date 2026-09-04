@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Execution_Error_StackTrace_Elements_Position:
+    # The real, zero-based column number this stack trace position points at. (AI-inferred)
     column: Any = None
+    # The real number of characters this stack trace position spans. (AI-inferred)
     length: Any = None
+    # The real, one-based line number this stack trace position points at. (AI-inferred)
     line: Any = None
 
 @dataclasses.dataclass
 class Execution_Error_StackTrace_Elements:
+    # The real, source-code position (line, column, length) this stack trace element points at. (AI-inferred)
     position: Any = None
+    # The real, named workflow step or subworkflow this stack trace element was executing in. (AI-inferred)
     routine: Any = None
+    # The real, named step within the `routine` this stack trace element points at. (AI-inferred)
     step: Any = None
 
 @dataclasses.dataclass
@@ -41,7 +47,9 @@ class Execution_StateError:
 
 @dataclasses.dataclass
 class Execution_Status_CurrentSteps:
+    # The real, named workflow step or subworkflow this stack trace element was executing in. (AI-inferred)
     routine: Any = None
+    # The real, named step within the `routine` this stack trace element points at. (AI-inferred)
     step: Any = None
 
 @dataclasses.dataclass

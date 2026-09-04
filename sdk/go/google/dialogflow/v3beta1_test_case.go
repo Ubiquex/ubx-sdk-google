@@ -888,24 +888,39 @@ var V3beta1TestCase_TestConfigFields = ubx.FieldMap{
 }
 
 type V3beta1TestCaseConfig struct {
-	DisplayName               any
-	LastTestResult            any
-	Name                      any
-	Notes                     any
-	Tags                      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The outcome of the most recent run of this test case. (AI-inferred)
+	LastTestResult any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Free-text notes attached to this resource. (AI-inferred)
+	Notes any
+	// Free-form label(s) attached to this resource. (AI-inferred)
+	Tags any
+	// The expected conversation turn(s) this test case verifies. (AI-inferred)
 	TestCaseConversationTurns any
-	TestConfig                any
+	// Configuration for this test run. (AI-inferred)
+	TestConfig any
 }
 
 type V3beta1TestCaseAttrs struct {
-	CreationTime              any
-	DisplayName               any
-	LastTestResult            any
-	Name                      any
-	Notes                     any
-	Tags                      any
+	// When this resource was created. (AI-inferred)
+	CreationTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The outcome of the most recent run of this test case. (AI-inferred)
+	LastTestResult any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Free-text notes attached to this resource. (AI-inferred)
+	Notes any
+	// Free-form label(s) attached to this resource. (AI-inferred)
+	Tags any
+	// The expected conversation turn(s) this test case verifies. (AI-inferred)
 	TestCaseConversationTurns any
-	TestConfig                any
+	// Configuration for this test run. (AI-inferred)
+	TestConfig any
 }
 
 var V3beta1TestCase = ubx.ResourceBinding{

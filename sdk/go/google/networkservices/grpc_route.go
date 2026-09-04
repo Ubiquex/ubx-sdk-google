@@ -4,63 +4,91 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GrpcRoute_Rules_Action_Destinations struct {
+	// The name of the service this applies to. (AI-inferred)
 	ServiceName any
-	Weight      any
+	// The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
+	Weight any
 }
 
 type GrpcRoute_Rules_Action_FaultInjectionPolicy_Abort struct {
+	// The HTTP status code returned. (AI-inferred)
 	HttpStatus any
+	// A percentage value. (AI-inferred)
 	Percentage any
 }
 
 type GrpcRoute_Rules_Action_FaultInjectionPolicy_Delay struct {
+	// A fixed delay duration applied to matching requests. (AI-inferred)
 	FixedDelay any
+	// A percentage value. (AI-inferred)
 	Percentage any
 }
 
 type GrpcRoute_Rules_Action_FaultInjectionPolicy struct {
+	// Immediately fails matching requests with a fixed status code, for fault-injection testing. (AI-inferred)
 	Abort any
+	// Configuration for artificially delaying matching requests, for fault-injection testing. (AI-inferred)
 	Delay any
 }
 
 type GrpcRoute_Rules_Action_RetryPolicy struct {
-	NumRetries      any
+	// The maximum number of times a failed request is retried. (AI-inferred)
+	NumRetries any
+	// The condition(s) (e.g. specific status codes) under which a failed request is retried. (AI-inferred)
 	RetryConditions any
 }
 
 type GrpcRoute_Rules_Action_StatefulSessionAffinity struct {
+	// How long a session-affinity cookie remains valid. (AI-inferred)
 	CookieTtl any
 }
 
 type GrpcRoute_Rules_Action struct {
-	Destinations            any
-	FaultInjectionPolicy    any
-	IdleTimeout             any
-	RetryPolicy             any
+	// The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
+	Destinations any
+	// Configuration for artificially injecting delays or aborted requests, for resilience testing. (AI-inferred)
+	FaultInjectionPolicy any
+	// How long an idle connection is kept open before being closed. (AI-inferred)
+	IdleTimeout any
+	// Configuration for automatically retrying failed requests. (AI-inferred)
+	RetryPolicy any
+	// Configuration for consistently routing a client's own requests to the same backend, using a session cookie. (AI-inferred)
 	StatefulSessionAffinity any
-	Timeout                 any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
 }
 
 type GrpcRoute_Rules_Matches_Headers struct {
-	Key   any
-	Type  any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type GrpcRoute_Rules_Matches_Method struct {
+	// Whether this path match is case-sensitive. (AI-inferred)
 	CaseSensitive any
-	GrpcMethod    any
-	GrpcService   any
-	Type          any
+	// The gRPC method this rule matches. (AI-inferred)
+	GrpcMethod any
+	// The gRPC service this rule matches. (AI-inferred)
+	GrpcService any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type GrpcRoute_Rules_Matches struct {
+	// The HTTP header(s) this applies to. (AI-inferred)
 	Headers any
-	Method  any
+	// The HTTP method this rule matches. (AI-inferred)
+	Method any
 }
 
 type GrpcRoute_Rules struct {
-	Action  any
+	// The action taken when this rule matches. (AI-inferred)
+	Action any
+	// The match condition(s) this rule evaluates. (AI-inferred)
 	Matches any
 }
 

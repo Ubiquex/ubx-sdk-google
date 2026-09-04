@@ -8,17 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LineageEvent_Links_DependencyInfo:
+    # The kind of dependency the target has on the source: `EXACT_COPY` (the target's data is copied unchanged from the source) or `OTHER` (any other transformation). (AI-inferred)
     dependency_type: Any = None
 
 @dataclasses.dataclass
 class LineageEvent_Links_Source:
+    # The specific field(s) of the source entity this link traces data from, when the lineage is tracked at field level rather than whole-entity level. (AI-inferred)
     field: Any = None
+    # The fully qualified name identifying the source entity (e.g. a BigQuery table's own `project.dataset.table` path). (AI-inferred)
     fully_qualified_name: Any = None
 
 @dataclasses.dataclass
 class LineageEvent_Links:
+    # Describes how the `target` entity in this link depends on the `source` entity -- e.g. whether the target is an exact copy of the source. (AI-inferred)
     dependency_info: Any = None
+    # A reference to the upstream entity data flowed from in this lineage link. (AI-inferred)
     source: Any = None
+    # A reference to the downstream entity data flowed to in this lineage link. (AI-inferred)
     target: Any = None
 
 _LineageEvent_Links_DependencyInfoFields = {

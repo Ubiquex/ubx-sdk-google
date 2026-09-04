@@ -4,7 +4,9 @@ package apikeys
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Key_Restrictions_AndroidKeyRestrictions_AllowedApplications struct {
-	PackageName     any
+	// The Android application's package name (e.g. `com.example.app`) this key is restricted to. (AI-inferred)
+	PackageName any
+	// The SHA-1 fingerprint of the Android app's signing certificate, restricting this key to builds signed with that certificate. (AI-inferred)
 	Sha1Fingerprint any
 }
 
@@ -14,7 +16,9 @@ type Key_Restrictions_AndroidKeyRestrictions struct {
 }
 
 type Key_Restrictions_ApiTargets struct {
+	// The specific method(s) of `service` this key is allowed to call; leaving this empty allows every method of `service`. (AI-inferred)
 	Methods any
+	// The API service this key is restricted to, e.g. `translate.googleapis.com`. Required for an API target restriction to take effect. (AI-inferred)
 	Service any
 }
 

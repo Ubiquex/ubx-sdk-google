@@ -8,16 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PublicDelegatedPrefix_PublicDelegatedSubPrefixs:
+    # The prefix length (in bits) of the sub-prefixes that can be allocated from this delegated sub-prefix. For instance, a value of 26 indicates that /26 CIDR blocks can be allocated. (AI-inferred)
     allocatable_prefix_length: Any = None
+    # The project ID or name to which this sub-prefix is delegated, allowing that project to use the delegated prefix. (AI-inferred)
     delegatee_project: Any = None
     description: Any = None
     enable_enhanced_ipv4_allocation: Any = None
+    # The IP CIDR range of this public delegated sub-prefix. (AI-inferred)
     ip_cidr_range: Any = None
+    # The access type for the IPv6 addresses in the sub-prefix. EXTERNAL means the prefix is used for publicly accessible IPv6 addresses, while INTERNAL means it is used for internal/private IPv6 addresses. (AI-inferred)
     ipv6_access_type: Any = None
+    # Specifies whether the sub-prefix is an address range (true) or a public delegated prefix (false). (AI-inferred)
     is_address: Any = None
+    # The mode of the sub-prefix, indicating how it is used. Allowed values are: DELEGATION, EXTERNAL_IPV6_FORWARDING_RULE_CREATION, EXTERNAL_IPV6_SUBNETWORK_CREATION, and INTERNAL_IPV6_SUBNETWORK_CREATION. (AI-inferred)
     mode: Any = None
+    # The name of the public delegated sub-prefix. This is used as an identifier for the sub-prefix within the public delegated prefix. (AI-inferred)
     name: Any = None
+    # The region of the sub-prefix. If not specified, the region of the parent public delegated prefix is used. (AI-inferred)
     region: Any = None
+    # The status of the public delegated sub-prefix, which can be either ACTIVE or INACTIVE. (AI-inferred)
     status: Any = None
 
 _PublicDelegatedPrefix_PublicDelegatedSubPrefixsFields = {

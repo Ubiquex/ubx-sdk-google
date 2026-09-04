@@ -8,25 +8,36 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Apiproduct_Attributes:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Apiproduct_GraphqlOperationGroup_OperationConfigs_Operations:
+    # The specific action being performed. (AI-inferred)
     operation: Any = None
+    # The kind of operation(s) this applies to. (AI-inferred)
     operation_types: Any = None
 
 @dataclasses.dataclass
 class Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota:
+    # How often this recurs. (AI-inferred)
     interval: Any = None
+    # The maximum amount allowed. (AI-inferred)
     limit: Any = None
+    # The unit of time this quota is measured over, e.g. minute or day. (AI-inferred)
     time_unit: Any = None
 
 @dataclasses.dataclass
 class Apiproduct_GraphqlOperationGroup_OperationConfigs:
+    # The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
     api_source: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The operation(s) this rule applies to. (AI-inferred)
     operations: Any = None
+    # The maximum usage allowed within a defined period. (AI-inferred)
     quota: Any = None
 
 @dataclasses.dataclass
@@ -38,10 +49,15 @@ class Apiproduct_GraphqlOperationGroup:
 
 @dataclasses.dataclass
 class Apiproduct_GrpcOperationGroup_OperationConfigs:
+    # The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
     api_source: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The HTTP method(s) this applies to. (AI-inferred)
     methods: Any = None
+    # The maximum usage allowed within a defined period. (AI-inferred)
     quota: Any = None
+    # A reference to the backend service this applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
@@ -51,15 +67,22 @@ class Apiproduct_GrpcOperationGroup:
 
 @dataclasses.dataclass
 class Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperations:
+    # The HTTP method(s) this applies to. (AI-inferred)
     methods: Any = None
+    # The name of the LLM model this applies to. (AI-inferred)
     model: Any = None
+    # A reference to the resource this applies to. (AI-inferred)
     resource: Any = None
 
 @dataclasses.dataclass
 class Apiproduct_LlmOperationGroup_OperationConfigs:
+    # The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
     api_source: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The LLM operation(s) (e.g. tokens consumed) this quota tracks. (AI-inferred)
     llm_operations: Any = None
+    # The maximum number of LLM tokens allowed within this quota period. (AI-inferred)
     llm_token_quota: Any = None
 
 @dataclasses.dataclass
@@ -69,14 +92,20 @@ class Apiproduct_LlmOperationGroup:
 
 @dataclasses.dataclass
 class Apiproduct_OperationGroup_OperationConfigs_Operations:
+    # The HTTP method(s) this applies to. (AI-inferred)
     methods: Any = None
+    # A reference to the resource this applies to. (AI-inferred)
     resource: Any = None
 
 @dataclasses.dataclass
 class Apiproduct_OperationGroup_OperationConfigs:
+    # The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
     api_source: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The operation(s) this rule applies to. (AI-inferred)
     operations: Any = None
+    # The maximum usage allowed within a defined period. (AI-inferred)
     quota: Any = None
 
 @dataclasses.dataclass
@@ -88,13 +117,18 @@ class Apiproduct_OperationGroup:
 
 @dataclasses.dataclass
 class Apiproduct_PayloadOperationGroup_OperationConfigs_Operations:
+    # The specific action being performed. (AI-inferred)
     operation: Any = None
 
 @dataclasses.dataclass
 class Apiproduct_PayloadOperationGroup_OperationConfigs:
+    # The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred)
     api_source: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The operation(s) this rule applies to. (AI-inferred)
     operations: Any = None
+    # The maximum usage allowed within a defined period. (AI-inferred)
     quota: Any = None
 
 @dataclasses.dataclass

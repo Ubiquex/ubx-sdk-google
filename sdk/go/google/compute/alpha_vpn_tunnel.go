@@ -94,7 +94,8 @@ var AlphaVpnTunnel_PqcPhase1Fields = ubx.FieldMap{
 type AlphaVpnTunnelConfig struct {
 	// Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
 	CapacityTier any
-	CipherSuite  any
+	// The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
+	CipherSuite any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// [Output Only] Detailed status message for the VPN tunnel.
@@ -119,8 +120,10 @@ type AlphaVpnTunnelConfig struct {
 	// URL of the peer side HA VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
 	PeerGcpGateway any
 	// IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
-	PeerIp    any
+	PeerIp any
+	// This tunnel's own post-quantum cryptography configuration for IKE phase 1, the initial key exchange. (AI-inferred)
 	PqcPhase1 any
+	// This tunnel's own post-quantum cryptography configuration for IKE phase 2, the IPsec security association. (AI-inferred)
 	PqcPhase2 any
 	// [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any
@@ -147,7 +150,8 @@ type AlphaVpnTunnelConfig struct {
 type AlphaVpnTunnelAttrs struct {
 	// Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
 	CapacityTier any
-	CipherSuite  any
+	// The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
+	CipherSuite any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -176,8 +180,10 @@ type AlphaVpnTunnelAttrs struct {
 	// URL of the peer side HA VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
 	PeerGcpGateway any
 	// IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
-	PeerIp    any
+	PeerIp any
+	// This tunnel's own post-quantum cryptography configuration for IKE phase 1, the initial key exchange. (AI-inferred)
 	PqcPhase1 any
+	// This tunnel's own post-quantum cryptography configuration for IKE phase 2, the IPsec security association. (AI-inferred)
 	PqcPhase2 any
 	// [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any

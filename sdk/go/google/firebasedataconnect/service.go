@@ -4,70 +4,110 @@ package firebasedataconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Service_Connectors_ClientCache struct {
-	EntityIdIncluded        any
+	// Whether the entity's own identifier is included in this result. (AI-inferred)
+	EntityIdIncluded any
+	// Whether strict schema validation is enforced. (AI-inferred)
 	StrictValidationEnabled any
 }
 
 type Service_Connectors_Source_Files struct {
+	// The literal content of this field. (AI-inferred)
 	Content any
-	Path    any
+	// A file or resource path. (AI-inferred)
+	Path any
 }
 
 type Service_Connectors_Source struct {
+	// The file(s) making up this schema or connector. (AI-inferred)
 	Files any
 }
 
 type Service_Connectors struct {
+	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
 	Annotations any
+	// Caching configuration applied on the client side. (AI-inferred)
 	ClientCache any
-	CreateTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Etag        any
-	Labels      any
-	Name        any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Output only. `true` while the backend is still working to bring this resource's actual state in line with its most recent requested change. (AI-inferred)
 	Reconciling any
-	Source      any
-	Uid         any
-	UpdateTime  any
+	// The GraphQL source document defining this schema or connector. (AI-inferred)
+	Source any
+	// Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
+	Uid any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Service_Schemas_Datasources_HttpGraphql struct {
+	// How long this operation is allowed to run before timing out. (AI-inferred)
 	Timeout any
-	Uri     any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Service_Schemas_Datasources_Postgresql_CloudSql struct {
-	Edition  any
+	// The Cloud SQL edition this instance runs, e.g. Enterprise or Enterprise Plus. (AI-inferred)
+	Edition any
+	// A reference to the underlying database instance. (AI-inferred)
 	Instance any
 }
 
 type Service_Schemas_Datasources_Postgresql struct {
-	CloudSql         any
-	Database         any
-	Ephemeral        any
-	Schema           any
-	SchemaMigration  any
+	// Configuration for connecting to a Cloud SQL database. (AI-inferred)
+	CloudSql any
+	// A reference to the database this applies to. (AI-inferred)
+	Database any
+	// Whether this resource is temporary and not intended to persist. (AI-inferred)
+	Ephemeral any
+	// The GraphQL schema defining this service's own data model. (AI-inferred)
+	Schema any
+	// How schema change(s) are applied to the underlying database. (AI-inferred)
+	SchemaMigration any
+	// How strictly the schema is validated against the underlying database before deployment. (AI-inferred)
 	SchemaValidation any
-	Unlinked         any
+	// Whether this schema is not yet linked to a data source. (AI-inferred)
+	Unlinked any
 }
 
 type Service_Schemas_Datasources struct {
+	// Configuration for exposing this connector's own operations over HTTP GraphQL. (AI-inferred)
 	HttpGraphql any
-	Postgresql  any
+	// Configuration specific to a PostgreSQL data source. (AI-inferred)
+	Postgresql any
 }
 
 type Service_Schemas struct {
+	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
 	Annotations any
-	CreateTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The data source(s) this service connects to. (AI-inferred)
 	Datasources any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Etag        any
-	Labels      any
-	Name        any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Output only. `true` while the backend is still working to bring this resource's actual state in line with its most recent requested change. (AI-inferred)
 	Reconciling any
-	Source      any
-	Uid         any
-	UpdateTime  any
+	// The GraphQL source document defining this schema or connector. (AI-inferred)
+	Source any
+	// Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
+	Uid any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var Service_Connectors_Source_FilesFields = ubx.FieldMap{

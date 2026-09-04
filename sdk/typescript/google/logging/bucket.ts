@@ -13,8 +13,11 @@ export interface Bucket_CmekSettings {
 }
 
 export interface Bucket_IndexConfigs {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The path to this field within its own containing record. (AI-inferred) */
   fieldPath?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

@@ -16,8 +16,10 @@ type Grant_Justification struct {
 }
 
 type Grant_PrivilegedAccess_GcpIamAccess_RoleBindings struct {
+	// A Common Expression Language (CEL) condition that must hold for this rule to apply. (AI-inferred)
 	ConditionExpression any
-	Role                any
+	// The IAM role this grant provides temporary access to. (AI-inferred)
+	Role any
 }
 
 type Grant_PrivilegedAccess_GcpIamAccess struct {
@@ -35,41 +37,61 @@ type Grant_PrivilegedAccess struct {
 }
 
 type Grant_Timeline_Events_ActivationFailed_Error struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Grant_Timeline_Events_ActivationFailed struct {
+	// Detail about an error that occurred. (AI-inferred)
 	Error any
 }
 
 type Grant_Timeline_Events_Approved struct {
-	Actor  any
+	// The identity that performed this action. (AI-inferred)
+	Actor any
+	// A human-readable justification supplied for this action. (AI-inferred)
 	Reason any
 }
 
 type Grant_Timeline_Events_Requested struct {
+	// The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
 	ExpireTime any
 }
 
 type Grant_Timeline_Events_Scheduled struct {
+	// The time this grant is scheduled to automatically activate. (AI-inferred)
 	ScheduledActivationTime any
 }
 
 type Grant_Timeline_Events struct {
-	Activated          any
-	ActivationFailed   any
-	Approved           any
-	Denied             any
-	Ended              any
-	EventTime          any
-	Expired            any
+	// When this grant was activated. (AI-inferred)
+	Activated any
+	// When activation of this grant failed. (AI-inferred)
+	ActivationFailed any
+	// When this grant was approved. (AI-inferred)
+	Approved any
+	// When this grant was denied. (AI-inferred)
+	Denied any
+	// When this grant's own access ended. (AI-inferred)
+	Ended any
+	// When this event occurred. (AI-inferred)
+	EventTime any
+	// When this grant expired without being activated. (AI-inferred)
+	Expired any
+	// When this grant was last modified by a process outside Privileged Access Manager. (AI-inferred)
 	ExternallyModified any
-	Requested          any
-	Revoked            any
-	Scheduled          any
-	Withdrawn          any
+	// When this grant was requested. (AI-inferred)
+	Requested any
+	// When this grant's own access was revoked before its natural expiration. (AI-inferred)
+	Revoked any
+	// When this grant's own activation is scheduled to occur. (AI-inferred)
+	Scheduled any
+	// When this grant's own request was withdrawn by its requester. (AI-inferred)
+	Withdrawn any
 }
 
 type Grant_Timeline struct {

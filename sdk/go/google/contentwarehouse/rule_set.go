@@ -4,82 +4,120 @@ package contentwarehouse
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigs struct {
+	// The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred)
 	ExemptedMembers any
-	LogType         any
+	// Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred)
+	LogType any
 }
 
 type RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs struct {
+	// Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred)
 	AuditLogConfigs any
-	Service         any
+	// The real Google Cloud service this document's own embedded IAM audit log configuration applies to. (AI-inferred)
+	Service any
 }
 
 type RuleSet_Rules_Actions_AccessControl_Policy_Bindings_Condition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// The real Common Expression Language (CEL) expression text of this document IAM policy binding's own condition. (AI-inferred)
+	Expression any
+	// The real, human-readable source location of this document IAM policy binding's own condition expression, used for error reporting. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type RuleSet_Rules_Actions_AccessControl_Policy_Bindings struct {
+	// The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
 	Condition any
-	Members   any
-	Role      any
+	// The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred)
+	Members any
+	// The real IAM role this document-level policy binding grants. (AI-inferred)
+	Role any
 }
 
 type RuleSet_Rules_Actions_AccessControl_Policy struct {
+	// Real, proposed IAM audit logging configuration this access-control action applies alongside its own policy bindings. (AI-inferred)
 	AuditConfigs any
-	Bindings     any
-	Etag         any
-	Version      any
+	// The list of `google.iam.v1.Policy` bindings, each granting a `role` to a set of `members`, optionally scoped by a `condition`. (AI-inferred)
+	Bindings any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// A real identifier for the specific version of this document schema, processor, or content that produced the element. (AI-inferred)
+	Version any
 }
 
 type RuleSet_Rules_Actions_AccessControl struct {
+	// The real operation (`ADD_POLICY_BINDING`, `REMOVE_POLICY_BINDING`, `REPLACE_POLICY_BINDING`) this access-control action performs. (AI-inferred)
 	OperationType any
-	Policy        any
+	// The real IAM policy (or policy fragment) this access-control action applies to the matching document. (AI-inferred)
+	Policy any
 }
 
 type RuleSet_Rules_Actions_AddToFolder struct {
+	// The real, target folder ID(s) an `add_to_folder`/`remove_from_folder_action` rule action operates on. (AI-inferred)
 	Folders any
 }
 
 type RuleSet_Rules_Actions_DataUpdate struct {
+	// The real, named property values a `data_update` rule action writes onto the matching document. (AI-inferred)
 	Entries any
 }
 
 type RuleSet_Rules_Actions_DataValidation struct {
+	// The real, named property conditions a `data_validation` rule action checks the matching document against. (AI-inferred)
 	Conditions any
 }
 
 type RuleSet_Rules_Actions_DeleteDocumentAction struct {
+	// Whether a `delete_document_action` real, permanently deletes the matching document rather than moving it to a recoverable trash state. (AI-inferred)
 	EnableHardDelete any
 }
 
 type RuleSet_Rules_Actions_PublishToPubSub struct {
+	// The real message payload(s) a `publish_to_pub_sub` rule action publishes. (AI-inferred)
 	Messages any
-	TopicId  any
+	// The real Pub/Sub topic a `publish_to_pub_sub` rule action publishes its own messages to. (AI-inferred)
+	TopicId any
 }
 
 type RuleSet_Rules_Actions_RemoveFromFolderAction struct {
+	// The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
 	Condition any
-	Folder    any
+	// The real, target folder ID a `remove_from_folder_action` removes the matching document from. (AI-inferred)
+	Folder any
 }
 
 type RuleSet_Rules_Actions struct {
-	AccessControl          any
-	ActionId               any
-	AddToFolder            any
-	DataUpdate             any
-	DataValidation         any
-	DeleteDocumentAction   any
-	PublishToPubSub        any
+	// A real rule action that adds, removes, or replaces an IAM policy binding on the matching document. (AI-inferred)
+	AccessControl any
+	// A real, stable identifier for this specific action within its own parent rule. (AI-inferred)
+	ActionId any
+	// A real rule action that adds the matching document to one or more `folders`. (AI-inferred)
+	AddToFolder any
+	// A real rule action that writes new property `entries` onto the matching document. (AI-inferred)
+	DataUpdate any
+	// A real rule action that checks the matching document's own properties against a set of `conditions`, failing the rule if they don't hold. (AI-inferred)
+	DataValidation any
+	// A real rule action that deletes the matching document, optionally with `enable_hard_delete` for permanent deletion. (AI-inferred)
+	DeleteDocumentAction any
+	// A real rule action that publishes one or more `messages` to a Pub/Sub `topic_id` when the rule matches. (AI-inferred)
+	PublishToPubSub any
+	// A real rule action that removes the matching document from a specific `folder`. (AI-inferred)
 	RemoveFromFolderAction any
 }
 
 type RuleSet_Rules struct {
-	Actions     any
-	Condition   any
+	// The real, ordered action(s) a matching `google_contentwarehouse_rule_set` rule runs when its own `condition` and `trigger_type` match. (AI-inferred)
+	Actions any
+	// The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
+	Condition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	RuleId      any
+	// A real, stable identifier for this rule within its own parent rule set. (AI-inferred)
+	RuleId any
+	// The real document lifecycle event (`ON_CREATE`, `ON_UPDATE`, `ON_CREATE_LINK`, `ON_DELETE_LINK`) that evaluates this rule. (AI-inferred)
 	TriggerType any
 }
 

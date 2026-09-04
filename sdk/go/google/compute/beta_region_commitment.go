@@ -432,7 +432,8 @@ type BetaRegionCommitmentConfig struct {
 	// [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
 	CustomEndTimestamp any
 	// An optional description of the commitment. You can provide this property when you create the resource.
-	Description          any
+	Description any
+	// The existing reservation resource(s) this commitment applies its own discount to. (AI-inferred)
 	ExistingReservations any
 	// Commitment for a particular license resource.
 	LicenseResource any
@@ -470,7 +471,8 @@ type BetaRegionCommitmentAttrs struct {
 	// An optional description of the commitment. You can provide this property when you create the resource.
 	Description any
 	// Output only. [Output Only] Commitment end time inRFC3339 text format.
-	EndTimestamp         any
+	EndTimestamp any
+	// The existing reservation resource(s) this commitment applies its own discount to. (AI-inferred)
 	ExistingReservations any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any

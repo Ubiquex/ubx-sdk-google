@@ -4,7 +4,9 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route_AsPaths struct {
-	AsLists         any
+	// A list of autonomous system (AS) numbers that form the AS path for the route, ordered according to the path segment type (AS_SEQUENCE or AS_SET). (AI-inferred)
+	AsLists any
+	// The type of BGP AS path segment, indicating the ordering and confederation scope of the AS numbers in the segment. Possible values are: AS_SEQUENCE (ordered set of AS numbers), AS_SET (unordered set), AS_CONFED_SEQUENCE (ordered set within a confederation), AS_CONFED_SET (unordered set within a confederation). (AI-inferred)
 	PathSegmentType any
 }
 
@@ -14,13 +16,18 @@ type Route_Params struct {
 }
 
 type Route_Warnings_Data struct {
-	Key   any
+	// The key of the key-value pair that provides additional information in the warning data. (AI-inferred)
+	Key any
+	// The value associated with a key in a warning data pair. This provides additional machine-readable details about the warning. (AI-inferred)
 	Value any
 }
 
 type Route_Warnings struct {
-	Code    any
-	Data    any
+	// A warning code that identifies the type of warning. Possible values include CLEANUP_FAILED, DEPRECATED_RESOURCE_USED, DEPRECATED_TYPE_USED, DISK_SIZE_LARGER_THAN_IMAGE_SIZE, EXPERIMENTAL_TYPE_USED, EXTERNAL_API_WARNING, FIELD_VALUE_OVERRIDEN, INJECTED_KERNELS_DEPRECATED, INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB, LARGE_DEPLOYMENT_WARNING, LIST_OVERHEAD_QUOTA_EXCEED, MISSING_TYPE_DEPENDENCY, NEXT_HOP_ADDRESS_NOT_ASSIGNED, NEXT_HOP_CANNOT_IP_FORWARD, NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE, NEXT_HOP_INSTANCE_NOT_FOUND, NEXT_HOP_INSTANCE_NOT_ON_NETWORK, NEXT_HOP_NOT_RUNNING, NOT_CRITICAL_ERROR, NO_RESULTS_ON_PAGE, PARTIAL_SUCCESS, QUOTA_INFO_UNAVAILABLE, REQUIRED_TOS_AGREEMENT, RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING, RESOURCE_NOT_DELETED, SCHEMA_VALIDATION_IGNORED, SINGLE_INSTANCE_PROPERTY_TEMPLATE, UNDECLARED_PROPERTIES, UNREACHABLE. (AI-inferred)
+	Code any
+	// A list of key-value pairs containing additional details about the warning. Each object in the list has a 'key' and a 'value' field that provide context for the warning message. (AI-inferred)
+	Data any
+	// A human-readable warning message describing the issue or condition associated with the route, as returned by the Compute Engine API. (AI-inferred)
 	Message any
 }
 

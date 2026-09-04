@@ -70,111 +70,175 @@ class QueuedResource_State:
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_MultisliceParams:
+    # The real number of TPU nodes (slices) to provision together as part of this multislice deployment. (AI-inferred)
     node_count: Any = None
+    # The real prefix used to name each individual TPU node created as part of this multislice deployment. (AI-inferred)
     node_id_prefix: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfig:
+    # The real physical TPU chip topology (e.g. `2x2x1`) this node's own accelerator is arranged in. (AI-inferred)
     topology: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKey:
+    # The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
     kms_key_name: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig:
+    # A real, customer-managed Cloud KMS encryption key used to encrypt this TPU node's own boot disk. (AI-inferred)
     customer_encryption_key: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_DataDisks:
+    # The real access mode (`READ_WRITE` or `READ_ONLY`) this data disk is attached to the TPU node with. (AI-inferred)
     mode: Any = None
+    # The real Compute Engine disk this TPU node's own data disk is created from or attached to. (AI-inferred)
     source_disk: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_NetworkConfig:
+    # Whether this TPU node's own network interface allows sending packets with a source IP different from its own (IP forwarding). (AI-inferred)
     can_ip_forward: Any = None
+    # Whether this TPU node's own network interface has an external (public) IP address. (AI-inferred)
     enable_external_ips: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real number of network queues configured for this TPU node's own network interface. (AI-inferred)
     queue_count: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfig:
+    # The real, assigned external (public) IP address for this TPU node's own network endpoint. (AI-inferred)
     external_ip: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints:
+    # Real, external-access configuration (such as the assigned `external_ip`) for this TPU node's own network endpoint. (AI-inferred)
     access_config: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The real network port this TPU node's own network endpoint listens on. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_SchedulingConfig:
+    # Whether this TPU node is real, preemptible, meaning Google Cloud may reclaim it on short notice at a reduced price. (AI-inferred)
     preemptible: Any = None
+    # Whether this TPU node real, consumes capacity from an existing TPU reservation rather than on-demand capacity. (AI-inferred)
     reserved: Any = None
+    # Whether this TPU node is real, provisioned as Spot capacity, priced lower but reclaimable at any time. (AI-inferred)
     spot: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_ServiceAccount:
+    # The real service account email this TPU node runs as when calling other Google Cloud APIs. (AI-inferred)
     email: Any = None
+    # The real OAuth scopes granted to this TPU node's own service account. (AI-inferred)
     scope: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfig:
+    # Whether Shielded VM Secure Boot is real, enabled for this TPU node. (AI-inferred)
     enable_secure_boot: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_Symptoms:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Real, additional detail text describing this detected TPU node symptom. (AI-inferred)
     details: Any = None
+    # The real, detected category of issue (e.g. `OUT_OF_MEMORY`, `HBM_OUT_OF_MEMORY`) affecting this TPU node. (AI-inferred)
     symptom_type: Any = None
+    # The real, specific TPU worker this symptom was detected on, within a multi-worker TPU node. (AI-inferred)
     worker_id: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenance:
+    # Whether this TPU node's own upcoming maintenance can be rescheduled by the owner to a different window. (AI-inferred)
     can_reschedule: Any = None
+    # The real, latest possible start time for this TPU node's own upcoming maintenance window. (AI-inferred)
     latest_window_start_time: Any = None
+    # The real, current status (`PENDING` or `ONGOING`) of this TPU node's own upcoming maintenance. (AI-inferred)
     maintenance_status: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The real end time of this TPU node's own currently scheduled maintenance window. (AI-inferred)
     window_end_time: Any = None
+    # The real start time of this TPU node's own currently scheduled maintenance window. (AI-inferred)
     window_start_time: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec_Node:
+    # The real TPU accelerator configuration (`type`, `topology`) this node requests. (AI-inferred)
     accelerator_config: Any = None
+    # The real, legacy-style TPU accelerator type string (e.g. `v3-8`) this node uses, an alternative to the newer `accelerator_config`. (AI-inferred)
     accelerator_type: Any = None
+    # The real TPU API version (e.g. `V2`) this node was created against. (AI-inferred)
     api_version: Any = None
+    # Real boot disk configuration for this TPU node, including its own `customer_encryption_key`. (AI-inferred)
     boot_disk_config: Any = None
+    # The real CIDR range this TPU node's own network is allocated from. (AI-inferred)
     cidr_block: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Real, additional persistent disks attached to this TPU node beyond its own boot disk. (AI-inferred)
     data_disks: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The real, current health status (e.g. `HEALTHY`, `UNHEALTHY_TENSORFLOW`) of this TPU node. (AI-inferred)
     health: Any = None
+    # Real, additional detail explaining this TPU node's own current `health` status. (AI-inferred)
     health_description: Any = None
+    # The real, numeric identifier Google Cloud assigned to this TPU node. (AI-inferred)
     id: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # Real, custom Compute Engine-style metadata key/value pairs attached to this TPU node. (AI-inferred)
     metadata: Any = None
+    # Whether this TPU node is real, part of a multislice deployment rather than a standalone node. (AI-inferred)
     multislice_node: Any = None
+    # The real, fully-qualified resource name of this TPU node. (AI-inferred)
     name: Any = None
+    # The real primary network configuration (VPC, subnetwork, IP forwarding) for this TPU node. (AI-inferred)
     network_config: Any = None
+    # Real, additional network interface configurations for this TPU node, for a node attached to more than one network. (AI-inferred)
     network_configs: Any = None
+    # The real IP address and port endpoints this TPU node's own workers are reachable at. (AI-inferred)
     network_endpoints: Any = None
+    # A reference to the real `google_tpu_tpu_queued_resource` this TPU node was created from, if it was created via a queued request. (AI-inferred)
     queued_resource: Any = None
+    # The real TPU software runtime version (e.g. `tpu-vm-tf-2.16.1-pod`) this node runs. (AI-inferred)
     runtime_version: Any = None
+    # Real scheduling configuration (`preemptible`, `reserved`, `spot`) controlling how this TPU node's own capacity is allocated. (AI-inferred)
     scheduling_config: Any = None
+    # The real Google Cloud service account (email and OAuth scopes) this TPU node runs as. (AI-inferred)
     service_account: Any = None
+    # Real Shielded VM configuration (such as `enable_secure_boot`) for this TPU node. (AI-inferred)
     shielded_instance_config: Any = None
+    # The real, current lifecycle state (e.g. `CREATING`, `READY`, `STOPPED`) of this TPU node. (AI-inferred)
     state: Any = None
+    # Real, detected health symptoms (such as out-of-memory events) reported for this TPU node. (AI-inferred)
     symptoms: Any = None
+    # Real Compute Engine network tags applied to this TPU node, used to match firewall rules. (AI-inferred)
     tags: Any = None
+    # Real, upcoming Google-initiated maintenance information for this TPU node, if any is scheduled. (AI-inferred)
     upcoming_maintenance: Any = None
 
 @dataclasses.dataclass
 class QueuedResource_Tpu_NodeSpec:
+    # Real configuration for provisioning this TPU as a multislice deployment (multiple coordinated TPU slices working as one training job). (AI-inferred)
     multislice_params: Any = None
+    # The real TPU node configuration this queued resource request will provision once capacity becomes available. (AI-inferred)
     node: Any = None
+    # The real, user-assigned ID for the TPU node created once this queued resource request is allocated. (AI-inferred)
     node_id: Any = None
+    # The resource name of the parent collection this resource is created under or listed from. (AI-inferred)
     parent: Any = None
 
 @dataclasses.dataclass

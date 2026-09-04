@@ -8,26 +8,38 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomTargetType_CustomActions_IncludeSkaffoldModules_Git:
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # A reference to the source repository. (AI-inferred)
     repo: Any = None
 
 @dataclasses.dataclass
 class CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo:
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # A reference to the source repository. (AI-inferred)
     repository: Any = None
 
 @dataclasses.dataclass
 class CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage:
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # The source this data or configuration is read from. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class CustomTargetType_CustomActions_IncludeSkaffoldModules:
+    # The configuration(s) making up this resource. (AI-inferred)
     configs: Any = None
+    # Configuration for reading this deployment's own manifests from a Git repository. (AI-inferred)
     git: Any = None
+    # A reference to the Cloud Build-connected repository this reads from. (AI-inferred)
     google_cloud_build_repo: Any = None
+    # Configuration for reading this deployment's own manifests from Cloud Storage. (AI-inferred)
     google_cloud_storage: Any = None
 
 @dataclasses.dataclass

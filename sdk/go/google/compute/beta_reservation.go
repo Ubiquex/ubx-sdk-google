@@ -335,7 +335,8 @@ type BetaReservationConfig struct {
 	// Advance control for cluster management, applicable only to DENSE deployment type reservations.
 	AdvancedDeploymentControl any
 	// This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
-	AggregateReservation    any
+	AggregateReservation any
+	// The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
 	ConfidentialComputeType any
 	// A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
 	DeleteAfterDuration any
@@ -378,7 +379,8 @@ type BetaReservationAttrs struct {
 	// This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
 	AggregateReservation any
 	// Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
-	Commitment              any
+	Commitment any
+	// The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
 	ConfidentialComputeType any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any

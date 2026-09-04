@@ -11,8 +11,10 @@ type Service_AgentSpec struct {
 }
 
 type Service_Interfaces struct {
+	// The communication protocol this interface accepts requests over: `JSONRPC`, `GRPC`, or `HTTP_JSON`. Tells Agent Registry which wire format to use when routing traffic to the interface's own `url`. (AI-inferred)
 	ProtocolBinding any
-	Url             any
+	// The target URL Agent Registry sends requests to for this interface, for example `https://api.example.com/v1/data`. (AI-inferred)
+	Url any
 }
 
 var Service_AgentSpecFields = ubx.FieldMap{

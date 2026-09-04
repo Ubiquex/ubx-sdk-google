@@ -2,23 +2,35 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface App_Attributes {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface App_Credentials_ApiProducts {
+  /** A reference to the API product this applies to. (AI-inferred) */
   apiproduct?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface App_Credentials {
+  /** The API product(s) this applies to. (AI-inferred) */
   apiProducts?: App_Credentials_ApiProducts[] | Computed<App_Credentials_ApiProducts[]>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: App_Attributes[] | Computed<App_Attributes[]>;
+  /** The API key issued to this app for calling APIs. (AI-inferred) */
   consumerKey?: string | Computed<string>;
+  /** The secret paired with `consumer_key` for OAuth authentication. (AI-inferred) */
   consumerSecret?: string | Computed<string>;
+  /** When this resource expires. (AI-inferred) */
   expiresAt?: string | Computed<string>;
+  /** When this certificate was issued. (AI-inferred) */
   issuedAt?: string | Computed<string>;
+  /** The OAuth scope(s) requested. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
+  /** The current status of this resource. (AI-inferred) */
   status?: string | Computed<string>;
 }
 

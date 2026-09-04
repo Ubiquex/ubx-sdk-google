@@ -4,15 +4,22 @@ package ftp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type User_StorageDirectoryMappings struct {
-	Bucket       any
+	// The real Cloud Storage bucket this FTP user's own storage directory mapping points at. (AI-inferred)
+	Bucket any
+	// The real object key prefix within `bucket` this storage directory mapping scopes the FTP user's access to. (AI-inferred)
 	BucketPrefix any
-	Directory    any
-	Permission   any
+	// The real, virtual FTP directory path this storage directory mapping exposes to the user. (AI-inferred)
+	Directory any
+	// The real access level (`READ_ONLY` or `READ_WRITE`) this storage directory mapping grants the FTP user. (AI-inferred)
+	Permission any
 }
 
 type User_UserCredentials struct {
-	CredentialName   any
-	CredentialType   any
+	// A real, client-assigned name identifying this FTP user credential. (AI-inferred)
+	CredentialName any
+	// The real credential type (currently only `PUBLIC_KEY`) this FTP user credential uses. (AI-inferred)
+	CredentialType any
+	// The real, raw SSH public key body authorized for this FTP user credential. (AI-inferred)
 	SshPublicKeyBody any
 }
 

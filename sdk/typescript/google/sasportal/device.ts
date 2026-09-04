@@ -76,12 +76,16 @@ export interface Device_ActiveConfig {
 }
 
 export interface Device_CurrentChannels_FrequencyRange {
+  /** The real, upper bound of this frequency range, in MHz. (AI-inferred) */
   highFrequencyMhz?: number | Computed<number>;
+  /** The real, lower bound of this frequency range, in MHz. (AI-inferred) */
   lowFrequencyMhz?: number | Computed<number>;
 }
 
 export interface Device_CurrentChannels {
+  /** The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred) */
   frequencyRange?: Device_CurrentChannels_FrequencyRange | Computed<Device_CurrentChannels_FrequencyRange>;
+  /** A real, SAS-computed suitability score for this available channel. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
@@ -112,19 +116,30 @@ export interface Device_DeviceMetadata {
 }
 
 export interface Device_Grants_MoveList {
+  /** The real identifier of the Dynamic Protection Area this move-list entry protects. (AI-inferred) */
   dpaId?: string | Computed<string>;
+  /** The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred) */
   frequencyRange?: Device_CurrentChannels_FrequencyRange | Computed<Device_CurrentChannels_FrequencyRange>;
 }
 
 export interface Device_Grants {
+  /** The real CBRS channel access tier (`CHANNEL_TYPE_GAA` general access, or `CHANNEL_TYPE_PAL` priority access) this device was granted. (AI-inferred) */
   channelType?: string | Computed<string>;
+  /** The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred) */
   expireTime?: string | Computed<string>;
+  /** The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred) */
   frequencyRange?: Device_CurrentChannels_FrequencyRange | Computed<Device_CurrentChannels_FrequencyRange>;
+  /** The real, SAS-assigned identifier for this spectrum grant. (AI-inferred) */
   grantId?: string | Computed<string>;
+  /** The real timestamp after which this device's own transmit authorization expires unless it sends another real heartbeat to the SAS. (AI-inferred) */
   lastHeartbeatTransmitExpireTime?: string | Computed<string>;
+  /** The real maximum Effective Isotropic Radiated Power, in dBm/MHz, this grant authorizes the device to transmit at. (AI-inferred) */
   maxEirp?: number | Computed<number>;
+  /** The real list of incumbent (protected) users this device's own grant must move off frequency for, if one becomes active nearby. (AI-inferred) */
   moveList?: Device_Grants_MoveList[] | Computed<Device_Grants_MoveList[]>;
+  /** The real, current state (`GRANT_STATE_GRANTED`, `GRANT_STATE_SUSPENDED`, `GRANT_STATE_TERMINATED`, etc.) of this spectrum grant. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The real, specific reason code(s) this grant is currently suspended, when its own `state` is suspended. (AI-inferred) */
   suspensionReason?: string[] | Computed<string[]>;
 }
 

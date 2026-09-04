@@ -9,37 +9,56 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class BackendService_Backends_CustomMetrics:
     dry_run: Any = None
+    # The maximum ratio of the custom metric's actual value to its target value. If a backend's metric exceeds this ratio, the load balancer considers it over-utilized and stops sending it new requests. (AI-inferred)
     max_utilization: Any = None
+    # The name of the custom metric used for load balancing this backend. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class BackendService_Backends_OrchestrationInfo:
+    # The URI of the resource being orchestrated by this backend, such as an Instance Group Manager. (AI-inferred)
     resource_uri: Any = None
 
 @dataclasses.dataclass
 class BackendService_Backends:
+    # Specifies the balancing mode for this backend, which determines how traffic is distributed among instances. Valid values are CONNECTION (based on connection count), UTILIZATION (based on CPU utilization), RATE (based on requests per second), IN_FLIGHT (based on in-flight requests), and CUSTOM_METRICS (based on custom metrics). (AI-inferred)
     balancing_mode: Any = None
+    # The capacity scaler for this backend, a floating-point value between 0 and 1. It determines the fraction of traffic that this backend will receive, with 1 (default) meaning full capacity. (AI-inferred)
     capacity_scaler: Any = None
     custom_metrics: Any = None
     description: Any = None
+    # If true, this backend is used only as a failover backend, meaning it receives traffic only when all other backends in the service are unhealthy. (AI-inferred)
     failover: Any = None
+    # The fully-qualified URL of a zonal or regional instance group, network endpoint group (NEG), or other backend resource that serves traffic for this backend service. This is required for each backend. (AI-inferred)
     group: Any = None
+    # Maximum number of connections to the backend. This applies when the balancing mode is CONNECTION and is used to determine backend capacity. (AI-inferred)
     max_connections: Any = None
+    # The maximum number of simultaneous connections allowed per backend endpoint (e.g., per instance in an instance group). This field is used when the backend's balancing mode is 'CONNECTION' and the protocol is TCP or UDP; a value of 0 indicates no limit. (AI-inferred)
     max_connections_per_endpoint: Any = None
     max_connections_per_instance: Any = None
+    # The maximum number of simultaneous in-flight requests allowed for this backend. If not set, the default is 1024. (AI-inferred)
     max_in_flight_requests: Any = None
+    # The maximum number of simultaneous (in-flight) requests allowed per backend endpoint. This setting can be used to protect endpoints from being overwhelmed by concurrent requests. (AI-inferred)
     max_in_flight_requests_per_endpoint: Any = None
+    # The maximum number of outstanding (in-flight) requests that a single backend instance can receive. This setting limits the number of simultaneous requests to an instance, helping to prevent overload in the backend service. (AI-inferred)
     max_in_flight_requests_per_instance: Any = None
+    # The maximum requests per second (RPS) that the backend can handle. Used only when the backend's balancing mode is RATE. (AI-inferred)
     max_rate: Any = None
+    # The maximum number of requests per second (RPS) that each endpoint (instance) in this backend is allowed to handle. This setting is used for capacity-based load balancing and applies only when the backend service's load balancing protocol supports rate-based distribution. (AI-inferred)
     max_rate_per_endpoint: Any = None
+    # The maximum rate (in requests per second) that each instance in the backend instance group is allowed to receive. This setting is used when the balancing mode is RATE. (AI-inferred)
     max_rate_per_instance: Any = None
+    # The maximum utilization threshold for the backend, expressed as a fraction. This is used when the backend's balancing mode is set to UTILIZATION, and the backend is considered at capacity when its utilization reaches this value. (AI-inferred)
     max_utilization: Any = None
     orchestration_info: Any = None
+    # Specifies the preference of this backend within the backend service. This field is used by load balancing policies that differentiate between preferred and default backends. Allowed values are DEFAULT, PREFERENCE_UNSPECIFIED, and PREFERRED. (AI-inferred)
     preference: Any = None
+    # Specifies whether the backend is expected to handle long-lived or short-lived traffic. Allowed values are LONG, SHORT, and TRAFFIC_DURATION_UNSPECIFIED. (AI-inferred)
     traffic_duration: Any = None
 
 @dataclasses.dataclass
 class BackendService_CdnPolicy_BypassCacheOnRequestHeaders:
+    # The name of the request header that, when present in the request, triggers bypassing the cache. The header name must be a valid HTTP header name. (AI-inferred)
     header_name: Any = None
 
 @dataclasses.dataclass
@@ -61,7 +80,9 @@ class BackendService_CdnPolicy_CacheKeyPolicy:
 
 @dataclasses.dataclass
 class BackendService_CdnPolicy_NegativeCachingPolicy:
+    # HTTP status code for which negative caching is applied (e.g., 404, 405, 500). (AI-inferred)
     code: Any = None
+    # The TTL (in seconds) for which to cache responses with the corresponding status code in the negative caching policy. (AI-inferred)
     ttl: Any = None
 
 @dataclasses.dataclass
@@ -168,6 +189,7 @@ class BackendService_HaPolicy_Leader_NetworkEndpoint:
 class BackendService_HaPolicy_Leader:
     # A fully-qualified URL (starting with https://www.googleapis.com/) of the zonal Network Endpoint Group (NEG) with `GCE_VM_IP` endpoints that the leader is attached to. The leader's backendGroup must already be specified as a backend of this backend service. Removing a backend that is designated as the leader's backendGroup is not permitted.
     backend_group: Any = None
+    # The network endpoint to be designated as the leader in the high-availability policy. This object identifies the specific endpoint that holds the leader role. (AI-inferred)
     network_endpoint: Any = None
 
 @dataclasses.dataclass
@@ -189,16 +211,20 @@ class BackendService_Iap:
 
 @dataclasses.dataclass
 class BackendService_LocalityLbPolicies_CustomPolicy:
+    # The data to be passed to the custom policy, as a string. (AI-inferred)
     data: Any = None
     name: Any = None
 
 @dataclasses.dataclass
 class BackendService_LocalityLbPolicies_Policy:
+    # The name of the load balancing policy. Must be one of: INVALID_LB_POLICY, LEAST_REQUEST, MAGLEV, ORIGINAL_DESTINATION, RANDOM, RING_HASH, ROUND_ROBIN, WEIGHTED_GCP_RENDEZVOUS, WEIGHTED_MAGLEV, WEIGHTED_ROUND_ROBIN. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class BackendService_LocalityLbPolicies:
+    # Configuration for a custom load balancing policy applied to a specific locality. This object defines a user-defined policy where a built-in policy is not used. (AI-inferred)
     custom_policy: Any = None
+    # Configuration for the locality load balancing policy. This object defines the standard load balancing algorithm and its optional settings within a locality LB policy. (AI-inferred)
     policy: Any = None
 
 @dataclasses.dataclass
@@ -225,6 +251,7 @@ class BackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinity:
 
 @dataclasses.dataclass
 class BackendService_NetworkPassThroughLbTrafficPolicy:
+    # Configures zonal affinity for the load balancer, which influences whether traffic is steered to backends in the same zone as the client. (AI-inferred)
     zonal_affinity: Any = None
 
 @dataclasses.dataclass
@@ -279,11 +306,14 @@ class BackendService_SecuritySettings:
 
 @dataclasses.dataclass
 class BackendService_Subsetting:
+    # The subsetting policy for this backend service. Allowed values are `CONSISTENT_HASH_SUBSETTING` and `NONE`. (AI-inferred)
     policy: Any = None
 
 @dataclasses.dataclass
 class BackendService_TlsSettings_SubjectAltNames:
+    # The DNS name to be included in the subject alternative names for TLS validation. This is used when the backend service’s TLS settings specify a DNS SAN. (AI-inferred)
     dns_name: Any = None
+    # A uniform resource identifier (URI) to be used as a subject alternative name for the backend service's TLS certificate. (AI-inferred)
     uniform_resource_identifier: Any = None
 
 @dataclasses.dataclass
@@ -299,6 +329,7 @@ class BackendService_TlsSettings:
 
 @dataclasses.dataclass
 class BackendService_UsedBy:
+    # The URL of the resource that references (uses) this backend service. (AI-inferred)
     reference: Any = None
 
 _BackendService_Backends_CustomMetricsFields = {
@@ -624,6 +655,7 @@ class BackendServiceConfig:
     failover_policy: Any = None
     # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
     fingerprint: Any = None
+    # The high availability (HA) policy for the backend service, which can include an HA mode (e.g., ACTIVE or INACTIVE) controlling cross-region failover behavior. (AI-inferred)
     ha_policy: Any = None
     # The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy.
     health_checks: Any = None
@@ -649,6 +681,7 @@ class BackendServiceConfig:
     name: Any = None
     # The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
     network: Any = None
+    # The network pass-through load balancer traffic policy for this backend service. This field is output-only and populated by the API with the effective traffic handling configuration for pass-through load balancers. (AI-inferred)
     network_pass_through_lb_traffic_policy: Any = None
     # A message containing information about the resource or system that manages the backend service.
     orchestration_info: Any = None
@@ -680,6 +713,7 @@ class BackendServiceConfig:
     subsetting: Any = None
     # The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
     timeout_sec: Any = None
+    # Settings for authenticating the backend service with a client certificate. (AI-inferred)
     tls_settings: Any = None
 
 @dataclasses.dataclass
@@ -722,6 +756,7 @@ class BackendServiceAttrs:
     failover_policy: Any = None
     # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
     fingerprint: Any = None
+    # The high availability (HA) policy for the backend service, which can include an HA mode (e.g., ACTIVE or INACTIVE) controlling cross-region failover behavior. (AI-inferred)
     ha_policy: Any = None
     # The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy.
     health_checks: Any = None
@@ -749,6 +784,7 @@ class BackendServiceAttrs:
     name: Any = None
     # The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
     network: Any = None
+    # The network pass-through load balancer traffic policy for this backend service. This field is output-only and populated by the API with the effective traffic handling configuration for pass-through load balancers. (AI-inferred)
     network_pass_through_lb_traffic_policy: Any = None
     # A message containing information about the resource or system that manages the backend service.
     orchestration_info: Any = None
@@ -782,6 +818,7 @@ class BackendServiceAttrs:
     subsetting: Any = None
     # The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
     timeout_sec: Any = None
+    # Settings for authenticating the backend service with a client certificate. (AI-inferred)
     tls_settings: Any = None
     # Output only. [Output Only] List of resources referencing given backend service.
     used_by: Any = None

@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityFeedback_FeedbackContexts:
+    # A custom key/value attribute. (AI-inferred)
     attribute: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 _SecurityFeedback_FeedbackContextsFields = {

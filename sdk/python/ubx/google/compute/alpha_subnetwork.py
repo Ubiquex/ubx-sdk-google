@@ -173,6 +173,7 @@ class AlphaSubnetworkConfig:
     private_ip_google_access: Any = None
     # This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
     private_ipv6_google_access: Any = None
+    # What this subnetwork is used for, e.g. a regular subnet or a regional managed proxy subnet for internal HTTP(S) load balancing. (AI-inferred)
     purpose: Any = None
     # URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
     region: Any = None
@@ -249,6 +250,7 @@ class AlphaSubnetworkAttrs:
     private_ip_google_access: Any = None
     # This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
     private_ipv6_google_access: Any = None
+    # What this subnetwork is used for, e.g. a regular subnet or a regional managed proxy subnet for internal HTTP(S) load balancing. (AI-inferred)
     purpose: Any = None
     # URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
     region: Any = None

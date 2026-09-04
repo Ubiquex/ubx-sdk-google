@@ -2,59 +2,93 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FirewallPolicy_Associations {
+  /** The full resource name of the folder or organization that this firewall policy is associated with. (AI-inferred) */
   attachmentTarget?: string | Computed<string>;
   displayName?: string | Computed<string>;
+  /** The unique ID of the firewall policy to associate with the target. (AI-inferred) */
   firewallPolicyId?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** A short, unique identifier for the association within the firewall policy, used for display and management purposes. (AI-inferred) */
   shortName?: string | Computed<string>;
 }
 
 export interface FirewallPolicy_PacketMirroringRules_Match_Layer4Configs {
+  /** The IP protocol to match. Accepts protocol names such as tcp, udp, icmp, esp, ah, ipip, sctp, a numeric IP protocol number, or 'all' to match any protocol. (AI-inferred) */
   ipProtocol?: string | Computed<string>;
+  /** Specifies the list of destination port numbers or ranges to match for this layer4 configuration. Each entry is a string, e.g., '80' or '8000-9000'. If omitted, the rule matches all ports. (AI-inferred) */
   ports?: string[] | Computed<string[]>;
 }
 
 export interface FirewallPolicy_PacketMirroringRules_Match_SrcSecureTags {
+  /** The name of the Secure Tag value to match in the source of the packet. This is the full resource name, such as `tagValues/123456789`. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The state of the secure tag, indicating whether it is currently effective or ineffective. Allowed values are 'EFFECTIVE' and 'INEFFECTIVE'. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface FirewallPolicy_PacketMirroringRules_Match {
+  /** List of destination address groups that define the destination IP addresses to match in the packet mirroring rule. (AI-inferred) */
   destAddressGroups?: string[] | Computed<string[]>;
+  /** A list of destination fully qualified domain names (FQDNs) used by the match criteria for packet mirroring rules. Traffic mirrored by the rule must be destined to one of the specified FQDNs. (AI-inferred) */
   destFqdns?: string[] | Computed<string[]>;
+  /** A list of destination IP address ranges in CIDR format. Traffic whose destination IP falls within any of these ranges matches this packet mirroring rule. (AI-inferred) */
   destIpRanges?: string[] | Computed<string[]>;
+  /** Specifies the network context of the destination traffic that this rule matches. Valid values are INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred) */
   destNetworkContext?: string | Computed<string>;
+  /** The destination network type to match for packet mirroring. The allowed values are: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred) */
   destNetworkType?: string | Computed<string>;
+  /** A list of destination region codes (for example, 'us-central1') that the packet mirroring rule matches on. The rule applies only to packets with a destination in one of the specified regions. (AI-inferred) */
   destRegionCodes?: string[] | Computed<string[]>;
+  /** A list of threat intelligence feeds to match against the destination IP address of the traffic. (AI-inferred) */
   destThreatIntelligences?: string[] | Computed<string[]>;
+  /** A list of layer 4 configurations used to match packets based on protocol and port. Each configuration specifies the IP protocol (such as TCP, UDP, ICMP) and an optional list of destination ports, allowing the firewall policy rule to apply to specific traffic types. (AI-inferred) */
   layer4Configs?: FirewallPolicy_PacketMirroringRules_Match_Layer4Configs[] | Computed<FirewallPolicy_PacketMirroringRules_Match_Layer4Configs[]>;
+  /** A list of full resource URLs to network address groups used as the source address match. Packets from sources that belong to these groups are mirrored. (AI-inferred) */
   srcAddressGroups?: string[] | Computed<string[]>;
+  /** The list of fully qualified domain names (FQDNs) that the rule uses as the source match condition. Traffic originating from these FQDNs matches the rule. (AI-inferred) */
   srcFqdns?: string[] | Computed<string[]>;
+  /** A list of source IP address ranges in CIDR notation that the packet mirroring rule matches on. If specified, the rule only applies to traffic originating from these ranges. (AI-inferred) */
   srcIpRanges?: string[] | Computed<string[]>;
+  /** Specifies the source network context for matching traffic. Allowed values are: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred) */
   srcNetworkContext?: string | Computed<string>;
+  /** The type of source network that the rule matches. Valid values are INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred) */
   srcNetworkType?: string | Computed<string>;
+  /** List of source CIDR networks to match. Traffic from any of these source IP ranges will match the rule and be mirrored. Each entry must be a valid CIDR block, for example: '10.0.0.0/8'. (AI-inferred) */
   srcNetworks?: string[] | Computed<string[]>;
+  /** Specifies the list of source region codes (e.g., 'us-central1', 'europe-west1') from which traffic must originate for the rule to apply. (AI-inferred) */
   srcRegionCodes?: string[] | Computed<string[]>;
+  /** List of secure tags used to match source resources for this packet mirroring rule. Traffic originating from any resource carrying one of these tags will be mirrored. (AI-inferred) */
   srcSecureTags?: FirewallPolicy_PacketMirroringRules_Match_SrcSecureTags[] | Computed<FirewallPolicy_PacketMirroringRules_Match_SrcSecureTags[]>;
+  /** A list of threat intelligence sources used to match the source IP address of traffic. If specified, the rule applies only to traffic whose source IP is identified by one of the listed threat intelligence feeds. (AI-inferred) */
   srcThreatIntelligences?: string[] | Computed<string[]>;
 }
 
 export interface FirewallPolicy_PacketMirroringRules {
   action?: string | Computed<string>;
+  /** An optional user-defined description for this packet mirroring rule within the firewall policy. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Specifies the direction of traffic to which this packet mirroring rule applies. Valid values are 'INGRESS' and 'EGRESS'. (AI-inferred) */
   direction?: string | Computed<string>;
+  /** Whether this packet mirroring rule is disabled. When set to true, the rule is not enforced. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
   enableLogging?: boolean | Computed<boolean>;
   kind?: string | Computed<string>;
+  /** The match criteria that specify which network traffic is subject to this packet mirroring rule. (AI-inferred) */
   match?: FirewallPolicy_PacketMirroringRules_Match | Computed<FirewallPolicy_PacketMirroringRules_Match>;
+  /** The priority of this packet mirroring rule. Lower values are evaluated first. Must be an integer between 0 and 65535. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** The name of the packet mirroring rule. This is a user-provided name used to identify the rule in the firewall policy. (AI-inferred) */
   ruleName?: string | Computed<string>;
   ruleTupleCount?: number | Computed<number>;
   securityProfileGroup?: string | Computed<string>;
+  /** List of forwarding rule URLs that are the target of the packet mirroring rule. Traffic sent to these forwarding rules is mirrored to the collector. (AI-inferred) */
   targetForwardingRules?: string[] | Computed<string[]>;
   targetResources?: string[] | Computed<string[]>;
+  /** A list of secure tags that identify the target instances whose traffic will be mirrored by this packet mirroring rule. (AI-inferred) */
   targetSecureTags?: FirewallPolicy_PacketMirroringRules_Match_SrcSecureTags[] | Computed<FirewallPolicy_PacketMirroringRules_Match_SrcSecureTags[]>;
+  /** A list of service accounts that the rule targets. Instances with any of these service accounts will have their traffic affected by this packet mirroring rule. If not specified, the rule applies to all instances. (AI-inferred) */
   targetServiceAccounts?: string[] | Computed<string[]>;
+  /** The type of target to which the packet mirroring rule applies. Valid values are INSTANCES and INTERNAL_MANAGED_LB. (AI-inferred) */
   targetType?: string | Computed<string>;
   tlsInspect?: boolean | Computed<boolean>;
 }

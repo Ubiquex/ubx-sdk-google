@@ -4,8 +4,10 @@ package ml
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trial_FinalMeasurement_Metrics struct {
+	// The name of the metric being reported. (AI-inferred)
 	Metric any
-	Value  any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Trial_FinalMeasurement struct {
@@ -18,9 +20,13 @@ type Trial_FinalMeasurement struct {
 }
 
 type Trial_Parameters struct {
-	FloatValue  any
-	IntValue    any
-	Parameter   any
+	// A floating-point value. (AI-inferred)
+	FloatValue any
+	// An integer value. (AI-inferred)
+	IntValue any
+	// The name of a hyperparameter being tuned. (AI-inferred)
+	Parameter any
+	// A string value. (AI-inferred)
 	StringValue any
 }
 

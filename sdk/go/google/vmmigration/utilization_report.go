@@ -13,35 +13,59 @@ type UtilizationReport_Error struct {
 }
 
 type UtilizationReport_Vms_Utilization struct {
-	CpuAveragePercent            any
-	CpuMaxPercent                any
-	DiskIoRateAverageKbps        any
-	DiskIoRateMaxKbps            any
-	MemoryAveragePercent         any
-	MemoryMaxPercent             any
+	// The real, average CPU utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
+	CpuAveragePercent any
+	// The real, peak CPU utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
+	CpuMaxPercent any
+	// The real, average disk I/O throughput, in kilobits per second, measured for this VM. (AI-inferred)
+	DiskIoRateAverageKbps any
+	// The real, peak disk I/O throughput, in kilobits per second, measured for this VM. (AI-inferred)
+	DiskIoRateMaxKbps any
+	// The real, average memory utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
+	MemoryAveragePercent any
+	// The real, peak memory utilization percentage measured for this VM over the report's own observation window. (AI-inferred)
+	MemoryMaxPercent any
+	// The real, average network throughput, in kilobits per second, measured for this VM. (AI-inferred)
 	NetworkThroughputAverageKbps any
-	NetworkThroughputMaxKbps     any
+	// The real, peak network throughput, in kilobits per second, measured for this VM. (AI-inferred)
+	NetworkThroughputMaxKbps any
 }
 
 type UtilizationReport_Vms_VmwareVmDetails struct {
-	Architecture          any
-	BootOption            any
-	CommittedStorageMb    any
-	CpuCount              any
+	// The real, detected CPU architecture (e.g. `VM_ARCHITECTURE_X86_FAMILY`) of this source VM. (AI-inferred)
+	Architecture any
+	// Which real boot mode (BIOS or EFI) the migrated VM instance is configured to use. (AI-inferred)
+	BootOption any
+	// The real, total committed storage, in MiB, allocated to this VM's own disks in the source environment. (AI-inferred)
+	CommittedStorageMb any
+	// The real number of virtual CPUs configured on this source VM. (AI-inferred)
+	CpuCount any
+	// A real, human-readable description of the vCenter datacenter this VM was discovered in. (AI-inferred)
 	DatacenterDescription any
-	DatacenterId          any
-	DiskCount             any
-	DisplayName           any
-	GuestDescription      any
-	MemoryMb              any
-	PowerState            any
-	Uuid                  any
-	VmId                  any
+	// The real, source-side identifier of the vCenter datacenter this VM was discovered in. (AI-inferred)
+	DatacenterId any
+	// The real number of disks attached to this source VM. (AI-inferred)
+	DiskCount any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The real, detected guest operating system description (e.g. from VMware Tools) reported for this VM. (AI-inferred)
+	GuestDescription any
+	// The real amount of memory, in MiB, configured on this source VM. (AI-inferred)
+	MemoryMb any
+	// The real, current power state (`ON`, `OFF`, `SUSPENDED`) of this source VM at the time it was inventoried. (AI-inferred)
+	PowerState any
+	// The real, source-side UUID uniquely identifying this VM within its own VMware environment. (AI-inferred)
+	Uuid any
+	// The real, source-side identifier of this VM within its own source environment. (AI-inferred)
+	VmId any
 }
 
 type UtilizationReport_Vms struct {
-	Utilization     any
-	VmId            any
+	// Real, measured resource utilization (CPU, memory, disk I/O, network) for one source VM in this utilization report. (AI-inferred)
+	Utilization any
+	// The real, source-side identifier of this VM within its own source environment. (AI-inferred)
+	VmId any
+	// Real, VMware-specific inventory details (CPU, memory, disks, datacenter) for this VM, when the source environment is VMware. (AI-inferred)
 	VmwareVmDetails any
 }
 

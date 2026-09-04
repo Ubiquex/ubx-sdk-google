@@ -34,15 +34,21 @@ type GoldengateDeployment_Properties_DeploymentDiagnosticData struct {
 }
 
 type GoldengateDeployment_Properties_IngressIps struct {
+	// The IP address this resource accepts inbound connections on. (AI-inferred)
 	IngressIpAddress any
 }
 
 type GoldengateDeployment_Properties_Locks struct {
-	CompartmentId     any
-	CreateTime        any
-	Message           any
+	// A reference to the Oracle Cloud Infrastructure compartment this resource belongs to. (AI-inferred)
+	CompartmentId any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// A reference to a related resource. (AI-inferred)
 	RelatedResourceId any
-	Type              any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type GoldengateDeployment_Properties_MaintenanceConfig struct {
@@ -100,8 +106,10 @@ type GoldengateDeployment_Properties_OggData struct {
 }
 
 type GoldengateDeployment_Properties_Placements struct {
+	// The Oracle Cloud Infrastructure availability domain this resource runs in. (AI-inferred)
 	AvailabilityDomain any
-	FaultDomain        any
+	// The Oracle Cloud Infrastructure fault domain this resource runs in. (AI-inferred)
+	FaultDomain any
 }
 
 type GoldengateDeployment_Properties struct {

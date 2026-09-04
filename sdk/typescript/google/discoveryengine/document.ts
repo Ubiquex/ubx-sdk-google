@@ -2,13 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Document_AclInfo_Readers_Principals {
+  /** An identifier for this entity in an external system. (AI-inferred) */
   externalEntityId?: string | Computed<string>;
+  /** An identifier for the group this belongs to. (AI-inferred) */
   groupId?: string | Computed<string>;
+  /** An identifier for the end user this applies to. (AI-inferred) */
   userId?: string | Computed<string>;
 }
 
 export interface Document_AclInfo_Readers {
+  /** Whether this configuration applies across the whole identity provider, rather than a specific scope. (AI-inferred) */
   idpWide?: boolean | Computed<boolean>;
+  /** The identity/identities this permission applies to. (AI-inferred) */
   principals?: Document_AclInfo_Readers_Principals[] | Computed<Document_AclInfo_Readers_Principals[]>;
 }
 
@@ -27,8 +32,11 @@ export interface Document_Content {
 }
 
 export interface Document_IndexStatus_ErrorSamples {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 

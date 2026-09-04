@@ -200,6 +200,7 @@ export interface V1beta1BudgetAttrs {
   etag: string;
   /** Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`. */
   name: string;
+  /** Who has full access to this budget's own data, in conjunction with the caller's own real IAM permissions, e.g. billing-account-level or project-level. (AI-inferred) */
   ownershipScope: string;
   /** Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications. */
   thresholdRules: V1beta1Budget_Budget_ThresholdRules[];
