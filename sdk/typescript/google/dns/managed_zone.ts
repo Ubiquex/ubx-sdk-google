@@ -4,19 +4,25 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ManagedZone_CloudLoggingConfig {
   /** If set, enable query logging for this ManagedZone. False by default, making logging opt-in. */
   enableLogging?: boolean | Computed<boolean>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface ManagedZone_DnssecConfig_DefaultKeySpecs {
+  /** The cryptographic algorithm used for this DNSSEC key. (AI-inferred) */
   algorithm?: string | Computed<string>;
+  /** The length, in bits, of this DNSSEC key. (AI-inferred) */
   keyLength?: number | Computed<number>;
+  /** Whether this is a DNSSEC key-signing key or zone-signing key. (AI-inferred) */
   keyType?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface ManagedZone_DnssecConfig {
   /** Specifies parameters for generating initial DnsKeys for this ManagedZone. Can only be changed while the state is OFF. */
   defaultKeySpecs?: ManagedZone_DnssecConfig_DefaultKeySpecs[] | Computed<ManagedZone_DnssecConfig_DefaultKeySpecs[]>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** Specifies the mechanism for authenticated denial-of-existence responses. Can only be changed while the state is OFF. */
   nonExistence?: string | Computed<string>;
@@ -25,14 +31,20 @@ export interface ManagedZone_DnssecConfig {
 }
 
 export interface ManagedZone_ForwardingConfig_TargetNameServers {
+  /** The DNS domain name this zone serves, e.g. `example.com.`. (AI-inferred) */
   domainName?: string | Computed<string>;
+  /** Whether forwarded queries are sent over the public internet or a private network path. (AI-inferred) */
   forwardingPath?: string | Computed<string>;
+  /** An IPv4 address. (AI-inferred) */
   ipv4Address?: string | Computed<string>;
+  /** An IPv6 address. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface ManagedZone_ForwardingConfig {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** List of target name servers to forward to. Cloud DNS selects the best available name server if more than one target is given. */
   targetNameServers?: ManagedZone_ForwardingConfig_TargetNameServers[] | Computed<ManagedZone_ForwardingConfig_TargetNameServers[]>;
@@ -41,48 +53,60 @@ export interface ManagedZone_ForwardingConfig {
 export interface ManagedZone_PeeringConfig_TargetNetwork {
   /** The time at which the zone was deactivated, in RFC 3339 date-time format. An empty string indicates that the peering connection is active. The producer network can deactivate a zone. The zone is automatically deactivated if the producer network that the zone targeted is deleted. Output only. */
   deactivateTime?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** The fully qualified URL of the VPC network to forward queries to. This should be formatted like `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}` */
   networkUrl?: string | Computed<string>;
 }
 
 export interface ManagedZone_PeeringConfig {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** A reference to the target VPC network. (AI-inferred) */
   targetNetwork?: ManagedZone_PeeringConfig_TargetNetwork | Computed<ManagedZone_PeeringConfig_TargetNetwork>;
 }
 
 export interface ManagedZone_PrivateVisibilityConfig_GkeClusters {
+  /** The GKE cluster this private zone's own visibility is scoped to. (AI-inferred) */
   gkeClusterName?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface ManagedZone_PrivateVisibilityConfig_Networks {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The VPC network this private zone or policy is visible from. (AI-inferred) */
   networkUrl?: string | Computed<string>;
 }
 
 export interface ManagedZone_PrivateVisibilityConfig {
   /** The list of Google Kubernetes Engine clusters that can see this zone. */
   gkeClusters?: ManagedZone_PrivateVisibilityConfig_GkeClusters[] | Computed<ManagedZone_PrivateVisibilityConfig_GkeClusters[]>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** The list of VPC networks that can see this zone. */
   networks?: ManagedZone_PrivateVisibilityConfig_Networks[] | Computed<ManagedZone_PrivateVisibilityConfig_Networks[]>;
 }
 
 export interface ManagedZone_ReverseLookupConfig {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface ManagedZone_ServiceDirectoryConfig_Namespace {
   /** The time that the namespace backing this zone was deleted; an empty string if it still exists. This is in RFC3339 text format. Output only. */
   deletionTime?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** The fully qualified URL of the namespace associated with the zone. Format must be `https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace}` */
   namespaceUrl?: string | Computed<string>;
 }
 
 export interface ManagedZone_ServiceDirectoryConfig {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The DNS namespace this applies to. (AI-inferred) */
   namespace?: ManagedZone_ServiceDirectoryConfig_Namespace | Computed<ManagedZone_ServiceDirectoryConfig_Namespace>;
 }
 
@@ -193,10 +217,13 @@ export interface ManagedZoneConfig {
   description?: string | Computed<string>;
   /** The DNS name of this managed zone, for instance "example.com.". */
   dnsName?: string | Computed<string>;
+  /** Configuration for signing this zone's own records with DNSSEC. (AI-inferred) */
   dnssecConfig?: ManagedZone_DnssecConfig | Computed<ManagedZone_DnssecConfig>;
+  /** Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred) */
   forwardingConfig?: ManagedZone_ForwardingConfig | Computed<ManagedZone_ForwardingConfig>;
   /** Unique identifier for the resource; defined by the server (output only) */
   id?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** User labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
@@ -206,8 +233,11 @@ export interface ManagedZoneConfig {
   nameServerSet?: string | Computed<string>;
   /** Delegate your managed_zone to these virtual name servers; defined by the server (output only) */
   nameServers?: string[] | Computed<string[]>;
+  /** Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred) */
   peeringConfig?: ManagedZone_PeeringConfig | Computed<ManagedZone_PeeringConfig>;
+  /** Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred) */
   privateVisibilityConfig?: ManagedZone_PrivateVisibilityConfig | Computed<ManagedZone_PrivateVisibilityConfig>;
+  /** Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred) */
   reverseLookupConfig?: ManagedZone_ReverseLookupConfig | Computed<ManagedZone_ReverseLookupConfig>;
   /** Contains information about Service Directory-backed zones. */
   serviceDirectoryConfig?: ManagedZone_ServiceDirectoryConfig | Computed<ManagedZone_ServiceDirectoryConfig>;
@@ -224,10 +254,13 @@ export interface ManagedZoneAttrs {
   description: string;
   /** The DNS name of this managed zone, for instance "example.com.". */
   dnsName: string;
+  /** Configuration for signing this zone's own records with DNSSEC. (AI-inferred) */
   dnssecConfig: ManagedZone_DnssecConfig;
+  /** Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred) */
   forwardingConfig: ManagedZone_ForwardingConfig;
   /** Unique identifier for the resource; defined by the server (output only) */
   id: string;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** User labels. */
   labels: Record<string, string>;
@@ -237,8 +270,11 @@ export interface ManagedZoneAttrs {
   nameServerSet: string;
   /** Delegate your managed_zone to these virtual name servers; defined by the server (output only) */
   nameServers: string[];
+  /** Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred) */
   peeringConfig: ManagedZone_PeeringConfig;
+  /** Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred) */
   privateVisibilityConfig: ManagedZone_PrivateVisibilityConfig;
+  /** Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred) */
   reverseLookupConfig: ManagedZone_ReverseLookupConfig;
   /** Contains information about Service Directory-backed zones. */
   serviceDirectoryConfig: ManagedZone_ServiceDirectoryConfig;

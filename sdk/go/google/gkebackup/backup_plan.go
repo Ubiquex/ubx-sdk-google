@@ -9,7 +9,9 @@ type BackupPlan_BackupConfig_EncryptionKey struct {
 }
 
 type BackupPlan_BackupConfig_SelectedApplications_NamespacedNames struct {
-	Name      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The Kubernetes namespace this applies to. (AI-inferred)
 	Namespace any
 }
 
@@ -19,7 +21,9 @@ type BackupPlan_BackupConfig_SelectedApplications struct {
 }
 
 type BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabels struct {
-	Key   any
+	// The key of this label or field. (AI-inferred)
+	Key any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -53,28 +57,41 @@ type BackupPlan_BackupConfig struct {
 }
 
 type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeek struct {
+	// The day(s) of the week this schedule runs on. (AI-inferred)
 	DaysOfWeek any
 }
 
 type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDate struct {
-	Day   any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// The month component of a date. (AI-inferred)
 	Month any
-	Year  any
+	// The year component of a date. (AI-inferred)
+	Year any
 }
 
 type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTime struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows struct {
-	Daily                any
-	DaysOfWeek           any
-	Duration             any
+	// Runs this schedule once per day. (AI-inferred)
+	Daily any
+	// The day(s) of the week this schedule runs on. (AI-inferred)
+	DaysOfWeek any
+	// How long this operation is allowed to run before timing out. (AI-inferred)
+	Duration any
+	// Runs this schedule exactly once, on the specified date. (AI-inferred)
 	SingleOccurrenceDate any
-	StartTime            any
+	// When this event or window started. (AI-inferred)
+	StartTime any
 }
 
 type BackupPlan_BackupSchedule_RpoConfig struct {

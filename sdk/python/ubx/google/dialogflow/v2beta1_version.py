@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V2beta1VersionConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
 
 @dataclasses.dataclass
 class V2beta1VersionAttrs:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # This version's own real, sequential version number. (AI-inferred)
     version_number: Any = None
 
 V2beta1Version = ubx.ResourceBinding(

@@ -72,20 +72,29 @@ class ConnectivityTest_ProbingDetails_DestinationEgressLocation:
 
 @dataclasses.dataclass
 class ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentiles:
+    # The measured latency for this probe, in microseconds. (AI-inferred)
     latency_micros: Any = None
+    # A percentage value. (AI-inferred)
     percent: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency:
+    # The distribution of measured latencies across percentiles for this test. (AI-inferred)
     latency_percentiles: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ProbingDetails_EdgeResponses:
+    # The physical location traffic egressed Google's own network from. (AI-inferred)
     destination_egress_location: Any = None
+    # The router the packet was delivered to. (AI-inferred)
     destination_router: Any = None
+    # Latency statistics measured while probing this test's own live network path. (AI-inferred)
     probing_latency: Any = None
+    # The outcome of this operation. (AI-inferred)
     result: Any = None
+    # How many probe packets were sent during this live connectivity test. (AI-inferred)
     sent_probe_count: Any = None
+    # How many probe packets successfully reached their own destination during this live connectivity test. (AI-inferred)
     successful_probe_count: Any = None
 
 @dataclasses.dataclass
@@ -143,383 +152,646 @@ class ConnectivityTest_ProbingDetails:
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Abort:
+    # Why this outcome occurred. (AI-inferred)
     cause: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The project(s) the caller lacks sufficient permission to fully analyze. (AI-inferred)
     projects_missing_permission: Any = None
+    # A reference to the specific resource this applies to. (AI-inferred)
     resource_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersion:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The App Engine environment this applies to. (AI-inferred)
     environment: Any = None
+    # The runtime environment this applies to. (AI-inferred)
     runtime: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunction:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version_id: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevision:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service_uri: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
     worker_pool_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstance:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An external (public) IP address. (AI-inferred)
     external_ip: Any = None
+    # An internal (private) IP address. (AI-inferred)
     internal_ip: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Deliver:
+    # Which category of Google-managed service this is. (AI-inferred)
     google_service_type: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The Google API this Private Service Connect endpoint targets. (AI-inferred)
     psc_google_api_target: Any = None
+    # A reference to the specific resource this applies to. (AI-inferred)
     resource_uri: Any = None
+    # The Cloud Storage bucket this endpoint resolves to. (AI-inferred)
     storage_bucket: Any = None
+    # The intended destination of this test or rule. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnection:
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # The specific IP address selected for this endpoint, when more than one was possible. (AI-inferred)
     selected_ip_address: Any = None
+    # The specific IP address range selected for this endpoint. (AI-inferred)
     selected_ip_range: Any = None
+    # A reference to the subnetwork this applies to. (AI-inferred)
     subnetwork_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Drop:
+    # Why this outcome occurred. (AI-inferred)
     cause: Any = None
+    # The geographic location code associated with the destination. (AI-inferred)
     destination_geolocation_code: Any = None
+    # The destination IP address of the simulated packet at this step. (AI-inferred)
     destination_ip: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A reference to the specific resource this applies to. (AI-inferred)
     resource_uri: Any = None
+    # The geographic location code associated with the source. (AI-inferred)
     source_geolocation_code: Any = None
+    # The source IP address of the simulated packet at this step. (AI-inferred)
     source_ip: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Firewall:
+    # The action taken by this step or rule. (AI-inferred)
     action: Any = None
+    # Whether this rule or step applies to `INGRESS` or `EGRESS` traffic. (AI-inferred)
     direction: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Which category of firewall rule matched, e.g. hierarchical or VPC. (AI-inferred)
     firewall_rule_type: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The policy that matched this step. (AI-inferred)
     policy: Any = None
+    # The relative priority of this policy -- lower numbers are evaluated first. (AI-inferred)
     policy_priority: Any = None
+    # A reference to the specific policy this applies to. (AI-inferred)
     policy_uri: Any = None
+    # The relative priority of this item -- lower numbers are evaluated first. (AI-inferred)
     priority: Any = None
+    # The service account(s) this rule applies to. (AI-inferred)
     target_service_accounts: Any = None
+    # The network tag(s) this rule applies to. (AI-inferred)
     target_tags: Any = None
+    # The kind of target this forwarding rule directs traffic to. (AI-inferred)
     target_type: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Forward:
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # A reference to the specific resource this applies to. (AI-inferred)
     resource_uri: Any = None
+    # The intended destination of this test or rule. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRule:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether firewall rules allowing Envoy-based health checks are correctly configured. (AI-inferred)
     envoy_health_check_firewalls_config_state: Any = None
+    # The name of the load balancer this trace passed through. (AI-inferred)
     load_balancer_name: Any = None
+    # The port range this rule matched against. (AI-inferred)
     matched_port_range: Any = None
+    # The protocol this rule matched against. (AI-inferred)
     matched_protocol: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The Google API this Private Service Connect endpoint targets. (AI-inferred)
     psc_google_api_target: Any = None
+    # A reference to the Private Service Connect service attachment this traffic passed through. (AI-inferred)
     psc_service_attachment_uri: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # The intended destination of this test or rule. (AI-inferred)
     target: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
+    # A virtual IP address. (AI-inferred)
     vip: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMaster:
+    # The VPC network the GKE cluster this endpoint belongs to is attached to. (AI-inferred)
     cluster_network_uri: Any = None
+    # A reference to the GKE cluster this endpoint belongs to. (AI-inferred)
     cluster_uri: Any = None
+    # The DNS-resolvable endpoint this applies to. (AI-inferred)
     dns_endpoint: Any = None
+    # An external (public) IP address. (AI-inferred)
     external_ip: Any = None
+    # An internal (private) IP address. (AI-inferred)
     internal_ip: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicy:
+    # The action taken by this step or rule. (AI-inferred)
     action: Any = None
+    # Whether this rule or step applies to `INGRESS` or `EGRESS` traffic. (AI-inferred)
     direction: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkipped:
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePod:
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # A reference to the GKE pod this applies to. (AI-inferred)
     pod_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleService:
+    # Which category of Google-managed service this is. (AI-inferred)
     google_service_type: Any = None
+    # The source IP address of the simulated packet at this step. (AI-inferred)
     source_ip: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnet:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Instance:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An external (public) IP address. (AI-inferred)
     external_ip: Any = None
+    # The network interface this applies to. (AI-inferred)
     interface: Any = None
+    # An internal (private) IP address. (AI-inferred)
     internal_ip: Any = None
+    # The network tag(s) matched by this rule. (AI-inferred)
     network_tags: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # A reference to the Private Service Connect network attachment this traffic passed through. (AI-inferred)
     psc_network_attachment_uri: Any = None
+    # Whether the associated resource is currently running. (AI-inferred)
     running: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachment:
+    # A reference to the Cloud Router this applies to. (AI-inferred)
     cloud_router_uri: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the Interconnect this traffic routes through. (AI-inferred)
     interconnect_uri: Any = None
+    # The IP address matched on the Layer 2 Interconnect attachment. (AI-inferred)
     l2_attachment_matched_ip_address: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkipped:
+    # IP range(s) excluded from NAT masquerading. (AI-inferred)
     non_masquerade_range: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_Backends:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The firewall rule(s) correctly allowing health check traffic to this backend. (AI-inferred)
     health_check_allowing_firewall_rules: Any = None
+    # The firewall rule(s) incorrectly blocking health check traffic to this backend. (AI-inferred)
     health_check_blocking_firewall_rules: Any = None
+    # Whether firewall rules allow health check probes to reach this backend. (AI-inferred)
     health_check_firewall_state: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer:
+    # The kind of backend this traffic is routed to, e.g. instance group or NEG. (AI-inferred)
     backend_type: Any = None
+    # A reference to the specific backend traffic was routed to. (AI-inferred)
     backend_uri: Any = None
+    # The backend(s) configured for this load balancer. (AI-inferred)
     backends: Any = None
+    # A reference to the health check associated with this backend. (AI-inferred)
     health_check_uri: Any = None
+    # The kind of load balancer this trace passed through, e.g. external HTTP(S). (AI-inferred)
     load_balancer_type: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfo:
+    # The backend bucket this load balancer routes matching traffic to. (AI-inferred)
     backend_bucket_uri: Any = None
+    # The backend service this load balancer routes matching traffic to. (AI-inferred)
     backend_service_uri: Any = None
+    # Whether firewall rules allowing health check traffic are correctly configured. (AI-inferred)
     health_check_firewalls_config_state: Any = None
+    # A reference to the health check associated with this backend. (AI-inferred)
     health_check_uri: Any = None
+    # A reference to the instance group this endpoint belongs to. (AI-inferred)
     instance_group_uri: Any = None
+    # A reference to the specific instance this endpoint resolves to. (AI-inferred)
     instance_uri: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the network endpoint group this applies to. (AI-inferred)
     network_endpoint_group_uri: Any = None
+    # The Google API this Private Service Connect endpoint targets. (AI-inferred)
     psc_google_api_target: Any = None
+    # A reference to the Private Service Connect service attachment this traffic passed through. (AI-inferred)
     psc_service_attachment_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Nat:
+    # Which kind of Cloud NAT gateway handled this traffic, e.g. public or private. (AI-inferred)
     cloud_nat_gateway_type: Any = None
+    # The name of the NAT gateway that processed this packet. (AI-inferred)
     nat_gateway_name: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The destination IP address after NAT was applied. (AI-inferred)
     new_destination_ip: Any = None
+    # The destination port after NAT was applied. (AI-inferred)
     new_destination_port: Any = None
+    # The source IP address after NAT was applied. (AI-inferred)
     new_source_ip: Any = None
+    # The source port after NAT was applied. (AI-inferred)
     new_source_port: Any = None
+    # The destination IP address before NAT was applied. (AI-inferred)
     old_destination_ip: Any = None
+    # The destination port before NAT was applied. (AI-inferred)
     old_destination_port: Any = None
+    # The source IP address before NAT was applied. (AI-inferred)
     old_source_ip: Any = None
+    # The source port before NAT was applied. (AI-inferred)
     old_source_port: Any = None
+    # The network protocol this applies to. (AI-inferred)
     protocol: Any = None
+    # A reference to the Cloud Router this applies to. (AI-inferred)
     router_uri: Any = None
+    # The numeric priority of the firewall rule that matched. (AI-inferred)
     rule_number: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Network:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The IP address range this rule matched against. (AI-inferred)
     matched_ip_range: Any = None
+    # The subnet this step's own IP address matched. (AI-inferred)
     matched_subnet_uri: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspection:
+    # A reference to the Cloud Next-Generation Firewall security profile group applied. (AI-inferred)
     security_profile_group_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnection:
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The destination IP address after NAT was applied. (AI-inferred)
     new_destination_ip: Any = None
+    # The destination port after NAT was applied. (AI-inferred)
     new_destination_port: Any = None
+    # The source IP address after NAT was applied. (AI-inferred)
     new_source_ip: Any = None
+    # The source port after NAT was applied. (AI-inferred)
     new_source_port: Any = None
+    # The destination IP address before NAT was applied. (AI-inferred)
     old_destination_ip: Any = None
+    # The destination port before NAT was applied. (AI-inferred)
     old_destination_port: Any = None
+    # The source IP address before NAT was applied. (AI-inferred)
     old_source_ip: Any = None
+    # The source port before NAT was applied. (AI-inferred)
     old_source_port: Any = None
+    # The network protocol this applies to. (AI-inferred)
     protocol: Any = None
+    # A reference to the subnet this applies to. (AI-inferred)
     subnet_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisCluster:
+    # The discovery endpoint IP address for this resource. (AI-inferred)
     discovery_endpoint_ip_address: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # A secondary IP address for this endpoint. (AI-inferred)
     secondary_endpoint_ip_address: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstance:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The primary IP address of this endpoint. (AI-inferred)
     primary_endpoint_ip: Any = None
+    # The IP address of a database's own read replica endpoint. (AI-inferred)
     read_endpoint_ip: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_Route:
+    # The next hop URI advertised for this route. (AI-inferred)
     advertised_route_next_hop_uri: Any = None
+    # The router that advertised this route. (AI-inferred)
     advertised_route_source_router_uri: Any = None
+    # The destination IP address range this rule matches. (AI-inferred)
     dest_ip_range: Any = None
+    # The destination port range(s) this rule matches. (AI-inferred)
     dest_port_ranges: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The network tag(s) on this instance. (AI-inferred)
     instance_tags: Any = None
+    # A reference to the Network Connectivity Center hub route this traffic followed. (AI-inferred)
     ncc_hub_route_uri: Any = None
+    # A reference to the Network Connectivity Center hub this traffic passed through. (AI-inferred)
     ncc_hub_uri: Any = None
+    # A reference to the Network Connectivity Center spoke this traffic passed through. (AI-inferred)
     ncc_spoke_uri: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # Where the packet was forwarded to next. (AI-inferred)
     next_hop: Any = None
+    # The VPC network the next hop belongs to. (AI-inferred)
     next_hop_network_uri: Any = None
+    # The kind of next hop the packet was forwarded to, e.g. instance or VPN tunnel. (AI-inferred)
     next_hop_type: Any = None
+    # A reference to the specific next hop the packet was forwarded to. (AI-inferred)
     next_hop_uri: Any = None
+    # A human-readable name for the route this path originated from. (AI-inferred)
     originating_route_display_name: Any = None
+    # A reference to the route this path originated from. (AI-inferred)
     originating_route_uri: Any = None
+    # The relative priority of this item -- lower numbers are evaluated first. (AI-inferred)
     priority: Any = None
+    # The network protocol(s) this rule matches. (AI-inferred)
     protocols: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # The scope this route applies within, e.g. network-wide or NCC hub-wide. (AI-inferred)
     route_scope: Any = None
+    # The kind of route that matched, e.g. subnet, static, or peering. (AI-inferred)
     route_type: Any = None
+    # The source IP address range this rule matches. (AI-inferred)
     src_ip_range: Any = None
+    # The source port range(s) this rule matches. (AI-inferred)
     src_port_ranges: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnection:
+    # The specific IP address selected for this endpoint, when more than one was possible. (AI-inferred)
     selected_ip_address: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNeg:
+    # A reference to the network endpoint group this applies to. (AI-inferred)
     neg_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucket:
+    # A reference to the Cloud Storage bucket this applies to. (AI-inferred)
     bucket: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfo:
+    # The resource type(s) this applies to. (AI-inferred)
     resource_types: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGateway:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
+    # A reference to the specific VPN tunnel this traffic passed through. (AI-inferred)
     vpn_tunnel_uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnel:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the VPC network this applies to. (AI-inferred)
     network_uri: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A reference to the remote VPN or Interconnect gateway this traffic passed through. (AI-inferred)
     remote_gateway: Any = None
+    # The IP address of the remote VPN or Interconnect gateway. (AI-inferred)
     remote_gateway_ip: Any = None
+    # How this network's own routing is configured, e.g. regional or global dynamic routing. (AI-inferred)
     routing_type: Any = None
+    # The source VPN or Interconnect gateway this traffic originated from. (AI-inferred)
     source_gateway: Any = None
+    # The IP address of the source VPN or Interconnect gateway. (AI-inferred)
     source_gateway_ip: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces_Steps:
+    # This trace step aborted, ending analysis without a definitive deliver/drop verdict. (AI-inferred)
     abort: Any = None
+    # The App Engine service version this endpoint resolves to. (AI-inferred)
     app_engine_version: Any = None
+    # Whether this condition results in the packet being dropped. (AI-inferred)
     causes_drop: Any = None
+    # The Cloud Functions function this endpoint resolves to. (AI-inferred)
     cloud_function: Any = None
+    # The Cloud Run job this endpoint resolves to. (AI-inferred)
     cloud_run_job: Any = None
+    # The Cloud Run revision this endpoint resolves to. (AI-inferred)
     cloud_run_revision: Any = None
+    # The Cloud SQL instance this endpoint resolves to. (AI-inferred)
     cloud_sql_instance: Any = None
+    # The Datastream private connection this endpoint routes through. (AI-inferred)
     datastream_private_connection: Any = None
+    # This trace step delivered the packet to its own final destination. (AI-inferred)
     deliver: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The direct VPC egress configuration this serverless endpoint routes traffic through. (AI-inferred)
     direct_vpc_egress_connection: Any = None
+    # The Database Migration Service private connection this endpoint routes through. (AI-inferred)
     dms_private_connection: Any = None
+    # This trace step dropped the packet, ending analysis with a drop verdict. (AI-inferred)
     drop: Any = None
+    # The source or destination endpoint being traced. (AI-inferred)
     endpoint: Any = None
+    # The firewall rule that matched this step. (AI-inferred)
     firewall: Any = None
+    # This trace step forwarded the packet on to the next hop. (AI-inferred)
     forward: Any = None
+    # The forwarding rule that matched this step. (AI-inferred)
     forwarding_rule: Any = None
+    # The GKE cluster control plane this endpoint resolves to. (AI-inferred)
     gke_master: Any = None
+    # The GKE NetworkPolicy that matched this step. (AI-inferred)
     gke_network_policy: Any = None
+    # Whether GKE NetworkPolicy evaluation was skipped for this step, and why. (AI-inferred)
     gke_network_policy_skipped: Any = None
+    # The GKE pod this endpoint resolves to. (AI-inferred)
     gke_pod: Any = None
+    # The Google-managed service this endpoint resolves to. (AI-inferred)
     google_service: Any = None
+    # The hybrid subnet this endpoint belongs to, for a Google Distributed Cloud environment. (AI-inferred)
     hybrid_subnet: Any = None
+    # A reference to the Compute Engine instance this endpoint resolves to. (AI-inferred)
     instance: Any = None
+    # The Interconnect attachment this traffic routes through. (AI-inferred)
     interconnect_attachment: Any = None
+    # Whether IP masquerading (NAT) was skipped for this step, and why. (AI-inferred)
     ip_masquerading_skipped: Any = None
+    # Detail about the load balancer this trace passed through. (AI-inferred)
     load_balancer: Any = None
+    # Detail about the specific backend a load balancer routed this trace to. (AI-inferred)
     load_balancer_backend_info: Any = None
+    # Detail about NAT applied to this packet at this step. (AI-inferred)
     nat: Any = None
+    # A reference to the VPC network this trace step's traffic traverses. (AI-inferred)
     network: Any = None
+    # Detail about Cloud Next-Generation Firewall inspection applied to this packet. (AI-inferred)
     ngfw_packet_inspection: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # Detail about the proxy connection this traffic passed through. (AI-inferred)
     proxy_connection: Any = None
+    # The Memorystore for Redis Cluster this endpoint resolves to. (AI-inferred)
     redis_cluster: Any = None
+    # The Memorystore for Redis instance this endpoint resolves to. (AI-inferred)
     redis_instance: Any = None
+    # The route that matched this step. (AI-inferred)
     route: Any = None
+    # Detail about a serverless resource's own external network connection. (AI-inferred)
     serverless_external_connection: Any = None
+    # The serverless network endpoint group this traffic routed through. (AI-inferred)
     serverless_neg: Any = None
+    # The current status of this resource or step. (AI-inferred)
     state: Any = None
+    # The Cloud Storage bucket this endpoint resolves to. (AI-inferred)
     storage_bucket: Any = None
+    # Detail about resource(s) the caller lacked sufficient permission to view during analysis. (AI-inferred)
     viewer_permission_missing_info: Any = None
+    # The Serverless VPC Access connector this endpoint routes through. (AI-inferred)
     vpc_connector: Any = None
+    # A reference to the VPN gateway this traffic passed through. (AI-inferred)
     vpn_gateway: Any = None
+    # Detail about the VPN tunnel this traffic passed through. (AI-inferred)
     vpn_tunnel: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTest_ReachabilityDetails_Traces:
+    # Detail identifying this trace's own source and destination endpoints. (AI-inferred)
     endpoint_info: Any = None
+    # The identifier of a related forward-direction trace, for a return-path trace. (AI-inferred)
     forward_trace_id: Any = None
+    # The ordered step(s) making up this trace. (AI-inferred)
     steps: Any = None
 
 @dataclasses.dataclass

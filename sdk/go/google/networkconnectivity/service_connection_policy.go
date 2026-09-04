@@ -28,32 +28,52 @@ type ServiceConnectionPolicy_PscConfig struct {
 }
 
 type ServiceConnectionPolicy_PscConnections_Error struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type ServiceConnectionPolicy_PscConnections_ErrorInfo struct {
-	Domain   any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// Additional structured metadata about this resource. (AI-inferred)
 	Metadata any
-	Reason   any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
 }
 
 type ServiceConnectionPolicy_PscConnections struct {
-	ConsumerAddress          any
-	ConsumerForwardingRule   any
-	ConsumerTargetProject    any
-	Error                    any
-	ErrorInfo                any
-	ErrorType                any
-	GceOperation             any
-	IpVersion                any
-	ProducerInstanceId       any
+	// The IP address on the consumer side of this connection. (AI-inferred)
+	ConsumerAddress any
+	// A reference to the consumer's own forwarding rule. (AI-inferred)
+	ConsumerForwardingRule any
+	// The project the consuming resource belongs to. (AI-inferred)
+	ConsumerTargetProject any
+	// Detail about an error that occurred. (AI-inferred)
+	Error any
+	// Structured detail about an error that occurred. (AI-inferred)
+	ErrorInfo any
+	// The category of error that occurred. (AI-inferred)
+	ErrorType any
+	// A reference to the underlying Compute Engine operation. (AI-inferred)
+	GceOperation any
+	// Whether this applies to IPv4 or IPv6. (AI-inferred)
+	IpVersion any
+	// The identifier of the producer-side instance backing this connection. (AI-inferred)
+	ProducerInstanceId any
+	// Metadata describing the producer-side instance backing this connection. (AI-inferred)
 	ProducerInstanceMetadata any
-	PscConnectionId          any
-	SelectedSubnetwork       any
-	ServiceClass             any
-	State                    any
+	// The unique identifier of this Private Service Connect connection. (AI-inferred)
+	PscConnectionId any
+	// A reference to the specific subnetwork selected for this connection. (AI-inferred)
+	SelectedSubnetwork any
+	// The class of managed service this connection belongs to. (AI-inferred)
+	ServiceClass any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 var ServiceConnectionPolicy_AutoCreatedSubnetInfoFields = ubx.FieldMap{

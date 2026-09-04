@@ -8,15 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Occurrence_AiSkillAnalysis_Findings_Location:
+    # The path to this file within the scanned artifact. (AI-inferred)
     file_path: Any = None
+    # The line number this finding was located at, within the containing file. (AI-inferred)
     line_number: Any = None
 
 @dataclasses.dataclass
 class Occurrence_AiSkillAnalysis_Findings:
+    # The category this finding or note belongs to. (AI-inferred)
     category: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # Where this occurrence was found. (AI-inferred)
     location: Any = None
+    # The vulnerability scanner that produced this occurrence. (AI-inferred)
     scanner: Any = None
+    # How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
@@ -50,17 +57,21 @@ class Occurrence_AiSkillAnalysis:
     findings: Any = None
     # Maximum severity found among findings. Per scanner verdict details.
     max_severity: Any = None
+    # This vulnerability's own effective severity, as separately determined by each scanner that found it. (AI-inferred)
     per_scanner_verdict: Any = None
     # Name of the skill that produced this analysis.
     skill_name: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Attestation_Jwts:
+    # An attestation signature encoded as a compact JSON Web Token. (AI-inferred)
     compact_jwt: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Attestation_Signatures:
+    # An identifier for the public key used to verify this signature. (AI-inferred)
     public_key_id: Any = None
+    # A cryptographic signature verifying this content. (AI-inferred)
     signature: Any = None
 
 @dataclasses.dataclass
@@ -74,47 +85,71 @@ class Occurrence_Attestation:
 
 @dataclasses.dataclass
 class Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies:
+    # Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
     annotations: Any = None
+    # The literal content of this value. (AI-inferred)
     content: Any = None
+    # A cryptographic digest identifying this content. (AI-inferred)
     digest: Any = None
+    # The URI this package can be downloaded from. (AI-inferred)
     download_location: Any = None
+    # The MIME type of this artifact. (AI-inferred)
     media_type: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition:
+    # A URI identifying the kind of build process that produced this artifact. (AI-inferred)
     build_type: Any = None
+    # Caller-supplied parameter(s) that configured this build. (AI-inferred)
     external_parameters: Any = None
+    # Build-system-internal parameter(s) that configured this build, not directly caller-supplied. (AI-inferred)
     internal_parameters: Any = None
+    # The exact, resolved dependency/dependencies actually used to produce this build. (AI-inferred)
     resolved_dependencies: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Builder:
+    # The dependency/dependencies the builder itself relied on. (AI-inferred)
     builder_dependencies: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Metadata:
+    # When this operation finished. (AI-inferred)
     finished_on: Any = None
+    # An identifier for this specific invocation. (AI-inferred)
     invocation_id: Any = None
+    # When this operation started. (AI-inferred)
     started_on: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails:
+    # The build system/tool that produced this artifact. (AI-inferred)
     builder: Any = None
+    # Additional artifact(s) produced as a byproduct of this build, beyond the primary output. (AI-inferred)
     byproducts: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_InTotoSlsaProvenanceV1_Predicate:
+    # The SLSA build definition describing this build's own inputs and process. (AI-inferred)
     build_definition: Any = None
+    # Detail about how this specific build was actually run. (AI-inferred)
     run_details: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_InTotoSlsaProvenanceV1_Subject:
+    # A cryptographic digest identifying this content. (AI-inferred)
     digest: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -123,11 +158,14 @@ class Occurrence_Build_InTotoSlsaProvenanceV1:
     type: Any = None
     # Keep in sync with schema at https://github.com/slsa-framework/slsa/blob/main/docs/provenance/schema/v1/provenance.proto Builder renamed to ProvenanceBuilder because of Java conflicts.
     predicate: Any = None
+    # The URI identifying the schema of this in-toto attestation's own predicate. (AI-inferred)
     predicate_type: Any = None
+    # The artifact(s) this attestation makes a claim about. (AI-inferred)
     subject: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoProvenance_BuilderConfig:
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
@@ -167,6 +205,7 @@ class Occurrence_Build_IntotoProvenance_Recipe:
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoProvenance:
+    # Configuration specific to the builder that produced this artifact. (AI-inferred)
     builder_config: Any = None
     # The collection of artifacts that influenced the build including sources, dependencies, build tools, base images, and so on. This is considered to be incomplete unless metadata.completeness.materials is true. Unset or null is equivalent to empty.
     materials: Any = None
@@ -177,7 +216,9 @@ class Occurrence_Build_IntotoProvenance:
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoStatement_SlsaProvenance_Materials:
+    # A cryptographic digest identifying this content. (AI-inferred)
     digest: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
@@ -195,6 +236,7 @@ class Occurrence_Build_IntotoStatement_SlsaProvenance_Recipe:
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoStatement_SlsaProvenance:
+    # The build system/tool that produced this artifact. (AI-inferred)
     builder: Any = None
     # The collection of artifacts that influenced the build including sources, dependencies, build tools, base images, and so on. This is considered to be incomplete unless metadata.completeness.materials is true. Unset or null is equivalent to empty.
     materials: Any = None
@@ -205,40 +247,55 @@ class Occurrence_Build_IntotoStatement_SlsaProvenance:
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSource:
+    # A cryptographic digest identifying this content. (AI-inferred)
     digest: Any = None
+    # The container image's own default entrypoint command. (AI-inferred)
     entry_point: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation:
     # Describes where the config file that kicked off the build came from. This is effectively a pointer to the source where buildConfig came from.
     config_source: Any = None
+    # The environment this build ran in. (AI-inferred)
     environment: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_Completeness:
+    # The environment this build ran in. (AI-inferred)
     environment: Any = None
+    # The source input(s) (e.g. source repository commit) consumed to produce this build. (AI-inferred)
     materials: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata:
+    # When this build completed. (AI-inferred)
     build_finished_on: Any = None
+    # An identifier for this specific build invocation. (AI-inferred)
     build_invocation_id: Any = None
+    # When this build started. (AI-inferred)
     build_started_on: Any = None
     # Indicates that the builder claims certain fields in this message to be complete.
     completeness: Any = None
+    # Whether this build is expected to produce an identical artifact when re-run with the same inputs. (AI-inferred)
     reproducible: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo:
+    # Configuration describing how this artifact was built. (AI-inferred)
     build_config: Any = None
+    # A URI identifying the kind of build process that produced this artifact. (AI-inferred)
     build_type: Any = None
     # Identifies the entity that executed the recipe, which is trusted to have correctly performed the operation and populated this provenance.
     builder: Any = None
     # Identifies the event that kicked off the build.
     invocation: Any = None
+    # The source input(s) (e.g. source repository commit) consumed to produce this build. (AI-inferred)
     materials: Any = None
     # Other properties of the build.
     metadata: Any = None
@@ -249,74 +306,108 @@ class Occurrence_Build_IntotoStatement:
     type: Any = None
     # `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
     predicate_type: Any = None
+    # Detail about how this artifact was built. (AI-inferred)
     provenance: Any = None
+    # Build provenance expressed per the SLSA (Supply-chain Levels for Software Artifacts) specification. (AI-inferred)
     slsa_provenance: Any = None
     # See full explanation of fields at slsa.dev/provenance/v0.2.
     slsa_provenance_zero_two: Any = None
+    # The artifact(s) this attestation makes a claim about. (AI-inferred)
     subject: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_BuiltArtifacts:
+    # A checksum verifying this content's own integrity. (AI-inferred)
     checksum: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The name(s) associated with this resource. (AI-inferred)
     names: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_Commands:
+    # The argument(s) passed to this command. (AI-inferred)
     args: Any = None
+    # The working directory this command ran in. (AI-inferred)
     dir: Any = None
+    # Environment variable(s) set for this build step or container. (AI-inferred)
     env: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The build step(s) that must complete before this one starts. (AI-inferred)
     wait_for: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContext:
+    # The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoId:
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The name of the source repository. (AI-inferred)
     repo_name: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId:
+    # An identifier for the Cloud Source Repository this source revision comes from. (AI-inferred)
     project_repo_id: Any = None
+    # Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo:
+    # Additional identifying detail for a source revision, e.g. a tag or branch name. (AI-inferred)
     alias_context: Any = None
+    # An identifier for the source repository this revision comes from. (AI-inferred)
     repo_id: Any = None
+    # An identifier for this specific source revision. (AI-inferred)
     revision_id: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Gerrit:
+    # Additional identifying detail for a source revision, e.g. a tag or branch name. (AI-inferred)
     alias_context: Any = None
+    # The Gerrit project this source revision belongs to. (AI-inferred)
     gerrit_project: Any = None
+    # The URI of the host this occurrence applies to. (AI-inferred)
     host_uri: Any = None
+    # An identifier for this specific source revision. (AI-inferred)
     revision_id: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Git:
+    # An identifier for this specific source revision. (AI-inferred)
     revision_id: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts:
+    # A reference to the Cloud Source Repository this source revision comes from. (AI-inferred)
     cloud_repo: Any = None
+    # A reference to a Gerrit code review source revision. (AI-inferred)
     gerrit: Any = None
+    # A reference to a Git source revision. (AI-inferred)
     git: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHash:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Build_Provenance_SourceProvenance_FileHashes:
+    # A cryptographic hash of this file's own content. (AI-inferred)
     file_hash: Any = None
 
 @dataclasses.dataclass
@@ -361,7 +452,9 @@ class Occurrence_Build_Provenance:
 
 @dataclasses.dataclass
 class Occurrence_Build:
+    # SLSA v1 provenance expressed in the in-toto attestation format. (AI-inferred)
     in_toto_slsa_provenance_v1: Any = None
+    # Build provenance expressed in the in-toto attestation format. (AI-inferred)
     intoto_provenance: Any = None
     # Spec defined at https://github.com/in-toto/attestation/tree/main/spec#statement The serialized InTotoStatement will be stored as Envelope.payload. Envelope.payloadType is always "application/vnd.in-toto+json".
     intoto_statement: Any = None
@@ -372,8 +465,11 @@ class Occurrence_Build:
 
 @dataclasses.dataclass
 class Occurrence_Compliance_NonCompliantFiles:
+    # A human-readable rendering of the command that produced this layer. (AI-inferred)
     display_command: Any = None
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
@@ -387,7 +483,9 @@ class Occurrence_Compliance_Version:
 
 @dataclasses.dataclass
 class Occurrence_Compliance:
+    # Why this resource failed the compliance check. (AI-inferred)
     non_compliance_reason: Any = None
+    # The file(s) that caused this resource to fail the compliance check. (AI-inferred)
     non_compliant_files: Any = None
     # Describes the CIS benchmark version that is applicable to a given OS and os version.
     version: Any = None
@@ -411,12 +509,16 @@ class Occurrence_Deployment:
 
 @dataclasses.dataclass
 class Occurrence_Discovery_AnalysisCompleted:
+    # Which category of analysis (e.g. vulnerability, package) this occurrence represents. (AI-inferred)
     analysis_type: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Discovery_AnalysisError:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -453,13 +555,18 @@ class Occurrence_Discovery:
 
 @dataclasses.dataclass
 class Occurrence_DsseAttestation_Envelope_Signatures:
+    # An identifier for the key used to produce this signature. (AI-inferred)
     keyid: Any = None
+    # A cryptographic signature. (AI-inferred)
     sig: Any = None
 
 @dataclasses.dataclass
 class Occurrence_DsseAttestation_Envelope:
+    # The signed content of this attestation. (AI-inferred)
     payload: Any = None
+    # The MIME type of the attestation's own payload. (AI-inferred)
     payload_type: Any = None
+    # The cryptographic signature(s) attached to this attestation. (AI-inferred)
     signatures: Any = None
 
 @dataclasses.dataclass
@@ -480,7 +587,9 @@ class Occurrence_Image_Fingerprint:
 
 @dataclasses.dataclass
 class Occurrence_Image_LayerInfo:
+    # The argument(s) passed to this build step. (AI-inferred)
     arguments: Any = None
+    # The Dockerfile instruction (e.g. `RUN`, `COPY`) that produced this layer. (AI-inferred)
     directive: Any = None
 
 @dataclasses.dataclass
@@ -503,17 +612,26 @@ class Occurrence_Package_License:
 
 @dataclasses.dataclass
 class Occurrence_Package_Location_Version:
+    # The package version's own epoch, used to order versions when the upstream numbering scheme changed. (AI-inferred)
     epoch: Any = None
+    # The fully qualified name of this package or resource. (AI-inferred)
     full_name: Any = None
+    # Whether this version range's own boundary is inclusive. (AI-inferred)
     inclusive: Any = None
+    # The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The specific revision of this source this applies to. (AI-inferred)
     revision: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Package_Location:
+    # A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
     cpe_uri: Any = None
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -566,33 +684,49 @@ class Occurrence_SbomReference:
 
 @dataclasses.dataclass
 class Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImages:
+    # The number of layers making up this container image. (AI-inferred)
     layer_count: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The container registry this image is hosted in. (AI-inferred)
     registry: Any = None
+    # A reference to the source repository this applies to. (AI-inferred)
     repository: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Secret_Locations_FileLocation_LayerDetails:
+    # The base image(s) this container image was built from. (AI-inferred)
     base_images: Any = None
+    # An identifier grouping related image layers that together form a distinct filesystem state. (AI-inferred)
     chain_id: Any = None
+    # The command executed. (AI-inferred)
     command: Any = None
+    # The digest of this layer's own uncompressed content, distinguishing it from its compressed digest. (AI-inferred)
     diff_id: Any = None
+    # The position of this item within its own containing sequence. (AI-inferred)
     index: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Secret_Locations_FileLocation:
+    # The path to this file within the scanned artifact. (AI-inferred)
     file_path: Any = None
+    # Detail about each layer making up this container image. (AI-inferred)
     layer_details: Any = None
+    # The line number this finding was located at, within the containing file. (AI-inferred)
     line_number: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Secret_Locations:
+    # Where this finding was located within the scanned artifact. (AI-inferred)
     file_location: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Secret_Statuses:
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
@@ -617,7 +751,9 @@ class Occurrence_Upgrade_Distribution:
 
 @dataclasses.dataclass
 class Occurrence_Upgrade_WindowsUpdate_Categories:
+    # An identifier for the category this belongs to. (AI-inferred)
     category_id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -673,7 +809,9 @@ class Occurrence_Vulnerability_CvssV2:
     confidentiality_impact: Any = None
     # Exploit Maturity (E). Defined in CVSS v4.
     exploit_maturity: Any = None
+    # A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred)
     exploitability_score: Any = None
+    # A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred)
     impact_score: Any = None
     # Integrity Impact (I). Defined in CVSS v2, v3.
     integrity_impact: Any = None
@@ -698,20 +836,32 @@ class Occurrence_Vulnerability_CvssV2:
 
 @dataclasses.dataclass
 class Occurrence_Vulnerability_PackageIssue:
+    # The CPE URI of the package version affected by this vulnerability. (AI-inferred)
     affected_cpe_uri: Any = None
+    # The name of the package affected by this vulnerability. (AI-inferred)
     affected_package: Any = None
+    # The specific version affected by this vulnerability. (AI-inferred)
     affected_version: Any = None
+    # The severity of this vulnerability after applying any project-level severity overrides. (AI-inferred)
     effective_severity: Any = None
+    # Where this finding was located within the scanned artifact. (AI-inferred)
     file_location: Any = None
+    # Whether a fixed version of the affected package is available. (AI-inferred)
     fix_available: Any = None
+    # The CPE URI of the package version that fixes this vulnerability. (AI-inferred)
     fixed_cpe_uri: Any = None
+    # The name of the package that fixes this vulnerability. (AI-inferred)
     fixed_package: Any = None
+    # The version that fixes this vulnerability. (AI-inferred)
     fixed_version: Any = None
+    # The package manager/ecosystem this package belongs to, e.g. `DEBIAN` or `NPM`. (AI-inferred)
     package_type: Any = None
 
 @dataclasses.dataclass
 class Occurrence_Vulnerability_RelatedUrls:
+    # A human-readable label for this item. (AI-inferred)
     label: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
@@ -728,7 +878,9 @@ class Occurrence_Vulnerability_Risk_Epss:
 
 @dataclasses.dataclass
 class Occurrence_Vulnerability_Risk:
+    # Whether this vulnerability appears on CISA's Known Exploited Vulnerabilities catalog. (AI-inferred)
     cisa_kev: Any = None
+    # The Exploit Prediction Scoring System probability that this vulnerability will be exploited in the wild. (AI-inferred)
     epss: Any = None
 
 @dataclasses.dataclass
@@ -740,8 +892,11 @@ class Occurrence_Vulnerability_VexAssessment_Justification:
 
 @dataclasses.dataclass
 class Occurrence_Vulnerability_VexAssessment_Remediations:
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # The category of fix available for this vulnerability, e.g. a package update or workaround. (AI-inferred)
     remediation_type: Any = None
+    # A URI with guidance on remediating this vulnerability. (AI-inferred)
     remediation_uri: Any = None
 
 @dataclasses.dataclass
@@ -787,6 +942,7 @@ class Occurrence_Vulnerability:
     package_issue: Any = None
     # Output only. URLs related to this vulnerability.
     related_urls: Any = None
+    # The assessed risk level of this finding. (AI-inferred)
     risk: Any = None
     # Output only. The note provider assigned severity of this vulnerability.
     severity: Any = None

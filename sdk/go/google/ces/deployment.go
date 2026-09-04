@@ -78,8 +78,11 @@ type Deployment_ChannelProfile struct {
 }
 
 type Deployment_ExperimentConfig_VersionRelease_TrafficAllocations struct {
-	AppVersion        any
-	Id                any
+	// A reference to the app version this applies to. (AI-inferred)
+	AppVersion any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The percentage of traffic this version receives. (AI-inferred)
 	TrafficPercentage any
 }
 

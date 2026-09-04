@@ -4,7 +4,9 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRanges struct {
+	// The maximum value of the range of allowed BGP peer ASN (Autonomous System Number) values. This defines the upper bound for the ASN range that can be configured for the BGP peer. (AI-inferred)
 	Max any
+	// The minimum (lower bound) of a BGP peer ASN range. The range is inclusive of this value. (AI-inferred)
 	Min any
 }
 
@@ -16,11 +18,14 @@ type InterconnectAttachment_ConfigurationConstraints struct {
 }
 
 type InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappings struct {
+	// The IP address of the appliance associated with the inner VLAN in this mapping. (AI-inferred)
 	InnerApplianceIpAddress any
-	InnerVlanTags           any
+	// A list of inner VLAN tags that are mapped to an appliance in the L2 forwarding appliance mapping. These tags are used to classify traffic for routing to the specified appliance. (AI-inferred)
+	InnerVlanTags any
 }
 
 type InterconnectAttachment_L2Forwarding_ApplianceMappings struct {
+	// IP address of the appliance inside the customer's network, used for this VLAN attachment mapping. (AI-inferred)
 	ApplianceIpAddress           any
 	InnerVlanToApplianceMappings any
 	Name                         any

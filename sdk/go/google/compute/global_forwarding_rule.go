@@ -4,22 +4,30 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalForwardingRule_AttachedExtensions struct {
+	// The URL or full resource name of the attached service attachment (e.g., a Private Service Connect service attachment) to associate with this forwarding rule. (AI-inferred)
 	Reference any
 }
 
 type GlobalForwardingRule_MetadataFilters_FilterLabels struct {
-	Name  any
+	// The name (key) of the metadata filter label. This is the label that must match the incoming request metadata. (AI-inferred)
+	Name any
+	// The value of the metadata filter label. This is used with the associated label name to match incoming request metadata and determine whether the forwarding rule applies. (AI-inferred)
 	Value any
 }
 
 type GlobalForwardingRule_MetadataFilters struct {
-	FilterLabels        any
+	// The list of label name/value pairs used to match incoming requests for the forwarding rule. Each label defines a metadata filter condition that must be satisfied for the rule to apply. (AI-inferred)
+	FilterLabels any
+	// Specifies the match criteria for the metadata filter. Allowed values are MATCH_ALL (must match all labels), MATCH_ANY (must match at least one label), and NOT_SET (no filtering applied). (AI-inferred)
 	FilterMatchCriteria any
 }
 
 type GlobalForwardingRule_ServiceDirectoryRegistrations struct {
-	Namespace              any
-	Service                any
+	// The name of the Service Directory namespace in which the forwarding rule's service is registered. This is required for Service Directory integration and must match an existing namespace. (AI-inferred)
+	Namespace any
+	// The Service Directory service to register with the forwarding rule. Provide the fully qualified service name (e.g., projects/my-project/locations/us-central1/namespaces/my-ns/services/my-service). (AI-inferred)
+	Service any
+	// The region for the Service Directory registration associated with this global forwarding rule. (AI-inferred)
 	ServiceDirectoryRegion any
 }
 
@@ -168,7 +176,8 @@ type GlobalForwardingRuleAttrs struct {
 	// The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The ports field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, or SCTP, and - It's applicable only to the following products: internal passthrough Network Load Balancers, backend service-based external passthrough Network Load Balancers, and internal protocol forwarding. - You can specify a list of up to five ports by number, separated by commas. The ports can be contiguous or discontiguous. For external forwarding rules, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol fields) if they share at least one port number. For internal forwarding rules within the same VPC network, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair if they share at least one port number. @pattern: \\d+(?:-\\d+)?
 	Ports any
 	// [Output Only] The PSC connection id of the PSC forwarding rule.
-	PscConnectionId     any
+	PscConnectionId any
+	// The status of the Private Service Connect (PSC) connection for this global forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred)
 	PscConnectionStatus any
 	// Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any

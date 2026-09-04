@@ -25,7 +25,9 @@ class Node_BootDiskConfig:
 
 @dataclasses.dataclass
 class Node_DataDisks:
+    # The real access mode (`READ_WRITE` or `READ_ONLY`) this data disk is attached to the TPU node with. (AI-inferred)
     mode: Any = None
+    # The real Compute Engine disk this TPU node's own data disk is created from or attached to. (AI-inferred)
     source_disk: Any = None
 
 @dataclasses.dataclass
@@ -43,12 +45,16 @@ class Node_NetworkConfig:
 
 @dataclasses.dataclass
 class Node_NetworkEndpoints_AccessConfig:
+    # The real, assigned external (public) IP address for this TPU node's own network endpoint. (AI-inferred)
     external_ip: Any = None
 
 @dataclasses.dataclass
 class Node_NetworkEndpoints:
+    # Real, external-access configuration (such as the assigned `external_ip`) for this TPU node's own network endpoint. (AI-inferred)
     access_config: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The real network port this TPU node's own network endpoint listens on. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
@@ -74,9 +80,13 @@ class Node_ShieldedInstanceConfig:
 
 @dataclasses.dataclass
 class Node_Symptoms:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Real, additional detail text describing this detected TPU node symptom. (AI-inferred)
     details: Any = None
+    # The real, detected category of issue (e.g. `OUT_OF_MEMORY`, `HBM_OUT_OF_MEMORY`) affecting this TPU node. (AI-inferred)
     symptom_type: Any = None
+    # The real, specific TPU worker this symptom was detected on, within a multi-worker TPU node. (AI-inferred)
     worker_id: Any = None
 
 @dataclasses.dataclass

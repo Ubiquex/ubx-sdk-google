@@ -4,13 +4,18 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionSslPolicy_Warnings_Data struct {
-	Key   any
+	// The key of the warning data entry, providing additional details about the warning. (AI-inferred)
+	Key any
+	// The value component of a key-value pair in the warning data, providing additional information about the warning. (AI-inferred)
 	Value any
 }
 
 type RegionSslPolicy_Warnings struct {
-	Code    any
-	Data    any
+	// The warning code, identifying the type of warning. Possible values include CLEANUP_FAILED, DEPRECATED_RESOURCE_USED, DEPRECATED_TYPE_USED, DISK_SIZE_LARGER_THAN_IMAGE_SIZE, EXPERIMENTAL_TYPE_USED, EXTERNAL_API_WARNING, FIELD_VALUE_OVERRIDEN, INJECTED_KERNELS_DEPRECATED, INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB, LARGE_DEPLOYMENT_WARNING, LIST_OVERHEAD_QUOTA_EXCEED, MISSING_TYPE_DEPENDENCY, NEXT_HOP_ADDRESS_NOT_ASSIGNED, NEXT_HOP_CANNOT_IP_FORWARD, NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE, NEXT_HOP_INSTANCE_NOT_FOUND, NEXT_HOP_INSTANCE_NOT_ON_NETWORK, NEXT_HOP_NOT_RUNNING, NOT_CRITICAL_ERROR, NO_RESULTS_ON_PAGE, PARTIAL_SUCCESS, QUOTA_INFO_UNAVAILABLE, REQUIRED_TOS_AGREEMENT, RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING, RESOURCE_NOT_DELETED, SCHEMA_VALIDATION_IGNORED, SINGLE_INSTANCE_PROPERTY_TEMPLATE, UNDECLARED_PROPERTIES, and UNREACHABLE. (AI-inferred)
+	Code any
+	// A list of key-value pairs providing additional details about the warning. (AI-inferred)
+	Data any
+	// A human-readable warning message describing the issue and suggested action. (AI-inferred)
 	Message any
 }
 

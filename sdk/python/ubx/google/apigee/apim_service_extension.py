@@ -8,15 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApimServiceExtension_Extensions:
+    # Whether requests are allowed through when this check itself fails to run. (AI-inferred)
     fail_open: Any = None
+    # The hostname this applies to. (AI-inferred)
     hostname: Any = None
+    # The condition that must hold for this rule to apply. (AI-inferred)
     match_condition: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The event type(s) this hook or plugin can respond to. (AI-inferred)
     supported_events: Any = None
 
 @dataclasses.dataclass
 class ApimServiceExtension_NetworkConfigs:
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
+    # A reference to the subnet this applies to. (AI-inferred)
     subnet: Any = None
 
 _ApimServiceExtension_ExtensionsFields = {

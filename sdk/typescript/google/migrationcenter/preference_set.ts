@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeries {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
 }
 
@@ -25,6 +26,7 @@ export interface PreferenceSet_VirtualMachinePreferences_RegionPreferences {
 }
 
 export interface PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypes {
+  /** The name of this node. (AI-inferred) */
   nodeName?: string | Computed<string>;
 }
 

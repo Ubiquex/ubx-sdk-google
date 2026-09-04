@@ -2,17 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Message_Message_ParsedData_Segments {
+  /** The field(s) this applies to. (AI-inferred) */
   fields?: Record<string, string> | Computed<Record<string, string>>;
+  /** An identifier for this HL7v2 segment type, e.g. `MSH` or `PID`. (AI-inferred) */
   segmentId?: string | Computed<string>;
+  /** An identifier grouping related HL7v2 segments together. (AI-inferred) */
   setId?: string | Computed<string>;
 }
 
 export interface Message_Message_ParsedData {
+  /** The segment(s) making up this HL7v2 message. (AI-inferred) */
   segments?: Message_Message_ParsedData_Segments[] | Computed<Message_Message_ParsedData_Segments[]>;
 }
 
 export interface Message_Message_PatientIds {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

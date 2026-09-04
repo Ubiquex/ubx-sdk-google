@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Report_Summary_AllAssetsStats_CoreCountHistogram_Buckets {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The lower bound of this range. (AI-inferred) */
   lowerBound?: string | Computed<string>;
+  /** The upper bound of this range. (AI-inferred) */
   upperBound?: string | Computed<string>;
 }
 
@@ -20,7 +23,9 @@ export interface Report_Summary_AllAssetsStats_MemoryUtilizationChart {
 }
 
 export interface Report_Summary_AllAssetsStats_OperatingSystem_DataPoints {
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
@@ -55,113 +60,173 @@ export interface Report_Summary_AllAssetsStats {
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations {
+  /** How many assets were successfully allocated a sizing recommendation. (AI-inferred) */
   allocatedAssetCount?: string | Computed<string>;
+  /** The recommended machine series for this asset. (AI-inferred) */
   machineSeries?: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding {
+  /** How many assets were successfully allocated a sizing recommendation. (AI-inferred) */
   allocatedAssetCount?: string | Computed<string>;
+  /** The disk type(s) recommended for allocated assets. (AI-inferred) */
   allocatedDiskTypes?: string[] | Computed<string[]>;
+  /** The region(s) allocated assets are recommended to run in. (AI-inferred) */
   allocatedRegions?: string[] | Computed<string[]>;
+  /** The machine series allocated to each asset, and its own relative share. (AI-inferred) */
   machineSeriesAllocations?: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations[] | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations[]>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences_MachinePreferences {
+  /** The machine series considered when generating sizing recommendations. (AI-inferred) */
   allowedMachineSeries?: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries[] | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries[]>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences {
+  /** Whether this asset's own OS license is bring-your-own or Google-provided. (AI-inferred) */
   licenseType?: string | Computed<string>;
+  /** Preference(s) shaping which machine type(s) are recommended. (AI-inferred) */
   machinePreferences?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences_MachinePreferences | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences_MachinePreferences>;
+  /** The recommended Persistent Disk type. (AI-inferred) */
   persistentDiskType?: string | Computed<string>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_RegionPreferences {
+  /** The region(s) preferred for allocation. (AI-inferred) */
   preferredRegions?: string[] | Computed<string[]>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypes {
+  /** The name of this node. (AI-inferred) */
   nodeName?: string | Computed<string>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences {
+  /** The committed-use discount term considered for cost estimation, e.g. 1-year or 3-year. (AI-inferred) */
   commitmentPlan?: string | Computed<string>;
+  /** The ratio of virtual to physical CPU cores assumed when estimating consolidated capacity. (AI-inferred) */
   cpuOvercommitRatio?: number | Computed<number>;
+  /** How host maintenance events are handled for this recommended machine, e.g. live migration versus terminate. (AI-inferred) */
   hostMaintenancePolicy?: string | Computed<string>;
+  /** The sole-tenant node type(s) considered for this recommendation. (AI-inferred) */
   nodeTypes?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypes[] | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypes[]>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferences {
+  /** The committed-use discount term considered for cost estimation, e.g. 1-year or 3-year. (AI-inferred) */
   commitmentPlan?: string | Computed<string>;
+  /** The ratio of virtual to physical CPU cores assumed when estimating consolidated capacity. (AI-inferred) */
   cpuOvercommitRatio?: number | Computed<number>;
+  /** The ratio of virtual to physical memory assumed when estimating consolidated capacity. (AI-inferred) */
   memoryOvercommitRatio?: number | Computed<number>;
+  /** The assumed ratio of storage savings from deduplication and compression. (AI-inferred) */
   storageDeduplicationCompressionRatio?: number | Computed<number>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences {
+  /** The committed-use discount term considered for cost estimation, e.g. 1-year or 3-year. (AI-inferred) */
   commitmentPlan?: string | Computed<string>;
+  /** Preference(s) shaping Compute Engine sizing recommendations. (AI-inferred) */
   computeEnginePreferences?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences>;
+  /** Preference(s) shaping which region(s) are recommended. (AI-inferred) */
   regionPreferences?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_RegionPreferences | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_RegionPreferences>;
+  /** Which strategy is used to size recommended machines, e.g. matching observed utilization versus matching current specs. (AI-inferred) */
   sizingOptimizationStrategy?: string | Computed<string>;
+  /** Preference(s) shaping sole-tenant node sizing recommendations. (AI-inferred) */
   soleTenancyPreferences?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences>;
+  /** The Google Cloud product this asset is being sized for migration to. (AI-inferred) */
   targetProduct?: string | Computed<string>;
+  /** Preference(s) shaping VMware Engine sizing recommendations. (AI-inferred) */
   vmwareEnginePreferences?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferences | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferences>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute {
+  /** The ISO 4217 currency code cost estimates are expressed in. (AI-inferred) */
   currencyCode?: string | Computed<string>;
+  /** The sub-second, nanosecond component of a value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The unit this measurement is expressed in. (AI-inferred) */
   units?: string | Computed<string>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocations {
+  /** How many assets were successfully allocated a sizing recommendation. (AI-inferred) */
   allocatedAssetCount?: string | Computed<string>;
+  /** A reference to the sole-tenant node this applies to. (AI-inferred) */
   node?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypes | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypes>;
+  /** How many nodes this applies to. (AI-inferred) */
   nodeCount?: string | Computed<string>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding {
+  /** How many assets were successfully allocated a sizing recommendation. (AI-inferred) */
   allocatedAssetCount?: string | Computed<string>;
+  /** The region(s) allocated assets are recommended to run in. (AI-inferred) */
   allocatedRegions?: string[] | Computed<string[]>;
+  /** How assets are allocated across sole-tenant node(s). (AI-inferred) */
   nodeAllocations?: Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocations[] | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocations[]>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocations {
+  /** How many assets were successfully allocated a sizing recommendation. (AI-inferred) */
   allocatedAssetCount?: string | Computed<string>;
+  /** How many nodes this applies to. (AI-inferred) */
   nodeCount?: string | Computed<string>;
+  /** The VMware node type considered for this recommendation. (AI-inferred) */
   vmwareNode?: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeries>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding {
+  /** How many assets were successfully allocated a sizing recommendation. (AI-inferred) */
   allocatedAssetCount?: string | Computed<string>;
+  /** The region(s) allocated assets are recommended to run in. (AI-inferred) */
   allocatedRegions?: string[] | Computed<string[]>;
+  /** How assets are allocated across sole-tenant node(s). (AI-inferred) */
   nodeAllocations?: Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocations[] | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocations[]>;
 }
 
 export interface Report_Summary_GroupFindings_PreferenceSetFindings {
+  /** A recommendation for migrating this asset to Compute Engine. (AI-inferred) */
   computeEngineFinding?: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Preference(s) shaping which machine type(s) are recommended. (AI-inferred) */
   machinePreferences?: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences>;
+  /** The estimated monthly compute cost. (AI-inferred) */
   monthlyCostCompute?: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute>;
+  /** The estimated monthly network egress cost. (AI-inferred) */
   monthlyCostNetworkEgress?: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute>;
+  /** The estimated monthly OS licensing cost. (AI-inferred) */
   monthlyCostOsLicense?: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute>;
+  /** Estimated monthly cost not otherwise categorized. (AI-inferred) */
   monthlyCostOther?: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute>;
+  /** The estimated monthly storage cost. (AI-inferred) */
   monthlyCostStorage?: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute>;
+  /** The total estimated monthly cost, summed across all categories. (AI-inferred) */
   monthlyCostTotal?: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute>;
+  /** A recommendation for migrating this asset to a sole-tenant node. (AI-inferred) */
   soleTenantFinding?: Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding>;
+  /** A recommendation for migrating this asset to Google Cloud VMware Engine. (AI-inferred) */
   vmwareEngineFinding?: Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding | Computed<Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding>;
 }
 
 export interface Report_Summary_GroupFindings {
+  /** Summary statistics computed across a group of assets. (AI-inferred) */
   assetAggregateStats?: Report_Summary_AllAssetsStats | Computed<Report_Summary_AllAssetsStats>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** How many assets appear in more than one group. (AI-inferred) */
   overlappingAssetCount?: string | Computed<string>;
+  /** The sizing/cost finding(s) computed for each preference set considered. (AI-inferred) */
   preferenceSetFindings?: Report_Summary_GroupFindings_PreferenceSetFindings[] | Computed<Report_Summary_GroupFindings_PreferenceSetFindings[]>;
 }
 

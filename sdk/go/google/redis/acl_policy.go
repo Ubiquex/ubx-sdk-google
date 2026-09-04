@@ -4,19 +4,27 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses struct {
-	AclPolicyRevision       any
+	// The current revision of this cluster's own access control list policy. (AI-inferred)
+	AclPolicyRevision any
+	// The numeric revision identifier of this ACL policy. (AI-inferred)
 	AclPolicyRevisionNumber any
-	ErrorMessage            any
-	State                   any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type AclPolicy_ClusterAclPolicyAttachments struct {
+	// The status of this ACL policy revision as it propagates across shard(s). (AI-inferred)
 	AclPolicyRevisionStatuses any
-	Cluster                   any
+	// A reference to the Redis cluster this applies to. (AI-inferred)
+	Cluster any
 }
 
 type AclPolicy_Rules struct {
-	Rule     any
+	// A single access control rule. (AI-inferred)
+	Rule any
+	// The username used to authenticate. (AI-inferred)
 	Username any
 }
 

@@ -2,24 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AuthorizationPolicy_Rules_Destinations_HttpHeaderMatch {
+  /** The HTTP header name this rule matches against. (AI-inferred) */
   headerName?: string | Computed<string>;
+  /** Matches values against this regular expression. (AI-inferred) */
   regexMatch?: string | Computed<string>;
 }
 
 export interface AuthorizationPolicy_Rules_Destinations {
+  /** The host(s) this rule applies to. (AI-inferred) */
   hosts?: string[] | Computed<string[]>;
+  /** Matches based on the value of a specific HTTP header. (AI-inferred) */
   httpHeaderMatch?: AuthorizationPolicy_Rules_Destinations_HttpHeaderMatch | Computed<AuthorizationPolicy_Rules_Destinations_HttpHeaderMatch>;
+  /** The gRPC/HTTP method(s) this rule matches. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
+  /** The port(s) this rule matches. (AI-inferred) */
   ports?: number[] | Computed<number[]>;
 }
 
 export interface AuthorizationPolicy_Rules_Sources {
+  /** The IP address range(s) this rule matches. (AI-inferred) */
   ipBlocks?: string[] | Computed<string[]>;
+  /** The identity/identities this rule matches against. (AI-inferred) */
   principals?: string[] | Computed<string[]>;
 }
 
 export interface AuthorizationPolicy_Rules {
+  /** The destination(s) this rule matches traffic against. (AI-inferred) */
   destinations?: AuthorizationPolicy_Rules_Destinations[] | Computed<AuthorizationPolicy_Rules_Destinations[]>;
+  /** The source(s) this rule matches traffic from. (AI-inferred) */
   sources?: AuthorizationPolicy_Rules_Sources[] | Computed<AuthorizationPolicy_Rules_Sources[]>;
 }
 

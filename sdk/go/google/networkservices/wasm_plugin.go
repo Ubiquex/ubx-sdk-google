@@ -13,19 +13,29 @@ type WasmPlugin_LogConfig struct {
 }
 
 type WasmPlugin_UsedBy struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
 }
 
 type WasmPlugin_Versions struct {
-	CreateTime         any
-	Description        any
-	ImageDigest        any
-	ImageUri           any
-	Labels             any
-	PluginConfigData   any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The content digest identifying the specific plugin image version. (AI-inferred)
+	ImageDigest any
+	// The container image URI for this plugin. (AI-inferred)
+	ImageUri any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// Inline configuration data passed to this plugin. (AI-inferred)
+	PluginConfigData any
+	// The content digest of this plugin's own configuration. (AI-inferred)
 	PluginConfigDigest any
-	PluginConfigUri    any
-	UpdateTime         any
+	// A reference to this plugin's own configuration, stored externally. (AI-inferred)
+	PluginConfigUri any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var WasmPlugin_LogConfigFields = ubx.FieldMap{

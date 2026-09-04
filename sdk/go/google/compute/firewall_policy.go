@@ -4,61 +4,95 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallPolicy_Associations struct {
+	// The full resource name of the folder or organization that this firewall policy is associated with. (AI-inferred)
 	AttachmentTarget any
 	DisplayName      any
+	// The unique ID of the firewall policy to associate with the target. (AI-inferred)
 	FirewallPolicyId any
 	Name             any
-	ShortName        any
+	// A short, unique identifier for the association within the firewall policy, used for display and management purposes. (AI-inferred)
+	ShortName any
 }
 
 type FirewallPolicy_PacketMirroringRules_Match_Layer4Configs struct {
+	// The IP protocol to match. Accepts protocol names such as tcp, udp, icmp, esp, ah, ipip, sctp, a numeric IP protocol number, or 'all' to match any protocol. (AI-inferred)
 	IpProtocol any
-	Ports      any
+	// Specifies the list of destination port numbers or ranges to match for this layer4 configuration. Each entry is a string, e.g., '80' or '8000-9000'. If omitted, the rule matches all ports. (AI-inferred)
+	Ports any
 }
 
 type FirewallPolicy_PacketMirroringRules_Match_SrcSecureTags struct {
-	Name  any
+	// The name of the Secure Tag value to match in the source of the packet. This is the full resource name, such as `tagValues/123456789`. (AI-inferred)
+	Name any
+	// The state of the secure tag, indicating whether it is currently effective or ineffective. Allowed values are 'EFFECTIVE' and 'INEFFECTIVE'. (AI-inferred)
 	State any
 }
 
 type FirewallPolicy_PacketMirroringRules_Match struct {
-	DestAddressGroups       any
-	DestFqdns               any
-	DestIpRanges            any
-	DestNetworkContext      any
-	DestNetworkType         any
-	DestRegionCodes         any
+	// List of destination address groups that define the destination IP addresses to match in the packet mirroring rule. (AI-inferred)
+	DestAddressGroups any
+	// A list of destination fully qualified domain names (FQDNs) used by the match criteria for packet mirroring rules. Traffic mirrored by the rule must be destined to one of the specified FQDNs. (AI-inferred)
+	DestFqdns any
+	// A list of destination IP address ranges in CIDR format. Traffic whose destination IP falls within any of these ranges matches this packet mirroring rule. (AI-inferred)
+	DestIpRanges any
+	// Specifies the network context of the destination traffic that this rule matches. Valid values are INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
+	DestNetworkContext any
+	// The destination network type to match for packet mirroring. The allowed values are: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
+	DestNetworkType any
+	// A list of destination region codes (for example, 'us-central1') that the packet mirroring rule matches on. The rule applies only to packets with a destination in one of the specified regions. (AI-inferred)
+	DestRegionCodes any
+	// A list of threat intelligence feeds to match against the destination IP address of the traffic. (AI-inferred)
 	DestThreatIntelligences any
-	Layer4Configs           any
-	SrcAddressGroups        any
-	SrcFqdns                any
-	SrcIpRanges             any
-	SrcNetworkContext       any
-	SrcNetworkType          any
-	SrcNetworks             any
-	SrcRegionCodes          any
-	SrcSecureTags           any
-	SrcThreatIntelligences  any
+	// A list of layer 4 configurations used to match packets based on protocol and port. Each configuration specifies the IP protocol (such as TCP, UDP, ICMP) and an optional list of destination ports, allowing the firewall policy rule to apply to specific traffic types. (AI-inferred)
+	Layer4Configs any
+	// A list of full resource URLs to network address groups used as the source address match. Packets from sources that belong to these groups are mirrored. (AI-inferred)
+	SrcAddressGroups any
+	// The list of fully qualified domain names (FQDNs) that the rule uses as the source match condition. Traffic originating from these FQDNs matches the rule. (AI-inferred)
+	SrcFqdns any
+	// A list of source IP address ranges in CIDR notation that the packet mirroring rule matches on. If specified, the rule only applies to traffic originating from these ranges. (AI-inferred)
+	SrcIpRanges any
+	// Specifies the source network context for matching traffic. Allowed values are: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
+	SrcNetworkContext any
+	// The type of source network that the rule matches. Valid values are INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, and VPC_NETWORKS. (AI-inferred)
+	SrcNetworkType any
+	// List of source CIDR networks to match. Traffic from any of these source IP ranges will match the rule and be mirrored. Each entry must be a valid CIDR block, for example: '10.0.0.0/8'. (AI-inferred)
+	SrcNetworks any
+	// Specifies the list of source region codes (e.g., 'us-central1', 'europe-west1') from which traffic must originate for the rule to apply. (AI-inferred)
+	SrcRegionCodes any
+	// List of secure tags used to match source resources for this packet mirroring rule. Traffic originating from any resource carrying one of these tags will be mirrored. (AI-inferred)
+	SrcSecureTags any
+	// A list of threat intelligence sources used to match the source IP address of traffic. If specified, the rule applies only to traffic whose source IP is identified by one of the listed threat intelligence feeds. (AI-inferred)
+	SrcThreatIntelligences any
 }
 
 type FirewallPolicy_PacketMirroringRules struct {
-	Action                any
-	Description           any
-	Direction             any
-	Disabled              any
-	EnableLogging         any
-	Kind                  any
-	Match                 any
-	Priority              any
-	RuleName              any
-	RuleTupleCount        any
-	SecurityProfileGroup  any
+	Action any
+	// An optional user-defined description for this packet mirroring rule within the firewall policy. (AI-inferred)
+	Description any
+	// Specifies the direction of traffic to which this packet mirroring rule applies. Valid values are 'INGRESS' and 'EGRESS'. (AI-inferred)
+	Direction any
+	// Whether this packet mirroring rule is disabled. When set to true, the rule is not enforced. (AI-inferred)
+	Disabled      any
+	EnableLogging any
+	Kind          any
+	// The match criteria that specify which network traffic is subject to this packet mirroring rule. (AI-inferred)
+	Match any
+	// The priority of this packet mirroring rule. Lower values are evaluated first. Must be an integer between 0 and 65535. (AI-inferred)
+	Priority any
+	// The name of the packet mirroring rule. This is a user-provided name used to identify the rule in the firewall policy. (AI-inferred)
+	RuleName             any
+	RuleTupleCount       any
+	SecurityProfileGroup any
+	// List of forwarding rule URLs that are the target of the packet mirroring rule. Traffic sent to these forwarding rules is mirrored to the collector. (AI-inferred)
 	TargetForwardingRules any
 	TargetResources       any
-	TargetSecureTags      any
+	// A list of secure tags that identify the target instances whose traffic will be mirrored by this packet mirroring rule. (AI-inferred)
+	TargetSecureTags any
+	// A list of service accounts that the rule targets. Instances with any of these service accounts will have their traffic affected by this packet mirroring rule. If not specified, the rule applies to all instances. (AI-inferred)
 	TargetServiceAccounts any
-	TargetType            any
-	TlsInspect            any
+	// The type of target to which the packet mirroring rule applies. Valid values are INSTANCES and INTERNAL_MANAGED_LB. (AI-inferred)
+	TargetType any
+	TlsInspect any
 }
 
 var FirewallPolicy_AssociationsFields = ubx.FieldMap{

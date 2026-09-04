@@ -9,129 +9,205 @@ export interface CertificateAuthority_AccessUrls {
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_AuthorityKeyId {
+  /** An identifier for this key. (AI-inferred) */
   keyId?: string | Computed<string>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_CertFingerprint {
+  /** A SHA-256 hash of this content. (AI-inferred) */
   sha256Hash?: string | Computed<string>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_PublicKey {
+  /** A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred) */
   format?: string | Computed<string>;
+  /** The key material for this key pair. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId {
+  /** The numeric component(s) making up an object identifier. (AI-inferred) */
   objectIdPath?: number[] | Computed<number[]>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes {
+  /** An X.509 object identifier (OID). (AI-inferred) */
   objectId?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence {
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes[] | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes[]>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject {
+  /** The Common Name field of this certificate's own subject. (AI-inferred) */
   commonName?: string | Computed<string>;
+  /** The two-letter country code in this certificate's own subject. (AI-inferred) */
   countryCode?: string | Computed<string>;
+  /** The locality (city) field in this certificate's own subject. (AI-inferred) */
   locality?: string | Computed<string>;
+  /** The organization field in this certificate's own subject. (AI-inferred) */
   organization?: string | Computed<string>;
+  /** The organizational unit field in this certificate's own subject. (AI-inferred) */
   organizationalUnit?: string | Computed<string>;
+  /** The postal code field in this certificate's own subject. (AI-inferred) */
   postalCode?: string | Computed<string>;
+  /** The state/province field in this certificate's own subject. (AI-inferred) */
   province?: string | Computed<string>;
+  /** The subject expressed as a raw sequence of Relative Distinguished Names. (AI-inferred) */
   rdnSequence?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence[] | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence[]>;
+  /** The street address field in this certificate's own subject. (AI-inferred) */
   streetAddress?: string | Computed<string>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSans {
+  /** Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred) */
   critical?: boolean | Computed<boolean>;
+  /** An X.509 object identifier (OID). (AI-inferred) */
   objectId?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName {
+  /** Caller-defined Subject Alternative Name(s) beyond the standard DNS/email/IP/URI types. (AI-inferred) */
   customSans?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSans[] | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSans[]>;
+  /** The DNS name(s) this certificate is valid for. (AI-inferred) */
   dnsNames?: string[] | Computed<string[]>;
+  /** The email address(es) this certificate is valid for. (AI-inferred) */
   emailAddresses?: string[] | Computed<string[]>;
+  /** The IP address(es) this certificate is valid for. (AI-inferred) */
   ipAddresses?: string[] | Computed<string[]>;
+  /** The URI(s) this certificate is valid for. (AI-inferred) */
   uris?: string[] | Computed<string[]>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_SubjectDescription {
+  /** This certificate's own serial number, in hexadecimal. (AI-inferred) */
   hexSerialNumber?: string | Computed<string>;
+  /** How long this certificate remains valid for, from issuance. (AI-inferred) */
   lifetime?: string | Computed<string>;
+  /** The timestamp after which this certificate is no longer valid. (AI-inferred) */
   notAfterTime?: string | Computed<string>;
+  /** The timestamp before which this certificate isn't yet valid. (AI-inferred) */
   notBeforeTime?: string | Computed<string>;
+  /** The identity this certificate identifies. (AI-inferred) */
   subject?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject>;
+  /** Additional identity/identities this certificate is also valid for, beyond its own primary subject. (AI-inferred) */
   subjectAltName?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptions {
+  /** Whether this certificate is itself a CA certificate, authorized to sign other certificates. (AI-inferred) */
   isCa?: boolean | Computed<boolean>;
+  /** The maximum number of intermediate CA certificates permitted below this one in a certificate chain. (AI-inferred) */
   maxIssuerPathLength?: number | Computed<number>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsage {
+  /** Whether this certificate is authorized to sign other certificates. (AI-inferred) */
   certSign?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for non-repudiation (content commitment). (AI-inferred) */
   contentCommitment?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized to sign certificate revocation lists. (AI-inferred) */
   crlSign?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for direct data encipherment. (AI-inferred) */
   dataEncipherment?: boolean | Computed<boolean>;
+  /** Whether this certificate's own key agreement usage is restricted to deciphering only. (AI-inferred) */
   decipherOnly?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for digital signatures. (AI-inferred) */
   digitalSignature?: boolean | Computed<boolean>;
+  /** Whether this certificate's own key agreement usage is restricted to enciphering only. (AI-inferred) */
   encipherOnly?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for key agreement. (AI-inferred) */
   keyAgreement?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for key encipherment. (AI-inferred) */
   keyEncipherment?: boolean | Computed<boolean>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsage {
+  /** Whether this certificate is authorized for TLS client authentication. (AI-inferred) */
   clientAuth?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for code signing. (AI-inferred) */
   codeSigning?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for email protection (S/MIME). (AI-inferred) */
   emailProtection?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for OCSP response signing. (AI-inferred) */
   ocspSigning?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for TLS server authentication. (AI-inferred) */
   serverAuth?: boolean | Computed<boolean>;
+  /** Whether this certificate is authorized for trusted timestamping. (AI-inferred) */
   timeStamping?: boolean | Computed<boolean>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage {
+  /** The core X.509 Key Usage bit(s) (e.g. digital signature, key encipherment) this certificate is authorized for. (AI-inferred) */
   baseKeyUsage?: CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsage | Computed<CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsage>;
+  /** The extended (application-specific) key usage purpose(s) this certificate is authorized for, e.g. server or client authentication. (AI-inferred) */
   extendedKeyUsage?: CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsage | Computed<CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsage>;
+  /** Extended key usage object identifier(s) not recognized as one of the standard, named purposes. (AI-inferred) */
   unknownExtendedKeyUsages?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId[] | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId[]>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraints {
+  /** Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred) */
   critical?: boolean | Computed<boolean>;
+  /** DNS name(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred) */
   excludedDnsNames?: string[] | Computed<string[]>;
+  /** Email address(es) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred) */
   excludedEmailAddresses?: string[] | Computed<string[]>;
+  /** IP address range(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred) */
   excludedIpRanges?: string[] | Computed<string[]>;
+  /** URI(s) explicitly excluded from what this CA is permitted to issue certificates for. (AI-inferred) */
   excludedUris?: string[] | Computed<string[]>;
+  /** DNS name(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred) */
   permittedDnsNames?: string[] | Computed<string[]>;
+  /** Email address(es) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred) */
   permittedEmailAddresses?: string[] | Computed<string[]>;
+  /** IP address range(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred) */
   permittedIpRanges?: string[] | Computed<string[]>;
+  /** URI(s) a CA is permitted to issue certificates for, per its own name constraints. (AI-inferred) */
   permittedUris?: string[] | Computed<string[]>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions_X509Description {
+  /** Additional, caller-defined X.509 extension(s) included in this certificate. (AI-inferred) */
   additionalExtensions?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSans[] | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSans[]>;
+  /** The OCSP responder URL(s) included in the Authority Information Access extension. (AI-inferred) */
   aiaOcspServers?: string[] | Computed<string[]>;
+  /** CA-specific certificate options, e.g. whether this certificate itself may sign other CA certificates. (AI-inferred) */
   caOptions?: CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptions | Computed<CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptions>;
+  /** The X.509 Key Usage extension, defining what cryptographic operations this certificate is authorized for. (AI-inferred) */
   keyUsage?: CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage | Computed<CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage>;
+  /** Restrictions on the namespace(s) (DNS, email, IP, URI) a CA is permitted to issue certificates for. (AI-inferred) */
   nameConstraints?: CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraints | Computed<CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraints>;
+  /** The certificate policy object identifier(s) this certificate asserts compliance with. (AI-inferred) */
   policyIds?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId[] | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectId[]>;
 }
 
 export interface CertificateAuthority_CaCertificateDescriptions {
+  /** The URL(s), included in the Authority Information Access extension, where the issuing CA certificate can be downloaded. (AI-inferred) */
   aiaIssuingCertificateUrls?: string[] | Computed<string[]>;
+  /** The X.509 Authority Key Identifier extension, identifying the key used to sign this certificate. (AI-inferred) */
   authorityKeyId?: CertificateAuthority_CaCertificateDescriptions_AuthorityKeyId | Computed<CertificateAuthority_CaCertificateDescriptions_AuthorityKeyId>;
+  /** A cryptographic fingerprint of this certificate. (AI-inferred) */
   certFingerprint?: CertificateAuthority_CaCertificateDescriptions_CertFingerprint | Computed<CertificateAuthority_CaCertificateDescriptions_CertFingerprint>;
+  /** The URL(s) where this certificate's own revocation list (CRL) can be downloaded. (AI-inferred) */
   crlDistributionPoints?: string[] | Computed<string[]>;
+  /** The public key of this certificate or key pair. (AI-inferred) */
   publicKey?: CertificateAuthority_CaCertificateDescriptions_PublicKey | Computed<CertificateAuthority_CaCertificateDescriptions_PublicKey>;
+  /** A human-readable description of this certificate's own subject. (AI-inferred) */
   subjectDescription?: CertificateAuthority_CaCertificateDescriptions_SubjectDescription | Computed<CertificateAuthority_CaCertificateDescriptions_SubjectDescription>;
+  /** The X.509 Subject Key Identifier extension, identifying this certificate's own public key. (AI-inferred) */
   subjectKeyId?: CertificateAuthority_CaCertificateDescriptions_AuthorityKeyId | Computed<CertificateAuthority_CaCertificateDescriptions_AuthorityKeyId>;
+  /** A digest of the to-be-signed portion of this certificate. (AI-inferred) */
   tbsCertificateDigest?: string | Computed<string>;
+  /** A structured description of this certificate's own X.509 fields. (AI-inferred) */
   x509Description?: CertificateAuthority_CaCertificateDescriptions_X509Description | Computed<CertificateAuthority_CaCertificateDescriptions_X509Description>;
 }
 

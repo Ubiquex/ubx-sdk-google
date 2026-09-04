@@ -4,22 +4,33 @@ package iampolicies
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IamPolicy_Rules_DenyRule_DenialCondition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// The Common Expression Language (CEL) expression evaluated by this condition. (AI-inferred)
+	Expression any
+	// A human-readable reference to where this expression is defined, for error messages. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type IamPolicy_Rules_DenyRule struct {
-	DenialCondition      any
-	DeniedPermissions    any
-	DeniedPrincipals     any
+	// A Common Expression Language (CEL) condition further restricting when this deny rule applies. (AI-inferred)
+	DenialCondition any
+	// The permission(s) this rule denies. (AI-inferred)
+	DeniedPermissions any
+	// The principal(s) this rule denies the listed permission(s) to. (AI-inferred)
+	DeniedPrincipals any
+	// The permission(s) exempted from this deny rule's own denial. (AI-inferred)
 	ExceptionPermissions any
-	ExceptionPrincipals  any
+	// The principal(s) exempted from this deny rule's own denial. (AI-inferred)
+	ExceptionPrincipals any
 }
 
 type IamPolicy_Rules struct {
-	DenyRule    any
+	// The deny rule this policy enforces, when this policy is a Deny Policy. (AI-inferred)
+	DenyRule any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
 }
 

@@ -20,7 +20,9 @@ export interface Backup_EncryptionKey {
 }
 
 export interface Backup_SelectedApplications_NamespacedNames {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Kubernetes namespace this applies to. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
@@ -30,7 +32,9 @@ export interface Backup_SelectedApplications {
 }
 
 export interface Backup_SelectedNamespaceLabels_ResourceLabels {
+  /** The key of this label or field. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

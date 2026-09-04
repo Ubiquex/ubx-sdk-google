@@ -17,13 +17,18 @@ export interface Note_Build {
 }
 
 export interface Note_Compliance_CisBenchmark {
+  /** The compliance benchmark profile level this check belongs to, e.g. Level 1 or Level 2. (AI-inferred) */
   profileLevel?: number | Computed<number>;
+  /** How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface Note_Compliance_Version {
+  /** The compliance benchmark document this check is defined in. (AI-inferred) */
   benchmarkDocument?: string | Computed<string>;
+  /** A Common Platform Enumeration URI identifying the affected software. (AI-inferred) */
   cpeUri?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
@@ -32,6 +37,7 @@ export interface Note_Compliance {
   cisBenchmark?: Note_Compliance_CisBenchmark | Computed<Note_Compliance_CisBenchmark>;
   /** A description about this compliance check. */
   description?: string | Computed<string>;
+  /** The consequence of this vulnerability if exploited. (AI-inferred) */
   impact?: string | Computed<string>;
   /** A rationale for the existence of this compliance check. */
   rationale?: string | Computed<string>;
@@ -72,25 +78,39 @@ export interface Note_Image {
 }
 
 export interface Note_Package_Digest {
+  /** The hash algorithm used, e.g. `SHA256`. (AI-inferred) */
   algo?: string | Computed<string>;
+  /** The raw bytes of this digest. (AI-inferred) */
   digestBytes?: string | Computed<string>;
 }
 
 export interface Note_Package_Distribution_LatestVersion {
+  /** The package version's own epoch, used to order versions when the upstream numbering scheme changed. (AI-inferred) */
   epoch?: number | Computed<number>;
+  /** The fully qualified name of this package or resource. (AI-inferred) */
   fullName?: string | Computed<string>;
+  /** Whether this version range's own boundary is inclusive. (AI-inferred) */
   inclusive?: boolean | Computed<boolean>;
+  /** The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The specific revision of this source this applies to. (AI-inferred) */
   revision?: string | Computed<string>;
 }
 
 export interface Note_Package_Distribution {
+  /** The CPU architecture this applies to, e.g. `x86_64`. (AI-inferred) */
   architecture?: string | Computed<string>;
+  /** A Common Platform Enumeration URI identifying the affected software. (AI-inferred) */
   cpeUri?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The most recent version of this package. (AI-inferred) */
   latestVersion?: Note_Package_Distribution_LatestVersion | Computed<Note_Package_Distribution_LatestVersion>;
+  /** The maintainer of this package. (AI-inferred) */
   maintainer?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
@@ -127,7 +147,9 @@ export interface Note_Package {
 }
 
 export interface Note_RelatedUrl {
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
@@ -139,14 +161,20 @@ export interface Note_SbomReference {
 }
 
 export interface Note_Upgrade_Distributions {
+  /** How this vulnerability or finding is classified. (AI-inferred) */
   classification?: string | Computed<string>;
+  /** A Common Platform Enumeration URI identifying the affected software. (AI-inferred) */
   cpeUri?: string | Computed<string>;
+  /** The CVE identifier for this vulnerability. (AI-inferred) */
   cve?: string[] | Computed<string[]>;
+  /** How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface Note_Upgrade_WindowsUpdate_Categories {
+  /** An identifier for the category this belongs to. (AI-inferred) */
   categoryId?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -202,7 +230,9 @@ export interface Note_Vulnerability_CvssV2 {
   confidentialityImpact?: string | Computed<string>;
   /** Exploit Maturity (E). Defined in CVSS v4. */
   exploitMaturity?: string | Computed<string>;
+  /** A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred) */
   exploitabilityScore?: number | Computed<number>;
+  /** A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred) */
   impactScore?: number | Computed<number>;
   /** Integrity Impact (I). Defined in CVSS v2, v3. */
   integrityImpact?: string | Computed<string>;
@@ -227,47 +257,76 @@ export interface Note_Vulnerability_CvssV2 {
 }
 
 export interface Note_Vulnerability_CvssV3 {
+  /** How difficult a successful exploit of this vulnerability is to execute, per CVSS. (AI-inferred) */
   attackComplexity?: string | Computed<string>;
   /** Base Metrics Represents the intrinsic characteristics of a vulnerability that are constant over time and across user environments. */
   attackVector?: string | Computed<string>;
+  /** The impact to system availability if this vulnerability is exploited, per CVSS. (AI-inferred) */
   availabilityImpact?: string | Computed<string>;
   /** The base score is a function of the base metric scores. */
   baseScore?: number | Computed<number>;
+  /** The impact to data confidentiality if this vulnerability is exploited, per CVSS. (AI-inferred) */
   confidentialityImpact?: string | Computed<string>;
+  /** A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred) */
   exploitabilityScore?: number | Computed<number>;
+  /** A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred) */
   impactScore?: number | Computed<number>;
+  /** The impact to data integrity if this vulnerability is exploited, per CVSS. (AI-inferred) */
   integrityImpact?: string | Computed<string>;
+  /** What level of privilege an attacker needs to exploit this vulnerability, per CVSS. (AI-inferred) */
   privilegesRequired?: string | Computed<string>;
+  /** What this occurrence's own analysis covers. (AI-inferred) */
   scope?: string | Computed<string>;
+  /** Whether exploiting this vulnerability requires interaction from a user other than the attacker, per CVSS. (AI-inferred) */
   userInteraction?: string | Computed<string>;
 }
 
 export interface Note_Vulnerability_Details {
+  /** The CPE URI of the package version affected by this vulnerability. (AI-inferred) */
   affectedCpeUri?: string | Computed<string>;
+  /** The name of the package affected by this vulnerability. (AI-inferred) */
   affectedPackage?: string | Computed<string>;
+  /** The end of the version range affected by this vulnerability. (AI-inferred) */
   affectedVersionEnd?: Note_Package_Distribution_LatestVersion | Computed<Note_Package_Distribution_LatestVersion>;
+  /** The start of the version range affected by this vulnerability. (AI-inferred) */
   affectedVersionStart?: Note_Package_Distribution_LatestVersion | Computed<Note_Package_Distribution_LatestVersion>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The CPE URI of the package version that fixes this vulnerability. (AI-inferred) */
   fixedCpeUri?: string | Computed<string>;
+  /** The name of the package that fixes this vulnerability. (AI-inferred) */
   fixedPackage?: string | Computed<string>;
+  /** The version that fixes this vulnerability. (AI-inferred) */
   fixedVersion?: Note_Package_Distribution_LatestVersion | Computed<Note_Package_Distribution_LatestVersion>;
+  /** Whether this note or occurrence has been superseded and should be treated as no longer current. (AI-inferred) */
   isObsolete?: boolean | Computed<boolean>;
+  /** The package manager/ecosystem this package belongs to, e.g. `DEBIAN` or `NPM`. (AI-inferred) */
   packageType?: string | Computed<string>;
+  /** A human-readable name for this vulnerability's own severity level. (AI-inferred) */
   severityName?: string | Computed<string>;
+  /** The source this build's own materials were drawn from. (AI-inferred) */
   source?: string | Computed<string>;
+  /** When this source note was last updated. (AI-inferred) */
   sourceUpdateTime?: string | Computed<string>;
+  /** The vendor of this package or software. (AI-inferred) */
   vendor?: string | Computed<string>;
 }
 
 export interface Note_Vulnerability_WindowsDetails_FixingKbs {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface Note_Vulnerability_WindowsDetails {
+  /** A Common Platform Enumeration URI identifying the affected software. (AI-inferred) */
   cpeUri?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The Windows Knowledge Base article(s) that fix this vulnerability. (AI-inferred) */
   fixingKbs?: Note_Vulnerability_WindowsDetails_FixingKbs[] | Computed<Note_Vulnerability_WindowsDetails_FixingKbs[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -302,8 +361,11 @@ export interface Note_VulnerabilityAssessment_Assessment_Justification {
 }
 
 export interface Note_VulnerabilityAssessment_Assessment_Remediations {
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** The category of fix available for this vulnerability, e.g. a package update or workaround. (AI-inferred) */
   remediationType?: string | Computed<string>;
+  /** A URI with guidance on remediating this vulnerability. (AI-inferred) */
   remediationUri?: Note_RelatedUrl | Computed<Note_RelatedUrl>;
 }
 
@@ -753,6 +815,7 @@ export interface NoteConfig {
   attestation?: Note_Attestation | Computed<Note_Attestation>;
   /** Note holding the version of the provider's builder and the signature of the provenance message in the build details occurrence. */
   build?: Note_Build | Computed<Note_Build>;
+  /** Detail about this resource's own compliance check result. (AI-inferred) */
   compliance?: Note_Compliance | Computed<Note_Compliance>;
   /** Output only. The time this note was created. This field can be used as a filter in list requests. */
   createTime?: string | Computed<string>;
@@ -760,6 +823,7 @@ export interface NoteConfig {
   deployment?: Note_Deployment | Computed<Note_Deployment>;
   /** A note that indicates a type of analysis a provider would perform. This note exists in a provider's project. A `Discovery` occurrence is created in a consumer's project at the start of analysis. */
   discovery?: Note_Discovery | Computed<Note_Discovery>;
+  /** An attestation wrapped in the Dead Simple Signing Envelope (DSSE) format. (AI-inferred) */
   dsseAttestation?: Note_Attestation | Computed<Note_Attestation>;
   /** Time of expiration for this note. Empty if note does not expire. */
   expirationTime?: string | Computed<string>;
@@ -800,6 +864,7 @@ export interface NoteAttrs {
   attestation: Note_Attestation;
   /** Note holding the version of the provider's builder and the signature of the provenance message in the build details occurrence. */
   build: Note_Build;
+  /** Detail about this resource's own compliance check result. (AI-inferred) */
   compliance: Note_Compliance;
   /** Output only. The time this note was created. This field can be used as a filter in list requests. */
   createTime: string;
@@ -807,6 +872,7 @@ export interface NoteAttrs {
   deployment: Note_Deployment;
   /** A note that indicates a type of analysis a provider would perform. This note exists in a provider's project. A `Discovery` occurrence is created in a consumer's project at the start of analysis. */
   discovery: Note_Discovery;
+  /** An attestation wrapped in the Dead Simple Signing Envelope (DSSE) format. (AI-inferred) */
   dsseAttestation: Note_Attestation;
   /** Time of expiration for this note. Empty if note does not expire. */
   expirationTime: string;

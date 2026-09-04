@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AutoLabelingRule_Conditions {
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

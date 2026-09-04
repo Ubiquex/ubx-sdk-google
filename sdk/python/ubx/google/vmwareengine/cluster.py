@@ -8,16 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds:
+    # Configuration for automatically removing node(s) when utilization drops. (AI-inferred)
     scale_in: Any = None
+    # Configuration for automatically adding node(s) when utilization rises. (AI-inferred)
     scale_out: Any = None
 
 @dataclasses.dataclass
 class Cluster_AutoscalingSettings_AutoscalingPolicies:
+    # The utilization threshold(s) that trigger scaling based on consumed memory. (AI-inferred)
     consumed_memory_thresholds: Any = None
+    # The utilization threshold(s) that trigger scaling based on CPU usage. (AI-inferred)
     cpu_thresholds: Any = None
+    # The utilization threshold(s) that trigger scaling based on granted memory. (AI-inferred)
     granted_memory_thresholds: Any = None
+    # A reference to the node type this applies to. (AI-inferred)
     node_type_id: Any = None
+    # The number of node(s) added each time this cluster scales out. (AI-inferred)
     scale_out_size: Any = None
+    # The utilization threshold(s) that trigger scaling based on storage usage. (AI-inferred)
     storage_thresholds: Any = None
 
 @dataclasses.dataclass
@@ -33,23 +41,35 @@ class Cluster_AutoscalingSettings:
 
 @dataclasses.dataclass
 class Cluster_DatastoreMountConfig_DatastoreNetwork:
+    # The number of active connection(s). (AI-inferred)
     connection_count: Any = None
+    # The maximum transmission unit size, in bytes, for this network. (AI-inferred)
     mtu: Any = None
+    # A reference to the network peering this applies to. (AI-inferred)
     network_peering: Any = None
+    # A reference to the subnet this applies to. (AI-inferred)
     subnet: Any = None
 
 @dataclasses.dataclass
 class Cluster_DatastoreMountConfig:
+    # Whether this datastore is accessible for reading only or for reading and writing. (AI-inferred)
     access_mode: Any = None
+    # A reference to the datastore this applies to. (AI-inferred)
     datastore: Any = None
+    # The network hosting this datastore. (AI-inferred)
     datastore_network: Any = None
+    # A single exported file share. (AI-inferred)
     file_share: Any = None
+    # The NFS protocol version this file share uses. (AI-inferred)
     nfs_version: Any = None
+    # The server(s) this applies to. (AI-inferred)
     servers: Any = None
 
 @dataclasses.dataclass
 class Cluster_NodeTypeConfigs:
+    # The number of CPU core(s) enabled per node, when overriding the node type's own default. (AI-inferred)
     custom_core_count: Any = None
+    # The number of node(s) provisioned. (AI-inferred)
     node_count: Any = None
 
 @dataclasses.dataclass

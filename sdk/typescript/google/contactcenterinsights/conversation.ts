@@ -34,7 +34,9 @@ export interface Conversation_DataSource_GcsSource {
 }
 
 export interface Conversation_DataSource_TurnLevelAudios {
+  /** The total duration of this conversation's own audio recording. (AI-inferred) */
   audioDuration?: string | Computed<string>;
+  /** The Cloud Storage URI of this conversation's own audio recording. (AI-inferred) */
   audioGcsUri?: string | Computed<string>;
 }
 
@@ -50,68 +52,101 @@ export interface Conversation_DataSource {
 }
 
 export interface Conversation_DialogflowIntents {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary {
+  /** This segment's own position within the full transcript. (AI-inferred) */
   transcriptIndex?: number | Computed<number>;
+  /** This word's own position within the transcript. (AI-inferred) */
   wordIndex?: number | Computed<number>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment {
+  /** The overall strength of sentiment detected, regardless of positive/negative direction. (AI-inferred) */
   magnitude?: number | Computed<number>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData {
+  /** An identifier for this specific entity mention, unique within its own conversation. (AI-inferred) */
   entityUniqueId?: string | Computed<string>;
+  /** The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred) */
   sentiment?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData {
+  /** An identifier for this specific intent match, unique within its own conversation. (AI-inferred) */
   intentUniqueId?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the detected issue this applies to. (AI-inferred) */
   issue?: string | Computed<string>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData {
+  /** Detail assigning this conversation to a specific issue category. (AI-inferred) */
   issueAssignment?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the phrase matcher this applies to. (AI-inferred) */
   phraseMatcher?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations {
+  /** Where this annotation ends within its own containing transcript or audio. (AI-inferred) */
   annotationEndBoundary?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary>;
+  /** Where this annotation starts within its own containing transcript or audio. (AI-inferred) */
   annotationStartBoundary?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary>;
+  /** Which audio channel this segment came from, for a multi-channel recording. (AI-inferred) */
   channelTag?: number | Computed<number>;
+  /** Detail about a named entity mentioned in this conversation. (AI-inferred) */
   entityMentionData?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData>;
+  /** Detail about a hold event within this conversation. (AI-inferred) */
   holdData?: unknown | Computed<unknown>;
+  /** Detail about an intent matched during this conversation turn. (AI-inferred) */
   intentMatchData?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData>;
+  /** Detail about a participant interrupting another during this conversation. (AI-inferred) */
   interruptionData?: unknown | Computed<unknown>;
+  /** Detail about an issue detected during this conversation. (AI-inferred) */
   issueMatchData?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData>;
+  /** Detail about a phrase matcher rule that matched during this conversation. (AI-inferred) */
   phraseMatchData?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData>;
+  /** Detailed sentiment analysis result for this conversation segment. (AI-inferred) */
   sentimentData?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment>;
+  /** Detail about a period of silence detected in this conversation's own audio. (AI-inferred) */
   silenceData?: unknown | Computed<unknown>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Entities {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** How central this entity is to the overall content, relative to other mentioned entities. (AI-inferred) */
   salience?: number | Computed<number>;
+  /** The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred) */
   sentiment?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Intents {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
@@ -123,62 +158,101 @@ export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred) */
   naValue?: boolean | Computed<boolean>;
+  /** This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred) */
   normalizedScore?: number | Computed<number>;
+  /** A numeric value. (AI-inferred) */
   numValue?: number | Computed<number>;
+  /** The maximum score achievable on this QA scorecard. (AI-inferred) */
   potentialScore?: number | Computed<number>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
+  /** Marks this QA answer as skipped, rather than providing a real value. (AI-inferred) */
   skipValue?: boolean | Computed<boolean>;
+  /** A text value. (AI-inferred) */
   strValue?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources {
+  /** The literal value of this answer. (AI-inferred) */
   answerValue?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue>;
+  /** The kind of source this data came from. (AI-inferred) */
   sourceType?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers {
+  /** The source content a generated answer was grounded in. (AI-inferred) */
   answerSources?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources[] | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources[]>;
+  /** The literal value of this answer. (AI-inferred) */
   answerValue?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue>;
+  /** A reference to the conversation this applies to. (AI-inferred) */
   conversation?: string | Computed<string>;
+  /** A reference to the QA scorecard question this applies to. (AI-inferred) */
   qaQuestion?: string | Computed<string>;
+  /** The full text/body of this question. (AI-inferred) */
   questionBody?: string | Computed<string>;
+  /** The label(s) attached to this resource. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults {
+  /** This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred) */
   normalizedScore?: number | Computed<number>;
+  /** The maximum score achievable on this QA scorecard. (AI-inferred) */
   potentialScore?: number | Computed<number>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
+  /** A label attached to this resource. (AI-inferred) */
   tag?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources {
+  /** This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred) */
   normalizedScore?: number | Computed<number>;
+  /** The maximum score achievable on this QA scorecard. (AI-inferred) */
   potentialScore?: number | Computed<number>;
+  /** Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred) */
   qaTagResults?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults[] | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults[]>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
+  /** The kind of source this data came from. (AI-inferred) */
   sourceType?: string | Computed<string>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults {
+  /** An identifier for the human or virtual agent this applies to. (AI-inferred) */
   agentId?: string | Computed<string>;
+  /** A reference to the conversation this applies to. (AI-inferred) */
   conversation?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred) */
   normalizedScore?: number | Computed<number>;
+  /** The maximum score achievable on this QA scorecard. (AI-inferred) */
   potentialScore?: number | Computed<number>;
+  /** The answer(s) recorded for this QA scorecard evaluation. (AI-inferred) */
   qaAnswers?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers[] | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers[]>;
+  /** A reference to the specific version of the QA scorecard used for this evaluation. (AI-inferred) */
   qaScorecardRevision?: string | Computed<string>;
+  /** Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred) */
   qaTagResults?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults[] | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults[]>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
+  /** The source(s) contributing to this computed score. (AI-inferred) */
   scoreSources?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources[] | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources[]>;
 }
 
 export interface Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Sentiments {
+  /** Which audio channel this segment came from, for a multi-channel recording. (AI-inferred) */
   channelTag?: number | Computed<number>;
+  /** Detailed sentiment analysis result for this conversation segment. (AI-inferred) */
   sentimentData?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment>;
 }
 
@@ -296,27 +370,46 @@ export interface Conversation_LatestSummary {
 }
 
 export interface Conversation_QualityMetadata_AgentInfo {
+  /** An identifier for the human or virtual agent this applies to. (AI-inferred) */
   agentId?: string | Computed<string>;
+  /** Whether this participant is a human agent or a virtual (Dialogflow) agent. (AI-inferred) */
   agentType?: string | Computed<string>;
+  /** A human-readable name for this deployment. (AI-inferred) */
   deploymentDisplayName?: string | Computed<string>;
+  /** An identifier for this deployment. (AI-inferred) */
   deploymentId?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A caller-defined code categorizing the outcome of this conversation. (AI-inferred) */
   dispositionCode?: string | Computed<string>;
+  /** The display name of the sub-agent the conversation started with. (AI-inferred) */
   entrySubagentDisplayName?: string | Computed<string>;
+  /** An identifier for the sub-agent the conversation started with. (AI-inferred) */
   entrySubagentId?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** A reference to the team this applies to. (AI-inferred) */
   team?: string | Computed<string>;
+  /** The team(s) this applies to. (AI-inferred) */
   teams?: string[] | Computed<string[]>;
+  /** A human-readable name for this version. (AI-inferred) */
   versionDisplayName?: string | Computed<string>;
+  /** An identifier for this version. (AI-inferred) */
   versionId?: string | Computed<string>;
 }
 
 export interface Conversation_QualityMetadata_FeedbackLabels {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
+  /** A reference to the specific resource this label was applied within. (AI-inferred) */
   labeledResource?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A human-readable label for this QA scorecard answer option. (AI-inferred) */
   qaAnswerLabel?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
@@ -334,148 +427,234 @@ export interface Conversation_QualityMetadata {
 }
 
 export interface Conversation_RuntimeAnnotations_AnswerFeedback {
+  /** Whether the end user clicked on this suggestion. (AI-inferred) */
   clicked?: boolean | Computed<boolean>;
+  /** How accurate a QA answer was judged to be. (AI-inferred) */
   correctnessLevel?: string | Computed<string>;
+  /** Whether this suggestion was actually shown to the agent. (AI-inferred) */
   displayed?: boolean | Computed<boolean>;
 }
 
 export interface Conversation_RuntimeAnnotations_ArticleSuggestion {
+  /** A numeric score reflecting how confident this detection or match is. (AI-inferred) */
   confidenceScore?: number | Computed<number>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the stored record of this query. (AI-inferred) */
   queryRecord?: string | Computed<string>;
+  /** The source this data or configuration is read from. (AI-inferred) */
   source?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSession {
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesEndSessionAnnotation {
+  /** A record of the conversation session ending. (AI-inferred) */
   endSession?: Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSession | Computed<Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSession>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransfer {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The agent this transfer moves the conversation to. (AI-inferred) */
   targetAgent?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob {
+  /** The literal data payload. (AI-inferred) */
   data?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool {
+  /** An identifier for the tool this applies to. (AI-inferred) */
   toolId?: string | Computed<string>;
+  /** A reference to the toolset this applies to. (AI-inferred) */
   toolset?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall {
+  /** The display name of the agent this applies to. (AI-inferred) */
   agentName?: string | Computed<string>;
+  /** The argument(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A reference to the tool call this response corresponds to. (AI-inferred) */
   parentToolCallId?: string | Computed<string>;
+  /** A reference to the tool this applies to. (AI-inferred) */
   tool?: string | Computed<string>;
+  /** A reference to a specific tool within a toolset. (AI-inferred) */
   toolsetTool?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponse {
+  /** The display name of the agent this applies to. (AI-inferred) */
   agentName?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A reference to the tool call this response corresponds to. (AI-inferred) */
   parentToolCallId?: string | Computed<string>;
+  /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A reference to the tool this applies to. (AI-inferred) */
   tool?: string | Computed<string>;
+  /** A reference to a specific tool within a toolset. (AI-inferred) */
   toolsetTool?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks {
+  /** A record of the conversation being transferred to another agent. (AI-inferred) */
   agentTransfer?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransfer | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransfer>;
+  /** Raw binary content. (AI-inferred) */
   blob?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob>;
+  /** The default value(s) for this resource's own declared variables. (AI-inferred) */
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Image content. (AI-inferred) */
   image?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob>;
+  /** A custom, integration-specific payload. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
+  /** A request from the agent to invoke a tool. (AI-inferred) */
   toolCall?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall>;
+  /** The result returned from invoking a tool. (AI-inferred) */
   toolResponse?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponse | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponse>;
+  /** The transcribed text of this conversation. (AI-inferred) */
   transcript?: string | Computed<string>;
+  /** The variable(s) whose own value changed as a result of this event. (AI-inferred) */
   updatedVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages {
+  /** The retrieved content chunk(s) making up this result. (AI-inferred) */
   chunks?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks[] | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks[]>;
+  /** When this event occurred. (AI-inferred) */
   eventTime?: string | Computed<string>;
+  /** Who this content is attributed to, e.g. agent or end user. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpan {
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The nested sub-operation(s) recorded under this trace span. (AI-inferred) */
   childSpans?: unknown[] | Computed<unknown[]>;
+  /** How long this event, segment, or conversation lasted. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** When this event, segment, or conversation ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** When this event, segment, or conversation started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation {
+  /** The message(s) making up this conversation. (AI-inferred) */
   messages?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages[] | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages[]>;
+  /** The top-level trace span this operation's own execution is recorded under. (AI-inferred) */
   rootSpan?: Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpan | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpan>;
 }
 
 export interface Conversation_RuntimeAnnotations_DialogflowInteraction {
+  /** How confident this detection or match is. (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** The Dialogflow intent matched during this conversation turn. (AI-inferred) */
   dialogflowIntentId?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_FaqAnswer {
+  /** The answer text returned for this query. (AI-inferred) */
   answer?: string | Computed<string>;
+  /** A numeric score reflecting how confident this detection or match is. (AI-inferred) */
   confidenceScore?: number | Computed<number>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the stored record of this query. (AI-inferred) */
   queryRecord?: string | Computed<string>;
+  /** The QA scorecard question text. (AI-inferred) */
   question?: string | Computed<string>;
+  /** The source this data or configuration is read from. (AI-inferred) */
   source?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_SmartComposeSuggestion {
+  /** A numeric score reflecting how confident this detection or match is. (AI-inferred) */
   confidenceScore?: number | Computed<number>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the stored record of this query. (AI-inferred) */
   queryRecord?: string | Computed<string>;
+  /** A suggestion generated for the agent. (AI-inferred) */
   suggestion?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_SmartReply {
+  /** A numeric score reflecting how confident this detection or match is. (AI-inferred) */
   confidenceScore?: number | Computed<number>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the stored record of this query. (AI-inferred) */
   queryRecord?: string | Computed<string>;
+  /** A response message. (AI-inferred) */
   reply?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations_UserInput {
+  /** The display name of the generator that produced this content. (AI-inferred) */
   generatorName?: string | Computed<string>;
+  /** The query text or expression. (AI-inferred) */
   query?: string | Computed<string>;
+  /** Which data source this query was run against. (AI-inferred) */
   querySource?: string | Computed<string>;
 }
 
 export interface Conversation_RuntimeAnnotations {
+  /** An identifier for this annotation. (AI-inferred) */
   annotationId?: string | Computed<string>;
+  /** End-user or agent feedback on the quality of a generated answer. (AI-inferred) */
   answerFeedback?: Conversation_RuntimeAnnotations_AnswerFeedback | Computed<Conversation_RuntimeAnnotations_AnswerFeedback>;
+  /** A suggested knowledge-base article surfaced to the agent during the conversation. (AI-inferred) */
   articleSuggestion?: Conversation_RuntimeAnnotations_ArticleSuggestion | Computed<Conversation_RuntimeAnnotations_ArticleSuggestion>;
+  /** An annotation marking where a CES (Customer Engagement Suite) agent session ended. (AI-inferred) */
   cesEndSessionAnnotation?: Conversation_RuntimeAnnotations_CesEndSessionAnnotation | Computed<Conversation_RuntimeAnnotations_CesEndSessionAnnotation>;
+  /** An annotation carrying CES (Customer Engagement Suite) agent detail for one conversation turn. (AI-inferred) */
   cesTurnAnnotation?: Conversation_RuntimeAnnotations_CesTurnAnnotation | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation>;
+  /** A generated summary of the conversation, suggested to the agent. (AI-inferred) */
   conversationSummarizationSuggestion?: Conversation_LatestSummary | Computed<Conversation_LatestSummary>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Detail about a Dialogflow-driven interaction within this conversation. (AI-inferred) */
   dialogflowInteraction?: Conversation_RuntimeAnnotations_DialogflowInteraction | Computed<Conversation_RuntimeAnnotations_DialogflowInteraction>;
+  /** Where this range ends. (AI-inferred) */
   endBoundary?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary>;
+  /** A suggested answer sourced from a connected FAQ document. (AI-inferred) */
   faqAnswer?: Conversation_RuntimeAnnotations_FaqAnswer | Computed<Conversation_RuntimeAnnotations_FaqAnswer>;
+  /** A suggested reply completion offered to the agent while typing. (AI-inferred) */
   smartComposeSuggestion?: Conversation_RuntimeAnnotations_SmartComposeSuggestion | Computed<Conversation_RuntimeAnnotations_SmartComposeSuggestion>;
+  /** A suggested full reply offered to the agent. (AI-inferred) */
   smartReply?: Conversation_RuntimeAnnotations_SmartReply | Computed<Conversation_RuntimeAnnotations_SmartReply>;
+  /** Where this range starts. (AI-inferred) */
   startBoundary?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary>;
+  /** The end user's own input for this turn. (AI-inferred) */
   userInput?: Conversation_RuntimeAnnotations_UserInput | Computed<Conversation_RuntimeAnnotations_UserInput>;
 }
 
 export interface Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata {
+  /** Whether this smart reply suggestion is drawn from the caller's own approved allowlist. (AI-inferred) */
   smartReplyAllowlistCovered?: boolean | Computed<boolean>;
 }
 
@@ -567,31 +746,50 @@ export interface Conversation_Transcript_TranscriptSegments_Parts {
 }
 
 export interface Conversation_Transcript_TranscriptSegments_SegmentParticipant {
+  /** Detail identifying a Dialogflow virtual agent participant. (AI-inferred) */
   dialogflowParticipant?: string | Computed<string>;
+  /** The display name of the Dialogflow virtual agent participant. (AI-inferred) */
   dialogflowParticipantName?: string | Computed<string>;
+  /** An anonymized identifier for the end user, consistent across their own conversations but not directly identifying. (AI-inferred) */
   obfuscatedExternalUserId?: string | Computed<string>;
+  /** Who this content is attributed to, e.g. agent or end user. (AI-inferred) */
   role?: string | Computed<string>;
+  /** An identifier for the end user this applies to. (AI-inferred) */
   userId?: string | Computed<string>;
 }
 
 export interface Conversation_Transcript_TranscriptSegments_Words {
+  /** How confident this detection or match is. (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** The ending position this range covers. (AI-inferred) */
   endOffset?: string | Computed<string>;
+  /** The starting position this range covers. (AI-inferred) */
   startOffset?: string | Computed<string>;
+  /** A single transcribed word. (AI-inferred) */
   word?: string | Computed<string>;
 }
 
 export interface Conversation_Transcript_TranscriptSegments {
+  /** Which audio channel this segment came from, for a multi-channel recording. (AI-inferred) */
   channelTag?: number | Computed<number>;
+  /** How confident this detection or match is. (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** Metadata Dialogflow attached to this conversation segment. (AI-inferred) */
   dialogflowSegmentMetadata?: Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata | Computed<Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** When this message was sent. (AI-inferred) */
   messageTime?: string | Computed<string>;
   parts?: Conversation_Transcript_TranscriptSegments_Parts[] | Computed<Conversation_Transcript_TranscriptSegments_Parts[]>;
+  /** The participant this conversation segment is attributed to. (AI-inferred) */
   segmentParticipant?: Conversation_Transcript_TranscriptSegments_SegmentParticipant | Computed<Conversation_Transcript_TranscriptSegments_SegmentParticipant>;
+  /** The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred) */
   sentiment?: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment | Computed<Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
+  /** The audio segment corresponding to this specific conversation turn. (AI-inferred) */
   turnLevelAudio?: Conversation_DataSource_TurnLevelAudios | Computed<Conversation_DataSource_TurnLevelAudios>;
+  /** The individual word(s) making up this transcript segment. (AI-inferred) */
   words?: Conversation_Transcript_TranscriptSegments_Words[] | Computed<Conversation_Transcript_TranscriptSegments_Words[]>;
 }
 

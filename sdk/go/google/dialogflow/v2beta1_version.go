@@ -4,14 +4,20 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1VersionConfig struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
 }
 
 type V2beta1VersionAttrs struct {
-	CreateTime    any
-	Description   any
-	Name          any
-	Status        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// This version's own real, sequential version number. (AI-inferred)
 	VersionNumber any
 }
 

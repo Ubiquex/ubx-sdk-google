@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Storelayoutpage_Name {
+  /** The real BCP-47 locale this store layout cluster's own localized `name` is written in. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** The real, localized display text for this store layout cluster's own name, in the paired `locale`. (AI-inferred) */
   text?: string | Computed<string>;
 }
 

@@ -18,12 +18,14 @@ type RegionCommitment_Params struct {
 }
 
 type RegionCommitment_Reservations_AdvancedDeploymentControl struct {
+	// The operational mode for the reservation. Valid values are ALL_CAPACITY (all capacity is provisioned immediately), HIGHLY_AVAILABLE_CAPACITY (capacity is distributed to support high availability), and RESERVATION_OPERATIONAL_MODE_UNSPECIFIED (mode not set, defaults to ALL_CAPACITY). (AI-inferred)
 	ReservationOperationalMode any
 }
 
 type RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator struct {
 	AcceleratorCount any
-	AcceleratorType  any
+	// Specifies the type of accelerator (GPU) used by the resources currently in use within the aggregate reservation. This value corresponds to the acceleratorType in the machine type, such as 'nvidia-tesla-t4'. (AI-inferred)
+	AcceleratorType any
 }
 
 type RegionCommitment_Reservations_AggregateReservation_InUseResources struct {
@@ -31,18 +33,24 @@ type RegionCommitment_Reservations_AggregateReservation_InUseResources struct {
 }
 
 type RegionCommitment_Reservations_AggregateReservation struct {
-	InUseResources    any
+	InUseResources any
+	// Specifies the resources included in this aggregate reservation. Each entry defines a resource type and the amount to reserve. (AI-inferred)
 	ReservedResources any
-	VmFamily          any
-	WorkloadType      any
+	// The family of TPU VMs to reserve capacity for. Valid values include VM_FAMILY_CLOUD_TPU_DEVICE_CT3, VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P, and VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X. (AI-inferred)
+	VmFamily any
+	// The workload type of the aggregate reservation. Valid values are BATCH, SERVING, or UNSPECIFIED. This determines how the reservation is used for batch or serving workloads. (AI-inferred)
+	WorkloadType any
 }
 
 type RegionCommitment_Reservations_DeleteAfterDuration struct {
-	Nanos   any
+	// The duration's sub-second component in nanoseconds, ranging from 0 to 999,999,999. (AI-inferred)
+	Nanos any
+	// The number of seconds in the duration after which the reservation is automatically deleted. Must be a string representation of an integer from 0 to 315,576,000,000 inclusive. (AI-inferred)
 	Seconds any
 }
 
 type RegionCommitment_Reservations_ReservationSharingPolicy struct {
+	// Specifies the sharing type for this reservation, controlling which services can use it. ALLOW_ALL permits all services, DISALLOW_ALL blocks all services, and SERVICE_SHARE_TYPE_UNSPECIFIED is the default unspecified value. (AI-inferred)
 	ServiceShareType any
 }
 
@@ -52,105 +60,159 @@ type RegionCommitment_Reservations_ResourceMetadata struct {
 }
 
 type RegionCommitment_Reservations_ResourceStatus_HealthInfo struct {
+	// The number of blocks that are degraded in the resource, as reported in its health information. This value indicates the extent of storage degradation for the resource. (AI-inferred)
 	DegradedBlockCount any
-	HealthStatus       any
-	HealthyBlockCount  any
+	// The health status of the resource. Possible values: DEGRADED, HEALTHY, HEALTH_STATUS_UNSPECIFIED. (AI-inferred)
+	HealthStatus any
+	// The number of healthy blocks in the reservation's resource health status. (AI-inferred)
+	HealthyBlockCount any
 }
 
 type RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance struct {
-	CanReschedule         any
+	// Indicates whether the upcoming group maintenance event can be rescheduled. (AI-inferred)
+	CanReschedule any
+	// The latest time at which the upcoming group maintenance window can start, as reported for this reservation's resource status. (AI-inferred)
 	LatestWindowStartTime any
 	MaintenanceOnShutdown any
 	MaintenanceReasons    any
-	MaintenanceStatus     any
-	Type                  any
-	WindowEndTime         any
-	WindowStartTime       any
+	// The maintenance status of the upcoming group maintenance, indicating whether it is ONGOING, PENDING, or UNKNOWN. (AI-inferred)
+	MaintenanceStatus any
+	// The type of upcoming maintenance for the reservation group. Possible values are: MULTIPLE, SCHEDULED, UNKNOWN_TYPE, UNSCHEDULED. (AI-inferred)
+	Type any
+	// The end time of the maintenance window for the upcoming group maintenance event, expressed as a timestamp string. (AI-inferred)
+	WindowEndTime any
+	// The start time of the maintenance window for an upcoming maintenance event on the reservation, as a timestamp. (AI-inferred)
+	WindowStartTime any
 }
 
 type RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance struct {
-	InstanceMaintenanceOngoingCount      any
-	InstanceMaintenancePendingCount      any
-	MaintenanceOngoingCount              any
-	MaintenancePendingCount              any
-	SchedulingType                       any
+	// The number of instances in the reservation that are currently undergoing maintenance, as reported in the reservation maintenance status. (AI-inferred)
+	InstanceMaintenanceOngoingCount any
+	// The number of instances in this reservation that have maintenance pending. (AI-inferred)
+	InstanceMaintenancePendingCount any
+	// The number of resources within this reservation that are currently undergoing maintenance. (AI-inferred)
+	MaintenanceOngoingCount any
+	// The number of instances in this reservation that have a pending maintenance event. (AI-inferred)
+	MaintenancePendingCount any
+	// The maintenance scheduling type for the reservation. Possible values are: 'GROUPED' (maintenance is grouped for the reservation), 'INDEPENDENT' (maintenance is handled independently), and 'GROUP_MAINTENANCE_TYPE_UNSPECIFIED' (the type is not specified). (AI-inferred)
+	SchedulingType any
+	// The number of ongoing maintenance operations for the subblock infrastructure within the reservation. (AI-inferred)
 	SubblockInfraMaintenanceOngoingCount any
+	// The number of pending maintenance items for the subblock infrastructure, as reported in the reservation maintenance status. (AI-inferred)
 	SubblockInfraMaintenancePendingCount any
-	UpcomingGroupMaintenance             any
+	// Upcoming maintenance information for the entire reservation group, shown in the resource status. (AI-inferred)
+	UpcomingGroupMaintenance any
 }
 
 type RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation struct {
+	// The ID of the instance template used to specify the machine type and other properties for this specific SKU allocation in the reservation. (AI-inferred)
 	SourceInstanceTemplateId any
-	Utilizations             any
+	// The utilization of the specific SKU reservation, keyed by resource type (e.g., memory). Each value is a fraction of the total capacity of that resource. (AI-inferred)
+	Utilizations any
 }
 
 type RegionCommitment_Reservations_ResourceStatus struct {
-	HealthInfo             any
-	ReservationBlockCount  any
+	HealthInfo any
+	// The number of capacity blocks that this reservation uses. (AI-inferred)
+	ReservationBlockCount any
+	// An object that provides the maintenance status details for the reservation, as part of the reservation's resource status. This is a computed field reflecting the current maintenance state of the reservation. (AI-inferred)
 	ReservationMaintenance any
 	SpecificSkuAllocation  any
 }
 
 type RegionCommitment_Reservations_ShareSettings_ProjectMap struct {
+	// The ID of the Google Cloud project that has shared access to the commitment reservation. This is the key for the project_map entry. (AI-inferred)
 	ProjectId any
 }
 
 type RegionCommitment_Reservations_ShareSettings struct {
+	// A map of project IDs to project-specific configuration, used to specify which projects can share this commitment's reservations as part of the sharing settings. (AI-inferred)
 	ProjectMap any
-	ShareType  any
+	// Defines the sharing type for this reservation. Allowed values are: LOCAL (only within the owning project), SPECIFIC_PROJECTS (shared with a list of specific projects), ORGANIZATION (shared with all projects in the organization), and SHARE_TYPE_UNSPECIFIED (default, indicating the field is not set). (AI-inferred)
+	ShareType any
 }
 
 type RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds struct {
+	// The size of the local SSD disk in gigabytes (GB), expressed as a string. (AI-inferred)
 	DiskSizeGb any
-	Interface  any
+	// The interface type for the local SSD. Supported values are `NVME` and `SCSI`. (AI-inferred)
+	Interface any
 }
 
 type RegionCommitment_Reservations_SpecificReservation_InstanceProperties struct {
+	// A list of guest accelerator (GPU) configurations to attach to instances created from this reservation. Each object defines an accelerator type and the number of accelerators. (AI-inferred)
 	GuestAccelerators any
-	LocalSsds         any
-	LocationHint      any
-	MachineType       any
-	MinCpuPlatform    any
+	// A list of local SSD configurations to attach to instances in this specific reservation. (AI-inferred)
+	LocalSsds any
+	// Optional location hint for the reserved instances, used by Compute Engine to optimize physical placement. (AI-inferred)
+	LocationHint any
+	// Specifies the machine type for the VM instances in this specific reservation. (AI-inferred)
+	MachineType any
+	// Specifies the minimum CPU platform allowed for VM instances in the specific reservation. The value must be a valid CPU platform name (e.g., 'Intel Skylake' or 'AMD Milan') and instances will be guaranteed to use a CPU platform at least as recent as the specified one. (AI-inferred)
+	MinCpuPlatform any
 }
 
 type RegionCommitment_Reservations_SpecificReservation struct {
-	AssuredCount           any
-	Count                  any
-	InUseCount             any
-	InstanceProperties     any
+	// The number of virtual machine instances that are guaranteed to be available in this specific reservation. This value must be less than or equal to the total 'count' of the reservation. (AI-inferred)
+	AssuredCount any
+	// The number of virtual machine instances to reserve in the specific reservation. The value must be a positive integer. (AI-inferred)
+	Count any
+	// Number of reserved instances from this specific reservation that are currently in use. (AI-inferred)
+	InUseCount any
+	// The properties of the virtual machines to be reserved in this specific reservation, including machine type, minimum CPU platform, accelerator configuration, and local SSD count. (AI-inferred)
+	InstanceProperties any
+	// The self-link of an instance template that defines the properties of the instances to be reserved. When specified, the specific reservation is created based on the template's configuration. (AI-inferred)
 	SourceInstanceTemplate any
 }
 
 type RegionCommitment_Reservations struct {
-	AdvancedDeploymentControl   any
-	AggregateReservation        any
-	Commitment                  any
-	ConfidentialComputeType     any
-	CreationTimestamp           any
-	DeleteAfterDuration         any
-	DeleteAtTime                any
-	DeploymentType              any
-	Description                 any
-	EarlyAccessMaintenance      any
-	EnableEmergentMaintenance   any
-	Id                          any
-	Kind                        any
-	LinkedCommitments           any
-	Name                        any
-	Params                      any
-	ProtectionTier              any
-	ReservationSharingPolicy    any
-	ResourceMetadata            any
-	ResourcePolicies            any
-	ResourceStatus              any
-	SatisfiesPzs                any
-	SchedulingType              any
-	SelfLink                    any
-	ShareSettings               any
-	SpecificReservation         any
+	AdvancedDeploymentControl any
+	// The aggregate reservation configuration, used to reserve capacity for a pool of resources (such as CPU and memory) without specifying exact instance shapes. It includes a VM family and a list of reserved resource types with counts, offering flexible capacity reservation for a group of instances. (AI-inferred)
+	AggregateReservation any
+	Commitment           any
+	// Specifies the confidential computing type for the reservation. Valid values are CONFIDENTIAL_COMPUTE_TYPE_TDX (for Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED (default, unspecified). (AI-inferred)
+	ConfidentialComputeType any
+	// Creation timestamp in RFC3339 text format. (AI-inferred)
+	CreationTimestamp any
+	// A duration (seconds and optional nanos) after which the reservation is automatically deleted. If unset, the reservation persists until the commitment ends. (AI-inferred)
+	DeleteAfterDuration any
+	// The time at which the reservation will be automatically deleted, in RFC3339 format. (AI-inferred)
+	DeleteAtTime any
+	// The deployment type for this reservation. Allowed values are DENSE and DEPLOYMENT_TYPE_UNSPECIFIED. (AI-inferred)
+	DeploymentType any
+	Description    any
+	// Specifies the early access mode for maintenance events on this reservation. Valid values are NO_EARLY_ACCESS, WAVE1, and WAVE2, indicating no early access, first wave, or second wave, respectively. (AI-inferred)
+	EarlyAccessMaintenance any
+	// Whether the reservation can be consumed by emergent maintenance requests. (AI-inferred)
+	EnableEmergentMaintenance any
+	Id                        any
+	// The type of the resource. Always 'compute#reservation' for this resource. (AI-inferred)
+	Kind any
+	// List of self_links of commitments linked to this reservation. This is used to associate the reservation with one or more commitments so that the commitment's discounts apply to the reserved capacity. (AI-inferred)
+	LinkedCommitments any
+	Name              any
+	Params            any
+	// The protection tier for the reservation, which determines the level of capacity protection. Valid values are `STANDARD`, `CAPACITY_OPTIMIZED`, and `PROTECTION_TIER_UNSPECIFIED` (the latter is the default when unspecified). (AI-inferred)
+	ProtectionTier           any
+	ReservationSharingPolicy any
+	ResourceMetadata         any
+	ResourcePolicies         any
+	ResourceStatus           any
+	// Whether this reservation satisfies the requirements for physical zone separation (PZS) for sole-tenant node groups. (AI-inferred)
+	SatisfiesPzs any
+	// The scheduling type of the reservation. Possible values: INDEPENDENT (reserves capacity for standalone instances), GROUPED (reserves capacity for a group of instances, typically used with managed instance groups), and GROUP_MAINTENANCE_TYPE_UNSPECIFIED (the scheduling type is not specified). (AI-inferred)
+	SchedulingType any
+	SelfLink       any
+	// Configuration for sharing a reservation with other projects. It specifies the share type (LOCAL or SPECIFIC_PROJECTS) and, for SPECIFIC_PROJECTS, the set of projects that can use the reservation. (AI-inferred)
+	ShareSettings any
+	// Configuration for a specific reservation within the commitment. This block specifies the instance count and instance properties (such as machine type and GPUs) for reserved VMs, which are dedicated to a single project. (AI-inferred)
+	SpecificReservation any
+	// Indicates whether the reservation is a specific reservation (for a specific instance type) or a non-specific reservation (for an instance family). When true, the reservation is specific; when false, it is non-specific. (AI-inferred)
 	SpecificReservationRequired any
-	Status                      any
-	Zone                        any
+	// The current status of the reservation, indicating its lifecycle state. Possible values are CREATING, DELETING, INVALID, READY, and UPDATING. (AI-inferred)
+	Status any
+	// The zone in which the reservation is created, within the commitment's region. (AI-inferred)
+	Zone any
 }
 
 type RegionCommitment_ResourceStatus struct {
@@ -159,9 +221,12 @@ type RegionCommitment_ResourceStatus struct {
 }
 
 type RegionCommitment_Resources struct {
+	// The type of accelerator (GPU) to include in the commitment, e.g., 'nvidia-tesla-v100'. Must be a valid accelerator type available in the region. (AI-inferred)
 	AcceleratorType any
-	Amount          any
-	Type            any
+	// The quantity of the resource type (e.g., VCPU, MEMORY) to reserve in the commitment. (AI-inferred)
+	Amount any
+	// The type of resource to commit to. Allowed values are `VCPU`, `MEMORY`, `LOCAL_SSD`, `ACCELERATOR`, and `UNSPECIFIED`. (AI-inferred)
+	Type any
 }
 
 var RegionCommitment_LicenseResourceFields = ubx.FieldMap{
@@ -408,7 +473,8 @@ type RegionCommitmentConfig struct {
 	// [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
 	CustomEndTimestamp any
 	// An optional description of the commitment. You can provide this property when you create the resource.
-	Description          any
+	Description any
+	// The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred)
 	ExistingReservations any
 	// Commitment for a particular license resource.
 	LicenseResource any
@@ -444,7 +510,8 @@ type RegionCommitmentAttrs struct {
 	// An optional description of the commitment. You can provide this property when you create the resource.
 	Description any
 	// Output only. [Output Only] Commitment end time inRFC3339 text format.
-	EndTimestamp         any
+	EndTimestamp any
+	// The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred)
 	ExistingReservations any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any

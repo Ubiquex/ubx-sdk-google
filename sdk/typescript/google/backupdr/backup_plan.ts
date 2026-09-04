@@ -2,34 +2,51 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BackupPlan_BackupRules_StandardSchedule_BackupWindow {
+  /** The hour of the day this backup window ends at. (AI-inferred) */
   endHourOfDay?: number | Computed<number>;
+  /** The hour of the day this backup window starts at. (AI-inferred) */
   startHourOfDay?: number | Computed<number>;
 }
 
 export interface BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonth {
+  /** The day of the week this applies to. (AI-inferred) */
   dayOfWeek?: string | Computed<string>;
+  /** The week of the month this schedule runs on. (AI-inferred) */
   weekOfMonth?: string | Computed<string>;
 }
 
 export interface BackupPlan_BackupRules_StandardSchedule {
+  /** The time window backups produced by this rule are permitted to start within. (AI-inferred) */
   backupWindow?: BackupPlan_BackupRules_StandardSchedule_BackupWindow | Computed<BackupPlan_BackupRules_StandardSchedule_BackupWindow>;
+  /** The day(s) of the month this schedule runs on. (AI-inferred) */
   daysOfMonth?: number[] | Computed<number[]>;
+  /** The day(s) of the week this schedule runs on. (AI-inferred) */
   daysOfWeek?: string[] | Computed<string[]>;
+  /** How often, in hours, this schedule recurs within its own window. (AI-inferred) */
   hourlyFrequency?: number | Computed<number>;
+  /** The month(s) this schedule runs in. (AI-inferred) */
   months?: string[] | Computed<string[]>;
+  /** How often this backup rule recurs, e.g. hourly, daily, or monthly. (AI-inferred) */
   recurrenceType?: string | Computed<string>;
+  /** The time zone this schedule is evaluated in. (AI-inferred) */
   timeZone?: string | Computed<string>;
+  /** The specific weekday-of-month (e.g. the second Tuesday) this schedule runs on. (AI-inferred) */
   weekDayOfMonth?: BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonth | Computed<BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonth>;
 }
 
 export interface BackupPlan_BackupRules {
+  /** How many days a backup produced by this rule is retained for. (AI-inferred) */
   backupRetentionDays?: number | Computed<number>;
+  /** A reference to the backup rule this applies to. (AI-inferred) */
   ruleId?: string | Computed<string>;
+  /** A recurrence schedule defined using standard time-based fields. (AI-inferred) */
   standardSchedule?: BackupPlan_BackupRules_StandardSchedule | Computed<BackupPlan_BackupRules_StandardSchedule>;
 }
 
 export interface BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabels_Labels {
+  /** The key of this attribute or label. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

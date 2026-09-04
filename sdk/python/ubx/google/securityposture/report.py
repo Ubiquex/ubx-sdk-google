@@ -13,32 +13,50 @@ class Report_Iac:
 
 @dataclasses.dataclass
 class Report_IacValidationReport_Violations_ViolatedAsset:
+    # A reference to the violating resource itself. (AI-inferred)
     asset: Any = None
+    # The type of the violating resource. (AI-inferred)
     asset_type: Any = None
 
 @dataclasses.dataclass
 class Report_IacValidationReport_Violations_ViolatedPolicy:
+    # The compliance standard(s) (and their own control IDs) this policy maps to. (AI-inferred)
     compliance_standards: Any = None
+    # A reference to the constraint this policy enforces. (AI-inferred)
     constraint: Any = None
+    # The kind of constraint that was violated. (AI-inferred)
     constraint_type: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
 
 @dataclasses.dataclass
 class Report_IacValidationReport_Violations_ViolatedPosture:
+    # The named group of policies this posture's own constraint belongs to. (AI-inferred)
     policy_set: Any = None
+    # A reference to the security posture this applies to. (AI-inferred)
     posture: Any = None
+    # A reference to the specific deployment of this posture this applies to. (AI-inferred)
     posture_deployment: Any = None
+    # The resource this posture deployment's own policies are enforced against. (AI-inferred)
     posture_deployment_target_resource: Any = None
+    # The specific revision of the posture this applies to. (AI-inferred)
     posture_revision_id: Any = None
 
 @dataclasses.dataclass
 class Report_IacValidationReport_Violations:
+    # A reference to the specific infrastructure-as-code resource this violation was found in. (AI-inferred)
     asset_id: Any = None
+    # Guidance for resolving this violation. (AI-inferred)
     next_steps: Any = None
+    # A reference to the policy this applies to. (AI-inferred)
     policy_id: Any = None
+    # How serious this finding is. (AI-inferred)
     severity: Any = None
+    # The specific resource, as declared in the infrastructure-as-code source, that violates this policy. (AI-inferred)
     violated_asset: Any = None
+    # The specific policy constraint that was violated. (AI-inferred)
     violated_policy: Any = None
+    # The security posture (and its own deployment) this violation was found against. (AI-inferred)
     violated_posture: Any = None
 
 @dataclasses.dataclass

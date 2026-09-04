@@ -7,6 +7,7 @@ export interface VmwareCluster_AntiAffinityGroups {
 }
 
 export interface VmwareCluster_Authorization_AdminUsers {
+  /** The username used to authenticate. (AI-inferred) */
   username?: string | Computed<string>;
 }
 
@@ -82,9 +83,13 @@ export interface VmwareCluster_LoadBalancer_ManualLbConfig {
 }
 
 export interface VmwareCluster_LoadBalancer_MetalLbConfig_AddressPools {
+  /** The IP address(es) this applies to. (AI-inferred) */
   addresses?: string[] | Computed<string[]>;
+  /** Whether known problematic IP addresses are avoided when allocating this pool. (AI-inferred) */
   avoidBuggyIps?: boolean | Computed<boolean>;
+  /** Whether IP addresses are manually assigned, rather than allocated from a pool. (AI-inferred) */
   manualAssign?: boolean | Computed<boolean>;
+  /** A reference to the node pool this applies to. (AI-inferred) */
   pool?: string | Computed<string>;
 }
 
@@ -94,13 +99,18 @@ export interface VmwareCluster_LoadBalancer_MetalLbConfig {
 }
 
 export interface VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips {
+  /** The hostname of this node. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** An IP address. (AI-inferred) */
   ip?: string | Computed<string>;
 }
 
 export interface VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks {
+  /** The default gateway IP address for this network. (AI-inferred) */
   gateway?: string | Computed<string>;
+  /** The IP address(es) this applies to. (AI-inferred) */
   ips?: VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips[] | Computed<VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips[]>;
+  /** The subnet mask for this network. (AI-inferred) */
   netmask?: string | Computed<string>;
 }
 
@@ -176,15 +186,22 @@ export interface VmwareCluster_NetworkConfig {
 }
 
 export interface VmwareCluster_Status_Conditions {
+  /** When this condition last changed from one status to another. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface VmwareCluster_Status_Versions_Versions {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
@@ -215,10 +232,15 @@ export interface VmwareCluster_UpgradePolicy {
 }
 
 export interface VmwareCluster_ValidationCheck_Status_Result {
+  /** The category this belongs to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

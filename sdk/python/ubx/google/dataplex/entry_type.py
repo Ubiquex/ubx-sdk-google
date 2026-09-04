@@ -13,6 +13,7 @@ class EntryType_Authorization:
 
 @dataclasses.dataclass
 class EntryType_RequiredAspects:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 _EntryType_AuthorizationFields = {

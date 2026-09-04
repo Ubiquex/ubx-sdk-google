@@ -13,7 +13,9 @@ class SandboxEnvironmentTemplate_CustomContainerEnvironment_CustomContainerSpec:
 
 @dataclasses.dataclass
 class SandboxEnvironmentTemplate_CustomContainerEnvironment_Ports:
+    # A network port number. (AI-inferred)
     port: Any = None
+    # The network protocol this applies to, e.g. `TCP` or `UDP`. (AI-inferred)
     protocol: Any = None
 
 @dataclasses.dataclass
@@ -41,8 +43,11 @@ class SandboxEnvironmentTemplate_DefaultContainerEnvironment:
 
 @dataclasses.dataclass
 class SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs:
+    # The domain this configuration or resource applies to. (AI-inferred)
     domain: Any = None
+    # The VPC network this resource is deployed into. (AI-inferred)
     target_network: Any = None
+    # The Google Cloud project this resource targets. (AI-inferred)
     target_project: Any = None
 
 @dataclasses.dataclass
@@ -58,11 +63,17 @@ class SandboxEnvironmentTemplate_EgressControlConfig:
 
 @dataclasses.dataclass
 class SandboxEnvironmentTemplate_IngressControlConfig_PscAutomationConfigs:
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
     forwarding_rule: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

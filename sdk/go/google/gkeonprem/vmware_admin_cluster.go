@@ -19,6 +19,7 @@ type VmwareAdminCluster_AntiAffinityGroups struct {
 }
 
 type VmwareAdminCluster_Authorization_ViewerUsers struct {
+	// The username used to authenticate. (AI-inferred)
 	Username any
 }
 
@@ -64,13 +65,18 @@ type VmwareAdminCluster_LoadBalancer_ManualLbConfig struct {
 }
 
 type VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips struct {
+	// The hostname of this node. (AI-inferred)
 	Hostname any
-	Ip       any
+	// An IP address. (AI-inferred)
+	Ip any
 }
 
 type VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks struct {
+	// The default gateway IP address for this network. (AI-inferred)
 	Gateway any
-	Ips     any
+	// The IP address(es) this applies to. (AI-inferred)
+	Ips any
+	// The subnet mask for this network. (AI-inferred)
 	Netmask any
 }
 
@@ -98,7 +104,8 @@ type VmwareAdminCluster_LoadBalancer_VipConfig struct {
 
 type VmwareAdminCluster_LoadBalancer struct {
 	// VmwareAdminF5BigIpConfig represents configuration parameters for an F5 BIG-IP load balancer.
-	F5Config       any
+	F5Config any
+	// Configuration for a manually (rather than automatically) provisioned load balancer. (AI-inferred)
 	ManualLbConfig any
 	// VmwareAdminMetalLbConfig represents configuration parameters for a MetalLB load balancer. For admin clusters, currently no configurations is needed.
 	MetalLbConfig any
@@ -145,31 +152,45 @@ type VmwareAdminCluster_NetworkConfig struct {
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles_Status_Conditions struct {
+	// When this condition last changed from one status to another. (AI-inferred)
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	State              any
-	Type               any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_Versions struct {
-	Count   any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions struct {
+	// The version(s) this applies to. (AI-inferred)
 	Versions any
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles_Status struct {
-	Conditions   any
+	// The current condition(s) affecting this resource's own status. (AI-inferred)
+	Conditions any
+	// A human-readable description of the error. (AI-inferred)
 	ErrorMessage any
-	Version      any
-	Versions     any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
+	// The version(s) this applies to. (AI-inferred)
+	Versions any
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles struct {
-	Status  any
+	// The current status of this resource. (AI-inferred)
+	Status any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
@@ -199,11 +220,16 @@ type VmwareAdminCluster_Proxy struct {
 }
 
 type VmwareAdminCluster_ValidationCheck_Status_Result struct {
-	Category    any
+	// The category this belongs to. (AI-inferred)
+	Category any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Details     any
-	Reason      any
-	State       any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type VmwareAdminCluster_ValidationCheck_Status struct {

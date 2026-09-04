@@ -4,18 +4,25 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UptimeCheckConfig_ContentMatchers_JsonPathMatcher struct {
+	// How the value at a JSON path is matched against an expected value. (AI-inferred)
 	JsonMatcher any
-	JsonPath    any
+	// The JSON path this rule applies to. (AI-inferred)
+	JsonPath any
 }
 
 type UptimeCheckConfig_ContentMatchers struct {
-	Content         any
+	// The literal content of this field. (AI-inferred)
+	Content any
+	// Configuration for matching a value at a specific JSON path. (AI-inferred)
 	JsonPathMatcher any
-	Matcher         any
+	// How this value is matched against an expected pattern. (AI-inferred)
+	Matcher any
 }
 
 type UptimeCheckConfig_HttpCheck_AcceptedResponseStatusCodes struct {
+	// The class of HTTP status codes (e.g. `4xx`) this uptime check matches. (AI-inferred)
 	StatusClass any
+	// The specific HTTP status code this uptime check matches. (AI-inferred)
 	StatusValue any
 }
 
@@ -68,12 +75,18 @@ type UptimeCheckConfig_HttpCheck struct {
 }
 
 type UptimeCheckConfig_InternalCheckers struct {
-	DisplayName   any
-	GcpZone       any
-	Name          any
-	Network       any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The Google Cloud zone this applies to. (AI-inferred)
+	GcpZone any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The project ID of the peered project this applies to. (AI-inferred)
 	PeerProjectId any
-	State         any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type UptimeCheckConfig_MonitoredResource struct {

@@ -51,7 +51,9 @@ class ConnectionProfile_GcsProfile:
 
 @dataclasses.dataclass
 class ConnectionProfile_MongodbProfile_HostAddresses:
+    # The hostname of the source database server. (AI-inferred)
     hostname: Any = None
+    # The port the source database server listens on. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass

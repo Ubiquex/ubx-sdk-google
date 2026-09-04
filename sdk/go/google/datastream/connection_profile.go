@@ -47,8 +47,10 @@ type ConnectionProfile_GcsProfile struct {
 }
 
 type ConnectionProfile_MongodbProfile_HostAddresses struct {
+	// The hostname of the source database server. (AI-inferred)
 	Hostname any
-	Port     any
+	// The port the source database server listens on. (AI-inferred)
+	Port any
 }
 
 type ConnectionProfile_MongodbProfile_SslConfig struct {

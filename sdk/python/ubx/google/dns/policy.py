@@ -8,13 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Policy_AlternativeNameServerConfig_TargetNameServers:
+    # Whether forwarded queries are sent over the public internet or a private network path. (AI-inferred)
     forwarding_path: Any = None
+    # An IPv4 address. (AI-inferred)
     ipv4_address: Any = None
+    # An IPv6 address. (AI-inferred)
     ipv6_address: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class Policy_AlternativeNameServerConfig:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.
     target_name_servers: Any = None
@@ -23,16 +28,21 @@ class Policy_AlternativeNameServerConfig:
 class Policy_Dns64Config_Scope:
     # Controls whether DNS64 is enabled globally for all networks bound to the policy.
     all_queries: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class Policy_Dns64Config:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # What this configuration's own visibility is scoped to. (AI-inferred)
     scope: Any = None
 
 @dataclasses.dataclass
 class Policy_Networks:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The VPC network this private zone or policy is visible from. (AI-inferred)
     network_url: Any = None
 
 _Policy_AlternativeNameServerConfig_TargetNameServersFields = {
@@ -72,6 +82,7 @@ _Policy_NetworksFields = {
 
 @dataclasses.dataclass
 class PolicyConfig:
+    # Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
     alternative_name_server_config: Any = None
     # A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
     description: Any = None
@@ -83,6 +94,7 @@ class PolicyConfig:
     enable_logging: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User-assigned name for this policy.
     name: Any = None
@@ -91,6 +103,7 @@ class PolicyConfig:
 
 @dataclasses.dataclass
 class PolicyAttrs:
+    # Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
     alternative_name_server_config: Any = None
     # A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.
     description: Any = None
@@ -102,6 +115,7 @@ class PolicyAttrs:
     enable_logging: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User-assigned name for this policy.
     name: Any = None

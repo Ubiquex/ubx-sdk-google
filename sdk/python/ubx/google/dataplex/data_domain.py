@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataDomain_Contacts_Identities:
+    # An identifier for a contact associated with this resource. (AI-inferred)
     contact_id: Any = None
+    # The name of a contact associated with this resource. (AI-inferred)
     contact_name: Any = None
+    # The role a contact plays with respect to this resource, e.g. owner or steward. (AI-inferred)
     contact_role: Any = None
 
 @dataclasses.dataclass

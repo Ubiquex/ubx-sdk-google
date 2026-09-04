@@ -57,6 +57,7 @@ class AlphaAcceleratorPodControllerAttrs:
     description: Any = None
     # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
+    # The kind of resource this is, a fixed, server-set discriminator string. (AI-inferred)
     kind: Any = None
     # Map of management interfaces. Keys must be valid RFC1035 names and at most 63 characters long.
     management_interfaces: Any = None

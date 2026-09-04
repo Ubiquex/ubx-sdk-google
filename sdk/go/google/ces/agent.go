@@ -4,10 +4,14 @@ package ces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Agent_AfterAgentCallbacks struct {
-	Description               any
-	Disabled                  any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// Whether the agent may call this tool on its own initiative, rather than only in direct response to an explicit user request. (AI-inferred)
 	ProactiveExecutionEnabled any
-	PythonCode                any
+	// Custom Python logic run inline as part of this tool or condition. (AI-inferred)
+	PythonCode any
 }
 
 type Agent_ModelSettings struct {
@@ -35,31 +39,42 @@ type Agent_RemoteDialogflowAgent struct {
 }
 
 type Agent_Toolsets struct {
+	// The identifier(s) of the tool(s) this applies to. (AI-inferred)
 	ToolIds any
+	// A reference to the toolset this belongs to. (AI-inferred)
 	Toolset any
 }
 
 type Agent_TransferRules_DeterministicTransfer_ExpressionCondition struct {
+	// The expression text. (AI-inferred)
 	Expression any
 }
 
 type Agent_TransferRules_DeterministicTransfer_PythonCodeCondition struct {
+	// Custom Python logic run inline as part of this tool or condition. (AI-inferred)
 	PythonCode any
 }
 
 type Agent_TransferRules_DeterministicTransfer struct {
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
 	ExpressionCondition any
+	// A Python expression that must evaluate truthy for this to apply. (AI-inferred)
 	PythonCodeCondition any
 }
 
 type Agent_TransferRules_DisablePlannerTransfer struct {
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
 	ExpressionCondition any
 }
 
 type Agent_TransferRules struct {
-	ChildAgent             any
-	DeterministicTransfer  any
-	Direction              any
+	// A reference to a sub-agent this agent may transfer the conversation to. (AI-inferred)
+	ChildAgent any
+	// Whether this agent transfer happens automatically, without the model deciding whether to invoke it. (AI-inferred)
+	DeterministicTransfer any
+	// Which direction this applies in. (AI-inferred)
+	Direction any
+	// Whether the model is prevented from transferring the conversation to another agent on its own initiative. (AI-inferred)
 	DisablePlannerTransfer any
 }
 

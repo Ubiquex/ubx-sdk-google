@@ -59,6 +59,7 @@ class ScanConfig_LatestRun_ErrorTrace:
 
 @dataclasses.dataclass
 class ScanConfig_LatestRun_WarningTraces:
+    # The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
     code: Any = None
 
 @dataclasses.dataclass

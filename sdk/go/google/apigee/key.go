@@ -4,12 +4,16 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Key_ApiProducts struct {
+	// A reference to the API product this applies to. (AI-inferred)
 	Apiproduct any
-	Status     any
+	// The current status of this resource. (AI-inferred)
+	Status any
 }
 
 type Key_Attributes struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 

@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V2beta1KnowledgeBaseConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface V2beta1KnowledgeBaseAttrs {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
 }
 

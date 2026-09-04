@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRanges {
+  /** The maximum value of the range of allowed BGP peer ASN (Autonomous System Number) values. This defines the upper bound for the ASN range that can be configured for the BGP peer. (AI-inferred) */
   max?: number | Computed<number>;
+  /** The minimum (lower bound) of a BGP peer ASN range. The range is inclusive of this value. (AI-inferred) */
   min?: number | Computed<number>;
 }
 
@@ -14,11 +16,14 @@ export interface InterconnectAttachment_ConfigurationConstraints {
 }
 
 export interface InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappings {
+  /** The IP address of the appliance associated with the inner VLAN in this mapping. (AI-inferred) */
   innerApplianceIpAddress?: string | Computed<string>;
+  /** A list of inner VLAN tags that are mapped to an appliance in the L2 forwarding appliance mapping. These tags are used to classify traffic for routing to the specified appliance. (AI-inferred) */
   innerVlanTags?: string[] | Computed<string[]>;
 }
 
 export interface InterconnectAttachment_L2Forwarding_ApplianceMappings {
+  /** IP address of the appliance inside the customer's network, used for this VLAN attachment mapping. (AI-inferred) */
   applianceIpAddress?: string | Computed<string>;
   innerVlanToApplianceMappings?: InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappings[] | Computed<InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappings[]>;
   name?: string | Computed<string>;

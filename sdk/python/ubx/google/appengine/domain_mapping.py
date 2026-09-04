@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DomainMapping_ResourceRecords:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The record data for this DNS record. (AI-inferred)
     rrdata: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

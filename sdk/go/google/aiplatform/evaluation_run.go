@@ -91,36 +91,55 @@ type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfig
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio struct {
-	BitRate    any
-	Delivery   any
-	MimeType   any
+	// The audio or video bit rate, in bits per second. (AI-inferred)
+	BitRate any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The audio sample rate, in Hz. (AI-inferred)
 	SampleRate any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	ImageSize   any
-	MimeType    any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
+	ImageSize any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text struct {
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
 	MimeType any
-	Schema   any
+	// A schema describing this value's own expected structure. (AI-inferred)
+	Schema any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	Duration    any
-	GcsUri      any
-	Resolution  any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// How long this clip, window, or operation lasts. (AI-inferred)
+	Duration any
+	// A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
+	GcsUri any
+	// The pixel dimensions of this image or video. (AI-inferred)
+	Resolution any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat struct {
+	// Audio content or configuration. (AI-inferred)
 	Audio any
+	// Image content or configuration. (AI-inferred)
 	Image any
-	Text  any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// Video content or configuration. (AI-inferred)
 	Video any
 }
 
@@ -141,7 +160,8 @@ type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSch
 	Example any
 	// Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
 	Format any
-	Items  any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
 	// Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
 	MaxItems any
 	// Optional. If type is `STRING`, `max_length` specifies the maximum length of the string.
@@ -194,21 +214,28 @@ type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConf
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig struct {
+	// The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
 	VoiceName any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig struct {
-	MimeType         any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
 	VoiceSampleAudio any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig struct {
-	PrebuiltVoiceConfig   any
+	// Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
+	PrebuiltVoiceConfig any
+	// Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
 	ReplicatedVoiceConfig any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs struct {
-	Speaker     any
+	// Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
+	Speaker any
+	// The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
 	VoiceConfig any
 }
 
@@ -316,175 +343,266 @@ type EvaluationRun_EvaluationConfig_CloudLoggingConfig struct {
 }
 
 type EvaluationRun_EvaluationConfig_DatasetCustomMetrics struct {
+	// How per-instance scores for this metric are combined into a single dataset-level result, e.g. average or sum. (AI-inferred)
 	AggregationFunction any
-	DisplayName         any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
 }
 
 type EvaluationRun_EvaluationConfig_LossAnalysisConfig struct {
+	// Identifies which candidate response this applies to. (AI-inferred)
 	Candidate any
-	Metric    any
+	// The metric this result was computed for. (AI-inferred)
+	Metric any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec struct {
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
 	Parameters any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec struct {
+	// The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
 	MetricSpecName any
-	Parameters     any
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
+	Parameters any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec struct {
+	// The full resource name of the metric this applies to. (AI-inferred)
 	MetricResourceName any
-	ModelConfig        any
-	PromptTemplate     any
-	RubricContentType  any
+	// Configuration for the model used by this job. (AI-inferred)
+	ModelConfig any
+	// The template used to construct the prompt sent to the model. (AI-inferred)
+	PromptTemplate any
+	// The kind of content generated rubrics should assess. (AI-inferred)
+	RubricContentType any
+	// A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
 	RubricTypeOntology any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec struct {
-	AdditionalConfig               any
-	JudgeAutoraterConfig           any
-	MetricPromptTemplate           any
+	// Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
+	AdditionalConfig any
+	// Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
+	JudgeAutoraterConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
 	PredefinedRubricGenerationSpec any
-	RubricGenerationSpec           any
-	RubricGroupKey                 any
-	SystemInstruction              any
+	// Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
+	RubricGenerationSpec any
+	// A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
+	RubricGroupKey any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpec struct {
+	// Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred)
 	UseEffectiveOrder any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpec struct {
+	// The function within the supplied custom code that computes this metric. (AI-inferred)
 	EvaluationFunction any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig struct {
-	AutoraterModel   any
-	FlipEnabled      any
+	// The judge model used to automatically score outputs against this metric, when the metric is model-based rather than computed directly. (AI-inferred)
+	AutoraterModel any
+	// Whether this rubric's own pass/fail evaluation is inverted. (AI-inferred)
+	FlipEnabled any
+	// The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred)
 	GenerationConfig any
-	SamplingCount    any
+	// How many samples are drawn when computing this metric. (AI-inferred)
+	SamplingCount any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec struct {
-	MetricSpecName       any
+	// The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
+	MetricSpecName any
+	// Configuration parameters specific to this metric's own computation. (AI-inferred)
 	MetricSpecParameters any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig struct {
+	// The function within the supplied custom code that parses the judge model's own response. (AI-inferred)
 	ParsingFunction any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig struct {
+	// Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred)
 	CustomCodeParserConfig any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpec struct {
-	ModelConfig        any
-	PromptTemplate     any
-	RubricContentType  any
+	// Configuration for the model used by this job. (AI-inferred)
+	ModelConfig any
+	// The template used to construct the prompt sent to the model. (AI-inferred)
+	PromptTemplate any
+	// The kind of content generated rubrics should assess. (AI-inferred)
+	RubricContentType any
+	// A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
 	RubricTypeOntology any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec struct {
-	AdditionalConfig               any
-	JudgeAutoraterConfig           any
-	MetricPromptTemplate           any
+	// Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
+	AdditionalConfig any
+	// Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
+	JudgeAutoraterConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
 	PredefinedRubricGenerationSpec any
-	ResultParserConfig             any
-	RubricGenerationSpec           any
-	RubricGroupKey                 any
-	SystemInstruction              any
+	// How the judge model's own raw response text is parsed into a final score. (AI-inferred)
+	ResultParserConfig any
+	// Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
+	RubricGenerationSpec any
+	// A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
+	RubricGroupKey any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRange struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Max         any
-	Min         any
-	Step        any
+	// The upper bound. (AI-inferred)
+	Max any
+	// The lower bound. (AI-inferred)
+	Min any
+	// A single step within this run or sequence. (AI-inferred)
+	Step any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata struct {
+	// Additional, metric-specific metadata beyond the standard fields. (AI-inferred)
 	OtherMetadata any
-	ScoreRange    any
-	Title         any
+	// The minimum and maximum values this metric's own score can take. (AI-inferred)
+	ScoreRange any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig struct {
+	// Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred)
 	ReturnRawOutput any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec struct {
-	BaselineResponseFieldName  any
+	// The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred)
+	BaselineResponseFieldName any
+	// The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred)
 	CandidateResponseFieldName any
-	CustomOutputFormatConfig   any
-	MetricPromptTemplate       any
-	SystemInstruction          any
+	// Configuration for the shape of a custom-formatted metric output. (AI-inferred)
+	CustomOutputFormatConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpec struct {
+	// Configuration for the shape of a custom-formatted metric output. (AI-inferred)
 	CustomOutputFormatConfig any
-	MetricPromptTemplate     any
-	SystemInstruction        any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpec struct {
-	RougeType      any
+	// Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred)
+	RougeType any
+	// Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred)
 	SplitSummaries any
-	UseStemmer     any
+	// Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred)
+	UseStemmer any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig struct {
-	AggregationMetrics         any
-	BleuSpec                   any
+	// Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred)
+	AggregationMetrics any
+	// Configuration for computing the BLEU text-similarity metric. (AI-inferred)
+	BleuSpec any
+	// Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
 	ComputationBasedMetricSpec any
-	CustomCodeExecutionSpec    any
-	ExactMatchSpec             any
-	LlmBasedMetricSpec         any
-	Metadata                   any
-	PairwiseMetricSpec         any
-	PointwiseMetricSpec        any
-	PredefinedMetricSpec       any
-	RougeSpec                  any
+	// Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred)
+	CustomCodeExecutionSpec any
+	// Configuration for computing an exact-string-match metric. (AI-inferred)
+	ExactMatchSpec any
+	// Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
+	LlmBasedMetricSpec any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred)
+	PairwiseMetricSpec any
+	// Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred)
+	PointwiseMetricSpec any
+	// Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
+	PredefinedMetricSpec any
+	// Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred)
+	RougeSpec any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_Property struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content struct {
+	// A named property of this object. (AI-inferred)
 	Property any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics struct {
-	Content    any
+	// The content of this message or resource. (AI-inferred)
+	Content any
+	// How heavily this rubric criterion is weighted in the overall verdict: `HIGH`, `MEDIUM`, or `LOW`. (AI-inferred)
 	Importance any
-	RubricId   any
-	Type       any
+	// An identifier for this rubric criterion, unique within its own containing set. (AI-inferred)
+	RubricId any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics struct {
+	// The individual rubric criteria used to judge a response. (AI-inferred)
 	Rubrics any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec struct {
-	InlineRubrics        any
+	// Rubric criteria supplied directly in the request, rather than referenced from a predefined group. (AI-inferred)
+	InlineRubrics any
+	// Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
 	JudgeAutoraterConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
 	MetricPromptTemplate any
+	// Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
 	RubricGenerationSpec any
-	RubricGroupKey       any
+	// A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
+	RubricGroupKey any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics struct {
+	// Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
 	ComputationBasedMetricSpec any
-	LlmBasedMetricSpec         any
-	Metric                     any
-	MetricConfig               any
-	MetricResourceName         any
-	PredefinedMetricSpec       any
-	RubricBasedMetricSpec      any
+	// Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
+	LlmBasedMetricSpec any
+	// The metric this result was computed for. (AI-inferred)
+	Metric any
+	// The configuration for how this metric is computed. (AI-inferred)
+	MetricConfig any
+	// The full resource name of the metric this applies to. (AI-inferred)
+	MetricResourceName any
+	// Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
+	PredefinedMetricSpec any
+	// Computes this metric by judging the response against a set of rubric criteria, rather than a single score. (AI-inferred)
+	RubricBasedMetricSpec any
 }
 
 type EvaluationRun_EvaluationConfig_OutputConfig_BigqueryDestination struct {
@@ -512,9 +630,12 @@ type EvaluationRun_EvaluationConfig_PromptTemplate struct {
 }
 
 type EvaluationRun_EvaluationConfig_RubricConfigs struct {
+	// Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
 	PredefinedRubricGenerationSpec any
-	RubricGenerationSpec           any
-	RubricGroupKey                 any
+	// Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
+	RubricGenerationSpec any
+	// A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
+	RubricGroupKey any
 }
 
 type EvaluationRun_EvaluationConfig struct {
@@ -553,228 +674,345 @@ type EvaluationRun_EvaluationResults struct {
 }
 
 type EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfig struct {
+	// A reference to the Gemini agent to run for this evaluation. (AI-inferred)
 	GeminiAgent any
 }
 
 type EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInput struct {
-	Parameters   any
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
+	Parameters any
+	// The initial key/value state the agent's own session starts with. (AI-inferred)
 	SessionState any
-	UserId       any
+	// The identifier of the simulated user for this evaluation session. (AI-inferred)
+	UserId any
 }
 
 type EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfig struct {
-	MaxTurn     any
+	// The maximum number of conversation turns the user simulator runs before ending the session. (AI-inferred)
+	MaxTurn any
+	// Configuration for the model used by this job. (AI-inferred)
 	ModelConfig any
-	ModelName   any
+	// The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred)
+	ModelName any
 }
 
 type EvaluationRun_InferenceConfigs_AgentRunConfig struct {
-	AgentEngine         any
-	GeminiAgentConfig   any
-	SessionInput        any
+	// A reference to the Agent Engine resource to run for this evaluation. (AI-inferred)
+	AgentEngine any
+	// Configuration for running a Gemini-based agent for this evaluation. (AI-inferred)
+	GeminiAgentConfig any
+	// The initial conversation session state passed to the agent when it's run for this evaluation. (AI-inferred)
+	SessionInput any
+	// Configuration for a simulated user that converses with the agent under evaluation, rather than replaying a fixed script. (AI-inferred)
 	UserSimulatorConfig any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUse struct {
+	// If `true`, screens `computer_use` requests for prompt-injection attempts before acting on them. (AI-inferred)
 	EnablePromptInjectionDetection any
-	Environment                    any
-	ExcludedPredefinedFunctions    any
+	// Which surface the `computer_use` tool operates in -- e.g. `browser`, for a sandboxed web browser. (AI-inferred)
+	Environment any
+	// Built-in `computer_use` actions to disable, typically to hand those actions to a custom, caller-registered function instead. (AI-inferred)
+	ExcludedPredefinedFunctions any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearch struct {
+	// The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
 	BlockingConfidence any
-	ExcludeDomains     any
+	// Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
+	ExcludeDomains any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearch struct {
-	ApiKey        any
+	// The API key credential used to authenticate this tool's own external calls. (AI-inferred)
+	ApiKey any
+	// Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
 	CustomConfigs any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarations struct {
-	Behavior             any
-	Description          any
-	Name                 any
-	Parameters           any
+	// Controls how the model treats this function call -- e.g. whether it must wait for the result before continuing, or can proceed without blocking. (AI-inferred)
+	Behavior any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
+	Parameters any
+	// The function's own parameter schema expressed as a plain JSON Schema document, an alternative to the structured `parameters` field. (AI-inferred)
 	ParametersJsonSchema any
-	Response             any
-	ResponseJsonSchema   any
+	// The response produced for this request. (AI-inferred)
+	Response any
+	// The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred)
+	ResponseJsonSchema any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypes struct {
-	Places  any
+	// Configuration for grounding responses in Google Maps place data specifically. (AI-inferred)
+	Places any
+	// Configuration for how requests are routed, e.g. to a specific region or backend. (AI-inferred)
 	Routing any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps struct {
-	EnableWidget   any
+	// Whether an interactive map widget is included alongside a Google Maps-grounded response. (AI-inferred)
+	EnableWidget any
+	// Which real-world grounding source(s) (e.g. web search, Maps) this configuration draws on. (AI-inferred)
 	GroundingTypes any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypes struct {
+	// Enables grounding via Google Image Search results. (AI-inferred)
 	ImageSearch any
-	WebSearch   any
+	// Enables grounding via Google Web Search results. (AI-inferred)
+	WebSearch any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch struct {
+	// The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
 	BlockingConfidence any
-	ExcludeDomains     any
-	SearchTypes        any
+	// Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
+	ExcludeDomains any
+	// Which kind(s) of web search results (image, web, or both) this grounding tool draws on. (AI-inferred)
+	SearchTypes any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig struct {
+	// The minimum predicted-usefulness score, from `dynamic_retrieval_config`, at which grounding is triggered -- a lower threshold grounds more often. (AI-inferred)
 	DynamicThreshold any
-	Mode             any
+	// Which operating mode this configuration uses. (AI-inferred)
+	Mode any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval struct {
+	// Controls when Google Search grounding actually triggers, based on how likely the model judges grounding to help. (AI-inferred)
 	DynamicRetrievalConfig any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearch struct {
-	ApiKey                  any
-	CustomConfigs           any
-	EnableDataRetention     any
+	// The API key credential used to authenticate this tool's own external calls. (AI-inferred)
+	ApiKey any
+	// Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
+	CustomConfigs any
+	// Whether Google retains this request's own data beyond the immediate response, per the caller's own data-retention agreement. (AI-inferred)
+	EnableDataRetention any
+	// If `true`, Google discards this request's own data immediately after responding rather than retaining it at all. (AI-inferred)
 	EnableZeroDataRetention any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig struct {
+	// The Secret Manager secret version holding the API key used to authenticate this call. (AI-inferred)
 	ApiKeySecretVersion any
-	ApiKeyString        any
+	// The literal API key value used to authenticate this tool's own external call. (AI-inferred)
+	ApiKeyString any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth struct {
+	// How the API key for this tool's own external service call is supplied. (AI-inferred)
 	ApiKeyConfig any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig struct {
-	ApiKeySecret        any
-	ApiKeyString        any
+	// The Secret Manager secret holding the API key used to authenticate this call. (AI-inferred)
+	ApiKeySecret any
+	// The literal API key value used to authenticate this tool's own external call. (AI-inferred)
+	ApiKeyString any
+	// Where in the HTTP request this credential is placed, e.g. a header or query parameter. (AI-inferred)
 	HttpElementLocation any
-	Name                any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig struct {
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig struct {
+	// The Secret Manager secret holding this credential. (AI-inferred)
 	CredentialSecret any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig struct {
-	AccessToken    any
+	// An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
+	AccessToken any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig struct {
-	IdToken        any
+	// An OpenID Connect ID token used to authenticate this call. (AI-inferred)
+	IdToken any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig struct {
-	ApiKeyConfig               any
-	AuthType                   any
+	// How the API key for this tool's own external service call is supplied. (AI-inferred)
+	ApiKeyConfig any
+	// Which authentication method this configuration uses, e.g. API key, OAuth, or OIDC. (AI-inferred)
+	AuthType any
+	// Authenticates using a Google-managed service account, rather than a caller-supplied credential. (AI-inferred)
 	GoogleServiceAccountConfig any
-	HttpBasicAuthConfig        any
-	OauthConfig                any
-	OidcConfig                 any
+	// Authenticates using HTTP Basic authentication (username and password). (AI-inferred)
+	HttpBasicAuthConfig any
+	// Authenticates using an OAuth 2.0 access token. (AI-inferred)
+	OauthConfig any
+	// Authenticates using an OpenID Connect ID token. (AI-inferred)
+	OidcConfig any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParams struct {
-	Index          any
-	NumHits        any
+	// The position of this item within its own containing sequence. (AI-inferred)
+	Index any
+	// How many search results (hits) to request from the external search API. (AI-inferred)
+	NumHits any
+	// The Elasticsearch search template used to construct this query. (AI-inferred)
 	SearchTemplate any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi struct {
-	ApiAuth             any
-	ApiSpec             any
-	AuthConfig          any
+	// Authentication credentials for calling this external API. (AI-inferred)
+	ApiAuth any
+	// Which external search API shape this configuration targets, e.g. `elastic_search_params` or `simple_search_params`. (AI-inferred)
+	ApiSpec any
+	// Authentication configuration for reaching this external resource. (AI-inferred)
+	AuthConfig any
+	// Parameters for querying an Elasticsearch-backed external search API. (AI-inferred)
 	ElasticSearchParams any
-	Endpoint            any
-	SimpleSearchParams  any
+	// The endpoint this call is directed to. (AI-inferred)
+	Endpoint any
+	// Parameters for querying a simple, generic external search API, as an alternative to `elastic_search_params`. (AI-inferred)
+	SimpleSearchParams any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecs struct {
+	// The Vertex AI Search data store this grounding query reads from, in the form `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`. (AI-inferred)
 	DataStore any
-	Filter    any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch struct {
+	// Restricts a Vertex AI Search grounding query to specific data store(s) within the configured search app, rather than all of them. (AI-inferred)
 	DataStoreSpecs any
-	Datastore      any
-	Engine         any
-	Filter         any
-	MaxResults     any
+	// The Vertex AI Search data store this applies to. (AI-inferred)
+	Datastore any
+	// The Vertex AI Search app (engine) this grounding query reads from. (AI-inferred)
+	Engine any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The maximum number of results this query returns. (AI-inferred)
+	MaxResults any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResources struct {
-	RagCorpus  any
+	// The RAG corpus this applies to, in the form `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`. (AI-inferred)
+	RagCorpus any
+	// Specific file ID(s) within `rag_corpus` to restrict retrieval to, instead of the whole corpus. (AI-inferred)
 	RagFileIds any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter struct {
-	MetadataFilter            any
-	VectorDistanceThreshold   any
+	// A filter expression restricting retrieval to chunks whose own metadata matches. (AI-inferred)
+	MetadataFilter any
+	// The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
+	VectorDistanceThreshold any
+	// The minimum vector similarity a retrieved chunk must have to be included -- a higher threshold returns fewer, more relevant chunks. (AI-inferred)
 	VectorSimilarityThreshold any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking struct {
-	LlmRanker   any
+	// Reranks retrieved results using a language model, rather than the dedicated rank service. (AI-inferred)
+	LlmRanker any
+	// Reranks retrieved results using Vertex AI's own dedicated semantic ranking model. (AI-inferred)
 	RankService any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig struct {
-	Filter  any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// Configuration for reranking retrieved results before returning them. (AI-inferred)
 	Ranking any
-	TopK    any
+	// Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
+	TopK any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore struct {
-	RagResources            any
-	RagRetrievalConfig      any
-	SimilarityTopK          any
+	// The RAG corpus/corpora (and optionally specific files within one corpus) this query retrieves from. (AI-inferred)
+	RagResources any
+	// Controls how many chunks are retrieved and how they're filtered/ranked for a RAG query. (AI-inferred)
+	RagRetrievalConfig any
+	// The maximum number of top-ranked results to return from retrieval. (AI-inferred)
+	SimilarityTopK any
+	// The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
 	VectorDistanceThreshold any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval struct {
+	// If `true`, suppresses source citations that would otherwise accompany a grounded response. (AI-inferred)
 	DisableAttribution any
-	ExternalApi        any
-	VertexAiSearch     any
-	VertexRagStore     any
+	// Configuration for grounding via a caller-specified external search API, rather than a Google-hosted one. (AI-inferred)
+	ExternalApi any
+	// Enables the model to ground its response in a Vertex AI Search data store. (AI-inferred)
+	VertexAiSearch any
+	// Enables the model to ground its response in one or more Vertex AI RAG Engine corpora. (AI-inferred)
+	VertexRagStore any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools struct {
-	CodeExecution         any
-	ComputerUse           any
-	EnterpriseWebSearch   any
-	ExaAiSearch           any
-	FunctionDeclarations  any
-	GoogleMaps            any
-	GoogleSearch          any
+	// Enables the model to write and run code in a hosted interpreter as part of generating its response. (AI-inferred)
+	CodeExecution any
+	// Enables the model to control a browser, mobile, or desktop `environment` by issuing UI actions (click, type, scroll) as part of generating its response. (AI-inferred)
+	ComputerUse any
+	// Enables grounding via an enterprise-scoped web search, as an alternative to open `google_search` grounding. (AI-inferred)
+	EnterpriseWebSearch any
+	// Enables grounding via the third-party Exa AI search tool, authenticated with `api_key`. (AI-inferred)
+	ExaAiSearch any
+	// The set of callable functions the model may invoke via `function_call`, each declared with a name, description, and parameter schema. (AI-inferred)
+	FunctionDeclarations any
+	// Enables the model to ground its response in Google Maps place and location data. (AI-inferred)
+	GoogleMaps any
+	// Enables the model to ground its response in live Google Search results. (AI-inferred)
+	GoogleSearch any
+	// Enables the model to ground its response in live Google Search results, with configurable dynamic-retrieval behavior. (AI-inferred)
 	GoogleSearchRetrieval any
-	ParallelAiSearch      any
-	Retrieval             any
-	UrlContext            any
+	// Enables grounding via the third-party Parallel AI search tool. (AI-inferred)
+	ParallelAiSearch any
+	// Enables the model to ground its response in a specified external or Vertex AI-hosted data source. (AI-inferred)
+	Retrieval any
+	// Enables the model to fetch and read the content of URLs it's given or discovers, to ground its response. (AI-inferred)
+	UrlContext any
 }
 
 type EvaluationRun_InferenceConfigs_Agents struct {
-	AgentId     any
-	AgentType   any
+	// The identifier of the agent this applies to. (AI-inferred)
+	AgentId any
+	// The kind of agent this is, e.g. which framework or platform it's built on. (AI-inferred)
+	AgentType any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// An instruction given to the model or agent. (AI-inferred)
 	Instruction any
-	SubAgents   any
-	Tools       any
+	// The child agent(s) this agent delegates parts of a task to. (AI-inferred)
+	SubAgents any
+	// The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred)
+	Tools any
 }
 
 type EvaluationRun_InferenceConfigs struct {
-	AgentRunConfig   any
-	Agents           any
+	// Configuration for running the agent under evaluation to produce responses, rather than using pre-recorded ones. (AI-inferred)
+	AgentRunConfig any
+	// The agent(s) involved in this evaluation, keyed by their own identifier. (AI-inferred)
+	Agents any
+	// The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred)
 	GenerationConfig any
-	Model            any
-	Parallelism      any
-	PromptTemplate   any
+	// A reference to the model this applies to. (AI-inferred)
+	Model any
+	// How many evaluation instances are processed concurrently. (AI-inferred)
+	Parallelism any
+	// The template used to construct the prompt sent to the model. (AI-inferred)
+	PromptTemplate any
 }
 
 var EvaluationRun_DataSource_BigqueryRequestSet_SamplingConfigFields = ubx.FieldMap{

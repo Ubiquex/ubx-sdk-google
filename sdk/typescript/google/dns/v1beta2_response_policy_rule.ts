@@ -211,6 +211,7 @@ export interface V1beta2ResponsePolicyRuleConfig {
   behavior?: string | Computed<string>;
   /** The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule. */
   dnsName?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   localData?: V1beta2ResponsePolicyRule_LocalData | Computed<V1beta2ResponsePolicyRule_LocalData>;
   /** An identifier for this rule. Must be unique with the ResponsePolicy. */
@@ -222,6 +223,7 @@ export interface V1beta2ResponsePolicyRuleAttrs {
   behavior: string;
   /** The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule. */
   dnsName: string;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   localData: V1beta2ResponsePolicyRule_LocalData;
   /** An identifier for this rule. Must be unique with the ResponsePolicy. */

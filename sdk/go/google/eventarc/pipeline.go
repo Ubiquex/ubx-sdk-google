@@ -4,47 +4,67 @@ package eventarc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipeline_Destinations_AuthenticationConfig_GoogleOidc struct {
-	Audience       any
+	// The intended recipient of this authentication token. (AI-inferred)
+	Audience any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type Pipeline_Destinations_AuthenticationConfig_OauthToken struct {
-	Scope          any
+	// What this configuration's own scope covers. (AI-inferred)
+	Scope any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type Pipeline_Destinations_AuthenticationConfig struct {
+	// Authenticates delivered requests using a Google-signed OIDC token. (AI-inferred)
 	GoogleOidc any
+	// Authenticates delivered requests using an OAuth access token. (AI-inferred)
 	OauthToken any
 }
 
 type Pipeline_Destinations_HttpEndpoint struct {
+	// The CEL expression mapping a source event into a CloudEvents-formatted message. (AI-inferred)
 	MessageBindingTemplate any
-	Uri                    any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Pipeline_Destinations_NetworkConfig struct {
+	// A reference to the network attachment used to reach this private destination. (AI-inferred)
 	NetworkAttachment any
 }
 
 type Pipeline_Destinations_OutputPayloadFormat_Avro struct {
+	// The literal content of this schema. (AI-inferred)
 	SchemaDefinition any
 }
 
 type Pipeline_Destinations_OutputPayloadFormat struct {
-	Avro     any
-	Json     any
+	// Configuration for encoding this schema using Avro. (AI-inferred)
+	Avro any
+	// Configuration for encoding this schema using JSON. (AI-inferred)
+	Json any
+	// Configuration for encoding this schema using Protocol Buffers. (AI-inferred)
 	Protobuf any
 }
 
 type Pipeline_Destinations struct {
+	// Configuration for authenticating requests delivered to this destination. (AI-inferred)
 	AuthenticationConfig any
-	HttpEndpoint         any
-	MessageBus           any
-	NetworkConfig        any
-	OutputPayloadFormat  any
-	Topic                any
-	Workflow             any
+	// The HTTP endpoint events are delivered to. (AI-inferred)
+	HttpEndpoint any
+	// A reference to the message bus this applies to. (AI-inferred)
+	MessageBus any
+	// Configuration controlling how this destination is reached over the network. (AI-inferred)
+	NetworkConfig any
+	// The format events are encoded in when delivered. (AI-inferred)
+	OutputPayloadFormat any
+	// A reference to the Pub/Sub topic this applies to. (AI-inferred)
+	Topic any
+	// A reference to the workflow this event triggers. (AI-inferred)
+	Workflow any
 }
 
 type Pipeline_LoggingConfig struct {
@@ -53,10 +73,12 @@ type Pipeline_LoggingConfig struct {
 }
 
 type Pipeline_Mediations_Transformation struct {
+	// The CEL expression used to transform this event's own payload. (AI-inferred)
 	TransformationTemplate any
 }
 
 type Pipeline_Mediations struct {
+	// A transformation applied to this event before delivery. (AI-inferred)
 	Transformation any
 }
 

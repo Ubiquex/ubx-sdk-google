@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeploymentResourcePool_DedicatedResources_AutoscalingMetricSpecs:
+    # The name of the metric this applies to. (AI-inferred)
     metric_name: Any = None
+    # The target value autoscaling tries to maintain for this metric. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass

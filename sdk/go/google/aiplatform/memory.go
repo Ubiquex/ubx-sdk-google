@@ -4,15 +4,21 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Memory_Metadata struct {
-	BoolValue      any
-	DoubleValue    any
-	StringValue    any
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
+	BoolValue any
+	// A floating-point value, populated when this field's own type is a double. (AI-inferred)
+	DoubleValue any
+	// A text value, populated when this field's own type is a string. (AI-inferred)
+	StringValue any
+	// A timestamp value, populated when this field's own type is a timestamp. (AI-inferred)
 	TimestampValue any
 }
 
 type Memory_Topics struct {
+	// The label identifying this caller-defined memory topic. (AI-inferred)
 	CustomMemoryTopicLabel any
-	ManagedMemoryTopic     any
+	// One of Vertex AI's own predefined memory topics, e.g. `USER_PREFERENCES`. (AI-inferred)
+	ManagedMemoryTopic any
 }
 
 var Memory_MetadataFields = ubx.FieldMap{

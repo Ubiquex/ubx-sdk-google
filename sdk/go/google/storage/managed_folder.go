@@ -4,8 +4,10 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedFolder_RapidCacheConfig_Policies struct {
+	// Whether this bucket ingests written objects for rapid analytics access as they land. (AI-inferred)
 	IngestOnWrite any
-	RapidCacheId  any
+	// The identifier of the rapid storage cache this applies to. (AI-inferred)
+	RapidCacheId any
 }
 
 type ManagedFolder_RapidCacheConfig struct {

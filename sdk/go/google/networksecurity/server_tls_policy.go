@@ -4,16 +4,20 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstance struct {
+	// A reference to the service extension plugin instance this applies to. (AI-inferred)
 	PluginInstance any
 }
 
 type ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpoint struct {
+	// The URI this configuration targets or proxies to. (AI-inferred)
 	TargetUri any
 }
 
 type ServerTlsPolicy_MtlsPolicy_ClientValidationCa struct {
+	// A reference to the certificate provider supplying TLS certificates for this configuration. (AI-inferred)
 	CertificateProviderInstance any
-	GrpcEndpoint                any
+	// The gRPC endpoint this plugin or configuration connects to. (AI-inferred)
+	GrpcEndpoint any
 }
 
 type ServerTlsPolicy_MtlsPolicy struct {

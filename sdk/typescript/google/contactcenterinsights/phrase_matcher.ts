@@ -2,22 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfig {
+  /** Whether this text match is case-sensitive. (AI-inferred) */
   caseSensitive?: boolean | Computed<boolean>;
 }
 
 export interface PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config {
+  /** Configures this phrase matcher to require an exact text match. (AI-inferred) */
   exactMatchConfig?: PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfig | Computed<PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfig>;
+  /** Configures this phrase matcher to match using a regular expression. (AI-inferred) */
   regexMatchConfig?: unknown | Computed<unknown>;
 }
 
 export interface PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules {
+  /** The configuration for this resource. (AI-inferred) */
   config?: PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config | Computed<PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config>;
+  /** Whether this condition's own result is inverted. (AI-inferred) */
   negated?: boolean | Computed<boolean>;
+  /** The query text or expression. (AI-inferred) */
   query?: string | Computed<string>;
 }
 
 export interface PhraseMatcher_PhraseMatchRuleGroups {
+  /** The rule(s) making up this phrase matcher. (AI-inferred) */
   phraseMatchRules?: PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules[] | Computed<PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules[]>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

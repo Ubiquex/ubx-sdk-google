@@ -13,14 +13,20 @@ class Target_AnthosCluster:
 
 @dataclasses.dataclass
 class Target_AssociatedEntities_GkeClusters:
+    # A reference to the GKE cluster this target deploys to. (AI-inferred)
     cluster: Any = None
+    # Uses a DNS-resolvable endpoint to reach this cluster, rather than a direct IP address. (AI-inferred)
     dns_endpoint: Any = None
+    # Whether this cluster is reached over its own internal (private) IP address, rather than a public one. (AI-inferred)
     internal_ip: Any = None
+    # The URL of a proxy used to reach this cluster. (AI-inferred)
     proxy_url: Any = None
 
 @dataclasses.dataclass
 class Target_AssociatedEntities:
+    # The Anthos-registered cluster(s) this applies to. (AI-inferred)
     anthos_clusters: Any = None
+    # The GKE cluster(s) this applies to. (AI-inferred)
     gke_clusters: Any = None
 
 @dataclasses.dataclass
@@ -30,24 +36,37 @@ class Target_CustomTarget:
 
 @dataclasses.dataclass
 class Target_ExecutionConfigs_DefaultPool:
+    # The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
     artifact_storage: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Target_ExecutionConfigs_PrivatePool:
+    # The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
     artifact_storage: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
     worker_pool: Any = None
 
 @dataclasses.dataclass
 class Target_ExecutionConfigs:
+    # The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
     artifact_storage: Any = None
+    # Configuration for running jobs on Cloud Build's own default worker pool, rather than a private one. (AI-inferred)
     default_pool: Any = None
+    # How long a job is allowed to run before being considered timed out. (AI-inferred)
     execution_timeout: Any = None
+    # Configuration for running jobs on a private Cloud Build worker pool, rather than the default shared one. (AI-inferred)
     private_pool: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # Which purpose(s) (render, deploy, verify) this execution environment configuration applies to. (AI-inferred)
     usages: Any = None
+    # Whether detailed, verbose output is produced for this operation. (AI-inferred)
     verbose: Any = None
+    # A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
     worker_pool: Any = None
 
 @dataclasses.dataclass

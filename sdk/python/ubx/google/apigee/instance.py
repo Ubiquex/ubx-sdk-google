@@ -15,14 +15,20 @@ class Instance_AccessLoggingConfig:
 
 @dataclasses.dataclass
 class Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTime:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class Instance_MaintenanceUpdatePolicy_MaintenanceWindows:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass

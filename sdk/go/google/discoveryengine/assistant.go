@@ -4,9 +4,12 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Assistant_CustomerPolicy_BannedPhrases struct {
+	// Whether accented characters are treated as equivalent to their unaccented form when matching. (AI-inferred)
 	IgnoreDiacritics any
-	MatchType        any
-	Phrase           any
+	// How this rule's own pattern is matched against the input. (AI-inferred)
+	MatchType any
+	// A word or phrase this rule matches. (AI-inferred)
+	Phrase any
 }
 
 type Assistant_CustomerPolicy_ModelArmorConfig struct {
@@ -26,11 +29,14 @@ type Assistant_CustomerPolicy struct {
 }
 
 type Assistant_EnabledTools_ToolInfo struct {
+	// A human-readable name for this tool. (AI-inferred)
 	ToolDisplayName any
-	ToolName        any
+	// The name of the tool invoked. (AI-inferred)
+	ToolName any
 }
 
 type Assistant_EnabledTools struct {
+	// Detail about the tool this action invoked. (AI-inferred)
 	ToolInfo any
 }
 

@@ -34,6 +34,7 @@ class V1beta2ResponsePolicyConfig:
     gke_clusters: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None
@@ -50,6 +51,7 @@ class V1beta2ResponsePolicyAttrs:
     gke_clusters: Any = None
     # Unique identifier for the resource; defined by the server (output only).
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None

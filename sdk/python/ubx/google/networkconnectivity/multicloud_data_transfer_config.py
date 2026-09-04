@@ -8,11 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MulticloudDataTransferConfig_Services_States:
+    # When this configuration took effect. (AI-inferred)
     effective_time: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class MulticloudDataTransferConfig_Services:
+    # The lifecycle state(s) this filter matches. (AI-inferred)
     states: Any = None
 
 _MulticloudDataTransferConfig_Services_StatesFields = {

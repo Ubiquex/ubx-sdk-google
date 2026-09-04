@@ -46,23 +46,28 @@ var AlphaNodeTemplate_ServerBindingFields = ubx.FieldMap{
 }
 
 type AlphaNodeTemplateConfig struct {
+	// The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred)
 	Accelerators any
 	// CPU overcommit.
 	CpuOvercommitType any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	Disks       any
+	// The disk configuration nodes created from this template provision. (AI-inferred)
+	Disks any
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Labels to use for node affinity, which will be used in instance scheduling.
 	NodeAffinityLabels any
 	// The node type to use for nodes group that are created from this template.
-	NodeType            any
+	NodeType any
+	// A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred)
 	NodeTypeFlexibility any
-	ServerBinding       any
+	// Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred)
+	ServerBinding any
 }
 
 type AlphaNodeTemplateAttrs struct {
+	// The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred)
 	Accelerators any
 	// CPU overcommit.
 	CpuOvercommitType any
@@ -70,7 +75,8 @@ type AlphaNodeTemplateAttrs struct {
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	Disks       any
+	// The disk configuration nodes created from this template provision. (AI-inferred)
+	Disks any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
@@ -80,7 +86,8 @@ type AlphaNodeTemplateAttrs struct {
 	// Labels to use for node affinity, which will be used in instance scheduling.
 	NodeAffinityLabels any
 	// The node type to use for nodes group that are created from this template.
-	NodeType            any
+	NodeType any
+	// A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred)
 	NodeTypeFlexibility any
 	// Output only. [Output Only] The name of the region where the node template resides, such as us-central1.
 	Region any
@@ -88,7 +95,8 @@ type AlphaNodeTemplateAttrs struct {
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
 	SelfLinkWithId any
-	ServerBinding  any
+	// Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred)
+	ServerBinding any
 	// Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
 	Status any
 	// Output only. [Output Only] An optional, human-readable explanation of the status.

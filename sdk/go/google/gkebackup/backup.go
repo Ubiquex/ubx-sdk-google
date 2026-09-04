@@ -22,7 +22,9 @@ type Backup_EncryptionKey struct {
 }
 
 type Backup_SelectedApplications_NamespacedNames struct {
-	Name      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The Kubernetes namespace this applies to. (AI-inferred)
 	Namespace any
 }
 
@@ -32,7 +34,9 @@ type Backup_SelectedApplications struct {
 }
 
 type Backup_SelectedNamespaceLabels_ResourceLabels struct {
-	Key   any
+	// The key of this label or field. (AI-inferred)
+	Key any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 

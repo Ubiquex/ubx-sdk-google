@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExternalVpnGateway_Interfaces {
+  /** The numeric identifier for this interface, unique within the external VPN gateway, used to associate it with VPN tunnels. (AI-inferred) */
   id?: number | Computed<number>;
+  /** The public IPv4 address for this interface of the external VPN gateway. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The IPv6 address of the external VPN gateway interface. This is the peer address used for establishing VPN tunnels over IPv6. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
 }
 

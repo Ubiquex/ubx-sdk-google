@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_AclPolicyInfo_AclPolicyRevisionStatuses:
+    # The current revision of this cluster's own access control list policy. (AI-inferred)
     acl_policy_revision: Any = None
+    # The numeric revision identifier of this ACL policy. (AI-inferred)
     acl_policy_revision_number: Any = None
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -51,34 +55,54 @@ class Cluster_AutomatedBackupConfig:
 
 @dataclasses.dataclass
 class Cluster_ClusterEndpoints_Connections_PscAutoConnection:
+    # The IP address this applies to. (AI-inferred)
     address: Any = None
+    # Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
     connection_type: Any = None
+    # A reference to the forwarding rule this applies to. (AI-inferred)
     forwarding_rule: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The identifier of the associated Google Cloud project. (AI-inferred)
     project_id: Any = None
+    # The unique identifier of this Private Service Connect connection. (AI-inferred)
     psc_connection_id: Any = None
+    # The current status of this Private Service Connect connection. (AI-inferred)
     psc_connection_status: Any = None
+    # A reference to the Private Service Connect service attachment this connects to. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass
 class Cluster_ClusterEndpoints_Connections_PscConnection:
+    # The IP address this applies to. (AI-inferred)
     address: Any = None
+    # Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
     connection_type: Any = None
+    # A reference to the forwarding rule this applies to. (AI-inferred)
     forwarding_rule: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The port number this applies to. (AI-inferred)
     port: Any = None
+    # The identifier of the associated Google Cloud project. (AI-inferred)
     project_id: Any = None
+    # The unique identifier of this Private Service Connect connection. (AI-inferred)
     psc_connection_id: Any = None
+    # The current status of this Private Service Connect connection. (AI-inferred)
     psc_connection_status: Any = None
+    # A reference to the Private Service Connect service attachment this connects to. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass
 class Cluster_ClusterEndpoints_Connections:
+    # A Private Service Connect connection automatically established for this cluster. (AI-inferred)
     psc_auto_connection: Any = None
+    # A Private Service Connect connection associated with this instance. (AI-inferred)
     psc_connection: Any = None
 
 @dataclasses.dataclass
 class Cluster_ClusterEndpoints:
+    # The active connection(s) to this instance. (AI-inferred)
     connections: Any = None
 
 @dataclasses.dataclass
@@ -110,12 +134,16 @@ class Cluster_CrossClusterReplicationConfig:
 
 @dataclasses.dataclass
 class Cluster_DiscoveryEndpoints_PscConfig:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
 
 @dataclasses.dataclass
 class Cluster_DiscoveryEndpoints:
+    # The IP address this applies to. (AI-inferred)
     address: Any = None
+    # The port number this applies to. (AI-inferred)
     port: Any = None
+    # Configuration for connecting to this instance via Private Service Connect. (AI-inferred)
     psc_config: Any = None
 
 @dataclasses.dataclass
@@ -136,7 +164,9 @@ class Cluster_GcsSource:
 
 @dataclasses.dataclass
 class Cluster_MaintenancePolicy_WeeklyMaintenanceWindow:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
@@ -183,7 +213,9 @@ class Cluster_PersistenceConfig:
 
 @dataclasses.dataclass
 class Cluster_PscServiceAttachments:
+    # Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
     connection_type: Any = None
+    # A reference to the Private Service Connect service attachment this connects to. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass

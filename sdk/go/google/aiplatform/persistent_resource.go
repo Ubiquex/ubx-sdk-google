@@ -18,8 +18,11 @@ type PersistentResource_Error struct {
 }
 
 type PersistentResource_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain        any
+	// The domain this configuration or resource applies to. (AI-inferred)
+	Domain any
+	// The VPC network this resource is deployed into. (AI-inferred)
 	TargetNetwork any
+	// The Google Cloud project this resource targets. (AI-inferred)
 	TargetProject any
 }
 
@@ -31,36 +34,55 @@ type PersistentResource_PscInterfaceConfig struct {
 }
 
 type PersistentResource_ResourcePools_AutoscalingSpec struct {
+	// The maximum number of machine replicas this job may scale up to. (AI-inferred)
 	MaxReplicaCount any
+	// The minimum number of machine replicas this job scales down to. (AI-inferred)
 	MinReplicaCount any
 }
 
 type PersistentResource_ResourcePools_DiskSpec struct {
+	// The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred)
 	BootDiskSizeGb any
-	BootDiskType   any
+	// The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred)
+	BootDiskType any
 }
 
 type PersistentResource_ResourcePools_MachineSpec_ReservationAffinity struct {
-	Key                     any
+	// A key identifying this entry. (AI-inferred)
+	Key any
+	// Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
 	ReservationAffinityType any
-	Values                  any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type PersistentResource_ResourcePools_MachineSpec struct {
-	AcceleratorCount    any
-	AcceleratorType     any
-	GpuPartitionSize    any
-	MachineType         any
+	// How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
+	AcceleratorCount any
+	// The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
+	AcceleratorType any
+	// The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
+	GpuPartitionSize any
+	// The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
+	MachineType any
+	// Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
 	ReservationAffinity any
-	TpuTopology         any
+	// The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
+	TpuTopology any
 }
 
 type PersistentResource_ResourcePools struct {
-	AutoscalingSpec  any
-	DiskSpec         any
-	Id               any
-	MachineSpec      any
-	ReplicaCount     any
+	// Autoscaling configuration for this resource pool. (AI-inferred)
+	AutoscalingSpec any
+	// The boot disk configuration provisioned for this job's own machine(s). (AI-inferred)
+	DiskSpec any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
+	MachineSpec any
+	// How many machine replicas this job runs. (AI-inferred)
+	ReplicaCount any
+	// Output only. How many replicas in this resource pool are currently in use. (AI-inferred)
 	UsedReplicaCount any
 }
 

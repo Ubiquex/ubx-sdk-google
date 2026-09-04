@@ -2,99 +2,142 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Policy_GkePolicy_CheckSets_Checks_ImageAllowlist {
+  /** A glob pattern of container image URL(s) exempt from attestation requirements. (AI-inferred) */
   allowPattern?: string[] | Computed<string[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheck {
+  /** The maximum age, in days, an image may have been uploaded and still pass this check. (AI-inferred) */
   maxUploadAgeDays?: number | Computed<number>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeys {
+  /** A public key, PEM-encoded. (AI-inferred) */
   publicKeyPem?: string | Computed<string>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet {
+  /** The public key(s) this applies to. (AI-inferred) */
   publicKeys?: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeys[] | Computed<Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeys[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A set of public key(s), any one of which may satisfy this check. (AI-inferred) */
   publicKeySet?: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet | Computed<Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck {
+  /** The Sigstore authority/authorities trusted to verify this check's own signatures. (AI-inferred) */
   sigstoreAuthorities?: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities[] | Computed<Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeys {
+  /** An identifier for this key. (AI-inferred) */
   keyId?: string | Computed<string>;
+  /** A public key, PEM-encoded. (AI-inferred) */
   publicKeyPem?: string | Computed<string>;
+  /** The algorithm used to sign this key or attestation. (AI-inferred) */
   signatureAlgorithm?: string | Computed<string>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet {
+  /** The PKIX public key(s) this applies to. (AI-inferred) */
   pkixPublicKeys?: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeys[] | Computed<Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeys[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A set of PKIX public key(s), any one of which may satisfy this check. (AI-inferred) */
   pkixPublicKeySet?: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet | Computed<Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck {
+  /** The authenticator(s) permitted to sign attestation(s) satisfying this check. (AI-inferred) */
   attestationAuthenticators?: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators[] | Computed<Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators[]>;
+  /** The project(s) whose own Container Analysis occurrences are trusted as attestation sources. (AI-inferred) */
   containerAnalysisAttestationProjects?: string[] | Computed<string[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSource {
+  /** The project(s) whose own Container Analysis occurrences are trusted as attestation sources. (AI-inferred) */
   containerAnalysisAttestationProjects?: string[] | Computed<string[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules {
+  /** Where the attestation(s) evaluated by this check are sourced from. (AI-inferred) */
   attestationSource?: Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSource | Computed<Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSource>;
+  /** Whether the image must have been built from a specific, allow-listed build configuration. (AI-inferred) */
   configBasedBuildRequired?: boolean | Computed<boolean>;
+  /** Caller-defined constraint(s) this policy enforces. (AI-inferred) */
   customConstraints?: string | Computed<string>;
+  /** The build system trusted to produce this image's own provenance. (AI-inferred) */
   trustedBuilder?: string | Computed<string>;
+  /** The source repository URL pattern(s) trusted to have produced this image. (AI-inferred) */
   trustedSourceRepoPatterns?: string[] | Computed<string[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_SlsaCheck {
+  /** The rule(s) making up this policy. (AI-inferred) */
   rules?: Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules[] | Computed<Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheck {
+  /** The source directory pattern(s) trusted to have produced this image. (AI-inferred) */
   trustedDirPatterns?: string[] | Computed<string[]>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheck {
+  /** The known CVE identifier(s) explicitly permitted, even though they would otherwise fail this check. (AI-inferred) */
   allowedCves?: string[] | Computed<string[]>;
+  /** The known CVE identifier(s) that cause this check to fail if present. (AI-inferred) */
   blockedCves?: string[] | Computed<string[]>;
+  /** The project(s) whose own Container Analysis occurrences are trusted as vulnerability data sources. (AI-inferred) */
   containerAnalysisVulnerabilityProjects?: string[] | Computed<string[]>;
+  /** The highest severity of fixable vulnerability an image is permitted to contain. (AI-inferred) */
   maximumFixableSeverity?: string | Computed<string>;
+  /** The highest severity of unfixable vulnerability an image is permitted to contain. (AI-inferred) */
   maximumUnfixableSeverity?: string | Computed<string>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Checks {
+  /** Whether every image is denied, with no exceptions. (AI-inferred) */
   alwaysDeny?: boolean | Computed<boolean>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The container image URL pattern(s) exempt from this policy's own checks. (AI-inferred) */
   imageAllowlist?: Policy_GkePolicy_CheckSets_Checks_ImageAllowlist | Computed<Policy_GkePolicy_CheckSets_Checks_ImageAllowlist>;
+  /** Verifies the image was built recently enough, within a configured age limit. (AI-inferred) */
   imageFreshnessCheck?: Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheck | Computed<Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheck>;
+  /** Verifies the image was signed by a trusted Sigstore identity. (AI-inferred) */
   sigstoreSignatureCheck?: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck | Computed<Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck>;
+  /** Verifies the image carries a valid Simple Signing format attestation. (AI-inferred) */
   simpleSigningAttestationCheck?: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck | Computed<Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck>;
+  /** Verifies the image's own SLSA provenance meets a required build level. (AI-inferred) */
   slsaCheck?: Policy_GkePolicy_CheckSets_Checks_SlsaCheck | Computed<Policy_GkePolicy_CheckSets_Checks_SlsaCheck>;
+  /** Verifies the image was built from a trusted source directory. (AI-inferred) */
   trustedDirectoryCheck?: Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheck | Computed<Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheck>;
+  /** Verifies the image's own known vulnerabilities stay within configured severity limits. (AI-inferred) */
   vulnerabilityCheck?: Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheck | Computed<Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheck>;
 }
 
 export interface Policy_GkePolicy_CheckSets_Scope {
+  /** The Kubernetes namespace this applies to. (AI-inferred) */
   kubernetesNamespace?: string | Computed<string>;
+  /** The Kubernetes service account this applies to. (AI-inferred) */
   kubernetesServiceAccount?: string | Computed<string>;
 }
 
 export interface Policy_GkePolicy_CheckSets {
+  /** The check(s) an image must satisfy for this policy to allow it. (AI-inferred) */
   checks?: Policy_GkePolicy_CheckSets_Checks[] | Computed<Policy_GkePolicy_CheckSets_Checks[]>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The container image URL pattern(s) exempt from this policy's own checks. (AI-inferred) */
   imageAllowlist?: Policy_GkePolicy_CheckSets_Checks_ImageAllowlist | Computed<Policy_GkePolicy_CheckSets_Checks_ImageAllowlist>;
+  /** What this configuration's own scope covers. (AI-inferred) */
   scope?: Policy_GkePolicy_CheckSets_Scope | Computed<Policy_GkePolicy_CheckSets_Scope>;
 }
 

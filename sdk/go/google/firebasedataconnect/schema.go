@@ -4,33 +4,48 @@ package firebasedataconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schema_Datasources_HttpGraphql struct {
+	// How long this operation is allowed to run before timing out. (AI-inferred)
 	Timeout any
-	Uri     any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Schema_Datasources_Postgresql_CloudSql struct {
-	Edition  any
+	// The Cloud SQL edition this instance runs, e.g. Enterprise or Enterprise Plus. (AI-inferred)
+	Edition any
+	// A reference to the underlying database instance. (AI-inferred)
 	Instance any
 }
 
 type Schema_Datasources_Postgresql struct {
-	CloudSql         any
-	Database         any
-	Ephemeral        any
-	Schema           any
-	SchemaMigration  any
+	// Configuration for connecting to a Cloud SQL database. (AI-inferred)
+	CloudSql any
+	// A reference to the database this applies to. (AI-inferred)
+	Database any
+	// Whether this resource is temporary and not intended to persist. (AI-inferred)
+	Ephemeral any
+	// The GraphQL schema defining this service's own data model. (AI-inferred)
+	Schema any
+	// How schema change(s) are applied to the underlying database. (AI-inferred)
+	SchemaMigration any
+	// How strictly the schema is validated against the underlying database before deployment. (AI-inferred)
 	SchemaValidation any
-	Unlinked         any
+	// Whether this schema is not yet linked to a data source. (AI-inferred)
+	Unlinked any
 }
 
 type Schema_Datasources struct {
+	// Configuration for exposing this connector's own operations over HTTP GraphQL. (AI-inferred)
 	HttpGraphql any
-	Postgresql  any
+	// Configuration specific to a PostgreSQL data source. (AI-inferred)
+	Postgresql any
 }
 
 type Schema_Source_Files struct {
+	// The literal content of this field. (AI-inferred)
 	Content any
-	Path    any
+	// A file or resource path. (AI-inferred)
+	Path any
 }
 
 type Schema_Source struct {

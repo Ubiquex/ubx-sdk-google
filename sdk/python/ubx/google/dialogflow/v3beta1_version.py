@@ -20,18 +20,28 @@ _V3beta1Version_NluSettingsFields = {
 
 @dataclasses.dataclass
 class V3beta1VersionConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
     nlu_settings: Any = None
 
 @dataclasses.dataclass
 class V3beta1VersionAttrs:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
     nlu_settings: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 V3beta1Version = ubx.ResourceBinding(

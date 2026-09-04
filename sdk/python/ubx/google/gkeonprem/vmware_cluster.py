@@ -13,6 +13,7 @@ class VmwareCluster_AntiAffinityGroups:
 
 @dataclasses.dataclass
 class VmwareCluster_Authorization_AdminUsers:
+    # The username used to authenticate. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
@@ -88,9 +89,13 @@ class VmwareCluster_LoadBalancer_ManualLbConfig:
 
 @dataclasses.dataclass
 class VmwareCluster_LoadBalancer_MetalLbConfig_AddressPools:
+    # The IP address(es) this applies to. (AI-inferred)
     addresses: Any = None
+    # Whether known problematic IP addresses are avoided when allocating this pool. (AI-inferred)
     avoid_buggy_ips: Any = None
+    # Whether IP addresses are manually assigned, rather than allocated from a pool. (AI-inferred)
     manual_assign: Any = None
+    # A reference to the node pool this applies to. (AI-inferred)
     pool: Any = None
 
 @dataclasses.dataclass
@@ -100,13 +105,18 @@ class VmwareCluster_LoadBalancer_MetalLbConfig:
 
 @dataclasses.dataclass
 class VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips:
+    # The hostname of this node. (AI-inferred)
     hostname: Any = None
+    # An IP address. (AI-inferred)
     ip: Any = None
 
 @dataclasses.dataclass
 class VmwareCluster_LoadBalancer_SeesawConfig_IpBlocks:
+    # The default gateway IP address for this network. (AI-inferred)
     gateway: Any = None
+    # The IP address(es) this applies to. (AI-inferred)
     ips: Any = None
+    # The subnet mask for this network. (AI-inferred)
     netmask: Any = None
 
 @dataclasses.dataclass
@@ -182,15 +192,22 @@ class VmwareCluster_NetworkConfig:
 
 @dataclasses.dataclass
 class VmwareCluster_Status_Conditions:
+    # When this condition last changed from one status to another. (AI-inferred)
     last_transition_time: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class VmwareCluster_Status_Versions_Versions:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -221,10 +238,15 @@ class VmwareCluster_UpgradePolicy:
 
 @dataclasses.dataclass
 class VmwareCluster_ValidationCheck_Status_Result:
+    # The category this belongs to. (AI-inferred)
     category: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

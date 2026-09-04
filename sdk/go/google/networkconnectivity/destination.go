@@ -4,15 +4,21 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Destination_Endpoints struct {
-	Asn        any
-	Csp        any
-	State      any
+	// The BGP Autonomous System Number this applies to. (AI-inferred)
+	Asn any
+	// The cloud service provider this hybrid connection reaches. (AI-inferred)
+	Csp any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
 	UpdateTime any
 }
 
 type Destination_StateTimeline_States struct {
+	// When this configuration took effect. (AI-inferred)
 	EffectiveTime any
-	State         any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type Destination_StateTimeline struct {

@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_Accelerators {
+  /** The kind of accelerator (e.g. Cloud Data Fusion accelerator) enabled for this instance. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Instance_AvailableVersion {
+  /** The feature(s) available to this instance. (AI-inferred) */
   availableFeatures?: string[] | Computed<string[]>;
+  /** The version used when none is explicitly specified. (AI-inferred) */
   defaultVersion?: boolean | Computed<boolean>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The version number this applies to. (AI-inferred) */
   versionNumber?: string | Computed<string>;
 }
 
@@ -33,8 +39,11 @@ export interface Instance_LoggingConfig {
 }
 
 export interface Instance_MaintenanceEvents {
+  /** When this event or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

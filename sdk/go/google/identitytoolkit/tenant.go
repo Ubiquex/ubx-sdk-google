@@ -39,11 +39,14 @@ type Tenant_Inheritance struct {
 }
 
 type Tenant_MfaConfig_ProviderConfigs_TotpProviderConfig struct {
+	// The number of adjacent 30-second time intervals checked when validating a TOTP code, tolerating minor clock drift between the client and server. (AI-inferred)
 	AdjacentIntervals any
 }
 
 type Tenant_MfaConfig_ProviderConfigs struct {
-	State              any
+	// Whether this multi-factor authentication provider is enabled, disabled, or mandatory. (AI-inferred)
+	State any
+	// Configuration for time-based one-time password (TOTP) as a multi-factor authentication method. (AI-inferred)
 	TotpProviderConfig any
 }
 
@@ -72,17 +75,25 @@ type Tenant_Monitoring struct {
 }
 
 type Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptions struct {
-	ContainsLowercaseCharacter       any
+	// Whether a password must contain at least one lowercase letter. (AI-inferred)
+	ContainsLowercaseCharacter any
+	// Whether a password must contain at least one non-alphanumeric character. (AI-inferred)
 	ContainsNonAlphanumericCharacter any
-	ContainsNumericCharacter         any
-	ContainsUppercaseCharacter       any
-	MaxPasswordLength                any
-	MinPasswordLength                any
+	// Whether a password must contain at least one digit. (AI-inferred)
+	ContainsNumericCharacter any
+	// Whether a password must contain at least one uppercase letter. (AI-inferred)
+	ContainsUppercaseCharacter any
+	// The longest password this policy allows. (AI-inferred)
+	MaxPasswordLength any
+	// The shortest password this policy allows. (AI-inferred)
+	MinPasswordLength any
 }
 
 type Tenant_PasswordPolicyConfig_PasswordPolicyVersions struct {
+	// Custom password complexity requirements enforced by this policy. (AI-inferred)
 	CustomStrengthOptions any
-	SchemaVersion         any
+	// The version of the password policy schema this configuration follows. (AI-inferred)
+	SchemaVersion any
 }
 
 type Tenant_PasswordPolicyConfig struct {
@@ -97,17 +108,23 @@ type Tenant_PasswordPolicyConfig struct {
 }
 
 type Tenant_RecaptchaConfig_ManagedRules struct {
-	Action   any
+	// What action to take when this reCAPTCHA rule's own condition is met, e.g. `BLOCK` or `ALLOW`. (AI-inferred)
+	Action any
+	// The upper bound of the reCAPTCHA risk score range this rule applies to. (AI-inferred)
 	EndScore any
 }
 
 type Tenant_RecaptchaConfig_RecaptchaKeys struct {
-	Key  any
+	// The reCAPTCHA site key used for this tenant. (AI-inferred)
+	Key any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Tenant_RecaptchaConfig_TollFraudManagedRules struct {
-	Action     any
+	// What action to take when this reCAPTCHA rule's own condition is met, e.g. `BLOCK` or `ALLOW`. (AI-inferred)
+	Action any
+	// The lower bound of the reCAPTCHA risk score range this rule applies to. (AI-inferred)
 	StartScore any
 }
 

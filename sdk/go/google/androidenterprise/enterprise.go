@@ -4,6 +4,7 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Enterprise_Administrator struct {
+	// The real email address of this enterprise's own designated administrator. (AI-inferred)
 	Email any
 }
 
@@ -34,16 +35,22 @@ var Enterprise_PlaySearchFields = ubx.FieldMap{
 }
 
 type EnterpriseConfig struct {
+	// Real settings controlling whether this enterprise supports app-level managed configurations. (AI-inferred)
 	ManagedConfigurations any
 	// The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Use whitespaces to separate multiple parent URIs.
 	Parent any
 	// Deprecated. Use PlaySearch.approveApps.
-	Permission   any
-	PlaySearch   any
-	PrivateApps  any
+	Permission any
+	// Real settings controlling whether users in this enterprise can search all of Google Play, not just the approved catalog. (AI-inferred)
+	PlaySearch any
+	// Real settings controlling whether this enterprise can publish private, org-internal apps to its own managed Google Play store. (AI-inferred)
+	PrivateApps any
+	// Real settings controlling whether this enterprise's own managed Google Play store can be customized via the Store Layout APIs. (AI-inferred)
 	StoreBuilder any
-	WebApps      any
-	ZeroTouch    any
+	// Real settings controlling whether this enterprise supports publishing web apps to its own managed Google Play store. (AI-inferred)
+	WebApps any
+	// Real settings controlling whether this enterprise supports Android zero-touch enrollment. (AI-inferred)
+	ZeroTouch any
 }
 
 type EnterpriseAttrs struct {
@@ -54,7 +61,8 @@ type EnterpriseAttrs struct {
 	// Contains settings for Google-provided user authentication.
 	GoogleAuthenticationSettings any
 	// The unique ID for the enterprise.
-	Id                    any
+	Id any
+	// Real settings controlling whether this enterprise supports app-level managed configurations. (AI-inferred)
 	ManagedConfigurations any
 	// The type of managed Google domain
 	ManagedGoogleDomainType any
@@ -64,13 +72,18 @@ type EnterpriseAttrs struct {
 	Parent any
 	// Deprecated. Use PlaySearch.approveApps.
 	Permission any
+	// Real settings controlling whether users in this enterprise can search all of Google Play, not just the approved catalog. (AI-inferred)
 	PlaySearch any
 	// The enterprise's primary domain, such as "example.com".
 	PrimaryDomain any
-	PrivateApps   any
-	StoreBuilder  any
-	WebApps       any
-	ZeroTouch     any
+	// Real settings controlling whether this enterprise can publish private, org-internal apps to its own managed Google Play store. (AI-inferred)
+	PrivateApps any
+	// Real settings controlling whether this enterprise's own managed Google Play store can be customized via the Store Layout APIs. (AI-inferred)
+	StoreBuilder any
+	// Real settings controlling whether this enterprise supports publishing web apps to its own managed Google Play store. (AI-inferred)
+	WebApps any
+	// Real settings controlling whether this enterprise supports Android zero-touch enrollment. (AI-inferred)
+	ZeroTouch any
 }
 
 var Enterprise = ubx.ResourceBinding{

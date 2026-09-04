@@ -8,64 +8,96 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary:
+    # This segment's own position within the full transcript. (AI-inferred)
     transcript_index: Any = None
+    # This word's own position within the transcript. (AI-inferred)
     word_index: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment:
+    # The overall strength of sentiment detected, regardless of positive/negative direction. (AI-inferred)
     magnitude: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData:
+    # An identifier for this specific entity mention, unique within its own conversation. (AI-inferred)
     entity_unique_id: Any = None
+    # The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
     sentiment: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData:
+    # An identifier for this specific intent match, unique within its own conversation. (AI-inferred)
     intent_unique_id: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the detected issue this applies to. (AI-inferred)
     issue: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData:
+    # Detail assigning this conversation to a specific issue category. (AI-inferred)
     issue_assignment: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the phrase matcher this applies to. (AI-inferred)
     phrase_matcher: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Annotations:
+    # Where this annotation ends within its own containing transcript or audio. (AI-inferred)
     annotation_end_boundary: Any = None
+    # Where this annotation starts within its own containing transcript or audio. (AI-inferred)
     annotation_start_boundary: Any = None
+    # Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
     channel_tag: Any = None
+    # Detail about a named entity mentioned in this conversation. (AI-inferred)
     entity_mention_data: Any = None
+    # Detail about a hold event within this conversation. (AI-inferred)
     hold_data: Any = None
+    # Detail about an intent matched during this conversation turn. (AI-inferred)
     intent_match_data: Any = None
+    # Detail about a participant interrupting another during this conversation. (AI-inferred)
     interruption_data: Any = None
+    # Detail about an issue detected during this conversation. (AI-inferred)
     issue_match_data: Any = None
+    # Detail about a phrase matcher rule that matched during this conversation. (AI-inferred)
     phrase_match_data: Any = None
+    # Detailed sentiment analysis result for this conversation segment. (AI-inferred)
     sentiment_data: Any = None
+    # Detail about a period of silence detected in this conversation's own audio. (AI-inferred)
     silence_data: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Entities:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # How central this entity is to the overall content, relative to other mentioned entities. (AI-inferred)
     salience: Any = None
+    # The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
     sentiment: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Intents:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
@@ -77,62 +109,101 @@ class Analyse_AnalysisResult_CallAnalysisMetadata_IssueModelResult:
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred)
     na_value: Any = None
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # A numeric value. (AI-inferred)
     num_value: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # Marks this QA answer as skipped, rather than providing a real value. (AI-inferred)
     skip_value: Any = None
+    # A text value. (AI-inferred)
     str_value: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources:
+    # The literal value of this answer. (AI-inferred)
     answer_value: Any = None
+    # The kind of source this data came from. (AI-inferred)
     source_type: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers:
+    # The source content a generated answer was grounded in. (AI-inferred)
     answer_sources: Any = None
+    # The literal value of this answer. (AI-inferred)
     answer_value: Any = None
+    # A reference to the conversation this applies to. (AI-inferred)
     conversation: Any = None
+    # A reference to the QA scorecard question this applies to. (AI-inferred)
     qa_question: Any = None
+    # The full text/body of this question. (AI-inferred)
     question_body: Any = None
+    # The label(s) attached to this resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults:
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # A label attached to this resource. (AI-inferred)
     tag: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources:
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
     qa_tag_results: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # The kind of source this data came from. (AI-inferred)
     source_type: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults:
+    # An identifier for the human or virtual agent this applies to. (AI-inferred)
     agent_id: Any = None
+    # A reference to the conversation this applies to. (AI-inferred)
     conversation: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # The answer(s) recorded for this QA scorecard evaluation. (AI-inferred)
     qa_answers: Any = None
+    # A reference to the specific version of the QA scorecard used for this evaluation. (AI-inferred)
     qa_scorecard_revision: Any = None
+    # Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
     qa_tag_results: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # The source(s) contributing to this computed score. (AI-inferred)
     score_sources: Any = None
 
 @dataclasses.dataclass
 class Analyse_AnalysisResult_CallAnalysisMetadata_Sentiments:
+    # Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
     channel_tag: Any = None
+    # Detailed sentiment analysis result for this conversation segment. (AI-inferred)
     sentiment_data: Any = None
 
 @dataclasses.dataclass

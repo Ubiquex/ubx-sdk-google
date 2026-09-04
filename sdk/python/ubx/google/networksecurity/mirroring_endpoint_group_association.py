@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MirroringEndpointGroupAssociation_Locations:
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

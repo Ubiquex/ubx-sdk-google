@@ -8,65 +8,101 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraint:
+    # Whether this custom constraint's own rule `ALLOW`s or `DENY`s a matching resource configuration. (AI-inferred)
     action_type: Any = None
+    # A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred)
     condition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The real resource lifecycle method(s) (e.g. `CREATE`, `UPDATE`) this custom constraint applies to. (AI-inferred)
     method_types: Any = None
+    # The real, fully-qualified resource name of this custom constraint or policy. (AI-inferred)
     name: Any = None
+    # The real Google Cloud resource type(s) this custom constraint applies to. (AI-inferred)
     resource_types: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_CustomConstraints:
+    # A real, proposed custom organization policy constraint definition being previewed or replayed. (AI-inferred)
     custom_constraint: Any = None
+    # The real organization resource this custom constraint is defined under. (AI-inferred)
     custom_constraint_parent: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Condition:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The real Common Expression Language (CEL) expression text of this policy rule's own `condition`. (AI-inferred)
     expression: Any = None
+    # The real, human-readable source location (file/line) of this CEL expression, used for error reporting. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Values:
+    # The real values this policy rule explicitly permits, for a list-type organization policy constraint. (AI-inferred)
     allowed_values: Any = None
+    # The real values this policy rule explicitly forbids, for a list-type organization policy constraint. (AI-inferred)
     denied_values: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules:
+    # Whether this policy rule real, allows every value unconditionally. (AI-inferred)
     allow_all: Any = None
+    # A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred)
     condition: Any = None
+    # Whether this policy rule real, denies every value unconditionally. (AI-inferred)
     deny_all: Any = None
+    # Whether this real boolean-type policy rule evaluates to `true` (enforced) or `false` (not enforced). (AI-inferred)
     enforce: Any = None
+    # Real, custom constraint-specific parameter values this policy rule supplies to a matching custom constraint. (AI-inferred)
     parameters: Any = None
+    # The real, explicit list of `allowed_values`/`denied_values` this policy rule enforces, for a list-type constraint. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec:
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Whether this policy spec real, inherits and merges with policies set on parent resources in the hierarchy, rather than fully overriding them. (AI-inferred)
     inherit_from_parent: Any = None
+    # Whether this policy spec real, clears any policy inherited from parent resources, enforcing only its own `rules`. (AI-inferred)
     reset: Any = None
+    # The real, ordered list of rules that make up this policy's own enforcement logic. (AI-inferred)
     rules: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate:
+    # The real launch/rollout stage this alternate policy version is being evaluated at. (AI-inferred)
     launch: Any = None
+    # The real policy specification (rules, inheritance, reset behavior) this policy or its alternate enforces. (AI-inferred)
     spec: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_Policies_Policy:
+    # A real, alternate version of this policy used for org policy testing, kept distinct from the policy actually enforced. (AI-inferred)
     alternate: Any = None
+    # A real, secondary policy spec evaluated for reporting purposes only, without actually being enforced -- lets an org test a stricter policy's impact before enabling it. (AI-inferred)
     dry_run_spec: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # The real, fully-qualified resource name of this custom constraint or policy. (AI-inferred)
     name: Any = None
+    # The real policy specification (rules, inheritance, reset behavior) this policy or its alternate enforces. (AI-inferred)
     spec: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreview_Overlay_Policies:
+    # A real, proposed organization policy being previewed or replayed against the resource hierarchy. (AI-inferred)
     policy: Any = None
+    # The real resource (project, folder, or organization) this proposed policy is being previewed or replayed against. (AI-inferred)
     policy_parent: Any = None
 
 @dataclasses.dataclass

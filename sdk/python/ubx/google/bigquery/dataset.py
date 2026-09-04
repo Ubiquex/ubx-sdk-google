@@ -8,44 +8,68 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dataset_Access_Condition:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A CEL expression that must evaluate `true` for this access grant to apply. (AI-inferred)
     expression: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class Dataset_Access_Dataset_Dataset:
+    # The BigQuery dataset ID this applies to. (AI-inferred)
     dataset_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class Dataset_Access_Dataset:
+    # A reference to the dataset this applies to. (AI-inferred)
     dataset: Any = None
+    # Which resource type(s) this applies to. (AI-inferred)
     target_types: Any = None
 
 @dataclasses.dataclass
 class Dataset_Access_Routine:
+    # The BigQuery dataset ID this applies to. (AI-inferred)
     dataset_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # A reference to the routine this applies to. (AI-inferred)
     routine_id: Any = None
 
 @dataclasses.dataclass
 class Dataset_Access_View:
+    # The BigQuery dataset ID this applies to. (AI-inferred)
     dataset_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The BigQuery table ID this applies to. (AI-inferred)
     table_id: Any = None
 
 @dataclasses.dataclass
 class Dataset_Access:
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     condition: Any = None
+    # A reference to the dataset this applies to. (AI-inferred)
     dataset: Any = None
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # Whether search history/results are grouped per end-user email, rather than aggregated across all users. (AI-inferred)
     group_by_email: Any = None
+    # The IAM principal this applies to. (AI-inferred)
     iam_member: Any = None
+    # The role this applies to. (AI-inferred)
     role: Any = None
+    # A reference to the routine this applies to. (AI-inferred)
     routine: Any = None
+    # A predefined IAM group (e.g. `allAuthenticatedUsers`) this grant applies to. (AI-inferred)
     special_group: Any = None
+    # The email of the user this applies to. (AI-inferred)
     user_by_email: Any = None
+    # Configuration or definition specific to a logical view. (AI-inferred)
     view: Any = None
 
 @dataclasses.dataclass
@@ -84,7 +108,9 @@ class Dataset_Restrictions:
 
 @dataclasses.dataclass
 class Dataset_Tags:
+    # The Resource Manager tag key this applies to. (AI-inferred)
     tag_key: Any = None
+    # The Resource Manager tag value this applies to. (AI-inferred)
     tag_value: Any = None
 
 _Dataset_Access_ConditionFields = {
@@ -217,6 +243,7 @@ class DatasetConfig:
     max_time_travel_hours: Any = None
     # Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details.
     resource_tags: Any = None
+    # The restriction(s) applied to this data. (AI-inferred)
     restrictions: Any = None
     # Optional. Updates storage_billing_model for the dataset.
     storage_billing_model: Any = None
@@ -271,6 +298,7 @@ class DatasetAttrs:
     max_time_travel_hours: Any = None
     # Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details.
     resource_tags: Any = None
+    # The restriction(s) applied to this data. (AI-inferred)
     restrictions: Any = None
     # Output only. Reserved for future use.
     satisfies_pzi: Any = None

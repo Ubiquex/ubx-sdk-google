@@ -4,19 +4,29 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1ParticipantConfig struct {
-	AgentDesktopSource       any
+	// Identifies the real, external agent desktop this participant connects through. (AI-inferred)
+	AgentDesktopSource any
+	// Real metadata key-value filters restricting which knowledge documents this participant's own suggestions draw from. (AI-inferred)
 	DocumentsMetadataFilters any
-	Name                     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// An opaque, caller-provided identifier for the real end user, used to correlate conversations without exposing their own real identity. (AI-inferred)
 	ObfuscatedExternalUserId any
-	Role                     any
+	// This participant's own real role in the conversation, e.g. end user, human agent, or automated agent. (AI-inferred)
+	Role any
 }
 
 type V2beta1ParticipantAttrs struct {
-	AgentDesktopSource       any
+	// Identifies the real, external agent desktop this participant connects through. (AI-inferred)
+	AgentDesktopSource any
+	// Real metadata key-value filters restricting which knowledge documents this participant's own suggestions draw from. (AI-inferred)
 	DocumentsMetadataFilters any
-	Name                     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// An opaque, caller-provided identifier for the real end user, used to correlate conversations without exposing their own real identity. (AI-inferred)
 	ObfuscatedExternalUserId any
-	Role                     any
+	// This participant's own real role in the conversation, e.g. end user, human agent, or automated agent. (AI-inferred)
+	Role any
 }
 
 var V2beta1Participant = ubx.ResourceBinding{

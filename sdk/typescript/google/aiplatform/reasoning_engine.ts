@@ -2,148 +2,222 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfig {
+  /** How many revision passes the memory bank considers per candidate memory before consolidating it. (AI-inferred) */
   revisionsPerCandidateCount?: number | Computed<number>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_Words {
+  /** The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   endOffset?: string | Computed<string>;
+  /** The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   startOffset?: string | Computed<string>;
+  /** A single transcribed word. (AI-inferred) */
   word?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription {
+  /** Which speaker a transcribed segment is attributed to, when speaker diarization is enabled. (AI-inferred) */
   speakerLabel?: string | Computed<string>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: string | Computed<string>;
+  /** The individual word(s) making up this transcript segment. (AI-inferred) */
   words?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_Words[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_Words[]>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResult {
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The result of this operation, e.g. whether it succeeded. (AI-inferred) */
   outcome?: string | Computed<string>;
+  /** The output produced by this operation. (AI-inferred) */
   output?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCode {
+  /** A machine-readable code identifying this outcome or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The language this content is in or should be processed as, typically a BCP-47 code. (AI-inferred) */
   language?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The URI of a previously uploaded file this Part references. (AI-inferred) */
   fileUri?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgs {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** A JSONPath expression selecting a location within a JSON document. (AI-inferred) */
   jsonPath?: string | Computed<string>;
+  /** Represents an explicit JSON `null`, populated when this field's own type is null. (AI-inferred) */
   nullValue?: string | Computed<string>;
+  /** A numeric value, populated when this field's own type is a number. (AI-inferred) */
   numberValue?: number | Computed<number>;
+  /** A text value, populated when this field's own type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred) */
   willContinue?: boolean | Computed<boolean>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall {
+  /** The argument value(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The function-call arguments accumulated so far, while the model is still streaming them incrementally. (AI-inferred) */
   partialArgs?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgs[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgs[]>;
+  /** Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred) */
   willContinue?: boolean | Computed<boolean>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData {
+  /** The raw, embedded bytes of this inline content. (AI-inferred) */
   data?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts {
+  /** A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred) */
   fileData?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData>;
+  /** Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred) */
   inlineData?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse {
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred) */
   parts?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts[]>;
+  /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Configuration for when and how this job is scheduled to run. (AI-inferred) */
   scheduling?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolution {
+  /** The severity or intensity level of this setting. (AI-inferred) */
   level?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadata {
+  /** The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   endOffset?: string | Computed<string>;
+  /** The frame rate, in frames per second, video input is sampled at. (AI-inferred) */
   fps?: number | Computed<number>;
+  /** The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred) */
   startOffset?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts {
+  /** Enables Gemini to transcribe spoken audio to text as part of its response. (AI-inferred) */
   audioTranscription?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription>;
+  /** The output of running a preceding `executable_code` block. (AI-inferred) */
   codeExecutionResult?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResult | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResult>;
+  /** Code the model generated for the tool-hosted interpreter to run, when code execution is enabled. (AI-inferred) */
   executableCode?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCode | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCode>;
+  /** A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred) */
   fileData?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData>;
+  /** A request from the model, inside its own response, to invoke a specific function the caller declared -- the caller executes it and returns the result via a matching `function_response`. (AI-inferred) */
   functionCall?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall>;
+  /** The caller-supplied result of a previously requested `function_call`, returned to the model in a following turn. (AI-inferred) */
   functionResponse?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse>;
+  /** Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred) */
   inlineData?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData>;
+  /** The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred) */
   mediaResolution?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolution | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolution>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: string | Computed<string>;
+  /** A step of the model's own intermediate reasoning, surfaced when extended thinking is enabled. (AI-inferred) */
   thought?: boolean | Computed<boolean>;
+  /** An opaque signature validating a `thought` block as genuinely produced by the model, so it can be safely replayed in a later turn. (AI-inferred) */
   thoughtSignature?: string | Computed<string>;
+  /** Configuration controlling how video input is sampled, e.g. frame rate and clipping. (AI-inferred) */
   videoMetadata?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadata | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadata>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content {
+  /** The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred) */
   parts?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts[]>;
+  /** Who this Content is attributed to in the conversation: `user` or `model`. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events {
+  /** The content of this message or resource. (AI-inferred) */
   content?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource {
+  /** The event(s) recorded during this run. (AI-inferred) */
   events?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events[]>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_Topics {
+  /** The label identifying this caller-defined memory topic. (AI-inferred) */
   customMemoryTopicLabel?: string | Computed<string>;
+  /** One of Vertex AI's own predefined memory topics, e.g. `USER_PREFERENCES`. (AI-inferred) */
   managedMemoryTopic?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories {
+  /** A single, discrete piece of information recorded as a memory. (AI-inferred) */
   fact?: string | Computed<string>;
+  /** The topic(s) this applies to. (AI-inferred) */
   topics?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_Topics[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_Topics[]>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples {
+  /** The source conversation this generated-memories example was derived from. (AI-inferred) */
   conversationSource?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource>;
+  /** The memory/memories this example expects to be generated from `conversation_source`. (AI-inferred) */
   generatedMemories?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories[]>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopic {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopic {
+  /** Which predefined memory topic this is. (AI-inferred) */
   managedTopicEnum?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics {
+  /** A caller-defined memory topic, identified by its own label, as an alternative to a predefined `managed_memory_topic`. (AI-inferred) */
   customMemoryTopic?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopic | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopic>;
+  /** One of Vertex AI's own predefined memory topics, e.g. `USER_PREFERENCES`. (AI-inferred) */
   managedMemoryTopic?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopic | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopic>;
 }
 
 export interface ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs {
+  /** Configuration for how the memory bank merges related memories into a single, consolidated one. (AI-inferred) */
   consolidationConfig?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfig | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfig>;
+  /** If `true`, the memory bank stores structured facts only, without also generating natural-language memory summaries. (AI-inferred) */
   disableNaturalLanguageMemories?: boolean | Computed<boolean>;
+  /** Whether the memory bank generates memories phrased in the third person, e.g. "the user prefers...", rather than the first person. (AI-inferred) */
   enableThirdPersonMemories?: boolean | Computed<boolean>;
+  /** Example conversation-to-memory pairs used to steer how the memory bank generates memories. (AI-inferred) */
   generateMemoriesExamples?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples[]>;
+  /** The topic(s) the memory bank organizes generated memories under. (AI-inferred) */
   memoryTopics?: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics[] | Computed<ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics[]>;
+  /** The key(s) memories are scoped/partitioned by, e.g. per-user or per-session. (AI-inferred) */
   scopeKeys?: string[] | Computed<string[]>;
 }
 
@@ -243,7 +317,9 @@ export interface ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig {
 }
 
 export interface ReasoningEngine_Spec_DeploymentSpec_Env {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -262,8 +338,11 @@ export interface ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe {
 }
 
 export interface ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigs {
+  /** The domain this configuration or resource applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** The VPC network this resource is deployed into. (AI-inferred) */
   targetNetwork?: string | Computed<string>;
+  /** The Google Cloud project this resource targets. (AI-inferred) */
   targetProject?: string | Computed<string>;
 }
 
@@ -275,12 +354,16 @@ export interface ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig {
 }
 
 export interface ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRef {
+  /** A reference to the Secret Manager secret this uses. (AI-inferred) */
   secret?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface ReasoningEngine_Spec_DeploymentSpec_SecretEnv {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to a Secret Manager secret and version. (AI-inferred) */
   secretRef?: ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRef | Computed<ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRef>;
 }
 

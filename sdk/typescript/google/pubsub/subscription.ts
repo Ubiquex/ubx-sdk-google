@@ -83,30 +83,43 @@ export interface Subscription_ExpirationPolicy {
 }
 
 export interface Subscription_MessageTransforms_AiInference_UnstructuredInference {
+  /** Model-specific parameters passed to the Vertex AI endpoint for unstructured inference. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Subscription_MessageTransforms_AiInference {
+  /** The Vertex AI model endpoint this transform sends each message to for inference. (AI-inferred) */
   endpoint?: string | Computed<string>;
+  /** The service account this transform uses to call the Vertex AI endpoint. (AI-inferred) */
   serviceAccountEmail?: string | Computed<string>;
+  /** Configuration for running inference on unstructured message content (e.g. free text), rather than a fixed schema. (AI-inferred) */
   unstructuredInference?: Subscription_MessageTransforms_AiInference_UnstructuredInference | Computed<Subscription_MessageTransforms_AiInference_UnstructuredInference>;
 }
 
 export interface Subscription_MessageTransforms_Compression {
+  /** The compression algorithm this transform uses, e.g. `ZLIB`. (AI-inferred) */
   compressionAlgorithm?: string | Computed<string>;
+  /** Whether this transform `COMPRESS`es or `DECOMPRESS`es message data. (AI-inferred) */
   compressionMode?: string | Computed<string>;
 }
 
 export interface Subscription_MessageTransforms_JavascriptUdf {
+  /** The JavaScript source code implementing this transform. (AI-inferred) */
   code?: string | Computed<string>;
+  /** The name of the function within `code` Pub/Sub invokes for each message. (AI-inferred) */
   functionName?: string | Computed<string>;
 }
 
 export interface Subscription_MessageTransforms {
+  /** A message transform that runs each message through a Vertex AI model and attaches the model's own inference as additional message data. (AI-inferred) */
   aiInference?: Subscription_MessageTransforms_AiInference | Computed<Subscription_MessageTransforms_AiInference>;
+  /** A message transform that compresses or decompresses message data as it flows through the transform pipeline. (AI-inferred) */
   compression?: Subscription_MessageTransforms_Compression | Computed<Subscription_MessageTransforms_Compression>;
+  /** If `true`, this transform is skipped without being removed from the pipeline. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** Whether this transform is active in the pipeline. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** A message transform implemented as a user-defined JavaScript function, run inline on each message. (AI-inferred) */
   javascriptUdf?: Subscription_MessageTransforms_JavascriptUdf | Computed<Subscription_MessageTransforms_JavascriptUdf>;
 }
 

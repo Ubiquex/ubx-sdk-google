@@ -8,24 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TagTemplate_Fields_Type_EnumType_AllowedValues:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
 class TagTemplate_Fields_Type_EnumType:
+    # The set of values permitted for this enum field. (AI-inferred)
     allowed_values: Any = None
 
 @dataclasses.dataclass
 class TagTemplate_Fields_Type:
+    # The set of named values this enum field is restricted to. (AI-inferred)
     enum_type: Any = None
+    # The base data type of this field, e.g. `STRING` or `NUMBER`. (AI-inferred)
     primitive_type: Any = None
 
 @dataclasses.dataclass
 class TagTemplate_Fields:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether this field must be present. (AI-inferred)
     is_required: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The relative ordering position of this item. (AI-inferred)
     order: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 _TagTemplate_Fields_Type_EnumType_AllowedValuesFields = {

@@ -2,389 +2,572 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Job_ActionDetails_DeidentifyDetails_DeidentifyStats {
+  /** How many values this job successfully transformed. (AI-inferred) */
   transformationCount?: string | Computed<string>;
+  /** How many values this job failed to transform. (AI-inferred) */
   transformationErrorCount?: string | Computed<string>;
+  /** The total number of bytes this job transformed. (AI-inferred) */
   transformedBytes?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor {
+  /** The blue color channel value. (AI-inferred) */
   blue?: number | Computed<number>;
+  /** The green color channel value. (AI-inferred) */
   green?: number | Computed<number>;
+  /** The red color channel value. (AI-inferred) */
   red?: number | Computed<number>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore {
+  /** The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred) */
   score?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes {
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred) */
   sensitivityScore?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore>;
+  /** The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms {
+  /** Applies this transformation to every detected info type, rather than a specific selected list. (AI-inferred) */
   allInfoTypes?: unknown | Computed<unknown>;
+  /** Applies this transformation to all detected text, rather than only specific info types. (AI-inferred) */
   allText?: unknown | Computed<unknown>;
+  /** The RGB color used to redact matched regions in an image. (AI-inferred) */
   redactionColor?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor>;
+  /** Restricts this transformation to specific, named info type(s), rather than all of them. (AI-inferred) */
   selectedInfoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations {
+  /** The transformation(s) to apply. (AI-inferred) */
   transforms?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms[]>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue {
+  /** The day-of-month component of a date value. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month component of a date value. (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year component of a date value. (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max {
+  /** A `true`/`false` value, populated when this `Value`'s own type is boolean. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
+  /** A calendar date value (year/month/day), populated when this `Value`'s own type is a date. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   dateValue?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue>;
+  /** A day-of-the-week value (e.g. `MONDAY`), populated when this `Value`'s own type is a weekday. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   dayOfWeekValue?: string | Computed<string>;
+  /** A floating-point number, populated when this `Value`'s own type is a float. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   floatValue?: number | Computed<number>;
+  /** A whole-number value, populated when this `Value`'s own type is an integer. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   integerValue?: string | Computed<string>;
+  /** A text value, populated when this `Value`'s own type is a string. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** A time-of-day value (hour/minute/second), populated when this `Value`'s own type is a time and the date/timezone aren't significant. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   timeValue?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue>;
+  /** A full date-and-time value, populated when this `Value`'s own type is a timestamp. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   timestampValue?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets {
+  /** The upper bound of this range. (AI-inferred) */
   max?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
+  /** The lower bound of this range. (AI-inferred) */
   min?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
+  /** The value substituted in place of the original. (AI-inferred) */
   replacementValue?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig {
+  /** The bucket range(s) making up this bucketing configuration. (AI-inferred) */
   buckets?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets[]>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore {
+  /** How many characters at the start/end are left unmasked, before masking the rest. (AI-inferred) */
   charactersToSkip?: string | Computed<string>;
+  /** A predefined character set (e.g. punctuation) skipped over when applying this transformation. (AI-inferred) */
   commonCharactersToIgnore?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig {
+  /** Character(s) skipped over (left as-is) when applying this transformation. (AI-inferred) */
   charactersToIgnore?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore[]>;
+  /** The character substituted in place of each masked character. (AI-inferred) */
   maskingCharacter?: string | Computed<string>;
+  /** How many characters to mask, counting from the position `reverse_order` specifies. (AI-inferred) */
   numberToMask?: number | Computed<number>;
+  /** Whether masking counts characters from the end of the value rather than the start. (AI-inferred) */
   reverseOrder?: boolean | Computed<boolean>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context {
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped {
+  /** The resource name of the Cloud KMS key used to unwrap `wrapped_key`. (AI-inferred) */
   cryptoKeyName?: string | Computed<string>;
+  /** The crypto key's own bytes, encrypted (wrapped) by the Cloud KMS key named in `crypto_key_name`. (AI-inferred) */
   wrappedKey?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped {
+  /** The raw key bytes themselves. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey {
+  /** A crypto key wrapped by Cloud KMS -- Sensitive Data Protection calls KMS to unwrap `wrapped_key` using `crypto_key_name` before use. (AI-inferred) */
   kmsWrapped?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped>;
+  /** A crypto key generated fresh, at random, for this request only -- never persisted or reusable afterward. (AI-inferred) */
   transient?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** A crypto key supplied as raw, unencrypted bytes. Simpler than `kms_wrapped` but carries more risk of the key leaking, since Sensitive Data Protection never handles it wrapped. (AI-inferred) */
   unwrapped?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig {
+  /** Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred) */
   context?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
+  /** The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred) */
   surrogateInfoType?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig {
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig {
+  /** A predefined character set (e.g. numeric, alphanumeric) the format-preserving encryption output is drawn from. (AI-inferred) */
   commonAlphabet?: string | Computed<string>;
+  /** Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred) */
   context?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
+  /** A caller-defined character set the format-preserving encryption output is drawn from, instead of a predefined `common_alphabet`. (AI-inferred) */
   customAlphabet?: string | Computed<string>;
+  /** The number of distinct symbols the format-preserving encryption's own alphabet uses. (AI-inferred) */
   radix?: number | Computed<number>;
+  /** The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred) */
   surrogateInfoType?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig {
+  /** Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred) */
   context?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
+  /** The most days a date may be shifted earlier. (AI-inferred) */
   lowerBoundDays?: number | Computed<number>;
+  /** The most days a date may be shifted later. (AI-inferred) */
   upperBoundDays?: number | Computed<number>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig {
+  /** The width of each bucket, for fixed-size numeric bucketing. (AI-inferred) */
   bucketSize?: number | Computed<number>;
+  /** The lowest value included in bucketing. (AI-inferred) */
   lowerBound?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
+  /** The highest value included in bucketing. (AI-inferred) */
   upperBound?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig {
+  /** The literal value to substitute in. (AI-inferred) */
   newValue?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList {
+  /** The literal words/phrases making up this `word_list`. (AI-inferred) */
   words?: string[] | Computed<string[]>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig {
+  /** A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred) */
   wordList?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig {
+  /** Which component of the date/time value to keep, e.g. `YEAR` or `MONTH`. (AI-inferred) */
   partToExtract?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation {
+  /** Groups numeric or date values into named ranges, replacing the original value with its own bucket label. (AI-inferred) */
   bucketingConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig>;
+  /** Replaces characters in a matching value with a fixed masking character, optionally leaving some characters unmasked. (AI-inferred) */
   characterMaskConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig>;
+  /** De-identifies a value with a deterministic, reversible cryptographic transform -- the same input always produces the same output, letting values still be joined/grouped on after de-identification. (AI-inferred) */
   cryptoDeterministicConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig>;
+  /** De-identifies a value by replacing it with a cryptographic hash, a one-way transform that can't be reversed. (AI-inferred) */
   cryptoHashConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig>;
+  /** De-identifies a value using format-preserving encryption (FFX mode) -- the output has the same format (length, character set) as the input. (AI-inferred) */
   cryptoReplaceFfxFpeConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig>;
+  /** De-identifies dates by shifting them a random, per-context number of days within a bounded range, preserving date arithmetic (like intervals between events) while hiding the real dates. (AI-inferred) */
   dateShiftConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig>;
+  /** Groups numeric values into fixed-width ranges between `lower_bound` and `upper_bound`, each `bucket_size` wide. (AI-inferred) */
   fixedSizeBucketingConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig>;
+  /** De-identifies a value by removing it entirely, leaving no replacement. (AI-inferred) */
   redactConfig?: unknown | Computed<unknown>;
+  /** De-identifies a value by replacing it with a fixed, generic replacement token. (AI-inferred) */
   replaceConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig>;
+  /** De-identifies a value by replacing it with a value drawn from a supplied word list. (AI-inferred) */
   replaceDictionaryConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig>;
+  /** De-identifies a value by replacing it with its own detected info type name (e.g. `[EMAIL_ADDRESS]`), rather than a fixed token. (AI-inferred) */
   replaceWithInfoTypeConfig?: unknown | Computed<unknown>;
+  /** De-identifies a date/time value by keeping only one component of it (e.g. just the year), discarding the rest. (AI-inferred) */
   timePartConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
+  /** A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred) */
   primitiveTransformation?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations {
+  /** The transformation(s) making up this configuration. (AI-inferred) */
   transformations?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations[]>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions {
+  /** A reference to the field this applies to. (AI-inferred) */
   field?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The comparison operator this condition uses. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred) */
   value?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions[]>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions>;
+  /** How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred) */
   logicalOperator?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition {
+  /** The condition expression(s) making up this rule. (AI-inferred) */
   expressions?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations {
+  /** The condition that must hold for this rule to apply. (AI-inferred) */
   condition?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition>;
+  /** The field(s) this applies to. (AI-inferred) */
   fields?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context[]>;
+  /** De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred) */
   infoTypeTransformations?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations>;
+  /** A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred) */
   primitiveTransformation?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions {
+  /** The condition that must hold for this rule to apply. (AI-inferred) */
   condition?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations {
+  /** The transformation(s) applied to specific field(s) of a structured record. (AI-inferred) */
   fieldTransformations?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations[]>;
+  /** Condition(s) under which an entire structured record is suppressed (dropped) rather than transformed. (AI-inferred) */
   recordSuppressions?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions[]>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_TransformationErrorHandling {
+  /** On a transformation error, leaves the original value as-is rather than failing the request. (AI-inferred) */
   leaveUntransformed?: unknown | Computed<unknown>;
+  /** On a transformation error, fails the whole request rather than leaving the value untransformed. (AI-inferred) */
   throwError?: unknown | Computed<unknown>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig {
+  /** The image redaction transformation(s) to apply. (AI-inferred) */
   imageTransformations?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations>;
+  /** De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred) */
   infoTypeTransformations?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations>;
+  /** De-identification transformation(s) applied to structured (tabular) records, field by field. (AI-inferred) */
   recordTransformations?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations>;
+  /** How a transformation error on one value is handled -- fail the whole request, or leave that one value untransformed. (AI-inferred) */
   transformationErrorHandling?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_TransformationErrorHandling | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_TransformationErrorHandling>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The de-identification transformation(s) to apply to matched content. (AI-inferred) */
   deidentifyConfig?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails_RequestedOptions {
+  /** A frozen copy of the de-identify template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred) */
   snapshotDeidentifyTemplate?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate>;
+  /** A frozen copy of the image redaction template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred) */
   snapshotImageRedactTemplate?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate>;
+  /** A frozen copy of the structured de-identify template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred) */
   snapshotStructuredDeidentifyTemplate?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate>;
 }
 
 export interface Job_ActionDetails_DeidentifyDetails {
+  /** Summary statistics for the de-identification action this job performed. (AI-inferred) */
   deidentifyStats?: Job_ActionDetails_DeidentifyDetails_DeidentifyStats | Computed<Job_ActionDetails_DeidentifyDetails_DeidentifyStats>;
+  /** The de-identification configuration that was requested for this job. (AI-inferred) */
   requestedOptions?: Job_ActionDetails_DeidentifyDetails_RequestedOptions | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions>;
 }
 
 export interface Job_ActionDetails {
+  /** Detail about the de-identification action this job performed. (AI-inferred) */
   deidentifyDetails?: Job_ActionDetails_DeidentifyDetails | Computed<Job_ActionDetails_DeidentifyDetails>;
 }
 
 export interface Job_Errors_Details {
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result or error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Job_Errors {
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: Job_Errors_Details | Computed<Job_Errors_Details>;
+  /** Additional detail about this event. (AI-inferred) */
   extraInfo?: string | Computed<string>;
+  /** The timestamp(s) recorded for this event. (AI-inferred) */
   timestamps?: string[] | Computed<string[]>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfig {
+  /** A reference to the de-identify template defining how matched values are transformed. (AI-inferred) */
   deidentifyTemplate?: string | Computed<string>;
+  /** A reference to the template defining how matched values within images are redacted. (AI-inferred) */
   imageRedactTemplate?: string | Computed<string>;
+  /** A reference to the de-identify template applied specifically to structured (tabular) data. (AI-inferred) */
   structuredDeidentifyTemplate?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table {
+  /** The BigQuery dataset ID this applies to. (AI-inferred) */
   datasetId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The BigQuery table ID this applies to. (AI-inferred) */
   tableId?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig {
+  /** A reference to the table this applies to. (AI-inferred) */
   table?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify {
+  /** The Cloud Storage location de-identified output is written to. (AI-inferred) */
   cloudStorageOutput?: string | Computed<string>;
+  /** Which file type(s) this de-identification action applies to. (AI-inferred) */
   fileTypesToTransform?: string[] | Computed<string[]>;
+  /** The de-identification transformation(s) to apply. (AI-inferred) */
   transformationConfig?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfig | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfig>;
+  /** Where a detailed, per-value record of this job's own transformations is stored. (AI-inferred) */
   transformationDetailsStorageConfig?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSub {
+  /** A reference to the Pub/Sub topic notifications are published to. (AI-inferred) */
   topic?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePath {
+  /** A file or object path this configuration reads from or writes to. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig {
+  /** The BigQuery schema findings are written under. (AI-inferred) */
   outputSchema?: string | Computed<string>;
+  /** The Cloud Storage path data is written to or read from. (AI-inferred) */
   storagePath?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePath | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePath>;
+  /** A reference to the table this applies to. (AI-inferred) */
   table?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings {
+  /** Where and how this job's own output is written. (AI-inferred) */
   outputConfig?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_Actions {
+  /** Configuration for de-identifying discovered sensitive data as part of this action. (AI-inferred) */
   deidentify?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify>;
+  /** Sends a notification email to the project's own owners/editors when this job completes. (AI-inferred) */
   jobNotificationEmails?: unknown | Computed<unknown>;
+  /** Publishes a notification to a Pub/Sub topic when this job completes. (AI-inferred) */
   pubSub?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSub | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSub>;
+  /** Publishes this job's own findings as Data Catalog tags on the scanned resource. (AI-inferred) */
   publishFindingsToCloudDataCatalog?: unknown | Computed<unknown>;
+  /** Publishes this job's own findings as Dataplex Catalog metadata on the scanned resource. (AI-inferred) */
   publishFindingsToDataplexCatalog?: unknown | Computed<unknown>;
+  /** Publishes a summary of this job's own findings to Security Command Center. (AI-inferred) */
   publishSummaryToCscc?: unknown | Computed<unknown>;
+  /** Publishes this job's own findings as Cloud Logging (Stackdriver) log entries. (AI-inferred) */
   publishToStackdriver?: unknown | Computed<unknown>;
+  /** Saves this job's own findings to a BigQuery table. (AI-inferred) */
   saveFindings?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex {
+  /** For a regex with capture groups, which group number(s) the match applies to, instead of the whole match. (AI-inferred) */
   groupIndexes?: number[] | Computed<number[]>;
+  /** A regular expression a `string`-typed value must match. (AI-inferred) */
   pattern?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment {
+  /** Sets a triggered finding's likelihood to this exact value, overriding whatever it would otherwise have been. (AI-inferred) */
   fixedLikelihood?: string | Computed<string>;
+  /** Shifts a triggered finding's likelihood up or down by this many levels, relative to whatever it would otherwise have been. (AI-inferred) */
   relativeLikelihood?: number | Computed<number>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity {
+  /** How many characters after a finding this hotword rule scans for a match. (AI-inferred) */
   windowAfter?: number | Computed<number>;
+  /** How many characters before a finding this hotword rule scans for a match. (AI-inferred) */
   windowBefore?: number | Computed<number>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule {
+  /** A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred) */
   hotwordRegex?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
+  /** How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred) */
   likelihoodAdjustment?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment>;
+  /** The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred) */
   proximity?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules {
+  /** A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred) */
   hotwordRule?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary {
+  /** A `gs://` Cloud Storage path this configuration reads from. (AI-inferred) */
   cloudStoragePath?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePath | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePath>;
+  /** A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred) */
   wordList?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch {
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel {
+  /** Which label field(s) on a Google Drive file are inspected. (AI-inferred) */
   labelFieldsToMatch?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch[] | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch[]>;
+  /** The identifier of the Google Drive label this applies to. (AI-inferred) */
   labelId?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel {
+  /** A globally unique identifier. (AI-inferred) */
   guid?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType {
+  /** Configuration for inspecting Google Drive file labels as part of this scan. (AI-inferred) */
   googleDriveLabel?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel>;
+  /** A Google Drive sensitivity label applied to a file, treated as a signal of the file's own real sensitivity. (AI-inferred) */
   sensitivityLabel?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression {
+  /** A regular expression matching against metadata key names. (AI-inferred) */
   keyRegex?: string | Computed<string>;
+  /** A regular expression matching against metadata values. (AI-inferred) */
   valueRegex?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredType {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes {
+  /** The rule(s) that adjust match likelihood for this custom info type based on surrounding context. (AI-inferred) */
   detectionRules?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules[] | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules[]>;
+  /** A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred) */
   dictionary?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary>;
+  /** Whether a match against this rule excludes the finding from results, or leaves it unaffected. (AI-inferred) */
   exclusionType?: string | Computed<string>;
+  /** Reports a Google Drive file's own applied label(s) as findings, treating the label itself as sensitive information to detect. (AI-inferred) */
   fileLabelInfoType?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType>;
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
+  /** How confident Sensitive Data Protection is that this is a real match, from `VERY_UNLIKELY` to `VERY_LIKELY`. (AI-inferred) */
   likelihood?: string | Computed<string>;
+  /** A condition matching against a specific metadata key/value pair on the scanned object. (AI-inferred) */
   metadataKeyValueExpression?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression>;
+  /** A regular expression this rule matches against. (AI-inferred) */
   regex?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
+  /** A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred) */
   sensitivityScore?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore>;
+  /** A reference to a previously created custom info type (a stored dictionary or regex) to reuse here. (AI-inferred) */
   storedType?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredType | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredType>;
+  /** Marks de-identified content with a caller-defined info type name, so it can later be recognized and re-identified. (AI-inferred) */
   surrogateType?: unknown | Computed<unknown>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits_MaxFindingsPerInfoType {
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
+  /** The maximum number of findings to report before stopping. (AI-inferred) */
   maxFindings?: number | Computed<number>;
 }
 
@@ -398,61 +581,90 @@ export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Lim
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_MinLikelihoodPerInfoType {
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
+  /** The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred) */
   minLikelihood?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType {
+  /** Whether the redaction region fully contains the finding's own bounding box. (AI-inferred) */
   encloses?: unknown | Computed<unknown>;
+  /** Whether the finding's own bounding box lies entirely within the redaction region. (AI-inferred) */
   fullyInside?: unknown | Computed<unknown>;
+  /** Whether the redaction region and the finding's own bounding box share any area at all. (AI-inferred) */
   overlaps?: unknown | Computed<unknown>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings {
+  /** How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred) */
   imageContainmentType?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType>;
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
+  /** The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred) */
   minLikelihood?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
+  /** How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred) */
   matchingType?: string | Computed<string>;
+  /** The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred) */
   minLikelihood?: string | Computed<string>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule {
+  /** Adjusts a finding's own likelihood based on whether related findings were also detected in an accompanying image. (AI-inferred) */
   adjustByImageFindings?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings>;
+  /** Adjusts a finding's own likelihood based on whether other specific info types were also matched nearby. (AI-inferred) */
   adjustByMatchingInfoTypes?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes>;
+  /** How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred) */
   likelihoodAdjustment?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword {
+  /** A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred) */
   hotwordRegex?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
+  /** The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred) */
   proximity?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings {
+  /** How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred) */
   imageContainmentType?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType>;
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule {
+  /** A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred) */
   dictionary?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary>;
+  /** Excludes a finding when a specified hotword regex is found nearby, the inverse of a hotword likelihood-boosting rule. (AI-inferred) */
   excludeByHotword?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword>;
+  /** Excludes a finding based on whether related findings were also detected in an accompanying image. (AI-inferred) */
   excludeByImageFindings?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings>;
+  /** Excludes findings that also match one of these other info types. (AI-inferred) */
   excludeInfoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes>;
+  /** How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred) */
   matchingType?: string | Computed<string>;
+  /** A regular expression this rule matches against. (AI-inferred) */
   regex?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules {
+  /** A rule that raises or lowers a finding's own likelihood, rather than excluding it outright. (AI-inferred) */
   adjustmentRule?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule>;
+  /** A rule that removes matching findings from the results entirely. (AI-inferred) */
   exclusionRule?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule>;
+  /** A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred) */
   hotwordRule?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule>;
 }
 
 export interface Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
+  /** The rule(s) making up this configuration. (AI-inferred) */
   rules?: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules[] | Computed<Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules[]>;
 }
 
@@ -624,7 +836,9 @@ export interface Job_InspectDetails_Result_HybridStats {
 }
 
 export interface Job_InspectDetails_Result_InfoTypeStats {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
 }
 
@@ -649,15 +863,22 @@ export interface Job_InspectDetails {
 }
 
 export interface Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_BucketValues {
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred) */
   value?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets {
+  /** The width of each bucket, for fixed-size numeric bucketing. (AI-inferred) */
   bucketSize?: string | Computed<string>;
+  /** How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValueCount?: string | Computed<string>;
+  /** The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValues?: Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_BucketValues[] | Computed<Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_BucketValues[]>;
+  /** The lower bound of this value-frequency histogram bucket. (AI-inferred) */
   valueFrequencyLowerBound?: string | Computed<string>;
+  /** The upper bound of this value-frequency histogram bucket. (AI-inferred) */
   valueFrequencyUpperBound?: string | Computed<string>;
 }
 
@@ -667,15 +888,22 @@ export interface Job_RiskDetails_CategoricalStatsResult {
 }
 
 export interface Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram_BucketValues {
+  /** The estimated probability of re-identifying an individual from this equivalence class. (AI-inferred) */
   estimatedProbability?: number | Computed<number>;
+  /** The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred) */
   quasiIdsValues?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[]>;
 }
 
 export interface Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram {
+  /** The width of each bucket, for fixed-size numeric bucketing. (AI-inferred) */
   bucketSize?: string | Computed<string>;
+  /** How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValueCount?: string | Computed<string>;
+  /** The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValues?: Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram_BucketValues[] | Computed<Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram_BucketValues[]>;
+  /** The upper bound of re-identification probability this histogram bucket covers. (AI-inferred) */
   maxProbability?: number | Computed<number>;
+  /** The lower bound of re-identification probability this histogram bucket covers. (AI-inferred) */
   minProbability?: number | Computed<number>;
 }
 
@@ -685,15 +913,22 @@ export interface Job_RiskDetails_DeltaPresenceEstimationResult {
 }
 
 export interface Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets_BucketValues {
+  /** How many records fall into this equivalence class -- records sharing the same combination of quasi-identifier values. (AI-inferred) */
   equivalenceClassSize?: string | Computed<string>;
+  /** The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred) */
   quasiIdsValues?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[]>;
 }
 
 export interface Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets {
+  /** The width of each bucket, for fixed-size numeric bucketing. (AI-inferred) */
   bucketSize?: string | Computed<string>;
+  /** How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValueCount?: string | Computed<string>;
+  /** The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValues?: Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets_BucketValues[] | Computed<Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets_BucketValues[]>;
+  /** The lower bound of this equivalence-class-size histogram bucket. (AI-inferred) */
   equivalenceClassSizeLowerBound?: string | Computed<string>;
+  /** The upper bound of this equivalence-class-size histogram bucket. (AI-inferred) */
   equivalenceClassSizeUpperBound?: string | Computed<string>;
 }
 
@@ -703,15 +938,22 @@ export interface Job_RiskDetails_KAnonymityResult {
 }
 
 export interface Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram_BucketValues {
+  /** The estimated minimum number of individuals in the broader population who could share this equivalence class's own quasi-identifier values. (AI-inferred) */
   estimatedAnonymity?: string | Computed<string>;
+  /** The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred) */
   quasiIdsValues?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[]>;
 }
 
 export interface Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram {
+  /** The width of each bucket, for fixed-size numeric bucketing. (AI-inferred) */
   bucketSize?: string | Computed<string>;
+  /** How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValueCount?: string | Computed<string>;
+  /** The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValues?: Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram_BucketValues[] | Computed<Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram_BucketValues[]>;
+  /** The upper bound of estimated anonymity this histogram bucket covers. (AI-inferred) */
   maxAnonymity?: string | Computed<string>;
+  /** The lower bound of estimated anonymity this histogram bucket covers. (AI-inferred) */
   minAnonymity?: string | Computed<string>;
 }
 
@@ -721,17 +963,26 @@ export interface Job_RiskDetails_KMapEstimationResult {
 }
 
 export interface Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets_BucketValues {
+  /** How many records fall into this equivalence class -- records sharing the same combination of quasi-identifier values. (AI-inferred) */
   equivalenceClassSize?: string | Computed<string>;
+  /** How many distinct sensitive values appear within this equivalence class. (AI-inferred) */
   numDistinctSensitiveValues?: string | Computed<string>;
+  /** The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred) */
   quasiIdsValues?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[] | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max[]>;
+  /** The most frequently occurring sensitive value(s) within this equivalence class. (AI-inferred) */
   topSensitiveValues?: Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_BucketValues[] | Computed<Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_BucketValues[]>;
 }
 
 export interface Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets {
+  /** The width of each bucket, for fixed-size numeric bucketing. (AI-inferred) */
   bucketSize?: string | Computed<string>;
+  /** How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValueCount?: string | Computed<string>;
+  /** The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred) */
   bucketValues?: Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets_BucketValues[] | Computed<Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets_BucketValues[]>;
+  /** The lower bound of this sensitive-value-frequency histogram bucket. (AI-inferred) */
   sensitiveValueFrequencyLowerBound?: string | Computed<string>;
+  /** The upper bound of this sensitive-value-frequency histogram bucket. (AI-inferred) */
   sensitiveValueFrequencyUpperBound?: string | Computed<string>;
 }
 
@@ -755,20 +1006,29 @@ export interface Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_Catego
 }
 
 export interface Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIds {
+  /** A caller-defined tag attached to this info type or finding. (AI-inferred) */
   customTag?: string | Computed<string>;
+  /** A reference to the field this applies to. (AI-inferred) */
   field?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
 }
 
 export interface Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables {
+  /** The field(s) treated as quasi-identifiers -- not directly identifying on their own, but potentially identifying in combination -- for a k-anonymity or l-diversity risk analysis. (AI-inferred) */
   quasiIds?: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIds[] | Computed<Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIds[]>;
+  /** How common this value's own equivalence class is within the dataset, for a risk analysis. (AI-inferred) */
   relativeFrequency?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** A reference to the table this applies to. (AI-inferred) */
   table?: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table | Computed<Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table>;
 }
 
 export interface Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_QuasiIds {
+  /** A caller-defined tag attached to this info type or finding. (AI-inferred) */
   customTag?: string | Computed<string>;
+  /** A reference to the field this applies to. (AI-inferred) */
   field?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** A value the risk analysis inferred rather than observed directly. (AI-inferred) */
   inferred?: unknown | Computed<unknown>;
+  /** A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred) */
   infoType?: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
 }
 

@@ -27,14 +27,18 @@ export interface AspectType_MetadataTemplate_Constraints {
 }
 
 export interface AspectType_MetadataTemplate_EnumValues {
+  /** Whether this field is deprecated and should no longer be used. (AI-inferred) */
   deprecated?: string | Computed<string>;
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: number | Computed<number>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface AspectType_MetadataTemplate {
   /** Definition of the annotations of a field. */
   annotations?: AspectType_MetadataTemplate_Annotations | Computed<AspectType_MetadataTemplate_Annotations>;
+  /** The schema each element of an array-typed field must satisfy. (AI-inferred) */
   arrayItems?: unknown | Computed<unknown>;
   /** Definition of the constraints of a field. */
   constraints?: AspectType_MetadataTemplate_Constraints | Computed<AspectType_MetadataTemplate_Constraints>;
@@ -42,6 +46,7 @@ export interface AspectType_MetadataTemplate {
   enumValues?: AspectType_MetadataTemplate_EnumValues[] | Computed<AspectType_MetadataTemplate_EnumValues[]>;
   /** Optional. Index is used to encode Template messages. The value of index can range between 1 and 2,147,483,647. Index must be unique within all fields in a Template. (Nested Templates can reuse indexes). Once a Template is defined, the index cannot be changed, because it identifies the field in the actual storage format. Index is a mandatory field, but it is optional for top level fields, and map/array "values" definitions. */
   index?: number | Computed<number>;
+  /** The schema a map-typed field's own values must satisfy. (AI-inferred) */
   mapItems?: unknown | Computed<unknown>;
   /** Required. The name of the field. */
   name?: string | Computed<string>;

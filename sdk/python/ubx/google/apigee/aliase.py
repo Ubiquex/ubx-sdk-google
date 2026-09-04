@@ -8,16 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Aliase_CertsInfo_CertInfo:
+    # The X.509 Basic Constraints extension, indicating whether this certificate is a CA. (AI-inferred)
     basic_constraints: Any = None
+    # When this certificate expires. (AI-inferred)
     expiry_date: Any = None
+    # Whether this certificate is currently valid (not expired, not revoked). (AI-inferred)
     is_valid: Any = None
+    # The issuer identity of this certificate. (AI-inferred)
     issuer: Any = None
+    # The public key of this certificate or key pair. (AI-inferred)
     public_key: Any = None
+    # This certificate's own serial number. (AI-inferred)
     serial_number: Any = None
+    # The name of the algorithm used to sign this certificate. (AI-inferred)
     sig_alg_name: Any = None
+    # The subject identity of this certificate. (AI-inferred)
     subject: Any = None
+    # Additional identity/identities (e.g. DNS names) this certificate is also valid for. (AI-inferred)
     subject_alternative_names: Any = None
+    # When this certificate becomes valid. (AI-inferred)
     valid_from: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -38,6 +49,7 @@ class AliaseConfig:
 class AliaseAttrs:
     # Resource ID for this alias. Values must match the regular expression `[^/]{1,255}`.
     alias: Any = None
+    # Detail about the certificate(s) associated with this keystore/alias. (AI-inferred)
     certs_info: Any = None
     # The HTTP Content-Type header value specifying the content type of the body.
     content_type: Any = None

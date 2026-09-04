@@ -8,35 +8,50 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value:
+    # Matches when the value contains this substring. (AI-inferred)
     contains: Any = None
+    # Matches only this exact value. (AI-inferred)
     exact: Any = None
+    # Whether this match is case-insensitive. (AI-inferred)
     ignore_case: Any = None
+    # Matches values starting with this prefix. (AI-inferred)
     prefix: Any = None
+    # Matches values ending with this suffix. (AI-inferred)
     suffix: Any = None
 
 @dataclasses.dataclass
 class ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ExtensionBinding_MatchConditions_To_Destination_HeaderSet:
+    # The HTTP header(s) this applies to. (AI-inferred)
     headers: Any = None
 
 @dataclasses.dataclass
 class ExtensionBinding_MatchConditions_To_Destination:
+    # A set of HTTP header match condition(s) that must all be satisfied. (AI-inferred)
     header_set: Any = None
+    # The host(s) this rule applies to. (AI-inferred)
     hosts: Any = None
+    # The URL path(s) this rule matches. (AI-inferred)
     paths: Any = None
+    # The resource(s) this applies to. (AI-inferred)
     resources: Any = None
 
 @dataclasses.dataclass
 class ExtensionBinding_MatchConditions_To:
+    # The destination this traffic is routed to. (AI-inferred)
     destination: Any = None
+    # A destination explicitly excluded from this match. (AI-inferred)
     not_destination: Any = None
 
 @dataclasses.dataclass
 class ExtensionBinding_MatchConditions:
+    # The destination(s) this rule matches traffic to. (AI-inferred)
     to: Any = None
 
 @dataclasses.dataclass

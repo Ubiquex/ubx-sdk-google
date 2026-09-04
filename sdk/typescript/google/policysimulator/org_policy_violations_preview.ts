@@ -2,65 +2,101 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface OrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraint {
+  /** Whether this custom constraint's own rule `ALLOW`s or `DENY`s a matching resource configuration. (AI-inferred) */
   actionType?: string | Computed<string>;
+  /** A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The real resource lifecycle method(s) (e.g. `CREATE`, `UPDATE`) this custom constraint applies to. (AI-inferred) */
   methodTypes?: string[] | Computed<string[]>;
+  /** The real, fully-qualified resource name of this custom constraint or policy. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real Google Cloud resource type(s) this custom constraint applies to. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_CustomConstraints {
+  /** A real, proposed custom organization policy constraint definition being previewed or replayed. (AI-inferred) */
   customConstraint?: OrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraint | Computed<OrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraint>;
+  /** The real organization resource this custom constraint is defined under. (AI-inferred) */
   customConstraintParent?: string | Computed<string>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Condition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The real Common Expression Language (CEL) expression text of this policy rule's own `condition`. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The real, human-readable source location (file/line) of this CEL expression, used for error reporting. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Values {
+  /** The real values this policy rule explicitly permits, for a list-type organization policy constraint. (AI-inferred) */
   allowedValues?: string[] | Computed<string[]>;
+  /** The real values this policy rule explicitly forbids, for a list-type organization policy constraint. (AI-inferred) */
   deniedValues?: string[] | Computed<string[]>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules {
+  /** Whether this policy rule real, allows every value unconditionally. (AI-inferred) */
   allowAll?: boolean | Computed<boolean>;
+  /** A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred) */
   condition?: OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Condition | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Condition>;
+  /** Whether this policy rule real, denies every value unconditionally. (AI-inferred) */
   denyAll?: boolean | Computed<boolean>;
+  /** Whether this real boolean-type policy rule evaluates to `true` (enforced) or `false` (not enforced). (AI-inferred) */
   enforce?: boolean | Computed<boolean>;
+  /** Real, custom constraint-specific parameter values this policy rule supplies to a matching custom constraint. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The real, explicit list of `allowed_values`/`denied_values` this policy rule enforces, for a list-type constraint. (AI-inferred) */
   values?: OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Values | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Values>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec {
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Whether this policy spec real, inherits and merges with policies set on parent resources in the hierarchy, rather than fully overriding them. (AI-inferred) */
   inheritFromParent?: boolean | Computed<boolean>;
+  /** Whether this policy spec real, clears any policy inherited from parent resources, enforcing only its own `rules`. (AI-inferred) */
   reset?: boolean | Computed<boolean>;
+  /** The real, ordered list of rules that make up this policy's own enforcement logic. (AI-inferred) */
   rules?: OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules[] | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules[]>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate {
+  /** The real launch/rollout stage this alternate policy version is being evaluated at. (AI-inferred) */
   launch?: string | Computed<string>;
+  /** The real policy specification (rules, inheritance, reset behavior) this policy or its alternate enforces. (AI-inferred) */
   spec?: OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_Policies_Policy {
+  /** A real, alternate version of this policy used for org policy testing, kept distinct from the policy actually enforced. (AI-inferred) */
   alternate?: OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate>;
+  /** A real, secondary policy spec evaluated for reporting purposes only, without actually being enforced -- lets an org test a stricter policy's impact before enabling it. (AI-inferred) */
   dryRunSpec?: OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** The real, fully-qualified resource name of this custom constraint or policy. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real policy specification (rules, inheritance, reset behavior) this policy or its alternate enforces. (AI-inferred) */
   spec?: OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec>;
 }
 
 export interface OrgPolicyViolationsPreview_Overlay_Policies {
+  /** A real, proposed organization policy being previewed or replayed against the resource hierarchy. (AI-inferred) */
   policy?: OrgPolicyViolationsPreview_Overlay_Policies_Policy | Computed<OrgPolicyViolationsPreview_Overlay_Policies_Policy>;
+  /** The real resource (project, folder, or organization) this proposed policy is being previewed or replayed against. (AI-inferred) */
   policyParent?: string | Computed<string>;
 }
 

@@ -13,7 +13,9 @@ class Guardrail_Action_GenerativeAnswer:
 
 @dataclasses.dataclass
 class Guardrail_Action_RespondImmediately_Responses:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
@@ -108,7 +110,9 @@ class Guardrail_LlmPromptSecurity:
 
 @dataclasses.dataclass
 class Guardrail_ModelSafety_SafetySettings:
+    # The category this classification or setting applies to. (AI-inferred)
     category: Any = None
+    # The value that must be met or crossed for this to apply. (AI-inferred)
     threshold: Any = None
 
 @dataclasses.dataclass

@@ -4,8 +4,10 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MirroringEndpointGroupAssociation_Locations struct {
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
 	Location any
-	State    any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type MirroringEndpointGroupAssociationConfig struct {

@@ -502,34 +502,60 @@ _V3beta1Flow_TransitionRoutesFields = {
 
 @dataclasses.dataclass
 class V3beta1FlowConfig:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
     event_handlers: Any = None
+    # The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
     input_parameter_definitions: Any = None
+    # Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
     knowledge_connector_settings: Any = None
+    # Whether this resource is currently locked against modification. (AI-inferred)
     locked: Any = None
+    # Configuration for how this agent handles multiple supported languages. (AI-inferred)
     multi_language_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
     nlu_settings: Any = None
+    # The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
     output_parameter_definitions: Any = None
+    # The reusable transition route group(s) included on this page/flow. (AI-inferred)
     transition_route_groups: Any = None
+    # The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
     transition_routes: Any = None
 
 @dataclasses.dataclass
 class V3beta1FlowAttrs:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
     event_handlers: Any = None
+    # The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
     input_parameter_definitions: Any = None
+    # Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
     knowledge_connector_settings: Any = None
+    # Whether this resource is currently locked against modification. (AI-inferred)
     locked: Any = None
+    # Configuration for how this agent handles multiple supported languages. (AI-inferred)
     multi_language_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
     nlu_settings: Any = None
+    # The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
     output_parameter_definitions: Any = None
+    # The reusable transition route group(s) included on this page/flow. (AI-inferred)
     transition_route_groups: Any = None
+    # The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
     transition_routes: Any = None
 
 V3beta1Flow = ubx.ResourceBinding(

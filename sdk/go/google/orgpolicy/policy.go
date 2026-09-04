@@ -4,24 +4,36 @@ package orgpolicy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policy_Alternate_Spec_Rules_Condition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// A boolean expression evaluated to determine whether this rule applies. (AI-inferred)
+	Expression any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type Policy_Alternate_Spec_Rules_Values struct {
+	// The set of values permitted by this constraint. (AI-inferred)
 	AllowedValues any
-	DeniedValues  any
+	// The set of values explicitly disallowed by this constraint. (AI-inferred)
+	DeniedValues any
 }
 
 type Policy_Alternate_Spec_Rules struct {
-	AllowAll   any
-	Condition  any
-	DenyAll    any
-	Enforce    any
+	// Whether every value is permitted, with no restriction. (AI-inferred)
+	AllowAll any
+	// The condition that must be satisfied for this rule to apply. (AI-inferred)
+	Condition any
+	// Whether every value is disallowed, with no exceptions. (AI-inferred)
+	DenyAll any
+	// Whether this constraint's own rule is actively enforced, rather than only evaluated. (AI-inferred)
+	Enforce any
+	// The parameter(s) configuring this policy. (AI-inferred)
 	Parameters any
-	Values     any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type Policy_Alternate_Spec struct {

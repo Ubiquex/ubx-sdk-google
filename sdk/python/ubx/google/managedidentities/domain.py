@@ -8,16 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Domain_Trusts:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # When the last successful heartbeat with the trusted domain occurred. (AI-inferred)
     last_trust_heartbeat_time: Any = None
+    # Whether authentication requests from the trusted domain are restricted to explicitly permitted resources. (AI-inferred)
     selective_authentication: Any = None
+    # The current status of this trust relationship. (AI-inferred)
     state: Any = None
+    # A human-readable description of this trust relationship's own current state. (AI-inferred)
     state_description: Any = None
+    # The DNS server IP address(es) for the trusted domain. (AI-inferred)
     target_dns_ip_addresses: Any = None
+    # The fully qualified name of the domain this trust is established with. (AI-inferred)
     target_domain_name: Any = None
+    # Whether this trust is one-way or bidirectional. (AI-inferred)
     trust_direction: Any = None
+    # The shared secret used to establish this trust relationship. (AI-inferred)
     trust_handshake_secret: Any = None
+    # The kind of trust relationship established, e.g. forest or external. (AI-inferred)
     trust_type: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass

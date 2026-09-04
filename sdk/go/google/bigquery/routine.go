@@ -4,48 +4,69 @@ package bigquery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Routine_Arguments_DataType_StructType_Fields struct {
+	// The field's own name, unique within its containing schema. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Routine_Arguments_DataType_StructType struct {
+	// The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
 	Fields any
 }
 
 type Routine_Arguments_DataType struct {
+	// The type of each element in an `ARRAY`-typed value. (AI-inferred)
 	ArrayElementType any
+	// The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
 	RangeElementType any
-	StructType       any
-	TypeKind         any
+	// The field(s) making up a `STRUCT`-typed value. (AI-inferred)
+	StructType any
+	// The base data type this schema node represents, e.g. `STRING` or `STRUCT`. (AI-inferred)
+	TypeKind any
 }
 
 type Routine_Arguments_TableType_Columns_Type_StructType struct {
+	// The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
 	Fields any
 }
 
 type Routine_Arguments_TableType_Columns_Type struct {
+	// The type of each element in an `ARRAY`-typed value. (AI-inferred)
 	ArrayElementType any
+	// The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
 	RangeElementType any
-	StructType       any
-	TypeKind         any
+	// The field(s) making up a `STRUCT`-typed value. (AI-inferred)
+	StructType any
+	// The base data type this schema node represents, e.g. `STRING` or `STRUCT`. (AI-inferred)
+	TypeKind any
 }
 
 type Routine_Arguments_TableType_Columns struct {
+	// The field's own name, unique within its containing schema. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Routine_Arguments_TableType struct {
+	// The column(s) this applies to. (AI-inferred)
 	Columns any
 }
 
 type Routine_Arguments struct {
+	// Whether this routine argument is a fixed type or takes any type (`ANY_TYPE`). (AI-inferred)
 	ArgumentKind any
-	DataType     any
-	IsAggregate  any
-	Mode         any
-	Name         any
-	TableType    any
+	// The data type of this value or column. (AI-inferred)
+	DataType any
+	// Whether this routine is a user-defined aggregate function. (AI-inferred)
+	IsAggregate any
+	// Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred)
+	Mode any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// Whether this table is a standard table, view, materialized view, or external table. (AI-inferred)
+	TableType any
 }
 
 type Routine_BuildStatus_ErrorResult struct {

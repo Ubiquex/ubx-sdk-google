@@ -8,22 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GlobalForwardingRule_AttachedExtensions:
+    # The URL or full resource name of the attached service attachment (e.g., a Private Service Connect service attachment) to associate with this forwarding rule. (AI-inferred)
     reference: Any = None
 
 @dataclasses.dataclass
 class GlobalForwardingRule_MetadataFilters_FilterLabels:
+    # The name (key) of the metadata filter label. This is the label that must match the incoming request metadata. (AI-inferred)
     name: Any = None
+    # The value of the metadata filter label. This is used with the associated label name to match incoming request metadata and determine whether the forwarding rule applies. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class GlobalForwardingRule_MetadataFilters:
+    # The list of label name/value pairs used to match incoming requests for the forwarding rule. Each label defines a metadata filter condition that must be satisfied for the rule to apply. (AI-inferred)
     filter_labels: Any = None
+    # Specifies the match criteria for the metadata filter. Allowed values are MATCH_ALL (must match all labels), MATCH_ANY (must match at least one label), and NOT_SET (no filtering applied). (AI-inferred)
     filter_match_criteria: Any = None
 
 @dataclasses.dataclass
 class GlobalForwardingRule_ServiceDirectoryRegistrations:
+    # The name of the Service Directory namespace in which the forwarding rule's service is registered. This is required for Service Directory integration and must match an existing namespace. (AI-inferred)
     namespace: Any = None
+    # The Service Directory service to register with the forwarding rule. Provide the fully qualified service name (e.g., projects/my-project/locations/us-central1/namespaces/my-ns/services/my-service). (AI-inferred)
     service: Any = None
+    # The region for the Service Directory registration associated with this global forwarding rule. (AI-inferred)
     service_directory_region: Any = None
 
 _GlobalForwardingRule_MetadataFilters_FilterLabelsFields = {
@@ -173,6 +181,7 @@ class GlobalForwardingRuleAttrs:
     ports: Any = None
     # [Output Only] The PSC connection id of the PSC forwarding rule.
     psc_connection_id: Any = None
+    # The status of the Private Service Connect (PSC) connection for this global forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred)
     psc_connection_status: Any = None
     # Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
     region: Any = None

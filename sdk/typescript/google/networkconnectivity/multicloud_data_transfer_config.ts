@@ -2,11 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MulticloudDataTransferConfig_Services_States {
+  /** When this configuration took effect. (AI-inferred) */
   effectiveTime?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface MulticloudDataTransferConfig_Services {
+  /** The lifecycle state(s) this filter matches. (AI-inferred) */
   states?: MulticloudDataTransferConfig_Services_States[] | Computed<MulticloudDataTransferConfig_Services_States[]>;
 }
 

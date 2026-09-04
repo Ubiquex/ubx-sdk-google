@@ -4,15 +4,21 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1KnowledgeBaseConfig struct {
-	DisplayName  any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
 	LanguageCode any
-	Name         any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type V2beta1KnowledgeBaseAttrs struct {
-	DisplayName  any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
 	LanguageCode any
-	Name         any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 var V2beta1KnowledgeBase = ubx.ResourceBinding{

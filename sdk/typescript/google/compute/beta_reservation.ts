@@ -334,6 +334,7 @@ export interface BetaReservationConfig {
   advancedDeploymentControl?: BetaReservation_AdvancedDeploymentControl | Computed<BetaReservation_AdvancedDeploymentControl>;
   /** This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation. */
   aggregateReservation?: BetaReservation_AggregateReservation | Computed<BetaReservation_AggregateReservation>;
+  /** The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred) */
   confidentialComputeType?: string | Computed<string>;
   /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
   deleteAfterDuration?: BetaReservation_DeleteAfterDuration | Computed<BetaReservation_DeleteAfterDuration>;
@@ -377,6 +378,7 @@ export interface BetaReservationAttrs {
   aggregateReservation: BetaReservation_AggregateReservation;
   /** Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment. */
   commitment: string;
+  /** The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred) */
   confidentialComputeType: string;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;

@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NodeGroup_NodeGroupConfig_Accelerators:
+    # How many accelerator (GPU) devices are attached per instance. (AI-inferred)
     accelerator_count: Any = None
+    # The full URI of the accelerator type attached. (AI-inferred)
     accelerator_type_uri: Any = None
 
 @dataclasses.dataclass
 class NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs:
+    # The size, in GB, of this disk. (AI-inferred)
     disk_size_gb: Any = None
+    # The disk type provisioned, e.g. `pd-ssd`. (AI-inferred)
     disk_type: Any = None
+    # The provisioned IOPS for this disk, when using a disk type that supports configuring it. (AI-inferred)
     provisioned_iops: Any = None
+    # The provisioned throughput for this disk, when using a disk type that supports configuring it. (AI-inferred)
     provisioned_throughput: Any = None
 
 @dataclasses.dataclass
@@ -37,13 +43,18 @@ class NodeGroup_NodeGroupConfig_DiskConfig:
 
 @dataclasses.dataclass
 class NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList:
+    # Configuration for each instance's own attached disk(s). (AI-inferred)
     disk_config: Any = None
+    # The machine type(s) this applies to. (AI-inferred)
     machine_types: Any = None
+    # The relative preference order of this option -- lower values are preferred first. (AI-inferred)
     rank: Any = None
 
 @dataclasses.dataclass
 class NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults:
+    # The Compute Engine machine type provisioned for each instance. (AI-inferred)
     machine_type: Any = None
+    # The number of VM instances this applies to. (AI-inferred)
     vm_count: Any = None
 
 @dataclasses.dataclass
@@ -66,9 +77,13 @@ class NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy:
 
 @dataclasses.dataclass
 class NodeGroup_NodeGroupConfig_InstanceReferences:
+    # An identifier for this specific instance. (AI-inferred)
     instance_id: Any = None
+    # The name of this instance. (AI-inferred)
     instance_name: Any = None
+    # The public ECIES key used to encrypt sensitive job parameters. (AI-inferred)
     public_ecies_key: Any = None
+    # A public key used for encryption or authentication. (AI-inferred)
     public_key: Any = None
 
 @dataclasses.dataclass

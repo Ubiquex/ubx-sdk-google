@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutoLabelingRule_Conditions:
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     condition: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 _AutoLabelingRule_ConditionsFields = {

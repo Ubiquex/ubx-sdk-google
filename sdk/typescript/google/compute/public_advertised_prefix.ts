@@ -2,9 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PublicAdvertisedPrefix_PublicDelegatedPrefixs {
+  /** The IP address range of the public delegated prefix, expressed in CIDR notation. (AI-inferred) */
   ipRange?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** The project ID where the public delegated prefix is created, allowing the public advertised prefix to be shared with a different project. (AI-inferred) */
   project?: string | Computed<string>;
+  /** The region where this delegated prefix is located. (AI-inferred) */
   region?: string | Computed<string>;
   status?: string | Computed<string>;
 }

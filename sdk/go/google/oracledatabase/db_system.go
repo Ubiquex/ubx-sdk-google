@@ -18,6 +18,7 @@ type DbSystem_Properties_DbHome_Database_Properties_DatabaseManagementConfig str
 }
 
 type DbSystem_Properties_DbHome_Database_Properties_DbBackupConfig_BackupDestinationDetails struct {
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 

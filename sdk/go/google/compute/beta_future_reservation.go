@@ -428,7 +428,8 @@ type BetaFutureReservationConfig struct {
 	// Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
 	AutoDeleteAutoCreatedReservations any
 	CommitmentInfo                    any
-	ConfidentialComputeType           any
+	// The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
+	ConfidentialComputeType any
 	// Type of the deployment requested as part of future reservation.
 	DeploymentType any
 	// An optional description of this resource. Provide this property when you create the future reservation.
@@ -462,7 +463,8 @@ type BetaFutureReservationConfig struct {
 	Status any
 	// Storage pool properties for the future reservation.
 	StoragePoolProperties any
-	TimeWindow            any
+	// The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred)
+	TimeWindow any
 }
 
 type BetaFutureReservationAttrs struct {
@@ -477,7 +479,8 @@ type BetaFutureReservationAttrs struct {
 	// Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
 	AutoDeleteAutoCreatedReservations any
 	CommitmentInfo                    any
-	ConfidentialComputeType           any
+	// The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred)
+	ConfidentialComputeType any
 	// Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format.
 	CreationTimestamp any
 	// Type of the deployment requested as part of future reservation.
@@ -521,7 +524,8 @@ type BetaFutureReservationAttrs struct {
 	Status any
 	// Storage pool properties for the future reservation.
 	StoragePoolProperties any
-	TimeWindow            any
+	// The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred)
+	TimeWindow any
 	// Output only. [Output Only] URL of the Zone where this future reservation resides.
 	Zone any
 }

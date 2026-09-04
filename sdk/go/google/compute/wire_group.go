@@ -32,6 +32,7 @@ type WireGroup_WireProperties struct {
 }
 
 type WireGroup_Wires_Endpoints struct {
+	// The URL of the Compute Engine interconnect used by this endpoint. (AI-inferred)
 	Interconnect any
 	VlanTag      any
 }

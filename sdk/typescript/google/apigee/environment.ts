@@ -23,7 +23,9 @@ export interface Environment_NodeConfig {
 }
 
 export interface Environment_Properties_Property {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -77,6 +79,7 @@ export interface EnvironmentConfig {
   displayName?: string | Computed<string>;
   /** Optional. URI of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that the only supported scheme is "http". The port must be supplied. To remove a forward proxy setting, update the field to an empty value. Note: At this time, PUT operations to add forwardProxyUri to an existing environment fail if the environment has nodeConfig set up. To successfully add the forwardProxyUri setting in this case, include the NodeConfig details with the request. */
   forwardProxyUri?: string | Computed<string>;
+  /** Whether this environment has flow hook(s) attached that run on every request. (AI-inferred) */
   hasAttachedFlowHooks?: boolean | Computed<boolean>;
   /** Required. Name of the environment. Values must match the regular expression `^[.\\p{Alnum}-_]{1,255}$` */
   name?: string | Computed<string>;
@@ -103,6 +106,7 @@ export interface EnvironmentAttrs {
   displayName: string;
   /** Optional. URI of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that the only supported scheme is "http". The port must be supplied. To remove a forward proxy setting, update the field to an empty value. Note: At this time, PUT operations to add forwardProxyUri to an existing environment fail if the environment has nodeConfig set up. To successfully add the forwardProxyUri setting in this case, include the NodeConfig details with the request. */
   forwardProxyUri: string;
+  /** Whether this environment has flow hook(s) attached that run on every request. (AI-inferred) */
   hasAttachedFlowHooks: boolean;
   /** Output only. Last modification time of this environment as milliseconds since epoch. */
   lastModifiedAt: string;

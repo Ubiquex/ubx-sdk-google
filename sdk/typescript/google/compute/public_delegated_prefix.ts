@@ -2,16 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PublicDelegatedPrefix_PublicDelegatedSubPrefixs {
+  /** The prefix length (in bits) of the sub-prefixes that can be allocated from this delegated sub-prefix. For instance, a value of 26 indicates that /26 CIDR blocks can be allocated. (AI-inferred) */
   allocatablePrefixLength?: number | Computed<number>;
+  /** The project ID or name to which this sub-prefix is delegated, allowing that project to use the delegated prefix. (AI-inferred) */
   delegateeProject?: string | Computed<string>;
   description?: string | Computed<string>;
   enableEnhancedIpv4Allocation?: boolean | Computed<boolean>;
+  /** The IP CIDR range of this public delegated sub-prefix. (AI-inferred) */
   ipCidrRange?: string | Computed<string>;
+  /** The access type for the IPv6 addresses in the sub-prefix. EXTERNAL means the prefix is used for publicly accessible IPv6 addresses, while INTERNAL means it is used for internal/private IPv6 addresses. (AI-inferred) */
   ipv6AccessType?: string | Computed<string>;
+  /** Specifies whether the sub-prefix is an address range (true) or a public delegated prefix (false). (AI-inferred) */
   isAddress?: boolean | Computed<boolean>;
+  /** The mode of the sub-prefix, indicating how it is used. Allowed values are: DELEGATION, EXTERNAL_IPV6_FORWARDING_RULE_CREATION, EXTERNAL_IPV6_SUBNETWORK_CREATION, and INTERNAL_IPV6_SUBNETWORK_CREATION. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The name of the public delegated sub-prefix. This is used as an identifier for the sub-prefix within the public delegated prefix. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The region of the sub-prefix. If not specified, the region of the parent public delegated prefix is used. (AI-inferred) */
   region?: string | Computed<string>;
+  /** The status of the public delegated sub-prefix, which can be either ACTIVE or INACTIVE. (AI-inferred) */
   status?: string | Computed<string>;
 }
 

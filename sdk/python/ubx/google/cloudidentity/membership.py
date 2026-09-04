@@ -15,20 +15,26 @@ class Membership_PreferredMemberKey:
 
 @dataclasses.dataclass
 class Membership_Roles_ExpiryDetail:
+    # The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
     expire_time: Any = None
 
 @dataclasses.dataclass
 class Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluation:
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Membership_Roles_RestrictionEvaluations:
+    # The result of evaluating this group's own membership restriction expression. (AI-inferred)
     member_restriction_evaluation: Any = None
 
 @dataclasses.dataclass
 class Membership_Roles:
+    # Additional detail about why this credential is expiring or expired. (AI-inferred)
     expiry_detail: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The result(s) of evaluating this group's own membership restriction(s). (AI-inferred)
     restriction_evaluations: Any = None
 
 _Membership_PreferredMemberKeyFields = {

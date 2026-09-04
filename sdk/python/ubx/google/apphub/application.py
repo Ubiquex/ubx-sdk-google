@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Application_Attributes_BusinessOwners:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The email address associated with this identity. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass

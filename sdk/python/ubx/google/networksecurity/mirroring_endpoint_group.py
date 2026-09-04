@@ -8,18 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MirroringEndpointGroup_Associations:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class MirroringEndpointGroup_ConnectedDeploymentGroups_Locations:
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class MirroringEndpointGroup_ConnectedDeploymentGroups:
+    # The location(s) this applies to. (AI-inferred)
     locations: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass

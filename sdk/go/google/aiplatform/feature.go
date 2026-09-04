@@ -4,18 +4,27 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Feature_MonitoringStatsAnomalies_FeatureStatsAnomaly struct {
+	// The deviation threshold that was crossed to trigger this anomaly. (AI-inferred)
 	AnomalyDetectionThreshold any
-	AnomalyUri                any
-	DistributionDeviation     any
-	EndTime                   any
-	Score                     any
-	StartTime                 any
-	StatsUri                  any
+	// A URI with further detail about this detected anomaly. (AI-inferred)
+	AnomalyUri any
+	// How far this feature's own current value distribution has deviated from its baseline. (AI-inferred)
+	DistributionDeviation any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// A URI with the full statistics this anomaly was detected from. (AI-inferred)
+	StatsUri any
 }
 
 type Feature_MonitoringStatsAnomalies struct {
+	// Detail about one detected anomaly in this feature's own statistics. (AI-inferred)
 	FeatureStatsAnomaly any
-	Objective           any
+	// Which kind of analysis produced this result, e.g. `IMPORT_FEATURE_ANALYSIS` or `SNAPSHOT_ANALYSIS`. (AI-inferred)
+	Objective any
 }
 
 type FeatureConfig struct {

@@ -69,6 +69,7 @@ class LicenseConfig:
     removable_from_disk: Any = None
     # Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
     required_coattached_licenses: Any = None
+    # The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred)
     resource_requirements: Any = None
     # If true, this license can only be used on VMs on sole tenant nodes.
     sole_tenant_only: Any = None
@@ -109,6 +110,7 @@ class LicenseAttrs:
     removable_from_disk: Any = None
     # Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
     required_coattached_licenses: Any = None
+    # The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred)
     resource_requirements: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None

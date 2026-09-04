@@ -2,9 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Acl_AclEntries {
+  /** The host this ACL entry applies to; Google Cloud Managed Service for Apache Kafka requires this be the wildcard `*`. (AI-inferred) */
   host?: string | Computed<string>;
+  /** The Kafka operation this ACL entry grants or denies, e.g. `READ`, `WRITE`, or `ALL`. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** Whether this ACL entry `ALLOW`s or `DENY`s the matching operation. (AI-inferred) */
   permissionType?: string | Computed<string>;
+  /** The identity this ACL entry applies to, in the form `User:{email}`, or `User:*` for any principal. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 

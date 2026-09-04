@@ -446,7 +446,8 @@ var AlphaCompositeType_TemplateContentsFields = ubx.FieldMap{
 type AlphaCompositeTypeConfig struct {
 	// An optional textual description of the resource; provided by the client when the resource is created.
 	Description any
-	Id          any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Map of labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
@@ -457,7 +458,8 @@ type AlphaCompositeTypeConfig struct {
 	Operation any
 	// Output only. Server defined URL for the resource.
 	SelfLink any
-	Status   any
+	// The current status of this resource. (AI-inferred)
+	Status any
 	// Files that make up the template contents of a template type.
 	TemplateContents any
 }
@@ -465,7 +467,8 @@ type AlphaCompositeTypeConfig struct {
 type AlphaCompositeTypeAttrs struct {
 	// An optional textual description of the resource; provided by the client when the resource is created.
 	Description any
-	Id          any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Map of labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
@@ -476,7 +479,8 @@ type AlphaCompositeTypeAttrs struct {
 	Operation any
 	// Output only. Server defined URL for the resource.
 	SelfLink any
-	Status   any
+	// The current status of this resource. (AI-inferred)
+	Status any
 	// Files that make up the template contents of a template type.
 	TemplateContents any
 }

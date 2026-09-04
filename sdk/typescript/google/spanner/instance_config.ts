@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InstanceConfig_InstanceConfig_OptionalReplicas {
+  /** The region designated as the default leader for this database's own leader-aware routing. (AI-inferred) */
   defaultLeaderLocation?: boolean | Computed<boolean>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

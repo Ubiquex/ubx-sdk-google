@@ -99,11 +99,15 @@ export interface HealthCheckConfig {
   checkIntervalSec?: number | Computed<number>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** A configuration block for a gRPC health check. It contains the parameters specific to the gRPC health check type within a Google Compute Engine health check. (AI-inferred) */
   grpcHealthCheck?: HealthCheck_GrpcHealthCheck | Computed<HealthCheck_GrpcHealthCheck>;
+  /** A nested block that configures gRPC health checking over TLS. This is one of the health check types for a Compute Engine health check, used when the gRPC service requires TLS encryption. (AI-inferred) */
   grpcTlsHealthCheck?: HealthCheck_GrpcTlsHealthCheck | Computed<HealthCheck_GrpcTlsHealthCheck>;
   /** A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2. */
   healthyThreshold?: number | Computed<number>;
+  /** The http2_health_check object contains settings for an HTTP/2 health check, one of the possible health check types in this resource. This field is computed and represents the active configuration when an HTTP/2 health check is used. (AI-inferred) */
   http2HealthCheck?: HealthCheck_Http2HealthCheck | Computed<HealthCheck_Http2HealthCheck>;
+  /** The HTTP health check configuration. This field is computed and output-only, so it cannot be set by the user and is populated by the API. (AI-inferred) */
   httpHealthCheck?: HealthCheck_Http2HealthCheck | Computed<HealthCheck_Http2HealthCheck>;
   httpsHealthCheck?: HealthCheck_Http2HealthCheck | Computed<HealthCheck_Http2HealthCheck>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
@@ -116,7 +120,9 @@ export interface HealthCheckConfig {
   selfLink?: string | Computed<string>;
   /** The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing. */
   sourceRegions?: string[] | Computed<string[]>;
+  /** The SSL health check configuration for the health check resource. This is an output-only field that provides the settings used for SSL-based health checks. (AI-inferred) */
   sslHealthCheck?: HealthCheck_SslHealthCheck | Computed<HealthCheck_SslHealthCheck>;
+  /** An output-only object that represents the TCP health check configuration applied to the resource, as returned by the Google Compute API. (AI-inferred) */
   tcpHealthCheck?: HealthCheck_SslHealthCheck | Computed<HealthCheck_SslHealthCheck>;
   /** How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec. */
   timeoutSec?: number | Computed<number>;
@@ -133,11 +139,15 @@ export interface HealthCheckAttrs {
   creationTimestamp: string;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** A configuration block for a gRPC health check. It contains the parameters specific to the gRPC health check type within a Google Compute Engine health check. (AI-inferred) */
   grpcHealthCheck: HealthCheck_GrpcHealthCheck;
+  /** A nested block that configures gRPC health checking over TLS. This is one of the health check types for a Compute Engine health check, used when the gRPC service requires TLS encryption. (AI-inferred) */
   grpcTlsHealthCheck: HealthCheck_GrpcTlsHealthCheck;
   /** A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2. */
   healthyThreshold: number;
+  /** The http2_health_check object contains settings for an HTTP/2 health check, one of the possible health check types in this resource. This field is computed and represents the active configuration when an HTTP/2 health check is used. (AI-inferred) */
   http2HealthCheck: HealthCheck_Http2HealthCheck;
+  /** The HTTP health check configuration. This field is computed and output-only, so it cannot be set by the user and is populated by the API. (AI-inferred) */
   httpHealthCheck: HealthCheck_Http2HealthCheck;
   httpsHealthCheck: HealthCheck_Http2HealthCheck;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
@@ -154,7 +164,9 @@ export interface HealthCheckAttrs {
   selfLink: string;
   /** The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing. */
   sourceRegions: string[];
+  /** The SSL health check configuration for the health check resource. This is an output-only field that provides the settings used for SSL-based health checks. (AI-inferred) */
   sslHealthCheck: HealthCheck_SslHealthCheck;
+  /** An output-only object that represents the TCP health check configuration applied to the resource, as returned by the Google Compute API. (AI-inferred) */
   tcpHealthCheck: HealthCheck_SslHealthCheck;
   /** How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec. */
   timeoutSec: number;

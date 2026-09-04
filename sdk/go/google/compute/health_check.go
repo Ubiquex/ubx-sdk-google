@@ -100,12 +100,16 @@ type HealthCheckConfig struct {
 	// How often (in seconds) to send a health check. The default value is 5 seconds.
 	CheckIntervalSec any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description        any
-	GrpcHealthCheck    any
+	Description any
+	// A configuration block for a gRPC health check. It contains the parameters specific to the gRPC health check type within a Google Compute Engine health check. (AI-inferred)
+	GrpcHealthCheck any
+	// A nested block that configures gRPC health checking over TLS. This is one of the health check types for a Compute Engine health check, used when the gRPC service requires TLS encryption. (AI-inferred)
 	GrpcTlsHealthCheck any
 	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
 	HealthyThreshold any
+	// The http2_health_check object contains settings for an HTTP/2 health check, one of the possible health check types in this resource. This field is computed and represents the active configuration when an HTTP/2 health check is used. (AI-inferred)
 	Http2HealthCheck any
+	// The HTTP health check configuration. This field is computed and output-only, so it cannot be set by the user and is populated by the API. (AI-inferred)
 	HttpHealthCheck  any
 	HttpsHealthCheck any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -117,8 +121,10 @@ type HealthCheckConfig struct {
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
-	SourceRegions  any
+	SourceRegions any
+	// The SSL health check configuration for the health check resource. This is an output-only field that provides the settings used for SSL-based health checks. (AI-inferred)
 	SslHealthCheck any
+	// An output-only object that represents the TCP health check configuration applied to the resource, as returned by the Google Compute API. (AI-inferred)
 	TcpHealthCheck any
 	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
 	TimeoutSec any
@@ -134,12 +140,16 @@ type HealthCheckAttrs struct {
 	// Output only. [Output Only] Creation timestamp in3339 text format.
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description        any
-	GrpcHealthCheck    any
+	Description any
+	// A configuration block for a gRPC health check. It contains the parameters specific to the gRPC health check type within a Google Compute Engine health check. (AI-inferred)
+	GrpcHealthCheck any
+	// A nested block that configures gRPC health checking over TLS. This is one of the health check types for a Compute Engine health check, used when the gRPC service requires TLS encryption. (AI-inferred)
 	GrpcTlsHealthCheck any
 	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
 	HealthyThreshold any
+	// The http2_health_check object contains settings for an HTTP/2 health check, one of the possible health check types in this resource. This field is computed and represents the active configuration when an HTTP/2 health check is used. (AI-inferred)
 	Http2HealthCheck any
+	// The HTTP health check configuration. This field is computed and output-only, so it cannot be set by the user and is populated by the API. (AI-inferred)
 	HttpHealthCheck  any
 	HttpsHealthCheck any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -155,8 +165,10 @@ type HealthCheckAttrs struct {
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
-	SourceRegions  any
+	SourceRegions any
+	// The SSL health check configuration for the health check resource. This is an output-only field that provides the settings used for SSL-based health checks. (AI-inferred)
 	SslHealthCheck any
+	// An output-only object that represents the TCP health check configuration applied to the resource, as returned by the Google Compute API. (AI-inferred)
 	TcpHealthCheck any
 	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
 	TimeoutSec any

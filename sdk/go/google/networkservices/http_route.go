@@ -4,130 +4,204 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HttpRoute_Rules_Action_CorsPolicy struct {
-	AllowCredentials   any
-	AllowHeaders       any
-	AllowMethods       any
+	// Whether the CORS response allows credentialed (cookie-bearing) cross-origin requests. (AI-inferred)
+	AllowCredentials any
+	// The request header(s) the CORS policy allows. (AI-inferred)
+	AllowHeaders any
+	// The HTTP method(s) the CORS policy allows. (AI-inferred)
+	AllowMethods any
+	// Regular expression(s) matching origins the CORS policy allows. (AI-inferred)
 	AllowOriginRegexes any
-	AllowOrigins       any
-	Disabled           any
-	ExposeHeaders      any
-	MaxAge             any
+	// The origin(s) the CORS policy allows. (AI-inferred)
+	AllowOrigins any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// The response header(s) the CORS policy exposes to the calling origin. (AI-inferred)
+	ExposeHeaders any
+	// How long, in seconds, the CORS preflight response may be cached by the browser. (AI-inferred)
+	MaxAge any
 }
 
 type HttpRoute_Rules_Action_Destinations_RequestHeaderModifier struct {
-	Add    any
+	// Adds this header if not already present. (AI-inferred)
+	Add any
+	// Removes this header before forwarding. (AI-inferred)
 	Remove any
-	Set    any
+	// Sets this header, overwriting any existing value. (AI-inferred)
+	Set any
 }
 
 type HttpRoute_Rules_Action_Destinations struct {
-	RequestHeaderModifier  any
+	// Header modification(s) applied to the request before forwarding. (AI-inferred)
+	RequestHeaderModifier any
+	// Header modification(s) applied to the response before returning it to the client. (AI-inferred)
 	ResponseHeaderModifier any
-	ServiceName            any
-	Weight                 any
+	// The name of the service this applies to. (AI-inferred)
+	ServiceName any
+	// The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
+	Weight any
 }
 
 type HttpRoute_Rules_Action_DirectResponse struct {
-	BytesBody  any
-	Status     any
+	// A fixed response body, as raw bytes. (AI-inferred)
+	BytesBody any
+	// The current status of this resource. (AI-inferred)
+	Status any
+	// A fixed response body, as a plain string. (AI-inferred)
 	StringBody any
 }
 
 type HttpRoute_Rules_Action_FaultInjectionPolicy_Abort struct {
+	// The HTTP status code returned. (AI-inferred)
 	HttpStatus any
+	// A percentage value. (AI-inferred)
 	Percentage any
 }
 
 type HttpRoute_Rules_Action_FaultInjectionPolicy_Delay struct {
+	// A fixed delay duration applied to matching requests. (AI-inferred)
 	FixedDelay any
+	// A percentage value. (AI-inferred)
 	Percentage any
 }
 
 type HttpRoute_Rules_Action_FaultInjectionPolicy struct {
+	// Immediately fails matching requests with a fixed status code, for fault-injection testing. (AI-inferred)
 	Abort any
+	// Configuration for artificially delaying matching requests, for fault-injection testing. (AI-inferred)
 	Delay any
 }
 
 type HttpRoute_Rules_Action_Redirect struct {
-	HostRedirect  any
+	// The host this request is redirected to. (AI-inferred)
+	HostRedirect any
+	// Whether matching requests are redirected from HTTP to HTTPS. (AI-inferred)
 	HttpsRedirect any
-	PathRedirect  any
-	PortRedirect  any
+	// The path this request is redirected to. (AI-inferred)
+	PathRedirect any
+	// The port this request is redirected to. (AI-inferred)
+	PortRedirect any
+	// The prefix substituted in place of the matched path prefix. (AI-inferred)
 	PrefixRewrite any
-	ResponseCode  any
-	StripQuery    any
+	// The HTTP status code returned in this direct response. (AI-inferred)
+	ResponseCode any
+	// Whether the query string is dropped from the URL before redirecting. (AI-inferred)
+	StripQuery any
 }
 
 type HttpRoute_Rules_Action_RequestMirrorPolicy struct {
-	Destination   any
+	// The destination this traffic is routed to. (AI-inferred)
+	Destination any
+	// The percentage of matching traffic also sent to a mirrored destination, in addition to its own real destination. (AI-inferred)
 	MirrorPercent any
 }
 
 type HttpRoute_Rules_Action_RetryPolicy struct {
-	NumRetries      any
-	PerTryTimeout   any
+	// The maximum number of times a failed request is retried. (AI-inferred)
+	NumRetries any
+	// The timeout applied to each individual retry attempt. (AI-inferred)
+	PerTryTimeout any
+	// The condition(s) (e.g. specific status codes) under which a failed request is retried. (AI-inferred)
 	RetryConditions any
 }
 
 type HttpRoute_Rules_Action_StatefulSessionAffinity struct {
+	// How long a session-affinity cookie remains valid. (AI-inferred)
 	CookieTtl any
 }
 
 type HttpRoute_Rules_Action_UrlRewrite struct {
-	HostRewrite       any
+	// Rewrites the `Host` header before forwarding to the backend. (AI-inferred)
+	HostRewrite any
+	// Rewrites the matched path prefix before forwarding to the backend. (AI-inferred)
 	PathPrefixRewrite any
 }
 
 type HttpRoute_Rules_Action struct {
-	CorsPolicy              any
-	Destinations            any
-	DirectResponse          any
-	FaultInjectionPolicy    any
-	IdleTimeout             any
-	Redirect                any
-	RequestHeaderModifier   any
-	RequestMirrorPolicy     any
-	ResponseHeaderModifier  any
-	RetryPolicy             any
+	// Cross-Origin Resource Sharing configuration applied to matching requests. (AI-inferred)
+	CorsPolicy any
+	// The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
+	Destinations any
+	// Responds directly with a fixed status code and body, rather than routing to a backend. (AI-inferred)
+	DirectResponse any
+	// Configuration for artificially injecting delays or aborted requests, for resilience testing. (AI-inferred)
+	FaultInjectionPolicy any
+	// How long an idle connection is kept open before being closed. (AI-inferred)
+	IdleTimeout any
+	// Redirects matching requests to a different host, path, or port. (AI-inferred)
+	Redirect any
+	// Header modification(s) applied to the request before forwarding. (AI-inferred)
+	RequestHeaderModifier any
+	// Configuration for sending a copy of matching traffic to a separate destination, without affecting the real response. (AI-inferred)
+	RequestMirrorPolicy any
+	// Header modification(s) applied to the response before returning it to the client. (AI-inferred)
+	ResponseHeaderModifier any
+	// Configuration for automatically retrying failed requests. (AI-inferred)
+	RetryPolicy any
+	// Configuration for consistently routing a client's own requests to the same backend, using a session cookie. (AI-inferred)
 	StatefulSessionAffinity any
-	Timeout                 any
-	UrlRewrite              any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
+	// Rewrites the request's own host and/or path before forwarding to the backend. (AI-inferred)
+	UrlRewrite any
 }
 
 type HttpRoute_Rules_Matches_Headers_RangeMatch struct {
-	End   any
+	// Where this range ends. (AI-inferred)
+	End any
+	// Where this range starts. (AI-inferred)
 	Start any
 }
 
 type HttpRoute_Rules_Matches_Headers struct {
-	ExactMatch   any
-	Header       any
-	InvertMatch  any
-	PrefixMatch  any
+	// Matches only this exact value. (AI-inferred)
+	ExactMatch any
+	// An HTTP header this applies to. (AI-inferred)
+	Header any
+	// Whether this match condition's own result is inverted. (AI-inferred)
+	InvertMatch any
+	// Matches values starting with this prefix. (AI-inferred)
+	PrefixMatch any
+	// Matches based only on whether this header is present, regardless of its own value. (AI-inferred)
 	PresentMatch any
-	RangeMatch   any
-	RegexMatch   any
-	SuffixMatch  any
+	// Matches when the value falls within this numeric range. (AI-inferred)
+	RangeMatch any
+	// Matches values against this regular expression. (AI-inferred)
+	RegexMatch any
+	// Matches values ending with this suffix. (AI-inferred)
+	SuffixMatch any
 }
 
 type HttpRoute_Rules_Matches_QueryParameters struct {
-	ExactMatch     any
-	PresentMatch   any
+	// Matches only this exact value. (AI-inferred)
+	ExactMatch any
+	// Matches based only on whether this header is present, regardless of its own value. (AI-inferred)
+	PresentMatch any
+	// A single query parameter this rule matches against. (AI-inferred)
 	QueryParameter any
-	RegexMatch     any
+	// Matches values against this regular expression. (AI-inferred)
+	RegexMatch any
 }
 
 type HttpRoute_Rules_Matches struct {
-	FullPathMatch   any
-	Headers         any
-	IgnoreCase      any
-	PrefixMatch     any
+	// Matches only this exact, complete path. (AI-inferred)
+	FullPathMatch any
+	// The HTTP header(s) this applies to. (AI-inferred)
+	Headers any
+	// Whether this match is case-insensitive. (AI-inferred)
+	IgnoreCase any
+	// Matches values starting with this prefix. (AI-inferred)
+	PrefixMatch any
+	// The query parameter(s) this rule matches against. (AI-inferred)
 	QueryParameters any
-	RegexMatch      any
+	// Matches values against this regular expression. (AI-inferred)
+	RegexMatch any
 }
 
 type HttpRoute_Rules struct {
-	Action  any
+	// The action taken when this rule matches. (AI-inferred)
+	Action any
+	// The match condition(s) this rule evaluates. (AI-inferred)
 	Matches any
 }
 

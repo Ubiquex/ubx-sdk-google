@@ -117,30 +117,43 @@ class Topic_MessageStoragePolicy:
 
 @dataclasses.dataclass
 class Topic_MessageTransforms_AiInference_UnstructuredInference:
+    # Model-specific parameters passed to the Vertex AI endpoint for unstructured inference. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class Topic_MessageTransforms_AiInference:
+    # The Vertex AI model endpoint this transform sends each message to for inference. (AI-inferred)
     endpoint: Any = None
+    # The service account this transform uses to call the Vertex AI endpoint. (AI-inferred)
     service_account_email: Any = None
+    # Configuration for running inference on unstructured message content (e.g. free text), rather than a fixed schema. (AI-inferred)
     unstructured_inference: Any = None
 
 @dataclasses.dataclass
 class Topic_MessageTransforms_Compression:
+    # The compression algorithm this transform uses, e.g. `ZLIB`. (AI-inferred)
     compression_algorithm: Any = None
+    # Whether this transform `COMPRESS`es or `DECOMPRESS`es message data. (AI-inferred)
     compression_mode: Any = None
 
 @dataclasses.dataclass
 class Topic_MessageTransforms_JavascriptUdf:
+    # The JavaScript source code implementing this transform. (AI-inferred)
     code: Any = None
+    # The name of the function within `code` Pub/Sub invokes for each message. (AI-inferred)
     function_name: Any = None
 
 @dataclasses.dataclass
 class Topic_MessageTransforms:
+    # A message transform that runs each message through a Vertex AI model and attaches the model's own inference as additional message data. (AI-inferred)
     ai_inference: Any = None
+    # A message transform that compresses or decompresses message data as it flows through the transform pipeline. (AI-inferred)
     compression: Any = None
+    # If `true`, this transform is skipped without being removed from the pipeline. (AI-inferred)
     disabled: Any = None
+    # Whether this transform is active in the pipeline. (AI-inferred)
     enabled: Any = None
+    # A message transform implemented as a user-defined JavaScript function, run inline on each message. (AI-inferred)
     javascript_udf: Any = None
 
 @dataclasses.dataclass

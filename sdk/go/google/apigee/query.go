@@ -4,11 +4,16 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Query_Metrics struct {
-	Alias    any
+	// A reference to a key/certificate alias in a keystore. (AI-inferred)
+	Alias any
+	// The mathematical function applied to compute this value. (AI-inferred)
 	Function any
-	Name     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// How this condition's own operands are compared. (AI-inferred)
 	Operator any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Query_QueryParams struct {
@@ -91,10 +96,12 @@ type QueryAttrs struct {
 	Name any
 	// Valid values include: `csv` or `json`. Defaults to `json`. Note: Configure the delimiter for CSV output using the csvDelimiter property.
 	OutputFormat any
-	QueryParams  any
+	// The query parameter(s) this applies to. (AI-inferred)
+	QueryParams any
 	// Asynchronous Report ID.
 	ReportDefinitionId any
-	Result             any
+	// The result produced by this operation. (AI-inferred)
+	Result any
 	// ResultFileSize is available only after the query is completed.
 	ResultFileSize any
 	// ResultRows is available only after the query is completed.

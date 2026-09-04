@@ -4,23 +4,32 @@ package developerconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysis struct {
+	// The Google Cloud project the tracked Artifact Analysis data belongs to. (AI-inferred)
 	ProjectId any
 }
 
 type InsightsConfig_ArtifactConfigs_GoogleArtifactRegistry struct {
+	// The Artifact Registry package this artifact config tracks. (AI-inferred)
 	ArtifactRegistryPackage any
-	ProjectId               any
+	// The Google Cloud project the tracked Artifact Registry package belongs to. (AI-inferred)
+	ProjectId any
 }
 
 type InsightsConfig_ArtifactConfigs struct {
+	// Identifies an artifact tracked via Google Artifact Analysis, for correlating vulnerability/provenance data into insights. (AI-inferred)
 	GoogleArtifactAnalysis any
+	// Identifies an artifact tracked via Artifact Registry. (AI-inferred)
 	GoogleArtifactRegistry any
-	Uri                    any
+	// The URI identifying this artifact, when tracked by reference rather than by a specific registry integration. (AI-inferred)
+	Uri any
 }
 
 type InsightsConfig_Errors struct {
-	Code    any
+	// The error's own numeric status code. (AI-inferred)
+	Code any
+	// Additional structured detail about the error. (AI-inferred)
 	Details any
+	// A human-readable description of the error. (AI-inferred)
 	Message any
 }
 
@@ -30,33 +39,48 @@ type InsightsConfig_Projects struct {
 }
 
 type InsightsConfig_RuntimeConfigs_AppHubService struct {
+	// The App Hub service resource this runtime config links to. (AI-inferred)
 	ApphubService any
-	Criticality   any
-	Environment   any
+	// The App Hub-assigned criticality level of this service. (AI-inferred)
+	Criticality any
+	// The App Hub-assigned environment (e.g. production, staging) this service runs in. (AI-inferred)
+	Environment any
 }
 
 type InsightsConfig_RuntimeConfigs_AppHubWorkload struct {
+	// The App Hub-assigned criticality level of this workload. (AI-inferred)
 	Criticality any
+	// The App Hub-assigned environment (e.g. production, staging) this workload runs in. (AI-inferred)
 	Environment any
-	Workload    any
+	// The App Hub workload resource this runtime config links to. (AI-inferred)
+	Workload any
 }
 
 type InsightsConfig_RuntimeConfigs_GkeWorkload struct {
-	Cluster    any
+	// The GKE cluster this workload runs in. (AI-inferred)
+	Cluster any
+	// The GKE Deployment resource this runtime config links to. (AI-inferred)
 	Deployment any
 }
 
 type InsightsConfig_RuntimeConfigs_GoogleCloudRun struct {
+	// The URI of the Cloud Run service this runtime config links to. (AI-inferred)
 	ServiceUri any
 }
 
 type InsightsConfig_RuntimeConfigs struct {
-	AppHubService  any
+	// Identifies the App Hub service this application is deployed as, for correlating runtime insights. (AI-inferred)
+	AppHubService any
+	// Identifies the App Hub workload this application is deployed as, for correlating runtime insights. (AI-inferred)
 	AppHubWorkload any
-	GkeWorkload    any
+	// Identifies the GKE deployment this application runs as, for correlating runtime insights. (AI-inferred)
+	GkeWorkload any
+	// Identifies the Cloud Run service this application runs as, for correlating runtime insights. (AI-inferred)
 	GoogleCloudRun any
-	State          any
-	Uri            any
+	// Whether this runtime has been successfully `LINKED` to its own source repository, or is `UNLINKED`. (AI-inferred)
+	State any
+	// The URI of the runtime resource this config tracks. (AI-inferred)
+	Uri any
 }
 
 var InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysisFields = ubx.FieldMap{

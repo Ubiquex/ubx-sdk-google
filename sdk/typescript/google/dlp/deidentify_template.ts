@@ -2,29 +2,41 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor {
+  /** The blue color channel value. (AI-inferred) */
   blue?: number | Computed<number>;
+  /** The green color channel value. (AI-inferred) */
   green?: number | Computed<number>;
+  /** The red color channel value. (AI-inferred) */
   red?: number | Computed<number>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore {
+  /** The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred) */
   score?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes {
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred) */
   sensitivityScore?: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore | Computed<DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore>;
+  /** The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms {
+  /** Applies this transformation to every detected info type, rather than a specific selected list. (AI-inferred) */
   allInfoTypes?: unknown | Computed<unknown>;
+  /** Applies this transformation to all detected text, rather than only specific info types. (AI-inferred) */
   allText?: unknown | Computed<unknown>;
+  /** The RGB color used to redact matched regions in an image. (AI-inferred) */
   redactionColor?: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor | Computed<DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor>;
+  /** Restricts this transformation to specific, named info type(s), rather than all of them. (AI-inferred) */
   selectedInfoTypes?: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes | Computed<DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes>;
 }
 
@@ -34,135 +46,202 @@ export interface DeidentifyTemplate_DeidentifyConfig_ImageTransformations {
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue {
+  /** The day-of-month component of a date value. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month component of a date value. (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year component of a date value. (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max {
+  /** A `true`/`false` value, populated when this `Value`'s own type is boolean. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
+  /** A calendar date value (year/month/day), populated when this `Value`'s own type is a date. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   dateValue?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue>;
+  /** A day-of-the-week value (e.g. `MONDAY`), populated when this `Value`'s own type is a weekday. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   dayOfWeekValue?: string | Computed<string>;
+  /** A floating-point number, populated when this `Value`'s own type is a float. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   floatValue?: number | Computed<number>;
+  /** A whole-number value, populated when this `Value`'s own type is an integer. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   integerValue?: string | Computed<string>;
+  /** A text value, populated when this `Value`'s own type is a string. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** A time-of-day value (hour/minute/second), populated when this `Value`'s own type is a time and the date/timezone aren't significant. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   timeValue?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue>;
+  /** A full date-and-time value, populated when this `Value`'s own type is a timestamp. Mutually exclusive with this message's other `*_value` fields. (AI-inferred) */
   timestampValue?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets {
+  /** The upper bound of this range. (AI-inferred) */
   max?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
+  /** The lower bound of this range. (AI-inferred) */
   min?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
+  /** The value substituted in place of the original. (AI-inferred) */
   replacementValue?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig {
+  /** The bucket range(s) making up this bucketing configuration. (AI-inferred) */
   buckets?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets[] | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets[]>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore {
+  /** How many characters at the start/end are left unmasked, before masking the rest. (AI-inferred) */
   charactersToSkip?: string | Computed<string>;
+  /** A predefined character set (e.g. punctuation) skipped over when applying this transformation. (AI-inferred) */
   commonCharactersToIgnore?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig {
+  /** Character(s) skipped over (left as-is) when applying this transformation. (AI-inferred) */
   charactersToIgnore?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore[] | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore[]>;
+  /** The character substituted in place of each masked character. (AI-inferred) */
   maskingCharacter?: string | Computed<string>;
+  /** How many characters to mask, counting from the position `reverse_order` specifies. (AI-inferred) */
   numberToMask?: number | Computed<number>;
+  /** Whether masking counts characters from the end of the value rather than the start. (AI-inferred) */
   reverseOrder?: boolean | Computed<boolean>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context {
+  /** The identifying name for this resource, its own field, or its own info type. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped {
+  /** The resource name of the Cloud KMS key used to unwrap `wrapped_key`. (AI-inferred) */
   cryptoKeyName?: string | Computed<string>;
+  /** The crypto key's own bytes, encrypted (wrapped) by the Cloud KMS key named in `crypto_key_name`. (AI-inferred) */
   wrappedKey?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped {
+  /** The raw key bytes themselves. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey {
+  /** A crypto key wrapped by Cloud KMS -- Sensitive Data Protection calls KMS to unwrap `wrapped_key` using `crypto_key_name` before use. (AI-inferred) */
   kmsWrapped?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped>;
+  /** A crypto key generated fresh, at random, for this request only -- never persisted or reusable afterward. (AI-inferred) */
   transient?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** A crypto key supplied as raw, unencrypted bytes. Simpler than `kms_wrapped` but carries more risk of the key leaking, since Sensitive Data Protection never handles it wrapped. (AI-inferred) */
   unwrapped?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig {
+  /** Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred) */
   context?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
+  /** The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred) */
   surrogateInfoType?: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig {
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig {
+  /** A predefined character set (e.g. numeric, alphanumeric) the format-preserving encryption output is drawn from. (AI-inferred) */
   commonAlphabet?: string | Computed<string>;
+  /** Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred) */
   context?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
+  /** A caller-defined character set the format-preserving encryption output is drawn from, instead of a predefined `common_alphabet`. (AI-inferred) */
   customAlphabet?: string | Computed<string>;
+  /** The number of distinct symbols the format-preserving encryption's own alphabet uses. (AI-inferred) */
   radix?: number | Computed<number>;
+  /** The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred) */
   surrogateInfoType?: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes | Computed<DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig {
+  /** Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred) */
   context?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred) */
   cryptoKey?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey>;
+  /** The most days a date may be shifted earlier. (AI-inferred) */
   lowerBoundDays?: number | Computed<number>;
+  /** The most days a date may be shifted later. (AI-inferred) */
   upperBoundDays?: number | Computed<number>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig {
+  /** The width of each bucket, for fixed-size numeric bucketing. (AI-inferred) */
   bucketSize?: number | Computed<number>;
+  /** The lowest value included in bucketing. (AI-inferred) */
   lowerBound?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
+  /** The highest value included in bucketing. (AI-inferred) */
   upperBound?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig {
+  /** The literal value to substitute in. (AI-inferred) */
   newValue?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList {
+  /** The literal words/phrases making up this `word_list`. (AI-inferred) */
   words?: string[] | Computed<string[]>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig {
+  /** A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred) */
   wordList?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig {
+  /** Which component of the date/time value to keep, e.g. `YEAR` or `MONTH`. (AI-inferred) */
   partToExtract?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation {
+  /** Groups numeric or date values into named ranges, replacing the original value with its own bucket label. (AI-inferred) */
   bucketingConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig>;
+  /** Replaces characters in a matching value with a fixed masking character, optionally leaving some characters unmasked. (AI-inferred) */
   characterMaskConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig>;
+  /** De-identifies a value with a deterministic, reversible cryptographic transform -- the same input always produces the same output, letting values still be joined/grouped on after de-identification. (AI-inferred) */
   cryptoDeterministicConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig>;
+  /** De-identifies a value by replacing it with a cryptographic hash, a one-way transform that can't be reversed. (AI-inferred) */
   cryptoHashConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig>;
+  /** De-identifies a value using format-preserving encryption (FFX mode) -- the output has the same format (length, character set) as the input. (AI-inferred) */
   cryptoReplaceFfxFpeConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig>;
+  /** De-identifies dates by shifting them a random, per-context number of days within a bounded range, preserving date arithmetic (like intervals between events) while hiding the real dates. (AI-inferred) */
   dateShiftConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig>;
+  /** Groups numeric values into fixed-width ranges between `lower_bound` and `upper_bound`, each `bucket_size` wide. (AI-inferred) */
   fixedSizeBucketingConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig>;
+  /** De-identifies a value by removing it entirely, leaving no replacement. (AI-inferred) */
   redactConfig?: unknown | Computed<unknown>;
+  /** De-identifies a value by replacing it with a fixed, generic replacement token. (AI-inferred) */
   replaceConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig>;
+  /** De-identifies a value by replacing it with a value drawn from a supplied word list. (AI-inferred) */
   replaceDictionaryConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig>;
+  /** De-identifies a value by replacing it with its own detected info type name (e.g. `[EMAIL_ADDRESS]`), rather than a fixed token. (AI-inferred) */
   replaceWithInfoTypeConfig?: unknown | Computed<unknown>;
+  /** De-identifies a date/time value by keeping only one component of it (e.g. just the year), discarding the rest. (AI-inferred) */
   timePartConfig?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations {
+  /** The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred) */
   infoTypes?: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[] | Computed<DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes[]>;
+  /** A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred) */
   primitiveTransformation?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation>;
 }
 
@@ -172,32 +251,44 @@ export interface DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations {
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions {
+  /** A reference to the field this applies to. (AI-inferred) */
   field?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context>;
+  /** The comparison operator this condition uses. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred) */
   value?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions[] | Computed<DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions[]>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions {
+  /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions | Computed<DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions>;
+  /** How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred) */
   logicalOperator?: string | Computed<string>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition {
+  /** The condition expression(s) making up this rule. (AI-inferred) */
   expressions?: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions | Computed<DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations {
+  /** The condition that must hold for this rule to apply. (AI-inferred) */
   condition?: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition | Computed<DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition>;
+  /** The field(s) this applies to. (AI-inferred) */
   fields?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context[] | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context[]>;
+  /** De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred) */
   infoTypeTransformations?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations>;
+  /** A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred) */
   primitiveTransformation?: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation | Computed<DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation>;
 }
 
 export interface DeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions {
+  /** The condition that must hold for this rule to apply. (AI-inferred) */
   condition?: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition | Computed<DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition>;
 }
 

@@ -8,85 +8,123 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Agent_AdvancedSettings_AudioExportGcsDestination:
+    # The URI of an audio clip this response instructs the client to play. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Agent_AdvancedSettings_DtmfSettings:
+    # Whether this setting is turned on. (AI-inferred)
     enabled: Any = None
+    # How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred)
     endpointing_timeout_duration: Any = None
+    # The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
     finish_digit: Any = None
+    # The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred)
     interdigit_timeout_duration: Any = None
+    # The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred)
     max_digits: Any = None
 
 @dataclasses.dataclass
 class Agent_AdvancedSettings_LoggingSettings:
+    # Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred)
     enable_consent_based_redaction: Any = None
+    # Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred)
     enable_interaction_logging: Any = None
+    # Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
     enable_stackdriver_logging: Any = None
 
 @dataclasses.dataclass
 class Agent_AdvancedSettings_SpeechSettings:
+    # How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred)
     endpointer_sensitivity: Any = None
+    # Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred)
     models: Any = None
+    # How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred)
     no_speech_timeout: Any = None
+    # Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred)
     use_timeout_based_endpointing: Any = None
 
 @dataclasses.dataclass
 class Agent_AdvancedSettings:
+    # The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred)
     audio_export_gcs_destination: Any = None
+    # Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred)
     dtmf_settings: Any = None
+    # Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred)
     logging_settings: Any = None
+    # Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
     speech_settings: Any = None
 
 @dataclasses.dataclass
 class Agent_AnswerFeedbackSettings:
+    # Whether end users can submit feedback on generated answers. (AI-inferred)
     enable_answer_feedback: Any = None
 
 @dataclasses.dataclass
 class Agent_ClientCertificateSettings:
+    # The passphrase protecting this private key. (AI-inferred)
     passphrase: Any = None
+    # The private key used to authenticate. (AI-inferred)
     private_key: Any = None
+    # The SSL/TLS certificate used for this connection. (AI-inferred)
     ssl_certificate: Any = None
 
 @dataclasses.dataclass
 class Agent_GenAppBuilderSettings:
+    # A reference to the search or data engine this applies to. (AI-inferred)
     engine: Any = None
 
 @dataclasses.dataclass
 class Agent_GitIntegrationSettings_GithubSettings:
+    # An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
     access_token: Any = None
+    # The branch(es) of a source repository this integration tracks. (AI-inferred)
     branches: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The URI of the source repository this integration syncs with. (AI-inferred)
     repository_uri: Any = None
+    # The source repository branch this integration keeps in sync with. (AI-inferred)
     tracking_branch: Any = None
 
 @dataclasses.dataclass
 class Agent_GitIntegrationSettings:
+    # Configuration for syncing this agent's own definition with a GitHub repository specifically. (AI-inferred)
     github_settings: Any = None
 
 @dataclasses.dataclass
 class Agent_PersonalizationSettings:
+    # Default metadata about the end user, merged into each new session unless overridden. (AI-inferred)
     default_end_user_metadata: Any = None
 
 @dataclasses.dataclass
 class Agent_SpeechToTextSettings:
+    # Whether speech recognition is biased toward this agent's own phrases and entities. (AI-inferred)
     enable_speech_adaptation: Any = None
 
 @dataclasses.dataclass
 class Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_Voice:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The preferred voice gender for synthesized speech, e.g. `FEMALE`, `MALE`, or `NEUTRAL`. (AI-inferred)
     ssml_gender: Any = None
 
 @dataclasses.dataclass
 class Agent_TextToSpeechSettings_SynthesizeSpeechConfigs:
+    # Audio effects profile(s) (e.g. for a specific speaker/headphone type) applied to synthesized speech. (AI-inferred)
     effects_profile_id: Any = None
+    # The pitch adjustment applied to synthesized speech. (AI-inferred)
     pitch: Any = None
+    # The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred)
     speaking_rate: Any = None
+    # Configuration for which synthesized voice this agent uses. (AI-inferred)
     voice: Any = None
+    # The volume adjustment, in decibels, applied to synthesized speech. (AI-inferred)
     volume_gain_db: Any = None
 
 @dataclasses.dataclass
 class Agent_TextToSpeechSettings:
+    # Per-language configuration for how this agent's own text-to-speech output sounds. (AI-inferred)
     synthesize_speech_configs: Any = None
 
 _Agent_AdvancedSettings_AudioExportGcsDestinationFields = {
@@ -202,54 +240,100 @@ _Agent_TextToSpeechSettingsFields = {
 
 @dataclasses.dataclass
 class AgentConfig:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
     answer_feedback_settings: Any = None
+    # The URI of an image representing this agent in the console and integrations. (AI-inferred)
     avatar_uri: Any = None
+    # TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
     client_certificate_settings: Any = None
+    # The language this agent responds in when no other language is specified or detected. (AI-inferred)
     default_language_code: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
     enable_multi_language_training: Any = None
+    # Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
     enable_spell_correction: Any = None
+    # Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
     enable_stackdriver_logging: Any = None
+    # Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
     gen_app_builder_settings: Any = None
+    # Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
     git_integration_settings: Any = None
+    # Whether this resource is currently locked against modification. (AI-inferred)
     locked: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for personalizing agent behavior per end user. (AI-inferred)
     personalization_settings: Any = None
+    # A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
     security_settings: Any = None
+    # Configuration for this agent's own speech-to-text behavior. (AI-inferred)
     speech_to_text_settings: Any = None
+    # The flow the conversation begins in. (AI-inferred)
     start_flow: Any = None
+    # The playbook the conversation begins in. (AI-inferred)
     start_playbook: Any = None
+    # The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
     supported_language_codes: Any = None
+    # Configuration for this agent's own text-to-speech behavior. (AI-inferred)
     text_to_speech_settings: Any = None
+    # The time zone this applies to, e.g. `America/Los_Angeles`. (AI-inferred)
     time_zone: Any = None
 
 @dataclasses.dataclass
 class AgentAttrs:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
     answer_feedback_settings: Any = None
+    # The URI of an image representing this agent in the console and integrations. (AI-inferred)
     avatar_uri: Any = None
+    # TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
     client_certificate_settings: Any = None
+    # The language this agent responds in when no other language is specified or detected. (AI-inferred)
     default_language_code: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
     enable_multi_language_training: Any = None
+    # Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
     enable_spell_correction: Any = None
+    # Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
     enable_stackdriver_logging: Any = None
+    # Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
     gen_app_builder_settings: Any = None
+    # Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
     git_integration_settings: Any = None
+    # Whether this resource is currently locked against modification. (AI-inferred)
     locked: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configuration for personalizing agent behavior per end user. (AI-inferred)
     personalization_settings: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
     satisfies_pzi: Any = None
+    # Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
     satisfies_pzs: Any = None
+    # A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
     security_settings: Any = None
+    # Configuration for this agent's own speech-to-text behavior. (AI-inferred)
     speech_to_text_settings: Any = None
+    # The flow the conversation begins in. (AI-inferred)
     start_flow: Any = None
+    # The playbook the conversation begins in. (AI-inferred)
     start_playbook: Any = None
+    # The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
     supported_language_codes: Any = None
+    # Configuration for this agent's own text-to-speech behavior. (AI-inferred)
     text_to_speech_settings: Any = None
+    # The time zone this applies to, e.g. `America/Los_Angeles`. (AI-inferred)
     time_zone: Any = None
 
 Agent = ubx.ResourceBinding(

@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Spoke_Gateway_IpRangeReservations {
+  /** The IP address range, in CIDR notation, this applies to. (AI-inferred) */
   ipRange?: string | Computed<string>;
 }
 
@@ -53,7 +54,9 @@ export interface Spoke_LinkedProducerVpcNetwork {
 }
 
 export interface Spoke_LinkedRouterApplianceInstances_Instances {
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** A reference to the virtual machine this applies to. (AI-inferred) */
   virtualMachine?: string | Computed<string>;
 }
 
@@ -90,8 +93,11 @@ export interface Spoke_LinkedVpcNetwork {
 }
 
 export interface Spoke_Reasons {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** Additional detail intended for the end user. (AI-inferred) */
   userDetails?: string | Computed<string>;
 }
 
@@ -176,6 +182,7 @@ export interface SpokeConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes. */
   linkedInterconnectAttachments?: Spoke_LinkedInterconnectAttachments | Computed<Spoke_LinkedInterconnectAttachments>;
+  /** A reference to the producer's own linked VPC network. (AI-inferred) */
   linkedProducerVpcNetwork?: Spoke_LinkedProducerVpcNetwork | Computed<Spoke_LinkedProducerVpcNetwork>;
   /** A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke. */
   linkedRouterApplianceInstances?: Spoke_LinkedRouterApplianceInstances | Computed<Spoke_LinkedRouterApplianceInstances>;
@@ -206,6 +213,7 @@ export interface SpokeAttrs {
   labels: Record<string, string>;
   /** A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes. */
   linkedInterconnectAttachments: Spoke_LinkedInterconnectAttachments;
+  /** A reference to the producer's own linked VPC network. (AI-inferred) */
   linkedProducerVpcNetwork: Spoke_LinkedProducerVpcNetwork;
   /** A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke. */
   linkedRouterApplianceInstances: Spoke_LinkedRouterApplianceInstances;

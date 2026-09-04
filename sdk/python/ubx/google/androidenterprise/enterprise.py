@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Enterprise_Administrator:
+    # The real email address of this enterprise's own designated administrator. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass
@@ -38,15 +39,21 @@ _Enterprise_PlaySearchFields = {
 
 @dataclasses.dataclass
 class EnterpriseConfig:
+    # Real settings controlling whether this enterprise supports app-level managed configurations. (AI-inferred)
     managed_configurations: Any = None
     # The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Use whitespaces to separate multiple parent URIs.
     parent: Any = None
     # Deprecated. Use PlaySearch.approveApps.
     permission: Any = None
+    # Real settings controlling whether users in this enterprise can search all of Google Play, not just the approved catalog. (AI-inferred)
     play_search: Any = None
+    # Real settings controlling whether this enterprise can publish private, org-internal apps to its own managed Google Play store. (AI-inferred)
     private_apps: Any = None
+    # Real settings controlling whether this enterprise's own managed Google Play store can be customized via the Store Layout APIs. (AI-inferred)
     store_builder: Any = None
+    # Real settings controlling whether this enterprise supports publishing web apps to its own managed Google Play store. (AI-inferred)
     web_apps: Any = None
+    # Real settings controlling whether this enterprise supports Android zero-touch enrollment. (AI-inferred)
     zero_touch: Any = None
 
 @dataclasses.dataclass
@@ -59,6 +66,7 @@ class EnterpriseAttrs:
     google_authentication_settings: Any = None
     # The unique ID for the enterprise.
     id: Any = None
+    # Real settings controlling whether this enterprise supports app-level managed configurations. (AI-inferred)
     managed_configurations: Any = None
     # The type of managed Google domain
     managed_google_domain_type: Any = None
@@ -68,12 +76,17 @@ class EnterpriseAttrs:
     parent: Any = None
     # Deprecated. Use PlaySearch.approveApps.
     permission: Any = None
+    # Real settings controlling whether users in this enterprise can search all of Google Play, not just the approved catalog. (AI-inferred)
     play_search: Any = None
     # The enterprise's primary domain, such as "example.com".
     primary_domain: Any = None
+    # Real settings controlling whether this enterprise can publish private, org-internal apps to its own managed Google Play store. (AI-inferred)
     private_apps: Any = None
+    # Real settings controlling whether this enterprise's own managed Google Play store can be customized via the Store Layout APIs. (AI-inferred)
     store_builder: Any = None
+    # Real settings controlling whether this enterprise supports publishing web apps to its own managed Google Play store. (AI-inferred)
     web_apps: Any = None
+    # Real settings controlling whether this enterprise supports Android zero-touch enrollment. (AI-inferred)
     zero_touch: Any = None
 
 Enterprise = ubx.ResourceBinding(

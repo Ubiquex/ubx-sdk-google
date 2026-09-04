@@ -8,23 +8,35 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Policy_Alternate_Spec_Rules_Condition:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A boolean expression evaluated to determine whether this rule applies. (AI-inferred)
     expression: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class Policy_Alternate_Spec_Rules_Values:
+    # The set of values permitted by this constraint. (AI-inferred)
     allowed_values: Any = None
+    # The set of values explicitly disallowed by this constraint. (AI-inferred)
     denied_values: Any = None
 
 @dataclasses.dataclass
 class Policy_Alternate_Spec_Rules:
+    # Whether every value is permitted, with no restriction. (AI-inferred)
     allow_all: Any = None
+    # The condition that must be satisfied for this rule to apply. (AI-inferred)
     condition: Any = None
+    # Whether every value is disallowed, with no exceptions. (AI-inferred)
     deny_all: Any = None
+    # Whether this constraint's own rule is actively enforced, rather than only evaluated. (AI-inferred)
     enforce: Any = None
+    # The parameter(s) configuring this policy. (AI-inferred)
     parameters: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass

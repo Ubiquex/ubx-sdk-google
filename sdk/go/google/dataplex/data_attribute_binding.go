@@ -4,8 +4,10 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAttributeBinding_Paths struct {
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
 	Attributes any
-	Name       any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 var DataAttributeBinding_PathsFields = ubx.FieldMap{

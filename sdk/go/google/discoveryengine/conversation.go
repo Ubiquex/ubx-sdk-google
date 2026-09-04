@@ -4,67 +4,95 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Conversation_Messages_Reply_Summary_SafetyAttributes struct {
+	// The category/categories this applies to. (AI-inferred)
 	Categories any
-	Scores     any
+	// The score(s) computed for this result. (AI-inferred)
+	Scores any
 }
 
 type Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_Sources struct {
+	// This reference's own position within its own containing list. (AI-inferred)
 	ReferenceIndex any
 }
 
 type Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations struct {
-	EndIndex   any
-	Sources    any
+	// The ending position this range covers. (AI-inferred)
+	EndIndex any
+	// The source(s) this content is drawn from. (AI-inferred)
+	Sources any
+	// The starting position this range covers. (AI-inferred)
 	StartIndex any
 }
 
 type Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata struct {
+	// The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred)
 	Citations any
 }
 
 type Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContents struct {
-	Content        any
+	// The content of this message or resource. (AI-inferred)
+	Content any
+	// An identifier for the specific page this applies to. (AI-inferred)
 	PageIdentifier any
 }
 
 type Conversation_Messages_Reply_Summary_SummaryWithMetadata_References struct {
+	// The text content of this retrieved chunk. (AI-inferred)
 	ChunkContents any
-	Document      any
-	Title         any
-	Uri           any
+	// A reference to the document this applies to. (AI-inferred)
+	Document any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Conversation_Messages_Reply_Summary_SummaryWithMetadata struct {
+	// Detail about which source(s) support specific claims in the generated answer. (AI-inferred)
 	CitationMetadata any
-	References       any
-	Summary          any
+	// The source reference(s) supporting this content. (AI-inferred)
+	References any
+	// A generated summary of the content. (AI-inferred)
+	Summary any
 }
 
 type Conversation_Messages_Reply_Summary struct {
-	SafetyAttributes      any
+	// The safety classification(s) detected in this content. (AI-inferred)
+	SafetyAttributes any
+	// Why summary generation was skipped, when it was. (AI-inferred)
 	SummarySkippedReasons any
-	SummaryText           any
-	SummaryWithMetadata   any
+	// The plain-text content of the generated summary. (AI-inferred)
+	SummaryText any
+	// The generated summary along with supporting citation and source metadata. (AI-inferred)
+	SummaryWithMetadata any
 }
 
 type Conversation_Messages_Reply struct {
+	// A generated summary of the content. (AI-inferred)
 	Summary any
 }
 
 type Conversation_Messages_UserInput_Context struct {
-	ActiveDocument   any
+	// The document currently being processed or displayed. (AI-inferred)
+	ActiveDocument any
+	// The document(s) supplying context for this request. (AI-inferred)
 	ContextDocuments any
 }
 
 type Conversation_Messages_UserInput struct {
+	// Additional context supplied for this request. (AI-inferred)
 	Context any
-	Input   any
+	// The input provided to this operation. (AI-inferred)
+	Input any
 }
 
 type Conversation_Messages struct {
+	// Output only. The timestamp when this resource was created. (AI-inferred)
 	CreateTime any
-	Reply      any
-	UserInput  any
+	// A single response message. (AI-inferred)
+	Reply any
+	// The end user's own input for this turn. (AI-inferred)
+	UserInput any
 }
 
 var Conversation_Messages_Reply_Summary_SafetyAttributesFields = ubx.FieldMap{

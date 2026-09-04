@@ -22,14 +22,20 @@ export interface Connection_CloudSql {
 }
 
 export interface Connection_Connection_Errors_Details {
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result or error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Connection_Connection_Errors {
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: Connection_Connection_Errors_Details | Computed<Connection_Connection_Errors_Details>;
+  /** Additional detail about this event. (AI-inferred) */
   extraInfo?: string | Computed<string>;
+  /** The timestamp(s) recorded for this event. (AI-inferred) */
   timestamps?: string[] | Computed<string[]>;
 }
 

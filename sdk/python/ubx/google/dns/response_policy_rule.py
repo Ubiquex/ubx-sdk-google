@@ -8,70 +8,111 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers:
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The IP protocol version this applies to. (AI-inferred)
     ip_protocol: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The type of load balancer this internal target is, e.g. regional internal. (AI-inferred)
     load_balancer_type: Any = None
+    # The VPC network this private zone or policy is visible from. (AI-inferred)
     network_url: Any = None
+    # A network port number. (AI-inferred)
     port: Any = None
+    # The Google Cloud project this applies to. (AI-inferred)
     project: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets:
+    # The external IP address(es) a forwarding rule directs matching queries to. (AI-inferred)
     external_endpoints: Any = None
+    # The internal load balancer(s) this record's own routing policy targets. (AI-inferred)
     internal_load_balancers: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items:
+    # The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
     health_checked_targets: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The record data (RDATA) value(s) for this DNS record. (AI-inferred)
     rrdatas: Any = None
+    # The DNSSEC signature record data for this record set. (AI-inferred)
     signature_rrdatas: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo:
+    # Whether traffic is restricted to healthy targets within the same region as the client, when using geo-routing. (AI-inferred)
     enable_fencing: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_PrimaryBackup:
+    # The fallback geo-routing policy applied when every primary target in this routing entry is unhealthy. (AI-inferred)
     backup_geo_targets: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The primary target(s) served while healthy, before falling back to backup targets. (AI-inferred)
     primary_targets: Any = None
+    # The fraction of traffic still routed to a target while it transitions out of rotation, rather than cutting over immediately. (AI-inferred)
     trickle_traffic: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr_Items:
+    # The target(s) whose own health is checked before being included in routing responses. (AI-inferred)
     health_checked_targets: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The record data (RDATA) value(s) for this DNS record. (AI-inferred)
     rrdatas: Any = None
+    # The DNSSEC signature record data for this record set. (AI-inferred)
     signature_rrdatas: Any = None
+    # The relative weight of this target in weighted round-robin routing -- higher values receive proportionally more traffic. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr:
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy:
+    # A routing policy entry keyed by the geographic origin of the query. (AI-inferred)
     geo: Any = None
+    # A reference to the health check used to determine target availability for routing. (AI-inferred)
     health_check: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # A routing policy that serves primary targets while healthy, falling back to backup targets otherwise. (AI-inferred)
     primary_backup: Any = None
+    # A weighted round-robin routing policy entry. (AI-inferred)
     wrr: Any = None
 
 @dataclasses.dataclass
 class ResponsePolicyRule_LocalData_LocalDatas:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The DNS record name this applies to. (AI-inferred)
     name: Any = None
+    # Configures this record to return different answers based on the querying client, e.g. by geo or weighted round-robin. (AI-inferred)
     routing_policy: Any = None
+    # The record data (RDATA) value(s) for this DNS record. (AI-inferred)
     rrdatas: Any = None
+    # The DNSSEC signature record data for this record set. (AI-inferred)
     signature_rrdatas: Any = None
+    # How long, in seconds, this record may be cached by resolvers. (AI-inferred)
     ttl: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -205,7 +246,9 @@ class ResponsePolicyRuleConfig:
     behavior: Any = None
     # The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
     dns_name: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # Static record data returned directly, rather than resolved from a health-checked target. (AI-inferred)
     local_data: Any = None
     # An identifier for this rule. Must be unique with the ResponsePolicy.
     rule_name: Any = None
@@ -216,7 +259,9 @@ class ResponsePolicyRuleAttrs:
     behavior: Any = None
     # The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
     dns_name: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # Static record data returned directly, rather than resolved from a health-checked target. (AI-inferred)
     local_data: Any = None
     # An identifier for this rule. Must be unique with the ResponsePolicy.
     rule_name: Any = None

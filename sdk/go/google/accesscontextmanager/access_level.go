@@ -4,37 +4,56 @@ package accesscontextmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessLevel_Basic_Conditions_DevicePolicy_OsConstraints struct {
-	MinimumVersion          any
-	OsType                  any
+	// The minimum required OS version. (AI-inferred)
+	MinimumVersion any
+	// The operating system type this constraint applies to. (AI-inferred)
+	OsType any
+	// Whether the device must be a verified, unmodified Chrome OS device. (AI-inferred)
 	RequireVerifiedChromeOs any
 }
 
 type AccessLevel_Basic_Conditions_DevicePolicy struct {
+	// The device management level(s) (e.g. managed, unmanaged) this access level accepts. (AI-inferred)
 	AllowedDeviceManagementLevels any
-	AllowedEncryptionStatuses     any
-	OsConstraints                 any
-	RequireAdminApproval          any
-	RequireCorpOwned              any
-	RequireScreenlock             any
+	// The device disk encryption status/statuses this access level accepts. (AI-inferred)
+	AllowedEncryptionStatuses any
+	// Device operating system requirement(s) this access level enforces. (AI-inferred)
+	OsConstraints any
+	// Whether admin approval is required for the device to be considered compliant. (AI-inferred)
+	RequireAdminApproval any
+	// Whether the device must be corporately owned. (AI-inferred)
+	RequireCorpOwned any
+	// Whether the device must have a screen lock configured. (AI-inferred)
+	RequireScreenlock any
 }
 
 type AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetwork struct {
-	Network          any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The VPC network and IP address range(s) this rule matches traffic from. (AI-inferred)
 	VpcIpSubnetworks any
 }
 
 type AccessLevel_Basic_Conditions_VpcNetworkSources struct {
+	// A reference to the VPC subnetwork this applies to. (AI-inferred)
 	VpcSubnetwork any
 }
 
 type AccessLevel_Basic_Conditions struct {
-	DevicePolicy         any
-	IpSubnetworks        any
-	Members              any
-	Negate               any
-	Regions              any
+	// Restricts access based on the requesting device's own posture, e.g. encryption and management status. (AI-inferred)
+	DevicePolicy any
+	// The IP address range(s), in CIDR notation, this access level accepts requests from. (AI-inferred)
+	IpSubnetworks any
+	// The principal(s) this applies to. (AI-inferred)
+	Members any
+	// Whether this condition's own result is inverted. (AI-inferred)
+	Negate any
+	// The geographic region(s) this access level accepts requests from. (AI-inferred)
+	Regions any
+	// The access level(s) a request must satisfy for this rule to permit it. (AI-inferred)
 	RequiredAccessLevels any
-	VpcNetworkSources    any
+	// The VPC network(s) this rule matches traffic from. (AI-inferred)
+	VpcNetworkSources any
 }
 
 type AccessLevel_Basic struct {

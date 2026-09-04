@@ -8,20 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BigQueryExportConfig:
+    # A reference to the BigQuery dataset this applies to. (AI-inferred)
     dataset: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class BigQueryExportAttrs:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A reference to the BigQuery dataset this applies to. (AI-inferred)
     dataset: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The identity that most recently modified this resource. (AI-inferred)
     most_recent_editor: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The identity this applies to. (AI-inferred)
     principal: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 BigQueryExport = ubx.ResourceBinding(

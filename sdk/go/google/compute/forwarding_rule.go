@@ -4,22 +4,30 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ForwardingRule_AttachedExtensions struct {
+	// The self-link or complete URL of the extension resource attached to this forwarding rule. (AI-inferred)
 	Reference any
 }
 
 type ForwardingRule_MetadataFilters_FilterLabels struct {
-	Name  any
+	// The name of the metadata filter label. This is the key of the label. (AI-inferred)
+	Name any
+	// The value of the metadata filter label. This is the value part of a key-value pair used to match incoming metadata traffic for the forwarding rule. (AI-inferred)
 	Value any
 }
 
 type ForwardingRule_MetadataFilters struct {
-	FilterLabels        any
+	// The list of label-value pairs to match against for the forwarding rule's metadata filter. (AI-inferred)
+	FilterLabels any
+	// Specifies how the metadata filter labels are matched against traffic. Valid values are MATCH_ALL (require all labels to match), MATCH_ANY (allow any one label to match), and NOT_SET (no specific matching criteria). (AI-inferred)
 	FilterMatchCriteria any
 }
 
 type ForwardingRule_ServiceDirectoryRegistrations struct {
-	Namespace              any
-	Service                any
+	// The Service Directory namespace where the forwarding rule will be registered as a service. (AI-inferred)
+	Namespace any
+	// The name of the Service Directory service to register the forwarding rule with. If not specified, a service name of the form `forwarding_rule_<forwarding_rule_name>` is automatically generated. (AI-inferred)
+	Service any
+	// The region of the Service Directory service to register. If not specified, it defaults to the region of the forwarding rule. (AI-inferred)
 	ServiceDirectoryRegion any
 }
 
@@ -168,7 +176,8 @@ type ForwardingRuleAttrs struct {
 	// The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The ports field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, or SCTP, and - It's applicable only to the following products: internal passthrough Network Load Balancers, backend service-based external passthrough Network Load Balancers, and internal protocol forwarding. - You can specify a list of up to five ports by number, separated by commas. The ports can be contiguous or discontiguous. For external forwarding rules, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol fields) if they share at least one port number. For internal forwarding rules within the same VPC network, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair if they share at least one port number. @pattern: \\d+(?:-\\d+)?
 	Ports any
 	// [Output Only] The PSC connection id of the PSC forwarding rule.
-	PscConnectionId     any
+	PscConnectionId any
+	// The status of the Private Service Connect (PSC) connection associated with this forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred)
 	PscConnectionStatus any
 	// Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any

@@ -9,8 +9,11 @@ export interface ConnectCluster_CapacityConfig {
 }
 
 export interface ConnectCluster_GcpConfig_AccessConfig_NetworkConfigs {
+  /** Additional subnet(s), beyond `primary_subnet`, this Connect cluster is reachable from. (AI-inferred) */
   additionalSubnets?: string[] | Computed<string[]>;
+  /** The DNS domain name(s) this Connect cluster is resolvable under from within the configured network. (AI-inferred) */
   dnsDomainNames?: string[] | Computed<string[]>;
+  /** The primary subnet this Connect cluster is reachable from. (AI-inferred) */
   primarySubnet?: string | Computed<string>;
 }
 

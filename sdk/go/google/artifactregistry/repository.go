@@ -4,23 +4,35 @@ package artifactregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Repository_CleanupPolicies_Condition struct {
-	NewerThan           any
-	OlderThan           any
+	// Matches versions newer than this duration. (AI-inferred)
+	NewerThan any
+	// Matches versions older than this duration. (AI-inferred)
+	OlderThan any
+	// Restricts this policy to package names starting with one of these prefixes. (AI-inferred)
 	PackageNamePrefixes any
-	TagPrefixes         any
-	TagState            any
+	// Restricts this policy to versions whose tags start with one of these prefixes. (AI-inferred)
+	TagPrefixes any
+	// Restricts this policy to versions that are `TAGGED`, `UNTAGGED`, or either. (AI-inferred)
+	TagState any
+	// Restricts this policy to version names starting with one of these prefixes. (AI-inferred)
 	VersionNamePrefixes any
 }
 
 type Repository_CleanupPolicies_MostRecentVersions struct {
-	KeepCount           any
+	// How many of the most recent versions to keep per matching package. (AI-inferred)
+	KeepCount any
+	// Restricts this keep-most-recent rule to package names starting with one of these prefixes. (AI-inferred)
 	PackageNamePrefixes any
 }
 
 type Repository_CleanupPolicies struct {
-	Action             any
-	Condition          any
-	Id                 any
+	// What this cleanup policy does to matching versions: `KEEP` or `DELETE`. (AI-inferred)
+	Action any
+	// The criteria a package version must match for this cleanup policy to apply. (AI-inferred)
+	Condition any
+	// A caller-chosen identifier for this cleanup policy, unique within its own repository. (AI-inferred)
+	Id any
+	// A cleanup policy variant that keeps only the N most recent versions per package, rather than matching by age or tag. (AI-inferred)
 	MostRecentVersions any
 }
 
@@ -107,8 +119,11 @@ type Repository_RemoteRepositoryConfig struct {
 }
 
 type Repository_VirtualRepositoryConfig_UpstreamPolicies struct {
-	Id         any
-	Priority   any
+	// A caller-chosen identifier for this upstream policy, unique within its own virtual repository. (AI-inferred)
+	Id any
+	// The order this upstream is checked in relative to the virtual repository's other upstreams -- lower values are checked first. (AI-inferred)
+	Priority any
+	// The upstream repository this policy references. (AI-inferred)
 	Repository any
 }
 

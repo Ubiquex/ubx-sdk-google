@@ -52,7 +52,8 @@ type AlphaAcceleratorPodControllerAttrs struct {
 	// An optional description of this resource.
 	Description any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id   any
+	Id any
+	// The kind of resource this is, a fixed, server-set discriminator string. (AI-inferred)
 	Kind any
 	// Map of management interfaces. Keys must be valid RFC1035 names and at most 63 characters long.
 	ManagementInterfaces any

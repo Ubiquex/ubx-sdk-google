@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Release_BuildArtifacts:
+    # The container image reference to run. (AI-inferred)
     image: Any = None
+    # A traffic tag applied to a specific revision. (AI-inferred)
     tag: Any = None
 
 @dataclasses.dataclass
@@ -59,62 +61,95 @@ class Release_Condition:
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_Git:
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # A reference to the source repository. (AI-inferred)
     repo: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo:
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # A reference to the source repository. (AI-inferred)
     repository: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage:
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # The source this data or configuration is read from. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules:
+    # The configuration(s) making up this resource. (AI-inferred)
     configs: Any = None
+    # Configuration for reading this deployment's own manifests from a Git repository. (AI-inferred)
     git: Any = None
+    # A reference to the Cloud Build-connected repository this reads from. (AI-inferred)
     google_cloud_build_repo: Any = None
+    # Configuration for reading this deployment's own manifests from Cloud Storage. (AI-inferred)
     google_cloud_storage: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_CustomActions:
+    # Which deploy action this job performs, e.g. `deploy` or `promote`. (AI-inferred)
     deploy_action: Any = None
+    # Additional Skaffold configuration module(s) to include when rendering this release. (AI-inferred)
     include_skaffold_modules: Any = None
+    # Which render action this job performs. (AI-inferred)
     render_action: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_Tasks_Deploy_Container:
+    # The command-line argument(s) passed to the container. (AI-inferred)
     args: Any = None
+    # The container entrypoint command to run, overriding the image's own default. (AI-inferred)
     command: Any = None
+    # Environment variable(s) set in the container. (AI-inferred)
     env: Any = None
+    # The container image reference to run. (AI-inferred)
     image: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_Tasks_Deploy:
+    # A single container's own configuration. (AI-inferred)
     container: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots_Tasks:
+    # Configuration for the deploy action itself. (AI-inferred)
     deploy: Any = None
+    # Configuration for the render action itself. (AI-inferred)
     render: Any = None
 
 @dataclasses.dataclass
 class Release_CustomTargetTypeSnapshots:
+    # Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
     annotations: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Caller-defined action(s) run as part of this phase, beyond the built-in predeploy/postdeploy/verify hooks. (AI-inferred)
     custom_actions: Any = None
+    # A reference to the custom target type this target uses. (AI-inferred)
     custom_target_type_id: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The task(s) making up this job. (AI-inferred)
     tasks: Any = None
+    # Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
     uid: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
@@ -151,127 +186,192 @@ class Release_DeliveryPipelineSnapshot_Condition:
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParameters:
+    # Label(s) a target must carry for this automation rule to apply to it. (AI-inferred)
     match_target_labels: Any = None
+    # The value(s) making up this configuration. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks:
+    # How often this check or action recurs. (AI-inferred)
     frequency: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # A single unit of work within this job. (AI-inferred)
     task: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks:
+    # The Cloud Monitoring alert policy/policies this check watches. (AI-inferred)
     alert_policies: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud:
+    # Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred)
     alert_policy_checks: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis:
+    # Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred)
     custom_checks: Any = None
+    # How long this phase, wait, or window lasts. (AI-inferred)
     duration: Any = None
+    # Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred)
     google_cloud: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy:
+    # The action(s) this hook or job performs. (AI-inferred)
     actions: Any = None
+    # The task(s) making up this job. (AI-inferred)
     tasks: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig:
+    # The task(s) making up this job. (AI-inferred)
     tasks: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment:
+    # Configuration for automated analysis run against a rollout phase. (AI-inferred)
     analysis: Any = None
+    # The progressive traffic percentage step(s) this canary deployment advances through. (AI-inferred)
     percentages: Any = None
+    # Configuration for actions run after a phase's own deployment completes. (AI-inferred)
     postdeploy: Any = None
+    # Configuration for actions run before a phase's own deployment starts. (AI-inferred)
     predeploy: Any = None
+    # Configuration for verification tests run against a phase's own deployment. (AI-inferred)
     verify: Any = None
+    # Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
     verify_config: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs:
+    # Configuration for automated analysis run against a rollout phase. (AI-inferred)
     analysis: Any = None
+    # A percentage value. (AI-inferred)
     percentage: Any = None
+    # A reference to the phase this applies to. (AI-inferred)
     phase_id: Any = None
+    # Configuration for actions run after a phase's own deployment completes. (AI-inferred)
     postdeploy: Any = None
+    # Configuration for actions run before a phase's own deployment starts. (AI-inferred)
     predeploy: Any = None
+    # The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
     profiles: Any = None
+    # Configuration for verification tests run against a phase's own deployment. (AI-inferred)
     verify: Any = None
+    # Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
     verify_config: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment:
+    # Per-phase configuration overrides for a canary or custom deployment strategy. (AI-inferred)
     phase_configs: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun:
+    # Whether traffic is shifted automatically through the canary steps, without waiting for manual approval at each one. (AI-inferred)
     automatic_traffic_control: Any = None
+    # Traffic tag(s) applied to the canary revision, for routing test traffic to it directly. (AI-inferred)
     canary_revision_tags: Any = None
+    # Traffic tag(s) applied to the previous (stable) revision, for routing test traffic to it directly. (AI-inferred)
     prior_revision_tags: Any = None
+    # Traffic tag(s) applied to the stable (non-canary) revision, for routing test traffic to it directly. (AI-inferred)
     stable_revision_tags: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations:
+    # The target ID(s) this promotion/rollout is directed to. (AI-inferred)
     destination_ids: Any = None
+    # Whether the Kubernetes Service is updated to route production traffic as the canary progresses, rather than only the underlying workload. (AI-inferred)
     propagate_service: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh:
+    # Configuration or detail about a specific deployment. (AI-inferred)
     deployment: Any = None
+    # The HTTP route resource splitting traffic between revisions for this canary deployment. (AI-inferred)
     http_route: Any = None
+    # The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
     pod_selector_label: Any = None
+    # The destination(s) traffic is routed to as part of this canary deployment. (AI-inferred)
     route_destinations: Any = None
+    # How long to wait after updating traffic routing before proceeding to the next step. (AI-inferred)
     route_update_wait_time: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
+    # How long traffic is held on the stable revision after a canary is rolled back, before resuming normal routing. (AI-inferred)
     stable_cutback_duration: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking:
+    # Configuration or detail about a specific deployment. (AI-inferred)
     deployment: Any = None
+    # Whether extra pod capacity is skipped when preparing this deployment, trading faster rollout for less headroom during the transition. (AI-inferred)
     disable_pod_overprovisioning: Any = None
+    # The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
     pod_selector_label: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes:
+    # Configuration for routing canary traffic through a Kubernetes Gateway API-based service mesh. (AI-inferred)
     gateway_service_mesh: Any = None
+    # Configuration for routing canary traffic using Cloud Service Mesh. (AI-inferred)
     service_networking: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig:
+    # Configuration specific to deploying this target as a Cloud Run service. (AI-inferred)
     cloud_run: Any = None
+    # Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred)
     kubernetes: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary:
+    # Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
     canary_deployment: Any = None
+    # A canary strategy using caller-defined percentage steps and phase configuration, rather than Cloud Deploy's own standard canary shape. (AI-inferred)
     custom_canary_deployment: Any = None
+    # Configuration specific to the runtime (GKE, Cloud Run, etc.) this target deploys to. (AI-inferred)
     runtime_config: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Standard:
+    # Configuration for automated analysis run against a rollout phase. (AI-inferred)
     analysis: Any = None
+    # Configuration for actions run after a phase's own deployment completes. (AI-inferred)
     postdeploy: Any = None
+    # Configuration for actions run before a phase's own deployment starts. (AI-inferred)
     predeploy: Any = None
+    # Configuration for verification tests run against a phase's own deployment. (AI-inferred)
     verify: Any = None
+    # Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
     verify_config: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy:
+    # Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
     canary: Any = None
+    # Configuration for the standard (non-canary, all-at-once) rollout strategy. (AI-inferred)
     standard: Any = None
 
 @dataclasses.dataclass
 class Release_DeliveryPipelineSnapshot_SerialPipeline_Stages:
+    # Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred)
     deploy_parameters: Any = None
+    # The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
     profiles: Any = None
+    # Which rollout strategy this release uses, e.g. standard or canary. (AI-inferred)
     strategy: Any = None
+    # A reference to the target this applies to. (AI-inferred)
     target_id: Any = None
 
 @dataclasses.dataclass
@@ -306,117 +406,181 @@ class Release_DeliveryPipelineSnapshot:
 
 @dataclasses.dataclass
 class Release_TargetArtifacts_PhaseArtifacts:
+    # The path within the release's own configuration where per-job Kubernetes manifests are found. (AI-inferred)
     job_manifests_path: Any = None
+    # The path within the release's own configuration where Kubernetes manifests are found. (AI-inferred)
     manifest_path: Any = None
+    # The path to the Skaffold configuration file used to render this release. (AI-inferred)
     skaffold_config_path: Any = None
 
 @dataclasses.dataclass
 class Release_TargetArtifacts:
+    # The URI of a built artifact. (AI-inferred)
     artifact_uri: Any = None
+    # The path within the release's own configuration where Kubernetes manifests are found. (AI-inferred)
     manifest_path: Any = None
+    # Build artifact(s) produced specifically for this rollout phase. (AI-inferred)
     phase_artifacts: Any = None
+    # The path to the Skaffold configuration file used to render this release. (AI-inferred)
     skaffold_config_path: Any = None
 
 @dataclasses.dataclass
 class Release_TargetRenders_Metadata_CloudRun:
+    # A reference to a single job. (AI-inferred)
     job: Any = None
+    # A specific revision of this resource. (AI-inferred)
     revision: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
+    # A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
     worker_pool: Any = None
 
 @dataclasses.dataclass
 class Release_TargetRenders_Metadata_Custom:
+    # The value(s) making up this configuration. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Release_TargetRenders_Metadata_Kubernetes:
+    # Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
     canary_deployment: Any = None
+    # Configuration or detail about a specific deployment. (AI-inferred)
     deployment: Any = None
+    # The Kubernetes namespace this deployment applies to. (AI-inferred)
     kubernetes_namespace: Any = None
 
 @dataclasses.dataclass
 class Release_TargetRenders_Metadata:
+    # Configuration specific to deploying this target as a Cloud Run service. (AI-inferred)
     cloud_run: Any = None
+    # A caller-defined configuration, as an alternative to a built-in option. (AI-inferred)
     custom: Any = None
+    # Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred)
     kubernetes: Any = None
 
 @dataclasses.dataclass
 class Release_TargetRenders:
+    # A machine-readable code identifying why this operation failed. (AI-inferred)
     failure_cause: Any = None
+    # A human-readable description of why this operation failed. (AI-inferred)
     failure_message: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # A reference to the Cloud Build build that rendered this release. (AI-inferred)
     rendering_build: Any = None
+    # The current status of rendering this release's own manifests. (AI-inferred)
     rendering_state: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_AnthosCluster:
+    # A reference to the GKE Hub / Fleet membership this target deploys to. (AI-inferred)
     membership: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_AssociatedEntities_GkeClusters:
+    # A reference to the GKE cluster this target deploys to. (AI-inferred)
     cluster: Any = None
+    # Uses a DNS-resolvable endpoint to reach this cluster, rather than a direct IP address. (AI-inferred)
     dns_endpoint: Any = None
+    # Whether this cluster is reached over its own internal (private) IP address, rather than a public one. (AI-inferred)
     internal_ip: Any = None
+    # The URL of a proxy used to reach this cluster. (AI-inferred)
     proxy_url: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_AssociatedEntities:
+    # The Anthos-registered cluster(s) this applies to. (AI-inferred)
     anthos_clusters: Any = None
+    # The GKE cluster(s) this applies to. (AI-inferred)
     gke_clusters: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_CustomTarget:
+    # Defines a deployment target type beyond Cloud Deploy's own built-ins (GKE, Cloud Run, etc.), backed by caller-supplied render/deploy actions. (AI-inferred)
     custom_target_type: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_ExecutionConfigs_DefaultPool:
+    # The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
     artifact_storage: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_ExecutionConfigs_PrivatePool:
+    # The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
     artifact_storage: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
     worker_pool: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_ExecutionConfigs:
+    # The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
     artifact_storage: Any = None
+    # Configuration for running jobs on Cloud Build's own default worker pool, rather than a private one. (AI-inferred)
     default_pool: Any = None
+    # How long a job is allowed to run before being considered timed out. (AI-inferred)
     execution_timeout: Any = None
+    # Configuration for running jobs on a private Cloud Build worker pool, rather than the default shared one. (AI-inferred)
     private_pool: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
+    # Which purpose(s) (render, deploy, verify) this execution environment configuration applies to. (AI-inferred)
     usages: Any = None
+    # Whether detailed, verbose output is produced for this operation. (AI-inferred)
     verbose: Any = None
+    # A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
     worker_pool: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_MultiTarget:
+    # The target ID(s) this applies to. (AI-inferred)
     target_ids: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots_Run:
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
 
 @dataclasses.dataclass
 class Release_TargetSnapshots:
+    # Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
     annotations: Any = None
+    # A reference to the Anthos-registered cluster this target deploys to. (AI-inferred)
     anthos_cluster: Any = None
+    # Additional Kubernetes resources associated with this deployment, beyond the primary workload, that verification/rendering also considers. (AI-inferred)
     associated_entities: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A reference to the custom target type this deployment uses. (AI-inferred)
     custom_target: Any = None
+    # Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred)
     deploy_parameters: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Per-usage (render, deploy, verify) execution environment configuration for this target's own jobs. (AI-inferred)
     execution_configs: Any = None
+    # Configuration specific to deploying this target to a GKE cluster. (AI-inferred)
     gke: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # Configuration for a rollout that deploys to more than one target as a coordinated group. (AI-inferred)
     multi_target: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Whether this phase requires explicit human approval before proceeding. (AI-inferred)
     require_approval: Any = None
+    # A reference to the Cloud Run service this applies to. (AI-inferred)
     run: Any = None
+    # A reference to the target this applies to. (AI-inferred)
     target_id: Any = None
+    # Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
     uid: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass

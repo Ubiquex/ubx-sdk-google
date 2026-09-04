@@ -199,10 +199,13 @@ class V1beta2ManagedZoneConfig:
     description: Any = None
     # The DNS name of this managed zone, for instance "example.com.".
     dns_name: Any = None
+    # Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
     dnssec_config: Any = None
+    # Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
     forwarding_config: Any = None
     # Unique identifier for the resource; defined by the server (output only)
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None
@@ -212,8 +215,11 @@ class V1beta2ManagedZoneConfig:
     name_server_set: Any = None
     # Delegate your managed_zone to these virtual name servers; defined by the server (output only)
     name_servers: Any = None
+    # Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
     peering_config: Any = None
+    # Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
     private_visibility_config: Any = None
+    # Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
     reverse_lookup_config: Any = None
     # Contains information about Service Directory-backed zones.
     service_directory_config: Any = None
@@ -230,10 +236,13 @@ class V1beta2ManagedZoneAttrs:
     description: Any = None
     # The DNS name of this managed zone, for instance "example.com.".
     dns_name: Any = None
+    # Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
     dnssec_config: Any = None
+    # Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
     forwarding_config: Any = None
     # Unique identifier for the resource; defined by the server (output only)
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None
@@ -243,8 +252,11 @@ class V1beta2ManagedZoneAttrs:
     name_server_set: Any = None
     # Delegate your managed_zone to these virtual name servers; defined by the server (output only)
     name_servers: Any = None
+    # Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
     peering_config: Any = None
+    # Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
     private_visibility_config: Any = None
+    # Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
     reverse_lookup_config: Any = None
     # Contains information about Service Directory-backed zones.
     service_directory_config: Any = None

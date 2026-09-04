@@ -20,7 +20,9 @@ class Template_FilterConfig_PiAndJailbreakFilterSettings:
 
 @dataclasses.dataclass
 class Template_FilterConfig_RaiSettings_RaiFilters:
+    # How aggressively this Responsible AI filter blocks content: `LOW_AND_ABOVE`, `MEDIUM_AND_ABOVE`, or `HIGH` confidence that the content matches `filter_type`. A lower confidence threshold blocks more content. (AI-inferred)
     confidence_level: Any = None
+    # The Responsible AI category this filter screens for: `SEXUALLY_EXPLICIT`, `HATE_SPEECH`, `HARASSMENT`, or `DANGEROUS` content. (AI-inferred)
     filter_type: Any = None
 
 @dataclasses.dataclass

@@ -19,8 +19,11 @@ class DeviceSession_AndroidDevice:
 
 @dataclasses.dataclass
 class DeviceSession_StateHistories:
+    # The real timestamp when this device session or test execution entered its own current state. (AI-inferred)
     event_time: Any = None
+    # The real, current lifecycle state (e.g. `ACTIVE`, `EXPIRED`, `FINISHED`) of this device session. (AI-inferred)
     session_state: Any = None
+    # Real, additional detail explaining this device session's or test execution's own current state. (AI-inferred)
     state_message: Any = None
 
 _DeviceSession_AndroidDeviceFields = {

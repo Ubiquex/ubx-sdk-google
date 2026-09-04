@@ -26,7 +26,9 @@ class PrivateCloud_Hcx:
 
 @dataclasses.dataclass
 class PrivateCloud_ManagementCluster_NodeTypeConfigs:
+    # The number of CPU core(s) enabled per node, when overriding the node type's own default. (AI-inferred)
     custom_core_count: Any = None
+    # The number of node(s) provisioned. (AI-inferred)
     node_count: Any = None
 
 @dataclasses.dataclass

@@ -189,7 +189,8 @@ type AlphaRegionMultiMigConfig struct {
 	Name any
 	// Resource policies message for a multi-MIG. Specifies the workload policy configuration of the multi-MIG.
 	ResourcePolicies any
-	Status           any
+	// The current operational state of this regional multi-MIG, as a structured status object. (AI-inferred)
+	Status any
 }
 
 type AlphaRegionMultiMigAttrs struct {
@@ -209,7 +210,8 @@ type AlphaRegionMultiMigAttrs struct {
 	ResourcePolicies any
 	// Output only. [Output only] Server-defined URL for the resource.
 	SelfLink any
-	Status   any
+	// The current operational state of this regional multi-MIG, as a structured status object. (AI-inferred)
+	Status any
 }
 
 var AlphaRegionMultiMig = ubx.ResourceBinding{

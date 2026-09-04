@@ -36,139 +36,209 @@ type DeliveryPipeline_Condition struct {
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_DeployParameters struct {
+	// Label(s) a target must carry for this automation rule to apply to it. (AI-inferred)
 	MatchTargetLabels any
-	Values            any
+	// The value(s) making up this configuration. (AI-inferred)
+	Values any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task_Container struct {
-	Args    any
+	// The command-line argument(s) passed to the container. (AI-inferred)
+	Args any
+	// The container entrypoint command to run, overriding the image's own default. (AI-inferred)
 	Command any
-	Env     any
-	Image   any
+	// Environment variable(s) set in the container. (AI-inferred)
+	Env any
+	// The container image reference to run. (AI-inferred)
+	Image any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task struct {
+	// A single container's own configuration. (AI-inferred)
 	Container any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks struct {
+	// How often this check or action recurs. (AI-inferred)
 	Frequency any
-	Id        any
-	Task      any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// A single unit of work within this job. (AI-inferred)
+	Task any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks struct {
+	// The Cloud Monitoring alert policy/policies this check watches. (AI-inferred)
 	AlertPolicies any
-	Id            any
-	Labels        any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud struct {
+	// Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred)
 	AlertPolicyChecks any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis struct {
+	// Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred)
 	CustomChecks any
-	Duration     any
-	GoogleCloud  any
+	// How long this phase, wait, or window lasts. (AI-inferred)
+	Duration any
+	// Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred)
+	GoogleCloud any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy struct {
+	// The action(s) this hook or job performs. (AI-inferred)
 	Actions any
-	Tasks   any
+	// The task(s) making up this job. (AI-inferred)
+	Tasks any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig struct {
+	// The task(s) making up this job. (AI-inferred)
 	Tasks any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment struct {
-	Analysis     any
-	Percentages  any
-	Postdeploy   any
-	Predeploy    any
-	Verify       any
+	// Configuration for automated analysis run against a rollout phase. (AI-inferred)
+	Analysis any
+	// The progressive traffic percentage step(s) this canary deployment advances through. (AI-inferred)
+	Percentages any
+	// Configuration for actions run after a phase's own deployment completes. (AI-inferred)
+	Postdeploy any
+	// Configuration for actions run before a phase's own deployment starts. (AI-inferred)
+	Predeploy any
+	// Configuration for verification tests run against a phase's own deployment. (AI-inferred)
+	Verify any
+	// Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
 	VerifyConfig any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs struct {
-	Analysis     any
-	Percentage   any
-	PhaseId      any
-	Postdeploy   any
-	Predeploy    any
-	Profiles     any
-	Verify       any
+	// Configuration for automated analysis run against a rollout phase. (AI-inferred)
+	Analysis any
+	// A percentage value. (AI-inferred)
+	Percentage any
+	// A reference to the phase this applies to. (AI-inferred)
+	PhaseId any
+	// Configuration for actions run after a phase's own deployment completes. (AI-inferred)
+	Postdeploy any
+	// Configuration for actions run before a phase's own deployment starts. (AI-inferred)
+	Predeploy any
+	// The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
+	Profiles any
+	// Configuration for verification tests run against a phase's own deployment. (AI-inferred)
+	Verify any
+	// Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
 	VerifyConfig any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment struct {
+	// Per-phase configuration overrides for a canary or custom deployment strategy. (AI-inferred)
 	PhaseConfigs any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun struct {
+	// Whether traffic is shifted automatically through the canary steps, without waiting for manual approval at each one. (AI-inferred)
 	AutomaticTrafficControl any
-	CanaryRevisionTags      any
-	PriorRevisionTags       any
-	StableRevisionTags      any
+	// Traffic tag(s) applied to the canary revision, for routing test traffic to it directly. (AI-inferred)
+	CanaryRevisionTags any
+	// Traffic tag(s) applied to the previous (stable) revision, for routing test traffic to it directly. (AI-inferred)
+	PriorRevisionTags any
+	// Traffic tag(s) applied to the stable (non-canary) revision, for routing test traffic to it directly. (AI-inferred)
+	StableRevisionTags any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations struct {
-	DestinationIds   any
+	// The target ID(s) this promotion/rollout is directed to. (AI-inferred)
+	DestinationIds any
+	// Whether the Kubernetes Service is updated to route production traffic as the canary progresses, rather than only the underlying workload. (AI-inferred)
 	PropagateService any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh struct {
-	Deployment            any
-	HttpRoute             any
-	PodSelectorLabel      any
-	RouteDestinations     any
-	RouteUpdateWaitTime   any
-	Service               any
+	// Configuration or detail about a specific deployment. (AI-inferred)
+	Deployment any
+	// The HTTP route resource splitting traffic between revisions for this canary deployment. (AI-inferred)
+	HttpRoute any
+	// The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
+	PodSelectorLabel any
+	// The destination(s) traffic is routed to as part of this canary deployment. (AI-inferred)
+	RouteDestinations any
+	// How long to wait after updating traffic routing before proceeding to the next step. (AI-inferred)
+	RouteUpdateWaitTime any
+	// A reference to the service this applies to. (AI-inferred)
+	Service any
+	// How long traffic is held on the stable revision after a canary is rolled back, before resuming normal routing. (AI-inferred)
 	StableCutbackDuration any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking struct {
-	Deployment                 any
+	// Configuration or detail about a specific deployment. (AI-inferred)
+	Deployment any
+	// Whether extra pod capacity is skipped when preparing this deployment, trading faster rollout for less headroom during the transition. (AI-inferred)
 	DisablePodOverprovisioning any
-	PodSelectorLabel           any
-	Service                    any
+	// The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
+	PodSelectorLabel any
+	// A reference to the service this applies to. (AI-inferred)
+	Service any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes struct {
+	// Configuration for routing canary traffic through a Kubernetes Gateway API-based service mesh. (AI-inferred)
 	GatewayServiceMesh any
-	ServiceNetworking  any
+	// Configuration for routing canary traffic using Cloud Service Mesh. (AI-inferred)
+	ServiceNetworking any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig struct {
-	CloudRun   any
+	// Configuration specific to deploying this target as a Cloud Run service. (AI-inferred)
+	CloudRun any
+	// Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred)
 	Kubernetes any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary struct {
-	CanaryDeployment       any
+	// Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
+	CanaryDeployment any
+	// A canary strategy using caller-defined percentage steps and phase configuration, rather than Cloud Deploy's own standard canary shape. (AI-inferred)
 	CustomCanaryDeployment any
-	RuntimeConfig          any
+	// Configuration specific to the runtime (GKE, Cloud Run, etc.) this target deploys to. (AI-inferred)
+	RuntimeConfig any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy_Standard struct {
-	Analysis     any
-	Postdeploy   any
-	Predeploy    any
-	Verify       any
+	// Configuration for automated analysis run against a rollout phase. (AI-inferred)
+	Analysis any
+	// Configuration for actions run after a phase's own deployment completes. (AI-inferred)
+	Postdeploy any
+	// Configuration for actions run before a phase's own deployment starts. (AI-inferred)
+	Predeploy any
+	// Configuration for verification tests run against a phase's own deployment. (AI-inferred)
+	Verify any
+	// Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
 	VerifyConfig any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages_Strategy struct {
-	Canary   any
+	// Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
+	Canary any
+	// Configuration for the standard (non-canary, all-at-once) rollout strategy. (AI-inferred)
 	Standard any
 }
 
 type DeliveryPipeline_SerialPipeline_Stages struct {
+	// Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred)
 	DeployParameters any
-	Profiles         any
-	Strategy         any
-	TargetId         any
+	// The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
+	Profiles any
+	// Which rollout strategy this release uses, e.g. standard or canary. (AI-inferred)
+	Strategy any
+	// A reference to the target this applies to. (AI-inferred)
+	TargetId any
 }
 
 type DeliveryPipeline_SerialPipeline struct {

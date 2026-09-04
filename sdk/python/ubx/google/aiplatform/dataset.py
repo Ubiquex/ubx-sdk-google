@@ -13,15 +13,25 @@ class Dataset_EncryptionSpec:
 
 @dataclasses.dataclass
 class Dataset_SavedQueries:
+    # Restricts this saved query to annotations matching the given filter expression. (AI-inferred)
     annotation_filter: Any = None
+    # Output only. How many distinct annotation specs (labels) this saved query's own annotations use. (AI-inferred)
     annotation_spec_count: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The ML problem type (e.g. classification, object detection) this saved query's own annotations are structured for. (AI-inferred)
     problem_type: Any = None
+    # Whether this saved query's own annotations are structured in a way AutoML training can consume directly. (AI-inferred)
     support_automl_training: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 _Dataset_EncryptionSpecFields = {

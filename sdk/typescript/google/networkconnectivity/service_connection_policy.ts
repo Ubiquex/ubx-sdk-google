@@ -26,31 +26,51 @@ export interface ServiceConnectionPolicy_PscConfig {
 }
 
 export interface ServiceConnectionPolicy_PscConnections_Error {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface ServiceConnectionPolicy_PscConnections_ErrorInfo {
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** Additional structured metadata about this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface ServiceConnectionPolicy_PscConnections {
+  /** The IP address on the consumer side of this connection. (AI-inferred) */
   consumerAddress?: string | Computed<string>;
+  /** A reference to the consumer's own forwarding rule. (AI-inferred) */
   consumerForwardingRule?: string | Computed<string>;
+  /** The project the consuming resource belongs to. (AI-inferred) */
   consumerTargetProject?: string | Computed<string>;
+  /** Detail about an error that occurred. (AI-inferred) */
   error?: ServiceConnectionPolicy_PscConnections_Error | Computed<ServiceConnectionPolicy_PscConnections_Error>;
+  /** Structured detail about an error that occurred. (AI-inferred) */
   errorInfo?: ServiceConnectionPolicy_PscConnections_ErrorInfo | Computed<ServiceConnectionPolicy_PscConnections_ErrorInfo>;
+  /** The category of error that occurred. (AI-inferred) */
   errorType?: string | Computed<string>;
+  /** A reference to the underlying Compute Engine operation. (AI-inferred) */
   gceOperation?: string | Computed<string>;
+  /** Whether this applies to IPv4 or IPv6. (AI-inferred) */
   ipVersion?: string | Computed<string>;
+  /** The identifier of the producer-side instance backing this connection. (AI-inferred) */
   producerInstanceId?: string | Computed<string>;
+  /** Metadata describing the producer-side instance backing this connection. (AI-inferred) */
   producerInstanceMetadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** The unique identifier of this Private Service Connect connection. (AI-inferred) */
   pscConnectionId?: string | Computed<string>;
+  /** A reference to the specific subnetwork selected for this connection. (AI-inferred) */
   selectedSubnetwork?: string | Computed<string>;
+  /** The class of managed service this connection belongs to. (AI-inferred) */
   serviceClass?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

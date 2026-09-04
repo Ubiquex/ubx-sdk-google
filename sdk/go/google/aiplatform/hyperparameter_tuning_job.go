@@ -38,61 +38,89 @@ type HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpec struct {
 }
 
 type HyperparameterTuningJob_StudySpec_Metrics_SafetyConfig struct {
+	// The minimum fraction of trials that must be predicted safe before an unsafe trial is allowed to be tried anyway. (AI-inferred)
 	DesiredMinSafeTrialsFraction any
-	SafetyThreshold              any
+	// The metric value below which a trial is considered unsafe. (AI-inferred)
+	SafetyThreshold any
 }
 
 type HyperparameterTuningJob_StudySpec_Metrics struct {
-	Goal         any
-	MetricId     any
+	// Whether this metric should be `MAXIMIZE`d or `MINIMIZE`d during tuning. (AI-inferred)
+	Goal any
+	// An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
+	MetricId any
+	// Configuration for safe hyperparameter tuning, which avoids proposing trials predicted to badly underperform. (AI-inferred)
 	SafetyConfig any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	Values       any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs struct {
-	ParameterSpec           any
+	// The definition (type, range, or allowed values) of this hyperparameter. (AI-inferred)
+	ParameterSpec any
+	// The parent categorical value(s) that activate this conditional parameter. (AI-inferred)
 	ParentCategoricalValues any
-	ParentDiscreteValues    any
-	ParentIntValues         any
+	// The parent discrete value(s) that activate this conditional parameter. (AI-inferred)
+	ParentDiscreteValues any
+	// The parent integer value(s) that activate this conditional parameter. (AI-inferred)
+	ParentIntValues any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	Values       any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	MaxValue     any
-	MinValue     any
+	// The largest value this parameter may take. (AI-inferred)
+	MaxValue any
+	// The smallest value this parameter may take. (AI-inferred)
+	MinValue any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	MaxValue     any
-	MinValue     any
+	// The largest value this parameter may take. (AI-inferred)
+	MaxValue any
+	// The smallest value this parameter may take. (AI-inferred)
+	MinValue any
 }
 
 type HyperparameterTuningJob_StudySpec_Parameters struct {
-	CategoricalValueSpec      any
+	// Defines this hyperparameter as a categorical value, chosen from a fixed set of string options. (AI-inferred)
+	CategoricalValueSpec any
+	// Sub-parameter(s) that only apply when this parameter takes specific value(s), for hyperparameter search spaces with conditional structure. (AI-inferred)
 	ConditionalParameterSpecs any
-	DiscreteValueSpec         any
-	DoubleValueSpec           any
-	IntegerValueSpec          any
-	ParameterId               any
-	ScaleType                 any
+	// Defines this hyperparameter as a value chosen from a fixed, explicit list of numbers. (AI-inferred)
+	DiscreteValueSpec any
+	// Defines this hyperparameter as a floating-point value within a `min_value`/`max_value` range. (AI-inferred)
+	DoubleValueSpec any
+	// Defines this hyperparameter as an integer value within a `min_value`/`max_value` range. (AI-inferred)
+	IntegerValueSpec any
+	// The name of this hyperparameter, unique within its own study. (AI-inferred)
+	ParameterId any
+	// How this hyperparameter's own search range is scaled when sampling, e.g. `UNIT_LINEAR_SCALE` or `UNIT_LOG_SCALE`. (AI-inferred)
+	ScaleType any
 }
 
 type HyperparameterTuningJob_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraint struct {
@@ -146,8 +174,11 @@ type HyperparameterTuningJob_TrialJobSpec_BaseOutputDirectory struct {
 }
 
 type HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain        any
+	// The domain this configuration or resource applies to. (AI-inferred)
+	Domain any
+	// The VPC network this resource is deployed into. (AI-inferred)
 	TargetNetwork any
+	// The Google Cloud project this resource targets. (AI-inferred)
 	TargetProject any
 }
 
@@ -172,66 +203,102 @@ type HyperparameterTuningJob_TrialJobSpec_Scheduling struct {
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec struct {
-	Args     any
-	Command  any
-	Env      any
+	// The argument value(s) passed to this call. (AI-inferred)
+	Args any
+	// The container entrypoint command and argument(s) to run. (AI-inferred)
+	Command any
+	// Environment variable(s) set for this job's own execution. (AI-inferred)
+	Env any
+	// The container image URI to run. (AI-inferred)
 	ImageUri any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpec struct {
+	// The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred)
 	BootDiskSizeGb any
-	BootDiskType   any
+	// The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred)
+	BootDiskType any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMounts struct {
-	Filesystem   any
-	InstanceIp   any
-	MountPoint   any
+	// The filesystem identifier to mount. (AI-inferred)
+	Filesystem any
+	// The IP address of the filesystem instance to mount. (AI-inferred)
+	InstanceIp any
+	// The filesystem path this volume is mounted at. (AI-inferred)
+	MountPoint any
+	// An identifier for this mounted volume, unique within its own job. (AI-inferred)
 	VolumeHandle any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity struct {
-	Key                     any
+	// A key identifying this entry. (AI-inferred)
+	Key any
+	// Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
 	ReservationAffinityType any
-	Values                  any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec struct {
-	AcceleratorCount    any
-	AcceleratorType     any
-	GpuPartitionSize    any
-	MachineType         any
+	// How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
+	AcceleratorCount any
+	// The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
+	AcceleratorType any
+	// The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
+	GpuPartitionSize any
+	// The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
+	MachineType any
+	// Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
 	ReservationAffinity any
-	TpuTopology         any
+	// The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
+	TpuTopology any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMounts struct {
+	// The filesystem path this volume is mounted at. (AI-inferred)
 	MountPoint any
-	Path       any
-	Server     any
+	// A file or object path. (AI-inferred)
+	Path any
+	// The server hostname or IP address to connect to. (AI-inferred)
+	Server any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpec struct {
-	Args             any
-	Env              any
+	// The argument value(s) passed to this call. (AI-inferred)
+	Args any
+	// Environment variable(s) set for this job's own execution. (AI-inferred)
+	Env any
+	// The prebuilt Vertex AI executor image this Python package runs on top of. (AI-inferred)
 	ExecutorImageUri any
-	PackageUris      any
-	PythonModule     any
+	// The Cloud Storage URI(s) of the Python package(s) (e.g. a `.tar.gz` sdist) to install and run. (AI-inferred)
+	PackageUris any
+	// The Python module to execute as this worker's own entry point. (AI-inferred)
+	PythonModule any
 }
 
 type HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs struct {
-	ContainerSpec     any
-	DiskSpec          any
-	LustreMounts      any
-	MachineSpec       any
-	NfsMounts         any
+	// The container image and command this worker pool runs. (AI-inferred)
+	ContainerSpec any
+	// The boot disk configuration provisioned for this job's own machine(s). (AI-inferred)
+	DiskSpec any
+	// Managed Lustre filesystem(s) mounted into this job's own worker containers. (AI-inferred)
+	LustreMounts any
+	// The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
+	MachineSpec any
+	// NFS filesystem(s) mounted into this job's own worker containers. (AI-inferred)
+	NfsMounts any
+	// A Python package (rather than a container image) this worker pool runs, using a prebuilt executor image. (AI-inferred)
 	PythonPackageSpec any
-	ReplicaCount      any
+	// How many machine replicas this job runs. (AI-inferred)
+	ReplicaCount any
 }
 
 type HyperparameterTuningJob_TrialJobSpec struct {
@@ -268,34 +335,53 @@ type HyperparameterTuningJob_TrialJobSpec struct {
 }
 
 type HyperparameterTuningJob_Trials_FinalMeasurement_Metrics struct {
+	// An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
 	MetricId any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type HyperparameterTuningJob_Trials_FinalMeasurement struct {
+	// How long this operation has been running, or took to complete. (AI-inferred)
 	ElapsedDuration any
-	Metrics         any
-	StepCount       any
+	// The metric value(s) recorded for this measurement. (AI-inferred)
+	Metrics any
+	// How many steps this job or trial ran for. (AI-inferred)
+	StepCount any
 }
 
 type HyperparameterTuningJob_Trials_Parameters struct {
+	// The name of this hyperparameter, unique within its own study. (AI-inferred)
 	ParameterId any
-	Value       any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type HyperparameterTuningJob_Trials struct {
-	ClientId         any
-	CustomJob        any
-	EndTime          any
+	// An identifier for the client that requested this trial. (AI-inferred)
+	ClientId any
+	// A reference to the custom training job running this trial. (AI-inferred)
+	CustomJob any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// The trial's own final, reported metric value(s) once it completed. (AI-inferred)
 	FinalMeasurement any
-	Id               any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// Why this trial was reported infeasible, if it was. (AI-inferred)
 	InfeasibleReason any
-	Measurements     any
-	Name             any
-	Parameters       any
-	StartTime        any
-	State            any
-	WebAccessUris    any
+	// The metric value(s) reported at each intermediate step during this trial. (AI-inferred)
+	Measurements any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
+	Parameters any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
+	// Interactive web UI URI(s) (e.g. a notebook or TensorBoard) for monitoring this trial while it runs. (AI-inferred)
+	WebAccessUris any
 }
 
 var HyperparameterTuningJob_EncryptionSpecFields = ubx.FieldMap{

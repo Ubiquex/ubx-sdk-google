@@ -426,6 +426,7 @@ export interface BetaFutureReservationConfig {
   /** Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false. */
   autoDeleteAutoCreatedReservations?: boolean | Computed<boolean>;
   commitmentInfo?: BetaFutureReservation_CommitmentInfo | Computed<BetaFutureReservation_CommitmentInfo>;
+  /** The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred) */
   confidentialComputeType?: string | Computed<string>;
   /** Type of the deployment requested as part of future reservation. */
   deploymentType?: string | Computed<string>;
@@ -460,6 +461,7 @@ export interface BetaFutureReservationConfig {
   status?: BetaFutureReservation_Status | Computed<BetaFutureReservation_Status>;
   /** Storage pool properties for the future reservation. */
   storagePoolProperties?: BetaFutureReservation_StoragePoolProperties | Computed<BetaFutureReservation_StoragePoolProperties>;
+  /** The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred) */
   timeWindow?: BetaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow | Computed<BetaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow>;
 }
 
@@ -475,6 +477,7 @@ export interface BetaFutureReservationAttrs {
   /** Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false. */
   autoDeleteAutoCreatedReservations: boolean;
   commitmentInfo: BetaFutureReservation_CommitmentInfo;
+  /** The confidential computing technology this reservation guarantees capacity for, e.g. SEV or TDX. (AI-inferred) */
   confidentialComputeType: string;
   /** Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format. */
   creationTimestamp: string;
@@ -519,6 +522,7 @@ export interface BetaFutureReservationAttrs {
   status: BetaFutureReservation_Status;
   /** Storage pool properties for the future reservation. */
   storagePoolProperties: BetaFutureReservation_StoragePoolProperties;
+  /** The start and end time this future reservation's own capacity is guaranteed for. (AI-inferred) */
   timeWindow: BetaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow;
   /** Output only. [Output Only] URL of the Zone where this future reservation resides. */
   zone: string;

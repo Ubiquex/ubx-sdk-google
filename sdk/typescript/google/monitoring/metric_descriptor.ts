@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MetricDescriptor_Labels {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The key of this label or attribute. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The data type of this metric's own values, e.g. `INT64` or `DOUBLE`. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 

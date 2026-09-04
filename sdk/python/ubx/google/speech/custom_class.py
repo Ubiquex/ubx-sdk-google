@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomClass_CustomClass_Items:
+    # The real, literal term this custom class item contributes to the class's own recognition bias. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Trial_FinalMeasurement_Metrics {
+  /** An identifier for this metric, unique within its own containing evaluation. (AI-inferred) */
   metricId?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
@@ -16,7 +18,9 @@ export interface Trial_FinalMeasurement {
 }
 
 export interface Trial_Parameters {
+  /** The name of this hyperparameter, unique within its own study. (AI-inferred) */
   parameterId?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: unknown | Computed<unknown>;
 }
 

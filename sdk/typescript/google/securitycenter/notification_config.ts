@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NotificationConfig_StreamingConfig {
+  /** Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred) */
   filter?: string | Computed<string>;
 }
 
@@ -10,17 +11,26 @@ const NotificationConfig_StreamingConfigFields: FieldMap = {
 };
 
 export interface NotificationConfigConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to the Pub/Sub topic notifications are published to. (AI-inferred) */
   pubsubTopic?: string | Computed<string>;
+  /** Configuration for streaming matching finding(s) to a destination. (AI-inferred) */
   streamingConfig?: NotificationConfig_StreamingConfig | Computed<NotificationConfig_StreamingConfig>;
 }
 
 export interface NotificationConfigAttrs {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** A reference to the Pub/Sub topic notifications are published to. (AI-inferred) */
   pubsubTopic: string;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount: string;
+  /** Configuration for streaming matching finding(s) to a destination. (AI-inferred) */
   streamingConfig: NotificationConfig_StreamingConfig;
 }
 

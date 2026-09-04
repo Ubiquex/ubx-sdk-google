@@ -4,18 +4,24 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Report_Metrics struct {
+	// The mathematical function applied to compute this value. (AI-inferred)
 	Function any
-	Name     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Report_Properties_Value struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type Report_Properties struct {
+	// A named property of this object. (AI-inferred)
 	Property any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 var Report_MetricsFields = ubx.FieldMap{

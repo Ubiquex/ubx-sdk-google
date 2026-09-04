@@ -8,26 +8,38 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndUserAuthentication_ConfigVariables_SecretValue:
+    # This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
     secret_value: Any = None
+    # The specific Secret Manager secret version referenced. (AI-inferred)
     secret_version: Any = None
 
 @dataclasses.dataclass
 class EndUserAuthentication_ConfigVariables:
+    # This configuration variable's own value, when its type is boolean. (AI-inferred)
     bool_value: Any = None
+    # This admin filter's own value, when its type is an integer. (AI-inferred)
     int_value: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
     secret_value: Any = None
+    # This admin filter's own value, when its type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
 class EndUserAuthentication_DestinationConfigs_Destinations:
+    # The hostname of this destination. (AI-inferred)
     host: Any = None
+    # The port this destination listens on. (AI-inferred)
     port: Any = None
+    # A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred)
     service_attachment: Any = None
 
 @dataclasses.dataclass
 class EndUserAuthentication_DestinationConfigs:
+    # The backend endpoint(s) traffic for this connection is routed to. (AI-inferred)
     destinations: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
@@ -137,7 +149,9 @@ class EndUserAuthentication_EndUserAuthenticationConfig:
 
 @dataclasses.dataclass
 class EndUserAuthentication_NotifyEndpointDestination_Endpoint_Headers:
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # This HTTP header's own value. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

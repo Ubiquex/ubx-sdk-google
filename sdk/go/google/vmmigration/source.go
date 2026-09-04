@@ -22,7 +22,9 @@ type Source_Aws_Error struct {
 }
 
 type Source_Aws_InventoryTagList struct {
-	Key   any
+	// The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred)
+	Key any
+	// The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
 	Value any
 }
 

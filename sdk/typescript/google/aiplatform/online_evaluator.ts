@@ -7,17 +7,26 @@ export interface OnlineEvaluator_CloudObservability_OpenTelemetry {
 }
 
 export interface OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration {
+  /** How the observed value is compared against this filter's own threshold, e.g. `GREATER_OR_EQUAL`. (AI-inferred) */
   comparisonOperator?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
 export interface OnlineEvaluator_CloudObservability_SessionScope_Filter {
+  /** How long this clip, window, or operation lasts. (AI-inferred) */
   duration?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
+  /** Restricts this online evaluator's own observability scope to failed model calls. (AI-inferred) */
   modelCallErrors?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
+  /** Restricts this online evaluator's own observability scope to model calls. (AI-inferred) */
   modelCalls?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
+  /** Restricts this online evaluator's own observability scope to failed tool calls. (AI-inferred) */
   toolCallErrors?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
+  /** Restricts this online evaluator's own observability scope to tool calls. (AI-inferred) */
   toolCalls?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
+  /** The total token count (input plus output) this filter compares against its own threshold. (AI-inferred) */
   totalTokenUsage?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
+  /** Restricts this online evaluator's own observability scope to user conversation turns. (AI-inferred) */
   userTurns?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
 }
 
@@ -34,7 +43,9 @@ export interface OnlineEvaluator_CloudObservability_SessionScope {
 }
 
 export interface OnlineEvaluator_CloudObservability_TraceScope_Filter {
+  /** How long this clip, window, or operation lasts. (AI-inferred) */
   duration?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
+  /** The total token count (input plus output) this filter compares against its own threshold. (AI-inferred) */
   totalTokenUsage?: OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration | Computed<OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration>;
 }
 
@@ -69,278 +80,437 @@ export interface OnlineEvaluator_Config {
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_BleuSpec {
+  /** Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred) */
   useEffectiveOrder?: boolean | Computed<boolean>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_ComputationBasedMetricSpec {
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_CustomCodeExecutionSpec {
+  /** The function within the supplied custom code that computes this metric. (AI-inferred) */
   evaluationFunction?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints {
+  /** BCP-47 language codes (e.g. `en-US`) this configuration applies to. (AI-inferred) */
   languageCodes?: string[] | Computed<string[]>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig {
+  /** Domain-specific words or phrases to bias transcription toward recognizing correctly. (AI-inferred) */
   adaptationPhrases?: string[] | Computed<string[]>;
+  /** A caller-supplied vocabulary of domain-specific terms to improve transcription accuracy for. (AI-inferred) */
   customVocabulary?: string[] | Computed<string[]>;
+  /** Whether transcription identifies and labels individual speakers. (AI-inferred) */
   diarization?: boolean | Computed<boolean>;
+  /** Whether the spoken language is auto-detected, rather than specified explicitly. (AI-inferred) */
   languageAuto?: unknown | Computed<unknown>;
+  /** BCP-47 language codes (e.g. `en-US`) this configuration applies to. (AI-inferred) */
   languageCodes?: string[] | Computed<string[]>;
+  /** Candidate language(s) to bias transcription or generation toward, when the language isn't specified explicitly. (AI-inferred) */
   languageHints?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints>;
+  /** Which operating mode this configuration uses. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** Whether individual words in a transcript include their own timestamps. (AI-inferred) */
   wordTimestamp?: boolean | Computed<boolean>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptions {
+  /** The compression level applied to generated image output -- higher values mean better quality at a larger file size. (AI-inferred) */
   compressionQuality?: number | Computed<number>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** Format and compression settings for generated image output. (AI-inferred) */
   imageOutputOptions?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptions | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptions>;
+  /** The pixel dimensions or resolution class requested for generated image output. (AI-inferred) */
   imageSize?: string | Computed<string>;
+  /** Whether generated images may depict people, and if so, which categories are allowed. (AI-inferred) */
   personGeneration?: string | Computed<string>;
+  /** Real, identifiable people generated image output is allowed to depict, when person generation is otherwise restricted. (AI-inferred) */
   prominentPeople?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio {
+  /** The audio or video bit rate, in bits per second. (AI-inferred) */
   bitRate?: number | Computed<number>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The audio sample rate, in Hz. (AI-inferred) */
   sampleRate?: number | Computed<number>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** The pixel dimensions or resolution class requested for generated image output. (AI-inferred) */
   imageSize?: string | Computed<string>;
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** A schema describing this value's own expected structure. (AI-inferred) */
   schema?: unknown | Computed<unknown>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video {
+  /** The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred) */
   aspectRatio?: string | Computed<string>;
+  /** How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred) */
   delivery?: string | Computed<string>;
+  /** How long this clip, window, or operation lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred) */
   gcsUri?: string | Computed<string>;
+  /** The pixel dimensions of this image or video. (AI-inferred) */
   resolution?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat {
+  /** Audio content or configuration. (AI-inferred) */
   audio?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio>;
+  /** Image content or configuration. (AI-inferred) */
   image?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image>;
+  /** The plain-text content of this Part. (AI-inferred) */
   text?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text>;
+  /** Video content or configuration. (AI-inferred) */
   video?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchema {
+  /** Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred) */
   additionalProperties?: unknown | Computed<unknown>;
+  /** A list of schemas where a value must satisfy at least one to be valid. (AI-inferred) */
   anyOf?: unknown[] | Computed<unknown[]>;
+  /** The value used when this field is left unset. (AI-inferred) */
   default?: unknown | Computed<unknown>;
+  /** Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred) */
   defs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exact, closed set of values a `string`-typed schema allows. (AI-inferred) */
   enum?: string[] | Computed<string[]>;
+  /** A sample value illustrating this schema, for documentation purposes only -- not enforced as a constraint. (AI-inferred) */
   example?: unknown | Computed<unknown>;
+  /** A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred) */
   format?: string | Computed<string>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
+  /** The most elements an `array`-typed value may have. (AI-inferred) */
   maxItems?: string | Computed<string>;
+  /** The most characters a `string`-typed value may have. (AI-inferred) */
   maxLength?: string | Computed<string>;
+  /** The most properties an `object`-typed value may have. (AI-inferred) */
   maxProperties?: string | Computed<string>;
+  /** The largest value a `number`/`integer`-typed value may take. (AI-inferred) */
   maximum?: number | Computed<number>;
+  /** The fewest elements an `array`-typed value may have. (AI-inferred) */
   minItems?: string | Computed<string>;
+  /** The fewest characters a `string`-typed value may have. (AI-inferred) */
   minLength?: string | Computed<string>;
+  /** The fewest properties an `object`-typed value may have. (AI-inferred) */
   minProperties?: string | Computed<string>;
+  /** The smallest value a `number`/`integer`-typed value may take. (AI-inferred) */
   minimum?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** A regular expression a `string`-typed value must match. (AI-inferred) */
   pattern?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The order this schema's own `properties` should appear in when Gemini generates a structured response -- Gemini otherwise has no guaranteed field order for JSON output. (AI-inferred) */
   propertyOrdering?: string[] | Computed<string[]>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: string[] | Computed<string[]>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoMode {
+  /** Which factor (e.g. quality, cost, or latency) automatic model routing should prioritize. (AI-inferred) */
   modelRoutingPreference?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualMode {
+  /** The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred) */
   modelName?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig {
+  /** Lets Vertex AI automatically choose which underlying model handles this request, e.g. by cost/latency/quality tradeoff. (AI-inferred) */
   autoMode?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoMode | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoMode>;
+  /** Pins this request to a specific, caller-chosen model rather than letting Vertex AI route it automatically. (AI-inferred) */
   manualMode?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualMode | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualMode>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig {
+  /** The name of the prebuilt Gemini voice to use for speech output. (AI-inferred) */
   voiceName?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig {
+  /** The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred) */
   voiceSampleAudio?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig {
+  /** Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred) */
   prebuiltVoiceConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig>;
+  /** Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred) */
   replicatedVoiceConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs {
+  /** Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred) */
   speaker?: string | Computed<string>;
+  /** The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred) */
   voiceConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig {
+  /** The per-speaker voice assignments making up a `multi_speaker_voice_config`. (AI-inferred) */
   speakerVoiceConfigs?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs[] | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs[]>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig {
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** Assigns distinct synthesized voices to different speakers in a multi-speaker audio response. (AI-inferred) */
   multiSpeakerVoiceConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig>;
+  /** The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred) */
   voiceConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfig {
+  /** Whether the model's own intermediate reasoning steps are included in the response, not just the final answer. (AI-inferred) */
   includeThoughts?: boolean | Computed<boolean>;
+  /** The maximum number of tokens the model may spend on internal reasoning before responding. (AI-inferred) */
   thinkingBudget?: number | Computed<number>;
+  /** How much internal reasoning effort the model applies before responding, e.g. `minimal` through `high` -- a coarser control than `thinking_budget`. (AI-inferred) */
   thinkingLevel?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig {
+  /** Whether transcribed segments include their own timestamps. (AI-inferred) */
   audioTimestamp?: boolean | Computed<boolean>;
+  /** Configuration for how audio is transcribed, e.g. custom vocabulary and diarization settings. (AI-inferred) */
   audioTranscriptionConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig>;
+  /** How many independent response candidates to generate for this request. (AI-inferred) */
   candidateCount?: number | Computed<number>;
+  /** Whether Gemini adapts its tone to the emotional content of the conversation, and may decline to respond when a reply isn't warranted. (AI-inferred) */
   enableAffectiveDialog?: boolean | Computed<boolean>;
+  /** Penalizes tokens proportionally to how often they've already appeared in the response so far, reducing repetition. (AI-inferred) */
   frequencyPenalty?: number | Computed<number>;
+  /** Configuration for image generation, when the model produces image output. (AI-inferred) */
   imageConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig>;
+  /** How many of the most likely tokens, and their log-probabilities, to return alongside each generated token. (AI-inferred) */
   logprobs?: number | Computed<number>;
+  /** The maximum number of tokens the response may contain. (AI-inferred) */
   maxOutputTokens?: number | Computed<number>;
+  /** The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred) */
   mediaResolution?: string | Computed<string>;
+  /** Penalizes tokens that have already appeared at all in the response so far, encouraging the model to introduce new topics. (AI-inferred) */
   presencePenalty?: number | Computed<number>;
+  /** The structural format the response should be returned in. (AI-inferred) */
   responseFormat?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat[] | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat[]>;
+  /** The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred) */
   responseJsonSchema?: unknown | Computed<unknown>;
+  /** Whether the response includes per-token log-probabilities. (AI-inferred) */
   responseLogprobs?: boolean | Computed<boolean>;
+  /** The MIME type the response should be formatted as, e.g. `application/json` for structured output. (AI-inferred) */
   responseMimeType?: string | Computed<string>;
+  /** Which output modalities (e.g. text, image, audio) the model may use in its response. (AI-inferred) */
   responseModalities?: string[] | Computed<string[]>;
+  /** The JSON Schema the response's own structured output must conform to. (AI-inferred) */
   responseSchema?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchema | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchema>;
+  /** Controls whether the model to use is chosen automatically or fixed manually. (AI-inferred) */
   routingConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig>;
+  /** A fixed random seed for sampling, making otherwise-random generation more reproducible across calls. (AI-inferred) */
   seed?: number | Computed<number>;
+  /** Configuration controlling how Gemini synthesizes spoken audio in its response. (AI-inferred) */
   speechConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig>;
+  /** Text sequence(s) that, if generated, cause the model to stop producing further output. (AI-inferred) */
   stopSequences?: string[] | Computed<string[]>;
+  /** Controls the randomness of token sampling -- higher values produce more varied, less predictable output. (AI-inferred) */
   temperature?: number | Computed<number>;
+  /** Configuration for the model's own extended, internal reasoning ('thinking') before producing a final response. (AI-inferred) */
   thinkingConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfig>;
+  /** Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred) */
   topK?: number | Computed<number>;
+  /** Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred) */
   topP?: number | Computed<number>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig {
+  /** The judge model used to automatically score outputs against this metric, when the metric is model-based rather than computed directly. (AI-inferred) */
   autoraterModel?: string | Computed<string>;
+  /** Whether this rubric's own pass/fail evaluation is inverted. (AI-inferred) */
   flipEnabled?: boolean | Computed<boolean>;
+  /** The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred) */
   generationConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig>;
+  /** How many samples are drawn when computing this metric. (AI-inferred) */
   samplingCount?: number | Computed<number>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpec {
+  /** The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred) */
   metricSpecName?: string | Computed<string>;
+  /** Configuration parameters specific to this metric's own computation. (AI-inferred) */
   metricSpecParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig {
+  /** The function within the supplied custom code that parses the judge model's own response. (AI-inferred) */
   parsingFunction?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig {
+  /** Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred) */
   customCodeParserConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_RubricGenerationSpec {
+  /** Configuration for the model used by this job. (AI-inferred) */
   modelConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig>;
+  /** The template used to construct the prompt sent to the model. (AI-inferred) */
   promptTemplate?: string | Computed<string>;
+  /** The kind of content generated rubrics should assess. (AI-inferred) */
   rubricContentType?: string | Computed<string>;
+  /** A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred) */
   rubricTypeOntology?: string[] | Computed<string[]>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec {
+  /** Extra, metric-specific configuration beyond the standard fields. (AI-inferred) */
   additionalConfig?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Configuration for the judge model used to automatically score this evaluation. (AI-inferred) */
   judgeAutoraterConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred) */
   predefinedRubricGenerationSpec?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** How the judge model's own raw response text is parsed into a final score. (AI-inferred) */
   resultParserConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig>;
+  /** Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred) */
   rubricGenerationSpec?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_RubricGenerationSpec | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_RubricGenerationSpec>;
+  /** A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred) */
   rubricGroupKey?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_Metadata_ScoreRange {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The upper bound. (AI-inferred) */
   max?: number | Computed<number>;
+  /** The lower bound. (AI-inferred) */
   min?: number | Computed<number>;
+  /** A single step within this run or sequence. (AI-inferred) */
   step?: number | Computed<number>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_Metadata {
+  /** Additional, metric-specific metadata beyond the standard fields. (AI-inferred) */
   otherMetadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The minimum and maximum values this metric's own score can take. (AI-inferred) */
   scoreRange?: OnlineEvaluator_MetricSources_Metric_Metadata_ScoreRange | Computed<OnlineEvaluator_MetricSources_Metric_Metadata_ScoreRange>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec_CustomOutputFormatConfig {
+  /** Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred) */
   returnRawOutput?: boolean | Computed<boolean>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec {
+  /** The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred) */
   baselineResponseFieldName?: string | Computed<string>;
+  /** The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred) */
   candidateResponseFieldName?: string | Computed<string>;
+  /** Configuration for the shape of a custom-formatted metric output. (AI-inferred) */
   customOutputFormatConfig?: OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec_CustomOutputFormatConfig | Computed<OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec_CustomOutputFormatConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_PointwiseMetricSpec {
+  /** Configuration for the shape of a custom-formatted metric output. (AI-inferred) */
   customOutputFormatConfig?: OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec_CustomOutputFormatConfig | Computed<OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec_CustomOutputFormatConfig>;
+  /** The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred) */
   metricPromptTemplate?: string | Computed<string>;
+  /** A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred) */
   systemInstruction?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_RougeSpec {
+  /** Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred) */
   rougeType?: string | Computed<string>;
+  /** Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred) */
   splitSummaries?: boolean | Computed<boolean>;
+  /** Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred) */
   useStemmer?: boolean | Computed<boolean>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric {
+  /** Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred) */
   aggregationMetrics?: string[] | Computed<string[]>;
+  /** Configuration for computing the BLEU text-similarity metric. (AI-inferred) */
   bleuSpec?: OnlineEvaluator_MetricSources_Metric_BleuSpec | Computed<OnlineEvaluator_MetricSources_Metric_BleuSpec>;
+  /** Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred) */
   computationBasedMetricSpec?: OnlineEvaluator_MetricSources_Metric_ComputationBasedMetricSpec | Computed<OnlineEvaluator_MetricSources_Metric_ComputationBasedMetricSpec>;
+  /** Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred) */
   customCodeExecutionSpec?: OnlineEvaluator_MetricSources_Metric_CustomCodeExecutionSpec | Computed<OnlineEvaluator_MetricSources_Metric_CustomCodeExecutionSpec>;
+  /** Configuration for computing an exact-string-match metric. (AI-inferred) */
   exactMatchSpec?: unknown | Computed<unknown>;
+  /** Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred) */
   llmBasedMetricSpec?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: OnlineEvaluator_MetricSources_Metric_Metadata | Computed<OnlineEvaluator_MetricSources_Metric_Metadata>;
+  /** Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred) */
   pairwiseMetricSpec?: OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec | Computed<OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec>;
+  /** Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred) */
   pointwiseMetricSpec?: OnlineEvaluator_MetricSources_Metric_PointwiseMetricSpec | Computed<OnlineEvaluator_MetricSources_Metric_PointwiseMetricSpec>;
+  /** Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred) */
   predefinedMetricSpec?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpec | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpec>;
+  /** Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred) */
   rougeSpec?: OnlineEvaluator_MetricSources_Metric_RougeSpec | Computed<OnlineEvaluator_MetricSources_Metric_RougeSpec>;
 }
 
 export interface OnlineEvaluator_MetricSources {
+  /** The metric this result was computed for. (AI-inferred) */
   metric?: OnlineEvaluator_MetricSources_Metric | Computed<OnlineEvaluator_MetricSources_Metric>;
+  /** The full resource name of the metric this applies to. (AI-inferred) */
   metricResourceName?: string | Computed<string>;
 }
 
 export interface OnlineEvaluator_StateDetails {
+  /** The message content. (AI-inferred) */
   message?: string | Computed<string>;
 }
 

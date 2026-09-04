@@ -4,194 +4,296 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Flow_AdvancedSettings_AudioExportGcsDestination struct {
+	// The URI of an audio clip this response instructs the client to play. (AI-inferred)
 	Uri any
 }
 
 type Flow_AdvancedSettings_DtmfSettings struct {
-	Enabled                    any
+	// Whether this setting is turned on. (AI-inferred)
+	Enabled any
+	// How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred)
 	EndpointingTimeoutDuration any
-	FinishDigit                any
-	InterdigitTimeoutDuration  any
-	MaxDigits                  any
+	// The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
+	FinishDigit any
+	// The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred)
+	InterdigitTimeoutDuration any
+	// The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred)
+	MaxDigits any
 }
 
 type Flow_AdvancedSettings_LoggingSettings struct {
+	// Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred)
 	EnableConsentBasedRedaction any
-	EnableInteractionLogging    any
-	EnableStackdriverLogging    any
+	// Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred)
+	EnableInteractionLogging any
+	// Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
+	EnableStackdriverLogging any
 }
 
 type Flow_AdvancedSettings_SpeechSettings struct {
-	EndpointerSensitivity      any
-	Models                     any
-	NoSpeechTimeout            any
+	// How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred)
+	EndpointerSensitivity any
+	// Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred)
+	Models any
+	// How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred)
+	NoSpeechTimeout any
+	// Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred)
 	UseTimeoutBasedEndpointing any
 }
 
 type Flow_AdvancedSettings struct {
+	// The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred)
 	AudioExportGcsDestination any
-	DtmfSettings              any
-	LoggingSettings           any
-	SpeechSettings            any
+	// Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred)
+	DtmfSettings any
+	// Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred)
+	LoggingSettings any
+	// Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
+	SpeechSettings any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess struct {
+	// Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
 	Metadata any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	Audio                     any
-	Uri                       any
+	// The synthesized audio content for this response. (AI-inferred)
+	Audio any
+	// The URI of an audio clip this response instructs the client to play. (AI-inferred)
+	Uri any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio struct {
+	// The ordered audio segments making up a `mixed_audio` response. (AI-inferred)
 	Segments any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	Ssml                      any
-	Text                      any
+	// Speech Synthesis Markup Language text, giving finer control over how this response is spoken aloud than plain `text` allows. (AI-inferred)
+	Ssml any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	AudioUri                  any
+	// The URI of the client-hosted audio clip a `play_audio` response points to. (AI-inferred)
+	AudioUri any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall struct {
+	// The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
 	PhoneNumber any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_Text struct {
+	// Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
 	AllowPlaybackInterruption any
-	Text                      any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall struct {
-	Action          any
+	// The specific action, exposed by `tool`, being invoked. (AI-inferred)
+	Action any
+	// The parameter values passed as input when invoking this tool's action. (AI-inferred)
 	InputParameters any
-	Tool            any
+	// The tool this fulfillment or response invokes. (AI-inferred)
+	Tool any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message struct {
-	Channel               any
-	ConversationSuccess   any
-	EndInteraction        any
-	KnowledgeInfoCard     any
-	LiveAgentHandoff      any
-	MixedAudio            any
-	OutputAudioText       any
-	Payload               any
-	PlayAudio             any
-	ResponseType          any
+	// The output channel this response message is scoped to (e.g. a specific integration), so different channels can receive different responses for the same turn. (AI-inferred)
+	Channel any
+	// Signals that the conversation reached a successful outcome, optionally carrying metadata describing why. (AI-inferred)
+	ConversationSuccess any
+	// Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
+	EndInteraction any
+	// An info-card response generated from a knowledge base or generative answer, rendered by clients that support Infobot Messenger-compatible cards. (AI-inferred)
+	KnowledgeInfoCard any
+	// Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
+	LiveAgentHandoff any
+	// An audio response composed of multiple segments, mixing Dialogflow's own synthesized speech with client-hosted audio clips played via `play_audio`. (AI-inferred)
+	MixedAudio any
+	// A text or SSML response used preferentially for speech synthesis, when the response also carries a plain `text` variant for display. (AI-inferred)
+	OutputAudioText any
+	// A custom, integration-specific JSON payload carried alongside this response message. (AI-inferred)
+	Payload any
+	// Signals the client to play an audio clip hosted at `audio_uri`, rather than synthesizing speech itself. (AI-inferred)
+	PlayAudio any
+	// Which kind of response message this is (e.g. entry prompt, follow-up, or error), controlling when Dialogflow surfaces it. (AI-inferred)
+	ResponseType any
+	// Signals a telephony integration to transfer the active call to `phone_number`. (AI-inferred)
 	TelephonyTransferCall any
-	Text                  any
-	ToolCall              any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
+	// A request from the agent to invoke a specific `tool`'s own `action`, passing `input_parameters`. (AI-inferred)
+	ToolCall any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent struct {
+	// Further, nested cascading if/else conditions evaluated when this case's own condition matches. (AI-inferred)
 	AdditionalCases any
-	Message         any
+	// The message content. (AI-inferred)
+	Message any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases struct {
+	// The message(s) or action(s) to run when this case's own condition matches. (AI-inferred)
 	CaseContent any
-	Condition   any
+	// A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
+	Condition any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases struct {
+	// The ordered condition/content pair(s) making up this cascading if/else. (AI-inferred)
 	Cases any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_Generators struct {
-	Generator       any
+	// A reference to the generator this invokes. (AI-inferred)
+	Generator any
+	// The parameter values passed as input when invoking this tool's action. (AI-inferred)
 	InputParameters any
+	// The session parameter this generator's own output is written to. (AI-inferred)
 	OutputParameter any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_SetParameterActions struct {
+	// The name of the parameter this applies to. (AI-inferred)
 	Parameter any
-	Value     any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Flow_EventHandlers_TriggerFulfillment struct {
-	AdvancedSettings         any
-	CodeBlockFunction        any
-	ConditionalCases         any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// The name of the Cloud Function this fulfillment invokes to run custom code inline. (AI-inferred)
+	CodeBlockFunction any
+	// A cascading if/else list of conditions -- the first one whose own `condition` evaluates true is used, the rest are ignored. (AI-inferred)
+	ConditionalCases any
+	// Whether Dialogflow falls back to a generative (LLM-produced) response when no other route matches, rather than a static no-match message. (AI-inferred)
 	EnableGenerativeFallback any
-	Generators               any
-	Messages                 any
-	ReturnPartialResponses   any
-	SetParameterActions      any
-	Tag                      any
-	Webhook                  any
+	// The generator(s) (LLM prompt-based response generation) invoked by this fulfillment. (AI-inferred)
+	Generators any
+	// The response message(s) this fulfillment returns. (AI-inferred)
+	Messages any
+	// Whether this fulfillment streams its own response back incrementally, rather than waiting to send it all at once. (AI-inferred)
+	ReturnPartialResponses any
+	// Session parameter value(s) this fulfillment sets before running its own webhook call or response. (AI-inferred)
+	SetParameterActions any
+	// A caller-defined identifier included in the webhook request, letting the webhook service tell which fulfillment triggered it. (AI-inferred)
+	Tag any
+	// A reference to the webhook this fulfillment calls. (AI-inferred)
+	Webhook any
 }
 
 type Flow_EventHandlers struct {
-	Event              any
-	Name               any
-	TargetFlow         any
-	TargetPage         any
-	TargetPlaybook     any
+	// The name of the event this handler responds to. (AI-inferred)
+	Event any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The flow this transition moves the conversation to. (AI-inferred)
+	TargetFlow any
+	// The page this transition moves the conversation to. (AI-inferred)
+	TargetPage any
+	// The playbook this transition moves the conversation to. (AI-inferred)
+	TargetPlaybook any
+	// The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
 	TriggerFulfillment any
 }
 
 type Flow_InputParameterDefinitions_TypeSchema_InlineSchema struct {
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
 	Items any
-	Type  any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Flow_InputParameterDefinitions_TypeSchema_SchemaReference struct {
+	// A schema describing this value's own expected structure. (AI-inferred)
 	Schema any
-	Tool   any
+	// The tool this fulfillment or response invokes. (AI-inferred)
+	Tool any
 }
 
 type Flow_InputParameterDefinitions_TypeSchema struct {
-	InlineSchema    any
+	// Defines this parameter's own type schema directly, rather than referencing one. (AI-inferred)
+	InlineSchema any
+	// References a separately defined schema, rather than declaring one inline. (AI-inferred)
 	SchemaReference any
 }
 
 type Flow_InputParameterDefinitions struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
-	Type        any
-	TypeSchema  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The schema describing this parameter's own expected type. (AI-inferred)
+	TypeSchema any
 }
 
 type Flow_KnowledgeConnectorSettings_DataStoreConnections struct {
-	DataStore              any
-	DataStoreType          any
+	// A reference to the Vertex AI Search data store this connection reads from. (AI-inferred)
+	DataStore any
+	// What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred)
+	DataStoreType any
+	// How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred)
 	DocumentProcessingMode any
 }
 
 type Flow_KnowledgeConnectorSettings struct {
+	// The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred)
 	DataStoreConnections any
-	Enabled              any
-	TargetFlow           any
-	TargetPage           any
-	TriggerFulfillment   any
+	// Whether this setting is turned on. (AI-inferred)
+	Enabled any
+	// The flow this transition moves the conversation to. (AI-inferred)
+	TargetFlow any
+	// The page this transition moves the conversation to. (AI-inferred)
+	TargetPage any
+	// The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
+	TriggerFulfillment any
 }
 
 type Flow_MultiLanguageSettings struct {
-	EnableMultiLanguageDetection   any
+	// Whether the agent auto-detects which supported language the end user is speaking, rather than requiring it be specified. (AI-inferred)
+	EnableMultiLanguageDetection any
+	// The language(s) this generator/playbook can produce responses in. (AI-inferred)
 	SupportedResponseLanguageCodes any
 }
 
 type Flow_NluSettings struct {
+	// The minimum confidence an intent match must reach to be accepted, below which it's treated as no match. (AI-inferred)
 	ClassificationThreshold any
-	ModelTrainingMode       any
-	ModelType               any
+	// Which mode this agent's own NLU model is trained with. (AI-inferred)
+	ModelTrainingMode any
+	// Which underlying model architecture this uses. (AI-inferred)
+	ModelType any
 }
 
 type Flow_TransitionRoutes struct {
-	Condition          any
-	Description        any
-	Intent             any
-	Name               any
-	TargetFlow         any
-	TargetPage         any
+	// A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
+	Condition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A reference to the intent this applies to. (AI-inferred)
+	Intent any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The flow this transition moves the conversation to. (AI-inferred)
+	TargetFlow any
+	// The page this transition moves the conversation to. (AI-inferred)
+	TargetPage any
+	// The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
 	TriggerFulfillment any
 }
 
@@ -500,35 +602,61 @@ var Flow_TransitionRoutesFields = ubx.FieldMap{
 }
 
 type FlowConfig struct {
-	AdvancedSettings           any
-	Description                any
-	DisplayName                any
-	EventHandlers              any
-	InputParameterDefinitions  any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
+	EventHandlers any
+	// The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
+	InputParameterDefinitions any
+	// Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
 	KnowledgeConnectorSettings any
-	Locked                     any
-	MultiLanguageSettings      any
-	Name                       any
-	NluSettings                any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// Configuration for how this agent handles multiple supported languages. (AI-inferred)
+	MultiLanguageSettings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
+	NluSettings any
+	// The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
 	OutputParameterDefinitions any
-	TransitionRouteGroups      any
-	TransitionRoutes           any
+	// The reusable transition route group(s) included on this page/flow. (AI-inferred)
+	TransitionRouteGroups any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
+	TransitionRoutes any
 }
 
 type FlowAttrs struct {
-	AdvancedSettings           any
-	Description                any
-	DisplayName                any
-	EventHandlers              any
-	InputParameterDefinitions  any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
+	EventHandlers any
+	// The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
+	InputParameterDefinitions any
+	// Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
 	KnowledgeConnectorSettings any
-	Locked                     any
-	MultiLanguageSettings      any
-	Name                       any
-	NluSettings                any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// Configuration for how this agent handles multiple supported languages. (AI-inferred)
+	MultiLanguageSettings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
+	NluSettings any
+	// The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
 	OutputParameterDefinitions any
-	TransitionRouteGroups      any
-	TransitionRoutes           any
+	// The reusable transition route group(s) included on this page/flow. (AI-inferred)
+	TransitionRouteGroups any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
+	TransitionRoutes any
 }
 
 var Flow = ubx.ResourceBinding{

@@ -17,350 +17,545 @@ class EvaluationItem_Error:
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_ComputerUse:
+    # If `true`, screens `computer_use` requests for prompt-injection attempts before acting on them. (AI-inferred)
     enable_prompt_injection_detection: Any = None
+    # Which surface the `computer_use` tool operates in -- e.g. `browser`, for a sandboxed web browser. (AI-inferred)
     environment: Any = None
+    # Built-in `computer_use` actions to disable, typically to hand those actions to a custom, caller-registered function instead. (AI-inferred)
     excluded_predefined_functions: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_EnterpriseWebSearch:
+    # The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
     blocking_confidence: Any = None
+    # Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
     exclude_domains: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_ExaAiSearch:
+    # The API key credential used to authenticate this tool's own external calls. (AI-inferred)
     api_key: Any = None
+    # Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
     custom_configs: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_FunctionDeclarations_Parameters:
+    # Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
     additional_properties: Any = None
+    # A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
     any_of: Any = None
+    # The value used when this field is left unset. (AI-inferred)
     default: Any = None
+    # Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
     defs: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
     enum: Any = None
+    # A sample value illustrating this schema, for documentation purposes only -- not enforced as a constraint. (AI-inferred)
     example: Any = None
+    # A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
     format: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The most elements an `array`-typed value may have. (AI-inferred)
     max_items: Any = None
+    # The most characters a `string`-typed value may have. (AI-inferred)
     max_length: Any = None
+    # The most properties an `object`-typed value may have. (AI-inferred)
     max_properties: Any = None
+    # The largest value a `number`/`integer`-typed value may take. (AI-inferred)
     maximum: Any = None
+    # The fewest elements an `array`-typed value may have. (AI-inferred)
     min_items: Any = None
+    # The fewest characters a `string`-typed value may have. (AI-inferred)
     min_length: Any = None
+    # The fewest properties an `object`-typed value may have. (AI-inferred)
     min_properties: Any = None
+    # The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
     minimum: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # A regular expression a `string`-typed value must match. (AI-inferred)
     pattern: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # The order this schema's own `properties` should appear in when Gemini generates a structured response -- Gemini otherwise has no guaranteed field order for JSON output. (AI-inferred)
     property_ordering: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_FunctionDeclarations:
+    # Controls how the model treats this function call -- e.g. whether it must wait for the result before continuing, or can proceed without blocking. (AI-inferred)
     behavior: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
+    # The function's own parameter schema expressed as a plain JSON Schema document, an alternative to the structured `parameters` field. (AI-inferred)
     parameters_json_schema: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
+    # The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred)
     response_json_schema: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_GoogleMaps_GroundingTypes:
+    # Configuration for grounding responses in Google Maps place data specifically. (AI-inferred)
     places: Any = None
+    # Configuration for how requests are routed, e.g. to a specific region or backend. (AI-inferred)
     routing: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_GoogleMaps:
+    # Whether an interactive map widget is included alongside a Google Maps-grounded response. (AI-inferred)
     enable_widget: Any = None
+    # Which real-world grounding source(s) (e.g. web search, Maps) this configuration draws on. (AI-inferred)
     grounding_types: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_GoogleSearch_SearchTypes:
+    # Enables grounding via Google Image Search results. (AI-inferred)
     image_search: Any = None
+    # Enables grounding via Google Web Search results. (AI-inferred)
     web_search: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_GoogleSearch:
+    # The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
     blocking_confidence: Any = None
+    # Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
     exclude_domains: Any = None
+    # Which kind(s) of web search results (image, web, or both) this grounding tool draws on. (AI-inferred)
     search_types: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig:
+    # The minimum predicted-usefulness score, from `dynamic_retrieval_config`, at which grounding is triggered -- a lower threshold grounds more often. (AI-inferred)
     dynamic_threshold: Any = None
+    # Which operating mode this configuration uses. (AI-inferred)
     mode: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_GoogleSearchRetrieval:
+    # Controls when Google Search grounding actually triggers, based on how likely the model judges grounding to help. (AI-inferred)
     dynamic_retrieval_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_ParallelAiSearch:
+    # The API key credential used to authenticate this tool's own external calls. (AI-inferred)
     api_key: Any = None
+    # Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
     custom_configs: Any = None
+    # Whether Google retains this request's own data beyond the immediate response, per the caller's own data-retention agreement. (AI-inferred)
     enable_data_retention: Any = None
+    # If `true`, Google discards this request's own data immediately after responding rather than retaining it at all. (AI-inferred)
     enable_zero_data_retention: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig:
+    # The Secret Manager secret version holding the API key used to authenticate this call. (AI-inferred)
     api_key_secret_version: Any = None
+    # The literal API key value used to authenticate this tool's own external call. (AI-inferred)
     api_key_string: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_ApiAuth:
+    # How the API key for this tool's own external service call is supplied. (AI-inferred)
     api_key_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig:
+    # The Secret Manager secret holding the API key used to authenticate this call. (AI-inferred)
     api_key_secret: Any = None
+    # The literal API key value used to authenticate this tool's own external call. (AI-inferred)
     api_key_string: Any = None
+    # Where in the HTTP request this credential is placed, e.g. a header or query parameter. (AI-inferred)
     http_element_location: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig:
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig:
+    # The Secret Manager secret holding this credential. (AI-inferred)
     credential_secret: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig:
+    # An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
     access_token: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig:
+    # An OpenID Connect ID token used to authenticate this call. (AI-inferred)
     id_token: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_AuthConfig:
+    # How the API key for this tool's own external service call is supplied. (AI-inferred)
     api_key_config: Any = None
+    # Which authentication method this configuration uses, e.g. API key, OAuth, or OIDC. (AI-inferred)
     auth_type: Any = None
+    # Authenticates using a Google-managed service account, rather than a caller-supplied credential. (AI-inferred)
     google_service_account_config: Any = None
+    # Authenticates using HTTP Basic authentication (username and password). (AI-inferred)
     http_basic_auth_config: Any = None
+    # Authenticates using an OAuth 2.0 access token. (AI-inferred)
     oauth_config: Any = None
+    # Authenticates using an OpenID Connect ID token. (AI-inferred)
     oidc_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParams:
+    # The position of this item within its own containing sequence. (AI-inferred)
     index: Any = None
+    # How many search results (hits) to request from the external search API. (AI-inferred)
     num_hits: Any = None
+    # The Elasticsearch search template used to construct this query. (AI-inferred)
     search_template: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_ExternalApi:
+    # Authentication credentials for calling this external API. (AI-inferred)
     api_auth: Any = None
+    # Which external search API shape this configuration targets, e.g. `elastic_search_params` or `simple_search_params`. (AI-inferred)
     api_spec: Any = None
+    # Authentication configuration for reaching this external resource. (AI-inferred)
     auth_config: Any = None
+    # Parameters for querying an Elasticsearch-backed external search API. (AI-inferred)
     elastic_search_params: Any = None
+    # The endpoint this call is directed to. (AI-inferred)
     endpoint: Any = None
+    # Parameters for querying a simple, generic external search API, as an alternative to `elastic_search_params`. (AI-inferred)
     simple_search_params: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecs:
+    # The Vertex AI Search data store this grounding query reads from, in the form `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`. (AI-inferred)
     data_store: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexAiSearch:
+    # Restricts a Vertex AI Search grounding query to specific data store(s) within the configured search app, rather than all of them. (AI-inferred)
     data_store_specs: Any = None
+    # The Vertex AI Search data store this applies to. (AI-inferred)
     datastore: Any = None
+    # The Vertex AI Search app (engine) this grounding query reads from. (AI-inferred)
     engine: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The maximum number of results this query returns. (AI-inferred)
     max_results: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexRagStore_RagResources:
+    # The RAG corpus this applies to, in the form `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`. (AI-inferred)
     rag_corpus: Any = None
+    # Specific file ID(s) within `rag_corpus` to restrict retrieval to, instead of the whole corpus. (AI-inferred)
     rag_file_ids: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter:
+    # A filter expression restricting retrieval to chunks whose own metadata matches. (AI-inferred)
     metadata_filter: Any = None
+    # The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
     vector_distance_threshold: Any = None
+    # The minimum vector similarity a retrieved chunk must have to be included -- a higher threshold returns fewer, more relevant chunks. (AI-inferred)
     vector_similarity_threshold: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker:
+    # The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred)
     model_name: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking:
+    # Reranks retrieved results using a language model, rather than the dedicated rank service. (AI-inferred)
     llm_ranker: Any = None
+    # Reranks retrieved results using Vertex AI's own dedicated semantic ranking model. (AI-inferred)
     rank_service: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig:
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # Configuration for reranking retrieved results before returning them. (AI-inferred)
     ranking: Any = None
+    # Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
     top_k: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval_VertexRagStore:
+    # The RAG corpus/corpora (and optionally specific files within one corpus) this query retrieves from. (AI-inferred)
     rag_resources: Any = None
+    # Controls how many chunks are retrieved and how they're filtered/ranked for a RAG query. (AI-inferred)
     rag_retrieval_config: Any = None
+    # The maximum number of top-ranked results to return from retrieval. (AI-inferred)
     similarity_top_k: Any = None
+    # The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
     vector_distance_threshold: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools_Retrieval:
+    # If `true`, suppresses source citations that would otherwise accompany a grounded response. (AI-inferred)
     disable_attribution: Any = None
+    # Configuration for grounding via a caller-specified external search API, rather than a Google-hosted one. (AI-inferred)
     external_api: Any = None
+    # Enables the model to ground its response in a Vertex AI Search data store. (AI-inferred)
     vertex_ai_search: Any = None
+    # Enables the model to ground its response in one or more Vertex AI RAG Engine corpora. (AI-inferred)
     vertex_rag_store: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents_Tools:
+    # Enables the model to write and run code in a hosted interpreter as part of generating its response. (AI-inferred)
     code_execution: Any = None
+    # Enables the model to control a browser, mobile, or desktop `environment` by issuing UI actions (click, type, scroll) as part of generating its response. (AI-inferred)
     computer_use: Any = None
+    # Enables grounding via an enterprise-scoped web search, as an alternative to open `google_search` grounding. (AI-inferred)
     enterprise_web_search: Any = None
+    # Enables grounding via the third-party Exa AI search tool, authenticated with `api_key`. (AI-inferred)
     exa_ai_search: Any = None
+    # The set of callable functions the model may invoke via `function_call`, each declared with a name, description, and parameter schema. (AI-inferred)
     function_declarations: Any = None
+    # Enables the model to ground its response in Google Maps place and location data. (AI-inferred)
     google_maps: Any = None
+    # Enables the model to ground its response in live Google Search results. (AI-inferred)
     google_search: Any = None
+    # Enables the model to ground its response in live Google Search results, with configurable dynamic-retrieval behavior. (AI-inferred)
     google_search_retrieval: Any = None
+    # Enables grounding via the third-party Parallel AI search tool. (AI-inferred)
     parallel_ai_search: Any = None
+    # Enables the model to ground its response in a specified external or Vertex AI-hosted data source. (AI-inferred)
     retrieval: Any = None
+    # Enables the model to fetch and read the content of URLs it's given or discovers, to ground its response. (AI-inferred)
     url_context: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Agents:
+    # The identifier of the agent this applies to. (AI-inferred)
     agent_id: Any = None
+    # The kind of agent this is, e.g. which framework or platform it's built on. (AI-inferred)
     agent_type: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # An instruction given to the model or agent. (AI-inferred)
     instruction: Any = None
+    # The child agent(s) this agent delegates parts of a task to. (AI-inferred)
     sub_agents: Any = None
+    # The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred)
     tools: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_AudioTranscription_Words:
+    # The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     end_offset: Any = None
+    # The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     start_offset: Any = None
+    # A single transcribed word. (AI-inferred)
     word: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_AudioTranscription:
+    # Which speaker a transcribed segment is attributed to, when speaker diarization is enabled. (AI-inferred)
     speaker_label: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # The individual word(s) making up this transcript segment. (AI-inferred)
     words: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_CodeExecutionResult:
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The result of this operation, e.g. whether it succeeded. (AI-inferred)
     outcome: Any = None
+    # The output produced by this operation. (AI-inferred)
     output: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_ExecutableCode:
+    # A machine-readable code identifying this outcome or error. (AI-inferred)
     code: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The language this content is in or should be processed as, typically a BCP-47 code. (AI-inferred)
     language: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_FileData:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The URI of a previously uploaded file this Part references. (AI-inferred)
     file_uri: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_FunctionCall_PartialArgs:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # A JSONPath expression selecting a location within a JSON document. (AI-inferred)
     json_path: Any = None
+    # Represents an explicit JSON `null`, populated when this field's own type is null. (AI-inferred)
     null_value: Any = None
+    # A numeric value, populated when this field's own type is a number. (AI-inferred)
     number_value: Any = None
+    # A text value, populated when this field's own type is a string. (AI-inferred)
     string_value: Any = None
+    # Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
     will_continue: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_FunctionCall:
+    # The argument value(s) passed to this call. (AI-inferred)
     args: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The function-call arguments accumulated so far, while the model is still streaming them incrementally. (AI-inferred)
     partial_args: Any = None
+    # Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
     will_continue: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_FunctionResponse_Parts_InlineData:
+    # The raw, embedded bytes of this inline content. (AI-inferred)
     data: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_FunctionResponse_Parts:
+    # A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
     file_data: Any = None
+    # Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
     inline_data: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_FunctionResponse:
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
     parts: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
+    # Configuration for when and how this job is scheduled to run. (AI-inferred)
     scheduling: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_MediaResolution:
+    # The severity or intensity level of this setting. (AI-inferred)
     level: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts_VideoMetadata:
+    # The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     end_offset: Any = None
+    # The frame rate, in frames per second, video input is sampled at. (AI-inferred)
     fps: Any = None
+    # The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     start_offset: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content_Parts:
+    # Enables Gemini to transcribe spoken audio to text as part of its response. (AI-inferred)
     audio_transcription: Any = None
+    # The output of running a preceding `executable_code` block. (AI-inferred)
     code_execution_result: Any = None
+    # Code the model generated for the tool-hosted interpreter to run, when code execution is enabled. (AI-inferred)
     executable_code: Any = None
+    # A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
     file_data: Any = None
+    # A request from the model, inside its own response, to invoke a specific function the caller declared -- the caller executes it and returns the result via a matching `function_response`. (AI-inferred)
     function_call: Any = None
+    # The caller-supplied result of a previously requested `function_call`, returned to the model in a following turn. (AI-inferred)
     function_response: Any = None
+    # Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
     inline_data: Any = None
+    # The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred)
     media_resolution: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # A step of the model's own intermediate reasoning, surfaced when extended thinking is enabled. (AI-inferred)
     thought: Any = None
+    # An opaque signature validating a `thought` block as genuinely produced by the model, so it can be safely replayed in a later turn. (AI-inferred)
     thought_signature: Any = None
+    # Configuration controlling how video input is sampled, e.g. frame rate and clipping. (AI-inferred)
     video_metadata: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events_Content:
+    # The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
     parts: Any = None
+    # Who this Content is attributed to in the conversation: `user` or `model`. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns_Events:
+    # The tool(s) available to the agent at this point in the conversation. (AI-inferred)
     active_tools: Any = None
+    # Who or what produced this event or message. (AI-inferred)
     author: Any = None
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # When this event occurred. (AI-inferred)
     event_time: Any = None
+    # The change this event made to the agent's own conversation state. (AI-inferred)
     state_delta: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData_Turns:
+    # The event(s) recorded during this run. (AI-inferred)
     events: Any = None
+    # An identifier for this conversation turn. (AI-inferred)
     turn_id: Any = None
+    # This turn's own position within the conversation. (AI-inferred)
     turn_index: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses_AgentData:
+    # The agent(s) involved in this evaluation, keyed by their own identifier. (AI-inferred)
     agents: Any = None
+    # The ordered conversation turn(s) making up this evaluation trace. (AI-inferred)
     turns: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_CandidateResponses:
+    # The agent's own recorded state and turn history for this evaluation candidate. (AI-inferred)
     agent_data: Any = None
+    # Identifies which candidate response this applies to. (AI-inferred)
     candidate: Any = None
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -390,23 +585,32 @@ class EvaluationItem_EvaluationRequest_Prompt:
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_Rubrics_Rubrics_Content_Property:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_Rubrics_Rubrics_Content:
+    # A named property of this object. (AI-inferred)
     property: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_Rubrics_Rubrics:
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # How heavily this rubric criterion is weighted in the overall verdict: `HIGH`, `MEDIUM`, or `LOW`. (AI-inferred)
     importance: Any = None
+    # An identifier for this rubric criterion, unique within its own containing set. (AI-inferred)
     rubric_id: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationRequest_Rubrics:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Identifies which rubric group this applies to. (AI-inferred)
     group_id: Any = None
+    # The individual rubric criteria used to judge a response. (AI-inferred)
     rubrics: Any = None
 
 @dataclasses.dataclass
@@ -422,18 +626,28 @@ class EvaluationItem_EvaluationRequest:
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationResponse_CandidateResults_RubricVerdicts:
+    # The rubric criterion this verdict was judged against. (AI-inferred)
     evaluated_rubric: Any = None
+    # The judge model's own reasoning for this verdict. (AI-inferred)
     reasoning: Any = None
+    # Whether this rubric criterion was satisfied. (AI-inferred)
     verdict: Any = None
 
 @dataclasses.dataclass
 class EvaluationItem_EvaluationResponse_CandidateResults:
+    # Extra, metric-specific result data beyond the standard score/explanation fields. (AI-inferred)
     additional_results: Any = None
+    # Identifies which candidate response this applies to. (AI-inferred)
     candidate: Any = None
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # A human-readable explanation of this result. (AI-inferred)
     explanation: Any = None
+    # The metric this result was computed for. (AI-inferred)
     metric: Any = None
+    # The per-rubric-criterion verdict(s) making up this evaluation result. (AI-inferred)
     rubric_verdicts: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass

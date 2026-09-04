@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Webapp_Icons:
+    # The real, base64-encoded image bytes for this web app's own icon. (AI-inferred)
     image_data: Any = None
 
 _Webapp_IconsFields = {

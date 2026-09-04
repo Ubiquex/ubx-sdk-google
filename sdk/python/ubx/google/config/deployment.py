@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Deployment_DeleteResults_Outputs:
+    # Whether this Terraform output value is marked sensitive and should be redacted from logs and the console. (AI-inferred)
     sensitive: Any = None
+    # The output value produced when this deployment's own resources were deleted. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -27,11 +29,14 @@ class Deployment_ProviderConfig:
 
 @dataclasses.dataclass
 class Deployment_TerraformBlueprint_ExternalValues_DeploymentSource:
+    # The other deployment this external value is sourced from. (AI-inferred)
     deployment: Any = None
+    # The name of the specific Terraform output on the source deployment to use as this value. (AI-inferred)
     output_name: Any = None
 
 @dataclasses.dataclass
 class Deployment_TerraformBlueprint_ExternalValues:
+    # References an output value from another Infrastructure Manager deployment, letting this blueprint consume it as an input. (AI-inferred)
     deployment_source: Any = None
 
 @dataclasses.dataclass
@@ -45,6 +50,7 @@ class Deployment_TerraformBlueprint_GitSource:
 
 @dataclasses.dataclass
 class Deployment_TerraformBlueprint_InputValues:
+    # The literal value passed for this Terraform input variable when the blueprint is applied. (AI-inferred)
     input_value: Any = None
 
 @dataclasses.dataclass
@@ -60,15 +66,22 @@ class Deployment_TerraformBlueprint:
 
 @dataclasses.dataclass
 class Deployment_TfErrors_Error:
+    # The error's own numeric status code. (AI-inferred)
     code: Any = None
+    # Additional structured detail about the error, in whatever shape Terraform's own error reporting supplied. (AI-inferred)
     details: Any = None
+    # A human-readable description of the error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Deployment_TfErrors:
+    # Structured detail for one error Terraform reported while applying this deployment's own blueprint. (AI-inferred)
     error: Any = None
+    # A human-readable summary of why this Terraform operation failed. (AI-inferred)
     error_description: Any = None
+    # The HTTP status code returned by the underlying API call that failed, when the error originated from one. (AI-inferred)
     http_response_code: Any = None
+    # The Terraform resource address (e.g. `google_storage_bucket.my_bucket`) this error occurred on. (AI-inferred)
     resource_address: Any = None
 
 _Deployment_DeleteResults_OutputsFields = {

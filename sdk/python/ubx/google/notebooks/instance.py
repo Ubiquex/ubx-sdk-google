@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_GceSetup_AcceleratorConfigs:
+    # The number of CPU core(s) allocated. (AI-inferred)
     core_count: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -36,10 +38,15 @@ class Instance_GceSetup_ContainerImage:
 
 @dataclasses.dataclass
 class Instance_GceSetup_DataDisks:
+    # How this disk is encrypted, e.g. with a Google-managed or customer-managed key. (AI-inferred)
     disk_encryption: Any = None
+    # The size of this disk, in gibibytes. (AI-inferred)
     disk_size_gb: Any = None
+    # The Persistent Disk type used, e.g. `pd-ssd` or `pd-standard`. (AI-inferred)
     disk_type: Any = None
+    # A reference to the Cloud KMS key used to encrypt this resource. (AI-inferred)
     kms_key: Any = None
+    # The resource policy/policies (e.g. scheduled snapshots) applied to this resource. (AI-inferred)
     resource_policies: Any = None
 
 @dataclasses.dataclass
@@ -51,13 +58,18 @@ class Instance_GceSetup_GpuDriverConfig:
 
 @dataclasses.dataclass
 class Instance_GceSetup_NetworkInterfaces_AccessConfigs:
+    # The externally reachable IP address assigned to this resource. (AI-inferred)
     external_ip: Any = None
 
 @dataclasses.dataclass
 class Instance_GceSetup_NetworkInterfaces:
+    # Network access configuration for this instance. (AI-inferred)
     access_configs: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The network interface type used, e.g. `VIRTIO_NET` or `GVNIC`. (AI-inferred)
     nic_type: Any = None
+    # A reference to the subnet this applies to. (AI-inferred)
     subnet: Any = None
 
 @dataclasses.dataclass
@@ -71,7 +83,9 @@ class Instance_GceSetup_ReservationAffinity:
 
 @dataclasses.dataclass
 class Instance_GceSetup_ServiceAccounts:
+    # The service account email this instance runs as. (AI-inferred)
     email: Any = None
+    # The OAuth scope(s) granted to this instance. (AI-inferred)
     scopes: Any = None
 
 @dataclasses.dataclass
@@ -135,14 +149,23 @@ class Instance_GceSetup:
 
 @dataclasses.dataclass
 class Instance_UpgradeHistory:
+    # The action to perform. (AI-inferred)
     action: Any = None
+    # The container image this instance runs. (AI-inferred)
     container_image: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The ML framework this environment provides. (AI-inferred)
     framework: Any = None
+    # A reference to the disk snapshot this resource is created from. (AI-inferred)
     snapshot: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The version this resource is upgraded or reset to. (AI-inferred)
     target_version: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
+    # The VM image this instance boots from. (AI-inferred)
     vm_image: Any = None
 
 _Instance_GceSetup_AcceleratorConfigsFields = {

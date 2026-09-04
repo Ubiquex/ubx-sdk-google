@@ -2,40 +2,63 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Webhook_GenericWebService_OauthConfig {
+  /** The OAuth client ID used to authenticate. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** The OAuth client secret used to authenticate. (AI-inferred) */
   clientSecret?: string | Computed<string>;
+  /** The OAuth scope(s) requested. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
+  /** The Secret Manager secret version holding the OAuth client secret, instead of storing it inline. (AI-inferred) */
   secretVersionForClientSecret?: string | Computed<string>;
+  /** The OAuth token endpoint URL used to obtain an access token. (AI-inferred) */
   tokenEndpoint?: string | Computed<string>;
 }
 
 export interface Webhook_GenericWebService_SecretVersionsForRequestHeaders {
+  /** A reference to a specific Secret Manager secret version. (AI-inferred) */
   secretVersion?: string | Computed<string>;
 }
 
 export interface Webhook_GenericWebService_ServiceAccountAuthConfig {
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Webhook_GenericWebService {
+  /** Additional CA certificate(s) trusted when calling this webhook over HTTPS, beyond the standard public CA set. (AI-inferred) */
   allowedCaCerts?: string[] | Computed<string[]>;
+  /** The HTTP method used to call this webhook, e.g. `POST`. (AI-inferred) */
   httpMethod?: string | Computed<string>;
+  /** Authenticates the webhook call using OAuth 2.0 client credentials. (AI-inferred) */
   oauthConfig?: Webhook_GenericWebService_OauthConfig | Computed<Webhook_GenericWebService_OauthConfig>;
+  /** How session parameter values are mapped into the webhook's own request payload. (AI-inferred) */
   parameterMapping?: Record<string, string> | Computed<Record<string, string>>;
+  /** The password used to authenticate. (AI-inferred) */
   password?: string | Computed<string>;
+  /** The literal request body template sent to the webhook. (AI-inferred) */
   requestBody?: string | Computed<string>;
+  /** HTTP header(s) sent with the webhook request. (AI-inferred) */
   requestHeaders?: Record<string, string> | Computed<Record<string, string>>;
+  /** The Secret Manager secret version holding the username/password credential, instead of storing it inline. (AI-inferred) */
   secretVersionForUsernamePassword?: string | Computed<string>;
+  /** Secret Manager secret version(s) supplying sensitive header values, instead of storing them inline. (AI-inferred) */
   secretVersionsForRequestHeaders?: Record<string, Webhook_GenericWebService_SecretVersionsForRequestHeaders> | Computed<Record<string, Webhook_GenericWebService_SecretVersionsForRequestHeaders>>;
+  /** Authenticates the webhook call using a Google Cloud service account's own identity token. (AI-inferred) */
   serviceAccountAuthConfig?: Webhook_GenericWebService_ServiceAccountAuthConfig | Computed<Webhook_GenericWebService_ServiceAccountAuthConfig>;
+  /** How Dialogflow's own service agent identity is presented when authenticating the webhook call. (AI-inferred) */
   serviceAgentAuth?: string | Computed<string>;
+  /** The URI of an audio clip this response instructs the client to play. (AI-inferred) */
   uri?: string | Computed<string>;
+  /** The username used to authenticate. (AI-inferred) */
   username?: string | Computed<string>;
+  /** Which webhook protocol this uses, e.g. a standard service call or a flexible one. (AI-inferred) */
   webhookType?: string | Computed<string>;
 }
 
 export interface Webhook_ServiceDirectory {
+  /** Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred) */
   genericWebService?: Webhook_GenericWebService | Computed<Webhook_GenericWebService>;
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
@@ -94,20 +117,32 @@ const Webhook_ServiceDirectoryFields: FieldMap = {
 };
 
 export interface WebhookConfig {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred) */
   genericWebService?: Webhook_GenericWebService | Computed<Webhook_GenericWebService>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to the Service Directory service this webhook is reached through. (AI-inferred) */
   serviceDirectory?: Webhook_ServiceDirectory | Computed<Webhook_ServiceDirectory>;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout?: string | Computed<string>;
 }
 
 export interface WebhookAttrs {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled: boolean;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred) */
   genericWebService: Webhook_GenericWebService;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** A reference to the Service Directory service this webhook is reached through. (AI-inferred) */
   serviceDirectory: Webhook_ServiceDirectory;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout: string;
 }
 

@@ -118,20 +118,31 @@ var V2beta1Environment_TextToSpeechSettingsFields = ubx.FieldMap{
 }
 
 type V2beta1EnvironmentConfig struct {
-	AgentVersion         any
-	Description          any
-	Fulfillment          any
+	// The real version of the agent this evaluation was run against. (AI-inferred)
+	AgentVersion any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred)
+	Fulfillment any
+	// Configuration for this agent's own text-to-speech behavior. (AI-inferred)
 	TextToSpeechSettings any
 }
 
 type V2beta1EnvironmentAttrs struct {
-	AgentVersion         any
-	Description          any
-	Fulfillment          any
-	Name                 any
-	State                any
+	// The real version of the agent this evaluation was run against. (AI-inferred)
+	AgentVersion any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The fulfillment (messages, webhook call, parameter updates) run at this point. (AI-inferred)
+	Fulfillment any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// Configuration for this agent's own text-to-speech behavior. (AI-inferred)
 	TextToSpeechSettings any
-	UpdateTime           any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var V2beta1Environment = ubx.ResourceBinding{

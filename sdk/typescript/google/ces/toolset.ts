@@ -23,14 +23,20 @@ export interface Toolset_ConnectorToolset_AuthConfig {
 }
 
 export interface Toolset_ConnectorToolset_ConnectorActions_EntityOperation {
+  /** The identifier of the entity this operation applies to. (AI-inferred) */
   entityId?: string | Computed<string>;
+  /** Which action this performs, e.g. create, update, or delete. (AI-inferred) */
   operation?: string | Computed<string>;
 }
 
 export interface Toolset_ConnectorToolset_ConnectorActions {
+  /** The identifier of the connector action this tool invokes. (AI-inferred) */
   connectionActionId?: string | Computed<string>;
+  /** A structured create/update/delete action performed against an entity in the connected external system. (AI-inferred) */
   entityOperation?: Toolset_ConnectorToolset_ConnectorActions_EntityOperation | Computed<Toolset_ConnectorToolset_ConnectorActions_EntityOperation>;
+  /** The input field(s) this tool or operation accepts. (AI-inferred) */
   inputFields?: string[] | Computed<string[]>;
+  /** The output field(s) this tool or operation returns. (AI-inferred) */
   outputFields?: string[] | Computed<string[]>;
 }
 
@@ -96,7 +102,9 @@ export interface Toolset_McpToolset_ServiceDirectoryConfig {
 }
 
 export interface Toolset_McpToolset_TlsConfig_CaCerts {
+  /** A TLS certificate. (AI-inferred) */
   cert?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
@@ -106,37 +114,63 @@ export interface Toolset_McpToolset_TlsConfig {
 }
 
 export interface Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema {
+  /** Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred) */
   additionalProperties?: unknown | Computed<unknown>;
+  /** A list of schemas where a value must satisfy at least one to be valid. (AI-inferred) */
   anyOf?: unknown[] | Computed<unknown[]>;
+  /** The value used when this field is left unset. (AI-inferred) */
   default?: unknown | Computed<unknown>;
+  /** Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred) */
   defs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The exact, closed set of values a `string`-typed schema allows. (AI-inferred) */
   enum?: string[] | Computed<string[]>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
+  /** The most elements an `array`-typed value may have. (AI-inferred) */
   maxItems?: string | Computed<string>;
+  /** The largest value a `number`/`integer`-typed value may take. (AI-inferred) */
   maximum?: number | Computed<number>;
+  /** The fewest elements an `array`-typed value may have. (AI-inferred) */
   minItems?: string | Computed<string>;
+  /** The smallest value a `number`/`integer`-typed value may take. (AI-inferred) */
   minimum?: number | Computed<number>;
+  /** Whether `null` is a valid value for this otherwise-typed field. (AI-inferred) */
   nullable?: boolean | Computed<boolean>;
+  /** The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred) */
   prefixItems?: unknown[] | Computed<unknown[]>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: string[] | Computed<string[]>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** Whether every element of an array-typed value must be distinct. (AI-inferred) */
   uniqueItems?: boolean | Computed<boolean>;
 }
 
 export interface Toolset_McpToolset_ToolOverrides_Snapshot {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The schema describing this tool's own expected input. (AI-inferred) */
   inputSchema?: Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema | Computed<Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema>;
+  /** The schema describing this tool's own expected output. (AI-inferred) */
   outputSchema?: Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema | Computed<Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema>;
 }
 
 export interface Toolset_McpToolset_ToolOverrides {
+  /** A caller-chosen description presented to the model in place of this item's own default description. (AI-inferred) */
   descriptionOverride?: string | Computed<string>;
+  /** A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred) */
   nameOverride?: string | Computed<string>;
+  /** A frozen copy of this resource's own content at a specific point in time. (AI-inferred) */
   snapshot?: Toolset_McpToolset_ToolOverrides_Snapshot | Computed<Toolset_McpToolset_ToolOverrides_Snapshot>;
+  /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
 }
 

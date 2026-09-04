@@ -69,8 +69,11 @@ export interface ResourcePolicy_SnapshotSchedulePolicy_Schedule_HourlySchedule {
 }
 
 export interface ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklySchedule_DayOfWeeks {
+  /** The day of the week on which the snapshot is taken. Allowed values are MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY, and INVALID. (AI-inferred) */
   day?: string | Computed<string>;
+  /** The duration of the time window during which the snapshot schedule is active on this day of the week, specified as an ISO 8601 duration (e.g., 'PT1H' for one hour). (AI-inferred) */
   duration?: string | Computed<string>;
+  /** The time of day, in HH:MM format using a 24-hour clock, at which the snapshot is taken on the specified day of the week (in UTC). (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
@@ -242,6 +245,7 @@ const ResourcePolicy_WorkloadPolicyFields: FieldMap = {
 };
 
 export interface ResourcePolicyConfig {
+  /** An output-only description of the resource policy, as returned by the Google Cloud API. (AI-inferred) */
   description?: string | Computed<string>;
   /** Resource policy for disk consistency groups. */
   diskConsistencyGroupPolicy?: unknown | Computed<unknown>;
@@ -262,6 +266,7 @@ export interface ResourcePolicyConfig {
 export interface ResourcePolicyAttrs {
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** An output-only description of the resource policy, as returned by the Google Cloud API. (AI-inferred) */
   description: string;
   /** Resource policy for disk consistency groups. */
   diskConsistencyGroupPolicy: unknown;
@@ -275,6 +280,7 @@ export interface ResourcePolicyAttrs {
   kind: string;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
+  /** The Google Cloud region where the resource policy is located. This field is computed by the provider and is output-only, meaning it is not user-configurable and reflects the region determined by the provider configuration. (AI-inferred) */
   region: string;
   /** Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification. */
   resourceStatus: ResourcePolicy_ResourceStatus;

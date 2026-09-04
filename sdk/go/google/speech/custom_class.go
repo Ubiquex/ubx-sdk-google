@@ -4,6 +4,7 @@ package speech
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomClass_CustomClass_Items struct {
+	// The real, literal term this custom class item contributes to the class's own recognition bias. (AI-inferred)
 	Value any
 }
 

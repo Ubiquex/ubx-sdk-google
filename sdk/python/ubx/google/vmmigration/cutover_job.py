@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CutoverJob_ComputeEngineDisksTargetDetails_Disks:
+    # The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred)
     disk_uri: Any = None
+    # The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred)
     source_disk_number: Any = None
 
 @dataclasses.dataclass
@@ -27,7 +29,9 @@ class CutoverJob_ComputeEngineDisksTargetDetails:
 
 @dataclasses.dataclass
 class CutoverJob_ComputeEngineTargetDetails_AdaptationModifiers:
+    # A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred)
     modifier: Any = None
+    # The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -39,8 +43,11 @@ class CutoverJob_ComputeEngineTargetDetails_AppliedLicense:
 
 @dataclasses.dataclass
 class CutoverJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities:
+    # The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred)
     key: Any = None
+    # The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred)
     operator: Any = None
+    # The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -61,10 +68,15 @@ class CutoverJob_ComputeEngineTargetDetails_Encryption:
 
 @dataclasses.dataclass
 class CutoverJob_ComputeEngineTargetDetails_NetworkInterfaces:
+    # The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred)
     external_ip: Any = None
+    # The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred)
     internal_ip: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred)
     network_tier: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
@@ -131,58 +143,93 @@ class CutoverJob_Error:
 
 @dataclasses.dataclass
 class CutoverJob_Steps_FinalSync_Steps_Replicating:
+    # The real, measured average replication throughput, in bytes per second, over the last 30 minutes. (AI-inferred)
     last_thirty_minutes_average_bytes_per_second: Any = None
+    # The real, measured average replication throughput, in bytes per second, over the last 2 minutes. (AI-inferred)
     last_two_minutes_average_bytes_per_second: Any = None
+    # The real number of bytes already replicated to Google Cloud so far in the current replication cycle. (AI-inferred)
     replicated_bytes: Any = None
+    # The real total number of bytes that need to be replicated to Google Cloud for the current replication cycle to complete. (AI-inferred)
     total_bytes: Any = None
 
 @dataclasses.dataclass
 class CutoverJob_Steps_FinalSync_Steps:
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's initializing-replication step, the phase before the first full data sync begins. (AI-inferred)
     initializing_replication: Any = None
+    # Real, detailed progress for VM Migration's post-processing step, the cleanup and finalization work after replication data has landed. (AI-inferred)
     post_processing: Any = None
+    # Real, detailed progress for VM Migration's own active data-replication step. (AI-inferred)
     replicating: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class CutoverJob_Steps_FinalSync_Warnings_ActionItem:
+    # The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred)
     locale: Any = None
+    # A real, human-readable status or error message for this migration step. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class CutoverJob_Steps_FinalSync_Warnings_HelpLinks:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A real URL pointing to more information about this migration warning or error. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class CutoverJob_Steps_FinalSync_Warnings:
+    # Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred)
     action_item: Any = None
+    # The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
     code: Any = None
+    # Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred)
     help_links: Any = None
+    # The real, human-readable text of one migration warning. (AI-inferred)
     warning_message: Any = None
+    # The real timestamp when this migration warning was raised. (AI-inferred)
     warning_time: Any = None
 
 @dataclasses.dataclass
 class CutoverJob_Steps_FinalSync:
+    # The real, sequential number of the current replication cycle for this migrating VM, incrementing each time a new sync cycle starts. (AI-inferred)
     cycle_number: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # The real error, if any, that caused this migration step or job to fail. (AI-inferred)
     error: Any = None
+    # The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred)
     name: Any = None
+    # Output only. The real, measured completion percentage (0-100) of the current migration step. (AI-inferred)
     progress_percent: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
+    # The real, current state of this migration job, step, or resource. (AI-inferred)
     state: Any = None
+    # The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred)
     steps: Any = None
+    # The real total time this migration job has spent paused, across every pause since it started. (AI-inferred)
     total_pause_duration: Any = None
+    # Real, non-fatal warnings raised during this migration job, each with its own `warning_message`, severity, and `action_item`. (AI-inferred)
     warnings: Any = None
 
 @dataclasses.dataclass
 class CutoverJob_Steps:
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's own final-sync step, the last data sync performed immediately before cutover. (AI-inferred)
     final_sync: Any = None
+    # Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred)
     instantiating_migrated_vm: Any = None
+    # Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred)
     preparing_vm_disks: Any = None
+    # The real, previous replication cycle for this migrating VM, kept for reference alongside the current one. (AI-inferred)
     previous_replication_cycle: Any = None
+    # Real, detailed progress for VM Migration's own step shutting down the source VM as part of a cutover. (AI-inferred)
     shutting_down_source_vm: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 _CutoverJob_ComputeEngineDisksTargetDetails_DisksFields = {

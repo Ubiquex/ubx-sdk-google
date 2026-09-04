@@ -857,6 +857,7 @@ export interface BetaInstanceConfig {
   name?: string | Computed<string>;
   /** An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance. */
   networkInterfaces?: BetaInstance_NetworkInterfaces[] | Computed<BetaInstance_NetworkInterfaces[]>;
+  /** Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred) */
   networkPerformanceConfig?: BetaInstance_NetworkPerformanceConfig | Computed<BetaInstance_NetworkPerformanceConfig>;
   /** Additional instance params. */
   params?: BetaInstance_Params | Computed<BetaInstance_Params>;
@@ -889,6 +890,7 @@ export interface BetaInstanceConfig {
   sourceMachineImageEncryptionKey?: BetaInstance_Disks_DiskEncryptionKey | Computed<BetaInstance_Disks_DiskEncryptionKey>;
   /** A set of instance tags. */
   tags?: BetaInstance_Tags | Computed<BetaInstance_Tags>;
+  /** Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred) */
   workloadIdentityConfig?: BetaInstance_WorkloadIdentityConfig | Computed<BetaInstance_WorkloadIdentityConfig>;
 }
 
@@ -948,6 +950,7 @@ export interface BetaInstanceAttrs {
   name: string;
   /** An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance. */
   networkInterfaces: BetaInstance_NetworkInterfaces[];
+  /** Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred) */
   networkPerformanceConfig: BetaInstance_NetworkPerformanceConfig;
   /** Additional instance params. */
   params: BetaInstance_Params;
@@ -992,6 +995,7 @@ export interface BetaInstanceAttrs {
   statusMessage: string;
   /** A set of instance tags. */
   tags: BetaInstance_Tags;
+  /** Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred) */
   workloadIdentityConfig: BetaInstance_WorkloadIdentityConfig;
   /** Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   zone: string;

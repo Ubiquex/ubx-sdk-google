@@ -8,108 +8,163 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_ComplianceStandards:
+    # A reference to a specific compliance control within a standard. (AI-inferred)
     control: Any = None
+    # A reference to the compliance standard this maps to. (AI-inferred)
     standard: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A boolean expression evaluated to determine whether this rule applies. (AI-inferred)
     expression: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypes:
+    # Whether this item is included in the applied policy. (AI-inferred)
     included: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Values:
+    # The set of values permitted by this constraint. (AI-inferred)
     allowed_values: Any = None
+    # The set of values explicitly disallowed by this constraint. (AI-inferred)
     denied_values: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules:
+    # Whether every value is permitted, with no restriction. (AI-inferred)
     allow_all: Any = None
+    # The condition that must be satisfied for this rule to apply. (AI-inferred)
     condition: Any = None
+    # Whether every value is disallowed, with no exceptions. (AI-inferred)
     deny_all: Any = None
+    # Whether this constraint's own rule is actively enforced, rather than only evaluated. (AI-inferred)
     enforce: Any = None
+    # The parameter(s) configuring this policy or module. (AI-inferred)
     parameters: Any = None
+    # The resource type(s) this constraint applies to. (AI-inferred)
     resource_types: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint:
+    # A reference to a predefined Organization Policy constraint. (AI-inferred)
     canned_constraint_id: Any = None
+    # The rule(s) making up this Organization Policy. (AI-inferred)
     policy_rules: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraint:
+    # Whether this rule allows or denies the matching action. (AI-inferred)
     action_type: Any = None
+    # The condition that must be satisfied for this rule to apply. (AI-inferred)
     condition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The API method type(s) (e.g. `CREATE`, `UPDATE`) this custom constraint evaluates. (AI-inferred)
     method_types: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The resource type(s) this constraint applies to. (AI-inferred)
     resource_types: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom:
+    # A caller-defined Organization Policy constraint. (AI-inferred)
     custom_constraint: Any = None
+    # The rule(s) making up this Organization Policy. (AI-inferred)
     policy_rules: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_Properties:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The Common Expression Language (CEL) expression evaluated by this custom constraint. (AI-inferred)
     value_expression: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput:
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelector:
+    # The resource type(s) this constraint applies to. (AI-inferred)
     resource_types: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config:
+    # Additional, custom output data returned alongside this finding. (AI-inferred)
     custom_output: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The condition evaluated against a resource for this constraint. (AI-inferred)
     predicate: Any = None
+    # Guidance for resolving this finding. (AI-inferred)
     recommendation: Any = None
+    # Restricts this policy to resource(s) matching a specific type. (AI-inferred)
     resource_selector: Any = None
+    # How serious this finding is. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule:
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # Whether this Security Health Analytics module is enabled, disabled, or inherited. (AI-inferred)
     module_enablement_state: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModule:
+    # Whether this Security Health Analytics module is enabled, disabled, or inherited. (AI-inferred)
     module_enablement_state: Any = None
+    # The name of the Security Health Analytics module this applies to. (AI-inferred)
     module_name: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies_Constraint:
+    # A reference to a built-in Organization Policy constraint enforced by this posture. (AI-inferred)
     org_policy_constraint: Any = None
+    # A caller-defined Organization Policy constraint enforced by this posture. (AI-inferred)
     org_policy_constraint_custom: Any = None
+    # A caller-defined Security Health Analytics detector module. (AI-inferred)
     security_health_analytics_custom_module: Any = None
+    # A built-in Security Health Analytics detector module. (AI-inferred)
     security_health_analytics_module: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets_Policies:
+    # The compliance standard(s) (and their own control IDs) this policy maps to. (AI-inferred)
     compliance_standards: Any = None
+    # A reference to the constraint this policy enforces. (AI-inferred)
     constraint: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A reference to the policy this applies to. (AI-inferred)
     policy_id: Any = None
 
 @dataclasses.dataclass
 class Posture_PolicySets:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The policy/policies making up this posture. (AI-inferred)
     policies: Any = None
+    # A reference to the policy set this applies to. (AI-inferred)
     policy_set_id: Any = None
 
 _Posture_PolicySets_Policies_ComplianceStandardsFields = {

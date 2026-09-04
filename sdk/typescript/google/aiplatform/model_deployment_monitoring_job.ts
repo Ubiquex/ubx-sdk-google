@@ -2,9 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ModelDeploymentMonitoringJob_BigqueryTables {
+  /** The full path of the BigQuery table this applies to. (AI-inferred) */
   bigqueryTablePath?: string | Computed<string>;
+  /** Whether this logged data comes from `TRAINING` or `SERVING`. (AI-inferred) */
   logSource?: string | Computed<string>;
+  /** Whether this logged data is a `PREDICT` or `EXPLAIN` request/response. (AI-inferred) */
   logType?: string | Computed<string>;
+  /** The schema version request/response log rows in this BigQuery table are written in. (AI-inferred) */
   requestResponseLoggingSchemaVersion?: string | Computed<string>;
 }
 
@@ -40,66 +44,94 @@ export interface ModelDeploymentMonitoringJob_LoggingSamplingStrategy {
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Bigquery {
+  /** The destination URI this data is written to. (AI-inferred) */
   outputUri?: string | Computed<string>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Gcs {
+  /** The destination URI prefix output files are written under. (AI-inferred) */
   outputUriPrefix?: string | Computed<string>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline {
+  /** Configuration for reading from or writing to BigQuery. (AI-inferred) */
   bigquery?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Bigquery | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Bigquery>;
+  /** Configuration for reading from or writing to Cloud Storage. (AI-inferred) */
   gcs?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Gcs | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_Gcs>;
+  /** The file format predictions are stored in, e.g. `JSONL` or `BIGQUERY`. (AI-inferred) */
   predictionFormat?: string | Computed<string>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig {
+  /** Whether feature-attribution explanations are computed as part of this monitoring objective. (AI-inferred) */
   enableFeatureAttributes?: boolean | Computed<boolean>;
+  /** The reference data feature-attribution drift is measured against. (AI-inferred) */
   explanationBaseline?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds {
+  /** The literal value of this field. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig {
+  /** Per-feature drift alert thresholds for feature-attribution scores, keyed by feature name. (AI-inferred) */
   attributionScoreDriftThresholds?: Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds> | Computed<Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds>>;
+  /** The drift alert threshold applied to any feature without its own entry in `drift_thresholds`. (AI-inferred) */
   defaultDriftThreshold?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds>;
+  /** Per-feature drift alert thresholds, keyed by feature name. (AI-inferred) */
   driftThresholds?: Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds> | Computed<Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds>>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySource {
+  /** The source URI this data is read from. (AI-inferred) */
   inputUri?: string | Computed<string>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSource {
+  /** The Cloud Storage URI(s) this applies to. (AI-inferred) */
   uris?: string[] | Computed<string[]>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset {
+  /** A BigQuery table or view this data is read from. (AI-inferred) */
   bigquerySource?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySource | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySource>;
+  /** The file format the source data is stored in. (AI-inferred) */
   dataFormat?: string | Computed<string>;
+  /** A reference to the dataset this applies to. (AI-inferred) */
   dataset?: string | Computed<string>;
+  /** A Cloud Storage location this data is read from. (AI-inferred) */
   gcsSource?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSource | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSource>;
+  /** How training data is sampled for request/response logging, e.g. a fixed random rate. (AI-inferred) */
   loggingSamplingStrategy?: ModelDeploymentMonitoringJob_LoggingSamplingStrategy | Computed<ModelDeploymentMonitoringJob_LoggingSamplingStrategy>;
+  /** The name of the field in the training dataset holding the ground-truth label. (AI-inferred) */
   targetField?: string | Computed<string>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfig {
+  /** Per-feature training-serving skew alert thresholds for feature-attribution scores, keyed by feature name. (AI-inferred) */
   attributionScoreSkewThresholds?: Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds> | Computed<Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds>>;
+  /** The training-serving skew alert threshold applied to any feature without its own entry in `skew_thresholds`. (AI-inferred) */
   defaultSkewThreshold?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds>;
+  /** Per-feature training-serving skew alert thresholds, keyed by feature name. (AI-inferred) */
   skewThresholds?: Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds> | Computed<Record<string, ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds>>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig {
+  /** Configuration for computing feature-attribution explanations as part of this monitoring objective. (AI-inferred) */
   explanationConfig?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig>;
+  /** Configuration for detecting drift between this model's own serving-time predictions and its training-time baseline. (AI-inferred) */
   predictionDriftDetectionConfig?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig>;
+  /** The dataset used as the training-time baseline this monitoring job compares serving traffic against. (AI-inferred) */
   trainingDataset?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset>;
+  /** Configuration for detecting skew between this model's own training data and its serving-time predictions. (AI-inferred) */
   trainingPredictionSkewDetectionConfig?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfig | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfig>;
 }
 
 export interface ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs {
+  /** The identifier this model was deployed under. (AI-inferred) */
   deployedModelId?: string | Computed<string>;
+  /** Configuration for what this monitoring job actually checks -- drift, skew, and/or explanation attribution. (AI-inferred) */
   objectiveConfig?: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig | Computed<ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig>;
 }
 

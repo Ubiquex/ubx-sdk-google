@@ -12,18 +12,25 @@ export interface SecurityProfile_CustomMirroringProfile {
 }
 
 export interface SecurityProfile_ThreatPreventionProfile_AntivirusOverrides {
+  /** The action taken when this rule matches, e.g. allow or deny. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The network protocol this rule matches. (AI-inferred) */
   protocol?: string | Computed<string>;
 }
 
 export interface SecurityProfile_ThreatPreventionProfile_SeverityOverrides {
+  /** The action taken when this rule matches, e.g. allow or deny. (AI-inferred) */
   action?: string | Computed<string>;
+  /** How serious this finding or threat is. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface SecurityProfile_ThreatPreventionProfile_ThreatOverrides {
+  /** The action taken when this rule matches, e.g. allow or deny. (AI-inferred) */
   action?: string | Computed<string>;
+  /** An identifier for the specific threat signature this applies to. (AI-inferred) */
   threatId?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -37,8 +44,11 @@ export interface SecurityProfile_ThreatPreventionProfile {
 }
 
 export interface SecurityProfile_UrlFilteringProfile_UrlFilters {
+  /** Whether matching traffic is allowed or denied. (AI-inferred) */
   filteringAction?: string | Computed<string>;
+  /** The relative priority of this rule -- lower numbers are evaluated first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** The URL(s) this applies to. (AI-inferred) */
   urls?: string[] | Computed<string[]>;
 }
 

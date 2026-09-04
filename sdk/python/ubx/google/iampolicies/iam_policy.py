@@ -8,22 +8,33 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IamPolicy_Rules_DenyRule_DenialCondition:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The Common Expression Language (CEL) expression evaluated by this condition. (AI-inferred)
     expression: Any = None
+    # A human-readable reference to where this expression is defined, for error messages. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class IamPolicy_Rules_DenyRule:
+    # A Common Expression Language (CEL) condition further restricting when this deny rule applies. (AI-inferred)
     denial_condition: Any = None
+    # The permission(s) this rule denies. (AI-inferred)
     denied_permissions: Any = None
+    # The principal(s) this rule denies the listed permission(s) to. (AI-inferred)
     denied_principals: Any = None
+    # The permission(s) exempted from this deny rule's own denial. (AI-inferred)
     exception_permissions: Any = None
+    # The principal(s) exempted from this deny rule's own denial. (AI-inferred)
     exception_principals: Any = None
 
 @dataclasses.dataclass
 class IamPolicy_Rules:
+    # The deny rule this policy enforces, when this policy is a Deny Policy. (AI-inferred)
     deny_rule: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
 
 _IamPolicy_Rules_DenyRule_DenialConditionFields = {

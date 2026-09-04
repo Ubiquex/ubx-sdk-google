@@ -8,16 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Job_BucketList_Buckets_Manifest:
+    # The Cloud Storage location of the manifest file listing the objects this job applies to. (AI-inferred)
     manifest_location: Any = None
 
 @dataclasses.dataclass
 class Job_BucketList_Buckets_PrefixList:
+    # The object name prefix(es) this job's own transformation applies to. (AI-inferred)
     included_object_prefixes: Any = None
 
 @dataclasses.dataclass
 class Job_BucketList_Buckets:
+    # The Cloud Storage bucket this batch job's own transformation applies to. (AI-inferred)
     bucket: Any = None
+    # Selects this bucket's own target objects from an explicit manifest file, rather than a prefix match. (AI-inferred)
     manifest: Any = None
+    # Selects this bucket's own target objects by object-name prefix, rather than an explicit manifest. (AI-inferred)
     prefix_list: Any = None
 
 @dataclasses.dataclass
@@ -51,13 +56,18 @@ class Job_DeleteObject:
 
 @dataclasses.dataclass
 class Job_ErrorSummaries_ErrorLogEntries:
+    # Detail explaining why this specific object failed. (AI-inferred)
     error_details: Any = None
+    # The `gs://` URI of the object that failed. (AI-inferred)
     object_uri: Any = None
 
 @dataclasses.dataclass
 class Job_ErrorSummaries:
+    # The gRPC-style status code shared by every error grouped under this summary, e.g. `PERMISSION_DENIED`. (AI-inferred)
     error_code: Any = None
+    # How many objects failed with this exact error code. (AI-inferred)
     error_count: Any = None
+    # A sample of the individual object failures grouped under this error summary. (AI-inferred)
     error_log_entries: Any = None
 
 @dataclasses.dataclass
@@ -144,7 +154,9 @@ class Job_RewriteObject:
 
 @dataclasses.dataclass
 class Job_SetObjectAcls_AccessControlsUpdates_Grants:
+    # The grantee (user, group, or project) this ACL grant applies to. (AI-inferred)
     entity: Any = None
+    # The access role granted to `entity`, e.g. `READER` or `OWNER`. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
@@ -161,6 +173,7 @@ class Job_SetObjectAcls:
 
 @dataclasses.dataclass
 class Job_UpdateObjectCustomContext_CustomContextUpdates_Updates:
+    # The value this batch job sets for the matching custom metadata key on each target object. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

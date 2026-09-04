@@ -22,6 +22,7 @@ export interface CertificateTemplate_IdentityConstraints {
 }
 
 export interface CertificateTemplate_PassthroughExtensions_AdditionalExtensions {
+  /** The numeric component(s) making up an object identifier. (AI-inferred) */
   objectIdPath?: number[] | Computed<number[]>;
 }
 
@@ -33,8 +34,11 @@ export interface CertificateTemplate_PassthroughExtensions {
 }
 
 export interface CertificateTemplate_PredefinedValues_AdditionalExtensions {
+  /** Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred) */
   critical?: boolean | Computed<boolean>;
+  /** An X.509 object identifier (OID). (AI-inferred) */
   objectId?: CertificateTemplate_PassthroughExtensions_AdditionalExtensions | Computed<CertificateTemplate_PassthroughExtensions_AdditionalExtensions>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

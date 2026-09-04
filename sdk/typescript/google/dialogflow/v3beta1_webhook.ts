@@ -94,20 +94,32 @@ const V3beta1Webhook_ServiceDirectoryFields: FieldMap = {
 };
 
 export interface V3beta1WebhookConfig {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred) */
   genericWebService?: V3beta1Webhook_GenericWebService | Computed<V3beta1Webhook_GenericWebService>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A reference to the Service Directory service this webhook is reached through. (AI-inferred) */
   serviceDirectory?: V3beta1Webhook_ServiceDirectory | Computed<V3beta1Webhook_ServiceDirectory>;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout?: string | Computed<string>;
 }
 
 export interface V3beta1WebhookAttrs {
+  /** Whether this configuration is currently turned off. (AI-inferred) */
   disabled: boolean;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred) */
   genericWebService: V3beta1Webhook_GenericWebService;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** A reference to the Service Directory service this webhook is reached through. (AI-inferred) */
   serviceDirectory: V3beta1Webhook_ServiceDirectory;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout: string;
 }
 

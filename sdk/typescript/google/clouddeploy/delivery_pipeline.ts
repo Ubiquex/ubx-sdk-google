@@ -34,138 +34,208 @@ export interface DeliveryPipeline_Condition {
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_DeployParameters {
+  /** Label(s) a target must carry for this automation rule to apply to it. (AI-inferred) */
   matchTargetLabels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The value(s) making up this configuration. (AI-inferred) */
   values?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task_Container {
+  /** The command-line argument(s) passed to the container. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** The container entrypoint command to run, overriding the image's own default. (AI-inferred) */
   command?: string[] | Computed<string[]>;
+  /** Environment variable(s) set in the container. (AI-inferred) */
   env?: Record<string, string> | Computed<Record<string, string>>;
+  /** The container image reference to run. (AI-inferred) */
   image?: string | Computed<string>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task {
+  /** A single container's own configuration. (AI-inferred) */
   container?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task_Container | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task_Container>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks {
+  /** How often this check or action recurs. (AI-inferred) */
   frequency?: string | Computed<string>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A single unit of work within this job. (AI-inferred) */
   task?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks {
+  /** The Cloud Monitoring alert policy/policies this check watches. (AI-inferred) */
   alertPolicies?: string[] | Computed<string[]>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud {
+  /** Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred) */
   alertPolicyChecks?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks[] | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks[]>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis {
+  /** Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred) */
   customChecks?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks[] | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks[]>;
+  /** How long this phase, wait, or window lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred) */
   googleCloud?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy {
+  /** The action(s) this hook or job performs. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
+  /** The task(s) making up this job. (AI-inferred) */
   tasks?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task[] | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task[]>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig {
+  /** The task(s) making up this job. (AI-inferred) */
   tasks?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task[] | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task[]>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment {
+  /** Configuration for automated analysis run against a rollout phase. (AI-inferred) */
   analysis?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis>;
+  /** The progressive traffic percentage step(s) this canary deployment advances through. (AI-inferred) */
   percentages?: number[] | Computed<number[]>;
+  /** Configuration for actions run after a phase's own deployment completes. (AI-inferred) */
   postdeploy?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for actions run before a phase's own deployment starts. (AI-inferred) */
   predeploy?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for verification tests run against a phase's own deployment. (AI-inferred) */
   verify?: boolean | Computed<boolean>;
+  /** Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred) */
   verifyConfig?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs {
+  /** Configuration for automated analysis run against a rollout phase. (AI-inferred) */
   analysis?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis>;
+  /** A percentage value. (AI-inferred) */
   percentage?: number | Computed<number>;
+  /** A reference to the phase this applies to. (AI-inferred) */
   phaseId?: string | Computed<string>;
+  /** Configuration for actions run after a phase's own deployment completes. (AI-inferred) */
   postdeploy?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for actions run before a phase's own deployment starts. (AI-inferred) */
   predeploy?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred) */
   profiles?: string[] | Computed<string[]>;
+  /** Configuration for verification tests run against a phase's own deployment. (AI-inferred) */
   verify?: boolean | Computed<boolean>;
+  /** Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred) */
   verifyConfig?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment {
+  /** Per-phase configuration overrides for a canary or custom deployment strategy. (AI-inferred) */
   phaseConfigs?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs[] | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs[]>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun {
+  /** Whether traffic is shifted automatically through the canary steps, without waiting for manual approval at each one. (AI-inferred) */
   automaticTrafficControl?: boolean | Computed<boolean>;
+  /** Traffic tag(s) applied to the canary revision, for routing test traffic to it directly. (AI-inferred) */
   canaryRevisionTags?: string[] | Computed<string[]>;
+  /** Traffic tag(s) applied to the previous (stable) revision, for routing test traffic to it directly. (AI-inferred) */
   priorRevisionTags?: string[] | Computed<string[]>;
+  /** Traffic tag(s) applied to the stable (non-canary) revision, for routing test traffic to it directly. (AI-inferred) */
   stableRevisionTags?: string[] | Computed<string[]>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations {
+  /** The target ID(s) this promotion/rollout is directed to. (AI-inferred) */
   destinationIds?: string[] | Computed<string[]>;
+  /** Whether the Kubernetes Service is updated to route production traffic as the canary progresses, rather than only the underlying workload. (AI-inferred) */
   propagateService?: boolean | Computed<boolean>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh {
+  /** Configuration or detail about a specific deployment. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** The HTTP route resource splitting traffic between revisions for this canary deployment. (AI-inferred) */
   httpRoute?: string | Computed<string>;
+  /** The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred) */
   podSelectorLabel?: string | Computed<string>;
+  /** The destination(s) traffic is routed to as part of this canary deployment. (AI-inferred) */
   routeDestinations?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations>;
+  /** How long to wait after updating traffic routing before proceeding to the next step. (AI-inferred) */
   routeUpdateWaitTime?: string | Computed<string>;
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
+  /** How long traffic is held on the stable revision after a canary is rolled back, before resuming normal routing. (AI-inferred) */
   stableCutbackDuration?: string | Computed<string>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking {
+  /** Configuration or detail about a specific deployment. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** Whether extra pod capacity is skipped when preparing this deployment, trading faster rollout for less headroom during the transition. (AI-inferred) */
   disablePodOverprovisioning?: boolean | Computed<boolean>;
+  /** The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred) */
   podSelectorLabel?: string | Computed<string>;
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes {
+  /** Configuration for routing canary traffic through a Kubernetes Gateway API-based service mesh. (AI-inferred) */
   gatewayServiceMesh?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh>;
+  /** Configuration for routing canary traffic using Cloud Service Mesh. (AI-inferred) */
   serviceNetworking?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig {
+  /** Configuration specific to deploying this target as a Cloud Run service. (AI-inferred) */
   cloudRun?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun>;
+  /** Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred) */
   kubernetes?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary {
+  /** Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred) */
   canaryDeployment?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment>;
+  /** A canary strategy using caller-defined percentage steps and phase configuration, rather than Cloud Deploy's own standard canary shape. (AI-inferred) */
   customCanaryDeployment?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment>;
+  /** Configuration specific to the runtime (GKE, Cloud Run, etc.) this target deploys to. (AI-inferred) */
   runtimeConfig?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy_Standard {
+  /** Configuration for automated analysis run against a rollout phase. (AI-inferred) */
   analysis?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis>;
+  /** Configuration for actions run after a phase's own deployment completes. (AI-inferred) */
   postdeploy?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for actions run before a phase's own deployment starts. (AI-inferred) */
   predeploy?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for verification tests run against a phase's own deployment. (AI-inferred) */
   verify?: boolean | Computed<boolean>;
+  /** Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred) */
   verifyConfig?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages_Strategy {
+  /** Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred) */
   canary?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary>;
+  /** Configuration for the standard (non-canary, all-at-once) rollout strategy. (AI-inferred) */
   standard?: DeliveryPipeline_SerialPipeline_Stages_Strategy_Standard | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy_Standard>;
 }
 
 export interface DeliveryPipeline_SerialPipeline_Stages {
+  /** Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred) */
   deployParameters?: DeliveryPipeline_SerialPipeline_Stages_DeployParameters[] | Computed<DeliveryPipeline_SerialPipeline_Stages_DeployParameters[]>;
+  /** The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred) */
   profiles?: string[] | Computed<string[]>;
+  /** Which rollout strategy this release uses, e.g. standard or canary. (AI-inferred) */
   strategy?: DeliveryPipeline_SerialPipeline_Stages_Strategy | Computed<DeliveryPipeline_SerialPipeline_Stages_Strategy>;
+  /** A reference to the target this applies to. (AI-inferred) */
   targetId?: string | Computed<string>;
 }
 

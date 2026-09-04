@@ -4,8 +4,11 @@ package toolresults
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PerfSampleSery_BasicPerfSampleSeries struct {
-	PerfMetricType    any
-	PerfUnit          any
+	// The real category of performance metric (`memory`, `cpu`, `network`, `graphics`) this basic performance sample series measures. (AI-inferred)
+	PerfMetricType any
+	// The real unit (e.g. `bytesPerSecond`, `framesPerSecond`, `percent`) this performance sample series' own values are measured in. (AI-inferred)
+	PerfUnit any
+	// The real, specific metric this performance sample series tracks (e.g. `cpuTotal`, `graphicsFrameRate`, `memoryRssTotal`). (AI-inferred)
 	SampleSeriesLabel any
 }
 

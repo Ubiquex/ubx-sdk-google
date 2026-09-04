@@ -2,17 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Report_Metrics {
+  /** The mathematical function applied to compute this value. (AI-inferred) */
   function?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Report_Properties_Value {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Report_Properties {
+  /** A named property of this object. (AI-inferred) */
   property?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: Report_Properties_Value[] | Computed<Report_Properties_Value[]>;
 }
 

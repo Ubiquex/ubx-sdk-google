@@ -4,41 +4,64 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Webhook_GenericWebService_OauthConfig struct {
-	ClientId                     any
-	ClientSecret                 any
-	Scopes                       any
+	// The OAuth client ID used to authenticate. (AI-inferred)
+	ClientId any
+	// The OAuth client secret used to authenticate. (AI-inferred)
+	ClientSecret any
+	// The OAuth scope(s) requested. (AI-inferred)
+	Scopes any
+	// The Secret Manager secret version holding the OAuth client secret, instead of storing it inline. (AI-inferred)
 	SecretVersionForClientSecret any
-	TokenEndpoint                any
+	// The OAuth token endpoint URL used to obtain an access token. (AI-inferred)
+	TokenEndpoint any
 }
 
 type Webhook_GenericWebService_SecretVersionsForRequestHeaders struct {
+	// A reference to a specific Secret Manager secret version. (AI-inferred)
 	SecretVersion any
 }
 
 type Webhook_GenericWebService_ServiceAccountAuthConfig struct {
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type Webhook_GenericWebService struct {
-	AllowedCaCerts                   any
-	HttpMethod                       any
-	OauthConfig                      any
-	ParameterMapping                 any
-	Password                         any
-	RequestBody                      any
-	RequestHeaders                   any
+	// Additional CA certificate(s) trusted when calling this webhook over HTTPS, beyond the standard public CA set. (AI-inferred)
+	AllowedCaCerts any
+	// The HTTP method used to call this webhook, e.g. `POST`. (AI-inferred)
+	HttpMethod any
+	// Authenticates the webhook call using OAuth 2.0 client credentials. (AI-inferred)
+	OauthConfig any
+	// How session parameter values are mapped into the webhook's own request payload. (AI-inferred)
+	ParameterMapping any
+	// The password used to authenticate. (AI-inferred)
+	Password any
+	// The literal request body template sent to the webhook. (AI-inferred)
+	RequestBody any
+	// HTTP header(s) sent with the webhook request. (AI-inferred)
+	RequestHeaders any
+	// The Secret Manager secret version holding the username/password credential, instead of storing it inline. (AI-inferred)
 	SecretVersionForUsernamePassword any
-	SecretVersionsForRequestHeaders  any
-	ServiceAccountAuthConfig         any
-	ServiceAgentAuth                 any
-	Uri                              any
-	Username                         any
-	WebhookType                      any
+	// Secret Manager secret version(s) supplying sensitive header values, instead of storing them inline. (AI-inferred)
+	SecretVersionsForRequestHeaders any
+	// Authenticates the webhook call using a Google Cloud service account's own identity token. (AI-inferred)
+	ServiceAccountAuthConfig any
+	// How Dialogflow's own service agent identity is presented when authenticating the webhook call. (AI-inferred)
+	ServiceAgentAuth any
+	// The URI of an audio clip this response instructs the client to play. (AI-inferred)
+	Uri any
+	// The username used to authenticate. (AI-inferred)
+	Username any
+	// Which webhook protocol this uses, e.g. a standard service call or a flexible one. (AI-inferred)
+	WebhookType any
 }
 
 type Webhook_ServiceDirectory struct {
+	// Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
 	GenericWebService any
-	Service           any
+	// A reference to the service this applies to. (AI-inferred)
+	Service any
 }
 
 var Webhook_GenericWebService_OauthConfigFields = ubx.FieldMap{
@@ -96,21 +119,33 @@ var Webhook_ServiceDirectoryFields = ubx.FieldMap{
 }
 
 type WebhookConfig struct {
-	Disabled          any
-	DisplayName       any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
 	GenericWebService any
-	Name              any
-	ServiceDirectory  any
-	Timeout           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the Service Directory service this webhook is reached through. (AI-inferred)
+	ServiceDirectory any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
 }
 
 type WebhookAttrs struct {
-	Disabled          any
-	DisplayName       any
+	// Whether this configuration is currently turned off. (AI-inferred)
+	Disabled any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
 	GenericWebService any
-	Name              any
-	ServiceDirectory  any
-	Timeout           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the Service Directory service this webhook is reached through. (AI-inferred)
+	ServiceDirectory any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
 }
 
 var Webhook = ubx.ResourceBinding{

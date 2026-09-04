@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NodeGroup_NodeGroupConfig_Accelerators {
+  /** How many accelerator (GPU) devices are attached per instance. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The full URI of the accelerator type attached. (AI-inferred) */
   acceleratorTypeUri?: string | Computed<string>;
 }
 
 export interface NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs {
+  /** The size, in GB, of this disk. (AI-inferred) */
   diskSizeGb?: number | Computed<number>;
+  /** The disk type provisioned, e.g. `pd-ssd`. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** The provisioned IOPS for this disk, when using a disk type that supports configuring it. (AI-inferred) */
   provisionedIops?: string | Computed<string>;
+  /** The provisioned throughput for this disk, when using a disk type that supports configuring it. (AI-inferred) */
   provisionedThroughput?: string | Computed<string>;
 }
 
@@ -31,13 +37,18 @@ export interface NodeGroup_NodeGroupConfig_DiskConfig {
 }
 
 export interface NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList {
+  /** Configuration for each instance's own attached disk(s). (AI-inferred) */
   diskConfig?: NodeGroup_NodeGroupConfig_DiskConfig | Computed<NodeGroup_NodeGroupConfig_DiskConfig>;
+  /** The machine type(s) this applies to. (AI-inferred) */
   machineTypes?: string[] | Computed<string[]>;
+  /** The relative preference order of this option -- lower values are preferred first. (AI-inferred) */
   rank?: number | Computed<number>;
 }
 
 export interface NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults {
+  /** The Compute Engine machine type provisioned for each instance. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The number of VM instances this applies to. (AI-inferred) */
   vmCount?: number | Computed<number>;
 }
 
@@ -60,9 +71,13 @@ export interface NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy {
 }
 
 export interface NodeGroup_NodeGroupConfig_InstanceReferences {
+  /** An identifier for this specific instance. (AI-inferred) */
   instanceId?: string | Computed<string>;
+  /** The name of this instance. (AI-inferred) */
   instanceName?: string | Computed<string>;
+  /** The public ECIES key used to encrypt sensitive job parameters. (AI-inferred) */
   publicEciesKey?: string | Computed<string>;
+  /** A public key used for encryption or authentication. (AI-inferred) */
   publicKey?: string | Computed<string>;
 }
 

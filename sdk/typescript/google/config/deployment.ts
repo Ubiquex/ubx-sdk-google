@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Deployment_DeleteResults_Outputs {
+  /** Whether this Terraform output value is marked sensitive and should be redacted from logs and the console. (AI-inferred) */
   sensitive?: boolean | Computed<boolean>;
+  /** The output value produced when this deployment's own resources were deleted. (AI-inferred) */
   value?: unknown | Computed<unknown>;
 }
 
@@ -21,11 +23,14 @@ export interface Deployment_ProviderConfig {
 }
 
 export interface Deployment_TerraformBlueprint_ExternalValues_DeploymentSource {
+  /** The other deployment this external value is sourced from. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** The name of the specific Terraform output on the source deployment to use as this value. (AI-inferred) */
   outputName?: string | Computed<string>;
 }
 
 export interface Deployment_TerraformBlueprint_ExternalValues {
+  /** References an output value from another Infrastructure Manager deployment, letting this blueprint consume it as an input. (AI-inferred) */
   deploymentSource?: Deployment_TerraformBlueprint_ExternalValues_DeploymentSource | Computed<Deployment_TerraformBlueprint_ExternalValues_DeploymentSource>;
 }
 
@@ -39,6 +44,7 @@ export interface Deployment_TerraformBlueprint_GitSource {
 }
 
 export interface Deployment_TerraformBlueprint_InputValues {
+  /** The literal value passed for this Terraform input variable when the blueprint is applied. (AI-inferred) */
   inputValue?: unknown | Computed<unknown>;
 }
 
@@ -54,15 +60,22 @@ export interface Deployment_TerraformBlueprint {
 }
 
 export interface Deployment_TfErrors_Error {
+  /** The error's own numeric status code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional structured detail about the error, in whatever shape Terraform's own error reporting supplied. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of the error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Deployment_TfErrors {
+  /** Structured detail for one error Terraform reported while applying this deployment's own blueprint. (AI-inferred) */
   error?: Deployment_TfErrors_Error | Computed<Deployment_TfErrors_Error>;
+  /** A human-readable summary of why this Terraform operation failed. (AI-inferred) */
   errorDescription?: string | Computed<string>;
+  /** The HTTP status code returned by the underlying API call that failed, when the error originated from one. (AI-inferred) */
   httpResponseCode?: number | Computed<number>;
+  /** The Terraform resource address (e.g. `google_storage_bucket.my_bucket`) this error occurred on. (AI-inferred) */
   resourceAddress?: string | Computed<string>;
 }
 

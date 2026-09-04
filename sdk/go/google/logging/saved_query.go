@@ -4,6 +4,7 @@ package logging
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SavedQuery_LoggingQuery_SummaryFields struct {
+	// A reference to a specific field. (AI-inferred)
 	Field any
 }
 
@@ -19,32 +20,50 @@ type SavedQuery_LoggingQuery struct {
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunction struct {
+	// The parameter(s) configuring this operation. (AI-inferred)
 	Parameters any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualField struct {
+	// The source field(s) this virtual field is derived from. (AI-inferred)
 	UnderlyingFieldSources any
-	VirtualFieldType       any
+	// The computation type defining how this virtual field's own value is derived. (AI-inferred)
+	VirtualFieldType any
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField struct {
-	Alias                  any
-	Cast                   any
-	Field                  any
-	Operation              any
-	RegexExtraction        any
+	// An alternate name this field is also known by. (AI-inferred)
+	Alias any
+	// Converts this field's own value to a different type. (AI-inferred)
+	Cast any
+	// A reference to a specific field. (AI-inferred)
+	Field any
+	// The transformation operation applied to this field. (AI-inferred)
+	Operation any
+	// Extracts a value from this field using a regular expression. (AI-inferred)
+	RegexExtraction any
+	// The SQL aggregation function (e.g. `COUNT`, `SUM`) applied to this field. (AI-inferred)
 	SqlAggregationFunction any
-	TruncationGranularity  any
-	VirtualField           any
+	// The unit values are rounded down to when this field is truncated. (AI-inferred)
+	TruncationGranularity any
+	// A field computed from other field(s), rather than read directly from the log entry. (AI-inferred)
+	VirtualField any
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources struct {
-	AliasRef       any
-	ColumnType     any
-	Field          any
-	IsJson         any
-	ParentPath     any
+	// A reference to another field this alias resolves to. (AI-inferred)
+	AliasRef any
+	// The data type of this analytics table column. (AI-inferred)
+	ColumnType any
+	// A reference to a specific field. (AI-inferred)
+	Field any
+	// Whether this field's own value is parsed as JSON. (AI-inferred)
+	IsJson any
+	// The path to this field's own containing parent. (AI-inferred)
+	ParentPath any
+	// A field derived and exposed as a new, named column. (AI-inferred)
 	ProjectedField any
 }
 
@@ -71,7 +90,9 @@ type SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter struct {
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBys struct {
-	FieldSource        any
+	// Where this field's own value is read from, e.g. the log payload or its own labels. (AI-inferred)
+	FieldSource any
+	// Whether results are sorted ascending or descending. (AI-inferred)
 	SortOrderDirection any
 }
 

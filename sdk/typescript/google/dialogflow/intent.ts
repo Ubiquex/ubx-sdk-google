@@ -2,20 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Intent_Parameters {
+  /** A reference to the entity type this applies to. (AI-inferred) */
   entityType?: string | Computed<string>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether this parameter captures a list of values, rather than a single one. (AI-inferred) */
   isList?: boolean | Computed<boolean>;
+  /** Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred) */
   redact?: boolean | Computed<boolean>;
 }
 
 export interface Intent_TrainingPhrases_Parts {
+  /** An identifier for this parameter, unique within its own containing form or intent. (AI-inferred) */
   parameterId?: string | Computed<string>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Intent_TrainingPhrases {
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The ordered content parts making up this training phrase or message. (AI-inferred) */
   parts?: Intent_TrainingPhrases_Parts[] | Computed<Intent_TrainingPhrases_Parts[]>;
+  /** How many times a matching training phrase part was annotated with this parameter, when disambiguating repeated entities. (AI-inferred) */
   repeatCount?: number | Computed<number>;
 }
 
@@ -42,26 +51,44 @@ const Intent_TrainingPhrasesFields: FieldMap = {
 };
 
 export interface IntentConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The DTMF digit pattern this matches against. (AI-inferred) */
   dtmfPattern?: string | Computed<string>;
+  /** Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred) */
   isFallback?: boolean | Computed<boolean>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: Intent_Parameters[] | Computed<Intent_Parameters[]>;
+  /** The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** Example user utterances used to train this intent's own recognition. (AI-inferred) */
   trainingPhrases?: Intent_TrainingPhrases[] | Computed<Intent_TrainingPhrases[]>;
 }
 
 export interface IntentAttrs {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The DTMF digit pattern this matches against. (AI-inferred) */
   dtmfPattern: string;
+  /** Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred) */
   isFallback: boolean;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels: Record<string, string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters: Intent_Parameters[];
+  /** The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred) */
   priority: number;
+  /** Example user utterances used to train this intent's own recognition. (AI-inferred) */
   trainingPhrases: Intent_TrainingPhrases[];
 }
 

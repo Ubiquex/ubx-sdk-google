@@ -43,11 +43,14 @@ class Tenant_Inheritance:
 
 @dataclasses.dataclass
 class Tenant_MfaConfig_ProviderConfigs_TotpProviderConfig:
+    # The number of adjacent 30-second time intervals checked when validating a TOTP code, tolerating minor clock drift between the client and server. (AI-inferred)
     adjacent_intervals: Any = None
 
 @dataclasses.dataclass
 class Tenant_MfaConfig_ProviderConfigs:
+    # Whether this multi-factor authentication provider is enabled, disabled, or mandatory. (AI-inferred)
     state: Any = None
+    # Configuration for time-based one-time password (TOTP) as a multi-factor authentication method. (AI-inferred)
     totp_provider_config: Any = None
 
 @dataclasses.dataclass
@@ -76,16 +79,24 @@ class Tenant_Monitoring:
 
 @dataclasses.dataclass
 class Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptions:
+    # Whether a password must contain at least one lowercase letter. (AI-inferred)
     contains_lowercase_character: Any = None
+    # Whether a password must contain at least one non-alphanumeric character. (AI-inferred)
     contains_non_alphanumeric_character: Any = None
+    # Whether a password must contain at least one digit. (AI-inferred)
     contains_numeric_character: Any = None
+    # Whether a password must contain at least one uppercase letter. (AI-inferred)
     contains_uppercase_character: Any = None
+    # The longest password this policy allows. (AI-inferred)
     max_password_length: Any = None
+    # The shortest password this policy allows. (AI-inferred)
     min_password_length: Any = None
 
 @dataclasses.dataclass
 class Tenant_PasswordPolicyConfig_PasswordPolicyVersions:
+    # Custom password complexity requirements enforced by this policy. (AI-inferred)
     custom_strength_options: Any = None
+    # The version of the password policy schema this configuration follows. (AI-inferred)
     schema_version: Any = None
 
 @dataclasses.dataclass
@@ -101,17 +112,23 @@ class Tenant_PasswordPolicyConfig:
 
 @dataclasses.dataclass
 class Tenant_RecaptchaConfig_ManagedRules:
+    # What action to take when this reCAPTCHA rule's own condition is met, e.g. `BLOCK` or `ALLOW`. (AI-inferred)
     action: Any = None
+    # The upper bound of the reCAPTCHA risk score range this rule applies to. (AI-inferred)
     end_score: Any = None
 
 @dataclasses.dataclass
 class Tenant_RecaptchaConfig_RecaptchaKeys:
+    # The reCAPTCHA site key used for this tenant. (AI-inferred)
     key: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Tenant_RecaptchaConfig_TollFraudManagedRules:
+    # What action to take when this reCAPTCHA rule's own condition is met, e.g. `BLOCK` or `ALLOW`. (AI-inferred)
     action: Any = None
+    # The lower bound of the reCAPTCHA risk score range this rule applies to. (AI-inferred)
     start_score: Any = None
 
 @dataclasses.dataclass

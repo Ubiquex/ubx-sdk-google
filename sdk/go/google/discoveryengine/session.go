@@ -4,281 +4,429 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Session_Turns_DetailedAnswer_Citations_Sources struct {
+	// An identifier for this reference. (AI-inferred)
 	ReferenceId any
 }
 
 type Session_Turns_DetailedAnswer_Citations struct {
-	EndIndex   any
-	Sources    any
+	// The ending position this range covers. (AI-inferred)
+	EndIndex any
+	// The source(s) this content is drawn from. (AI-inferred)
+	Sources any
+	// The starting position this range covers. (AI-inferred)
 	StartIndex any
 }
 
 type Session_Turns_DetailedAnswer_GroundingSupports struct {
-	EndIndex               any
+	// The ending position this range covers. (AI-inferred)
+	EndIndex any
+	// Whether this content must pass a grounding check before being returned. (AI-inferred)
 	GroundingCheckRequired any
-	GroundingScore         any
-	Sources                any
-	StartIndex             any
+	// How well this generated content is supported by the retrieved source material. (AI-inferred)
+	GroundingScore any
+	// The source(s) this content is drawn from. (AI-inferred)
+	Sources any
+	// The starting position this range covers. (AI-inferred)
+	StartIndex any
 }
 
 type Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfo struct {
+	// Whether this example illustrates desired (rather than undesired) behavior. (AI-inferred)
 	Positive any
-	Type     any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Session_Turns_DetailedAnswer_QueryUnderstandingInfo struct {
+	// Detail about how this query was automatically classified, e.g. its own intent. (AI-inferred)
 	QueryClassificationInfo any
 }
 
 type Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadata struct {
-	Document       any
+	// A reference to the document this applies to. (AI-inferred)
+	Document any
+	// An identifier for the specific page this applies to. (AI-inferred)
 	PageIdentifier any
-	StructData     any
-	Title          any
-	Uri            any
+	// Arbitrary structured data associated with this document. (AI-inferred)
+	StructData any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Session_Turns_DetailedAnswer_References_ChunkInfo struct {
-	Chunk            any
-	Content          any
+	// A reference to the specific content chunk this applies to. (AI-inferred)
+	Chunk any
+	// The content of this message or resource. (AI-inferred)
+	Content any
+	// Metadata describing this document. (AI-inferred)
 	DocumentMetadata any
-	RelevanceScore   any
+	// How relevant this result is judged to be to the query. (AI-inferred)
+	RelevanceScore any
 }
 
 type Session_Turns_DetailedAnswer_References_StructuredDocumentInfo struct {
-	Document   any
+	// A reference to the document this applies to. (AI-inferred)
+	Document any
+	// Arbitrary structured data associated with this document. (AI-inferred)
 	StructData any
-	Title      any
-	Uri        any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContents struct {
-	Content        any
+	// The content of this message or resource. (AI-inferred)
+	Content any
+	// An identifier for the specific page this applies to. (AI-inferred)
 	PageIdentifier any
+	// How relevant this result is judged to be to the query. (AI-inferred)
 	RelevanceScore any
 }
 
 type Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo struct {
+	// The text content of this retrieved chunk. (AI-inferred)
 	ChunkContents any
-	Document      any
-	StructData    any
-	Title         any
-	Uri           any
+	// A reference to the document this applies to. (AI-inferred)
+	Document any
+	// Arbitrary structured data associated with this document. (AI-inferred)
+	StructData any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Session_Turns_DetailedAnswer_References struct {
-	ChunkInfo                any
-	StructuredDocumentInfo   any
+	// Detail about a retrieved content chunk used to ground this answer. (AI-inferred)
+	ChunkInfo any
+	// Detail about a document's own structured (non-plain-text) content. (AI-inferred)
+	StructuredDocumentInfo any
+	// Detail about a document's own unstructured (plain-text) content. (AI-inferred)
 	UnstructuredDocumentInfo any
 }
 
 type Session_Turns_DetailedAnswer_SafetyRatings struct {
-	Blocked          any
-	Category         any
-	Probability      any
+	// Whether this content was blocked by a safety or policy check. (AI-inferred)
+	Blocked any
+	// The category this belongs to. (AI-inferred)
+	Category any
+	// The likelihood this classification is correct. (AI-inferred)
+	Probability any
+	// A numeric score reflecting the likelihood this classification is correct. (AI-inferred)
 	ProbabilityScore any
-	Severity         any
-	SeverityScore    any
+	// How serious this finding is. (AI-inferred)
+	Severity any
+	// A numeric score reflecting how serious this finding is. (AI-inferred)
+	SeverityScore any
 }
 
 type Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfo struct {
-	Chunk          any
-	Content        any
+	// A reference to the specific content chunk this applies to. (AI-inferred)
+	Chunk any
+	// The content of this message or resource. (AI-inferred)
+	Content any
+	// How relevant this result is judged to be to the query. (AI-inferred)
 	RelevanceScore any
 }
 
 type Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfo struct {
-	Snippet       any
+	// A short excerpt of matching content. (AI-inferred)
+	Snippet any
+	// Whether a snippet was successfully generated for this result. (AI-inferred)
 	SnippetStatus any
 }
 
 type Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults struct {
-	ChunkInfo   any
-	Document    any
+	// Detail about a retrieved content chunk used to ground this answer. (AI-inferred)
+	ChunkInfo any
+	// A reference to the document this applies to. (AI-inferred)
+	Document any
+	// Detail about how this snippet was extracted and its own relevance. (AI-inferred)
 	SnippetInfo any
-	StructData  any
-	Title       any
-	Uri         any
+	// Arbitrary structured data associated with this document. (AI-inferred)
+	StructData any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Session_Turns_DetailedAnswer_Steps_Actions_Observation struct {
+	// The result(s) returned by this search. (AI-inferred)
 	SearchResults any
 }
 
 type Session_Turns_DetailedAnswer_Steps_Actions_SearchAction struct {
+	// The search query text. (AI-inferred)
 	Query any
 }
 
 type Session_Turns_DetailedAnswer_Steps_Actions struct {
-	Observation  any
+	// The result observed after running a tool or action. (AI-inferred)
+	Observation any
+	// An action representing a search query executed as part of answering. (AI-inferred)
 	SearchAction any
 }
 
 type Session_Turns_DetailedAnswer_Steps struct {
-	Actions     any
+	// The action(s) taken as part of this agent step. (AI-inferred)
+	Actions any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	State       any
-	Thought     any
+	// The current status of this resource or operation. (AI-inferred)
+	State any
+	// A step of the model's own intermediate reasoning. (AI-inferred)
+	Thought any
 }
 
 type Session_Turns_DetailedAnswer struct {
-	AnswerSkippedReasons   any
-	AnswerText             any
-	Citations              any
-	CompleteTime           any
-	CreateTime             any
-	GroundingScore         any
-	GroundingSupports      any
-	Name                   any
+	// Why answer generation was skipped for this query, when it was. (AI-inferred)
+	AnswerSkippedReasons any
+	// The plain-text content of the generated answer. (AI-inferred)
+	AnswerText any
+	// The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred)
+	Citations any
+	// When this operation completed. (AI-inferred)
+	CompleteTime any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// How well this generated content is supported by the retrieved source material. (AI-inferred)
+	GroundingScore any
+	// The specific source span(s) supporting a claim in the generated answer. (AI-inferred)
+	GroundingSupports any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Detail about how this query was interpreted before retrieval. (AI-inferred)
 	QueryUnderstandingInfo any
-	References             any
-	RelatedQuestions       any
-	SafetyRatings          any
-	State                  any
-	Steps                  any
+	// The source reference(s) supporting this content. (AI-inferred)
+	References any
+	// Suggested follow-up question(s) related to this query. (AI-inferred)
+	RelatedQuestions any
+	// The safety rating(s) assessed for this content, per category. (AI-inferred)
+	SafetyRatings any
+	// The current status of this resource or operation. (AI-inferred)
+	State any
+	// The ordered step(s) making up this process. (AI-inferred)
+	Steps any
 }
 
 type Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResult struct {
+	// The phrase(s) blocked from appearing in generated content. (AI-inferred)
 	BannedPhrases any
 }
 
 type Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_Error struct {
-	Code    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult struct {
-	Error               any
+	// Error detail for this failed operation. (AI-inferred)
+	Error any
+	// Detail about a Model Armor policy violation detected in this content. (AI-inferred)
 	ModelArmorViolation any
 }
 
 type Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults struct {
+	// The outcome of checking this content against the configured banned-phrase policy. (AI-inferred)
 	BannedPhraseEnforcementResult any
-	ModelArmorEnforcementResult   any
+	// The outcome of checking this content against Model Armor's own safety policies. (AI-inferred)
+	ModelArmorEnforcementResult any
 }
 
 type Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult struct {
-	PolicyResults   any
-	Verdict         any
+	// The outcome of evaluating this content against the configured safety/content policies. (AI-inferred)
+	PolicyResults any
+	// The final determination reached. (AI-inferred)
+	Verdict any
+	// Which policy or check flagged this violation. (AI-inferred)
 	ViolationSource any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDate struct {
-	Day   any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// The month component of a date. (AI-inferred)
 	Month any
-	Year  any
+	// The year component of a date. (AI-inferred)
+	Year any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations struct {
-	EndIndex        any
-	License         any
+	// The ending position this range covers. (AI-inferred)
+	EndIndex any
+	// The license this content is distributed under. (AI-inferred)
+	License any
+	// When this document was published. (AI-inferred)
 	PublicationDate any
-	StartIndex      any
-	Title           any
-	Uri             any
+	// The starting position this range covers. (AI-inferred)
+	StartIndex any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata struct {
+	// The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred)
 	Citations any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResult struct {
+	// The result of this operation. (AI-inferred)
 	Outcome any
-	Output  any
+	// The output produced by this operation. (AI-inferred)
+	Output any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCode struct {
+	// A machine-readable code identifying this result. (AI-inferred)
 	Code any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_File struct {
-	FileId   any
+	// An identifier for this specific file. (AI-inferred)
+	FileId any
+	// The IANA MIME type of this content. (AI-inferred)
 	MimeType any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineData struct {
-	Data     any
+	// The literal data payload. (AI-inferred)
+	Data any
+	// The IANA MIME type of this content. (AI-inferred)
 	MimeType any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content struct {
+	// The output of running a preceding block of generated code. (AI-inferred)
 	CodeExecutionResult any
-	ExecutableCode      any
-	File                any
-	InlineData          any
-	Role                any
-	Text                any
-	Thought             any
+	// Code generated by the model for the tool-hosted interpreter to run. (AI-inferred)
+	ExecutableCode any
+	// A reference to a specific file. (AI-inferred)
+	File any
+	// Media content embedded directly, as raw bytes plus a MIME type. (AI-inferred)
+	InlineData any
+	// Who this content is attributed to, e.g. user or model. (AI-inferred)
+	Role any
+	// The plain-text content. (AI-inferred)
+	Text any
+	// A step of the model's own intermediate reasoning. (AI-inferred)
+	Thought any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadata struct {
-	Document       any
-	Domain         any
-	Language       any
-	MimeType       any
+	// A reference to the document this applies to. (AI-inferred)
+	Document any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// The language this content is in. (AI-inferred)
+	Language any
+	// The IANA MIME type of this content. (AI-inferred)
+	MimeType any
+	// An identifier for the specific page this applies to. (AI-inferred)
 	PageIdentifier any
-	Title          any
-	Uri            any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References struct {
-	ChunkMetadata    any
-	CodeSnippet      any
-	Content          any
+	ChunkMetadata any
+	// A short excerpt of code. (AI-inferred)
+	CodeSnippet any
+	// The content of this message or resource. (AI-inferred)
+	Content any
+	// Metadata describing this document. (AI-inferred)
 	DocumentMetadata any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_Segments struct {
-	EndIndex         any
-	GroundingScore   any
+	// The ending position this range covers. (AI-inferred)
+	EndIndex any
+	// How well this generated content is supported by the retrieved source material. (AI-inferred)
+	GroundingScore any
+	// The reference index/indices this citation points to. (AI-inferred)
 	ReferenceIndices any
-	StartIndex       any
-	Text             any
+	// The starting position this range covers. (AI-inferred)
+	StartIndex any
+	// The plain-text content. (AI-inferred)
+	Text any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegments struct {
-	ContentId        any
+	// An identifier for this specific content item. (AI-inferred)
+	ContentId any
+	// The reference index/indices this citation points to. (AI-inferred)
 	ReferenceIndices any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata struct {
-	References     any
-	Segments       any
+	// The source reference(s) supporting this content. (AI-inferred)
+	References any
+	// The segment(s) making up this content. (AI-inferred)
+	Segments any
+	// Visually distinct region(s) (e.g. a table or figure) identified within this document. (AI-inferred)
 	VisualSegments any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies_GroundedContent struct {
-	CitationMetadata      any
-	Content               any
+	// Detail about which source(s) support specific claims in the generated answer. (AI-inferred)
+	CitationMetadata any
+	// The content of this message or resource. (AI-inferred)
+	Content any
+	// Detail linking specific spans of generated text back to their own supporting source content. (AI-inferred)
 	TextGroundingMetadata any
 }
 
 type Session_Turns_DetailedAssistAnswer_Replies struct {
-	CreateTime      any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Content that has been verified as grounded in the retrieved source material. (AI-inferred)
 	GroundedContent any
 }
 
 type Session_Turns_DetailedAssistAnswer struct {
-	AssistSkippedReasons            any
+	// Why assistance was skipped for this request, when it was. (AI-inferred)
+	AssistSkippedReasons any
+	// The outcome of checking this content against the caller's own custom policy. (AI-inferred)
 	CustomerPolicyEnforcementResult any
-	Name                            any
-	Replies                         any
-	State                           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The reply/replies making up this response. (AI-inferred)
+	Replies any
+	// The current status of this resource or operation. (AI-inferred)
+	State any
 }
 
 type Session_Turns_Query struct {
+	// An identifier for this specific query. (AI-inferred)
 	QueryId any
-	Text    any
+	// The plain-text content. (AI-inferred)
+	Text any
 }
 
 type Session_Turns struct {
-	Answer               any
-	DetailedAnswer       any
+	// The generated answer text. (AI-inferred)
+	Answer any
+	// The full, structured answer response, including citations and supporting detail. (AI-inferred)
+	DetailedAnswer any
+	// The full, structured assistance response, including citations and supporting detail. (AI-inferred)
 	DetailedAssistAnswer any
-	Live                 any
-	Query                any
-	QueryConfig          any
+	// Whether this configuration is currently active and serving. (AI-inferred)
+	Live any
+	// The search query text. (AI-inferred)
+	Query any
+	// Configuration for how this query is processed. (AI-inferred)
+	QueryConfig any
 }
 
 var Session_Turns_DetailedAnswer_Citations_SourcesFields = ubx.FieldMap{

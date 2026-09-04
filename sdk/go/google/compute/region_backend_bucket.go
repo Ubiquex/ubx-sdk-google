@@ -4,6 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionBackendBucket_CdnPolicy_BypassCacheOnRequestHeaders struct {
+	// The name of the request header to match. If this header is present in a request, the CDN bypasses the cache for that request. (AI-inferred)
 	HeaderName any
 }
 
@@ -15,8 +16,10 @@ type RegionBackendBucket_CdnPolicy_CacheKeyPolicy struct {
 }
 
 type RegionBackendBucket_CdnPolicy_NegativeCachingPolicy struct {
+	// The HTTP status code for which the negative caching TTL applies. This defines which response status codes will be cached negatively with the specified TTL. (AI-inferred)
 	Code any
-	Ttl  any
+	// The TTL (in seconds) for caching responses with the corresponding status code. (AI-inferred)
+	Ttl any
 }
 
 type RegionBackendBucket_CdnPolicy struct {
@@ -52,6 +55,7 @@ type RegionBackendBucket_Params struct {
 }
 
 type RegionBackendBucket_UsedBy struct {
+	// The URL of the resource that is currently using this backend bucket. This is the full reference to the using resource, such as a URL map or load balancer. (AI-inferred)
 	Reference any
 }
 

@@ -8,11 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QaQuestion_AnswerChoices:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred)
     na_value: Any = None
+    # A numeric value. (AI-inferred)
     num_value: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # A text value. (AI-inferred)
     str_value: Any = None
 
 @dataclasses.dataclass

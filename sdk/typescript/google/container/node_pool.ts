@@ -31,25 +31,36 @@ export interface NodePool_BestEffortProvisioning {
 }
 
 export interface NodePool_Conditions {
+  /** A standard gRPC-style status code summarizing this outcome. (AI-inferred) */
   canonicalCode?: string | Computed<string>;
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable description of this result or error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface NodePool_Config_Accelerators_GpuDriverInstallationConfig {
+  /** Which GPU driver version GKE installs, e.g. `LATEST` or `DEFAULT`. (AI-inferred) */
   gpuDriverVersion?: string | Computed<string>;
 }
 
 export interface NodePool_Config_Accelerators_GpuSharingConfig {
+  /** How a shared GPU is divided among containers, e.g. `TIME_SHARING` or `MPS`. (AI-inferred) */
   gpuSharingStrategy?: string | Computed<string>;
+  /** The maximum number of containers that may share a single physical GPU. (AI-inferred) */
   maxSharedClientsPerGpu?: string | Computed<string>;
 }
 
 export interface NodePool_Config_Accelerators {
+  /** How many accelerator (GPU/TPU) devices are attached per node. (AI-inferred) */
   acceleratorCount?: string | Computed<string>;
+  /** The accelerator (GPU/TPU) type attached to each node, e.g. `nvidia-tesla-t4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** Whether and how GKE automatically installs the GPU driver on nodes with attached accelerators. (AI-inferred) */
   gpuDriverInstallationConfig?: NodePool_Config_Accelerators_GpuDriverInstallationConfig | Computed<NodePool_Config_Accelerators_GpuDriverInstallationConfig>;
+  /** The fraction of a physical GPU allocated per partition, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
+  /** Configuration letting multiple containers share a single physical GPU, rather than each requiring a dedicated one. (AI-inferred) */
   gpuSharingConfig?: NodePool_Config_Accelerators_GpuSharingConfig | Computed<NodePool_Config_Accelerators_GpuSharingConfig>;
 }
 
@@ -81,11 +92,14 @@ export interface NodePool_Config_ConfidentialNodes {
 }
 
 export interface NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig {
+  /** The Secret Manager secret version this value is sourced from. (AI-inferred) */
   secretUri?: string | Computed<string>;
 }
 
 export interface NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig {
+  /** The fully qualified domain name(s) of the private registry/registries this certificate is trusted for. (AI-inferred) */
   fqdns?: string[] | Computed<string[]>;
+  /** A CA certificate sourced from Secret Manager, trusted for verifying a private container registry's own TLS certificate. (AI-inferred) */
   gcpSecretManagerCertificateConfig?: NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig | Computed<NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig>;
 }
 
@@ -97,31 +111,45 @@ export interface NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig {
 }
 
 export interface NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca {
+  /** The Secret Manager secret version holding this certificate, in the form `projects/{project}/secrets/{secret}/versions/{version}`. (AI-inferred) */
   gcpSecretManagerSecretUri?: string | Computed<string>;
 }
 
 export interface NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Client {
+  /** A TLS certificate. (AI-inferred) */
   cert?: NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca | Computed<NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca | Computed<NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca>;
 }
 
 export interface NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Header {
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value of this key/value pair. (AI-inferred) */
   value?: string[] | Computed<string[]>;
 }
 
 export interface NodePool_Config_ContainerdConfig_RegistryHosts_Hosts {
+  /** The CA certificate used to verify the remote server's own identity. (AI-inferred) */
   ca?: NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca[] | Computed<NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca[]>;
+  /** The capability/capabilities this proxy or client supports. (AI-inferred) */
   capabilities?: string[] | Computed<string[]>;
+  /** Client-side TLS configuration. (AI-inferred) */
   client?: NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Client[] | Computed<NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Client[]>;
+  /** How long to wait when establishing this connection before giving up. (AI-inferred) */
   dialTimeout?: string | Computed<string>;
+  /** An HTTP header sent with this request. (AI-inferred) */
   header?: NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Header[] | Computed<NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Header[]>;
+  /** The hostname this applies to. (AI-inferred) */
   host?: string | Computed<string>;
+  /** A path used in place of the default, for reaching this endpoint. (AI-inferred) */
   overridePath?: boolean | Computed<boolean>;
 }
 
 export interface NodePool_Config_ContainerdConfig_RegistryHosts {
+  /** The host(s) this configuration applies to. (AI-inferred) */
   hosts?: NodePool_Config_ContainerdConfig_RegistryHosts_Hosts[] | Computed<NodePool_Config_ContainerdConfig_RegistryHosts_Hosts[]>;
+  /** Server-side TLS configuration. (AI-inferred) */
   server?: string | Computed<string>;
 }
 
@@ -364,7 +392,9 @@ export interface NodePool_Config_SandboxConfig {
 }
 
 export interface NodePool_Config_SecondaryBootDisks {
+  /** The disk image used for this node's own boot disk. (AI-inferred) */
   diskImage?: string | Computed<string>;
+  /** Which operating mode this configuration uses. (AI-inferred) */
   mode?: string | Computed<string>;
 }
 
@@ -376,8 +406,11 @@ export interface NodePool_Config_ShieldedInstanceConfig {
 }
 
 export interface NodePool_Config_SoleTenantConfig_NodeAffinities {
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** How this taint's own key/value is compared against a pod's own toleration, e.g. `Equal` or `Exists`. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The value(s) making up this configuration. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -394,8 +427,11 @@ export interface NodePool_Config_TaintConfig {
 }
 
 export interface NodePool_Config_Taints {
+  /** What happens to a pod that doesn't tolerate this taint, e.g. `NoSchedule` or `NoExecute`. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value of this key/value pair. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -553,14 +589,20 @@ export interface NodePool_MaxPodsConstraint {
 }
 
 export interface NodePool_NetworkConfig_AdditionalNodeNetworkConfigs {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface NodePool_NetworkConfig_AdditionalPodNetworkConfigs {
+  /** The maximum number of pods schedulable on a single node in this node pool. (AI-inferred) */
   maxPodsPerNode?: NodePool_MaxPodsConstraint | Computed<NodePool_MaxPodsConstraint>;
+  /** A reference to the Compute Engine network attachment this cluster's own control plane connects through. (AI-inferred) */
   networkAttachment?: string | Computed<string>;
+  /** The subnet secondary IP range used for pod IP addresses. (AI-inferred) */
   secondaryPodRange?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 

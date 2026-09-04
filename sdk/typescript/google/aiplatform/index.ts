@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Index_DeployedIndexes {
+  /** The identifier this index was deployed under. (AI-inferred) */
   deployedIndexId?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the index endpoint this index is deployed to. (AI-inferred) */
   indexEndpoint?: string | Computed<string>;
 }
 

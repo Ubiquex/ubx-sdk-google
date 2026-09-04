@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Workstation_PersistentDirectories {
+  /** The path this volume is mounted at inside the container. (AI-inferred) */
   mountPath?: string | Computed<string>;
+  /** The size of this resource, in gibibytes. (AI-inferred) */
   sizeGb?: number | Computed<number>;
 }
 

@@ -95,36 +95,55 @@ class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfi
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio:
+    # The audio or video bit rate, in bits per second. (AI-inferred)
     bit_rate: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The audio sample rate, in Hz. (AI-inferred)
     sample_rate: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
     image_size: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # A schema describing this value's own expected structure. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # How long this clip, window, or operation lasts. (AI-inferred)
     duration: Any = None
+    # A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
     gcs_uri: Any = None
+    # The pixel dimensions of this image or video. (AI-inferred)
     resolution: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat:
+    # Audio content or configuration. (AI-inferred)
     audio: Any = None
+    # Image content or configuration. (AI-inferred)
     image: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # Video content or configuration. (AI-inferred)
     video: Any = None
 
 @dataclasses.dataclass
@@ -145,6 +164,7 @@ class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSc
     example: Any = None
     # Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
     format: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
     # Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
     max_items: Any = None
@@ -198,21 +218,28 @@ class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingCon
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig:
+    # The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
     voice_name: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
     voice_sample_audio: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig:
+    # Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
     prebuilt_voice_config: Any = None
+    # Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
     replicated_voice_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs:
+    # Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
     speaker: Any = None
+    # The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
     voice_config: Any = None
 
 @dataclasses.dataclass
@@ -320,174 +347,265 @@ class EvaluationRun_EvaluationConfig_CloudLoggingConfig:
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_DatasetCustomMetrics:
+    # How per-instance scores for this metric are combined into a single dataset-level result, e.g. average or sum. (AI-inferred)
     aggregation_function: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_LossAnalysisConfig:
+    # Identifies which candidate response this applies to. (AI-inferred)
     candidate: Any = None
+    # The metric this result was computed for. (AI-inferred)
     metric: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec:
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec:
+    # The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
     metric_spec_name: Any = None
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec:
+    # The full resource name of the metric this applies to. (AI-inferred)
     metric_resource_name: Any = None
+    # Configuration for the model used by this job. (AI-inferred)
     model_config: Any = None
+    # The template used to construct the prompt sent to the model. (AI-inferred)
     prompt_template: Any = None
+    # The kind of content generated rubrics should assess. (AI-inferred)
     rubric_content_type: Any = None
+    # A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
     rubric_type_ontology: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec:
+    # Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
     additional_config: Any = None
+    # Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
     judge_autorater_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
     predefined_rubric_generation_spec: Any = None
+    # Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
     rubric_generation_spec: Any = None
+    # A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
     rubric_group_key: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpec:
+    # Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred)
     use_effective_order: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpec:
+    # The function within the supplied custom code that computes this metric. (AI-inferred)
     evaluation_function: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig:
+    # The judge model used to automatically score outputs against this metric, when the metric is model-based rather than computed directly. (AI-inferred)
     autorater_model: Any = None
+    # Whether this rubric's own pass/fail evaluation is inverted. (AI-inferred)
     flip_enabled: Any = None
+    # The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred)
     generation_config: Any = None
+    # How many samples are drawn when computing this metric. (AI-inferred)
     sampling_count: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec:
+    # The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
     metric_spec_name: Any = None
+    # Configuration parameters specific to this metric's own computation. (AI-inferred)
     metric_spec_parameters: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig:
+    # The function within the supplied custom code that parses the judge model's own response. (AI-inferred)
     parsing_function: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig:
+    # Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred)
     custom_code_parser_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpec:
+    # Configuration for the model used by this job. (AI-inferred)
     model_config: Any = None
+    # The template used to construct the prompt sent to the model. (AI-inferred)
     prompt_template: Any = None
+    # The kind of content generated rubrics should assess. (AI-inferred)
     rubric_content_type: Any = None
+    # A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
     rubric_type_ontology: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec:
+    # Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
     additional_config: Any = None
+    # Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
     judge_autorater_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
     predefined_rubric_generation_spec: Any = None
+    # How the judge model's own raw response text is parsed into a final score. (AI-inferred)
     result_parser_config: Any = None
+    # Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
     rubric_generation_spec: Any = None
+    # A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
     rubric_group_key: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRange:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The upper bound. (AI-inferred)
     max: Any = None
+    # The lower bound. (AI-inferred)
     min: Any = None
+    # A single step within this run or sequence. (AI-inferred)
     step: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata:
+    # Additional, metric-specific metadata beyond the standard fields. (AI-inferred)
     other_metadata: Any = None
+    # The minimum and maximum values this metric's own score can take. (AI-inferred)
     score_range: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig:
+    # Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred)
     return_raw_output: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec:
+    # The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred)
     baseline_response_field_name: Any = None
+    # The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred)
     candidate_response_field_name: Any = None
+    # Configuration for the shape of a custom-formatted metric output. (AI-inferred)
     custom_output_format_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpec:
+    # Configuration for the shape of a custom-formatted metric output. (AI-inferred)
     custom_output_format_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpec:
+    # Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred)
     rouge_type: Any = None
+    # Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred)
     split_summaries: Any = None
+    # Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred)
     use_stemmer: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_MetricConfig:
+    # Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred)
     aggregation_metrics: Any = None
+    # Configuration for computing the BLEU text-similarity metric. (AI-inferred)
     bleu_spec: Any = None
+    # Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
     computation_based_metric_spec: Any = None
+    # Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred)
     custom_code_execution_spec: Any = None
+    # Configuration for computing an exact-string-match metric. (AI-inferred)
     exact_match_spec: Any = None
+    # Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
     llm_based_metric_spec: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred)
     pairwise_metric_spec: Any = None
+    # Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred)
     pointwise_metric_spec: Any = None
+    # Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
     predefined_metric_spec: Any = None
+    # Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred)
     rouge_spec: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_Property:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content:
+    # A named property of this object. (AI-inferred)
     property: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics:
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # How heavily this rubric criterion is weighted in the overall verdict: `HIGH`, `MEDIUM`, or `LOW`. (AI-inferred)
     importance: Any = None
+    # An identifier for this rubric criterion, unique within its own containing set. (AI-inferred)
     rubric_id: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics:
+    # The individual rubric criteria used to judge a response. (AI-inferred)
     rubrics: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec:
+    # Rubric criteria supplied directly in the request, rather than referenced from a predefined group. (AI-inferred)
     inline_rubrics: Any = None
+    # Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
     judge_autorater_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
     rubric_generation_spec: Any = None
+    # A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
     rubric_group_key: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_Metrics:
+    # Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
     computation_based_metric_spec: Any = None
+    # Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
     llm_based_metric_spec: Any = None
+    # The metric this result was computed for. (AI-inferred)
     metric: Any = None
+    # The configuration for how this metric is computed. (AI-inferred)
     metric_config: Any = None
+    # The full resource name of the metric this applies to. (AI-inferred)
     metric_resource_name: Any = None
+    # Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
     predefined_metric_spec: Any = None
+    # Computes this metric by judging the response against a set of rubric criteria, rather than a single score. (AI-inferred)
     rubric_based_metric_spec: Any = None
 
 @dataclasses.dataclass
@@ -516,8 +634,11 @@ class EvaluationRun_EvaluationConfig_PromptTemplate:
 
 @dataclasses.dataclass
 class EvaluationRun_EvaluationConfig_RubricConfigs:
+    # Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
     predefined_rubric_generation_spec: Any = None
+    # Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
     rubric_generation_spec: Any = None
+    # A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
     rubric_group_key: Any = None
 
 @dataclasses.dataclass
@@ -557,227 +678,344 @@ class EvaluationRun_EvaluationResults:
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfig:
+    # A reference to the Gemini agent to run for this evaluation. (AI-inferred)
     gemini_agent: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInput:
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
+    # The initial key/value state the agent's own session starts with. (AI-inferred)
     session_state: Any = None
+    # The identifier of the simulated user for this evaluation session. (AI-inferred)
     user_id: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfig:
+    # The maximum number of conversation turns the user simulator runs before ending the session. (AI-inferred)
     max_turn: Any = None
+    # Configuration for the model used by this job. (AI-inferred)
     model_config: Any = None
+    # The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred)
     model_name: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_AgentRunConfig:
+    # A reference to the Agent Engine resource to run for this evaluation. (AI-inferred)
     agent_engine: Any = None
+    # Configuration for running a Gemini-based agent for this evaluation. (AI-inferred)
     gemini_agent_config: Any = None
+    # The initial conversation session state passed to the agent when it's run for this evaluation. (AI-inferred)
     session_input: Any = None
+    # Configuration for a simulated user that converses with the agent under evaluation, rather than replaying a fixed script. (AI-inferred)
     user_simulator_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUse:
+    # If `true`, screens `computer_use` requests for prompt-injection attempts before acting on them. (AI-inferred)
     enable_prompt_injection_detection: Any = None
+    # Which surface the `computer_use` tool operates in -- e.g. `browser`, for a sandboxed web browser. (AI-inferred)
     environment: Any = None
+    # Built-in `computer_use` actions to disable, typically to hand those actions to a custom, caller-registered function instead. (AI-inferred)
     excluded_predefined_functions: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearch:
+    # The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
     blocking_confidence: Any = None
+    # Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
     exclude_domains: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearch:
+    # The API key credential used to authenticate this tool's own external calls. (AI-inferred)
     api_key: Any = None
+    # Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
     custom_configs: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarations:
+    # Controls how the model treats this function call -- e.g. whether it must wait for the result before continuing, or can proceed without blocking. (AI-inferred)
     behavior: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
+    # The function's own parameter schema expressed as a plain JSON Schema document, an alternative to the structured `parameters` field. (AI-inferred)
     parameters_json_schema: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
+    # The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred)
     response_json_schema: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypes:
+    # Configuration for grounding responses in Google Maps place data specifically. (AI-inferred)
     places: Any = None
+    # Configuration for how requests are routed, e.g. to a specific region or backend. (AI-inferred)
     routing: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps:
+    # Whether an interactive map widget is included alongside a Google Maps-grounded response. (AI-inferred)
     enable_widget: Any = None
+    # Which real-world grounding source(s) (e.g. web search, Maps) this configuration draws on. (AI-inferred)
     grounding_types: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypes:
+    # Enables grounding via Google Image Search results. (AI-inferred)
     image_search: Any = None
+    # Enables grounding via Google Web Search results. (AI-inferred)
     web_search: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch:
+    # The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
     blocking_confidence: Any = None
+    # Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
     exclude_domains: Any = None
+    # Which kind(s) of web search results (image, web, or both) this grounding tool draws on. (AI-inferred)
     search_types: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig:
+    # The minimum predicted-usefulness score, from `dynamic_retrieval_config`, at which grounding is triggered -- a lower threshold grounds more often. (AI-inferred)
     dynamic_threshold: Any = None
+    # Which operating mode this configuration uses. (AI-inferred)
     mode: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval:
+    # Controls when Google Search grounding actually triggers, based on how likely the model judges grounding to help. (AI-inferred)
     dynamic_retrieval_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearch:
+    # The API key credential used to authenticate this tool's own external calls. (AI-inferred)
     api_key: Any = None
+    # Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
     custom_configs: Any = None
+    # Whether Google retains this request's own data beyond the immediate response, per the caller's own data-retention agreement. (AI-inferred)
     enable_data_retention: Any = None
+    # If `true`, Google discards this request's own data immediately after responding rather than retaining it at all. (AI-inferred)
     enable_zero_data_retention: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig:
+    # The Secret Manager secret version holding the API key used to authenticate this call. (AI-inferred)
     api_key_secret_version: Any = None
+    # The literal API key value used to authenticate this tool's own external call. (AI-inferred)
     api_key_string: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth:
+    # How the API key for this tool's own external service call is supplied. (AI-inferred)
     api_key_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig:
+    # The Secret Manager secret holding the API key used to authenticate this call. (AI-inferred)
     api_key_secret: Any = None
+    # The literal API key value used to authenticate this tool's own external call. (AI-inferred)
     api_key_string: Any = None
+    # Where in the HTTP request this credential is placed, e.g. a header or query parameter. (AI-inferred)
     http_element_location: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig:
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig:
+    # The Secret Manager secret holding this credential. (AI-inferred)
     credential_secret: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig:
+    # An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
     access_token: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig:
+    # An OpenID Connect ID token used to authenticate this call. (AI-inferred)
     id_token: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig:
+    # How the API key for this tool's own external service call is supplied. (AI-inferred)
     api_key_config: Any = None
+    # Which authentication method this configuration uses, e.g. API key, OAuth, or OIDC. (AI-inferred)
     auth_type: Any = None
+    # Authenticates using a Google-managed service account, rather than a caller-supplied credential. (AI-inferred)
     google_service_account_config: Any = None
+    # Authenticates using HTTP Basic authentication (username and password). (AI-inferred)
     http_basic_auth_config: Any = None
+    # Authenticates using an OAuth 2.0 access token. (AI-inferred)
     oauth_config: Any = None
+    # Authenticates using an OpenID Connect ID token. (AI-inferred)
     oidc_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParams:
+    # The position of this item within its own containing sequence. (AI-inferred)
     index: Any = None
+    # How many search results (hits) to request from the external search API. (AI-inferred)
     num_hits: Any = None
+    # The Elasticsearch search template used to construct this query. (AI-inferred)
     search_template: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi:
+    # Authentication credentials for calling this external API. (AI-inferred)
     api_auth: Any = None
+    # Which external search API shape this configuration targets, e.g. `elastic_search_params` or `simple_search_params`. (AI-inferred)
     api_spec: Any = None
+    # Authentication configuration for reaching this external resource. (AI-inferred)
     auth_config: Any = None
+    # Parameters for querying an Elasticsearch-backed external search API. (AI-inferred)
     elastic_search_params: Any = None
+    # The endpoint this call is directed to. (AI-inferred)
     endpoint: Any = None
+    # Parameters for querying a simple, generic external search API, as an alternative to `elastic_search_params`. (AI-inferred)
     simple_search_params: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecs:
+    # The Vertex AI Search data store this grounding query reads from, in the form `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`. (AI-inferred)
     data_store: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch:
+    # Restricts a Vertex AI Search grounding query to specific data store(s) within the configured search app, rather than all of them. (AI-inferred)
     data_store_specs: Any = None
+    # The Vertex AI Search data store this applies to. (AI-inferred)
     datastore: Any = None
+    # The Vertex AI Search app (engine) this grounding query reads from. (AI-inferred)
     engine: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The maximum number of results this query returns. (AI-inferred)
     max_results: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResources:
+    # The RAG corpus this applies to, in the form `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`. (AI-inferred)
     rag_corpus: Any = None
+    # Specific file ID(s) within `rag_corpus` to restrict retrieval to, instead of the whole corpus. (AI-inferred)
     rag_file_ids: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter:
+    # A filter expression restricting retrieval to chunks whose own metadata matches. (AI-inferred)
     metadata_filter: Any = None
+    # The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
     vector_distance_threshold: Any = None
+    # The minimum vector similarity a retrieved chunk must have to be included -- a higher threshold returns fewer, more relevant chunks. (AI-inferred)
     vector_similarity_threshold: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking:
+    # Reranks retrieved results using a language model, rather than the dedicated rank service. (AI-inferred)
     llm_ranker: Any = None
+    # Reranks retrieved results using Vertex AI's own dedicated semantic ranking model. (AI-inferred)
     rank_service: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig:
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # Configuration for reranking retrieved results before returning them. (AI-inferred)
     ranking: Any = None
+    # Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
     top_k: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore:
+    # The RAG corpus/corpora (and optionally specific files within one corpus) this query retrieves from. (AI-inferred)
     rag_resources: Any = None
+    # Controls how many chunks are retrieved and how they're filtered/ranked for a RAG query. (AI-inferred)
     rag_retrieval_config: Any = None
+    # The maximum number of top-ranked results to return from retrieval. (AI-inferred)
     similarity_top_k: Any = None
+    # The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
     vector_distance_threshold: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval:
+    # If `true`, suppresses source citations that would otherwise accompany a grounded response. (AI-inferred)
     disable_attribution: Any = None
+    # Configuration for grounding via a caller-specified external search API, rather than a Google-hosted one. (AI-inferred)
     external_api: Any = None
+    # Enables the model to ground its response in a Vertex AI Search data store. (AI-inferred)
     vertex_ai_search: Any = None
+    # Enables the model to ground its response in one or more Vertex AI RAG Engine corpora. (AI-inferred)
     vertex_rag_store: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents_Tools:
+    # Enables the model to write and run code in a hosted interpreter as part of generating its response. (AI-inferred)
     code_execution: Any = None
+    # Enables the model to control a browser, mobile, or desktop `environment` by issuing UI actions (click, type, scroll) as part of generating its response. (AI-inferred)
     computer_use: Any = None
+    # Enables grounding via an enterprise-scoped web search, as an alternative to open `google_search` grounding. (AI-inferred)
     enterprise_web_search: Any = None
+    # Enables grounding via the third-party Exa AI search tool, authenticated with `api_key`. (AI-inferred)
     exa_ai_search: Any = None
+    # The set of callable functions the model may invoke via `function_call`, each declared with a name, description, and parameter schema. (AI-inferred)
     function_declarations: Any = None
+    # Enables the model to ground its response in Google Maps place and location data. (AI-inferred)
     google_maps: Any = None
+    # Enables the model to ground its response in live Google Search results. (AI-inferred)
     google_search: Any = None
+    # Enables the model to ground its response in live Google Search results, with configurable dynamic-retrieval behavior. (AI-inferred)
     google_search_retrieval: Any = None
+    # Enables grounding via the third-party Parallel AI search tool. (AI-inferred)
     parallel_ai_search: Any = None
+    # Enables the model to ground its response in a specified external or Vertex AI-hosted data source. (AI-inferred)
     retrieval: Any = None
+    # Enables the model to fetch and read the content of URLs it's given or discovers, to ground its response. (AI-inferred)
     url_context: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs_Agents:
+    # The identifier of the agent this applies to. (AI-inferred)
     agent_id: Any = None
+    # The kind of agent this is, e.g. which framework or platform it's built on. (AI-inferred)
     agent_type: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # An instruction given to the model or agent. (AI-inferred)
     instruction: Any = None
+    # The child agent(s) this agent delegates parts of a task to. (AI-inferred)
     sub_agents: Any = None
+    # The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred)
     tools: Any = None
 
 @dataclasses.dataclass
 class EvaluationRun_InferenceConfigs:
+    # Configuration for running the agent under evaluation to produce responses, rather than using pre-recorded ones. (AI-inferred)
     agent_run_config: Any = None
+    # The agent(s) involved in this evaluation, keyed by their own identifier. (AI-inferred)
     agents: Any = None
+    # The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred)
     generation_config: Any = None
+    # A reference to the model this applies to. (AI-inferred)
     model: Any = None
+    # How many evaluation instances are processed concurrently. (AI-inferred)
     parallelism: Any = None
+    # The template used to construct the prompt sent to the model. (AI-inferred)
     prompt_template: Any = None
 
 _EvaluationRun_DataSource_BigqueryRequestSet_SamplingConfigFields = {

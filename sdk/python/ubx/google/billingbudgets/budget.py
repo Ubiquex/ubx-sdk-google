@@ -74,7 +74,9 @@ class Budget_NotificationsRule:
 
 @dataclasses.dataclass
 class Budget_ThresholdRules:
+    # Whether this threshold compares against `CURRENT_SPEND` (spend recorded so far this period) or `FORECASTED_SPEND` (Billing's own projected spend for the full period). Defaults to `CURRENT_SPEND`. (AI-inferred)
     spend_basis: Any = None
+    # Required. The percentage of the budget amount that triggers a notification when crossed, expressed as a 1.0-based fraction -- `0.5` means 50%. (AI-inferred)
     threshold_percent: Any = None
 
 _Budget_Amount_SpecifiedAmountFields = {
@@ -152,6 +154,7 @@ class BudgetConfig:
     etag: Any = None
     # NotificationsRule defines notifications that are sent based on budget spend and thresholds.
     notifications_rule: Any = None
+    # Who can view and modify this budget: `ALL_USERS` (any project member with billing permissions) or `BILLING_ACCOUNT` (billing-account-level users only, letting them create single-project budgets project-level users can't change). Defaults to `ALL_USERS` when unset. (AI-inferred)
     ownership_scope: Any = None
     # Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
     threshold_rules: Any = None
@@ -170,6 +173,7 @@ class BudgetAttrs:
     name: Any = None
     # NotificationsRule defines notifications that are sent based on budget spend and thresholds.
     notifications_rule: Any = None
+    # Who can view and modify this budget: `ALL_USERS` (any project member with billing permissions) or `BILLING_ACCOUNT` (billing-account-level users only, letting them create single-project budgets project-level users can't change). Defaults to `ALL_USERS` when unset. (AI-inferred)
     ownership_scope: Any = None
     # Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
     threshold_rules: Any = None

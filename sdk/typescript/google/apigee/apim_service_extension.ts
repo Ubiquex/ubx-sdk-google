@@ -2,15 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ApimServiceExtension_Extensions {
+  /** Whether requests are allowed through when this check itself fails to run. (AI-inferred) */
   failOpen?: boolean | Computed<boolean>;
+  /** The hostname this applies to. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** The condition that must hold for this rule to apply. (AI-inferred) */
   matchCondition?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The event type(s) this hook or plugin can respond to. (AI-inferred) */
   supportedEvents?: string[] | Computed<string[]>;
 }
 
 export interface ApimServiceExtension_NetworkConfigs {
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
+  /** A reference to the subnet this applies to. (AI-inferred) */
   subnet?: string | Computed<string>;
 }
 

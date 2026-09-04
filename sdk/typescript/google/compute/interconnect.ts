@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentages {
+  /** Percentage of the interconnect's total bandwidth allocated to the associated VLAN attachment. All percentages in the bandwidth_percentages block must sum to 100. (AI-inferred) */
   percentage?: number | Computed<number>;
+  /** The traffic class to which this bandwidth percentage applies. Allowed values are TC1, TC2, TC3, TC4, TC5, and TC6. (AI-inferred) */
   trafficClass?: string | Computed<string>;
 }
 
@@ -12,6 +14,7 @@ export interface Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePo
 }
 
 export interface Interconnect_ApplicationAwareInterconnect {
+  /** The bandwidth_percentage_policy block configures the bandwidth percentage allocation for an application-aware interconnect. (AI-inferred) */
   bandwidthPercentagePolicy?: Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy | Computed<Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy>;
   /** Description for the application awareness profile on this Cloud Interconnect. */
   profileDescription?: string | Computed<string>;
@@ -22,24 +25,34 @@ export interface Interconnect_ApplicationAwareInterconnect {
 }
 
 export interface Interconnect_CircuitInfos {
+  /** The customer-side demarcation ID for the interconnect circuit. (AI-inferred) */
   customerDemarcId?: string | Computed<string>;
   googleCircuitId?: string | Computed<string>;
+  /** The Google-assigned demarcation point ID for this interconnect circuit. (AI-inferred) */
   googleDemarcId?: string | Computed<string>;
 }
 
 export interface Interconnect_ExpectedOutages {
+  /** The list of circuit names that are affected by this outage. (AI-inferred) */
   affectedCircuits?: string[] | Computed<string[]>;
   description?: string | Computed<string>;
+  /** The time at which the expected outage is scheduled to end. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The type of issue causing the expected outage. Possible values are IT_OUTAGE, IT_PARTIAL_OUTAGE, OUTAGE, and PARTIAL_OUTAGE. (AI-inferred) */
   issueType?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** The source of the expected outage. Allowed values are GOOGLE for outages initiated by Google, and NSRC_GOOGLE for outages reported by the Network Service Reliability Center. (AI-inferred) */
   source?: string | Computed<string>;
+  /** The start time of the outage, in RFC3339 format. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current state of the expected outage. Possible values are: ACTIVE, CANCELLED, COMPLETED, NS_ACTIVE, NS_CANCELED. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Interconnect_Macsec_PreSharedKeys {
+  /** A user-defined name for this pre-shared key. Must be unique within the interconnect. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The start time for this pre-shared key, in RFC3339 UTC timestamp format. The key becomes active at this time; if omitted, it becomes active immediately. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 

@@ -4,40 +4,59 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors struct {
+	// Additional detail about this error. (AI-inferred)
 	ErrorDetails any
-	Severity     any
+	// How serious this finding is. (AI-inferred)
+	Severity any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError struct {
+	// The row number this error occurred on. (AI-inferred)
 	RowNumber any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError struct {
+	// Detail about a failure while parsing an uploaded CSV file. (AI-inferred)
 	CsvError any
+	// The path to this file. (AI-inferred)
 	FilePath any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxError struct {
+	// The row number this error occurred on. (AI-inferred)
 	RowNumber any
-	Sheet     any
+	// The spreadsheet sheet this applies to. (AI-inferred)
+	Sheet any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors struct {
+	// Detail about a failure while reading an uploaded archive file. (AI-inferred)
 	ArchiveError any
-	AssetTitle   any
-	CsvError     any
-	Errors       any
-	RowNumber    any
-	VmName       any
-	VmUuid       any
-	XlsxError    any
+	// A human-readable name for this asset. (AI-inferred)
+	AssetTitle any
+	// Detail about a failure while parsing an uploaded CSV file. (AI-inferred)
+	CsvError any
+	// The error(s) encountered. (AI-inferred)
+	Errors any
+	// The row number this error occurred on. (AI-inferred)
+	RowNumber any
+	// The name of this virtual machine. (AI-inferred)
+	VmName any
+	// A unique identifier for this virtual machine. (AI-inferred)
+	VmUuid any
+	// Detail about a failure while parsing an uploaded Excel file. (AI-inferred)
+	XlsxError any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations struct {
-	FileErrors    any
-	FileName      any
+	// The error(s) encountered while processing this file. (AI-inferred)
+	FileErrors any
+	// The name of this file. (AI-inferred)
+	FileName any
+	// Whether this report is incomplete, e.g. due to processing errors on some assets. (AI-inferred)
 	PartialReport any
-	RowErrors     any
+	// The error(s) encountered on specific row(s) of this file. (AI-inferred)
+	RowErrors any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors struct {

@@ -15,11 +15,14 @@ type Queue_AppEngineRoutingOverride struct {
 }
 
 type Queue_HttpTarget_HeaderOverrides_Header struct {
-	Key   any
+	// The HTTP header name to set. (AI-inferred)
+	Key any
+	// The HTTP header value to set. (AI-inferred)
 	Value any
 }
 
 type Queue_HttpTarget_HeaderOverrides struct {
+	// A single HTTP header to upsert onto every task's request in this queue's `http_target`. Headers prefixed `X-CloudTasks-` are reserved for Cloud Tasks' own service headers and can't be overridden this way. (AI-inferred)
 	Header any
 }
 

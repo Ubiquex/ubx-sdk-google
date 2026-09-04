@@ -4,6 +4,7 @@ package bigtableadmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaterializedView_ClusterStates struct {
+	// The current replication status of this cluster relative to the rest of the instance. (AI-inferred)
 	ReplicationState any
 }
 

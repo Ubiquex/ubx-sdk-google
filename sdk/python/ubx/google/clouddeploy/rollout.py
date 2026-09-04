@@ -46,79 +46,120 @@ class Rollout_Metadata:
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_Container:
+    # The command-line argument(s) passed to the container. (AI-inferred)
     args: Any = None
+    # The container entrypoint command to run, overriding the image's own default. (AI-inferred)
     command: Any = None
+    # Environment variable(s) set in the container. (AI-inferred)
     env: Any = None
+    # The container image reference to run. (AI-inferred)
     image: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task:
+    # A single container's own configuration. (AI-inferred)
     container: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks:
+    # How often this check or action recurs. (AI-inferred)
     frequency: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # A single unit of work within this job. (AI-inferred)
     task: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecks:
+    # The Cloud Monitoring alert policy/policies this check watches. (AI-inferred)
     alert_policies: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud:
+    # Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred)
     alert_policy_checks: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob:
+    # Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred)
     custom_checks: Any = None
+    # How long this phase, wait, or window lasts. (AI-inferred)
     duration: Any = None
+    # Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred)
     google_cloud: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob:
+    # The action(s) this hook or job performs. (AI-inferred)
     actions: Any = None
+    # The task(s) making up this job. (AI-inferred)
     tasks: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJob:
+    # The task(s) making up this job. (AI-inferred)
     tasks: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs:
+    # A job that advances a child rollout to its own next phase, as part of a multi-target rollout. (AI-inferred)
     advance_child_rollout_job: Any = None
+    # A job that runs automated analysis (e.g. metrics-based) on a rollout phase before promoting it. (AI-inferred)
     analysis_job: Any = None
+    # A job that creates a child rollout targeting a specific destination, as part of a multi-target rollout. (AI-inferred)
     create_child_rollout_job: Any = None
+    # The job that performs the actual deployment for this phase. (AI-inferred)
     deploy_job: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # A record of one execution of a job. (AI-inferred)
     job_run: Any = None
+    # A job that runs custom actions after this phase's own deployment completes. (AI-inferred)
     postdeploy_job: Any = None
+    # A job that runs custom actions before this phase's own deployment starts. (AI-inferred)
     predeploy_job: Any = None
+    # A human-readable reason this job was skipped, when it was. (AI-inferred)
     skip_message: Any = None
+    # The current status of this job or resource. (AI-inferred)
     state: Any = None
+    # A job that runs verification tests against this phase's own deployment before it's considered successful. (AI-inferred)
     verify_job: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_ChildRolloutJobs:
+    # The job(s) that advance this rollout to its own next phase. (AI-inferred)
     advance_rollout_jobs: Any = None
+    # The job(s) that create a new rollout. (AI-inferred)
     create_rollout_jobs: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases_DeploymentJobs:
+    # A job that runs automated analysis (e.g. metrics-based) on a rollout phase before promoting it. (AI-inferred)
     analysis_job: Any = None
+    # The job that performs the actual deployment for this phase. (AI-inferred)
     deploy_job: Any = None
+    # A job that runs custom actions after this phase's own deployment completes. (AI-inferred)
     postdeploy_job: Any = None
+    # A job that runs custom actions before this phase's own deployment starts. (AI-inferred)
     predeploy_job: Any = None
+    # A job that runs verification tests against this phase's own deployment before it's considered successful. (AI-inferred)
     verify_job: Any = None
 
 @dataclasses.dataclass
 class Rollout_Phases:
+    # The job(s) that create or advance child rollouts, as part of a multi-target rollout. (AI-inferred)
     child_rollout_jobs: Any = None
+    # The job(s) that perform the actual deployment for this phase. (AI-inferred)
     deployment_jobs: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # A human-readable reason this job was skipped, when it was. (AI-inferred)
     skip_message: Any = None
+    # The current status of this job or resource. (AI-inferred)
     state: Any = None
 
 _Rollout_Metadata_AutomationFields = {

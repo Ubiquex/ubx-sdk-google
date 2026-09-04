@@ -14,18 +14,28 @@ const V3beta1Version_NluSettingsFields: FieldMap = {
 };
 
 export interface V3beta1VersionConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings?: V3beta1Version_NluSettings | Computed<V3beta1Version_NluSettings>;
 }
 
 export interface V3beta1VersionAttrs {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings: V3beta1Version_NluSettings;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state: string;
 }
 

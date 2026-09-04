@@ -74,12 +74,19 @@ export interface Job_TrainingInput_EvaluatorConfig {
 }
 
 export interface Job_TrainingInput_Hyperparameters_Params {
+  /** The candidate string value(s) considered for this categorical hyperparameter. (AI-inferred) */
   categoricalValues?: string[] | Computed<string[]>;
+  /** The candidate numeric value(s) considered for this discrete hyperparameter. (AI-inferred) */
   discreteValues?: number[] | Computed<number[]>;
+  /** The maximum value allowed. (AI-inferred) */
   maxValue?: number | Computed<number>;
+  /** The minimum value allowed. (AI-inferred) */
   minValue?: number | Computed<number>;
+  /** The name of a hyperparameter being tuned. (AI-inferred) */
   parameterName?: string | Computed<string>;
+  /** How this hyperparameter's own search space is scaled, e.g. linearly or logarithmically. (AI-inferred) */
   scaleType?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -180,20 +187,32 @@ export interface Job_TrainingOutput_BuiltInAlgorithmOutput {
 }
 
 export interface Job_TrainingOutput_Trials_AllMetrics {
+  /** The value of the objective metric this trial achieved. (AI-inferred) */
   objectiveValue?: number | Computed<number>;
+  /** The training step this metric was reported at. (AI-inferred) */
   trainingStep?: string | Computed<string>;
 }
 
 export interface Job_TrainingOutput_Trials {
+  /** The full set of metric(s) reported for this trial. (AI-inferred) */
   allMetrics?: Job_TrainingOutput_Trials_AllMetrics[] | Computed<Job_TrainingOutput_Trials_AllMetrics[]>;
+  /** The output produced by a built-in training algorithm. (AI-inferred) */
   builtInAlgorithmOutput?: Job_TrainingOutput_BuiltInAlgorithmOutput | Computed<Job_TrainingOutput_BuiltInAlgorithmOutput>;
+  /** When this event or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The metric value reported at the conclusion of this trial. (AI-inferred) */
   finalMetric?: Job_TrainingOutput_Trials_AllMetrics | Computed<Job_TrainingOutput_Trials_AllMetrics>;
+  /** The hyperparameter tuning configuration for this training job. (AI-inferred) */
   hyperparameters?: Record<string, string> | Computed<Record<string, string>>;
+  /** Whether this trial was stopped before completing all of its own training steps. (AI-inferred) */
   isTrialStoppedEarly?: boolean | Computed<boolean>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The unique identifier of this hyperparameter tuning trial. (AI-inferred) */
   trialId?: string | Computed<string>;
+  /** The URI(s) used to access this training job's own interactive web interface(s). (AI-inferred) */
   webAccessUris?: Record<string, string> | Computed<Record<string, string>>;
 }
 

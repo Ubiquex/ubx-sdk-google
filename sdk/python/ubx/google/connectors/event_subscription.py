@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EventSubscription_Destinations_Endpoint_Headers:
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # This HTTP header's own value. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -20,20 +22,29 @@ class EventSubscription_Destinations_Endpoint:
 
 @dataclasses.dataclass
 class EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValue:
+    # The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
     kms_key_name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValue:
+    # The specific Secret Manager secret version referenced. (AI-inferred)
     secret_version: Any = None
 
 @dataclasses.dataclass
 class EventSubscription_Destinations_Pubsub_ConfigVariables:
+    # This configuration variable's own value, when its type is boolean. (AI-inferred)
     bool_value: Any = None
+    # This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred)
     encryption_key_value: Any = None
+    # This admin filter's own value, when its type is an integer. (AI-inferred)
     int_value: Any = None
+    # This configuration variable's own name. (AI-inferred)
     key: Any = None
+    # This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
     secret_value: Any = None
+    # This admin filter's own value, when its type is a string. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass

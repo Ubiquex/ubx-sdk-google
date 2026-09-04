@@ -4,56 +4,82 @@ package clouddeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDate struct {
-	Day   any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// The month component of a date. (AI-inferred)
 	Month any
-	Year  any
+	// The year component of a date. (AI-inferred)
+	Year any
 }
 
 type DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTime struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows struct {
-	EndDate   any
-	EndTime   any
+	// The date this applies through. (AI-inferred)
+	EndDate any
+	// The time of day this applies through. (AI-inferred)
+	EndTime any
+	// The date this applies from. (AI-inferred)
 	StartDate any
+	// The time of day this applies from. (AI-inferred)
 	StartTime any
 }
 
 type DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindows struct {
+	// The day(s) of the week this recurring window applies to. (AI-inferred)
 	DaysOfWeek any
-	EndTime    any
-	StartTime  any
+	// The time of day this applies through. (AI-inferred)
+	EndTime any
+	// The time of day this applies from. (AI-inferred)
+	StartTime any
 }
 
 type DeployPolicy_Rules_RolloutRestriction_TimeWindows struct {
+	// A specific, non-recurring date/time range this maintenance window applies to. (AI-inferred)
 	OneTimeWindows any
-	TimeZone       any
-	WeeklyWindows  any
+	// The time zone this schedule or window is interpreted in. (AI-inferred)
+	TimeZone any
+	// A recurring weekly time window this configuration applies during. (AI-inferred)
+	WeeklyWindows any
 }
 
 type DeployPolicy_Rules_RolloutRestriction struct {
-	Actions     any
-	Id          any
-	Invokers    any
+	// The action(s) this hook or job performs. (AI-inferred)
+	Actions any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// Which source(s) (e.g. a user action, an automation rule) are allowed to trigger this operation. (AI-inferred)
+	Invokers any
+	// The time window(s) this configuration applies during. (AI-inferred)
 	TimeWindows any
 }
 
 type DeployPolicy_Rules struct {
+	// Constraints on when or how a rollout is allowed to proceed. (AI-inferred)
 	RolloutRestriction any
 }
 
 type DeployPolicy_Selectors_DeliveryPipeline struct {
-	Id     any
+	// An identifier for this item, unique within its own containing list. (AI-inferred)
+	Id any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
 	Labels any
 }
 
 type DeployPolicy_Selectors struct {
+	// A reference to the delivery pipeline this applies to. (AI-inferred)
 	DeliveryPipeline any
-	Target           any
+	// A reference to the target this applies to. (AI-inferred)
+	Target any
 }
 
 var DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDateFields = ubx.FieldMap{

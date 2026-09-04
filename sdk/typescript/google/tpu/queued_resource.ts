@@ -64,111 +64,175 @@ export interface QueuedResource_State {
 }
 
 export interface QueuedResource_Tpu_NodeSpec_MultisliceParams {
+  /** The real number of TPU nodes (slices) to provision together as part of this multislice deployment. (AI-inferred) */
   nodeCount?: number | Computed<number>;
+  /** The real prefix used to name each individual TPU node created as part of this multislice deployment. (AI-inferred) */
   nodeIdPrefix?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfig {
+  /** The real physical TPU chip topology (e.g. `2x2x1`) this node's own accelerator is arranged in. (AI-inferred) */
   topology?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKey {
+  /** The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/* /locations/* /keyRings/* /cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred) */
   kmsKeyName?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig {
+  /** A real, customer-managed Cloud KMS encryption key used to encrypt this TPU node's own boot disk. (AI-inferred) */
   customerEncryptionKey?: QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKey | Computed<QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKey>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_DataDisks {
+  /** The real access mode (`READ_WRITE` or `READ_ONLY`) this data disk is attached to the TPU node with. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The real Compute Engine disk this TPU node's own data disk is created from or attached to. (AI-inferred) */
   sourceDisk?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_NetworkConfig {
+  /** Whether this TPU node's own network interface allows sending packets with a source IP different from its own (IP forwarding). (AI-inferred) */
   canIpForward?: boolean | Computed<boolean>;
+  /** Whether this TPU node's own network interface has an external (public) IP address. (AI-inferred) */
   enableExternalIps?: boolean | Computed<boolean>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real number of network queues configured for this TPU node's own network interface. (AI-inferred) */
   queueCount?: number | Computed<number>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfig {
+  /** The real, assigned external (public) IP address for this TPU node's own network endpoint. (AI-inferred) */
   externalIp?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints {
+  /** Real, external-access configuration (such as the assigned `external_ip`) for this TPU node's own network endpoint. (AI-inferred) */
   accessConfig?: QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfig | Computed<QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfig>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The real network port this TPU node's own network endpoint listens on. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_SchedulingConfig {
+  /** Whether this TPU node is real, preemptible, meaning Google Cloud may reclaim it on short notice at a reduced price. (AI-inferred) */
   preemptible?: boolean | Computed<boolean>;
+  /** Whether this TPU node real, consumes capacity from an existing TPU reservation rather than on-demand capacity. (AI-inferred) */
   reserved?: boolean | Computed<boolean>;
+  /** Whether this TPU node is real, provisioned as Spot capacity, priced lower but reclaimable at any time. (AI-inferred) */
   spot?: boolean | Computed<boolean>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_ServiceAccount {
+  /** The real service account email this TPU node runs as when calling other Google Cloud APIs. (AI-inferred) */
   email?: string | Computed<string>;
+  /** The real OAuth scopes granted to this TPU node's own service account. (AI-inferred) */
   scope?: string[] | Computed<string[]>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfig {
+  /** Whether Shielded VM Secure Boot is real, enabled for this TPU node. (AI-inferred) */
   enableSecureBoot?: boolean | Computed<boolean>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_Symptoms {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Real, additional detail text describing this detected TPU node symptom. (AI-inferred) */
   details?: string | Computed<string>;
+  /** The real, detected category of issue (e.g. `OUT_OF_MEMORY`, `HBM_OUT_OF_MEMORY`) affecting this TPU node. (AI-inferred) */
   symptomType?: string | Computed<string>;
+  /** The real, specific TPU worker this symptom was detected on, within a multi-worker TPU node. (AI-inferred) */
   workerId?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenance {
+  /** Whether this TPU node's own upcoming maintenance can be rescheduled by the owner to a different window. (AI-inferred) */
   canReschedule?: boolean | Computed<boolean>;
+  /** The real, latest possible start time for this TPU node's own upcoming maintenance window. (AI-inferred) */
   latestWindowStartTime?: string | Computed<string>;
+  /** The real, current status (`PENDING` or `ONGOING`) of this TPU node's own upcoming maintenance. (AI-inferred) */
   maintenanceStatus?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The real end time of this TPU node's own currently scheduled maintenance window. (AI-inferred) */
   windowEndTime?: string | Computed<string>;
+  /** The real start time of this TPU node's own currently scheduled maintenance window. (AI-inferred) */
   windowStartTime?: string | Computed<string>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec_Node {
+  /** The real TPU accelerator configuration (`type`, `topology`) this node requests. (AI-inferred) */
   acceleratorConfig?: QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfig | Computed<QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfig>;
+  /** The real, legacy-style TPU accelerator type string (e.g. `v3-8`) this node uses, an alternative to the newer `accelerator_config`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The real TPU API version (e.g. `V2`) this node was created against. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** Real boot disk configuration for this TPU node, including its own `customer_encryption_key`. (AI-inferred) */
   bootDiskConfig?: QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig | Computed<QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig>;
+  /** The real CIDR range this TPU node's own network is allocated from. (AI-inferred) */
   cidrBlock?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Real, additional persistent disks attached to this TPU node beyond its own boot disk. (AI-inferred) */
   dataDisks?: QueuedResource_Tpu_NodeSpec_Node_DataDisks[] | Computed<QueuedResource_Tpu_NodeSpec_Node_DataDisks[]>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The real, current health status (e.g. `HEALTHY`, `UNHEALTHY_TENSORFLOW`) of this TPU node. (AI-inferred) */
   health?: string | Computed<string>;
+  /** Real, additional detail explaining this TPU node's own current `health` status. (AI-inferred) */
   healthDescription?: string | Computed<string>;
+  /** The real, numeric identifier Google Cloud assigned to this TPU node. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Real, custom Compute Engine-style metadata key/value pairs attached to this TPU node. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** Whether this TPU node is real, part of a multislice deployment rather than a standalone node. (AI-inferred) */
   multisliceNode?: boolean | Computed<boolean>;
+  /** The real, fully-qualified resource name of this TPU node. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real primary network configuration (VPC, subnetwork, IP forwarding) for this TPU node. (AI-inferred) */
   networkConfig?: QueuedResource_Tpu_NodeSpec_Node_NetworkConfig | Computed<QueuedResource_Tpu_NodeSpec_Node_NetworkConfig>;
+  /** Real, additional network interface configurations for this TPU node, for a node attached to more than one network. (AI-inferred) */
   networkConfigs?: QueuedResource_Tpu_NodeSpec_Node_NetworkConfig[] | Computed<QueuedResource_Tpu_NodeSpec_Node_NetworkConfig[]>;
+  /** The real IP address and port endpoints this TPU node's own workers are reachable at. (AI-inferred) */
   networkEndpoints?: QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints[] | Computed<QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints[]>;
+  /** A reference to the real `google_tpu_tpu_queued_resource` this TPU node was created from, if it was created via a queued request. (AI-inferred) */
   queuedResource?: string | Computed<string>;
+  /** The real TPU software runtime version (e.g. `tpu-vm-tf-2.16.1-pod`) this node runs. (AI-inferred) */
   runtimeVersion?: string | Computed<string>;
+  /** Real scheduling configuration (`preemptible`, `reserved`, `spot`) controlling how this TPU node's own capacity is allocated. (AI-inferred) */
   schedulingConfig?: QueuedResource_Tpu_NodeSpec_Node_SchedulingConfig | Computed<QueuedResource_Tpu_NodeSpec_Node_SchedulingConfig>;
+  /** The real Google Cloud service account (email and OAuth scopes) this TPU node runs as. (AI-inferred) */
   serviceAccount?: QueuedResource_Tpu_NodeSpec_Node_ServiceAccount | Computed<QueuedResource_Tpu_NodeSpec_Node_ServiceAccount>;
+  /** Real Shielded VM configuration (such as `enable_secure_boot`) for this TPU node. (AI-inferred) */
   shieldedInstanceConfig?: QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfig | Computed<QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfig>;
+  /** The real, current lifecycle state (e.g. `CREATING`, `READY`, `STOPPED`) of this TPU node. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Real, detected health symptoms (such as out-of-memory events) reported for this TPU node. (AI-inferred) */
   symptoms?: QueuedResource_Tpu_NodeSpec_Node_Symptoms[] | Computed<QueuedResource_Tpu_NodeSpec_Node_Symptoms[]>;
+  /** Real Compute Engine network tags applied to this TPU node, used to match firewall rules. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
+  /** Real, upcoming Google-initiated maintenance information for this TPU node, if any is scheduled. (AI-inferred) */
   upcomingMaintenance?: QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenance | Computed<QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenance>;
 }
 
 export interface QueuedResource_Tpu_NodeSpec {
+  /** Real configuration for provisioning this TPU as a multislice deployment (multiple coordinated TPU slices working as one training job). (AI-inferred) */
   multisliceParams?: QueuedResource_Tpu_NodeSpec_MultisliceParams | Computed<QueuedResource_Tpu_NodeSpec_MultisliceParams>;
+  /** The real TPU node configuration this queued resource request will provision once capacity becomes available. (AI-inferred) */
   node?: QueuedResource_Tpu_NodeSpec_Node | Computed<QueuedResource_Tpu_NodeSpec_Node>;
+  /** The real, user-assigned ID for the TPU node created once this queued resource request is allocated. (AI-inferred) */
   nodeId?: string | Computed<string>;
+  /** The resource name of the parent collection this resource is created under or listed from. (AI-inferred) */
   parent?: string | Computed<string>;
 }
 

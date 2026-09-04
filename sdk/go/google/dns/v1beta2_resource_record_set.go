@@ -183,6 +183,7 @@ var V1beta2ResourceRecordSet_RoutingPolicyFields = ubx.FieldMap{
 }
 
 type V1beta2ResourceRecordSetConfig struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// For example, www.example.com.
 	Name any
@@ -199,6 +200,7 @@ type V1beta2ResourceRecordSetConfig struct {
 }
 
 type V1beta2ResourceRecordSetAttrs struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// For example, www.example.com.
 	Name any

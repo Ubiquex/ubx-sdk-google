@@ -17,9 +17,13 @@ export interface Cluster_AutomatedBackupPolicy_TimeBasedRetention {
 }
 
 export interface Cluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes {
+  /** The hour component of a time value. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of a time value. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of a time value. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of a time value. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
@@ -143,19 +147,27 @@ export interface Cluster_MaintenanceSchedule {
 }
 
 export interface Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month component of a date. (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year component of a date. (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods {
+  /** When this window or period ends. (AI-inferred) */
   endDate?: Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate | Computed<Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate>;
+  /** When this window or period starts. (AI-inferred) */
   startDate?: Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate | Computed<Cluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate>;
+  /** The time this event occurred at. (AI-inferred) */
   time?: Cluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes | Computed<Cluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes>;
 }
 
 export interface Cluster_MaintenanceUpdatePolicy_MaintenanceWindows {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: string | Computed<string>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: Cluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes | Computed<Cluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes>;
 }
 

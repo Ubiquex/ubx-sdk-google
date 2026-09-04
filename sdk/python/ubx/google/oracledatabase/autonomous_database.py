@@ -24,14 +24,23 @@ class AutonomousDatabase_Properties_ConnectionStrings_AllConnectionStrings:
 
 @dataclasses.dataclass
 class AutonomousDatabase_Properties_ConnectionStrings_Profiles:
+    # The Oracle database service consumer group this connection uses. (AI-inferred)
     consumer_group: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether the connection string identifies the host by IP address or hostname. (AI-inferred)
     host_format: Any = None
+    # Whether this resource spans multiple availability domains within its own region. (AI-inferred)
     is_regional: Any = None
+    # The network protocol used. (AI-inferred)
     protocol: Any = None
+    # Whether this connection is direct or routed through a shared session pool. (AI-inferred)
     session_mode: Any = None
+    # The format this connection string is expressed in, e.g. long or Easy Connect. (AI-inferred)
     syntax_format: Any = None
+    # Whether the client, the server, or both must authenticate via TLS for this connection. (AI-inferred)
     tls_authentication: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -70,6 +79,7 @@ class AutonomousDatabase_Properties_ConnectionUrls:
 
 @dataclasses.dataclass
 class AutonomousDatabase_Properties_CustomerContacts:
+    # An email address associated with this resource. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass
@@ -81,7 +91,9 @@ class AutonomousDatabase_Properties_EncryptionKey:
 
 @dataclasses.dataclass
 class AutonomousDatabase_Properties_EncryptionKeyHistoryEntries:
+    # When this resource was activated. (AI-inferred)
     activation_time: Any = None
+    # The key used to encrypt this resource. (AI-inferred)
     encryption_key: Any = None
 
 @dataclasses.dataclass
@@ -99,15 +111,22 @@ class AutonomousDatabase_Properties_LocalStandbyDb:
 
 @dataclasses.dataclass
 class AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class AutonomousDatabase_Properties_ScheduledOperationDetails:
+    # The day of the week this applies to. (AI-inferred)
     day_of_week: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
+    # When this event or window ended. (AI-inferred)
     stop_time: Any = None
 
 @dataclasses.dataclass

@@ -8,20 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Firewallpolicy_Actions_SetHeader:
+    # The header name to set. (AI-inferred)
     key: Any = None
+    # The header value to set. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Firewallpolicy_Actions_Substitute:
+    # The path whose content is served in place of the matching request. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class Firewallpolicy_Actions:
+    # Lets the matching request through unmodified. (AI-inferred)
     allow: Any = None
+    # Blocks the matching request outright. (AI-inferred)
     block: Any = None
+    # Injects the reCAPTCHA client-side script into the matching response, without otherwise altering it. (AI-inferred)
     include_recaptcha_script: Any = None
+    # Redirects the matching request to reCAPTCHA's own interstitial challenge page. (AI-inferred)
     redirect: Any = None
+    # Adds or overwrites a header on the matching request before forwarding it. (AI-inferred)
     set_header: Any = None
+    # Serves an alternate path's own content in place of the matching request, without redirecting the client. (AI-inferred)
     substitute: Any = None
 
 _Firewallpolicy_Actions_SetHeaderFields = {

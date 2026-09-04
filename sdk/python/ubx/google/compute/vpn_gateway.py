@@ -14,7 +14,9 @@ class VpnGateway_Params:
 @dataclasses.dataclass
 class VpnGateway_VpnInterfaces:
     id: Any = None
+    # The Interconnect attachment to use for this VPN interface. This is applicable when using HA VPN over Cloud Interconnect. (AI-inferred)
     interconnect_attachment: Any = None
+    # The external IP address assigned to this VPN gateway interface. (AI-inferred)
     ip_address: Any = None
     ipv6_address: Any = None
 

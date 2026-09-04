@@ -98,6 +98,7 @@ _AlphaVpnTunnel_PqcPhase1Fields = {
 class AlphaVpnTunnelConfig:
     # Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
     capacity_tier: Any = None
+    # The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
     cipher_suite: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -124,7 +125,9 @@ class AlphaVpnTunnelConfig:
     peer_gcp_gateway: Any = None
     # IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
     peer_ip: Any = None
+    # This tunnel's own post-quantum cryptography configuration for IKE phase 1, the initial key exchange. (AI-inferred)
     pqc_phase1: Any = None
+    # This tunnel's own post-quantum cryptography configuration for IKE phase 2, the IPsec security association. (AI-inferred)
     pqc_phase2: Any = None
     # [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
     region: Any = None
@@ -151,6 +154,7 @@ class AlphaVpnTunnelConfig:
 class AlphaVpnTunnelAttrs:
     # Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
     capacity_tier: Any = None
+    # The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred)
     cipher_suite: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None
@@ -181,7 +185,9 @@ class AlphaVpnTunnelAttrs:
     peer_gcp_gateway: Any = None
     # IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
     peer_ip: Any = None
+    # This tunnel's own post-quantum cryptography configuration for IKE phase 1, the initial key exchange. (AI-inferred)
     pqc_phase1: Any = None
+    # This tunnel's own post-quantum cryptography configuration for IKE phase 2, the IPsec security association. (AI-inferred)
     pqc_phase2: Any = None
     # [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
     region: Any = None

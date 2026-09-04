@@ -4,9 +4,12 @@ package appengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainMapping_ResourceRecords struct {
-	Name   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The record data for this DNS record. (AI-inferred)
 	Rrdata any
-	Type   any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type DomainMapping_SslSettings struct {

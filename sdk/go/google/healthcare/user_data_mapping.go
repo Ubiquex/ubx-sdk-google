@@ -4,8 +4,10 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserDataMapping_ResourceAttributes struct {
+	// A reference to the attribute definition this applies to. (AI-inferred)
 	AttributeDefinitionId any
-	Values                any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 var UserDataMapping_ResourceAttributesFields = ubx.FieldMap{

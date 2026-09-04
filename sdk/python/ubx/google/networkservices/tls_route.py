@@ -8,22 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TlsRoute_Rules_Action_Destinations:
+    # The name of the service this applies to. (AI-inferred)
     service_name: Any = None
+    # The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class TlsRoute_Rules_Action:
+    # The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
     destinations: Any = None
+    # How long an idle connection is kept open before being closed. (AI-inferred)
     idle_timeout: Any = None
 
 @dataclasses.dataclass
 class TlsRoute_Rules_Matches:
+    # The Application-Layer Protocol Negotiation identifier(s) offered during TLS handshake. (AI-inferred)
     alpn: Any = None
+    # The TLS Server Name Indication value this endpoint expects. (AI-inferred)
     sni_host: Any = None
 
 @dataclasses.dataclass
 class TlsRoute_Rules:
+    # The action taken when this rule matches. (AI-inferred)
     action: Any = None
+    # The match condition(s) this rule evaluates. (AI-inferred)
     matches: Any = None
 
 _TlsRoute_Rules_Action_DestinationsFields = {

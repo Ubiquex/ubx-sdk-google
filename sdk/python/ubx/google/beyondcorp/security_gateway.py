@@ -8,10 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityGateway_Hubs_InternetGateway:
+    # The public IP address(es) assigned to this hub's own internet gateway for outbound traffic. (AI-inferred)
     assigned_ips: Any = None
 
 @dataclasses.dataclass
 class SecurityGateway_Hubs:
+    # Configuration for this hub's own outbound internet gateway. (AI-inferred)
     internet_gateway: Any = None
 
 @dataclasses.dataclass

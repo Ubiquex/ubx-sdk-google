@@ -4,23 +4,31 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfig struct {
+	// Whether this text match is case-sensitive. (AI-inferred)
 	CaseSensitive any
 }
 
 type PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config struct {
+	// Configures this phrase matcher to require an exact text match. (AI-inferred)
 	ExactMatchConfig any
+	// Configures this phrase matcher to match using a regular expression. (AI-inferred)
 	RegexMatchConfig any
 }
 
 type PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules struct {
-	Config  any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// Whether this condition's own result is inverted. (AI-inferred)
 	Negated any
-	Query   any
+	// The query text or expression. (AI-inferred)
+	Query any
 }
 
 type PhraseMatcher_PhraseMatchRuleGroups struct {
+	// The rule(s) making up this phrase matcher. (AI-inferred)
 	PhraseMatchRules any
-	Type             any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 var PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfigFields = ubx.FieldMap{

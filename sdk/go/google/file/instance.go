@@ -20,33 +20,51 @@ type Instance_DirectoryServices struct {
 }
 
 type Instance_FileShares_NfsExportOptions struct {
+	// Whether this connection is read-only or read-write. (AI-inferred)
 	AccessMode any
-	AnonGid    any
-	AnonUid    any
-	IpRanges   any
-	Network    any
+	// The group ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred)
+	AnonGid any
+	// The user ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred)
+	AnonUid any
+	// The IP address range(s), in CIDR notation, this applies to. (AI-inferred)
+	IpRanges any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// How requests from root or unmapped clients are remapped. (AI-inferred)
 	SquashMode any
 }
 
 type Instance_FileShares struct {
-	CapacityGb           any
-	Name                 any
-	NfsExportOptions     any
-	SourceBackup         any
+	// The provisioned capacity, in gibibytes. (AI-inferred)
+	CapacityGb any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The NFS export configuration for this file share. (AI-inferred)
+	NfsExportOptions any
+	// A reference to the backup this resource is created from. (AI-inferred)
+	SourceBackup any
+	// A reference to the Backup and DR backup this resource is created from. (AI-inferred)
 	SourceBackupdrBackup any
 }
 
 type Instance_Networks_PscConfig struct {
+	// A reference to the project this endpoint is created in. (AI-inferred)
 	EndpointProject    any
 	RequestedIpAddress any
 }
 
 type Instance_Networks struct {
-	ConnectMode     any
-	IpAddresses     any
-	Modes           any
-	Network         any
-	PscConfig       any
+	// Whether this instance is reached via direct peering or Private Service Access. (AI-inferred)
+	ConnectMode any
+	// The IP address(es) assigned to this resource. (AI-inferred)
+	IpAddresses any
+	// The mode(s) this applies to. (AI-inferred)
+	Modes any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// Configuration for connecting to this instance via Private Service Connect. (AI-inferred)
+	PscConfig any
+	// The IP address range reserved for this instance. (AI-inferred)
 	ReservedIpRange any
 }
 
@@ -81,11 +99,16 @@ type Instance_PerformanceLimits struct {
 }
 
 type Instance_Replication_Replicas struct {
+	// When this replication last successfully synced. (AI-inferred)
 	LastActiveSyncTime any
-	PeerInstance       any
-	State              any
-	StateReasons       any
-	StateUpdateTime    any
+	// A reference to the replication peer instance. (AI-inferred)
+	PeerInstance any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The reason(s) explaining this resource's own current state. (AI-inferred)
+	StateReasons any
+	// When this resource's own state was last updated. (AI-inferred)
+	StateUpdateTime any
 }
 
 type Instance_Replication struct {

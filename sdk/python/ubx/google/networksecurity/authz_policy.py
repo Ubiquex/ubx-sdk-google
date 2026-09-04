@@ -20,79 +20,114 @@ class AuthzPolicy_CustomProvider:
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_From_NotSources_IpBlocks:
+    # The number of characters or bytes this applies to. (AI-inferred)
     length: Any = None
+    # Matches values starting with this prefix. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_From_NotSources_Principals_Principal:
+    # Matches when the value contains this substring. (AI-inferred)
     contains: Any = None
+    # Matches only this exact value. (AI-inferred)
     exact: Any = None
+    # Whether this match is case-insensitive. (AI-inferred)
     ignore_case: Any = None
+    # Matches values starting with this prefix. (AI-inferred)
     prefix: Any = None
+    # Matches values ending with this suffix. (AI-inferred)
     suffix: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_From_NotSources_Principals:
+    # The identity this rule matches against. (AI-inferred)
     principal: Any = None
+    # Criteria for selecting which caller identities this rule matches. (AI-inferred)
     principal_selector: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSet:
+    # The identifier(s) this applies to. (AI-inferred)
     ids: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_From_NotSources_Resources:
+    # The service account this principal is identified by. (AI-inferred)
     iam_service_account: Any = None
+    # The Resource Manager tag value(s) this rule matches resources against. (AI-inferred)
     tag_value_id_set: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_From_NotSources:
+    # The IP address range(s) this rule matches. (AI-inferred)
     ip_blocks: Any = None
+    # The identity/identities this rule matches against. (AI-inferred)
     principals: Any = None
+    # The resource(s) this rule applies to. (AI-inferred)
     resources: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_From:
+    # Source(s) explicitly excluded from this rule's own match, even if they'd otherwise match. (AI-inferred)
     not_sources: Any = None
+    # The source(s) this rule matches traffic from. (AI-inferred)
     sources: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_Headers:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value this matches against. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_To_NotOperations_HeaderSet:
+    # The HTTP header(s) this rule matches against. (AI-inferred)
     headers: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_To_NotOperations_Mcp_Methods:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Additional parameter(s) for this rule. (AI-inferred)
     params: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_To_NotOperations_Mcp:
+    # Whether default protocol methods are automatically allowed, in addition to any explicitly listed. (AI-inferred)
     base_protocol_methods_option: Any = None
+    # The gRPC/HTTP method(s) this rule matches. (AI-inferred)
     methods: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_To_NotOperations:
+    # A set of HTTP header match condition(s) that must all be satisfied. (AI-inferred)
     header_set: Any = None
+    # The host(s) this rule applies to. (AI-inferred)
     hosts: Any = None
+    # Configuration for exposing a Model Context Protocol server through this gateway. (AI-inferred)
     mcp: Any = None
+    # The gRPC/HTTP method(s) this rule matches. (AI-inferred)
     methods: Any = None
+    # The URL path(s) this rule matches. (AI-inferred)
     paths: Any = None
+    # The TLS Server Name Indication value(s) this rule matches. (AI-inferred)
     snis: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules_To:
+    # Operation(s) explicitly excluded from this rule's own match, even if they'd otherwise match. (AI-inferred)
     not_operations: Any = None
+    # The operation(s) this rule matches. (AI-inferred)
     operations: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicy_HttpRules:
+    # The source(s) this rule matches traffic from. (AI-inferred)
     from_: Any = None
+    # The destination(s) this rule matches traffic to. (AI-inferred)
     to: Any = None
+    # An additional condition that must hold for this rule to apply. (AI-inferred)
     when: Any = None
 
 @dataclasses.dataclass

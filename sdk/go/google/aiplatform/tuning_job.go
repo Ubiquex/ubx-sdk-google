@@ -18,72 +18,102 @@ type TuningJob_Error struct {
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue struct {
+	// The numeric score this evaluation produced. (AI-inferred)
 	Score any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputs struct {
+	// The judge model's own unparsed, raw response text. (AI-inferred)
 	RawOutput any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput struct {
+	// The raw, unparsed output(s) produced alongside this metric's own computed result. (AI-inferred)
 	RawOutputs any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult struct {
-	CustomOutput   any
-	Explanation    any
+	// Free-form output produced by a custom-code or custom-parsed metric. (AI-inferred)
+	CustomOutput any
+	// A human-readable explanation of this result. (AI-inferred)
+	Explanation any
+	// Which candidate the judge preferred: `BASELINE`, `CANDIDATE`, or `TIE`. (AI-inferred)
 	PairwiseChoice any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResult struct {
+	// Free-form output produced by a custom-code or custom-parsed metric. (AI-inferred)
 	CustomOutput any
-	Explanation  any
-	Score        any
+	// A human-readable explanation of this result. (AI-inferred)
+	Explanation any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults struct {
-	AggregationMetric         any
-	BleuMetricValue           any
+	// Which summary statistic this aggregated result reports, e.g. `AVERAGE` or `PERCENTILE_P90`. (AI-inferred)
+	AggregationMetric any
+	// The BLEU score computed for this result. (AI-inferred)
+	BleuMetricValue any
+	// The result produced by running this metric's own caller-supplied evaluation code. (AI-inferred)
 	CustomCodeExecutionResult any
-	ExactMatchMetricValue     any
-	PairwiseMetricResult      any
-	PointwiseMetricResult     any
-	RougeMetricValue          any
+	// The exact-match score computed for this result. (AI-inferred)
+	ExactMatchMetricValue any
+	// The result of comparing two candidate responses against each other for this metric. (AI-inferred)
+	PairwiseMetricResult any
+	// The result of scoring a single candidate response in isolation for this metric. (AI-inferred)
+	PointwiseMetricResult any
+	// The ROUGE score computed for this result. (AI-inferred)
+	RougeMetricValue any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySource struct {
+	// The source URI this data is read from. (AI-inferred)
 	InputUri any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSource struct {
+	// The Cloud Storage URI(s) this applies to. (AI-inferred)
 	Uris any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset struct {
+	// A BigQuery table or view this data is read from. (AI-inferred)
 	BigquerySource any
-	GcsSource      any
+	// A Cloud Storage location this data is read from. (AI-inferred)
+	GcsSource any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput struct {
+	// The individual aggregated metric value(s) making up this output. (AI-inferred)
 	AggregationResults any
-	Dataset            any
+	// A reference to the dataset this applies to. (AI-inferred)
+	Dataset any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfo struct {
+	// The Cloud Storage directory this operation's own output is written to. (AI-inferred)
 	GcsOutputDirectory any
 }
 
 type TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse struct {
+	// The dataset-level result produced by aggregating per-instance evaluation results. (AI-inferred)
 	AggregationOutput any
-	OutputInfo        any
+	// Detail about where this operation's own output was written. (AI-inferred)
+	OutputInfo any
 }
 
 type TuningJob_EvaluateDatasetRuns struct {
-	CheckpointId            any
-	Error                   any
+	// An identifier for this specific training checkpoint. (AI-inferred)
+	CheckpointId any
+	// Error detail for this failed operation. (AI-inferred)
+	Error any
+	// The result produced by running this evaluation over the whole dataset. (AI-inferred)
 	EvaluateDatasetResponse any
-	EvaluationRun           any
-	OperationName           any
+	// A reference to the evaluation run this applies to. (AI-inferred)
+	EvaluationRun any
+	// The name of the long-running operation tracking this task. (AI-inferred)
+	OperationName any
 }
 
 type TuningJob_PreTunedModel struct {
@@ -162,36 +192,55 @@ type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationC
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio struct {
-	BitRate    any
-	Delivery   any
-	MimeType   any
+	// The audio or video bit rate, in bits per second. (AI-inferred)
+	BitRate any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The audio sample rate, in Hz. (AI-inferred)
 	SampleRate any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	ImageSize   any
-	MimeType    any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
+	ImageSize any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text struct {
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
 	MimeType any
-	Schema   any
+	// A schema describing this value's own expected structure. (AI-inferred)
+	Schema any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	Duration    any
-	GcsUri      any
-	Resolution  any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// How long this clip, window, or operation lasts. (AI-inferred)
+	Duration any
+	// A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
+	GcsUri any
+	// The pixel dimensions of this image or video. (AI-inferred)
+	Resolution any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat struct {
+	// Audio content or configuration. (AI-inferred)
 	Audio any
+	// Image content or configuration. (AI-inferred)
 	Image any
-	Text  any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// Video content or configuration. (AI-inferred)
 	Video any
 }
 
@@ -212,7 +261,8 @@ type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationC
 	Example any
 	// Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
 	Format any
-	Items  any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
 	// Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
 	MaxItems any
 	// Optional. If type is `STRING`, `max_length` specifies the maximum length of the string.
@@ -265,21 +315,28 @@ type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationC
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig struct {
+	// The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
 	VoiceName any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig struct {
-	MimeType         any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
 	VoiceSampleAudio any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig struct {
-	PrebuiltVoiceConfig   any
+	// Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
+	PrebuiltVoiceConfig any
+	// Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
 	ReplicatedVoiceConfig any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs struct {
-	Speaker     any
+	// Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
+	Speaker any
+	// The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
 	VoiceConfig any
 }
 
@@ -369,103 +426,155 @@ type TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig struct {
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_DatasetCustomMetrics struct {
+	// How per-instance scores for this metric are combined into a single dataset-level result, e.g. average or sum. (AI-inferred)
 	AggregationFunction any
-	DisplayName         any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpec struct {
+	// Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred)
 	UseEffectiveOrder any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpec struct {
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
 	Parameters any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpec struct {
+	// The function within the supplied custom code that computes this metric. (AI-inferred)
 	EvaluationFunction any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec struct {
-	MetricSpecName       any
+	// The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
+	MetricSpecName any
+	// Configuration parameters specific to this metric's own computation. (AI-inferred)
 	MetricSpecParameters any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig struct {
+	// The function within the supplied custom code that parses the judge model's own response. (AI-inferred)
 	ParsingFunction any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig struct {
+	// Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred)
 	CustomCodeParserConfig any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec struct {
-	ModelConfig        any
-	PromptTemplate     any
-	RubricContentType  any
+	// Configuration for the model used by this job. (AI-inferred)
+	ModelConfig any
+	// The template used to construct the prompt sent to the model. (AI-inferred)
+	PromptTemplate any
+	// The kind of content generated rubrics should assess. (AI-inferred)
+	RubricContentType any
+	// A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
 	RubricTypeOntology any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec struct {
-	AdditionalConfig               any
-	JudgeAutoraterConfig           any
-	MetricPromptTemplate           any
+	// Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
+	AdditionalConfig any
+	// Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
+	JudgeAutoraterConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
 	PredefinedRubricGenerationSpec any
-	ResultParserConfig             any
-	RubricGenerationSpec           any
-	RubricGroupKey                 any
-	SystemInstruction              any
+	// How the judge model's own raw response text is parsed into a final score. (AI-inferred)
+	ResultParserConfig any
+	// Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
+	RubricGenerationSpec any
+	// A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
+	RubricGroupKey any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRange struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Max         any
-	Min         any
-	Step        any
+	// The upper bound. (AI-inferred)
+	Max any
+	// The lower bound. (AI-inferred)
+	Min any
+	// A single step within this run or sequence. (AI-inferred)
+	Step any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata struct {
+	// Additional, metric-specific metadata beyond the standard fields. (AI-inferred)
 	OtherMetadata any
-	ScoreRange    any
-	Title         any
+	// The minimum and maximum values this metric's own score can take. (AI-inferred)
+	ScoreRange any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig struct {
+	// Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred)
 	ReturnRawOutput any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec struct {
-	BaselineResponseFieldName  any
+	// The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred)
+	BaselineResponseFieldName any
+	// The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred)
 	CandidateResponseFieldName any
-	CustomOutputFormatConfig   any
-	MetricPromptTemplate       any
-	SystemInstruction          any
+	// Configuration for the shape of a custom-formatted metric output. (AI-inferred)
+	CustomOutputFormatConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpec struct {
+	// Configuration for the shape of a custom-formatted metric output. (AI-inferred)
 	CustomOutputFormatConfig any
-	MetricPromptTemplate     any
-	SystemInstruction        any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpec struct {
-	RougeType      any
+	// Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred)
+	RougeType any
+	// Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred)
 	SplitSummaries any
-	UseStemmer     any
+	// Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred)
+	UseStemmer any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics struct {
-	AggregationMetrics         any
-	BleuSpec                   any
+	// Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred)
+	AggregationMetrics any
+	// Configuration for computing the BLEU text-similarity metric. (AI-inferred)
+	BleuSpec any
+	// Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
 	ComputationBasedMetricSpec any
-	CustomCodeExecutionSpec    any
-	ExactMatchSpec             any
-	LlmBasedMetricSpec         any
-	Metadata                   any
-	PairwiseMetricSpec         any
-	PointwiseMetricSpec        any
-	PredefinedMetricSpec       any
-	RougeSpec                  any
+	// Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred)
+	CustomCodeExecutionSpec any
+	// Configuration for computing an exact-string-match metric. (AI-inferred)
+	ExactMatchSpec any
+	// Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
+	LlmBasedMetricSpec any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred)
+	PairwiseMetricSpec any
+	// Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred)
+	PointwiseMetricSpec any
+	// Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
+	PredefinedMetricSpec any
+	// Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred)
+	RougeSpec any
 }
 
 type TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfig_GcsDestination struct {
@@ -514,10 +623,14 @@ type TuningJob_SupervisedTuningSpec struct {
 }
 
 type TuningJob_TunedModel_Checkpoints struct {
+	// An identifier for this specific training checkpoint. (AI-inferred)
 	CheckpointId any
-	Endpoint     any
-	Epoch        any
-	Step         any
+	// The endpoint this call is directed to. (AI-inferred)
+	Endpoint any
+	// The training epoch this checkpoint was saved at. (AI-inferred)
+	Epoch any
+	// A single step within this run or sequence. (AI-inferred)
+	Step any
 }
 
 type TuningJob_TunedModel struct {
@@ -530,8 +643,11 @@ type TuningJob_TunedModel struct {
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_ScoreVariancePerExampleDistribution_Buckets struct {
+	// How many of this item there are. (AI-inferred)
 	Count any
-	Left  any
+	// The lower bound of this range. (AI-inferred)
+	Left any
+	// The upper bound of this range. (AI-inferred)
 	Right any
 }
 
@@ -555,109 +671,167 @@ type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_ScoreVariancePerE
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription_Words struct {
-	EndOffset   any
+	// The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
+	EndOffset any
+	// The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
 	StartOffset any
-	Word        any
+	// A single transcribed word. (AI-inferred)
+	Word any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription struct {
+	// Which speaker a transcribed segment is attributed to, when speaker diarization is enabled. (AI-inferred)
 	SpeakerLabel any
-	Text         any
-	Words        any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// The individual word(s) making up this transcript segment. (AI-inferred)
+	Words any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_CodeExecutionResult struct {
-	Id      any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The result of this operation, e.g. whether it succeeded. (AI-inferred)
 	Outcome any
-	Output  any
+	// The output produced by this operation. (AI-inferred)
+	Output any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_ExecutableCode struct {
-	Code     any
-	Id       any
+	// A machine-readable code identifying this outcome or error. (AI-inferred)
+	Code any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The language this content is in or should be processed as, typically a BCP-47 code. (AI-inferred)
 	Language any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FileData struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	FileUri     any
-	MimeType    any
+	// The URI of a previously uploaded file this Part references. (AI-inferred)
+	FileUri any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall_PartialArgs struct {
-	BoolValue    any
-	JsonPath     any
-	NullValue    any
-	NumberValue  any
-	StringValue  any
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
+	BoolValue any
+	// A JSONPath expression selecting a location within a JSON document. (AI-inferred)
+	JsonPath any
+	// Represents an explicit JSON `null`, populated when this field's own type is null. (AI-inferred)
+	NullValue any
+	// A numeric value, populated when this field's own type is a number. (AI-inferred)
+	NumberValue any
+	// A text value, populated when this field's own type is a string. (AI-inferred)
+	StringValue any
+	// Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
 	WillContinue any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall struct {
-	Args         any
-	Id           any
-	Name         any
-	PartialArgs  any
+	// The argument value(s) passed to this call. (AI-inferred)
+	Args any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The function-call arguments accumulated so far, while the model is still streaming them incrementally. (AI-inferred)
+	PartialArgs any
+	// Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
 	WillContinue any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts_InlineData struct {
-	Data        any
+	// The raw, embedded bytes of this inline content. (AI-inferred)
+	Data any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	MimeType    any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts struct {
-	FileData   any
+	// A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
+	FileData any
+	// Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
 	InlineData any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse struct {
-	Id         any
-	Name       any
-	Parts      any
-	Response   any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
+	Parts any
+	// The response produced for this request. (AI-inferred)
+	Response any
+	// Configuration for when and how this job is scheduled to run. (AI-inferred)
 	Scheduling any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_MediaResolution struct {
+	// The severity or intensity level of this setting. (AI-inferred)
 	Level any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_VideoMetadata struct {
-	EndOffset   any
-	Fps         any
+	// The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
+	EndOffset any
+	// The frame rate, in frames per second, video input is sampled at. (AI-inferred)
+	Fps any
+	// The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
 	StartOffset any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts struct {
-	AudioTranscription  any
+	// Enables Gemini to transcribe spoken audio to text as part of its response. (AI-inferred)
+	AudioTranscription any
+	// The output of running a preceding `executable_code` block. (AI-inferred)
 	CodeExecutionResult any
-	ExecutableCode      any
-	FileData            any
-	FunctionCall        any
-	FunctionResponse    any
-	InlineData          any
-	MediaResolution     any
-	Text                any
-	Thought             any
-	ThoughtSignature    any
-	VideoMetadata       any
+	// Code the model generated for the tool-hosted interpreter to run, when code execution is enabled. (AI-inferred)
+	ExecutableCode any
+	// A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
+	FileData any
+	// A request from the model, inside its own response, to invoke a specific function the caller declared -- the caller executes it and returns the result via a matching `function_response`. (AI-inferred)
+	FunctionCall any
+	// The caller-supplied result of a previously requested `function_call`, returned to the model in a following turn. (AI-inferred)
+	FunctionResponse any
+	// Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
+	InlineData any
+	// The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred)
+	MediaResolution any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// A step of the model's own intermediate reasoning, surfaced when extended thinking is enabled. (AI-inferred)
+	Thought any
+	// An opaque signature validating a `thought` block as genuinely produced by the model, so it can be safely replayed in a later turn. (AI-inferred)
+	ThoughtSignature any
+	// Configuration controlling how video input is sampled, e.g. frame rate and clipping. (AI-inferred)
+	VideoMetadata any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion struct {
+	// The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
 	Parts any
-	Role  any
+	// Who this Content is attributed to in the conversation: `user` or `model`. (AI-inferred)
+	Role any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions struct {
+	// A single candidate completion. (AI-inferred)
 	Completion any
-	Score      any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples struct {
+	// The candidate completion(s) recorded for this example. (AI-inferred)
 	Completions any
-	Contents    any
+	// The message content making up this example. (AI-inferred)
+	Contents any
 }
 
 type TuningJob_TuningDataStats_PreferenceOptimizationDataStats struct {
@@ -684,8 +858,11 @@ type TuningJob_TuningDataStats_PreferenceOptimizationDataStats struct {
 }
 
 type TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistribution_Buckets struct {
+	// How many of this item there are. (AI-inferred)
 	Count any
-	Left  any
+	// The lower bound of this range. (AI-inferred)
+	Left any
+	// The upper bound of this range. (AI-inferred)
 	Right any
 }
 

@@ -2,24 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceAttachment_ConnectedEndpoints {
+  /** The URL of the consumer network that is connected to this service attachment, e.g. projects/{project}/global/networks/{network}. (AI-inferred) */
   consumerNetwork?: string | Computed<string>;
+  /** The URL of the consumer endpoint (for example, a forwarding rule) that is connected to the service attachment. (AI-inferred) */
   endpoint?: string | Computed<string>;
   endpointWithId?: string | Computed<string>;
+  /** The list of NAT IP addresses allocated for the consumer endpoint. (AI-inferred) */
   natIps?: string[] | Computed<string[]>;
+  /** The number of connections that have been propagated to the consumer network from the producer network for this connected endpoint. (AI-inferred) */
   propagatedConnectionCount?: number | Computed<number>;
+  /** The unique identifier for the Private Service Connect connection associated with this connected endpoint. (AI-inferred) */
   pscConnectionId?: string | Computed<string>;
+  /** The current status of the connected endpoint. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface ServiceAttachment_ConsumerAcceptLists {
+  /** The maximum number of connections allowed for the consumer in the accept list. A value of 0 means no limit. (AI-inferred) */
   connectionLimit?: number | Computed<number>;
   endpointUrl?: string | Computed<string>;
+  /** The URL of the network that is allowed to connect to this service attachment. (AI-inferred) */
   networkUrl?: string | Computed<string>;
+  /** The project ID or project number of a consumer project that is allowed to connect to the service attachment. Used in the consumer accept list to identify the allowed project. (AI-inferred) */
   projectIdOrNum?: string | Computed<string>;
 }
 
 export interface ServiceAttachment_PscServiceAttachmentId {
   high?: string | Computed<string>;
+  /** The lower 32 bits of the 64-bit PSC service attachment ID, represented as a decimal string. (AI-inferred) */
   low?: string | Computed<string>;
 }
 
@@ -62,6 +72,7 @@ export interface ServiceAttachmentConfig {
   producerForwardingRule?: string | Computed<string>;
   /** The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250. */
   propagatedConnectionLimit?: number | Computed<number>;
+  /** This service attachment's own globally unique identifier, assigned by Google Compute Engine. (AI-inferred) */
   pscServiceAttachmentId?: ServiceAttachment_PscServiceAttachmentId | Computed<ServiceAttachment_PscServiceAttachmentId>;
   /** This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false. */
   reconcileConnections?: boolean | Computed<boolean>;
@@ -104,6 +115,7 @@ export interface ServiceAttachmentAttrs {
   producerForwardingRule: string;
   /** The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250. */
   propagatedConnectionLimit: number;
+  /** This service attachment's own globally unique identifier, assigned by Google Compute Engine. (AI-inferred) */
   pscServiceAttachmentId: ServiceAttachment_PscServiceAttachmentId;
   /** This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false. */
   reconcileConnections: boolean;

@@ -18,10 +18,14 @@ type Instance_DiskEncryptionStatus struct {
 }
 
 type Instance_DnsNames struct {
+	// Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
 	ConnectionType any
-	DnsScope       any
-	Name           any
-	RecordManager  any
+	// Whether this DNS name resolves within the VPC only or more broadly. (AI-inferred)
+	DnsScope any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The system responsible for managing this DNS record. (AI-inferred)
+	RecordManager any
 }
 
 type Instance_FailoverReplica struct {
@@ -47,35 +51,56 @@ type Instance_GeminiConfig struct {
 }
 
 type Instance_IpAddresses struct {
-	IpAddress    any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// When this resource will be retired and no longer usable. (AI-inferred)
 	TimeToRetire any
-	Type         any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Instance_Nodes_PscAutoConnections struct {
-	ConsumerNetwork                       any
-	ConsumerNetworkStatus                 any
-	ConsumerProject                       any
-	InstanceAutoDnsStatus                 any
-	IpAddress                             any
-	ServiceConnectionPolicy               any
+	// A reference to the consumer-side VPC network this connection uses. (AI-inferred)
+	ConsumerNetwork any
+	// The current status of the consumer-side network connection. (AI-inferred)
+	ConsumerNetworkStatus any
+	// A reference to the consumer's own Google Cloud project. (AI-inferred)
+	ConsumerProject any
+	// Whether this instance's own automatic DNS name is active. (AI-inferred)
+	InstanceAutoDnsStatus any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// A reference to the service connection policy this applies to. (AI-inferred)
+	ServiceConnectionPolicy any
+	// The outcome of automatically creating a service connection policy for this instance. (AI-inferred)
 	ServiceConnectionPolicyCreationResult any
-	Status                                any
-	WriteEndpointAutoDnsStatus            any
+	// The current status of this resource. (AI-inferred)
+	Status any
+	// Whether this instance's own automatic DNS name for the write endpoint is active. (AI-inferred)
+	WriteEndpointAutoDnsStatus any
 }
 
 type Instance_Nodes struct {
-	DnsName                  any
-	DnsNames                 any
-	GceZone                  any
-	IpAddresses              any
-	Name                     any
-	PscAutoConnections       any
+	// The DNS name assigned to this instance. (AI-inferred)
+	DnsName any
+	// The DNS name(s) assigned to this instance. (AI-inferred)
+	DnsNames any
+	// The Compute Engine zone this instance runs in. (AI-inferred)
+	GceZone any
+	// The IP address(es) assigned to this instance. (AI-inferred)
+	IpAddresses any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Private Service Connect connection(s) automatically established for this instance. (AI-inferred)
+	PscAutoConnections any
+	// A reference to the Private Service Connect service attachment this instance publishes. (AI-inferred)
 	PscServiceAttachmentLink any
-	State                    any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type Instance_OnPremisesConfiguration_SelectedObjects struct {
+	// A reference to the database this applies to. (AI-inferred)
 	Database any
 }
 
@@ -168,6 +193,7 @@ type Instance_ReplicationCluster struct {
 }
 
 type Instance_ScheduledMaintenance struct {
+	// Whether this maintenance can be deferred to a later window. (AI-inferred)
 	CanDefer any
 	// If the scheduled maintenance can be rescheduled.
 	CanReschedule any
@@ -251,7 +277,9 @@ type Instance_Settings_BackupConfiguration struct {
 }
 
 type Instance_Settings_ConnectionPoolConfig_Flags struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -270,9 +298,12 @@ type Instance_Settings_DataCacheConfig struct {
 }
 
 type Instance_Settings_DenyMaintenancePeriods struct {
-	EndDate   any
+	// When this window or period ends. (AI-inferred)
+	EndDate any
+	// When this window or period starts. (AI-inferred)
 	StartDate any
-	Time      any
+	// The time this event occurred at. (AI-inferred)
+	Time any
 }
 
 type Instance_Settings_EntraidConfig struct {
@@ -307,10 +338,14 @@ type Instance_Settings_InsightsConfig struct {
 }
 
 type Instance_Settings_IpConfiguration_AuthorizedNetworks struct {
+	// When this resource expires. (AI-inferred)
 	ExpirationTime any
-	Kind           any
-	Name           any
-	Value          any
+	// The category of this resource. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Instance_Settings_IpConfiguration_PscConfig struct {
@@ -428,7 +463,9 @@ type Instance_Settings_PerformanceCaptureConfig struct {
 }
 
 type Instance_Settings_ReadPoolAutoScaleConfig_TargetMetrics struct {
-	Metric      any
+	// The name of the metric being reported. (AI-inferred)
+	Metric any
+	// The value this metric is measured against. (AI-inferred)
 	TargetValue any
 }
 
@@ -556,9 +593,12 @@ type Instance_Settings struct {
 }
 
 type Instance_UpgradableDatabaseVersions struct {
-	DisplayName  any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The major version of the database engine this instance runs. (AI-inferred)
 	MajorVersion any
-	Name         any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 var Instance_DiskEncryptionConfigurationFields = ubx.FieldMap{
@@ -1072,7 +1112,8 @@ type InstanceConfig struct {
 	// The service account email address assigned to the instance.\This property is read-only.
 	ServiceAccountEmailAddress any
 	// Database instance settings.
-	Settings               any
+	Settings any
+	// Whether this instance uses the legacy or the new (Private Service Connect based) network architecture. (AI-inferred)
 	SqlNetworkArchitecture any
 	// The current serving state of the Cloud SQL instance.
 	State any
@@ -1174,7 +1215,8 @@ type InstanceAttrs struct {
 	// The service account email address assigned to the instance.\This property is read-only.
 	ServiceAccountEmailAddress any
 	// Database instance settings.
-	Settings               any
+	Settings any
+	// Whether this instance uses the legacy or the new (Private Service Connect based) network architecture. (AI-inferred)
 	SqlNetworkArchitecture any
 	// The current serving state of the Cloud SQL instance.
 	State any

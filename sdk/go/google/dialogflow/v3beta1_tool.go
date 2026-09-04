@@ -284,26 +284,43 @@ var V3beta1Tool_OpenApiSpecFields = ubx.FieldMap{
 }
 
 type V3beta1ToolConfig struct {
+	// The specification of a connector (an external API or service) a generator can call. (AI-inferred)
 	ConnectorSpec any
+	// Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
 	DataStoreSpec any
-	Description   any
-	DisplayName   any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The specification of an extension a generator can invoke. (AI-inferred)
 	ExtensionSpec any
-	FunctionSpec  any
-	Name          any
-	OpenApiSpec   any
+	// Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
+	FunctionSpec any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSpec any
 }
 
 type V3beta1ToolAttrs struct {
+	// The specification of a connector (an external API or service) a generator can call. (AI-inferred)
 	ConnectorSpec any
+	// Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
 	DataStoreSpec any
-	Description   any
-	DisplayName   any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The specification of an extension a generator can invoke. (AI-inferred)
 	ExtensionSpec any
-	FunctionSpec  any
-	Name          any
-	OpenApiSpec   any
-	ToolType      any
+	// Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
+	FunctionSpec any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
+	OpenApiSpec any
+	// Which kind of tool this is, e.g. an OpenAPI-defined service, a function, or a data store. (AI-inferred)
+	ToolType any
 }
 
 var V3beta1Tool = ubx.ResourceBinding{

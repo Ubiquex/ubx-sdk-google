@@ -24,10 +24,12 @@ type Job_Configuration_Copy struct {
 	DestinationEncryptionConfiguration any
 	// Optional. The time when the destination table expires. Expired tables will be deleted and their storage reclaimed.
 	DestinationExpirationTime any
-	DestinationTable          any
+	// The table this operation writes to. (AI-inferred)
+	DestinationTable any
 	// Optional. Supported operation types in table copy job.
 	OperationType any
-	SourceTable   any
+	// The table this job's own input is read from. (AI-inferred)
+	SourceTable any
 	// [Pick one] Source tables to copy.
 	SourceTables any
 	// Optional. Specifies the action that occurs if the destination table already exists. The following values are supported: * WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data and uses the schema and table constraints from the source table. * WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. * WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion.
@@ -65,6 +67,7 @@ type Job_Configuration_Extract struct {
 	PrintHeader any
 	// Id path of a model.
 	SourceModel any
+	// The table this job's own input is read from. (AI-inferred)
 	SourceTable any
 	// Whether to use logical types when extracting to AVRO format. Not applicable when extracting models.
 	UseAvroLogicalTypes any
@@ -76,7 +79,9 @@ type Job_Configuration_Load_Clustering struct {
 }
 
 type Job_Configuration_Load_ConnectionProperties struct {
-	Key   any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -128,57 +133,87 @@ type Job_Configuration_Load_RangePartitioning struct {
 }
 
 type Job_Configuration_Load_Schema_Fields_Categories struct {
+	// The literal name(s) this applies to. (AI-inferred)
 	Names any
 }
 
 type Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfo struct {
+	// The data governance tag(s) applied to this column. (AI-inferred)
 	DataGovernanceTags any
 }
 
 type Job_Configuration_Load_Schema_Fields_DataPolicies struct {
+	// The field's own name, unique within its containing schema. (AI-inferred)
 	Name any
 }
 
 type Job_Configuration_Load_Schema_Fields_DataPolicyList struct {
+	// Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
 	DataPolicies any
 }
 
 type Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo struct {
-	Asynchronous         any
+	// Whether a generated column's own value is computed asynchronously after write, rather than synchronously. (AI-inferred)
+	Asynchronous any
+	// The SQL expression computing this generated column's own value. (AI-inferred)
 	GenerationExpression any
-	Stored               any
+	// Whether a generated column's own computed value is physically stored, rather than recomputed on each read. (AI-inferred)
+	Stored any
 }
 
 type Job_Configuration_Load_Schema_Fields_GeneratedColumn struct {
+	// Detail about a generated column's own computation. (AI-inferred)
 	GeneratedExpressionInfo any
-	GeneratedMode           any
+	// Whether this column's own value is stored, virtual (computed on read), or not generated at all. (AI-inferred)
+	GeneratedMode any
 }
 
 type Job_Configuration_Load_Schema_Fields_RangeElementType struct {
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Job_Configuration_Load_Schema_Fields struct {
-	Categories             any
-	Collation              any
+	// The set of category labels this applies to. (AI-inferred)
+	Categories any
+	// The collation (locale-aware string comparison rule) applied to a `STRING`-typed field, e.g. `und:ci` for case-insensitive comparison, or empty for the default case-sensitive comparison. (AI-inferred)
+	Collation any
+	// Detail about the data governance tag(s) associated with this column. (AI-inferred)
 	DataGovernanceTagsInfo any
-	DataPolicies           any
-	DataPolicyList         any
+	// Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
+	DataPolicies any
+	// The data policies (e.g. dynamic data masking rules) applied to this column. (AI-inferred)
+	DataPolicyList any
+	// A SQL expression computing this column's own default value when none is supplied on insert. (AI-inferred)
 	DefaultValueExpression any
-	Description            any
-	Fields                 any
-	ForeignTypeDefinition  any
-	GeneratedColumn        any
-	MaxLength              any
-	Mode                   any
-	Name                   any
-	PolicyTags             any
-	Precision              any
-	RangeElementType       any
-	RoundingMode           any
-	Scale                  any
-	TimestampPrecision     any
-	Type                   any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
+	Fields any
+	// The native type definition of this column in the external system it's federated from. (AI-inferred)
+	ForeignTypeDefinition any
+	// A column whose own value is computed from other columns, rather than stored directly. (AI-inferred)
+	GeneratedColumn any
+	// The most characters a `string`-typed value may have. (AI-inferred)
+	MaxLength any
+	// Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred)
+	Mode any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// The Data Catalog policy tag(s) governing access to this column. (AI-inferred)
+	PolicyTags any
+	// For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
+	Precision any
+	// The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
+	RangeElementType any
+	// How values are rounded when they exceed this `NUMERIC`/`BIGNUMERIC` field's own scale. (AI-inferred)
+	RoundingMode any
+	// For a `NUMERIC`/`BIGNUMERIC` field, how many digits are kept after the decimal point. (AI-inferred)
+	Scale any
+	// The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred)
+	TimestampPrecision any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_Configuration_Load_Schema_ForeignTypeInfo struct {
@@ -231,7 +266,8 @@ type Job_Configuration_Load struct {
 	DecimalTargetTypes any
 	// Configuration for Cloud KMS encryption settings.
 	DestinationEncryptionConfiguration any
-	DestinationTable                   any
+	// The table this operation writes to. (AI-inferred)
+	DestinationTable any
 	// Properties for the destination table.
 	DestinationTableProperties any
 	// Optional. The character encoding of the data. The supported values are UTF-8, ISO-8859-1, UTF-16BE, UTF-16LE, UTF-32BE, and UTF-32LE. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the `quote` and `fieldDelimiter` properties. If you don't specify an encoding, or if you specify a UTF-8 encoding when the CSV file is not UTF-8 encoded, BigQuery attempts to convert the data to UTF-8. Generally, your data loads successfully, but it may not match byte-for-byte what you expect. To avoid this, specify the correct encoding by using the `--encoding` flag. If BigQuery can't convert a character other than the ASCII `0` character, BigQuery converts the character to the standard Unicode replacement character: �.
@@ -259,7 +295,8 @@ type Job_Configuration_Load struct {
 	// If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.
 	ProjectionFields any
 	// Optional. The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true. To include the specific quote character within a quoted value, precede it with an additional matching quote character. For example, if you want to escape the default character ' " ', use ' "" '. @default "
-	Quote             any
+	Quote any
+	// Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
 	RangePartitioning any
 	// Optional. The user can provide a reference file with the reader schema. This file is only loaded if it is part of source URIs, but is not loaded otherwise. It is enabled for the following formats: AVRO, PARQUET, ORC.
 	ReferenceFileSchemaUri any
@@ -280,7 +317,8 @@ type Job_Configuration_Load struct {
 	// [Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one '*' wildcard character and it must come after the 'bucket' name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups: Exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
 	SourceUris any
 	// Optional. Date format used for parsing TIME values.
-	TimeFormat       any
+	TimeFormat any
+	// Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
 	TimePartitioning any
 	// Optional. Default time zone that will apply when parsing timestamp values that have no specific time zone.
 	TimeZone any
@@ -302,34 +340,51 @@ type Job_Configuration_Query_DefaultDataset struct {
 }
 
 type Job_Configuration_Query_QueryParameters_ParameterType_StructTypes struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Name        any
-	Type        any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_Configuration_Query_QueryParameters_ParameterType struct {
-	ArrayType          any
-	RangeElementType   any
-	StructTypes        any
+	// The schema of the element type, when this field is an `ARRAY`. (AI-inferred)
+	ArrayType any
+	// The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
+	RangeElementType any
+	// The field(s) making up a `STRUCT`-typed schema. (AI-inferred)
+	StructTypes any
+	// The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred)
 	TimestampPrecision any
-	Type               any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_Configuration_Query_QueryParameters_ParameterValue_RangeValue struct {
-	End   any
+	// Where this range ends. (AI-inferred)
+	End any
+	// Where this range starts. (AI-inferred)
 	Start any
 }
 
 type Job_Configuration_Query_QueryParameters_ParameterValue struct {
-	ArrayValues  any
-	RangeValue   any
+	// The individual element value(s) making up an array value. (AI-inferred)
+	ArrayValues any
+	// A value expressed as a `RANGE` type. (AI-inferred)
+	RangeValue any
+	// The field value(s) making up a `STRUCT`-typed value. (AI-inferred)
 	StructValues any
-	Value        any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Job_Configuration_Query_QueryParameters struct {
-	Name           any
-	ParameterType  any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// The data type of this routine parameter. (AI-inferred)
+	ParameterType any
+	// The value passed for this parameter. (AI-inferred)
 	ParameterValue any
 }
 
@@ -343,19 +398,26 @@ type Job_Configuration_Query_ScriptOptions struct {
 }
 
 type Job_Configuration_Query_SystemVariables_Types_StructType_Fields struct {
+	// The field's own name, unique within its containing schema. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Job_Configuration_Query_SystemVariables_Types_StructType struct {
+	// The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
 	Fields any
 }
 
 type Job_Configuration_Query_SystemVariables_Types struct {
+	// The type of each element in an `ARRAY`-typed value. (AI-inferred)
 	ArrayElementType any
+	// The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
 	RangeElementType any
-	StructType       any
-	TypeKind         any
+	// The field(s) making up a `STRUCT`-typed value. (AI-inferred)
+	StructType any
+	// The base data type this schema node represents, e.g. `STRING` or `STRUCT`. (AI-inferred)
+	TypeKind any
 }
 
 type Job_Configuration_Query_SystemVariables struct {
@@ -366,94 +428,156 @@ type Job_Configuration_Query_SystemVariables struct {
 }
 
 type Job_Configuration_Query_TableDefinitions_AvroOptions struct {
+	// Whether Avro logical types (e.g. decimal, timestamp) are converted to their corresponding BigQuery types, rather than their raw underlying type. (AI-inferred)
 	UseAvroLogicalTypes any
 }
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig struct {
+	// The fully qualified name of the protocol buffer message type this data is encoded as. (AI-inferred)
 	ProtoMessageName any
-	SchemaBundleId   any
+	// A reference to the schema bundle (e.g. a set of `.proto` definitions) this configuration uses. (AI-inferred)
+	SchemaBundleId any
 }
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns struct {
-	Encoding         any
-	FieldName        any
-	OnlyReadLatest   any
-	ProtoConfig      any
+	// The text encoding this field's own byte values should be interpreted with. (AI-inferred)
+	Encoding any
+	// The name of the field this applies to. (AI-inferred)
+	FieldName any
+	// Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
+	OnlyReadLatest any
+	// Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
+	ProtoConfig any
+	// The Bigtable column qualifier, in its own raw encoded (byte) form. (AI-inferred)
 	QualifierEncoded any
-	QualifierString  any
-	Type             any
+	// The Bigtable column qualifier, decoded as a string. (AI-inferred)
+	QualifierString any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies struct {
-	Columns        any
-	Encoding       any
-	FamilyId       any
+	// The column(s) this applies to. (AI-inferred)
+	Columns any
+	// The text encoding this field's own byte values should be interpreted with. (AI-inferred)
+	Encoding any
+	// The Bigtable column family this applies to. (AI-inferred)
+	FamilyId any
+	// Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
 	OnlyReadLatest any
-	ProtoConfig    any
-	Type           any
+	// Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
+	ProtoConfig any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions struct {
-	ColumnFamilies                  any
+	// The Bigtable column family/families this configuration applies to. (AI-inferred)
+	ColumnFamilies any
+	// Whether Bigtable column families not explicitly configured are silently ignored, rather than causing an error. (AI-inferred)
 	IgnoreUnspecifiedColumnFamilies any
-	OutputColumnFamiliesAsJson      any
-	ReadRowkeyAsString              any
+	// Whether Bigtable column family data is returned as a single JSON-encoded column, rather than one column per qualifier. (AI-inferred)
+	OutputColumnFamiliesAsJson any
+	// Whether the Bigtable row key is read as a plain string, rather than raw bytes. (AI-inferred)
+	ReadRowkeyAsString any
 }
 
 type Job_Configuration_Query_TableDefinitions_CsvOptions struct {
-	AllowJaggedRows                any
-	AllowQuotedNewlines            any
-	Encoding                       any
-	FieldDelimiter                 any
-	NullMarker                     any
-	NullMarkers                    any
+	// Whether CSV rows with fewer columns than the schema are accepted, with missing trailing fields treated as null. (AI-inferred)
+	AllowJaggedRows any
+	// Whether newline characters are allowed inside quoted CSV field values. (AI-inferred)
+	AllowQuotedNewlines any
+	// The text encoding this field's own byte values should be interpreted with. (AI-inferred)
+	Encoding any
+	// The character separating fields in a delimited source file, e.g. `,`. (AI-inferred)
+	FieldDelimiter any
+	// The string that represents a null value in the source data. (AI-inferred)
+	NullMarker any
+	// The string(s) that represent a null value in the source data. (AI-inferred)
+	NullMarkers any
+	// Whether ASCII control characters in CSV data are preserved as-is, rather than stripped. (AI-inferred)
 	PreserveAsciiControlCharacters any
-	Quote                          any
-	SkipLeadingRows                any
-	SourceColumnMatch              any
+	// The character used to quote field values in a delimited source file. (AI-inferred)
+	Quote any
+	// How many leading rows of the source file are skipped, e.g. a CSV header row. (AI-inferred)
+	SkipLeadingRows any
+	// Whether source file columns are matched to table columns by name or by position. (AI-inferred)
+	SourceColumnMatch any
 }
 
 type Job_Configuration_Query_TableDefinitions_GoogleSheetsOptions struct {
-	Range           any
+	// The range this value spans. (AI-inferred)
+	Range any
+	// How many leading rows of the source file are skipped, e.g. a CSV header row. (AI-inferred)
 	SkipLeadingRows any
 }
 
 type Job_Configuration_Query_TableDefinitions_JsonOptions struct {
+	// The text encoding this field's own byte values should be interpreted with. (AI-inferred)
 	Encoding any
 }
 
 type Job_Configuration_Query_TableDefinitions struct {
-	Autodetect               any
-	AvroOptions              any
-	BigtableOptions          any
-	Compression              any
-	ConnectionId             any
-	CsvOptions               any
-	DateFormat               any
-	DatetimeFormat           any
-	DecimalTargetTypes       any
-	FileSetSpecType          any
-	GoogleSheetsOptions      any
-	HivePartitioningOptions  any
-	IgnoreUnknownValues      any
-	JsonExtension            any
-	JsonOptions              any
-	MaxBadRecords            any
-	MetadataCacheMode        any
-	ObjectMetadata           any
-	ParquetOptions           any
-	ReferenceFileSchemaUri   any
-	Schema                   any
-	SourceFormat             any
-	SourceUris               any
-	TimeFormat               any
-	TimeZone                 any
-	TimestampFormat          any
+	// Whether the table's own schema is automatically inferred from the source data, rather than explicitly specified. (AI-inferred)
+	Autodetect any
+	// Configuration specific to reading data in Avro format. (AI-inferred)
+	AvroOptions any
+	// Configuration specific to reading data from a federated Bigtable source. (AI-inferred)
+	BigtableOptions any
+	// The compression codec applied to this data. (AI-inferred)
+	Compression any
+	// A reference to the connection resource this uses to reach an external data source. (AI-inferred)
+	ConnectionId any
+	// Configuration specific to reading data in CSV format. (AI-inferred)
+	CsvOptions any
+	// The format date values are parsed/rendered with. (AI-inferred)
+	DateFormat any
+	// The format datetime values are parsed/rendered with. (AI-inferred)
+	DatetimeFormat any
+	// Which numeric type(s) `NUMERIC`/`BIGNUMERIC` source values are converted to when loaded. (AI-inferred)
+	DecimalTargetTypes any
+	// How the source file set is specified, e.g. as a list of URIs or a manifest file. (AI-inferred)
+	FileSetSpecType any
+	// Configuration specific to reading data from a linked Google Sheet. (AI-inferred)
+	GoogleSheetsOptions any
+	// Configuration for reading data laid out using Hive-style directory partitioning. (AI-inferred)
+	HivePartitioningOptions any
+	// Whether source data values not matching any column in the table's own schema are silently dropped, rather than causing an error. (AI-inferred)
+	IgnoreUnknownValues any
+	// How JSON source data is interpreted, e.g. as newline-delimited records or a GeoJSON feature collection. (AI-inferred)
+	JsonExtension any
+	// Configuration specific to reading data in JSON format. (AI-inferred)
+	JsonOptions any
+	// The maximum number of bad records tolerated before the load job fails. (AI-inferred)
+	MaxBadRecords any
+	// Whether and how BigLake table metadata is cached, e.g. automatically refreshed. (AI-inferred)
+	MetadataCacheMode any
+	// Metadata describing an object referenced by this table, for object tables. (AI-inferred)
+	ObjectMetadata any
+	// Configuration specific to reading data in Parquet format. (AI-inferred)
+	ParquetOptions any
+	// The URI of a reference file whose own embedded schema is used for the whole external table. (AI-inferred)
+	ReferenceFileSchemaUri any
+	// The schema describing this table's own field structure. (AI-inferred)
+	Schema any
+	// The file format of the source data, e.g. `CSV`, `AVRO`, or `PARQUET`. (AI-inferred)
+	SourceFormat any
+	// The source file URI(s) this data is loaded/read from. (AI-inferred)
+	SourceUris any
+	// The format time values are parsed/rendered with. (AI-inferred)
+	TimeFormat any
+	// The time zone this applies to. (AI-inferred)
+	TimeZone any
+	// The format timestamp values are parsed/rendered with. (AI-inferred)
+	TimestampFormat any
+	// The precision timestamp values are converted to when loaded. (AI-inferred)
 	TimestampTargetPrecision any
 }
 
 type Job_Configuration_Query_UserDefinedFunctionResources struct {
-	InlineCode  any
+	// Routine logic supplied directly as inline source code, rather than referencing an external definition. (AI-inferred)
+	InlineCode any
+	// A URI identifying this external resource. (AI-inferred)
 	ResourceUri any
 }
 
@@ -474,7 +598,8 @@ type Job_Configuration_Query struct {
 	DefaultDataset any
 	// Configuration for Cloud KMS encryption settings.
 	DestinationEncryptionConfiguration any
-	DestinationTable                   any
+	// The table this operation writes to. (AI-inferred)
+	DestinationTable any
 	// Optional. If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For GoogleSQL queries, this flag is ignored and results are never flattened.
 	FlattenResults any
 	// Optional. [Deprecated] Maximum billing tier allowed for this query. The billing tier controls the amount of compute resources allotted to the query, and multiplies the on-demand cost of the query accordingly. A query that runs within its allotted resources will succeed and indicate its billing tier in statistics.query.billingTier, but if the query exceeds its allotted resources, it will fail with billingTierLimitExceeded. WARNING: The billed byte amount can be multiplied by an amount up to this number! Most users should not need to alter this setting, and we recommend that you avoid introducing new uses of it.
@@ -490,7 +615,8 @@ type Job_Configuration_Query struct {
 	// [Required] SQL query text to execute. The useLegacySql field can be used to indicate whether the query uses legacy SQL or GoogleSQL.
 	Query any
 	// Query parameters for GoogleSQL queries.
-	QueryParameters   any
+	QueryParameters any
+	// Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
 	RangePartitioning any
 	// Allows the schema of the destination table to be updated as a side effect of the query job. Schema update options are supported in three cases: when writeDisposition is WRITE_APPEND; when writeDisposition is WRITE_TRUNCATE_DATA; when writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema. One or more of the following values are specified: * ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. * ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable.
 	SchemaUpdateOptions any
@@ -500,6 +626,7 @@ type Job_Configuration_Query struct {
 	SystemVariables any
 	// Optional. You can specify external table definitions, which operate as ephemeral tables that can be queried. These definitions are configured using a JSON map, where the string key represents the table identifier, and the value is the corresponding external data configuration object.
 	TableDefinitions any
+	// Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
 	TimePartitioning any
 	// Optional. Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query uses BigQuery's [GoogleSQL](https://docs.cloud.google.com/bigquery/docs/introduction-sql). When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false.
 	UseLegacySql any
@@ -565,13 +692,20 @@ type Job_Statistics_DataMaskingStatistics struct {
 }
 
 type Job_Statistics_Extract_Timeline struct {
-	ActiveUnits            any
-	CompletedUnits         any
-	ElapsedMs              any
+	// How many work units this stage is currently processing. (AI-inferred)
+	ActiveUnits any
+	// How many work units this stage has finished processing. (AI-inferred)
+	CompletedUnits any
+	// How long this stage/step has been running, in milliseconds. (AI-inferred)
+	ElapsedMs any
+	// An estimate of how many more work units could run in parallel right now, given available slots. (AI-inferred)
 	EstimatedRunnableUnits any
-	PendingUnits           any
-	ShuffleRamUsageRatio   any
-	TotalSlotMs            any
+	// How many work units this stage hasn't started processing yet. (AI-inferred)
+	PendingUnits any
+	// What fraction of available shuffle memory this stage used. (AI-inferred)
+	ShuffleRamUsageRatio any
+	// The total slot-milliseconds consumed across every stage of this job. (AI-inferred)
+	TotalSlotMs any
 }
 
 type Job_Statistics_Extract struct {
@@ -599,7 +733,9 @@ type Job_Statistics_Load struct {
 }
 
 type Job_Statistics_Query_BiEngineStatistics_BiEngineReasons struct {
-	Code    any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// A human-readable message describing this event, error, or status. (AI-inferred)
 	Message any
 }
 
@@ -653,12 +789,18 @@ type Job_Statistics_Query_ExportDataStatistics struct {
 }
 
 type Job_Statistics_Query_ExternalServiceCosts struct {
-	BillingMethod     any
-	BytesBilled       any
-	BytesProcessed    any
-	ExternalService   any
+	// How compute cost for this job is charged, e.g. on-demand or by reserved slots. (AI-inferred)
+	BillingMethod any
+	// The number of bytes this job was billed for. (AI-inferred)
+	BytesBilled any
+	// The number of bytes this job actually processed. (AI-inferred)
+	BytesProcessed any
+	// A reference to the external service this job used. (AI-inferred)
+	ExternalService any
+	// The number of query slots reserved for this job. (AI-inferred)
 	ReservedSlotCount any
-	SlotMs            any
+	// The total slot-milliseconds this job consumed. (AI-inferred)
+	SlotMs any
 }
 
 type Job_Statistics_Query_GenAiStats_ErrorStats struct {
@@ -667,26 +809,37 @@ type Job_Statistics_Query_GenAiStats_ErrorStats struct {
 }
 
 type Job_Statistics_Query_GenAiStats_FunctionStats_CacheStats struct {
+	// The number of rows served from cached metadata. (AI-inferred)
 	NumCacheHitRows any
 }
 
 type Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStats struct {
-	Message              any
+	// A human-readable message describing this event, error, or status. (AI-inferred)
+	Message any
+	// The number of rows this query avoided scanning due to metadata caching. (AI-inferred)
 	NumCostOptimizedRows any
 }
 
 type Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStats struct {
-	Errors        any
+	// The error(s) encountered. (AI-inferred)
+	Errors any
+	// The number of rows that failed to load. (AI-inferred)
 	NumFailedRows any
 }
 
 type Job_Statistics_Query_GenAiStats_FunctionStats struct {
-	CacheStats            any
+	// Statistics about how effectively cached metadata was used for this query. (AI-inferred)
+	CacheStats any
+	// Statistics about how metadata caching reduced this query's own scan cost. (AI-inferred)
 	CostOptimizationStats any
-	ErrorStats            any
-	FunctionName          any
-	NumProcessedRows      any
-	Prompt                any
+	// Statistics about error rows encountered while loading data. (AI-inferred)
+	ErrorStats any
+	// The name of the routine. (AI-inferred)
+	FunctionName any
+	// The number of rows processed. (AI-inferred)
+	NumProcessedRows any
+	// The prompt text sent to the model. (AI-inferred)
+	Prompt any
 }
 
 type Job_Statistics_Query_GenAiStats struct {
@@ -729,10 +882,14 @@ type Job_Statistics_Query_LoadQueryStatistics struct {
 }
 
 type Job_Statistics_Query_MaterializedViewStatistics_MaterializedView struct {
-	Chosen              any
+	// Whether this option was actually selected/used. (AI-inferred)
+	Chosen any
+	// The estimated number of bytes this query avoided scanning due to metadata caching or BI Engine acceleration. (AI-inferred)
 	EstimatedBytesSaved any
-	RejectedReason      any
-	TableReference      any
+	// Why this row or record was rejected. (AI-inferred)
+	RejectedReason any
+	// A reference to a specific BigQuery table. (AI-inferred)
+	TableReference any
 }
 
 type Job_Statistics_Query_MaterializedViewStatistics struct {
@@ -741,18 +898,27 @@ type Job_Statistics_Query_MaterializedViewStatistics struct {
 }
 
 type Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStats struct {
+	// The number of input partitions remaining after column-metadata-based pruning. (AI-inferred)
 	PostCmetaPruningParallelInputCount any
-	PostCmetaPruningPartitionCount     any
-	PreCmetaPruningParallelInputCount  any
+	// The number of partitions remaining after column-metadata-based pruning. (AI-inferred)
+	PostCmetaPruningPartitionCount any
+	// The number of input partitions before column-metadata-based pruning. (AI-inferred)
+	PreCmetaPruningParallelInputCount any
 }
 
 type Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage struct {
-	Explanation    any
-	PruningStats   any
-	Staleness      any
+	// A human-readable explanation of this result. (AI-inferred)
+	Explanation any
+	// Statistics about how much data this query avoided reading due to partition/index pruning. (AI-inferred)
+	PruningStats any
+	// How old this cached data or metadata currently is. (AI-inferred)
+	Staleness any
+	// A reference to a specific BigQuery table. (AI-inferred)
 	TableReference any
-	TableType      any
-	UnusedReason   any
+	// Whether this table is a standard table, view, materialized view, or external table. (AI-inferred)
+	TableType any
+	// Why this index, cache, or optimization wasn't used for this query. (AI-inferred)
+	UnusedReason any
 }
 
 type Job_Statistics_Query_MetadataCacheStatistics struct {
@@ -761,306 +927,525 @@ type Job_Statistics_Query_MetadataCacheStatistics struct {
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics struct {
-	Aic           any
+	// The Akaike Information Criterion for this fitted model -- lower values indicate a better tradeoff between fit and complexity. (AI-inferred)
+	Aic any
+	// The log-likelihood of the fitted model given the training data. (AI-inferred)
 	LogLikelihood any
-	Variance      any
+	// The variance of the model's own residuals. (AI-inferred)
+	Variance any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder struct {
+	// The differencing degree (`d`) of the ARIMA model -- how many times the series was differenced to make it stationary. (AI-inferred)
 	D any
+	// The autoregressive order (`p`) of the ARIMA model -- how many past values it regresses on. (AI-inferred)
 	P any
+	// The moving-average order (`q`) of the ARIMA model -- how many past forecast errors it incorporates. (AI-inferred)
 	Q any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics struct {
+	// Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred)
 	ArimaFittingMetrics any
-	HasDrift            any
-	HasHolidayEffect    any
-	HasSpikesAndDips    any
-	HasStepChanges      any
-	NonSeasonalOrder    any
-	SeasonalPeriods     any
-	TimeSeriesId        any
-	TimeSeriesIds       any
+	// Whether this ARIMA model was fit with a drift term. (AI-inferred)
+	HasDrift any
+	// Whether the fitted ARIMA model detected a holiday effect in the time series. (AI-inferred)
+	HasHolidayEffect any
+	// Whether the fitted ARIMA model detected spikes and dips in the time series. (AI-inferred)
+	HasSpikesAndDips any
+	// Whether the fitted ARIMA model detected step changes in the time series. (AI-inferred)
+	HasStepChanges any
+	// The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
+	NonSeasonalOrder any
+	// The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
+	SeasonalPeriods any
+	// The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred)
+	TimeSeriesId any
+	// The identifier(s) of the time series this applies to. (AI-inferred)
+	TimeSeriesIds any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics struct {
-	ArimaFittingMetrics                any
+	// Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred)
+	ArimaFittingMetrics any
+	// Forecast-quality metrics for a single fitted ARIMA time series model. (AI-inferred)
 	ArimaSingleModelForecastingMetrics any
-	HasDrift                           any
-	NonSeasonalOrder                   any
-	SeasonalPeriods                    any
-	TimeSeriesId                       any
+	// Whether this ARIMA model was fit with a drift term. (AI-inferred)
+	HasDrift any
+	// The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
+	NonSeasonalOrder any
+	// The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
+	SeasonalPeriods any
+	// The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred)
+	TimeSeriesId any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics struct {
-	Accuracy  any
-	F1Score   any
-	LogLoss   any
+	// The fraction of predictions this model got exactly right, on its own evaluation data. (AI-inferred)
+	Accuracy any
+	// The harmonic mean of this model's own precision and recall, on its own evaluation data. (AI-inferred)
+	F1Score any
+	// The logarithmic loss of the model's own predicted probabilities against the true labels -- lower is better. (AI-inferred)
+	LogLoss any
+	// For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
 	Precision any
-	Recall    any
-	RocAuc    any
+	// The fraction of actual positive cases this model correctly identified, on its own evaluation data. (AI-inferred)
+	Recall any
+	// The area under the ROC curve for this classification model -- closer to 1.0 indicates better separation between classes. (AI-inferred)
+	RocAuc any
+	// The classification probability threshold above which a prediction is treated as positive. (AI-inferred)
 	Threshold any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixList struct {
-	Accuracy               any
-	F1Score                any
-	FalseNegatives         any
-	FalsePositives         any
+	// The fraction of predictions this model got exactly right, on its own evaluation data. (AI-inferred)
+	Accuracy any
+	// The harmonic mean of this model's own precision and recall, on its own evaluation data. (AI-inferred)
+	F1Score any
+	// The count of instances the model incorrectly predicted as negative. (AI-inferred)
+	FalseNegatives any
+	// The count of instances the model incorrectly predicted as positive. (AI-inferred)
+	FalsePositives any
+	// The classification probability threshold above which a prediction is treated as the positive class. (AI-inferred)
 	PositiveClassThreshold any
-	Precision              any
-	Recall                 any
-	TrueNegatives          any
-	TruePositives          any
+	// For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
+	Precision any
+	// The fraction of actual positive cases this model correctly identified, on its own evaluation data. (AI-inferred)
+	Recall any
+	// The count of instances the model correctly predicted as negative. (AI-inferred)
+	TrueNegatives any
+	// The count of instances the model correctly predicted as positive. (AI-inferred)
+	TruePositives any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics struct {
+	// Classification evaluation metrics (precision, recall, accuracy, etc.) computed across all classes, aggregated to a single score. (AI-inferred)
 	AggregateClassificationMetrics any
-	BinaryConfusionMatrixList      any
-	NegativeLabel                  any
-	PositiveLabel                  any
+	// The confusion matrix/matrices computed at various classification thresholds, for a binary classifier. (AI-inferred)
+	BinaryConfusionMatrixList any
+	// The label value treated as the negative class. (AI-inferred)
+	NegativeLabel any
+	// The label value treated as the positive class. (AI-inferred)
+	PositiveLabel any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCounts struct {
+	// The category this value or classification belongs to. (AI-inferred)
 	Category any
-	Count    any
+	// How many of this item there are. (AI-inferred)
+	Count any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue struct {
+	// How many times each category value occurred. (AI-inferred)
 	CategoryCounts any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues struct {
+	// A single categorical value and its own observed count. (AI-inferred)
 	CategoricalValue any
-	FeatureColumn    any
-	NumericalValue   any
+	// The name of the feature (input) column this applies to. (AI-inferred)
+	FeatureColumn any
+	// A numeric value. (AI-inferred)
+	NumericalValue any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters struct {
-	CentroidId    any
-	Count         any
+	// The identifier of the cluster centroid this applies to, for a clustering model. (AI-inferred)
+	CentroidId any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// The value(s) of the input feature(s) for this instance. (AI-inferred)
 	FeatureValues any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics struct {
-	Clusters            any
-	DaviesBouldinIndex  any
+	// The cluster(s) produced by a clustering model. (AI-inferred)
+	Clusters any
+	// A clustering-quality score measuring average similarity between each cluster and its most similar other cluster -- lower is better. (AI-inferred)
+	DaviesBouldinIndex any
+	// The average squared distance from each point to its own assigned cluster centroid. (AI-inferred)
 	MeanSquaredDistance any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetrics struct {
+	// The total fraction of variance explained across all retained principal components. (AI-inferred)
 	TotalExplainedVarianceRatio any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_Entries struct {
-	ItemCount      any
+	// How many item(s) this applies to. (AI-inferred)
+	ItemCount any
+	// The label the model predicted for this instance. (AI-inferred)
 	PredictedLabel any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows struct {
+	// The true, observed label for this evaluation instance. (AI-inferred)
 	ActualLabel any
-	Entries     any
+	// The entry/entries making up this collection. (AI-inferred)
+	Entries any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList struct {
+	// The minimum confidence a prediction must reach to be accepted. (AI-inferred)
 	ConfidenceThreshold any
-	Rows                any
+	// The row(s) making up this result. (AI-inferred)
+	Rows any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics struct {
+	// Classification evaluation metrics (precision, recall, accuracy, etc.) computed across all classes, aggregated to a single score. (AI-inferred)
 	AggregateClassificationMetrics any
-	ConfusionMatrixList            any
+	// The confusion matrix/matrices computed at various classification thresholds. (AI-inferred)
+	ConfusionMatrixList any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetrics struct {
-	AverageRank                        any
-	MeanAveragePrecision               any
-	MeanSquaredError                   any
+	// The average rank assigned across evaluation instances, for a ranking model. (AI-inferred)
+	AverageRank any
+	// The mean of average precision scores across queries/users, for a ranking model. (AI-inferred)
+	MeanAveragePrecision any
+	// The average squared difference between predicted and actual values, for a regression model. (AI-inferred)
+	MeanSquaredError any
+	// A ranking-quality score comparing the model's own result ordering to an ideal ordering, normalized to [0, 1]. (AI-inferred)
 	NormalizedDiscountedCumulativeGain any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetrics struct {
-	MeanAbsoluteError   any
-	MeanSquaredError    any
+	// The average absolute difference between predicted and actual values, for a regression model. (AI-inferred)
+	MeanAbsoluteError any
+	// The average squared difference between predicted and actual values, for a regression model. (AI-inferred)
+	MeanSquaredError any
+	// The average squared difference between the log of predicted and actual values, for a regression model. (AI-inferred)
 	MeanSquaredLogError any
+	// The median absolute difference between predicted and actual values, for a regression model. (AI-inferred)
 	MedianAbsoluteError any
-	RSquared            any
+	// The proportion of variance in the target explained by the model -- closer to 1.0 indicates a better fit. (AI-inferred)
+	RSquared any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics struct {
-	ArimaForecastingMetrics         any
-	BinaryClassificationMetrics     any
-	ClusteringMetrics               any
-	DimensionalityReductionMetrics  any
+	// Forecast-quality metrics for a fitted ARIMA model, one set per time series. (AI-inferred)
+	ArimaForecastingMetrics any
+	// Evaluation metrics specific to a binary (two-class) classification model. (AI-inferred)
+	BinaryClassificationMetrics any
+	// Evaluation metrics specific to a clustering model. (AI-inferred)
+	ClusteringMetrics any
+	// Evaluation metrics specific to a dimensionality-reduction (e.g. PCA) model. (AI-inferred)
+	DimensionalityReductionMetrics any
+	// Evaluation metrics specific to a multi-class classification model. (AI-inferred)
 	MultiClassClassificationMetrics any
-	RankingMetrics                  any
-	RegressionMetrics               any
+	// Evaluation metrics specific to a ranking/recommendation model. (AI-inferred)
+	RankingMetrics any
+	// Evaluation metrics specific to a regression model. (AI-inferred)
+	RegressionMetrics any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_Hparams struct {
-	ActivationFn                any
-	AdjustStepChanges           any
-	ApproxGlobalFeatureContrib  any
-	AutoArima                   any
-	AutoArimaMaxOrder           any
-	AutoArimaMinOrder           any
-	AutoClassWeights            any
-	BatchSize                   any
-	BoosterType                 any
-	BudgetHours                 any
-	CalculatePvalues            any
-	CategoryEncodingMethod      any
-	CleanSpikesAndDips          any
-	ColorSpace                  any
-	ColsampleBylevel            any
-	ColsampleBynode             any
-	ColsampleBytree             any
-	ContributionMetric          any
-	DartNormalizeType           any
-	DataFrequency               any
-	DataSplitColumn             any
-	DataSplitEvalFraction       any
-	DataSplitMethod             any
-	DecomposeTimeSeries         any
-	DimensionIdColumns          any
-	DistanceType                any
-	Dropout                     any
-	EarlyStop                   any
-	EnableGlobalExplain         any
-	EndpointIdleTtl             any
-	FeedbackType                any
-	FitIntercept                any
-	ForecastLimitLowerBound     any
-	ForecastLimitUpperBound     any
-	HiddenUnits                 any
-	HolidayRegion               any
-	HolidayRegions              any
-	Horizon                     any
-	HparamTuningObjectives      any
-	HuggingFaceModelId          any
-	IncludeDrift                any
-	InitialLearnRate            any
-	InputLabelColumns           any
-	InstanceWeightColumn        any
+	// The activation function used between hidden layers of a neural network model, e.g. `RELU`. (AI-inferred)
+	ActivationFn any
+	// Whether the ARIMA model automatically adjusts for detected step changes in the time series. (AI-inferred)
+	AdjustStepChanges any
+	// Whether feature attribution is computed using a faster, approximate method rather than an exact one. (AI-inferred)
+	ApproxGlobalFeatureContrib any
+	// Whether BigQuery ML automatically searches for the best-fitting ARIMA order, rather than using a caller-specified one. (AI-inferred)
+	AutoArima any
+	// The maximum ARIMA order considered during automatic order search. (AI-inferred)
+	AutoArimaMaxOrder any
+	// The minimum ARIMA order considered during automatic order search. (AI-inferred)
+	AutoArimaMinOrder any
+	// Whether class weights are automatically balanced based on label frequency in the training data. (AI-inferred)
+	AutoClassWeights any
+	// How many examples are processed together in each training step. (AI-inferred)
+	BatchSize any
+	// The boosting algorithm used, e.g. `GBTREE` or `DART`. (AI-inferred)
+	BoosterType any
+	// The maximum training time allotted, in hours. (AI-inferred)
+	BudgetHours any
+	// Whether statistical p-values are computed for model coefficients. (AI-inferred)
+	CalculatePvalues any
+	// How categorical features are encoded into numeric input for the model, e.g. one-hot. (AI-inferred)
+	CategoryEncodingMethod any
+	// Whether transient spikes and dips are automatically smoothed out of the time series before fitting. (AI-inferred)
+	CleanSpikesAndDips any
+	// The color space used to interpret pixel data. (AI-inferred)
+	ColorSpace any
+	// The fraction of features randomly sampled at each tree level, for a boosted tree model. (AI-inferred)
+	ColsampleBylevel any
+	// The fraction of features randomly sampled at each tree split, for a boosted tree model. (AI-inferred)
+	ColsampleBynode any
+	// The fraction of features randomly sampled when building each tree, for a boosted tree model. (AI-inferred)
+	ColsampleBytree any
+	// Which metric feature contributions/attributions are computed relative to. (AI-inferred)
+	ContributionMetric any
+	// How tree contributions are normalized in DART boosting, e.g. `TREE` or `FOREST`. (AI-inferred)
+	DartNormalizeType any
+	// The expected time interval between consecutive observations in a time series, e.g. daily or hourly. (AI-inferred)
+	DataFrequency any
+	// The column identifying which split (train/eval) each row belongs to, for a custom data split. (AI-inferred)
+	DataSplitColumn any
+	// The fraction of training data held out for evaluation. (AI-inferred)
+	DataSplitEvalFraction any
+	// How training data is divided into training and evaluation sets, e.g. random or sequential. (AI-inferred)
+	DataSplitMethod any
+	// Whether the time series is decomposed into trend, seasonal, and holiday components as part of fitting. (AI-inferred)
+	DecomposeTimeSeries any
+	// The column(s) identifying which entity/dimension each row of a multi-dimensional time series belongs to. (AI-inferred)
+	DimensionIdColumns any
+	// The distance metric used to measure similarity between points, e.g. Euclidean or cosine. (AI-inferred)
+	DistanceType any
+	// The fraction of units randomly dropped during training, to reduce overfitting. (AI-inferred)
+	Dropout any
+	// Whether training stops automatically once further iterations no longer improve the evaluation metric. (AI-inferred)
+	EarlyStop any
+	// Whether global (whole-model) feature-importance explanations are computed, in addition to per-prediction ones. (AI-inferred)
+	EnableGlobalExplain any
+	// How long a deployed model endpoint is kept warm without traffic before being torn down. (AI-inferred)
+	EndpointIdleTtl any
+	// Whether user feedback for this recommender model is implicit or explicit. (AI-inferred)
+	FeedbackType any
+	// Whether an intercept term is fit as part of the model, rather than forcing it to zero. (AI-inferred)
+	FitIntercept any
+	// The lower bound of the forecast's own confidence interval. (AI-inferred)
+	ForecastLimitLowerBound any
+	// The upper bound of the forecast's own confidence interval. (AI-inferred)
+	ForecastLimitUpperBound any
+	// The number of units in each hidden layer, for a neural network model. (AI-inferred)
+	HiddenUnits any
+	// The region whose public holidays are factored into ARIMA forecasting. (AI-inferred)
+	HolidayRegion any
+	// The region(s) whose public holidays are factored into ARIMA forecasting. (AI-inferred)
+	HolidayRegions any
+	// How many future time steps this forecast covers. (AI-inferred)
+	Horizon any
+	// The metric(s) hyperparameter tuning optimizes for. (AI-inferred)
+	HparamTuningObjectives any
+	// The Hugging Face Hub identifier of the model this references. (AI-inferred)
+	HuggingFaceModelId any
+	// Whether the ARIMA model's own drift term is included when computing forecasts. (AI-inferred)
+	IncludeDrift any
+	// The learning rate used at the start of training, before any line-search adjustment. (AI-inferred)
+	InitialLearnRate any
+	// The column(s) holding the true label(s) used to train and evaluate the model. (AI-inferred)
+	InputLabelColumns any
+	// The column giving each training example's own relative importance weight. (AI-inferred)
+	InstanceWeightColumn any
+	// How many interpolation steps are used when computing Integrated Gradients feature attributions. (AI-inferred)
 	IntegratedGradientsNumSteps any
-	IsTestColumn                any
-	ItemColumn                  any
-	KmeansInitializationColumn  any
-	KmeansInitializationMethod  any
-	L1RegActivation             any
-	L1Regularization            any
-	L2Regularization            any
-	LabelClassWeights           any
-	LearnRate                   any
-	LearnRateStrategy           any
-	LossType                    any
-	MachineType                 any
-	MaxIterations               any
-	MaxParallelTrials           any
-	MaxReplicaCount             any
-	MaxTimeSeriesLength         any
-	MaxTreeDepth                any
-	MinAprioriSupport           any
-	MinRelativeProgress         any
-	MinReplicaCount             any
-	MinSplitLoss                any
-	MinTimeSeriesLength         any
-	MinTreeChildWeight          any
-	ModelGardenModelName        any
-	ModelRegistry               any
-	ModelUri                    any
-	NonSeasonalOrder            any
-	NumClusters                 any
-	NumFactors                  any
-	NumParallelTree             any
-	NumPrincipalComponents      any
-	NumTrials                   any
-	OptimizationStrategy        any
-	Optimizer                   any
-	PcaExplainedVarianceRatio   any
-	PcaSolver                   any
-	ReservationAffinityKey      any
-	ReservationAffinityType     any
-	ReservationAffinityValues   any
-	SampledShapleyNumPaths      any
-	ScaleFeatures               any
-	StandardizeFeatures         any
-	Subsample                   any
-	TfVersion                   any
-	TimeSeriesDataColumn        any
-	TimeSeriesIdColumn          any
-	TimeSeriesIdColumns         any
-	TimeSeriesLengthFraction    any
-	TimeSeriesTimestampColumn   any
-	TreeMethod                  any
-	TrendSmoothingWindowSize    any
-	UserColumn                  any
+	// The column marking which rows belong to the held-out test set. (AI-inferred)
+	IsTestColumn any
+	// The column identifying the item in a recommender model's own training data. (AI-inferred)
+	ItemColumn any
+	// The column providing caller-specified initial centroid positions for k-means clustering. (AI-inferred)
+	KmeansInitializationColumn any
+	// How initial centroid positions are chosen for k-means clustering, e.g. random or k-means++. (AI-inferred)
+	KmeansInitializationMethod any
+	// The L1 regularization strength applied to activations, for a neural network model. (AI-inferred)
+	L1RegActivation any
+	// The L1 regularization strength applied during training. (AI-inferred)
+	L1Regularization any
+	// The L2 regularization strength applied during training. (AI-inferred)
+	L2Regularization any
+	// Per-class weight(s) applied during training, to counteract class imbalance. (AI-inferred)
+	LabelClassWeights any
+	// The step size used to update model weights during training. (AI-inferred)
+	LearnRate any
+	// How the learning rate changes over training, e.g. fixed or line-search. (AI-inferred)
+	LearnRateStrategy any
+	// The loss function optimized during training. (AI-inferred)
+	LossType any
+	// The machine type provisioned for this training job. (AI-inferred)
+	MachineType any
+	// The maximum number of training iterations. (AI-inferred)
+	MaxIterations any
+	// The maximum number of hyperparameter tuning trials run concurrently. (AI-inferred)
+	MaxParallelTrials any
+	// The maximum number of serving replicas this deployed model may scale up to. (AI-inferred)
+	MaxReplicaCount any
+	// The maximum number of historical time steps used when fitting the model. (AI-inferred)
+	MaxTimeSeriesLength any
+	// The maximum depth a single decision tree may reach. (AI-inferred)
+	MaxTreeDepth any
+	// The minimum support threshold an itemset must reach to be considered frequent, for association rule mining. (AI-inferred)
+	MinAprioriSupport any
+	// The minimum relative improvement in loss required to continue training another iteration. (AI-inferred)
+	MinRelativeProgress any
+	// The minimum number of serving replicas this deployed model scales down to. (AI-inferred)
+	MinReplicaCount any
+	// The minimum loss reduction required to make a further split in a decision tree. (AI-inferred)
+	MinSplitLoss any
+	// The minimum number of historical time steps required to fit the model. (AI-inferred)
+	MinTimeSeriesLength any
+	// The minimum sum of instance weight required in a tree leaf, for a boosted tree model. (AI-inferred)
+	MinTreeChildWeight any
+	// The Model Garden identifier of the foundation model this references. (AI-inferred)
+	ModelGardenModelName any
+	// Which model registry this model is published to. (AI-inferred)
+	ModelRegistry any
+	// The Cloud Storage URI of the model artifact. (AI-inferred)
+	ModelUri any
+	// The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
+	NonSeasonalOrder any
+	// The number of clusters the model is fit with. (AI-inferred)
+	NumClusters any
+	// The number of latent factors used in a matrix factorization model. (AI-inferred)
+	NumFactors any
+	// The number of trees built in parallel at each boosting round, for a random-forest-style ensemble. (AI-inferred)
+	NumParallelTree any
+	// The number of principal components computed by a PCA model. (AI-inferred)
+	NumPrincipalComponents any
+	// The number of hyperparameter tuning trials run. (AI-inferred)
+	NumTrials any
+	// Which algorithm is used to optimize the training objective. (AI-inferred)
+	OptimizationStrategy any
+	// The optimization algorithm used to update model weights during training, e.g. Adam. (AI-inferred)
+	Optimizer any
+	// The fraction of total variance each principal component explains. (AI-inferred)
+	PcaExplainedVarianceRatio any
+	// The algorithm used to compute principal components. (AI-inferred)
+	PcaSolver any
+	// The reservation-assignment label key this job's own reservation affinity matches on. (AI-inferred)
+	ReservationAffinityKey any
+	// Whether this job must, may, or must not use a specific reservation. (AI-inferred)
+	ReservationAffinityType any
+	// The reservation-assignment label value(s) this job's own reservation affinity matches on. (AI-inferred)
+	ReservationAffinityValues any
+	// How many feature-permutation paths Sampled Shapley samples to approximate attributions. (AI-inferred)
+	SampledShapleyNumPaths any
+	// Whether input features are automatically normalized (scaled) before training. (AI-inferred)
+	ScaleFeatures any
+	// Whether input features are standardized (zero mean, unit variance) before training. (AI-inferred)
+	StandardizeFeatures any
+	// The fraction of training examples randomly sampled for each boosting round. (AI-inferred)
+	Subsample any
+	// The TensorFlow version this imported model was trained with. (AI-inferred)
+	TfVersion any
+	// The column holding the value(s) to forecast. (AI-inferred)
+	TimeSeriesDataColumn any
+	// The column identifying which time series each row belongs to, when training on multiple series at once. (AI-inferred)
+	TimeSeriesIdColumn any
+	// The column(s) identifying which time series each row belongs to, when training on multiple series at once. (AI-inferred)
+	TimeSeriesIdColumns any
+	// The fraction of the time series' own full length used to compute this metric. (AI-inferred)
+	TimeSeriesLengthFraction any
+	// The column holding each observation's own timestamp. (AI-inferred)
+	TimeSeriesTimestampColumn any
+	// The algorithm used to build each decision tree, e.g. exact or histogram-based. (AI-inferred)
+	TreeMethod any
+	// The window size used to smooth the trend component when decomposing the time series. (AI-inferred)
+	TrendSmoothingWindowSize any
+	// The column identifying the user in a recommender model's own training data. (AI-inferred)
+	UserColumn any
+	// The Vertex AI Model Registry version alias(es) assigned to this model. (AI-inferred)
 	VertexAiModelVersionAliases any
-	WalsAlpha                   any
-	WarmStart                   any
-	XgboostVersion              any
+	// The confidence weighting parameter used by the Weighted Alternating Least Squares algorithm, for matrix factorization. (AI-inferred)
+	WalsAlpha any
+	// Whether training resumes from a previous model's own learned weights, rather than starting from scratch. (AI-inferred)
+	WarmStart any
+	// The XGBoost library version this imported model was trained with. (AI-inferred)
+	XgboostVersion any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials struct {
-	EndTimeMs                     any
-	ErrorMessage                  any
-	EvalLoss                      any
-	EvaluationMetrics             any
+	// When this event ended, as a Unix timestamp in milliseconds. (AI-inferred)
+	EndTimeMs any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// The loss value computed on the evaluation (held-out) dataset. (AI-inferred)
+	EvalLoss any
+	// The evaluation metric(s) computed for this trained model. (AI-inferred)
+	EvaluationMetrics any
+	// The evaluation metric(s) recorded for one hyperparameter tuning trial. (AI-inferred)
 	HparamTuningEvaluationMetrics any
-	Hparams                       any
-	StartTimeMs                   any
-	Status                        any
-	TrainingLoss                  any
-	TrialId                       any
+	// The hyperparameter value(s) used for this trial. (AI-inferred)
+	Hparams any
+	// When this event started, as a Unix timestamp in milliseconds. (AI-inferred)
+	StartTimeMs any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// The loss value computed on the training dataset. (AI-inferred)
+	TrainingLoss any
+	// An identifier for this hyperparameter tuning trial. (AI-inferred)
+	TrialId any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficients struct {
+	// The fitted autoregressive coefficient(s) of the model. (AI-inferred)
 	AutoRegressiveCoefficients any
-	InterceptCoefficient       any
-	MovingAverageCoefficients  any
+	// The fitted intercept term of the model. (AI-inferred)
+	InterceptCoefficient any
+	// The fitted moving-average coefficient(s) of an ARIMA model. (AI-inferred)
+	MovingAverageCoefficients any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo struct {
-	ArimaCoefficients   any
+	// The fitted autoregressive, moving-average, and intercept coefficient(s) of an ARIMA model. (AI-inferred)
+	ArimaCoefficients any
+	// Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred)
 	ArimaFittingMetrics any
-	HasDrift            any
-	HasHolidayEffect    any
-	HasSpikesAndDips    any
-	HasStepChanges      any
-	NonSeasonalOrder    any
-	SeasonalPeriods     any
-	TimeSeriesId        any
-	TimeSeriesIds       any
+	// Whether this ARIMA model was fit with a drift term. (AI-inferred)
+	HasDrift any
+	// Whether the fitted ARIMA model detected a holiday effect in the time series. (AI-inferred)
+	HasHolidayEffect any
+	// Whether the fitted ARIMA model detected spikes and dips in the time series. (AI-inferred)
+	HasSpikesAndDips any
+	// Whether the fitted ARIMA model detected step changes in the time series. (AI-inferred)
+	HasStepChanges any
+	// The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred)
+	NonSeasonalOrder any
+	// The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
+	SeasonalPeriods any
+	// The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred)
+	TimeSeriesId any
+	// The identifier(s) of the time series this applies to. (AI-inferred)
+	TimeSeriesIds any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult struct {
-	ArimaModelInfo  any
+	// Detail about one fitted ARIMA model, when a query trains multiple time series at once. (AI-inferred)
+	ArimaModelInfo any
+	// The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred)
 	SeasonalPeriods any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfos struct {
-	CentroidId    any
+	// The identifier of the cluster centroid this applies to, for a clustering model. (AI-inferred)
+	CentroidId any
+	// The average distance from a cluster's own centroid to its member points. (AI-inferred)
 	ClusterRadius any
-	ClusterSize   any
+	// How many training examples fall into this cluster. (AI-inferred)
+	ClusterSize any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfos struct {
+	// The running total of variance explained as successive principal components are added, for a PCA model. (AI-inferred)
 	CumulativeExplainedVarianceRatio any
-	ExplainedVariance                any
-	ExplainedVarianceRatio           any
-	PrincipalComponentId             any
+	// How much of the total variance in the data this component/model accounts for. (AI-inferred)
+	ExplainedVariance any
+	// The fraction of total variance this principal component explains. (AI-inferred)
+	ExplainedVarianceRatio any
+	// The identifier of the principal component this applies to. (AI-inferred)
+	PrincipalComponentId any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults struct {
-	ArimaResult             any
-	ClusterInfos            any
-	DurationMs              any
-	EvalLoss                any
-	Index                   any
-	LearnRate               any
+	// The fitted ARIMA model result(s), one per time series analyzed. (AI-inferred)
+	ArimaResult any
+	// Detail about each cluster produced by a clustering model. (AI-inferred)
+	ClusterInfos any
+	// How long this operation took, in milliseconds. (AI-inferred)
+	DurationMs any
+	// The loss value computed on the evaluation (held-out) dataset. (AI-inferred)
+	EvalLoss any
+	// The position of this item within its own containing sequence. (AI-inferred)
+	Index any
+	// The step size used to update model weights during training. (AI-inferred)
+	LearnRate any
+	// Detail about each principal component computed by a PCA model. (AI-inferred)
 	PrincipalComponentInfos any
-	TrainingLoss            any
+	// The loss value computed on the training dataset. (AI-inferred)
+	TrainingLoss any
 }
 
 type Job_Statistics_Query_MlStatistics struct {
@@ -1084,56 +1469,82 @@ type Job_Statistics_Query_ModelTraining struct {
 }
 
 type Job_Statistics_Query_ObjectStorageStats struct {
-	CacheBytesRead         any
-	CloudProvider          any
+	// The number of bytes served from cached metadata/results, rather than freshly read. (AI-inferred)
+	CacheBytesRead any
+	// Which cloud provider hosts this external resource. (AI-inferred)
+	CloudProvider any
+	// The number of bytes read from Cloud Storage objects. (AI-inferred)
 	ObjectStorageBytesRead any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChange struct {
+	// How much the record count read differs from a prior baseline, as a percentage. (AI-inferred)
 	RecordsReadDiffPercentage any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights struct {
+	// How the model's own input data has changed since it was last trained, if at all. (AI-inferred)
 	InputDataChange any
-	StageId         any
+	// An identifier for this query stage. (AI-inferred)
+	StageId any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoins struct {
-	LeftRows   any
+	// The number of rows on the left side of a join stage. (AI-inferred)
+	LeftRows any
+	// The number of rows this stage/job produced. (AI-inferred)
 	OutputRows any
-	RightRows  any
-	StepIndex  any
+	// The number of rows on the right side of a join stage. (AI-inferred)
+	RightRows any
+	// This step's own position within its own containing sequence. (AI-inferred)
+	StepIndex any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSources struct {
-	OutputBytesMax    any
+	// The maximum output size any single work unit in this stage produced, in bytes. (AI-inferred)
+	OutputBytesMax any
+	// The median output size across work units in this stage, in bytes. (AI-inferred)
 	OutputBytesMedian any
-	OutputBytesP95    any
-	StageId           any
+	// The 95th-percentile output size across work units in this stage, in bytes. (AI-inferred)
+	OutputBytesP95 any
+	// An identifier for this query stage. (AI-inferred)
+	StageId any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew struct {
+	// The query stage(s) identified as the source of a detected data skew. (AI-inferred)
 	SkewSources any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights struct {
-	BiEngineReasons          any
-	HighCardinalityJoins     any
+	// Why this query wasn't accelerated by BI Engine, when it wasn't. (AI-inferred)
+	BiEngineReasons any
+	// Join(s) in this query involving a high-cardinality key, flagged as a potential performance concern. (AI-inferred)
+	HighCardinalityJoins any
+	// Whether this query was slowed by hitting its own project's shuffle capacity limit. (AI-inferred)
 	InsufficientShuffleQuota any
-	PartitionSkew            any
-	SlotContention           any
-	StageId                  any
+	// Whether one or more partitions in this stage received disproportionately more data than others, flagged as a potential performance concern. (AI-inferred)
+	PartitionSkew any
+	// Whether this stage was slowed by contention for query execution slots. (AI-inferred)
+	SlotContention any
+	// An identifier for this query stage. (AI-inferred)
+	StageId any
 }
 
 type Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsight struct {
-	AvgPreviousStalenessMs      any
+	// The average age, in milliseconds, of the cached metadata used before this refresh. (AI-inferred)
+	AvgPreviousStalenessMs any
+	// How much cache staleness increased relative to a prior baseline, as a percentage. (AI-inferred)
 	StalenessPercentageIncrease any
 }
 
 type Job_Statistics_Query_PerformanceInsights_TableChangeInsights struct {
+	// Whether cached metadata was available but deliberately not used for this query, despite being used previously. (AI-inferred)
 	MetadataCacheNotUsedButUsedPreviously any
-	MetadataCacheStalenessInsight         any
-	TableReference                        any
+	// Detail about how stale the cached metadata used for this query was. (AI-inferred)
+	MetadataCacheStalenessInsight any
+	// A reference to a specific BigQuery table. (AI-inferred)
+	TableReference any
 }
 
 type Job_Statistics_Query_PerformanceInsights struct {
@@ -1153,67 +1564,113 @@ type Job_Statistics_Query_QueryInfo struct {
 }
 
 type Job_Statistics_Query_QueryPlan_Steps struct {
-	Kind     any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The finer-grained sub-step(s) making up this step. (AI-inferred)
 	Substeps any
 }
 
 type Job_Statistics_Query_QueryPlan struct {
-	CompletedParallelInputs   any
-	ComputeMode               any
-	ComputeMsAvg              any
-	ComputeMsMax              any
-	ComputeRatioAvg           any
-	ComputeRatioMax           any
-	EndMs                     any
-	Id                        any
-	InputStages               any
-	Name                      any
-	ParallelInputs            any
-	ReadMsAvg                 any
-	ReadMsMax                 any
-	ReadRatioAvg              any
-	ReadRatioMax              any
-	RecordsRead               any
-	RecordsWritten            any
-	ShuffleOutputBytes        any
+	// How many parallel input partitions have finished processing. (AI-inferred)
+	CompletedParallelInputs any
+	// Whether this query ran using on-demand or reserved compute capacity. (AI-inferred)
+	ComputeMode any
+	// The average compute time per work unit in this stage, in milliseconds. (AI-inferred)
+	ComputeMsAvg any
+	// The maximum compute time for any single work unit in this stage, in milliseconds. (AI-inferred)
+	ComputeMsMax any
+	// The average fraction of total stage time spent computing, versus reading/writing/waiting. (AI-inferred)
+	ComputeRatioAvg any
+	// The maximum fraction of total stage time any single work unit spent computing. (AI-inferred)
+	ComputeRatioMax any
+	// When this stage/step ended, in milliseconds since the job started. (AI-inferred)
+	EndMs any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The upstream query stage(s) this stage reads its own input from. (AI-inferred)
+	InputStages any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// The number of input partitions this stage processes in parallel. (AI-inferred)
+	ParallelInputs any
+	// The average time spent reading per work unit in this stage, in milliseconds. (AI-inferred)
+	ReadMsAvg any
+	// The maximum time spent reading by any single work unit in this stage, in milliseconds. (AI-inferred)
+	ReadMsMax any
+	// The average fraction of total stage time spent reading. (AI-inferred)
+	ReadRatioAvg any
+	// The maximum fraction of total stage time any single work unit spent reading. (AI-inferred)
+	ReadRatioMax any
+	// The number of records read. (AI-inferred)
+	RecordsRead any
+	// The number of records written. (AI-inferred)
+	RecordsWritten any
+	// The total number of bytes this stage wrote to shuffle. (AI-inferred)
+	ShuffleOutputBytes any
+	// The number of shuffle output bytes that spilled to disk because they didn't fit in memory. (AI-inferred)
 	ShuffleOutputBytesSpilled any
-	SlotMs                    any
-	StartMs                   any
-	Status                    any
-	Steps                     any
-	WaitMsAvg                 any
-	WaitMsMax                 any
-	WaitRatioAvg              any
-	WaitRatioMax              any
-	WriteMsAvg                any
-	WriteMsMax                any
-	WriteRatioAvg             any
-	WriteRatioMax             any
+	// The total slot-milliseconds this job consumed. (AI-inferred)
+	SlotMs any
+	// When this stage/step started, in milliseconds since the job started. (AI-inferred)
+	StartMs any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// The ordered step(s) making up this sequence. (AI-inferred)
+	Steps any
+	// The average time spent waiting per work unit in this stage, in milliseconds. (AI-inferred)
+	WaitMsAvg any
+	// The maximum time spent waiting by any single work unit in this stage, in milliseconds. (AI-inferred)
+	WaitMsMax any
+	// The average fraction of total stage time spent waiting. (AI-inferred)
+	WaitRatioAvg any
+	// The maximum fraction of total stage time any single work unit spent waiting. (AI-inferred)
+	WaitRatioMax any
+	// The average time spent writing per work unit in this stage, in milliseconds. (AI-inferred)
+	WriteMsAvg any
+	// The maximum time spent writing by any single work unit in this stage, in milliseconds. (AI-inferred)
+	WriteMsMax any
+	// The average fraction of total stage time spent writing. (AI-inferred)
+	WriteRatioAvg any
+	// The maximum fraction of total stage time any single work unit spent writing. (AI-inferred)
+	WriteRatioMax any
 }
 
 type Job_Statistics_Query_ReferencedPropertyGraphs struct {
-	DatasetId       any
-	ProjectId       any
+	// The BigQuery dataset ID this applies to. (AI-inferred)
+	DatasetId any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
+	// A reference to the property graph this applies to. (AI-inferred)
 	PropertyGraphId any
 }
 
 type Job_Statistics_Query_ReservationUsage struct {
-	Name   any
+	// The field's own name, unique within its containing schema. (AI-inferred)
+	Name any
+	// The total slot-milliseconds this job consumed. (AI-inferred)
 	SlotMs any
 }
 
 type Job_Statistics_Query_SearchStatistics_IndexPruningStats struct {
-	BaseTable                          any
-	IndexId                            any
+	// A reference to the underlying table a view or materialized view is defined over. (AI-inferred)
+	BaseTable any
+	// A reference to the search index this applies to. (AI-inferred)
+	IndexId any
+	// The number of input partitions remaining after index-based pruning. (AI-inferred)
 	PostIndexPruningParallelInputCount any
-	PreIndexPruningParallelInputCount  any
+	// The number of input partitions before index-based pruning. (AI-inferred)
+	PreIndexPruningParallelInputCount any
 }
 
 type Job_Statistics_Query_SearchStatistics_IndexUnusedReasons struct {
+	// A reference to the underlying table a view or materialized view is defined over. (AI-inferred)
 	BaseTable any
-	Code      any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// The name of the search index. (AI-inferred)
 	IndexName any
-	Message   any
+	// A human-readable message describing this event, error, or status. (AI-inferred)
+	Message any
 }
 
 type Job_Statistics_Query_SearchStatistics struct {
@@ -1248,14 +1705,20 @@ type Job_Statistics_Query_SparkStatistics struct {
 }
 
 type Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasons struct {
-	Code             any
-	Message          any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// A human-readable message describing this event, error, or status. (AI-inferred)
+	Message any
+	// The column(s) a search index doesn't cover, requiring a fallback table scan for queries referencing them. (AI-inferred)
 	UncoveredColumns any
 }
 
 type Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages struct {
-	BaseTable                  any
-	IsQueryAccelerated         any
+	// A reference to the underlying table a view or materialized view is defined over. (AI-inferred)
+	BaseTable any
+	// Whether this query was accelerated by BI Engine. (AI-inferred)
+	IsQueryAccelerated any
+	// Why a search index's own stored column(s) weren't used to answer this query. (AI-inferred)
 	StoredColumnsUnusedReasons any
 }
 
@@ -1277,11 +1740,14 @@ type Job_Statistics_Query struct {
 	CacheHit any
 	// Identifier for a dataset.
 	DclTargetDataset any
-	DclTargetTable   any
-	DclTargetView    any
+	// The table a Data Control Language statement (e.g. `GRANT`) applies to. (AI-inferred)
+	DclTargetTable any
+	// The view a Data Control Language statement (e.g. `GRANT`) applies to. (AI-inferred)
+	DclTargetView any
 	// Output only. The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries.
 	DdlAffectedRowAccessPolicyCount any
-	DdlDestinationTable             any
+	// The table a Data Definition Language statement created or modified. (AI-inferred)
+	DdlDestinationTable any
 	// Output only. The DDL operation performed, possibly dependent on the pre-existence of the DDL target.
 	DdlOperationPerformed any
 	// Identifier for a dataset.
@@ -1290,7 +1756,8 @@ type Job_Statistics_Query struct {
 	DdlTargetRoutine any
 	// Id path of a row access policy.
 	DdlTargetRowAccessPolicy any
-	DdlTargetTable           any
+	// The table a Data Definition Language statement applies to. (AI-inferred)
+	DdlTargetTable any
 	// Detailed statistics for DML statements
 	DmlStats any
 	// Output only. The original estimate of bytes processed for the job.
@@ -1310,7 +1777,8 @@ type Job_Statistics_Query struct {
 	// Statistics for metadata caching in queried tables.
 	MetadataCacheStatistics any
 	// Job statistics specific to a BigQuery ML training job.
-	MlStatistics  any
+	MlStatistics any
+	// Detail about this model's own training run. (AI-inferred)
 	ModelTraining any
 	// Deprecated.
 	ModelTrainingCurrentIteration any
@@ -1370,12 +1838,18 @@ type Job_Statistics_RowLevelSecurityStatistics struct {
 }
 
 type Job_Statistics_ScriptStatistics_StackFrames struct {
-	EndColumn   any
-	EndLine     any
+	// The column position this range ends at. (AI-inferred)
+	EndColumn any
+	// The line number this range ends at. (AI-inferred)
+	EndLine any
+	// A reference to the stored procedure this applies to. (AI-inferred)
 	ProcedureId any
+	// The column position this range starts at. (AI-inferred)
 	StartColumn any
-	StartLine   any
-	Text        any
+	// The line number this range starts at. (AI-inferred)
+	StartLine any
+	// The plain-text content. (AI-inferred)
+	Text any
 }
 
 type Job_Statistics_ScriptStatistics struct {
@@ -3360,6 +3834,7 @@ var Job_StatusFields = ubx.FieldMap{
 }
 
 type JobConfig struct {
+	// The configuration for this job. (AI-inferred)
 	Configuration any
 	// Reason about why a Job was created from a [`jobs.query`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query) method when used with `JOB_CREATION_OPTIONAL` Job creation mode. For [`jobs.insert`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/insert) method calls it will always be `REQUESTED`.
 	JobCreationReason any
@@ -3367,10 +3842,12 @@ type JobConfig struct {
 	JobReference any
 	// Statistics for a single job execution.
 	Statistics any
-	Status     any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
 }
 
 type JobAttrs struct {
+	// The configuration for this job. (AI-inferred)
 	Configuration any
 	// Output only. A hash of this resource.
 	Etag any
@@ -3388,7 +3865,8 @@ type JobAttrs struct {
 	SelfLink any
 	// Statistics for a single job execution.
 	Statistics any
-	Status     any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
 	// Output only. Email address of the user who ran the job.
 	UserEmail any
 }

@@ -78,13 +78,17 @@ type Device_ActiveConfig struct {
 }
 
 type Device_CurrentChannels_FrequencyRange struct {
+	// The real, upper bound of this frequency range, in MHz. (AI-inferred)
 	HighFrequencyMhz any
-	LowFrequencyMhz  any
+	// The real, lower bound of this frequency range, in MHz. (AI-inferred)
+	LowFrequencyMhz any
 }
 
 type Device_CurrentChannels struct {
+	// The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred)
 	FrequencyRange any
-	Score          any
+	// A real, SAS-computed suitability score for this available channel. (AI-inferred)
+	Score any
 }
 
 type Device_DeviceMetadata_NrqzValidation struct {
@@ -114,20 +118,31 @@ type Device_DeviceMetadata struct {
 }
 
 type Device_Grants_MoveList struct {
-	DpaId          any
+	// The real identifier of the Dynamic Protection Area this move-list entry protects. (AI-inferred)
+	DpaId any
+	// The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred)
 	FrequencyRange any
 }
 
 type Device_Grants struct {
-	ChannelType                     any
-	ExpireTime                      any
-	FrequencyRange                  any
-	GrantId                         any
+	// The real CBRS channel access tier (`CHANNEL_TYPE_GAA` general access, or `CHANNEL_TYPE_PAL` priority access) this device was granted. (AI-inferred)
+	ChannelType any
+	// The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
+	ExpireTime any
+	// The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred)
+	FrequencyRange any
+	// The real, SAS-assigned identifier for this spectrum grant. (AI-inferred)
+	GrantId any
+	// The real timestamp after which this device's own transmit authorization expires unless it sends another real heartbeat to the SAS. (AI-inferred)
 	LastHeartbeatTransmitExpireTime any
-	MaxEirp                         any
-	MoveList                        any
-	State                           any
-	SuspensionReason                any
+	// The real maximum Effective Isotropic Radiated Power, in dBm/MHz, this grant authorizes the device to transmit at. (AI-inferred)
+	MaxEirp any
+	// The real list of incumbent (protected) users this device's own grant must move off frequency for, if one becomes active nearby. (AI-inferred)
+	MoveList any
+	// The real, current state (`GRANT_STATE_GRANTED`, `GRANT_STATE_SUSPENDED`, `GRANT_STATE_TERMINATED`, etc.) of this spectrum grant. (AI-inferred)
+	State any
+	// The real, specific reason code(s) this grant is currently suspended, when its own `state` is suspended. (AI-inferred)
+	SuspensionReason any
 }
 
 var Device_ActiveConfig_AirInterfaceFields = ubx.FieldMap{

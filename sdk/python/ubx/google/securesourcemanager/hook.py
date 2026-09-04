@@ -23,6 +23,7 @@ class HookConfig:
     events: Any = None
     # Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`
     name: Any = None
+    # Configuration for which push events this webhook fires on and what payload it sends -- the per-hook counterpart to a branch rule's own trigger settings. (AI-inferred)
     push_option: Any = None
     # Optional. The sensitive query string to be appended to the target URI.
     sensitive_query_string: Any = None
@@ -39,6 +40,7 @@ class HookAttrs:
     events: Any = None
     # Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`
     name: Any = None
+    # Configuration for which push events this webhook fires on and what payload it sends -- the per-hook counterpart to a branch rule's own trigger settings. (AI-inferred)
     push_option: Any = None
     # Optional. The sensitive query string to be appended to the target URI.
     sensitive_query_string: Any = None

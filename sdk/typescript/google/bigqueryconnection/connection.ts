@@ -78,15 +78,22 @@ export interface Connection_Configuration_Asset {
 }
 
 export interface Connection_Configuration_Authentication_Parameters_SecretValue {
+  /** The literal secret value, accepted on write but never returned on read. (AI-inferred) */
   plaintext?: string | Computed<string>;
+  /** How this secret is stored/referenced, e.g. as a plaintext value versus a Secret Manager reference. (AI-inferred) */
   secretType?: string | Computed<string>;
 }
 
 export interface Connection_Configuration_Authentication_Parameters {
+  /** A boolean value, populated when this authentication parameter's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** A floating-point value, populated when this authentication parameter's own type is a double. (AI-inferred) */
   doubleValue?: number | Computed<number>;
+  /** An integer value, populated when this authentication parameter's own type is a 32-bit integer. (AI-inferred) */
   int32Value?: number | Computed<number>;
+  /** A secret value, populated when this authentication parameter must be kept confidential rather than stored/returned in plaintext. (AI-inferred) */
   secretValue?: Connection_Configuration_Authentication_Parameters_SecretValue | Computed<Connection_Configuration_Authentication_Parameters_SecretValue>;
+  /** A text value, populated when this authentication parameter's own type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 

@@ -9,8 +9,11 @@ type SslPolicy_Warnings_Data struct {
 }
 
 type SslPolicy_Warnings struct {
-	Code    any
-	Data    any
+	// The warning type code, such as DEPRECATED_RESOURCE_USED or RESOURCE_NOT_DELETED. (AI-inferred)
+	Code any
+	// A list of key-value pairs providing additional details about a warning. (AI-inferred)
+	Data any
+	// A human-readable message describing the warning returned by the API. (AI-inferred)
 	Message any
 }
 

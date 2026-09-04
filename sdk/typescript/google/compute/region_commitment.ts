@@ -16,11 +16,13 @@ export interface RegionCommitment_Params {
 }
 
 export interface RegionCommitment_Reservations_AdvancedDeploymentControl {
+  /** The operational mode for the reservation. Valid values are ALL_CAPACITY (all capacity is provisioned immediately), HIGHLY_AVAILABLE_CAPACITY (capacity is distributed to support high availability), and RESERVATION_OPERATIONAL_MODE_UNSPECIFIED (mode not set, defaults to ALL_CAPACITY). (AI-inferred) */
   reservationOperationalMode?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator {
   acceleratorCount?: number | Computed<number>;
+  /** Specifies the type of accelerator (GPU) used by the resources currently in use within the aggregate reservation. This value corresponds to the acceleratorType in the machine type, such as 'nvidia-tesla-t4'. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
 }
 
@@ -30,17 +32,23 @@ export interface RegionCommitment_Reservations_AggregateReservation_InUseResourc
 
 export interface RegionCommitment_Reservations_AggregateReservation {
   inUseResources?: RegionCommitment_Reservations_AggregateReservation_InUseResources[] | Computed<RegionCommitment_Reservations_AggregateReservation_InUseResources[]>;
+  /** Specifies the resources included in this aggregate reservation. Each entry defines a resource type and the amount to reserve. (AI-inferred) */
   reservedResources?: RegionCommitment_Reservations_AggregateReservation_InUseResources[] | Computed<RegionCommitment_Reservations_AggregateReservation_InUseResources[]>;
+  /** The family of TPU VMs to reserve capacity for. Valid values include VM_FAMILY_CLOUD_TPU_DEVICE_CT3, VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P, and VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X. (AI-inferred) */
   vmFamily?: string | Computed<string>;
+  /** The workload type of the aggregate reservation. Valid values are BATCH, SERVING, or UNSPECIFIED. This determines how the reservation is used for batch or serving workloads. (AI-inferred) */
   workloadType?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_DeleteAfterDuration {
+  /** The duration's sub-second component in nanoseconds, ranging from 0 to 999,999,999. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The number of seconds in the duration after which the reservation is automatically deleted. Must be a string representation of an integer from 0 to 315,576,000,000 inclusive. (AI-inferred) */
   seconds?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_ReservationSharingPolicy {
+  /** Specifies the sharing type for this reservation, controlling which services can use it. ALLOW_ALL permits all services, DISALLOW_ALL blocks all services, and SERVICE_SHARE_TYPE_UNSPECIFIED is the default unspecified value. (AI-inferred) */
   serviceShareType?: string | Computed<string>;
 }
 
@@ -50,104 +58,158 @@ export interface RegionCommitment_Reservations_ResourceMetadata {
 }
 
 export interface RegionCommitment_Reservations_ResourceStatus_HealthInfo {
+  /** The number of blocks that are degraded in the resource, as reported in its health information. This value indicates the extent of storage degradation for the resource. (AI-inferred) */
   degradedBlockCount?: number | Computed<number>;
+  /** The health status of the resource. Possible values: DEGRADED, HEALTHY, HEALTH_STATUS_UNSPECIFIED. (AI-inferred) */
   healthStatus?: string | Computed<string>;
+  /** The number of healthy blocks in the reservation's resource health status. (AI-inferred) */
   healthyBlockCount?: number | Computed<number>;
 }
 
 export interface RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance {
+  /** Indicates whether the upcoming group maintenance event can be rescheduled. (AI-inferred) */
   canReschedule?: boolean | Computed<boolean>;
+  /** The latest time at which the upcoming group maintenance window can start, as reported for this reservation's resource status. (AI-inferred) */
   latestWindowStartTime?: string | Computed<string>;
   maintenanceOnShutdown?: boolean | Computed<boolean>;
   maintenanceReasons?: string[] | Computed<string[]>;
+  /** The maintenance status of the upcoming group maintenance, indicating whether it is ONGOING, PENDING, or UNKNOWN. (AI-inferred) */
   maintenanceStatus?: string | Computed<string>;
+  /** The type of upcoming maintenance for the reservation group. Possible values are: MULTIPLE, SCHEDULED, UNKNOWN_TYPE, UNSCHEDULED. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The end time of the maintenance window for the upcoming group maintenance event, expressed as a timestamp string. (AI-inferred) */
   windowEndTime?: string | Computed<string>;
+  /** The start time of the maintenance window for an upcoming maintenance event on the reservation, as a timestamp. (AI-inferred) */
   windowStartTime?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance {
+  /** The number of instances in the reservation that are currently undergoing maintenance, as reported in the reservation maintenance status. (AI-inferred) */
   instanceMaintenanceOngoingCount?: number | Computed<number>;
+  /** The number of instances in this reservation that have maintenance pending. (AI-inferred) */
   instanceMaintenancePendingCount?: number | Computed<number>;
+  /** The number of resources within this reservation that are currently undergoing maintenance. (AI-inferred) */
   maintenanceOngoingCount?: number | Computed<number>;
+  /** The number of instances in this reservation that have a pending maintenance event. (AI-inferred) */
   maintenancePendingCount?: number | Computed<number>;
+  /** The maintenance scheduling type for the reservation. Possible values are: 'GROUPED' (maintenance is grouped for the reservation), 'INDEPENDENT' (maintenance is handled independently), and 'GROUP_MAINTENANCE_TYPE_UNSPECIFIED' (the type is not specified). (AI-inferred) */
   schedulingType?: string | Computed<string>;
+  /** The number of ongoing maintenance operations for the subblock infrastructure within the reservation. (AI-inferred) */
   subblockInfraMaintenanceOngoingCount?: number | Computed<number>;
+  /** The number of pending maintenance items for the subblock infrastructure, as reported in the reservation maintenance status. (AI-inferred) */
   subblockInfraMaintenancePendingCount?: number | Computed<number>;
+  /** Upcoming maintenance information for the entire reservation group, shown in the resource status. (AI-inferred) */
   upcomingGroupMaintenance?: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance | Computed<RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance>;
 }
 
 export interface RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation {
+  /** The ID of the instance template used to specify the machine type and other properties for this specific SKU allocation in the reservation. (AI-inferred) */
   sourceInstanceTemplateId?: string | Computed<string>;
+  /** The utilization of the specific SKU reservation, keyed by resource type (e.g., memory). Each value is a fraction of the total capacity of that resource. (AI-inferred) */
   utilizations?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface RegionCommitment_Reservations_ResourceStatus {
   healthInfo?: RegionCommitment_Reservations_ResourceStatus_HealthInfo | Computed<RegionCommitment_Reservations_ResourceStatus_HealthInfo>;
+  /** The number of capacity blocks that this reservation uses. (AI-inferred) */
   reservationBlockCount?: number | Computed<number>;
+  /** An object that provides the maintenance status details for the reservation, as part of the reservation's resource status. This is a computed field reflecting the current maintenance state of the reservation. (AI-inferred) */
   reservationMaintenance?: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance | Computed<RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance>;
   specificSkuAllocation?: RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation | Computed<RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation>;
 }
 
 export interface RegionCommitment_Reservations_ShareSettings_ProjectMap {
+  /** The ID of the Google Cloud project that has shared access to the commitment reservation. This is the key for the project_map entry. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_ShareSettings {
+  /** A map of project IDs to project-specific configuration, used to specify which projects can share this commitment's reservations as part of the sharing settings. (AI-inferred) */
   projectMap?: Record<string, RegionCommitment_Reservations_ShareSettings_ProjectMap> | Computed<Record<string, RegionCommitment_Reservations_ShareSettings_ProjectMap>>;
+  /** Defines the sharing type for this reservation. Allowed values are: LOCAL (only within the owning project), SPECIFIC_PROJECTS (shared with a list of specific projects), ORGANIZATION (shared with all projects in the organization), and SHARE_TYPE_UNSPECIFIED (default, indicating the field is not set). (AI-inferred) */
   shareType?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds {
+  /** The size of the local SSD disk in gigabytes (GB), expressed as a string. (AI-inferred) */
   diskSizeGb?: string | Computed<string>;
+  /** The interface type for the local SSD. Supported values are `NVME` and `SCSI`. (AI-inferred) */
   interface?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_SpecificReservation_InstanceProperties {
+  /** A list of guest accelerator (GPU) configurations to attach to instances created from this reservation. Each object defines an accelerator type and the number of accelerators. (AI-inferred) */
   guestAccelerators?: RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator[] | Computed<RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator[]>;
+  /** A list of local SSD configurations to attach to instances in this specific reservation. (AI-inferred) */
   localSsds?: RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds[] | Computed<RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds[]>;
+  /** Optional location hint for the reserved instances, used by Compute Engine to optimize physical placement. (AI-inferred) */
   locationHint?: string | Computed<string>;
+  /** Specifies the machine type for the VM instances in this specific reservation. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** Specifies the minimum CPU platform allowed for VM instances in the specific reservation. The value must be a valid CPU platform name (e.g., 'Intel Skylake' or 'AMD Milan') and instances will be guaranteed to use a CPU platform at least as recent as the specified one. (AI-inferred) */
   minCpuPlatform?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations_SpecificReservation {
+  /** The number of virtual machine instances that are guaranteed to be available in this specific reservation. This value must be less than or equal to the total 'count' of the reservation. (AI-inferred) */
   assuredCount?: string | Computed<string>;
+  /** The number of virtual machine instances to reserve in the specific reservation. The value must be a positive integer. (AI-inferred) */
   count?: string | Computed<string>;
+  /** Number of reserved instances from this specific reservation that are currently in use. (AI-inferred) */
   inUseCount?: string | Computed<string>;
+  /** The properties of the virtual machines to be reserved in this specific reservation, including machine type, minimum CPU platform, accelerator configuration, and local SSD count. (AI-inferred) */
   instanceProperties?: RegionCommitment_Reservations_SpecificReservation_InstanceProperties | Computed<RegionCommitment_Reservations_SpecificReservation_InstanceProperties>;
+  /** The self-link of an instance template that defines the properties of the instances to be reserved. When specified, the specific reservation is created based on the template's configuration. (AI-inferred) */
   sourceInstanceTemplate?: string | Computed<string>;
 }
 
 export interface RegionCommitment_Reservations {
   advancedDeploymentControl?: RegionCommitment_Reservations_AdvancedDeploymentControl | Computed<RegionCommitment_Reservations_AdvancedDeploymentControl>;
+  /** The aggregate reservation configuration, used to reserve capacity for a pool of resources (such as CPU and memory) without specifying exact instance shapes. It includes a VM family and a list of reserved resource types with counts, offering flexible capacity reservation for a group of instances. (AI-inferred) */
   aggregateReservation?: RegionCommitment_Reservations_AggregateReservation | Computed<RegionCommitment_Reservations_AggregateReservation>;
   commitment?: string | Computed<string>;
+  /** Specifies the confidential computing type for the reservation. Valid values are CONFIDENTIAL_COMPUTE_TYPE_TDX (for Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED (default, unspecified). (AI-inferred) */
   confidentialComputeType?: string | Computed<string>;
+  /** Creation timestamp in RFC3339 text format. (AI-inferred) */
   creationTimestamp?: string | Computed<string>;
+  /** A duration (seconds and optional nanos) after which the reservation is automatically deleted. If unset, the reservation persists until the commitment ends. (AI-inferred) */
   deleteAfterDuration?: RegionCommitment_Reservations_DeleteAfterDuration | Computed<RegionCommitment_Reservations_DeleteAfterDuration>;
+  /** The time at which the reservation will be automatically deleted, in RFC3339 format. (AI-inferred) */
   deleteAtTime?: string | Computed<string>;
+  /** The deployment type for this reservation. Allowed values are DENSE and DEPLOYMENT_TYPE_UNSPECIFIED. (AI-inferred) */
   deploymentType?: string | Computed<string>;
   description?: string | Computed<string>;
+  /** Specifies the early access mode for maintenance events on this reservation. Valid values are NO_EARLY_ACCESS, WAVE1, and WAVE2, indicating no early access, first wave, or second wave, respectively. (AI-inferred) */
   earlyAccessMaintenance?: string | Computed<string>;
+  /** Whether the reservation can be consumed by emergent maintenance requests. (AI-inferred) */
   enableEmergentMaintenance?: boolean | Computed<boolean>;
   id?: string | Computed<string>;
+  /** The type of the resource. Always 'compute#reservation' for this resource. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** List of self_links of commitments linked to this reservation. This is used to associate the reservation with one or more commitments so that the commitment's discounts apply to the reserved capacity. (AI-inferred) */
   linkedCommitments?: string[] | Computed<string[]>;
   name?: string | Computed<string>;
   params?: RegionCommitment_Params | Computed<RegionCommitment_Params>;
+  /** The protection tier for the reservation, which determines the level of capacity protection. Valid values are `STANDARD`, `CAPACITY_OPTIMIZED`, and `PROTECTION_TIER_UNSPECIFIED` (the latter is the default when unspecified). (AI-inferred) */
   protectionTier?: string | Computed<string>;
   reservationSharingPolicy?: RegionCommitment_Reservations_ReservationSharingPolicy | Computed<RegionCommitment_Reservations_ReservationSharingPolicy>;
   resourceMetadata?: RegionCommitment_Reservations_ResourceMetadata | Computed<RegionCommitment_Reservations_ResourceMetadata>;
   resourcePolicies?: Record<string, string> | Computed<Record<string, string>>;
   resourceStatus?: RegionCommitment_Reservations_ResourceStatus | Computed<RegionCommitment_Reservations_ResourceStatus>;
+  /** Whether this reservation satisfies the requirements for physical zone separation (PZS) for sole-tenant node groups. (AI-inferred) */
   satisfiesPzs?: boolean | Computed<boolean>;
+  /** The scheduling type of the reservation. Possible values: INDEPENDENT (reserves capacity for standalone instances), GROUPED (reserves capacity for a group of instances, typically used with managed instance groups), and GROUP_MAINTENANCE_TYPE_UNSPECIFIED (the scheduling type is not specified). (AI-inferred) */
   schedulingType?: string | Computed<string>;
   selfLink?: string | Computed<string>;
+  /** Configuration for sharing a reservation with other projects. It specifies the share type (LOCAL or SPECIFIC_PROJECTS) and, for SPECIFIC_PROJECTS, the set of projects that can use the reservation. (AI-inferred) */
   shareSettings?: RegionCommitment_Reservations_ShareSettings | Computed<RegionCommitment_Reservations_ShareSettings>;
+  /** Configuration for a specific reservation within the commitment. This block specifies the instance count and instance properties (such as machine type and GPUs) for reserved VMs, which are dedicated to a single project. (AI-inferred) */
   specificReservation?: RegionCommitment_Reservations_SpecificReservation | Computed<RegionCommitment_Reservations_SpecificReservation>;
+  /** Indicates whether the reservation is a specific reservation (for a specific instance type) or a non-specific reservation (for an instance family). When true, the reservation is specific; when false, it is non-specific. (AI-inferred) */
   specificReservationRequired?: boolean | Computed<boolean>;
+  /** The current status of the reservation, indicating its lifecycle state. Possible values are CREATING, DELETING, INVALID, READY, and UPDATING. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The zone in which the reservation is created, within the commitment's region. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
@@ -157,8 +219,11 @@ export interface RegionCommitment_ResourceStatus {
 }
 
 export interface RegionCommitment_Resources {
+  /** The type of accelerator (GPU) to include in the commitment, e.g., 'nvidia-tesla-v100'. Must be a valid accelerator type available in the region. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The quantity of the resource type (e.g., VCPU, MEMORY) to reserve in the commitment. (AI-inferred) */
   amount?: string | Computed<string>;
+  /** The type of resource to commit to. Allowed values are `VCPU`, `MEMORY`, `LOCAL_SSD`, `ACCELERATOR`, and `UNSPECIFIED`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -407,6 +472,7 @@ export interface RegionCommitmentConfig {
   customEndTimestamp?: string | Computed<string>;
   /** An optional description of the commitment. You can provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred) */
   existingReservations?: string[] | Computed<string[]>;
   /** Commitment for a particular license resource. */
   licenseResource?: RegionCommitment_LicenseResource | Computed<RegionCommitment_LicenseResource>;
@@ -443,6 +509,7 @@ export interface RegionCommitmentAttrs {
   description: string;
   /** Output only. [Output Only] Commitment end time inRFC3339 text format. */
   endTimestamp: string;
+  /** The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred) */
   existingReservations: string[];
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;

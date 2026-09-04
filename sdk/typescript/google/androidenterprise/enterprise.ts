@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Enterprise_Administrator {
+  /** The real email address of this enterprise's own designated administrator. (AI-inferred) */
   email?: string | Computed<string>;
 }
 
@@ -32,15 +33,21 @@ const Enterprise_PlaySearchFields: FieldMap = {
 };
 
 export interface EnterpriseConfig {
+  /** Real settings controlling whether this enterprise supports app-level managed configurations. (AI-inferred) */
   managedConfigurations?: Enterprise_ManagedConfigurations | Computed<Enterprise_ManagedConfigurations>;
   /** The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Use whitespaces to separate multiple parent URIs. */
   parent?: string | Computed<string>;
   /** Deprecated. Use PlaySearch.approveApps. */
   permission?: string[] | Computed<string[]>;
+  /** Real settings controlling whether users in this enterprise can search all of Google Play, not just the approved catalog. (AI-inferred) */
   playSearch?: Enterprise_PlaySearch | Computed<Enterprise_PlaySearch>;
+  /** Real settings controlling whether this enterprise can publish private, org-internal apps to its own managed Google Play store. (AI-inferred) */
   privateApps?: Enterprise_ManagedConfigurations | Computed<Enterprise_ManagedConfigurations>;
+  /** Real settings controlling whether this enterprise's own managed Google Play store can be customized via the Store Layout APIs. (AI-inferred) */
   storeBuilder?: Enterprise_ManagedConfigurations | Computed<Enterprise_ManagedConfigurations>;
+  /** Real settings controlling whether this enterprise supports publishing web apps to its own managed Google Play store. (AI-inferred) */
   webApps?: Enterprise_ManagedConfigurations | Computed<Enterprise_ManagedConfigurations>;
+  /** Real settings controlling whether this enterprise supports Android zero-touch enrollment. (AI-inferred) */
   zeroTouch?: Enterprise_ManagedConfigurations | Computed<Enterprise_ManagedConfigurations>;
 }
 
@@ -53,6 +60,7 @@ export interface EnterpriseAttrs {
   googleAuthenticationSettings: Enterprise_GoogleAuthenticationSettings;
   /** The unique ID for the enterprise. */
   id: string;
+  /** Real settings controlling whether this enterprise supports app-level managed configurations. (AI-inferred) */
   managedConfigurations: Enterprise_ManagedConfigurations;
   /** The type of managed Google domain */
   managedGoogleDomainType: string;
@@ -62,12 +70,17 @@ export interface EnterpriseAttrs {
   parent: string;
   /** Deprecated. Use PlaySearch.approveApps. */
   permission: string[];
+  /** Real settings controlling whether users in this enterprise can search all of Google Play, not just the approved catalog. (AI-inferred) */
   playSearch: Enterprise_PlaySearch;
   /** The enterprise's primary domain, such as "example.com". */
   primaryDomain: string;
+  /** Real settings controlling whether this enterprise can publish private, org-internal apps to its own managed Google Play store. (AI-inferred) */
   privateApps: Enterprise_ManagedConfigurations;
+  /** Real settings controlling whether this enterprise's own managed Google Play store can be customized via the Store Layout APIs. (AI-inferred) */
   storeBuilder: Enterprise_ManagedConfigurations;
+  /** Real settings controlling whether this enterprise supports publishing web apps to its own managed Google Play store. (AI-inferred) */
   webApps: Enterprise_ManagedConfigurations;
+  /** Real settings controlling whether this enterprise supports Android zero-touch enrollment. (AI-inferred) */
   zeroTouch: Enterprise_ManagedConfigurations;
 }
 

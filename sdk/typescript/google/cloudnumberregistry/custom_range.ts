@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomRange_Attributes {
+  /** The real key of this custom IP range's own metadata attribute. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real value of this custom IP range's own metadata attribute. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

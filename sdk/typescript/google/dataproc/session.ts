@@ -135,8 +135,11 @@ export interface Session_RuntimeInfo_CurrentUsage {
 }
 
 export interface Session_RuntimeInfo_PropertiesInfo_AutotuningProperties {
+  /** A note attached to this workflow step or job. (AI-inferred) */
   annotation?: string | Computed<string>;
+  /** The value this setting was overridden to. (AI-inferred) */
   overriddenValue?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -163,8 +166,11 @@ export interface Session_RuntimeInfo {
 }
 
 export interface Session_StateHistory {
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** A human-readable description of the current state. (AI-inferred) */
   stateMessage?: string | Computed<string>;
+  /** When this resource entered its own current state. (AI-inferred) */
   stateStartTime?: string | Computed<string>;
 }
 

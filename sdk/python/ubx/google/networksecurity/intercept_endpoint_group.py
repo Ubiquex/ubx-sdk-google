@@ -8,13 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterceptEndpointGroup_Associations:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class InterceptEndpointGroup_ConnectedDeploymentGroup_Locations:
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

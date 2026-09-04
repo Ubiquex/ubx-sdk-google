@@ -4,25 +4,35 @@ package datacatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagTemplate_Fields_Type_EnumType_AllowedValues struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
 type TagTemplate_Fields_Type_EnumType struct {
+	// The set of values permitted for this enum field. (AI-inferred)
 	AllowedValues any
 }
 
 type TagTemplate_Fields_Type struct {
-	EnumType      any
+	// The set of named values this enum field is restricted to. (AI-inferred)
+	EnumType any
+	// The base data type of this field, e.g. `STRING` or `NUMBER`. (AI-inferred)
 	PrimitiveType any
 }
 
 type TagTemplate_Fields struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	IsRequired  any
-	Name        any
-	Order       any
-	Type        any
+	// Whether this field must be present. (AI-inferred)
+	IsRequired any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The relative ordering position of this item. (AI-inferred)
+	Order any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 var TagTemplate_Fields_Type_EnumType_AllowedValuesFields = ubx.FieldMap{

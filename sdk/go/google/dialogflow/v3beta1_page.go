@@ -480,29 +480,49 @@ var V3beta1Page_TransitionRoutesFields = ubx.FieldMap{
 }
 
 type V3beta1PageConfig struct {
-	AdvancedSettings           any
-	Description                any
-	DisplayName                any
-	EntryFulfillment           any
-	EventHandlers              any
-	Form                       any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred)
+	EntryFulfillment any
+	// The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
+	EventHandlers any
+	// The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred)
+	Form any
+	// Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
 	KnowledgeConnectorSettings any
-	Name                       any
-	TransitionRouteGroups      any
-	TransitionRoutes           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The reusable transition route group(s) included on this page/flow. (AI-inferred)
+	TransitionRouteGroups any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
+	TransitionRoutes any
 }
 
 type V3beta1PageAttrs struct {
-	AdvancedSettings           any
-	Description                any
-	DisplayName                any
-	EntryFulfillment           any
-	EventHandlers              any
-	Form                       any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred)
+	EntryFulfillment any
+	// The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
+	EventHandlers any
+	// The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred)
+	Form any
+	// Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
 	KnowledgeConnectorSettings any
-	Name                       any
-	TransitionRouteGroups      any
-	TransitionRoutes           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The reusable transition route group(s) included on this page/flow. (AI-inferred)
+	TransitionRouteGroups any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
+	TransitionRoutes any
 }
 
 var V3beta1Page = ubx.ResourceBinding{

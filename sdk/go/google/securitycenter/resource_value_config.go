@@ -60,22 +60,35 @@ var ResourceValueConfig_RequestsFields = ubx.FieldMap{
 }
 
 type ResourceValueConfigConfig struct {
+	// Optional. The requested amounts of compute resources. Keys are resource names (e.g., "cpu", "memory"). Values are quantities (e.g., "250m", "512Mi"). (AI-inferred)
 	Requests any
 }
 
 type ResourceValueConfigAttrs struct {
-	CloudProvider                  any
-	CreateTime                     any
-	Description                    any
-	Name                           any
-	Requests                       any
-	ResourceLabelsSelector         any
-	ResourceType                   any
-	ResourceValue                  any
-	Scope                          any
+	// The real cloud provider this lookup is scoped to. (AI-inferred)
+	CloudProvider any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Optional. The requested amounts of compute resources. Keys are resource names (e.g., "cpu", "memory"). Values are quantities (e.g., "250m", "512Mi"). (AI-inferred)
+	Requests any
+	// The real label selector used to match resources for this object. (AI-inferred)
+	ResourceLabelsSelector any
+	// The canonical resource type name in the format of a resource type as defined by [AIP-123](https://google.aip.dev/123). For example, `"compute.googleapis.com/Instance"`. Optional. (AI-inferred)
+	ResourceType any
+	// The real, assigned business-value rating of this resource. (AI-inferred)
+	ResourceValue any
+	// The Topology Manager aligns resources in following scopes: * container * pod The default scope is 'container' if unspecified. See https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/#topology-manager-scopes (AI-inferred)
+	Scope any
+	// The real Sensitive Data Protection (DLP) mapping applied to this resource. (AI-inferred)
 	SensitiveDataProtectionMapping any
-	TagValues                      any
-	UpdateTime                     any
+	// The real resource-manager tag values applied to this object. (AI-inferred)
+	TagValues any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var ResourceValueConfig = ubx.ResourceBinding{

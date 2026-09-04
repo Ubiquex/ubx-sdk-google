@@ -4,85 +4,123 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Agent_AdvancedSettings_AudioExportGcsDestination struct {
+	// The URI of an audio clip this response instructs the client to play. (AI-inferred)
 	Uri any
 }
 
 type Agent_AdvancedSettings_DtmfSettings struct {
-	Enabled                    any
+	// Whether this setting is turned on. (AI-inferred)
+	Enabled any
+	// How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred)
 	EndpointingTimeoutDuration any
-	FinishDigit                any
-	InterdigitTimeoutDuration  any
-	MaxDigits                  any
+	// The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
+	FinishDigit any
+	// The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred)
+	InterdigitTimeoutDuration any
+	// The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred)
+	MaxDigits any
 }
 
 type Agent_AdvancedSettings_LoggingSettings struct {
+	// Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred)
 	EnableConsentBasedRedaction any
-	EnableInteractionLogging    any
-	EnableStackdriverLogging    any
+	// Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred)
+	EnableInteractionLogging any
+	// Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
+	EnableStackdriverLogging any
 }
 
 type Agent_AdvancedSettings_SpeechSettings struct {
-	EndpointerSensitivity      any
-	Models                     any
-	NoSpeechTimeout            any
+	// How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred)
+	EndpointerSensitivity any
+	// Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred)
+	Models any
+	// How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred)
+	NoSpeechTimeout any
+	// Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred)
 	UseTimeoutBasedEndpointing any
 }
 
 type Agent_AdvancedSettings struct {
+	// The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred)
 	AudioExportGcsDestination any
-	DtmfSettings              any
-	LoggingSettings           any
-	SpeechSettings            any
+	// Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred)
+	DtmfSettings any
+	// Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred)
+	LoggingSettings any
+	// Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
+	SpeechSettings any
 }
 
 type Agent_AnswerFeedbackSettings struct {
+	// Whether end users can submit feedback on generated answers. (AI-inferred)
 	EnableAnswerFeedback any
 }
 
 type Agent_ClientCertificateSettings struct {
-	Passphrase     any
-	PrivateKey     any
+	// The passphrase protecting this private key. (AI-inferred)
+	Passphrase any
+	// The private key used to authenticate. (AI-inferred)
+	PrivateKey any
+	// The SSL/TLS certificate used for this connection. (AI-inferred)
 	SslCertificate any
 }
 
 type Agent_GenAppBuilderSettings struct {
+	// A reference to the search or data engine this applies to. (AI-inferred)
 	Engine any
 }
 
 type Agent_GitIntegrationSettings_GithubSettings struct {
-	AccessToken    any
-	Branches       any
-	DisplayName    any
-	RepositoryUri  any
+	// An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
+	AccessToken any
+	// The branch(es) of a source repository this integration tracks. (AI-inferred)
+	Branches any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The URI of the source repository this integration syncs with. (AI-inferred)
+	RepositoryUri any
+	// The source repository branch this integration keeps in sync with. (AI-inferred)
 	TrackingBranch any
 }
 
 type Agent_GitIntegrationSettings struct {
+	// Configuration for syncing this agent's own definition with a GitHub repository specifically. (AI-inferred)
 	GithubSettings any
 }
 
 type Agent_PersonalizationSettings struct {
+	// Default metadata about the end user, merged into each new session unless overridden. (AI-inferred)
 	DefaultEndUserMetadata any
 }
 
 type Agent_SpeechToTextSettings struct {
+	// Whether speech recognition is biased toward this agent's own phrases and entities. (AI-inferred)
 	EnableSpeechAdaptation any
 }
 
 type Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_Voice struct {
-	Name       any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The preferred voice gender for synthesized speech, e.g. `FEMALE`, `MALE`, or `NEUTRAL`. (AI-inferred)
 	SsmlGender any
 }
 
 type Agent_TextToSpeechSettings_SynthesizeSpeechConfigs struct {
+	// Audio effects profile(s) (e.g. for a specific speaker/headphone type) applied to synthesized speech. (AI-inferred)
 	EffectsProfileId any
-	Pitch            any
-	SpeakingRate     any
-	Voice            any
-	VolumeGainDb     any
+	// The pitch adjustment applied to synthesized speech. (AI-inferred)
+	Pitch any
+	// The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred)
+	SpeakingRate any
+	// Configuration for which synthesized voice this agent uses. (AI-inferred)
+	Voice any
+	// The volume adjustment, in decibels, applied to synthesized speech. (AI-inferred)
+	VolumeGainDb any
 }
 
 type Agent_TextToSpeechSettings struct {
+	// Per-language configuration for how this agent's own text-to-speech output sounds. (AI-inferred)
 	SynthesizeSpeechConfigs any
 }
 
@@ -198,55 +236,101 @@ var Agent_TextToSpeechSettingsFields = ubx.FieldMap{
 }
 
 type AgentConfig struct {
-	AdvancedSettings            any
-	AnswerFeedbackSettings      any
-	AvatarUri                   any
-	ClientCertificateSettings   any
-	DefaultLanguageCode         any
-	Description                 any
-	DisplayName                 any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
+	AnswerFeedbackSettings any
+	// The URI of an image representing this agent in the console and integrations. (AI-inferred)
+	AvatarUri any
+	// TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
+	ClientCertificateSettings any
+	// The language this agent responds in when no other language is specified or detected. (AI-inferred)
+	DefaultLanguageCode any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
 	EnableMultiLanguageTraining any
-	EnableSpellCorrection       any
-	EnableStackdriverLogging    any
-	GenAppBuilderSettings       any
-	GitIntegrationSettings      any
-	Locked                      any
-	Name                        any
-	PersonalizationSettings     any
-	SecuritySettings            any
-	SpeechToTextSettings        any
-	StartFlow                   any
-	StartPlaybook               any
-	SupportedLanguageCodes      any
-	TextToSpeechSettings        any
-	TimeZone                    any
+	// Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
+	EnableSpellCorrection any
+	// Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
+	EnableStackdriverLogging any
+	// Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
+	GenAppBuilderSettings any
+	// Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
+	GitIntegrationSettings any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for personalizing agent behavior per end user. (AI-inferred)
+	PersonalizationSettings any
+	// A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
+	SecuritySettings any
+	// Configuration for this agent's own speech-to-text behavior. (AI-inferred)
+	SpeechToTextSettings any
+	// The flow the conversation begins in. (AI-inferred)
+	StartFlow any
+	// The playbook the conversation begins in. (AI-inferred)
+	StartPlaybook any
+	// The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
+	SupportedLanguageCodes any
+	// Configuration for this agent's own text-to-speech behavior. (AI-inferred)
+	TextToSpeechSettings any
+	// The time zone this applies to, e.g. `America/Los_Angeles`. (AI-inferred)
+	TimeZone any
 }
 
 type AgentAttrs struct {
-	AdvancedSettings            any
-	AnswerFeedbackSettings      any
-	AvatarUri                   any
-	ClientCertificateSettings   any
-	DefaultLanguageCode         any
-	Description                 any
-	DisplayName                 any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// Configuration for collecting end-user feedback (thumbs up/down) on generated answers. (AI-inferred)
+	AnswerFeedbackSettings any
+	// The URI of an image representing this agent in the console and integrations. (AI-inferred)
+	AvatarUri any
+	// TLS client certificate configuration for mutual-TLS authentication. (AI-inferred)
+	ClientCertificateSettings any
+	// The language this agent responds in when no other language is specified or detected. (AI-inferred)
+	DefaultLanguageCode any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether training phrases across multiple languages are used together when training this agent's own NLU model. (AI-inferred)
 	EnableMultiLanguageTraining any
-	EnableSpellCorrection       any
-	EnableStackdriverLogging    any
-	GenAppBuilderSettings       any
-	GitIntegrationSettings      any
-	Locked                      any
-	Name                        any
-	PersonalizationSettings     any
-	SatisfiesPzi                any
-	SatisfiesPzs                any
-	SecuritySettings            any
-	SpeechToTextSettings        any
-	StartFlow                   any
-	StartPlaybook               any
-	SupportedLanguageCodes      any
-	TextToSpeechSettings        any
-	TimeZone                    any
+	// Whether end-user text input is automatically spell-corrected before intent matching. (AI-inferred)
+	EnableSpellCorrection any
+	// Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
+	EnableStackdriverLogging any
+	// Configuration connecting this agent to a Vertex AI Search / Agent Builder engine. (AI-inferred)
+	GenAppBuilderSettings any
+	// Configuration for syncing this agent's own definition with a Git repository. (AI-inferred)
+	GitIntegrationSettings any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for personalizing agent behavior per end user. (AI-inferred)
+	PersonalizationSettings any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Isolation requirements, guaranteeing a failure in one zone can't affect it in another. (AI-inferred)
+	SatisfiesPzi any
+	// Output only. Whether this resource meets Google Cloud's Physical Zone Separation requirements, guaranteeing its zonal replicas run in physically separate zones. (AI-inferred)
+	SatisfiesPzs any
+	// A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
+	SecuritySettings any
+	// Configuration for this agent's own speech-to-text behavior. (AI-inferred)
+	SpeechToTextSettings any
+	// The flow the conversation begins in. (AI-inferred)
+	StartFlow any
+	// The playbook the conversation begins in. (AI-inferred)
+	StartPlaybook any
+	// The additional language(s), beyond the default, this agent can converse in. (AI-inferred)
+	SupportedLanguageCodes any
+	// Configuration for this agent's own text-to-speech behavior. (AI-inferred)
+	TextToSpeechSettings any
+	// The time zone this applies to, e.g. `America/Los_Angeles`. (AI-inferred)
+	TimeZone any
 }
 
 var Agent = ubx.ResourceBinding{

@@ -482,35 +482,62 @@ const V2beta1Generator_ToolsetToolsFields: FieldMap = {
 };
 
 export interface V2beta1GeneratorConfig {
+  /** Real, additional context supplied to guide this generator's own agent-coaching suggestions. (AI-inferred) */
   agentCoachingContext?: V2beta1Generator_AgentCoachingContext | Computed<V2beta1Generator_AgentCoachingContext>;
+  /** The real CES (Conversational Experience Studio) app(s) this generator can call. (AI-inferred) */
   cesAppSpecs?: V2beta1Generator_CesAppSpecs[] | Computed<V2beta1Generator_CesAppSpecs[]>;
+  /** The real CES (Conversational Experience Studio) tool(s) this generator can choose from. (AI-inferred) */
   cesToolSpecs?: V2beta1Generator_CesToolSpecs[] | Computed<V2beta1Generator_CesToolSpecs[]>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Real, free-form background text supplied as additional context to this generator. (AI-inferred) */
   freeFormContext?: V2beta1Generator_FreeFormContext | Computed<V2beta1Generator_FreeFormContext>;
+  /** Real parameters (e.g. temperature, max output tokens) controlling this generator's own model inference. (AI-inferred) */
   inferenceParameter?: V2beta1Generator_InferenceParameter | Computed<V2beta1Generator_InferenceParameter>;
+  /** A reference to the real, published foundation model this generator uses. (AI-inferred) */
   publishedModel?: string | Computed<string>;
+  /** Configures how this generator avoids repeating a suggestion already made earlier in the same conversation. (AI-inferred) */
   suggestionDedupingConfig?: V2beta1Generator_SuggestionDedupingConfig | Computed<V2beta1Generator_SuggestionDedupingConfig>;
+  /** Real, additional context supplied to guide this generator's own summarization output. (AI-inferred) */
   summarizationContext?: V2beta1Generator_SummarizationContext | Computed<V2beta1Generator_SummarizationContext>;
+  /** The real tool(s) this generator may call. (AI-inferred) */
   tools?: string[] | Computed<string[]>;
+  /** The real tool(s), grouped as a toolset, this generator may call. (AI-inferred) */
   toolsetTools?: V2beta1Generator_ToolsetTools[] | Computed<V2beta1Generator_ToolsetTools[]>;
+  /** The real event that triggers this generator to run. (AI-inferred) */
   triggerEvent?: string | Computed<string>;
 }
 
 export interface V2beta1GeneratorAttrs {
+  /** Real, additional context supplied to guide this generator's own agent-coaching suggestions. (AI-inferred) */
   agentCoachingContext: V2beta1Generator_AgentCoachingContext;
+  /** The real CES (Conversational Experience Studio) app(s) this generator can call. (AI-inferred) */
   cesAppSpecs: V2beta1Generator_CesAppSpecs[];
+  /** The real CES (Conversational Experience Studio) tool(s) this generator can choose from. (AI-inferred) */
   cesToolSpecs: V2beta1Generator_CesToolSpecs[];
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** Real, free-form background text supplied as additional context to this generator. (AI-inferred) */
   freeFormContext: V2beta1Generator_FreeFormContext;
+  /** Real parameters (e.g. temperature, max output tokens) controlling this generator's own model inference. (AI-inferred) */
   inferenceParameter: V2beta1Generator_InferenceParameter;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** A reference to the real, published foundation model this generator uses. (AI-inferred) */
   publishedModel: string;
+  /** Configures how this generator avoids repeating a suggestion already made earlier in the same conversation. (AI-inferred) */
   suggestionDedupingConfig: V2beta1Generator_SuggestionDedupingConfig;
+  /** Real, additional context supplied to guide this generator's own summarization output. (AI-inferred) */
   summarizationContext: V2beta1Generator_SummarizationContext;
+  /** The real tool(s) this generator may call. (AI-inferred) */
   tools: string[];
+  /** The real tool(s), grouped as a toolset, this generator may call. (AI-inferred) */
   toolsetTools: V2beta1Generator_ToolsetTools[];
+  /** The real event that triggers this generator to run. (AI-inferred) */
   triggerEvent: string;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

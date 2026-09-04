@@ -20,7 +20,9 @@ export interface PrivateCloud_Hcx {
 }
 
 export interface PrivateCloud_ManagementCluster_NodeTypeConfigs {
+  /** The number of CPU core(s) enabled per node, when overriding the node type's own default. (AI-inferred) */
   customCoreCount?: number | Computed<number>;
+  /** The number of node(s) provisioned. (AI-inferred) */
   nodeCount?: number | Computed<number>;
 }
 

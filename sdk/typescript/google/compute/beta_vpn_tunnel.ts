@@ -57,6 +57,7 @@ const BetaVpnTunnel_ParamsFields: FieldMap = {
 export interface BetaVpnTunnelConfig {
   /** Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits. */
   capacityTier?: string | Computed<string>;
+  /** The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred) */
   cipherSuite?: BetaVpnTunnel_CipherSuite | Computed<BetaVpnTunnel_CipherSuite>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -108,6 +109,7 @@ export interface BetaVpnTunnelConfig {
 export interface BetaVpnTunnelAttrs {
   /** Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits. */
   capacityTier: string;
+  /** The cipher suite this VPN tunnel negotiates, including whether post-quantum key exchange is used. (AI-inferred) */
   cipherSuite: BetaVpnTunnel_CipherSuite;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;

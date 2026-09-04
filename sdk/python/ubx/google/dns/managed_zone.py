@@ -10,19 +10,25 @@ import ubx_sdk as ubx
 class ManagedZone_CloudLoggingConfig:
     # If set, enable query logging for this ManagedZone. False by default, making logging opt-in.
     enable_logging: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_DnssecConfig_DefaultKeySpecs:
+    # The cryptographic algorithm used for this DNSSEC key. (AI-inferred)
     algorithm: Any = None
+    # The length, in bits, of this DNSSEC key. (AI-inferred)
     key_length: Any = None
+    # Whether this is a DNSSEC key-signing key or zone-signing key. (AI-inferred)
     key_type: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_DnssecConfig:
     # Specifies parameters for generating initial DnsKeys for this ManagedZone. Can only be changed while the state is OFF.
     default_key_specs: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # Specifies the mechanism for authenticated denial-of-existence responses. Can only be changed while the state is OFF.
     non_existence: Any = None
@@ -31,14 +37,20 @@ class ManagedZone_DnssecConfig:
 
 @dataclasses.dataclass
 class ManagedZone_ForwardingConfig_TargetNameServers:
+    # The DNS domain name this zone serves, e.g. `example.com.`. (AI-inferred)
     domain_name: Any = None
+    # Whether forwarded queries are sent over the public internet or a private network path. (AI-inferred)
     forwarding_path: Any = None
+    # An IPv4 address. (AI-inferred)
     ipv4_address: Any = None
+    # An IPv6 address. (AI-inferred)
     ipv6_address: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_ForwardingConfig:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # List of target name servers to forward to. Cloud DNS selects the best available name server if more than one target is given.
     target_name_servers: Any = None
@@ -47,48 +59,60 @@ class ManagedZone_ForwardingConfig:
 class ManagedZone_PeeringConfig_TargetNetwork:
     # The time at which the zone was deactivated, in RFC 3339 date-time format. An empty string indicates that the peering connection is active. The producer network can deactivate a zone. The zone is automatically deactivated if the producer network that the zone targeted is deleted. Output only.
     deactivate_time: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # The fully qualified URL of the VPC network to forward queries to. This should be formatted like `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`
     network_url: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_PeeringConfig:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # A reference to the target VPC network. (AI-inferred)
     target_network: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_PrivateVisibilityConfig_GkeClusters:
+    # The GKE cluster this private zone's own visibility is scoped to. (AI-inferred)
     gke_cluster_name: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_PrivateVisibilityConfig_Networks:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The VPC network this private zone or policy is visible from. (AI-inferred)
     network_url: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_PrivateVisibilityConfig:
     # The list of Google Kubernetes Engine clusters that can see this zone.
     gke_clusters: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # The list of VPC networks that can see this zone.
     networks: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_ReverseLookupConfig:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_ServiceDirectoryConfig_Namespace:
     # The time that the namespace backing this zone was deleted; an empty string if it still exists. This is in RFC3339 text format. Output only.
     deletion_time: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # The fully qualified URL of the namespace associated with the zone. Format must be `https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace}`
     namespace_url: Any = None
 
 @dataclasses.dataclass
 class ManagedZone_ServiceDirectoryConfig:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The DNS namespace this applies to. (AI-inferred)
     namespace: Any = None
 
 _ManagedZone_CloudLoggingConfigFields = {
@@ -199,10 +223,13 @@ class ManagedZoneConfig:
     description: Any = None
     # The DNS name of this managed zone, for instance "example.com.".
     dns_name: Any = None
+    # Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
     dnssec_config: Any = None
+    # Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
     forwarding_config: Any = None
     # Unique identifier for the resource; defined by the server (output only)
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None
@@ -212,8 +239,11 @@ class ManagedZoneConfig:
     name_server_set: Any = None
     # Delegate your managed_zone to these virtual name servers; defined by the server (output only)
     name_servers: Any = None
+    # Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
     peering_config: Any = None
+    # Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
     private_visibility_config: Any = None
+    # Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
     reverse_lookup_config: Any = None
     # Contains information about Service Directory-backed zones.
     service_directory_config: Any = None
@@ -230,10 +260,13 @@ class ManagedZoneAttrs:
     description: Any = None
     # The DNS name of this managed zone, for instance "example.com.".
     dns_name: Any = None
+    # Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
     dnssec_config: Any = None
+    # Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
     forwarding_config: Any = None
     # Unique identifier for the resource; defined by the server (output only)
     id: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # User labels.
     labels: Any = None
@@ -243,8 +276,11 @@ class ManagedZoneAttrs:
     name_server_set: Any = None
     # Delegate your managed_zone to these virtual name servers; defined by the server (output only)
     name_servers: Any = None
+    # Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
     peering_config: Any = None
+    # Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
     private_visibility_config: Any = None
+    # Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
     reverse_lookup_config: Any = None
     # Contains information about Service Directory-backed zones.
     service_directory_config: Any = None

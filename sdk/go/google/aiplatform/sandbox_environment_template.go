@@ -9,7 +9,9 @@ type SandboxEnvironmentTemplate_CustomContainerEnvironment_CustomContainerSpec s
 }
 
 type SandboxEnvironmentTemplate_CustomContainerEnvironment_Ports struct {
-	Port     any
+	// A network port number. (AI-inferred)
+	Port any
+	// The network protocol this applies to, e.g. `TCP` or `UDP`. (AI-inferred)
 	Protocol any
 }
 
@@ -37,8 +39,11 @@ type SandboxEnvironmentTemplate_DefaultContainerEnvironment struct {
 }
 
 type SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs struct {
-	Domain        any
+	// The domain this configuration or resource applies to. (AI-inferred)
+	Domain any
+	// The VPC network this resource is deployed into. (AI-inferred)
 	TargetNetwork any
+	// The Google Cloud project this resource targets. (AI-inferred)
 	TargetProject any
 }
 
@@ -54,12 +59,18 @@ type SandboxEnvironmentTemplate_EgressControlConfig struct {
 }
 
 type SandboxEnvironmentTemplate_IngressControlConfig_PscAutomationConfigs struct {
-	ErrorMessage   any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
 	ForwardingRule any
-	IpAddress      any
-	Network        any
-	ProjectId      any
-	State          any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
 }
 
 type SandboxEnvironmentTemplate_IngressControlConfig struct {

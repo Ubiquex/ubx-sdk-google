@@ -216,8 +216,11 @@ class Cluster_Autoscaling_AutoprovisioningNodePoolDefaults:
 
 @dataclasses.dataclass
 class Cluster_Autoscaling_ResourceLimits:
+    # The largest value a `number`/`integer`-typed value may take. (AI-inferred)
     maximum: Any = None
+    # The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
     minimum: Any = None
+    # Which kind of resource this applies to. (AI-inferred)
     resource_type: Any = None
 
 @dataclasses.dataclass
@@ -246,6 +249,7 @@ class Cluster_BinaryAuthorization:
 
 @dataclasses.dataclass
 class Cluster_Cluster_CompliancePostureConfig_ComplianceStandards:
+    # Configuration for the standard (non-Autopilot) cluster mode. (AI-inferred)
     standard: Any = None
 
 @dataclasses.dataclass
@@ -257,8 +261,11 @@ class Cluster_Cluster_CompliancePostureConfig:
 
 @dataclasses.dataclass
 class Cluster_Cluster_Conditions:
+    # A standard gRPC-style status code summarizing this outcome. (AI-inferred)
     canonical_code: Any = None
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # A human-readable description of this result or error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -281,7 +288,9 @@ class Cluster_Cluster_ControlPlaneEndpointsConfig_DnsEndpointConfig:
 
 @dataclasses.dataclass
 class Cluster_Cluster_ControlPlaneEndpointsConfig_IpEndpointsConfig_AuthorizedNetworksConfig_CidrBlocks:
+    # An IP address range in CIDR notation. (AI-inferred)
     cidr_block: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
@@ -321,8 +330,11 @@ class Cluster_Cluster_ControlPlaneEndpointsConfig:
 
 @dataclasses.dataclass
 class Cluster_Cluster_DatabaseEncryption_LastOperationErrors:
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # The name of this key. (AI-inferred)
     key_name: Any = None
+    # When this event occurred. (AI-inferred)
     timestamp: Any = None
 
 @dataclasses.dataclass
@@ -373,13 +385,18 @@ class Cluster_Cluster_GkeAutoUpgradeConfig:
 
 @dataclasses.dataclass
 class Cluster_Cluster_IpAllocationPolicy_AdditionalIpRangesConfigs:
+    # The name(s) of the secondary IP range(s) used for pod IP addresses. (AI-inferred)
     pod_ipv4_range_names: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_IpAllocationPolicy_AdditionalPodRangesConfig_PodRangeInfo:
+    # The name of the secondary IP range this applies to. (AI-inferred)
     range_name: Any = None
+    # The observed or target resource utilization level. (AI-inferred)
     utilization: Any = None
 
 @dataclasses.dataclass
@@ -478,13 +495,18 @@ class Cluster_Cluster_MaintenancePolicy_Window_DailyMaintenanceWindow:
 
 @dataclasses.dataclass
 class Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions_MaintenanceExclusionOptions:
+    # What happens once this maintenance exclusion window's own end time is reached. (AI-inferred)
     end_time_behavior: Any = None
+    # What this setting applies to. (AI-inferred)
     scope: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions:
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # Configuration for a maintenance exclusion window, e.g. its own scope. (AI-inferred)
     maintenance_exclusion_options: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
@@ -674,19 +696,27 @@ class Cluster_Cluster_NetworkPolicy:
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_Accelerators_GpuDriverInstallationConfig:
+    # Which GPU driver version GKE installs, e.g. `LATEST` or `DEFAULT`. (AI-inferred)
     gpu_driver_version: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_Accelerators_GpuSharingConfig:
+    # How a shared GPU is divided among containers, e.g. `TIME_SHARING` or `MPS`. (AI-inferred)
     gpu_sharing_strategy: Any = None
+    # The maximum number of containers that may share a single physical GPU. (AI-inferred)
     max_shared_clients_per_gpu: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_Accelerators:
+    # How many accelerator (GPU/TPU) devices are attached per node. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU/TPU) type attached to each node, e.g. `nvidia-tesla-t4`. (AI-inferred)
     accelerator_type: Any = None
+    # Whether and how GKE automatically installs the GPU driver on nodes with attached accelerators. (AI-inferred)
     gpu_driver_installation_config: Any = None
+    # The fraction of a physical GPU allocated per partition, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
     gpu_partition_size: Any = None
+    # Configuration letting multiple containers share a single physical GPU, rather than each requiring a dedicated one. (AI-inferred)
     gpu_sharing_config: Any = None
 
 @dataclasses.dataclass
@@ -711,11 +741,14 @@ class Cluster_Cluster_NodeConfig_BootDisk:
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig:
+    # The Secret Manager secret version this value is sourced from. (AI-inferred)
     secret_uri: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig:
+    # The fully qualified domain name(s) of the private registry/registries this certificate is trusted for. (AI-inferred)
     fqdns: Any = None
+    # A CA certificate sourced from Secret Manager, trusted for verifying a private container registry's own TLS certificate. (AI-inferred)
     gcp_secret_manager_certificate_config: Any = None
 
 @dataclasses.dataclass
@@ -727,31 +760,45 @@ class Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig:
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca:
+    # The Secret Manager secret version holding this certificate, in the form `projects/{project}/secrets/{secret}/versions/{version}`. (AI-inferred)
     gcp_secret_manager_secret_uri: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Client:
+    # A TLS certificate. (AI-inferred)
     cert: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Header:
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # The value of this key/value pair. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts:
+    # The CA certificate used to verify the remote server's own identity. (AI-inferred)
     ca: Any = None
+    # The capability/capabilities this proxy or client supports. (AI-inferred)
     capabilities: Any = None
+    # Client-side TLS configuration. (AI-inferred)
     client: Any = None
+    # How long to wait when establishing this connection before giving up. (AI-inferred)
     dial_timeout: Any = None
+    # An HTTP header sent with this request. (AI-inferred)
     header: Any = None
+    # The hostname this applies to. (AI-inferred)
     host: Any = None
+    # A path used in place of the default, for reaching this endpoint. (AI-inferred)
     override_path: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts:
+    # The host(s) this configuration applies to. (AI-inferred)
     hosts: Any = None
+    # Server-side TLS configuration. (AI-inferred)
     server: Any = None
 
 @dataclasses.dataclass
@@ -989,13 +1036,18 @@ class Cluster_Cluster_NodeConfig_SandboxConfig:
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_SecondaryBootDisks:
+    # The disk image used for this node's own boot disk. (AI-inferred)
     disk_image: Any = None
+    # Which operating mode this configuration uses. (AI-inferred)
     mode: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_SoleTenantConfig_NodeAffinities:
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # How this taint's own key/value is compared against a pod's own toleration, e.g. `Equal` or `Exists`. (AI-inferred)
     operator: Any = None
+    # The value(s) making up this configuration. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -1012,8 +1064,11 @@ class Cluster_Cluster_NodeConfig_TaintConfig:
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodeConfig_Taints:
+    # What happens to a pod that doesn't tolerate this taint, e.g. `NoSchedule` or `NoExecute`. (AI-inferred)
     effect: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # The value of this key/value pair. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -1161,112 +1216,183 @@ class Cluster_Cluster_NodePoolDefaults:
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_Autoscaling:
+    # Whether this node pool was created automatically by cluster autoscaling, rather than explicitly by the caller. (AI-inferred)
     autoprovisioned: Any = None
+    # Whether this feature or setting is turned on. (AI-inferred)
     enabled: Any = None
+    # How new nodes are distributed across zones when autoscaling, e.g. `BALANCED` or `ANY`. (AI-inferred)
     location_policy: Any = None
+    # The maximum number of nodes this node pool may scale up to. (AI-inferred)
     max_node_count: Any = None
+    # The minimum number of nodes this node pool scales down to. (AI-inferred)
     min_node_count: Any = None
+    # The maximum total node count across all zones this node pool may scale up to. (AI-inferred)
     total_max_node_count: Any = None
+    # The minimum total node count across all zones this node pool scales down to. (AI-inferred)
     total_min_node_count: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_BestEffortProvisioning:
+    # Whether this feature or setting is turned on. (AI-inferred)
     enabled: Any = None
+    # The minimum number of nodes that must be provisioned for best-effort provisioning to be considered successful. (AI-inferred)
     min_provision_nodes: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_KubeletCertInfo:
+    # When this node's own bootstrap certificate (for nodes without a TPM) expires. (AI-inferred)
     non_tpm_bootstrap_cert_expire_time: Any = None
+    # When this node's own TPM-backed bootstrap certificate expires. (AI-inferred)
     tpm_bootstrap_cert_expire_time: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_MaintenancePolicy_ExclusionUntilEndOfSupport:
+    # Whether this feature or setting is turned on. (AI-inferred)
     enabled: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_MaintenancePolicy:
+    # Excludes this cluster from automatic upgrades until its own current minor version reaches end of support. (AI-inferred)
     exclusion_until_end_of_support: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_NetworkConfig_AdditionalNodeNetworkConfigs:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_NetworkConfig_AdditionalPodNetworkConfigs:
+    # The maximum number of pods schedulable on a single node in this node pool. (AI-inferred)
     max_pods_per_node: Any = None
+    # A reference to the Compute Engine network attachment this cluster's own control plane connects through. (AI-inferred)
     network_attachment: Any = None
+    # The subnet secondary IP range used for pod IP addresses. (AI-inferred)
     secondary_pod_range: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_NetworkConfig:
+    # The network configuration profile applied to accelerator-attached network interfaces. (AI-inferred)
     accelerator_network_profile: Any = None
+    # Additional VPC network interface(s) attached to each node, beyond the primary one. (AI-inferred)
     additional_node_network_configs: Any = None
+    # Additional pod network interface(s) attached to each node, for multi-networking scenarios. (AI-inferred)
     additional_pod_network_configs: Any = None
+    # Whether GKE automatically creates a new secondary IP range for pods, rather than using an existing one. (AI-inferred)
     create_pod_range: Any = None
+    # Whether nodes in this pool are assigned only internal IP addresses, with no direct public internet access. (AI-inferred)
     enable_private_nodes: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # Configuration for the network bandwidth tier available to each node. (AI-inferred)
     network_performance_config: Any = None
+    # Configuration for the network performance tier available to each node. (AI-inferred)
     network_tier_config: Any = None
+    # Configuration for whether a node's own pod IP range is sized larger than its `max_pods_per_node`, to leave room for pod churn. (AI-inferred)
     pod_cidr_overprovision_config: Any = None
+    # The pod IP address range assigned to this node, in CIDR notation. (AI-inferred)
     pod_ipv4_cidr_block: Any = None
+    # What fraction of this node's own pod IP address range is currently in use. (AI-inferred)
     pod_ipv4_range_utilization: Any = None
+    # A reference to the secondary IP range used for pod addresses. (AI-inferred)
     pod_range: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_NodeDrainConfig:
+    # How long a resource is given to terminate gracefully before being forcibly removed. (AI-inferred)
     grace_termination_duration: Any = None
+    # How long to wait for a PodDisruptionBudget to allow eviction before proceeding anyway. (AI-inferred)
     pdb_timeout_duration: Any = None
+    # Whether PodDisruptionBudgets are honored when nodes in this pool are deleted. (AI-inferred)
     respect_pdb_during_node_pool_deletion: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_PlacementPolicy:
+    # The name of the placement policy this applies. (AI-inferred)
     policy_name: Any = None
+    # The physical arrangement of TPU chips provisioned for this node pool, e.g. `2x2x1`. (AI-inferred)
     tpu_topology: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_UpdateInfo_BlueGreenInfo:
+    # Output only. The Compute Engine instance group URL(s) making up the original (blue) node pool during a blue/green upgrade. (AI-inferred)
     blue_instance_group_urls: Any = None
+    # Output only. When deletion of the old (blue) node pool began during a blue/green upgrade. (AI-inferred)
     blue_pool_deletion_start_time: Any = None
+    # Output only. The Compute Engine instance group URL(s) making up the new (green) node pool during a blue/green upgrade. (AI-inferred)
     green_instance_group_urls: Any = None
+    # Output only. The node version running in the new (green) node pool during a blue/green upgrade. (AI-inferred)
     green_pool_version: Any = None
+    # The current phase of this operation or rollout. (AI-inferred)
     phase: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools_UpdateInfo:
+    # Output only. Detail about an in-progress or completed blue/green node pool upgrade. (AI-inferred)
     blue_green_info: Any = None
 
 @dataclasses.dataclass
 class Cluster_Cluster_NodePools:
+    # Configuration specific to Autopilot-mode node pools. (AI-inferred)
     autopilot_config: Any = None
+    # Configuration for automatically resizing this node pool based on demand. (AI-inferred)
     autoscaling: Any = None
+    # Allows this node pool to start with fewer nodes than requested if full capacity isn't immediately available, rather than failing outright. (AI-inferred)
     best_effort_provisioning: Any = None
+    # The current condition(s) affecting this resource's own status. (AI-inferred)
     conditions: Any = None
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # How many nodes this node pool starts with when first created. (AI-inferred)
     initial_node_count: Any = None
+    # Output only. The Compute Engine instance group URL(s) backing this node pool. (AI-inferred)
     instance_group_urls: Any = None
+    # Detail about the kubelet's own TLS certificate for this node. (AI-inferred)
     kubelet_cert_info: Any = None
+    # The zone(s) this resource is spread across. (AI-inferred)
     locations: Any = None
+    # Configuration for when automatic cluster maintenance is allowed to occur. (AI-inferred)
     maintenance_policy: Any = None
+    # Configuration for automatic node repair and upgrade. (AI-inferred)
     management: Any = None
+    # The maximum number of pods schedulable on a single node in this node pool. (AI-inferred)
     max_pods_constraint: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Networking configuration for this cluster or node pool. (AI-inferred)
     network_config: Any = None
+    # Configuration for how nodes are gracefully drained before removal, e.g. during a scale-down or upgrade. (AI-inferred)
     node_drain_config: Any = None
+    # Configuration for how nodes are physically placed relative to each other, e.g. compact placement for low-latency networking. (AI-inferred)
     placement_policy: Any = None
+    # The size of the pod IP address range assigned to this node. (AI-inferred)
     pod_ipv4_cidr_size: Any = None
+    # Uses Dynamic Workload Scheduler queued provisioning for this node pool, waiting for capacity to become available rather than failing immediately. (AI-inferred)
     queued_provisioning: Any = None
+    # Output only. The fully qualified URL identifying this resource. (AI-inferred)
     self_link: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # A human-readable description of this resource's own current status. (AI-inferred)
     status_message: Any = None
+    # Detail about an in-progress or completed update to this resource. (AI-inferred)
     update_info: Any = None
+    # Configuration controlling how this node pool is upgraded, e.g. surge size and strategy. (AI-inferred)
     upgrade_settings: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass

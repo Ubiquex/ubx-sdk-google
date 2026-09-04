@@ -208,6 +208,7 @@ class V1beta2ChangeConfig:
     id: Any = None
     # If the DNS queries for the zone will be served.
     is_serving: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # The time that this operation was started by the server (output only). This is in RFC3339 text format.
     start_time: Any = None
@@ -224,6 +225,7 @@ class V1beta2ChangeAttrs:
     id: Any = None
     # If the DNS queries for the zone will be served.
     is_serving: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
     # The time that this operation was started by the server (output only). This is in RFC3339 text format.
     start_time: Any = None

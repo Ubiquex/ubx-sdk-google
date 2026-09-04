@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecuritySetting_AudioExportSettings:
+    # The filename pattern exported conversation audio is saved under. (AI-inferred)
     audio_export_pattern: Any = None
+    # The audio file format, e.g. `MP3` or `OGG_OPUS`. (AI-inferred)
     audio_format: Any = None
+    # Whether sensitive data detected in exported conversation audio is redacted. (AI-inferred)
     enable_audio_redaction: Any = None
+    # The Cloud Storage bucket this applies to. (AI-inferred)
     gcs_bucket: Any = None
+    # Whether synthesized speech audio is saved for later playback/reuse, rather than discarded after use. (AI-inferred)
     store_tts_audio: Any = None
 
 @dataclasses.dataclass
 class SecuritySetting_InsightsExportSettings:
+    # Whether conversation data is exported to Conversational Insights for analysis. (AI-inferred)
     enable_insights_export: Any = None
 
 _SecuritySetting_AudioExportSettingsFields = {
@@ -32,30 +38,52 @@ _SecuritySetting_InsightsExportSettingsFields = {
 
 @dataclasses.dataclass
 class SecuritySettingConfig:
+    # Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
     audio_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
     deidentify_template: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
     insights_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
     inspect_template: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Which category/categories of stored data this purge request removes. (AI-inferred)
     purge_data_types: Any = None
+    # How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
     redaction_scope: Any = None
+    # How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
     redaction_strategy: Any = None
+    # How long conversation data is retained before automatic deletion. (AI-inferred)
     retention_strategy: Any = None
+    # How many days conversation data is retained before automatic deletion. (AI-inferred)
     retention_window_days: Any = None
 
 @dataclasses.dataclass
 class SecuritySettingAttrs:
+    # Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
     audio_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
     deidentify_template: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
     insights_export_settings: Any = None
+    # A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
     inspect_template: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Which category/categories of stored data this purge request removes. (AI-inferred)
     purge_data_types: Any = None
+    # How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
     redaction_scope: Any = None
+    # How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
     redaction_strategy: Any = None
+    # How long conversation data is retained before automatic deletion. (AI-inferred)
     retention_strategy: Any = None
+    # How many days conversation data is retained before automatic deletion. (AI-inferred)
     retention_window_days: Any = None
 
 SecuritySetting = ubx.ResourceBinding(

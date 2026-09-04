@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WorkflowConfig_InvocationConfig_IncludedTargets {
+  /** The database (BigQuery project) this included target table belongs to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** The name of this included target table. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The schema (BigQuery dataset) this included target table belongs to. (AI-inferred) */
   schema?: string | Computed<string>;
 }
 
@@ -25,14 +28,20 @@ export interface WorkflowConfig_InvocationConfig {
 }
 
 export interface WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatus {
+  /** The error's own numeric status code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional structured detail about the error. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of the error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface WorkflowConfig_RecentScheduledExecutionRecords {
+  /** The error this scheduled workflow execution failed with, if it didn't succeed. (AI-inferred) */
   errorStatus?: WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatus | Computed<WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatus>;
+  /** When this scheduled workflow execution occurred. (AI-inferred) */
   executionTime?: string | Computed<string>;
+  /** The workflow invocation this scheduled execution produced. (AI-inferred) */
   workflowInvocation?: string | Computed<string>;
 }
 

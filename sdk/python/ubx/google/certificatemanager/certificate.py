@@ -8,29 +8,44 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Cname:
+    # The record data expected for this validation to succeed. (AI-inferred)
     expected_data: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The record data actually observed for this domain. (AI-inferred)
     resolved_data: Any = None
 
 @dataclasses.dataclass
 class Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Ips:
+    # Whether this DNS record currently resolves to the expected value. (AI-inferred)
     resolved: Any = None
+    # Whether this certificate is actively serving traffic. (AI-inferred)
     serving: Any = None
+    # Whether this certificate is served on non-standard port(s). (AI-inferred)
     serving_on_alt_ports: Any = None
 
 @dataclasses.dataclass
 class Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting:
+    # The CNAME target this DNS record must point to. (AI-inferred)
     cname: Any = None
+    # The IP address(es) this applies to. (AI-inferred)
     ips: Any = None
+    # The issue(s) detected during troubleshooting. (AI-inferred)
     issues: Any = None
 
 @dataclasses.dataclass
 class Certificate_Managed_AuthorizationAttemptInfo:
+    # When this validation attempt was made. (AI-inferred)
     attempt_time: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # Why this validation attempt failed. (AI-inferred)
     failure_reason: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
+    # Diagnostic detail helping to explain this resource's own current state. (AI-inferred)
     troubleshooting: Any = None
 
 @dataclasses.dataclass
@@ -73,6 +88,7 @@ class Certificate_SelfManaged:
 
 @dataclasses.dataclass
 class Certificate_UsedBy:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 _Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_CnameFields = {

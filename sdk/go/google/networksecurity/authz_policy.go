@@ -16,79 +16,114 @@ type AuthzPolicy_CustomProvider struct {
 }
 
 type AuthzPolicy_HttpRules_From_NotSources_IpBlocks struct {
+	// The number of characters or bytes this applies to. (AI-inferred)
 	Length any
+	// Matches values starting with this prefix. (AI-inferred)
 	Prefix any
 }
 
 type AuthzPolicy_HttpRules_From_NotSources_Principals_Principal struct {
-	Contains   any
-	Exact      any
+	// Matches when the value contains this substring. (AI-inferred)
+	Contains any
+	// Matches only this exact value. (AI-inferred)
+	Exact any
+	// Whether this match is case-insensitive. (AI-inferred)
 	IgnoreCase any
-	Prefix     any
-	Suffix     any
+	// Matches values starting with this prefix. (AI-inferred)
+	Prefix any
+	// Matches values ending with this suffix. (AI-inferred)
+	Suffix any
 }
 
 type AuthzPolicy_HttpRules_From_NotSources_Principals struct {
-	Principal         any
+	// The identity this rule matches against. (AI-inferred)
+	Principal any
+	// Criteria for selecting which caller identities this rule matches. (AI-inferred)
 	PrincipalSelector any
 }
 
 type AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSet struct {
+	// The identifier(s) this applies to. (AI-inferred)
 	Ids any
 }
 
 type AuthzPolicy_HttpRules_From_NotSources_Resources struct {
+	// The service account this principal is identified by. (AI-inferred)
 	IamServiceAccount any
-	TagValueIdSet     any
+	// The Resource Manager tag value(s) this rule matches resources against. (AI-inferred)
+	TagValueIdSet any
 }
 
 type AuthzPolicy_HttpRules_From_NotSources struct {
-	IpBlocks   any
+	// The IP address range(s) this rule matches. (AI-inferred)
+	IpBlocks any
+	// The identity/identities this rule matches against. (AI-inferred)
 	Principals any
-	Resources  any
+	// The resource(s) this rule applies to. (AI-inferred)
+	Resources any
 }
 
 type AuthzPolicy_HttpRules_From struct {
+	// Source(s) explicitly excluded from this rule's own match, even if they'd otherwise match. (AI-inferred)
 	NotSources any
-	Sources    any
+	// The source(s) this rule matches traffic from. (AI-inferred)
+	Sources any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_Headers struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The literal value this matches against. (AI-inferred)
 	Value any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations_HeaderSet struct {
+	// The HTTP header(s) this rule matches against. (AI-inferred)
 	Headers any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations_Mcp_Methods struct {
-	Name   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Additional parameter(s) for this rule. (AI-inferred)
 	Params any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations_Mcp struct {
+	// Whether default protocol methods are automatically allowed, in addition to any explicitly listed. (AI-inferred)
 	BaseProtocolMethodsOption any
-	Methods                   any
+	// The gRPC/HTTP method(s) this rule matches. (AI-inferred)
+	Methods any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations struct {
+	// A set of HTTP header match condition(s) that must all be satisfied. (AI-inferred)
 	HeaderSet any
-	Hosts     any
-	Mcp       any
-	Methods   any
-	Paths     any
-	Snis      any
+	// The host(s) this rule applies to. (AI-inferred)
+	Hosts any
+	// Configuration for exposing a Model Context Protocol server through this gateway. (AI-inferred)
+	Mcp any
+	// The gRPC/HTTP method(s) this rule matches. (AI-inferred)
+	Methods any
+	// The URL path(s) this rule matches. (AI-inferred)
+	Paths any
+	// The TLS Server Name Indication value(s) this rule matches. (AI-inferred)
+	Snis any
 }
 
 type AuthzPolicy_HttpRules_To struct {
+	// Operation(s) explicitly excluded from this rule's own match, even if they'd otherwise match. (AI-inferred)
 	NotOperations any
-	Operations    any
+	// The operation(s) this rule matches. (AI-inferred)
+	Operations any
 }
 
 type AuthzPolicy_HttpRules struct {
+	// The source(s) this rule matches traffic from. (AI-inferred)
 	From any
-	To   any
+	// The destination(s) this rule matches traffic to. (AI-inferred)
+	To any
+	// An additional condition that must hold for this rule to apply. (AI-inferred)
 	When any
 }
 

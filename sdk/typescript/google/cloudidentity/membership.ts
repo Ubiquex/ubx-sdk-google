@@ -9,20 +9,26 @@ export interface Membership_PreferredMemberKey {
 }
 
 export interface Membership_Roles_ExpiryDetail {
+  /** The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred) */
   expireTime?: string | Computed<string>;
 }
 
 export interface Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluation {
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Membership_Roles_RestrictionEvaluations {
+  /** The result of evaluating this group's own membership restriction expression. (AI-inferred) */
   memberRestrictionEvaluation?: Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluation | Computed<Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluation>;
 }
 
 export interface Membership_Roles {
+  /** Additional detail about why this credential is expiring or expired. (AI-inferred) */
   expiryDetail?: Membership_Roles_ExpiryDetail | Computed<Membership_Roles_ExpiryDetail>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The result(s) of evaluating this group's own membership restriction(s). (AI-inferred) */
   restrictionEvaluations?: Membership_Roles_RestrictionEvaluations | Computed<Membership_Roles_RestrictionEvaluations>;
 }
 

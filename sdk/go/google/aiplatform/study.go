@@ -24,61 +24,89 @@ type Study_StudySpec_DecayCurveStoppingSpec struct {
 }
 
 type Study_StudySpec_Metrics_SafetyConfig struct {
+	// The minimum fraction of trials that must be predicted safe before an unsafe trial is allowed to be tried anyway. (AI-inferred)
 	DesiredMinSafeTrialsFraction any
-	SafetyThreshold              any
+	// The metric value below which a trial is considered unsafe. (AI-inferred)
+	SafetyThreshold any
 }
 
 type Study_StudySpec_Metrics struct {
-	Goal         any
-	MetricId     any
+	// Whether this metric should be `MAXIMIZE`d or `MINIMIZE`d during tuning. (AI-inferred)
+	Goal any
+	// An identifier for this metric, unique within its own containing evaluation. (AI-inferred)
+	MetricId any
+	// Configuration for safe hyperparameter tuning, which avoids proposing trials predicted to badly underperform. (AI-inferred)
 	SafetyConfig any
 }
 
 type Study_StudySpec_Parameters_CategoricalValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	Values       any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Study_StudySpec_Parameters_ConditionalParameterSpecs struct {
-	ParameterSpec           any
+	// The definition (type, range, or allowed values) of this hyperparameter. (AI-inferred)
+	ParameterSpec any
+	// The parent categorical value(s) that activate this conditional parameter. (AI-inferred)
 	ParentCategoricalValues any
-	ParentDiscreteValues    any
-	ParentIntValues         any
+	// The parent discrete value(s) that activate this conditional parameter. (AI-inferred)
+	ParentDiscreteValues any
+	// The parent integer value(s) that activate this conditional parameter. (AI-inferred)
+	ParentIntValues any
 }
 
 type Study_StudySpec_Parameters_DiscreteValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	Values       any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type Study_StudySpec_Parameters_DoubleValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	MaxValue     any
-	MinValue     any
+	// The largest value this parameter may take. (AI-inferred)
+	MaxValue any
+	// The smallest value this parameter may take. (AI-inferred)
+	MinValue any
 }
 
 type Study_StudySpec_Parameters_IntegerValueSpec struct {
+	// The value used when this parameter is left unset. (AI-inferred)
 	DefaultValue any
-	MaxValue     any
-	MinValue     any
+	// The largest value this parameter may take. (AI-inferred)
+	MaxValue any
+	// The smallest value this parameter may take. (AI-inferred)
+	MinValue any
 }
 
 type Study_StudySpec_Parameters struct {
-	CategoricalValueSpec      any
+	// Defines this hyperparameter as a categorical value, chosen from a fixed set of string options. (AI-inferred)
+	CategoricalValueSpec any
+	// Sub-parameter(s) that only apply when this parameter takes specific value(s), for hyperparameter search spaces with conditional structure. (AI-inferred)
 	ConditionalParameterSpecs any
-	DiscreteValueSpec         any
-	DoubleValueSpec           any
-	IntegerValueSpec          any
-	ParameterId               any
-	ScaleType                 any
+	// Defines this hyperparameter as a value chosen from a fixed, explicit list of numbers. (AI-inferred)
+	DiscreteValueSpec any
+	// Defines this hyperparameter as a floating-point value within a `min_value`/`max_value` range. (AI-inferred)
+	DoubleValueSpec any
+	// Defines this hyperparameter as an integer value within a `min_value`/`max_value` range. (AI-inferred)
+	IntegerValueSpec any
+	// The name of this hyperparameter, unique within its own study. (AI-inferred)
+	ParameterId any
+	// How this hyperparameter's own search range is scaled when sampling, e.g. `UNIT_LINEAR_SCALE` or `UNIT_LOG_SCALE`. (AI-inferred)
+	ScaleType any
 }
 
 type Study_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraint struct {

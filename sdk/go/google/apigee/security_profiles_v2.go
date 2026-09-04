@@ -4,12 +4,15 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityProfilesV2_ProfileAssessmentConfigs_Include struct {
+	// The kind of gateway (e.g. proxy or shared flow) this applies to. (AI-inferred)
 	GatewayTypes any
 }
 
 type SecurityProfilesV2_ProfileAssessmentConfigs struct {
+	// Whether this item is included. (AI-inferred)
 	Include any
-	Weight  any
+	// The relative weight of this item. (AI-inferred)
+	Weight any
 }
 
 var SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields = ubx.FieldMap{

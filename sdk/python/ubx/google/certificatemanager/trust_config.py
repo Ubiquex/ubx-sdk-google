@@ -8,11 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TrustConfig_AllowlistedCertificates:
+    # The certificate, PEM-encoded. (AI-inferred)
     pem_certificate: Any = None
 
 @dataclasses.dataclass
 class TrustConfig_SpiffeTrustStores:
+    # The intermediate CA certificate(s) chained below the root. (AI-inferred)
     intermediate_cas: Any = None
+    # The root CA certificate(s) this trust configuration trusts. (AI-inferred)
     trust_anchors: Any = None
 
 _TrustConfig_AllowlistedCertificatesFields = {

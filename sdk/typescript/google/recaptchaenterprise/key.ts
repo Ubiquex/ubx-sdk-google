@@ -43,6 +43,7 @@ export interface Key_WafSettings {
 }
 
 export interface Key_WebSettings_ChallengeSettings_ActionSettings {
+  /** The minimum reCAPTCHA risk score a request on this action must reach to be treated as legitimate, below which the configured challenge or block applies. (AI-inferred) */
   scoreThreshold?: number | Computed<number>;
 }
 

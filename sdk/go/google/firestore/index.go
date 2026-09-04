@@ -4,33 +4,46 @@ package firestore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Index_Fields_SearchConfig_GeoSpec struct {
+	// Whether GeoJSON-format indexing is disabled for this geospatial field. (AI-inferred)
 	GeoJsonIndexingDisabled any
 }
 
 type Index_Fields_SearchConfig_TextSpec_IndexSpecs struct {
+	// How this text index breaks the field's own value into searchable terms, e.g. `TOKENIZED`. (AI-inferred)
 	IndexType any
+	// How broadly this text index matches queries, e.g. `MATCH_GLOBALLY` for substring matches anywhere in the field. (AI-inferred)
 	MatchType any
 }
 
 type Index_Fields_SearchConfig_TextSpec struct {
+	// The individual text-indexing rule(s) applied to this field. (AI-inferred)
 	IndexSpecs any
 }
 
 type Index_Fields_SearchConfig struct {
-	GeoSpec  any
+	// Configures this field as a geospatial search index. (AI-inferred)
+	GeoSpec any
+	// Configures this field as a full-text search index. (AI-inferred)
 	TextSpec any
 }
 
 type Index_Fields_VectorConfig struct {
+	// The number of dimensions the vectors stored in this field have. (AI-inferred)
 	Dimension any
-	Flat      any
+	// Uses a flat (exhaustive, brute-force) vector index structure, trading index build/update simplicity for scan-time cost at large scale. (AI-inferred)
+	Flat any
 }
 
 type Index_Fields struct {
-	ArrayConfig  any
-	FieldPath    any
-	Order        any
+	// Indexes the contents of an array-typed field for `CONTAINS`-style membership queries. (AI-inferred)
+	ArrayConfig any
+	// The document field this index entry covers, in dot notation. (AI-inferred)
+	FieldPath any
+	// The sort direction this index supports for `field_path`: `ASCENDING` or `DESCENDING`. (AI-inferred)
+	Order any
+	// Configures `field_path` as a full-text or geo search index, rather than a standard ordered/array index. (AI-inferred)
 	SearchConfig any
+	// Configures this field as a vector similarity search index, for nearest-neighbor queries over embeddings. (AI-inferred)
 	VectorConfig any
 }
 

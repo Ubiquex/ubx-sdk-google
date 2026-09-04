@@ -2,32 +2,47 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Connection_AdminFilters_StringListValues {
+  /** The literal value(s) making up this string list. (AI-inferred) */
   listValues?: string[] | Computed<string[]>;
 }
 
 export interface Connection_AdminFilters {
+  /** The field this admin-configured filter matches against. (AI-inferred) */
   filterKey?: string | Computed<string>;
+  /** The kind of value this filter compares against, e.g. a string or an integer. (AI-inferred) */
   filterType?: string | Computed<string>;
+  /** This admin filter's own value, when its type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** This admin filter's own value, when its type is a list of strings. (AI-inferred) */
   stringListValues?: Connection_AdminFilters_StringListValues | Computed<Connection_AdminFilters_StringListValues>;
+  /** This admin filter's own value, when its type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface Connection_AuthConfig_AdditionalVariables_EncryptionKeyValue {
+  /** The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/* /locations/* /keyRings/* /cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred) */
   kmsKeyName?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Connection_AuthConfig_AdditionalVariables_SecretValue {
+  /** The specific Secret Manager secret version referenced. (AI-inferred) */
   secretVersion?: string | Computed<string>;
 }
 
 export interface Connection_AuthConfig_AdditionalVariables {
+  /** This configuration variable's own value, when its type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred) */
   encryptionKeyValue?: Connection_AuthConfig_AdditionalVariables_EncryptionKeyValue | Computed<Connection_AuthConfig_AdditionalVariables_EncryptionKeyValue>;
+  /** This admin filter's own value, when its type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred) */
   secretValue?: Connection_AuthConfig_AdditionalVariables_SecretValue | Computed<Connection_AuthConfig_AdditionalVariables_SecretValue>;
+  /** This admin filter's own value, when its type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
@@ -166,13 +181,18 @@ export interface Connection_ConnectorVersionInfraConfig {
 }
 
 export interface Connection_DestinationConfigs_Destinations {
+  /** The hostname of this destination. (AI-inferred) */
   host?: string | Computed<string>;
+  /** The port this destination listens on. (AI-inferred) */
   port?: number | Computed<number>;
+  /** A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred) */
   serviceAttachment?: string | Computed<string>;
 }
 
 export interface Connection_DestinationConfigs {
+  /** The backend endpoint(s) traffic for this connection is routed to. (AI-inferred) */
   destinations?: Connection_DestinationConfigs_Destinations[] | Computed<Connection_DestinationConfigs_Destinations[]>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
@@ -317,7 +337,9 @@ export interface Connection_Status {
 }
 
 export interface Connection_TrafficShapingConfigs {
+  /** How long this traffic shaping configuration applies for. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** The maximum request volume allowed within this traffic shaping window. (AI-inferred) */
   quotaLimit?: string | Computed<string>;
 }
 

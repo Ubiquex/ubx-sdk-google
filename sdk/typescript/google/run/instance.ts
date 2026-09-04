@@ -11,126 +11,193 @@ export interface Instance_BinaryAuthorization {
 }
 
 export interface Instance_Conditions {
+  /** Output only. Why this execution is in its current state, e.g. why it failed. (AI-inferred) */
   executionReason?: string | Computed<string>;
+  /** Output only. Why this instance is in its current state, e.g. why it isn't serving traffic. (AI-inferred) */
   instanceReason?: string | Computed<string>;
+  /** Output only. When this condition last changed from one status to another. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** Output only. A short, machine-readable identifier for why this condition holds. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** Output only. Why this revision is in its current state, e.g. why it failed to become ready. (AI-inferred) */
   revisionReason?: string | Computed<string>;
+  /** Output only. How serious this condition is, e.g. whether it's merely informational or actively blocking the resource from being ready. (AI-inferred) */
   severity?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Instance_ContainerStatuses {
+  /** The content digest of the container image actually deployed. (AI-inferred) */
   imageDigest?: string | Computed<string>;
+  /** The name identifying this container, revision, execution, or resource. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Instance_Containers_BuildInfo {
+  /** The name of the function to invoke, when deploying from source as a Cloud Run function. (AI-inferred) */
   functionTarget?: string | Computed<string>;
+  /** Where this source code is located. (AI-inferred) */
   sourceLocation?: string | Computed<string>;
 }
 
 export interface Instance_Containers_Env_ValueSource_SecretKeyRef {
+  /** The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred) */
   secret?: string | Computed<string>;
+  /** The version identifier of this resource or revision. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Instance_Containers_Env_ValueSource {
+  /** References a specific key within a Secret Manager secret. (AI-inferred) */
   secretKeyRef?: Instance_Containers_Env_ValueSource_SecretKeyRef | Computed<Instance_Containers_Env_ValueSource_SecretKeyRef>;
 }
 
 export interface Instance_Containers_Env {
+  /** The name identifying this container, revision, execution, or resource. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this environment variable or setting. (AI-inferred) */
   value?: string | Computed<string>;
+  /** Where this value is sourced from, e.g. a Secret Manager secret. (AI-inferred) */
   valueSource?: Instance_Containers_Env_ValueSource | Computed<Instance_Containers_Env_ValueSource>;
 }
 
 export interface Instance_Containers_LivenessProbe_Grpc {
+  /** The TCP port this applies to. (AI-inferred) */
   port?: number | Computed<number>;
+  /** The gRPC health-check service name this probe calls, when using a `grpc` probe. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface Instance_Containers_LivenessProbe_HttpGet_HttpHeaders {
+  /** The name identifying this container, revision, execution, or resource. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this environment variable or setting. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Instance_Containers_LivenessProbe_HttpGet {
+  /** Extra HTTP headers this `http_get` probe sends with its request. (AI-inferred) */
   httpHeaders?: Instance_Containers_LivenessProbe_HttpGet_HttpHeaders[] | Computed<Instance_Containers_LivenessProbe_HttpGet_HttpHeaders[]>;
+  /** The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The TCP port this applies to. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
 export interface Instance_Containers_LivenessProbe_TcpSocket {
+  /** The TCP port this applies to. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
 export interface Instance_Containers_LivenessProbe {
+  /** How many consecutive probe failures are tolerated before the container is considered unhealthy and Cloud Run acts on it. (AI-inferred) */
   failureThreshold?: number | Computed<number>;
+  /** Configures this probe to call the container's own gRPC health-check service, rather than an HTTP or TCP check. (AI-inferred) */
   grpc?: Instance_Containers_LivenessProbe_Grpc | Computed<Instance_Containers_LivenessProbe_Grpc>;
+  /** Configures this probe to send an HTTP GET request to the container, treating a 2xx/3xx response as healthy. (AI-inferred) */
   httpGet?: Instance_Containers_LivenessProbe_HttpGet | Computed<Instance_Containers_LivenessProbe_HttpGet>;
+  /** How long Cloud Run waits after the container starts before running this probe for the first time. (AI-inferred) */
   initialDelaySeconds?: number | Computed<number>;
+  /** How often, in seconds, this probe runs. (AI-inferred) */
   periodSeconds?: number | Computed<number>;
+  /** Configures this probe to simply check the container's port is accepting TCP connections, without sending any application-level request. (AI-inferred) */
   tcpSocket?: Instance_Containers_LivenessProbe_TcpSocket | Computed<Instance_Containers_LivenessProbe_TcpSocket>;
+  /** How long this probe waits for a response before treating the attempt as a failure. (AI-inferred) */
   timeoutSeconds?: number | Computed<number>;
 }
 
 export interface Instance_Containers_Ports {
+  /** The port the container listens on. (AI-inferred) */
   containerPort?: number | Computed<number>;
+  /** The name identifying this container, revision, execution, or resource. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Instance_Containers_Resources {
+  /** Whether CPU is only allocated while actively handling requests, rather than continuously. (AI-inferred) */
   cpuIdle?: boolean | Computed<boolean>;
+  /** The maximum resource amount(s) (CPU, memory) this container may use. (AI-inferred) */
   limits?: Record<string, string> | Computed<Record<string, string>>;
+  /** Whether extra CPU is temporarily allocated during container startup, to reduce cold-start latency. (AI-inferred) */
   startupCpuBoost?: boolean | Computed<boolean>;
 }
 
 export interface Instance_Containers_SourceCode_CloudStorageSource {
+  /** The Cloud Storage bucket this volume mount is backed by. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** A number incremented each time this resource is significantly modified. (AI-inferred) */
   generation?: string | Computed<string>;
+  /** The Cloud Storage object this applies to. (AI-inferred) */
   object?: string | Computed<string>;
 }
 
 export interface Instance_Containers_SourceCode_InlinedSource_Sources {
+  /** The literal content of this configuration value. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The name of this file. (AI-inferred) */
   filename?: string | Computed<string>;
 }
 
 export interface Instance_Containers_SourceCode_InlinedSource {
+  /** The source(s) this build reads from. (AI-inferred) */
   sources?: Instance_Containers_SourceCode_InlinedSource_Sources[] | Computed<Instance_Containers_SourceCode_InlinedSource_Sources[]>;
 }
 
 export interface Instance_Containers_SourceCode {
+  /** The Cloud Storage location of the source code for this build. (AI-inferred) */
   cloudStorageSource?: Instance_Containers_SourceCode_CloudStorageSource | Computed<Instance_Containers_SourceCode_CloudStorageSource>;
+  /** Source code provided directly inline, rather than referencing an external location. (AI-inferred) */
   inlinedSource?: Instance_Containers_SourceCode_InlinedSource | Computed<Instance_Containers_SourceCode_InlinedSource>;
 }
 
 export interface Instance_Containers_VolumeMounts {
+  /** The path within the container this volume is mounted at. (AI-inferred) */
   mountPath?: string | Computed<string>;
+  /** The name identifying this container, revision, execution, or resource. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A specific subdirectory within the volume to mount, rather than its own root. (AI-inferred) */
   subPath?: string | Computed<string>;
 }
 
 export interface Instance_Containers {
+  /** The argument(s) passed to the container's own command. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** The base image this container was built from, tracked for automatic base image update. (AI-inferred) */
   baseImageUri?: string | Computed<string>;
+  /** Detail about how this revision's own image was built. (AI-inferred) */
   buildInfo?: Instance_Containers_BuildInfo | Computed<Instance_Containers_BuildInfo>;
+  /** The container entrypoint command, overriding the image's own default. (AI-inferred) */
   command?: string[] | Computed<string[]>;
+  /** The container(s) that must be healthy before this one starts. (AI-inferred) */
   dependsOn?: string[] | Computed<string[]>;
+  /** Environment variable(s) set in the container. (AI-inferred) */
   env?: Instance_Containers_Env[] | Computed<Instance_Containers_Env[]>;
+  /** The container image reference to run. (AI-inferred) */
   image?: string | Computed<string>;
+  /** A probe determining whether the container is still running correctly, restarting it if not. (AI-inferred) */
   livenessProbe?: Instance_Containers_LivenessProbe | Computed<Instance_Containers_LivenessProbe>;
+  /** The name identifying this container, revision, execution, or resource. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The port(s) this container exposes. (AI-inferred) */
   ports?: Instance_Containers_Ports[] | Computed<Instance_Containers_Ports[]>;
+  /** A probe determining whether the container is ready to receive traffic. (AI-inferred) */
   readinessProbe?: Instance_Containers_LivenessProbe | Computed<Instance_Containers_LivenessProbe>;
+  /** The compute resource requirement(s) (CPU, memory) for this container. (AI-inferred) */
   resources?: Instance_Containers_Resources | Computed<Instance_Containers_Resources>;
+  /** Configuration for launching this container within an isolated sandbox environment. (AI-inferred) */
   sandboxLauncher?: boolean | Computed<boolean>;
+  /** The source code this build was produced from. (AI-inferred) */
   sourceCode?: Instance_Containers_SourceCode | Computed<Instance_Containers_SourceCode>;
+  /** A probe determining whether the container has finished starting up, before liveness/readiness probes begin. (AI-inferred) */
   startupProbe?: Instance_Containers_LivenessProbe | Computed<Instance_Containers_LivenessProbe>;
+  /** The volume(s) mounted into this container. (AI-inferred) */
   volumeMounts?: Instance_Containers_VolumeMounts[] | Computed<Instance_Containers_VolumeMounts[]>;
+  /** The working directory the container's own entrypoint runs from. (AI-inferred) */
   workingDir?: string | Computed<string>;
 }
 
@@ -140,50 +207,74 @@ export interface Instance_NodeSelector {
 }
 
 export interface Instance_Volumes_CloudSqlInstance {
+  /** The instance(s) this applies to. (AI-inferred) */
   instances?: string[] | Computed<string[]>;
 }
 
 export interface Instance_Volumes_EmptyDir {
+  /** The storage medium backing this volume. (AI-inferred) */
   medium?: string | Computed<string>;
+  /** The maximum size this ephemeral volume may grow to. (AI-inferred) */
   sizeLimit?: string | Computed<string>;
 }
 
 export interface Instance_Volumes_Gcs {
+  /** The Cloud Storage bucket this volume mount is backed by. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** Additional mount option(s) applied to this volume. (AI-inferred) */
   mountOptions?: string[] | Computed<string[]>;
+  /** Whether this volume mount is mounted read-only, preventing the container from writing to it. (AI-inferred) */
   readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Instance_Volumes_Nfs {
+  /** The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred) */
   path?: string | Computed<string>;
+  /** Whether this volume mount is mounted read-only, preventing the container from writing to it. (AI-inferred) */
   readOnly?: boolean | Computed<boolean>;
+  /** The server hostname or address this connects to. (AI-inferred) */
   server?: string | Computed<string>;
 }
 
 export interface Instance_Volumes_Secret_Items {
+  /** The file permission mode applied. (AI-inferred) */
   mode?: number | Computed<number>;
+  /** The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The version identifier of this resource or revision. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Instance_Volumes_Secret {
+  /** The default file permission mode applied to files in this volume. (AI-inferred) */
   defaultMode?: number | Computed<number>;
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: Instance_Volumes_Secret_Items[] | Computed<Instance_Volumes_Secret_Items[]>;
+  /** The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred) */
   secret?: string | Computed<string>;
 }
 
 export interface Instance_Volumes {
+  /** The Cloud SQL instance(s) this service connects to. (AI-inferred) */
   cloudSqlInstance?: Instance_Volumes_CloudSqlInstance | Computed<Instance_Volumes_CloudSqlInstance>;
+  /** An ephemeral volume backed by local storage, cleared when the instance stops. (AI-inferred) */
   emptyDir?: Instance_Volumes_EmptyDir | Computed<Instance_Volumes_EmptyDir>;
+  /** Configuration for a volume backed by a Cloud Storage bucket. (AI-inferred) */
   gcs?: Instance_Volumes_Gcs | Computed<Instance_Volumes_Gcs>;
+  /** The name identifying this container, revision, execution, or resource. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for a volume backed by an NFS file share. (AI-inferred) */
   nfs?: Instance_Volumes_Nfs | Computed<Instance_Volumes_Nfs>;
+  /** The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred) */
   secret?: Instance_Volumes_Secret | Computed<Instance_Volumes_Secret>;
 }
 
 export interface Instance_VpcAccess_NetworkInterfaces {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
+  /** The traffic tag(s) applied to this revision. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
 }
 
@@ -480,6 +571,7 @@ const Instance_VpcAccessFields: FieldMap = {
 };
 
 export interface InstanceConfig {
+  /** Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred) */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Settings for Binary Authorization feature. */
   binaryAuthorization?: Instance_BinaryAuthorization | Computed<Instance_BinaryAuthorization>;
@@ -509,6 +601,7 @@ export interface InstanceConfig {
   ingress?: string | Computed<string>;
   /** Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check. */
   invokerIamDisabled?: boolean | Computed<boolean>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, `GA` is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if `ALPHA` is provided as input, but only `BETA` and `GA`-level features are used, this field will be `BETA` on output. */
   launchStage?: string | Computed<string>;
@@ -518,6 +611,7 @@ export interface InstanceConfig {
   nodeSelector?: Instance_NodeSelector | Computed<Instance_NodeSelector>;
   /** Optional. Restart policy for the Instance. */
   restartPolicy?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
   /** Defines a status condition for a resource. */
   terminalCondition?: Instance_Conditions | Computed<Instance_Conditions>;
@@ -528,6 +622,7 @@ export interface InstanceConfig {
 }
 
 export interface InstanceAttrs {
+  /** Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred) */
   annotations: Record<string, string>;
   /** Settings for Binary Authorization feature. */
   binaryAuthorization: Instance_BinaryAuthorization;
@@ -571,6 +666,7 @@ export interface InstanceAttrs {
   ingress: string;
   /** Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check. */
   invokerIamDisabled: boolean;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels: Record<string, string>;
   /** Output only. Email address of the last authenticated modifier. */
   lastModifier: string;
@@ -590,6 +686,7 @@ export interface InstanceAttrs {
   restartPolicy: string;
   /** Output only. Reserved for future use. */
   satisfiesPzs: boolean;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount: string;
   /** Defines a status condition for a resource. */
   terminalCondition: Instance_Conditions;

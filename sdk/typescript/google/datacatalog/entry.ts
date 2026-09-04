@@ -32,7 +32,9 @@ export interface Entry_BigqueryTableSpec {
 }
 
 export interface Entry_BusinessContext_Contacts_People {
+  /** A structured label categorizing this business term or its usage. (AI-inferred) */
   designation?: string | Computed<string>;
+  /** An email address associated with this entry. (AI-inferred) */
   email?: string | Computed<string>;
 }
 
@@ -140,9 +142,13 @@ export interface Entry_DatabaseTableSpec_DataplexTable_DataplexSpec {
 }
 
 export interface Entry_DatabaseTableSpec_DataplexTable_ExternalTables {
+  /** A reference to the linked Data Catalog entry. (AI-inferred) */
   dataCatalogEntry?: string | Computed<string>;
+  /** The fully qualified name identifying this entry within its own source system. (AI-inferred) */
   fullyQualifiedName?: string | Computed<string>;
+  /** A reference to the underlying Google Cloud resource this entry represents. (AI-inferred) */
   googleCloudResource?: string | Computed<string>;
+  /** The external system this entry originates from. (AI-inferred) */
   system?: string | Computed<string>;
 }
 
@@ -192,14 +198,20 @@ export interface Entry_FilesetSpec {
 }
 
 export interface Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestamps {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred) */
   expireTime?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Entry_GcsFilesetSpec_SampleGcsFileSpecs {
+  /** The path to this file within its own source system. (AI-inferred) */
   filePath?: string | Computed<string>;
+  /** Creation and modification timestamps read from Cloud Storage object metadata. (AI-inferred) */
   gcsTimestamps?: Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestamps | Computed<Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestamps>;
+  /** The size of this object, in bytes. (AI-inferred) */
   sizeBytes?: string | Computed<string>;
 }
 
@@ -211,31 +223,48 @@ export interface Entry_GcsFilesetSpec {
 }
 
 export interface Entry_GraphSpec_EdgeTables_DestinationNodeReference {
+  /** The column(s) identifying an edge's own source and destination nodes. (AI-inferred) */
   edgeTableColumns?: string[] | Computed<string[]>;
+  /** An alternate name this graph node is also known by. (AI-inferred) */
   nodeAlias?: string | Computed<string>;
+  /** The column(s) identifying this graph node's own key. (AI-inferred) */
   nodeTableColumns?: string[] | Computed<string[]>;
 }
 
 export interface Entry_GraphSpec_EdgeTables_LabelAndProperties_Properties {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Entry_GraphSpec_EdgeTables_LabelAndProperties {
+  /** A human-readable label for this entry. (AI-inferred) */
   label?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Entry_GraphSpec_EdgeTables_LabelAndProperties_Properties[] | Computed<Entry_GraphSpec_EdgeTables_LabelAndProperties_Properties[]>;
 }
 
 export interface Entry_GraphSpec_EdgeTables {
+  /** An alternate name this entry is also known by. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** The source system this entry's own data originates from. (AI-inferred) */
   dataSource?: string | Computed<string>;
+  /** A reference to the node this edge points to. (AI-inferred) */
   destinationNodeReference?: Entry_GraphSpec_EdgeTables_DestinationNodeReference | Computed<Entry_GraphSpec_EdgeTables_DestinationNodeReference>;
+  /** The column whose own values are used as dynamic labels for this graph element. (AI-inferred) */
   dynamicLabelColumn?: string | Computed<string>;
+  /** The column whose own values populate dynamic properties for this graph element. (AI-inferred) */
   dynamicPropertiesColumn?: string | Computed<string>;
+  /** The key(s) identifying element(s) within this schema. (AI-inferred) */
   elementKeys?: string[] | Computed<string[]>;
+  /** The source data this process consumed. (AI-inferred) */
   inputSource?: string | Computed<string>;
+  /** The category of this schema element. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The label and associated key/value properties assigned to this graph element. (AI-inferred) */
   labelAndProperties?: Entry_GraphSpec_EdgeTables_LabelAndProperties[] | Computed<Entry_GraphSpec_EdgeTables_LabelAndProperties[]>;
+  /** A reference to the node this edge originates from. (AI-inferred) */
   sourceNodeReference?: Entry_GraphSpec_EdgeTables_DestinationNodeReference | Computed<Entry_GraphSpec_EdgeTables_DestinationNodeReference>;
 }
 
@@ -301,8 +330,11 @@ export interface Entry_RoutineSpec_BigqueryRoutineSpec {
 }
 
 export interface Entry_RoutineSpec_RoutineArguments {
+  /** Whether this field is `REQUIRED`, `NULLABLE`, or `REPEATED`. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -322,20 +354,32 @@ export interface Entry_RoutineSpec {
 }
 
 export interface Entry_Schema_Columns_LookerColumnSpec {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Entry_Schema_Columns {
+  /** A reference to a specific column. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The value used when none is explicitly provided. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The garbage-collection rule applied to this Bigtable column family. (AI-inferred) */
   gcRule?: string | Computed<string>;
+  /** The strongest indexing level detected for this column. (AI-inferred) */
   highestIndexingType?: string | Computed<string>;
+  /** Metadata specific to a column sourced from Looker. (AI-inferred) */
   lookerColumnSpec?: Entry_Schema_Columns_LookerColumnSpec | Computed<Entry_Schema_Columns_LookerColumnSpec>;
+  /** Whether this field is `REQUIRED`, `NULLABLE`, or `REPEATED`. (AI-inferred) */
   mode?: string | Computed<string>;
+  /** This column's own position within its containing schema. (AI-inferred) */
   ordinalPosition?: number | Computed<number>;
+  /** The data type of elements within this range-typed field. (AI-inferred) */
   rangeElementType?: Entry_Schema_Columns_LookerColumnSpec | Computed<Entry_Schema_Columns_LookerColumnSpec>;
+  /** The nested column(s) contained within this column. (AI-inferred) */
   subcolumns?: unknown[] | Computed<unknown[]>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -345,9 +389,13 @@ export interface Entry_Schema {
 }
 
 export interface Entry_ServiceSpec_CloudBigtableInstanceSpec_CloudBigtableClusterSpecs {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the resource this entry represents. (AI-inferred) */
   linkedResource?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -362,13 +410,18 @@ export interface Entry_ServiceSpec {
 }
 
 export interface Entry_SpannerTableSpec_ForeignKeys_ColumnMappings {
+  /** A reference to a specific column. (AI-inferred) */
   column?: string | Computed<string>;
+  /** The column this reference points to. (AI-inferred) */
   referenceColumn?: string | Computed<string>;
 }
 
 export interface Entry_SpannerTableSpec_ForeignKeys {
+  /** The mapping of source column(s) to this lineage process's own inputs and outputs. (AI-inferred) */
   columnMappings?: Entry_SpannerTableSpec_ForeignKeys_ColumnMappings[] | Computed<Entry_SpannerTableSpec_ForeignKeys_ColumnMappings[]>;
+  /** A reference to the Data Catalog entry this applies to. (AI-inferred) */
   entry?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -394,13 +447,18 @@ export interface Entry_SqlDatabaseSystemSpec {
 }
 
 export interface Entry_UsageSignal_CommonUsageWithinTimeRange {
+  /** The number of times this resource has been viewed. (AI-inferred) */
   viewCount?: string | Computed<string>;
 }
 
 export interface Entry_UsageSignal_UsageWithinTimeRange {
+  /** The total number of times this task was cancelled. (AI-inferred) */
   totalCancellations?: number | Computed<number>;
+  /** The total number of times this task completed successfully. (AI-inferred) */
   totalCompletions?: number | Computed<number>;
+  /** The cumulative execution time, in milliseconds, across all successful completions of this task. (AI-inferred) */
   totalExecutionTimeForCompletionsMillis?: number | Computed<number>;
+  /** The total number of times this task failed. (AI-inferred) */
   totalFailures?: number | Computed<number>;
 }
 

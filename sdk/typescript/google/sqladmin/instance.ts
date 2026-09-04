@@ -16,9 +16,13 @@ export interface Instance_DiskEncryptionStatus {
 }
 
 export interface Instance_DnsNames {
+  /** Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred) */
   connectionType?: string | Computed<string>;
+  /** Whether this DNS name resolves within the VPC only or more broadly. (AI-inferred) */
   dnsScope?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The system responsible for managing this DNS record. (AI-inferred) */
   recordManager?: string | Computed<string>;
 }
 
@@ -45,35 +49,56 @@ export interface Instance_GeminiConfig {
 }
 
 export interface Instance_IpAddresses {
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** When this resource will be retired and no longer usable. (AI-inferred) */
   timeToRetire?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Instance_Nodes_PscAutoConnections {
+  /** A reference to the consumer-side VPC network this connection uses. (AI-inferred) */
   consumerNetwork?: string | Computed<string>;
+  /** The current status of the consumer-side network connection. (AI-inferred) */
   consumerNetworkStatus?: string | Computed<string>;
+  /** A reference to the consumer's own Google Cloud project. (AI-inferred) */
   consumerProject?: string | Computed<string>;
+  /** Whether this instance's own automatic DNS name is active. (AI-inferred) */
   instanceAutoDnsStatus?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** A reference to the service connection policy this applies to. (AI-inferred) */
   serviceConnectionPolicy?: string | Computed<string>;
+  /** The outcome of automatically creating a service connection policy for this instance. (AI-inferred) */
   serviceConnectionPolicyCreationResult?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   status?: string | Computed<string>;
+  /** Whether this instance's own automatic DNS name for the write endpoint is active. (AI-inferred) */
   writeEndpointAutoDnsStatus?: string | Computed<string>;
 }
 
 export interface Instance_Nodes {
+  /** The DNS name assigned to this instance. (AI-inferred) */
   dnsName?: string | Computed<string>;
+  /** The DNS name(s) assigned to this instance. (AI-inferred) */
   dnsNames?: Instance_DnsNames[] | Computed<Instance_DnsNames[]>;
+  /** The Compute Engine zone this instance runs in. (AI-inferred) */
   gceZone?: string | Computed<string>;
+  /** The IP address(es) assigned to this instance. (AI-inferred) */
   ipAddresses?: Instance_IpAddresses[] | Computed<Instance_IpAddresses[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Private Service Connect connection(s) automatically established for this instance. (AI-inferred) */
   pscAutoConnections?: Instance_Nodes_PscAutoConnections[] | Computed<Instance_Nodes_PscAutoConnections[]>;
+  /** A reference to the Private Service Connect service attachment this instance publishes. (AI-inferred) */
   pscServiceAttachmentLink?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Instance_OnPremisesConfiguration_SelectedObjects {
+  /** A reference to the database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
 }
 
@@ -166,6 +191,7 @@ export interface Instance_ReplicationCluster {
 }
 
 export interface Instance_ScheduledMaintenance {
+  /** Whether this maintenance can be deferred to a later window. (AI-inferred) */
   canDefer?: boolean | Computed<boolean>;
   /** If the scheduled maintenance can be rescheduled. */
   canReschedule?: boolean | Computed<boolean>;
@@ -249,7 +275,9 @@ export interface Instance_Settings_BackupConfiguration {
 }
 
 export interface Instance_Settings_ConnectionPoolConfig_Flags {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -268,8 +296,11 @@ export interface Instance_Settings_DataCacheConfig {
 }
 
 export interface Instance_Settings_DenyMaintenancePeriods {
+  /** When this window or period ends. (AI-inferred) */
   endDate?: string | Computed<string>;
+  /** When this window or period starts. (AI-inferred) */
   startDate?: string | Computed<string>;
+  /** The time this event occurred at. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
@@ -305,9 +336,13 @@ export interface Instance_Settings_InsightsConfig {
 }
 
 export interface Instance_Settings_IpConfiguration_AuthorizedNetworks {
+  /** When this resource expires. (AI-inferred) */
   expirationTime?: string | Computed<string>;
+  /** The category of this resource. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -426,7 +461,9 @@ export interface Instance_Settings_PerformanceCaptureConfig {
 }
 
 export interface Instance_Settings_ReadPoolAutoScaleConfig_TargetMetrics {
+  /** The name of the metric being reported. (AI-inferred) */
   metric?: string | Computed<string>;
+  /** The value this metric is measured against. (AI-inferred) */
   targetValue?: number | Computed<number>;
 }
 
@@ -554,8 +591,11 @@ export interface Instance_Settings {
 }
 
 export interface Instance_UpgradableDatabaseVersions {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The major version of the database engine this instance runs. (AI-inferred) */
   majorVersion?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -1071,6 +1111,7 @@ export interface InstanceConfig {
   serviceAccountEmailAddress?: string | Computed<string>;
   /** Database instance settings. */
   settings?: Instance_Settings | Computed<Instance_Settings>;
+  /** Whether this instance uses the legacy or the new (Private Service Connect based) network architecture. (AI-inferred) */
   sqlNetworkArchitecture?: string | Computed<string>;
   /** The current serving state of the Cloud SQL instance. */
   state?: string | Computed<string>;
@@ -1173,6 +1214,7 @@ export interface InstanceAttrs {
   serviceAccountEmailAddress: string;
   /** Database instance settings. */
   settings: Instance_Settings;
+  /** Whether this instance uses the legacy or the new (Private Service Connect based) network architecture. (AI-inferred) */
   sqlNetworkArchitecture: string;
   /** The current serving state of the Cloud SQL instance. */
   state: string;

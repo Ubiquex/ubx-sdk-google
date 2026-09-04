@@ -528,9 +528,11 @@ const BetaRegionSecurityPolicy_UserDefinedFieldsFields: FieldMap = {
 export interface BetaRegionSecurityPolicyConfig {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig?: BetaRegionSecurityPolicy_AdaptiveProtectionConfig | Computed<BetaRegionSecurityPolicy_AdaptiveProtectionConfig>;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig?: BetaRegionSecurityPolicy_AdvancedOptionsConfig | Computed<BetaRegionSecurityPolicy_AdvancedOptionsConfig>;
   /** A list of associations that belong to this policy. */
   associations?: BetaRegionSecurityPolicy_Associations[] | Computed<BetaRegionSecurityPolicy_Associations[]>;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig?: BetaRegionSecurityPolicy_DdosProtectionConfig | Computed<BetaRegionSecurityPolicy_DdosProtectionConfig>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -558,11 +560,13 @@ export interface BetaRegionSecurityPolicyConfig {
 export interface BetaRegionSecurityPolicyAttrs {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig: BetaRegionSecurityPolicy_AdaptiveProtectionConfig;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig: BetaRegionSecurityPolicy_AdvancedOptionsConfig;
   /** A list of associations that belong to this policy. */
   associations: BetaRegionSecurityPolicy_Associations[];
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig: BetaRegionSecurityPolicy_DdosProtectionConfig;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;

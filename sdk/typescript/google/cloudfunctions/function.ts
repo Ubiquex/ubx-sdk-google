@@ -80,8 +80,11 @@ export interface Function_BuildConfig {
 }
 
 export interface Function_EventTrigger_EventFilters {
+  /** A single custom attribute. (AI-inferred) */
   attribute?: string | Computed<string>;
+  /** How this condition's own operands are compared. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -107,27 +110,40 @@ export interface Function_EventTrigger {
 }
 
 export interface Function_ServiceConfig_DirectVpcNetworkInterface {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
+  /** The label(s) or tag(s) attached to this resource. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
 }
 
 export interface Function_ServiceConfig_SecretEnvironmentVariables {
+  /** The key of this attribute or label. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The identifier of the associated Google Cloud project. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** A reference to the secret this applies to. (AI-inferred) */
   secret?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Function_ServiceConfig_SecretVolumes_Versions {
+  /** A file or resource path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Function_ServiceConfig_SecretVolumes {
+  /** The path this volume is mounted at inside the container. (AI-inferred) */
   mountPath?: string | Computed<string>;
+  /** The identifier of the associated Google Cloud project. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** A reference to the secret this applies to. (AI-inferred) */
   secret?: string | Computed<string>;
+  /** The version(s) this applies to. (AI-inferred) */
   versions?: Function_ServiceConfig_SecretVolumes_Versions[] | Computed<Function_ServiceConfig_SecretVolumes_Versions[]>;
 }
 
@@ -177,8 +193,11 @@ export interface Function_ServiceConfig {
 }
 
 export interface Function_StateMessages {
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** How serious this condition is. (AI-inferred) */
   severity?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

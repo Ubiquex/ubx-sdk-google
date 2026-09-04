@@ -2,9 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Customer_CustomerOnboardingState_OnboardingSteps {
+  /** The real, current completion status (`PENDING`, `SUCCEEDED`, `FAILED`, `NOT_APPLICABLE`) of this customer onboarding step. (AI-inferred) */
   completionState?: string | Computed<string>;
+  /** The real timestamp when this customer onboarding step completed, if it has. (AI-inferred) */
   completionTime?: string | Computed<string>;
+  /** The real timestamp when this customer onboarding step started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The real, specific onboarding step (`KAJ_ENROLLMENT` or `CUSTOMER_ENVIRONMENT`) this status entry describes. (AI-inferred) */
   step?: string | Computed<string>;
 }
 

@@ -11,8 +11,11 @@ export interface IssueModel_InputDataConfig {
 }
 
 export interface IssueModel_TrainingStats_IssueStats {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the detected issue this applies to. (AI-inferred) */
   issue?: string | Computed<string>;
+  /** How many conversations have been manually labeled for this dataset. (AI-inferred) */
   labeledConversationsCount?: string | Computed<string>;
 }
 

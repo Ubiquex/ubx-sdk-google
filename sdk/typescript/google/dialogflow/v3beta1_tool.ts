@@ -282,25 +282,42 @@ const V3beta1Tool_OpenApiSpecFields: FieldMap = {
 };
 
 export interface V3beta1ToolConfig {
+  /** The specification of a connector (an external API or service) a generator can call. (AI-inferred) */
   connectorSpec?: V3beta1Tool_ConnectorSpec | Computed<V3beta1Tool_ConnectorSpec>;
+  /** Configuration for how this playbook or tool queries a connected data store. (AI-inferred) */
   dataStoreSpec?: V3beta1Tool_DataStoreSpec | Computed<V3beta1Tool_DataStoreSpec>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The specification of an extension a generator can invoke. (AI-inferred) */
   extensionSpec?: V3beta1Tool_ExtensionSpec | Computed<V3beta1Tool_ExtensionSpec>;
+  /** Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred) */
   functionSpec?: V3beta1Tool_FunctionSpec | Computed<V3beta1Tool_FunctionSpec>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSpec?: V3beta1Tool_OpenApiSpec | Computed<V3beta1Tool_OpenApiSpec>;
 }
 
 export interface V3beta1ToolAttrs {
+  /** The specification of a connector (an external API or service) a generator can call. (AI-inferred) */
   connectorSpec: V3beta1Tool_ConnectorSpec;
+  /** Configuration for how this playbook or tool queries a connected data store. (AI-inferred) */
   dataStoreSpec: V3beta1Tool_DataStoreSpec;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The specification of an extension a generator can invoke. (AI-inferred) */
   extensionSpec: V3beta1Tool_ExtensionSpec;
+  /** Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred) */
   functionSpec: V3beta1Tool_FunctionSpec;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSpec: V3beta1Tool_OpenApiSpec;
+  /** Which kind of tool this is, e.g. an OpenAPI-defined service, a function, or a data store. (AI-inferred) */
   toolType: string;
 }
 

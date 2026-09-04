@@ -4,27 +4,39 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndUserAuthentication_ConfigVariables_SecretValue struct {
-	SecretValue   any
+	// This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
+	SecretValue any
+	// The specific Secret Manager secret version referenced. (AI-inferred)
 	SecretVersion any
 }
 
 type EndUserAuthentication_ConfigVariables struct {
-	BoolValue   any
-	IntValue    any
-	Key         any
+	// This configuration variable's own value, when its type is boolean. (AI-inferred)
+	BoolValue any
+	// This admin filter's own value, when its type is an integer. (AI-inferred)
+	IntValue any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
 	SecretValue any
+	// This admin filter's own value, when its type is a string. (AI-inferred)
 	StringValue any
 }
 
 type EndUserAuthentication_DestinationConfigs_Destinations struct {
-	Host              any
-	Port              any
+	// The hostname of this destination. (AI-inferred)
+	Host any
+	// The port this destination listens on. (AI-inferred)
+	Port any
+	// A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred)
 	ServiceAttachment any
 }
 
 type EndUserAuthentication_DestinationConfigs struct {
+	// The backend endpoint(s) traffic for this connection is routed to. (AI-inferred)
 	Destinations any
-	Key          any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
 }
 
 type EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlow_OauthTokenData struct {
@@ -133,7 +145,9 @@ type EndUserAuthentication_EndUserAuthenticationConfig struct {
 }
 
 type EndUserAuthentication_NotifyEndpointDestination_Endpoint_Headers struct {
-	Key   any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// This HTTP header's own value. (AI-inferred)
 	Value any
 }
 

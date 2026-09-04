@@ -20,6 +20,7 @@ export interface FeatureGroup_BigQuery {
   entityIdColumns?: string[] | Computed<string[]>;
   /** Optional. Set if the data source is not a time-series. */
   staticDataSource?: boolean | Computed<boolean>;
+  /** Configuration for reading this feature group's own data as a time series from BigQuery. (AI-inferred) */
   timeSeries?: FeatureGroup_BigQuery_TimeSeries | Computed<FeatureGroup_BigQuery_TimeSeries>;
 }
 

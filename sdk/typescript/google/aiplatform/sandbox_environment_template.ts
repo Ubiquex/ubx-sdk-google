@@ -7,7 +7,9 @@ export interface SandboxEnvironmentTemplate_CustomContainerEnvironment_CustomCon
 }
 
 export interface SandboxEnvironmentTemplate_CustomContainerEnvironment_Ports {
+  /** A network port number. (AI-inferred) */
   port?: number | Computed<number>;
+  /** The network protocol this applies to, e.g. `TCP` or `UDP`. (AI-inferred) */
   protocol?: string | Computed<string>;
 }
 
@@ -35,8 +37,11 @@ export interface SandboxEnvironmentTemplate_DefaultContainerEnvironment {
 }
 
 export interface SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs {
+  /** The domain this configuration or resource applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** The VPC network this resource is deployed into. (AI-inferred) */
   targetNetwork?: string | Computed<string>;
+  /** The Google Cloud project this resource targets. (AI-inferred) */
   targetProject?: string | Computed<string>;
 }
 
@@ -52,11 +57,17 @@ export interface SandboxEnvironmentTemplate_EgressControlConfig {
 }
 
 export interface SandboxEnvironmentTemplate_IngressControlConfig_PscAutomationConfigs {
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** A reference to the forwarding rule directing traffic to this resource. (AI-inferred) */
   forwardingRule?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

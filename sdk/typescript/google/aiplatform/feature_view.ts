@@ -14,7 +14,9 @@ export interface FeatureView_BigtableMetadata {
 }
 
 export interface FeatureView_FeatureRegistrySource_FeatureGroups {
+  /** The feature group this applies to. (AI-inferred) */
   featureGroupId?: string | Computed<string>;
+  /** The specific feature(s) within `feature_group_id` this applies to. (AI-inferred) */
   featureIds?: string[] | Computed<string[]>;
 }
 
@@ -138,6 +140,7 @@ const FeatureView_VertexRagSourceFields: FieldMap = {
 };
 
 export interface FeatureViewConfig {
+  /** The BigQuery table or view this feature view reads its own data from. (AI-inferred) */
   bigQuerySource?: FeatureView_BigQuerySource | Computed<FeatureView_BigQuerySource>;
   /** Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances. */
   bigtableMetadata?: FeatureView_BigtableMetadata | Computed<FeatureView_BigtableMetadata>;
@@ -162,6 +165,7 @@ export interface FeatureViewConfig {
 }
 
 export interface FeatureViewAttrs {
+  /** The BigQuery table or view this feature view reads its own data from. (AI-inferred) */
   bigQuerySource: FeatureView_BigQuerySource;
   /** Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances. */
   bigtableMetadata: FeatureView_BigtableMetadata;

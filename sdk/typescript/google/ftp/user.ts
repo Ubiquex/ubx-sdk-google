@@ -2,15 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface User_StorageDirectoryMappings {
+  /** The real Cloud Storage bucket this FTP user's own storage directory mapping points at. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** The real object key prefix within `bucket` this storage directory mapping scopes the FTP user's access to. (AI-inferred) */
   bucketPrefix?: string | Computed<string>;
+  /** The real, virtual FTP directory path this storage directory mapping exposes to the user. (AI-inferred) */
   directory?: string | Computed<string>;
+  /** The real access level (`READ_ONLY` or `READ_WRITE`) this storage directory mapping grants the FTP user. (AI-inferred) */
   permission?: string | Computed<string>;
 }
 
 export interface User_UserCredentials {
+  /** A real, client-assigned name identifying this FTP user credential. (AI-inferred) */
   credentialName?: string | Computed<string>;
+  /** The real credential type (currently only `PUBLIC_KEY`) this FTP user credential uses. (AI-inferred) */
   credentialType?: string | Computed<string>;
+  /** The real, raw SSH public key body authorized for this FTP user credential. (AI-inferred) */
   sshPublicKeyBody?: string | Computed<string>;
 }
 

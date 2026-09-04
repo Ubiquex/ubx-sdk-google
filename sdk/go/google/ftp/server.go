@@ -18,18 +18,24 @@ type Server_GoogleManagedServerCredential struct {
 }
 
 type Server_InternalConfig_ConsumerAcceptList struct {
+	// The real maximum number of concurrent connections this consumer accept-list entry is allowed. (AI-inferred)
 	ConnectionLimit any
-	Project         any
+	// The real Google Cloud project this consumer accept-list entry authorizes to connect via Private Service Connect. (AI-inferred)
+	Project any
 }
 
 type Server_InternalConfig_ConsumerRejectList struct {
+	// The real Google Cloud project this consumer accept-list entry authorizes to connect via Private Service Connect. (AI-inferred)
 	Project any
 }
 
 type Server_InternalConfig_PscEndpoints struct {
+	// The real Private Service Connect endpoint address this FTP server is reachable at. (AI-inferred)
 	Endpoint any
-	Network  any
-	Status   any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The real, current connection status of this Private Service Connect endpoint. (AI-inferred)
+	Status any
 }
 
 type Server_InternalConfig struct {

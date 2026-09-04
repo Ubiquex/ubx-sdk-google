@@ -28,31 +28,53 @@ var V3beta1SecuritySetting_InsightsExportSettingsFields = ubx.FieldMap{
 }
 
 type V3beta1SecuritySettingConfig struct {
-	AudioExportSettings    any
-	DeidentifyTemplate     any
-	DisplayName            any
+	// Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
+	AudioExportSettings any
+	// A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
+	DeidentifyTemplate any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
 	InsightsExportSettings any
-	InspectTemplate        any
-	Name                   any
-	PurgeDataTypes         any
-	RedactionScope         any
-	RedactionStrategy      any
-	RetentionStrategy      any
-	RetentionWindowDays    any
+	// A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
+	InspectTemplate any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Which category/categories of stored data this purge request removes. (AI-inferred)
+	PurgeDataTypes any
+	// How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
+	RedactionScope any
+	// How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
+	RedactionStrategy any
+	// How long conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionStrategy any
+	// How many days conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionWindowDays any
 }
 
 type V3beta1SecuritySettingAttrs struct {
-	AudioExportSettings    any
-	DeidentifyTemplate     any
-	DisplayName            any
+	// Configuration for exporting conversation audio recordings to Cloud Storage. (AI-inferred)
+	AudioExportSettings any
+	// A reference to the Sensitive Data Protection template used to redact sensitive data from this content. (AI-inferred)
+	DeidentifyTemplate any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Configuration for exporting conversation data to Conversational Insights. (AI-inferred)
 	InsightsExportSettings any
-	InspectTemplate        any
-	Name                   any
-	PurgeDataTypes         any
-	RedactionScope         any
-	RedactionStrategy      any
-	RetentionStrategy      any
-	RetentionWindowDays    any
+	// A reference to the Sensitive Data Protection template used to detect sensitive data in this content. (AI-inferred)
+	InspectTemplate any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Which category/categories of stored data this purge request removes. (AI-inferred)
+	PurgeDataTypes any
+	// How broadly redaction applies, e.g. to this request only or the whole conversation. (AI-inferred)
+	RedactionScope any
+	// How matched sensitive data is redacted, e.g. replaced with a placeholder token. (AI-inferred)
+	RedactionStrategy any
+	// How long conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionStrategy any
+	// How many days conversation data is retained before automatic deletion. (AI-inferred)
+	RetentionWindowDays any
 }
 
 var V3beta1SecuritySetting = ubx.ResourceBinding{

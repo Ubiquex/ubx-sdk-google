@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Agent_AfterAgentCallbacks:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Whether the agent may call this tool on its own initiative, rather than only in direct response to an explicit user request. (AI-inferred)
     proactive_execution_enabled: Any = None
+    # Custom Python logic run inline as part of this tool or condition. (AI-inferred)
     python_code: Any = None
 
 @dataclasses.dataclass
@@ -39,31 +43,42 @@ class Agent_RemoteDialogflowAgent:
 
 @dataclasses.dataclass
 class Agent_Toolsets:
+    # The identifier(s) of the tool(s) this applies to. (AI-inferred)
     tool_ids: Any = None
+    # A reference to the toolset this belongs to. (AI-inferred)
     toolset: Any = None
 
 @dataclasses.dataclass
 class Agent_TransferRules_DeterministicTransfer_ExpressionCondition:
+    # The expression text. (AI-inferred)
     expression: Any = None
 
 @dataclasses.dataclass
 class Agent_TransferRules_DeterministicTransfer_PythonCodeCondition:
+    # Custom Python logic run inline as part of this tool or condition. (AI-inferred)
     python_code: Any = None
 
 @dataclasses.dataclass
 class Agent_TransferRules_DeterministicTransfer:
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     expression_condition: Any = None
+    # A Python expression that must evaluate truthy for this to apply. (AI-inferred)
     python_code_condition: Any = None
 
 @dataclasses.dataclass
 class Agent_TransferRules_DisablePlannerTransfer:
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     expression_condition: Any = None
 
 @dataclasses.dataclass
 class Agent_TransferRules:
+    # A reference to a sub-agent this agent may transfer the conversation to. (AI-inferred)
     child_agent: Any = None
+    # Whether this agent transfer happens automatically, without the model deciding whether to invoke it. (AI-inferred)
     deterministic_transfer: Any = None
+    # Which direction this applies in. (AI-inferred)
     direction: Any = None
+    # Whether the model is prevented from transferring the conversation to another agent on its own initiative. (AI-inferred)
     disable_planner_transfer: Any = None
 
 _Agent_AfterAgentCallbacksFields = {

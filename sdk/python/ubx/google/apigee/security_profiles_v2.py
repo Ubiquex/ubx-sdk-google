@@ -8,11 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityProfilesV2_ProfileAssessmentConfigs_Include:
+    # The kind of gateway (e.g. proxy or shared flow) this applies to. (AI-inferred)
     gateway_types: Any = None
 
 @dataclasses.dataclass
 class SecurityProfilesV2_ProfileAssessmentConfigs:
+    # Whether this item is included. (AI-inferred)
     include: Any = None
+    # The relative weight of this item. (AI-inferred)
     weight: Any = None
 
 _SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields = {

@@ -19,8 +19,11 @@ class Bucket_CmekSettings:
 
 @dataclasses.dataclass
 class Bucket_IndexConfigs:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The path to this field within its own containing record. (AI-inferred)
     field_path: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 _Bucket_CmekSettingsFields = {

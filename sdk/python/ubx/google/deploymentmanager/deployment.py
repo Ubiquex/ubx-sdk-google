@@ -8,57 +8,85 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Deployment_Labels:
+    # The key of this metadata entry. (AI-inferred)
     key: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors_DebugInfo:
+    # Additional detail about this result. (AI-inferred)
     detail: Any = None
+    # The individual frame(s) making up this stack trace. (AI-inferred)
     stack_entries: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors_ErrorDetails_ErrorInfo:
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # Metadata entries associated with this resource. (AI-inferred)
     metadatas: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors_ErrorDetails_Help_Links:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors_ErrorDetails_Help:
+    # Related link(s) for this resource. (AI-inferred)
     links: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors_ErrorDetails_LocalizedMessage:
+    # The locale this localized content is expressed in. (AI-inferred)
     locale: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors_ErrorDetails_QuotaInfo:
+    # The dimension(s) this quota is tracked across, e.g. region. (AI-inferred)
     dimensions: Any = None
+    # The quota limit that will take effect at a future date. (AI-inferred)
     future_limit: Any = None
+    # The maximum amount allowed. (AI-inferred)
     limit: Any = None
+    # The name of the quota this limit applies to. (AI-inferred)
     limit_name: Any = None
+    # The name of the metric this applies to. (AI-inferred)
     metric_name: Any = None
+    # The current status of this feature rollout. (AI-inferred)
     rollout_status: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors_ErrorDetails:
+    # Structured detail about an error that occurred. (AI-inferred)
     error_info: Any = None
+    # Guidance for resolving this error. (AI-inferred)
     help: Any = None
+    # A human-readable error message, localized for the caller. (AI-inferred)
     localized_message: Any = None
+    # Detail about the quota this operation is subject to. (AI-inferred)
     quota_info: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_Error_Errors:
+    # The argument(s) passed to this operation. (AI-inferred)
     arguments: Any = None
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail intended for debugging. (AI-inferred)
     debug_info: Any = None
+    # Additional structured detail about the error. (AI-inferred)
     error_details: Any = None
+    # The Google Cloud region or zone this applies to. (AI-inferred)
     location: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -80,14 +108,20 @@ class Deployment_Operation_GetVersionOperationMetadata_InlineSbomInfo:
 
 @dataclasses.dataclass
 class Deployment_Operation_GetVersionOperationMetadata:
+    # Software bill-of-materials information embedded in this resource. (AI-inferred)
     inline_sbom_info: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatus:
+    # The number of VM instance(s) successfully created by this bulk operation. (AI-inferred)
     created_vm_count: Any = None
+    # The number of VM instance(s) deleted by this bulk operation. (AI-inferred)
     deleted_vm_count: Any = None
+    # The number of VM instance(s) this bulk operation failed to create. (AI-inferred)
     failed_to_create_vm_count: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
+    # The total number of VM instance(s) this bulk operation targets. (AI-inferred)
     target_vm_count: Any = None
 
 @dataclasses.dataclass
@@ -106,13 +140,18 @@ class Deployment_Operation_SetAutoscalerLinkOperationMetadata:
 
 @dataclasses.dataclass
 class Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations:
+    # Detail about an error that occurred. (AI-inferred)
     error: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -124,8 +163,11 @@ class Deployment_Operation_SetCommonInstanceMetadataOperationMetadata:
 
 @dataclasses.dataclass
 class Deployment_Operation_Warnings:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # The literal content of this field. (AI-inferred)
     data: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -140,7 +182,9 @@ class Deployment_Operation:
     end_time: Any = None
     # [Output Only] If errors are generated during processing of the operation, this field will be populated.
     error: Any = None
+    # Metadata specific to a firewall policy rule operation. (AI-inferred)
     firewall_policy_rule_operation_metadata: Any = None
+    # Metadata specific to a get-version operation. (AI-inferred)
     get_version_operation_metadata: Any = None
     # [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
     http_error_message: Any = None
@@ -150,6 +194,7 @@ class Deployment_Operation:
     id: Any = None
     # [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
     insert_time: Any = None
+    # Metadata specific to a bulk instance-insert operation. (AI-inferred)
     instances_bulk_insert_operation_metadata: Any = None
     # Output only. [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
     kind: Any = None
@@ -167,7 +212,9 @@ class Deployment_Operation:
     self_link: Any = None
     # Output only. [Output Only] Server-defined URL for this resource with the resource id.
     self_link_with_id: Any = None
+    # Metadata specific to a set-autoscaler-link operation. (AI-inferred)
     set_autoscaler_link_operation_metadata: Any = None
+    # Metadata specific to a set-common-instance-metadata operation. (AI-inferred)
     set_common_instance_metadata_operation_metadata: Any = None
     # [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
     start_time: Any = None
@@ -193,11 +240,14 @@ class Deployment_Target_Config:
 
 @dataclasses.dataclass
 class Deployment_Target_Imports:
+    # The literal content of this field. (AI-inferred)
     content: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Deployment_Target:
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
     # Specifies any files to import for this configuration. This can be used to import templates or other files. For example, you might import a text file in order to use the file in a template.
     imports: Any = None
@@ -474,6 +524,7 @@ class DeploymentConfig:
     description: Any = None
     # Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment.
     fingerprint: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
     # Output only. Creation timestamp in RFC3339 text format.
     insert_time: Any = None
@@ -487,7 +538,9 @@ class DeploymentConfig:
     operation: Any = None
     # Output only. Server defined URL for the resource.
     self_link: Any = None
+    # A reference to the resource this operation targets. (AI-inferred)
     target: Any = None
+    # The update being applied to this resource. (AI-inferred)
     update: Any = None
     # Output only. Update timestamp in RFC3339 text format.
     update_time: Any = None
@@ -498,6 +551,7 @@ class DeploymentAttrs:
     description: Any = None
     # Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment.
     fingerprint: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
     # Output only. Creation timestamp in RFC3339 text format.
     insert_time: Any = None
@@ -511,7 +565,9 @@ class DeploymentAttrs:
     operation: Any = None
     # Output only. Server defined URL for the resource.
     self_link: Any = None
+    # A reference to the resource this operation targets. (AI-inferred)
     target: Any = None
+    # The update being applied to this resource. (AI-inferred)
     update: Any = None
     # Output only. Update timestamp in RFC3339 text format.
     update_time: Any = None

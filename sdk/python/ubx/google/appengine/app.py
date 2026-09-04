@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class App_DispatchRules:
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # A file or resource path. (AI-inferred)
     path: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
@@ -103,6 +106,7 @@ class AppAttrs:
     id: Any = None
     # Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations).
     location_id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
     # The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one.
     service_account: Any = None

@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Api_ApiFunctionalRequirements_EnumValues_Values:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
     immutable: Any = None
 
 @dataclasses.dataclass
@@ -50,15 +54,22 @@ class Api_Owner:
 
 @dataclasses.dataclass
 class Api_SourceMetadata_PluginInstanceActionSource:
+    # An identifier for this action, unique within its own containing plugin. (AI-inferred)
     action_id: Any = None
+    # A reference to the plugin instance this applies to. (AI-inferred)
     plugin_instance: Any = None
 
 @dataclasses.dataclass
 class Api_SourceMetadata:
+    # When the original, externally-sourced resource was created. (AI-inferred)
     original_resource_create_time: Any = None
+    # The identifier of the original, externally-sourced resource this was imported from. (AI-inferred)
     original_resource_id: Any = None
+    # When the original, externally-sourced resource was last updated. (AI-inferred)
     original_resource_update_time: Any = None
+    # Where this plugin action's own definition is sourced from. (AI-inferred)
     plugin_instance_action_source: Any = None
+    # The kind of source this data came from. (AI-inferred)
     source_type: Any = None
 
 _Api_ApiFunctionalRequirements_EnumValues_ValuesFields = {

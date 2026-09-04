@@ -1135,7 +1135,9 @@ class AlphaInstanceConfig:
     guest_accelerators: Any = None
     # Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
     hostname: Any = None
+    # Whether this instance has a Trusted Platform Module (TPM)-backed identity. (AI-inferred)
     identity: Any = None
+    # Whether an identity certificate is enabled for this instance's own TPM-backed identity. (AI-inferred)
     identity_certificate: Any = None
     instance_encryption_key: Any = None
     # KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
@@ -1158,6 +1160,7 @@ class AlphaInstanceConfig:
     name: Any = None
     # An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
     network_interfaces: Any = None
+    # Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
     network_performance_config: Any = None
     # Additional instance params.
     params: Any = None
@@ -1196,6 +1199,7 @@ class AlphaInstanceConfig:
     tags: Any = None
     # Upcoming Maintenance notification information.
     upcoming_maintenance: Any = None
+    # Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
     workload_identity_config: Any = None
 
 @dataclasses.dataclass
@@ -1228,7 +1232,9 @@ class AlphaInstanceAttrs:
     hostname: Any = None
     # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
+    # Whether this instance has a Trusted Platform Module (TPM)-backed identity. (AI-inferred)
     identity: Any = None
+    # Whether an identity certificate is enabled for this instance's own TPM-backed identity. (AI-inferred)
     identity_certificate: Any = None
     instance_encryption_key: Any = None
     # KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
@@ -1259,6 +1265,7 @@ class AlphaInstanceAttrs:
     name: Any = None
     # An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
     network_interfaces: Any = None
+    # Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
     network_performance_config: Any = None
     # Additional instance params.
     params: Any = None
@@ -1313,6 +1320,7 @@ class AlphaInstanceAttrs:
     tags: Any = None
     # Upcoming Maintenance notification information.
     upcoming_maintenance: Any = None
+    # Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
     workload_identity_config: Any = None
     # Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
     zone: Any = None

@@ -9,15 +9,21 @@ type DataProduct_AccessApprovalConfig struct {
 }
 
 type DataProduct_AccessGroups_Principal struct {
-	GoogleGroup    any
+	// A Google Group this permission or contact applies to. (AI-inferred)
+	GoogleGroup any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type DataProduct_AccessGroups struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Principal   any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The identity this permission grant applies to. (AI-inferred)
+	Principal any
 }
 
 var DataProduct_AccessApprovalConfigFields = ubx.FieldMap{

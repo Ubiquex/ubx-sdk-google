@@ -12,7 +12,9 @@ export interface ImageImport_DiskImageTargetDefaults_Encryption {
 }
 
 export interface ImageImport_DiskImageTargetDefaults_OsAdaptationParameters_AdaptationModifiers {
+  /** A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred) */
   modifier?: string | Computed<string>;
+  /** The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -56,10 +58,15 @@ export interface ImageImport_MachineImageTargetDefaults_MachineImageParametersOv
 }
 
 export interface ImageImport_MachineImageTargetDefaults_NetworkInterfaces {
+  /** The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   externalIp?: string | Computed<string>;
+  /** The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   internalIp?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred) */
   networkTier?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
@@ -111,49 +118,78 @@ export interface ImageImport_MachineImageTargetDefaults {
 }
 
 export interface ImageImport_RecentImageImportJobs_Errors {
+  /** The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Real, structured detail data attached to a migration error, giving more specific context than its own `message` alone. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A real, human-readable status or error message for this migration step. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface ImageImport_RecentImageImportJobs_Steps {
+  /** Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred) */
   adaptingOs?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own step creating the final Compute Engine image or machine image, for an image import job. (AI-inferred) */
   creatingImage?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real, detailed progress for VM Migration's own initial setup step, before real data transfer begins. (AI-inferred) */
   initializing?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own step loading the source image's files ahead of import. (AI-inferred) */
   loadingSourceFiles?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface ImageImport_RecentImageImportJobs_Warnings_ActionItem {
+  /** The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** A real, human-readable status or error message for this migration step. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface ImageImport_RecentImageImportJobs_Warnings_HelpLinks {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A real URL pointing to more information about this migration warning or error. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface ImageImport_RecentImageImportJobs_Warnings {
+  /** Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred) */
   actionItem?: ImageImport_RecentImageImportJobs_Warnings_ActionItem | Computed<ImageImport_RecentImageImportJobs_Warnings_ActionItem>;
+  /** The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred) */
   code?: string | Computed<string>;
+  /** Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred) */
   helpLinks?: ImageImport_RecentImageImportJobs_Warnings_HelpLinks[] | Computed<ImageImport_RecentImageImportJobs_Warnings_HelpLinks[]>;
+  /** The real, human-readable text of one migration warning. (AI-inferred) */
   warningMessage?: ImageImport_RecentImageImportJobs_Warnings_ActionItem | Computed<ImageImport_RecentImageImportJobs_Warnings_ActionItem>;
+  /** The real timestamp when this migration warning was raised. (AI-inferred) */
   warningTime?: string | Computed<string>;
 }
 
 export interface ImageImport_RecentImageImportJobs {
+  /** The real Cloud Storage URI of the image file this VM Migration image import job is importing from. (AI-inferred) */
   cloudStorageUri?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The real Google Cloud resource(s) (such as a Compute Engine image) this image import job created. (AI-inferred) */
   createdResources?: string[] | Computed<string[]>;
+  /** Real, target-side configuration for importing the source image as a standalone Compute Engine disk image. (AI-inferred) */
   diskImageTargetDetails?: ImageImport_DiskImageTargetDefaults | Computed<ImageImport_DiskImageTargetDefaults>;
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real errors, if any, that occurred while running this image import job. (AI-inferred) */
   errors?: ImageImport_RecentImageImportJobs_Errors[] | Computed<ImageImport_RecentImageImportJobs_Errors[]>;
+  /** Real, target-side configuration for importing the source image as a Compute Engine machine image (a full VM template) rather than a plain disk image. (AI-inferred) */
   machineImageTargetDetails?: ImageImport_MachineImageTargetDefaults | Computed<ImageImport_MachineImageTargetDefaults>;
+  /** The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real, current state of this migration job, step, or resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred) */
   steps?: ImageImport_RecentImageImportJobs_Steps[] | Computed<ImageImport_RecentImageImportJobs_Steps[]>;
+  /** Real, non-fatal warnings raised during this migration job, each with its own `warning_message`, severity, and `action_item`. (AI-inferred) */
   warnings?: ImageImport_RecentImageImportJobs_Warnings[] | Computed<ImageImport_RecentImageImportJobs_Warnings[]>;
 }
 

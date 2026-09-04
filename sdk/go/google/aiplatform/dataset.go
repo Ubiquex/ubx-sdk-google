@@ -9,16 +9,26 @@ type Dataset_EncryptionSpec struct {
 }
 
 type Dataset_SavedQueries struct {
-	AnnotationFilter      any
-	AnnotationSpecCount   any
-	CreateTime            any
-	DisplayName           any
-	Etag                  any
-	Metadata              any
-	Name                  any
-	ProblemType           any
+	// Restricts this saved query to annotations matching the given filter expression. (AI-inferred)
+	AnnotationFilter any
+	// Output only. How many distinct annotation specs (labels) this saved query's own annotations use. (AI-inferred)
+	AnnotationSpecCount any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The ML problem type (e.g. classification, object detection) this saved query's own annotations are structured for. (AI-inferred)
+	ProblemType any
+	// Whether this saved query's own annotations are structured in a way AutoML training can consume directly. (AI-inferred)
 	SupportAutomlTraining any
-	UpdateTime            any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var Dataset_EncryptionSpecFields = ubx.FieldMap{

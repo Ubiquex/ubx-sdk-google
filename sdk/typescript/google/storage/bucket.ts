@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Bucket_Acl_ProjectTeam {
+  /** The numeric identifier of the associated Google Cloud project. (AI-inferred) */
   projectNumber?: string | Computed<string>;
+  /** The team associated with this entity. (AI-inferred) */
   team?: string | Computed<string>;
 }
 
 export interface Bucket_Acl {
+  /** A reference to the Cloud Storage bucket this applies to. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** An email address associated with this entity. (AI-inferred) */
   email?: string | Computed<string>;
+  /** The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred) */
   entity?: string | Computed<string>;
+  /** The unique identifier of this entity. (AI-inferred) */
   entityId?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The category of this resource. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The project team role associated with this entity. (AI-inferred) */
   projectTeam?: Bucket_Acl_ProjectTeam | Computed<Bucket_Acl_ProjectTeam>;
+  /** The access role granted, e.g. `READER` or `OWNER`. (AI-inferred) */
   role?: string | Computed<string>;
+  /** The API URL identifying this resource. (AI-inferred) */
   selfLink?: string | Computed<string>;
 }
 
@@ -37,9 +50,13 @@ export interface Bucket_Billing {
 }
 
 export interface Bucket_Cors {
+  /** The maximum time, in seconds, a cached response may be reused. (AI-inferred) */
   maxAgeSeconds?: number | Computed<number>;
+  /** The HTTP method(s) this applies to. (AI-inferred) */
   method?: string[] | Computed<string[]>;
+  /** The origin(s) this CORS rule permits requests from. (AI-inferred) */
   origin?: string[] | Computed<string[]>;
+  /** The HTTP response header(s) exposed by this CORS rule. (AI-inferred) */
   responseHeader?: string[] | Computed<string[]>;
 }
 
@@ -49,18 +66,31 @@ export interface Bucket_CustomPlacementConfig {
 }
 
 export interface Bucket_DefaultObjectAcl {
+  /** A reference to the Cloud Storage bucket this applies to. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** An email address associated with this entity. (AI-inferred) */
   email?: string | Computed<string>;
+  /** The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred) */
   entity?: string | Computed<string>;
+  /** The unique identifier of this entity. (AI-inferred) */
   entityId?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** The specific object generation this applies to. (AI-inferred) */
   generation?: string | Computed<string>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The category of this resource. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** A reference to the Cloud Storage object this applies to. (AI-inferred) */
   object?: string | Computed<string>;
+  /** The project team role associated with this entity. (AI-inferred) */
   projectTeam?: Bucket_Acl_ProjectTeam | Computed<Bucket_Acl_ProjectTeam>;
+  /** The access role granted, e.g. `READER` or `OWNER`. (AI-inferred) */
   role?: string | Computed<string>;
+  /** The API URL identifying this resource. (AI-inferred) */
   selfLink?: string | Computed<string>;
 }
 
@@ -109,7 +139,9 @@ export interface Bucket_IpFilter_PublicNetworkSource {
 }
 
 export interface Bucket_IpFilter_VpcNetworkSources {
+  /** The IP address range(s), in CIDR notation, permitted to access this bucket. (AI-inferred) */
   allowedIpCidrRanges?: string[] | Computed<string[]>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
 }
 
@@ -127,29 +159,47 @@ export interface Bucket_IpFilter {
 }
 
 export interface Bucket_Lifecycle_Rule_Action {
+  /** The Cloud Storage class this object or bucket uses. (AI-inferred) */
   storageClass?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Bucket_Lifecycle_Rule_Condition {
+  /** The age, in days, an object must reach for this condition to match. (AI-inferred) */
   age?: number | Computed<number>;
+  /** Matches object(s) created before this date. (AI-inferred) */
   createdBefore?: string | Computed<string>;
+  /** Matches object(s) whose own custom time is before this date. (AI-inferred) */
   customTimeBefore?: string | Computed<string>;
+  /** The number of days since an object's own custom time for this condition to match. (AI-inferred) */
   daysSinceCustomTime?: number | Computed<number>;
+  /** The number of days since an object became noncurrent for this condition to match. (AI-inferred) */
   daysSinceNoncurrentTime?: number | Computed<number>;
+  /** Whether this condition matches only live (non-archived) object versions. (AI-inferred) */
   isLive?: boolean | Computed<boolean>;
+  /** A glob pattern object names must match for this rule to apply. (AI-inferred) */
   matchesPattern?: string | Computed<string>;
+  /** The object name prefix(es) this rule matches. (AI-inferred) */
   matchesPrefix?: string[] | Computed<string[]>;
+  /** The storage class(es) this rule matches. (AI-inferred) */
   matchesStorageClass?: string[] | Computed<string[]>;
+  /** The object name suffix(es) this rule matches. (AI-inferred) */
   matchesSuffix?: string[] | Computed<string[]>;
+  /** Matches object(s) that became noncurrent before this date. (AI-inferred) */
   noncurrentTimeBefore?: string | Computed<string>;
+  /** The number of newer version(s) an object must have for this condition to match. (AI-inferred) */
   numNewerVersions?: number | Computed<number>;
+  /** Matches object(s) larger than this size, in bytes. (AI-inferred) */
   sizeAboveBytes?: string | Computed<string>;
+  /** Matches object(s) smaller than this size, in bytes. (AI-inferred) */
   sizeBelowBytes?: string | Computed<string>;
 }
 
 export interface Bucket_Lifecycle_Rule {
+  /** The action to take when this rule's own condition is satisfied. (AI-inferred) */
   action?: Bucket_Lifecycle_Rule_Action | Computed<Bucket_Lifecycle_Rule_Action>;
+  /** The condition that must be satisfied for this rule to apply. (AI-inferred) */
   condition?: Bucket_Lifecycle_Rule_Condition | Computed<Bucket_Lifecycle_Rule_Condition>;
 }
 

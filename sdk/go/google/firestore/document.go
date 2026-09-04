@@ -4,43 +4,66 @@ package firestore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Document_Fields_ArrayValue struct {
+	// The value(s) making up this array. (AI-inferred)
 	Values any
 }
 
 type Document_Fields_FunctionValue struct {
-	Args    any
-	Name    any
+	// The argument(s) passed to this function call. (AI-inferred)
+	Args any
+	// The name of this function. (AI-inferred)
+	Name any
+	// Named option(s) passed to this function call. (AI-inferred)
 	Options any
 }
 
 type Document_Fields_GeoPointValue struct {
-	Latitude  any
+	// The geographic coordinate's own latitude, in degrees. (AI-inferred)
+	Latitude any
+	// The geographic coordinate's own longitude, in degrees. (AI-inferred)
 	Longitude any
 }
 
 type Document_Fields_MapValue struct {
+	// The key/value pair(s) making up this map. (AI-inferred)
 	Fields any
 }
 
 type Document_Fields_PipelineValue struct {
+	// The ordered stage(s) making up this pipeline. (AI-inferred)
 	Stages any
 }
 
 type Document_Fields struct {
-	ArrayValue             any
-	BooleanValue           any
-	BytesValue             any
-	DoubleValue            any
-	FieldReferenceValue    any
-	FunctionValue          any
-	GeoPointValue          any
-	IntegerValue           any
-	MapValue               any
-	NullValue              any
-	PipelineValue          any
-	ReferenceValue         any
-	StringValue            any
-	TimestampValue         any
+	// This field's own value, when its type is an array. (AI-inferred)
+	ArrayValue any
+	// This field's own value, when its type is a boolean. (AI-inferred)
+	BooleanValue any
+	// This field's own value, when its type is raw bytes, base64-encoded. (AI-inferred)
+	BytesValue any
+	// This field's own value, when its type is a floating-point number. (AI-inferred)
+	DoubleValue any
+	// This field's own value, when it references another field by its dotted path. (AI-inferred)
+	FieldReferenceValue any
+	// This field's own value, when it's the result of a Firestore pipeline function call. (AI-inferred)
+	FunctionValue any
+	// This field's own value, when its type is a geographic coordinate (latitude/longitude). (AI-inferred)
+	GeoPointValue any
+	// This field's own value, when its type is a 64-bit integer. (AI-inferred)
+	IntegerValue any
+	// This field's own value, when its type is a nested map of key/value pairs. (AI-inferred)
+	MapValue any
+	// This field's own value, when it's explicitly null. (AI-inferred)
+	NullValue any
+	// This field's own value, when it's the result of a Firestore aggregation pipeline. (AI-inferred)
+	PipelineValue any
+	// This field's own value, when it references another document, by its full resource name. (AI-inferred)
+	ReferenceValue any
+	// This field's own value, when its type is a string. (AI-inferred)
+	StringValue any
+	// This field's own value, when its type is a point in time. (AI-inferred)
+	TimestampValue any
+	// This field's own value, when it references a pipeline variable by name. (AI-inferred)
 	VariableReferenceValue any
 }
 

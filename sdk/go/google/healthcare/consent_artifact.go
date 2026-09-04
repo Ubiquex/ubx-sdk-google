@@ -4,7 +4,9 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConsentArtifact_ConsentContentScreenshots struct {
-	GcsUri   any
+	// A Cloud Storage object URI. (AI-inferred)
+	GcsUri any
+	// The raw, unparsed byte content of this message. (AI-inferred)
 	RawBytes any
 }
 

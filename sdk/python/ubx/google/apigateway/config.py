@@ -8,16 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Config_GrpcServices_FileDescriptorSet:
+    # The real, base64-encoded raw bytes of this source document (an OpenAPI spec, gRPC descriptor, or service config file). (AI-inferred)
     contents: Any = None
+    # The real, relative file path this source document is identified by within the API config's own uploaded source bundle. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class Config_GrpcServices:
+    # The real, compiled Protocol Buffers FileDescriptorSet describing this gRPC service's own API surface. (AI-inferred)
     file_descriptor_set: Any = None
+    # The real, additional source file(s) (such as gRPC service config) uploaded alongside a `file_descriptor_set` for a gRPC-backed API config. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Config_OpenapiDocuments:
+    # The real, uploaded OpenAPI specification document this API config was created from. (AI-inferred)
     document: Any = None
 
 _Config_GrpcServices_FileDescriptorSetFields = {

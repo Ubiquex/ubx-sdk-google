@@ -569,11 +569,13 @@ _AlphaSecurityPolicy_UserDefinedFieldsFields = {
 class AlphaSecurityPolicyConfig:
     # Configuration options for Cloud Armor Adaptive Protection (CAAP).
     adaptive_protection_config: Any = None
+    # Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred)
     advanced_options_config: Any = None
     # A list of associations that belong to this policy.
     associations: Any = None
     # Configuration options for Cloud Armor.
     cloud_armor_config: Any = None
+    # Configures this security policy's own DDoS protection tier. (AI-inferred)
     ddos_protection_config: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -601,6 +603,7 @@ class AlphaSecurityPolicyConfig:
 class AlphaSecurityPolicyAttrs:
     # Configuration options for Cloud Armor Adaptive Protection (CAAP).
     adaptive_protection_config: Any = None
+    # Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred)
     advanced_options_config: Any = None
     # A list of associations that belong to this policy.
     associations: Any = None
@@ -608,6 +611,7 @@ class AlphaSecurityPolicyAttrs:
     cloud_armor_config: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None
+    # Configures this security policy's own DDoS protection tier. (AI-inferred)
     ddos_protection_config: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None

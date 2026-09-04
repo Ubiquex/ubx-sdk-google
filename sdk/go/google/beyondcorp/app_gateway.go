@@ -4,8 +4,10 @@ package beyondcorp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppGateway_AllocatedConnections struct {
+	// The port on the app gateway's own ingress this allocated connection listens on. (AI-inferred)
 	IngressPort any
-	PscUri      any
+	// The Private Service Connect URI backing this allocated connection. (AI-inferred)
+	PscUri any
 }
 
 type AppGatewayConfig struct {

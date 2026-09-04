@@ -38,7 +38,9 @@ class SecurityAction_Deny:
 
 @dataclasses.dataclass
 class SecurityAction_Flag_Headers:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

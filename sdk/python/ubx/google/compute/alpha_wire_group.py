@@ -154,6 +154,7 @@ class AlphaWireGroupAttrs:
     reconciling: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None
+    # The server-defined, fully qualified URL for this exact resource, including its own numeric resource id. (AI-inferred)
     self_link_with_id: Any = None
     # Service level details determined for the wire group configuration.
     service_level: Any = None

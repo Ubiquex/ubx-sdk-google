@@ -2,22 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ForwardingRule_AttachedExtensions {
+  /** The self-link or complete URL of the extension resource attached to this forwarding rule. (AI-inferred) */
   reference?: string | Computed<string>;
 }
 
 export interface ForwardingRule_MetadataFilters_FilterLabels {
+  /** The name of the metadata filter label. This is the key of the label. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The value of the metadata filter label. This is the value part of a key-value pair used to match incoming metadata traffic for the forwarding rule. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ForwardingRule_MetadataFilters {
+  /** The list of label-value pairs to match against for the forwarding rule's metadata filter. (AI-inferred) */
   filterLabels?: ForwardingRule_MetadataFilters_FilterLabels[] | Computed<ForwardingRule_MetadataFilters_FilterLabels[]>;
+  /** Specifies how the metadata filter labels are matched against traffic. Valid values are MATCH_ALL (require all labels to match), MATCH_ANY (allow any one label to match), and NOT_SET (no specific matching criteria). (AI-inferred) */
   filterMatchCriteria?: string | Computed<string>;
 }
 
 export interface ForwardingRule_ServiceDirectoryRegistrations {
+  /** The Service Directory namespace where the forwarding rule will be registered as a service. (AI-inferred) */
   namespace?: string | Computed<string>;
+  /** The name of the Service Directory service to register the forwarding rule with. If not specified, a service name of the form `forwarding_rule_<forwarding_rule_name>` is automatically generated. (AI-inferred) */
   service?: string | Computed<string>;
+  /** The region of the Service Directory service to register. If not specified, it defaults to the region of the forwarding rule. (AI-inferred) */
   serviceDirectoryRegion?: string | Computed<string>;
 }
 
@@ -167,6 +175,7 @@ export interface ForwardingRuleAttrs {
   ports: string[];
   /** [Output Only] The PSC connection id of the PSC forwarding rule. */
   pscConnectionId: string;
+  /** The status of the Private Service Connect (PSC) connection associated with this forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred) */
   pscConnectionStatus: string;
   /** Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region: string;

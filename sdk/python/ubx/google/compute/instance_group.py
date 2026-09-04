@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstanceGroup_NamedPorts:
+    # The name of the named port, which must be unique within the instance group. (AI-inferred)
     name: Any = None
+    # The port number for the named port. This is the TCP/UDP port that the name maps to, used by load balancers or other services. (AI-inferred)
     port: Any = None
 
 _InstanceGroup_NamedPortsFields = {

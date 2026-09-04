@@ -2,18 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MirroringEndpointGroup_Associations {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface MirroringEndpointGroup_ConnectedDeploymentGroups_Locations {
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface MirroringEndpointGroup_ConnectedDeploymentGroups {
+  /** The location(s) this applies to. (AI-inferred) */
   locations?: MirroringEndpointGroup_ConnectedDeploymentGroups_Locations[] | Computed<MirroringEndpointGroup_ConnectedDeploymentGroups_Locations[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Bucket_Acl_ProjectTeam:
+    # The numeric identifier of the associated Google Cloud project. (AI-inferred)
     project_number: Any = None
+    # The team associated with this entity. (AI-inferred)
     team: Any = None
 
 @dataclasses.dataclass
 class Bucket_Acl:
+    # A reference to the Cloud Storage bucket this applies to. (AI-inferred)
     bucket: Any = None
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # An email address associated with this entity. (AI-inferred)
     email: Any = None
+    # The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred)
     entity: Any = None
+    # The unique identifier of this entity. (AI-inferred)
     entity_id: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The category of this resource. (AI-inferred)
     kind: Any = None
+    # The project team role associated with this entity. (AI-inferred)
     project_team: Any = None
+    # The access role granted, e.g. `READER` or `OWNER`. (AI-inferred)
     role: Any = None
+    # The API URL identifying this resource. (AI-inferred)
     self_link: Any = None
 
 @dataclasses.dataclass
@@ -43,9 +56,13 @@ class Bucket_Billing:
 
 @dataclasses.dataclass
 class Bucket_Cors:
+    # The maximum time, in seconds, a cached response may be reused. (AI-inferred)
     max_age_seconds: Any = None
+    # The HTTP method(s) this applies to. (AI-inferred)
     method: Any = None
+    # The origin(s) this CORS rule permits requests from. (AI-inferred)
     origin: Any = None
+    # The HTTP response header(s) exposed by this CORS rule. (AI-inferred)
     response_header: Any = None
 
 @dataclasses.dataclass
@@ -55,18 +72,31 @@ class Bucket_CustomPlacementConfig:
 
 @dataclasses.dataclass
 class Bucket_DefaultObjectAcl:
+    # A reference to the Cloud Storage bucket this applies to. (AI-inferred)
     bucket: Any = None
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # An email address associated with this entity. (AI-inferred)
     email: Any = None
+    # The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred)
     entity: Any = None
+    # The unique identifier of this entity. (AI-inferred)
     entity_id: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # The specific object generation this applies to. (AI-inferred)
     generation: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The category of this resource. (AI-inferred)
     kind: Any = None
+    # A reference to the Cloud Storage object this applies to. (AI-inferred)
     object: Any = None
+    # The project team role associated with this entity. (AI-inferred)
     project_team: Any = None
+    # The access role granted, e.g. `READER` or `OWNER`. (AI-inferred)
     role: Any = None
+    # The API URL identifying this resource. (AI-inferred)
     self_link: Any = None
 
 @dataclasses.dataclass
@@ -115,7 +145,9 @@ class Bucket_IpFilter_PublicNetworkSource:
 
 @dataclasses.dataclass
 class Bucket_IpFilter_VpcNetworkSources:
+    # The IP address range(s), in CIDR notation, permitted to access this bucket. (AI-inferred)
     allowed_ip_cidr_ranges: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
 
 @dataclasses.dataclass
@@ -133,29 +165,47 @@ class Bucket_IpFilter:
 
 @dataclasses.dataclass
 class Bucket_Lifecycle_Rule_Action:
+    # The Cloud Storage class this object or bucket uses. (AI-inferred)
     storage_class: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Bucket_Lifecycle_Rule_Condition:
+    # The age, in days, an object must reach for this condition to match. (AI-inferred)
     age: Any = None
+    # Matches object(s) created before this date. (AI-inferred)
     created_before: Any = None
+    # Matches object(s) whose own custom time is before this date. (AI-inferred)
     custom_time_before: Any = None
+    # The number of days since an object's own custom time for this condition to match. (AI-inferred)
     days_since_custom_time: Any = None
+    # The number of days since an object became noncurrent for this condition to match. (AI-inferred)
     days_since_noncurrent_time: Any = None
+    # Whether this condition matches only live (non-archived) object versions. (AI-inferred)
     is_live: Any = None
+    # A glob pattern object names must match for this rule to apply. (AI-inferred)
     matches_pattern: Any = None
+    # The object name prefix(es) this rule matches. (AI-inferred)
     matches_prefix: Any = None
+    # The storage class(es) this rule matches. (AI-inferred)
     matches_storage_class: Any = None
+    # The object name suffix(es) this rule matches. (AI-inferred)
     matches_suffix: Any = None
+    # Matches object(s) that became noncurrent before this date. (AI-inferred)
     noncurrent_time_before: Any = None
+    # The number of newer version(s) an object must have for this condition to match. (AI-inferred)
     num_newer_versions: Any = None
+    # Matches object(s) larger than this size, in bytes. (AI-inferred)
     size_above_bytes: Any = None
+    # Matches object(s) smaller than this size, in bytes. (AI-inferred)
     size_below_bytes: Any = None
 
 @dataclasses.dataclass
 class Bucket_Lifecycle_Rule:
+    # The action to take when this rule's own condition is satisfied. (AI-inferred)
     action: Any = None
+    # The condition that must be satisfied for this rule to apply. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass

@@ -181,6 +181,7 @@ const V1beta2ResourceRecordSet_RoutingPolicyFields: FieldMap = {
 };
 
 export interface V1beta2ResourceRecordSetConfig {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** For example, www.example.com. */
   name?: string | Computed<string>;
@@ -197,6 +198,7 @@ export interface V1beta2ResourceRecordSetConfig {
 }
 
 export interface V1beta2ResourceRecordSetAttrs {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** For example, www.example.com. */
   name: string;

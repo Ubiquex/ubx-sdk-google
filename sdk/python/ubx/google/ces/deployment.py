@@ -82,8 +82,11 @@ class Deployment_ChannelProfile:
 
 @dataclasses.dataclass
 class Deployment_ExperimentConfig_VersionRelease_TrafficAllocations:
+    # A reference to the app version this applies to. (AI-inferred)
     app_version: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The percentage of traffic this version receives. (AI-inferred)
     traffic_percentage: Any = None
 
 @dataclasses.dataclass

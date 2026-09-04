@@ -4,28 +4,44 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LbRouteExtension_ExtensionChains_Extensions struct {
-	Authority            any
-	FailOpen             any
-	ForwardAttributes    any
-	ForwardHeaders       any
-	Metadata             any
-	Name                 any
-	ObservabilityMode    any
-	RequestBodySendMode  any
+	// The `:authority` (Host) value this rule matches or sets. (AI-inferred)
+	Authority any
+	// Whether traffic is allowed through when this check itself fails to run, rather than being blocked. (AI-inferred)
+	FailOpen any
+	// Additional caller-defined attribute(s) forwarded alongside this request. (AI-inferred)
+	ForwardAttributes any
+	// The header(s) forwarded from the original request. (AI-inferred)
+	ForwardHeaders any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Whether this extension only observes traffic, without modifying it. (AI-inferred)
+	ObservabilityMode any
+	// Whether the request body is streamed or buffered when sent to this extension. (AI-inferred)
+	RequestBodySendMode any
+	// Whether the response body is streamed or buffered when sent to this extension. (AI-inferred)
 	ResponseBodySendMode any
-	Service              any
-	SupportedEvents      any
-	Timeout              any
+	// A reference to the backend service this routes traffic to. (AI-inferred)
+	Service any
+	// The event type(s) this plugin can respond to, e.g. request headers or response body. (AI-inferred)
+	SupportedEvents any
+	// How long to wait before this operation is considered to have timed out. (AI-inferred)
+	Timeout any
 }
 
 type LbRouteExtension_ExtensionChains_MatchCondition struct {
+	// A Common Expression Language expression evaluated to determine whether this rule applies. (AI-inferred)
 	CelExpression any
 }
 
 type LbRouteExtension_ExtensionChains struct {
-	Extensions     any
+	// Additional plugin(s) or extension(s) applied to this traffic. (AI-inferred)
+	Extensions any
+	// The condition that must hold for this rule to apply. (AI-inferred)
 	MatchCondition any
-	Name           any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 var LbRouteExtension_ExtensionChains_ExtensionsFields = ubx.FieldMap{

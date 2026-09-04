@@ -8,75 +8,109 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpoint:
+    # A reference to the forwarding rule this applies to. (AI-inferred)
     forwarding_rule: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources:
+    # A reference to the access level this applies to. (AI-inferred)
     access_level: Any = None
+    # A reference to the Private Service Connect endpoint this applies to. (AI-inferred)
     psc_endpoint: Any = None
+    # A reference to the resource this applies to. (AI-inferred)
     resource: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_EgressPolicies_EgressFrom:
+    # The identity/identities this rule applies to. (AI-inferred)
     identities: Any = None
+    # The category of identity/identities this rule applies to, e.g. any identity or a specific list. (AI-inferred)
     identity_type: Any = None
+    # Whether access is restricted based on the request's own network source. (AI-inferred)
     source_restriction: Any = None
+    # The source(s) this rule matches traffic from. (AI-inferred)
     sources: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectors:
+    # The specific API method this rule applies to. (AI-inferred)
     method: Any = None
+    # The specific IAM permission this rule applies to. (AI-inferred)
     permission: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations:
+    # The specific API method(s) or permission(s) this rule applies to. (AI-inferred)
     method_selectors: Any = None
+    # The name of the Google Cloud service this applies to. (AI-inferred)
     service_name: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_EgressPolicies_EgressTo:
+    # External (non-Google-Cloud) resource(s) this rule applies to. (AI-inferred)
     external_resources: Any = None
+    # The API operation(s) this rule applies to. (AI-inferred)
     operations: Any = None
+    # The resource(s) this rule applies to. (AI-inferred)
     resources: Any = None
+    # The IAM role(s) this restriction applies to. (AI-inferred)
     roles: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_EgressPolicies:
+    # The source(s) this egress rule applies to. (AI-inferred)
     egress_from: Any = None
+    # The destination(s) this egress rule permits access to. (AI-inferred)
     egress_to: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_IngressPolicies_IngressFrom:
+    # The identity/identities this rule applies to. (AI-inferred)
     identities: Any = None
+    # The category of identity/identities this rule applies to, e.g. any identity or a specific list. (AI-inferred)
     identity_type: Any = None
+    # The source(s) this rule matches traffic from. (AI-inferred)
     sources: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_IngressPolicies_IngressTo:
+    # The API operation(s) this rule applies to. (AI-inferred)
     operations: Any = None
+    # The resource(s) this rule applies to. (AI-inferred)
     resources: Any = None
+    # The IAM role(s) this restriction applies to. (AI-inferred)
     roles: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_IngressPolicies:
+    # The source(s) this ingress rule applies to. (AI-inferred)
     ingress_from: Any = None
+    # The destination(s) this ingress rule permits access to. (AI-inferred)
     ingress_to: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeader:
+    # A key identifying this entry. (AI-inferred)
     key: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers:
+    # Whether an identifying header is added to requests as they pass through this configuration. (AI-inferred)
     add_request_header: Any = None
 
 @dataclasses.dataclass
 class ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns:
+    # Additional modifier(s) refining how this rule is evaluated. (AI-inferred)
     modifiers: Any = None
+    # A regular expression a `string`-typed value must match. (AI-inferred)
     pattern: Any = None
+    # The Google Cloud service this rule applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass

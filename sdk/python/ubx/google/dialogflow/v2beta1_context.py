@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V2beta1ContextConfig:
+    # The number of conversational turns this context remains active for. (AI-inferred)
     lifespan_count: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class V2beta1ContextAttrs:
+    # The number of conversational turns this context remains active for. (AI-inferred)
     lifespan_count: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
 
 V2beta1Context = ubx.ResourceBinding(

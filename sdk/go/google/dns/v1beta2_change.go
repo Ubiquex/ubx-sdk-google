@@ -204,7 +204,8 @@ type V1beta2ChangeConfig struct {
 	Id any
 	// If the DNS queries for the zone will be served.
 	IsServing any
-	Kind      any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// The time that this operation was started by the server (output only). This is in RFC3339 text format.
 	StartTime any
 	// Status of the operation (output only). A status of "done" means that the request to update the authoritative servers has been sent, but the servers might not be updated yet.
@@ -220,7 +221,8 @@ type V1beta2ChangeAttrs struct {
 	Id any
 	// If the DNS queries for the zone will be served.
 	IsServing any
-	Kind      any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// The time that this operation was started by the server (output only). This is in RFC3339 text format.
 	StartTime any
 	// Status of the operation (output only). A status of "done" means that the request to update the authoritative servers has been sent, but the servers might not be updated yet.

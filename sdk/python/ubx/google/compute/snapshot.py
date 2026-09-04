@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Snapshot_GuestOsFeatures:
+    # The type of guest OS feature. This specifies a feature that the guest OS supports or requires. Valid values are: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -58,16 +59,19 @@ class SnapshotConfig:
     name: Any = None
     # Additional snapshot params.
     params: Any = None
+    # The encryption key used to encrypt the snapshot. This field is computed and output-only, meaning the provider populates it with the key information returned from the API. (AI-inferred)
     snapshot_encryption_key: Any = None
     # Indicates the type of the snapshot.
     snapshot_type: Any = None
     # The source disk used to create this snapshot.
     source_disk: Any = None
+    # The customer-supplied encryption key used to encrypt the source disk from which the snapshot was created. This field is output-only and reflects the key details as used by the API. (AI-inferred)
     source_disk_encryption_key: Any = None
     # The source disk whose recovery checkpoint will be used to create this snapshot.
     source_disk_for_recovery_checkpoint: Any = None
     # The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
     source_instant_snapshot: Any = None
+    # The encryption key information for the source instant snapshot used to create this snapshot. This is a computed, output-only field that provides the customer-supplied encryption key (CSEK) details if the source instant snapshot was encrypted with one. (AI-inferred)
     source_instant_snapshot_encryption_key: Any = None
     # Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
     storage_locations: Any = None
@@ -122,6 +126,7 @@ class SnapshotAttrs:
     satisfies_pzs: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None
+    # The encryption key used to encrypt the snapshot. This field is computed and output-only, meaning the provider populates it with the key information returned from the API. (AI-inferred)
     snapshot_encryption_key: Any = None
     # Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
     snapshot_group_id: Any = None
@@ -131,6 +136,7 @@ class SnapshotAttrs:
     snapshot_type: Any = None
     # The source disk used to create this snapshot.
     source_disk: Any = None
+    # The customer-supplied encryption key used to encrypt the source disk from which the snapshot was created. This field is output-only and reflects the key details as used by the API. (AI-inferred)
     source_disk_encryption_key: Any = None
     # The source disk whose recovery checkpoint will be used to create this snapshot.
     source_disk_for_recovery_checkpoint: Any = None
@@ -138,6 +144,7 @@ class SnapshotAttrs:
     source_disk_id: Any = None
     # The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
     source_instant_snapshot: Any = None
+    # The encryption key information for the source instant snapshot used to create this snapshot. This is a computed, output-only field that provides the customer-supplied encryption key (CSEK) details if the source instant snapshot was encrypted with one. (AI-inferred)
     source_instant_snapshot_encryption_key: Any = None
     # Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this snapshot. For example, if you created the snapshot from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
     source_instant_snapshot_id: Any = None

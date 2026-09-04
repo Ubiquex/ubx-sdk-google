@@ -9,199 +9,308 @@ type Endpoint_ClientConnectionConfig struct {
 }
 
 type Endpoint_DeployedModels_AutomaticResources struct {
+	// The maximum number of machine replicas this job may scale up to. (AI-inferred)
 	MaxReplicaCount any
+	// The minimum number of machine replicas this job scales down to. (AI-inferred)
 	MinReplicaCount any
 }
 
 type Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecs struct {
+	// The name of the metric this applies to. (AI-inferred)
 	MetricName any
-	Target     any
+	// The target value autoscaling tries to maintain for this metric. (AI-inferred)
+	Target any
 }
 
 type Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinity struct {
-	Key                     any
+	// A key identifying this entry. (AI-inferred)
+	Key any
+	// Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
 	ReservationAffinityType any
-	Values                  any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type Endpoint_DeployedModels_DedicatedResources_MachineSpec struct {
-	AcceleratorCount    any
-	AcceleratorType     any
-	GpuPartitionSize    any
-	MachineType         any
+	// How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
+	AcceleratorCount any
+	// The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
+	AcceleratorType any
+	// The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
+	GpuPartitionSize any
+	// The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
+	MachineType any
+	// Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
 	ReservationAffinity any
-	TpuTopology         any
+	// The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
+	TpuTopology any
 }
 
 type Endpoint_DeployedModels_DedicatedResources struct {
+	// The metric(s) (e.g. CPU utilization) autoscaling bases its own replica-count decisions on, and each one's target value. (AI-inferred)
 	AutoscalingMetricSpecs any
-	MachineSpec            any
-	MaxReplicaCount        any
-	MinReplicaCount        any
-	RequiredReplicaCount   any
-	Spot                   any
+	// The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
+	MachineSpec any
+	// The maximum number of machine replicas this job may scale up to. (AI-inferred)
+	MaxReplicaCount any
+	// The minimum number of machine replicas this job scales down to. (AI-inferred)
+	MinReplicaCount any
+	// The minimum number of replicas that must be ready before this deployment is considered available. (AI-inferred)
+	RequiredReplicaCount any
+	// Whether this deployment runs on lower-cost Spot VMs, which can be preempted, rather than standard on-demand capacity. (AI-inferred)
+	Spot any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue       any
-	MinValue       any
-	OriginalMean   any
+	// The largest value this parameter may take. (AI-inferred)
+	MaxValue any
+	// The smallest value this parameter may take. (AI-inferred)
+	MinValue any
+	// The mean of this feature's own values before normalization. (AI-inferred)
+	OriginalMean any
+	// The standard deviation of this feature's own values before normalization. (AI-inferred)
 	OriginalStddev any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_Visualization struct {
+	// Attribution values below this percentile are clipped from the visualization. (AI-inferred)
 	ClipPercentLowerbound any
+	// Attribution values above this percentile are clipped from the visualization. (AI-inferred)
 	ClipPercentUpperbound any
-	ColorMap              any
-	OverlayType           any
-	Polarity              any
-	Type                  any
+	// The color scheme used to render attribution values in the visualization. (AI-inferred)
+	ColorMap any
+	// How the attribution visualization is overlaid on the original input image. (AI-inferred)
+	OverlayType any
+	// Whether the visualization highlights positive attributions, negative attributions, or both. (AI-inferred)
+	Polarity any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs struct {
+	// The name of the tensor giving the shape of a sparse input, when this input is represented sparsely. (AI-inferred)
 	DenseShapeTensorName any
-	EncodedBaselines     any
-	EncodedTensorName    any
-	Encoding             any
-	FeatureValueDomain   any
-	GroupName            any
-	IndexFeatureMapping  any
-	IndicesTensorName    any
-	InputBaselines       any
-	InputTensorName      any
-	Modality             any
-	Visualization        any
+	// The baseline value(s) for the encoded tensor, used as the reference point feature attributions are computed against. (AI-inferred)
+	EncodedBaselines any
+	// The name of the encoded (post-transformation) input tensor this metadata describes. (AI-inferred)
+	EncodedTensorName any
+	// How this input feature is encoded into its own model tensor, e.g. `BAG_OF_FEATURES` or `IDENTITY`. (AI-inferred)
+	Encoding any
+	// The real-world value range (min/max, or original mean/standard deviation if normalized) this input feature was drawn from. (AI-inferred)
+	FeatureValueDomain any
+	// Groups related input features together for combined feature-attribution reporting. (AI-inferred)
+	GroupName any
+	// The feature name corresponding to each index position in the input tensor -- required when `encoding` is a sparse/indicator encoding. (AI-inferred)
+	IndexFeatureMapping any
+	// The name of the tensor giving the indices of a sparse input's own non-zero values. (AI-inferred)
+	IndicesTensorName any
+	// The baseline value(s) for this input, used as the reference point feature attributions are computed against. (AI-inferred)
+	InputBaselines any
+	// The name of the model's own input tensor this metadata describes. (AI-inferred)
+	InputTensorName any
+	// The kind of data this input represents, e.g. `numeric`, `image`, or `text`. (AI-inferred)
+	Modality any
+	// How feature attributions for this input are rendered visually, e.g. for image inputs. (AI-inferred)
+	Visualization any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey   any
+	// The key identifying which display-name mapping to apply to this output's own values. (AI-inferred)
+	DisplayNameMappingKey any
+	// Maps output tensor index positions to their own human-readable display names. (AI-inferred)
 	IndexDisplayNameMapping any
-	OutputTensorName        any
+	// The name of the model's own output tensor this metadata describes. (AI-inferred)
+	OutputTensorName any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata struct {
+	// The URI of the schema describing this explanation's own feature-attribution output format. (AI-inferred)
 	FeatureAttributionsSchemaUri any
-	Inputs                       any
-	LatentSpaceSource            any
-	Outputs                      any
+	// The input(s) to this operation. (AI-inferred)
+	Inputs any
+	// The name of the input feature Integrated Gradients/XRAI treats as the model's own latent embedding space, for embedding-based explanations. (AI-inferred)
+	LatentSpaceSource any
+	// The output(s) produced by this operation. (AI-inferred)
+	Outputs any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSource struct {
+	// The Cloud Storage URI(s) this applies to. (AI-inferred)
 	Uris any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource struct {
+	// The file format the source data is stored in. (AI-inferred)
 	DataFormat any
-	GcsSource  any
+	// A Cloud Storage location this data is read from. (AI-inferred)
+	GcsSource any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_Presets struct {
+	// The kind of data this input represents, e.g. `numeric`, `image`, or `text`. (AI-inferred)
 	Modality any
-	Query    any
+	// The query strategy to use, e.g. `PRECISE` or `FAST`. (AI-inferred)
+	Query any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples struct {
-	ExampleGcsSource            any
+	// The Cloud Storage location of the example dataset used for example-based explanations. (AI-inferred)
+	ExampleGcsSource any
+	// Fine-grained configuration for the nearest-neighbor search index backing example-based explanations. (AI-inferred)
 	NearestNeighborSearchConfig any
-	NeighborCount               any
-	Presets                     any
+	// How many nearest-neighbor examples to return per prediction. (AI-inferred)
+	NeighborCount any
+	// A named, predefined configuration bundle, as a shortcut for setting individual fields. (AI-inferred)
+	Presets any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfig struct {
+	// The maximum Gaussian blur strength applied when constructing a blurred baseline. (AI-inferred)
 	MaxBlurSigma any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The standard deviation parameter of a Gaussian/normal distribution used for sampling. (AI-inferred)
 	Sigma any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma struct {
+	// The standard deviation of Gaussian noise SmoothGrad adds to each sampled copy of the input. (AI-inferred)
 	NoiseSigma any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig struct {
+	// Per-feature noise standard deviation(s) applied by SmoothGrad, when different features need different noise levels. (AI-inferred)
 	FeatureNoiseSigma any
-	NoiseSigma        any
-	NoisySampleCount  any
+	// The standard deviation of Gaussian noise SmoothGrad adds to each sampled copy of the input. (AI-inferred)
+	NoiseSigma any
+	// How many noisy copies of the input SmoothGrad averages over. (AI-inferred)
+	NoisySampleCount any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution struct {
+	// Configures Integrated Gradients/XRAI to use a progressively blurred version of the input as its own baseline, rather than a black image. (AI-inferred)
 	BlurBaselineConfig any
-	SmoothGradConfig   any
-	StepCount          any
+	// Configures SmoothGrad noise averaging, reducing visual noise in the resulting attribution by averaging over several noisy copies of the input. (AI-inferred)
+	SmoothGradConfig any
+	// How many steps this job or trial ran for. (AI-inferred)
+	StepCount any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttribution struct {
+	// How many feature-permutation paths Sampled Shapley samples to approximate attributions. (AI-inferred)
 	PathCount any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters struct {
-	Examples                       any
+	// Configures example-based explanations -- returning the training examples most similar to a given prediction, instead of a feature-attribution score. (AI-inferred)
+	Examples any
+	// Computes feature attributions using the Integrated Gradients method, integrating the model's own gradient along a path from a baseline input to the actual input. (AI-inferred)
 	IntegratedGradientsAttribution any
-	OutputIndices                  any
-	SampledShapleyAttribution      any
-	TopK                           any
-	XraiAttribution                any
+	// Restricts explanations to specific output index/indices, instead of every model output. (AI-inferred)
+	OutputIndices any
+	// Computes feature attributions using the Sampled Shapley method, approximating Shapley values by sampling feature permutations. (AI-inferred)
+	SampledShapleyAttribution any
+	// Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
+	TopK any
+	// Computes feature attributions for image inputs using the XRAI method, an Integrated-Gradients variant that groups pixels into coherent regions. (AI-inferred)
+	XraiAttribution any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec struct {
-	Metadata   any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
 	Parameters any
 }
 
 type Endpoint_DeployedModels_FasterDeploymentConfig struct {
+	// Whether this deployment uses a faster, lower-fidelity rollout path suited for quick experimentation. (AI-inferred)
 	FastTryoutEnabled any
 }
 
 type Endpoint_DeployedModels_PrivateEndpoints struct {
-	ExplainHttpUri    any
-	HealthHttpUri     any
-	PredictHttpUri    any
+	// The private URI for sending explanation requests to this deployment. (AI-inferred)
+	ExplainHttpUri any
+	// The private URI for health-checking this deployment. (AI-inferred)
+	HealthHttpUri any
+	// The private URI for sending prediction requests to this deployment. (AI-inferred)
+	PredictHttpUri any
+	// The Private Service Connect service attachment backing this deployment's own private endpoints. (AI-inferred)
 	ServiceAttachment any
 }
 
 type Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculation struct {
+	// The smaller model used to propose draft tokens for speculative decoding. (AI-inferred)
 	DraftModel any
 }
 
 type Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculation struct {
+	// The n-gram length used to propose candidate tokens for speculative decoding. (AI-inferred)
 	NgramSize any
 }
 
 type Endpoint_DeployedModels_SpeculativeDecodingSpec struct {
+	// Uses a smaller, faster draft model to propose candidate tokens for the main model to verify. (AI-inferred)
 	DraftModelSpeculation any
-	NgramSpeculation      any
+	// Uses n-gram matching against recent output, rather than a separate draft model, to propose candidate tokens for speculative decoding. (AI-inferred)
+	NgramSpeculation any
+	// How many candidate tokens are drafted ahead per speculative decoding step. (AI-inferred)
 	SpeculativeTokenCount any
 }
 
 type Endpoint_DeployedModels_Status struct {
+	// Output only. How many replicas of this deployment are currently ready to serve traffic. (AI-inferred)
 	AvailableReplicaCount any
-	LastUpdateTime        any
-	Message               any
+	// Output only. When this resource was last updated. (AI-inferred)
+	LastUpdateTime any
+	// The message content. (AI-inferred)
+	Message any
 }
 
 type Endpoint_DeployedModels struct {
-	AutomaticResources      any
-	CheckpointId            any
-	CreateTime              any
-	DedicatedResources      any
+	// Lets Vertex AI automatically manage compute resources for this deployment, as an alternative to `dedicated_resources`. (AI-inferred)
+	AutomaticResources any
+	// An identifier for this specific training checkpoint. (AI-inferred)
+	CheckpointId any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Reserves dedicated compute resources (machine type, replica count, autoscaling) for this deployment, as an alternative to `automatic_resources`. (AI-inferred)
+	DedicatedResources any
+	// If `true`, suppresses the deployed container's own stdout/stderr from being written to Cloud Logging. (AI-inferred)
 	DisableContainerLogging any
-	DisableExplanations     any
-	DisplayName             any
-	EnableAccessLogging     any
-	ExplanationSpec         any
-	FasterDeploymentConfig  any
-	GdcConnectedModel       any
-	Id                      any
-	Model                   any
-	ModelVersionId          any
-	PrivateEndpoints        any
-	ServiceAccount          any
-	SharedResources         any
+	// If `true`, skips generating feature-attribution explanations for predictions from this deployment, even if `explanation_spec` is configured. (AI-inferred)
+	DisableExplanations any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether individual prediction requests to this deployment are logged. (AI-inferred)
+	EnableAccessLogging any
+	// Configuration for how Vertex AI computes feature-attribution explanations for predictions from this deployment. (AI-inferred)
+	ExplanationSpec any
+	// Configuration trading a longer initial rollout for faster subsequent scale-up, or vice versa. (AI-inferred)
+	FasterDeploymentConfig any
+	// A reference to the corresponding model resource on a connected Google Distributed Cloud environment. (AI-inferred)
+	GdcConnectedModel any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// A reference to the model this applies to. (AI-inferred)
+	Model any
+	// The specific version of the model this applies to. (AI-inferred)
+	ModelVersionId any
+	// The private network endpoint URIs this deployment is reachable at. (AI-inferred)
+	PrivateEndpoints any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// A reference to the shared deployment resource pool this model is co-located on, when it isn't deployed with its own dedicated resources. (AI-inferred)
+	SharedResources any
+	// Configuration for speculative decoding, which drafts several candidate tokens ahead using a cheaper method and verifies them with the main model, to speed up generation. (AI-inferred)
 	SpeculativeDecodingSpec any
-	Status                  any
-	SystemLabels            any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// Output only. Labels Vertex AI itself attaches to this resource, distinct from user-provided `labels`. (AI-inferred)
+	SystemLabels any
 }
 
 type Endpoint_EncryptionSpec struct {
@@ -239,12 +348,18 @@ type Endpoint_PredictRequestResponseLoggingConfig struct {
 }
 
 type Endpoint_PrivateServiceConnectConfig_PscAutomationConfigs struct {
-	ErrorMessage   any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
 	ForwardingRule any
-	IpAddress      any
-	Network        any
-	ProjectId      any
-	State          any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
 }
 
 type Endpoint_PrivateServiceConnectConfig struct {

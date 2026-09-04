@@ -2,12 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Group_AdditionalGroupKeys {
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A container grouping related external identifier(s) together. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
 export interface Group_DynamicGroupMetadata_Queries {
+  /** The query evaluated to produce this result. (AI-inferred) */
   query?: string | Computed<string>;
+  /** The category of resource this applies to. (AI-inferred) */
   resourceType?: string | Computed<string>;
 }
 

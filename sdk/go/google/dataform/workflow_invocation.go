@@ -9,9 +9,12 @@ type WorkflowInvocation_DataEncryptionState struct {
 }
 
 type WorkflowInvocation_InvocationConfig_IncludedTargets struct {
+	// The database (BigQuery project) this included target table belongs to. (AI-inferred)
 	Database any
-	Name     any
-	Schema   any
+	// The name of this included target table. (AI-inferred)
+	Name any
+	// The schema (BigQuery dataset) this included target table belongs to. (AI-inferred)
+	Schema any
 }
 
 type WorkflowInvocation_InvocationConfig struct {

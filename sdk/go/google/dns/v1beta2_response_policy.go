@@ -29,7 +29,8 @@ type V1beta2ResponsePolicyConfig struct {
 	// The list of Google Kubernetes Engine clusters to which this response policy is applied.
 	GkeClusters any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any
@@ -45,7 +46,8 @@ type V1beta2ResponsePolicyAttrs struct {
 	// The list of Google Kubernetes Engine clusters to which this response policy is applied.
 	GkeClusters any
 	// Unique identifier for the resource; defined by the server (output only).
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any

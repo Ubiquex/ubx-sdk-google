@@ -24,10 +24,15 @@ type Subnetwork_Params struct {
 }
 
 type Subnetwork_SecondaryIpRanges struct {
-	IpCidrRange           any
-	IpCollection          any
-	IpVersion             any
-	RangeName             any
+	// The CIDR range for the secondary IP range, specified in CIDR notation (e.g., '10.0.1.0/24'). This range must not overlap with the primary or other secondary IP ranges in the subnetwork. (AI-inferred)
+	IpCidrRange any
+	// The name of the IP collection to use for this secondary IP range. (AI-inferred)
+	IpCollection any
+	// The IP version of this secondary IP range. Allowed values are IPV4, IPV6, or IP_VERSION_UNSPECIFIED. (AI-inferred)
+	IpVersion any
+	// The name of the secondary IP range. Must be unique within the subnetwork. (AI-inferred)
+	RangeName any
+	// Reference to a reserved internal range (by name or URI) used to allocate this secondary IP range. Specify this instead of ip_cidr_range to use a pre-reserved internal range for the secondary range. (AI-inferred)
 	ReservedInternalRange any
 }
 
@@ -42,9 +47,12 @@ type Subnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization struct {
 }
 
 type Subnetwork_UtilizationDetails_Ipv4Utilizations struct {
-	RangeName        any
+	// The name of the IP range (e.g., primary or a specific secondary range) for which this IPv4 utilization is reported. (AI-inferred)
+	RangeName any
+	// The total number of IPv4 addresses allocated in the subnetwork, represented as a string. (AI-inferred)
 	TotalAllocatedIp any
-	TotalFreeIp      any
+	// The total number of free (unassigned) IPv4 addresses in the subnet's utilization range, represented as a string. (AI-inferred)
+	TotalFreeIp any
 }
 
 type Subnetwork_UtilizationDetails struct {
@@ -157,7 +165,8 @@ type SubnetworkConfig struct {
 	PrivateIpGoogleAccess any
 	// This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
 	PrivateIpv6GoogleAccess any
-	Purpose                 any
+	// The purpose of the subnetwork, indicating how it is used. Valid values include GLOBAL_MANAGED_PROXY, INTERNAL_HTTPS_LOAD_BALANCER, PEER_MIGRATION, PRIVATE, PRIVATE_NAT, PRIVATE_RFC_1918, PRIVATE_SERVICE_CONNECT, and REGIONAL_MANAGED_PROXY. When not set, the default is PRIVATE. (AI-inferred)
+	Purpose any
 	// URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
 	Region any
 	// The URL of the reserved internal range.
@@ -219,7 +228,8 @@ type SubnetworkAttrs struct {
 	PrivateIpGoogleAccess any
 	// This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
 	PrivateIpv6GoogleAccess any
-	Purpose                 any
+	// The purpose of the subnetwork, indicating how it is used. Valid values include GLOBAL_MANAGED_PROXY, INTERNAL_HTTPS_LOAD_BALANCER, PEER_MIGRATION, PRIVATE, PRIVATE_NAT, PRIVATE_RFC_1918, PRIVATE_SERVICE_CONNECT, and REGIONAL_MANAGED_PROXY. When not set, the default is PRIVATE. (AI-inferred)
+	Purpose any
 	// URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
 	Region any
 	// The URL of the reserved internal range.

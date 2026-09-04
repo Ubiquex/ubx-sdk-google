@@ -8,79 +8,126 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_AfterAgentCallbacks:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Whether the agent may call this tool on its own initiative, rather than only in direct response to an explicit user request. (AI-inferred)
     proactive_execution_enabled: Any = None
+    # Custom Python logic run inline as part of this tool or condition. (AI-inferred)
     python_code: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_ModelSettings:
+    # The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
     model: Any = None
+    # Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred)
     temperature: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_RemoteDialogflowAgent:
+    # A reference to the agent this applies to. (AI-inferred)
     agent: Any = None
+    # The Dialogflow CX environment this remote agent runs in. (AI-inferred)
     environment_id: Any = None
+    # The Dialogflow CX flow this remote agent starts in. (AI-inferred)
     flow_id: Any = None
+    # Maps this app's own variable(s) into the remote Dialogflow agent's own session parameters. (AI-inferred)
     input_variable_mapping: Any = None
+    # The app variable supplying the language code passed to the remote Dialogflow agent. (AI-inferred)
     language_code_variable: Any = None
+    # Maps the remote Dialogflow agent's own session parameters back into this app's own variable(s). (AI-inferred)
     output_variable_mapping: Any = None
+    # Whether the remote Dialogflow agent's own barge-in/interruption settings are honored, rather than this app's own defaults. (AI-inferred)
     respect_response_interruption_settings: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_Toolsets:
+    # The identifier(s) of the tool(s) this applies to. (AI-inferred)
     tool_ids: Any = None
+    # A reference to the toolset this belongs to. (AI-inferred)
     toolset: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionCondition:
+    # The expression text. (AI-inferred)
     expression: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeCondition:
+    # Custom Python logic run inline as part of this tool or condition. (AI-inferred)
     python_code: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_TransferRules_DeterministicTransfer:
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     expression_condition: Any = None
+    # A Python expression that must evaluate truthy for this to apply. (AI-inferred)
     python_code_condition: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_TransferRules_DisablePlannerTransfer:
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     expression_condition: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents_TransferRules:
+    # A reference to a sub-agent this agent may transfer the conversation to. (AI-inferred)
     child_agent: Any = None
+    # Whether this agent transfer happens automatically, without the model deciding whether to invoke it. (AI-inferred)
     deterministic_transfer: Any = None
+    # Which direction this applies in. (AI-inferred)
     direction: Any = None
+    # Whether the model is prevented from transferring the conversation to another agent on its own initiative. (AI-inferred)
     disable_planner_transfer: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Agents:
+    # Custom code run after this agent finishes handling a turn. (AI-inferred)
     after_agent_callbacks: Any = None
+    # Custom code run after the underlying model produces a response, before it's returned. (AI-inferred)
     after_model_callbacks: Any = None
+    # Custom code run after a tool call completes, before its own result is used. (AI-inferred)
     after_tool_callbacks: Any = None
+    # Custom code run before this agent starts handling a turn. (AI-inferred)
     before_agent_callbacks: Any = None
+    # Custom code run before the underlying model is called, letting the request be inspected or modified. (AI-inferred)
     before_model_callbacks: Any = None
+    # Custom code run before a tool is called, letting the call be inspected, modified, or skipped. (AI-inferred)
     before_tool_callbacks: Any = None
+    # The sub-agent(s) this agent may delegate parts of a conversation to. (AI-inferred)
     child_agents: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # The generated answer text, summarized from retrieved source content. (AI-inferred)
     generated_summary: Any = None
+    # The guardrail(s) applied to this agent. (AI-inferred)
     guardrails: Any = None
+    # An instruction given to the model or agent. (AI-inferred)
     instruction: Any = None
+    # Configures this as an LLM-driven agent, with its own model, prompt, and tools. (AI-inferred)
     llm_agent: Any = None
+    # Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
     model_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configures this agent to delegate the conversation to a separate, existing Dialogflow CX agent. (AI-inferred)
     remote_dialogflow_agent: Any = None
+    # The tool(s) available to this agent. (AI-inferred)
     tools: Any = None
+    # The toolset(s) available to this agent. (AI-inferred)
     toolsets: Any = None
+    # The rule(s) governing when this agent transfers the conversation to another agent. (AI-inferred)
     transfer_rules: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
+    # Output only. Configuration problem(s) found when this resource was last validated. (AI-inferred)
     validation_errors: Any = None
 
 @dataclasses.dataclass
@@ -103,11 +150,17 @@ class Version_Snapshot_App_AudioProcessingConfig_BargeInConfig:
 
 @dataclasses.dataclass
 class Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigs:
+    # The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred)
     consent_audio_gcs_uri: Any = None
+    # An instruction given to the model or agent. (AI-inferred)
     instruction: Any = None
+    # The name of the underlying LLM this uses, e.g. `gemini-3.0-flash`. (AI-inferred)
     model: Any = None
+    # The speed synthesized speech is spoken at, relative to the default rate. (AI-inferred)
     speaking_rate: Any = None
+    # Configuration for which synthesized voice this agent uses. (AI-inferred)
     voice: Any = None
+    # The Cloud Storage URI of an audio sample used to clone a custom voice. (AI-inferred)
     voice_sample_gcs_uri: Any = None
 
 @dataclasses.dataclass
@@ -132,7 +185,9 @@ class Version_Snapshot_App_ClientCertificateSettings:
 
 @dataclasses.dataclass
 class Version_Snapshot_App_DataStoreSettings_Engines:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -350,30 +405,52 @@ class Version_Snapshot_App_LoggingSettings:
 
 @dataclasses.dataclass
 class Version_Snapshot_App_PredefinedVariableDeclarations_Schema:
+    # Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
     additional_properties: Any = None
+    # A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
     any_of: Any = None
+    # The value used when this field is left unset. (AI-inferred)
     default: Any = None
+    # Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
     defs: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
     enum: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The most elements an `array`-typed value may have. (AI-inferred)
     max_items: Any = None
+    # The largest value a `number`/`integer`-typed value may take. (AI-inferred)
     maximum: Any = None
+    # The fewest elements an `array`-typed value may have. (AI-inferred)
     min_items: Any = None
+    # The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
     minimum: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred)
     prefix_items: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # A reference to a schema defined under `defs`, by name. (AI-inferred)
     ref: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # Whether every element of an array-typed value must be distinct. (AI-inferred)
     unique_items: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_App_PredefinedVariableDeclarations:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A schema describing this value's own expected structure. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
@@ -447,518 +524,815 @@ class Version_Snapshot_App:
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_AgentTransfer:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The agent this transfer moves the conversation to. (AI-inferred)
     target_agent: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_Blob:
+    # The literal data payload. (AI-inferred)
     data: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool:
+    # An identifier for this tool, unique within its own containing toolset. (AI-inferred)
     tool_id: Any = None
+    # A reference to the toolset this belongs to. (AI-inferred)
     toolset: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_ToolCall:
+    # The argument(s) passed to this call. (AI-inferred)
     args: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # A reference to a single tool. (AI-inferred)
     tool: Any = None
+    # A reference to a specific tool within a toolset. (AI-inferred)
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_ToolResponse:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
+    # A reference to a single tool. (AI-inferred)
     tool: Any = None
+    # A reference to a specific tool within a toolset. (AI-inferred)
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks:
+    # Transfers the conversation to another agent. (AI-inferred)
     agent_transfer: Any = None
+    # Raw binary content. (AI-inferred)
     blob: Any = None
+    # The default value(s) for this app's own declared variables. (AI-inferred)
     default_variables: Any = None
+    # Image content. (AI-inferred)
     image: Any = None
+    # A custom, integration-specific payload. (AI-inferred)
     payload: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
+    # A request from the model to invoke a specific tool. (AI-inferred)
     tool_call: Any = None
+    # The result returned from invoking a tool. (AI-inferred)
     tool_response: Any = None
+    # The transcribed text of spoken audio. (AI-inferred)
     transcript: Any = None
+    # The variable(s) whose own value changed as a result of this event. (AI-inferred)
     updated_variables: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages:
+    # The retrieved content chunk(s) making up this result. (AI-inferred)
     chunks: Any = None
+    # When this event occurred. (AI-inferred)
     event_time: Any = None
+    # Who this content is attributed to, e.g. `user` or `model`. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The agent this example conversation begins with. (AI-inferred)
     entry_agent: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # Whether this example is currently flagged as invalid, e.g. after a referenced resource was removed. (AI-inferred)
     invalid: Any = None
+    # The message(s) making up this conversation or example. (AI-inferred)
     messages: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_Action_GenerativeAnswer:
+    # The prompt text sent to the model. (AI-inferred)
     prompt: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_Action_RespondImmediately_Responses:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_Action_RespondImmediately:
+    # The response message(s) to choose from. (AI-inferred)
     responses: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_Action_TransferAgent:
+    # A reference to the agent this applies to. (AI-inferred)
     agent: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_Action:
+    # Responds by generating an answer with the model, rather than a fixed response. (AI-inferred)
     generative_answer: Any = None
+    # Responds directly with a fixed message, bypassing the model. (AI-inferred)
     respond_immediately: Any = None
+    # Responds by transferring the conversation to another agent. (AI-inferred)
     transfer_agent: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_CodeCallback:
+    # Custom code run after the agent finishes handling a turn. (AI-inferred)
     after_agent_callback: Any = None
+    # Custom code run after the underlying model produces a response. (AI-inferred)
     after_model_callback: Any = None
+    # Custom code run before the agent starts handling a turn. (AI-inferred)
     before_agent_callback: Any = None
+    # Custom code run before the underlying model is called. (AI-inferred)
     before_model_callback: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_ContentFilter:
+    # The word/phrase(s) this filter blocks. (AI-inferred)
     banned_contents: Any = None
+    # The word/phrase(s) this filter blocks from the agent's own responses. (AI-inferred)
     banned_contents_in_agent_response: Any = None
+    # The word/phrase(s) this filter blocks from user input. (AI-inferred)
     banned_contents_in_user_input: Any = None
+    # Whether accented characters are treated as equivalent to their unaccented form when matching. (AI-inferred)
     disregard_diacritics: Any = None
+    # How banned content is matched: `SIMPLE_STRING_MATCH`, `WORD_BOUNDARY_STRING_MATCH`, or `REGEXP_MATCH`. (AI-inferred)
     match_type: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_LlmPolicy:
+    # Whether very short spoken input is accepted, rather than treated as noise. (AI-inferred)
     allow_short_utterance: Any = None
+    # Whether this check allows the request through when the check itself fails to run, rather than blocking it. (AI-inferred)
     fail_open: Any = None
+    # The maximum number of prior messages kept as context for the conversation. (AI-inferred)
     max_conversation_messages: Any = None
+    # Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
     model_settings: Any = None
+    # What this policy applies to. (AI-inferred)
     policy_scope: Any = None
+    # The prompt text sent to the model. (AI-inferred)
     prompt: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettings:
+    # The default prompt template used to instruct the security check. (AI-inferred)
     default_prompt_template: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_LlmPromptSecurity:
+    # A caller-defined policy overriding the guardrail's own default behavior. (AI-inferred)
     custom_policy: Any = None
+    # The guardrail's own default configuration, used when no custom policy is set. (AI-inferred)
     default_settings: Any = None
+    # Whether this check allows the request through when the check itself fails to run, rather than blocking it. (AI-inferred)
     fail_open: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_ModelSafety_SafetySettings:
+    # The category this classification or setting applies to. (AI-inferred)
     category: Any = None
+    # The value that must be met or crossed for this to apply. (AI-inferred)
     threshold: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails_ModelSafety:
+    # Per-category safety threshold(s) applied to model output. (AI-inferred)
     safety_settings: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Guardrails:
+    # The action to perform. (AI-inferred)
     action: Any = None
+    # Runs custom code at a specific point in the agent's own lifecycle, as this guardrail's own action. (AI-inferred)
     code_callback: Any = None
+    # Blocks matching content from user input and/or agent responses. (AI-inferred)
     content_filter: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether this guardrail is currently turned on. (AI-inferred)
     enabled: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # A guardrail enforced by having a judge model evaluate whether content complies with a caller-defined policy. (AI-inferred)
     llm_policy: Any = None
+    # Screens for prompt injection and jailbreak attempts using a security-focused model check. (AI-inferred)
     llm_prompt_security: Any = None
+    # Applies the underlying model's own built-in content safety filters. (AI-inferred)
     model_safety: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_AgentTool:
+    # A reference to the agent this applies to. (AI-inferred)
     agent: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ClientFunction:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ConnectorTool_Action_EntityOperation:
+    # The identifier of the entity this operation applies to. (AI-inferred)
     entity_id: Any = None
+    # Which action this performs, e.g. create, update, or delete. (AI-inferred)
     operation: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ConnectorTool_Action:
+    # The identifier of the connector action this tool invokes. (AI-inferred)
     connection_action_id: Any = None
+    # A structured create/update/delete action performed against an entity in the connected external system. (AI-inferred)
     entity_operation: Any = None
+    # The input field(s) this tool or operation accepts. (AI-inferred)
     input_fields: Any = None
+    # The output field(s) this tool or operation returns. (AI-inferred)
     output_fields: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfig:
+    # An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
     oauth_token: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfig:
+    # The private key used to sign the authentication JWT. (AI-inferred)
     client_key: Any = None
+    # The JWT issuer identity presented when authenticating. (AI-inferred)
     issuer: Any = None
+    # The JWT subject identity presented when authenticating. (AI-inferred)
     subject: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ConnectorTool_AuthConfig:
+    # Authenticates using the OAuth 2.0 authorization code grant. (AI-inferred)
     oauth2_auth_code_config: Any = None
+    # Authenticates using the OAuth 2.0 JWT bearer grant, signing a JWT with a private key rather than an interactive login. (AI-inferred)
     oauth2_jwt_bearer_config: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ConnectorTool:
+    # The action to perform. (AI-inferred)
     action: Any = None
+    # Authentication configuration for reaching this external resource. (AI-inferred)
     auth_config: Any = None
+    # A reference to the connector connection this tool uses. (AI-inferred)
     connection: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints:
+    # The attribute value at this control point. (AI-inferred)
     attribute_value: Any = None
+    # The boost applied at this control point. (AI-inferred)
     boost_amount: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec:
+    # The kind of attribute this boost rule keys on. (AI-inferred)
     attribute_type: Any = None
+    # The mapping between an attribute's own value and its resulting boost amount, defining the boost curve. (AI-inferred)
     control_points: Any = None
+    # The name of the field this applies to. (AI-inferred)
     field_name: Any = None
+    # How boost values are interpolated between control points, e.g. linear. (AI-inferred)
     interpolation_type: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs:
+    # How much to raise or lower a matching result's own ranking. (AI-inferred)
     boost: Any = None
+    # A boost rule computed from a continuous field value, rather than a fixed amount. (AI-inferred)
     boost_control_spec: Any = None
+    # A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec:
+    # Rule(s) boosting or burying specific search results when their own condition matches. (AI-inferred)
     condition_boost_specs: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_BoostSpecs:
+    # The data store(s) this tool queries. (AI-inferred)
     data_stores: Any = None
+    # The specification defining this resource's own behavior. (AI-inferred)
     spec: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig:
+    # The set of resources this configuration applies to. (AI-inferred)
     collection: Any = None
+    # A human-readable name for this collection, shown in the console. (AI-inferred)
     collection_display_name: Any = None
+    # Which external data source this applies to. (AI-inferred)
     data_source: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore:
+    # Configuration for connecting this tool to an external enterprise system via a Google Cloud connector (e.g. Salesforce, ServiceNow). (AI-inferred)
     connector_config: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # How documents in this data store are processed for grounding. (AI-inferred)
     document_processing_mode: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_DataStoreSource:
+    # A reference to the Vertex AI Search data store this tool queries. (AI-inferred)
     data_store: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_EngineSource:
+    # The data store(s) included under this search app. (AI-inferred)
     data_store_sources: Any = None
+    # A reference to the Vertex AI Search app (engine) this queries. (AI-inferred)
     engine: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfig:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # How strictly generated answers must be grounded in retrieved source content. (AI-inferred)
     grounding_level: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # Configuration controlling the underlying LLM's own behavior, e.g. temperature, prompt, and system instruction. (AI-inferred)
     model_settings: Any = None
+    # The prompt text sent to the model. (AI-inferred)
     prompt: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig:
+    # Whether source snippets are included alongside a generated answer. (AI-inferred)
     enable_snippets: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_ModalityConfigs:
+    # Configuration for how strictly generated answers must be grounded in retrieved source content. (AI-inferred)
     grounding_config: Any = None
+    # Which modality (text, audio, etc.) this applies to. (AI-inferred)
     modality_type: Any = None
+    # Configuration for automatically rewriting the user's own query before retrieval, to improve search results. (AI-inferred)
     rewriter_config: Any = None
+    # Configuration for including source snippets alongside a generated answer. (AI-inferred)
     snippets_config: Any = None
+    # Configuration for how retrieved search results are summarized into a generated answer. (AI-inferred)
     summarization_config: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool:
+    # Rule(s) boosting or burying specific search results. (AI-inferred)
     boost_specs: Any = None
+    # Configures this tool to query a specific data store directly. (AI-inferred)
     data_store_source: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Configures this tool to query through a Vertex AI Search app (engine), which may span multiple data stores. (AI-inferred)
     engine_source: Any = None
+    # Whether a caller-supplied search filter parameter is always included in queries, or never. (AI-inferred)
     filter_parameter_behavior: Any = None
+    # Per-modality (text, voice) configuration for how this data store tool's own results are presented. (AI-inferred)
     modality_configs: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_FileSearchTool:
+    # Whether the file corpus this tool searches is `USER_OWNED` or `FULLY_MANAGED` by the platform. (AI-inferred)
     corpus_type: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A reference to the file corpus this tool searches. (AI-inferred)
     file_corpus: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_GoogleSearchTool_PromptConfig:
+    # The prompt text used when responding in text. (AI-inferred)
     text_prompt: Any = None
+    # The prompt text used when responding by voice. (AI-inferred)
     voice_prompt: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_GoogleSearchTool:
+    # URL(s) whose own content is fetched and used as additional search context. (AI-inferred)
     context_urls: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Domain(s) excluded from this tool's own search results. (AI-inferred)
     exclude_domains: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Domain(s) this tool's own search results are preferentially drawn from. (AI-inferred)
     preferred_domains: Any = None
+    # Per-modality prompt text guiding how this tool's own results are presented. (AI-inferred)
     prompt_config: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig:
+    # The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred)
     api_key_secret_version: Any = None
+    # The name of the API key parameter. (AI-inferred)
     key_name: Any = None
+    # Where in the request the credential is placed, e.g. a header or query parameter. (AI-inferred)
     request_location: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig:
+    # A token used to authenticate this request. (AI-inferred)
     token: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig:
+    # The OAuth client ID used to authenticate. (AI-inferred)
     client_id: Any = None
+    # The Secret Manager secret version holding the OAuth client secret. (AI-inferred)
     client_secret_version: Any = None
+    # Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred)
     oauth_grant_type: Any = None
+    # The OAuth scope(s) requested. (AI-inferred)
     scopes: Any = None
+    # The OAuth token endpoint URL used to obtain an access token. (AI-inferred)
     token_endpoint: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig:
+    # The OAuth scope(s) requested. (AI-inferred)
     scopes: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_ApiAuthentication:
+    # Authenticates using a static API key. (AI-inferred)
     api_key_config: Any = None
+    # Authenticates using a static bearer token. (AI-inferred)
     bearer_token_config: Any = None
+    # Authenticates using OAuth 2.0. (AI-inferred)
     oauth_config: Any = None
+    # Authenticates using a Google Cloud service account's own identity token. (AI-inferred)
     service_account_auth_config: Any = None
+    # Authenticates using this service's own service agent identity token. (AI-inferred)
     service_agent_id_token_auth_config: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig:
+    # A reference to the Service Directory service this is reached through. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_TlsConfig_CaCerts:
+    # A TLS certificate. (AI-inferred)
     cert: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_TlsConfig:
+    # The CA certificate(s) trusted for this TLS connection. (AI-inferred)
     ca_certs: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool:
+    # Authentication configuration for calling this tool's own external API. (AI-inferred)
     api_authentication: Any = None
+    # Additional caller-defined HTTP header(s) sent with this request. (AI-inferred)
     custom_headers: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The schema describing this tool's own expected input. (AI-inferred)
     input_schema: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred)
     name_override: Any = None
+    # The schema describing this tool's own expected output. (AI-inferred)
     output_schema: Any = None
+    # The address of the server this connects to. (AI-inferred)
     server_address: Any = None
+    # Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
     service_directory_config: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
+    # TLS/SSL configuration for this connection. (AI-inferred)
     tls_config: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_OpenApiTool:
+    # Authentication configuration for calling this tool's own external API. (AI-inferred)
     api_authentication: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred)
     ignore_unknown_fields: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Defines this tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_schema: Any = None
+    # Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
     service_directory_config: Any = None
+    # TLS/SSL configuration for this connection. (AI-inferred)
     tls_config: Any = None
+    # The URL this tool calls. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_PythonFunction:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Custom Python logic run inline as part of this tool or condition. (AI-inferred)
     python_code: Any = None
+    # Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
     service_directory_config: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Example(s) illustrating expected behavior. (AI-inferred)
     examples: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The input modality/modalities (text, audio, etc.) this supports. (AI-inferred)
     input_modes: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The output modality/modalities (text, audio, etc.) this supports. (AI-inferred)
     output_modes: Any = None
+    # Free-form label(s) attached to this resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces:
+    # The communication protocol this interface accepts requests over. (AI-inferred)
     protocol_binding: Any = None
+    # The protocol version this interface implements. (AI-inferred)
     protocol_version: Any = None
+    # A reference to the tenant this applies to. (AI-inferred)
     tenant: Any = None
+    # The URL this tool calls. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_RemoteAgentTool_AgentCard:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The skill(s) the remote agent advertises being able to perform. (AI-inferred)
     skills: Any = None
+    # The transport/interface(s) (e.g. HTTP, gRPC) the remote agent supports being called over. (AI-inferred)
     supported_interfaces: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_RemoteAgentTool:
+    # The A2A agent card describing the remote agent's own identity, capabilities, and supported interfaces. (AI-inferred)
     agent_card: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_SystemTool:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_ToolFakeConfig:
+    # Custom code run inline. (AI-inferred)
     code_block: Any = None
+    # Whether this tool returns its own configured fake response instead of calling the real backend. (AI-inferred)
     enable_fake_mode: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_WidgetTool_DataMapping:
+    # Maps a source field name to the widget's own display field. (AI-inferred)
     field_mappings: Any = None
+    # Which mode this widget's own data mapping uses: `FIELD_MAPPING` or `PYTHON_SCRIPT`. (AI-inferred)
     mode: Any = None
+    # A Python function implementing this tool's own logic. (AI-inferred)
     python_function: Any = None
+    # Custom Python code computing this widget's own data mapping. (AI-inferred)
     python_script: Any = None
+    # The tool this widget's own data is sourced from. (AI-inferred)
     source_tool_name: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_WidgetTool_TextResponseConfig:
+    # A fixed text string used as-is. (AI-inferred)
     static_text: Any = None
+    # An instruction guiding the model in generating the widget's own text fallback. (AI-inferred)
     text_response_instruction: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_WidgetTool:
+    # Configuration for mapping this widget's own backing data into its display fields. (AI-inferred)
     data_mapping: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # Configuration for the text fallback shown when this widget can't be rendered. (AI-inferred)
     text_response_config: Any = None
+    # Widget-type-specific display configuration. (AI-inferred)
     ui_config: Any = None
+    # Which kind of widget this is, e.g. `PRODUCT_CAROUSEL` or `APPOINTMENT_SCHEDULER`. (AI-inferred)
     widget_type: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools:
+    # A tool that invokes another agent as a callable sub-routine. (AI-inferred)
     agent_tool: Any = None
+    # A tool implemented by the calling client application, rather than a server-side backend. (AI-inferred)
     client_function: Any = None
+    # A tool that invokes an action on an external enterprise system via a Google Cloud connector. (AI-inferred)
     connector_tool: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A tool that retrieves grounding content from a Vertex AI Search data store or search app. (AI-inferred)
     data_store_tool: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # How this tool is executed, e.g. synchronously or asynchronously. (AI-inferred)
     execution_type: Any = None
+    # A tool that searches over a corpus of uploaded files for grounding content. (AI-inferred)
     file_search_tool: Any = None
+    # The generated answer text, summarized from retrieved source content. (AI-inferred)
     generated_summary: Any = None
+    # A tool that grounds responses in live Google Search results. (AI-inferred)
     google_search_tool: Any = None
+    # A tool exposed by a connected Model Context Protocol (MCP) server. (AI-inferred)
     mcp_tool: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A tool defined by an OpenAPI specification document, calling a plain HTTPS API. (AI-inferred)
     open_api_tool: Any = None
+    # A Python function implementing this tool's own logic. (AI-inferred)
     python_function: Any = None
+    # A tool that invokes a separate, independently hosted agent over the Agent-to-Agent (A2A) protocol. (AI-inferred)
     remote_agent_tool: Any = None
+    # One of the platform's own built-in system tools. (AI-inferred)
     system_tool: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
+    # Configuration for returning a fixed, fake response from this tool instead of calling its own real backend, for testing. (AI-inferred)
     tool_fake_config: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
+    # A tool that renders an interactive UI widget (e.g. a product carousel) in the conversation. (AI-inferred)
     widget_tool: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Toolsets_ConnectorToolset:
+    # Authentication configuration for reaching this external resource. (AI-inferred)
     auth_config: Any = None
+    # A reference to the connector connection this tool uses. (AI-inferred)
     connection: Any = None
+    # The connector action(s) exposed as tools by this toolset. (AI-inferred)
     connector_actions: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Toolsets_McpToolset_ToolOverrides_Snapshot:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The schema describing this tool's own expected input. (AI-inferred)
     input_schema: Any = None
+    # The schema describing this tool's own expected output. (AI-inferred)
     output_schema: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Toolsets_McpToolset_ToolOverrides:
+    # A caller-chosen description presented to the model in place of this item's own default description. (AI-inferred)
     description_override: Any = None
+    # A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred)
     name_override: Any = None
+    # A frozen copy of this resource's own content at a specific point in time. (AI-inferred)
     snapshot: Any = None
+    # A reference to a single tool. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Toolsets_McpToolset:
+    # Authentication configuration for calling this tool's own external API. (AI-inferred)
     api_authentication: Any = None
+    # Additional caller-defined HTTP header(s) sent with this request. (AI-inferred)
     custom_headers: Any = None
+    # The address of the server this connects to. (AI-inferred)
     server_address: Any = None
+    # Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
     service_directory_config: Any = None
+    # TLS/SSL configuration for this connection. (AI-inferred)
     tls_config: Any = None
+    # Caller overrides (e.g. name, description) applied to specific tools exposed by this toolset. (AI-inferred)
     tool_overrides: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Toolsets_OpenApiToolset:
+    # Authentication configuration for calling this tool's own external API. (AI-inferred)
     api_authentication: Any = None
+    # Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred)
     ignore_unknown_fields: Any = None
+    # Defines this tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_schema: Any = None
+    # Configuration for reaching this tool's own backend via Service Directory, instead of a direct URL. (AI-inferred)
     service_directory_config: Any = None
+    # TLS/SSL configuration for this connection. (AI-inferred)
     tls_config: Any = None
+    # The URL this tool calls. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Toolsets:
+    # A toolset made up of action(s) from a single connected external system. (AI-inferred)
     connector_toolset: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
     etag: Any = None
+    # How this tool is executed, e.g. synchronously or asynchronously. (AI-inferred)
     execution_type: Any = None
+    # A toolset made up of the tools exposed by a connected MCP server. (AI-inferred)
     mcp_toolset: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A toolset made up of the operations defined in an OpenAPI specification document. (AI-inferred)
     open_api_toolset: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
+    # Configuration for returning a fixed, fake response from this tool instead of calling its own real backend, for testing. (AI-inferred)
     tool_fake_config: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass

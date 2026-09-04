@@ -2,29 +2,47 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Object_Acl_ProjectTeam {
+  /** The numeric identifier of the associated Google Cloud project. (AI-inferred) */
   projectNumber?: string | Computed<string>;
+  /** The team associated with this entity. (AI-inferred) */
   team?: string | Computed<string>;
 }
 
 export interface Object_Acl {
+  /** A reference to the Cloud Storage bucket this applies to. (AI-inferred) */
   bucket?: string | Computed<string>;
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** An email address associated with this entity. (AI-inferred) */
   email?: string | Computed<string>;
+  /** The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred) */
   entity?: string | Computed<string>;
+  /** The unique identifier of this entity. (AI-inferred) */
   entityId?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** The specific object generation this applies to. (AI-inferred) */
   generation?: string | Computed<string>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The category of this resource. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** A reference to the Cloud Storage object this applies to. (AI-inferred) */
   object?: string | Computed<string>;
+  /** The project team role associated with this entity. (AI-inferred) */
   projectTeam?: Object_Acl_ProjectTeam | Computed<Object_Acl_ProjectTeam>;
+  /** The access role granted, e.g. `READER` or `OWNER`. (AI-inferred) */
   role?: string | Computed<string>;
+  /** The API URL identifying this resource. (AI-inferred) */
   selfLink?: string | Computed<string>;
 }
 
 export interface Object_Contexts_Custom {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

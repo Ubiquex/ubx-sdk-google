@@ -4,33 +4,45 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceGroupManagerResizeRequest_Instances_PreservedState_Disks struct {
+	// Specifies whether the preserved state disk is automatically deleted when the instance is deleted. Accepts string values 'true' or 'false' (defaults to 'false'). (AI-inferred)
 	AutoDelete any
-	Mode       any
-	Source     any
+	// The access mode for the preserved disk. Valid values are READ_ONLY and READ_WRITE. (AI-inferred)
+	Mode any
+	// The source disk associated with the preserved state. This is the device name or URL of the disk attached to the instance. (AI-inferred)
+	Source any
 }
 
 type InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddress struct {
+	// The external IP address to preserve for the instance in the resize request. (AI-inferred)
 	Address any
+	// The literal IP address value to preserve for the external IP. (AI-inferred)
 	Literal any
 }
 
 type InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps struct {
+	// Whether the preserved external IP address should be automatically deleted when the associated instance is deleted, controlling the lifecycle of the IP in the instance's preserved state. (AI-inferred)
 	AutoDelete any
 	IpAddress  any
 }
 
 type InstanceGroupManagerResizeRequest_Instances_PreservedState struct {
-	Disks       any
+	// Map of disk device names to their preservation state. The key is the device name of the disk, and the value configures preservation settings such as whether the disk is automatically deleted when the instance is deleted. (AI-inferred)
+	Disks any
+	// Map of instance names to preserved external IP configurations for the resize operation. The keys are instance names, and the values are objects representing the external IP assignment for each instance. (AI-inferred)
 	ExternalIps any
+	// Preserved internal IPs for the instance. The map keys are the network interface names, and the values define the IP address and auto-delete settings for each interface. (AI-inferred)
 	InternalIps any
-	Metadata    any
+	// Preserved metadata key-value pairs to be applied to the instances created by the resize request. This overrides metadata from the instance template for these instances. (AI-inferred)
+	Metadata any
 }
 
 type InstanceGroupManagerResizeRequest_Instances struct {
-	Fingerprint    any
-	Name           any
+	Fingerprint any
+	Name        any
+	// Configuration for the state to preserve for the instance in the resize request. This block is used to set stateful disks and metadata that should be preserved when the instance is created or deleted. See the preserved_state sub-block for the full structure. (AI-inferred)
 	PreservedState any
-	Status         any
+	// The status of the instance in relation to the resize request. Possible values are APPLYING, DELETING, EFFECTIVE, NONE, UNAPPLIED, and UNAPPLIED_DELETION, indicating whether the instance is being applied, deleted, effective, not applicable, unapplied, or scheduled for deletion but not yet applied. (AI-inferred)
+	Status any
 }
 
 type InstanceGroupManagerResizeRequest_RequestedRunDuration struct {
@@ -41,46 +53,63 @@ type InstanceGroupManagerResizeRequest_RequestedRunDuration struct {
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain    any
+	// The logical grouping for the error, such as 'global' for consumer-facing errors or a service-specific domain like 'compute.googleapis.com' for producer-facing errors. (AI-inferred)
+	Domain any
+	// Metadata about the error, as key-value pairs. The keys and values are service-specific and provide additional context for the error condition. (AI-inferred)
 	Metadatas any
-	Reason    any
+	// The `reason` is a stable, machine-readable identifier that indicates the specific cause of the error. It is typically part of the error info structure and can be used to programmatically handle distinct error conditions. (AI-inferred)
+	Reason any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url         any
+	// The URL pointing to additional documentation or resources for troubleshooting the error. (AI-inferred)
+	Url any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help struct {
+	// A list of links to documentation or resources that provide additional information about the error. Each link includes a description and a URL. (AI-inferred)
 	Links any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale  any
+	// The locale code for the localized error message (e.g., en-US). (AI-inferred)
+	Locale any
+	// The localized text of the error message, intended for display to users. (AI-inferred)
 	Message any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions    any
-	FutureLimit   any
-	Limit         any
-	LimitName     any
-	MetricName    any
+	// The quota dimensions (such as region or zone) as key-value pairs. Each key is a dimension name and the value is the dimension value, both as strings. (AI-inferred)
+	Dimensions  any
+	FutureLimit any
+	// The quota limit for the resource, representing the maximum allowed value for the metric in question. (AI-inferred)
+	Limit any
+	// The name of the quota limit that was exceeded, as reported in the quota error details. (AI-inferred)
+	LimitName any
+	// The name of the quota metric that was exceeded, identifying the specific quota limit that caused the error. (AI-inferred)
+	MetricName any
+	// The rollout status of the quota. Possible values are IN_PROGRESS (indicating a rollout is currently underway) and ROLLOUT_STATUS_UNSPECIFIED (indicating the status is not specified). (AI-inferred)
 	RolloutStatus any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails struct {
-	ErrorInfo        any
-	Help             any
+	ErrorInfo any
+	// Help information for the error, containing links to documentation that can assist in resolving the issue. (AI-inferred)
+	Help any
+	// An object containing a localized error message and its locale. Provides a user-readable error description in the user's preferred language. (AI-inferred)
 	LocalizedMessage any
 	QuotaInfo        any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors struct {
+	// The error code for this error entry, typically a machine-readable identifier for the specific error type. (AI-inferred)
 	Code         any
 	ErrorDetails any
-	Location     any
-	Message      any
+	// The location of the error in the request, such as the path to a specific field or parameter that caused the error. (AI-inferred)
+	Location any
+	// A human-readable error message describing the failure. (AI-inferred)
+	Message any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error struct {
@@ -95,7 +124,8 @@ type InstanceGroupManagerResizeRequest_Status_LastAttempt struct {
 
 type InstanceGroupManagerResizeRequest_Status struct {
 	// Output only. Fatal errors encountered during the queueing or provisioning phases of the ResizeRequest that caused the transition to the FAILED state. Contrary to the last_attempt errors, this field is final and errors are never removed from here, as the ResizeRequest is not going to retry.
-	Error       any
+	Error any
+	// The result of the most recent resize attempt, including any error that occurred if the attempt failed. (AI-inferred)
 	LastAttempt any
 }
 
@@ -261,7 +291,8 @@ type InstanceGroupManagerResizeRequestConfig struct {
 	RequestedRunDuration any
 	// The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
 	ResizeBy any
-	Status   any
+	// The status of the resize request, containing the current state of the operation (such as pending, succeeded, or failed) and any error details if the request was not successful. (AI-inferred)
+	Status any
 }
 
 type InstanceGroupManagerResizeRequestAttrs struct {
@@ -288,7 +319,8 @@ type InstanceGroupManagerResizeRequestAttrs struct {
 	// Output only. Server-defined URL for this resource with the resource id.
 	SelfLinkWithId any
 	// Output only. Current state of the request.
-	State  any
+	State any
+	// The status of the resize request, containing the current state of the operation (such as pending, succeeded, or failed) and any error details if the request was not successful. (AI-inferred)
 	Status any
 	// Output only. The URL of a zone where the resize request is located. Populated only for zonal resize requests.
 	Zone any

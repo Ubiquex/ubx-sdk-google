@@ -4,7 +4,9 @@ package testing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestMatrice_ClientInfo_ClientInfoDetails struct {
-	Key   any
+	// The real key of one entry in a key/value pair used by this test configuration. (AI-inferred)
+	Key any
+	// The real value of one entry in a key/value pair used by this test configuration. (AI-inferred)
 	Value any
 }
 
@@ -16,10 +18,14 @@ type TestMatrice_ClientInfo struct {
 }
 
 type TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevices struct {
-	AndroidModelId   any
+	// The real Firebase Test Lab catalog ID of an Android test device model (e.g. `Pixel8`). (AI-inferred)
+	AndroidModelId any
+	// The real Firebase Test Lab catalog ID of an Android OS version to test against. (AI-inferred)
 	AndroidVersionId any
-	Locale           any
-	Orientation      any
+	// The real device locale (language and region, e.g. `en_US`) to run this test under. (AI-inferred)
+	Locale any
+	// The real screen orientation (`portrait` or `landscape`) to run this test in. (AI-inferred)
+	Orientation any
 }
 
 type TestMatrice_EnvironmentMatrix_AndroidDeviceList struct {
@@ -39,10 +45,14 @@ type TestMatrice_EnvironmentMatrix_AndroidMatrix struct {
 }
 
 type TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevices struct {
-	IosModelId   any
+	// The real Firebase Test Lab catalog ID of an iOS test device model. (AI-inferred)
+	IosModelId any
+	// The real Firebase Test Lab catalog ID of an iOS OS version to test against. (AI-inferred)
 	IosVersionId any
-	Locale       any
-	Orientation  any
+	// The real device locale (language and region, e.g. `en_US`) to run this test under. (AI-inferred)
+	Locale any
+	// The real screen orientation (`portrait` or `landscape`) to run this test in. (AI-inferred)
+	Orientation any
 }
 
 type TestMatrice_EnvironmentMatrix_IosDeviceList struct {
@@ -60,8 +70,10 @@ type TestMatrice_EnvironmentMatrix struct {
 }
 
 type TestMatrice_ExtendedInvalidMatrixDetails struct {
+	// A real, human-readable explanation for why this test matrix's own invalid-matrix details were flagged. (AI-inferred)
 	Message any
-	Reason  any
+	// The real, specific reason this test matrix or test execution was flagged as invalid. (AI-inferred)
+	Reason any
 }
 
 type TestMatrice_ResultStorage_GoogleCloudStorage struct {
@@ -97,210 +109,324 @@ type TestMatrice_ResultStorage struct {
 }
 
 type TestMatrice_TestExecutions_Environment struct {
+	// The real Android device model, OS version, locale, and orientation this test execution ran against. (AI-inferred)
 	AndroidDevice any
-	IosDevice     any
+	// The real iOS device model, OS version, and locale this test execution ran against. (AI-inferred)
+	IosDevice any
 }
 
 type TestMatrice_TestExecutions_Shard_TestTargetsForShard struct {
+	// The real, specific test class or method names to run, restricting an instrumentation test run to a subset of its full suite. (AI-inferred)
 	TestTargets any
 }
 
 type TestMatrice_TestExecutions_Shard struct {
+	// Firebase Test Lab's own real, estimated duration for this specific shard to complete. (AI-inferred)
 	EstimatedShardDuration any
-	NumShards              any
-	ShardIndex             any
-	TestTargetsForShard    any
+	// The real number of parallel shards to split this test run's targets across. (AI-inferred)
+	NumShards any
+	// The real, zero-based index of this shard among a sharded test run's `num_shards` total shards. (AI-inferred)
+	ShardIndex any
+	// The real subset of `test_targets` assigned to run on one specific shard, when a test run is manually sharded. (AI-inferred)
+	TestTargetsForShard any
 }
 
 type TestMatrice_TestExecutions_TestDetails struct {
-	ErrorMessage     any
+	// A real, human-readable error message explaining why this test execution or issue occurred. (AI-inferred)
+	ErrorMessage any
+	// Real, ordered, human-readable progress messages logged as this test execution ran. (AI-inferred)
 	ProgressMessages any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_Apks struct {
+	// The real, split APK files Firebase Test Lab generates from an uploaded App Bundle for a specific device configuration. (AI-inferred)
 	BundleSplits any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle struct {
-	Apks           any
+	// The real, split Android APK files (from an App Bundle) that together make up one installable build for a specific device configuration. (AI-inferred)
+	Apks any
+	// The real Cloud Storage location of the uploaded Android App Bundle this test run's `bundle_splits` were generated from. (AI-inferred)
 	BundleLocation any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualSharding struct {
+	// The real subset of `test_targets` assigned to run on one specific shard, when a test run is manually sharded. (AI-inferred)
 	TestTargetsForShard any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartSharding struct {
+	// The real, target duration Firebase Test Lab aims for each shard to take, when using smart sharding. (AI-inferred)
 	TargetedShardDuration any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformSharding struct {
+	// The real number of parallel shards to split this test run's targets across. (AI-inferred)
 	NumShards any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption struct {
-	ManualSharding  any
-	SmartSharding   any
+	// Real, explicit shard-to-test-target assignments for this instrumentation test run. (AI-inferred)
+	ManualSharding any
+	// Real, automatic sharding for this instrumentation test run, targeting a specific `targeted_shard_duration` per shard. (AI-inferred)
+	SmartSharding any
+	// Real, automatic, even sharding of this instrumentation test run's targets across `num_shards` shards. (AI-inferred)
 	UniformSharding any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest struct {
-	AppApk             any
-	AppBundle          any
-	AppPackageId       any
+	// A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred)
+	AppApk any
+	// A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred)
+	AppBundle any
+	// The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred)
+	AppPackageId any
+	// Whether to real, run this Android instrumentation test using Android Test Orchestrator, which isolates each test in its own instrumentation instance. (AI-inferred)
 	OrchestratorOption any
-	ShardingOption     any
-	TestApk            any
-	TestPackageId      any
-	TestRunnerClass    any
-	TestTargets        any
+	// Real, chosen sharding strategy (`manual_sharding`, `smart_sharding`, or `uniform_sharding`) for this instrumentation test run. (AI-inferred)
+	ShardingOption any
+	// A reference to the real instrumentation test APK, uploaded to Cloud Storage, that exercises the app under test. (AI-inferred)
+	TestApk any
+	// The real Android application ID (package name) of the instrumentation test APK. (AI-inferred)
+	TestPackageId any
+	// The real, fully-qualified class name of the instrumentation test runner to use for this test. (AI-inferred)
+	TestRunnerClass any
+	// The real, specific test class or method names to run, restricting an instrumentation test run to a subset of its full suite. (AI-inferred)
+	TestTargets any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectives struct {
-	ActionType   any
-	InputText    any
+	// The real type of Robo directive action to take on a matched UI element, e.g. `SINGLE_CLICK` or `ENTER_TEXT`. (AI-inferred)
+	ActionType any
+	// The real text value a Robo directive types into a matched UI element (for `ENTER_TEXT`-type actions). (AI-inferred)
+	InputText any
+	// The real, fully-qualified resource name this reference points at. (AI-inferred)
 	ResourceName any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivity struct {
-	Action     any
+	// The real Android intent action string (e.g. `android.intent.action.MAIN`) a starting intent specifies. (AI-inferred)
+	Action any
+	// The real Android intent category string(s) (e.g. `android.intent.category.LAUNCHER`) a starting intent specifies. (AI-inferred)
 	Categories any
-	Uri        any
+	// The real URI data an Android intent carries, for a starting intent that launches the app via a deep link. (AI-inferred)
+	Uri any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents struct {
+	// Start the Robo test from the app's own real, declared launcher activity. (AI-inferred)
 	LauncherActivity any
-	NoActivity       any
-	StartActivity    any
-	Timeout          any
+	// Start the Robo test without launching any activity, leaving the app in whatever state it's already in. (AI-inferred)
+	NoActivity any
+	// Start the Robo test from a specific, real named Android activity rather than the app's own default launcher. (AI-inferred)
+	StartActivity any
+	// The real maximum duration Firebase Test Lab allows this test or device session to run before it's forcibly stopped. (AI-inferred)
+	Timeout any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest struct {
-	AppApk             any
-	AppBundle          any
+	// A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred)
+	AppApk any
+	// A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred)
+	AppBundle any
+	// The real, specific Android activity the Robo crawler should start from, overriding the app's own default launcher activity. (AI-inferred)
 	AppInitialActivity any
-	AppPackageId       any
-	MaxDepth           any
-	MaxSteps           any
-	RoboDirectives     any
-	RoboMode           any
-	RoboScript         any
-	StartingIntents    any
+	// The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred)
+	AppPackageId any
+	// The real maximum depth of UI states the Robo crawler explores from the app's own starting screen. (AI-inferred)
+	MaxDepth any
+	// The real maximum number of UI actions the Robo crawler takes during this test run. (AI-inferred)
+	MaxSteps any
+	// Real, targeted instructions (like text to type into a specific field) that guide Firebase Test Lab's Robo crawler when it reaches matching UI elements. (AI-inferred)
+	RoboDirectives any
+	// Which real Robo test strategy to use: standard automatic UI exploration, or a mode that starts from `robo_directives`/`starting_intents` instead. (AI-inferred)
+	RoboMode any
+	// A real, recorded action script that guides Firebase Test Lab's Robo crawler through a specific app flow (like a login screen) instead of relying on automatic exploration alone. (AI-inferred)
+	RoboScript any
+	// Real Android intents Firebase Test Lab's Robo crawler should use to launch the app under test, instead of its default launcher activity. (AI-inferred)
+	StartingIntents any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidTestLoop struct {
-	AppApk         any
-	AppBundle      any
-	AppPackageId   any
+	// A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred)
+	AppApk any
+	// A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred)
+	AppBundle any
+	// The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred)
+	AppPackageId any
+	// Real, named labels identifying which Game Loop `scenarios` to run, as an alternative to specifying raw scenario numbers. (AI-inferred)
 	ScenarioLabels any
-	Scenarios      any
+	// The real, numbered Game Loop scenario IDs to exercise for a Game Loop test, letting one app be tested across multiple distinct gameplay scenarios. (AI-inferred)
+	Scenarios any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosRoboTest struct {
+	// The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred)
 	AppBundleId any
-	AppIpa      any
-	RoboScript  any
+	// A reference to the real iOS `.ipa` app file under test, uploaded to Cloud Storage. (AI-inferred)
+	AppIpa any
+	// A real, recorded action script that guides Firebase Test Lab's Robo crawler through a specific app flow (like a login screen) instead of relying on automatic exploration alone. (AI-inferred)
+	RoboScript any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosTestLoop struct {
+	// The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred)
 	AppBundleId any
-	AppIpa      any
-	Scenarios   any
+	// A reference to the real iOS `.ipa` app file under test, uploaded to Cloud Storage. (AI-inferred)
+	AppIpa any
+	// The real, numbered Game Loop scenario IDs to exercise for a Game Loop test, letting one app be tested across multiple distinct gameplay scenarios. (AI-inferred)
+	Scenarios any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories struct {
-	BundleId   any
-	Content    any
+	// The real iOS bundle identifier this device configuration or test target applies to. (AI-inferred)
+	BundleId any
+	// The real content or configuration payload this test-run entry carries. (AI-inferred)
+	Content any
+	// The real, on-device file path a file should be pushed to or pulled from during a test run. (AI-inferred)
 	DevicePath any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosTestSetup struct {
-	AdditionalIpas  any
-	NetworkProfile  any
+	// Extra real iOS `.ipa` files to install onto the device alongside the app under test. (AI-inferred)
+	AdditionalIpas any
+	// The real, named network condition profile (simulating a specific bandwidth/latency/packet-loss shape) to apply during the test run. (AI-inferred)
+	NetworkProfile any
+	// Real, on-device directory paths to pull files from after an iOS test run completes. (AI-inferred)
 	PullDirectories any
-	PushFiles       any
+	// Real local files to push onto the device's own filesystem before an iOS test run starts. (AI-inferred)
+	PushFiles any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosXcTest struct {
-	AppBundleId             any
+	// The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred)
+	AppBundleId any
+	// Whether this iOS XCTest run real, requires special app entitlements (like Sign in with Apple) that Firebase Test Lab must configure for. (AI-inferred)
 	TestSpecialEntitlements any
-	TestsZip                any
-	XcodeVersion            any
-	Xctestrun               any
+	// A real, uploaded zip file containing the built iOS test bundle to run. (AI-inferred)
+	TestsZip any
+	// The real Xcode version used to build (and run) this iOS test. (AI-inferred)
+	XcodeVersion any
+	// A real, uploaded `.xctestrun` file describing how to run this iOS XCTest bundle. (AI-inferred)
+	Xctestrun any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_Account struct {
+	// Real, automatic Google account provisioning for this test run, requiring no explicit credentials. (AI-inferred)
 	GoogleAuto any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks struct {
-	Location    any
+	// The real Google Cloud region this Firebase Test Lab device session or resource runs in. (AI-inferred)
+	Location any
+	// The real Android package name this device configuration, intent, or test target applies to. (AI-inferred)
 	PackageName any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFile struct {
-	Obb         any
+	// A real Android OBB expansion file to push onto the device before this test run starts. (AI-inferred)
+	Obb any
+	// The real, on-device file name an `obb_file` must be installed under for the app to find it. (AI-inferred)
 	ObbFileName any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFile struct {
-	Content    any
+	// The real content or configuration payload this test-run entry carries. (AI-inferred)
+	Content any
+	// The real, on-device file path a file should be pushed to or pulled from during a test run. (AI-inferred)
 	DevicePath any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush struct {
-	ObbFile     any
+	// A real Android OBB expansion file to install onto the test device alongside the app under test. (AI-inferred)
+	ObbFile any
+	// A real, plain file to push onto the device's own filesystem before this test run starts. (AI-inferred)
 	RegularFile any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_Systrace struct {
+	// The real duration, in seconds, to capture systrace data for during this test run. (AI-inferred)
 	DurationSeconds any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup struct {
-	Account                  any
-	AdditionalApks           any
-	DirectoriesToPull        any
+	// Real, pre-authenticated Google account configuration to set up on the device before this test run starts. (AI-inferred)
+	Account any
+	// Extra real Android APKs to install onto the device alongside the app and test APK, for a test that depends on another app being present. (AI-inferred)
+	AdditionalApks any
+	// Real, on-device directory paths Firebase Test Lab pulls files from after the test run completes, for later inspection. (AI-inferred)
+	DirectoriesToPull any
+	// Whether Firebase Test Lab should real, skip automatically granting the app's own requested runtime permissions before the test starts. (AI-inferred)
 	DontAutograntPermissions any
-	EnvironmentVariables     any
-	FilesToPush              any
-	InitialSetupApks         any
-	NetworkProfile           any
-	Systrace                 any
+	// Real key/value environment variables passed into the instrumentation test run. (AI-inferred)
+	EnvironmentVariables any
+	// Real local files Firebase Test Lab pushes onto the device's own filesystem before the test run starts. (AI-inferred)
+	FilesToPush any
+	// Real, additional APKs to install onto the device before this test run starts, beyond the app and test APKs themselves. (AI-inferred)
+	InitialSetupApks any
+	// The real, named network condition profile (simulating a specific bandwidth/latency/packet-loss shape) to apply during the test run. (AI-inferred)
+	NetworkProfile any
+	// Real configuration for collecting an Android systrace during this test run. (AI-inferred)
+	Systrace any
 }
 
 type TestMatrice_TestExecutions_TestSpecification struct {
+	// Real configuration for an Android instrumentation test run: the test APK, runner class, and sharding options. (AI-inferred)
 	AndroidInstrumentationTest any
-	AndroidRoboTest            any
-	AndroidTestLoop            any
-	DisablePerformanceMetrics  any
-	DisableVideoRecording      any
-	IosRoboTest                any
-	IosTestLoop                any
-	IosTestSetup               any
-	IosXcTest                  any
-	TestSetup                  any
-	TestTimeout                any
+	// Real configuration for an Android Robo test run: exploration depth/steps, starting activity, and directives. (AI-inferred)
+	AndroidRoboTest any
+	// Real configuration for an Android Game Loop test run: which `scenarios`/`scenario_labels` to exercise. (AI-inferred)
+	AndroidTestLoop any
+	// Whether to real, disable collection of performance metrics (CPU, memory, graphics) during this test run. (AI-inferred)
+	DisablePerformanceMetrics any
+	// Whether to real, disable video recording of this test run. (AI-inferred)
+	DisableVideoRecording any
+	// Real configuration for an iOS Robo test run. (AI-inferred)
+	IosRoboTest any
+	// Real configuration for an iOS Game Loop test run. (AI-inferred)
+	IosTestLoop any
+	// Real, iOS-specific device setup (files to push/pull, additional IPAs) to apply before this test run starts. (AI-inferred)
+	IosTestSetup any
+	// Real configuration for an iOS XCTest run: the `tests_zip`/`xctestrun` bundle and Xcode version. (AI-inferred)
+	IosXcTest any
+	// Real, shared Android device setup (files to push, account config, systrace) applied before this test run starts. (AI-inferred)
+	TestSetup any
+	// The real maximum duration Firebase Test Lab allows one individual test run to take before it's forcibly stopped. (AI-inferred)
+	TestTimeout any
 }
 
 type TestMatrice_TestExecutions_ToolResultsStep struct {
+	// The real Tool Results execution ID this test execution's own results are recorded under. (AI-inferred)
 	ExecutionId any
-	HistoryId   any
-	ProjectId   any
-	StepId      any
+	// The real Tool Results history ID this test execution's own results are recorded under. (AI-inferred)
+	HistoryId any
+	// The real Google Cloud project ID this test matrix or device session runs under. (AI-inferred)
+	ProjectId any
+	// The real Tool Results step ID this test execution's own results are recorded under. (AI-inferred)
+	StepId any
 }
 
 type TestMatrice_TestExecutions struct {
-	Environment       any
-	Id                any
-	MatrixId          any
-	ProjectId         any
-	Shard             any
-	State             any
-	TestDetails       any
+	// The real device and OS environment (Android or iOS) one test execution within this matrix ran against. (AI-inferred)
+	Environment any
+	// A real, stable identifier for this test resource. (AI-inferred)
+	Id any
+	// The real, parent test matrix ID this test execution belongs to. (AI-inferred)
+	MatrixId any
+	// The real Google Cloud project ID this test matrix or device session runs under. (AI-inferred)
+	ProjectId any
+	// Real sharding details (which shard, and its own estimated duration) for this specific test execution. (AI-inferred)
+	Shard any
+	// The real, current state (e.g. `RUNNING`, `FINISHED`, `ERROR`) of this test execution, or of a detected grant/status in this resource. (AI-inferred)
+	State any
+	// Real, additional progress and error detail for this specific test execution. (AI-inferred)
+	TestDetails any
+	// The real test type (instrumentation, Robo, Game Loop, XCTest) and its own configuration for this test execution. (AI-inferred)
 	TestSpecification any
-	Timestamp         any
-	ToolResultsStep   any
+	// The real timestamp this test execution was created or last updated at. (AI-inferred)
+	Timestamp any
+	// A reference to this test execution's own corresponding `google_toolresults_step`, where its detailed results are recorded. (AI-inferred)
+	ToolResultsStep any
 }
 
 var TestMatrice_ClientInfo_ClientInfoDetailsFields = ubx.FieldMap{

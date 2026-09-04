@@ -13,14 +13,19 @@ type BareMetalNodePool_NodePoolConfig_KubeletConfig struct {
 }
 
 type BareMetalNodePool_NodePoolConfig_NodeConfigs struct {
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
 	Labels any
+	// The IP address of this node. (AI-inferred)
 	NodeIp any
 }
 
 type BareMetalNodePool_NodePoolConfig_Taints struct {
+	// What happens to a pod that doesn't tolerate this taint. (AI-inferred)
 	Effect any
-	Key    any
-	Value  any
+	// The key of this taint or label. (AI-inferred)
+	Key any
+	// The value of this taint or label. (AI-inferred)
+	Value any
 }
 
 type BareMetalNodePool_NodePoolConfig struct {
@@ -37,15 +42,22 @@ type BareMetalNodePool_NodePoolConfig struct {
 }
 
 type BareMetalNodePool_Status_Conditions struct {
+	// When this condition last changed from one status to another. (AI-inferred)
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	State              any
-	Type               any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type BareMetalNodePool_Status_Versions_Versions struct {
-	Count   any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 

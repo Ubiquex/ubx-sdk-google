@@ -8,36 +8,55 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccessLevel_Basic_Conditions_DevicePolicy_OsConstraints:
+    # The minimum required OS version. (AI-inferred)
     minimum_version: Any = None
+    # The operating system type this constraint applies to. (AI-inferred)
     os_type: Any = None
+    # Whether the device must be a verified, unmodified Chrome OS device. (AI-inferred)
     require_verified_chrome_os: Any = None
 
 @dataclasses.dataclass
 class AccessLevel_Basic_Conditions_DevicePolicy:
+    # The device management level(s) (e.g. managed, unmanaged) this access level accepts. (AI-inferred)
     allowed_device_management_levels: Any = None
+    # The device disk encryption status/statuses this access level accepts. (AI-inferred)
     allowed_encryption_statuses: Any = None
+    # Device operating system requirement(s) this access level enforces. (AI-inferred)
     os_constraints: Any = None
+    # Whether admin approval is required for the device to be considered compliant. (AI-inferred)
     require_admin_approval: Any = None
+    # Whether the device must be corporately owned. (AI-inferred)
     require_corp_owned: Any = None
+    # Whether the device must have a screen lock configured. (AI-inferred)
     require_screenlock: Any = None
 
 @dataclasses.dataclass
 class AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetwork:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The VPC network and IP address range(s) this rule matches traffic from. (AI-inferred)
     vpc_ip_subnetworks: Any = None
 
 @dataclasses.dataclass
 class AccessLevel_Basic_Conditions_VpcNetworkSources:
+    # A reference to the VPC subnetwork this applies to. (AI-inferred)
     vpc_subnetwork: Any = None
 
 @dataclasses.dataclass
 class AccessLevel_Basic_Conditions:
+    # Restricts access based on the requesting device's own posture, e.g. encryption and management status. (AI-inferred)
     device_policy: Any = None
+    # The IP address range(s), in CIDR notation, this access level accepts requests from. (AI-inferred)
     ip_subnetworks: Any = None
+    # The principal(s) this applies to. (AI-inferred)
     members: Any = None
+    # Whether this condition's own result is inverted. (AI-inferred)
     negate: Any = None
+    # The geographic region(s) this access level accepts requests from. (AI-inferred)
     regions: Any = None
+    # The access level(s) a request must satisfy for this rule to permit it. (AI-inferred)
     required_access_levels: Any = None
+    # The VPC network(s) this rule matches traffic from. (AI-inferred)
     vpc_network_sources: Any = None
 
 @dataclasses.dataclass

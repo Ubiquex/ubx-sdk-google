@@ -4,8 +4,10 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutoLabelingRule_Conditions struct {
+	// A boolean expression that must evaluate `true` for this to apply. (AI-inferred)
 	Condition any
-	Value     any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 var AutoLabelingRule_ConditionsFields = ubx.FieldMap{

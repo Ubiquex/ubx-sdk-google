@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Memory_Metadata {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** A floating-point value, populated when this field's own type is a double. (AI-inferred) */
   doubleValue?: number | Computed<number>;
+  /** A text value, populated when this field's own type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** A timestamp value, populated when this field's own type is a timestamp. (AI-inferred) */
   timestampValue?: string | Computed<string>;
 }
 
 export interface Memory_Topics {
+  /** The label identifying this caller-defined memory topic. (AI-inferred) */
   customMemoryTopicLabel?: string | Computed<string>;
+  /** One of Vertex AI's own predefined memory topics, e.g. `USER_PREFERENCES`. (AI-inferred) */
   managedMemoryTopic?: string | Computed<string>;
 }
 

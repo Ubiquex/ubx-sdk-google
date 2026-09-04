@@ -565,11 +565,13 @@ var AlphaRegionSecurityPolicy_UserDefinedFieldsFields = ubx.FieldMap{
 type AlphaRegionSecurityPolicyConfig struct {
 	// Configuration options for Cloud Armor Adaptive Protection (CAAP).
 	AdaptiveProtectionConfig any
-	AdvancedOptionsConfig    any
+	// Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred)
+	AdvancedOptionsConfig any
 	// A list of associations that belong to this policy.
 	Associations any
 	// Configuration options for Cloud Armor.
-	CloudArmorConfig     any
+	CloudArmorConfig any
+	// Configures this security policy's own DDoS protection tier. (AI-inferred)
 	DdosProtectionConfig any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
@@ -597,13 +599,15 @@ type AlphaRegionSecurityPolicyConfig struct {
 type AlphaRegionSecurityPolicyAttrs struct {
 	// Configuration options for Cloud Armor Adaptive Protection (CAAP).
 	AdaptiveProtectionConfig any
-	AdvancedOptionsConfig    any
+	// Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred)
+	AdvancedOptionsConfig any
 	// A list of associations that belong to this policy.
 	Associations any
 	// Configuration options for Cloud Armor.
 	CloudArmorConfig any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp    any
+	CreationTimestamp any
+	// Configures this security policy's own DDoS protection tier. (AI-inferred)
 	DdosProtectionConfig any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any

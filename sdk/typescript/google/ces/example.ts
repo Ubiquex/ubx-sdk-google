@@ -2,52 +2,81 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Example_Messages_Chunks_AgentTransfer {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The agent this transfer moves the conversation to. (AI-inferred) */
   targetAgent?: string | Computed<string>;
 }
 
 export interface Example_Messages_Chunks_Blob {
+  /** The literal data payload. (AI-inferred) */
   data?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface Example_Messages_Chunks_ToolCall_ToolsetTool {
+  /** An identifier for this tool, unique within its own containing toolset. (AI-inferred) */
   toolId?: string | Computed<string>;
+  /** A reference to the toolset this belongs to. (AI-inferred) */
   toolset?: string | Computed<string>;
 }
 
 export interface Example_Messages_Chunks_ToolCall {
+  /** The argument(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
+  /** A reference to a specific tool within a toolset. (AI-inferred) */
   toolsetTool?: Example_Messages_Chunks_ToolCall_ToolsetTool | Computed<Example_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface Example_Messages_Chunks_ToolResponse {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
+  /** A reference to a specific tool within a toolset. (AI-inferred) */
   toolsetTool?: Example_Messages_Chunks_ToolCall_ToolsetTool | Computed<Example_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface Example_Messages_Chunks {
+  /** Transfers the conversation to another agent. (AI-inferred) */
   agentTransfer?: Example_Messages_Chunks_AgentTransfer | Computed<Example_Messages_Chunks_AgentTransfer>;
+  /** Raw binary content. (AI-inferred) */
   blob?: Example_Messages_Chunks_Blob | Computed<Example_Messages_Chunks_Blob>;
+  /** The default value(s) for this app's own declared variables. (AI-inferred) */
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Image content. (AI-inferred) */
   image?: Example_Messages_Chunks_Blob | Computed<Example_Messages_Chunks_Blob>;
+  /** A custom, integration-specific payload. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
+  /** A request from the model to invoke a specific tool. (AI-inferred) */
   toolCall?: Example_Messages_Chunks_ToolCall | Computed<Example_Messages_Chunks_ToolCall>;
+  /** The result returned from invoking a tool. (AI-inferred) */
   toolResponse?: Example_Messages_Chunks_ToolResponse | Computed<Example_Messages_Chunks_ToolResponse>;
+  /** The transcribed text of spoken audio. (AI-inferred) */
   transcript?: string | Computed<string>;
+  /** The variable(s) whose own value changed as a result of this event. (AI-inferred) */
   updatedVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Example_Messages {
+  /** The retrieved content chunk(s) making up this result. (AI-inferred) */
   chunks?: Example_Messages_Chunks[] | Computed<Example_Messages_Chunks[]>;
+  /** When this event occurred. (AI-inferred) */
   eventTime?: string | Computed<string>;
+  /** Who this content is attributed to, e.g. `user` or `model`. (AI-inferred) */
   role?: string | Computed<string>;
 }
 

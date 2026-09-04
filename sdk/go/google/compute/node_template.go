@@ -4,23 +4,30 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NodeTemplate_Accelerators struct {
+	// The number of accelerators of the specified type to attach to nodes created from this node template. This field is part of the accelerators block, which also specifies the accelerator type. (AI-inferred)
 	AcceleratorCount any
-	AcceleratorType  any
+	// The type of accelerator (GPU) to attach to the node, such as 'nvidia-tesla-a100'. This should be a valid accelerator type identifier supported by Compute Engine. (AI-inferred)
+	AcceleratorType any
 }
 
 type NodeTemplate_Disks struct {
+	// The number of disks of the specified type to attach to the node template. (AI-inferred)
 	DiskCount  any
 	DiskSizeGb any
-	DiskType   any
+	// The type of disk to attach to the node, such as 'local-ssd'. Defaults to 'local-ssd'. (AI-inferred)
+	DiskType any
 }
 
 type NodeTemplate_NodeTypeFlexibility struct {
+	// The number of virtual CPUs to allocate for the node template. Provide a specific integer value as a string (e.g., "8") or use "any" to allow flexible selection based on available resources. (AI-inferred)
 	Cpus     any
 	LocalSsd any
-	Memory   any
+	// Specifies the amount of memory (in MB) that the flexible node type must have. This is used to define a custom node type for the node template. (AI-inferred)
+	Memory any
 }
 
 type NodeTemplate_ServerBinding struct {
+	// Specifies the server binding type for the node template, controlling whether the node can be restarted on any server or only on a minimal set of servers. Valid values are RESTART_NODE_ON_ANY_SERVER, RESTART_NODE_ON_MINIMAL_SERVERS, or SERVER_BINDING_TYPE_UNSPECIFIED. (AI-inferred)
 	Type any
 }
 
@@ -46,23 +53,28 @@ var NodeTemplate_ServerBindingFields = ubx.FieldMap{
 }
 
 type NodeTemplateConfig struct {
+	// A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred)
 	Accelerators any
 	// CPU overcommit.
 	CpuOvercommitType any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	Disks       any
+	// The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred)
+	Disks any
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Labels to use for node affinity, which will be used in instance scheduling.
 	NodeAffinityLabels any
 	// The node type to use for nodes group that are created from this template.
-	NodeType            any
+	NodeType any
+	// Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred)
 	NodeTypeFlexibility any
-	ServerBinding       any
+	// The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred)
+	ServerBinding any
 }
 
 type NodeTemplateAttrs struct {
+	// A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred)
 	Accelerators any
 	// CPU overcommit.
 	CpuOvercommitType any
@@ -70,7 +82,8 @@ type NodeTemplateAttrs struct {
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	Disks       any
+	// The list of local disk configurations associated with the node template. This is an output-only field computed by the API, containing the disk type and size for each local disk. (AI-inferred)
+	Disks any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
@@ -80,12 +93,14 @@ type NodeTemplateAttrs struct {
 	// Labels to use for node affinity, which will be used in instance scheduling.
 	NodeAffinityLabels any
 	// The node type to use for nodes group that are created from this template.
-	NodeType            any
+	NodeType any
+	// Node type flexibility settings for the template, allowing the template to be used with a range of node types by specifying a CPU and memory range instead of a fixed node type. (AI-inferred)
 	NodeTypeFlexibility any
 	// Output only. [Output Only] The name of the region where the node template resides, such as us-central1.
 	Region any
 	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink      any
+	SelfLink any
+	// The server binding configuration of the node template, which controls how nodes are restarted during maintenance events. This field is output-only and reflects the binding type used by the template. (AI-inferred)
 	ServerBinding any
 	// Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
 	Status any

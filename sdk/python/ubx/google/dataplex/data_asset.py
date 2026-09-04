@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataAsset_AccessGroupConfigs:
+    # The IAM role(s) granted. (AI-inferred)
     iam_roles: Any = None
 
 _DataAsset_AccessGroupConfigsFields = {

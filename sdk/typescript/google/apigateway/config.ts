@@ -2,16 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Config_GrpcServices_FileDescriptorSet {
+  /** The real, base64-encoded raw bytes of this source document (an OpenAPI spec, gRPC descriptor, or service config file). (AI-inferred) */
   contents?: string | Computed<string>;
+  /** The real, relative file path this source document is identified by within the API config's own uploaded source bundle. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface Config_GrpcServices {
+  /** The real, compiled Protocol Buffers FileDescriptorSet describing this gRPC service's own API surface. (AI-inferred) */
   fileDescriptorSet?: Config_GrpcServices_FileDescriptorSet | Computed<Config_GrpcServices_FileDescriptorSet>;
+  /** The real, additional source file(s) (such as gRPC service config) uploaded alongside a `file_descriptor_set` for a gRPC-backed API config. (AI-inferred) */
   source?: Config_GrpcServices_FileDescriptorSet[] | Computed<Config_GrpcServices_FileDescriptorSet[]>;
 }
 
 export interface Config_OpenapiDocuments {
+  /** The real, uploaded OpenAPI specification document this API config was created from. (AI-inferred) */
   document?: Config_GrpcServices_FileDescriptorSet | Computed<Config_GrpcServices_FileDescriptorSet>;
 }
 

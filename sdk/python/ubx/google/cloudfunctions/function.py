@@ -86,8 +86,11 @@ class Function_BuildConfig:
 
 @dataclasses.dataclass
 class Function_EventTrigger_EventFilters:
+    # A single custom attribute. (AI-inferred)
     attribute: Any = None
+    # How this condition's own operands are compared. (AI-inferred)
     operator: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -113,27 +116,40 @@ class Function_EventTrigger:
 
 @dataclasses.dataclass
 class Function_ServiceConfig_DirectVpcNetworkInterface:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
+    # The label(s) or tag(s) attached to this resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Function_ServiceConfig_SecretEnvironmentVariables:
+    # The key of this attribute or label. (AI-inferred)
     key: Any = None
+    # The identifier of the associated Google Cloud project. (AI-inferred)
     project_id: Any = None
+    # A reference to the secret this applies to. (AI-inferred)
     secret: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Function_ServiceConfig_SecretVolumes_Versions:
+    # A file or resource path. (AI-inferred)
     path: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Function_ServiceConfig_SecretVolumes:
+    # The path this volume is mounted at inside the container. (AI-inferred)
     mount_path: Any = None
+    # The identifier of the associated Google Cloud project. (AI-inferred)
     project_id: Any = None
+    # A reference to the secret this applies to. (AI-inferred)
     secret: Any = None
+    # The version(s) this applies to. (AI-inferred)
     versions: Any = None
 
 @dataclasses.dataclass
@@ -183,8 +199,11 @@ class Function_ServiceConfig:
 
 @dataclasses.dataclass
 class Function_StateMessages:
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # How serious this condition is. (AI-inferred)
     severity: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

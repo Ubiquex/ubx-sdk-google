@@ -4,34 +4,51 @@ package backupdr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupPlan_BackupRules_StandardSchedule_BackupWindow struct {
-	EndHourOfDay   any
+	// The hour of the day this backup window ends at. (AI-inferred)
+	EndHourOfDay any
+	// The hour of the day this backup window starts at. (AI-inferred)
 	StartHourOfDay any
 }
 
 type BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonth struct {
-	DayOfWeek   any
+	// The day of the week this applies to. (AI-inferred)
+	DayOfWeek any
+	// The week of the month this schedule runs on. (AI-inferred)
 	WeekOfMonth any
 }
 
 type BackupPlan_BackupRules_StandardSchedule struct {
-	BackupWindow    any
-	DaysOfMonth     any
-	DaysOfWeek      any
+	// The time window backups produced by this rule are permitted to start within. (AI-inferred)
+	BackupWindow any
+	// The day(s) of the month this schedule runs on. (AI-inferred)
+	DaysOfMonth any
+	// The day(s) of the week this schedule runs on. (AI-inferred)
+	DaysOfWeek any
+	// How often, in hours, this schedule recurs within its own window. (AI-inferred)
 	HourlyFrequency any
-	Months          any
-	RecurrenceType  any
-	TimeZone        any
-	WeekDayOfMonth  any
+	// The month(s) this schedule runs in. (AI-inferred)
+	Months any
+	// How often this backup rule recurs, e.g. hourly, daily, or monthly. (AI-inferred)
+	RecurrenceType any
+	// The time zone this schedule is evaluated in. (AI-inferred)
+	TimeZone any
+	// The specific weekday-of-month (e.g. the second Tuesday) this schedule runs on. (AI-inferred)
+	WeekDayOfMonth any
 }
 
 type BackupPlan_BackupRules struct {
+	// How many days a backup produced by this rule is retained for. (AI-inferred)
 	BackupRetentionDays any
-	RuleId              any
-	StandardSchedule    any
+	// A reference to the backup rule this applies to. (AI-inferred)
+	RuleId any
+	// A recurrence schedule defined using standard time-based fields. (AI-inferred)
+	StandardSchedule any
 }
 
 type BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabels_Labels struct {
-	Key   any
+	// The key of this attribute or label. (AI-inferred)
+	Key any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 

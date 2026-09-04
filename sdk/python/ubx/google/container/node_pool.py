@@ -37,25 +37,36 @@ class NodePool_BestEffortProvisioning:
 
 @dataclasses.dataclass
 class NodePool_Conditions:
+    # A standard gRPC-style status code summarizing this outcome. (AI-inferred)
     canonical_code: Any = None
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # A human-readable description of this result or error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_Accelerators_GpuDriverInstallationConfig:
+    # Which GPU driver version GKE installs, e.g. `LATEST` or `DEFAULT`. (AI-inferred)
     gpu_driver_version: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_Accelerators_GpuSharingConfig:
+    # How a shared GPU is divided among containers, e.g. `TIME_SHARING` or `MPS`. (AI-inferred)
     gpu_sharing_strategy: Any = None
+    # The maximum number of containers that may share a single physical GPU. (AI-inferred)
     max_shared_clients_per_gpu: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_Accelerators:
+    # How many accelerator (GPU/TPU) devices are attached per node. (AI-inferred)
     accelerator_count: Any = None
+    # The accelerator (GPU/TPU) type attached to each node, e.g. `nvidia-tesla-t4`. (AI-inferred)
     accelerator_type: Any = None
+    # Whether and how GKE automatically installs the GPU driver on nodes with attached accelerators. (AI-inferred)
     gpu_driver_installation_config: Any = None
+    # The fraction of a physical GPU allocated per partition, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
     gpu_partition_size: Any = None
+    # Configuration letting multiple containers share a single physical GPU, rather than each requiring a dedicated one. (AI-inferred)
     gpu_sharing_config: Any = None
 
 @dataclasses.dataclass
@@ -87,11 +98,14 @@ class NodePool_Config_ConfidentialNodes:
 
 @dataclasses.dataclass
 class NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig:
+    # The Secret Manager secret version this value is sourced from. (AI-inferred)
     secret_uri: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig:
+    # The fully qualified domain name(s) of the private registry/registries this certificate is trusted for. (AI-inferred)
     fqdns: Any = None
+    # A CA certificate sourced from Secret Manager, trusted for verifying a private container registry's own TLS certificate. (AI-inferred)
     gcp_secret_manager_certificate_config: Any = None
 
 @dataclasses.dataclass
@@ -103,31 +117,45 @@ class NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig:
 
 @dataclasses.dataclass
 class NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca:
+    # The Secret Manager secret version holding this certificate, in the form `projects/{project}/secrets/{secret}/versions/{version}`. (AI-inferred)
     gcp_secret_manager_secret_uri: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Client:
+    # A TLS certificate. (AI-inferred)
     cert: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Header:
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # The value of this key/value pair. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_ContainerdConfig_RegistryHosts_Hosts:
+    # The CA certificate used to verify the remote server's own identity. (AI-inferred)
     ca: Any = None
+    # The capability/capabilities this proxy or client supports. (AI-inferred)
     capabilities: Any = None
+    # Client-side TLS configuration. (AI-inferred)
     client: Any = None
+    # How long to wait when establishing this connection before giving up. (AI-inferred)
     dial_timeout: Any = None
+    # An HTTP header sent with this request. (AI-inferred)
     header: Any = None
+    # The hostname this applies to. (AI-inferred)
     host: Any = None
+    # A path used in place of the default, for reaching this endpoint. (AI-inferred)
     override_path: Any = None
 
 @dataclasses.dataclass
 class NodePool_Config_ContainerdConfig_RegistryHosts:
+    # The host(s) this configuration applies to. (AI-inferred)
     hosts: Any = None
+    # Server-side TLS configuration. (AI-inferred)
     server: Any = None
 
 @dataclasses.dataclass
@@ -370,7 +398,9 @@ class NodePool_Config_SandboxConfig:
 
 @dataclasses.dataclass
 class NodePool_Config_SecondaryBootDisks:
+    # The disk image used for this node's own boot disk. (AI-inferred)
     disk_image: Any = None
+    # Which operating mode this configuration uses. (AI-inferred)
     mode: Any = None
 
 @dataclasses.dataclass
@@ -382,8 +412,11 @@ class NodePool_Config_ShieldedInstanceConfig:
 
 @dataclasses.dataclass
 class NodePool_Config_SoleTenantConfig_NodeAffinities:
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # How this taint's own key/value is compared against a pod's own toleration, e.g. `Equal` or `Exists`. (AI-inferred)
     operator: Any = None
+    # The value(s) making up this configuration. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -400,8 +433,11 @@ class NodePool_Config_TaintConfig:
 
 @dataclasses.dataclass
 class NodePool_Config_Taints:
+    # What happens to a pod that doesn't tolerate this taint, e.g. `NoSchedule` or `NoExecute`. (AI-inferred)
     effect: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # The value of this key/value pair. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -559,14 +595,20 @@ class NodePool_MaxPodsConstraint:
 
 @dataclasses.dataclass
 class NodePool_NetworkConfig_AdditionalNodeNetworkConfigs:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class NodePool_NetworkConfig_AdditionalPodNetworkConfigs:
+    # The maximum number of pods schedulable on a single node in this node pool. (AI-inferred)
     max_pods_per_node: Any = None
+    # A reference to the Compute Engine network attachment this cluster's own control plane connects through. (AI-inferred)
     network_attachment: Any = None
+    # The subnet secondary IP range used for pod IP addresses. (AI-inferred)
     secondary_pod_range: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass

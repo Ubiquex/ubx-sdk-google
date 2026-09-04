@@ -4,15 +4,21 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1SourceConfig struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type V1beta1SourceAttrs struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Name        any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 var V1beta1Source = ubx.ResourceBinding{

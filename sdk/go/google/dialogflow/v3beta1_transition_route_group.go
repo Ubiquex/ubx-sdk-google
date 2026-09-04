@@ -362,14 +362,20 @@ var V3beta1TransitionRouteGroup_TransitionRoutesFields = ubx.FieldMap{
 }
 
 type V3beta1TransitionRouteGroupConfig struct {
-	DisplayName      any
-	Name             any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
 	TransitionRoutes any
 }
 
 type V3beta1TransitionRouteGroupAttrs struct {
-	DisplayName      any
-	Name             any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
 	TransitionRoutes any
 }
 

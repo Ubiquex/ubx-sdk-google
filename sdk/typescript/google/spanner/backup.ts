@@ -20,6 +20,7 @@ export interface Backup_EncryptionInfo {
 }
 
 export interface Backup_InstancePartitions {
+  /** A reference to the instance partition this applies to. (AI-inferred) */
   instancePartition?: string | Computed<string>;
 }
 

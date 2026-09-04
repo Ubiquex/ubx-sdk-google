@@ -17,8 +17,11 @@ class Release_Blueprint:
 
 @dataclasses.dataclass
 class Release_InputVariableDefaults:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The real, declared value of this input variable, matching its own `type`. (AI-inferred)
     value: Any = None
+    # The real, named input variable this default value applies to. (AI-inferred)
     variable: Any = None
 
 @dataclasses.dataclass

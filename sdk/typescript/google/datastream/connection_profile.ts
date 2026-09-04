@@ -45,7 +45,9 @@ export interface ConnectionProfile_GcsProfile {
 }
 
 export interface ConnectionProfile_MongodbProfile_HostAddresses {
+  /** The hostname of the source database server. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** The port the source database server listens on. (AI-inferred) */
   port?: number | Computed<number>;
 }
 

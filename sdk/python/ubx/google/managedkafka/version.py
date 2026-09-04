@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Version_References:
+    # The name of the referenced schema or resource. (AI-inferred)
     name: Any = None
+    # The schema subject this reference points to. (AI-inferred)
     subject: Any = None
+    # The specific version of the referenced schema. (AI-inferred)
     version: Any = None
 
 _Version_ReferencesFields = {

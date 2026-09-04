@@ -2,19 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Consent_Policies_AuthorizationRule {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A boolean expression evaluated to determine whether this rule applies. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface Consent_Policies_ResourceAttributes {
+  /** A reference to the attribute definition this applies to. (AI-inferred) */
   attributeDefinitionId?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Consent_Policies {
+  /** The condition determining whether a specific consent authorization applies. (AI-inferred) */
   authorizationRule?: Consent_Policies_AuthorizationRule | Computed<Consent_Policies_AuthorizationRule>;
+  /** Custom attribute(s) attached to this consent resource. (AI-inferred) */
   resourceAttributes?: Consent_Policies_ResourceAttributes[] | Computed<Consent_Policies_ResourceAttributes[]>;
 }
 

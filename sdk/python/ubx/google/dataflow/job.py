@@ -20,84 +20,145 @@ class Job_Environment_DebugOptions:
 
 @dataclasses.dataclass
 class Job_Environment_WorkerPools_AutoscalingSettings:
+    # The autoscaling algorithm used, e.g. throughput-based. (AI-inferred)
     algorithm: Any = None
+    # The maximum number of workers this job's own autoscaling may scale up to. (AI-inferred)
     max_num_workers: Any = None
 
 @dataclasses.dataclass
 class Job_Environment_WorkerPools_DataDisks:
+    # The disk type provisioned for each worker. (AI-inferred)
     disk_type: Any = None
+    # The filesystem path this disk is mounted at. (AI-inferred)
     mount_point: Any = None
+    # The size, in GB. (AI-inferred)
     size_gb: Any = None
 
 @dataclasses.dataclass
 class Job_Environment_WorkerPools_Packages:
+    # The Google Cloud region this job runs in. (AI-inferred)
     location: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A SHA-256 hash of this content. (AI-inferred)
     sha256: Any = None
 
 @dataclasses.dataclass
 class Job_Environment_WorkerPools_SdkHarnessContainerImages:
+    # The capability/capabilities this SDK harness supports. (AI-inferred)
     capabilities: Any = None
+    # The container image used for the worker harness. (AI-inferred)
     container_image: Any = None
+    # An identifier for this job's own execution environment. (AI-inferred)
     environment_id: Any = None
+    # Whether each SDK harness container is pinned to a single CPU core. (AI-inferred)
     use_single_core_per_container: Any = None
 
 @dataclasses.dataclass
 class Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettings:
+    # The base URL this applies to. (AI-inferred)
     base_url: Any = None
+    # Whether usage/diagnostic reporting is enabled for this job. (AI-inferred)
     reporting_enabled: Any = None
+    # The API endpoint this service is reached at. (AI-inferred)
     service_path: Any = None
+    # The API endpoint the managed shuffle service is reached at. (AI-inferred)
     shuffle_service_path: Any = None
+    # The Cloud Storage path prefix used for this job's own temporary files. (AI-inferred)
     temp_storage_prefix: Any = None
+    # An identifier for this specific worker. (AI-inferred)
     worker_id: Any = None
 
 @dataclasses.dataclass
 class Job_Environment_WorkerPools_TaskrunnerSettings:
+    # Whether log output is also written to stderr, in addition to its own normal destination. (AI-inferred)
     alsologtostderr: Any = None
+    # The base directory task-related files are written under on each worker. (AI-inferred)
     base_task_dir: Any = None
+    # The base URL this applies to. (AI-inferred)
     base_url: Any = None
+    # The name of the file recording command lines executed on this worker. (AI-inferred)
     commandlines_file_name: Any = None
+    # Whether the pipeline continues processing after an unhandled exception, rather than failing the job. (AI-inferred)
     continue_on_exception: Any = None
+    # The Dataflow API version this job was submitted against. (AI-inferred)
     dataflow_api_version: Any = None
+    # The command used to launch the worker harness. (AI-inferred)
     harness_command: Any = None
+    # A hint indicating which SDK language this job was authored in. (AI-inferred)
     language_hint: Any = None
+    # The directory worker logs are written to. (AI-inferred)
     log_dir: Any = None
+    # Whether worker startup logs are also written to the VM's own serial console. (AI-inferred)
     log_to_serialconsole: Any = None
+    # The Cloud Storage location worker logs are uploaded to. (AI-inferred)
     log_upload_location: Any = None
+    # The OAuth scope(s) granted to each worker's own service account. (AI-inferred)
     oauth_scopes: Any = None
+    # Configuration for the workers that execute this job's own parallel processing steps. (AI-inferred)
     parallel_worker_settings: Any = None
+    # The main class launched to run the streaming worker harness. (AI-inferred)
     streaming_worker_main_class: Any = None
+    # The task group this worker belongs to. (AI-inferred)
     task_group: Any = None
+    # The user account tasks run as on this worker. (AI-inferred)
     task_user: Any = None
+    # The Cloud Storage path prefix used for this job's own temporary files. (AI-inferred)
     temp_storage_prefix: Any = None
+    # An identifier for this specific worker VM. (AI-inferred)
     vm_id: Any = None
+    # The name of the file describing this job's own workflow graph. (AI-inferred)
     workflow_file_name: Any = None
 
 @dataclasses.dataclass
 class Job_Environment_WorkerPools:
+    # Configuration for automatically resizing this job's own worker pool based on load. (AI-inferred)
     autoscaling_settings: Any = None
+    # The additional persistent disk(s) attached to each worker. (AI-inferred)
     data_disks: Any = None
+    # The default set of SDK package(s) staged for this job. (AI-inferred)
     default_package_set: Any = None
+    # The provisioned IOPS for the worker's own disk, when using a disk type that supports configuring it. (AI-inferred)
     disk_provisioned_iops: Any = None
+    # The provisioned throughput, in MiB/s, for the worker's own disk. (AI-inferred)
     disk_provisioned_throughput_mibps: Any = None
+    # The size, in GB, of each worker's own disk. (AI-inferred)
     disk_size_gb: Any = None
+    # The source image used for each worker's own boot disk. (AI-inferred)
     disk_source_image: Any = None
+    # The disk type provisioned for each worker. (AI-inferred)
     disk_type: Any = None
+    # Whether workers are assigned public IP addresses, or only internal ones. (AI-inferred)
     ip_configuration: Any = None
+    # The kind of pipeline step or value this is. (AI-inferred)
     kind: Any = None
+    # The Compute Engine machine type provisioned for each worker. (AI-inferred)
     machine_type: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # How many threads run per worker. (AI-inferred)
     num_threads_per_worker: Any = None
+    # The number of workers this job runs with. (AI-inferred)
     num_workers: Any = None
+    # How the worker's own VM behaves during a host maintenance event, e.g. live migration versus terminate. (AI-inferred)
     on_host_maintenance: Any = None
+    # The SDK package(s) staged for this job. (AI-inferred)
     packages: Any = None
+    # Additional, worker-pool-type-specific arguments. (AI-inferred)
     pool_args: Any = None
+    # The container image(s) used for the SDK harness process(es) on each worker. (AI-inferred)
     sdk_harness_container_images: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
+    # Configuration for the process that manages task execution on each worker. (AI-inferred)
     taskrunner_settings: Any = None
+    # Whether worker VMs are torn down when the job completes or fails. (AI-inferred)
     teardown_policy: Any = None
+    # The container image used for the worker harness process. (AI-inferred)
     worker_harness_container_image: Any = None
+    # The Compute Engine zone workers are provisioned in. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
@@ -145,6 +206,7 @@ class Job_Environment:
 
 @dataclasses.dataclass
 class Job_ExecutionInfo_Stages:
+    # The name of this pipeline step. (AI-inferred)
     step_name: Any = None
 
 @dataclasses.dataclass
@@ -154,35 +216,50 @@ class Job_ExecutionInfo:
 
 @dataclasses.dataclass
 class Job_JobMetadata_BigTableDetails:
+    # An identifier for this specific instance. (AI-inferred)
     instance_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # A reference to the BigQuery table this applies to. (AI-inferred)
     table_id: Any = None
 
 @dataclasses.dataclass
 class Job_JobMetadata_BigqueryDetails:
+    # A reference to the dataset this applies to. (AI-inferred)
     dataset: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The query text or expression. (AI-inferred)
     query: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Job_JobMetadata_DatastoreDetails:
+    # The namespace this applies to. (AI-inferred)
     namespace: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class Job_JobMetadata_FileDetails:
+    # A file path pattern, e.g. matching multiple input files with a wildcard. (AI-inferred)
     file_pattern: Any = None
 
 @dataclasses.dataclass
 class Job_JobMetadata_PubsubDetails:
+    # A reference to the Pub/Sub subscription this applies to. (AI-inferred)
     subscription: Any = None
+    # A reference to the Pub/Sub topic this applies to. (AI-inferred)
     topic: Any = None
 
 @dataclasses.dataclass
 class Job_JobMetadata_SdkVersion_Bugs:
+    # How serious this log entry or finding is. (AI-inferred)
     severity: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
@@ -198,8 +275,11 @@ class Job_JobMetadata_SdkVersion:
 
 @dataclasses.dataclass
 class Job_JobMetadata_SpannerDetails:
+    # The identifier of the database this applies to. (AI-inferred)
     database_id: Any = None
+    # An identifier for this specific instance. (AI-inferred)
     instance_id: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
@@ -223,56 +303,92 @@ class Job_JobMetadata:
 
 @dataclasses.dataclass
 class Job_PipelineDescription_DisplayData:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # A value expressed as a duration. (AI-inferred)
     duration_value: Any = None
+    # A floating-point value, populated when this field's own type is a float. (AI-inferred)
     float_value: Any = None
+    # A 64-bit integer value, populated when this field's own type is an integer. (AI-inferred)
     int64_value: Any = None
+    # A fully qualified Java class name, populated when this field's own type is a class reference. (AI-inferred)
     java_class_value: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # A human-readable label for this item. (AI-inferred)
     label: Any = None
+    # The namespace this applies to. (AI-inferred)
     namespace: Any = None
+    # A short text value. (AI-inferred)
     short_str_value: Any = None
+    # A text value. (AI-inferred)
     str_value: Any = None
+    # A timestamp value, populated when this field's own type is a timestamp. (AI-inferred)
     timestamp_value: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Job_PipelineDescription_ExecutionPipelineStage_ComponentSource:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The pipeline transform or collection this element was originally part of, before optimization. (AI-inferred)
     original_transform_or_collection: Any = None
+    # The user account this applies to. (AI-inferred)
     user_name: Any = None
 
 @dataclasses.dataclass
 class Job_PipelineDescription_ExecutionPipelineStage_ComponentTransform:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The pipeline transform this element was originally part of, before optimization. (AI-inferred)
     original_transform: Any = None
+    # The user account this applies to. (AI-inferred)
     user_name: Any = None
 
 @dataclasses.dataclass
 class Job_PipelineDescription_ExecutionPipelineStage_InputSource:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The pipeline transform or collection this element was originally part of, before optimization. (AI-inferred)
     original_transform_or_collection: Any = None
+    # The size, in bytes. (AI-inferred)
     size_bytes: Any = None
+    # The user account this applies to. (AI-inferred)
     user_name: Any = None
 
 @dataclasses.dataclass
 class Job_PipelineDescription_ExecutionPipelineStage:
+    # The pipeline component this element reads from. (AI-inferred)
     component_source: Any = None
+    # The pipeline transform this element belongs to. (AI-inferred)
     component_transform: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The source this pipeline reads its own input from. (AI-inferred)
     input_source: Any = None
+    # The kind of pipeline step or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The destination this pipeline writes its own output to. (AI-inferred)
     output_source: Any = None
+    # The execution stage that must complete before this one begins. (AI-inferred)
     prerequisite_stage: Any = None
 
 @dataclasses.dataclass
 class Job_PipelineDescription_OriginalPipelineTransform:
+    # Human-readable key/value detail describing this pipeline component, shown in the Dataflow console. (AI-inferred)
     display_data: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The name of the input collection this transform reads from. (AI-inferred)
     input_collection_name: Any = None
+    # The kind of pipeline step or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The name of the output collection this transform writes to. (AI-inferred)
     output_collection_name: Any = None
 
 @dataclasses.dataclass
@@ -288,19 +404,30 @@ class Job_PipelineDescription:
 
 @dataclasses.dataclass
 class Job_RuntimeUpdatableParams_Schedules_Parameters:
+    # The target CPU utilization autoscaling aims to maintain. (AI-inferred)
     cpu_utilization_target: Any = None
+    # The target end-to-end processing latency for this streaming pipeline. (AI-inferred)
     latency_target: Any = None
+    # The maximum number of workers this job's own autoscaling may scale up to. (AI-inferred)
     max_worker_count: Any = None
+    # The minimum number of workers this job's own autoscaling scales down to. (AI-inferred)
     min_worker_count: Any = None
 
 @dataclasses.dataclass
 class Job_RuntimeUpdatableParams_Schedules:
+    # The cron schedule expression this applies to. (AI-inferred)
     crontab: Any = None
+    # How long this applies for. (AI-inferred)
     duration: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # The relative priority of this item. (AI-inferred)
     priority: Any = None
+    # The time zone this schedule is interpreted in. (AI-inferred)
     time_zone: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
@@ -327,14 +454,20 @@ class Job_ServiceResources:
 
 @dataclasses.dataclass
 class Job_StageStates:
+    # When this job entered its own current state. (AI-inferred)
     current_state_time: Any = None
+    # The name of this pipeline execution stage. (AI-inferred)
     execution_stage_name: Any = None
+    # The current status of this pipeline execution stage. (AI-inferred)
     execution_stage_state: Any = None
 
 @dataclasses.dataclass
 class Job_Steps:
+    # The kind of pipeline step or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
 
 _Job_Environment_DebugOptions_DataSamplingFields = {

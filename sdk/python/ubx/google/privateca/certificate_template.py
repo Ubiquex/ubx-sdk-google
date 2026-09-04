@@ -28,6 +28,7 @@ class CertificateTemplate_IdentityConstraints:
 
 @dataclasses.dataclass
 class CertificateTemplate_PassthroughExtensions_AdditionalExtensions:
+    # The numeric component(s) making up an object identifier. (AI-inferred)
     object_id_path: Any = None
 
 @dataclasses.dataclass
@@ -39,8 +40,11 @@ class CertificateTemplate_PassthroughExtensions:
 
 @dataclasses.dataclass
 class CertificateTemplate_PredefinedValues_AdditionalExtensions:
+    # Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
     critical: Any = None
+    # An X.509 object identifier (OID). (AI-inferred)
     object_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

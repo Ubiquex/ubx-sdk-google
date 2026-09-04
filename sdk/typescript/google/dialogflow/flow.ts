@@ -2,194 +2,296 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Flow_AdvancedSettings_AudioExportGcsDestination {
+  /** The URI of an audio clip this response instructs the client to play. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Flow_AdvancedSettings_DtmfSettings {
+  /** Whether this setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred) */
   endpointingTimeoutDuration?: string | Computed<string>;
+  /** The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred) */
   finishDigit?: string | Computed<string>;
+  /** The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred) */
   interdigitTimeoutDuration?: string | Computed<string>;
+  /** The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred) */
   maxDigits?: number | Computed<number>;
 }
 
 export interface Flow_AdvancedSettings_LoggingSettings {
+  /** Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred) */
   enableConsentBasedRedaction?: boolean | Computed<boolean>;
+  /** Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred) */
   enableInteractionLogging?: boolean | Computed<boolean>;
+  /** Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred) */
   enableStackdriverLogging?: boolean | Computed<boolean>;
 }
 
 export interface Flow_AdvancedSettings_SpeechSettings {
+  /** How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred) */
   endpointerSensitivity?: number | Computed<number>;
+  /** Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred) */
   models?: Record<string, string> | Computed<Record<string, string>>;
+  /** How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred) */
   noSpeechTimeout?: string | Computed<string>;
+  /** Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred) */
   useTimeoutBasedEndpointing?: boolean | Computed<boolean>;
 }
 
 export interface Flow_AdvancedSettings {
+  /** The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred) */
   audioExportGcsDestination?: Flow_AdvancedSettings_AudioExportGcsDestination | Computed<Flow_AdvancedSettings_AudioExportGcsDestination>;
+  /** Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred) */
   dtmfSettings?: Flow_AdvancedSettings_DtmfSettings | Computed<Flow_AdvancedSettings_DtmfSettings>;
+  /** Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred) */
   loggingSettings?: Flow_AdvancedSettings_LoggingSettings | Computed<Flow_AdvancedSettings_LoggingSettings>;
+  /** Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred) */
   speechSettings?: Flow_AdvancedSettings_SpeechSettings | Computed<Flow_AdvancedSettings_SpeechSettings>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess {
+  /** Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred) */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** The synthesized audio content for this response. (AI-inferred) */
   audio?: string | Computed<string>;
+  /** The URI of an audio clip this response instructs the client to play. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio {
+  /** The ordered audio segments making up a `mixed_audio` response. (AI-inferred) */
   segments?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments[] | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments[]>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** Speech Synthesis Markup Language text, giving finer control over how this response is spoken aloud than plain `text` allows. (AI-inferred) */
   ssml?: string | Computed<string>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** The URI of the client-hosted audio clip a `play_audio` response points to. (AI-inferred) */
   audioUri?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall {
+  /** The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred) */
   phoneNumber?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_Text {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string[] | Computed<string[]>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall {
+  /** The specific action, exposed by `tool`, being invoked. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The parameter values passed as input when invoking this tool's action. (AI-inferred) */
   inputParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The tool this fulfillment or response invokes. (AI-inferred) */
   tool?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message {
+  /** The output channel this response message is scoped to (e.g. a specific integration), so different channels can receive different responses for the same turn. (AI-inferred) */
   channel?: string | Computed<string>;
+  /** Signals that the conversation reached a successful outcome, optionally carrying metadata describing why. (AI-inferred) */
   conversationSuccess?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess>;
+  /** Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred) */
   endInteraction?: unknown | Computed<unknown>;
+  /** An info-card response generated from a knowledge base or generative answer, rendered by clients that support Infobot Messenger-compatible cards. (AI-inferred) */
   knowledgeInfoCard?: unknown | Computed<unknown>;
+  /** Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred) */
   liveAgentHandoff?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess>;
+  /** An audio response composed of multiple segments, mixing Dialogflow's own synthesized speech with client-hosted audio clips played via `play_audio`. (AI-inferred) */
   mixedAudio?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio>;
+  /** A text or SSML response used preferentially for speech synthesis, when the response also carries a plain `text` variant for display. (AI-inferred) */
   outputAudioText?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText>;
+  /** A custom, integration-specific JSON payload carried alongside this response message. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Signals the client to play an audio clip hosted at `audio_uri`, rather than synthesizing speech itself. (AI-inferred) */
   playAudio?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio>;
+  /** Which kind of response message this is (e.g. entry prompt, follow-up, or error), controlling when Dialogflow surfaces it. (AI-inferred) */
   responseType?: string | Computed<string>;
+  /** Signals a telephony integration to transfer the active call to `phone_number`. (AI-inferred) */
   telephonyTransferCall?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_Text | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_Text>;
+  /** A request from the agent to invoke a specific `tool`'s own `action`, passing `input_parameters`. (AI-inferred) */
   toolCall?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent {
+  /** Further, nested cascading if/else conditions evaluated when this case's own condition matches. (AI-inferred) */
   additionalCases?: unknown | Computed<unknown>;
+  /** The message content. (AI-inferred) */
   message?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases {
+  /** The message(s) or action(s) to run when this case's own condition matches. (AI-inferred) */
   caseContent?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent[] | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent[]>;
+  /** A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred) */
   condition?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_ConditionalCases {
+  /** The ordered condition/content pair(s) making up this cascading if/else. (AI-inferred) */
   cases?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases[] | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases[]>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_Generators {
+  /** A reference to the generator this invokes. (AI-inferred) */
   generator?: string | Computed<string>;
+  /** The parameter values passed as input when invoking this tool's action. (AI-inferred) */
   inputParameters?: Record<string, string> | Computed<Record<string, string>>;
+  /** The session parameter this generator's own output is written to. (AI-inferred) */
   outputParameter?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment_SetParameterActions {
+  /** The name of the parameter this applies to. (AI-inferred) */
   parameter?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: unknown | Computed<unknown>;
 }
 
 export interface Flow_EventHandlers_TriggerFulfillment {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: Flow_AdvancedSettings | Computed<Flow_AdvancedSettings>;
+  /** The name of the Cloud Function this fulfillment invokes to run custom code inline. (AI-inferred) */
   codeBlockFunction?: string | Computed<string>;
+  /** A cascading if/else list of conditions -- the first one whose own `condition` evaluates true is used, the rest are ignored. (AI-inferred) */
   conditionalCases?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases[] | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases[]>;
+  /** Whether Dialogflow falls back to a generative (LLM-produced) response when no other route matches, rather than a static no-match message. (AI-inferred) */
   enableGenerativeFallback?: boolean | Computed<boolean>;
+  /** The generator(s) (LLM prompt-based response generation) invoked by this fulfillment. (AI-inferred) */
   generators?: Flow_EventHandlers_TriggerFulfillment_Generators[] | Computed<Flow_EventHandlers_TriggerFulfillment_Generators[]>;
+  /** The response message(s) this fulfillment returns. (AI-inferred) */
   messages?: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message[] | Computed<Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message[]>;
+  /** Whether this fulfillment streams its own response back incrementally, rather than waiting to send it all at once. (AI-inferred) */
   returnPartialResponses?: boolean | Computed<boolean>;
+  /** Session parameter value(s) this fulfillment sets before running its own webhook call or response. (AI-inferred) */
   setParameterActions?: Flow_EventHandlers_TriggerFulfillment_SetParameterActions[] | Computed<Flow_EventHandlers_TriggerFulfillment_SetParameterActions[]>;
+  /** A caller-defined identifier included in the webhook request, letting the webhook service tell which fulfillment triggered it. (AI-inferred) */
   tag?: string | Computed<string>;
+  /** A reference to the webhook this fulfillment calls. (AI-inferred) */
   webhook?: string | Computed<string>;
 }
 
 export interface Flow_EventHandlers {
+  /** The name of the event this handler responds to. (AI-inferred) */
   event?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The flow this transition moves the conversation to. (AI-inferred) */
   targetFlow?: string | Computed<string>;
+  /** The page this transition moves the conversation to. (AI-inferred) */
   targetPage?: string | Computed<string>;
+  /** The playbook this transition moves the conversation to. (AI-inferred) */
   targetPlaybook?: string | Computed<string>;
+  /** The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred) */
   triggerFulfillment?: Flow_EventHandlers_TriggerFulfillment | Computed<Flow_EventHandlers_TriggerFulfillment>;
 }
 
 export interface Flow_InputParameterDefinitions_TypeSchema_InlineSchema {
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: unknown | Computed<unknown>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Flow_InputParameterDefinitions_TypeSchema_SchemaReference {
+  /** A schema describing this value's own expected structure. (AI-inferred) */
   schema?: string | Computed<string>;
+  /** The tool this fulfillment or response invokes. (AI-inferred) */
   tool?: string | Computed<string>;
 }
 
 export interface Flow_InputParameterDefinitions_TypeSchema {
+  /** Defines this parameter's own type schema directly, rather than referencing one. (AI-inferred) */
   inlineSchema?: Flow_InputParameterDefinitions_TypeSchema_InlineSchema | Computed<Flow_InputParameterDefinitions_TypeSchema_InlineSchema>;
+  /** References a separately defined schema, rather than declaring one inline. (AI-inferred) */
   schemaReference?: Flow_InputParameterDefinitions_TypeSchema_SchemaReference | Computed<Flow_InputParameterDefinitions_TypeSchema_SchemaReference>;
 }
 
 export interface Flow_InputParameterDefinitions {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The schema describing this parameter's own expected type. (AI-inferred) */
   typeSchema?: Flow_InputParameterDefinitions_TypeSchema | Computed<Flow_InputParameterDefinitions_TypeSchema>;
 }
 
 export interface Flow_KnowledgeConnectorSettings_DataStoreConnections {
+  /** A reference to the Vertex AI Search data store this connection reads from. (AI-inferred) */
   dataStore?: string | Computed<string>;
+  /** What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred) */
   dataStoreType?: string | Computed<string>;
+  /** How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred) */
   documentProcessingMode?: string | Computed<string>;
 }
 
 export interface Flow_KnowledgeConnectorSettings {
+  /** The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred) */
   dataStoreConnections?: Flow_KnowledgeConnectorSettings_DataStoreConnections[] | Computed<Flow_KnowledgeConnectorSettings_DataStoreConnections[]>;
+  /** Whether this setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** The flow this transition moves the conversation to. (AI-inferred) */
   targetFlow?: string | Computed<string>;
+  /** The page this transition moves the conversation to. (AI-inferred) */
   targetPage?: string | Computed<string>;
+  /** The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred) */
   triggerFulfillment?: Flow_EventHandlers_TriggerFulfillment | Computed<Flow_EventHandlers_TriggerFulfillment>;
 }
 
 export interface Flow_MultiLanguageSettings {
+  /** Whether the agent auto-detects which supported language the end user is speaking, rather than requiring it be specified. (AI-inferred) */
   enableMultiLanguageDetection?: boolean | Computed<boolean>;
+  /** The language(s) this generator/playbook can produce responses in. (AI-inferred) */
   supportedResponseLanguageCodes?: string[] | Computed<string[]>;
 }
 
 export interface Flow_NluSettings {
+  /** The minimum confidence an intent match must reach to be accepted, below which it's treated as no match. (AI-inferred) */
   classificationThreshold?: number | Computed<number>;
+  /** Which mode this agent's own NLU model is trained with. (AI-inferred) */
   modelTrainingMode?: string | Computed<string>;
+  /** Which underlying model architecture this uses. (AI-inferred) */
   modelType?: string | Computed<string>;
 }
 
 export interface Flow_TransitionRoutes {
+  /** A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A reference to the intent this applies to. (AI-inferred) */
   intent?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The flow this transition moves the conversation to. (AI-inferred) */
   targetFlow?: string | Computed<string>;
+  /** The page this transition moves the conversation to. (AI-inferred) */
   targetPage?: string | Computed<string>;
+  /** The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred) */
   triggerFulfillment?: Flow_EventHandlers_TriggerFulfillment | Computed<Flow_EventHandlers_TriggerFulfillment>;
 }
 
@@ -498,34 +600,60 @@ const Flow_TransitionRoutesFields: FieldMap = {
 };
 
 export interface FlowConfig {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: Flow_AdvancedSettings | Computed<Flow_AdvancedSettings>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred) */
   eventHandlers?: Flow_EventHandlers[] | Computed<Flow_EventHandlers[]>;
+  /** The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred) */
   inputParameterDefinitions?: Flow_InputParameterDefinitions[] | Computed<Flow_InputParameterDefinitions[]>;
+  /** Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred) */
   knowledgeConnectorSettings?: Flow_KnowledgeConnectorSettings | Computed<Flow_KnowledgeConnectorSettings>;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked?: boolean | Computed<boolean>;
+  /** Configuration for how this agent handles multiple supported languages. (AI-inferred) */
   multiLanguageSettings?: Flow_MultiLanguageSettings | Computed<Flow_MultiLanguageSettings>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings?: Flow_NluSettings | Computed<Flow_NluSettings>;
+  /** The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred) */
   outputParameterDefinitions?: Flow_InputParameterDefinitions[] | Computed<Flow_InputParameterDefinitions[]>;
+  /** The reusable transition route group(s) included on this page/flow. (AI-inferred) */
   transitionRouteGroups?: string[] | Computed<string[]>;
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes?: Flow_TransitionRoutes[] | Computed<Flow_TransitionRoutes[]>;
 }
 
 export interface FlowAttrs {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings: Flow_AdvancedSettings;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred) */
   eventHandlers: Flow_EventHandlers[];
+  /** The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred) */
   inputParameterDefinitions: Flow_InputParameterDefinitions[];
+  /** Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred) */
   knowledgeConnectorSettings: Flow_KnowledgeConnectorSettings;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked: boolean;
+  /** Configuration for how this agent handles multiple supported languages. (AI-inferred) */
   multiLanguageSettings: Flow_MultiLanguageSettings;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings: Flow_NluSettings;
+  /** The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred) */
   outputParameterDefinitions: Flow_InputParameterDefinitions[];
+  /** The reusable transition route group(s) included on this page/flow. (AI-inferred) */
   transitionRouteGroups: string[];
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes: Flow_TransitionRoutes[];
 }
 

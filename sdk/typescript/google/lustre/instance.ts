@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_AccessRulesOptions_AccessRules {
+  /** The IP address range(s) this access rule grants access to. (AI-inferred) */
   ipAddressRanges?: string[] | Computed<string[]>;
+  /** A caller-chosen name for this access rule. (AI-inferred) */
   name?: string | Computed<string>;
+  /** How client root privileges are handled: `NO_SQUASH` (client root keeps root on the filesystem) or `ROOT_SQUASH` (client root is mapped to an unprivileged user). (AI-inferred) */
   squashMode?: string | Computed<string>;
 }
 
@@ -24,26 +27,38 @@ export interface Instance_DynamicTierOptions {
 }
 
 export interface Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate {
+  /** The day-of-month component of the end date. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month component of the end date. (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year component of the end date. (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time {
+  /** The hour component of the time. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute component of the time. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The sub-second, nanosecond component of the time. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second component of the time. (AI-inferred) */
   seconds?: number | Computed<number>;
 }
 
 export interface Instance_MaintenancePolicy_MaintenanceExclusionWindow {
+  /** The calendar date this maintenance exclusion window ends on. (AI-inferred) */
   endDate?: Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate | Computed<Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate>;
+  /** The calendar date this maintenance exclusion window begins on. (AI-inferred) */
   startDate?: Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate | Computed<Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate>;
+  /** The time of day this maintenance exclusion window's own start/end dates apply from. (AI-inferred) */
   time?: Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time | Computed<Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time>;
 }
 
 export interface Instance_MaintenancePolicy_WeeklyMaintenanceWindows {
+  /** The day of the week this recurring maintenance window occurs on. (AI-inferred) */
   dayOfWeek?: string | Computed<string>;
+  /** The UTC time of day this recurring maintenance window starts at. (AI-inferred) */
   startTime?: Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time | Computed<Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time>;
 }
 

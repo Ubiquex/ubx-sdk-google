@@ -7,14 +7,20 @@ export interface Target_AnthosCluster {
 }
 
 export interface Target_AssociatedEntities_GkeClusters {
+  /** A reference to the GKE cluster this target deploys to. (AI-inferred) */
   cluster?: string | Computed<string>;
+  /** Uses a DNS-resolvable endpoint to reach this cluster, rather than a direct IP address. (AI-inferred) */
   dnsEndpoint?: boolean | Computed<boolean>;
+  /** Whether this cluster is reached over its own internal (private) IP address, rather than a public one. (AI-inferred) */
   internalIp?: boolean | Computed<boolean>;
+  /** The URL of a proxy used to reach this cluster. (AI-inferred) */
   proxyUrl?: string | Computed<string>;
 }
 
 export interface Target_AssociatedEntities {
+  /** The Anthos-registered cluster(s) this applies to. (AI-inferred) */
   anthosClusters?: Target_AnthosCluster[] | Computed<Target_AnthosCluster[]>;
+  /** The GKE cluster(s) this applies to. (AI-inferred) */
   gkeClusters?: Target_AssociatedEntities_GkeClusters[] | Computed<Target_AssociatedEntities_GkeClusters[]>;
 }
 
@@ -24,24 +30,37 @@ export interface Target_CustomTarget {
 }
 
 export interface Target_ExecutionConfigs_DefaultPool {
+  /** The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred) */
   artifactStorage?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Target_ExecutionConfigs_PrivatePool {
+  /** The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred) */
   artifactStorage?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred) */
   workerPool?: string | Computed<string>;
 }
 
 export interface Target_ExecutionConfigs {
+  /** The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred) */
   artifactStorage?: string | Computed<string>;
+  /** Configuration for running jobs on Cloud Build's own default worker pool, rather than a private one. (AI-inferred) */
   defaultPool?: Target_ExecutionConfigs_DefaultPool | Computed<Target_ExecutionConfigs_DefaultPool>;
+  /** How long a job is allowed to run before being considered timed out. (AI-inferred) */
   executionTimeout?: string | Computed<string>;
+  /** Configuration for running jobs on a private Cloud Build worker pool, rather than the default shared one. (AI-inferred) */
   privatePool?: Target_ExecutionConfigs_PrivatePool | Computed<Target_ExecutionConfigs_PrivatePool>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** Which purpose(s) (render, deploy, verify) this execution environment configuration applies to. (AI-inferred) */
   usages?: string[] | Computed<string[]>;
+  /** Whether detailed, verbose output is produced for this operation. (AI-inferred) */
   verbose?: boolean | Computed<boolean>;
+  /** A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred) */
   workerPool?: string | Computed<string>;
 }
 

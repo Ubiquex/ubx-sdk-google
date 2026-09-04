@@ -4,17 +4,22 @@ package datastream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_Fields struct {
+	// A reference to a specific field. (AI-inferred)
 	Field any
 }
 
 type Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections struct {
+	// A reference to the source collection (e.g. a MongoDB collection) this applies to. (AI-inferred)
 	Collection any
-	Fields     any
+	// The field(s) making up this schema. (AI-inferred)
+	Fields any
 }
 
 type Stream_BackfillAll_MongodbExcludedObjects_Databases struct {
+	// The source collection(s) included or excluded by this filter. (AI-inferred)
 	Collections any
-	Database    any
+	// The source database this applies to. (AI-inferred)
+	Database any
 }
 
 type Stream_BackfillAll_MongodbExcludedObjects struct {
@@ -23,24 +28,37 @@ type Stream_BackfillAll_MongodbExcludedObjects struct {
 }
 
 type Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumns struct {
-	Collation       any
-	Column          any
-	DataType        any
-	Length          any
-	Nullable        any
+	// The character set collation used for this column's own string comparisons. (AI-inferred)
+	Collation any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// The data type of this column. (AI-inferred)
+	DataType any
+	// The maximum length of this column's own value. (AI-inferred)
+	Length any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// This column's own position within its own containing table, starting from 1. (AI-inferred)
 	OrdinalPosition any
-	Precision       any
-	PrimaryKey      any
-	Scale           any
+	// The total number of digits a numeric column may hold. (AI-inferred)
+	Precision any
+	// The column(s) making up this table's own primary key. (AI-inferred)
+	PrimaryKey any
+	// The number of digits kept after the decimal point in a numeric column. (AI-inferred)
+	Scale any
 }
 
 type Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables struct {
+	// The MySQL column(s) making up this table. (AI-inferred)
 	MysqlColumns any
-	Table        any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases struct {
-	Database    any
+	// The source database this applies to. (AI-inferred)
+	Database any
+	// The MySQL table(s) this applies to. (AI-inferred)
 	MysqlTables any
 }
 
@@ -50,25 +68,38 @@ type Stream_BackfillAll_MysqlExcludedObjects struct {
 }
 
 type Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumns struct {
-	Column          any
-	DataType        any
-	Encoding        any
-	Length          any
-	Nullable        any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// The data type of this column. (AI-inferred)
+	DataType any
+	// The character encoding used for this column's own text data. (AI-inferred)
+	Encoding any
+	// The maximum length of this column's own value. (AI-inferred)
+	Length any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// This column's own position within its own containing table, starting from 1. (AI-inferred)
 	OrdinalPosition any
-	Precision       any
-	PrimaryKey      any
-	Scale           any
+	// The total number of digits a numeric column may hold. (AI-inferred)
+	Precision any
+	// The column(s) making up this table's own primary key. (AI-inferred)
+	PrimaryKey any
+	// The number of digits kept after the decimal point in a numeric column. (AI-inferred)
+	Scale any
 }
 
 type Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables struct {
+	// The Oracle column(s) making up this table. (AI-inferred)
 	OracleColumns any
-	Table         any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Stream_BackfillAll_OracleExcludedObjects_OracleSchemas struct {
+	// The Oracle table(s) this applies to. (AI-inferred)
 	OracleTables any
-	Schema       any
+	// A reference to the source schema this applies to. (AI-inferred)
+	Schema any
 }
 
 type Stream_BackfillAll_OracleExcludedObjects struct {
@@ -77,24 +108,36 @@ type Stream_BackfillAll_OracleExcludedObjects struct {
 }
 
 type Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumns struct {
-	Column          any
-	DataType        any
-	Length          any
-	Nullable        any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// The data type of this column. (AI-inferred)
+	DataType any
+	// The maximum length of this column's own value. (AI-inferred)
+	Length any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// This column's own position within its own containing table, starting from 1. (AI-inferred)
 	OrdinalPosition any
-	Precision       any
-	PrimaryKey      any
-	Scale           any
+	// The total number of digits a numeric column may hold. (AI-inferred)
+	Precision any
+	// The column(s) making up this table's own primary key. (AI-inferred)
+	PrimaryKey any
+	// The number of digits kept after the decimal point in a numeric column. (AI-inferred)
+	Scale any
 }
 
 type Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables struct {
+	// The PostgreSQL column(s) making up this table. (AI-inferred)
 	PostgresqlColumns any
-	Table             any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas struct {
+	// The PostgreSQL table(s) this applies to. (AI-inferred)
 	PostgresqlTables any
-	Schema           any
+	// A reference to the source schema this applies to. (AI-inferred)
+	Schema any
 }
 
 type Stream_BackfillAll_PostgresqlExcludedObjects struct {
@@ -103,13 +146,18 @@ type Stream_BackfillAll_PostgresqlExcludedObjects struct {
 }
 
 type Stream_BackfillAll_SaasExcludedObjects_Objects_Properties struct {
-	PrimaryKey   any
-	Properties   any
+	// The column(s) making up this table's own primary key. (AI-inferred)
+	PrimaryKey any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
+	// The name of the MongoDB field this applies to. (AI-inferred)
 	PropertyName any
 }
 
 type Stream_BackfillAll_SaasExcludedObjects_Objects struct {
+	// The name of the source object (table/collection) this applies to. (AI-inferred)
 	ObjectName any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
 	Properties any
 }
 
@@ -119,13 +167,18 @@ type Stream_BackfillAll_SaasExcludedObjects struct {
 }
 
 type Stream_BackfillAll_SalesforceExcludedObjects_Objects_Fields struct {
+	// The data type of this column. (AI-inferred)
 	DataType any
-	Name     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Whether this Salesforce field may hold a null value. (AI-inferred)
 	Nillable any
 }
 
 type Stream_BackfillAll_SalesforceExcludedObjects_Objects struct {
-	Fields     any
+	// The field(s) making up this schema. (AI-inferred)
+	Fields any
+	// The name of the source object (table/collection) this applies to. (AI-inferred)
 	ObjectName any
 }
 
@@ -135,19 +188,27 @@ type Stream_BackfillAll_SalesforceExcludedObjects struct {
 }
 
 type Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_Columns struct {
-	Column          any
-	DataType        any
-	IsPrimaryKey    any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// The data type of this column. (AI-inferred)
+	DataType any
+	// Whether this column is part of the source table's own primary key. (AI-inferred)
+	IsPrimaryKey any
+	// This column's own position within its own containing table, starting from 1. (AI-inferred)
 	OrdinalPosition any
 }
 
 type Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables struct {
+	// The column(s) making up this table. (AI-inferred)
 	Columns any
-	Table   any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Stream_BackfillAll_SpannerExcludedObjects_Schemas struct {
+	// A reference to the source schema this applies to. (AI-inferred)
 	Schema any
+	// The table(s) making up this schema. (AI-inferred)
 	Tables any
 }
 
@@ -157,12 +218,16 @@ type Stream_BackfillAll_SpannerExcludedObjects struct {
 }
 
 type Stream_BackfillAll_SqlServerExcludedObjects_Schemas_Tables struct {
+	// The column(s) making up this table. (AI-inferred)
 	Columns any
-	Table   any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Stream_BackfillAll_SqlServerExcludedObjects_Schemas struct {
+	// A reference to the source schema this applies to. (AI-inferred)
 	Schema any
+	// The table(s) making up this schema. (AI-inferred)
 	Tables any
 }
 
@@ -269,81 +334,117 @@ type Stream_DestinationConfig struct {
 }
 
 type Stream_Errors struct {
-	Details   any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// When this error occurred. (AI-inferred)
 	ErrorTime any
+	// A unique identifier for this specific error occurrence. (AI-inferred)
 	ErrorUuid any
-	Message   any
-	Reason    any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
 }
 
 type Stream_RuleSets_CustomizationRules_BigqueryClustering struct {
+	// The column(s) making up this table. (AI-inferred)
 	Columns any
 }
 
 type Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartition struct {
+	// The time granularity (e.g. day, hour) the destination table is partitioned at. (AI-inferred)
 	PartitioningTimeGranularity any
 }
 
 type Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartition struct {
-	Column   any
-	End      any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// Where this range ends. (AI-inferred)
+	End any
+	// How often this recurring action happens. (AI-inferred)
 	Interval any
-	Start    any
+	// Where this range starts. (AI-inferred)
+	Start any
 }
 
 type Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartition struct {
-	Column                      any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// The time granularity (e.g. day, hour) the destination table is partitioned at. (AI-inferred)
 	PartitioningTimeGranularity any
 }
 
 type Stream_RuleSets_CustomizationRules_BigqueryPartitioning struct {
+	// Partitions the destination table by the time each row was ingested, rather than a source column's own value. (AI-inferred)
 	IngestionTimePartition any
-	IntegerRangePartition  any
+	// Partitions the destination table by integer ranges of a specific column. (AI-inferred)
+	IntegerRangePartition any
+	// Whether queries against the destination table must include a filter on the partitioning column. (AI-inferred)
 	RequirePartitionFilter any
-	TimeUnitPartition      any
+	// Partitions the destination table by a fixed time unit (e.g. day) derived from a source column's own value. (AI-inferred)
+	TimeUnitPartition any
 }
 
 type Stream_RuleSets_CustomizationRules struct {
-	BigqueryClustering   any
+	// Configures the destination BigQuery table to be clustered by specific column(s). (AI-inferred)
+	BigqueryClustering any
+	// Configures the destination BigQuery table to be partitioned, e.g. by ingestion time or a specific column. (AI-inferred)
 	BigqueryPartitioning any
 }
 
 type Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifier struct {
+	// A reference to the source collection (e.g. a MongoDB collection) this applies to. (AI-inferred)
 	Collection any
-	Database   any
+	// The source database this applies to. (AI-inferred)
+	Database any
 }
 
 type Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifier struct {
+	// The source database this applies to. (AI-inferred)
 	Database any
-	Table    any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier struct {
+	// A reference to the source schema this applies to. (AI-inferred)
 	Schema any
-	Table  any
+	// A reference to the specific table this applies to. (AI-inferred)
+	Table any
 }
 
 type Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifier struct {
+	// The name of the source object (table/collection) this applies to. (AI-inferred)
 	ObjectName any
 }
 
 type Stream_RuleSets_ObjectFilter_SourceObjectIdentifier struct {
-	MongodbIdentifier    any
-	MysqlIdentifier      any
-	OracleIdentifier     any
+	// Identifies a specific MongoDB database, collection, or field this applies to. (AI-inferred)
+	MongodbIdentifier any
+	// Identifies a specific MySQL database or table this applies to. (AI-inferred)
+	MysqlIdentifier any
+	// Identifies a specific Oracle schema or table this applies to. (AI-inferred)
+	OracleIdentifier any
+	// Identifies a specific PostgreSQL schema or table this applies to. (AI-inferred)
 	PostgresqlIdentifier any
+	// Identifies a specific Salesforce object or field this applies to. (AI-inferred)
 	SalesforceIdentifier any
-	SpannerIdentifier    any
-	SqlServerIdentifier  any
+	// Identifies a specific Spanner database or table this applies to. (AI-inferred)
+	SpannerIdentifier any
+	// Identifies a specific SQL Server schema or table this applies to. (AI-inferred)
+	SqlServerIdentifier any
 }
 
 type Stream_RuleSets_ObjectFilter struct {
+	// Identifies the specific source object (table/collection) this applies to. (AI-inferred)
 	SourceObjectIdentifier any
 }
 
 type Stream_RuleSets struct {
+	// Rule(s) transforming how source schema objects are represented in the destination. (AI-inferred)
 	CustomizationRules any
-	ObjectFilter       any
+	// Restricts this stream to specific source object(s), by inclusion or exclusion. (AI-inferred)
+	ObjectFilter any
 }
 
 type Stream_SourceConfig_DataverseSourceConfig struct {

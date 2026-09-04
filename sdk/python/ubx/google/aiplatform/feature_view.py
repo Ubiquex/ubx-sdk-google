@@ -20,7 +20,9 @@ class FeatureView_BigtableMetadata:
 
 @dataclasses.dataclass
 class FeatureView_FeatureRegistrySource_FeatureGroups:
+    # The feature group this applies to. (AI-inferred)
     feature_group_id: Any = None
+    # The specific feature(s) within `feature_group_id` this applies to. (AI-inferred)
     feature_ids: Any = None
 
 @dataclasses.dataclass
@@ -144,6 +146,7 @@ _FeatureView_VertexRagSourceFields = {
 
 @dataclasses.dataclass
 class FeatureViewConfig:
+    # The BigQuery table or view this feature view reads its own data from. (AI-inferred)
     big_query_source: Any = None
     # Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances.
     bigtable_metadata: Any = None
@@ -168,6 +171,7 @@ class FeatureViewConfig:
 
 @dataclasses.dataclass
 class FeatureViewAttrs:
+    # The BigQuery table or view this feature view reads its own data from. (AI-inferred)
     big_query_source: Any = None
     # Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances.
     bigtable_metadata: Any = None

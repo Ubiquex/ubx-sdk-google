@@ -8,13 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Document_AclInfo_Readers_Principals:
+    # An identifier for this entity in an external system. (AI-inferred)
     external_entity_id: Any = None
+    # An identifier for the group this belongs to. (AI-inferred)
     group_id: Any = None
+    # An identifier for the end user this applies to. (AI-inferred)
     user_id: Any = None
 
 @dataclasses.dataclass
 class Document_AclInfo_Readers:
+    # Whether this configuration applies across the whole identity provider, rather than a specific scope. (AI-inferred)
     idp_wide: Any = None
+    # The identity/identities this permission applies to. (AI-inferred)
     principals: Any = None
 
 @dataclasses.dataclass
@@ -33,8 +38,11 @@ class Document_Content:
 
 @dataclasses.dataclass
 class Document_IndexStatus_ErrorSamples:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass

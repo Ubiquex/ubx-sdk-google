@@ -2,66 +2,94 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Conversation_Messages_Reply_Summary_SafetyAttributes {
+  /** The category/categories this applies to. (AI-inferred) */
   categories?: string[] | Computed<string[]>;
+  /** The score(s) computed for this result. (AI-inferred) */
   scores?: number[] | Computed<number[]>;
 }
 
 export interface Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_Sources {
+  /** This reference's own position within its own containing list. (AI-inferred) */
   referenceIndex?: string | Computed<string>;
 }
 
 export interface Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations {
+  /** The ending position this range covers. (AI-inferred) */
   endIndex?: string | Computed<string>;
+  /** The source(s) this content is drawn from. (AI-inferred) */
   sources?: Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_Sources[] | Computed<Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_Sources[]>;
+  /** The starting position this range covers. (AI-inferred) */
   startIndex?: string | Computed<string>;
 }
 
 export interface Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata {
+  /** The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred) */
   citations?: Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations[] | Computed<Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations[]>;
 }
 
 export interface Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContents {
+  /** The content of this message or resource. (AI-inferred) */
   content?: string | Computed<string>;
+  /** An identifier for the specific page this applies to. (AI-inferred) */
   pageIdentifier?: string | Computed<string>;
 }
 
 export interface Conversation_Messages_Reply_Summary_SummaryWithMetadata_References {
+  /** The text content of this retrieved chunk. (AI-inferred) */
   chunkContents?: Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContents[] | Computed<Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContents[]>;
+  /** A reference to the document this applies to. (AI-inferred) */
   document?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Conversation_Messages_Reply_Summary_SummaryWithMetadata {
+  /** Detail about which source(s) support specific claims in the generated answer. (AI-inferred) */
   citationMetadata?: Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata | Computed<Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata>;
+  /** The source reference(s) supporting this content. (AI-inferred) */
   references?: Conversation_Messages_Reply_Summary_SummaryWithMetadata_References[] | Computed<Conversation_Messages_Reply_Summary_SummaryWithMetadata_References[]>;
+  /** A generated summary of the content. (AI-inferred) */
   summary?: string | Computed<string>;
 }
 
 export interface Conversation_Messages_Reply_Summary {
+  /** The safety classification(s) detected in this content. (AI-inferred) */
   safetyAttributes?: Conversation_Messages_Reply_Summary_SafetyAttributes | Computed<Conversation_Messages_Reply_Summary_SafetyAttributes>;
+  /** Why summary generation was skipped, when it was. (AI-inferred) */
   summarySkippedReasons?: string[] | Computed<string[]>;
+  /** The plain-text content of the generated summary. (AI-inferred) */
   summaryText?: string | Computed<string>;
+  /** The generated summary along with supporting citation and source metadata. (AI-inferred) */
   summaryWithMetadata?: Conversation_Messages_Reply_Summary_SummaryWithMetadata | Computed<Conversation_Messages_Reply_Summary_SummaryWithMetadata>;
 }
 
 export interface Conversation_Messages_Reply {
+  /** A generated summary of the content. (AI-inferred) */
   summary?: Conversation_Messages_Reply_Summary | Computed<Conversation_Messages_Reply_Summary>;
 }
 
 export interface Conversation_Messages_UserInput_Context {
+  /** The document currently being processed or displayed. (AI-inferred) */
   activeDocument?: string | Computed<string>;
+  /** The document(s) supplying context for this request. (AI-inferred) */
   contextDocuments?: string[] | Computed<string[]>;
 }
 
 export interface Conversation_Messages_UserInput {
+  /** Additional context supplied for this request. (AI-inferred) */
   context?: Conversation_Messages_UserInput_Context | Computed<Conversation_Messages_UserInput_Context>;
+  /** The input provided to this operation. (AI-inferred) */
   input?: string | Computed<string>;
 }
 
 export interface Conversation_Messages {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A single response message. (AI-inferred) */
   reply?: Conversation_Messages_Reply | Computed<Conversation_Messages_Reply>;
+  /** The end user's own input for this turn. (AI-inferred) */
   userInput?: Conversation_Messages_UserInput | Computed<Conversation_Messages_UserInput>;
 }
 

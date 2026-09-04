@@ -8,7 +8,9 @@ export interface VpnGateway_Params {
 
 export interface VpnGateway_VpnInterfaces {
   id?: number | Computed<number>;
+  /** The Interconnect attachment to use for this VPN interface. This is applicable when using HA VPN over Cloud Interconnect. (AI-inferred) */
   interconnectAttachment?: string | Computed<string>;
+  /** The external IP address assigned to this VPN gateway interface. (AI-inferred) */
   ipAddress?: string | Computed<string>;
   ipv6Address?: string | Computed<string>;
 }

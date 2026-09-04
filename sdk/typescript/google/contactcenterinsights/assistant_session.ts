@@ -2,12 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AssistantSession_Messages_Chunks {
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface AssistantSession_Messages {
+  /** The retrieved content chunk(s) making up this result. (AI-inferred) */
   chunks?: AssistantSession_Messages_Chunks[] | Computed<AssistantSession_Messages_Chunks[]>;
+  /** When this event occurred. (AI-inferred) */
   eventTime?: string | Computed<string>;
+  /** Who this content is attributed to, e.g. agent or end user. (AI-inferred) */
   role?: string | Computed<string>;
 }
 

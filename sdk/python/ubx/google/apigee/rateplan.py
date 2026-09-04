@@ -8,20 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Rateplan_ConsumptionPricingRates_Fee:
+    # The ISO 4217 currency code monetary values are expressed in. (AI-inferred)
     currency_code: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The unit this measurement is expressed in. (AI-inferred)
     units: Any = None
 
 @dataclasses.dataclass
 class Rateplan_ConsumptionPricingRates:
+    # Where this range ends. (AI-inferred)
     end: Any = None
+    # A monetary charge applied. (AI-inferred)
     fee: Any = None
+    # Where this range starts. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class Rateplan_RevenueShareRates:
+    # Where this range ends. (AI-inferred)
     end: Any = None
+    # The percentage of a resource shared with another entity. (AI-inferred)
     share_percentage: Any = None
+    # Where this range starts. (AI-inferred)
     start: Any = None
 
 _Rateplan_ConsumptionPricingRates_FeeFields = {

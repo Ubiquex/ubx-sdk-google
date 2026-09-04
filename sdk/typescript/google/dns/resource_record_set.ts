@@ -2,26 +2,41 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers {
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The IP protocol version this applies to. (AI-inferred) */
   ipProtocol?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The type of load balancer this internal target is, e.g. regional internal. (AI-inferred) */
   loadBalancerType?: string | Computed<string>;
+  /** The VPC network this private zone or policy is visible from. (AI-inferred) */
   networkUrl?: string | Computed<string>;
+  /** A network port number. (AI-inferred) */
   port?: string | Computed<string>;
+  /** The Google Cloud project this applies to. (AI-inferred) */
   project?: string | Computed<string>;
+  /** The Google Cloud region this applies to. (AI-inferred) */
   region?: string | Computed<string>;
 }
 
 export interface ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets {
+  /** The external IP address(es) a forwarding rule directs matching queries to. (AI-inferred) */
   externalEndpoints?: string[] | Computed<string[]>;
+  /** The internal load balancer(s) this record's own routing policy targets. (AI-inferred) */
   internalLoadBalancers?: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers[] | Computed<ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers[]>;
 }
 
 export interface ResourceRecordSet_RoutingPolicy_Geo_Items {
+  /** The target(s) whose own health is checked before being included in routing responses. (AI-inferred) */
   healthCheckedTargets?: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets | Computed<ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The record data (RDATA) value(s) for this DNS record. (AI-inferred) */
   rrdatas?: string[] | Computed<string[]>;
+  /** The DNSSEC signature record data for this record set. (AI-inferred) */
   signatureRrdatas?: string[] | Computed<string[]>;
 }
 
@@ -30,12 +45,14 @@ export interface ResourceRecordSet_RoutingPolicy_Geo {
   enableFencing?: boolean | Computed<boolean>;
   /** The primary geo routing configuration. If there are multiple items with the same location, an error is returned instead. */
   items?: ResourceRecordSet_RoutingPolicy_Geo_Items[] | Computed<ResourceRecordSet_RoutingPolicy_Geo_Items[]>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
 export interface ResourceRecordSet_RoutingPolicy_PrimaryBackup {
   /** Configures a `RRSetRoutingPolicy` that routes based on the geo location of the querying user. */
   backupGeoTargets?: ResourceRecordSet_RoutingPolicy_Geo | Computed<ResourceRecordSet_RoutingPolicy_Geo>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** HealthCheckTargets describes endpoints to health-check when responding to Routing Policy queries. Only the healthy endpoints will be included in the response. Set either `internal_load_balancer` or `external_endpoints`. Do not set both. */
   primaryTargets?: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets | Computed<ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets>;
@@ -44,15 +61,22 @@ export interface ResourceRecordSet_RoutingPolicy_PrimaryBackup {
 }
 
 export interface ResourceRecordSet_RoutingPolicy_Wrr_Items {
+  /** The target(s) whose own health is checked before being included in routing responses. (AI-inferred) */
   healthCheckedTargets?: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets | Computed<ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The record data (RDATA) value(s) for this DNS record. (AI-inferred) */
   rrdatas?: string[] | Computed<string[]>;
+  /** The DNSSEC signature record data for this record set. (AI-inferred) */
   signatureRrdatas?: string[] | Computed<string[]>;
+  /** The relative weight of this target in weighted round-robin routing -- higher values receive proportionally more traffic. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface ResourceRecordSet_RoutingPolicy_Wrr {
+  /** The schema every element of an `array`-typed value must satisfy. (AI-inferred) */
   items?: ResourceRecordSet_RoutingPolicy_Wrr_Items[] | Computed<ResourceRecordSet_RoutingPolicy_Wrr_Items[]>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
@@ -61,6 +85,7 @@ export interface ResourceRecordSet_RoutingPolicy {
   geo?: ResourceRecordSet_RoutingPolicy_Geo | Computed<ResourceRecordSet_RoutingPolicy_Geo>;
   /** The fully qualified URL of the HealthCheck to use for this RRSetRoutingPolicy. Format this URL like `https://www.googleapis.com/compute/v1/projects/{project}/global/healthChecks/{healthCheck}`. https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks */
   healthCheck?: string | Computed<string>;
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** Configures a RRSetRoutingPolicy such that all queries are responded with the primary_targets if they are healthy. And if all of them are unhealthy, then we fallback to a geo localized policy. */
   primaryBackup?: ResourceRecordSet_RoutingPolicy_PrimaryBackup | Computed<ResourceRecordSet_RoutingPolicy_PrimaryBackup>;
@@ -167,6 +192,7 @@ const ResourceRecordSet_RoutingPolicyFields: FieldMap = {
 };
 
 export interface ResourceRecordSetConfig {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
   /** For example, www.example.com. */
   name?: string | Computed<string>;
@@ -183,6 +209,7 @@ export interface ResourceRecordSetConfig {
 }
 
 export interface ResourceRecordSetAttrs {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind: string;
   /** For example, www.example.com. */
   name: string;

@@ -4,65 +4,97 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary struct {
+	// This segment's own position within the full transcript. (AI-inferred)
 	TranscriptIndex any
-	WordIndex       any
+	// This word's own position within the transcript. (AI-inferred)
+	WordIndex any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment struct {
+	// The overall strength of sentiment detected, regardless of positive/negative direction. (AI-inferred)
 	Magnitude any
-	Score     any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData struct {
+	// An identifier for this specific entity mention, unique within its own conversation. (AI-inferred)
 	EntityUniqueId any
-	Sentiment      any
-	Type           any
+	// The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
+	Sentiment any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData struct {
+	// An identifier for this specific intent match, unique within its own conversation. (AI-inferred)
 	IntentUniqueId any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Issue       any
-	Score       any
+	// A reference to the detected issue this applies to. (AI-inferred)
+	Issue any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData struct {
+	// Detail assigning this conversation to a specific issue category. (AI-inferred)
 	IssueAssignment any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData struct {
-	DisplayName   any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the phrase matcher this applies to. (AI-inferred)
 	PhraseMatcher any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Annotations struct {
-	AnnotationEndBoundary   any
+	// Where this annotation ends within its own containing transcript or audio. (AI-inferred)
+	AnnotationEndBoundary any
+	// Where this annotation starts within its own containing transcript or audio. (AI-inferred)
 	AnnotationStartBoundary any
-	ChannelTag              any
-	EntityMentionData       any
-	HoldData                any
-	IntentMatchData         any
-	InterruptionData        any
-	IssueMatchData          any
-	PhraseMatchData         any
-	SentimentData           any
-	SilenceData             any
+	// Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
+	ChannelTag any
+	// Detail about a named entity mentioned in this conversation. (AI-inferred)
+	EntityMentionData any
+	// Detail about a hold event within this conversation. (AI-inferred)
+	HoldData any
+	// Detail about an intent matched during this conversation turn. (AI-inferred)
+	IntentMatchData any
+	// Detail about a participant interrupting another during this conversation. (AI-inferred)
+	InterruptionData any
+	// Detail about an issue detected during this conversation. (AI-inferred)
+	IssueMatchData any
+	// Detail about a phrase matcher rule that matched during this conversation. (AI-inferred)
+	PhraseMatchData any
+	// Detailed sentiment analysis result for this conversation segment. (AI-inferred)
+	SentimentData any
+	// Detail about a period of silence detected in this conversation's own audio. (AI-inferred)
+	SilenceData any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Entities struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Metadata    any
-	Salience    any
-	Sentiment   any
-	Type        any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// How central this entity is to the overall content, relative to other mentioned entities. (AI-inferred)
+	Salience any
+	// The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
+	Sentiment any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Intents struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
+	// An identifier for this resource. (AI-inferred)
+	Id any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_IssueModelResult struct {
@@ -73,62 +105,101 @@ type Analyse_AnalysisResult_CallAnalysisMetadata_IssueModelResult struct {
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue struct {
-	BoolValue       any
-	Key             any
-	NaValue         any
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
+	BoolValue any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred)
+	NaValue any
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
 	NormalizedScore any
-	NumValue        any
-	PotentialScore  any
-	Score           any
-	SkipValue       any
-	StrValue        any
+	// A numeric value. (AI-inferred)
+	NumValue any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// Marks this QA answer as skipped, rather than providing a real value. (AI-inferred)
+	SkipValue any
+	// A text value. (AI-inferred)
+	StrValue any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources struct {
+	// The literal value of this answer. (AI-inferred)
 	AnswerValue any
-	SourceType  any
+	// The kind of source this data came from. (AI-inferred)
+	SourceType any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers struct {
+	// The source content a generated answer was grounded in. (AI-inferred)
 	AnswerSources any
-	AnswerValue   any
-	Conversation  any
-	QaQuestion    any
-	QuestionBody  any
-	Tags          any
+	// The literal value of this answer. (AI-inferred)
+	AnswerValue any
+	// A reference to the conversation this applies to. (AI-inferred)
+	Conversation any
+	// A reference to the QA scorecard question this applies to. (AI-inferred)
+	QaQuestion any
+	// The full text/body of this question. (AI-inferred)
+	QuestionBody any
+	// The label(s) attached to this resource. (AI-inferred)
+	Tags any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults struct {
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
 	NormalizedScore any
-	PotentialScore  any
-	Score           any
-	Tag             any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// A label attached to this resource. (AI-inferred)
+	Tag any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources struct {
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
 	NormalizedScore any
-	PotentialScore  any
-	QaTagResults    any
-	Score           any
-	SourceType      any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
+	QaTagResults any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// The kind of source this data came from. (AI-inferred)
+	SourceType any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults struct {
-	AgentId             any
-	Conversation        any
-	CreateTime          any
-	Name                any
-	NormalizedScore     any
-	PotentialScore      any
-	QaAnswers           any
+	// An identifier for the human or virtual agent this applies to. (AI-inferred)
+	AgentId any
+	// A reference to the conversation this applies to. (AI-inferred)
+	Conversation any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
+	NormalizedScore any
+	// The maximum score achievable on this QA scorecard. (AI-inferred)
+	PotentialScore any
+	// The answer(s) recorded for this QA scorecard evaluation. (AI-inferred)
+	QaAnswers any
+	// A reference to the specific version of the QA scorecard used for this evaluation. (AI-inferred)
 	QaScorecardRevision any
-	QaTagResults        any
-	Score               any
-	ScoreSources        any
+	// Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
+	QaTagResults any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// The source(s) contributing to this computed score. (AI-inferred)
+	ScoreSources any
 }
 
 type Analyse_AnalysisResult_CallAnalysisMetadata_Sentiments struct {
-	ChannelTag    any
+	// Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
+	ChannelTag any
+	// Detailed sentiment analysis result for this conversation segment. (AI-inferred)
 	SentimentData any
 }
 

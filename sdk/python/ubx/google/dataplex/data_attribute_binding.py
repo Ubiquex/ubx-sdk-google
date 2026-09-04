@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataAttributeBinding_Paths:
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 _DataAttributeBinding_PathsFields = {

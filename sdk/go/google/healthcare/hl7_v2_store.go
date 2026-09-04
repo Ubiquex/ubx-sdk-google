@@ -4,55 +4,81 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Hl7V2Store_NotificationConfigs struct {
-	Filter      any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
 	PubsubTopic any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_Segment struct {
+	// The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred)
 	MaxOccurs any
+	// The minimum number of times this HL7v2 field/segment must occur. (AI-inferred)
 	MinOccurs any
-	Type      any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members struct {
-	Group   any
+	// A reference to the consent group this applies to. (AI-inferred)
+	Group any
+	// A single HL7v2 message segment. (AI-inferred)
 	Segment any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs struct {
-	Choice    any
+	// The specific option selected from a set of alternatives. (AI-inferred)
+	Choice any
+	// The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred)
 	MaxOccurs any
-	Members   any
+	// The principal(s) this applies to. (AI-inferred)
+	Members any
+	// The minimum number of times this HL7v2 field/segment must occur. (AI-inferred)
 	MinOccurs any
-	Name      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_Version struct {
+	// A reference to a field within the HL7v2 message header (MSH) segment. (AI-inferred)
 	MshField any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas struct {
+	// Schema configuration for parsing HL7v2 message types. (AI-inferred)
 	MessageSchemaConfigs any
-	Version              any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Types_Type_Fields struct {
+	// The maximum number of times this HL7v2 field/segment may repeat. (AI-inferred)
 	MaxOccurs any
+	// The minimum number of times this HL7v2 field/segment must occur. (AI-inferred)
 	MinOccurs any
-	Name      any
-	Table     any
-	Type      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the destination table this applies to. (AI-inferred)
+	Table any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Types_Type struct {
-	Fields    any
-	Name      any
+	// The field(s) this applies to. (AI-inferred)
+	Fields any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The base data type this schema element represents. (AI-inferred)
 	Primitive any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Types struct {
-	Type    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 

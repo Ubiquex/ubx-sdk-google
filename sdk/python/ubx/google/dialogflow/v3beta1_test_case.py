@@ -892,23 +892,38 @@ _V3beta1TestCase_TestConfigFields = {
 
 @dataclasses.dataclass
 class V3beta1TestCaseConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The outcome of the most recent run of this test case. (AI-inferred)
     last_test_result: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Free-text notes attached to this resource. (AI-inferred)
     notes: Any = None
+    # Free-form label(s) attached to this resource. (AI-inferred)
     tags: Any = None
+    # The expected conversation turn(s) this test case verifies. (AI-inferred)
     test_case_conversation_turns: Any = None
+    # Configuration for this test run. (AI-inferred)
     test_config: Any = None
 
 @dataclasses.dataclass
 class V3beta1TestCaseAttrs:
+    # When this resource was created. (AI-inferred)
     creation_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The outcome of the most recent run of this test case. (AI-inferred)
     last_test_result: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Free-text notes attached to this resource. (AI-inferred)
     notes: Any = None
+    # Free-form label(s) attached to this resource. (AI-inferred)
     tags: Any = None
+    # The expected conversation turn(s) this test case verifies. (AI-inferred)
     test_case_conversation_turns: Any = None
+    # Configuration for this test run. (AI-inferred)
     test_config: Any = None
 
 V3beta1TestCase = ubx.ResourceBinding(

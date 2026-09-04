@@ -4,6 +4,7 @@ package contentwarehouse
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SynonymSet_Synonyms struct {
+	// The real, individual synonym words that make up one entry in a `google_contentwarehouse_synonym_set`. (AI-inferred)
 	Words any
 }
 

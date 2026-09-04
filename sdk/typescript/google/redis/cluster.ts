@@ -2,9 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_AclPolicyInfo_AclPolicyRevisionStatuses {
+  /** The current revision of this cluster's own access control list policy. (AI-inferred) */
   aclPolicyRevision?: string | Computed<string>;
+  /** The numeric revision identifier of this ACL policy. (AI-inferred) */
   aclPolicyRevisionNumber?: string | Computed<string>;
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
@@ -45,34 +49,54 @@ export interface Cluster_AutomatedBackupConfig {
 }
 
 export interface Cluster_ClusterEndpoints_Connections_PscAutoConnection {
+  /** The IP address this applies to. (AI-inferred) */
   address?: string | Computed<string>;
+  /** Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred) */
   connectionType?: string | Computed<string>;
+  /** A reference to the forwarding rule this applies to. (AI-inferred) */
   forwardingRule?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The identifier of the associated Google Cloud project. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The unique identifier of this Private Service Connect connection. (AI-inferred) */
   pscConnectionId?: string | Computed<string>;
+  /** The current status of this Private Service Connect connection. (AI-inferred) */
   pscConnectionStatus?: string | Computed<string>;
+  /** A reference to the Private Service Connect service attachment this connects to. (AI-inferred) */
   serviceAttachment?: string | Computed<string>;
 }
 
 export interface Cluster_ClusterEndpoints_Connections_PscConnection {
+  /** The IP address this applies to. (AI-inferred) */
   address?: string | Computed<string>;
+  /** Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred) */
   connectionType?: string | Computed<string>;
+  /** A reference to the forwarding rule this applies to. (AI-inferred) */
   forwardingRule?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The port number this applies to. (AI-inferred) */
   port?: number | Computed<number>;
+  /** The identifier of the associated Google Cloud project. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The unique identifier of this Private Service Connect connection. (AI-inferred) */
   pscConnectionId?: string | Computed<string>;
+  /** The current status of this Private Service Connect connection. (AI-inferred) */
   pscConnectionStatus?: string | Computed<string>;
+  /** A reference to the Private Service Connect service attachment this connects to. (AI-inferred) */
   serviceAttachment?: string | Computed<string>;
 }
 
 export interface Cluster_ClusterEndpoints_Connections {
+  /** A Private Service Connect connection automatically established for this cluster. (AI-inferred) */
   pscAutoConnection?: Cluster_ClusterEndpoints_Connections_PscAutoConnection | Computed<Cluster_ClusterEndpoints_Connections_PscAutoConnection>;
+  /** A Private Service Connect connection associated with this instance. (AI-inferred) */
   pscConnection?: Cluster_ClusterEndpoints_Connections_PscConnection | Computed<Cluster_ClusterEndpoints_Connections_PscConnection>;
 }
 
 export interface Cluster_ClusterEndpoints {
+  /** The active connection(s) to this instance. (AI-inferred) */
   connections?: Cluster_ClusterEndpoints_Connections[] | Computed<Cluster_ClusterEndpoints_Connections[]>;
 }
 
@@ -104,12 +128,16 @@ export interface Cluster_CrossClusterReplicationConfig {
 }
 
 export interface Cluster_DiscoveryEndpoints_PscConfig {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
 }
 
 export interface Cluster_DiscoveryEndpoints {
+  /** The IP address this applies to. (AI-inferred) */
   address?: string | Computed<string>;
+  /** The port number this applies to. (AI-inferred) */
   port?: number | Computed<number>;
+  /** Configuration for connecting to this instance via Private Service Connect. (AI-inferred) */
   pscConfig?: Cluster_DiscoveryEndpoints_PscConfig | Computed<Cluster_DiscoveryEndpoints_PscConfig>;
 }
 
@@ -130,7 +158,9 @@ export interface Cluster_GcsSource {
 }
 
 export interface Cluster_MaintenancePolicy_WeeklyMaintenanceWindow {
+  /** The day-of-month component of a date. (AI-inferred) */
   day?: string | Computed<string>;
+  /** When this event or window started. (AI-inferred) */
   startTime?: Cluster_AutomatedBackupConfig_FixedFrequencySchedule_StartTime | Computed<Cluster_AutomatedBackupConfig_FixedFrequencySchedule_StartTime>;
 }
 
@@ -177,7 +207,9 @@ export interface Cluster_PersistenceConfig {
 }
 
 export interface Cluster_PscServiceAttachments {
+  /** Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred) */
   connectionType?: string | Computed<string>;
+  /** A reference to the Private Service Connect service attachment this connects to. (AI-inferred) */
   serviceAttachment?: string | Computed<string>;
 }
 

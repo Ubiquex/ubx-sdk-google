@@ -8,9 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PublicAdvertisedPrefix_PublicDelegatedPrefixs:
+    # The IP address range of the public delegated prefix, expressed in CIDR notation. (AI-inferred)
     ip_range: Any = None
     name: Any = None
+    # The project ID where the public delegated prefix is created, allowing the public advertised prefix to be shared with a different project. (AI-inferred)
     project: Any = None
+    # The region where this delegated prefix is located. (AI-inferred)
     region: Any = None
     status: Any = None
 

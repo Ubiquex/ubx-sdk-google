@@ -8,15 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GlobalVmExtensionPolicy_ExtensionPolicies:
+    # The specific version of the extension to pin the policy to. When set, the policy always uses this exact version. If unset, the latest available version is used. (AI-inferred)
     pinned_version: Any = None
     string_config: Any = None
 
 @dataclasses.dataclass
 class GlobalVmExtensionPolicy_InstanceSelectors_LabelSelector:
+    # A map of key-value pairs that an instance's labels must match for the instance to be included in the selection. Instances with all of these labels are selected. (AI-inferred)
     inclusion_labels: Any = None
 
 @dataclasses.dataclass
 class GlobalVmExtensionPolicy_InstanceSelectors:
+    # A label selector object used to match instances based on their labels, determining which instances the policy applies to. (AI-inferred)
     label_selector: Any = None
 
 @dataclasses.dataclass
@@ -36,15 +39,18 @@ class GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_Loc
 
 @dataclasses.dataclass
 class GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts:
+    # A map of location names to the current rollout status for each location, indicating the progress of the rollout operation in each geographic region. (AI-inferred)
     location_rollout_status: Any = None
     rollout: Any = None
     rollout_plan: Any = None
+    # The current state of the rollout operation, with possible values STATE_CANCELLED, STATE_COMPLETED, STATE_FAILED, STATE_PAUSED, STATE_PROCESSING, STATE_UNKNOWN, and STATE_UNSPECIFIED. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus:
     # Output only. [Output Only] The current rollouts for the latest version of the resource. There should be only one current rollout, but for scalability, we make it repeated.
     current_rollouts: Any = None
+    # The status details of the previous rollout operation, if one exists. This object is present only when a prior rollout has been performed and contains information about that prior rollout's state. (AI-inferred)
     previous_rollout: Any = None
 
 @dataclasses.dataclass

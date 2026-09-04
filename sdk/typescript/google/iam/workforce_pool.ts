@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WorkforcePool_AccessRestrictions_AllowedServices {
+  /** The domain this allowed service applies to. (AI-inferred) */
   domain?: string | Computed<string>;
 }
 

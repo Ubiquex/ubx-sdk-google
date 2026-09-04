@@ -4,9 +4,12 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricDescriptor_Labels struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Key         any
-	ValueType   any
+	// The key of this label or attribute. (AI-inferred)
+	Key any
+	// The data type of this metric's own values, e.g. `INT64` or `DOUBLE`. (AI-inferred)
+	ValueType any
 }
 
 type MetricDescriptor_Metadata struct {

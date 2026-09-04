@@ -4,85 +4,134 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IndexEndpoint_DeployedIndexes_AutomaticResources struct {
+	// The maximum number of machine replicas this job may scale up to. (AI-inferred)
 	MaxReplicaCount any
+	// The minimum number of machine replicas this job scales down to. (AI-inferred)
 	MinReplicaCount any
 }
 
 type IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecs struct {
+	// The name of the metric this applies to. (AI-inferred)
 	MetricName any
-	Target     any
+	// The target value autoscaling tries to maintain for this metric. (AI-inferred)
+	Target any
 }
 
 type IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinity struct {
-	Key                     any
+	// A key identifying this entry. (AI-inferred)
+	Key any
+	// Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred)
 	ReservationAffinityType any
-	Values                  any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec struct {
-	AcceleratorCount    any
-	AcceleratorType     any
-	GpuPartitionSize    any
-	MachineType         any
+	// How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred)
+	AcceleratorCount any
+	// The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred)
+	AcceleratorType any
+	// The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
+	GpuPartitionSize any
+	// The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred)
+	MachineType any
+	// Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred)
 	ReservationAffinity any
-	TpuTopology         any
+	// The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred)
+	TpuTopology any
 }
 
 type IndexEndpoint_DeployedIndexes_DedicatedResources struct {
+	// The metric(s) (e.g. CPU utilization) autoscaling bases its own replica-count decisions on, and each one's target value. (AI-inferred)
 	AutoscalingMetricSpecs any
-	MachineSpec            any
-	MaxReplicaCount        any
-	MinReplicaCount        any
-	RequiredReplicaCount   any
-	Spot                   any
+	// The machine type, accelerator, and count provisioned to run this job. (AI-inferred)
+	MachineSpec any
+	// The maximum number of machine replicas this job may scale up to. (AI-inferred)
+	MaxReplicaCount any
+	// The minimum number of machine replicas this job scales down to. (AI-inferred)
+	MinReplicaCount any
+	// The minimum number of replicas that must be ready before this deployment is considered available. (AI-inferred)
+	RequiredReplicaCount any
+	// Whether this deployment runs on lower-cost Spot VMs, which can be preempted, rather than standard on-demand capacity. (AI-inferred)
+	Spot any
 }
 
 type IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProvider struct {
+	// The JWT issuer(s) whose tokens are accepted for authenticating to this deployed index. (AI-inferred)
 	AllowedIssuers any
-	Audiences      any
+	// The intended audience value(s) a JWT must carry to be accepted for authenticating to this deployed index. (AI-inferred)
+	Audiences any
 }
 
 type IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig struct {
+	// The identity provider trusted to issue authentication tokens for this deployed index. (AI-inferred)
 	AuthProvider any
 }
 
 type IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpoints struct {
+	// The IP address this Private Service Connect endpoint resolves to for index queries. (AI-inferred)
 	MatchAddress any
-	Network      any
-	ProjectId    any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
 }
 
 type IndexEndpoint_DeployedIndexes_PrivateEndpoints struct {
-	MatchGrpcAddress      any
+	// The gRPC address this deployed index's own private endpoint is reachable at. (AI-inferred)
+	MatchGrpcAddress any
+	// The Private Service Connect endpoint(s) Vertex AI automatically provisioned for this deployed index. (AI-inferred)
 	PscAutomatedEndpoints any
-	ServiceAttachment     any
+	// The Private Service Connect service attachment backing this deployment's own private endpoints. (AI-inferred)
+	ServiceAttachment any
 }
 
 type IndexEndpoint_DeployedIndexes_PscAutomationConfigs struct {
-	ErrorMessage   any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
 	ForwardingRule any
-	IpAddress      any
-	Network        any
-	ProjectId      any
-	State          any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
 }
 
 type IndexEndpoint_DeployedIndexes struct {
-	AutomaticResources           any
-	CreateTime                   any
-	DedicatedResources           any
-	DeployedIndexAuthConfig      any
-	DeploymentGroup              any
-	DeploymentTier               any
-	DisplayName                  any
-	EnableAccessLogging          any
+	// Lets Vertex AI automatically manage compute resources for this deployment, as an alternative to `dedicated_resources`. (AI-inferred)
+	AutomaticResources any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Reserves dedicated compute resources (machine type, replica count, autoscaling) for this deployment, as an alternative to `automatic_resources`. (AI-inferred)
+	DedicatedResources any
+	// Authentication requirements callers must satisfy to query this deployed index. (AI-inferred)
+	DeployedIndexAuthConfig any
+	// Which deployment group this deployed index belongs to, for routing/isolation purposes. (AI-inferred)
+	DeploymentGroup any
+	// The service tier this index was deployed at, e.g. `STORAGE`. (AI-inferred)
+	DeploymentTier any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether individual prediction requests to this deployment are logged. (AI-inferred)
+	EnableAccessLogging any
+	// Whether individual datapoint upsert operations against this deployed index are logged. (AI-inferred)
 	EnableDatapointUpsertLogging any
-	Id                           any
-	Index                        any
-	IndexSyncTime                any
-	PrivateEndpoints             any
-	PscAutomationConfigs         any
-	ReservedIpRanges             any
+	// An identifier for this object. (AI-inferred)
+	Id any
+	// The position of this item within its own containing sequence. (AI-inferred)
+	Index any
+	// Output only. When this deployed index was last synced with its own source index. (AI-inferred)
+	IndexSyncTime any
+	// The private network endpoint URIs this deployment is reachable at. (AI-inferred)
+	PrivateEndpoints any
+	// Configuration requesting Vertex AI automatically provision Private Service Connect endpoints for this deployed index. (AI-inferred)
+	PscAutomationConfigs any
+	// The VPC IP range(s) reserved for this deployed index's own use. (AI-inferred)
+	ReservedIpRanges any
 }
 
 type IndexEndpoint_EncryptionSpec struct {

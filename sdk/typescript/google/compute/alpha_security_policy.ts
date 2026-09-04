@@ -563,11 +563,13 @@ const AlphaSecurityPolicy_UserDefinedFieldsFields: FieldMap = {
 export interface AlphaSecurityPolicyConfig {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig?: AlphaSecurityPolicy_AdaptiveProtectionConfig | Computed<AlphaSecurityPolicy_AdaptiveProtectionConfig>;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig?: AlphaSecurityPolicy_AdvancedOptionsConfig | Computed<AlphaSecurityPolicy_AdvancedOptionsConfig>;
   /** A list of associations that belong to this policy. */
   associations?: AlphaSecurityPolicy_Associations[] | Computed<AlphaSecurityPolicy_Associations[]>;
   /** Configuration options for Cloud Armor. */
   cloudArmorConfig?: AlphaSecurityPolicy_CloudArmorConfig | Computed<AlphaSecurityPolicy_CloudArmorConfig>;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig?: AlphaSecurityPolicy_DdosProtectionConfig | Computed<AlphaSecurityPolicy_DdosProtectionConfig>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -595,6 +597,7 @@ export interface AlphaSecurityPolicyConfig {
 export interface AlphaSecurityPolicyAttrs {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig: AlphaSecurityPolicy_AdaptiveProtectionConfig;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig: AlphaSecurityPolicy_AdvancedOptionsConfig;
   /** A list of associations that belong to this policy. */
   associations: AlphaSecurityPolicy_Associations[];
@@ -602,6 +605,7 @@ export interface AlphaSecurityPolicyAttrs {
   cloudArmorConfig: AlphaSecurityPolicy_CloudArmorConfig;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig: AlphaSecurityPolicy_DdosProtectionConfig;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;

@@ -560,27 +560,46 @@ const V3beta1Example_ActionsFields: FieldMap = {
 };
 
 export interface V3beta1ExampleConfig {
+  /** The action(s) taken by this step or event. (AI-inferred) */
   actions?: V3beta1Example_Actions[] | Computed<V3beta1Example_Actions[]>;
+  /** The current state of this conversation. (AI-inferred) */
   conversationState?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The input parameter value(s) a playbook invocation was given. (AI-inferred) */
   playbookInput?: V3beta1Example_Actions_PlaybookInvocation_PlaybookInput | Computed<V3beta1Example_Actions_PlaybookInvocation_PlaybookInput>;
+  /** The output parameter value(s) a playbook invocation produced. (AI-inferred) */
   playbookOutput?: V3beta1Example_Actions_PlaybookInvocation_PlaybookOutput | Computed<V3beta1Example_Actions_PlaybookInvocation_PlaybookOutput>;
 }
 
 export interface V3beta1ExampleAttrs {
+  /** The action(s) taken by this step or event. (AI-inferred) */
   actions: V3beta1Example_Actions[];
+  /** The current state of this conversation. (AI-inferred) */
   conversationState: string;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The input parameter value(s) a playbook invocation was given. (AI-inferred) */
   playbookInput: V3beta1Example_Actions_PlaybookInvocation_PlaybookInput;
+  /** The output parameter value(s) a playbook invocation produced. (AI-inferred) */
   playbookOutput: V3beta1Example_Actions_PlaybookInvocation_PlaybookOutput;
+  /** How many tokens this content consumed. (AI-inferred) */
   tokenCount: string;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
 }
 

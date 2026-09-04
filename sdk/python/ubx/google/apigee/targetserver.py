@@ -19,6 +19,7 @@ class Targetserver_SSlinfo:
     ciphers: Any = None
     # Optional. Enables two-way TLS.
     client_auth_enabled: Any = None
+    # The Common Name field of this certificate's own subject. (AI-inferred)
     common_name: Any = None
     # Required. Enables TLS. If false, neither one-way nor two-way TLS will be enabled.
     enabled: Any = None

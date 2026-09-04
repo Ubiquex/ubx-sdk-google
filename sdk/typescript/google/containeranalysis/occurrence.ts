@@ -2,15 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Occurrence_AiSkillAnalysis_Findings_Location {
+  /** The path to this file within the scanned artifact. (AI-inferred) */
   filePath?: string | Computed<string>;
+  /** The line number this finding was located at, within the containing file. (AI-inferred) */
   lineNumber?: string | Computed<string>;
 }
 
 export interface Occurrence_AiSkillAnalysis_Findings {
+  /** The category this finding or note belongs to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** Where this occurrence was found. (AI-inferred) */
   location?: Occurrence_AiSkillAnalysis_Findings_Location | Computed<Occurrence_AiSkillAnalysis_Findings_Location>;
+  /** The vulnerability scanner that produced this occurrence. (AI-inferred) */
   scanner?: string | Computed<string>;
+  /** How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
@@ -44,17 +51,21 @@ export interface Occurrence_AiSkillAnalysis {
   findings?: Occurrence_AiSkillAnalysis_Findings[] | Computed<Occurrence_AiSkillAnalysis_Findings[]>;
   /** Maximum severity found among findings. Per scanner verdict details. */
   maxSeverity?: string | Computed<string>;
+  /** This vulnerability's own effective severity, as separately determined by each scanner that found it. (AI-inferred) */
   perScannerVerdict?: Occurrence_AiSkillAnalysis_PerScannerVerdict | Computed<Occurrence_AiSkillAnalysis_PerScannerVerdict>;
   /** Name of the skill that produced this analysis. */
   skillName?: string | Computed<string>;
 }
 
 export interface Occurrence_Attestation_Jwts {
+  /** An attestation signature encoded as a compact JSON Web Token. (AI-inferred) */
   compactJwt?: string | Computed<string>;
 }
 
 export interface Occurrence_Attestation_Signatures {
+  /** An identifier for the public key used to verify this signature. (AI-inferred) */
   publicKeyId?: string | Computed<string>;
+  /** A cryptographic signature verifying this content. (AI-inferred) */
   signature?: string | Computed<string>;
 }
 
@@ -68,47 +79,71 @@ export interface Occurrence_Attestation {
 }
 
 export interface Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies {
+  /** Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred) */
   annotations?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The literal content of this value. (AI-inferred) */
   content?: string | Computed<string>;
+  /** A cryptographic digest identifying this content. (AI-inferred) */
   digest?: Record<string, string> | Computed<Record<string, string>>;
+  /** The URI this package can be downloaded from. (AI-inferred) */
   downloadLocation?: string | Computed<string>;
+  /** The MIME type of this artifact. (AI-inferred) */
   mediaType?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition {
+  /** A URI identifying the kind of build process that produced this artifact. (AI-inferred) */
   buildType?: string | Computed<string>;
+  /** Caller-supplied parameter(s) that configured this build. (AI-inferred) */
   externalParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Build-system-internal parameter(s) that configured this build, not directly caller-supplied. (AI-inferred) */
   internalParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The exact, resolved dependency/dependencies actually used to produce this build. (AI-inferred) */
   resolvedDependencies?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies[] | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies[]>;
 }
 
 export interface Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Builder {
+  /** The dependency/dependencies the builder itself relied on. (AI-inferred) */
   builderDependencies?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies[] | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies[]>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Metadata {
+  /** When this operation finished. (AI-inferred) */
   finishedOn?: string | Computed<string>;
+  /** An identifier for this specific invocation. (AI-inferred) */
   invocationId?: string | Computed<string>;
+  /** When this operation started. (AI-inferred) */
   startedOn?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails {
+  /** The build system/tool that produced this artifact. (AI-inferred) */
   builder?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Builder | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Builder>;
+  /** Additional artifact(s) produced as a byproduct of this build, beyond the primary output. (AI-inferred) */
   byproducts?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies[] | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies[]>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Metadata | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Metadata>;
 }
 
 export interface Occurrence_Build_InTotoSlsaProvenanceV1_Predicate {
+  /** The SLSA build definition describing this build's own inputs and process. (AI-inferred) */
   buildDefinition?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition>;
+  /** Detail about how this specific build was actually run. (AI-inferred) */
   runDetails?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails>;
 }
 
 export interface Occurrence_Build_InTotoSlsaProvenanceV1_Subject {
+  /** A cryptographic digest identifying this content. (AI-inferred) */
   digest?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -117,11 +152,14 @@ export interface Occurrence_Build_InTotoSlsaProvenanceV1 {
   type?: string | Computed<string>;
   /** Keep in sync with schema at https://github.com/slsa-framework/slsa/blob/main/docs/provenance/schema/v1/provenance.proto Builder renamed to ProvenanceBuilder because of Java conflicts. */
   predicate?: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Predicate>;
+  /** The URI identifying the schema of this in-toto attestation's own predicate. (AI-inferred) */
   predicateType?: string | Computed<string>;
+  /** The artifact(s) this attestation makes a claim about. (AI-inferred) */
   subject?: Occurrence_Build_InTotoSlsaProvenanceV1_Subject[] | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Subject[]>;
 }
 
 export interface Occurrence_Build_IntotoProvenance_BuilderConfig {
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
@@ -161,6 +199,7 @@ export interface Occurrence_Build_IntotoProvenance_Recipe {
 }
 
 export interface Occurrence_Build_IntotoProvenance {
+  /** Configuration specific to the builder that produced this artifact. (AI-inferred) */
   builderConfig?: Occurrence_Build_IntotoProvenance_BuilderConfig | Computed<Occurrence_Build_IntotoProvenance_BuilderConfig>;
   /** The collection of artifacts that influenced the build including sources, dependencies, build tools, base images, and so on. This is considered to be incomplete unless metadata.completeness.materials is true. Unset or null is equivalent to empty. */
   materials?: string[] | Computed<string[]>;
@@ -171,7 +210,9 @@ export interface Occurrence_Build_IntotoProvenance {
 }
 
 export interface Occurrence_Build_IntotoStatement_SlsaProvenance_Materials {
+  /** A cryptographic digest identifying this content. (AI-inferred) */
   digest?: Record<string, string> | Computed<Record<string, string>>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
@@ -189,6 +230,7 @@ export interface Occurrence_Build_IntotoStatement_SlsaProvenance_Recipe {
 }
 
 export interface Occurrence_Build_IntotoStatement_SlsaProvenance {
+  /** The build system/tool that produced this artifact. (AI-inferred) */
   builder?: Occurrence_Build_IntotoProvenance_BuilderConfig | Computed<Occurrence_Build_IntotoProvenance_BuilderConfig>;
   /** The collection of artifacts that influenced the build including sources, dependencies, build tools, base images, and so on. This is considered to be incomplete unless metadata.completeness.materials is true. Unset or null is equivalent to empty. */
   materials?: Occurrence_Build_IntotoStatement_SlsaProvenance_Materials[] | Computed<Occurrence_Build_IntotoStatement_SlsaProvenance_Materials[]>;
@@ -199,40 +241,55 @@ export interface Occurrence_Build_IntotoStatement_SlsaProvenance {
 }
 
 export interface Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSource {
+  /** A cryptographic digest identifying this content. (AI-inferred) */
   digest?: Record<string, string> | Computed<Record<string, string>>;
+  /** The container image's own default entrypoint command. (AI-inferred) */
   entryPoint?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation {
   /** Describes where the config file that kicked off the build came from. This is effectively a pointer to the source where buildConfig came from. */
   configSource?: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSource | Computed<Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSource>;
+  /** The environment this build ran in. (AI-inferred) */
   environment?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_Completeness {
+  /** The environment this build ran in. (AI-inferred) */
   environment?: boolean | Computed<boolean>;
+  /** The source input(s) (e.g. source repository commit) consumed to produce this build. (AI-inferred) */
   materials?: boolean | Computed<boolean>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: boolean | Computed<boolean>;
 }
 
 export interface Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata {
+  /** When this build completed. (AI-inferred) */
   buildFinishedOn?: string | Computed<string>;
+  /** An identifier for this specific build invocation. (AI-inferred) */
   buildInvocationId?: string | Computed<string>;
+  /** When this build started. (AI-inferred) */
   buildStartedOn?: string | Computed<string>;
   /** Indicates that the builder claims certain fields in this message to be complete. */
   completeness?: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_Completeness | Computed<Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_Completeness>;
+  /** Whether this build is expected to produce an identical artifact when re-run with the same inputs. (AI-inferred) */
   reproducible?: boolean | Computed<boolean>;
 }
 
 export interface Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo {
+  /** Configuration describing how this artifact was built. (AI-inferred) */
   buildConfig?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A URI identifying the kind of build process that produced this artifact. (AI-inferred) */
   buildType?: string | Computed<string>;
   /** Identifies the entity that executed the recipe, which is trusted to have correctly performed the operation and populated this provenance. */
   builder?: Occurrence_Build_IntotoProvenance_BuilderConfig | Computed<Occurrence_Build_IntotoProvenance_BuilderConfig>;
   /** Identifies the event that kicked off the build. */
   invocation?: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation | Computed<Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation>;
+  /** The source input(s) (e.g. source repository commit) consumed to produce this build. (AI-inferred) */
   materials?: Occurrence_Build_IntotoStatement_SlsaProvenance_Materials[] | Computed<Occurrence_Build_IntotoStatement_SlsaProvenance_Materials[]>;
   /** Other properties of the build. */
   metadata?: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata | Computed<Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata>;
@@ -243,74 +300,108 @@ export interface Occurrence_Build_IntotoStatement {
   type?: string | Computed<string>;
   /** `https://slsa.dev/provenance/v0.1` for SlsaProvenance. */
   predicateType?: string | Computed<string>;
+  /** Detail about how this artifact was built. (AI-inferred) */
   provenance?: Occurrence_Build_IntotoProvenance | Computed<Occurrence_Build_IntotoProvenance>;
+  /** Build provenance expressed per the SLSA (Supply-chain Levels for Software Artifacts) specification. (AI-inferred) */
   slsaProvenance?: Occurrence_Build_IntotoStatement_SlsaProvenance | Computed<Occurrence_Build_IntotoStatement_SlsaProvenance>;
   /** See full explanation of fields at slsa.dev/provenance/v0.2. */
   slsaProvenanceZeroTwo?: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo | Computed<Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo>;
+  /** The artifact(s) this attestation makes a claim about. (AI-inferred) */
   subject?: Occurrence_Build_InTotoSlsaProvenanceV1_Subject[] | Computed<Occurrence_Build_InTotoSlsaProvenanceV1_Subject[]>;
 }
 
 export interface Occurrence_Build_Provenance_BuiltArtifacts {
+  /** A checksum verifying this content's own integrity. (AI-inferred) */
   checksum?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The name(s) associated with this resource. (AI-inferred) */
   names?: string[] | Computed<string[]>;
 }
 
 export interface Occurrence_Build_Provenance_Commands {
+  /** The argument(s) passed to this command. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** The working directory this command ran in. (AI-inferred) */
   dir?: string | Computed<string>;
+  /** Environment variable(s) set for this build step or container. (AI-inferred) */
   env?: string[] | Computed<string[]>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The build step(s) that must complete before this one starts. (AI-inferred) */
   waitFor?: string[] | Computed<string[]>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContext {
+  /** The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoId {
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The name of the source repository. (AI-inferred) */
   repoName?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId {
+  /** An identifier for the Cloud Source Repository this source revision comes from. (AI-inferred) */
   projectRepoId?: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoId | Computed<Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoId>;
+  /** Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo {
+  /** Additional identifying detail for a source revision, e.g. a tag or branch name. (AI-inferred) */
   aliasContext?: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContext | Computed<Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContext>;
+  /** An identifier for the source repository this revision comes from. (AI-inferred) */
   repoId?: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId | Computed<Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId>;
+  /** An identifier for this specific source revision. (AI-inferred) */
   revisionId?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Gerrit {
+  /** Additional identifying detail for a source revision, e.g. a tag or branch name. (AI-inferred) */
   aliasContext?: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContext | Computed<Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContext>;
+  /** The Gerrit project this source revision belongs to. (AI-inferred) */
   gerritProject?: string | Computed<string>;
+  /** The URI of the host this occurrence applies to. (AI-inferred) */
   hostUri?: string | Computed<string>;
+  /** An identifier for this specific source revision. (AI-inferred) */
   revisionId?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Git {
+  /** An identifier for this specific source revision. (AI-inferred) */
   revisionId?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts {
+  /** A reference to the Cloud Source Repository this source revision comes from. (AI-inferred) */
   cloudRepo?: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo | Computed<Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo>;
+  /** A reference to a Gerrit code review source revision. (AI-inferred) */
   gerrit?: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Gerrit | Computed<Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Gerrit>;
+  /** A reference to a Git source revision. (AI-inferred) */
   git?: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Git | Computed<Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Git>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHash {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Occurrence_Build_Provenance_SourceProvenance_FileHashes {
+  /** A cryptographic hash of this file's own content. (AI-inferred) */
   fileHash?: Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHash[] | Computed<Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHash[]>;
 }
 
@@ -355,7 +446,9 @@ export interface Occurrence_Build_Provenance {
 }
 
 export interface Occurrence_Build {
+  /** SLSA v1 provenance expressed in the in-toto attestation format. (AI-inferred) */
   inTotoSlsaProvenanceV1?: Occurrence_Build_InTotoSlsaProvenanceV1 | Computed<Occurrence_Build_InTotoSlsaProvenanceV1>;
+  /** Build provenance expressed in the in-toto attestation format. (AI-inferred) */
   intotoProvenance?: Occurrence_Build_IntotoProvenance | Computed<Occurrence_Build_IntotoProvenance>;
   /** Spec defined at https://github.com/in-toto/attestation/tree/main/spec#statement The serialized InTotoStatement will be stored as Envelope.payload. Envelope.payloadType is always "application/vnd.in-toto+json". */
   intotoStatement?: Occurrence_Build_IntotoStatement | Computed<Occurrence_Build_IntotoStatement>;
@@ -366,8 +459,11 @@ export interface Occurrence_Build {
 }
 
 export interface Occurrence_Compliance_NonCompliantFiles {
+  /** A human-readable rendering of the command that produced this layer. (AI-inferred) */
   displayCommand?: string | Computed<string>;
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** A machine-readable reason code. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
@@ -381,7 +477,9 @@ export interface Occurrence_Compliance_Version {
 }
 
 export interface Occurrence_Compliance {
+  /** Why this resource failed the compliance check. (AI-inferred) */
   nonComplianceReason?: string | Computed<string>;
+  /** The file(s) that caused this resource to fail the compliance check. (AI-inferred) */
   nonCompliantFiles?: Occurrence_Compliance_NonCompliantFiles[] | Computed<Occurrence_Compliance_NonCompliantFiles[]>;
   /** Describes the CIS benchmark version that is applicable to a given OS and os version. */
   version?: Occurrence_Compliance_Version | Computed<Occurrence_Compliance_Version>;
@@ -405,12 +503,16 @@ export interface Occurrence_Deployment {
 }
 
 export interface Occurrence_Discovery_AnalysisCompleted {
+  /** Which category of analysis (e.g. vulnerability, package) this occurrence represents. (AI-inferred) */
   analysisType?: string[] | Computed<string[]>;
 }
 
 export interface Occurrence_Discovery_AnalysisError {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -447,13 +549,18 @@ export interface Occurrence_Discovery {
 }
 
 export interface Occurrence_DsseAttestation_Envelope_Signatures {
+  /** An identifier for the key used to produce this signature. (AI-inferred) */
   keyid?: string | Computed<string>;
+  /** A cryptographic signature. (AI-inferred) */
   sig?: string | Computed<string>;
 }
 
 export interface Occurrence_DsseAttestation_Envelope {
+  /** The signed content of this attestation. (AI-inferred) */
   payload?: string | Computed<string>;
+  /** The MIME type of the attestation's own payload. (AI-inferred) */
   payloadType?: string | Computed<string>;
+  /** The cryptographic signature(s) attached to this attestation. (AI-inferred) */
   signatures?: Occurrence_DsseAttestation_Envelope_Signatures[] | Computed<Occurrence_DsseAttestation_Envelope_Signatures[]>;
 }
 
@@ -474,7 +581,9 @@ export interface Occurrence_Image_Fingerprint {
 }
 
 export interface Occurrence_Image_LayerInfo {
+  /** The argument(s) passed to this build step. (AI-inferred) */
   arguments?: string | Computed<string>;
+  /** The Dockerfile instruction (e.g. `RUN`, `COPY`) that produced this layer. (AI-inferred) */
   directive?: string | Computed<string>;
 }
 
@@ -497,17 +606,26 @@ export interface Occurrence_Package_License {
 }
 
 export interface Occurrence_Package_Location_Version {
+  /** The package version's own epoch, used to order versions when the upstream numbering scheme changed. (AI-inferred) */
   epoch?: number | Computed<number>;
+  /** The fully qualified name of this package or resource. (AI-inferred) */
   fullName?: string | Computed<string>;
+  /** Whether this version range's own boundary is inclusive. (AI-inferred) */
   inclusive?: boolean | Computed<boolean>;
+  /** The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The specific revision of this source this applies to. (AI-inferred) */
   revision?: string | Computed<string>;
 }
 
 export interface Occurrence_Package_Location {
+  /** A Common Platform Enumeration URI identifying the affected software. (AI-inferred) */
   cpeUri?: string | Computed<string>;
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: Occurrence_Package_Location_Version | Computed<Occurrence_Package_Location_Version>;
 }
 
@@ -560,33 +678,49 @@ export interface Occurrence_SbomReference {
 }
 
 export interface Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImages {
+  /** The number of layers making up this container image. (AI-inferred) */
   layerCount?: number | Computed<number>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The container registry this image is hosted in. (AI-inferred) */
   registry?: string | Computed<string>;
+  /** A reference to the source repository this applies to. (AI-inferred) */
   repository?: string | Computed<string>;
 }
 
 export interface Occurrence_Secret_Locations_FileLocation_LayerDetails {
+  /** The base image(s) this container image was built from. (AI-inferred) */
   baseImages?: Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImages[] | Computed<Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImages[]>;
+  /** An identifier grouping related image layers that together form a distinct filesystem state. (AI-inferred) */
   chainId?: string | Computed<string>;
+  /** The command executed. (AI-inferred) */
   command?: string | Computed<string>;
+  /** The digest of this layer's own uncompressed content, distinguishing it from its compressed digest. (AI-inferred) */
   diffId?: string | Computed<string>;
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: number | Computed<number>;
 }
 
 export interface Occurrence_Secret_Locations_FileLocation {
+  /** The path to this file within the scanned artifact. (AI-inferred) */
   filePath?: string | Computed<string>;
+  /** Detail about each layer making up this container image. (AI-inferred) */
   layerDetails?: Occurrence_Secret_Locations_FileLocation_LayerDetails | Computed<Occurrence_Secret_Locations_FileLocation_LayerDetails>;
+  /** The line number this finding was located at, within the containing file. (AI-inferred) */
   lineNumber?: number | Computed<number>;
 }
 
 export interface Occurrence_Secret_Locations {
+  /** Where this finding was located within the scanned artifact. (AI-inferred) */
   fileLocation?: Occurrence_Secret_Locations_FileLocation | Computed<Occurrence_Secret_Locations_FileLocation>;
 }
 
 export interface Occurrence_Secret_Statuses {
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
@@ -611,7 +745,9 @@ export interface Occurrence_Upgrade_Distribution {
 }
 
 export interface Occurrence_Upgrade_WindowsUpdate_Categories {
+  /** An identifier for the category this belongs to. (AI-inferred) */
   categoryId?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -667,7 +803,9 @@ export interface Occurrence_Vulnerability_CvssV2 {
   confidentialityImpact?: string | Computed<string>;
   /** Exploit Maturity (E). Defined in CVSS v4. */
   exploitMaturity?: string | Computed<string>;
+  /** A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred) */
   exploitabilityScore?: number | Computed<number>;
+  /** A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred) */
   impactScore?: number | Computed<number>;
   /** Integrity Impact (I). Defined in CVSS v2, v3. */
   integrityImpact?: string | Computed<string>;
@@ -692,20 +830,32 @@ export interface Occurrence_Vulnerability_CvssV2 {
 }
 
 export interface Occurrence_Vulnerability_PackageIssue {
+  /** The CPE URI of the package version affected by this vulnerability. (AI-inferred) */
   affectedCpeUri?: string | Computed<string>;
+  /** The name of the package affected by this vulnerability. (AI-inferred) */
   affectedPackage?: string | Computed<string>;
+  /** The specific version affected by this vulnerability. (AI-inferred) */
   affectedVersion?: Occurrence_Package_Location_Version | Computed<Occurrence_Package_Location_Version>;
+  /** The severity of this vulnerability after applying any project-level severity overrides. (AI-inferred) */
   effectiveSeverity?: string | Computed<string>;
+  /** Where this finding was located within the scanned artifact. (AI-inferred) */
   fileLocation?: Occurrence_Secret_Locations_FileLocation[] | Computed<Occurrence_Secret_Locations_FileLocation[]>;
+  /** Whether a fixed version of the affected package is available. (AI-inferred) */
   fixAvailable?: boolean | Computed<boolean>;
+  /** The CPE URI of the package version that fixes this vulnerability. (AI-inferred) */
   fixedCpeUri?: string | Computed<string>;
+  /** The name of the package that fixes this vulnerability. (AI-inferred) */
   fixedPackage?: string | Computed<string>;
+  /** The version that fixes this vulnerability. (AI-inferred) */
   fixedVersion?: Occurrence_Package_Location_Version | Computed<Occurrence_Package_Location_Version>;
+  /** The package manager/ecosystem this package belongs to, e.g. `DEBIAN` or `NPM`. (AI-inferred) */
   packageType?: string | Computed<string>;
 }
 
 export interface Occurrence_Vulnerability_RelatedUrls {
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
@@ -722,7 +872,9 @@ export interface Occurrence_Vulnerability_Risk_Epss {
 }
 
 export interface Occurrence_Vulnerability_Risk {
+  /** Whether this vulnerability appears on CISA's Known Exploited Vulnerabilities catalog. (AI-inferred) */
   cisaKev?: Occurrence_Vulnerability_Risk_CisaKev | Computed<Occurrence_Vulnerability_Risk_CisaKev>;
+  /** The Exploit Prediction Scoring System probability that this vulnerability will be exploited in the wild. (AI-inferred) */
   epss?: Occurrence_Vulnerability_Risk_Epss | Computed<Occurrence_Vulnerability_Risk_Epss>;
 }
 
@@ -734,8 +886,11 @@ export interface Occurrence_Vulnerability_VexAssessment_Justification {
 }
 
 export interface Occurrence_Vulnerability_VexAssessment_Remediations {
+  /** Additional detail about this result. (AI-inferred) */
   details?: string | Computed<string>;
+  /** The category of fix available for this vulnerability, e.g. a package update or workaround. (AI-inferred) */
   remediationType?: string | Computed<string>;
+  /** A URI with guidance on remediating this vulnerability. (AI-inferred) */
   remediationUri?: Occurrence_Vulnerability_RelatedUrls | Computed<Occurrence_Vulnerability_RelatedUrls>;
 }
 
@@ -781,6 +936,7 @@ export interface Occurrence_Vulnerability {
   packageIssue?: Occurrence_Vulnerability_PackageIssue[] | Computed<Occurrence_Vulnerability_PackageIssue[]>;
   /** Output only. URLs related to this vulnerability. */
   relatedUrls?: Occurrence_Vulnerability_RelatedUrls[] | Computed<Occurrence_Vulnerability_RelatedUrls[]>;
+  /** The assessed risk level of this finding. (AI-inferred) */
   risk?: Occurrence_Vulnerability_Risk | Computed<Occurrence_Vulnerability_Risk>;
   /** Output only. The note provider assigned severity of this vulnerability. */
   severity?: string | Computed<string>;

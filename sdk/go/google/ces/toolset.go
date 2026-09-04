@@ -25,15 +25,21 @@ type Toolset_ConnectorToolset_AuthConfig struct {
 }
 
 type Toolset_ConnectorToolset_ConnectorActions_EntityOperation struct {
-	EntityId  any
+	// The identifier of the entity this operation applies to. (AI-inferred)
+	EntityId any
+	// Which action this performs, e.g. create, update, or delete. (AI-inferred)
 	Operation any
 }
 
 type Toolset_ConnectorToolset_ConnectorActions struct {
+	// The identifier of the connector action this tool invokes. (AI-inferred)
 	ConnectionActionId any
-	EntityOperation    any
-	InputFields        any
-	OutputFields       any
+	// A structured create/update/delete action performed against an entity in the connected external system. (AI-inferred)
+	EntityOperation any
+	// The input field(s) this tool or operation accepts. (AI-inferred)
+	InputFields any
+	// The output field(s) this tool or operation returns. (AI-inferred)
+	OutputFields any
 }
 
 type Toolset_ConnectorToolset struct {
@@ -98,7 +104,9 @@ type Toolset_McpToolset_ServiceDirectoryConfig struct {
 }
 
 type Toolset_McpToolset_TlsConfig_CaCerts struct {
-	Cert        any
+	// A TLS certificate. (AI-inferred)
+	Cert any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 }
 
@@ -108,38 +116,64 @@ type Toolset_McpToolset_TlsConfig struct {
 }
 
 type Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema struct {
+	// Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
 	AdditionalProperties any
-	AnyOf                any
-	Default              any
-	Defs                 any
-	Description          any
-	Enum                 any
-	Items                any
-	MaxItems             any
-	Maximum              any
-	MinItems             any
-	Minimum              any
-	Nullable             any
-	PrefixItems          any
-	Properties           any
-	Ref                  any
-	Required             any
-	Title                any
-	Type                 any
-	UniqueItems          any
+	// A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
+	AnyOf any
+	// The value used when this field is left unset. (AI-inferred)
+	Default any
+	// Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
+	Defs any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
+	Enum any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
+	// The most elements an `array`-typed value may have. (AI-inferred)
+	MaxItems any
+	// The largest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Maximum any
+	// The fewest elements an `array`-typed value may have. (AI-inferred)
+	MinItems any
+	// The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Minimum any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// The JSON Schema for each fixed-position element at the start of a tuple-shaped array, before its own variadic `items` schema applies. (AI-inferred)
+	PrefixItems any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// Whether every element of an array-typed value must be distinct. (AI-inferred)
+	UniqueItems any
 }
 
 type Toolset_McpToolset_ToolOverrides_Snapshot struct {
-	Description  any
-	InputSchema  any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The schema describing this tool's own expected input. (AI-inferred)
+	InputSchema any
+	// The schema describing this tool's own expected output. (AI-inferred)
 	OutputSchema any
 }
 
 type Toolset_McpToolset_ToolOverrides struct {
+	// A caller-chosen description presented to the model in place of this item's own default description. (AI-inferred)
 	DescriptionOverride any
-	NameOverride        any
-	Snapshot            any
-	Tool                any
+	// A caller-chosen name presented to the model in place of this item's own real, underlying name. (AI-inferred)
+	NameOverride any
+	// A frozen copy of this resource's own content at a specific point in time. (AI-inferred)
+	Snapshot any
+	// A reference to a single tool. (AI-inferred)
+	Tool any
 }
 
 type Toolset_McpToolset struct {

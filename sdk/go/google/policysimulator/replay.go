@@ -4,33 +4,48 @@ package policysimulator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigs struct {
+	// The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred)
 	ExemptedMembers any
-	LogType         any
+	// Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred)
+	LogType any
 }
 
 type Replay_Config_PolicyOverlay_AuditConfigs struct {
+	// Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred)
 	AuditLogConfigs any
-	Service         any
+	// The real Google Cloud service this audit log configuration applies to, or `allServices` for every service. (AI-inferred)
+	Service any
 }
 
 type Replay_Config_PolicyOverlay_Bindings_Condition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// The real Common Expression Language (CEL) expression text of this policy rule's own `condition`. (AI-inferred)
+	Expression any
+	// The real, human-readable source location (file/line) of this CEL expression, used for error reporting. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type Replay_Config_PolicyOverlay_Bindings struct {
+	// A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred)
 	Condition any
-	Members   any
-	Role      any
+	// The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred)
+	Members any
+	// The real IAM role this proposed policy binding grants. (AI-inferred)
+	Role any
 }
 
 type Replay_Config_PolicyOverlay struct {
+	// Real, proposed IAM audit logging configuration overlaid for this policy simulation. (AI-inferred)
 	AuditConfigs any
-	Bindings     any
-	Etag         any
-	Version      any
+	// The list of `google.iam.v1.Policy` bindings, each granting a `role` to a set of `members`, optionally scoped by a `condition`. (AI-inferred)
+	Bindings any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// The real `google.iam.v1.Policy` schema version this proposed policy overlay is expressed in. (AI-inferred)
+	Version any
 }
 
 type Replay_Config struct {

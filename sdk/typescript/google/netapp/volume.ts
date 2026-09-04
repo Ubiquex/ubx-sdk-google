@@ -13,10 +13,15 @@ export interface Volume_BackupConfig {
 }
 
 export interface Volume_BlockDevices {
+  /** The host group(s) this policy applies to. (AI-inferred) */
   hostGroups?: string[] | Computed<string[]>;
+  /** A unique identifier for this resource. (AI-inferred) */
   identifier?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The operating system type this applies to. (AI-inferred) */
   osType?: string | Computed<string>;
+  /** The size of this resource, in gibibytes. (AI-inferred) */
   sizeGib?: string | Computed<string>;
 }
 
@@ -77,18 +82,31 @@ export interface Volume_CloneDetails {
 }
 
 export interface Volume_ExportPolicy_Rules {
+  /** Whether this client is granted read-only or read-write access. (AI-inferred) */
   accessType?: string | Computed<string>;
+  /** The client IP address range(s), in CIDR notation, permitted to access this export. (AI-inferred) */
   allowedClients?: string | Computed<string>;
+  /** The user ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred) */
   anonUid?: string | Computed<string>;
+  /** Whether this client is granted root access. (AI-inferred) */
   hasRootAccess?: string | Computed<string>;
+  /** Whether Kerberos v5 authenticated clients are granted read-only access. (AI-inferred) */
   kerberos5ReadOnly?: boolean | Computed<boolean>;
+  /** Whether Kerberos v5 authenticated clients are granted read-write access. (AI-inferred) */
   kerberos5ReadWrite?: boolean | Computed<boolean>;
+  /** Whether Kerberos v5 with integrity checking authenticated clients are granted read-only access. (AI-inferred) */
   kerberos5iReadOnly?: boolean | Computed<boolean>;
+  /** Whether Kerberos v5 with integrity checking authenticated clients are granted read-write access. (AI-inferred) */
   kerberos5iReadWrite?: boolean | Computed<boolean>;
+  /** Whether Kerberos v5 with privacy protection authenticated clients are granted read-only access. (AI-inferred) */
   kerberos5pReadOnly?: boolean | Computed<boolean>;
+  /** Whether Kerberos v5 with privacy protection authenticated clients are granted read-write access. (AI-inferred) */
   kerberos5pReadWrite?: boolean | Computed<boolean>;
+  /** Whether NFS version 3 is enabled for this volume. (AI-inferred) */
   nfsv3?: boolean | Computed<boolean>;
+  /** Whether NFS version 4 is enabled for this volume. (AI-inferred) */
   nfsv4?: boolean | Computed<boolean>;
+  /** How requests from root or unmapped clients are remapped. (AI-inferred) */
   squashMode?: string | Computed<string>;
 }
 
@@ -128,10 +146,15 @@ export interface Volume_LargeCapacityConfig {
 }
 
 export interface Volume_MountOptions {
+  /** The NFS export path for this volume. (AI-inferred) */
   export?: string | Computed<string>;
+  /** The fully qualified NFS export path for this volume. (AI-inferred) */
   exportFull?: string | Computed<string>;
+  /** Guidance for how to mount or connect to this resource. (AI-inferred) */
   instructions?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The network protocol used. (AI-inferred) */
   protocol?: string | Computed<string>;
 }
 

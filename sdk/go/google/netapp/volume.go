@@ -15,11 +15,16 @@ type Volume_BackupConfig struct {
 }
 
 type Volume_BlockDevices struct {
+	// The host group(s) this policy applies to. (AI-inferred)
 	HostGroups any
+	// A unique identifier for this resource. (AI-inferred)
 	Identifier any
-	Name       any
-	OsType     any
-	SizeGib    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The operating system type this applies to. (AI-inferred)
+	OsType any
+	// The size of this resource, in gibibytes. (AI-inferred)
+	SizeGib any
 }
 
 type Volume_CacheParameters_CacheConfig_CachePrePopulate struct {
@@ -79,19 +84,32 @@ type Volume_CloneDetails struct {
 }
 
 type Volume_ExportPolicy_Rules struct {
-	AccessType          any
-	AllowedClients      any
-	AnonUid             any
-	HasRootAccess       any
-	Kerberos5ReadOnly   any
-	Kerberos5ReadWrite  any
-	Kerberos5iReadOnly  any
+	// Whether this client is granted read-only or read-write access. (AI-inferred)
+	AccessType any
+	// The client IP address range(s), in CIDR notation, permitted to access this export. (AI-inferred)
+	AllowedClients any
+	// The user ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred)
+	AnonUid any
+	// Whether this client is granted root access. (AI-inferred)
+	HasRootAccess any
+	// Whether Kerberos v5 authenticated clients are granted read-only access. (AI-inferred)
+	Kerberos5ReadOnly any
+	// Whether Kerberos v5 authenticated clients are granted read-write access. (AI-inferred)
+	Kerberos5ReadWrite any
+	// Whether Kerberos v5 with integrity checking authenticated clients are granted read-only access. (AI-inferred)
+	Kerberos5iReadOnly any
+	// Whether Kerberos v5 with integrity checking authenticated clients are granted read-write access. (AI-inferred)
 	Kerberos5iReadWrite any
-	Kerberos5pReadOnly  any
+	// Whether Kerberos v5 with privacy protection authenticated clients are granted read-only access. (AI-inferred)
+	Kerberos5pReadOnly any
+	// Whether Kerberos v5 with privacy protection authenticated clients are granted read-write access. (AI-inferred)
 	Kerberos5pReadWrite any
-	Nfsv3               any
-	Nfsv4               any
-	SquashMode          any
+	// Whether NFS version 3 is enabled for this volume. (AI-inferred)
+	Nfsv3 any
+	// Whether NFS version 4 is enabled for this volume. (AI-inferred)
+	Nfsv4 any
+	// How requests from root or unmapped clients are remapped. (AI-inferred)
+	SquashMode any
 }
 
 type Volume_ExportPolicy struct {
@@ -130,11 +148,16 @@ type Volume_LargeCapacityConfig struct {
 }
 
 type Volume_MountOptions struct {
-	Export       any
-	ExportFull   any
+	// The NFS export path for this volume. (AI-inferred)
+	Export any
+	// The fully qualified NFS export path for this volume. (AI-inferred)
+	ExportFull any
+	// Guidance for how to mount or connect to this resource. (AI-inferred)
 	Instructions any
-	IpAddress    any
-	Protocol     any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The network protocol used. (AI-inferred)
+	Protocol any
 }
 
 type Volume_RestoreParameters struct {

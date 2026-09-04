@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Release_BuildArtifacts {
+  /** The container image reference to run. (AI-inferred) */
   image?: string | Computed<string>;
+  /** A traffic tag applied to a specific revision. (AI-inferred) */
   tag?: string | Computed<string>;
 }
 
@@ -53,62 +55,95 @@ export interface Release_Condition {
 }
 
 export interface Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_Git {
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** A reference to the source repository. (AI-inferred) */
   repo?: string | Computed<string>;
 }
 
 export interface Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo {
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** A reference to a schema defined under `defs`, by name. (AI-inferred) */
   ref?: string | Computed<string>;
+  /** A reference to the source repository. (AI-inferred) */
   repository?: string | Computed<string>;
 }
 
 export interface Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage {
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The source this data or configuration is read from. (AI-inferred) */
   source?: string | Computed<string>;
 }
 
 export interface Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules {
+  /** The configuration(s) making up this resource. (AI-inferred) */
   configs?: string[] | Computed<string[]>;
+  /** Configuration for reading this deployment's own manifests from a Git repository. (AI-inferred) */
   git?: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_Git | Computed<Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_Git>;
+  /** A reference to the Cloud Build-connected repository this reads from. (AI-inferred) */
   googleCloudBuildRepo?: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo | Computed<Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo>;
+  /** Configuration for reading this deployment's own manifests from Cloud Storage. (AI-inferred) */
   googleCloudStorage?: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage | Computed<Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage>;
 }
 
 export interface Release_CustomTargetTypeSnapshots_CustomActions {
+  /** Which deploy action this job performs, e.g. `deploy` or `promote`. (AI-inferred) */
   deployAction?: string | Computed<string>;
+  /** Additional Skaffold configuration module(s) to include when rendering this release. (AI-inferred) */
   includeSkaffoldModules?: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules[] | Computed<Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules[]>;
+  /** Which render action this job performs. (AI-inferred) */
   renderAction?: string | Computed<string>;
 }
 
 export interface Release_CustomTargetTypeSnapshots_Tasks_Deploy_Container {
+  /** The command-line argument(s) passed to the container. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** The container entrypoint command to run, overriding the image's own default. (AI-inferred) */
   command?: string[] | Computed<string[]>;
+  /** Environment variable(s) set in the container. (AI-inferred) */
   env?: Record<string, string> | Computed<Record<string, string>>;
+  /** The container image reference to run. (AI-inferred) */
   image?: string | Computed<string>;
 }
 
 export interface Release_CustomTargetTypeSnapshots_Tasks_Deploy {
+  /** A single container's own configuration. (AI-inferred) */
   container?: Release_CustomTargetTypeSnapshots_Tasks_Deploy_Container | Computed<Release_CustomTargetTypeSnapshots_Tasks_Deploy_Container>;
 }
 
 export interface Release_CustomTargetTypeSnapshots_Tasks {
+  /** Configuration for the deploy action itself. (AI-inferred) */
   deploy?: Release_CustomTargetTypeSnapshots_Tasks_Deploy | Computed<Release_CustomTargetTypeSnapshots_Tasks_Deploy>;
+  /** Configuration for the render action itself. (AI-inferred) */
   render?: Release_CustomTargetTypeSnapshots_Tasks_Deploy | Computed<Release_CustomTargetTypeSnapshots_Tasks_Deploy>;
 }
 
 export interface Release_CustomTargetTypeSnapshots {
+  /** Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred) */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Caller-defined action(s) run as part of this phase, beyond the built-in predeploy/postdeploy/verify hooks. (AI-inferred) */
   customActions?: Release_CustomTargetTypeSnapshots_CustomActions | Computed<Release_CustomTargetTypeSnapshots_CustomActions>;
+  /** A reference to the custom target type this target uses. (AI-inferred) */
   customTargetTypeId?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The task(s) making up this job. (AI-inferred) */
   tasks?: Release_CustomTargetTypeSnapshots_Tasks | Computed<Release_CustomTargetTypeSnapshots_Tasks>;
+  /** Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred) */
   uid?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
@@ -145,127 +180,192 @@ export interface Release_DeliveryPipelineSnapshot_Condition {
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParameters {
+  /** Label(s) a target must carry for this automation rule to apply to it. (AI-inferred) */
   matchTargetLabels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The value(s) making up this configuration. (AI-inferred) */
   values?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks {
+  /** How often this check or action recurs. (AI-inferred) */
   frequency?: string | Computed<string>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A single unit of work within this job. (AI-inferred) */
   task?: Release_CustomTargetTypeSnapshots_Tasks_Deploy | Computed<Release_CustomTargetTypeSnapshots_Tasks_Deploy>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks {
+  /** The Cloud Monitoring alert policy/policies this check watches. (AI-inferred) */
   alertPolicies?: string[] | Computed<string[]>;
+  /** An identifier for this item, unique within its own containing list. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud {
+  /** Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred) */
   alertPolicyChecks?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks[] | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks[]>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis {
+  /** Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred) */
   customChecks?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks[] | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks[]>;
+  /** How long this phase, wait, or window lasts. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred) */
   googleCloud?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy {
+  /** The action(s) this hook or job performs. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
+  /** The task(s) making up this job. (AI-inferred) */
   tasks?: Release_CustomTargetTypeSnapshots_Tasks_Deploy[] | Computed<Release_CustomTargetTypeSnapshots_Tasks_Deploy[]>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig {
+  /** The task(s) making up this job. (AI-inferred) */
   tasks?: Release_CustomTargetTypeSnapshots_Tasks_Deploy[] | Computed<Release_CustomTargetTypeSnapshots_Tasks_Deploy[]>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment {
+  /** Configuration for automated analysis run against a rollout phase. (AI-inferred) */
   analysis?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis>;
+  /** The progressive traffic percentage step(s) this canary deployment advances through. (AI-inferred) */
   percentages?: number[] | Computed<number[]>;
+  /** Configuration for actions run after a phase's own deployment completes. (AI-inferred) */
   postdeploy?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for actions run before a phase's own deployment starts. (AI-inferred) */
   predeploy?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for verification tests run against a phase's own deployment. (AI-inferred) */
   verify?: boolean | Computed<boolean>;
+  /** Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred) */
   verifyConfig?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs {
+  /** Configuration for automated analysis run against a rollout phase. (AI-inferred) */
   analysis?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis>;
+  /** A percentage value. (AI-inferred) */
   percentage?: number | Computed<number>;
+  /** A reference to the phase this applies to. (AI-inferred) */
   phaseId?: string | Computed<string>;
+  /** Configuration for actions run after a phase's own deployment completes. (AI-inferred) */
   postdeploy?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for actions run before a phase's own deployment starts. (AI-inferred) */
   predeploy?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred) */
   profiles?: string[] | Computed<string[]>;
+  /** Configuration for verification tests run against a phase's own deployment. (AI-inferred) */
   verify?: boolean | Computed<boolean>;
+  /** Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred) */
   verifyConfig?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment {
+  /** Per-phase configuration overrides for a canary or custom deployment strategy. (AI-inferred) */
   phaseConfigs?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs[] | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs[]>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun {
+  /** Whether traffic is shifted automatically through the canary steps, without waiting for manual approval at each one. (AI-inferred) */
   automaticTrafficControl?: boolean | Computed<boolean>;
+  /** Traffic tag(s) applied to the canary revision, for routing test traffic to it directly. (AI-inferred) */
   canaryRevisionTags?: string[] | Computed<string[]>;
+  /** Traffic tag(s) applied to the previous (stable) revision, for routing test traffic to it directly. (AI-inferred) */
   priorRevisionTags?: string[] | Computed<string[]>;
+  /** Traffic tag(s) applied to the stable (non-canary) revision, for routing test traffic to it directly. (AI-inferred) */
   stableRevisionTags?: string[] | Computed<string[]>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations {
+  /** The target ID(s) this promotion/rollout is directed to. (AI-inferred) */
   destinationIds?: string[] | Computed<string[]>;
+  /** Whether the Kubernetes Service is updated to route production traffic as the canary progresses, rather than only the underlying workload. (AI-inferred) */
   propagateService?: boolean | Computed<boolean>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh {
+  /** Configuration or detail about a specific deployment. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** The HTTP route resource splitting traffic between revisions for this canary deployment. (AI-inferred) */
   httpRoute?: string | Computed<string>;
+  /** The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred) */
   podSelectorLabel?: string | Computed<string>;
+  /** The destination(s) traffic is routed to as part of this canary deployment. (AI-inferred) */
   routeDestinations?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations>;
+  /** How long to wait after updating traffic routing before proceeding to the next step. (AI-inferred) */
   routeUpdateWaitTime?: string | Computed<string>;
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
+  /** How long traffic is held on the stable revision after a canary is rolled back, before resuming normal routing. (AI-inferred) */
   stableCutbackDuration?: string | Computed<string>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking {
+  /** Configuration or detail about a specific deployment. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** Whether extra pod capacity is skipped when preparing this deployment, trading faster rollout for less headroom during the transition. (AI-inferred) */
   disablePodOverprovisioning?: boolean | Computed<boolean>;
+  /** The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred) */
   podSelectorLabel?: string | Computed<string>;
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes {
+  /** Configuration for routing canary traffic through a Kubernetes Gateway API-based service mesh. (AI-inferred) */
   gatewayServiceMesh?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh>;
+  /** Configuration for routing canary traffic using Cloud Service Mesh. (AI-inferred) */
   serviceNetworking?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig {
+  /** Configuration specific to deploying this target as a Cloud Run service. (AI-inferred) */
   cloudRun?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun>;
+  /** Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred) */
   kubernetes?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary {
+  /** Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred) */
   canaryDeployment?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment>;
+  /** A canary strategy using caller-defined percentage steps and phase configuration, rather than Cloud Deploy's own standard canary shape. (AI-inferred) */
   customCanaryDeployment?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment>;
+  /** Configuration specific to the runtime (GKE, Cloud Run, etc.) this target deploys to. (AI-inferred) */
   runtimeConfig?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Standard {
+  /** Configuration for automated analysis run against a rollout phase. (AI-inferred) */
   analysis?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis>;
+  /** Configuration for actions run after a phase's own deployment completes. (AI-inferred) */
   postdeploy?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for actions run before a phase's own deployment starts. (AI-inferred) */
   predeploy?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy>;
+  /** Configuration for verification tests run against a phase's own deployment. (AI-inferred) */
   verify?: boolean | Computed<boolean>;
+  /** Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred) */
   verifyConfig?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy {
+  /** Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred) */
   canary?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary>;
+  /** Configuration for the standard (non-canary, all-at-once) rollout strategy. (AI-inferred) */
   standard?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Standard | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Standard>;
 }
 
 export interface Release_DeliveryPipelineSnapshot_SerialPipeline_Stages {
+  /** Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred) */
   deployParameters?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParameters[] | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParameters[]>;
+  /** The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred) */
   profiles?: string[] | Computed<string[]>;
+  /** Which rollout strategy this release uses, e.g. standard or canary. (AI-inferred) */
   strategy?: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy | Computed<Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy>;
+  /** A reference to the target this applies to. (AI-inferred) */
   targetId?: string | Computed<string>;
 }
 
@@ -300,117 +400,181 @@ export interface Release_DeliveryPipelineSnapshot {
 }
 
 export interface Release_TargetArtifacts_PhaseArtifacts {
+  /** The path within the release's own configuration where per-job Kubernetes manifests are found. (AI-inferred) */
   jobManifestsPath?: string | Computed<string>;
+  /** The path within the release's own configuration where Kubernetes manifests are found. (AI-inferred) */
   manifestPath?: string | Computed<string>;
+  /** The path to the Skaffold configuration file used to render this release. (AI-inferred) */
   skaffoldConfigPath?: string | Computed<string>;
 }
 
 export interface Release_TargetArtifacts {
+  /** The URI of a built artifact. (AI-inferred) */
   artifactUri?: string | Computed<string>;
+  /** The path within the release's own configuration where Kubernetes manifests are found. (AI-inferred) */
   manifestPath?: string | Computed<string>;
+  /** Build artifact(s) produced specifically for this rollout phase. (AI-inferred) */
   phaseArtifacts?: Record<string, Release_TargetArtifacts_PhaseArtifacts> | Computed<Record<string, Release_TargetArtifacts_PhaseArtifacts>>;
+  /** The path to the Skaffold configuration file used to render this release. (AI-inferred) */
   skaffoldConfigPath?: string | Computed<string>;
 }
 
 export interface Release_TargetRenders_Metadata_CloudRun {
+  /** A reference to a single job. (AI-inferred) */
   job?: string | Computed<string>;
+  /** A specific revision of this resource. (AI-inferred) */
   revision?: string | Computed<string>;
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
+  /** A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred) */
   workerPool?: string | Computed<string>;
 }
 
 export interface Release_TargetRenders_Metadata_Custom {
+  /** The value(s) making up this configuration. (AI-inferred) */
   values?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Release_TargetRenders_Metadata_Kubernetes {
+  /** Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred) */
   canaryDeployment?: string | Computed<string>;
+  /** Configuration or detail about a specific deployment. (AI-inferred) */
   deployment?: string | Computed<string>;
+  /** The Kubernetes namespace this deployment applies to. (AI-inferred) */
   kubernetesNamespace?: string | Computed<string>;
 }
 
 export interface Release_TargetRenders_Metadata {
+  /** Configuration specific to deploying this target as a Cloud Run service. (AI-inferred) */
   cloudRun?: Release_TargetRenders_Metadata_CloudRun | Computed<Release_TargetRenders_Metadata_CloudRun>;
+  /** A caller-defined configuration, as an alternative to a built-in option. (AI-inferred) */
   custom?: Release_TargetRenders_Metadata_Custom | Computed<Release_TargetRenders_Metadata_Custom>;
+  /** Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred) */
   kubernetes?: Release_TargetRenders_Metadata_Kubernetes | Computed<Release_TargetRenders_Metadata_Kubernetes>;
 }
 
 export interface Release_TargetRenders {
+  /** A machine-readable code identifying why this operation failed. (AI-inferred) */
   failureCause?: string | Computed<string>;
+  /** A human-readable description of why this operation failed. (AI-inferred) */
   failureMessage?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Release_TargetRenders_Metadata | Computed<Release_TargetRenders_Metadata>;
+  /** A reference to the Cloud Build build that rendered this release. (AI-inferred) */
   renderingBuild?: string | Computed<string>;
+  /** The current status of rendering this release's own manifests. (AI-inferred) */
   renderingState?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots_AnthosCluster {
+  /** A reference to the GKE Hub / Fleet membership this target deploys to. (AI-inferred) */
   membership?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots_AssociatedEntities_GkeClusters {
+  /** A reference to the GKE cluster this target deploys to. (AI-inferred) */
   cluster?: string | Computed<string>;
+  /** Uses a DNS-resolvable endpoint to reach this cluster, rather than a direct IP address. (AI-inferred) */
   dnsEndpoint?: boolean | Computed<boolean>;
+  /** Whether this cluster is reached over its own internal (private) IP address, rather than a public one. (AI-inferred) */
   internalIp?: boolean | Computed<boolean>;
+  /** The URL of a proxy used to reach this cluster. (AI-inferred) */
   proxyUrl?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots_AssociatedEntities {
+  /** The Anthos-registered cluster(s) this applies to. (AI-inferred) */
   anthosClusters?: Release_TargetSnapshots_AnthosCluster[] | Computed<Release_TargetSnapshots_AnthosCluster[]>;
+  /** The GKE cluster(s) this applies to. (AI-inferred) */
   gkeClusters?: Release_TargetSnapshots_AssociatedEntities_GkeClusters[] | Computed<Release_TargetSnapshots_AssociatedEntities_GkeClusters[]>;
 }
 
 export interface Release_TargetSnapshots_CustomTarget {
+  /** Defines a deployment target type beyond Cloud Deploy's own built-ins (GKE, Cloud Run, etc.), backed by caller-supplied render/deploy actions. (AI-inferred) */
   customTargetType?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots_ExecutionConfigs_DefaultPool {
+  /** The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred) */
   artifactStorage?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots_ExecutionConfigs_PrivatePool {
+  /** The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred) */
   artifactStorage?: string | Computed<string>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred) */
   workerPool?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots_ExecutionConfigs {
+  /** The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred) */
   artifactStorage?: string | Computed<string>;
+  /** Configuration for running jobs on Cloud Build's own default worker pool, rather than a private one. (AI-inferred) */
   defaultPool?: Release_TargetSnapshots_ExecutionConfigs_DefaultPool | Computed<Release_TargetSnapshots_ExecutionConfigs_DefaultPool>;
+  /** How long a job is allowed to run before being considered timed out. (AI-inferred) */
   executionTimeout?: string | Computed<string>;
+  /** Configuration for running jobs on a private Cloud Build worker pool, rather than the default shared one. (AI-inferred) */
   privatePool?: Release_TargetSnapshots_ExecutionConfigs_PrivatePool | Computed<Release_TargetSnapshots_ExecutionConfigs_PrivatePool>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** Which purpose(s) (render, deploy, verify) this execution environment configuration applies to. (AI-inferred) */
   usages?: string[] | Computed<string[]>;
+  /** Whether detailed, verbose output is produced for this operation. (AI-inferred) */
   verbose?: boolean | Computed<boolean>;
+  /** A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred) */
   workerPool?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots_MultiTarget {
+  /** The target ID(s) this applies to. (AI-inferred) */
   targetIds?: string[] | Computed<string[]>;
 }
 
 export interface Release_TargetSnapshots_Run {
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
 }
 
 export interface Release_TargetSnapshots {
+  /** Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred) */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
+  /** A reference to the Anthos-registered cluster this target deploys to. (AI-inferred) */
   anthosCluster?: Release_TargetSnapshots_AnthosCluster | Computed<Release_TargetSnapshots_AnthosCluster>;
+  /** Additional Kubernetes resources associated with this deployment, beyond the primary workload, that verification/rendering also considers. (AI-inferred) */
   associatedEntities?: Record<string, Release_TargetSnapshots_AssociatedEntities> | Computed<Record<string, Release_TargetSnapshots_AssociatedEntities>>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A reference to the custom target type this deployment uses. (AI-inferred) */
   customTarget?: Release_TargetSnapshots_CustomTarget | Computed<Release_TargetSnapshots_CustomTarget>;
+  /** Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred) */
   deployParameters?: Record<string, string> | Computed<Record<string, string>>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** Per-usage (render, deploy, verify) execution environment configuration for this target's own jobs. (AI-inferred) */
   executionConfigs?: Release_TargetSnapshots_ExecutionConfigs[] | Computed<Release_TargetSnapshots_ExecutionConfigs[]>;
+  /** Configuration specific to deploying this target to a GKE cluster. (AI-inferred) */
   gke?: Release_TargetSnapshots_AssociatedEntities_GkeClusters | Computed<Release_TargetSnapshots_AssociatedEntities_GkeClusters>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Configuration for a rollout that deploys to more than one target as a coordinated group. (AI-inferred) */
   multiTarget?: Release_TargetSnapshots_MultiTarget | Computed<Release_TargetSnapshots_MultiTarget>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Whether this phase requires explicit human approval before proceeding. (AI-inferred) */
   requireApproval?: boolean | Computed<boolean>;
+  /** A reference to the Cloud Run service this applies to. (AI-inferred) */
   run?: Release_TargetSnapshots_Run | Computed<Release_TargetSnapshots_Run>;
+  /** A reference to the target this applies to. (AI-inferred) */
   targetId?: string | Computed<string>;
+  /** Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred) */
   uid?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 

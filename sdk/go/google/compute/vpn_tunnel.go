@@ -4,20 +4,29 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpnTunnel_CipherSuite_Phase1 struct {
-	Dh         any
+	// List of Diffie-Hellman group identifiers used during IKE phase 1 negotiation for the VPN tunnel cipher suite. (AI-inferred)
+	Dh any
+	// List of encryption algorithms used for IKE phase 1 negotiation. These algorithms define the encryption methods permitted during the initial IPsec/IKE key exchange. (AI-inferred)
 	Encryption any
-	Integrity  any
-	Prf        any
+	// The list of integrity algorithms permitted for IKE phase 1 negotiation. Supported values include SHA1, SHA256, SHA384, and SHA512; if left empty, the default set of algorithms is used. (AI-inferred)
+	Integrity any
+	// The list of allowed Pseudo-Random Function (PRF) algorithms for the IKE phase 1 proposal, used for key derivation during the IKE handshake. (AI-inferred)
+	Prf any
 }
 
 type VpnTunnel_CipherSuite_Phase2 struct {
+	// A list of acceptable encryption algorithms for Phase 2 of the IKE negotiation. (AI-inferred)
 	Encryption any
-	Integrity  any
-	Pfs        any
+	// A list of integrity algorithms to be used for the IPsec phase 2 proposal in the VPN tunnel. The tunnel negotiates using one of the listed algorithms to ensure data integrity. (AI-inferred)
+	Integrity any
+	// Specifies the Diffie-Hellman groups allowed for Perfect Forward Secrecy (PFS) during Phase 2 of the IKE negotiation. (AI-inferred)
+	Pfs any
 }
 
 type VpnTunnel_CipherSuite struct {
+	// The phase1 object defines the IKE Phase 1 (ISAKMP SA) settings for the VPN tunnel's cipher suite, including the encryption, integrity, and DH group algorithms used during the initial key exchange. (AI-inferred)
 	Phase1 any
+	// Settings for IPsec Phase 2 (IKE Quick Mode), including encryption and integrity algorithms, within the cipher suite for the VPN tunnel. (AI-inferred)
 	Phase2 any
 }
 
@@ -57,6 +66,7 @@ var VpnTunnel_ParamsFields = ubx.FieldMap{
 }
 
 type VpnTunnelConfig struct {
+	// The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred)
 	CipherSuite any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
@@ -106,6 +116,7 @@ type VpnTunnelConfig struct {
 }
 
 type VpnTunnelAttrs struct {
+	// The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred)
 	CipherSuite any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any

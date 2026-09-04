@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExternalAccessRule_DestinationIpRanges {
+  /** The externally reachable IP address assigned to this resource. (AI-inferred) */
   externalAddress?: string | Computed<string>;
+  /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The IP address range, in CIDR notation, this applies to. (AI-inferred) */
   ipAddressRange?: string | Computed<string>;
 }
 

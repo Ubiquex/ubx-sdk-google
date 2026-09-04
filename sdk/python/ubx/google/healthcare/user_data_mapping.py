@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserDataMapping_ResourceAttributes:
+    # A reference to the attribute definition this applies to. (AI-inferred)
     attribute_definition_id: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 _UserDataMapping_ResourceAttributesFields = {

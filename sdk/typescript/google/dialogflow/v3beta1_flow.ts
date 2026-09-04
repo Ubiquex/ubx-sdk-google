@@ -496,34 +496,60 @@ const V3beta1Flow_TransitionRoutesFields: FieldMap = {
 };
 
 export interface V3beta1FlowConfig {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: V3beta1Flow_AdvancedSettings | Computed<V3beta1Flow_AdvancedSettings>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred) */
   eventHandlers?: V3beta1Flow_EventHandlers[] | Computed<V3beta1Flow_EventHandlers[]>;
+  /** The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred) */
   inputParameterDefinitions?: V3beta1Flow_InputParameterDefinitions[] | Computed<V3beta1Flow_InputParameterDefinitions[]>;
+  /** Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred) */
   knowledgeConnectorSettings?: V3beta1Flow_KnowledgeConnectorSettings | Computed<V3beta1Flow_KnowledgeConnectorSettings>;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked?: boolean | Computed<boolean>;
+  /** Configuration for how this agent handles multiple supported languages. (AI-inferred) */
   multiLanguageSettings?: V3beta1Flow_MultiLanguageSettings | Computed<V3beta1Flow_MultiLanguageSettings>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings?: V3beta1Flow_NluSettings | Computed<V3beta1Flow_NluSettings>;
+  /** The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred) */
   outputParameterDefinitions?: V3beta1Flow_InputParameterDefinitions[] | Computed<V3beta1Flow_InputParameterDefinitions[]>;
+  /** The reusable transition route group(s) included on this page/flow. (AI-inferred) */
   transitionRouteGroups?: string[] | Computed<string[]>;
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes?: V3beta1Flow_TransitionRoutes[] | Computed<V3beta1Flow_TransitionRoutes[]>;
 }
 
 export interface V3beta1FlowAttrs {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings: V3beta1Flow_AdvancedSettings;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred) */
   eventHandlers: V3beta1Flow_EventHandlers[];
+  /** The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred) */
   inputParameterDefinitions: V3beta1Flow_InputParameterDefinitions[];
+  /** Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred) */
   knowledgeConnectorSettings: V3beta1Flow_KnowledgeConnectorSettings;
+  /** Whether this resource is currently locked against modification. (AI-inferred) */
   locked: boolean;
+  /** Configuration for how this agent handles multiple supported languages. (AI-inferred) */
   multiLanguageSettings: V3beta1Flow_MultiLanguageSettings;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred) */
   nluSettings: V3beta1Flow_NluSettings;
+  /** The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred) */
   outputParameterDefinitions: V3beta1Flow_InputParameterDefinitions[];
+  /** The reusable transition route group(s) included on this page/flow. (AI-inferred) */
   transitionRouteGroups: string[];
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes: V3beta1Flow_TransitionRoutes[];
 }
 

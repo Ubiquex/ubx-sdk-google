@@ -15,7 +15,9 @@ class ManagementServer_ManagementUri:
 
 @dataclasses.dataclass
 class ManagementServer_Networks:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # Whether this connection uses VPC peering or another connectivity mode. (AI-inferred)
     peering_mode: Any = None
 
 @dataclasses.dataclass

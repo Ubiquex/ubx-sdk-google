@@ -4,7 +4,9 @@ package apim
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ObservationSource_GclbObservationSource_PscNetworkConfigs struct {
-	Network    any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
 	Subnetwork any
 }
 

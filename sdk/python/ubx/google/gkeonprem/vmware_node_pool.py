@@ -8,13 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VmwareNodePool_Config_Taints:
+    # What happens to a pod that doesn't tolerate this taint. (AI-inferred)
     effect: Any = None
+    # The key of this taint or label. (AI-inferred)
     key: Any = None
+    # The value of this taint or label. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class VmwareNodePool_Config_VsphereConfig_Tags:
+    # The category this belongs to. (AI-inferred)
     category: Any = None
+    # A label attached to this resource. (AI-inferred)
     tag: Any = None
 
 @dataclasses.dataclass
@@ -58,15 +63,22 @@ class VmwareNodePool_NodePoolAutoscaling:
 
 @dataclasses.dataclass
 class VmwareNodePool_Status_Conditions:
+    # When this condition last changed from one status to another. (AI-inferred)
     last_transition_time: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class VmwareNodePool_Status_Versions_Versions:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass

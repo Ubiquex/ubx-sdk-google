@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MigratingVm_AwsSourceVmDetails_Disks {
+  /** The real, source-side index identifying which of the source VM's disks this migration status entry describes. (AI-inferred) */
   diskNumber?: number | Computed<number>;
+  /** The real, provisioned size, in GiB, of a migrated disk. (AI-inferred) */
   sizeGb?: string | Computed<string>;
+  /** The real, source-side volume identifier of one disk on an AWS-sourced migrating VM. (AI-inferred) */
   volumeId?: string | Computed<string>;
 }
 
@@ -28,8 +31,11 @@ export interface MigratingVm_AwsSourceVmDetails {
 }
 
 export interface MigratingVm_AzureSourceVmDetails_Disks {
+  /** The real, source-side disk identifier of one disk on an Azure-sourced migrating VM. (AI-inferred) */
   diskId?: string | Computed<string>;
+  /** The real, source-side index identifying which of the source VM's disks this migration status entry describes. (AI-inferred) */
   diskNumber?: number | Computed<number>;
+  /** The real, provisioned size, in GiB, of a migrated disk. (AI-inferred) */
   sizeGb?: string | Computed<string>;
 }
 
@@ -47,19 +53,27 @@ export interface MigratingVm_AzureSourceVmDetails {
 }
 
 export interface MigratingVm_ComputeEngineDisksTargetDefaults_Disks_Encryption {
+  /** The real Cloud KMS key used to encrypt this migrated resource's data at rest. (AI-inferred) */
   kmsKey?: string | Computed<string>;
 }
 
 export interface MigratingVm_ComputeEngineDisksTargetDefaults_Disks_VmAttachmentDetails {
+  /** The real device name a migrated disk is attached to the target VM instance under. (AI-inferred) */
   deviceName?: string | Computed<string>;
 }
 
 export interface MigratingVm_ComputeEngineDisksTargetDefaults_Disks {
+  /** Real, extra Compute Engine labels to apply to the migrated VM or disk beyond whatever VM Migration applies automatically. (AI-inferred) */
   additionalLabels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The real, target-side name to assign to a migrated disk in Google Cloud. (AI-inferred) */
   diskName?: string | Computed<string>;
+  /** The real Compute Engine disk type (e.g. `pd-ssd`, `pd-standard`) to use for a migrated disk. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** Real encryption configuration (e.g. the `kms_key` to use) applied to a migrated disk or VM. (AI-inferred) */
   encryption?: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_Encryption | Computed<MigratingVm_ComputeEngineDisksTargetDefaults_Disks_Encryption>;
+  /** The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred) */
   sourceDiskNumber?: number | Computed<number>;
+  /** Real, target-side details describing how a migrated disk attaches to its VM instance (device name, boot disk status). (AI-inferred) */
   vmAttachmentDetails?: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_VmAttachmentDetails | Computed<MigratingVm_ComputeEngineDisksTargetDefaults_Disks_VmAttachmentDetails>;
 }
 
@@ -82,8 +96,11 @@ export interface MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_B
 }
 
 export interface MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeScheduling_NodeAffinities {
+  /** The real Compute Engine node affinity label key this scheduling rule matches against. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real comparison or matching rule an `adaptation_modifiers` entry's own `modifier` is applied under. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The real, allowed label value(s) this node affinity rule matches against its own `key`. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -99,10 +116,15 @@ export interface MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_C
 }
 
 export interface MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfaces {
+  /** The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   externalIp?: string | Computed<string>;
+  /** The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred) */
   internalIp?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred) */
   networkTier?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
@@ -155,7 +177,9 @@ export interface MigratingVm_ComputeEngineDisksTargetDefaults {
 }
 
 export interface MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiers {
+  /** A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred) */
   modifier?: string | Computed<string>;
+  /** The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -231,35 +255,53 @@ export interface MigratingVm_CurrentSyncInfo_Error {
 }
 
 export interface MigratingVm_CurrentSyncInfo_Steps_Replicating {
+  /** The real, measured average replication throughput, in bytes per second, over the last 30 minutes. (AI-inferred) */
   lastThirtyMinutesAverageBytesPerSecond?: string | Computed<string>;
+  /** The real, measured average replication throughput, in bytes per second, over the last 2 minutes. (AI-inferred) */
   lastTwoMinutesAverageBytesPerSecond?: string | Computed<string>;
+  /** The real number of bytes already replicated to Google Cloud so far in the current replication cycle. (AI-inferred) */
   replicatedBytes?: string | Computed<string>;
+  /** The real total number of bytes that need to be replicated to Google Cloud for the current replication cycle to complete. (AI-inferred) */
   totalBytes?: string | Computed<string>;
 }
 
 export interface MigratingVm_CurrentSyncInfo_Steps {
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real, detailed progress for VM Migration's initializing-replication step, the phase before the first full data sync begins. (AI-inferred) */
   initializingReplication?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's post-processing step, the cleanup and finalization work after replication data has landed. (AI-inferred) */
   postProcessing?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own active data-replication step. (AI-inferred) */
   replicating?: MigratingVm_CurrentSyncInfo_Steps_Replicating | Computed<MigratingVm_CurrentSyncInfo_Steps_Replicating>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface MigratingVm_CurrentSyncInfo_Warnings_ActionItem {
+  /** The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** A real, human-readable status or error message for this migration step. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface MigratingVm_CurrentSyncInfo_Warnings_HelpLinks {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A real URL pointing to more information about this migration warning or error. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface MigratingVm_CurrentSyncInfo_Warnings {
+  /** Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred) */
   actionItem?: MigratingVm_CurrentSyncInfo_Warnings_ActionItem | Computed<MigratingVm_CurrentSyncInfo_Warnings_ActionItem>;
+  /** The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred) */
   code?: string | Computed<string>;
+  /** Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred) */
   helpLinks?: MigratingVm_CurrentSyncInfo_Warnings_HelpLinks[] | Computed<MigratingVm_CurrentSyncInfo_Warnings_HelpLinks[]>;
+  /** The real, human-readable text of one migration warning. (AI-inferred) */
   warningMessage?: MigratingVm_CurrentSyncInfo_Warnings_ActionItem | Computed<MigratingVm_CurrentSyncInfo_Warnings_ActionItem>;
+  /** The real timestamp when this migration warning was raised. (AI-inferred) */
   warningTime?: string | Computed<string>;
 }
 
@@ -313,95 +355,161 @@ export interface MigratingVm_Policy {
 }
 
 export interface MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_Disks {
+  /** The real Compute Engine resource URI of one disk involved in this migration job. (AI-inferred) */
   diskUri?: string | Computed<string>;
+  /** The real, source-side index identifying which of the source VM's own disks a target disk or job status corresponds to. (AI-inferred) */
   sourceDiskNumber?: number | Computed<number>;
 }
 
 export interface MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetails {
+  /** The real Compute Engine resource URI of the migrated VM instance. (AI-inferred) */
   vmUri?: string | Computed<string>;
 }
 
 export interface MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails {
+  /** The real, target-side disk configuration for a migrated VM's own disks. (AI-inferred) */
   disks?: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_Disks[] | Computed<MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_Disks[]>;
+  /** Real, target-side migration configuration for the source VM's own individual disks. (AI-inferred) */
   disksTargetDetails?: unknown | Computed<unknown>;
+  /** Real, target-side configuration for the migrated VM instance itself, distinct from its individual disks. (AI-inferred) */
   vmTargetDetails?: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetails | Computed<MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetails>;
 }
 
 export interface MigratingVm_RecentCloneJobs_ComputeEngineTargetDetails {
+  /** Real, fine-grained adjustments applied during OS adaptation for specific guest OS quirks encountered on the source VM. (AI-inferred) */
   adaptationModifiers?: MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiers[] | Computed<MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiers[]>;
+  /** Extra real Google Cloud licenses to attach to the migrated VM, beyond whatever license VM Migration infers automatically from the source OS. (AI-inferred) */
   additionalLicenses?: string[] | Computed<string[]>;
+  /** The real license type VM Migration actually applied to the migrated VM, after resolving any requested `license_type`. (AI-inferred) */
   appliedLicense?: MigratingVm_ComputeEngineTargetDefaults_AppliedLicense | Computed<MigratingVm_ComputeEngineTargetDefaults_AppliedLicense>;
+  /** Real settings and progress for converting the source VM's own boot mode (e.g. BIOS to UEFI) during migration. (AI-inferred) */
   bootConversion?: string | Computed<string>;
+  /** Which real boot mode (BIOS or EFI) the migrated VM instance is configured to use. (AI-inferred) */
   bootOption?: string | Computed<string>;
+  /** Real Compute Engine scheduling configuration (host maintenance behavior, restart policy, node affinity) for the migrated VM instance. (AI-inferred) */
   computeScheduling?: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeScheduling | Computed<MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeScheduling>;
+  /** The real, additional Compute Engine zones a migrated disk is replicated to, for a regional persistent disk. (AI-inferred) */
   diskReplicaZones?: string[] | Computed<string[]>;
+  /** The real Compute Engine disk type (e.g. `pd-ssd`, `pd-standard`) to use for a migrated disk. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** Whether Shielded VM integrity monitoring is real, enabled on the migrated VM instance. (AI-inferred) */
   enableIntegrityMonitoring?: boolean | Computed<boolean>;
+  /** Whether a Shielded VM virtual Trusted Platform Module is real, enabled on the migrated VM instance. (AI-inferred) */
   enableVtpm?: boolean | Computed<boolean>;
+  /** Real encryption configuration (e.g. the `kms_key` to use) applied to a migrated disk or VM. (AI-inferred) */
   encryption?: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_Encryption | Computed<MigratingVm_ComputeEngineDisksTargetDefaults_Disks_Encryption>;
+  /** The real hostname to assign to the migrated VM instance. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Which real licensing model applies to the migrated VM: the source's own existing license (BYOL) or a new Google Cloud-provided one (PAYG). (AI-inferred) */
   licenseType?: string | Computed<string>;
+  /** The real target Compute Engine machine type (e.g. `e2-standard-4`) to use for the migrated VM instance. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The real target Compute Engine machine type series (e.g. `e2`, `n2`) to select a machine type from, when an exact `machine_type` isn't pinned. (AI-inferred) */
   machineTypeSeries?: string | Computed<string>;
+  /** Real Compute Engine instance metadata key/value pairs to apply to the migrated VM instance. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** The real, target-side network interface configuration for the migrated VM instance. (AI-inferred) */
   networkInterfaces?: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfaces[] | Computed<MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfaces[]>;
+  /** Real Compute Engine network tags to apply to the migrated VM instance, used to match firewall rules and routes. (AI-inferred) */
   networkTags?: string[] | Computed<string[]>;
+  /** The real Google Cloud project ID this migration resource applies to. (AI-inferred) */
   project?: string | Computed<string>;
+  /** Whether Shielded VM Secure Boot is real, enabled on the migrated VM instance. (AI-inferred) */
   secureBoot?: boolean | Computed<boolean>;
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
+  /** A reference to the real Compute Engine storage pool a migrated disk should be provisioned from. (AI-inferred) */
   storagePool?: string | Computed<string>;
+  /** The real, target-side name to assign to the migrated VM instance in Google Cloud. (AI-inferred) */
   vmName?: string | Computed<string>;
+  /** The real Compute Engine zone the migrated VM instance or disk is created in. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
 export interface MigratingVm_RecentCloneJobs_Steps {
+  /** Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred) */
   adaptingOs?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred) */
   instantiatingMigratedVm?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred) */
   preparingVmDisks?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface MigratingVm_RecentCloneJobs {
+  /** Real, target-side Compute Engine disk configuration (type, size, name) for a migrated disk. (AI-inferred) */
   computeEngineDisksTargetDetails?: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails | Computed<MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails>;
+  /** Real, target-side Compute Engine configuration (machine type, zone, network, disks) the source VM migrates into. (AI-inferred) */
   computeEngineTargetDetails?: MigratingVm_RecentCloneJobs_ComputeEngineTargetDetails | Computed<MigratingVm_RecentCloneJobs_ComputeEngineTargetDetails>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The real error, if any, that caused this migration step or job to fail. (AI-inferred) */
   error?: MigratingVm_CurrentSyncInfo_Error | Computed<MigratingVm_CurrentSyncInfo_Error>;
+  /** The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real, current state of this migration job, step, or resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The real timestamp when this resource most recently entered its current `state`. (AI-inferred) */
   stateTime?: string | Computed<string>;
+  /** The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred) */
   steps?: MigratingVm_RecentCloneJobs_Steps[] | Computed<MigratingVm_RecentCloneJobs_Steps[]>;
 }
 
 export interface MigratingVm_RecentCutoverJobs_Steps {
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Real, detailed progress for VM Migration's own final-sync step, the last data sync performed immediately before cutover. (AI-inferred) */
   finalSync?: MigratingVm_CurrentSyncInfo | Computed<MigratingVm_CurrentSyncInfo>;
+  /** Real, detailed progress for VM Migration's own step creating the actual Compute Engine VM instance from the migrated disks. (AI-inferred) */
   instantiatingMigratedVm?: unknown | Computed<unknown>;
+  /** Real, detailed progress for VM Migration's own step preparing the migrated VM's disks in Google Cloud ahead of instantiation. (AI-inferred) */
   preparingVmDisks?: unknown | Computed<unknown>;
+  /** The real, previous replication cycle for this migrating VM, kept for reference alongside the current one. (AI-inferred) */
   previousReplicationCycle?: MigratingVm_CurrentSyncInfo | Computed<MigratingVm_CurrentSyncInfo>;
+  /** Real, detailed progress for VM Migration's own step shutting down the source VM as part of a cutover. (AI-inferred) */
   shuttingDownSourceVm?: unknown | Computed<unknown>;
+  /** The real timestamp when this migration step or cycle started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface MigratingVm_RecentCutoverJobs {
+  /** Real, target-side Compute Engine disk configuration (type, size, name) for a migrated disk. (AI-inferred) */
   computeEngineDisksTargetDetails?: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails | Computed<MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails>;
+  /** Real, target-side Compute Engine configuration (machine type, zone, network, disks) the source VM migrates into. (AI-inferred) */
   computeEngineTargetDetails?: MigratingVm_RecentCloneJobs_ComputeEngineTargetDetails | Computed<MigratingVm_RecentCloneJobs_ComputeEngineTargetDetails>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The real error, if any, that caused this migration step or job to fail. (AI-inferred) */
   error?: MigratingVm_CurrentSyncInfo_Error | Computed<MigratingVm_CurrentSyncInfo_Error>;
+  /** The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Output only. The real, measured completion percentage (0-100) of the current migration step. (AI-inferred) */
   progressPercent?: number | Computed<number>;
+  /** The real, current state of this migration job, step, or resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Real, additional detail explaining this migrating VM's own current cutover job state. (AI-inferred) */
   stateMessage?: string | Computed<string>;
+  /** The real timestamp when this resource most recently entered its current `state`. (AI-inferred) */
   stateTime?: string | Computed<string>;
+  /** The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred) */
   steps?: MigratingVm_RecentCutoverJobs_Steps[] | Computed<MigratingVm_RecentCutoverJobs_Steps[]>;
 }
 
 export interface MigratingVm_VmwareSourceVmDetails_Disks {
+  /** The real, source-side index identifying which of the source VM's disks this migration status entry describes. (AI-inferred) */
   diskNumber?: number | Computed<number>;
+  /** The real, source-side disk label of one disk on a VMware-sourced migrating VM. (AI-inferred) */
   label?: string | Computed<string>;
+  /** The real, provisioned size, in GiB, of a migrated disk. (AI-inferred) */
   sizeGb?: string | Computed<string>;
 }
 

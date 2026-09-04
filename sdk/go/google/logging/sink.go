@@ -11,12 +11,18 @@ type Sink_BigqueryOptions struct {
 }
 
 type Sink_Exclusions struct {
-	CreateTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Disabled    any
-	Filter      any
-	Name        any
-	UpdateTime  any
+	// Whether this feature is turned off. (AI-inferred)
+	Disabled any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var Sink_BigqueryOptionsFields = ubx.FieldMap{

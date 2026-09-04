@@ -42,26 +42,44 @@ const V3beta1Intent_TrainingPhrasesFields: FieldMap = {
 };
 
 export interface V3beta1IntentConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The DTMF digit pattern this matches against. (AI-inferred) */
   dtmfPattern?: string | Computed<string>;
+  /** Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred) */
   isFallback?: boolean | Computed<boolean>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: V3beta1Intent_Parameters[] | Computed<V3beta1Intent_Parameters[]>;
+  /** The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** Example user utterances used to train this intent's own recognition. (AI-inferred) */
   trainingPhrases?: V3beta1Intent_TrainingPhrases[] | Computed<V3beta1Intent_TrainingPhrases[]>;
 }
 
 export interface V3beta1IntentAttrs {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The DTMF digit pattern this matches against. (AI-inferred) */
   dtmfPattern: string;
+  /** Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred) */
   isFallback: boolean;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels: Record<string, string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters: V3beta1Intent_Parameters[];
+  /** The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred) */
   priority: number;
+  /** Example user utterances used to train this intent's own recognition. (AI-inferred) */
   trainingPhrases: V3beta1Intent_TrainingPhrases[];
 }
 

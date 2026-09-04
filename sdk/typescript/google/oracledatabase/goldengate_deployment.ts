@@ -32,14 +32,20 @@ export interface GoldengateDeployment_Properties_DeploymentDiagnosticData {
 }
 
 export interface GoldengateDeployment_Properties_IngressIps {
+  /** The IP address this resource accepts inbound connections on. (AI-inferred) */
   ingressIpAddress?: string | Computed<string>;
 }
 
 export interface GoldengateDeployment_Properties_Locks {
+  /** A reference to the Oracle Cloud Infrastructure compartment this resource belongs to. (AI-inferred) */
   compartmentId?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A reference to a related resource. (AI-inferred) */
   relatedResourceId?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -98,7 +104,9 @@ export interface GoldengateDeployment_Properties_OggData {
 }
 
 export interface GoldengateDeployment_Properties_Placements {
+  /** The Oracle Cloud Infrastructure availability domain this resource runs in. (AI-inferred) */
   availabilityDomain?: string | Computed<string>;
+  /** The Oracle Cloud Infrastructure fault domain this resource runs in. (AI-inferred) */
   faultDomain?: string | Computed<string>;
 }
 

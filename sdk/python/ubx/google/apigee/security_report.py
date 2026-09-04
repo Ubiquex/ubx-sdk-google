@@ -8,10 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityReport_Metrics:
+    # How values are combined across a time window, e.g. sum or average. (AI-inferred)
     aggregation_function: Any = None
+    # A reference to a key/certificate alias in a keystore. (AI-inferred)
     alias: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # How this condition's own operands are compared. (AI-inferred)
     operator: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

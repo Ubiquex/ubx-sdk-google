@@ -12,15 +12,22 @@ export interface BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationProp
 }
 
 export interface BackupPlanAssociation_RulesConfigInfo_LastBackupError {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface BackupPlanAssociation_RulesConfigInfo {
+  /** Detail about the error encountered during the most recent backup attempt. (AI-inferred) */
   lastBackupError?: BackupPlanAssociation_RulesConfigInfo_LastBackupError | Computed<BackupPlanAssociation_RulesConfigInfo_LastBackupError>;
+  /** The outcome of the most recent backup attempt. (AI-inferred) */
   lastBackupState?: string | Computed<string>;
+  /** The consistency point in time of the most recent successful backup. (AI-inferred) */
   lastSuccessfulBackupConsistencyTime?: string | Computed<string>;
+  /** A reference to the backup rule this applies to. (AI-inferred) */
   ruleId?: string | Computed<string>;
 }
 

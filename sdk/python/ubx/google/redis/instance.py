@@ -8,15 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_WeeklyMaintenanceWindow:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # How long this operation ran for. (AI-inferred)
     duration: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
@@ -43,7 +50,9 @@ class Instance_MaintenanceSchedule:
 
 @dataclasses.dataclass
 class Instance_Nodes:
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
+    # The Compute Engine zone this applies to. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
@@ -59,10 +68,15 @@ class Instance_PersistenceConfig:
 
 @dataclasses.dataclass
 class Instance_ServerCaCerts:
+    # The certificate presented for this connection. (AI-inferred)
     cert: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
     expire_time: Any = None
+    # This certificate's own serial number. (AI-inferred)
     serial_number: Any = None
+    # A SHA-1 fingerprint of this certificate. (AI-inferred)
     sha1_fingerprint: Any = None
 
 _Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields = {

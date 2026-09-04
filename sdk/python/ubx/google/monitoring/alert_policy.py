@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AlertPolicy_AlertStrategy_NotificationChannelStrategy:
+    # The notification channel(s) alerted when this policy fires. (AI-inferred)
     notification_channel_names: Any = None
+    # How often notifications are re-sent while this alert remains open. (AI-inferred)
     renotify_interval: Any = None
 
 @dataclasses.dataclass
@@ -29,110 +31,170 @@ class AlertPolicy_AlertStrategy:
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionAbsent_Aggregations:
+    # The time interval time series data points are grouped into before aggregation. (AI-inferred)
     alignment_period: Any = None
+    # How values are combined across multiple time series. (AI-inferred)
     cross_series_reducer: Any = None
+    # The field(s) time series data is grouped by before aggregation. (AI-inferred)
     group_by_fields: Any = None
+    # How data points within each individual time series are aligned. (AI-inferred)
     per_series_aligner: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionAbsent_Trigger:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # A percentage value. (AI-inferred)
     percent: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionAbsent:
+    # The aggregation step(s) applied to the queried time series data. (AI-inferred)
     aggregations: Any = None
+    # How long a condition must remain true before this alert fires. (AI-inferred)
     duration: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # The condition that must be satisfied across time series for this alert to fire. (AI-inferred)
     trigger: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionMatchedLog:
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # Rule(s) extracting label values from matching log entries. (AI-inferred)
     label_extractors: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionMonitoringQueryLanguage:
+    # How long a condition must remain true before this alert fires. (AI-inferred)
     duration: Any = None
+    # How missing data is treated when evaluating this condition. (AI-inferred)
     evaluation_missing_data: Any = None
+    # The query evaluated to produce this result. (AI-inferred)
     query: Any = None
+    # The condition that must be satisfied across time series for this alert to fire. (AI-inferred)
     trigger: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionPrometheusQueryLanguage:
+    # The name of the alert rule this applies to. (AI-inferred)
     alert_rule: Any = None
+    # Whether validation of the referenced metric is skipped. (AI-inferred)
     disable_metric_validation: Any = None
+    # How long a condition must remain true before this alert fires. (AI-inferred)
     duration: Any = None
+    # How often this SQL condition is evaluated. (AI-inferred)
     evaluation_interval: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The query evaluated to produce this result. (AI-inferred)
     query: Any = None
+    # The rule group this alert rule belongs to. (AI-inferred)
     rule_group: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionSql_BooleanTest:
+    # A reference to a specific column. (AI-inferred)
     column: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTime:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionSql_Daily:
+    # How long this query is allowed to run before timing out. (AI-inferred)
     execution_time: Any = None
+    # How often this schedule recurs. (AI-inferred)
     periodicity: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionSql_Hourly:
+    # The number of minutes past the hour this schedule runs at. (AI-inferred)
     minute_offset: Any = None
+    # How often this schedule recurs. (AI-inferred)
     periodicity: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionSql_Minutes:
+    # How often this schedule recurs. (AI-inferred)
     periodicity: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionSql_RowCountTest:
+    # The comparison operator used to evaluate this threshold, e.g. `COMPARISON_GT`. (AI-inferred)
     comparison: Any = None
+    # The value that must be crossed for this condition to trigger. (AI-inferred)
     threshold: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionSql:
+    # A condition that evaluates a boolean-valued log query. (AI-inferred)
     boolean_test: Any = None
+    # Runs this schedule once per day. (AI-inferred)
     daily: Any = None
+    # Runs this schedule once per hour. (AI-inferred)
     hourly: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The query evaluated to produce this result. (AI-inferred)
     query: Any = None
+    # A condition that evaluates the number of rows returned by a SQL query. (AI-inferred)
     row_count_test: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionThreshold_ForecastOptions:
+    # How far into the future this forecast condition projects. (AI-inferred)
     forecast_horizon: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions_ConditionThreshold:
+    # The aggregation step(s) applied to the queried time series data. (AI-inferred)
     aggregations: Any = None
+    # The comparison operator used to evaluate this threshold, e.g. `COMPARISON_GT`. (AI-inferred)
     comparison: Any = None
+    # The aggregation step(s) applied to the denominator time series, when computing a ratio. (AI-inferred)
     denominator_aggregations: Any = None
+    # The filter selecting the denominator time series, when computing a ratio. (AI-inferred)
     denominator_filter: Any = None
+    # How long a condition must remain true before this alert fires. (AI-inferred)
     duration: Any = None
+    # How missing data is treated when evaluating this condition. (AI-inferred)
     evaluation_missing_data: Any = None
+    # Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
     filter: Any = None
+    # Configuration for a forecast-based alerting condition. (AI-inferred)
     forecast_options: Any = None
+    # The value that must be crossed for this condition to trigger. (AI-inferred)
     threshold_value: Any = None
+    # The condition that must be satisfied across time series for this alert to fire. (AI-inferred)
     trigger: Any = None
 
 @dataclasses.dataclass
 class AlertPolicy_Conditions:
+    # A condition that triggers when expected data stops arriving. (AI-inferred)
     condition_absent: Any = None
+    # A condition that triggers when a log entry matches a specified filter. (AI-inferred)
     condition_matched_log: Any = None
+    # A condition defined using Monitoring Query Language (MQL). (AI-inferred)
     condition_monitoring_query_language: Any = None
+    # A condition defined using PromQL. (AI-inferred)
     condition_prometheus_query_language: Any = None
+    # A condition defined using a SQL query. (AI-inferred)
     condition_sql: Any = None
+    # A condition that triggers when a metric crosses a defined threshold. (AI-inferred)
     condition_threshold: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -144,7 +206,9 @@ class AlertPolicy_CreationRecord:
 
 @dataclasses.dataclass
 class AlertPolicy_Documentation_Links:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A URL this applies to. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass

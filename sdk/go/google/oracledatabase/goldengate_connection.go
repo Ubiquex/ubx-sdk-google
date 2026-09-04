@@ -98,7 +98,9 @@ type GoldengateConnection_Properties_DatabricksConnectionProperties struct {
 }
 
 type GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributes struct {
-	Key   any
+	// The key of this metadata entry. (AI-inferred)
+	Key any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
@@ -334,8 +336,11 @@ type GoldengateConnection_Properties_JavaMessageServiceConnectionProperties stru
 }
 
 type GoldengateConnection_Properties_KafkaConnectionProperties_BootstrapServers struct {
-	Host             any
-	Port             any
+	// The hostname this applies to. (AI-inferred)
+	Host any
+	// The port number this applies to. (AI-inferred)
+	Port any
+	// The private IP address assigned to this resource. (AI-inferred)
 	PrivateIpAddress any
 }
 

@@ -11,15 +11,21 @@ type Step_CompletionTime struct {
 }
 
 type Step_DimensionValue struct {
-	Key   any
+	// The real key of this dimension value, identifying what real axis (e.g. device model, API level) this step's own results are broken out by. (AI-inferred)
+	Key any
+	// The real value of this dimension, matching its own `key`. (AI-inferred)
 	Value any
 }
 
 type Step_MultiStep_PrimaryStep_IndividualOutcome struct {
+	// The real, sequential number of this individual step's own outcome within a multi-step (sharded) test run. (AI-inferred)
 	MultistepNumber any
-	OutcomeSummary  any
-	RunDuration     any
-	StepId          any
+	// The real, overall outcome (`success`, `failure`, `inconclusive`, `flaky`, `skipped`) of this individual step or multi-step run. (AI-inferred)
+	OutcomeSummary any
+	// The real, measured wall-clock duration this individual step's own run took. (AI-inferred)
+	RunDuration any
+	// The real Tool Results step ID this individual multi-step outcome corresponds to. (AI-inferred)
+	StepId any
 }
 
 type Step_MultiStep_PrimaryStep struct {
@@ -94,36 +100,54 @@ type Step_Outcome struct {
 }
 
 type Step_TestExecutionStep_TestIssues_StackTrace struct {
+	// The real, raw exception text captured in this test issue's own `stack_trace`. (AI-inferred)
 	Exception any
 }
 
 type Step_TestExecutionStep_TestIssues_WarningMigration struct {
+	// The real, fully-qualified type name of the structured warning payload in this `warning_migration` entry. (AI-inferred)
 	TypeUrl any
-	Value   any
+	// The real value of this dimension, matching its own `key`. (AI-inferred)
+	Value any
 }
 
 type Step_TestExecutionStep_TestIssues struct {
-	Category         any
-	ErrorMessage     any
-	Severity         any
-	StackTrace       any
-	Type             any
+	// The real category (`common` or `robo`) this detected test issue falls under. (AI-inferred)
+	Category any
+	// A real, human-readable error message explaining this detected test issue. (AI-inferred)
+	ErrorMessage any
+	// The real severity level (`info`, `suggestion`, `warning`, `severe`) Firebase Test Lab assigned this detected test issue. (AI-inferred)
+	Severity any
+	// The real, captured stack trace for this detected test issue, when the issue is an exception or crash. (AI-inferred)
+	StackTrace any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// Real, structured detail for a test issue that's been migrated to a newer warning representation. (AI-inferred)
 	WarningMigration any
 }
 
 type Step_TestExecutionStep_TestSuiteOverviews_XmlSource struct {
+	// The real Cloud Storage URI of this test suite's own uploaded `xml_source` file. (AI-inferred)
 	FileUri any
 }
 
 type Step_TestExecutionStep_TestSuiteOverviews struct {
-	ElapsedTime  any
-	ErrorCount   any
+	// The real, total wall-clock duration this test suite took to run. (AI-inferred)
+	ElapsedTime any
+	// The real number of tests in this test suite that ended in an error (as opposed to a normal failure). (AI-inferred)
+	ErrorCount any
+	// The real number of tests in this test suite that failed. (AI-inferred)
 	FailureCount any
-	FlakyCount   any
-	Name         any
+	// The real number of tests in this test suite detected as flaky (inconsistent across reruns). (AI-inferred)
+	FlakyCount any
+	// The real name of this test suite. (AI-inferred)
+	Name any
+	// The real number of tests in this test suite that were skipped. (AI-inferred)
 	SkippedCount any
-	TotalCount   any
-	XmlSource    any
+	// The real total number of tests in this test suite. (AI-inferred)
+	TotalCount any
+	// A real, uploaded XML test report (e.g. JUnit-format) this test suite overview was parsed from. (AI-inferred)
+	XmlSource any
 }
 
 type Step_TestExecutionStep_TestTiming struct {
@@ -137,15 +161,21 @@ type Step_TestExecutionStep_ToolExecution_ExitCode struct {
 }
 
 type Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCase struct {
-	ClassName     any
-	Name          any
+	// The real, fully-qualified class name of the test case this tool output describes. (AI-inferred)
+	ClassName any
+	// The real name of this test suite. (AI-inferred)
+	Name any
+	// The real name of the test suite this test case belongs to. (AI-inferred)
 	TestSuiteName any
 }
 
 type Step_TestExecutionStep_ToolExecution_ToolOutputs struct {
+	// The real timestamp when this tool execution's own output was recorded. (AI-inferred)
 	CreationTime any
-	Output       any
-	TestCase     any
+	// The real, captured output (such as a log or report file) produced by running this tool. (AI-inferred)
+	Output any
+	// Real, structured detail about one individual test case this tool execution's own output describes. (AI-inferred)
+	TestCase any
 }
 
 type Step_TestExecutionStep_ToolExecution struct {

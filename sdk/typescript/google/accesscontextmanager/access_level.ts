@@ -2,36 +2,55 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessLevel_Basic_Conditions_DevicePolicy_OsConstraints {
+  /** The minimum required OS version. (AI-inferred) */
   minimumVersion?: string | Computed<string>;
+  /** The operating system type this constraint applies to. (AI-inferred) */
   osType?: string | Computed<string>;
+  /** Whether the device must be a verified, unmodified Chrome OS device. (AI-inferred) */
   requireVerifiedChromeOs?: boolean | Computed<boolean>;
 }
 
 export interface AccessLevel_Basic_Conditions_DevicePolicy {
+  /** The device management level(s) (e.g. managed, unmanaged) this access level accepts. (AI-inferred) */
   allowedDeviceManagementLevels?: string[] | Computed<string[]>;
+  /** The device disk encryption status/statuses this access level accepts. (AI-inferred) */
   allowedEncryptionStatuses?: string[] | Computed<string[]>;
+  /** Device operating system requirement(s) this access level enforces. (AI-inferred) */
   osConstraints?: AccessLevel_Basic_Conditions_DevicePolicy_OsConstraints[] | Computed<AccessLevel_Basic_Conditions_DevicePolicy_OsConstraints[]>;
+  /** Whether admin approval is required for the device to be considered compliant. (AI-inferred) */
   requireAdminApproval?: boolean | Computed<boolean>;
+  /** Whether the device must be corporately owned. (AI-inferred) */
   requireCorpOwned?: boolean | Computed<boolean>;
+  /** Whether the device must have a screen lock configured. (AI-inferred) */
   requireScreenlock?: boolean | Computed<boolean>;
 }
 
 export interface AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetwork {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The VPC network and IP address range(s) this rule matches traffic from. (AI-inferred) */
   vpcIpSubnetworks?: string[] | Computed<string[]>;
 }
 
 export interface AccessLevel_Basic_Conditions_VpcNetworkSources {
+  /** A reference to the VPC subnetwork this applies to. (AI-inferred) */
   vpcSubnetwork?: AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetwork | Computed<AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetwork>;
 }
 
 export interface AccessLevel_Basic_Conditions {
+  /** Restricts access based on the requesting device's own posture, e.g. encryption and management status. (AI-inferred) */
   devicePolicy?: AccessLevel_Basic_Conditions_DevicePolicy | Computed<AccessLevel_Basic_Conditions_DevicePolicy>;
+  /** The IP address range(s), in CIDR notation, this access level accepts requests from. (AI-inferred) */
   ipSubnetworks?: string[] | Computed<string[]>;
+  /** The principal(s) this applies to. (AI-inferred) */
   members?: string[] | Computed<string[]>;
+  /** Whether this condition's own result is inverted. (AI-inferred) */
   negate?: boolean | Computed<boolean>;
+  /** The geographic region(s) this access level accepts requests from. (AI-inferred) */
   regions?: string[] | Computed<string[]>;
+  /** The access level(s) a request must satisfy for this rule to permit it. (AI-inferred) */
   requiredAccessLevels?: string[] | Computed<string[]>;
+  /** The VPC network(s) this rule matches traffic from. (AI-inferred) */
   vpcNetworkSources?: AccessLevel_Basic_Conditions_VpcNetworkSources[] | Computed<AccessLevel_Basic_Conditions_VpcNetworkSources[]>;
 }
 

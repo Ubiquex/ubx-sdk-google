@@ -863,6 +863,7 @@ class BetaInstanceConfig:
     name: Any = None
     # An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
     network_interfaces: Any = None
+    # Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
     network_performance_config: Any = None
     # Additional instance params.
     params: Any = None
@@ -895,6 +896,7 @@ class BetaInstanceConfig:
     source_machine_image_encryption_key: Any = None
     # A set of instance tags.
     tags: Any = None
+    # Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
     workload_identity_config: Any = None
 
 @dataclasses.dataclass
@@ -954,6 +956,7 @@ class BetaInstanceAttrs:
     name: Any = None
     # An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
     network_interfaces: Any = None
+    # Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
     network_performance_config: Any = None
     # Additional instance params.
     params: Any = None
@@ -998,6 +1001,7 @@ class BetaInstanceAttrs:
     status_message: Any = None
     # A set of instance tags.
     tags: Any = None
+    # Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
     workload_identity_config: Any = None
     # Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
     zone: Any = None

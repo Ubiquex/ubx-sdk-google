@@ -8,51 +8,73 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Application_EndpointMatchers:
+    # The hostname this endpoint matcher matches incoming requests against. (AI-inferred)
     hostname: Any = None
+    # The port(s) this endpoint matcher matches incoming requests against, alongside `hostname`. (AI-inferred)
     ports: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams_EgressPolicy:
+    # The region(s) this upstream's own egress traffic is restricted to. (AI-inferred)
     regions: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams_External_Endpoints:
+    # The hostname of this external endpoint. (AI-inferred)
     hostname: Any = None
+    # The port of this external endpoint. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams_External:
+    # The external endpoint(s) (hostname and port) this upstream forwards to. (AI-inferred)
     endpoints: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams_Network:
+    # The VPC network this upstream is reached through. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo:
+    # The encoding of the device-info header: `PROTOBUF`, `JSON`, or `NONE` to omit it. (AI-inferred)
     output_type: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams_ProxyProtocol_ContextualHeaders:
+    # Whether and how the requesting device's own posture information is attached as a header. (AI-inferred)
     device_info: Any = None
+    # Whether and how routing/dispatch information for this request is attached as a header. (AI-inferred)
     dispatch_info: Any = None
+    # Whether and how the requesting user's own group membership is attached as a header. (AI-inferred)
     group_info: Any = None
+    # The default encoding applied to contextual headers that don't specify their own `output_type`: `PROTOBUF`, `JSON`, or `NONE`. (AI-inferred)
     output_type: Any = None
+    # Whether and how the requesting user's own identity is attached as a header. (AI-inferred)
     user_info: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams_ProxyProtocol:
+    # Client-supplied header names allowed to pass through to the upstream unmodified, alongside BeyondCorp's own injected context headers. (AI-inferred)
     allowed_client_headers: Any = None
+    # Whether the original client's own IP address is forwarded to the upstream in a proxy header. (AI-inferred)
     client_ip: Any = None
+    # Which identity/device/access context BeyondCorp Enterprise attaches to proxied requests as headers, and in what format. (AI-inferred)
     contextual_headers: Any = None
+    # How the gateway identifies itself to the upstream in proxied requests: `RESOURCE_NAME` or unspecified. (AI-inferred)
     gateway_identity: Any = None
+    # Additional caller-defined key/value headers attached to every proxied request to this upstream. (AI-inferred)
     metadata_headers: Any = None
 
 @dataclasses.dataclass
 class Application_Upstreams:
+    # Restricts which region(s) traffic to this upstream is allowed to egress from. (AI-inferred)
     egress_policy: Any = None
+    # Configuration for an upstream reached over the public internet, by hostname and port, rather than through a private network attachment. (AI-inferred)
     external: Any = None
+    # Configuration for an upstream reached through a specific VPC network, rather than the public internet. (AI-inferred)
     network: Any = None
+    # Configuration for headers BeyondCorp Enterprise attaches to proxied requests, carrying identity and device context to the upstream. (AI-inferred)
     proxy_protocol: Any = None
 
 _Application_EndpointMatchersFields = {

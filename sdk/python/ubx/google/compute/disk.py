@@ -19,6 +19,7 @@ class Disk_AsyncPrimaryDisk:
 
 @dataclasses.dataclass
 class Disk_AsyncSecondaryDisks:
+    # The disk to be used as the secondary disk for asynchronous replication. This nested object defines the target disk that receives replicated data from the primary disk. (AI-inferred)
     async_replication_disk: Any = None
 
 @dataclasses.dataclass
@@ -36,6 +37,7 @@ class Disk_DiskEncryptionKey:
 
 @dataclasses.dataclass
 class Disk_GuestOsFeatures:
+    # The type of guest OS feature to enable on the disk. Valid values are: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, and WINDOWS. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -45,10 +47,12 @@ class Disk_Params:
 
 @dataclasses.dataclass
 class Disk_ResourceStatus_AsyncPrimaryDisk:
+    # The lifecycle state of the asynchronous primary disk replication, such as CREATED, STARTING, ACTIVE, STOPPING, STOPPED, or STATE_UNSPECIFIED. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Disk_ResourceStatus:
+    # The primary disk that is part of the async replication relationship. This field is present on secondary disks and provides the URL and state of the primary disk. (AI-inferred)
     async_primary_disk: Any = None
     # Key: disk, value: AsyncReplicationStatus message
     async_secondary_disks: Any = None
@@ -99,9 +103,11 @@ class DiskConfig:
     access_mode: Any = None
     # The architecture of the disk. Valid values are ARM64 or X86_64.
     architecture: Any = None
+    # The primary disk in an asynchronous replication pairing. When this disk is configured as a secondary disk, this computed attribute contains the disk name and zone of the primary disk. (AI-inferred)
     async_primary_disk: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Encryption key configuration for the disk. This block can be used to specify a customer-supplied raw key or a customer-managed Cloud KMS key at creation time, and it is also populated with computed metadata (such as a fingerprint) for the key that was actually used. (AI-inferred)
     disk_encryption_key: Any = None
     # Whether this disk is using confidential compute mode.
     enable_confidential_compute: Any = None
@@ -133,6 +139,7 @@ class DiskConfig:
     replica_zones: Any = None
     # Resource policies applied to this disk for automatic snapshot creations.
     resource_policies: Any = None
+    # An output-only object that reports the physical storage zones of the disk, including the primary zone and, for regional disks, the replica zone. (AI-inferred)
     resource_status: Any = None
     # Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0.
     size_gb: Any = None
@@ -140,11 +147,13 @@ class DiskConfig:
     source_disk: Any = None
     # The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
     source_image: Any = None
+    # Customer-supplied encryption key used to decrypt the source image when creating the disk. This field is output-only and is populated by the API with the key details used for the source image. (AI-inferred)
     source_image_encryption_key: Any = None
     # The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
     source_instant_snapshot: Any = None
     # The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
     source_snapshot: Any = None
+    # The customer-supplied encryption key of the source snapshot used to create this disk. This output-only field exposes details about the key (e.g., raw key or KMS key reference) that was used to decrypt the source snapshot. (AI-inferred)
     source_snapshot_encryption_key: Any = None
     # The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
     source_storage_object: Any = None
@@ -159,6 +168,7 @@ class DiskAttrs:
     access_mode: Any = None
     # The architecture of the disk. Valid values are ARM64 or X86_64.
     architecture: Any = None
+    # The primary disk in an asynchronous replication pairing. When this disk is configured as a secondary disk, this computed attribute contains the disk name and zone of the primary disk. (AI-inferred)
     async_primary_disk: Any = None
     # Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
     async_secondary_disks: Any = None
@@ -166,6 +176,7 @@ class DiskAttrs:
     creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # Encryption key configuration for the disk. This block can be used to specify a customer-supplied raw key or a customer-managed Cloud KMS key at creation time, and it is also populated with computed metadata (such as a fingerprint) for the key that was actually used. (AI-inferred)
     disk_encryption_key: Any = None
     # Whether this disk is using confidential compute mode.
     enable_confidential_compute: Any = None
@@ -207,6 +218,7 @@ class DiskAttrs:
     replica_zones: Any = None
     # Resource policies applied to this disk for automatic snapshot creations.
     resource_policies: Any = None
+    # An output-only object that reports the physical storage zones of the disk, including the primary zone and, for regional disks, the replica zone. (AI-inferred)
     resource_status: Any = None
     # Output only. Reserved for future use.
     satisfies_pzi: Any = None
@@ -226,6 +238,7 @@ class DiskAttrs:
     source_disk_id: Any = None
     # The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
     source_image: Any = None
+    # Customer-supplied encryption key used to decrypt the source image when creating the disk. This field is output-only and is populated by the API with the key details used for the source image. (AI-inferred)
     source_image_encryption_key: Any = None
     # Output only. [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
     source_image_id: Any = None
@@ -235,6 +248,7 @@ class DiskAttrs:
     source_instant_snapshot_id: Any = None
     # The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
     source_snapshot: Any = None
+    # The customer-supplied encryption key of the source snapshot used to create this disk. This output-only field exposes details about the key (e.g., raw key or KMS key reference) that was used to decrypt the source snapshot. (AI-inferred)
     source_snapshot_encryption_key: Any = None
     # Output only. [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
     source_snapshot_id: Any = None

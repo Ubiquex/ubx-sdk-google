@@ -8,52 +8,81 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Example_Messages_Chunks_AgentTransfer:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The agent this transfer moves the conversation to. (AI-inferred)
     target_agent: Any = None
 
 @dataclasses.dataclass
 class Example_Messages_Chunks_Blob:
+    # The literal data payload. (AI-inferred)
     data: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class Example_Messages_Chunks_ToolCall_ToolsetTool:
+    # An identifier for this tool, unique within its own containing toolset. (AI-inferred)
     tool_id: Any = None
+    # A reference to the toolset this belongs to. (AI-inferred)
     toolset: Any = None
 
 @dataclasses.dataclass
 class Example_Messages_Chunks_ToolCall:
+    # The argument(s) passed to this call. (AI-inferred)
     args: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # A reference to a single tool. (AI-inferred)
     tool: Any = None
+    # A reference to a specific tool within a toolset. (AI-inferred)
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class Example_Messages_Chunks_ToolResponse:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
+    # A reference to a single tool. (AI-inferred)
     tool: Any = None
+    # A reference to a specific tool within a toolset. (AI-inferred)
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class Example_Messages_Chunks:
+    # Transfers the conversation to another agent. (AI-inferred)
     agent_transfer: Any = None
+    # Raw binary content. (AI-inferred)
     blob: Any = None
+    # The default value(s) for this app's own declared variables. (AI-inferred)
     default_variables: Any = None
+    # Image content. (AI-inferred)
     image: Any = None
+    # A custom, integration-specific payload. (AI-inferred)
     payload: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
+    # A request from the model to invoke a specific tool. (AI-inferred)
     tool_call: Any = None
+    # The result returned from invoking a tool. (AI-inferred)
     tool_response: Any = None
+    # The transcribed text of spoken audio. (AI-inferred)
     transcript: Any = None
+    # The variable(s) whose own value changed as a result of this event. (AI-inferred)
     updated_variables: Any = None
 
 @dataclasses.dataclass
 class Example_Messages:
+    # The retrieved content chunk(s) making up this result. (AI-inferred)
     chunks: Any = None
+    # When this event occurred. (AI-inferred)
     event_time: Any = None
+    # Who this content is attributed to, e.g. `user` or `model`. (AI-inferred)
     role: Any = None
 
 _Example_Messages_Chunks_AgentTransferFields = {

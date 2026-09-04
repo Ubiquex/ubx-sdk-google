@@ -6,6 +6,7 @@ export interface V1beta1FeedbackEntryConfig {
   customMetadata?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. The ID of the event within the session that the feedback relates to. */
   eventId?: string | Computed<string>;
+  /** The real label(s) categorizing this feedback entry. (AI-inferred) */
   feedbackLabels?: string[] | Computed<string[]>;
   /** Optional. Qualitative free-form comments provided by the user. */
   feedbackText?: string | Computed<string>;
@@ -28,6 +29,7 @@ export interface V1beta1FeedbackEntryAttrs {
   customMetadata: Record<string, string>;
   /** Required. The ID of the event within the session that the feedback relates to. */
   eventId: string;
+  /** The real label(s) categorizing this feedback entry. (AI-inferred) */
   feedbackLabels: string[];
   /** Optional. Qualitative free-form comments provided by the user. */
   feedbackText: string;

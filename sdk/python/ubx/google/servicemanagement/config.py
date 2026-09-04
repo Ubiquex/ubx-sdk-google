@@ -8,81 +8,124 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Config_Apis_Methods_Options:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Config_Apis_Methods:
+    # The protocol buffer edition this file was written against. (AI-inferred)
     edition: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Additional configuration option(s) for this element. (AI-inferred)
     options: Any = None
+    # Whether this method streams its own request, rather than sending it in a single message. (AI-inferred)
     request_streaming: Any = None
+    # The fully qualified type URL of this method's own request message. (AI-inferred)
     request_type_url: Any = None
+    # Whether this method streams its own response, rather than returning it in a single message. (AI-inferred)
     response_streaming: Any = None
+    # The fully qualified type URL of this method's own response message. (AI-inferred)
     response_type_url: Any = None
+    # Which protocol buffer syntax version this file uses. (AI-inferred)
     syntax: Any = None
 
 @dataclasses.dataclass
 class Config_Apis_Mixins:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The root type or resource this hierarchy is anchored at. (AI-inferred)
     root: Any = None
 
 @dataclasses.dataclass
 class Config_Apis_SourceContext:
+    # The name of the source file this element is defined in. (AI-inferred)
     file_name: Any = None
 
 @dataclasses.dataclass
 class Config_Apis:
+    # The protocol buffer edition this file was written against. (AI-inferred)
     edition: Any = None
+    # The method(s) making up this service or interface. (AI-inferred)
     methods: Any = None
+    # Other API interface(s) whose own methods are mixed into this one. (AI-inferred)
     mixins: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Additional configuration option(s) for this element. (AI-inferred)
     options: Any = None
+    # Identifies the source file/location this element was defined in. (AI-inferred)
     source_context: Any = None
+    # Which protocol buffer syntax version this file uses. (AI-inferred)
     syntax: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Config_Aspects_Rules:
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
 class Config_Aspects:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The rule(s) making up this policy. (AI-inferred)
     rules: Any = None
+    # The specification defining this resource's own behavior. (AI-inferred)
     spec: Any = None
 
 @dataclasses.dataclass
 class Config_Authentication_Providers_JwtLocations:
+    # The cookie name this JWT location reads from. (AI-inferred)
     cookie: Any = None
+    # An HTTP header this applies to. (AI-inferred)
     header: Any = None
+    # The query text or expression. (AI-inferred)
     query: Any = None
+    # A required prefix a matching value must start with. (AI-inferred)
     value_prefix: Any = None
 
 @dataclasses.dataclass
 class Config_Authentication_Providers:
+    # The intended audience value(s) a JWT must carry to authenticate to this API. (AI-inferred)
     audiences: Any = None
+    # The OAuth authorization endpoint URL. (AI-inferred)
     authorization_url: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # The JWT issuer identity trusted for this authentication provider. (AI-inferred)
     issuer: Any = None
+    # The URL of the JSON Web Key Set used to verify JWTs from this issuer. (AI-inferred)
     jwks_uri: Any = None
+    # Where in the request a JWT may be found, e.g. a specific header or query parameter. (AI-inferred)
     jwt_locations: Any = None
 
 @dataclasses.dataclass
 class Config_Authentication_Rules_Oauth:
+    # The recommended OAuth scope(s) for calling this API. (AI-inferred)
     canonical_scopes: Any = None
 
 @dataclasses.dataclass
 class Config_Authentication_Rules_Requirements:
+    # The intended audience value(s) a JWT must carry to authenticate to this API. (AI-inferred)
     audiences: Any = None
+    # A reference to the authentication provider this applies to. (AI-inferred)
     provider_id: Any = None
 
 @dataclasses.dataclass
 class Config_Authentication_Rules:
+    # Whether this method can be called without any authentication credential. (AI-inferred)
     allow_without_credential: Any = None
+    # OAuth 2.0 authentication requirement(s) for this method. (AI-inferred)
     oauth: Any = None
+    # The authentication/authorization requirement(s) this applies. (AI-inferred)
     requirements: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -94,16 +137,27 @@ class Config_Authentication:
 
 @dataclasses.dataclass
 class Config_Backend_Rules:
+    # The network address this applies to. (AI-inferred)
     address: Any = None
+    # The maximum time, in seconds, this call may take before timing out. (AI-inferred)
     deadline: Any = None
+    # Whether authentication is disabled for this method. (AI-inferred)
     disable_auth: Any = None
+    # The expected audience claim value in JWTs from this issuer. (AI-inferred)
     jwt_audience: Any = None
+    # Which policy the client uses to distribute calls across backend replicas. (AI-inferred)
     load_balancing_policy: Any = None
+    # The minimum deadline, in seconds, callers may request for this method. (AI-inferred)
     min_deadline: Any = None
+    # The maximum time a long-running operation started by this method may take before timing out. (AI-inferred)
     operation_deadline: Any = None
+    # Configuration override(s) applied depending on which protocol (e.g. gRPC vs HTTP) the request arrived over. (AI-inferred)
     overrides_by_request_protocol: Any = None
+    # How the URL path is translated into the backend request, e.g. appended or replaced. (AI-inferred)
     path_translation: Any = None
+    # The wire protocol this applies to. (AI-inferred)
     protocol: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -113,7 +167,9 @@ class Config_Backend:
 
 @dataclasses.dataclass
 class Config_Billing_ConsumerDestinations:
+    # The metric(s) this configuration applies to. (AI-inferred)
     metrics: Any = None
+    # The resource type this monitoring data is associated with. (AI-inferred)
     monitored_resource: Any = None
 
 @dataclasses.dataclass
@@ -123,10 +179,15 @@ class Config_Billing:
 
 @dataclasses.dataclass
 class Config_Context_Rules:
+    # The protocol buffer extension(s) allowed in this method's own request message. (AI-inferred)
     allowed_request_extensions: Any = None
+    # The protocol buffer extension(s) allowed in this method's own response message. (AI-inferred)
     allowed_response_extensions: Any = None
+    # Interface(s) this service implements and exposes to callers. (AI-inferred)
     provided: Any = None
+    # Interface(s) this service depends on and requests be made available. (AI-inferred)
     requested: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -136,13 +197,18 @@ class Config_Context:
 
 @dataclasses.dataclass
 class Config_Control_MethodPolicies_RequestPolicies:
+    # The IAM permission required to access this resource. (AI-inferred)
     resource_permission: Any = None
+    # The resource type this permission or quota applies to. (AI-inferred)
     resource_type: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
 class Config_Control_MethodPolicies:
+    # Policy/policies applied to requests for this API. (AI-inferred)
     request_policies: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -154,7 +220,9 @@ class Config_Control:
 
 @dataclasses.dataclass
 class Config_CustomError_Rules:
+    # Whether this message type represents an error/exception, for client-library-generation purposes. (AI-inferred)
     is_error_type: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -166,15 +234,22 @@ class Config_CustomError:
 
 @dataclasses.dataclass
 class Config_Documentation_Pages:
+    # The literal content of this value. (AI-inferred)
     content: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Nested documentation page(s) under this one. (AI-inferred)
     subpages: Any = None
 
 @dataclasses.dataclass
 class Config_Documentation_Rules:
+    # A human-readable explanation of why this element is deprecated and what to use instead. (AI-inferred)
     deprecation_description: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Word(s) excluded from the client-library-generation naming replacement rules. (AI-inferred)
     disable_replacement_words: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -198,42 +273,67 @@ class Config_Documentation:
 
 @dataclasses.dataclass
 class Config_Endpoints:
+    # Alternate name(s) this also resolves under. (AI-inferred)
     aliases: Any = None
+    # Whether Cross-Origin Resource Sharing requests are allowed for this API. (AI-inferred)
     allow_cors: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The destination this applies to. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class Config_Enums_Enumvalue:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The field number assigned to this protocol buffer field. (AI-inferred)
     number: Any = None
+    # Additional configuration option(s) for this element. (AI-inferred)
     options: Any = None
 
 @dataclasses.dataclass
 class Config_Enums:
+    # The protocol buffer edition this file was written against. (AI-inferred)
     edition: Any = None
+    # A single named value within this enum type. (AI-inferred)
     enumvalue: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Additional configuration option(s) for this element. (AI-inferred)
     options: Any = None
+    # Identifies the source file/location this element was defined in. (AI-inferred)
     source_context: Any = None
+    # Which protocol buffer syntax version this file uses. (AI-inferred)
     syntax: Any = None
 
 @dataclasses.dataclass
 class Config_Http_Rules_Custom:
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The URL path pattern this method's own HTTP binding matches. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class Config_Http_Rules:
+    # Additional URL path pattern(s) this method is also reachable at, beyond its own primary HTTP binding. (AI-inferred)
     additional_bindings: Any = None
+    # The message field mapped to the HTTP request body. (AI-inferred)
     body: Any = None
+    # A caller-defined HTTP binding, using a custom verb. (AI-inferred)
     custom: Any = None
+    # The HTTP `DELETE` binding for this method. (AI-inferred)
     delete: Any = None
+    # The HTTP `GET` binding for this method. (AI-inferred)
     get: Any = None
+    # The HTTP `PATCH` binding for this method. (AI-inferred)
     patch: Any = None
+    # The HTTP `POST` binding for this method. (AI-inferred)
     post: Any = None
+    # The HTTP `PUT` binding for this method. (AI-inferred)
     put: Any = None
+    # The message field the HTTP response body is mapped from. (AI-inferred)
     response_body: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -245,7 +345,9 @@ class Config_Http:
 
 @dataclasses.dataclass
 class Config_Logging_ConsumerDestinations:
+    # The log type(s) this monitored resource emits. (AI-inferred)
     logs: Any = None
+    # The resource type this monitoring data is associated with. (AI-inferred)
     monitored_resource: Any = None
 
 @dataclasses.dataclass
@@ -257,45 +359,73 @@ class Config_Logging:
 
 @dataclasses.dataclass
 class Config_Logs_Labels:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # The data type of this value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class Config_Logs:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Config_Metrics_Metadata:
+    # How long data is delayed before being ingested into monitoring. (AI-inferred)
     ingest_delay: Any = None
+    # The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
     launch_stage: Any = None
+    # How often this metric is sampled. (AI-inferred)
     sample_period: Any = None
+    # At which resource hierarchy level (e.g. project, organization) this metric's own time series is aggregated. (AI-inferred)
     time_series_resource_hierarchy_level: Any = None
 
 @dataclasses.dataclass
 class Config_Metrics:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
     launch_stage: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # Whether this metric is a gauge, delta, or cumulative measurement. (AI-inferred)
     metric_kind: Any = None
+    # The monitored resource type(s) this log or metric applies to. (AI-inferred)
     monitored_resource_types: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The unit this measurement is expressed in. (AI-inferred)
     unit: Any = None
+    # The data type of this value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class Config_MonitoredResources:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
     launch_stage: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -307,103 +437,159 @@ class Config_Monitoring:
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGeneration:
+    # Whether elements omitted from the public surface are still generated, marked internal, rather than skipped entirely. (AI-inferred)
     generate_omitted_as_internal: Any = None
+    # The method(s) making up this service or interface. (AI-inferred)
     methods: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_CppSettings_Common:
+    # Where this data or traffic is sent. (AI-inferred)
     destinations: Any = None
+    # The URL of this API's own reference documentation. (AI-inferred)
     reference_docs_uri: Any = None
+    # Restricts generated client library surface to only a caller-specified subset of methods. (AI-inferred)
     selective_gapic_generation: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_CppSettings:
+    # Configuration shared across every client library language for this API. (AI-inferred)
     common: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_DotnetSettings:
+    # Configuration shared across every client library language for this API. (AI-inferred)
     common: Any = None
+    # Namespace(s) forced to use a specific alias in generated client libraries. (AI-inferred)
     forced_namespace_aliases: Any = None
+    # Method signature(s) manually curated for this client library, overriding the automatically derived ones. (AI-inferred)
     handwritten_signatures: Any = None
+    # Resource(s) excluded from automatic client library resource-name helper generation. (AI-inferred)
     ignored_resources: Any = None
+    # Resource(s) whose own generated client-library name differs from their real API resource name. (AI-inferred)
     renamed_resources: Any = None
+    # Service(s) whose own generated client-library name differs from their real API service name. (AI-inferred)
     renamed_services: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_GoSettings:
+    # Configuration shared across every client library language for this API. (AI-inferred)
     common: Any = None
+    # Service(s) whose own generated client-library name differs from their real API service name. (AI-inferred)
     renamed_services: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_JavaSettings:
+    # Configuration shared across every client library language for this API. (AI-inferred)
     common: Any = None
+    # The package name generated client libraries use for this API. (AI-inferred)
     library_package: Any = None
+    # The class name(s) generated client libraries use for this service, per language. (AI-inferred)
     service_class_names: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_PhpSettings:
+    # Configuration shared across every client library language for this API. (AI-inferred)
     common: Any = None
+    # The package name generated client libraries use for this API. (AI-inferred)
     library_package: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeatures:
+    # Whether generated Python types follow idiomatic Python naming/structure conventions, rather than a direct proto mapping. (AI-inferred)
     protobuf_pythonic_types_enabled: Any = None
+    # Whether the generated REST client library uses asynchronous I/O. (AI-inferred)
     rest_async_io_enabled: Any = None
+    # Whether an unversioned convenience package is omitted from the generated client library. (AI-inferred)
     unversioned_package_disabled: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings_PythonSettings:
+    # Configuration shared across every client library language for this API. (AI-inferred)
     common: Any = None
+    # Client-library-generation features still marked experimental for this language. (AI-inferred)
     experimental_features: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_LibrarySettings:
+    # Client library generation settings specific to C++. (AI-inferred)
     cpp_settings: Any = None
+    # Client library generation settings specific to .NET. (AI-inferred)
     dotnet_settings: Any = None
+    # Client library generation settings specific to Go. (AI-inferred)
     go_settings: Any = None
+    # Client library generation settings specific to Java. (AI-inferred)
     java_settings: Any = None
+    # The launch/maturity stage of this API element, e.g. `GA`, `BETA`, or `ALPHA`. (AI-inferred)
     launch_stage: Any = None
+    # Client library generation settings specific to Node.js. (AI-inferred)
     node_settings: Any = None
+    # Client library generation settings specific to PHP. (AI-inferred)
     php_settings: Any = None
+    # Client library generation settings specific to Python. (AI-inferred)
     python_settings: Any = None
+    # Whether enum values are serialized as numbers rather than names, in the REST transport. (AI-inferred)
     rest_numeric_enums: Any = None
+    # Client library generation settings specific to Ruby. (AI-inferred)
     ruby_settings: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_MethodSettings_Batching_BatchDescriptor:
+    # The request field that holds the batched item(s). (AI-inferred)
     batched_field: Any = None
+    # Field(s) used to determine which of several possible message types this payload actually is. (AI-inferred)
     discriminator_fields: Any = None
+    # The response field holding an individual item, when the method returns multiple results per page. (AI-inferred)
     subresponse_field: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_MethodSettings_Batching_Thresholds:
+    # How long to wait, at most, before flushing a batch even if it hasn't reached its own size limit. (AI-inferred)
     delay_threshold: Any = None
+    # The maximum number of elements allowed in a single batch. (AI-inferred)
     element_count_limit: Any = None
+    # The number of elements that triggers flushing a batch early. (AI-inferred)
     element_count_threshold: Any = None
+    # The maximum number of unacknowledged bytes allowed before flow control pauses further sends. (AI-inferred)
     flow_control_byte_limit: Any = None
+    # The maximum number of unacknowledged elements allowed before flow control pauses further sends. (AI-inferred)
     flow_control_element_limit: Any = None
+    # What happens when a flow-control limit is exceeded, e.g. block or throw an error. (AI-inferred)
     flow_control_limit_exceeded_behavior: Any = None
+    # The maximum total request size, in bytes, allowed in a single batch. (AI-inferred)
     request_byte_limit: Any = None
+    # The total request size, in bytes, that triggers flushing a batch early. (AI-inferred)
     request_byte_threshold: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_MethodSettings_Batching:
+    # Configuration for how individual requests are automatically batched together into fewer underlying calls. (AI-inferred)
     batch_descriptor: Any = None
+    # The threshold value(s) that trigger this alert or action. (AI-inferred)
     thresholds: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_MethodSettings_LongRunning:
+    # How long to wait before the first poll of a long-running operation's own status. (AI-inferred)
     initial_poll_delay: Any = None
+    # The maximum interval between polls of a long-running operation's own status. (AI-inferred)
     max_poll_delay: Any = None
+    # The factor the poll interval is multiplied by after each unsuccessful poll, for exponential backoff. (AI-inferred)
     poll_delay_multiplier: Any = None
+    # The maximum total time spent polling a long-running operation before giving up. (AI-inferred)
     total_poll_timeout: Any = None
 
 @dataclasses.dataclass
 class Config_Publishing_MethodSettings:
+    # Request field(s) the server automatically populates if the caller leaves them unset. (AI-inferred)
     auto_populated_fields: Any = None
+    # Configuration for automatically batching client requests together for efficiency. (AI-inferred)
     batching: Any = None
+    # Configuration for this method's own long-running operation semantics, e.g. polling interval. (AI-inferred)
     long_running: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -433,23 +619,38 @@ class Config_Publishing:
 
 @dataclasses.dataclass
 class Config_Quota_Limits:
+    # The default quota limit applied when no more specific override exists. (AI-inferred)
     default_limit: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # How long this applies for. (AI-inferred)
     duration: Any = None
+    # The quota amount available at no charge, before billed usage begins. (AI-inferred)
     free_tier: Any = None
+    # The maximum quota limit an override may raise this metric to. (AI-inferred)
     max_limit: Any = None
+    # A reference to the metric this applies to. (AI-inferred)
     metric: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Which source (e.g. internal, external) this traffic originated from. (AI-inferred)
     traffic_source: Any = None
+    # The unit this measurement is expressed in. (AI-inferred)
     unit: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Config_Quota_MetricRules:
+    # Quota cost override(s) applied when this method is invoked by an AI agent, rather than a regular caller. (AI-inferred)
     agentic_metric_costs: Any = None
+    # How much quota each metric consumes per call to this method. (AI-inferred)
     metric_costs: Any = None
+    # Quota cost override(s) applied when this method is invoked by a regular (non-agent) caller. (AI-inferred)
     nonagentic_metric_costs: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -466,13 +667,18 @@ class Config_SourceInfo:
 
 @dataclasses.dataclass
 class Config_SystemParameters_Rules_Parameters:
+    # The HTTP header name this JWT location reads from. (AI-inferred)
     http_header: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The query parameter name this JWT location reads from. (AI-inferred)
     url_query_parameter: Any = None
 
 @dataclasses.dataclass
 class Config_SystemParameters_Rules:
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
@@ -482,31 +688,51 @@ class Config_SystemParameters:
 
 @dataclasses.dataclass
 class Config_SystemTypes_Fields:
+    # Whether this field is optional, required, or repeated. (AI-inferred)
     cardinality: Any = None
+    # The value used when this field is left unset. (AI-inferred)
     default_value: Any = None
+    # The name this field is serialized under in JSON, when different from its own proto field name. (AI-inferred)
     json_name: Any = None
+    # The kind of resource or value this is. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The field number assigned to this protocol buffer field. (AI-inferred)
     number: Any = None
+    # Which `oneof` group this field belongs to, if any. (AI-inferred)
     oneof_index: Any = None
+    # Additional configuration option(s) for this element. (AI-inferred)
     options: Any = None
+    # Whether repeated scalar field values are packed into a single, more compact encoding. (AI-inferred)
     packed: Any = None
+    # The fully qualified type URL of this message. (AI-inferred)
     type_url: Any = None
 
 @dataclasses.dataclass
 class Config_SystemTypes:
+    # The protocol buffer edition this file was written against. (AI-inferred)
     edition: Any = None
+    # The field(s) making up this message. (AI-inferred)
     fields: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The `oneof` group(s) defined in this message. (AI-inferred)
     oneofs: Any = None
+    # Additional configuration option(s) for this element. (AI-inferred)
     options: Any = None
+    # Identifies the source file/location this element was defined in. (AI-inferred)
     source_context: Any = None
+    # Which protocol buffer syntax version this file uses. (AI-inferred)
     syntax: Any = None
 
 @dataclasses.dataclass
 class Config_Usage_Rules:
+    # Whether calls without an API key are allowed for this method. (AI-inferred)
     allow_unregistered_calls: Any = None
+    # A pattern selecting which API element(s) this rule applies to. (AI-inferred)
     selector: Any = None
+    # Whether Service Control checks (quota, auth, billing) are bypassed for this method. (AI-inferred)
     skip_service_control: Any = None
 
 @dataclasses.dataclass

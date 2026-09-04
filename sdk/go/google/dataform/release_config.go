@@ -50,15 +50,21 @@ type ReleaseConfig_CodeCompilationConfig struct {
 }
 
 type ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatus struct {
-	Code    any
+	// The error's own numeric status code. (AI-inferred)
+	Code any
+	// Additional structured detail about the error. (AI-inferred)
 	Details any
+	// A human-readable description of the error. (AI-inferred)
 	Message any
 }
 
 type ReleaseConfig_RecentScheduledReleaseRecords struct {
+	// The compilation result produced by this scheduled release run, if it succeeded. (AI-inferred)
 	CompilationResult any
-	ErrorStatus       any
-	ReleaseTime       any
+	// The error this scheduled release run failed with, if it didn't succeed. (AI-inferred)
+	ErrorStatus any
+	// When this scheduled release run occurred. (AI-inferred)
+	ReleaseTime any
 }
 
 var ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields = ubx.FieldMap{

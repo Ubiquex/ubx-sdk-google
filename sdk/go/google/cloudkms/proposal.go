@@ -9,7 +9,9 @@ type Proposal_AddQuorumMember struct {
 }
 
 type Proposal_QuorumParameters_Challenges struct {
-	Challenge    any
+	// The cryptographic challenge value a quorum participant must sign to approve this proposal. (AI-inferred)
+	Challenge any
+	// The PEM-encoded public key used to verify a quorum participant's own signed response to `challenge`. (AI-inferred)
 	PublicKeyPem any
 }
 

@@ -22,9 +22,13 @@ class Instance_DiskEncryptionStatus:
 
 @dataclasses.dataclass
 class Instance_DnsNames:
+    # Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
     connection_type: Any = None
+    # Whether this DNS name resolves within the VPC only or more broadly. (AI-inferred)
     dns_scope: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The system responsible for managing this DNS record. (AI-inferred)
     record_manager: Any = None
 
 @dataclasses.dataclass
@@ -51,35 +55,56 @@ class Instance_GeminiConfig:
 
 @dataclasses.dataclass
 class Instance_IpAddresses:
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # When this resource will be retired and no longer usable. (AI-inferred)
     time_to_retire: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Instance_Nodes_PscAutoConnections:
+    # A reference to the consumer-side VPC network this connection uses. (AI-inferred)
     consumer_network: Any = None
+    # The current status of the consumer-side network connection. (AI-inferred)
     consumer_network_status: Any = None
+    # A reference to the consumer's own Google Cloud project. (AI-inferred)
     consumer_project: Any = None
+    # Whether this instance's own automatic DNS name is active. (AI-inferred)
     instance_auto_dns_status: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # A reference to the service connection policy this applies to. (AI-inferred)
     service_connection_policy: Any = None
+    # The outcome of automatically creating a service connection policy for this instance. (AI-inferred)
     service_connection_policy_creation_result: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
+    # Whether this instance's own automatic DNS name for the write endpoint is active. (AI-inferred)
     write_endpoint_auto_dns_status: Any = None
 
 @dataclasses.dataclass
 class Instance_Nodes:
+    # The DNS name assigned to this instance. (AI-inferred)
     dns_name: Any = None
+    # The DNS name(s) assigned to this instance. (AI-inferred)
     dns_names: Any = None
+    # The Compute Engine zone this instance runs in. (AI-inferred)
     gce_zone: Any = None
+    # The IP address(es) assigned to this instance. (AI-inferred)
     ip_addresses: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Private Service Connect connection(s) automatically established for this instance. (AI-inferred)
     psc_auto_connections: Any = None
+    # A reference to the Private Service Connect service attachment this instance publishes. (AI-inferred)
     psc_service_attachment_link: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Instance_OnPremisesConfiguration_SelectedObjects:
+    # A reference to the database this applies to. (AI-inferred)
     database: Any = None
 
 @dataclasses.dataclass
@@ -172,6 +197,7 @@ class Instance_ReplicationCluster:
 
 @dataclasses.dataclass
 class Instance_ScheduledMaintenance:
+    # Whether this maintenance can be deferred to a later window. (AI-inferred)
     can_defer: Any = None
     # If the scheduled maintenance can be rescheduled.
     can_reschedule: Any = None
@@ -255,7 +281,9 @@ class Instance_Settings_BackupConfiguration:
 
 @dataclasses.dataclass
 class Instance_Settings_ConnectionPoolConfig_Flags:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -274,8 +302,11 @@ class Instance_Settings_DataCacheConfig:
 
 @dataclasses.dataclass
 class Instance_Settings_DenyMaintenancePeriods:
+    # When this window or period ends. (AI-inferred)
     end_date: Any = None
+    # When this window or period starts. (AI-inferred)
     start_date: Any = None
+    # The time this event occurred at. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
@@ -311,9 +342,13 @@ class Instance_Settings_InsightsConfig:
 
 @dataclasses.dataclass
 class Instance_Settings_IpConfiguration_AuthorizedNetworks:
+    # When this resource expires. (AI-inferred)
     expiration_time: Any = None
+    # The category of this resource. (AI-inferred)
     kind: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -432,7 +467,9 @@ class Instance_Settings_PerformanceCaptureConfig:
 
 @dataclasses.dataclass
 class Instance_Settings_ReadPoolAutoScaleConfig_TargetMetrics:
+    # The name of the metric being reported. (AI-inferred)
     metric: Any = None
+    # The value this metric is measured against. (AI-inferred)
     target_value: Any = None
 
 @dataclasses.dataclass
@@ -560,8 +597,11 @@ class Instance_Settings:
 
 @dataclasses.dataclass
 class Instance_UpgradableDatabaseVersions:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The major version of the database engine this instance runs. (AI-inferred)
     major_version: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 _Instance_DiskEncryptionConfigurationFields = {
@@ -1077,6 +1117,7 @@ class InstanceConfig:
     service_account_email_address: Any = None
     # Database instance settings.
     settings: Any = None
+    # Whether this instance uses the legacy or the new (Private Service Connect based) network architecture. (AI-inferred)
     sql_network_architecture: Any = None
     # The current serving state of the Cloud SQL instance.
     state: Any = None
@@ -1179,6 +1220,7 @@ class InstanceAttrs:
     service_account_email_address: Any = None
     # Database instance settings.
     settings: Any = None
+    # Whether this instance uses the legacy or the new (Private Service Connect based) network architecture. (AI-inferred)
     sql_network_architecture: Any = None
     # The current serving state of the Cloud SQL instance.
     state: Any = None

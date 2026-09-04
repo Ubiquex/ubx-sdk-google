@@ -63,6 +63,7 @@ export interface LicenseConfig {
   removableFromDisk?: boolean | Computed<boolean>;
   /** Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license. */
   requiredCoattachedLicenses?: string[] | Computed<string[]>;
+  /** The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred) */
   resourceRequirements?: License_ResourceRequirements | Computed<License_ResourceRequirements>;
   /** If true, this license can only be used on VMs on sole tenant nodes. */
   soleTenantOnly?: boolean | Computed<boolean>;
@@ -103,6 +104,7 @@ export interface LicenseAttrs {
   removableFromDisk: boolean;
   /** Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license. */
   requiredCoattachedLicenses: string[];
+  /** The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred) */
   resourceRequirements: License_ResourceRequirements;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;

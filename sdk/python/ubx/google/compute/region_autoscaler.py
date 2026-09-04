@@ -15,10 +15,15 @@ class RegionAutoscaler_AutoscalingPolicy_CpuUtilization:
 
 @dataclasses.dataclass
 class RegionAutoscaler_AutoscalingPolicy_CustomMetricUtilizations:
+    # A filter string that selects which time series (resources) contribute to the metric for autoscaling decisions, applied using the Cloud Monitoring API syntax. (AI-inferred)
     filter: Any = None
+    # The name of the metric to use for autoscaling. This corresponds to the Cloud Monitoring metric identifier, typically in the form 'custom.googleapis.com/[metric_name]'. (AI-inferred)
     metric: Any = None
+    # The number of instances used to calculate the custom metric utilization. If omitted, the metric is calculated across all instances in the group. (AI-inferred)
     single_instance_assignment: Any = None
+    # The target value for the custom metric that the autoscaler aims to maintain. When the metric value exceeds or falls below this target, the autoscaler adjusts the number of instances accordingly. (AI-inferred)
     utilization_target: Any = None
+    # Specifies the type of utilization target for the custom metric: GAUGE for instantaneous values, DELTA_PER_MINUTE for the rate per minute, or DELTA_PER_SECOND for the rate per second. (AI-inferred)
     utilization_target_type: Any = None
 
 @dataclasses.dataclass
@@ -44,11 +49,17 @@ class RegionAutoscaler_AutoscalingPolicy_ScaleInControl:
 
 @dataclasses.dataclass
 class RegionAutoscaler_AutoscalingPolicy_ScalingSchedules:
+    # An optional description of this scaling schedule. (AI-inferred)
     description: Any = None
+    # Whether the scaling schedule is disabled. When set to true, the autoscaler does not apply this schedule. Defaults to false. (AI-inferred)
     disabled: Any = None
+    # The duration of the scaling schedule in seconds. After the scheduled start time (defined by the cron expression in the 'schedule' field), the scaling parameters are applied for this length of time. (AI-inferred)
     duration_sec: Any = None
+    # The minimum number of replicas that must be running during the scheduled time period. This value is used by the autoscaler to ensure capacity during the schedule. (AI-inferred)
     min_required_replicas: Any = None
+    # A cron-style schedule string that specifies when the autoscaling policy's scaling schedule takes effect (e.g., '0 9 * * *' means daily at 09:00). (AI-inferred)
     schedule: Any = None
+    # The time zone to use for the scaling schedule, specified as a string from the IANA time zone database (e.g., "UTC", "America/New_York"). This determines how the schedule's start time and duration are interpreted. (AI-inferred)
     time_zone: Any = None
 
 @dataclasses.dataclass
@@ -76,13 +87,18 @@ class RegionAutoscaler_AutoscalingPolicy:
 
 @dataclasses.dataclass
 class RegionAutoscaler_ScalingScheduleStatus:
+    # The last time the scaling schedule started, in RFC3339 UTC format. (AI-inferred)
     last_start_time: Any = None
+    # The next time this scaling schedule is scheduled to become active, in RFC3339 timestamp format. (AI-inferred)
     next_start_time: Any = None
+    # The current state of the scaling schedule. Valid values are `ACTIVE` (schedule is active and will be used for autoscaling) and `OBSOLETE` (schedule is no longer active, e.g., due to expiration or deletion). (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class RegionAutoscaler_StatusDetails:
+    # The human-readable message describing the status detail, typically containing information about an error or warning condition. (AI-inferred)
     message: Any = None
+    # The type of the autoscaler status detail, indicating a specific condition or reason for the current scaling state. Possible values are: ALL_INSTANCES_UNHEALTHY, BACKEND_SERVICE_DOES_NOT_EXIST, CAPPED_AT_MAX_NUM_REPLICAS, CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE, CUSTOM_METRIC_INVALID, MIN_EQUALS_MAX, MISSING_CUSTOM_METRIC_DATA_POINTS, MISSING_LOAD_BALANCING_DATA_POINTS, MODE_OFF, MODE_ONLY_SCALE_OUT, MODE_ONLY_UP, MORE_THAN_ONE_BACKEND_SERVICE, NOT_ENOUGH_QUOTA_AVAILABLE, REGION_RESOURCE_STOCKOUT, SCALING_TARGET_DOES_NOT_EXIST, SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX, SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN, UNKNOWN, UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION, ZONE_RESOURCE_STOCKOUT. (AI-inferred)
     type: Any = None
 
 _RegionAutoscaler_AutoscalingPolicy_CpuUtilizationFields = {

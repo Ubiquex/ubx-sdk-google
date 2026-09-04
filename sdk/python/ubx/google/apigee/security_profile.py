@@ -8,16 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityProfile_Environments:
+    # When this resource was attached. (AI-inferred)
     attach_time: Any = None
+    # A reference to the Apigee environment this applies to. (AI-inferred)
     environment: Any = None
 
 @dataclasses.dataclass
 class SecurityProfile_ProfileConfig_Categories:
+    # Configuration for detecting and mitigating API abuse. (AI-inferred)
     abuse: Any = None
+    # Authorization configuration for this connection. (AI-inferred)
     authorization: Any = None
+    # Cross-Origin Resource Sharing configuration. (AI-inferred)
     cors: Any = None
+    # Configuration for how requests/responses are transformed as they pass through this proxy. (AI-inferred)
     mediation: Any = None
+    # Configuration for mutual TLS authentication. (AI-inferred)
     mtls: Any = None
+    # Detail about a detected security threat. (AI-inferred)
     threat: Any = None
 
 @dataclasses.dataclass
@@ -27,8 +35,11 @@ class SecurityProfile_ProfileConfig:
 
 @dataclasses.dataclass
 class SecurityProfile_ScoringConfigs:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The path to the field this abuse-detection score is read from. (AI-inferred)
     score_path: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 _SecurityProfile_EnvironmentsFields = {

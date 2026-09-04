@@ -2,22 +2,33 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Entry_Aspects_AspectSource {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The version of the data this profile or scan result was computed from. (AI-inferred) */
   dataVersion?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Entry_Aspects {
+  /** Where this metadata aspect's own data was sourced from. (AI-inferred) */
   aspectSource?: Entry_Aspects_AspectSource | Computed<Entry_Aspects_AspectSource>;
+  /** A reference to the aspect type defining this metadata aspect's own structure. (AI-inferred) */
   aspectType?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The literal data payload. (AI-inferred) */
   data?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Entry_EntrySource_Ancestors {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

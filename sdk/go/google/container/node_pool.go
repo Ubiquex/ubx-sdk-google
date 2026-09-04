@@ -33,26 +33,37 @@ type NodePool_BestEffortProvisioning struct {
 }
 
 type NodePool_Conditions struct {
+	// A standard gRPC-style status code summarizing this outcome. (AI-inferred)
 	CanonicalCode any
-	Code          any
-	Message       any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// A human-readable description of this result or error. (AI-inferred)
+	Message any
 }
 
 type NodePool_Config_Accelerators_GpuDriverInstallationConfig struct {
+	// Which GPU driver version GKE installs, e.g. `LATEST` or `DEFAULT`. (AI-inferred)
 	GpuDriverVersion any
 }
 
 type NodePool_Config_Accelerators_GpuSharingConfig struct {
-	GpuSharingStrategy     any
+	// How a shared GPU is divided among containers, e.g. `TIME_SHARING` or `MPS`. (AI-inferred)
+	GpuSharingStrategy any
+	// The maximum number of containers that may share a single physical GPU. (AI-inferred)
 	MaxSharedClientsPerGpu any
 }
 
 type NodePool_Config_Accelerators struct {
-	AcceleratorCount            any
-	AcceleratorType             any
+	// How many accelerator (GPU/TPU) devices are attached per node. (AI-inferred)
+	AcceleratorCount any
+	// The accelerator (GPU/TPU) type attached to each node, e.g. `nvidia-tesla-t4`. (AI-inferred)
+	AcceleratorType any
+	// Whether and how GKE automatically installs the GPU driver on nodes with attached accelerators. (AI-inferred)
 	GpuDriverInstallationConfig any
-	GpuPartitionSize            any
-	GpuSharingConfig            any
+	// The fraction of a physical GPU allocated per partition, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred)
+	GpuPartitionSize any
+	// Configuration letting multiple containers share a single physical GPU, rather than each requiring a dedicated one. (AI-inferred)
+	GpuSharingConfig any
 }
 
 type NodePool_Config_AdvancedMachineFeatures struct {
@@ -83,11 +94,14 @@ type NodePool_Config_ConfidentialNodes struct {
 }
 
 type NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig struct {
+	// The Secret Manager secret version this value is sourced from. (AI-inferred)
 	SecretUri any
 }
 
 type NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig struct {
-	Fqdns                             any
+	// The fully qualified domain name(s) of the private registry/registries this certificate is trusted for. (AI-inferred)
+	Fqdns any
+	// A CA certificate sourced from Secret Manager, trusted for verifying a private container registry's own TLS certificate. (AI-inferred)
 	GcpSecretManagerCertificateConfig any
 }
 
@@ -99,31 +113,45 @@ type NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig struct {
 }
 
 type NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca struct {
+	// The Secret Manager secret version holding this certificate, in the form `projects/{project}/secrets/{secret}/versions/{version}`. (AI-inferred)
 	GcpSecretManagerSecretUri any
 }
 
 type NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Client struct {
+	// A TLS certificate. (AI-inferred)
 	Cert any
-	Key  any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
 }
 
 type NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Header struct {
-	Key   any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// The value of this key/value pair. (AI-inferred)
 	Value any
 }
 
 type NodePool_Config_ContainerdConfig_RegistryHosts_Hosts struct {
-	Ca           any
+	// The CA certificate used to verify the remote server's own identity. (AI-inferred)
+	Ca any
+	// The capability/capabilities this proxy or client supports. (AI-inferred)
 	Capabilities any
-	Client       any
-	DialTimeout  any
-	Header       any
-	Host         any
+	// Client-side TLS configuration. (AI-inferred)
+	Client any
+	// How long to wait when establishing this connection before giving up. (AI-inferred)
+	DialTimeout any
+	// An HTTP header sent with this request. (AI-inferred)
+	Header any
+	// The hostname this applies to. (AI-inferred)
+	Host any
+	// A path used in place of the default, for reaching this endpoint. (AI-inferred)
 	OverridePath any
 }
 
 type NodePool_Config_ContainerdConfig_RegistryHosts struct {
-	Hosts  any
+	// The host(s) this configuration applies to. (AI-inferred)
+	Hosts any
+	// Server-side TLS configuration. (AI-inferred)
 	Server any
 }
 
@@ -366,8 +394,10 @@ type NodePool_Config_SandboxConfig struct {
 }
 
 type NodePool_Config_SecondaryBootDisks struct {
+	// The disk image used for this node's own boot disk. (AI-inferred)
 	DiskImage any
-	Mode      any
+	// Which operating mode this configuration uses. (AI-inferred)
+	Mode any
 }
 
 type NodePool_Config_ShieldedInstanceConfig struct {
@@ -378,9 +408,12 @@ type NodePool_Config_ShieldedInstanceConfig struct {
 }
 
 type NodePool_Config_SoleTenantConfig_NodeAffinities struct {
-	Key      any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// How this taint's own key/value is compared against a pod's own toleration, e.g. `Equal` or `Exists`. (AI-inferred)
 	Operator any
-	Values   any
+	// The value(s) making up this configuration. (AI-inferred)
+	Values any
 }
 
 type NodePool_Config_SoleTenantConfig struct {
@@ -396,9 +429,12 @@ type NodePool_Config_TaintConfig struct {
 }
 
 type NodePool_Config_Taints struct {
+	// What happens to a pod that doesn't tolerate this taint, e.g. `NoSchedule` or `NoExecute`. (AI-inferred)
 	Effect any
-	Key    any
-	Value  any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// The value of this key/value pair. (AI-inferred)
+	Value any
 }
 
 type NodePool_Config_WindowsNodeConfig struct {
@@ -555,15 +591,21 @@ type NodePool_MaxPodsConstraint struct {
 }
 
 type NodePool_NetworkConfig_AdditionalNodeNetworkConfigs struct {
-	Network    any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
 	Subnetwork any
 }
 
 type NodePool_NetworkConfig_AdditionalPodNetworkConfigs struct {
-	MaxPodsPerNode    any
+	// The maximum number of pods schedulable on a single node in this node pool. (AI-inferred)
+	MaxPodsPerNode any
+	// A reference to the Compute Engine network attachment this cluster's own control plane connects through. (AI-inferred)
 	NetworkAttachment any
+	// The subnet secondary IP range used for pod IP addresses. (AI-inferred)
 	SecondaryPodRange any
-	Subnetwork        any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type NodePool_NetworkConfig_NetworkPerformanceConfig struct {

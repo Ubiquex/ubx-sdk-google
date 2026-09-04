@@ -4,14 +4,22 @@ package baremetalsolution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NfsShare_AllowedClients struct {
-	AllowDev           any
-	AllowSuid          any
+	// Whether this NFS-allowed client is permitted to access device files on the share. (AI-inferred)
+	AllowDev any
+	// Whether this NFS-allowed client is permitted to use set-user-ID and set-group-ID bits on the share. (AI-inferred)
+	AllowSuid any
+	// The real CIDR range of client IP addresses this NFS share access rule applies to. (AI-inferred)
 	AllowedClientsCidr any
-	MountPermissions   any
-	Network            any
-	NfsPath            any
-	NoRootSquash       any
-	ShareIp            any
+	// The real mount access level (`READ` or `READ_WRITE`) this NFS-allowed client is granted. (AI-inferred)
+	MountPermissions any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The real, exported NFS path clients matching this rule can mount. (AI-inferred)
+	NfsPath any
+	// Whether this NFS-allowed client is exempt from root squashing, letting a client's own root user act as root on the share. (AI-inferred)
+	NoRootSquash any
+	// The real IP address this NFS share is served from. (AI-inferred)
+	ShareIp any
 }
 
 var NfsShare_AllowedClientsFields = ubx.FieldMap{

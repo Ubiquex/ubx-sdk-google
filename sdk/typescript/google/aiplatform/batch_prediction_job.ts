@@ -60,39 +60,64 @@ export interface BatchPredictionJob_Error {
 }
 
 export interface BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomain {
+  /** The largest value this parameter may take. (AI-inferred) */
   maxValue?: number | Computed<number>;
+  /** The smallest value this parameter may take. (AI-inferred) */
   minValue?: number | Computed<number>;
+  /** The mean of this feature's own values before normalization. (AI-inferred) */
   originalMean?: number | Computed<number>;
+  /** The standard deviation of this feature's own values before normalization. (AI-inferred) */
   originalStddev?: number | Computed<number>;
 }
 
 export interface BatchPredictionJob_ExplanationSpec_Metadata_Inputs_Visualization {
+  /** Attribution values below this percentile are clipped from the visualization. (AI-inferred) */
   clipPercentLowerbound?: number | Computed<number>;
+  /** Attribution values above this percentile are clipped from the visualization. (AI-inferred) */
   clipPercentUpperbound?: number | Computed<number>;
+  /** The color scheme used to render attribution values in the visualization. (AI-inferred) */
   colorMap?: string | Computed<string>;
+  /** How the attribution visualization is overlaid on the original input image. (AI-inferred) */
   overlayType?: string | Computed<string>;
+  /** Whether the visualization highlights positive attributions, negative attributions, or both. (AI-inferred) */
   polarity?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface BatchPredictionJob_ExplanationSpec_Metadata_Inputs {
+  /** The name of the tensor giving the shape of a sparse input, when this input is represented sparsely. (AI-inferred) */
   denseShapeTensorName?: string | Computed<string>;
+  /** The baseline value(s) for the encoded tensor, used as the reference point feature attributions are computed against. (AI-inferred) */
   encodedBaselines?: unknown[] | Computed<unknown[]>;
+  /** The name of the encoded (post-transformation) input tensor this metadata describes. (AI-inferred) */
   encodedTensorName?: string | Computed<string>;
+  /** How this input feature is encoded into its own model tensor, e.g. `BAG_OF_FEATURES` or `IDENTITY`. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The real-world value range (min/max, or original mean/standard deviation if normalized) this input feature was drawn from. (AI-inferred) */
   featureValueDomain?: BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomain | Computed<BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomain>;
+  /** Groups related input features together for combined feature-attribution reporting. (AI-inferred) */
   groupName?: string | Computed<string>;
+  /** The feature name corresponding to each index position in the input tensor -- required when `encoding` is a sparse/indicator encoding. (AI-inferred) */
   indexFeatureMapping?: string[] | Computed<string[]>;
+  /** The name of the tensor giving the indices of a sparse input's own non-zero values. (AI-inferred) */
   indicesTensorName?: string | Computed<string>;
+  /** The baseline value(s) for this input, used as the reference point feature attributions are computed against. (AI-inferred) */
   inputBaselines?: unknown[] | Computed<unknown[]>;
+  /** The name of the model's own input tensor this metadata describes. (AI-inferred) */
   inputTensorName?: string | Computed<string>;
+  /** The kind of data this input represents, e.g. `numeric`, `image`, or `text`. (AI-inferred) */
   modality?: string | Computed<string>;
+  /** How feature attributions for this input are rendered visually, e.g. for image inputs. (AI-inferred) */
   visualization?: BatchPredictionJob_ExplanationSpec_Metadata_Inputs_Visualization | Computed<BatchPredictionJob_ExplanationSpec_Metadata_Inputs_Visualization>;
 }
 
 export interface BatchPredictionJob_ExplanationSpec_Metadata_Outputs {
+  /** The key identifying which display-name mapping to apply to this output's own values. (AI-inferred) */
   displayNameMappingKey?: string | Computed<string>;
+  /** Maps output tensor index positions to their own human-readable display names. (AI-inferred) */
   indexDisplayNameMapping?: unknown | Computed<unknown>;
+  /** The name of the model's own output tensor this metadata describes. (AI-inferred) */
   outputTensorName?: string | Computed<string>;
 }
 
@@ -143,7 +168,9 @@ export interface BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradien
 }
 
 export interface BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The standard deviation parameter of a Gaussian/normal distribution used for sampling. (AI-inferred) */
   sigma?: number | Computed<number>;
 }
 
@@ -279,11 +306,14 @@ export interface BatchPredictionJob_ResourcesConsumed {
 }
 
 export interface BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_Env {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPorts {
+  /** The port number the container listens on. (AI-inferred) */
   containerPort?: number | Computed<number>;
 }
 

@@ -33,27 +33,39 @@ type Enterprise_Logo struct {
 }
 
 type Enterprise_SigninDetails_GoogleAuthenticationOptions struct {
+	// Whether Google authentication is real, `OPTIONAL` or `REQUIRED` at device sign-in for this enterprise. (AI-inferred)
 	AuthenticationRequirement any
 }
 
 type Enterprise_SigninDetails struct {
-	AllowPersonalUsage          any
-	DefaultStatus               any
+	// Whether personal use of a fully-managed device is real, allowed, disallowed, or disallowed with no user profile at all. (AI-inferred)
+	AllowPersonalUsage any
+	// Whether this sign-in detail is real, the enterprise's own current default sign-in configuration. (AI-inferred)
+	DefaultStatus any
+	// Real Google authentication requirements applied at device sign-in for this enterprise. (AI-inferred)
 	GoogleAuthenticationOptions any
-	QrCode                      any
-	SigninEnrollmentToken       any
-	SigninUrl                   any
-	TokenTag                    any
+	// The real, generated QR code content for this sign-in detail, used to enroll a device via this specific sign-in configuration. (AI-inferred)
+	QrCode any
+	// The real enrollment token associated with this sign-in detail. (AI-inferred)
+	SigninEnrollmentToken any
+	// The real URL a device is directed to for user authentication under this sign-in detail. (AI-inferred)
+	SigninUrl any
+	// A real, client-supplied tag distinguishing this sign-in detail's own enrollment token from others on the same enterprise. (AI-inferred)
+	TokenTag any
 }
 
 type Enterprise_TermsAndConditions_Content struct {
-	DefaultMessage    any
+	// The real, default-language text of this terms-and-conditions content, shown when no `localized_messages` entry matches the user's own locale. (AI-inferred)
+	DefaultMessage any
+	// Real, per-locale translations of this terms-and-conditions content. (AI-inferred)
 	LocalizedMessages any
 }
 
 type Enterprise_TermsAndConditions struct {
+	// The real, localized text content of this enterprise's own terms and conditions. (AI-inferred)
 	Content any
-	Header  any
+	// A real, short header/title shown above this terms-and-conditions content. (AI-inferred)
+	Header any
 }
 
 var Enterprise_ContactInfoFields = ubx.FieldMap{

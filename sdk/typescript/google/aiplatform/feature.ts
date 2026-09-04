@@ -2,17 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Feature_MonitoringStatsAnomalies_FeatureStatsAnomaly {
+  /** The deviation threshold that was crossed to trigger this anomaly. (AI-inferred) */
   anomalyDetectionThreshold?: number | Computed<number>;
+  /** A URI with further detail about this detected anomaly. (AI-inferred) */
   anomalyUri?: string | Computed<string>;
+  /** How far this feature's own current value distribution has deviated from its baseline. (AI-inferred) */
   distributionDeviation?: number | Computed<number>;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The numeric score this evaluation produced. (AI-inferred) */
   score?: number | Computed<number>;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** A URI with the full statistics this anomaly was detected from. (AI-inferred) */
   statsUri?: string | Computed<string>;
 }
 
 export interface Feature_MonitoringStatsAnomalies {
+  /** Detail about one detected anomaly in this feature's own statistics. (AI-inferred) */
   featureStatsAnomaly?: Feature_MonitoringStatsAnomalies_FeatureStatsAnomaly | Computed<Feature_MonitoringStatsAnomalies_FeatureStatsAnomaly>;
+  /** Which kind of analysis produced this result, e.g. `IMPORT_FEATURE_ANALYSIS` or `SNAPSHOT_ANALYSIS`. (AI-inferred) */
   objective?: string | Computed<string>;
 }
 

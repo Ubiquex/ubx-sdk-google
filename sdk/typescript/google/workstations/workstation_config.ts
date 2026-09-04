@@ -2,13 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WorkstationConfig_AllowedPorts {
+  /** The first value in this range. (AI-inferred) */
   first?: number | Computed<number>;
+  /** The last value in this range. (AI-inferred) */
   last?: number | Computed<number>;
 }
 
 export interface WorkstationConfig_Conditions {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -35,28 +40,42 @@ export interface WorkstationConfig_EncryptionKey {
 }
 
 export interface WorkstationConfig_EphemeralDirectories_GcePd {
+  /** The Persistent Disk type used, e.g. `pd-ssd` or `pd-balanced`. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** Whether this volume is mounted read-only. (AI-inferred) */
   readOnly?: boolean | Computed<boolean>;
+  /** The disk image this resource is created from. (AI-inferred) */
   sourceImage?: string | Computed<string>;
+  /** The disk snapshot this resource is created from. (AI-inferred) */
   sourceSnapshot?: string | Computed<string>;
 }
 
 export interface WorkstationConfig_EphemeralDirectories {
+  /** Configures this persistent disk using a standard Compute Engine persistent disk. (AI-inferred) */
   gcePd?: WorkstationConfig_EphemeralDirectories_GcePd | Computed<WorkstationConfig_EphemeralDirectories_GcePd>;
+  /** The path this volume is mounted at inside the container. (AI-inferred) */
   mountPath?: string | Computed<string>;
 }
 
 export interface WorkstationConfig_Host_GceInstance_Accelerators {
+  /** How many of this item there are. (AI-inferred) */
   count?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface WorkstationConfig_Host_GceInstance_BoostConfigs {
+  /** The hardware accelerator(s) (e.g. GPUs) attached to this workstation. (AI-inferred) */
   accelerators?: WorkstationConfig_Host_GceInstance_Accelerators[] | Computed<WorkstationConfig_Host_GceInstance_Accelerators[]>;
+  /** The size of the boot disk, in gibibytes. (AI-inferred) */
   bootDiskSizeGb?: number | Computed<number>;
+  /** Whether nested virtualization is enabled inside this workstation. (AI-inferred) */
   enableNestedVirtualization?: boolean | Computed<boolean>;
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The machine type this workstation runs as. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The number of workstation(s) kept ready in this pool. (AI-inferred) */
   poolSize?: number | Computed<number>;
 }
 
@@ -117,31 +136,48 @@ export interface WorkstationConfig_Host {
 }
 
 export interface WorkstationConfig_PersistentDirectories_GceHd {
+  /** How long a workstation is kept in an archived state before it's deleted. (AI-inferred) */
   archiveTimeout?: string | Computed<string>;
+  /** The maximum size, in gibibytes, this disk is allowed to grow to. (AI-inferred) */
   maxSizeGb?: number | Computed<number>;
+  /** What happens to this persistent disk's own data after the workstation using it is deleted. (AI-inferred) */
   reclaimPolicy?: string | Computed<string>;
+  /** The size of this resource, in gibibytes. (AI-inferred) */
   sizeGb?: number | Computed<number>;
+  /** The disk snapshot this resource is created from. (AI-inferred) */
   sourceSnapshot?: string | Computed<string>;
 }
 
 export interface WorkstationConfig_PersistentDirectories_GcePd {
+  /** How long a workstation is kept in an archived state before it's deleted. (AI-inferred) */
   archiveTimeout?: string | Computed<string>;
+  /** The Persistent Disk type used, e.g. `pd-ssd` or `pd-balanced`. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** The file system type used to format this disk. (AI-inferred) */
   fsType?: string | Computed<string>;
+  /** The maximum size, in gibibytes, this disk is allowed to grow to. (AI-inferred) */
   maxSizeGb?: number | Computed<number>;
+  /** What happens to this persistent disk's own data after the workstation using it is deleted. (AI-inferred) */
   reclaimPolicy?: string | Computed<string>;
+  /** The size of this resource, in gibibytes. (AI-inferred) */
   sizeGb?: number | Computed<number>;
+  /** The disk snapshot this resource is created from. (AI-inferred) */
   sourceSnapshot?: string | Computed<string>;
 }
 
 export interface WorkstationConfig_PersistentDirectories {
+  /** Configures this persistent disk using a Compute Engine hyperdisk. (AI-inferred) */
   gceHd?: WorkstationConfig_PersistentDirectories_GceHd | Computed<WorkstationConfig_PersistentDirectories_GceHd>;
+  /** Configures this persistent disk using a standard Compute Engine persistent disk. (AI-inferred) */
   gcePd?: WorkstationConfig_PersistentDirectories_GcePd | Computed<WorkstationConfig_PersistentDirectories_GcePd>;
+  /** The path this volume is mounted at inside the container. (AI-inferred) */
   mountPath?: string | Computed<string>;
 }
 
 export interface WorkstationConfig_ReadinessChecks {
+  /** A file or resource path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The port number this applies to. (AI-inferred) */
   port?: number | Computed<number>;
 }
 

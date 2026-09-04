@@ -2,75 +2,109 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Tool_DataStoreSpec_DataStoreConnections {
+  /** A reference to the Vertex AI Search data store this connection reads from. (AI-inferred) */
   dataStore?: string | Computed<string>;
+  /** What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred) */
   dataStoreType?: string | Computed<string>;
+  /** How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred) */
   documentProcessingMode?: string | Computed<string>;
 }
 
 export interface Tool_DataStoreSpec {
+  /** The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred) */
   dataStoreConnections?: Tool_DataStoreSpec_DataStoreConnections[] | Computed<Tool_DataStoreSpec_DataStoreConnections[]>;
+  /** The prompt played when the caller's own input can't be matched to any expected value. (AI-inferred) */
   fallbackPrompt?: unknown | Computed<unknown>;
 }
 
 export interface Tool_FunctionSpec {
+  /** The schema describing this tool's own expected input. (AI-inferred) */
   inputSchema?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The schema describing this tool's own expected output. (AI-inferred) */
   outputSchema?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Tool_OpenApiSpec_Authentication_ApiKeyConfig {
+  /** The API key used to authenticate this call. (AI-inferred) */
   apiKey?: string | Computed<string>;
+  /** The name of the API key parameter. (AI-inferred) */
   keyName?: string | Computed<string>;
+  /** Where in the request a value (e.g. an API key) is placed, e.g. a header or query parameter. (AI-inferred) */
   requestLocation?: string | Computed<string>;
+  /** The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred) */
   secretVersionForApiKey?: string | Computed<string>;
 }
 
 export interface Tool_OpenApiSpec_Authentication_BearerTokenConfig {
+  /** The Secret Manager secret version holding the bearer token, instead of storing it inline. (AI-inferred) */
   secretVersionForToken?: string | Computed<string>;
+  /** A token used to authenticate or identify this request. (AI-inferred) */
   token?: string | Computed<string>;
 }
 
 export interface Tool_OpenApiSpec_Authentication_OauthConfig {
+  /** The OAuth client ID used to authenticate. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** The OAuth client secret used to authenticate. (AI-inferred) */
   clientSecret?: string | Computed<string>;
+  /** Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred) */
   oauthGrantType?: string | Computed<string>;
+  /** The OAuth scope(s) requested. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
+  /** The Secret Manager secret version holding the OAuth client secret, instead of storing it inline. (AI-inferred) */
   secretVersionForClientSecret?: string | Computed<string>;
+  /** The OAuth token endpoint URL used to obtain an access token. (AI-inferred) */
   tokenEndpoint?: string | Computed<string>;
 }
 
 export interface Tool_OpenApiSpec_Authentication_ServiceAccountAuthConfig {
+  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Tool_OpenApiSpec_Authentication_ServiceAgentAuthConfig {
+  /** How Dialogflow's own service agent identity is presented when authenticating the webhook call. (AI-inferred) */
   serviceAgentAuth?: string | Computed<string>;
 }
 
 export interface Tool_OpenApiSpec_Authentication {
+  /** Configuration for authenticating using an API key. (AI-inferred) */
   apiKeyConfig?: Tool_OpenApiSpec_Authentication_ApiKeyConfig | Computed<Tool_OpenApiSpec_Authentication_ApiKeyConfig>;
+  /** Configuration for authenticating using a static bearer token. (AI-inferred) */
   bearerTokenConfig?: Tool_OpenApiSpec_Authentication_BearerTokenConfig | Computed<Tool_OpenApiSpec_Authentication_BearerTokenConfig>;
+  /** Authenticates the webhook call using OAuth 2.0 client credentials. (AI-inferred) */
   oauthConfig?: Tool_OpenApiSpec_Authentication_OauthConfig | Computed<Tool_OpenApiSpec_Authentication_OauthConfig>;
+  /** Authenticates the webhook call using a Google Cloud service account's own identity token. (AI-inferred) */
   serviceAccountAuthConfig?: Tool_OpenApiSpec_Authentication_ServiceAccountAuthConfig | Computed<Tool_OpenApiSpec_Authentication_ServiceAccountAuthConfig>;
+  /** Configuration for authenticating using Dialogflow's own service agent identity. (AI-inferred) */
   serviceAgentAuthConfig?: Tool_OpenApiSpec_Authentication_ServiceAgentAuthConfig | Computed<Tool_OpenApiSpec_Authentication_ServiceAgentAuthConfig>;
 }
 
 export interface Tool_OpenApiSpec_ServiceDirectoryConfig {
+  /** A reference to the service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface Tool_OpenApiSpec_TlsConfig_CaCerts {
+  /** A TLS certificate. (AI-inferred) */
   cert?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
 export interface Tool_OpenApiSpec_TlsConfig {
+  /** The CA certificate(s) trusted for this TLS connection. (AI-inferred) */
   caCerts?: Tool_OpenApiSpec_TlsConfig_CaCerts[] | Computed<Tool_OpenApiSpec_TlsConfig_CaCerts[]>;
 }
 
 export interface Tool_OpenApiSpec {
+  /** The authentication method used for this call. (AI-inferred) */
   authentication?: Tool_OpenApiSpec_Authentication | Computed<Tool_OpenApiSpec_Authentication>;
+  /** Configuration for reaching this webhook via Service Directory, instead of a direct URL. (AI-inferred) */
   serviceDirectoryConfig?: Tool_OpenApiSpec_ServiceDirectoryConfig | Computed<Tool_OpenApiSpec_ServiceDirectoryConfig>;
+  /** The schema describing this text value's own expected structure. (AI-inferred) */
   textSchema?: string | Computed<string>;
+  /** TLS/SSL configuration for this connection. (AI-inferred) */
   tlsConfig?: Tool_OpenApiSpec_TlsConfig | Computed<Tool_OpenApiSpec_TlsConfig>;
 }
 
@@ -188,21 +222,34 @@ const Tool_OpenApiSpecFields: FieldMap = {
 };
 
 export interface ToolConfig {
+  /** Configuration for how this playbook or tool queries a connected data store. (AI-inferred) */
   dataStoreSpec?: Tool_DataStoreSpec | Computed<Tool_DataStoreSpec>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred) */
   functionSpec?: Tool_FunctionSpec | Computed<Tool_FunctionSpec>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSpec?: Tool_OpenApiSpec | Computed<Tool_OpenApiSpec>;
 }
 
 export interface ToolAttrs {
+  /** Configuration for how this playbook or tool queries a connected data store. (AI-inferred) */
   dataStoreSpec: Tool_DataStoreSpec;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred) */
   functionSpec: Tool_FunctionSpec;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
   openApiSpec: Tool_OpenApiSpec;
+  /** Which kind of tool this is, e.g. an OpenAPI-defined service, a function, or a data store. (AI-inferred) */
   toolType: string;
 }
 

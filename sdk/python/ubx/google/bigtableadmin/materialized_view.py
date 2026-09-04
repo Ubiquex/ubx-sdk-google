@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MaterializedView_ClusterStates:
+    # The current replication status of this cluster relative to the rest of the instance. (AI-inferred)
     replication_state: Any = None
 
 @dataclasses.dataclass

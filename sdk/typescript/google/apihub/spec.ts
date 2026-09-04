@@ -2,38 +2,56 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Spec_AdditionalSpecContents_SpecContents {
+  /** The literal content of this resource. (AI-inferred) */
   contents?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
   mimeType?: string | Computed<string>;
 }
 
 export interface Spec_AdditionalSpecContents {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The format this API spec's own content is written in, e.g. OpenAPI or Protocol Buffers. (AI-inferred) */
   specContentType?: string | Computed<string>;
+  /** The raw content of this API specification. (AI-inferred) */
   specContents?: Spec_AdditionalSpecContents_SpecContents | Computed<Spec_AdditionalSpecContents_SpecContents>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
 export interface Spec_Attributes_EnumValues_Values {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether this custom attribute's own value can't be changed after creation. (AI-inferred) */
   immutable?: boolean | Computed<boolean>;
 }
 
 export interface Spec_Attributes_EnumValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: Spec_Attributes_EnumValues_Values[] | Computed<Spec_Attributes_EnumValues_Values[]>;
 }
 
 export interface Spec_Attributes_JsonValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Spec_Attributes {
+  /** A reference to the custom attribute this applies to. (AI-inferred) */
   attribute?: string | Computed<string>;
+  /** The selected value(s) of a multi-select enum-typed custom attribute. (AI-inferred) */
   enumValues?: Spec_Attributes_EnumValues | Computed<Spec_Attributes_EnumValues>;
+  /** JSON-typed value(s) for this custom attribute. (AI-inferred) */
   jsonValues?: Spec_Attributes_JsonValues | Computed<Spec_Attributes_JsonValues>;
+  /** Multiple text value(s) for this custom attribute. (AI-inferred) */
   stringValues?: Spec_Attributes_JsonValues | Computed<Spec_Attributes_JsonValues>;
+  /** URI-typed value(s) for this custom attribute. (AI-inferred) */
   uriValues?: Spec_Attributes_JsonValues | Computed<Spec_Attributes_JsonValues>;
 }
 
@@ -66,25 +84,36 @@ export interface Spec_Documentation {
 }
 
 export interface Spec_LintResponse_Issues_Range_End {
+  /** The column position within the line this applies to. (AI-inferred) */
   character?: number | Computed<number>;
+  /** The line number this applies to. (AI-inferred) */
   line?: number | Computed<number>;
 }
 
 export interface Spec_LintResponse_Issues_Range {
+  /** Where this range ends. (AI-inferred) */
   end?: Spec_LintResponse_Issues_Range_End | Computed<Spec_LintResponse_Issues_Range_End>;
+  /** Where this range starts. (AI-inferred) */
   start?: Spec_LintResponse_Issues_Range_End | Computed<Spec_LintResponse_Issues_Range_End>;
 }
 
 export interface Spec_LintResponse_Issues {
+  /** A machine-readable code identifying this result. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
+  /** A file or object path. (AI-inferred) */
   path?: string[] | Computed<string[]>;
+  /** The range this value spans. (AI-inferred) */
   range?: Spec_LintResponse_Issues_Range | Computed<Spec_LintResponse_Issues_Range>;
+  /** How serious this finding is. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface Spec_LintResponse_Summary {
+  /** How many of this item there are. (AI-inferred) */
   count?: number | Computed<number>;
+  /** How serious this finding is. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
@@ -104,15 +133,22 @@ export interface Spec_LintResponse {
 }
 
 export interface Spec_SourceMetadata_PluginInstanceActionSource {
+  /** An identifier for this action, unique within its own containing plugin. (AI-inferred) */
   actionId?: string | Computed<string>;
+  /** A reference to the plugin instance this applies to. (AI-inferred) */
   pluginInstance?: string | Computed<string>;
 }
 
 export interface Spec_SourceMetadata {
+  /** When the original, externally-sourced resource was created. (AI-inferred) */
   originalResourceCreateTime?: string | Computed<string>;
+  /** The identifier of the original, externally-sourced resource this was imported from. (AI-inferred) */
   originalResourceId?: string | Computed<string>;
+  /** When the original, externally-sourced resource was last updated. (AI-inferred) */
   originalResourceUpdateTime?: string | Computed<string>;
+  /** Where this plugin action's own definition is sourced from. (AI-inferred) */
   pluginInstanceActionSource?: Spec_SourceMetadata_PluginInstanceActionSource | Computed<Spec_SourceMetadata_PluginInstanceActionSource>;
+  /** The kind of source this data came from. (AI-inferred) */
   sourceType?: string | Computed<string>;
 }
 

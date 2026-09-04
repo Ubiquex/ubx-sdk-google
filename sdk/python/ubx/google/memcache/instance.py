@@ -8,20 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_InstanceMessages:
+    # A machine-readable code identifying this instance-level advisory, e.g. `ZONE_DISTRIBUTION_UNBALANCED`. (AI-inferred)
     code: Any = None
+    # A human-readable description of this instance-level advisory. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime:
+    # The hour component of the start time. (AI-inferred)
     hours: Any = None
+    # The minute component of the start time. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of the start time. (AI-inferred)
     nanos: Any = None
+    # The second component of the start time. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class Instance_MaintenancePolicy_WeeklyMaintenanceWindow:
+    # The day of the week this recurring maintenance window occurs on. (AI-inferred)
     day: Any = None
+    # How long this recurring maintenance window lasts. (AI-inferred)
     duration: Any = None
+    # The time of day this recurring maintenance window starts at. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
@@ -46,18 +55,28 @@ class Instance_MaintenanceSchedule:
 
 @dataclasses.dataclass
 class Instance_MemcacheNodes_Parameters:
+    # An identifier for this parameter set. (AI-inferred)
     id: Any = None
+    # The Memcached configuration parameters themselves, as key/value pairs. (AI-inferred)
     params: Any = None
 
 @dataclasses.dataclass
 class Instance_MemcacheNodes:
+    # Output only. The hostname or IP address this Memcached node listens on. (AI-inferred)
     host: Any = None
+    # Output only. The full, exact Memcached server version running on this node. (AI-inferred)
     memcache_full_version: Any = None
+    # The Memcached protocol version this instance runs, e.g. `MEMCACHE_1_5`. (AI-inferred)
     memcache_version: Any = None
+    # Output only. An identifier for this node, unique within its own instance. (AI-inferred)
     node_id: Any = None
+    # Output only. The effective Memcached configuration parameters currently applied to this node. (AI-inferred)
     parameters: Any = None
+    # Output only. The port this Memcached node listens on. (AI-inferred)
     port: Any = None
+    # Output only. This node's own current lifecycle state, e.g. `READY` or `UPDATING`. (AI-inferred)
     state: Any = None
+    # Output only. The zone this node is running in. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
@@ -140,6 +159,7 @@ class InstanceConfig:
     node_config: Any = None
     # Required. Number of nodes in the Memcached instance.
     node_count: Any = None
+    # The Memcached configuration parameters requested for this instance; may differ from `memcache_nodes.parameters` until every node has picked up the change. (AI-inferred)
     parameters: Any = None
     # Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
     reserved_ip_range_id: Any = None
@@ -182,6 +202,7 @@ class InstanceAttrs:
     node_config: Any = None
     # Required. Number of nodes in the Memcached instance.
     node_count: Any = None
+    # The Memcached configuration parameters requested for this instance; may differ from `memcache_nodes.parameters` until every node has picked up the change. (AI-inferred)
     parameters: Any = None
     # Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
     reserved_ip_range_id: Any = None

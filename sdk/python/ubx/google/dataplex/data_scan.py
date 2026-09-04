@@ -108,19 +108,27 @@ class DataScan_DataDiscoverySpec:
 
 @dataclasses.dataclass
 class DataScan_DataDocumentationResult_DatasetResult_Queries:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A SQL statement or expression. (AI-inferred)
     sql: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths:
+    # The path(s) this applies to. (AI-inferred)
     paths: Any = None
+    # The fully qualified name of this table. (AI-inferred)
     table_fqn: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships:
+    # The field path(s) on the left-hand entry this relationship connects from. (AI-inferred)
     left_schema_paths: Any = None
+    # The field path(s) on the right-hand entry this relationship connects to. (AI-inferred)
     right_schema_paths: Any = None
+    # The source(s) this data or configuration is drawn from. (AI-inferred)
     sources: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -134,8 +142,11 @@ class DataScan_DataDocumentationResult_DatasetResult:
 
 @dataclasses.dataclass
 class DataScan_DataDocumentationResult_TableResult_Schema_Fields:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The field(s) making up this schema or aspect. (AI-inferred)
     fields: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -187,46 +198,72 @@ class DataScan_DataProfileResult_PostScanActionsResult:
 
 @dataclasses.dataclass
 class DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfile:
+    # The average (mean) value observed for this column. (AI-inferred)
     average: Any = None
+    # The largest value this parameter may take. (AI-inferred)
     max: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min: Any = None
+    # The quartile value(s) computed for this column's own distribution. (AI-inferred)
     quartiles: Any = None
+    # The standard deviation observed for this column's own values. (AI-inferred)
     standard_deviation: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfile:
+    # The average (mean) value observed for this column. (AI-inferred)
     average: Any = None
+    # The largest value this parameter may take. (AI-inferred)
     max: Any = None
+    # The smallest value this parameter may take. (AI-inferred)
     min: Any = None
+    # The quartile value(s) computed for this column's own distribution. (AI-inferred)
     quartiles: Any = None
+    # The standard deviation observed for this column's own values. (AI-inferred)
     standard_deviation: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataProfileResult_Profile_Fields_Profile_StringProfile:
+    # The average length observed for this string column's own values. (AI-inferred)
     average_length: Any = None
+    # The most characters a `string`-typed value may have. (AI-inferred)
     max_length: Any = None
+    # The fewest characters a `string`-typed value may have. (AI-inferred)
     min_length: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataProfileResult_Profile_Fields_Profile_TopNvalues:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The proportion this applies to. (AI-inferred)
     ratio: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataProfileResult_Profile_Fields_Profile:
+    # The fraction of this column's own values that are distinct. (AI-inferred)
     distinct_ratio: Any = None
+    # Statistical profile computed for a floating-point column. (AI-inferred)
     double_profile: Any = None
+    # Statistical profile computed for an integer column. (AI-inferred)
     integer_profile: Any = None
+    # The fraction of this column's own values that are null. (AI-inferred)
     null_ratio: Any = None
+    # Statistical profile computed for a string column. (AI-inferred)
     string_profile: Any = None
+    # The N most frequently occurring value(s) observed for this column. (AI-inferred)
     top_nvalues: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataProfileResult_Profile_Fields:
+    # Whether this schema field is nullable, required, or repeated. (AI-inferred)
     mode: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Statistical profile data computed for this column or table. (AI-inferred)
     profile: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -306,148 +343,225 @@ class DataScan_DataQualityResult_AnomalyDetectionGeneratedAssets:
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Columns_Dimensions_Dimension:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Columns_Dimensions:
+    # The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred)
     dimension: Any = None
+    # Whether this data quality check passed. (AI-inferred)
     passed: Any = None
+    # The overall score this quality scan or profile produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Columns:
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # The data quality dimension(s) this scan assesses. (AI-inferred)
     dimensions: Any = None
+    # Whether this data quality check passed. (AI-inferred)
     passed: Any = None
+    # The overall score this quality scan or profile produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_DebugQueriesResultSets_Results:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_DebugQueriesResultSets:
+    # The result(s) produced by this operation. (AI-inferred)
     results: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_DebugQueries:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A SQL statement. (AI-inferred)
     sql_statement: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_RangeExpectation:
+    # The maximum acceptable value for this data quality rule. (AI-inferred)
     max_value: Any = None
+    # The minimum acceptable value for this data quality rule. (AI-inferred)
     min_value: Any = None
+    # Whether the maximum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
     strict_max_enabled: Any = None
+    # Whether the minimum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
     strict_min_enabled: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_RegexExpectation:
+    # A regular expression this rule matches against. (AI-inferred)
     regex: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation:
+    # A SQL expression. (AI-inferred)
     sql_expression: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSource:
+    # A typed relationship connecting two catalog entries. (AI-inferred)
     entry_link: Any = None
+    # The kind of relationship this entry link represents. (AI-inferred)
     entry_link_type: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySource:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the catalog entry this applies to. (AI-inferred)
     entry: Any = None
+    # A reference to the entry type defining this catalog entry's own structure. (AI-inferred)
     entry_type: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements:
+    # One of the two catalog entries connected by this link. (AI-inferred)
     entry_link_source: Any = None
+    # Detail about where this catalog entry's own data was sourced from. (AI-inferred)
     entry_source: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_RuleSource:
+    # The path element(s) locating this rule within its own containing scan. (AI-inferred)
     rule_path_elements: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_SetExpectation:
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_SqlAssertion:
+    # A SQL statement. (AI-inferred)
     sql_statement: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectation:
+    # The maximum acceptable value for this data quality rule. (AI-inferred)
     max_value: Any = None
+    # The minimum acceptable value for this data quality rule. (AI-inferred)
     min_value: Any = None
+    # The specific statistic this measurement reports. (AI-inferred)
     statistic: Any = None
+    # Whether the maximum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
     strict_max_enabled: Any = None
+    # Whether the minimum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
     strict_min_enabled: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParameters:
+    # The value used when this field is left unset. (AI-inferred)
     default_value: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollection:
+    # The SQL query text. (AI-inferred)
     query: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate:
+    # Which operation(s) this entry/resource supports. (AI-inferred)
     capabilities: Any = None
+    # The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred)
     dimension: Any = None
+    # The parameter(s) this custom SQL rule or query accepts. (AI-inferred)
     input_parameters: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the collection of resources this SQL query targets. (AI-inferred)
     sql_collection: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_TemplateReference_Values:
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule_TemplateReference:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The final SQL statement actually run, after any template substitution. (AI-inferred)
     resolved_sql: Any = None
+    # A predefined rule template this rule instantiates. (AI-inferred)
     rule_template: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules_Rule:
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # The underlying SQL query/queries run to compute this result, surfaced for debugging. (AI-inferred)
     debug_queries: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred)
     dimension: Any = None
+    # Whether null values are excluded from this rule's own evaluation. (AI-inferred)
     ignore_null: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A data quality rule asserting that this column's own values are never null. (AI-inferred)
     non_null_expectation: Any = None
+    # A data quality rule asserting that this column's own values fall within a specified range. (AI-inferred)
     range_expectation: Any = None
+    # A data quality rule asserting that this column's own values match a regular expression. (AI-inferred)
     regex_expectation: Any = None
+    # A data quality rule asserting that a custom SQL row-level condition holds. (AI-inferred)
     row_condition_expectation: Any = None
+    # Where this rule's own definition came from, e.g. inline or a referenced template. (AI-inferred)
     rule_source: Any = None
+    # A data quality rule asserting that this column's own values belong to a specified set. (AI-inferred)
     set_expectation: Any = None
+    # A data quality rule defined by a custom SQL assertion, rather than a built-in rule type. (AI-inferred)
     sql_assertion: Any = None
+    # A data quality rule asserting that a computed statistic (e.g. row count) falls within a specified range. (AI-inferred)
     statistic_range_expectation: Any = None
+    # Whether this scan or rule is currently suspended from running. (AI-inferred)
     suspended: Any = None
+    # A data quality rule asserting that a custom SQL table-level condition holds. (AI-inferred)
     table_condition_expectation: Any = None
+    # A reference to the rule template this instantiates. (AI-inferred)
     template_reference: Any = None
+    # The value that must be met or crossed for this to apply. (AI-inferred)
     threshold: Any = None
+    # A data quality rule asserting that this column's own values are all unique. (AI-inferred)
     uniqueness_expectation: Any = None
 
 @dataclasses.dataclass
 class DataScan_DataQualityResult_Rules:
+    # How many rows were evaluated for this data quality assertion. (AI-inferred)
     assertion_row_count: Any = None
+    # The raw result set(s) returned by the debug queries. (AI-inferred)
     debug_queries_result_sets: Any = None
+    # How many rows were evaluated for this data quality rule. (AI-inferred)
     evaluated_count: Any = None
+    # A SQL query returning the specific row(s) that failed this data quality rule. (AI-inferred)
     failing_rows_query: Any = None
+    # How many null values were observed in this column. (AI-inferred)
     null_count: Any = None
+    # The fraction of evaluated rows that passed this data quality rule. (AI-inferred)
     pass_ratio: Any = None
+    # Whether this data quality check passed. (AI-inferred)
     passed: Any = None
+    # How many rows passed this data quality rule. (AI-inferred)
     passed_count: Any = None
+    # The data quality rule that produced this result. (AI-inferred)
     rule: Any = None
 
 @dataclasses.dataclass
@@ -569,51 +683,79 @@ class DataScan_ExecutionStatus:
 
 @dataclasses.dataclass
 class DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints:
+    # Whether this schema field is required, optional, or repeated. (AI-inferred)
     cardinality: Any = None
 
 @dataclasses.dataclass
 class DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHints:
+    # How this value is normalized before comparison. (AI-inferred)
     normalization: Any = None
+    # Configuration for how this metadata is automatically synthesized. (AI-inferred)
     synthesis: Any = None
 
 @dataclasses.dataclass
 class DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields:
+    # The data type of this value or column. (AI-inferred)
     data_type: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred)
     extraction_hints: Any = None
+    # The field(s) making up this schema or aspect. (AI-inferred)
     fields: Any = None
+    # The category of metadata this entry represents. (AI-inferred)
     metadata_type: Any = None
+    # Whether this schema field is nullable, required, or repeated. (AI-inferred)
     mode: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappings:
+    # A reference to a specific field. (AI-inferred)
     field: Any = None
+    # The field this foreign key references. (AI-inferred)
     referenced_field: Any = None
 
 @dataclasses.dataclass
 class DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # How field(s) from a source entry map into this destination entry. (AI-inferred)
     field_mappings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The type of node a metadata relationship's own target refers to. (AI-inferred)
     referenced_node_type: Any = None
 
 @dataclasses.dataclass
 class DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred)
     extraction_hints: Any = None
+    # The field(s) making up this schema or aspect. (AI-inferred)
     fields: Any = None
+    # The foreign key constraint(s) defined on this table. (AI-inferred)
     foreign_keys: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The type of node a metadata relationship's own source refers to. (AI-inferred)
     source_node_type: Any = None
+    # The type of node this relationship's own target refers to. (AI-inferred)
     target_node_type: Any = None
 
 @dataclasses.dataclass
 class DataScan_UnstructuredDataProfileResult_GraphProfile_NodeTypes:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred)
     extraction_hints: Any = None
+    # The field(s) making up this schema or aspect. (AI-inferred)
     fields: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The column(s) making up this table's own primary key. (AI-inferred)
     primary_keys: Any = None
 
 @dataclasses.dataclass

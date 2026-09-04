@@ -498,35 +498,61 @@ var V3beta1Flow_TransitionRoutesFields = ubx.FieldMap{
 }
 
 type V3beta1FlowConfig struct {
-	AdvancedSettings           any
-	Description                any
-	DisplayName                any
-	EventHandlers              any
-	InputParameterDefinitions  any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
+	EventHandlers any
+	// The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
+	InputParameterDefinitions any
+	// Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
 	KnowledgeConnectorSettings any
-	Locked                     any
-	MultiLanguageSettings      any
-	Name                       any
-	NluSettings                any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// Configuration for how this agent handles multiple supported languages. (AI-inferred)
+	MultiLanguageSettings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
+	NluSettings any
+	// The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
 	OutputParameterDefinitions any
-	TransitionRouteGroups      any
-	TransitionRoutes           any
+	// The reusable transition route group(s) included on this page/flow. (AI-inferred)
+	TransitionRouteGroups any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
+	TransitionRoutes any
 }
 
 type V3beta1FlowAttrs struct {
-	AdvancedSettings           any
-	Description                any
-	DisplayName                any
-	EventHandlers              any
-	InputParameterDefinitions  any
+	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
+	AdvancedSettings any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
+	EventHandlers any
+	// The parameter(s) this playbook or tool accepts as input, with their own name and type. (AI-inferred)
+	InputParameterDefinitions any
+	// Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
 	KnowledgeConnectorSettings any
-	Locked                     any
-	MultiLanguageSettings      any
-	Name                       any
-	NluSettings                any
+	// Whether this resource is currently locked against modification. (AI-inferred)
+	Locked any
+	// Configuration for how this agent handles multiple supported languages. (AI-inferred)
+	MultiLanguageSettings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for this agent's own natural language understanding, e.g. model type and classification threshold. (AI-inferred)
+	NluSettings any
+	// The parameter(s) this playbook or tool returns as output, with their own name and type. (AI-inferred)
 	OutputParameterDefinitions any
-	TransitionRouteGroups      any
-	TransitionRoutes           any
+	// The reusable transition route group(s) included on this page/flow. (AI-inferred)
+	TransitionRouteGroups any
+	// The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
+	TransitionRoutes any
 }
 
 var V3beta1Flow = ubx.ResourceBinding{

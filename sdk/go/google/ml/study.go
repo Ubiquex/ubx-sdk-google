@@ -9,46 +9,66 @@ type Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfig struct {
 }
 
 type Study_StudyConfig_AutomatedStoppingConfig struct {
+	// Configuration for stopping trials early using a decay-curve prediction of their own final performance. (AI-inferred)
 	DecayCurveStoppingConfig any
 	// The median automated stopping rule stops a pending trial if the trial's best objective_value is strictly below the median 'performance' of all completed trials reported up to the trial's last measurement. Currently, 'performance' refers to the running average of the objective values reported by the trial in each measurement.
 	MedianAutomatedStoppingConfig any
 }
 
 type Study_StudyConfig_Metrics struct {
-	Goal   any
+	// Whether this objective is being minimized or maximized. (AI-inferred)
+	Goal any
+	// The name of the metric being reported. (AI-inferred)
 	Metric any
 }
 
 type Study_StudyConfig_Parameters_CategoricalValueSpec struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Study_StudyConfig_Parameters_DiscreteValueSpec struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Study_StudyConfig_Parameters_DoubleValueSpec struct {
+	// The maximum value allowed. (AI-inferred)
 	MaxValue any
+	// The minimum value allowed. (AI-inferred)
 	MinValue any
 }
 
 type Study_StudyConfig_Parameters_IntegerValueSpec struct {
+	// The maximum value allowed. (AI-inferred)
 	MaxValue any
+	// The minimum value allowed. (AI-inferred)
 	MinValue any
 }
 
 type Study_StudyConfig_Parameters struct {
-	CategoricalValueSpec    any
-	ChildParameterSpecs     any
-	DiscreteValueSpec       any
-	DoubleValueSpec         any
-	IntegerValueSpec        any
-	Parameter               any
+	// The set of string value(s) a categorical hyperparameter may take. (AI-inferred)
+	CategoricalValueSpec any
+	// Hyperparameter(s) evaluated only when this parent parameter takes a specific value. (AI-inferred)
+	ChildParameterSpecs any
+	// The set of numeric value(s) a discrete hyperparameter may take. (AI-inferred)
+	DiscreteValueSpec any
+	// The valid range of a floating-point hyperparameter. (AI-inferred)
+	DoubleValueSpec any
+	// The valid range of an integer hyperparameter. (AI-inferred)
+	IntegerValueSpec any
+	// The name of a hyperparameter being tuned. (AI-inferred)
+	Parameter any
+	// The parent categorical value(s) this conditional parameter applies under. (AI-inferred)
 	ParentCategoricalValues any
-	ParentDiscreteValues    any
-	ParentIntValues         any
-	ScaleType               any
-	Type                    any
+	// The parent discrete value(s) this conditional parameter applies under. (AI-inferred)
+	ParentDiscreteValues any
+	// The parent integer value(s) this conditional parameter applies under. (AI-inferred)
+	ParentIntValues any
+	// How this hyperparameter's own search space is scaled, e.g. linearly or logarithmically. (AI-inferred)
+	ScaleType any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Study_StudyConfig struct {

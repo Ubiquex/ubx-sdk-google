@@ -7,11 +7,14 @@ export interface Reservation_AdvancedDeploymentControl {
 }
 
 export interface Reservation_AggregateReservation_InUseResources_Accelerator {
+  /** The number of accelerators of the specified type that are currently in use by the reservation. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The type of accelerator (GPU) used by this in-use resource within the aggregate reservation, such as 'nvidia-tesla-t4' or 'nvidia-tesla-a100'. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
 }
 
 export interface Reservation_AggregateReservation_InUseResources {
+  /** Configuration for the accelerator attached to this in-use resource, specifying the accelerator type and the number of accelerators. (AI-inferred) */
   accelerator?: Reservation_AggregateReservation_InUseResources_Accelerator | Computed<Reservation_AggregateReservation_InUseResources_Accelerator>;
 }
 
@@ -68,6 +71,7 @@ export interface Reservation_ResourceStatus_ReservationMaintenance_UpcomingGroup
   maintenanceOnShutdown?: boolean | Computed<boolean>;
   /** The reasons for the maintenance. Only valid for vms. */
   maintenanceReasons?: string[] | Computed<string[]>;
+  /** The current maintenance status for the upcoming group maintenance, with possible values ONGOING, PENDING, or UNKNOWN. (AI-inferred) */
   maintenanceStatus?: string | Computed<string>;
   /** Defines the type of maintenance. */
   type?: string | Computed<string>;
@@ -115,6 +119,7 @@ export interface Reservation_ResourceStatus {
 }
 
 export interface Reservation_ShareSettings_ProjectMap {
+  /** The ID of the project with which the reservation is shared, used in the project_map for specific project sharing. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
@@ -126,7 +131,9 @@ export interface Reservation_ShareSettings {
 }
 
 export interface Reservation_SpecificReservation_InstanceProperties_LocalSsds {
+  /** The size of the local SSD in GB. Valid values are multiples of 375, from 375 to 3000 inclusive. Defaults to 375. (AI-inferred) */
   diskSizeGb?: string | Computed<string>;
+  /** The interface type for the local SSD, either `NVME` or `SCSI`. This determines the storage protocol used for the local SSD devices. (AI-inferred) */
   interface?: string | Computed<string>;
 }
 
@@ -313,6 +320,7 @@ export interface ReservationConfig {
   advancedDeploymentControl?: Reservation_AdvancedDeploymentControl | Computed<Reservation_AdvancedDeploymentControl>;
   /** This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation. */
   aggregateReservation?: Reservation_AggregateReservation | Computed<Reservation_AggregateReservation>;
+  /** The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred) */
   confidentialComputeType?: string | Computed<string>;
   /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
   deleteAfterDuration?: Reservation_DeleteAfterDuration | Computed<Reservation_DeleteAfterDuration>;
@@ -332,6 +340,7 @@ export interface ReservationConfig {
   params?: Reservation_Params | Computed<Reservation_Params>;
   /** Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures). */
   protectionTier?: string | Computed<string>;
+  /** An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred) */
   reservationSharingPolicy?: Reservation_ReservationSharingPolicy | Computed<Reservation_ReservationSharingPolicy>;
   /** Standardized resource metadata common to all compute resources. */
   resourceMetadata?: Reservation_ResourceMetadata | Computed<Reservation_ResourceMetadata>;
@@ -358,6 +367,7 @@ export interface ReservationAttrs {
   aggregateReservation: Reservation_AggregateReservation;
   /** Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment. */
   commitment: string;
+  /** The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred) */
   confidentialComputeType: string;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
@@ -385,6 +395,7 @@ export interface ReservationAttrs {
   params: Reservation_Params;
   /** Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures). */
   protectionTier: string;
+  /** An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred) */
   reservationSharingPolicy: Reservation_ReservationSharingPolicy;
   /** Standardized resource metadata common to all compute resources. */
   resourceMetadata: Reservation_ResourceMetadata;

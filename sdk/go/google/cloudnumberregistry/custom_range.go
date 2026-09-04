@@ -4,7 +4,9 @@ package cloudnumberregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRange_Attributes struct {
-	Key   any
+	// The real key of this custom IP range's own metadata attribute. (AI-inferred)
+	Key any
+	// The real value of this custom IP range's own metadata attribute. (AI-inferred)
 	Value any
 }
 

@@ -15,10 +15,12 @@ class Backend_Codebase:
 
 @dataclasses.dataclass
 class Backend_ManagedResources_RunService:
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class Backend_ManagedResources:
+    # A reference to the Cloud Run service this backend deploys to. (AI-inferred)
     run_service: Any = None
 
 _Backend_CodebaseFields = {

@@ -164,38 +164,68 @@ _V3beta1Experiment_VariantsHistoryFields = {
 
 @dataclasses.dataclass
 class V3beta1ExperimentConfig:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The definition of this resource. (AI-inferred)
     definition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # How long this experiment runs before automatically concluding. (AI-inferred)
     experiment_length: Any = None
+    # When this resource was last updated. (AI-inferred)
     last_update_time: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The result produced by this operation. (AI-inferred)
     result: Any = None
+    # Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
     rollout_config: Any = None
+    # Why this rollout was halted, if it failed. (AI-inferred)
     rollout_failure_reason: Any = None
+    # The current progress of this gradual rollout. (AI-inferred)
     rollout_state: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The history of variant configurations this experiment has run with over time. (AI-inferred)
     variants_history: Any = None
 
 @dataclasses.dataclass
 class V3beta1ExperimentAttrs:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The definition of this resource. (AI-inferred)
     definition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # How long this experiment runs before automatically concluding. (AI-inferred)
     experiment_length: Any = None
+    # When this resource was last updated. (AI-inferred)
     last_update_time: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The result produced by this operation. (AI-inferred)
     result: Any = None
+    # Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
     rollout_config: Any = None
+    # Why this rollout was halted, if it failed. (AI-inferred)
     rollout_failure_reason: Any = None
+    # The current progress of this gradual rollout. (AI-inferred)
     rollout_state: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The history of variant configurations this experiment has run with over time. (AI-inferred)
     variants_history: Any = None
 
 V3beta1Experiment = ubx.ResourceBinding(

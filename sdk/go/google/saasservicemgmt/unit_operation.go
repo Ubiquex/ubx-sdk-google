@@ -4,11 +4,16 @@ package saasservicemgmt
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UnitOperation_Conditions struct {
+	// The real timestamp when this SaaS offering's own condition last changed status. (AI-inferred)
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	Status             any
-	Type               any
+	// A real, human-readable explanation for this condition's own current status. (AI-inferred)
+	Message any
+	// A real, short, machine-readable reason code for this condition's own current status. (AI-inferred)
+	Reason any
+	// The real, current status (`STATUS_TRUE`, `STATUS_FALSE`, `STATUS_UNKNOWN`) of this condition. (AI-inferred)
+	Status any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type UnitOperation_FlagUpdate struct {
@@ -17,8 +22,11 @@ type UnitOperation_FlagUpdate struct {
 }
 
 type UnitOperation_Provision_InputVariables struct {
-	Type     any
-	Value    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The real, declared value of this input variable, matching its own `type`. (AI-inferred)
+	Value any
+	// The real, named input variable this default value applies to. (AI-inferred)
 	Variable any
 }
 

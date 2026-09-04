@@ -26,6 +26,7 @@ class FeatureOnlineStore_Bigtable_BigtableMetadata:
 
 @dataclasses.dataclass
 class FeatureOnlineStore_Bigtable:
+    # Autoscaling configuration for the Bigtable instance backing this online serving store. (AI-inferred)
     auto_scaling: Any = None
     # Metadata of the Bigtable instance. This is used by direct read access to the Bigtable in tenant project.
     bigtable_metadata: Any = None
@@ -36,11 +37,17 @@ class FeatureOnlineStore_Bigtable:
 
 @dataclasses.dataclass
 class FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfig_PscAutomationConfigs:
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
     forwarding_rule: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The Google Cloud project ID this applies to. (AI-inferred)
     project_id: Any = None
+    # The current lifecycle state of this resource or job. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -131,6 +138,7 @@ _FeatureOnlineStore_EncryptionSpecFields = {
 
 @dataclasses.dataclass
 class FeatureOnlineStoreConfig:
+    # Configuration for the Bigtable instance backing this online serving store. (AI-inferred)
     bigtable: Any = None
     # The dedicated serving endpoint for this FeatureOnlineStore. Only need to set when you choose Optimized storage type. Public endpoint is provisioned by default.
     dedicated_serving_endpoint: Any = None
@@ -147,6 +155,7 @@ class FeatureOnlineStoreConfig:
 
 @dataclasses.dataclass
 class FeatureOnlineStoreAttrs:
+    # Configuration for the Bigtable instance backing this online serving store. (AI-inferred)
     bigtable: Any = None
     # Output only. Timestamp when this FeatureOnlineStore was created.
     create_time: Any = None

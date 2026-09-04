@@ -360,14 +360,20 @@ const V3beta1TransitionRouteGroup_TransitionRoutesFields: FieldMap = {
 };
 
 export interface V3beta1TransitionRouteGroupConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes?: V3beta1TransitionRouteGroup_TransitionRoutes[] | Computed<V3beta1TransitionRouteGroup_TransitionRoutes[]>;
 }
 
 export interface V3beta1TransitionRouteGroupAttrs {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes: V3beta1TransitionRouteGroup_TransitionRoutes[];
 }
 

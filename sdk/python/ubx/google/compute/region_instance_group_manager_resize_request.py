@@ -8,32 +8,45 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Instances_PreservedState_Disks:
+    # Indicates whether the disk is automatically deleted when the instance is deleted (true) or preserved (false). (AI-inferred)
     auto_delete: Any = None
+    # The mode of a preserved disk, indicating whether the disk is attached in read-only or read-write mode. Acceptable values are 'READ_WRITE' and 'READ_ONLY'. (AI-inferred)
     mode: Any = None
+    # The source disk or image to preserve for the instance's stateful disk, specified as a name, self-link, or partial URL. This disk or image is used to restore the instance's disk state during resize operations. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddress:
+    # The external IP address to preserve and assign to the instance when the resize request is processed. (AI-inferred)
     address: Any = None
+    # The literal IP address value to assign as the preserved external IP address for this instance. (AI-inferred)
     literal: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps:
+    # Indicates whether the external IP is automatically deleted when the instance is deleted. Valid values are 'TRUE' and 'FALSE'. (AI-inferred)
     auto_delete: Any = None
+    # The preserved external IP address configuration for a network interface. This object includes the IP address and its address type (such as INTERNAL or EXTERNAL). (AI-inferred)
     ip_address: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Instances_PreservedState:
+    # Map of disk names to preserved disk state. Each key is the disk name, and the value is an object specifying the source of the disk and optionally the disk mode (READ_ONLY or READ_WRITE). (AI-inferred)
     disks: Any = None
+    # A map of external IPs to preserve for the instance as part of its preserved state during a resize operation. (AI-inferred)
     external_ips: Any = None
     internal_ips: Any = None
+    # A map of metadata key-value pairs to preserve for the instance when the resize request is applied. (AI-inferred)
     metadata: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Instances:
+    # The fingerprint of the instance used for optimistic concurrency control, ensuring the instance hasn't changed since it was last read. (AI-inferred)
     fingerprint: Any = None
     name: Any = None
+    # Configuration for preserving instance state during a resize operation, such as metadata and disk settings. (AI-inferred)
     preserved_state: Any = None
+    # The status of an instance in the resize request. Possible values are: APPLYING, DELETING, EFFECTIVE, NONE, UNAPPLIED, and UNAPPLIED_DELETION. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -45,45 +58,65 @@ class RegionInstanceGroupManagerResizeRequest_RequestedRunDuration:
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfo:
+    # The logical grouping to which the error belongs, often a service domain such as 'googleapis.com' or 'gke.io'. (AI-inferred)
     domain: Any = None
+    # Additional structured details about this error, provided as key-value pairs. Keys must match the regex `[a-z][a-zA-Z0-9]*` or `_[a-z][a-zA-Z0-9]*`. (AI-inferred)
     metadatas: Any = None
+    # The reason that identifies the specific cause of the error. This value is unique within the error's domain and typically follows the pattern `[A-Z0-9_]+` (e.g., 'SERVICE_DISABLED'). (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_Links:
+    # A human-readable description of the help link, providing context or guidance related to the error. (AI-inferred)
     description: Any = None
+    # URL to a help resource related to the error detail. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help:
+    # A list of links to helpful resources related to the error, where each link object typically contains a description and a URL. (AI-inferred)
     links: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessage:
+    # The locale (language tag, e.g., 'en-US') of the localized error message. (AI-inferred)
     locale: Any = None
+    # The localized human-readable error message text, provided in the language specified by the corresponding 'locale' field within the localized_message error detail. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo:
+    # A map of quota dimension keys to values, such as region, zone, or resource type, that identifies the specific quota limit that was exceeded. (AI-inferred)
     dimensions: Any = None
+    # The quota limit that will apply if the resize request is accepted, used in quota error details. (AI-inferred)
     future_limit: Any = None
+    # The maximum allowed value for the quota metric, as specified by the quota limit. (AI-inferred)
     limit: Any = None
+    # The name of the specific quota limit that was exceeded, as reported in the quota_info error details. (AI-inferred)
     limit_name: Any = None
+    # The name of the quota metric that was exceeded, such as 'compute.googleapis.com/cpus'. (AI-inferred)
     metric_name: Any = None
+    # The rollout status of the quota, indicating whether the rollout is in progress. Allowed values: IN_PROGRESS and ROLLOUT_STATUS_UNSPECIFIED. (AI-inferred)
     rollout_status: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails:
     error_info: Any = None
+    # An object containing links to documentation that help resolve the error. (AI-inferred)
     help: Any = None
+    # A localized error message object, typically containing a 'locale' (e.g., 'en-US') and a 'message' string with the error text in that locale. (AI-inferred)
     localized_message: Any = None
+    # Information about the quota limit that was exceeded, including the metric name, the quota limit, and the current usage. (AI-inferred)
     quota_info: Any = None
 
 @dataclasses.dataclass
 class RegionInstanceGroupManagerResizeRequest_Status_Error_Errors:
+    # The machine-readable error code for the resize request failure, as returned by the Compute Engine API. This string typically identifies the specific error condition. (AI-inferred)
     code: Any = None
     error_details: Any = None
+    # The path or field in the request that the error pertains to, typically a JSON Pointer or field name. (AI-inferred)
     location: Any = None
+    # A human-readable error message that explains the failure. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -100,6 +133,7 @@ class RegionInstanceGroupManagerResizeRequest_Status_LastAttempt:
 class RegionInstanceGroupManagerResizeRequest_Status:
     # Output only. Fatal errors encountered during the queueing or provisioning phases of the ResizeRequest that caused the transition to the FAILED state. Contrary to the last_attempt errors, this field is final and errors are never removed from here, as the ResizeRequest is not going to retry.
     error: Any = None
+    # Represents the most recent attempt to resize the instance group, including error details if the attempt failed. (AI-inferred)
     last_attempt: Any = None
 
 _RegionInstanceGroupManagerResizeRequest_Instances_PreservedState_DisksFields = {

@@ -8,16 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterceptDeploymentGroup_ConnectedEndpointGroups:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class InterceptDeploymentGroup_Locations:
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class InterceptDeploymentGroup_NestedDeployments:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The current status of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

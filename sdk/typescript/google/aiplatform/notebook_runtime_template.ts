@@ -82,7 +82,9 @@ export interface NotebookRuntimeTemplate_SoftwareConfig_ColabImage {
 }
 
 export interface NotebookRuntimeTemplate_SoftwareConfig_Env {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

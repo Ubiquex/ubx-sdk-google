@@ -8,24 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AuthorizationPolicy_Rules_Destinations_HttpHeaderMatch:
+    # The HTTP header name this rule matches against. (AI-inferred)
     header_name: Any = None
+    # Matches values against this regular expression. (AI-inferred)
     regex_match: Any = None
 
 @dataclasses.dataclass
 class AuthorizationPolicy_Rules_Destinations:
+    # The host(s) this rule applies to. (AI-inferred)
     hosts: Any = None
+    # Matches based on the value of a specific HTTP header. (AI-inferred)
     http_header_match: Any = None
+    # The gRPC/HTTP method(s) this rule matches. (AI-inferred)
     methods: Any = None
+    # The port(s) this rule matches. (AI-inferred)
     ports: Any = None
 
 @dataclasses.dataclass
 class AuthorizationPolicy_Rules_Sources:
+    # The IP address range(s) this rule matches. (AI-inferred)
     ip_blocks: Any = None
+    # The identity/identities this rule matches against. (AI-inferred)
     principals: Any = None
 
 @dataclasses.dataclass
 class AuthorizationPolicy_Rules:
+    # The destination(s) this rule matches traffic against. (AI-inferred)
     destinations: Any = None
+    # The source(s) this rule matches traffic from. (AI-inferred)
     sources: Any = None
 
 _AuthorizationPolicy_Rules_Destinations_HttpHeaderMatchFields = {

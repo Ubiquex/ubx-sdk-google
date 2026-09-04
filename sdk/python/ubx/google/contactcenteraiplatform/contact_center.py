@@ -15,16 +15,24 @@ class ContactCenter_AdminUser:
 
 @dataclasses.dataclass
 class ContactCenter_Critical_PeakHours_EndTime:
+    # The hour-of-day component (0-23) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
     hours: Any = None
+    # The minute-of-hour component (0-59) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
     minutes: Any = None
+    # The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred)
     nanos: Any = None
+    # The second-of-minute component (0-60, allowing a leap second) of a `google.type.TimeOfDay`/`DateTime`, or the whole-unit component of a `google.protobuf.Duration`/`Timestamp` paired with that same message's own `nanos`. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class ContactCenter_Critical_PeakHours:
+    # The real day(s) of the week this peak-hours window applies to. (AI-inferred)
     days: Any = None
+    # The real duration of this contact center's own peak usage window. (AI-inferred)
     duration: Any = None
+    # The real time of day this peak-hours window ends. (AI-inferred)
     end_time: Any = None
+    # The real time of day this peak-hours window starts. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
@@ -44,7 +52,9 @@ class ContactCenter_InstanceConfig:
 
 @dataclasses.dataclass
 class ContactCenter_PrivateAccess_EgressSettings:
+    # The real, named private-access egress setting this contact center's own network configuration applies. (AI-inferred)
     name: Any = None
+    # The real Private Service Connect service attachment name(s) this contact center's own egress traffic is routed through. (AI-inferred)
     service_attachment_names: Any = None
 
 @dataclasses.dataclass
@@ -192,6 +202,7 @@ class ContactCenterConfig:
     display_name: Any = None
     # LINT.IfChange First Channel to receive the updates. Meant to dev/test instances
     early: Any = None
+    # Output only. Real, computed feature configuration and entitlements active for this contact center instance. (AI-inferred)
     feature_config: Any = None
     # Message storing the instance configuration.
     instance_config: Any = None
@@ -234,6 +245,7 @@ class ContactCenterAttrs:
     early: Any = None
     # Output only. Timestamp in UTC of when this resource is considered expired.
     expire_time: Any = None
+    # Output only. Real, computed feature configuration and entitlements active for this contact center instance. (AI-inferred)
     feature_config: Any = None
     # Message storing the instance configuration.
     instance_config: Any = None

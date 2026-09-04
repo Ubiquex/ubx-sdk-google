@@ -18,33 +18,51 @@ export interface Instance_DirectoryServices {
 }
 
 export interface Instance_FileShares_NfsExportOptions {
+  /** Whether this connection is read-only or read-write. (AI-inferred) */
   accessMode?: string | Computed<string>;
+  /** The group ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred) */
   anonGid?: string | Computed<string>;
+  /** The user ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred) */
   anonUid?: string | Computed<string>;
+  /** The IP address range(s), in CIDR notation, this applies to. (AI-inferred) */
   ipRanges?: string[] | Computed<string[]>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** How requests from root or unmapped clients are remapped. (AI-inferred) */
   squashMode?: string | Computed<string>;
 }
 
 export interface Instance_FileShares {
+  /** The provisioned capacity, in gibibytes. (AI-inferred) */
   capacityGb?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The NFS export configuration for this file share. (AI-inferred) */
   nfsExportOptions?: Instance_FileShares_NfsExportOptions[] | Computed<Instance_FileShares_NfsExportOptions[]>;
+  /** A reference to the backup this resource is created from. (AI-inferred) */
   sourceBackup?: string | Computed<string>;
+  /** A reference to the Backup and DR backup this resource is created from. (AI-inferred) */
   sourceBackupdrBackup?: string | Computed<string>;
 }
 
 export interface Instance_Networks_PscConfig {
+  /** A reference to the project this endpoint is created in. (AI-inferred) */
   endpointProject?: string | Computed<string>;
   requestedIpAddress?: string | Computed<string>;
 }
 
 export interface Instance_Networks {
+  /** Whether this instance is reached via direct peering or Private Service Access. (AI-inferred) */
   connectMode?: string | Computed<string>;
+  /** The IP address(es) assigned to this resource. (AI-inferred) */
   ipAddresses?: string[] | Computed<string[]>;
+  /** The mode(s) this applies to. (AI-inferred) */
   modes?: string[] | Computed<string[]>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** Configuration for connecting to this instance via Private Service Connect. (AI-inferred) */
   pscConfig?: Instance_Networks_PscConfig | Computed<Instance_Networks_PscConfig>;
+  /** The IP address range reserved for this instance. (AI-inferred) */
   reservedIpRange?: string | Computed<string>;
 }
 
@@ -79,10 +97,15 @@ export interface Instance_PerformanceLimits {
 }
 
 export interface Instance_Replication_Replicas {
+  /** When this replication last successfully synced. (AI-inferred) */
   lastActiveSyncTime?: string | Computed<string>;
+  /** A reference to the replication peer instance. (AI-inferred) */
   peerInstance?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The reason(s) explaining this resource's own current state. (AI-inferred) */
   stateReasons?: string[] | Computed<string[]>;
+  /** When this resource's own state was last updated. (AI-inferred) */
   stateUpdateTime?: string | Computed<string>;
 }
 

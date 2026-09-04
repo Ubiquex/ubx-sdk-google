@@ -88,7 +88,9 @@ class NotebookRuntimeTemplate_SoftwareConfig_ColabImage:
 
 @dataclasses.dataclass
 class NotebookRuntimeTemplate_SoftwareConfig_Env:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

@@ -4,6 +4,7 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeries struct {
+	// A machine-readable code identifying this result. (AI-inferred)
 	Code any
 }
 
@@ -27,6 +28,7 @@ type PreferenceSet_VirtualMachinePreferences_RegionPreferences struct {
 }
 
 type PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypes struct {
+	// The name of this node. (AI-inferred)
 	NodeName any
 }
 

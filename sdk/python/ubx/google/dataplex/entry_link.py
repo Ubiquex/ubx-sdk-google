@@ -8,23 +8,35 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EntryLink_Aspects_AspectSource:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The version of the data this profile or scan result was computed from. (AI-inferred)
     data_version: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class EntryLink_Aspects:
+    # Where this metadata aspect's own data was sourced from. (AI-inferred)
     aspect_source: Any = None
+    # A reference to the aspect type defining this metadata aspect's own structure. (AI-inferred)
     aspect_type: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The literal data payload. (AI-inferred)
     data: Any = None
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class EntryLink_EntryReferences:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A file or object path. (AI-inferred)
     path: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 _EntryLink_Aspects_AspectSourceFields = {

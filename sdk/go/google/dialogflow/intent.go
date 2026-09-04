@@ -4,20 +4,29 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Intent_Parameters struct {
+	// A reference to the entity type this applies to. (AI-inferred)
 	EntityType any
-	Id         any
-	IsList     any
-	Redact     any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// Whether this parameter captures a list of values, rather than a single one. (AI-inferred)
+	IsList any
+	// Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
+	Redact any
 }
 
 type Intent_TrainingPhrases_Parts struct {
+	// An identifier for this parameter, unique within its own containing form or intent. (AI-inferred)
 	ParameterId any
-	Text        any
+	// The plain-text content of this response message. (AI-inferred)
+	Text any
 }
 
 type Intent_TrainingPhrases struct {
-	Id          any
-	Parts       any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The ordered content parts making up this training phrase or message. (AI-inferred)
+	Parts any
+	// How many times a matching training phrase part was annotated with this parameter, when disambiguating repeated entities. (AI-inferred)
 	RepeatCount any
 }
 
@@ -44,26 +53,44 @@ var Intent_TrainingPhrasesFields = ubx.FieldMap{
 }
 
 type IntentConfig struct {
-	Description     any
-	DisplayName     any
-	DtmfPattern     any
-	IsFallback      any
-	Labels          any
-	Name            any
-	Parameters      any
-	Priority        any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The DTMF digit pattern this matches against. (AI-inferred)
+	DtmfPattern any
+	// Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
+	IsFallback any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
+	// The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
+	Priority any
+	// Example user utterances used to train this intent's own recognition. (AI-inferred)
 	TrainingPhrases any
 }
 
 type IntentAttrs struct {
-	Description     any
-	DisplayName     any
-	DtmfPattern     any
-	IsFallback      any
-	Labels          any
-	Name            any
-	Parameters      any
-	Priority        any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The DTMF digit pattern this matches against. (AI-inferred)
+	DtmfPattern any
+	// Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
+	IsFallback any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
+	// The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
+	Priority any
+	// Example user utterances used to train this intent's own recognition. (AI-inferred)
 	TrainingPhrases any
 }
 

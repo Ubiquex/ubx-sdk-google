@@ -4,19 +4,26 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MirroringEndpointGroup_Associations struct {
-	Name    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
 	Network any
-	State   any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type MirroringEndpointGroup_ConnectedDeploymentGroups_Locations struct {
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
 	Location any
-	State    any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type MirroringEndpointGroup_ConnectedDeploymentGroups struct {
+	// The location(s) this applies to. (AI-inferred)
 	Locations any
-	Name      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type MirroringEndpointGroupConfig struct {

@@ -23,16 +23,21 @@ class ChannelPartnerRepricingConfig_RepricingConfig_Adjustment:
 
 @dataclasses.dataclass
 class ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupCondition:
+    # The real, named group of SKUs this repricing condition matches against. (AI-inferred)
     sku_group: Any = None
 
 @dataclasses.dataclass
 class ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition:
+    # A real repricing condition matching entitlements whose SKU belongs to a specific `sku_group`. (AI-inferred)
     sku_group_condition: Any = None
 
 @dataclasses.dataclass
 class ChannelPartnerRepricingConfig_RepricingConfig_ConditionalOverrides:
+    # The real margin adjustment (as a `percentage_adjustment`) this repricing rule applies when its own `repricing_condition` matches. (AI-inferred)
     adjustment: Any = None
+    # The real cost basis (`COST_AT_LIST` or `DIRECT_CUSTOMER_COST`) this repricing rule's own adjustment is calculated against. (AI-inferred)
     rebilling_basis: Any = None
+    # The real condition (such as a matching `sku_group`) that must hold for this conditional repricing override to apply. (AI-inferred)
     repricing_condition: Any = None
 
 @dataclasses.dataclass

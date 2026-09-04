@@ -4,75 +4,111 @@ package apihub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_Actions_CurationConfig_CustomCuration struct {
+	// A reference to the curation this applies to. (AI-inferred)
 	Curation any
 }
 
 type Instance_Actions_CurationConfig struct {
-	CurationType   any
+	// The kind of curation this performs. (AI-inferred)
+	CurationType any
+	// Configures curation using a caller-supplied plugin, rather than a built-in curator. (AI-inferred)
 	CustomCuration any
 }
 
 type Instance_Actions_HubInstanceAction_LastExecution struct {
-	EndTime        any
-	ErrorMessage   any
-	Result         any
+	// When this operation ended. (AI-inferred)
+	EndTime any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// The result produced by this operation. (AI-inferred)
+	Result any
+	// Additional metadata about this result. (AI-inferred)
 	ResultMetadata any
-	StartTime      any
+	// When this operation started. (AI-inferred)
+	StartTime any
 }
 
 type Instance_Actions_HubInstanceAction struct {
+	// The current status of this plugin action's own most recent execution. (AI-inferred)
 	CurrentExecutionState any
-	LastExecution         any
+	// Detail about this plugin action's own most recent execution. (AI-inferred)
+	LastExecution any
 }
 
 type Instance_Actions_ResourceConfig struct {
-	ActionType  any
+	// The kind of action this represents. (AI-inferred)
+	ActionType any
+	// A reference to the Pub/Sub topic this plugin publishes events to. (AI-inferred)
 	PubsubTopic any
 }
 
 type Instance_Actions struct {
-	ActionId               any
-	CurationConfig         any
-	HubInstanceAction      any
-	ResourceConfig         any
+	// An identifier for this action, unique within its own containing plugin. (AI-inferred)
+	ActionId any
+	// Configuration for how metadata is automatically curated (enriched, classified) for discovered APIs. (AI-inferred)
+	CurationConfig any
+	// A reference to the plugin action this applies to. (AI-inferred)
+	HubInstanceAction any
+	// Configuration specific to this resource. (AI-inferred)
+	ResourceConfig any
+	// The cron expression this plugin action runs on. (AI-inferred)
 	ScheduleCronExpression any
-	ScheduleTimeZone       any
-	ServiceAccount         any
-	State                  any
+	// The time zone this schedule is interpreted in. (AI-inferred)
+	ScheduleTimeZone any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// The current status of this resource. (AI-inferred)
+	State any
 }
 
 type Instance_AdditionalConfig_EnumValue struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
+	// An identifier for this resource. (AI-inferred)
+	Id any
 }
 
 type Instance_AdditionalConfig_MultiIntValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Instance_AdditionalConfig_MultiSelectValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Instance_AdditionalConfig_MultiStringValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Instance_AdditionalConfig_SecretValue struct {
+	// The Secret Manager secret version holding this credential. (AI-inferred)
 	SecretVersion any
 }
 
 type Instance_AdditionalConfig struct {
-	BoolValue         any
-	EnumValue         any
-	IntValue          any
-	Key               any
-	MultiIntValues    any
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
+	BoolValue any
+	// The selected value of an enum-typed custom attribute. (AI-inferred)
+	EnumValue any
+	// An integer value, populated when this field's own type is an integer. (AI-inferred)
+	IntValue any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// Multiple integer value(s) for this custom attribute. (AI-inferred)
+	MultiIntValues any
+	// The selected value(s) of a multi-select custom attribute. (AI-inferred)
 	MultiSelectValues any
+	// Multiple string value(s) for this custom attribute. (AI-inferred)
 	MultiStringValues any
-	SecretValue       any
-	StringValue       any
+	// A secret credential value. (AI-inferred)
+	SecretValue any
+	// A text value, populated when this field's own type is a string. (AI-inferred)
+	StringValue any
 }
 
 type Instance_AuthConfig_ApiKeyConfig struct {
@@ -117,10 +153,14 @@ type Instance_AuthConfig struct {
 }
 
 type Instance_SourceEnvironmentsConfig struct {
-	CreateTime           any
-	SourceEnvironment    any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The environment this data was sourced from. (AI-inferred)
+	SourceEnvironment any
+	// A URI identifying the source environment. (AI-inferred)
 	SourceEnvironmentUri any
-	UpdateTime           any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 var Instance_Actions_CurationConfig_CustomCurationFields = ubx.FieldMap{

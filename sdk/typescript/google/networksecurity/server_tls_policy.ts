@@ -2,15 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstance {
+  /** A reference to the service extension plugin instance this applies to. (AI-inferred) */
   pluginInstance?: string | Computed<string>;
 }
 
 export interface ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpoint {
+  /** The URI this configuration targets or proxies to. (AI-inferred) */
   targetUri?: string | Computed<string>;
 }
 
 export interface ServerTlsPolicy_MtlsPolicy_ClientValidationCa {
+  /** A reference to the certificate provider supplying TLS certificates for this configuration. (AI-inferred) */
   certificateProviderInstance?: ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstance | Computed<ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstance>;
+  /** The gRPC endpoint this plugin or configuration connects to. (AI-inferred) */
   grpcEndpoint?: ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpoint | Computed<ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpoint>;
 }
 

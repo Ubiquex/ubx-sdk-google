@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Firewall_Allowed:
+    # The IP protocol to which this rule applies. Valid values are 'tcp', 'udp', 'icmp', 'esp', 'ah', 'sctp', or 'all'. (AI-inferred)
     ipprotocol: Any = None
+    # An optional list of ports or port ranges (e.g., '80' or '8000-9000') to which this rule applies. Only valid for TCP and UDP protocols; if omitted, the rule applies to all ports. (AI-inferred)
     ports: Any = None
 
 @dataclasses.dataclass

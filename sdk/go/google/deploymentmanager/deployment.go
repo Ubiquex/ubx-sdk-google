@@ -4,58 +4,86 @@ package deploymentmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployment_Labels struct {
-	Key   any
+	// The key of this metadata entry. (AI-inferred)
+	Key any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type Deployment_Operation_Error_Errors_DebugInfo struct {
-	Detail       any
+	// Additional detail about this result. (AI-inferred)
+	Detail any
+	// The individual frame(s) making up this stack trace. (AI-inferred)
 	StackEntries any
 }
 
 type Deployment_Operation_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain    any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// Metadata entries associated with this resource. (AI-inferred)
 	Metadatas any
-	Reason    any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
 }
 
 type Deployment_Operation_Error_Errors_ErrorDetails_Help_Links struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Url         any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type Deployment_Operation_Error_Errors_ErrorDetails_Help struct {
+	// Related link(s) for this resource. (AI-inferred)
 	Links any
 }
 
 type Deployment_Operation_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale  any
+	// The locale this localized content is expressed in. (AI-inferred)
+	Locale any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Deployment_Operation_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions    any
-	FutureLimit   any
-	Limit         any
-	LimitName     any
-	MetricName    any
+	// The dimension(s) this quota is tracked across, e.g. region. (AI-inferred)
+	Dimensions any
+	// The quota limit that will take effect at a future date. (AI-inferred)
+	FutureLimit any
+	// The maximum amount allowed. (AI-inferred)
+	Limit any
+	// The name of the quota this limit applies to. (AI-inferred)
+	LimitName any
+	// The name of the metric this applies to. (AI-inferred)
+	MetricName any
+	// The current status of this feature rollout. (AI-inferred)
 	RolloutStatus any
 }
 
 type Deployment_Operation_Error_Errors_ErrorDetails struct {
-	ErrorInfo        any
-	Help             any
+	// Structured detail about an error that occurred. (AI-inferred)
+	ErrorInfo any
+	// Guidance for resolving this error. (AI-inferred)
+	Help any
+	// A human-readable error message, localized for the caller. (AI-inferred)
 	LocalizedMessage any
-	QuotaInfo        any
+	// Detail about the quota this operation is subject to. (AI-inferred)
+	QuotaInfo any
 }
 
 type Deployment_Operation_Error_Errors struct {
-	Arguments    any
-	Code         any
-	DebugInfo    any
+	// The argument(s) passed to this operation. (AI-inferred)
+	Arguments any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail intended for debugging. (AI-inferred)
+	DebugInfo any
+	// Additional structured detail about the error. (AI-inferred)
 	ErrorDetails any
-	Location     any
-	Message      any
+	// The Google Cloud region or zone this applies to. (AI-inferred)
+	Location any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
 }
 
 type Deployment_Operation_Error struct {
@@ -76,15 +104,21 @@ type Deployment_Operation_GetVersionOperationMetadata_InlineSbomInfo struct {
 }
 
 type Deployment_Operation_GetVersionOperationMetadata struct {
+	// Software bill-of-materials information embedded in this resource. (AI-inferred)
 	InlineSbomInfo any
 }
 
 type Deployment_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatus struct {
-	CreatedVmCount        any
-	DeletedVmCount        any
+	// The number of VM instance(s) successfully created by this bulk operation. (AI-inferred)
+	CreatedVmCount any
+	// The number of VM instance(s) deleted by this bulk operation. (AI-inferred)
+	DeletedVmCount any
+	// The number of VM instance(s) this bulk operation failed to create. (AI-inferred)
 	FailedToCreateVmCount any
-	Status                any
-	TargetVmCount         any
+	// The current status of this resource. (AI-inferred)
+	Status any
+	// The total number of VM instance(s) this bulk operation targets. (AI-inferred)
+	TargetVmCount any
 }
 
 type Deployment_Operation_InstancesBulkInsertOperationMetadata struct {
@@ -102,13 +136,18 @@ type Deployment_Operation_SetAutoscalerLinkOperationMetadata struct {
 }
 
 type Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Deployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations struct {
+	// Detail about an error that occurred. (AI-inferred)
 	Error any
+	// The current lifecycle state of this resource. (AI-inferred)
 	State any
 }
 
@@ -120,8 +159,11 @@ type Deployment_Operation_SetCommonInstanceMetadataOperationMetadata struct {
 }
 
 type Deployment_Operation_Warnings struct {
-	Code    any
-	Data    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// The literal content of this field. (AI-inferred)
+	Data any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
@@ -135,9 +177,11 @@ type Deployment_Operation struct {
 	// [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
 	EndTime any
 	// [Output Only] If errors are generated during processing of the operation, this field will be populated.
-	Error                               any
+	Error any
+	// Metadata specific to a firewall policy rule operation. (AI-inferred)
 	FirewallPolicyRuleOperationMetadata any
-	GetVersionOperationMetadata         any
+	// Metadata specific to a get-version operation. (AI-inferred)
+	GetVersionOperationMetadata any
 	// [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
 	HttpErrorMessage any
 	// [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
@@ -145,7 +189,8 @@ type Deployment_Operation struct {
 	// [Output Only] The unique identifier for the operation. This identifier is defined by the server.
 	Id any
 	// [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
-	InsertTime                           any
+	InsertTime any
+	// Metadata specific to a bulk instance-insert operation. (AI-inferred)
 	InstancesBulkInsertOperationMetadata any
 	// Output only. [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
 	Kind any
@@ -162,8 +207,10 @@ type Deployment_Operation struct {
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId                             any
-	SetAutoscalerLinkOperationMetadata         any
+	SelfLinkWithId any
+	// Metadata specific to a set-autoscaler-link operation. (AI-inferred)
+	SetAutoscalerLinkOperationMetadata any
+	// Metadata specific to a set-common-instance-metadata operation. (AI-inferred)
 	SetCommonInstanceMetadataOperationMetadata any
 	// [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
 	StartTime any
@@ -189,11 +236,14 @@ type Deployment_Target_Config struct {
 }
 
 type Deployment_Target_Imports struct {
+	// The literal content of this field. (AI-inferred)
 	Content any
-	Name    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Deployment_Target struct {
+	// The configuration for this resource. (AI-inferred)
 	Config any
 	// Specifies any files to import for this configuration. This can be used to import templates or other files. For example, you might import a text file in order to use the file in a template.
 	Imports any
@@ -470,7 +520,8 @@ type DeploymentConfig struct {
 	Description any
 	// Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment.
 	Fingerprint any
-	Id          any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Map of One Platform labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
@@ -483,8 +534,10 @@ type DeploymentConfig struct {
 	Operation any
 	// Output only. Server defined URL for the resource.
 	SelfLink any
-	Target   any
-	Update   any
+	// A reference to the resource this operation targets. (AI-inferred)
+	Target any
+	// The update being applied to this resource. (AI-inferred)
+	Update any
 	// Output only. Update timestamp in RFC3339 text format.
 	UpdateTime any
 }
@@ -494,7 +547,8 @@ type DeploymentAttrs struct {
 	Description any
 	// Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment.
 	Fingerprint any
-	Id          any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Map of One Platform labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
@@ -507,8 +561,10 @@ type DeploymentAttrs struct {
 	Operation any
 	// Output only. Server defined URL for the resource.
 	SelfLink any
-	Target   any
-	Update   any
+	// A reference to the resource this operation targets. (AI-inferred)
+	Target any
+	// The update being applied to this resource. (AI-inferred)
+	Update any
 	// Output only. Update timestamp in RFC3339 text format.
 	UpdateTime any
 }

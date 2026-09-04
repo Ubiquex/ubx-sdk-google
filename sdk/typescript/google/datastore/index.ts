@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Index_Properties {
+  /** Whether this composite index property is real, sorted `ASCENDING` or `DESCENDING`. (AI-inferred) */
   direction?: string | Computed<string>;
+  /** The real, indexed entity property name this composite index property covers. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

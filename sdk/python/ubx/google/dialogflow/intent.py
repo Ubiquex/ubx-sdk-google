@@ -8,20 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Intent_Parameters:
+    # A reference to the entity type this applies to. (AI-inferred)
     entity_type: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # Whether this parameter captures a list of values, rather than a single one. (AI-inferred)
     is_list: Any = None
+    # Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
     redact: Any = None
 
 @dataclasses.dataclass
 class Intent_TrainingPhrases_Parts:
+    # An identifier for this parameter, unique within its own containing form or intent. (AI-inferred)
     parameter_id: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Intent_TrainingPhrases:
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The ordered content parts making up this training phrase or message. (AI-inferred)
     parts: Any = None
+    # How many times a matching training phrase part was annotated with this parameter, when disambiguating repeated entities. (AI-inferred)
     repeat_count: Any = None
 
 _Intent_ParametersFields = {
@@ -48,26 +57,44 @@ _Intent_TrainingPhrasesFields = {
 
 @dataclasses.dataclass
 class IntentConfig:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The DTMF digit pattern this matches against. (AI-inferred)
     dtmf_pattern: Any = None
+    # Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
     is_fallback: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
     priority: Any = None
+    # Example user utterances used to train this intent's own recognition. (AI-inferred)
     training_phrases: Any = None
 
 @dataclasses.dataclass
 class IntentAttrs:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The DTMF digit pattern this matches against. (AI-inferred)
     dtmf_pattern: Any = None
+    # Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
     is_fallback: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
     priority: Any = None
+    # Example user utterances used to train this intent's own recognition. (AI-inferred)
     training_phrases: Any = None
 
 Intent = ubx.ResourceBinding(

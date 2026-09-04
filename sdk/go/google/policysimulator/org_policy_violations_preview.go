@@ -4,65 +4,101 @@ package policysimulator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraint struct {
-	ActionType    any
-	Condition     any
-	Description   any
-	DisplayName   any
-	MethodTypes   any
-	Name          any
+	// Whether this custom constraint's own rule `ALLOW`s or `DENY`s a matching resource configuration. (AI-inferred)
+	ActionType any
+	// A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred)
+	Condition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The real resource lifecycle method(s) (e.g. `CREATE`, `UPDATE`) this custom constraint applies to. (AI-inferred)
+	MethodTypes any
+	// The real, fully-qualified resource name of this custom constraint or policy. (AI-inferred)
+	Name any
+	// The real Google Cloud resource type(s) this custom constraint applies to. (AI-inferred)
 	ResourceTypes any
-	UpdateTime    any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type OrgPolicyViolationsPreview_Overlay_CustomConstraints struct {
-	CustomConstraint       any
+	// A real, proposed custom organization policy constraint definition being previewed or replayed. (AI-inferred)
+	CustomConstraint any
+	// The real organization resource this custom constraint is defined under. (AI-inferred)
 	CustomConstraintParent any
 }
 
 type OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Condition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// The real Common Expression Language (CEL) expression text of this policy rule's own `condition`. (AI-inferred)
+	Expression any
+	// The real, human-readable source location (file/line) of this CEL expression, used for error reporting. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Values struct {
+	// The real values this policy rule explicitly permits, for a list-type organization policy constraint. (AI-inferred)
 	AllowedValues any
-	DeniedValues  any
+	// The real values this policy rule explicitly forbids, for a list-type organization policy constraint. (AI-inferred)
+	DeniedValues any
 }
 
 type OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules struct {
-	AllowAll   any
-	Condition  any
-	DenyAll    any
-	Enforce    any
+	// Whether this policy rule real, allows every value unconditionally. (AI-inferred)
+	AllowAll any
+	// A real Common Expression Language (CEL) expression this custom constraint or policy rule evaluates to decide whether it applies. (AI-inferred)
+	Condition any
+	// Whether this policy rule real, denies every value unconditionally. (AI-inferred)
+	DenyAll any
+	// Whether this real boolean-type policy rule evaluates to `true` (enforced) or `false` (not enforced). (AI-inferred)
+	Enforce any
+	// Real, custom constraint-specific parameter values this policy rule supplies to a matching custom constraint. (AI-inferred)
 	Parameters any
-	Values     any
+	// The real, explicit list of `allowed_values`/`denied_values` this policy rule enforces, for a list-type constraint. (AI-inferred)
+	Values any
 }
 
 type OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec struct {
-	Etag              any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// Whether this policy spec real, inherits and merges with policies set on parent resources in the hierarchy, rather than fully overriding them. (AI-inferred)
 	InheritFromParent any
-	Reset             any
-	Rules             any
-	UpdateTime        any
+	// Whether this policy spec real, clears any policy inherited from parent resources, enforcing only its own `rules`. (AI-inferred)
+	Reset any
+	// The real, ordered list of rules that make up this policy's own enforcement logic. (AI-inferred)
+	Rules any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type OrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate struct {
+	// The real launch/rollout stage this alternate policy version is being evaluated at. (AI-inferred)
 	Launch any
-	Spec   any
+	// The real policy specification (rules, inheritance, reset behavior) this policy or its alternate enforces. (AI-inferred)
+	Spec any
 }
 
 type OrgPolicyViolationsPreview_Overlay_Policies_Policy struct {
-	Alternate  any
+	// A real, alternate version of this policy used for org policy testing, kept distinct from the policy actually enforced. (AI-inferred)
+	Alternate any
+	// A real, secondary policy spec evaluated for reporting purposes only, without actually being enforced -- lets an org test a stricter policy's impact before enabling it. (AI-inferred)
 	DryRunSpec any
-	Etag       any
-	Name       any
-	Spec       any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// The real, fully-qualified resource name of this custom constraint or policy. (AI-inferred)
+	Name any
+	// The real policy specification (rules, inheritance, reset behavior) this policy or its alternate enforces. (AI-inferred)
+	Spec any
 }
 
 type OrgPolicyViolationsPreview_Overlay_Policies struct {
-	Policy       any
+	// A real, proposed organization policy being previewed or replayed against the resource hierarchy. (AI-inferred)
+	Policy any
+	// The real resource (project, folder, or organization) this proposed policy is being previewed or replayed against. (AI-inferred)
 	PolicyParent any
 }
 

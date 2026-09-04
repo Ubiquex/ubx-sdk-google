@@ -4,39 +4,57 @@ package apihub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Spec_AdditionalSpecContents_SpecContents struct {
+	// The literal content of this resource. (AI-inferred)
 	Contents any
+	// The IANA MIME type of this content. (AI-inferred)
 	MimeType any
 }
 
 type Spec_AdditionalSpecContents struct {
-	CreateTime      any
-	Labels          any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The format this API spec's own content is written in, e.g. OpenAPI or Protocol Buffers. (AI-inferred)
 	SpecContentType any
-	SpecContents    any
-	UpdateTime      any
+	// The raw content of this API specification. (AI-inferred)
+	SpecContents any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Spec_Attributes_EnumValues_Values struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Immutable   any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
+	Immutable any
 }
 
 type Spec_Attributes_EnumValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Spec_Attributes_JsonValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type Spec_Attributes struct {
-	Attribute    any
-	EnumValues   any
-	JsonValues   any
+	// A reference to the custom attribute this applies to. (AI-inferred)
+	Attribute any
+	// The selected value(s) of a multi-select enum-typed custom attribute. (AI-inferred)
+	EnumValues any
+	// JSON-typed value(s) for this custom attribute. (AI-inferred)
+	JsonValues any
+	// Multiple text value(s) for this custom attribute. (AI-inferred)
 	StringValues any
-	UriValues    any
+	// URI-typed value(s) for this custom attribute. (AI-inferred)
+	UriValues any
 }
 
 type Spec_Details_OpenApiSpecDetails_Owner struct {
@@ -68,25 +86,36 @@ type Spec_Documentation struct {
 }
 
 type Spec_LintResponse_Issues_Range_End struct {
+	// The column position within the line this applies to. (AI-inferred)
 	Character any
-	Line      any
+	// The line number this applies to. (AI-inferred)
+	Line any
 }
 
 type Spec_LintResponse_Issues_Range struct {
-	End   any
+	// Where this range ends. (AI-inferred)
+	End any
+	// Where this range starts. (AI-inferred)
 	Start any
 }
 
 type Spec_LintResponse_Issues struct {
-	Code     any
-	Message  any
-	Path     any
-	Range    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// A file or object path. (AI-inferred)
+	Path any
+	// The range this value spans. (AI-inferred)
+	Range any
+	// How serious this finding is. (AI-inferred)
 	Severity any
 }
 
 type Spec_LintResponse_Summary struct {
-	Count    any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// How serious this finding is. (AI-inferred)
 	Severity any
 }
 
@@ -106,16 +135,23 @@ type Spec_LintResponse struct {
 }
 
 type Spec_SourceMetadata_PluginInstanceActionSource struct {
-	ActionId       any
+	// An identifier for this action, unique within its own containing plugin. (AI-inferred)
+	ActionId any
+	// A reference to the plugin instance this applies to. (AI-inferred)
 	PluginInstance any
 }
 
 type Spec_SourceMetadata struct {
+	// When the original, externally-sourced resource was created. (AI-inferred)
 	OriginalResourceCreateTime any
-	OriginalResourceId         any
+	// The identifier of the original, externally-sourced resource this was imported from. (AI-inferred)
+	OriginalResourceId any
+	// When the original, externally-sourced resource was last updated. (AI-inferred)
 	OriginalResourceUpdateTime any
+	// Where this plugin action's own definition is sourced from. (AI-inferred)
 	PluginInstanceActionSource any
-	SourceType                 any
+	// The kind of source this data came from. (AI-inferred)
+	SourceType any
 }
 
 var Spec_Attributes_EnumValues_ValuesFields = ubx.FieldMap{

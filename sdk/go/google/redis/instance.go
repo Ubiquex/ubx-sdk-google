@@ -4,15 +4,22 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type Instance_MaintenancePolicy_WeeklyMaintenanceWindow struct {
-	Day       any
-	Duration  any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// How long this operation ran for. (AI-inferred)
+	Duration any
+	// When this event or window started. (AI-inferred)
 	StartTime any
 }
 
@@ -39,7 +46,9 @@ type Instance_MaintenanceSchedule struct {
 }
 
 type Instance_Nodes struct {
-	Id   any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The Compute Engine zone this applies to. (AI-inferred)
 	Zone any
 }
 
@@ -55,10 +64,15 @@ type Instance_PersistenceConfig struct {
 }
 
 type Instance_ServerCaCerts struct {
-	Cert            any
-	CreateTime      any
-	ExpireTime      any
-	SerialNumber    any
+	// The certificate presented for this connection. (AI-inferred)
+	Cert any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
+	ExpireTime any
+	// This certificate's own serial number. (AI-inferred)
+	SerialNumber any
+	// A SHA-1 fingerprint of this certificate. (AI-inferred)
 	Sha1Fingerprint any
 }
 

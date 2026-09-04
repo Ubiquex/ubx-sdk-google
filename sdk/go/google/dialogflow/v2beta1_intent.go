@@ -723,49 +723,89 @@ var V2beta1Intent_TrainingPhrasesFields = ubx.FieldMap{
 }
 
 type V2beta1IntentConfig struct {
-	Action                   any
+	// The specific action, exposed by `tool`, being invoked. (AI-inferred)
+	Action any
+	// The real messaging platform(s) this intent's own default responses render for. (AI-inferred)
 	DefaultResponsePlatforms any
-	DisplayName              any
-	EndInteraction           any
-	Events                   any
-	InputContextNames        any
-	IsFallback               any
-	LiveAgentHandoff         any
-	Messages                 any
-	MlDisabled               any
-	MlEnabled                any
-	Name                     any
-	OutputContexts           any
-	Parameters               any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
+	EndInteraction any
+	// The real custom event name(s) that can trigger this intent directly, without matching user input. (AI-inferred)
+	Events any
+	// The real context(s) that must be active for this intent to be matched. (AI-inferred)
+	InputContextNames any
+	// Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
+	IsFallback any
+	// Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
+	LiveAgentHandoff any
+	// The response message(s) this fulfillment returns. (AI-inferred)
+	Messages any
+	// Whether machine-learning-based matching is disabled for this intent, restricting it to exact phrase matches. (AI-inferred)
+	MlDisabled any
+	// Whether machine-learning-based matching is enabled for this intent. Deprecated in favor of `ml_disabled`. (AI-inferred)
+	MlEnabled any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The real context(s) this intent activates once matched. (AI-inferred)
+	OutputContexts any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
+	// A reference to this intent's own direct parent, when this intent is itself a follow-up intent. (AI-inferred)
 	ParentFollowupIntentName any
-	Priority                 any
-	ResetContexts            any
-	TrainingPhrases          any
-	WebhookState             any
+	// The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
+	Priority any
+	// Whether matching this intent clears all previously active contexts. (AI-inferred)
+	ResetContexts any
+	// Example user utterances used to train this intent's own recognition. (AI-inferred)
+	TrainingPhrases any
+	// Whether a webhook is enabled for this intent, and whether it is required for slot filling. (AI-inferred)
+	WebhookState any
 }
 
 type V2beta1IntentAttrs struct {
-	Action                   any
+	// The specific action, exposed by `tool`, being invoked. (AI-inferred)
+	Action any
+	// The real messaging platform(s) this intent's own default responses render for. (AI-inferred)
 	DefaultResponsePlatforms any
-	DisplayName              any
-	EndInteraction           any
-	Events                   any
-	FollowupIntentInfo       any
-	InputContextNames        any
-	IsFallback               any
-	LiveAgentHandoff         any
-	Messages                 any
-	MlDisabled               any
-	MlEnabled                any
-	Name                     any
-	OutputContexts           any
-	Parameters               any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
+	EndInteraction any
+	// The real custom event name(s) that can trigger this intent directly, without matching user input. (AI-inferred)
+	Events any
+	// The real, direct follow-up intent(s) nested under this intent. (AI-inferred)
+	FollowupIntentInfo any
+	// The real context(s) that must be active for this intent to be matched. (AI-inferred)
+	InputContextNames any
+	// Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
+	IsFallback any
+	// Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
+	LiveAgentHandoff any
+	// The response message(s) this fulfillment returns. (AI-inferred)
+	Messages any
+	// Whether machine-learning-based matching is disabled for this intent, restricting it to exact phrase matches. (AI-inferred)
+	MlDisabled any
+	// Whether machine-learning-based matching is enabled for this intent. Deprecated in favor of `ml_disabled`. (AI-inferred)
+	MlEnabled any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The real context(s) this intent activates once matched. (AI-inferred)
+	OutputContexts any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
+	// A reference to this intent's own direct parent, when this intent is itself a follow-up intent. (AI-inferred)
 	ParentFollowupIntentName any
-	Priority                 any
-	ResetContexts            any
-	RootFollowupIntentName   any
-	TrainingPhrases          any
-	WebhookState             any
+	// The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
+	Priority any
+	// Whether matching this intent clears all previously active contexts. (AI-inferred)
+	ResetContexts any
+	// A reference to the top-level intent at the root of this intent's own follow-up chain. (AI-inferred)
+	RootFollowupIntentName any
+	// Example user utterances used to train this intent's own recognition. (AI-inferred)
+	TrainingPhrases any
+	// Whether a webhook is enabled for this intent, and whether it is required for slot filling. (AI-inferred)
+	WebhookState any
 }
 
 var V2beta1Intent = ubx.ResourceBinding{

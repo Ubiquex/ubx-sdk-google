@@ -11,19 +11,27 @@ type DicomStore_NotificationConfig struct {
 }
 
 type DicomStore_NotificationConfigs struct {
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
 	PubsubTopic any
 }
 
 type DicomStore_StreamConfigs_BigqueryDestination struct {
-	Force              any
+	// Whether this operation proceeds even if it would otherwise be blocked by a safety check. (AI-inferred)
+	Force any
+	// Whether the source store's own resources are included, in addition to the destination's. (AI-inferred)
 	IncludeSourceStore any
-	SchemaFlattened    any
-	SchemaJson         any
-	TableUri           any
-	WriteDisposition   any
+	// Whether the parsed message schema is flattened into a single-level structure. (AI-inferred)
+	SchemaFlattened any
+	// The message schema, expressed as JSON. (AI-inferred)
+	SchemaJson any
+	// A reference to the BigQuery table this applies to. (AI-inferred)
+	TableUri any
+	// Whether export output overwrites, appends to, or requires an empty destination table. (AI-inferred)
+	WriteDisposition any
 }
 
 type DicomStore_StreamConfigs struct {
+	// The BigQuery table this operation's own output is written to. (AI-inferred)
 	BigqueryDestination any
 }
 

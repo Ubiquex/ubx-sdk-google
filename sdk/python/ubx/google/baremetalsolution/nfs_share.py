@@ -8,13 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NfsShare_AllowedClients:
+    # Whether this NFS-allowed client is permitted to access device files on the share. (AI-inferred)
     allow_dev: Any = None
+    # Whether this NFS-allowed client is permitted to use set-user-ID and set-group-ID bits on the share. (AI-inferred)
     allow_suid: Any = None
+    # The real CIDR range of client IP addresses this NFS share access rule applies to. (AI-inferred)
     allowed_clients_cidr: Any = None
+    # The real mount access level (`READ` or `READ_WRITE`) this NFS-allowed client is granted. (AI-inferred)
     mount_permissions: Any = None
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The real, exported NFS path clients matching this rule can mount. (AI-inferred)
     nfs_path: Any = None
+    # Whether this NFS-allowed client is exempt from root squashing, letting a client's own root user act as root on the share. (AI-inferred)
     no_root_squash: Any = None
+    # The real IP address this NFS share is served from. (AI-inferred)
     share_ip: Any = None
 
 _NfsShare_AllowedClientsFields = {

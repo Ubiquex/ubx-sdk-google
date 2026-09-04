@@ -2,36 +2,58 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DocumentSchema_PropertyDefinitions_EnumTypeOptions {
+  /** The real, closed set of values an enum-typed document schema property is allowed to take. (AI-inferred) */
   possibleValues?: string[] | Computed<string[]>;
+  /** Whether Document AI Warehouse should real, skip validating a property's value against its own `possible_values` at write time. (AI-inferred) */
   validationCheckDisabled?: boolean | Computed<boolean>;
 }
 
 export interface DocumentSchema_PropertyDefinitions_PropertyTypeOptions {
+  /** The real, nested sub-property definitions that make up a map-typed document schema property. (AI-inferred) */
   propertyDefinitions?: unknown[] | Computed<unknown[]>;
 }
 
 export interface DocumentSchema_PropertyDefinitions_SchemaSources {
+  /** The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real Document AI processor type (e.g. an invoice or contract parser) this schema property is sourced from. (AI-inferred) */
   processorType?: string | Computed<string>;
 }
 
 export interface DocumentSchema_PropertyDefinitions {
+  /** Real, additional type-specific configuration for a document schema property definition whose declared type is date-time. (AI-inferred) */
   dateTimeTypeOptions?: unknown | Computed<unknown>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Real, additional type-specific configuration for a document schema property definition whose declared type is a closed enumeration, including its own `possible_values`. (AI-inferred) */
   enumTypeOptions?: DocumentSchema_PropertyDefinitions_EnumTypeOptions | Computed<DocumentSchema_PropertyDefinitions_EnumTypeOptions>;
+  /** Real, additional type-specific configuration for a document schema property definition whose declared type is a floating-point number. (AI-inferred) */
   floatTypeOptions?: unknown | Computed<unknown>;
+  /** Real, additional type-specific configuration for a document schema property definition whose declared type is an integer. (AI-inferred) */
   integerTypeOptions?: unknown | Computed<unknown>;
+  /** Whether documents can be real, filtered by this schema property's own value in a search query. (AI-inferred) */
   isFilterable?: boolean | Computed<boolean>;
+  /** Whether this schema property is real, treated as document metadata rather than extracted document content. (AI-inferred) */
   isMetadata?: boolean | Computed<boolean>;
+  /** Whether this schema property is real, allowed to hold more than one value on a single document. (AI-inferred) */
   isRepeatable?: boolean | Computed<boolean>;
+  /** Whether every document conforming to this schema must real, supply a value for this property. (AI-inferred) */
   isRequired?: boolean | Computed<boolean>;
+  /** Whether this schema property's own value is real, indexed for full-text or structured search. (AI-inferred) */
   isSearchable?: boolean | Computed<boolean>;
+  /** Real, additional type-specific configuration for a document schema property definition whose declared type is a map of named sub-fields. (AI-inferred) */
   mapTypeOptions?: unknown | Computed<unknown>;
+  /** The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real, type-specific configuration (matching this property definition's own declared type) governing how its values are validated and stored. (AI-inferred) */
   propertyTypeOptions?: DocumentSchema_PropertyDefinitions_PropertyTypeOptions | Computed<DocumentSchema_PropertyDefinitions_PropertyTypeOptions>;
+  /** How real, heavily this property's own value is weighted when ranking documents for retrieval-oriented search. (AI-inferred) */
   retrievalImportance?: string | Computed<string>;
+  /** The real Document AI processor(s) or source(s) this schema property definition was generated from or is linked to. (AI-inferred) */
   schemaSources?: DocumentSchema_PropertyDefinitions_SchemaSources[] | Computed<DocumentSchema_PropertyDefinitions_SchemaSources[]>;
+  /** Real, additional type-specific configuration for a document schema property definition whose declared type is plain text. (AI-inferred) */
   textTypeOptions?: unknown | Computed<unknown>;
+  /** Real, additional type-specific configuration for a document schema property definition whose declared type is a timestamp. (AI-inferred) */
   timestampTypeOptions?: unknown | Computed<unknown>;
 }
 

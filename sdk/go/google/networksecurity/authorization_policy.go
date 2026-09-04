@@ -4,25 +4,35 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthorizationPolicy_Rules_Destinations_HttpHeaderMatch struct {
+	// The HTTP header name this rule matches against. (AI-inferred)
 	HeaderName any
+	// Matches values against this regular expression. (AI-inferred)
 	RegexMatch any
 }
 
 type AuthorizationPolicy_Rules_Destinations struct {
-	Hosts           any
+	// The host(s) this rule applies to. (AI-inferred)
+	Hosts any
+	// Matches based on the value of a specific HTTP header. (AI-inferred)
 	HttpHeaderMatch any
-	Methods         any
-	Ports           any
+	// The gRPC/HTTP method(s) this rule matches. (AI-inferred)
+	Methods any
+	// The port(s) this rule matches. (AI-inferred)
+	Ports any
 }
 
 type AuthorizationPolicy_Rules_Sources struct {
-	IpBlocks   any
+	// The IP address range(s) this rule matches. (AI-inferred)
+	IpBlocks any
+	// The identity/identities this rule matches against. (AI-inferred)
 	Principals any
 }
 
 type AuthorizationPolicy_Rules struct {
+	// The destination(s) this rule matches traffic against. (AI-inferred)
 	Destinations any
-	Sources      any
+	// The source(s) this rule matches traffic from. (AI-inferred)
+	Sources any
 }
 
 var AuthorizationPolicy_Rules_Destinations_HttpHeaderMatchFields = ubx.FieldMap{

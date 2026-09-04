@@ -32,6 +32,7 @@ class RuleConfig:
     condition: Any = None
     # The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`.
     name: Any = None
+    # The operation this rule applies to, e.g. `DOWNLOAD`. (AI-inferred)
     operation: Any = None
     # The package ID the rule applies to. If empty, this rule applies to all packages inside the repository.
     package_id: Any = None
@@ -44,6 +45,7 @@ class RuleAttrs:
     condition: Any = None
     # The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`.
     name: Any = None
+    # The operation this rule applies to, e.g. `DOWNLOAD`. (AI-inferred)
     operation: Any = None
     # The package ID the rule applies to. If empty, this rule applies to all packages inside the repository.
     package_id: Any = None

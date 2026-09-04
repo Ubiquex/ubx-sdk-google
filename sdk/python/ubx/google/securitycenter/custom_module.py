@@ -8,25 +8,42 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomModuleConfig:
+    # The cloud provider this resource belongs to. (AI-inferred)
     cloud_provider: Any = None
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether this feature is enabled, disabled, or inherited from a parent. (AI-inferred)
     enablement_state: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class CustomModuleAttrs:
+    # A reference to the parent security posture module this inherits from. (AI-inferred)
     ancestor_module: Any = None
+    # The cloud provider this resource belongs to. (AI-inferred)
     cloud_provider: Any = None
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Whether this feature is enabled, disabled, or inherited from a parent. (AI-inferred)
     enablement_state: Any = None
+    # The identity that most recently modified this resource. (AI-inferred)
     last_editor: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 CustomModule = ubx.ResourceBinding(

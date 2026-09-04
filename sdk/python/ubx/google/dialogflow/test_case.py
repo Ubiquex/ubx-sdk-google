@@ -8,331 +8,513 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config_BargeInConfig:
+    # How long after the agent starts speaking before the caller is allowed to interrupt it. (AI-inferred)
     no_barge_in_duration: Any = None
+    # The total time this operation, run, or window covers. (AI-inferred)
     total_duration: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config:
+    # The audio encoding format, e.g. `AUDIO_ENCODING_LINEAR_16`. (AI-inferred)
     audio_encoding: Any = None
+    # Configuration for whether and how the caller can interrupt (barge in on) the agent's own spoken response. (AI-inferred)
     barge_in_config: Any = None
+    # Whether per-word confidence and timing detail is included in speech recognition results. (AI-inferred)
     enable_word_info: Any = None
+    # The name of the model this applies to. (AI-inferred)
     model: Any = None
+    # Which specific model variant this uses. (AI-inferred)
     model_variant: Any = None
+    # Opts this agent out of automatic migration to Dialogflow's newer Conformer speech-recognition model. (AI-inferred)
     opt_out_conformer_model_migration: Any = None
+    # Phrase(s) speech recognition is biased toward recognizing correctly. (AI-inferred)
     phrase_hints: Any = None
+    # The audio sample rate, in Hz. (AI-inferred)
     sample_rate_hertz: Any = None
+    # Whether speech recognition ends after detecting a single utterance, rather than continuing to listen. (AI-inferred)
     single_utterance: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio:
+    # The synthesized audio content for this response. (AI-inferred)
     audio: Any = None
+    # The configuration for this resource. (AI-inferred)
     config: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_Dtmf:
+    # The DTMF digit(s) entered. (AI-inferred)
     digits: Any = None
+    # The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
     finish_digit: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_Event:
+    # The name of the event this handler responds to. (AI-inferred)
     event: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_Intent:
+    # A reference to the intent this applies to. (AI-inferred)
     intent: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_Text:
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult_Error:
+    # The message content. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult:
+    # The specific action, exposed by `tool`, being invoked. (AI-inferred)
     action: Any = None
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # The parameter value(s) produced by this operation. (AI-inferred)
     output_parameters: Any = None
+    # The tool this fulfillment or response invokes. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput_Input:
+    # The synthesized audio content for this response. (AI-inferred)
     audio: Any = None
+    # DTMF (touch-tone) input configuration or data. (AI-inferred)
     dtmf: Any = None
+    # The name of the event this handler responds to. (AI-inferred)
     event: Any = None
+    # A reference to the intent this applies to. (AI-inferred)
     intent: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
+    # The result returned from invoking a tool. (AI-inferred)
     tool_call_result: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_UserInput:
+    # Whether Dialogflow analyzes the sentiment of end-user input during the conversation. (AI-inferred)
     enable_sentiment_analysis: Any = None
+    # Parameter value(s) supplied directly into this playbook or flow invocation, bypassing normal collection. (AI-inferred)
     injected_parameters: Any = None
+    # The input provided to this operation. (AI-inferred)
     input: Any = None
+    # Whether this tool is implemented by calling a webhook, rather than a built-in action. (AI-inferred)
     is_webhook_enabled: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_AudioExportGcsDestination:
+    # The URI of an audio clip this response instructs the client to play. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_DtmfSettings:
+    # Whether this setting is turned on. (AI-inferred)
     enabled: Any = None
+    # How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred)
     endpointing_timeout_duration: Any = None
+    # The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred)
     finish_digit: Any = None
+    # The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred)
     interdigit_timeout_duration: Any = None
+    # The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred)
     max_digits: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_LoggingSettings:
+    # Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred)
     enable_consent_based_redaction: Any = None
+    # Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred)
     enable_interaction_logging: Any = None
+    # Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred)
     enable_stackdriver_logging: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_SpeechSettings:
+    # How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred)
     endpointer_sensitivity: Any = None
+    # Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred)
     models: Any = None
+    # How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred)
     no_speech_timeout: Any = None
+    # Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred)
     use_timeout_based_endpointing: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings:
+    # The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred)
     audio_export_gcs_destination: Any = None
+    # Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred)
     dtmf_settings: Any = None
+    # Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred)
     logging_settings: Any = None
+    # Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred)
     speech_settings: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess:
+    # Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred)
     metadata: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # The synthesized audio content for this response. (AI-inferred)
     audio: Any = None
+    # The URI of an audio clip this response instructs the client to play. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio:
+    # The ordered audio segments making up a `mixed_audio` response. (AI-inferred)
     segments: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # Speech Synthesis Markup Language text, giving finer control over how this response is spoken aloud than plain `text` allows. (AI-inferred)
     ssml: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # The URI of the client-hosted audio clip a `play_audio` response points to. (AI-inferred)
     audio_uri: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall:
+    # The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred)
     phone_number: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text:
+    # Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred)
     allow_playback_interruption: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall:
+    # The specific action, exposed by `tool`, being invoked. (AI-inferred)
     action: Any = None
+    # The parameter values passed as input when invoking this tool's action. (AI-inferred)
     input_parameters: Any = None
+    # The tool this fulfillment or response invokes. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message:
+    # The output channel this response message is scoped to (e.g. a specific integration), so different channels can receive different responses for the same turn. (AI-inferred)
     channel: Any = None
+    # Signals that the conversation reached a successful outcome, optionally carrying metadata describing why. (AI-inferred)
     conversation_success: Any = None
+    # Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred)
     end_interaction: Any = None
+    # An info-card response generated from a knowledge base or generative answer, rendered by clients that support Infobot Messenger-compatible cards. (AI-inferred)
     knowledge_info_card: Any = None
+    # Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred)
     live_agent_handoff: Any = None
+    # An audio response composed of multiple segments, mixing Dialogflow's own synthesized speech with client-hosted audio clips played via `play_audio`. (AI-inferred)
     mixed_audio: Any = None
+    # A text or SSML response used preferentially for speech synthesis, when the response also carries a plain `text` variant for display. (AI-inferred)
     output_audio_text: Any = None
+    # A custom, integration-specific JSON payload carried alongside this response message. (AI-inferred)
     payload: Any = None
+    # Signals the client to play an audio clip hosted at `audio_uri`, rather than synthesizing speech itself. (AI-inferred)
     play_audio: Any = None
+    # Which kind of response message this is (e.g. entry prompt, follow-up, or error), controlling when Dialogflow surfaces it. (AI-inferred)
     response_type: Any = None
+    # Signals a telephony integration to transfer the active call to `phone_number`. (AI-inferred)
     telephony_transfer_call: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
+    # A request from the agent to invoke a specific `tool`'s own `action`, passing `input_parameters`. (AI-inferred)
     tool_call: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent:
+    # Further, nested cascading if/else conditions evaluated when this case's own condition matches. (AI-inferred)
     additional_cases: Any = None
+    # The message content. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases:
+    # The message(s) or action(s) to run when this case's own condition matches. (AI-inferred)
     case_content: Any = None
+    # A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases:
+    # The ordered condition/content pair(s) making up this cascading if/else. (AI-inferred)
     cases: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Generators:
+    # A reference to the generator this invokes. (AI-inferred)
     generator: Any = None
+    # The parameter values passed as input when invoking this tool's action. (AI-inferred)
     input_parameters: Any = None
+    # The session parameter this generator's own output is written to. (AI-inferred)
     output_parameter: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_SetParameterActions:
+    # The name of the parameter this applies to. (AI-inferred)
     parameter: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # The name of the Cloud Function this fulfillment invokes to run custom code inline. (AI-inferred)
     code_block_function: Any = None
+    # A cascading if/else list of conditions -- the first one whose own `condition` evaluates true is used, the rest are ignored. (AI-inferred)
     conditional_cases: Any = None
+    # Whether Dialogflow falls back to a generative (LLM-produced) response when no other route matches, rather than a static no-match message. (AI-inferred)
     enable_generative_fallback: Any = None
+    # The generator(s) (LLM prompt-based response generation) invoked by this fulfillment. (AI-inferred)
     generators: Any = None
+    # The response message(s) this fulfillment returns. (AI-inferred)
     messages: Any = None
+    # Whether this fulfillment streams its own response back incrementally, rather than waiting to send it all at once. (AI-inferred)
     return_partial_responses: Any = None
+    # Session parameter value(s) this fulfillment sets before running its own webhook call or response. (AI-inferred)
     set_parameter_actions: Any = None
+    # A caller-defined identifier included in the webhook request, letting the webhook service tell which fulfillment triggered it. (AI-inferred)
     tag: Any = None
+    # A reference to the webhook this fulfillment calls. (AI-inferred)
     webhook: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers:
+    # The name of the event this handler responds to. (AI-inferred)
     event: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The flow this transition moves the conversation to. (AI-inferred)
     target_flow: Any = None
+    # The page this transition moves the conversation to. (AI-inferred)
     target_page: Any = None
+    # The playbook this transition moves the conversation to. (AI-inferred)
     target_playbook: Any = None
+    # The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
     trigger_fulfillment: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters_FillBehavior:
+    # The fulfillment run the first time this page's own form parameter is requested. (AI-inferred)
     initial_prompt_fulfillment: Any = None
+    # Event handler(s) triggered when the caller's own input doesn't satisfy this form parameter, prompting again. (AI-inferred)
     reprompt_event_handlers: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the entity type this applies to. (AI-inferred)
     entity_type: Any = None
+    # Configuration for how this page prompts for and validates its own required parameters. (AI-inferred)
     fill_behavior: Any = None
+    # Whether this parameter captures a list of values, rather than a single one. (AI-inferred)
     is_list: Any = None
+    # Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
     redact: Any = None
+    # The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
     required: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form:
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings_DataStoreConnections:
+    # A reference to the Vertex AI Search data store this connection reads from. (AI-inferred)
     data_store: Any = None
+    # What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred)
     data_store_type: Any = None
+    # How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred)
     document_processing_mode: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings:
+    # The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred)
     data_store_connections: Any = None
+    # Whether this setting is turned on. (AI-inferred)
     enabled: Any = None
+    # The flow this transition moves the conversation to. (AI-inferred)
     target_flow: Any = None
+    # The page this transition moves the conversation to. (AI-inferred)
     target_page: Any = None
+    # The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
     trigger_fulfillment: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_TransitionRoutes:
+    # A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
     condition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A reference to the intent this applies to. (AI-inferred)
     intent: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The flow this transition moves the conversation to. (AI-inferred)
     target_flow: Any = None
+    # The page this transition moves the conversation to. (AI-inferred)
     target_page: Any = None
+    # The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred)
     trigger_fulfillment: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage:
+    # Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
     advanced_settings: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred)
     entry_fulfillment: Any = None
+    # The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred)
     event_handlers: Any = None
+    # The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred)
     form: Any = None
+    # Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred)
     knowledge_connector_settings: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The reusable transition route group(s) included on this page/flow. (AI-inferred)
     transition_route_groups: Any = None
+    # The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
     transition_routes: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Differences:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Status:
+    # A machine-readable code identifying this result or error. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # The message content. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_Parameters:
+    # A reference to the entity type this applies to. (AI-inferred)
     entity_type: Any = None
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # Whether this parameter captures a list of values, rather than a single one. (AI-inferred)
     is_list: Any = None
+    # Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred)
     redact: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases_Parts:
+    # An identifier for this parameter, unique within its own containing form or intent. (AI-inferred)
     parameter_id: Any = None
+    # The plain-text content of this response message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases:
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The ordered content parts making up this training phrase or message. (AI-inferred)
     parts: Any = None
+    # How many times a matching training phrase part was annotated with this parameter, when disambiguating repeated entities. (AI-inferred)
     repeat_count: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The DTMF digit pattern this matches against. (AI-inferred)
     dtmf_pattern: Any = None
+    # Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred)
     is_fallback: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The parameter(s) making up this configuration. (AI-inferred)
     parameters: Any = None
+    # The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred)
     priority: Any = None
+    # Example user utterances used to train this intent's own recognition. (AI-inferred)
     training_phrases: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput:
+    # The page the conversation is currently on. (AI-inferred)
     current_page: Any = None
+    # Structured, low-level detail about how this turn was processed, useful for debugging. (AI-inferred)
     diagnostic_info: Any = None
+    # The specific difference(s) found between the expected and actual test results. (AI-inferred)
     differences: Any = None
+    # The session parameter value(s) in effect at this point in the conversation. (AI-inferred)
     session_parameters: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     status: Any = None
+    # The text response variant(s) this message can be rendered as. (AI-inferred)
     text_responses: Any = None
+    # The intent that was matched and triggered this turn. (AI-inferred)
     triggered_intent: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult_ConversationTurns:
+    # The end-user's own input for this turn. (AI-inferred)
     user_input: Any = None
+    # The agent's own recorded output (messages, parameters, matched intent) for this conversation turn. (AI-inferred)
     virtual_agent_output: Any = None
 
 @dataclasses.dataclass
 class TestCase_LastTestResult:
+    # The ordered turn(s) making up this conversation or test case. (AI-inferred)
     conversation_turns: Any = None
+    # A reference to the environment this applies to. (AI-inferred)
     environment: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The outcome of running this test. (AI-inferred)
     test_result: Any = None
+    # When this test was run. (AI-inferred)
     test_time: Any = None
 
 @dataclasses.dataclass
 class TestCase_TestConfig:
+    # A reference to the flow this applies to. (AI-inferred)
     flow: Any = None
+    # A reference to the page this applies to. (AI-inferred)
     page: Any = None
+    # The session parameter(s) tracked and reported for this experiment. (AI-inferred)
     tracking_parameters: Any = None
 
 _TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config_BargeInConfigFields = {
@@ -894,23 +1076,38 @@ _TestCase_TestConfigFields = {
 
 @dataclasses.dataclass
 class TestCaseConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The outcome of the most recent run of this test case. (AI-inferred)
     last_test_result: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Free-text notes attached to this resource. (AI-inferred)
     notes: Any = None
+    # Free-form label(s) attached to this resource. (AI-inferred)
     tags: Any = None
+    # The expected conversation turn(s) this test case verifies. (AI-inferred)
     test_case_conversation_turns: Any = None
+    # Configuration for this test run. (AI-inferred)
     test_config: Any = None
 
 @dataclasses.dataclass
 class TestCaseAttrs:
+    # When this resource was created. (AI-inferred)
     creation_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The outcome of the most recent run of this test case. (AI-inferred)
     last_test_result: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Free-text notes attached to this resource. (AI-inferred)
     notes: Any = None
+    # Free-form label(s) attached to this resource. (AI-inferred)
     tags: Any = None
+    # The expected conversation turn(s) this test case verifies. (AI-inferred)
     test_case_conversation_turns: Any = None
+    # Configuration for this test run. (AI-inferred)
     test_config: Any = None
 
 TestCase = ubx.ResourceBinding(

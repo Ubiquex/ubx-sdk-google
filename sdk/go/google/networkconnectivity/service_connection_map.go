@@ -4,63 +4,102 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceConnectionMap_ConsumerPscConfigs struct {
-	ConsumerInstanceProject       any
-	DisableGlobalAccess           any
-	IpVersion                     any
-	Network                       any
-	ProducerInstanceId            any
-	ProducerInstanceMetadata      any
-	Project                       any
+	// The project the consuming instance belongs to. (AI-inferred)
+	ConsumerInstanceProject any
+	// Whether access to this endpoint is restricted to its own region, rather than global. (AI-inferred)
+	DisableGlobalAccess any
+	// Whether this applies to IPv4 or IPv6. (AI-inferred)
+	IpVersion any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The identifier of the producer-side instance backing this connection. (AI-inferred)
+	ProducerInstanceId any
+	// Metadata describing the producer-side instance backing this connection. (AI-inferred)
+	ProducerInstanceMetadata any
+	// A reference to the Google Cloud project this applies to. (AI-inferred)
+	Project any
+	// The mapping of endpoint IP addresses to the service attachment(s) they connect to. (AI-inferred)
 	ServiceAttachmentIpAddressMap any
-	State                         any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus struct {
+	// Detail about an error that occurred. (AI-inferred)
 	Error any
-	Fqdn  any
+	// The fully qualified domain name this applies to. (AI-inferred)
+	Fqdn any
+	// The current lifecycle state of this resource. (AI-inferred)
 	State any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections_ErrorInfo struct {
-	Domain   any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// Additional structured metadata about this resource. (AI-inferred)
 	Metadata any
-	Reason   any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections struct {
-	DnsAutomationStatus      any
-	Error                    any
-	ErrorInfo                any
-	ErrorType                any
-	ForwardingRule           any
-	GceOperation             any
-	Ip                       any
-	IpVersion                any
-	Network                  any
-	ProducerInstanceId       any
+	// The current status of automated DNS record creation for this connection. (AI-inferred)
+	DnsAutomationStatus any
+	// Detail about an error that occurred. (AI-inferred)
+	Error any
+	// Structured detail about an error that occurred. (AI-inferred)
+	ErrorInfo any
+	// The category of error that occurred. (AI-inferred)
+	ErrorType any
+	// A reference to the forwarding rule this applies to. (AI-inferred)
+	ForwardingRule any
+	// A reference to the underlying Compute Engine operation. (AI-inferred)
+	GceOperation any
+	// An IP address. (AI-inferred)
+	Ip any
+	// Whether this applies to IPv4 or IPv6. (AI-inferred)
+	IpVersion any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The identifier of the producer-side instance backing this connection. (AI-inferred)
+	ProducerInstanceId any
+	// Metadata describing the producer-side instance backing this connection. (AI-inferred)
 	ProducerInstanceMetadata any
-	Project                  any
-	PscConnectionId          any
-	SelectedSubnetwork       any
-	ServiceAttachmentUri     any
-	State                    any
+	// A reference to the Google Cloud project this applies to. (AI-inferred)
+	Project any
+	// The unique identifier of this Private Service Connect connection. (AI-inferred)
+	PscConnectionId any
+	// A reference to the specific subnetwork selected for this connection. (AI-inferred)
+	SelectedSubnetwork any
+	// A reference to the service attachment this connects to. (AI-inferred)
+	ServiceAttachmentUri any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpec struct {
+	// The DNS suffix this configuration applies to. (AI-inferred)
 	DnsSuffix any
-	Hostname  any
-	Ttl       any
+	// The hostname this applies to. (AI-inferred)
+	Hostname any
+	// The time-to-live applied to this DNS record. (AI-inferred)
+	Ttl any
 }
 
 type ServiceConnectionMap_ProducerPscConfigs struct {
+	// Configuration for automatically creating DNS record(s) for this Private Service Connect connection. (AI-inferred)
 	AutomatedDnsCreationSpec any
-	ServiceAttachmentUri     any
+	// A reference to the service attachment this connects to. (AI-inferred)
+	ServiceAttachmentUri any
 }
 
 var ServiceConnectionMap_ConsumerPscConfigsFields = ubx.FieldMap{

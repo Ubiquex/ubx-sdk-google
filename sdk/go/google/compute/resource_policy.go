@@ -71,8 +71,11 @@ type ResourcePolicy_SnapshotSchedulePolicy_Schedule_HourlySchedule struct {
 }
 
 type ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklySchedule_DayOfWeeks struct {
-	Day       any
-	Duration  any
+	// The day of the week on which the snapshot is taken. Allowed values are MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY, and INVALID. (AI-inferred)
+	Day any
+	// The duration of the time window during which the snapshot schedule is active on this day of the week, specified as an ISO 8601 duration (e.g., 'PT1H' for one hour). (AI-inferred)
+	Duration any
+	// The time of day, in HH:MM format using a 24-hour clock, at which the snapshot is taken on the specified day of the week (in UTC). (AI-inferred)
 	StartTime any
 }
 
@@ -244,6 +247,7 @@ var ResourcePolicy_WorkloadPolicyFields = ubx.FieldMap{
 }
 
 type ResourcePolicyConfig struct {
+	// An output-only description of the resource policy, as returned by the Google Cloud API. (AI-inferred)
 	Description any
 	// Resource policy for disk consistency groups.
 	DiskConsistencyGroupPolicy any
@@ -264,7 +268,8 @@ type ResourcePolicyConfig struct {
 type ResourcePolicyAttrs struct {
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
-	Description       any
+	// An output-only description of the resource policy, as returned by the Google Cloud API. (AI-inferred)
+	Description any
 	// Resource policy for disk consistency groups.
 	DiskConsistencyGroupPolicy any
 	// A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation
@@ -276,7 +281,8 @@ type ResourcePolicyAttrs struct {
 	// Output only. [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
 	Kind any
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name   any
+	Name any
+	// The Google Cloud region where the resource policy is located. This field is computed by the provider and is output-only, meaning it is not user-configurable and reflects the region determined by the provider configuration. (AI-inferred)
 	Region any
 	// Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification.
 	ResourceStatus any

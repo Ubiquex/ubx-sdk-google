@@ -2,26 +2,38 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimits {
+  /** The maximum number of nodes autoscaling is allowed to scale up to. (AI-inferred) */
   maxNodes?: number | Computed<number>;
+  /** The maximum number of processing units autoscaling is allowed to scale up to. (AI-inferred) */
   maxProcessingUnits?: number | Computed<number>;
+  /** The minimum number of nodes autoscaling is allowed to scale down to. (AI-inferred) */
   minNodes?: number | Computed<number>;
+  /** The minimum number of processing units autoscaling is allowed to scale down to. (AI-inferred) */
   minProcessingUnits?: number | Computed<number>;
 }
 
 export interface Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides {
+  /** The minimum and maximum bounds this instance is allowed to autoscale within. (AI-inferred) */
   autoscalingLimits?: Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimits | Computed<Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimits>;
+  /** The target high-priority CPU utilization percentage autoscaling aims to maintain. (AI-inferred) */
   autoscalingTargetHighPriorityCpuUtilizationPercent?: number | Computed<number>;
+  /** The target total CPU utilization percentage autoscaling aims to maintain. (AI-inferred) */
   autoscalingTargetTotalCpuUtilizationPercent?: number | Computed<number>;
+  /** Whether autoscaling based on high-priority CPU utilization is disabled. (AI-inferred) */
   disableHighPriorityCpuAutoscaling?: boolean | Computed<boolean>;
+  /** Whether autoscaling based on total CPU utilization is disabled. (AI-inferred) */
   disableTotalCpuAutoscaling?: boolean | Computed<boolean>;
 }
 
 export interface Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection {
+  /** The Google Cloud region this applies to. (AI-inferred) */
   location?: string | Computed<string>;
 }
 
 export interface Instance_AutoscalingConfig_AsymmetricAutoscalingOptions {
+  /** Configuration values that override this instance's own inherited defaults. (AI-inferred) */
   overrides?: Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides | Computed<Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides>;
+  /** Restricts an operation to replica(s) matching a specific selector. (AI-inferred) */
   replicaSelection?: Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection | Computed<Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection>;
 }
 
@@ -53,8 +65,11 @@ export interface Instance_FreeInstanceMetadata {
 }
 
 export interface Instance_Instance_ReplicaComputeCapacity {
+  /** The number of nodes provisioned for this instance. (AI-inferred) */
   nodeCount?: number | Computed<number>;
+  /** The number of processing units provisioned for this instance. (AI-inferred) */
   processingUnits?: number | Computed<number>;
+  /** Restricts an operation to replica(s) matching a specific selector. (AI-inferred) */
   replicaSelection?: Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection | Computed<Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection>;
 }
 

@@ -858,7 +858,8 @@ type BetaInstanceConfig struct {
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
-	NetworkInterfaces        any
+	NetworkInterfaces any
+	// Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
 	NetworkPerformanceConfig any
 	// Additional instance params.
 	Params any
@@ -890,7 +891,8 @@ type BetaInstanceConfig struct {
 	SourceMachineImage              any
 	SourceMachineImageEncryptionKey any
 	// A set of instance tags.
-	Tags                   any
+	Tags any
+	// Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
 	WorkloadIdentityConfig any
 }
 
@@ -949,7 +951,8 @@ type BetaInstanceAttrs struct {
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
-	NetworkInterfaces        any
+	NetworkInterfaces any
+	// Configures this instance's own network performance tier, e.g. enabling Tier_1 higher-bandwidth networking. (AI-inferred)
 	NetworkPerformanceConfig any
 	// Additional instance params.
 	Params any
@@ -993,7 +996,8 @@ type BetaInstanceAttrs struct {
 	// Output only. [Output Only] An optional, human-readable explanation of the status.
 	StatusMessage any
 	// A set of instance tags.
-	Tags                   any
+	Tags any
+	// Whether this instance has a workload identity, and whether an identity certificate is enabled for it. (AI-inferred)
 	WorkloadIdentityConfig any
 	// Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Zone any

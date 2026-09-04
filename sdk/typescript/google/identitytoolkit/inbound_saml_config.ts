@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InboundSamlConfig_IdpConfig_IdpCertificates {
+  /** The X.509 certificate, in PEM format. (AI-inferred) */
   x509Certificate?: string | Computed<string>;
 }
 
@@ -17,7 +18,9 @@ export interface InboundSamlConfig_IdpConfig {
 }
 
 export interface InboundSamlConfig_SpConfig_SpCertificates {
+  /** When this certificate expires. (AI-inferred) */
   expiresAt?: string | Computed<string>;
+  /** The X.509 certificate, in PEM format. (AI-inferred) */
   x509Certificate?: string | Computed<string>;
 }
 

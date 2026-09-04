@@ -4,7 +4,9 @@ package vision
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Product_ProductLabels struct {
-	Key   any
+	// The real, custom label key attached to this Vision Product Search product. (AI-inferred)
+	Key any
+	// The real value of this product label, paired with its own `key`. (AI-inferred)
 	Value any
 }
 

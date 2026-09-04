@@ -4,18 +4,24 @@ package datalineage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LineageEvent_Links_DependencyInfo struct {
+	// The kind of dependency the target has on the source: `EXACT_COPY` (the target's data is copied unchanged from the source) or `OTHER` (any other transformation). (AI-inferred)
 	DependencyType any
 }
 
 type LineageEvent_Links_Source struct {
-	Field              any
+	// The specific field(s) of the source entity this link traces data from, when the lineage is tracked at field level rather than whole-entity level. (AI-inferred)
+	Field any
+	// The fully qualified name identifying the source entity (e.g. a BigQuery table's own `project.dataset.table` path). (AI-inferred)
 	FullyQualifiedName any
 }
 
 type LineageEvent_Links struct {
+	// Describes how the `target` entity in this link depends on the `source` entity -- e.g. whether the target is an exact copy of the source. (AI-inferred)
 	DependencyInfo any
-	Source         any
-	Target         any
+	// A reference to the upstream entity data flowed from in this lineage link. (AI-inferred)
+	Source any
+	// A reference to the downstream entity data flowed to in this lineage link. (AI-inferred)
+	Target any
 }
 
 var LineageEvent_Links_DependencyInfoFields = ubx.FieldMap{

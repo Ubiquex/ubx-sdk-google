@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V2beta1KnowledgeBaseConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class V2beta1KnowledgeBaseAttrs:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
 
 V2beta1KnowledgeBase = ubx.ResourceBinding(

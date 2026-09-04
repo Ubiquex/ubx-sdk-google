@@ -52,6 +52,7 @@ class AgentConnectivityTemplateConfig:
     deployment_model: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
+    # Configuration for how this service's own outbound (egress) traffic is routed. (AI-inferred)
     egress_network_config: Any = None
     # Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
     etag: Any = None
@@ -74,6 +75,7 @@ class AgentConnectivityTemplateAttrs:
     deployment_model: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
+    # Configuration for how this service's own outbound (egress) traffic is routed. (AI-inferred)
     egress_network_config: Any = None
     # Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
     etag: Any = None

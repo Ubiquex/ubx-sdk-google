@@ -22,174 +22,250 @@ class Table_ChangeStreamConfig:
 
 @dataclasses.dataclass
 class Table_ClusterStates_EncryptionInfo_EncryptionStatus:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Table_ClusterStates_EncryptionInfo:
+    # Output only. Whether this cluster's own customer-managed encryption key is currently accessible and working. (AI-inferred)
     encryption_status: Any = None
+    # Whether this data is encrypted with a Google-managed or customer-managed key. (AI-inferred)
     encryption_type: Any = None
+    # The specific Cloud KMS key version currently used to encrypt this resource's own data. (AI-inferred)
     kms_key_version: Any = None
 
 @dataclasses.dataclass
 class Table_ClusterStates:
+    # Output only. The current encryption status of this cluster's own data. (AI-inferred)
     encryption_info: Any = None
+    # The current replication status of this cluster relative to the rest of the instance. (AI-inferred)
     replication_state: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_GcRule_Intersection:
+    # The rule(s) making up this configuration. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_GcRule:
+    # Defines this aggregate as computing the intersection of set-valued inputs. (AI-inferred)
     intersection: Any = None
+    # The maximum age a cell version may reach before being eligible for garbage collection. (AI-inferred)
     max_age: Any = None
+    # The maximum number of cell versions kept per column before older ones are garbage collected. (AI-inferred)
     max_num_versions: Any = None
+    # Defines this aggregate as computing the union of set-valued inputs. (AI-inferred)
     union: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_Stats:
+    # Output only. The average number of stored cell versions per column, across this table. (AI-inferred)
     average_cells_per_column: Any = None
+    # Output only. The average number of columns per row, across this table. (AI-inferred)
     average_columns_per_row: Any = None
+    # Output only. The logical (uncompressed) size of this table's own data, in bytes. (AI-inferred)
     logical_data_bytes: Any = None
+    # Output only. The logical size of this table's own data stored on HDD, in bytes. (AI-inferred)
     logical_data_hdd_bytes: Any = None
+    # Output only. The logical size of this table's own data stored on SSD, in bytes. (AI-inferred)
     logical_data_ssd_bytes: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_AggregateType:
+    # Defines this column as storing a HyperLogLog++ sketch, for approximate distinct-count aggregation. (AI-inferred)
     hllpp_unique_count: Any = None
+    # The type of value this aggregate/encoding accepts as input. (AI-inferred)
     input_type: Any = None
+    # Defines this aggregate as computing the maximum of its own input values. (AI-inferred)
     max: Any = None
+    # Defines this aggregate as computing the minimum of its own input values. (AI-inferred)
     min: Any = None
+    # The kind of state this represents. (AI-inferred)
     state_type: Any = None
+    # Defines this aggregate as computing the sum of its own input values. (AI-inferred)
     sum: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_ArrayType:
+    # The type of each element in an array-typed column. (AI-inferred)
     element_type: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_BoolType:
+    # How this value is encoded into raw Bigtable bytes. (AI-inferred)
     encoding: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_BytesType_Encoding_Raw:
+    # Whether embedded null bytes in delimited encoding are escaped, rather than treated as a delimiter. (AI-inferred)
     escape_nulls: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_BytesType_Encoding:
+    # Uses the raw, unencoded bytes directly, with no type-specific encoding applied. (AI-inferred)
     raw: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_BytesType:
+    # How this value is encoded into raw Bigtable bytes. (AI-inferred)
     encoding: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_EnumType:
+    # The name of this enum type. (AI-inferred)
     enum_name: Any = None
+    # A reference to the schema bundle (e.g. protocol buffer definitions) this configuration uses. (AI-inferred)
     schema_bundle_id: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_Int32Type_Encoding:
+    # Encodes this value as fixed-width, big-endian bytes. (AI-inferred)
     big_endian_bytes: Any = None
+    # Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred)
     ordered_code_bytes: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_Int32Type:
+    # How this value is encoded into raw Bigtable bytes. (AI-inferred)
     encoding: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytes:
+    # Defines this column's own value as raw bytes. (AI-inferred)
     bytes_type: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_Int64Type_Encoding:
+    # Encodes this value as fixed-width, big-endian bytes. (AI-inferred)
     big_endian_bytes: Any = None
+    # Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred)
     ordered_code_bytes: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_Int64Type:
+    # How this value is encoded into raw Bigtable bytes. (AI-inferred)
     encoding: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_MapType:
+    # The type of a map type's own key. (AI-inferred)
     key_type: Any = None
+    # The type of a map type's own value, or an aggregate's own accumulated value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_ProtoType:
+    # The name of the protocol buffer message type this value is encoded as. (AI-inferred)
     message_name: Any = None
+    # A reference to the schema bundle (e.g. protocol buffer definitions) this configuration uses. (AI-inferred)
     schema_bundle_id: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8Bytes:
+    # The character used to escape embedded delimiter or null bytes in delimited encoding. (AI-inferred)
     null_escape_char: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_StringType_Encoding:
+    # Encodes this value as UTF-8 bytes. (AI-inferred)
     utf8_bytes: Any = None
+    # Uses the raw bytes directly, interpreted as UTF-8 text. (AI-inferred)
     utf8_raw: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_StringType:
+    # How this value is encoded into raw Bigtable bytes. (AI-inferred)
     encoding: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytes:
+    # The byte sequence separating encoded values. (AI-inferred)
     delimiter: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_StructType_Encoding:
+    # Encodes this value as raw bytes followed by a delimiter character. (AI-inferred)
     delimited_bytes: Any = None
+    # Encodes this value using Bigtable's own order-preserving byte encoding, so sorted byte order matches sorted value order. (AI-inferred)
     ordered_code_bytes: Any = None
+    # Marks this rule as a leaf condition, rather than a union/intersection of further sub-rules. (AI-inferred)
     singleton: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_StructType_Fields:
+    # The name of this struct field. (AI-inferred)
     field_name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_StructType:
+    # How this value is encoded into raw Bigtable bytes. (AI-inferred)
     encoding: Any = None
+    # The field(s) making up this struct type. (AI-inferred)
     fields: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_TimestampType_Encoding:
+    # Encodes a timestamp as a 64-bit integer count of microseconds since the Unix epoch. (AI-inferred)
     unix_micros_int64: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType_TimestampType:
+    # How this value is encoded into raw Bigtable bytes. (AI-inferred)
     encoding: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies_ValueType:
+    # Defines this column as storing a running aggregate (e.g. sum, max) computed automatically as new values are written. (AI-inferred)
     aggregate_type: Any = None
+    # Defines this column's own value as an array of another type. (AI-inferred)
     array_type: Any = None
+    # Defines this column's own value as a boolean. (AI-inferred)
     bool_type: Any = None
+    # Defines this column's own value as raw bytes. (AI-inferred)
     bytes_type: Any = None
+    # Defines this column's own value as a calendar date. (AI-inferred)
     date_type: Any = None
+    # Defines this column's own value as one of a fixed set of named integer values. (AI-inferred)
     enum_type: Any = None
+    # Defines this column's own value as a 32-bit floating-point number. (AI-inferred)
     float32_type: Any = None
+    # Defines this column's own value as a 64-bit floating-point number. (AI-inferred)
     float64_type: Any = None
+    # Defines this column's own value as geospatial data. (AI-inferred)
     geography_type: Any = None
+    # Defines this column's own value as a 32-bit integer. (AI-inferred)
     int32_type: Any = None
+    # Defines this column's own value as a 64-bit integer. (AI-inferred)
     int64_type: Any = None
+    # Defines this column's own value as a map from keys to values. (AI-inferred)
     map_type: Any = None
+    # Defines this column's own value as a protocol buffer message. (AI-inferred)
     proto_type: Any = None
+    # Defines this column's own value as a string. (AI-inferred)
     string_type: Any = None
+    # Defines this column's own value as a struct with named fields. (AI-inferred)
     struct_type: Any = None
+    # Defines this column's own value as a timestamp. (AI-inferred)
     timestamp_type: Any = None
 
 @dataclasses.dataclass
 class Table_ColumnFamilies:
+    # The garbage-collection rule determining which stored cell versions in this column family are automatically deleted. (AI-inferred)
     gc_rule: Any = None
+    # Statistics about this resource. (AI-inferred)
     stats: Any = None
+    # The type of a map type's own value, or an aggregate's own accumulated value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class Table_InitialSplits:
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
@@ -214,26 +290,44 @@ class Table_RestoreInfo:
 
 @dataclasses.dataclass
 class Table_RowKeySchema_Fields_Type:
+    # Defines this column as storing a running aggregate (e.g. sum, max) computed automatically as new values are written. (AI-inferred)
     aggregate_type: Any = None
+    # Defines this column's own value as an array of another type. (AI-inferred)
     array_type: Any = None
+    # Defines this column's own value as a boolean. (AI-inferred)
     bool_type: Any = None
+    # Defines this column's own value as raw bytes. (AI-inferred)
     bytes_type: Any = None
+    # Defines this column's own value as a calendar date. (AI-inferred)
     date_type: Any = None
+    # Defines this column's own value as one of a fixed set of named integer values. (AI-inferred)
     enum_type: Any = None
+    # Defines this column's own value as a 32-bit floating-point number. (AI-inferred)
     float32_type: Any = None
+    # Defines this column's own value as a 64-bit floating-point number. (AI-inferred)
     float64_type: Any = None
+    # Defines this column's own value as geospatial data. (AI-inferred)
     geography_type: Any = None
+    # Defines this column's own value as a 32-bit integer. (AI-inferred)
     int32_type: Any = None
+    # Defines this column's own value as a 64-bit integer. (AI-inferred)
     int64_type: Any = None
+    # Defines this column's own value as a map from keys to values. (AI-inferred)
     map_type: Any = None
+    # Defines this column's own value as a protocol buffer message. (AI-inferred)
     proto_type: Any = None
+    # Defines this column's own value as a string. (AI-inferred)
     string_type: Any = None
+    # Defines this column's own value as a struct with named fields. (AI-inferred)
     struct_type: Any = None
+    # Defines this column's own value as a timestamp. (AI-inferred)
     timestamp_type: Any = None
 
 @dataclasses.dataclass
 class Table_RowKeySchema_Fields:
+    # The name of this struct field. (AI-inferred)
     field_name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

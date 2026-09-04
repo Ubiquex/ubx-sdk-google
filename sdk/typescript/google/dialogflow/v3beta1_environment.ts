@@ -152,21 +152,34 @@ const V3beta1Environment_WebhookConfigFields: FieldMap = {
 };
 
 export interface V3beta1EnvironmentConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Configuration for how test cases in this agent are run. (AI-inferred) */
   testCasesConfig?: V3beta1Environment_TestCasesConfig | Computed<V3beta1Environment_TestCasesConfig>;
+  /** Per-version configuration, e.g. traffic percentage, making up this environment. (AI-inferred) */
   versionConfigs?: V3beta1Environment_VersionConfigs[] | Computed<V3beta1Environment_VersionConfigs[]>;
+  /** Configuration for how this tool or fulfillment calls its own webhook. (AI-inferred) */
   webhookConfig?: V3beta1Environment_WebhookConfig | Computed<V3beta1Environment_WebhookConfig>;
 }
 
 export interface V3beta1EnvironmentAttrs {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Configuration for how test cases in this agent are run. (AI-inferred) */
   testCasesConfig: V3beta1Environment_TestCasesConfig;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime: string;
+  /** Per-version configuration, e.g. traffic percentage, making up this environment. (AI-inferred) */
   versionConfigs: V3beta1Environment_VersionConfigs[];
+  /** Configuration for how this tool or fulfillment calls its own webhook. (AI-inferred) */
   webhookConfig: V3beta1Environment_WebhookConfig;
 }
 

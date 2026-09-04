@@ -183,6 +183,7 @@ class BetaGlobalForwardingRuleAttrs:
     ports: Any = None
     # [Output Only] The PSC connection id of the PSC forwarding rule.
     psc_connection_id: Any = None
+    # The current status of this forwarding rule's own Private Service Connect connection to its target service. (AI-inferred)
     psc_connection_status: Any = None
     # Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
     region: Any = None

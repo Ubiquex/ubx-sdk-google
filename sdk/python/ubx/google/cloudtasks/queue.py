@@ -19,11 +19,14 @@ class Queue_AppEngineRoutingOverride:
 
 @dataclasses.dataclass
 class Queue_HttpTarget_HeaderOverrides_Header:
+    # The HTTP header name to set. (AI-inferred)
     key: Any = None
+    # The HTTP header value to set. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Queue_HttpTarget_HeaderOverrides:
+    # A single HTTP header to upsert onto every task's request in this queue's `http_target`. Headers prefixed `X-CloudTasks-` are reserved for Cloud Tasks' own service headers and can't be overridden this way. (AI-inferred)
     header: Any = None
 
 @dataclasses.dataclass

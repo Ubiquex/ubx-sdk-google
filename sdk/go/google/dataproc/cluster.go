@@ -9,99 +9,153 @@ type Cluster_Config_AutoscalingConfig struct {
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators struct {
-	AcceleratorCount   any
+	// How many accelerator (GPU) devices are attached per instance. (AI-inferred)
+	AcceleratorCount any
+	// The full URI of the accelerator type attached. (AI-inferred)
 	AcceleratorTypeUri any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs struct {
-	DiskSizeGb            any
-	DiskType              any
-	ProvisionedIops       any
+	// The size, in GB, of this disk. (AI-inferred)
+	DiskSizeGb any
+	// The disk type provisioned, e.g. `pd-ssd`. (AI-inferred)
+	DiskType any
+	// The provisioned IOPS for this disk, when using a disk type that supports configuring it. (AI-inferred)
+	ProvisionedIops any
+	// The provisioned throughput for this disk, when using a disk type that supports configuring it. (AI-inferred)
 	ProvisionedThroughput any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig struct {
-	AttachedDiskConfigs           any
-	BootDiskProvisionedIops       any
+	// Additional persistent disk(s) attached to each instance, beyond the boot disk. (AI-inferred)
+	AttachedDiskConfigs any
+	// The provisioned IOPS for the boot disk, when using a disk type that supports configuring it. (AI-inferred)
+	BootDiskProvisionedIops any
+	// The provisioned throughput for the boot disk, when using a disk type that supports configuring it. (AI-inferred)
 	BootDiskProvisionedThroughput any
-	BootDiskSizeGb                any
-	BootDiskType                  any
-	LocalSsdInterface             any
-	NumLocalSsds                  any
+	// The size, in GB, of each instance's own boot disk. (AI-inferred)
+	BootDiskSizeGb any
+	// The boot disk type provisioned for each instance, e.g. `pd-ssd`. (AI-inferred)
+	BootDiskType any
+	// The interface local SSDs are attached over, e.g. `NVME` or `SCSI`. (AI-inferred)
+	LocalSsdInterface any
+	// How many local SSD disks are attached. (AI-inferred)
+	NumLocalSsds any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList struct {
-	DiskConfig   any
+	// Configuration for each instance's own attached disk(s). (AI-inferred)
+	DiskConfig any
+	// The machine type(s) this applies to. (AI-inferred)
 	MachineTypes any
-	Rank         any
+	// The relative preference order of this option -- lower values are preferred first. (AI-inferred)
+	Rank any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults struct {
+	// The Compute Engine machine type provisioned for each instance. (AI-inferred)
 	MachineType any
-	VmCount     any
+	// The number of VM instances this applies to. (AI-inferred)
+	VmCount any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix struct {
-	StandardCapacityBase             any
+	// The number of instances always provisioned as standard (non-Spot), before any additional Spot capacity mix applies. (AI-inferred)
+	StandardCapacityBase any
+	// The percentage of capacity above `standard_capacity_base` provisioned as standard (non-Spot), rather than Spot. (AI-inferred)
 	StandardCapacityPercentAboveBase any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy struct {
-	InstanceMachineTypes     any
-	InstanceSelectionList    any
+	// The machine type(s) considered for this instance group's own flexible provisioning. (AI-inferred)
+	InstanceMachineTypes any
+	// The ranked machine type option(s) considered when provisioning instances for this group. (AI-inferred)
+	InstanceSelectionList any
+	// Output only. Which machine type(s) were actually selected when provisioning this instance group. (AI-inferred)
 	InstanceSelectionResults any
-	ProvisioningModelMix     any
+	// Configures a mix of standard and Spot/preemptible instances within this group. (AI-inferred)
+	ProvisioningModelMix any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences struct {
-	InstanceId     any
-	InstanceName   any
+	// An identifier for this specific instance. (AI-inferred)
+	InstanceId any
+	// The name of this instance. (AI-inferred)
+	InstanceName any
+	// The public ECIES key used to encrypt sensitive job parameters. (AI-inferred)
 	PublicEciesKey any
-	PublicKey      any
+	// A public key used for encryption or authentication. (AI-inferred)
+	PublicKey any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig struct {
+	// The name of the underlying Compute Engine managed instance group. (AI-inferred)
 	InstanceGroupManagerName any
-	InstanceGroupManagerUri  any
-	InstanceTemplateName     any
+	// The URI of the underlying Compute Engine managed instance group. (AI-inferred)
+	InstanceGroupManagerUri any
+	// The name of the Compute Engine instance template used for this instance group. (AI-inferred)
+	InstanceTemplateName any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig struct {
+	// The fraction of instances that must successfully register before cluster creation is considered complete. (AI-inferred)
 	RequiredRegistrationFraction any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig struct {
-	Accelerators              any
-	DiskConfig                any
-	ImageUri                  any
+	// The accelerator (GPU) device(s) attached to each instance. (AI-inferred)
+	Accelerators any
+	// Configuration for each instance's own attached disk(s). (AI-inferred)
+	DiskConfig any
+	// The custom image URI used for this cluster's own instances. (AI-inferred)
+	ImageUri any
+	// Configures a mix of machine types and provisioning models for this instance group, to improve availability and cost. (AI-inferred)
 	InstanceFlexibilityPolicy any
-	InstanceNames             any
-	InstanceReferences        any
-	IsPreemptible             any
-	MachineTypeUri            any
-	ManagedGroupConfig        any
-	MinCpuPlatform            any
-	MinNumInstances           any
-	NumInstances              any
-	Preemptibility            any
-	StartupConfig             any
+	// The name(s) of the instance(s) this applies to. (AI-inferred)
+	InstanceNames any
+	// Reference(s) to specific instance(s). (AI-inferred)
+	InstanceReferences any
+	// Whether this instance is preemptible/spot, rather than standard on-demand. (AI-inferred)
+	IsPreemptible any
+	// The full URI of the machine type provisioned. (AI-inferred)
+	MachineTypeUri any
+	// Configuration for the underlying Compute Engine managed instance group backing this cluster's own instance group. (AI-inferred)
+	ManagedGroupConfig any
+	// The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred)
+	MinCpuPlatform any
+	// The minimum number of instances required for cluster creation to succeed. (AI-inferred)
+	MinNumInstances any
+	// How many instances this group has. (AI-inferred)
+	NumInstances any
+	// Whether instances in this group are `PREEMPTIBLE`, `SPOT`, or non-preemptible. (AI-inferred)
+	Preemptibility any
+	// Configuration for how many instances must be running before the cluster is considered started. (AI-inferred)
+	StartupConfig any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup struct {
-	Labels          any
-	Name            any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Configuration for a Dataproc node group -- a shared pool of instances usable across clusters. (AI-inferred)
 	NodeGroupConfig any
-	Roles           any
+	// The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred)
+	Roles any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups struct {
-	NodeGroup   any
+	// A reference to the node group this applies to. (AI-inferred)
+	NodeGroup any
+	// A caller-chosen identifier for this node group, unique within its own cluster. (AI-inferred)
 	NodeGroupId any
 }
 
 type Cluster_Config_DataprocMetricConfig_Metrics struct {
+	// Caller-specified metric(s) used to override the default autoscaling signal. (AI-inferred)
 	MetricOverrides any
-	MetricSource    any
+	// Which source (e.g. Hadoop YARN, Spark) autoscaling metrics are drawn from. (AI-inferred)
+	MetricSource any
 }
 
 type Cluster_Config_DataprocMetricConfig struct {
@@ -194,37 +248,56 @@ type Cluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTarget struct {
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling struct {
+	// The maximum number of nodes this group may scale up to. (AI-inferred)
 	MaxNodeCount any
+	// The minimum number of nodes this group scales down to. (AI-inferred)
 	MinNodeCount any
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators struct {
+	// How many accelerator (GPU) devices are attached per instance. (AI-inferred)
 	AcceleratorCount any
-	AcceleratorType  any
+	// The accelerator (GPU) type attached, e.g. `nvidia-tesla-t4`. (AI-inferred)
+	AcceleratorType any
+	// The fraction of a physical GPU allocated per partition, when GPU partitioning is used. (AI-inferred)
 	GpuPartitionSize any
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config struct {
-	Accelerators   any
+	// The accelerator (GPU) device(s) attached to each instance. (AI-inferred)
+	Accelerators any
+	// The Cloud KMS key used to encrypt each instance's own boot disk. (AI-inferred)
 	BootDiskKmsKey any
-	LocalSsdCount  any
-	MachineType    any
+	// How many local SSD disks are attached to each instance. (AI-inferred)
+	LocalSsdCount any
+	// The Compute Engine machine type provisioned for each instance. (AI-inferred)
+	MachineType any
+	// The minimum CPU platform each instance's own underlying VM must run on. (AI-inferred)
 	MinCpuPlatform any
-	Preemptible    any
+	// Whether each instance is preemptible, lower cost but reclaimable at any time. (AI-inferred)
+	Preemptible any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
-	Spot           any
+	// Whether each instance runs as a Spot VM, lower cost but reclaimable at any time. (AI-inferred)
+	Spot any
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig struct {
+	// Configuration for automatically resizing this cluster's own worker instance group(s) based on load. (AI-inferred)
 	Autoscaling any
-	Config      any
-	Locations   any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// The zone(s) this resource is spread across. (AI-inferred)
+	Locations any
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget struct {
-	NodePool       any
+	// A reference to the node pool this applies to, for a GKE-based Dataproc cluster. (AI-inferred)
+	NodePool any
+	// Configuration for a GKE node pool backing this Dataproc-on-GKE cluster. (AI-inferred)
 	NodePoolConfig any
-	Roles          any
+	// The cluster role(s) (e.g. master, worker) this applies to. (AI-inferred)
+	Roles any
 }
 
 type Cluster_Config_GkeClusterConfig struct {
@@ -237,7 +310,9 @@ type Cluster_Config_GkeClusterConfig struct {
 }
 
 type Cluster_Config_InitializationActions struct {
-	ExecutableFile   any
+	// The Pig/Hive/Presto script file to execute. (AI-inferred)
+	ExecutableFile any
+	// How long this workflow template's own execution may run before being cancelled. (AI-inferred)
 	ExecutionTimeout any
 }
 

@@ -8,21 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan:
+    # The last page number (1-indexed) covered by a `page_span`. (AI-inferred)
     page_end: Any = None
+    # The first page number (1-indexed) covered by a `page_span`. (AI-inferred)
     page_start: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters:
+    # The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred)
     page_span: Any = None
+    # The real, extracted text content of this document element. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_ChunkedDocument_Chunks:
+    # A stable identifier for one chunk of document content in a chunked (e.g. retrieval-oriented) document representation. (AI-inferred)
     chunk_id: Any = None
+    # The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred)
     content: Any = None
+    # The real, detected footer block(s) on a document page, structurally distinct from the page's own main body content. (AI-inferred)
     page_footers: Any = None
+    # The real, detected header block(s) on a document page, structurally distinct from the page's own main body content. (AI-inferred)
     page_headers: Any = None
+    # The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred)
     page_span: Any = None
+    # The real `block_id`(s) of the document layout block(s) this element (like an entity or chunk) was derived from. (AI-inferred)
     source_block_ids: Any = None
 
 @dataclasses.dataclass
@@ -32,41 +42,59 @@ class Document_CloudAiDocument_ChunkedDocument:
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntries:
+    # The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
     blocks: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock:
+    # The real, individual entries that make up a detected `list_block`. (AI-inferred)
     list_entries: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_Cells:
+    # The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
     blocks: Any = None
+    # The number of real table columns this cell spans, for a cell that merges across multiple columns. (AI-inferred)
     col_span: Any = None
+    # The number of real table rows this cell spans, for a cell that merges across multiple rows. (AI-inferred)
     row_span: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows:
+    # The real table cells that make up a detected table structure on a document page. (AI-inferred)
     cells: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock:
+    # The real, non-header rows of a detected table, each holding one row's worth of `cells`. (AI-inferred)
     body_rows: Any = None
+    # The real, detected caption text associated with a table or figure block. (AI-inferred)
     caption: Any = None
+    # The real header row(s) of a detected table, each holding one row's worth of `cells`. (AI-inferred)
     header_rows: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_DocumentLayout_Blocks_TextBlock:
+    # The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
     blocks: Any = None
+    # The real, extracted text content of this document element. (AI-inferred)
     text: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_DocumentLayout_Blocks:
+    # A stable identifier for this document layout block, referenced by `source_block_ids` on elements derived from it. (AI-inferred)
     block_id: Any = None
+    # A detected list-structured content block on a document page, holding its own `list_entries`. (AI-inferred)
     list_block: Any = None
+    # The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred)
     page_span: Any = None
+    # A detected table-structured content block on a document page, holding its own `header_rows` and `body_rows`. (AI-inferred)
     table_block: Any = None
+    # A detected block of plain, unstructured text content on a document page. (AI-inferred)
     text_block: Any = None
 
 @dataclasses.dataclass
@@ -76,121 +104,192 @@ class Document_CloudAiDocument_DocumentLayout:
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_NormalizedValue_AddressValue:
+    # The real, individual address line(s) of a normalized postal address, in the order they'd appear on an envelope. (AI-inferred)
     address_lines: Any = None
+    # The real, highest administrative subdivision (e.g. a state or province) of a normalized postal address. (AI-inferred)
     administrative_area: Any = None
+    # A BCP-47 language code (e.g. `en-US`) identifying a detected or configured language. (AI-inferred)
     language_code: Any = None
+    # The real city or town of a normalized postal address. (AI-inferred)
     locality: Any = None
+    # The real organization or company name associated with a normalized postal address. (AI-inferred)
     organization: Any = None
+    # The real postal or ZIP code of a normalized postal address. (AI-inferred)
     postal_code: Any = None
+    # The real, named recipient(s) of a normalized postal address. (AI-inferred)
     recipients: Any = None
+    # The real, two-letter CLDR region code (e.g. `US`) of a normalized postal address's own country. (AI-inferred)
     region_code: Any = None
+    # One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred)
     revision: Any = None
+    # A real, country-specific postal sorting code for a normalized postal address, when the country uses one. (AI-inferred)
     sorting_code: Any = None
+    # A real sublocality (e.g. a borough or neighborhood) of a normalized postal address, when the address includes one. (AI-inferred)
     sublocality: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_NormalizedValue_DateValue:
+    # The day of a `google.type.Date` (1-31 for a real, complete month; 0 to specify a year/month with no specific day). (AI-inferred)
     day: Any = None
+    # The month of a `google.type.Date` (1-12; 0 to specify a year with no specific month). (AI-inferred)
     month: Any = None
+    # The year of a `google.type.Date` (0 to specify a date without a year, e.g. an anniversary). (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZone:
+    # A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
     id: Any = None
+    # A real identifier for the specific version of this document schema, processor, or content that produced the element. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue:
+    # The day of a `google.type.Date` (1-31 for a real, complete month; 0 to specify a year/month with no specific day). (AI-inferred)
     day: Any = None
+    # The hour-of-day component (0-23) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
     hours: Any = None
+    # The minute-of-hour component (0-59) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
     minutes: Any = None
+    # The month of a `google.type.Date` (1-12; 0 to specify a year with no specific month). (AI-inferred)
     month: Any = None
+    # The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred)
     nanos: Any = None
+    # The second-of-minute component (0-60, allowing a leap second) of a `google.type.TimeOfDay`/`DateTime`, or the whole-unit component of a `google.protobuf.Duration`/`Timestamp` paired with that same message's own `nanos`. (AI-inferred)
     seconds: Any = None
+    # The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
     time_zone: Any = None
+    # The fixed UTC offset a `google.type.DateTime` is expressed in, used instead of a named `time_zone` when the value has no real, resolvable time zone (e.g. a fixed historical offset). (AI-inferred)
     utc_offset: Any = None
+    # The year of a `google.type.Date` (0 to specify a date without a year, e.g. an anniversary). (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_NormalizedValue_MoneyValue:
+    # The real, three-letter ISO 4217 currency code (e.g. `USD`) of a normalized monetary value. (AI-inferred)
     currency_code: Any = None
+    # The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred)
     nanos: Any = None
+    # The real, whole-currency-unit component of a normalized monetary value (e.g. the dollars in a USD amount). (AI-inferred)
     units: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_NormalizedValue:
+    # This detected entity's own value, when Document AI normalized it as a structured postal address. (AI-inferred)
     address_value: Any = None
+    # This document property's own value, when its declared type is boolean. (AI-inferred)
     boolean_value: Any = None
+    # This detected entity's own value, when Document AI normalized it as a `google.type.Date`. (AI-inferred)
     date_value: Any = None
+    # This document property's own value, when its declared type is a date-time. (AI-inferred)
     datetime_value: Any = None
+    # This document property's own value, when its declared type is a floating-point number. (AI-inferred)
     float_value: Any = None
+    # This detected entity's own value, when Document AI normalized it as a whole number. (AI-inferred)
     integer_value: Any = None
+    # This detected entity's own value, when Document AI normalized it as a monetary amount (`currency_code` plus `units`). (AI-inferred)
     money_value: Any = None
+    # The real, extracted text content of this document element. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices:
+    # The horizontal coordinate of one vertex in a `bounding_poly` (pixel or normalized, matching whichever vertex list it appears in). (AI-inferred)
     x: Any = None
+    # The vertical coordinate of one vertex in a `bounding_poly` (pixel or normalized, matching whichever vertex list it appears in). (AI-inferred)
     y: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly:
+    # The polygon's own vertices, normalized to `[0, 1]` relative to the page's own width and height rather than given in pixels. (AI-inferred)
     normalized_vertices: Any = None
+    # The polygon's own vertices, in the page image's real pixel coordinate space (origin at the page's top-left corner). (AI-inferred)
     vertices: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_PageAnchor_PageRefs:
+    # The polygon locating this element on its page, as either pixel-coordinate `vertices` or `normalized_vertices` scaled to `[0, 1]` relative to the page's own dimensions. (AI-inferred)
     bounding_poly: Any = None
+    # Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
     confidence: Any = None
+    # The real, referenced layout element's own ID, when a page reference points at a specific document layout element rather than a whole page. (AI-inferred)
     layout_id: Any = None
+    # The real, structural type (e.g. `PARAGRAPH`, `TABLE`, `FORM_FIELD`) of the layout element a page reference points at. (AI-inferred)
     layout_type: Any = None
+    # The real, zero-based page number this page reference points at. (AI-inferred)
     page: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_PageAnchor:
+    # The specific real page(s) and layout element(s) a `page_anchor` points at. (AI-inferred)
     page_refs: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_Provenance_Parents:
+    # A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
     id: Any = None
+    # The real, zero-based position of this element within its own containing repeated list or table row/column. (AI-inferred)
     index: Any = None
+    # One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred)
     revision: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_Provenance:
+    # A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
     id: Any = None
+    # The earlier document element(s) this one's own `provenance` was derived from, tracking real lineage across document revisions. (AI-inferred)
     parents: Any = None
+    # One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred)
     revision: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_TextAnchor_TextSegments:
+    # The ending character offset (exclusive) into the document's own raw text for this text segment. (AI-inferred)
     end_index: Any = None
+    # The starting character offset (inclusive) into the document's own raw text for this text segment. (AI-inferred)
     start_index: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities_TextAnchor:
+    # The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred)
     content: Any = None
+    # The character-offset span(s) into the document's own raw text that this `text_anchor` refers to. (AI-inferred)
     text_segments: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Entities:
+    # Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
     confidence: Any = None
+    # A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
     id: Any = None
+    # A stable identifier for one detected entity mention within the document's own text. (AI-inferred)
     mention_id: Any = None
+    # The real, literal text span Document AI detected as referring to this entity. (AI-inferred)
     mention_text: Any = None
+    # A machine-readable, normalized form of a detected document value (e.g. a parsed date or amount), alongside the raw detected `text`. (AI-inferred)
     normalized_value: Any = None
+    # The real page location(s) an entity, form field, or other document element is anchored to. (AI-inferred)
     page_anchor: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
     provenance: Any = None
+    # Whether this detected entity's own value was real, redacted in the document rather than extracted in full. (AI-inferred)
     redacted: Any = None
+    # A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
     text_anchor: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_EntityRelations:
+    # The real, referenced entity ID this entity relation points at as its own object. (AI-inferred)
     object_id: Any = None
+    # The real, named relationship (e.g. a parent-child link) this entity relation describes between two document entities. (AI-inferred)
     relation: Any = None
+    # The real, referenced entity ID this entity relation points at as its own subject. (AI-inferred)
     subject_id: Any = None
 
 @dataclasses.dataclass
@@ -204,174 +303,277 @@ class Document_CloudAiDocument_Error:
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Blocks_DetectedLanguages:
+    # Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
     confidence: Any = None
+    # A BCP-47 language code (e.g. `en-US`) identifying a detected or configured language. (AI-inferred)
     language_code: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Blocks_Layout:
+    # The polygon locating this element on its page, as either pixel-coordinate `vertices` or `normalized_vertices` scaled to `[0, 1]` relative to the page's own dimensions. (AI-inferred)
     bounding_poly: Any = None
+    # Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
     confidence: Any = None
+    # The detected real orientation of this page or text run, e.g. `PAGE_UP`, `PAGE_RIGHT`, `PAGE_DOWN`, `PAGE_LEFT`. (AI-inferred)
     orientation: Any = None
+    # A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
     text_anchor: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Blocks:
+    # The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
     detected_languages: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
+    # Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
     provenance: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_DetectedBarcodes_Barcode:
+    # A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
     format: Any = None
+    # The real, raw decoded bytes or text of this barcode, before any `value_format`-specific interpretation. (AI-inferred)
     raw_value: Any = None
+    # The real, structured interpretation (e.g. a URL or contact card) Document AI applied to this barcode's own `raw_value`. (AI-inferred)
     value_format: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_DetectedBarcodes:
+    # The real, decoded content of one detected barcode, including its own `format` and `raw_value`. (AI-inferred)
     barcode: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Dimension:
+    # The real height, in Document AI style units, of a detected text run or table cell. (AI-inferred)
     height: Any = None
+    # The measurement unit (e.g. points, pixels) a `height`/`width`/`font_size` value in Document AI style metadata is expressed in. (AI-inferred)
     unit: Any = None
+    # The real width, in Document AI style units, of a detected text run or table cell. (AI-inferred)
     width: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_FormFields:
+    # A real, human-corrected version of this form field's own detected key text, when a reviewer has edited it. (AI-inferred)
     corrected_key_text: Any = None
+    # A real, human-corrected version of this form field's own detected value text, when a reviewer has edited it. (AI-inferred)
     corrected_value_text: Any = None
+    # The real, detected label text (the "key" side) of this form field. (AI-inferred)
     field_name: Any = None
+    # The real, detected value text (the "value" side) of this form field. (AI-inferred)
     field_value: Any = None
+    # The real language(s) Document AI detected in this form field's own `field_name` text. (AI-inferred)
     name_detected_languages: Any = None
+    # Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
     provenance: Any = None
+    # The real language(s) Document AI detected in this form field's own `field_value` text. (AI-inferred)
     value_detected_languages: Any = None
+    # The real, detected data type (e.g. a date or currency amount) of this form field's own value. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Image:
+    # The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred)
     content: Any = None
+    # The real height, in Document AI style units, of a detected text run or table cell. (AI-inferred)
     height: Any = None
+    # The real IANA MIME type (e.g. `image/png`) of this embedded page image. (AI-inferred)
     mime_type: Any = None
+    # The real width, in Document AI style units, of a detected text run or table cell. (AI-inferred)
     width: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefects:
+    # Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
     confidence: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_ImageQualityScores:
+    # Real, specific image quality issues (e.g. blur, glare) Document AI detected on this page. (AI-inferred)
     detected_defects: Any = None
+    # Document AI's own real, overall image quality score for this page, from `0` (worst) to `1` (best). (AI-inferred)
     quality_score: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Symbols:
+    # The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
     detected_languages: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Tables_BodyRows_Cells:
+    # The number of real table columns this cell spans, for a cell that merges across multiple columns. (AI-inferred)
     col_span: Any = None
+    # The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
     detected_languages: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
+    # The number of real table rows this cell spans, for a cell that merges across multiple rows. (AI-inferred)
     row_span: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Tables_BodyRows:
+    # The real table cells that make up a detected table structure on a document page. (AI-inferred)
     cells: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Tables:
+    # The real, non-header rows of a detected table, each holding one row's worth of `cells`. (AI-inferred)
     body_rows: Any = None
+    # The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
     detected_languages: Any = None
+    # The real header row(s) of a detected table, each holding one row's worth of `cells`. (AI-inferred)
     header_rows: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
+    # Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
     provenance: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Tokens_DetectedBreak:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor:
+    # The alpha (opacity) channel of a `google.type.Color`, as an optional fraction in `[0, 1]`; treated as fully opaque (`1`) if unset. (AI-inferred)
     alpha: Any = None
+    # The blue channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred)
     blue: Any = None
+    # The green channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred)
     green: Any = None
+    # The red channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred)
     red: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Tokens_StyleInfo:
+    # The real, detected background color of a text run, as a `google.type.Color`. (AI-inferred)
     background_color: Any = None
+    # Whether this token's own detected text style is real, bold. (AI-inferred)
     bold: Any = None
+    # The real, detected font size of a text run. (AI-inferred)
     font_size: Any = None
+    # The real, detected font family or type name of this token's own text. (AI-inferred)
     font_type: Any = None
+    # The real, detected font weight (e.g. normal, bold) of a text run. (AI-inferred)
     font_weight: Any = None
+    # Whether this token's own text was real, detected as handwritten rather than printed. (AI-inferred)
     handwritten: Any = None
+    # Whether this token's own detected text style is real, italic. (AI-inferred)
     italic: Any = None
+    # The real, detected letter spacing of this token's own text. (AI-inferred)
     letter_spacing: Any = None
+    # The real, detected font size, in pixels, of this token's own text. (AI-inferred)
     pixel_font_size: Any = None
+    # Whether this token's own detected text style uses real, small capital letters. (AI-inferred)
     smallcaps: Any = None
+    # Whether this token's own detected text style has a real strikethrough. (AI-inferred)
     strikeout: Any = None
+    # Whether this token's own detected text style is real, subscript. (AI-inferred)
     subscript: Any = None
+    # Whether this token's own detected text style is real, superscript. (AI-inferred)
     superscript: Any = None
+    # The real, detected text color of this token, as a `google.type.Color`. (AI-inferred)
     text_color: Any = None
+    # Whether this token's own detected text style is real, underlined. (AI-inferred)
     underlined: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Tokens:
+    # Real information about the whitespace or line break immediately following this token, if any. (AI-inferred)
     detected_break: Any = None
+    # The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
     detected_languages: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
+    # Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
     provenance: Any = None
+    # Real, detected text styling (font, weight, color, decoration) for this token. (AI-inferred)
     style_info: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_Transforms:
+    # The real number of columns in this transform matrix. (AI-inferred)
     cols: Any = None
+    # The real, raw matrix data of this transform, row-major. (AI-inferred)
     data: Any = None
+    # The real number of rows in this transform matrix, or of a detected table's own `body_rows`/`header_rows`. (AI-inferred)
     rows: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages_VisualElements:
+    # The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
     detected_languages: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Pages:
+    # The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
     blocks: Any = None
+    # Real barcodes Document AI detected on this page, each with its own decoded `barcode` value and location. (AI-inferred)
     detected_barcodes: Any = None
+    # The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
     detected_languages: Any = None
+    # The real width and height, in the page's own coordinate units, of this document page. (AI-inferred)
     dimension: Any = None
+    # Real key-value form fields Document AI detected on this page. (AI-inferred)
     form_fields: Any = None
+    # The real, embedded raster image of this document page, when the original document image is included in the response. (AI-inferred)
     image: Any = None
+    # Real, automated image quality scoring for this document page, flagging any `detected_defects`. (AI-inferred)
     image_quality_scores: Any = None
+    # The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
     layout: Any = None
+    # Real, detected lines of text on this document page, each grouping a real run of `tokens`. (AI-inferred)
     lines: Any = None
+    # The real, one-based page number of this page within the document. (AI-inferred)
     page_number: Any = None
+    # Real, detected paragraphs of text on this document page, each grouping one or more `lines`. (AI-inferred)
     paragraphs: Any = None
+    # Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
     provenance: Any = None
+    # Real, individual detected characters or symbols on this document page, the finest-grained real text detection unit. (AI-inferred)
     symbols: Any = None
+    # Real, detected tables on this document page, each with its own `header_rows` and `body_rows`. (AI-inferred)
     tables: Any = None
+    # Real, detected words or word-like units on this document page, each grouping one or more `symbols`. (AI-inferred)
     tokens: Any = None
+    # A real 2D affine transform matrix applied to reposition this page's own detected content, when the page has been de-skewed or rotated for processing. (AI-inferred)
     transforms: Any = None
+    # Real, detected non-text visual elements (such as a checkbox or signature) on this document page. (AI-inferred)
     visual_elements: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Revisions_HumanReview:
+    # The real, current review state (e.g. rejected, needs review) of this document revision's own human review. (AI-inferred)
     state: Any = None
+    # Real, additional detail explaining this document revision's own human review state. (AI-inferred)
     state_message: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_Revisions:
+    # The real name of the processor, human reviewer, or tool that produced this document revision. (AI-inferred)
     agent: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Real, human review status and outcome for this document revision, when it went through Document AI human-in-the-loop review. (AI-inferred)
     human_review: Any = None
+    # A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
     id: Any = None
+    # The resource name of the parent collection this resource is created under or listed from. (AI-inferred)
     parent: Any = None
+    # The real, prior revision ID(s) this revision was derived from, tracking the document's own edit lineage. (AI-inferred)
     parent_ids: Any = None
+    # The real Document AI processor (its own resource name) that produced this document revision. (AI-inferred)
     processor: Any = None
 
 @dataclasses.dataclass
@@ -385,24 +587,37 @@ class Document_CloudAiDocument_ShardInfo:
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_TextChanges:
+    # The real, literal text of one detected change between this document revision and its own prior revision. (AI-inferred)
     changed_text: Any = None
+    # Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
     provenance: Any = None
+    # A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
     text_anchor: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_TextStyles_FontSize:
+    # The real, detected font size of this text run. (AI-inferred)
     size: Any = None
+    # The measurement unit (e.g. points, pixels) a `height`/`width`/`font_size` value in Document AI style metadata is expressed in. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class Document_CloudAiDocument_TextStyles:
+    # The real, detected background color of a text run, as a `google.type.Color`. (AI-inferred)
     background_color: Any = None
+    # The real, detected color of this text run, as a `google.type.Color`. (AI-inferred)
     color: Any = None
+    # The real, detected font family name of this text run. (AI-inferred)
     font_family: Any = None
+    # The real, detected font size of a text run. (AI-inferred)
     font_size: Any = None
+    # The real, detected font weight (e.g. normal, bold) of a text run. (AI-inferred)
     font_weight: Any = None
+    # A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
     text_anchor: Any = None
+    # The real, detected text decoration (e.g. underline, strikethrough) of this text run. (AI-inferred)
     text_decoration: Any = None
+    # The real, detected overall style classification (e.g. heading, body text) of this text run. (AI-inferred)
     text_style: Any = None
 
 @dataclasses.dataclass
@@ -445,57 +660,82 @@ class Document_CloudAiDocumentOption:
 
 @dataclasses.dataclass
 class Document_Document_Properties_DateTimeValues:
+    # The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_EnumValues:
+    # The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_FloatValues:
+    # The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_MapProperty_Fields_EnumValue:
+    # This map field's own real, single scalar value. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_MapProperty_Fields_TimestampValue:
+    # This document property's own value, when its declared type is text. (AI-inferred)
     text_value: Any = None
+    # This document property's own value, when its declared type is a timestamp. (AI-inferred)
     timestamp_value: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_MapProperty_Fields:
+    # This document property's own value, when its declared type is boolean. (AI-inferred)
     boolean_value: Any = None
+    # This document property's own value, when its declared type is a date-time. (AI-inferred)
     datetime_value: Any = None
+    # One real map field's own value, when that field's declared type is a closed enumeration. (AI-inferred)
     enum_value: Any = None
+    # This document property's own value, when its declared type is a floating-point number. (AI-inferred)
     float_value: Any = None
+    # One real map field's own value, when that field's declared type is an integer. (AI-inferred)
     int_value: Any = None
+    # One real map field's own value, when that field's declared type is text. (AI-inferred)
     string_value: Any = None
+    # This document property's own value, when its declared type is a timestamp. (AI-inferred)
     timestamp_value: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_MapProperty:
+    # The real, named sub-fields (and their own typed values) that make up this map-typed document property. (AI-inferred)
     fields: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_PropertyValues:
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties_TimestampValues:
+    # The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Document_Document_Properties:
+    # This document property's own real value(s), when its declared type is date-time. (AI-inferred)
     date_time_values: Any = None
+    # This document property's own real value(s), when its declared type is a closed enumeration. (AI-inferred)
     enum_values: Any = None
+    # This document property's own real value(s), when its declared type is a floating-point number. (AI-inferred)
     float_values: Any = None
+    # This document property's own real value(s), when its declared type is an integer. (AI-inferred)
     integer_values: Any = None
+    # This document property's own real value, when its declared type is a map of named sub-fields. (AI-inferred)
     map_property: Any = None
+    # The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred)
     name: Any = None
+    # This document property's own real value(s), when its declared type is a nested, structured property (not a simple scalar). (AI-inferred)
     property_values: Any = None
+    # This document property's own real value(s), when its declared type is plain text. (AI-inferred)
     text_values: Any = None
+    # This document property's own real value(s), when its declared type is a timestamp. (AI-inferred)
     timestamp_values: Any = None
 
 @dataclasses.dataclass
@@ -545,25 +785,36 @@ class Document_Document:
 
 @dataclasses.dataclass
 class Document_Policy_AuditConfigs_AuditLogConfigs:
+    # The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred)
     exempted_members: Any = None
+    # Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred)
     log_type: Any = None
 
 @dataclasses.dataclass
 class Document_Policy_AuditConfigs:
+    # Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred)
     audit_log_configs: Any = None
+    # The real Google Cloud service this document's own embedded IAM audit log configuration applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class Document_Policy_Bindings_Condition:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The real Common Expression Language (CEL) expression text of this document IAM policy binding's own condition. (AI-inferred)
     expression: Any = None
+    # The real, human-readable source location of this document IAM policy binding's own condition expression, used for error reporting. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class Document_Policy_Bindings:
+    # The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
     condition: Any = None
+    # The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred)
     members: Any = None
+    # The real IAM role this document-level policy binding grants. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass

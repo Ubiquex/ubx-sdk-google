@@ -36,60 +36,88 @@ export interface HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpec {
 }
 
 export interface HyperparameterTuningJob_StudySpec_Metrics_SafetyConfig {
+  /** The minimum fraction of trials that must be predicted safe before an unsafe trial is allowed to be tried anyway. (AI-inferred) */
   desiredMinSafeTrialsFraction?: number | Computed<number>;
+  /** The metric value below which a trial is considered unsafe. (AI-inferred) */
   safetyThreshold?: number | Computed<number>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Metrics {
+  /** Whether this metric should be `MAXIMIZE`d or `MINIMIZE`d during tuning. (AI-inferred) */
   goal?: string | Computed<string>;
+  /** An identifier for this metric, unique within its own containing evaluation. (AI-inferred) */
   metricId?: string | Computed<string>;
+  /** Configuration for safe hyperparameter tuning, which avoids proposing trials predicted to badly underperform. (AI-inferred) */
   safetyConfig?: HyperparameterTuningJob_StudySpec_Metrics_SafetyConfig | Computed<HyperparameterTuningJob_StudySpec_Metrics_SafetyConfig>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: number[] | Computed<number[]>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs {
+  /** The definition (type, range, or allowed values) of this hyperparameter. (AI-inferred) */
   parameterSpec?: unknown | Computed<unknown>;
+  /** The parent categorical value(s) that activate this conditional parameter. (AI-inferred) */
   parentCategoricalValues?: HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues | Computed<HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues>;
+  /** The parent discrete value(s) that activate this conditional parameter. (AI-inferred) */
   parentDiscreteValues?: HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues | Computed<HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValues>;
+  /** The parent integer value(s) that activate this conditional parameter. (AI-inferred) */
   parentIntValues?: HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues | Computed<HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: number | Computed<number>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: number[] | Computed<number[]>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: number | Computed<number>;
+  /** The largest value this parameter may take. (AI-inferred) */
   maxValue?: number | Computed<number>;
+  /** The smallest value this parameter may take. (AI-inferred) */
   minValue?: number | Computed<number>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpec {
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: string | Computed<string>;
+  /** The largest value this parameter may take. (AI-inferred) */
   maxValue?: string | Computed<string>;
+  /** The smallest value this parameter may take. (AI-inferred) */
   minValue?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_StudySpec_Parameters {
+  /** Defines this hyperparameter as a categorical value, chosen from a fixed set of string options. (AI-inferred) */
   categoricalValueSpec?: HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpec | Computed<HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpec>;
+  /** Sub-parameter(s) that only apply when this parameter takes specific value(s), for hyperparameter search spaces with conditional structure. (AI-inferred) */
   conditionalParameterSpecs?: HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs[] | Computed<HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs[]>;
+  /** Defines this hyperparameter as a value chosen from a fixed, explicit list of numbers. (AI-inferred) */
   discreteValueSpec?: HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpec | Computed<HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpec>;
+  /** Defines this hyperparameter as a floating-point value within a `min_value`/`max_value` range. (AI-inferred) */
   doubleValueSpec?: HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpec | Computed<HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpec>;
+  /** Defines this hyperparameter as an integer value within a `min_value`/`max_value` range. (AI-inferred) */
   integerValueSpec?: HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpec | Computed<HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpec>;
+  /** The name of this hyperparameter, unique within its own study. (AI-inferred) */
   parameterId?: string | Computed<string>;
+  /** How this hyperparameter's own search range is scaled when sampling, e.g. `UNIT_LINEAR_SCALE` or `UNIT_LOG_SCALE`. (AI-inferred) */
   scaleType?: string | Computed<string>;
 }
 
@@ -144,8 +172,11 @@ export interface HyperparameterTuningJob_TrialJobSpec_BaseOutputDirectory {
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfig_DnsPeeringConfigs {
+  /** The domain this configuration or resource applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** The VPC network this resource is deployed into. (AI-inferred) */
   targetNetwork?: string | Computed<string>;
+  /** The Google Cloud project this resource targets. (AI-inferred) */
   targetProject?: string | Computed<string>;
 }
 
@@ -170,65 +201,101 @@ export interface HyperparameterTuningJob_TrialJobSpec_Scheduling {
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec {
+  /** The argument value(s) passed to this call. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** The container entrypoint command and argument(s) to run. (AI-inferred) */
   command?: string[] | Computed<string[]>;
+  /** Environment variable(s) set for this job's own execution. (AI-inferred) */
   env?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env[] | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env[]>;
+  /** The container image URI to run. (AI-inferred) */
   imageUri?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpec {
+  /** The size, in GB, of the boot disk provisioned for this job's own machine(s). (AI-inferred) */
   bootDiskSizeGb?: number | Computed<number>;
+  /** The boot disk type provisioned for this job's own machine(s), e.g. `pd-ssd`. (AI-inferred) */
   bootDiskType?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMounts {
+  /** The filesystem identifier to mount. (AI-inferred) */
   filesystem?: string | Computed<string>;
+  /** The IP address of the filesystem instance to mount. (AI-inferred) */
   instanceIp?: string | Computed<string>;
+  /** The filesystem path this volume is mounted at. (AI-inferred) */
   mountPoint?: string | Computed<string>;
+  /** An identifier for this mounted volume, unique within its own job. (AI-inferred) */
   volumeHandle?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity {
+  /** A key identifying this entry. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Whether this job requires a specific reservation, any matching reservation, or none at all. (AI-inferred) */
   reservationAffinityType?: string | Computed<string>;
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec {
+  /** How many accelerator (GPU/TPU) devices are attached per machine. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
+  /** The accelerator (GPU/TPU) type attached to each machine, e.g. `NVIDIA_TESLA_T4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** The fraction of a physical GPU allocated to this workload, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
+  /** The Compute Engine machine type provisioned for this job, e.g. `n1-standard-4`. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** Whether this job must, may, or must not run on a specific Compute Engine reservation, rather than on-demand capacity. (AI-inferred) */
   reservationAffinity?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity>;
+  /** The physical arrangement of TPU chips provisioned for this job, e.g. `2x2x1`. (AI-inferred) */
   tpuTopology?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMounts {
+  /** The filesystem path this volume is mounted at. (AI-inferred) */
   mountPoint?: string | Computed<string>;
+  /** A file or object path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The server hostname or IP address to connect to. (AI-inferred) */
   server?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpec {
+  /** The argument value(s) passed to this call. (AI-inferred) */
   args?: string[] | Computed<string[]>;
+  /** Environment variable(s) set for this job's own execution. (AI-inferred) */
   env?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env[] | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env[]>;
+  /** The prebuilt Vertex AI executor image this Python package runs on top of. (AI-inferred) */
   executorImageUri?: string | Computed<string>;
+  /** The Cloud Storage URI(s) of the Python package(s) (e.g. a `.tar.gz` sdist) to install and run. (AI-inferred) */
   packageUris?: string[] | Computed<string[]>;
+  /** The Python module to execute as this worker's own entry point. (AI-inferred) */
   pythonModule?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs {
+  /** The container image and command this worker pool runs. (AI-inferred) */
   containerSpec?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec>;
+  /** The boot disk configuration provisioned for this job's own machine(s). (AI-inferred) */
   diskSpec?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpec | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpec>;
+  /** Managed Lustre filesystem(s) mounted into this job's own worker containers. (AI-inferred) */
   lustreMounts?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMounts[] | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMounts[]>;
+  /** The machine type, accelerator, and count provisioned to run this job. (AI-inferred) */
   machineSpec?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec>;
+  /** NFS filesystem(s) mounted into this job's own worker containers. (AI-inferred) */
   nfsMounts?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMounts[] | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMounts[]>;
+  /** A Python package (rather than a container image) this worker pool runs, using a prebuilt executor image. (AI-inferred) */
   pythonPackageSpec?: HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpec | Computed<HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpec>;
+  /** How many machine replicas this job runs. (AI-inferred) */
   replicaCount?: string | Computed<string>;
 }
 
@@ -266,33 +333,52 @@ export interface HyperparameterTuningJob_TrialJobSpec {
 }
 
 export interface HyperparameterTuningJob_Trials_FinalMeasurement_Metrics {
+  /** An identifier for this metric, unique within its own containing evaluation. (AI-inferred) */
   metricId?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
 export interface HyperparameterTuningJob_Trials_FinalMeasurement {
+  /** How long this operation has been running, or took to complete. (AI-inferred) */
   elapsedDuration?: string | Computed<string>;
+  /** The metric value(s) recorded for this measurement. (AI-inferred) */
   metrics?: HyperparameterTuningJob_Trials_FinalMeasurement_Metrics[] | Computed<HyperparameterTuningJob_Trials_FinalMeasurement_Metrics[]>;
+  /** How many steps this job or trial ran for. (AI-inferred) */
   stepCount?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJob_Trials_Parameters {
+  /** The name of this hyperparameter, unique within its own study. (AI-inferred) */
   parameterId?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: unknown | Computed<unknown>;
 }
 
 export interface HyperparameterTuningJob_Trials {
+  /** An identifier for the client that requested this trial. (AI-inferred) */
   clientId?: string | Computed<string>;
+  /** A reference to the custom training job running this trial. (AI-inferred) */
   customJob?: string | Computed<string>;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** The trial's own final, reported metric value(s) once it completed. (AI-inferred) */
   finalMeasurement?: HyperparameterTuningJob_Trials_FinalMeasurement | Computed<HyperparameterTuningJob_Trials_FinalMeasurement>;
+  /** An identifier for this object. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Why this trial was reported infeasible, if it was. (AI-inferred) */
   infeasibleReason?: string | Computed<string>;
+  /** The metric value(s) reported at each intermediate step during this trial. (AI-inferred) */
   measurements?: HyperparameterTuningJob_Trials_FinalMeasurement[] | Computed<HyperparameterTuningJob_Trials_FinalMeasurement[]>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema describing this function's own callable arguments. (AI-inferred) */
   parameters?: HyperparameterTuningJob_Trials_Parameters[] | Computed<HyperparameterTuningJob_Trials_Parameters[]>;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current lifecycle state of this resource or job. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Interactive web UI URI(s) (e.g. a notebook or TensorBoard) for monitoring this trial while it runs. (AI-inferred) */
   webAccessUris?: Record<string, string> | Computed<Record<string, string>>;
 }
 

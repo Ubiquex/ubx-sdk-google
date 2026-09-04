@@ -4,29 +4,44 @@ package certificatemanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Cname struct {
+	// The record data expected for this validation to succeed. (AI-inferred)
 	ExpectedData any
-	Name         any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The record data actually observed for this domain. (AI-inferred)
 	ResolvedData any
 }
 
 type Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_Ips struct {
-	Resolved          any
-	Serving           any
+	// Whether this DNS record currently resolves to the expected value. (AI-inferred)
+	Resolved any
+	// Whether this certificate is actively serving traffic. (AI-inferred)
+	Serving any
+	// Whether this certificate is served on non-standard port(s). (AI-inferred)
 	ServingOnAltPorts any
 }
 
 type Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting struct {
-	Cname  any
-	Ips    any
+	// The CNAME target this DNS record must point to. (AI-inferred)
+	Cname any
+	// The IP address(es) this applies to. (AI-inferred)
+	Ips any
+	// The issue(s) detected during troubleshooting. (AI-inferred)
 	Issues any
 }
 
 type Certificate_Managed_AuthorizationAttemptInfo struct {
-	AttemptTime     any
-	Details         any
-	Domain          any
-	FailureReason   any
-	State           any
+	// When this validation attempt was made. (AI-inferred)
+	AttemptTime any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// Why this validation attempt failed. (AI-inferred)
+	FailureReason any
+	// The current status of this resource. (AI-inferred)
+	State any
+	// Diagnostic detail helping to explain this resource's own current state. (AI-inferred)
 	Troubleshooting any
 }
 
@@ -69,6 +84,7 @@ type Certificate_SelfManaged struct {
 }
 
 type Certificate_UsedBy struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
 }
 

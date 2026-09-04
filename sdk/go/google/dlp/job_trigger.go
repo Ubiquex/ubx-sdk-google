@@ -4,158 +4,230 @@ package dlp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobTrigger_Errors_Details struct {
-	Code    any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// Additional detail explaining this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result or error. (AI-inferred)
 	Message any
 }
 
 type JobTrigger_Errors struct {
-	Details    any
-	ExtraInfo  any
+	// Additional detail explaining this result. (AI-inferred)
+	Details any
+	// Additional detail about this event. (AI-inferred)
+	ExtraInfo any
+	// The timestamp(s) recorded for this event. (AI-inferred)
 	Timestamps any
 }
 
 type JobTrigger_InspectJob_Actions_Deidentify_TransformationConfig struct {
-	DeidentifyTemplate           any
-	ImageRedactTemplate          any
+	// A reference to the de-identify template defining how matched values are transformed. (AI-inferred)
+	DeidentifyTemplate any
+	// A reference to the template defining how matched values within images are redacted. (AI-inferred)
+	ImageRedactTemplate any
+	// A reference to the de-identify template applied specifically to structured (tabular) data. (AI-inferred)
 	StructuredDeidentifyTemplate any
 }
 
 type JobTrigger_InspectJob_Actions_Deidentify_TransformationDetailsStorageConfig_Table struct {
+	// The BigQuery dataset ID this applies to. (AI-inferred)
 	DatasetId any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
-	TableId   any
+	// The BigQuery table ID this applies to. (AI-inferred)
+	TableId any
 }
 
 type JobTrigger_InspectJob_Actions_Deidentify_TransformationDetailsStorageConfig struct {
+	// A reference to the table this applies to. (AI-inferred)
 	Table any
 }
 
 type JobTrigger_InspectJob_Actions_Deidentify struct {
-	CloudStorageOutput                 any
-	FileTypesToTransform               any
-	TransformationConfig               any
+	// The Cloud Storage location de-identified output is written to. (AI-inferred)
+	CloudStorageOutput any
+	// Which file type(s) this de-identification action applies to. (AI-inferred)
+	FileTypesToTransform any
+	// The de-identification transformation(s) to apply. (AI-inferred)
+	TransformationConfig any
+	// Where a detailed, per-value record of this job's own transformations is stored. (AI-inferred)
 	TransformationDetailsStorageConfig any
 }
 
 type JobTrigger_InspectJob_Actions_PubSub struct {
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
 	Topic any
 }
 
 type JobTrigger_InspectJob_Actions_SaveFindings_OutputConfig_StoragePath struct {
+	// A file or object path this configuration reads from or writes to. (AI-inferred)
 	Path any
 }
 
 type JobTrigger_InspectJob_Actions_SaveFindings_OutputConfig struct {
+	// The BigQuery schema findings are written under. (AI-inferred)
 	OutputSchema any
-	StoragePath  any
-	Table        any
+	// The Cloud Storage path data is written to or read from. (AI-inferred)
+	StoragePath any
+	// A reference to the table this applies to. (AI-inferred)
+	Table any
 }
 
 type JobTrigger_InspectJob_Actions_SaveFindings struct {
+	// Where and how this job's own output is written. (AI-inferred)
 	OutputConfig any
 }
 
 type JobTrigger_InspectJob_Actions struct {
-	Deidentify                        any
-	JobNotificationEmails             any
-	PubSub                            any
+	// Configuration for de-identifying discovered sensitive data as part of this action. (AI-inferred)
+	Deidentify any
+	// Sends a notification email to the project's own owners/editors when this job completes. (AI-inferred)
+	JobNotificationEmails any
+	// Publishes a notification to a Pub/Sub topic when this job completes. (AI-inferred)
+	PubSub any
+	// Publishes this job's own findings as Data Catalog tags on the scanned resource. (AI-inferred)
 	PublishFindingsToCloudDataCatalog any
-	PublishFindingsToDataplexCatalog  any
-	PublishSummaryToCscc              any
-	PublishToStackdriver              any
-	SaveFindings                      any
+	// Publishes this job's own findings as Dataplex Catalog metadata on the scanned resource. (AI-inferred)
+	PublishFindingsToDataplexCatalog any
+	// Publishes a summary of this job's own findings to Security Command Center. (AI-inferred)
+	PublishSummaryToCscc any
+	// Publishes this job's own findings as Cloud Logging (Stackdriver) log entries. (AI-inferred)
+	PublishToStackdriver any
+	// Saves this job's own findings to a BigQuery table. (AI-inferred)
+	SaveFindings any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex struct {
+	// For a regex with capture groups, which group number(s) the match applies to, instead of the whole match. (AI-inferred)
 	GroupIndexes any
-	Pattern      any
+	// A regular expression a `string`-typed value must match. (AI-inferred)
+	Pattern any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment struct {
-	FixedLikelihood    any
+	// Sets a triggered finding's likelihood to this exact value, overriding whatever it would otherwise have been. (AI-inferred)
+	FixedLikelihood any
+	// Shifts a triggered finding's likelihood up or down by this many levels, relative to whatever it would otherwise have been. (AI-inferred)
 	RelativeLikelihood any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity struct {
-	WindowAfter  any
+	// How many characters after a finding this hotword rule scans for a match. (AI-inferred)
+	WindowAfter any
+	// How many characters before a finding this hotword rule scans for a match. (AI-inferred)
 	WindowBefore any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule struct {
-	HotwordRegex         any
+	// A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
+	HotwordRegex any
+	// How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
 	LikelihoodAdjustment any
-	Proximity            any
+	// The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
+	Proximity any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_DetectionRules struct {
+	// A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
 	HotwordRule any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_Dictionary_WordList struct {
+	// The literal words/phrases making up this `word_list`. (AI-inferred)
 	Words any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_Dictionary struct {
+	// A `gs://` Cloud Storage path this configuration reads from. (AI-inferred)
 	CloudStoragePath any
-	WordList         any
+	// A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
+	WordList any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch struct {
-	Id    any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
 	Value any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel struct {
+	// Which label field(s) on a Google Drive file are inspected. (AI-inferred)
 	LabelFieldsToMatch any
-	LabelId            any
+	// The identifier of the Google Drive label this applies to. (AI-inferred)
+	LabelId any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel struct {
+	// A globally unique identifier. (AI-inferred)
 	Guid any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_FileLabelInfoType struct {
+	// Configuration for inspecting Google Drive file labels as part of this scan. (AI-inferred)
 	GoogleDriveLabel any
+	// A Google Drive sensitivity label applied to a file, treated as a signal of the file's own real sensitivity. (AI-inferred)
 	SensitivityLabel any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore struct {
+	// The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
 	Score any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_InfoType struct {
-	Name             any
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
+	Name any
+	// A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
 	SensitivityScore any
-	Version          any
+	// The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred)
+	Version any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression struct {
-	KeyRegex   any
+	// A regular expression matching against metadata key names. (AI-inferred)
+	KeyRegex any
+	// A regular expression matching against metadata values. (AI-inferred)
 	ValueRegex any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes_StoredType struct {
+	// Output only. The timestamp when this resource was created. (AI-inferred)
 	CreateTime any
-	Name       any
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
+	Name any
 }
 
 type JobTrigger_InspectJob_InspectConfig_CustomInfoTypes struct {
-	DetectionRules             any
-	Dictionary                 any
-	ExclusionType              any
-	FileLabelInfoType          any
-	InfoType                   any
-	Likelihood                 any
+	// The rule(s) that adjust match likelihood for this custom info type based on surrounding context. (AI-inferred)
+	DetectionRules any
+	// A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
+	Dictionary any
+	// Whether a match against this rule excludes the finding from results, or leaves it unaffected. (AI-inferred)
+	ExclusionType any
+	// Reports a Google Drive file's own applied label(s) as findings, treating the label itself as sensitive information to detect. (AI-inferred)
+	FileLabelInfoType any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
+	InfoType any
+	// How confident Sensitive Data Protection is that this is a real match, from `VERY_UNLIKELY` to `VERY_LIKELY`. (AI-inferred)
+	Likelihood any
+	// A condition matching against a specific metadata key/value pair on the scanned object. (AI-inferred)
 	MetadataKeyValueExpression any
-	Regex                      any
-	SensitivityScore           any
-	StoredType                 any
-	SurrogateType              any
+	// A regular expression this rule matches against. (AI-inferred)
+	Regex any
+	// A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
+	SensitivityScore any
+	// A reference to a previously created custom info type (a stored dictionary or regex) to reuse here. (AI-inferred)
+	StoredType any
+	// Marks de-identified content with a caller-defined info type name, so it can later be recognized and re-identified. (AI-inferred)
+	SurrogateType any
 }
 
 type JobTrigger_InspectJob_InspectConfig_Limits_MaxFindingsPerInfoType struct {
-	InfoType    any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
+	InfoType any
+	// The maximum number of findings to report before stopping. (AI-inferred)
 	MaxFindings any
 }
 
@@ -169,66 +241,96 @@ type JobTrigger_InspectJob_InspectConfig_Limits struct {
 }
 
 type JobTrigger_InspectJob_InspectConfig_MinLikelihoodPerInfoType struct {
-	InfoType      any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
+	InfoType any
+	// The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
 	MinLikelihood any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType struct {
-	Encloses    any
+	// Whether the redaction region fully contains the finding's own bounding box. (AI-inferred)
+	Encloses any
+	// Whether the finding's own bounding box lies entirely within the redaction region. (AI-inferred)
 	FullyInside any
-	Overlaps    any
+	// Whether the redaction region and the finding's own bounding box share any area at all. (AI-inferred)
+	Overlaps any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings struct {
+	// How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
 	ImageContainmentType any
-	InfoTypes            any
-	MinLikelihood        any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
+	// The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
+	MinLikelihood any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes struct {
-	InfoTypes     any
-	MatchingType  any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
+	// How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
+	MatchingType any
+	// The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
 	MinLikelihood any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_AdjustmentRule struct {
-	AdjustByImageFindings     any
+	// Adjusts a finding's own likelihood based on whether related findings were also detected in an accompanying image. (AI-inferred)
+	AdjustByImageFindings any
+	// Adjusts a finding's own likelihood based on whether other specific info types were also matched nearby. (AI-inferred)
 	AdjustByMatchingInfoTypes any
-	LikelihoodAdjustment      any
+	// How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
+	LikelihoodAdjustment any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword struct {
+	// A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
 	HotwordRegex any
-	Proximity    any
+	// The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
+	Proximity any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings struct {
+	// How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
 	ImageContainmentType any
-	InfoTypes            any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes struct {
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
 	InfoTypes any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules_ExclusionRule struct {
-	Dictionary             any
-	ExcludeByHotword       any
+	// A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
+	Dictionary any
+	// Excludes a finding when a specified hotword regex is found nearby, the inverse of a hotword likelihood-boosting rule. (AI-inferred)
+	ExcludeByHotword any
+	// Excludes a finding based on whether related findings were also detected in an accompanying image. (AI-inferred)
 	ExcludeByImageFindings any
-	ExcludeInfoTypes       any
-	MatchingType           any
-	Regex                  any
+	// Excludes findings that also match one of these other info types. (AI-inferred)
+	ExcludeInfoTypes any
+	// How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
+	MatchingType any
+	// A regular expression this rule matches against. (AI-inferred)
+	Regex any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet_Rules struct {
+	// A rule that raises or lowers a finding's own likelihood, rather than excluding it outright. (AI-inferred)
 	AdjustmentRule any
-	ExclusionRule  any
-	HotwordRule    any
+	// A rule that removes matching findings from the results entirely. (AI-inferred)
+	ExclusionRule any
+	// A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
+	HotwordRule any
 }
 
 type JobTrigger_InspectJob_InspectConfig_RuleSet struct {
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
 	InfoTypes any
-	Rules     any
+	// The rule(s) making up this configuration. (AI-inferred)
+	Rules any
 }
 
 type JobTrigger_InspectJob_InspectConfig struct {
@@ -253,6 +355,7 @@ type JobTrigger_InspectJob_InspectConfig struct {
 }
 
 type JobTrigger_InspectJob_StorageConfig_BigQueryOptions_ExcludedFields struct {
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
 	Name any
 }
 
@@ -370,11 +473,14 @@ type JobTrigger_InspectJob struct {
 }
 
 type JobTrigger_JobTrigger_Triggers_Schedule struct {
+	// How often this scheduled trigger recurs. (AI-inferred)
 	RecurrencePeriodDuration any
 }
 
 type JobTrigger_JobTrigger_Triggers struct {
-	Manual   any
+	// Triggers this job only when explicitly run, rather than on a recurring schedule. (AI-inferred)
+	Manual any
+	// Runs this job automatically on a recurring interval. (AI-inferred)
 	Schedule any
 }
 

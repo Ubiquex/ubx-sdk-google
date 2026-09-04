@@ -11,15 +11,21 @@ type Database_EncryptionConfig struct {
 }
 
 type Database_EncryptionInfo_EncryptionStatus struct {
-	Code    any
+	// A machine-readable status or error code. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type Database_EncryptionInfo struct {
+	// The current status of encryption for this resource. (AI-inferred)
 	EncryptionStatus any
-	EncryptionType   any
-	KmsKeyVersion    any
+	// The kind of encryption applied to this resource, e.g. Google-managed or customer-managed. (AI-inferred)
+	EncryptionType any
+	// The specific Cloud KMS key version used to encrypt this resource. (AI-inferred)
+	KmsKeyVersion any
 }
 
 type Database_QuorumInfo_QuorumType_SingleRegion struct {

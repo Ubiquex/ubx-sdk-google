@@ -74,36 +74,55 @@ class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Generation
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio:
+    # The audio or video bit rate, in bits per second. (AI-inferred)
     bit_rate: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The audio sample rate, in Hz. (AI-inferred)
     sample_rate: Any = None
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
     image_size: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # A schema describing this value's own expected structure. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # How long this clip, window, or operation lasts. (AI-inferred)
     duration: Any = None
+    # A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
     gcs_uri: Any = None
+    # The pixel dimensions of this image or video. (AI-inferred)
     resolution: Any = None
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat:
+    # Audio content or configuration. (AI-inferred)
     audio: Any = None
+    # Image content or configuration. (AI-inferred)
     image: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # Video content or configuration. (AI-inferred)
     video: Any = None
 
 @dataclasses.dataclass
@@ -124,6 +143,7 @@ class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Generation
     example: Any = None
     # Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
     format: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
     # Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
     max_items: Any = None
@@ -177,21 +197,28 @@ class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Generation
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig:
+    # The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
     voice_name: Any = None
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
     voice_sample_audio: Any = None
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig:
+    # Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
     prebuilt_voice_config: Any = None
+    # Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
     replicated_voice_config: Any = None
 
 @dataclasses.dataclass
 class EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs:
+    # Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
     speaker: Any = None
+    # The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
     voice_config: Any = None
 
 @dataclasses.dataclass

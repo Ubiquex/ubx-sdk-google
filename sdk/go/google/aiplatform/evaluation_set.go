@@ -4,228 +4,354 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EvaluationSet_AgentConfigs_Tools_ComputerUse struct {
+	// If `true`, screens `computer_use` requests for prompt-injection attempts before acting on them. (AI-inferred)
 	EnablePromptInjectionDetection any
-	Environment                    any
-	ExcludedPredefinedFunctions    any
+	// Which surface the `computer_use` tool operates in -- e.g. `browser`, for a sandboxed web browser. (AI-inferred)
+	Environment any
+	// Built-in `computer_use` actions to disable, typically to hand those actions to a custom, caller-registered function instead. (AI-inferred)
+	ExcludedPredefinedFunctions any
 }
 
 type EvaluationSet_AgentConfigs_Tools_EnterpriseWebSearch struct {
+	// The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
 	BlockingConfidence any
-	ExcludeDomains     any
+	// Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
+	ExcludeDomains any
 }
 
 type EvaluationSet_AgentConfigs_Tools_ExaAiSearch struct {
-	ApiKey        any
+	// The API key credential used to authenticate this tool's own external calls. (AI-inferred)
+	ApiKey any
+	// Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
 	CustomConfigs any
 }
 
 type EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_Parameters struct {
+	// Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
 	AdditionalProperties any
-	AnyOf                any
-	Default              any
-	Defs                 any
-	Description          any
-	Enum                 any
-	Example              any
-	Format               any
-	Items                any
-	MaxItems             any
-	MaxLength            any
-	MaxProperties        any
-	Maximum              any
-	MinItems             any
-	MinLength            any
-	MinProperties        any
-	Minimum              any
-	Nullable             any
-	Pattern              any
-	Properties           any
-	PropertyOrdering     any
-	Ref                  any
-	Required             any
-	Title                any
-	Type                 any
+	// A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
+	AnyOf any
+	// The value used when this field is left unset. (AI-inferred)
+	Default any
+	// Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
+	Defs any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
+	Enum any
+	// A sample value illustrating this schema, for documentation purposes only -- not enforced as a constraint. (AI-inferred)
+	Example any
+	// A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
+	Format any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
+	// The most elements an `array`-typed value may have. (AI-inferred)
+	MaxItems any
+	// The most characters a `string`-typed value may have. (AI-inferred)
+	MaxLength any
+	// The most properties an `object`-typed value may have. (AI-inferred)
+	MaxProperties any
+	// The largest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Maximum any
+	// The fewest elements an `array`-typed value may have. (AI-inferred)
+	MinItems any
+	// The fewest characters a `string`-typed value may have. (AI-inferred)
+	MinLength any
+	// The fewest properties an `object`-typed value may have. (AI-inferred)
+	MinProperties any
+	// The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Minimum any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// A regular expression a `string`-typed value must match. (AI-inferred)
+	Pattern any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
+	// The order this schema's own `properties` should appear in when Gemini generates a structured response -- Gemini otherwise has no guaranteed field order for JSON output. (AI-inferred)
+	PropertyOrdering any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type EvaluationSet_AgentConfigs_Tools_FunctionDeclarations struct {
-	Behavior             any
-	Description          any
-	Name                 any
-	Parameters           any
+	// Controls how the model treats this function call -- e.g. whether it must wait for the result before continuing, or can proceed without blocking. (AI-inferred)
+	Behavior any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
+	Parameters any
+	// The function's own parameter schema expressed as a plain JSON Schema document, an alternative to the structured `parameters` field. (AI-inferred)
 	ParametersJsonSchema any
-	Response             any
-	ResponseJsonSchema   any
+	// The response produced for this request. (AI-inferred)
+	Response any
+	// The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred)
+	ResponseJsonSchema any
 }
 
 type EvaluationSet_AgentConfigs_Tools_GoogleMaps_GroundingTypes struct {
-	Places  any
+	// Configuration for grounding responses in Google Maps place data specifically. (AI-inferred)
+	Places any
+	// Configuration for how requests are routed, e.g. to a specific region or backend. (AI-inferred)
 	Routing any
 }
 
 type EvaluationSet_AgentConfigs_Tools_GoogleMaps struct {
-	EnableWidget   any
+	// Whether an interactive map widget is included alongside a Google Maps-grounded response. (AI-inferred)
+	EnableWidget any
+	// Which real-world grounding source(s) (e.g. web search, Maps) this configuration draws on. (AI-inferred)
 	GroundingTypes any
 }
 
 type EvaluationSet_AgentConfigs_Tools_GoogleSearch_SearchTypes struct {
+	// Enables grounding via Google Image Search results. (AI-inferred)
 	ImageSearch any
-	WebSearch   any
+	// Enables grounding via Google Web Search results. (AI-inferred)
+	WebSearch any
 }
 
 type EvaluationSet_AgentConfigs_Tools_GoogleSearch struct {
+	// The minimum confidence level at which a safety/content filter blocks matching content, rather than only flagging it. (AI-inferred)
 	BlockingConfidence any
-	ExcludeDomains     any
-	SearchTypes        any
+	// Domains excluded from this tool's own results (e.g. Google Search grounding), even when otherwise relevant. (AI-inferred)
+	ExcludeDomains any
+	// Which kind(s) of web search results (image, web, or both) this grounding tool draws on. (AI-inferred)
+	SearchTypes any
 }
 
 type EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig struct {
+	// The minimum predicted-usefulness score, from `dynamic_retrieval_config`, at which grounding is triggered -- a lower threshold grounds more often. (AI-inferred)
 	DynamicThreshold any
-	Mode             any
+	// Which operating mode this configuration uses. (AI-inferred)
+	Mode any
 }
 
 type EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval struct {
+	// Controls when Google Search grounding actually triggers, based on how likely the model judges grounding to help. (AI-inferred)
 	DynamicRetrievalConfig any
 }
 
 type EvaluationSet_AgentConfigs_Tools_ParallelAiSearch struct {
-	ApiKey                  any
-	CustomConfigs           any
-	EnableDataRetention     any
+	// The API key credential used to authenticate this tool's own external calls. (AI-inferred)
+	ApiKey any
+	// Tool-specific configuration overrides, keyed by the tool they apply to. (AI-inferred)
+	CustomConfigs any
+	// Whether Google retains this request's own data beyond the immediate response, per the caller's own data-retention agreement. (AI-inferred)
+	EnableDataRetention any
+	// If `true`, Google discards this request's own data immediately after responding rather than retaining it at all. (AI-inferred)
 	EnableZeroDataRetention any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig struct {
+	// The Secret Manager secret version holding the API key used to authenticate this call. (AI-inferred)
 	ApiKeySecretVersion any
-	ApiKeyString        any
+	// The literal API key value used to authenticate this tool's own external call. (AI-inferred)
+	ApiKeyString any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth struct {
+	// How the API key for this tool's own external service call is supplied. (AI-inferred)
 	ApiKeyConfig any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig struct {
-	ApiKeySecret        any
-	ApiKeyString        any
+	// The Secret Manager secret holding the API key used to authenticate this call. (AI-inferred)
+	ApiKeySecret any
+	// The literal API key value used to authenticate this tool's own external call. (AI-inferred)
+	ApiKeyString any
+	// Where in the HTTP request this credential is placed, e.g. a header or query parameter. (AI-inferred)
 	HttpElementLocation any
-	Name                any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig struct {
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig struct {
+	// The Secret Manager secret holding this credential. (AI-inferred)
 	CredentialSecret any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig struct {
-	AccessToken    any
+	// An OAuth 2.0 access token used to authenticate this call. (AI-inferred)
+	AccessToken any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig struct {
-	IdToken        any
+	// An OpenID Connect ID token used to authenticate this call. (AI-inferred)
+	IdToken any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
 	ServiceAccount any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig struct {
-	ApiKeyConfig               any
-	AuthType                   any
+	// How the API key for this tool's own external service call is supplied. (AI-inferred)
+	ApiKeyConfig any
+	// Which authentication method this configuration uses, e.g. API key, OAuth, or OIDC. (AI-inferred)
+	AuthType any
+	// Authenticates using a Google-managed service account, rather than a caller-supplied credential. (AI-inferred)
 	GoogleServiceAccountConfig any
-	HttpBasicAuthConfig        any
-	OauthConfig                any
-	OidcConfig                 any
+	// Authenticates using HTTP Basic authentication (username and password). (AI-inferred)
+	HttpBasicAuthConfig any
+	// Authenticates using an OAuth 2.0 access token. (AI-inferred)
+	OauthConfig any
+	// Authenticates using an OpenID Connect ID token. (AI-inferred)
+	OidcConfig any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ElasticSearchParams struct {
-	Index          any
-	NumHits        any
+	// The position of this item within its own containing sequence. (AI-inferred)
+	Index any
+	// How many search results (hits) to request from the external search API. (AI-inferred)
+	NumHits any
+	// The Elasticsearch search template used to construct this query. (AI-inferred)
 	SearchTemplate any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi struct {
-	ApiAuth             any
-	ApiSpec             any
-	AuthConfig          any
+	// Authentication credentials for calling this external API. (AI-inferred)
+	ApiAuth any
+	// Which external search API shape this configuration targets, e.g. `elastic_search_params` or `simple_search_params`. (AI-inferred)
+	ApiSpec any
+	// Authentication configuration for reaching this external resource. (AI-inferred)
+	AuthConfig any
+	// Parameters for querying an Elasticsearch-backed external search API. (AI-inferred)
 	ElasticSearchParams any
-	Endpoint            any
-	SimpleSearchParams  any
+	// The endpoint this call is directed to. (AI-inferred)
+	Endpoint any
+	// Parameters for querying a simple, generic external search API, as an alternative to `elastic_search_params`. (AI-inferred)
+	SimpleSearchParams any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch_DataStoreSpecs struct {
+	// The Vertex AI Search data store this grounding query reads from, in the form `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`. (AI-inferred)
 	DataStore any
-	Filter    any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch struct {
+	// Restricts a Vertex AI Search grounding query to specific data store(s) within the configured search app, rather than all of them. (AI-inferred)
 	DataStoreSpecs any
-	Datastore      any
-	Engine         any
-	Filter         any
-	MaxResults     any
+	// The Vertex AI Search data store this applies to. (AI-inferred)
+	Datastore any
+	// The Vertex AI Search app (engine) this grounding query reads from. (AI-inferred)
+	Engine any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The maximum number of results this query returns. (AI-inferred)
+	MaxResults any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagResources struct {
-	RagCorpus  any
+	// The RAG corpus this applies to, in the form `projects/{project}/locations/{location}/ragCorpora/{ragCorpus}`. (AI-inferred)
+	RagCorpus any
+	// Specific file ID(s) within `rag_corpus` to restrict retrieval to, instead of the whole corpus. (AI-inferred)
 	RagFileIds any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter struct {
-	MetadataFilter            any
-	VectorDistanceThreshold   any
+	// A filter expression restricting retrieval to chunks whose own metadata matches. (AI-inferred)
+	MetadataFilter any
+	// The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
+	VectorDistanceThreshold any
+	// The minimum vector similarity a retrieved chunk must have to be included -- a higher threshold returns fewer, more relevant chunks. (AI-inferred)
 	VectorSimilarityThreshold any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRanker struct {
+	// The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred)
 	ModelName any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking struct {
-	LlmRanker   any
+	// Reranks retrieved results using a language model, rather than the dedicated rank service. (AI-inferred)
+	LlmRanker any
+	// Reranks retrieved results using Vertex AI's own dedicated semantic ranking model. (AI-inferred)
 	RankService any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig struct {
-	Filter  any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// Configuration for reranking retrieved results before returning them. (AI-inferred)
 	Ranking any
-	TopK    any
+	// Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
+	TopK any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore struct {
-	RagResources            any
-	RagRetrievalConfig      any
-	SimilarityTopK          any
+	// The RAG corpus/corpora (and optionally specific files within one corpus) this query retrieves from. (AI-inferred)
+	RagResources any
+	// Controls how many chunks are retrieved and how they're filtered/ranked for a RAG query. (AI-inferred)
+	RagRetrievalConfig any
+	// The maximum number of top-ranked results to return from retrieval. (AI-inferred)
+	SimilarityTopK any
+	// The maximum vector-similarity distance a grounding match may have and still be included -- a stricter (lower) threshold returns fewer, closer matches. (AI-inferred)
 	VectorDistanceThreshold any
 }
 
 type EvaluationSet_AgentConfigs_Tools_Retrieval struct {
+	// If `true`, suppresses source citations that would otherwise accompany a grounded response. (AI-inferred)
 	DisableAttribution any
-	ExternalApi        any
-	VertexAiSearch     any
-	VertexRagStore     any
+	// Configuration for grounding via a caller-specified external search API, rather than a Google-hosted one. (AI-inferred)
+	ExternalApi any
+	// Enables the model to ground its response in a Vertex AI Search data store. (AI-inferred)
+	VertexAiSearch any
+	// Enables the model to ground its response in one or more Vertex AI RAG Engine corpora. (AI-inferred)
+	VertexRagStore any
 }
 
 type EvaluationSet_AgentConfigs_Tools struct {
-	CodeExecution         any
-	ComputerUse           any
-	EnterpriseWebSearch   any
-	ExaAiSearch           any
-	FunctionDeclarations  any
-	GoogleMaps            any
-	GoogleSearch          any
+	// Enables the model to write and run code in a hosted interpreter as part of generating its response. (AI-inferred)
+	CodeExecution any
+	// Enables the model to control a browser, mobile, or desktop `environment` by issuing UI actions (click, type, scroll) as part of generating its response. (AI-inferred)
+	ComputerUse any
+	// Enables grounding via an enterprise-scoped web search, as an alternative to open `google_search` grounding. (AI-inferred)
+	EnterpriseWebSearch any
+	// Enables grounding via the third-party Exa AI search tool, authenticated with `api_key`. (AI-inferred)
+	ExaAiSearch any
+	// The set of callable functions the model may invoke via `function_call`, each declared with a name, description, and parameter schema. (AI-inferred)
+	FunctionDeclarations any
+	// Enables the model to ground its response in Google Maps place and location data. (AI-inferred)
+	GoogleMaps any
+	// Enables the model to ground its response in live Google Search results. (AI-inferred)
+	GoogleSearch any
+	// Enables the model to ground its response in live Google Search results, with configurable dynamic-retrieval behavior. (AI-inferred)
 	GoogleSearchRetrieval any
-	ParallelAiSearch      any
-	Retrieval             any
-	UrlContext            any
+	// Enables grounding via the third-party Parallel AI search tool. (AI-inferred)
+	ParallelAiSearch any
+	// Enables the model to ground its response in a specified external or Vertex AI-hosted data source. (AI-inferred)
+	Retrieval any
+	// Enables the model to fetch and read the content of URLs it's given or discovers, to ground its response. (AI-inferred)
+	UrlContext any
 }
 
 type EvaluationSet_AgentConfigs struct {
-	AgentId     any
-	AgentType   any
+	// The identifier of the agent this applies to. (AI-inferred)
+	AgentId any
+	// The kind of agent this is, e.g. which framework or platform it's built on. (AI-inferred)
+	AgentType any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// An instruction given to the model or agent. (AI-inferred)
 	Instruction any
-	SubAgents   any
-	Tools       any
+	// The child agent(s) this agent delegates parts of a task to. (AI-inferred)
+	SubAgents any
+	// The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred)
+	Tools any
 }
 
 type EvaluationSet_EncryptionSpec struct {

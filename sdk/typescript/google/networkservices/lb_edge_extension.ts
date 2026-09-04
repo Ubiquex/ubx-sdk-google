@@ -2,27 +2,43 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LbEdgeExtension_ExtensionChains_Extensions {
+  /** The `:authority` (Host) value this rule matches or sets. (AI-inferred) */
   authority?: string | Computed<string>;
+  /** Whether traffic is allowed through when this check itself fails to run, rather than being blocked. (AI-inferred) */
   failOpen?: boolean | Computed<boolean>;
+  /** Additional caller-defined attribute(s) forwarded alongside this request. (AI-inferred) */
   forwardAttributes?: string[] | Computed<string[]>;
+  /** The header(s) forwarded from the original request. (AI-inferred) */
   forwardHeaders?: string[] | Computed<string[]>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Whether this extension only observes traffic, without modifying it. (AI-inferred) */
   observabilityMode?: boolean | Computed<boolean>;
+  /** Whether the request body is streamed or buffered when sent to this extension. (AI-inferred) */
   requestBodySendMode?: string | Computed<string>;
+  /** Whether the response body is streamed or buffered when sent to this extension. (AI-inferred) */
   responseBodySendMode?: string | Computed<string>;
+  /** A reference to the backend service this routes traffic to. (AI-inferred) */
   service?: string | Computed<string>;
+  /** The event type(s) this plugin can respond to, e.g. request headers or response body. (AI-inferred) */
   supportedEvents?: string[] | Computed<string[]>;
+  /** How long to wait before this operation is considered to have timed out. (AI-inferred) */
   timeout?: string | Computed<string>;
 }
 
 export interface LbEdgeExtension_ExtensionChains_MatchCondition {
+  /** A Common Expression Language expression evaluated to determine whether this rule applies. (AI-inferred) */
   celExpression?: string | Computed<string>;
 }
 
 export interface LbEdgeExtension_ExtensionChains {
+  /** Additional plugin(s) or extension(s) applied to this traffic. (AI-inferred) */
   extensions?: LbEdgeExtension_ExtensionChains_Extensions[] | Computed<LbEdgeExtension_ExtensionChains_Extensions[]>;
+  /** The condition that must hold for this rule to apply. (AI-inferred) */
   matchCondition?: LbEdgeExtension_ExtensionChains_MatchCondition | Computed<LbEdgeExtension_ExtensionChains_MatchCondition>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

@@ -177,6 +177,7 @@ export interface BetaGlobalForwardingRuleAttrs {
   ports: string[];
   /** [Output Only] The PSC connection id of the PSC forwarding rule. */
   pscConnectionId: string;
+  /** The current status of this forwarding rule's own Private Service Connect connection to its target service. (AI-inferred) */
   pscConnectionStatus: string;
   /** Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region: string;

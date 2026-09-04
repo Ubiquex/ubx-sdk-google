@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Processor_ProcessorVersionAliases {
+  /** An alternate name this schema entity is also known by. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** A reference to the specific processor version this applies to. (AI-inferred) */
   processorVersion?: string | Computed<string>;
 }
 

@@ -16,7 +16,9 @@ export interface MigrationJob_DestinationDatabase {
 }
 
 export interface MigrationJob_DumpFlags_DumpFlags {
+  /** The name of this flag. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -40,13 +42,18 @@ export interface MigrationJob_MysqlHomogeneousConfig {
 }
 
 export interface MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifier {
+  /** The name of the database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** The name of the schema this applies to. (AI-inferred) */
   schema?: string | Computed<string>;
+  /** The name of the table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs {
+  /** Identifies a specific database object (schema, table, or column) this configuration applies to. (AI-inferred) */
   objectIdentifier?: MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifier | Computed<MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifier>;
 }
 
@@ -148,13 +155,18 @@ export interface MigrationJob_SqlserverHomogeneousMigrationJobConfig_DagConfig {
 }
 
 export interface MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptions {
+  /** The path to the certificate used to decrypt this backup. (AI-inferred) */
   certPath?: string | Computed<string>;
+  /** The password protecting the private key used to decrypt this backup. (AI-inferred) */
   pvkPassword?: string | Computed<string>;
+  /** The path to the private key used to decrypt this backup. (AI-inferred) */
   pvkPath?: string | Computed<string>;
 }
 
 export interface MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups {
+  /** The name of the database this applies to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** Configuration for decrypting an encrypted backup file. (AI-inferred) */
   encryptionOptions?: MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptions | Computed<MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptions>;
 }
 

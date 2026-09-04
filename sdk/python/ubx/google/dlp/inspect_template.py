@@ -8,98 +8,140 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex:
+    # For a regex with capture groups, which group number(s) the match applies to, instead of the whole match. (AI-inferred)
     group_indexes: Any = None
+    # A regular expression a `string`-typed value must match. (AI-inferred)
     pattern: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment:
+    # Sets a triggered finding's likelihood to this exact value, overriding whatever it would otherwise have been. (AI-inferred)
     fixed_likelihood: Any = None
+    # Shifts a triggered finding's likelihood up or down by this many levels, relative to whatever it would otherwise have been. (AI-inferred)
     relative_likelihood: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity:
+    # How many characters after a finding this hotword rule scans for a match. (AI-inferred)
     window_after: Any = None
+    # How many characters before a finding this hotword rule scans for a match. (AI-inferred)
     window_before: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule:
+    # A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
     hotword_regex: Any = None
+    # How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
     likelihood_adjustment: Any = None
+    # The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
     proximity: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules:
+    # A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
     hotword_rule: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_CloudStoragePath:
+    # A file or object path this configuration reads from or writes to. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordList:
+    # The literal words/phrases making up this `word_list`. (AI-inferred)
     words: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary:
+    # A `gs://` Cloud Storage path this configuration reads from. (AI-inferred)
     cloud_storage_path: Any = None
+    # A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
     word_list: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch:
+    # An identifier for this item. (AI-inferred)
     id: Any = None
+    # The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel:
+    # Which label field(s) on a Google Drive file are inspected. (AI-inferred)
     label_fields_to_match: Any = None
+    # The identifier of the Google Drive label this applies to. (AI-inferred)
     label_id: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel:
+    # A globally unique identifier. (AI-inferred)
     guid: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType:
+    # Configuration for inspecting Google Drive file labels as part of this scan. (AI-inferred)
     google_drive_label: Any = None
+    # A Google Drive sensitivity label applied to a file, treated as a signal of the file's own real sensitivity. (AI-inferred)
     sensitivity_label: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore:
+    # The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_InfoType:
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
+    # A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
     sensitivity_score: Any = None
+    # The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression:
+    # A regular expression matching against metadata key names. (AI-inferred)
     key_regex: Any = None
+    # A regular expression matching against metadata values. (AI-inferred)
     value_regex: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes_StoredType:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The identifying name for this resource, its own field, or its own info type. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_CustomInfoTypes:
+    # The rule(s) that adjust match likelihood for this custom info type based on surrounding context. (AI-inferred)
     detection_rules: Any = None
+    # A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
     dictionary: Any = None
+    # Whether a match against this rule excludes the finding from results, or leaves it unaffected. (AI-inferred)
     exclusion_type: Any = None
+    # Reports a Google Drive file's own applied label(s) as findings, treating the label itself as sensitive information to detect. (AI-inferred)
     file_label_info_type: Any = None
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
+    # How confident Sensitive Data Protection is that this is a real match, from `VERY_UNLIKELY` to `VERY_LIKELY`. (AI-inferred)
     likelihood: Any = None
+    # A condition matching against a specific metadata key/value pair on the scanned object. (AI-inferred)
     metadata_key_value_expression: Any = None
+    # A regular expression this rule matches against. (AI-inferred)
     regex: Any = None
+    # A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
     sensitivity_score: Any = None
+    # A reference to a previously created custom info type (a stored dictionary or regex) to reuse here. (AI-inferred)
     stored_type: Any = None
+    # Marks de-identified content with a caller-defined info type name, so it can later be recognized and re-identified. (AI-inferred)
     surrogate_type: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_Limits_MaxFindingsPerInfoType:
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
+    # The maximum number of findings to report before stopping. (AI-inferred)
     max_findings: Any = None
 
 @dataclasses.dataclass
@@ -113,65 +155,95 @@ class InspectTemplate_InspectConfig_Limits:
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_MinLikelihoodPerInfoType:
+    # A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
     info_type: Any = None
+    # The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
     min_likelihood: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType:
+    # Whether the redaction region fully contains the finding's own bounding box. (AI-inferred)
     encloses: Any = None
+    # Whether the finding's own bounding box lies entirely within the redaction region. (AI-inferred)
     fully_inside: Any = None
+    # Whether the redaction region and the finding's own bounding box share any area at all. (AI-inferred)
     overlaps: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings:
+    # How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
     image_containment_type: Any = None
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
     min_likelihood: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
     matching_type: Any = None
+    # The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
     min_likelihood: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule:
+    # Adjusts a finding's own likelihood based on whether related findings were also detected in an accompanying image. (AI-inferred)
     adjust_by_image_findings: Any = None
+    # Adjusts a finding's own likelihood based on whether other specific info types were also matched nearby. (AI-inferred)
     adjust_by_matching_info_types: Any = None
+    # How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
     likelihood_adjustment: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword:
+    # A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
     hotword_regex: Any = None
+    # The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
     proximity: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings:
+    # How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
     image_containment_type: Any = None
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule:
+    # A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
     dictionary: Any = None
+    # Excludes a finding when a specified hotword regex is found nearby, the inverse of a hotword likelihood-boosting rule. (AI-inferred)
     exclude_by_hotword: Any = None
+    # Excludes a finding based on whether related findings were also detected in an accompanying image. (AI-inferred)
     exclude_by_image_findings: Any = None
+    # Excludes findings that also match one of these other info types. (AI-inferred)
     exclude_info_types: Any = None
+    # How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
     matching_type: Any = None
+    # A regular expression this rule matches against. (AI-inferred)
     regex: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet_Rules:
+    # A rule that raises or lowers a finding's own likelihood, rather than excluding it outright. (AI-inferred)
     adjustment_rule: Any = None
+    # A rule that removes matching findings from the results entirely. (AI-inferred)
     exclusion_rule: Any = None
+    # A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
     hotword_rule: Any = None
 
 @dataclasses.dataclass
 class InspectTemplate_InspectConfig_RuleSet:
+    # The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
     info_types: Any = None
+    # The rule(s) making up this configuration. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass

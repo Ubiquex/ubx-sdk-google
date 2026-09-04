@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentages:
+    # Percentage of the interconnect's total bandwidth allocated to the associated VLAN attachment. All percentages in the bandwidth_percentages block must sum to 100. (AI-inferred)
     percentage: Any = None
+    # The traffic class to which this bandwidth percentage applies. Allowed values are TC1, TC2, TC3, TC4, TC5, and TC6. (AI-inferred)
     traffic_class: Any = None
 
 @dataclasses.dataclass
@@ -18,6 +20,7 @@ class Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy:
 
 @dataclasses.dataclass
 class Interconnect_ApplicationAwareInterconnect:
+    # The bandwidth_percentage_policy block configures the bandwidth percentage allocation for an application-aware interconnect. (AI-inferred)
     bandwidth_percentage_policy: Any = None
     # Description for the application awareness profile on this Cloud Interconnect.
     profile_description: Any = None
@@ -28,24 +31,34 @@ class Interconnect_ApplicationAwareInterconnect:
 
 @dataclasses.dataclass
 class Interconnect_CircuitInfos:
+    # The customer-side demarcation ID for the interconnect circuit. (AI-inferred)
     customer_demarc_id: Any = None
     google_circuit_id: Any = None
+    # The Google-assigned demarcation point ID for this interconnect circuit. (AI-inferred)
     google_demarc_id: Any = None
 
 @dataclasses.dataclass
 class Interconnect_ExpectedOutages:
+    # The list of circuit names that are affected by this outage. (AI-inferred)
     affected_circuits: Any = None
     description: Any = None
+    # The time at which the expected outage is scheduled to end. (AI-inferred)
     end_time: Any = None
+    # The type of issue causing the expected outage. Possible values are IT_OUTAGE, IT_PARTIAL_OUTAGE, OUTAGE, and PARTIAL_OUTAGE. (AI-inferred)
     issue_type: Any = None
     name: Any = None
+    # The source of the expected outage. Allowed values are GOOGLE for outages initiated by Google, and NSRC_GOOGLE for outages reported by the Network Service Reliability Center. (AI-inferred)
     source: Any = None
+    # The start time of the outage, in RFC3339 format. (AI-inferred)
     start_time: Any = None
+    # The current state of the expected outage. Possible values are: ACTIVE, CANCELLED, COMPLETED, NS_ACTIVE, NS_CANCELED. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Interconnect_Macsec_PreSharedKeys:
+    # A user-defined name for this pre-shared key. Must be unique within the interconnect. (AI-inferred)
     name: Any = None
+    # The start time for this pre-shared key, in RFC3339 UTC timestamp format. The key becomes active at this time; if omitted, it becomes active immediately. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass

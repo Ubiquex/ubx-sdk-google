@@ -4,15 +4,22 @@ package containeranalysis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Occurrence_AiSkillAnalysis_Findings_Location struct {
-	FilePath   any
+	// The path to this file within the scanned artifact. (AI-inferred)
+	FilePath any
+	// The line number this finding was located at, within the containing file. (AI-inferred)
 	LineNumber any
 }
 
 type Occurrence_AiSkillAnalysis_Findings struct {
+	// The category this finding or note belongs to. (AI-inferred)
 	Category any
-	Details  any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// Where this occurrence was found. (AI-inferred)
 	Location any
-	Scanner  any
+	// The vulnerability scanner that produced this occurrence. (AI-inferred)
+	Scanner any
+	// How serious this vulnerability is, e.g. `CRITICAL` or `LOW`. (AI-inferred)
 	Severity any
 }
 
@@ -45,19 +52,23 @@ type Occurrence_AiSkillAnalysis struct {
 	// Findings produced by the analysis.
 	Findings any
 	// Maximum severity found among findings. Per scanner verdict details.
-	MaxSeverity       any
+	MaxSeverity any
+	// This vulnerability's own effective severity, as separately determined by each scanner that found it. (AI-inferred)
 	PerScannerVerdict any
 	// Name of the skill that produced this analysis.
 	SkillName any
 }
 
 type Occurrence_Attestation_Jwts struct {
+	// An attestation signature encoded as a compact JSON Web Token. (AI-inferred)
 	CompactJwt any
 }
 
 type Occurrence_Attestation_Signatures struct {
+	// An identifier for the public key used to verify this signature. (AI-inferred)
 	PublicKeyId any
-	Signature   any
+	// A cryptographic signature verifying this content. (AI-inferred)
+	Signature any
 }
 
 type Occurrence_Attestation struct {
@@ -70,60 +81,87 @@ type Occurrence_Attestation struct {
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies struct {
-	Annotations      any
-	Content          any
-	Digest           any
+	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
+	Annotations any
+	// The literal content of this value. (AI-inferred)
+	Content any
+	// A cryptographic digest identifying this content. (AI-inferred)
+	Digest any
+	// The URI this package can be downloaded from. (AI-inferred)
 	DownloadLocation any
-	MediaType        any
-	Name             any
-	Uri              any
+	// The MIME type of this artifact. (AI-inferred)
+	MediaType any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition struct {
-	BuildType            any
-	ExternalParameters   any
-	InternalParameters   any
+	// A URI identifying the kind of build process that produced this artifact. (AI-inferred)
+	BuildType any
+	// Caller-supplied parameter(s) that configured this build. (AI-inferred)
+	ExternalParameters any
+	// Build-system-internal parameter(s) that configured this build, not directly caller-supplied. (AI-inferred)
+	InternalParameters any
+	// The exact, resolved dependency/dependencies actually used to produce this build. (AI-inferred)
 	ResolvedDependencies any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Builder struct {
+	// The dependency/dependencies the builder itself relied on. (AI-inferred)
 	BuilderDependencies any
-	Id                  any
-	Version             any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Metadata struct {
-	FinishedOn   any
+	// When this operation finished. (AI-inferred)
+	FinishedOn any
+	// An identifier for this specific invocation. (AI-inferred)
 	InvocationId any
-	StartedOn    any
+	// When this operation started. (AI-inferred)
+	StartedOn any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails struct {
-	Builder    any
+	// The build system/tool that produced this artifact. (AI-inferred)
+	Builder any
+	// Additional artifact(s) produced as a byproduct of this build, beyond the primary output. (AI-inferred)
 	Byproducts any
-	Metadata   any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate struct {
+	// The SLSA build definition describing this build's own inputs and process. (AI-inferred)
 	BuildDefinition any
-	RunDetails      any
+	// Detail about how this specific build was actually run. (AI-inferred)
+	RunDetails any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Subject struct {
+	// A cryptographic digest identifying this content. (AI-inferred)
 	Digest any
-	Name   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1 struct {
 	// InToto spec defined at https://github.com/in-toto/attestation/tree/main/spec#statement
 	Type any
 	// Keep in sync with schema at https://github.com/slsa-framework/slsa/blob/main/docs/provenance/schema/v1/provenance.proto Builder renamed to ProvenanceBuilder because of Java conflicts.
-	Predicate     any
+	Predicate any
+	// The URI identifying the schema of this in-toto attestation's own predicate. (AI-inferred)
 	PredicateType any
-	Subject       any
+	// The artifact(s) this attestation makes a claim about. (AI-inferred)
+	Subject any
 }
 
 type Occurrence_Build_IntotoProvenance_BuilderConfig struct {
+	// An identifier for this resource. (AI-inferred)
 	Id any
 }
 
@@ -163,6 +201,7 @@ type Occurrence_Build_IntotoProvenance_Recipe struct {
 }
 
 type Occurrence_Build_IntotoProvenance struct {
+	// Configuration specific to the builder that produced this artifact. (AI-inferred)
 	BuilderConfig any
 	// The collection of artifacts that influenced the build including sources, dependencies, build tools, base images, and so on. This is considered to be incomplete unless metadata.completeness.materials is true. Unset or null is equivalent to empty.
 	Materials any
@@ -173,8 +212,10 @@ type Occurrence_Build_IntotoProvenance struct {
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenance_Materials struct {
+	// A cryptographic digest identifying this content. (AI-inferred)
 	Digest any
-	Uri    any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenance_Recipe struct {
@@ -191,6 +232,7 @@ type Occurrence_Build_IntotoStatement_SlsaProvenance_Recipe struct {
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenance struct {
+	// The build system/tool that produced this artifact. (AI-inferred)
 	Builder any
 	// The collection of artifacts that influenced the build including sources, dependencies, build tools, base images, and so on. This is considered to be incomplete unless metadata.completeness.materials is true. Unset or null is equivalent to empty.
 	Materials any
@@ -201,41 +243,56 @@ type Occurrence_Build_IntotoStatement_SlsaProvenance struct {
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSource struct {
-	Digest     any
+	// A cryptographic digest identifying this content. (AI-inferred)
+	Digest any
+	// The container image's own default entrypoint command. (AI-inferred)
 	EntryPoint any
-	Uri        any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation struct {
 	// Describes where the config file that kicked off the build came from. This is effectively a pointer to the source where buildConfig came from.
 	ConfigSource any
-	Environment  any
-	Parameters   any
+	// The environment this build ran in. (AI-inferred)
+	Environment any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_Completeness struct {
+	// The environment this build ran in. (AI-inferred)
 	Environment any
-	Materials   any
-	Parameters  any
+	// The source input(s) (e.g. source repository commit) consumed to produce this build. (AI-inferred)
+	Materials any
+	// The parameter(s) making up this configuration. (AI-inferred)
+	Parameters any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata struct {
-	BuildFinishedOn   any
+	// When this build completed. (AI-inferred)
+	BuildFinishedOn any
+	// An identifier for this specific build invocation. (AI-inferred)
 	BuildInvocationId any
-	BuildStartedOn    any
+	// When this build started. (AI-inferred)
+	BuildStartedOn any
 	// Indicates that the builder claims certain fields in this message to be complete.
 	Completeness any
+	// Whether this build is expected to produce an identical artifact when re-run with the same inputs. (AI-inferred)
 	Reproducible any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo struct {
+	// Configuration describing how this artifact was built. (AI-inferred)
 	BuildConfig any
-	BuildType   any
+	// A URI identifying the kind of build process that produced this artifact. (AI-inferred)
+	BuildType any
 	// Identifies the entity that executed the recipe, which is trusted to have correctly performed the operation and populated this provenance.
 	Builder any
 	// Identifies the event that kicked off the build.
 	Invocation any
-	Materials  any
+	// The source input(s) (e.g. source repository commit) consumed to produce this build. (AI-inferred)
+	Materials any
 	// Other properties of the build.
 	Metadata any
 }
@@ -244,75 +301,109 @@ type Occurrence_Build_IntotoStatement struct {
 	// Always `https://in-toto.io/Statement/v0.1`.
 	Type any
 	// `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
-	PredicateType  any
-	Provenance     any
+	PredicateType any
+	// Detail about how this artifact was built. (AI-inferred)
+	Provenance any
+	// Build provenance expressed per the SLSA (Supply-chain Levels for Software Artifacts) specification. (AI-inferred)
 	SlsaProvenance any
 	// See full explanation of fields at slsa.dev/provenance/v0.2.
 	SlsaProvenanceZeroTwo any
-	Subject               any
+	// The artifact(s) this attestation makes a claim about. (AI-inferred)
+	Subject any
 }
 
 type Occurrence_Build_Provenance_BuiltArtifacts struct {
+	// A checksum verifying this content's own integrity. (AI-inferred)
 	Checksum any
-	Id       any
-	Names    any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The name(s) associated with this resource. (AI-inferred)
+	Names any
 }
 
 type Occurrence_Build_Provenance_Commands struct {
-	Args    any
-	Dir     any
-	Env     any
-	Id      any
-	Name    any
+	// The argument(s) passed to this command. (AI-inferred)
+	Args any
+	// The working directory this command ran in. (AI-inferred)
+	Dir any
+	// Environment variable(s) set for this build step or container. (AI-inferred)
+	Env any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The build step(s) that must complete before this one starts. (AI-inferred)
 	WaitFor any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContext struct {
+	// The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred)
 	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoId struct {
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
-	RepoName  any
+	// The name of the source repository. (AI-inferred)
+	RepoName any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId struct {
+	// An identifier for the Cloud Source Repository this source revision comes from. (AI-inferred)
 	ProjectRepoId any
-	Uid           any
+	// Output only. A system-assigned, globally unique identifier for this resource, in UUID4 format. (AI-inferred)
+	Uid any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo struct {
+	// Additional identifying detail for a source revision, e.g. a tag or branch name. (AI-inferred)
 	AliasContext any
-	RepoId       any
-	RevisionId   any
+	// An identifier for the source repository this revision comes from. (AI-inferred)
+	RepoId any
+	// An identifier for this specific source revision. (AI-inferred)
+	RevisionId any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Gerrit struct {
-	AliasContext  any
+	// Additional identifying detail for a source revision, e.g. a tag or branch name. (AI-inferred)
+	AliasContext any
+	// The Gerrit project this source revision belongs to. (AI-inferred)
 	GerritProject any
-	HostUri       any
-	RevisionId    any
+	// The URI of the host this occurrence applies to. (AI-inferred)
+	HostUri any
+	// An identifier for this specific source revision. (AI-inferred)
+	RevisionId any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Git struct {
+	// An identifier for this specific source revision. (AI-inferred)
 	RevisionId any
-	Url        any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts struct {
+	// A reference to the Cloud Source Repository this source revision comes from. (AI-inferred)
 	CloudRepo any
-	Gerrit    any
-	Git       any
-	Labels    any
+	// A reference to a Gerrit code review source revision. (AI-inferred)
+	Gerrit any
+	// A reference to a Git source revision. (AI-inferred)
+	Git any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHash struct {
-	Type  any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_FileHashes struct {
+	// A cryptographic hash of this file's own content. (AI-inferred)
 	FileHash any
 }
 
@@ -357,8 +448,10 @@ type Occurrence_Build_Provenance struct {
 }
 
 type Occurrence_Build struct {
+	// SLSA v1 provenance expressed in the in-toto attestation format. (AI-inferred)
 	InTotoSlsaProvenanceV1 any
-	IntotoProvenance       any
+	// Build provenance expressed in the in-toto attestation format. (AI-inferred)
+	IntotoProvenance any
 	// Spec defined at https://github.com/in-toto/attestation/tree/main/spec#statement The serialized InTotoStatement will be stored as Envelope.payload. Envelope.payloadType is always "application/vnd.in-toto+json".
 	IntotoStatement any
 	// Provenance of a build. Contains all information needed to verify the full details about the build from source to completion.
@@ -368,9 +461,12 @@ type Occurrence_Build struct {
 }
 
 type Occurrence_Compliance_NonCompliantFiles struct {
+	// A human-readable rendering of the command that produced this layer. (AI-inferred)
 	DisplayCommand any
-	Path           any
-	Reason         any
+	// A file or object path. (AI-inferred)
+	Path any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
 }
 
 type Occurrence_Compliance_Version struct {
@@ -383,8 +479,10 @@ type Occurrence_Compliance_Version struct {
 }
 
 type Occurrence_Compliance struct {
+	// Why this resource failed the compliance check. (AI-inferred)
 	NonComplianceReason any
-	NonCompliantFiles   any
+	// The file(s) that caused this resource to fail the compliance check. (AI-inferred)
+	NonCompliantFiles any
 	// Describes the CIS benchmark version that is applicable to a given OS and os version.
 	Version any
 }
@@ -407,12 +505,16 @@ type Occurrence_Deployment struct {
 }
 
 type Occurrence_Discovery_AnalysisCompleted struct {
+	// Which category of analysis (e.g. vulnerability, package) this occurrence represents. (AI-inferred)
 	AnalysisType any
 }
 
 type Occurrence_Discovery_AnalysisError struct {
-	Code    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
@@ -449,14 +551,19 @@ type Occurrence_Discovery struct {
 }
 
 type Occurrence_DsseAttestation_Envelope_Signatures struct {
+	// An identifier for the key used to produce this signature. (AI-inferred)
 	Keyid any
-	Sig   any
+	// A cryptographic signature. (AI-inferred)
+	Sig any
 }
 
 type Occurrence_DsseAttestation_Envelope struct {
-	Payload     any
+	// The signed content of this attestation. (AI-inferred)
+	Payload any
+	// The MIME type of the attestation's own payload. (AI-inferred)
 	PayloadType any
-	Signatures  any
+	// The cryptographic signature(s) attached to this attestation. (AI-inferred)
+	Signatures any
 }
 
 type Occurrence_DsseAttestation struct {
@@ -476,7 +583,9 @@ type Occurrence_Image_Fingerprint struct {
 }
 
 type Occurrence_Image_LayerInfo struct {
+	// The argument(s) passed to this build step. (AI-inferred)
 	Arguments any
+	// The Dockerfile instruction (e.g. `RUN`, `COPY`) that produced this layer. (AI-inferred)
 	Directive any
 }
 
@@ -499,17 +608,26 @@ type Occurrence_Package_License struct {
 }
 
 type Occurrence_Package_Location_Version struct {
-	Epoch     any
-	FullName  any
+	// The package version's own epoch, used to order versions when the upstream numbering scheme changed. (AI-inferred)
+	Epoch any
+	// The fully qualified name of this package or resource. (AI-inferred)
+	FullName any
+	// Whether this version range's own boundary is inclusive. (AI-inferred)
 	Inclusive any
-	Kind      any
-	Name      any
-	Revision  any
+	// The kind of note or occurrence this is, e.g. `VULNERABILITY` or `BUILD`. (AI-inferred)
+	Kind any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The specific revision of this source this applies to. (AI-inferred)
+	Revision any
 }
 
 type Occurrence_Package_Location struct {
-	CpeUri  any
-	Path    any
+	// A Common Platform Enumeration URI identifying the affected software. (AI-inferred)
+	CpeUri any
+	// A file or object path. (AI-inferred)
+	Path any
+	// The version identifier this applies to. (AI-inferred)
 	Version any
 }
 
@@ -562,33 +680,49 @@ type Occurrence_SbomReference struct {
 }
 
 type Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImages struct {
+	// The number of layers making up this container image. (AI-inferred)
 	LayerCount any
-	Name       any
-	Registry   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The container registry this image is hosted in. (AI-inferred)
+	Registry any
+	// A reference to the source repository this applies to. (AI-inferred)
 	Repository any
 }
 
 type Occurrence_Secret_Locations_FileLocation_LayerDetails struct {
+	// The base image(s) this container image was built from. (AI-inferred)
 	BaseImages any
-	ChainId    any
-	Command    any
-	DiffId     any
-	Index      any
+	// An identifier grouping related image layers that together form a distinct filesystem state. (AI-inferred)
+	ChainId any
+	// The command executed. (AI-inferred)
+	Command any
+	// The digest of this layer's own uncompressed content, distinguishing it from its compressed digest. (AI-inferred)
+	DiffId any
+	// The position of this item within its own containing sequence. (AI-inferred)
+	Index any
 }
 
 type Occurrence_Secret_Locations_FileLocation struct {
-	FilePath     any
+	// The path to this file within the scanned artifact. (AI-inferred)
+	FilePath any
+	// Detail about each layer making up this container image. (AI-inferred)
 	LayerDetails any
-	LineNumber   any
+	// The line number this finding was located at, within the containing file. (AI-inferred)
+	LineNumber any
 }
 
 type Occurrence_Secret_Locations struct {
+	// Where this finding was located within the scanned artifact. (AI-inferred)
 	FileLocation any
 }
 
 type Occurrence_Secret_Statuses struct {
-	Message    any
-	Status     any
+	// A human-readable description of this result. (AI-inferred)
+	Message any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
 	UpdateTime any
 }
 
@@ -613,8 +747,10 @@ type Occurrence_Upgrade_Distribution struct {
 }
 
 type Occurrence_Upgrade_WindowsUpdate_Categories struct {
+	// An identifier for the category this belongs to. (AI-inferred)
 	CategoryId any
-	Name       any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Occurrence_Upgrade_WindowsUpdate_Identity struct {
@@ -668,9 +804,11 @@ type Occurrence_Vulnerability_CvssV2 struct {
 	// Confidentiality Impact (C). Defined in CVSS v2, v3.
 	ConfidentialityImpact any
 	// Exploit Maturity (E). Defined in CVSS v4.
-	ExploitMaturity     any
+	ExploitMaturity any
+	// A CVSS sub-score reflecting how easily this vulnerability can be exploited. (AI-inferred)
 	ExploitabilityScore any
-	ImpactScore         any
+	// A CVSS sub-score reflecting the consequence of a successful exploit. (AI-inferred)
+	ImpactScore any
 	// Integrity Impact (I). Defined in CVSS v2, v3.
 	IntegrityImpact any
 	// Privileges Required (PR). Defined in CVSS v3, v4.
@@ -694,21 +832,33 @@ type Occurrence_Vulnerability_CvssV2 struct {
 }
 
 type Occurrence_Vulnerability_PackageIssue struct {
-	AffectedCpeUri    any
-	AffectedPackage   any
-	AffectedVersion   any
+	// The CPE URI of the package version affected by this vulnerability. (AI-inferred)
+	AffectedCpeUri any
+	// The name of the package affected by this vulnerability. (AI-inferred)
+	AffectedPackage any
+	// The specific version affected by this vulnerability. (AI-inferred)
+	AffectedVersion any
+	// The severity of this vulnerability after applying any project-level severity overrides. (AI-inferred)
 	EffectiveSeverity any
-	FileLocation      any
-	FixAvailable      any
-	FixedCpeUri       any
-	FixedPackage      any
-	FixedVersion      any
-	PackageType       any
+	// Where this finding was located within the scanned artifact. (AI-inferred)
+	FileLocation any
+	// Whether a fixed version of the affected package is available. (AI-inferred)
+	FixAvailable any
+	// The CPE URI of the package version that fixes this vulnerability. (AI-inferred)
+	FixedCpeUri any
+	// The name of the package that fixes this vulnerability. (AI-inferred)
+	FixedPackage any
+	// The version that fixes this vulnerability. (AI-inferred)
+	FixedVersion any
+	// The package manager/ecosystem this package belongs to, e.g. `DEBIAN` or `NPM`. (AI-inferred)
+	PackageType any
 }
 
 type Occurrence_Vulnerability_RelatedUrls struct {
+	// A human-readable label for this item. (AI-inferred)
 	Label any
-	Url   any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type Occurrence_Vulnerability_Risk_CisaKev struct {
@@ -724,8 +874,10 @@ type Occurrence_Vulnerability_Risk_Epss struct {
 }
 
 type Occurrence_Vulnerability_Risk struct {
+	// Whether this vulnerability appears on CISA's Known Exploited Vulnerabilities catalog. (AI-inferred)
 	CisaKev any
-	Epss    any
+	// The Exploit Prediction Scoring System probability that this vulnerability will be exploited in the wild. (AI-inferred)
+	Epss any
 }
 
 type Occurrence_Vulnerability_VexAssessment_Justification struct {
@@ -736,9 +888,12 @@ type Occurrence_Vulnerability_VexAssessment_Justification struct {
 }
 
 type Occurrence_Vulnerability_VexAssessment_Remediations struct {
-	Details         any
+	// Additional detail about this result. (AI-inferred)
+	Details any
+	// The category of fix available for this vulnerability, e.g. a package update or workaround. (AI-inferred)
 	RemediationType any
-	RemediationUri  any
+	// A URI with guidance on remediating this vulnerability. (AI-inferred)
+	RemediationUri any
 }
 
 type Occurrence_Vulnerability_VexAssessment struct {
@@ -783,7 +938,8 @@ type Occurrence_Vulnerability struct {
 	PackageIssue any
 	// Output only. URLs related to this vulnerability.
 	RelatedUrls any
-	Risk        any
+	// The assessed risk level of this finding. (AI-inferred)
+	Risk any
 	// Output only. The note provider assigned severity of this vulnerability.
 	Severity any
 	// Output only. A one sentence description of this vulnerability.

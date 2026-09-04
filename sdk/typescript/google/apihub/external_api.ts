@@ -2,25 +2,36 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExternalApi_Attributes_EnumValues_Values {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether this custom attribute's own value can't be changed after creation. (AI-inferred) */
   immutable?: boolean | Computed<boolean>;
 }
 
 export interface ExternalApi_Attributes_EnumValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: ExternalApi_Attributes_EnumValues_Values[] | Computed<ExternalApi_Attributes_EnumValues_Values[]>;
 }
 
 export interface ExternalApi_Attributes_JsonValues {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface ExternalApi_Attributes {
+  /** A reference to the custom attribute this applies to. (AI-inferred) */
   attribute?: string | Computed<string>;
+  /** The selected value(s) of a multi-select enum-typed custom attribute. (AI-inferred) */
   enumValues?: ExternalApi_Attributes_EnumValues | Computed<ExternalApi_Attributes_EnumValues>;
+  /** JSON-typed value(s) for this custom attribute. (AI-inferred) */
   jsonValues?: ExternalApi_Attributes_JsonValues | Computed<ExternalApi_Attributes_JsonValues>;
+  /** Multiple text value(s) for this custom attribute. (AI-inferred) */
   stringValues?: ExternalApi_Attributes_JsonValues | Computed<ExternalApi_Attributes_JsonValues>;
+  /** URI-typed value(s) for this custom attribute. (AI-inferred) */
   uriValues?: ExternalApi_Attributes_JsonValues | Computed<ExternalApi_Attributes_JsonValues>;
 }
 

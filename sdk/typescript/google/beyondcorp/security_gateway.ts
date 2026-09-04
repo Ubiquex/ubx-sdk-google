@@ -2,10 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityGateway_Hubs_InternetGateway {
+  /** The public IP address(es) assigned to this hub's own internet gateway for outbound traffic. (AI-inferred) */
   assignedIps?: string[] | Computed<string[]>;
 }
 
 export interface SecurityGateway_Hubs {
+  /** Configuration for this hub's own outbound internet gateway. (AI-inferred) */
   internetGateway?: SecurityGateway_Hubs_InternetGateway | Computed<SecurityGateway_Hubs_InternetGateway>;
 }
 

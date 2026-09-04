@@ -4,16 +4,23 @@ package binaryauthorization
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKey struct {
-	KeyId              any
-	PublicKeyPem       any
+	// An identifier for this key. (AI-inferred)
+	KeyId any
+	// A public key, PEM-encoded. (AI-inferred)
+	PublicKeyPem any
+	// The algorithm used to sign this key or attestation. (AI-inferred)
 	SignatureAlgorithm any
 }
 
 type Attestor_UserOwnedGrafeasNote_PublicKeys struct {
+	// The ASCII-armored PGP public key used to verify this attestation's own signature. (AI-inferred)
 	AsciiArmoredPgpPublicKey any
-	Comment                  any
-	Id                       any
-	PkixPublicKey            any
+	// A free-text comment about this resource. (AI-inferred)
+	Comment any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// A public key in PKIX (X.509 SubjectPublicKeyInfo) format. (AI-inferred)
+	PkixPublicKey any
 }
 
 type Attestor_UserOwnedGrafeasNote struct {

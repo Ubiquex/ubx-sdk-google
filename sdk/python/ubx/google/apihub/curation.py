@@ -20,7 +20,9 @@ class Curation_Endpoint:
 
 @dataclasses.dataclass
 class Curation_PluginInstanceActions:
+    # An identifier for this action, unique within its own containing plugin. (AI-inferred)
     action_id: Any = None
+    # A reference to the plugin instance this applies to. (AI-inferred)
     plugin_instance: Any = None
 
 _Curation_Endpoint_ApplicationIntegrationEndpointDetailsFields = {

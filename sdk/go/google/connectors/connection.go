@@ -4,33 +4,48 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connection_AdminFilters_StringListValues struct {
+	// The literal value(s) making up this string list. (AI-inferred)
 	ListValues any
 }
 
 type Connection_AdminFilters struct {
-	FilterKey        any
-	FilterType       any
-	IntValue         any
+	// The field this admin-configured filter matches against. (AI-inferred)
+	FilterKey any
+	// The kind of value this filter compares against, e.g. a string or an integer. (AI-inferred)
+	FilterType any
+	// This admin filter's own value, when its type is an integer. (AI-inferred)
+	IntValue any
+	// This admin filter's own value, when its type is a list of strings. (AI-inferred)
 	StringListValues any
-	StringValue      any
+	// This admin filter's own value, when its type is a string. (AI-inferred)
+	StringValue any
 }
 
 type Connection_AuthConfig_AdditionalVariables_EncryptionKeyValue struct {
+	// The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/*/locations/*/keyRings/*/cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred)
 	KmsKeyName any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Connection_AuthConfig_AdditionalVariables_SecretValue struct {
+	// The specific Secret Manager secret version referenced. (AI-inferred)
 	SecretVersion any
 }
 
 type Connection_AuthConfig_AdditionalVariables struct {
-	BoolValue          any
+	// This configuration variable's own value, when its type is boolean. (AI-inferred)
+	BoolValue any
+	// This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred)
 	EncryptionKeyValue any
-	IntValue           any
-	Key                any
-	SecretValue        any
-	StringValue        any
+	// This admin filter's own value, when its type is an integer. (AI-inferred)
+	IntValue any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
+	// This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred)
+	SecretValue any
+	// This admin filter's own value, when its type is a string. (AI-inferred)
+	StringValue any
 }
 
 type Connection_AuthConfig_Oauth2AuthCodeFlow struct {
@@ -168,14 +183,19 @@ type Connection_ConnectorVersionInfraConfig struct {
 }
 
 type Connection_DestinationConfigs_Destinations struct {
-	Host              any
-	Port              any
+	// The hostname of this destination. (AI-inferred)
+	Host any
+	// The port this destination listens on. (AI-inferred)
+	Port any
+	// A reference to the Private Service Connect service attachment this destination routes through. (AI-inferred)
 	ServiceAttachment any
 }
 
 type Connection_DestinationConfigs struct {
+	// The backend endpoint(s) traffic for this connection is routed to. (AI-inferred)
 	Destinations any
-	Key          any
+	// This configuration variable's own name. (AI-inferred)
+	Key any
 }
 
 type Connection_EventingConfig_DeadLetterConfig struct {
@@ -319,7 +339,9 @@ type Connection_Status struct {
 }
 
 type Connection_TrafficShapingConfigs struct {
-	Duration   any
+	// How long this traffic shaping configuration applies for. (AI-inferred)
+	Duration any
+	// The maximum request volume allowed within this traffic shaping window. (AI-inferred)
 	QuotaLimit any
 }
 

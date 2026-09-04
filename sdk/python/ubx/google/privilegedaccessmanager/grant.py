@@ -20,7 +20,9 @@ class Grant_Justification:
 
 @dataclasses.dataclass
 class Grant_PrivilegedAccess_GcpIamAccess_RoleBindings:
+    # A Common Expression Language (CEL) condition that must hold for this rule to apply. (AI-inferred)
     condition_expression: Any = None
+    # The IAM role this grant provides temporary access to. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
@@ -39,40 +41,60 @@ class Grant_PrivilegedAccess:
 
 @dataclasses.dataclass
 class Grant_Timeline_Events_ActivationFailed_Error:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Grant_Timeline_Events_ActivationFailed:
+    # Detail about an error that occurred. (AI-inferred)
     error: Any = None
 
 @dataclasses.dataclass
 class Grant_Timeline_Events_Approved:
+    # The identity that performed this action. (AI-inferred)
     actor: Any = None
+    # A human-readable justification supplied for this action. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class Grant_Timeline_Events_Requested:
+    # The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
     expire_time: Any = None
 
 @dataclasses.dataclass
 class Grant_Timeline_Events_Scheduled:
+    # The time this grant is scheduled to automatically activate. (AI-inferred)
     scheduled_activation_time: Any = None
 
 @dataclasses.dataclass
 class Grant_Timeline_Events:
+    # When this grant was activated. (AI-inferred)
     activated: Any = None
+    # When activation of this grant failed. (AI-inferred)
     activation_failed: Any = None
+    # When this grant was approved. (AI-inferred)
     approved: Any = None
+    # When this grant was denied. (AI-inferred)
     denied: Any = None
+    # When this grant's own access ended. (AI-inferred)
     ended: Any = None
+    # When this event occurred. (AI-inferred)
     event_time: Any = None
+    # When this grant expired without being activated. (AI-inferred)
     expired: Any = None
+    # When this grant was last modified by a process outside Privileged Access Manager. (AI-inferred)
     externally_modified: Any = None
+    # When this grant was requested. (AI-inferred)
     requested: Any = None
+    # When this grant's own access was revoked before its natural expiration. (AI-inferred)
     revoked: Any = None
+    # When this grant's own activation is scheduled to occur. (AI-inferred)
     scheduled: Any = None
+    # When this grant's own request was withdrawn by its requester. (AI-inferred)
     withdrawn: Any = None
 
 @dataclasses.dataclass

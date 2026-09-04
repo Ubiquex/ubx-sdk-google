@@ -74,14 +74,20 @@ export interface StoredInfoType_Config {
 }
 
 export interface StoredInfoType_CurrentVersion_Errors_Details {
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result or error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface StoredInfoType_CurrentVersion_Errors {
+  /** Additional detail explaining this result. (AI-inferred) */
   details?: StoredInfoType_CurrentVersion_Errors_Details | Computed<StoredInfoType_CurrentVersion_Errors_Details>;
+  /** Additional detail about this event. (AI-inferred) */
   extraInfo?: string | Computed<string>;
+  /** The timestamp(s) recorded for this event. (AI-inferred) */
   timestamps?: string[] | Computed<string[]>;
 }
 

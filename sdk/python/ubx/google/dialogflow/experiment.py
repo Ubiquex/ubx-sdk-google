@@ -8,66 +8,97 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Experiment_Definition_VersionVariants_Variants:
+    # Whether this experiment variant is the unmodified control, rather than a variation being tested. (AI-inferred)
     is_control_group: Any = None
+    # How incoming traffic is split across this experiment's own variants. (AI-inferred)
     traffic_allocation: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Experiment_Definition_VersionVariants:
+    # The variant(s) making up this experiment. (AI-inferred)
     variants: Any = None
 
 @dataclasses.dataclass
 class Experiment_Definition:
+    # A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
     condition: Any = None
+    # The agent version(s) participating in this experiment, one per variant. (AI-inferred)
     version_variants: Any = None
 
 @dataclasses.dataclass
 class Experiment_Result_VersionMetrics_Metrics_ConfidenceInterval:
+    # The statistical confidence level used when computing this experiment's own results. (AI-inferred)
     confidence_level: Any = None
+    # The lower bound of this range. (AI-inferred)
     lower_bound: Any = None
+    # The proportion this applies to. (AI-inferred)
     ratio: Any = None
+    # The upper bound of this range. (AI-inferred)
     upper_bound: Any = None
 
 @dataclasses.dataclass
 class Experiment_Result_VersionMetrics_Metrics:
+    # The statistical confidence interval computed for this experiment metric. (AI-inferred)
     confidence_interval: Any = None
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # Which kind of count this metric reports. (AI-inferred)
     count_type: Any = None
+    # The proportion this applies to. (AI-inferred)
     ratio: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Experiment_Result_VersionMetrics:
+    # The metric value(s) recorded for this result. (AI-inferred)
     metrics: Any = None
+    # How many sessions this metric or result covers. (AI-inferred)
     session_count: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Experiment_Result:
+    # When this resource was last updated. (AI-inferred)
     last_update_time: Any = None
+    # The metric value(s) recorded for a specific agent version. (AI-inferred)
     version_metrics: Any = None
 
 @dataclasses.dataclass
 class Experiment_RolloutConfig_RolloutSteps:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The minimum duration required. (AI-inferred)
     min_duration: Any = None
+    # The percentage of traffic this variant or rollout step receives. (AI-inferred)
     traffic_percent: Any = None
 
 @dataclasses.dataclass
 class Experiment_RolloutConfig:
+    # The condition under which this rollout or experiment is considered to have failed. (AI-inferred)
     failure_condition: Any = None
+    # The condition traffic must meet to advance to the next rollout step. (AI-inferred)
     rollout_condition: Any = None
+    # The ordered step(s) (traffic percentage and minimum duration) making up this gradual rollout. (AI-inferred)
     rollout_steps: Any = None
 
 @dataclasses.dataclass
 class Experiment_RolloutState:
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # A single step within this run or sequence. (AI-inferred)
     step: Any = None
+    # This step's own position within its own containing sequence. (AI-inferred)
     step_index: Any = None
 
 @dataclasses.dataclass
 class Experiment_VariantsHistory:
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
+    # The agent version(s) participating in this experiment, one per variant. (AI-inferred)
     version_variants: Any = None
 
 _Experiment_Definition_VersionVariants_VariantsFields = {
@@ -164,38 +195,68 @@ _Experiment_VariantsHistoryFields = {
 
 @dataclasses.dataclass
 class ExperimentConfig:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The definition of this resource. (AI-inferred)
     definition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # How long this experiment runs before automatically concluding. (AI-inferred)
     experiment_length: Any = None
+    # When this resource was last updated. (AI-inferred)
     last_update_time: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The result produced by this operation. (AI-inferred)
     result: Any = None
+    # Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
     rollout_config: Any = None
+    # Why this rollout was halted, if it failed. (AI-inferred)
     rollout_failure_reason: Any = None
+    # The current progress of this gradual rollout. (AI-inferred)
     rollout_state: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The history of variant configurations this experiment has run with over time. (AI-inferred)
     variants_history: Any = None
 
 @dataclasses.dataclass
 class ExperimentAttrs:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The definition of this resource. (AI-inferred)
     definition: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # When this operation, run, or window ended. (AI-inferred)
     end_time: Any = None
+    # How long this experiment runs before automatically concluding. (AI-inferred)
     experiment_length: Any = None
+    # When this resource was last updated. (AI-inferred)
     last_update_time: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The result produced by this operation. (AI-inferred)
     result: Any = None
+    # Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
     rollout_config: Any = None
+    # Why this rollout was halted, if it failed. (AI-inferred)
     rollout_failure_reason: Any = None
+    # The current progress of this gradual rollout. (AI-inferred)
     rollout_state: Any = None
+    # When this operation, run, or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The history of variant configurations this experiment has run with over time. (AI-inferred)
     variants_history: Any = None
 
 Experiment = ubx.ResourceBinding(

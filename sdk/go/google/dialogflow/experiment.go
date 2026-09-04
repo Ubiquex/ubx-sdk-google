@@ -4,66 +4,97 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Experiment_Definition_VersionVariants_Variants struct {
-	IsControlGroup    any
+	// Whether this experiment variant is the unmodified control, rather than a variation being tested. (AI-inferred)
+	IsControlGroup any
+	// How incoming traffic is split across this experiment's own variants. (AI-inferred)
 	TrafficAllocation any
-	Version           any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Experiment_Definition_VersionVariants struct {
+	// The variant(s) making up this experiment. (AI-inferred)
 	Variants any
 }
 
 type Experiment_Definition struct {
-	Condition       any
+	// A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred)
+	Condition any
+	// The agent version(s) participating in this experiment, one per variant. (AI-inferred)
 	VersionVariants any
 }
 
 type Experiment_Result_VersionMetrics_Metrics_ConfidenceInterval struct {
+	// The statistical confidence level used when computing this experiment's own results. (AI-inferred)
 	ConfidenceLevel any
-	LowerBound      any
-	Ratio           any
-	UpperBound      any
+	// The lower bound of this range. (AI-inferred)
+	LowerBound any
+	// The proportion this applies to. (AI-inferred)
+	Ratio any
+	// The upper bound of this range. (AI-inferred)
+	UpperBound any
 }
 
 type Experiment_Result_VersionMetrics_Metrics struct {
+	// The statistical confidence interval computed for this experiment metric. (AI-inferred)
 	ConfidenceInterval any
-	Count              any
-	CountType          any
-	Ratio              any
-	Type               any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// Which kind of count this metric reports. (AI-inferred)
+	CountType any
+	// The proportion this applies to. (AI-inferred)
+	Ratio any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Experiment_Result_VersionMetrics struct {
-	Metrics      any
+	// The metric value(s) recorded for this result. (AI-inferred)
+	Metrics any
+	// How many sessions this metric or result covers. (AI-inferred)
 	SessionCount any
-	Version      any
+	// The version identifier this applies to. (AI-inferred)
+	Version any
 }
 
 type Experiment_Result struct {
+	// When this resource was last updated. (AI-inferred)
 	LastUpdateTime any
+	// The metric value(s) recorded for a specific agent version. (AI-inferred)
 	VersionMetrics any
 }
 
 type Experiment_RolloutConfig_RolloutSteps struct {
-	DisplayName    any
-	MinDuration    any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The minimum duration required. (AI-inferred)
+	MinDuration any
+	// The percentage of traffic this variant or rollout step receives. (AI-inferred)
 	TrafficPercent any
 }
 
 type Experiment_RolloutConfig struct {
+	// The condition under which this rollout or experiment is considered to have failed. (AI-inferred)
 	FailureCondition any
+	// The condition traffic must meet to advance to the next rollout step. (AI-inferred)
 	RolloutCondition any
-	RolloutSteps     any
+	// The ordered step(s) (traffic percentage and minimum duration) making up this gradual rollout. (AI-inferred)
+	RolloutSteps any
 }
 
 type Experiment_RolloutState struct {
+	// When this operation, run, or window started. (AI-inferred)
 	StartTime any
-	Step      any
+	// A single step within this run or sequence. (AI-inferred)
+	Step any
+	// This step's own position within its own containing sequence. (AI-inferred)
 	StepIndex any
 }
 
 type Experiment_VariantsHistory struct {
-	UpdateTime      any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
+	// The agent version(s) participating in this experiment, one per variant. (AI-inferred)
 	VersionVariants any
 }
 
@@ -160,39 +191,69 @@ var Experiment_VariantsHistoryFields = ubx.FieldMap{
 }
 
 type ExperimentConfig struct {
-	CreateTime           any
-	Definition           any
-	Description          any
-	DisplayName          any
-	EndTime              any
-	ExperimentLength     any
-	LastUpdateTime       any
-	Name                 any
-	Result               any
-	RolloutConfig        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The definition of this resource. (AI-inferred)
+	Definition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// How long this experiment runs before automatically concluding. (AI-inferred)
+	ExperimentLength any
+	// When this resource was last updated. (AI-inferred)
+	LastUpdateTime any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The result produced by this operation. (AI-inferred)
+	Result any
+	// Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
+	RolloutConfig any
+	// Why this rollout was halted, if it failed. (AI-inferred)
 	RolloutFailureReason any
-	RolloutState         any
-	StartTime            any
-	State                any
-	VariantsHistory      any
+	// The current progress of this gradual rollout. (AI-inferred)
+	RolloutState any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The history of variant configurations this experiment has run with over time. (AI-inferred)
+	VariantsHistory any
 }
 
 type ExperimentAttrs struct {
-	CreateTime           any
-	Definition           any
-	Description          any
-	DisplayName          any
-	EndTime              any
-	ExperimentLength     any
-	LastUpdateTime       any
-	Name                 any
-	Result               any
-	RolloutConfig        any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The definition of this resource. (AI-inferred)
+	Definition any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// When this operation, run, or window ended. (AI-inferred)
+	EndTime any
+	// How long this experiment runs before automatically concluding. (AI-inferred)
+	ExperimentLength any
+	// When this resource was last updated. (AI-inferred)
+	LastUpdateTime any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The result produced by this operation. (AI-inferred)
+	Result any
+	// Configuration for gradually shifting traffic to a new agent version. (AI-inferred)
+	RolloutConfig any
+	// Why this rollout was halted, if it failed. (AI-inferred)
 	RolloutFailureReason any
-	RolloutState         any
-	StartTime            any
-	State                any
-	VariantsHistory      any
+	// The current progress of this gradual rollout. (AI-inferred)
+	RolloutState any
+	// When this operation, run, or window started. (AI-inferred)
+	StartTime any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// The history of variant configurations this experiment has run with over time. (AI-inferred)
+	VariantsHistory any
 }
 
 var Experiment = ubx.ResourceBinding{

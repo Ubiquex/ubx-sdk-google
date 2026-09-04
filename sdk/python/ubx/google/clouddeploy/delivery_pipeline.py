@@ -40,138 +40,208 @@ class DeliveryPipeline_Condition:
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_DeployParameters:
+    # Label(s) a target must carry for this automation rule to apply to it. (AI-inferred)
     match_target_labels: Any = None
+    # The value(s) making up this configuration. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task_Container:
+    # The command-line argument(s) passed to the container. (AI-inferred)
     args: Any = None
+    # The container entrypoint command to run, overriding the image's own default. (AI-inferred)
     command: Any = None
+    # Environment variable(s) set in the container. (AI-inferred)
     env: Any = None
+    # The container image reference to run. (AI-inferred)
     image: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks_Task:
+    # A single container's own configuration. (AI-inferred)
     container: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks:
+    # How often this check or action recurs. (AI-inferred)
     frequency: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # A single unit of work within this job. (AI-inferred)
     task: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks:
+    # The Cloud Monitoring alert policy/policies this check watches. (AI-inferred)
     alert_policies: Any = None
+    # An identifier for this item, unique within its own containing list. (AI-inferred)
     id: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud:
+    # Cloud Monitoring alert policies that must stay clear for this phase to be considered successful. (AI-inferred)
     alert_policy_checks: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis:
+    # Caller-defined checks that must pass for this phase to be considered successful. (AI-inferred)
     custom_checks: Any = None
+    # How long this phase, wait, or window lasts. (AI-inferred)
     duration: Any = None
+    # Configuration specific to running this check against Google Cloud's own monitoring. (AI-inferred)
     google_cloud: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy:
+    # The action(s) this hook or job performs. (AI-inferred)
     actions: Any = None
+    # The task(s) making up this job. (AI-inferred)
     tasks: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig:
+    # The task(s) making up this job. (AI-inferred)
     tasks: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment:
+    # Configuration for automated analysis run against a rollout phase. (AI-inferred)
     analysis: Any = None
+    # The progressive traffic percentage step(s) this canary deployment advances through. (AI-inferred)
     percentages: Any = None
+    # Configuration for actions run after a phase's own deployment completes. (AI-inferred)
     postdeploy: Any = None
+    # Configuration for actions run before a phase's own deployment starts. (AI-inferred)
     predeploy: Any = None
+    # Configuration for verification tests run against a phase's own deployment. (AI-inferred)
     verify: Any = None
+    # Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
     verify_config: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs:
+    # Configuration for automated analysis run against a rollout phase. (AI-inferred)
     analysis: Any = None
+    # A percentage value. (AI-inferred)
     percentage: Any = None
+    # A reference to the phase this applies to. (AI-inferred)
     phase_id: Any = None
+    # Configuration for actions run after a phase's own deployment completes. (AI-inferred)
     postdeploy: Any = None
+    # Configuration for actions run before a phase's own deployment starts. (AI-inferred)
     predeploy: Any = None
+    # The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
     profiles: Any = None
+    # Configuration for verification tests run against a phase's own deployment. (AI-inferred)
     verify: Any = None
+    # Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
     verify_config: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment:
+    # Per-phase configuration overrides for a canary or custom deployment strategy. (AI-inferred)
     phase_configs: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun:
+    # Whether traffic is shifted automatically through the canary steps, without waiting for manual approval at each one. (AI-inferred)
     automatic_traffic_control: Any = None
+    # Traffic tag(s) applied to the canary revision, for routing test traffic to it directly. (AI-inferred)
     canary_revision_tags: Any = None
+    # Traffic tag(s) applied to the previous (stable) revision, for routing test traffic to it directly. (AI-inferred)
     prior_revision_tags: Any = None
+    # Traffic tag(s) applied to the stable (non-canary) revision, for routing test traffic to it directly. (AI-inferred)
     stable_revision_tags: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations:
+    # The target ID(s) this promotion/rollout is directed to. (AI-inferred)
     destination_ids: Any = None
+    # Whether the Kubernetes Service is updated to route production traffic as the canary progresses, rather than only the underlying workload. (AI-inferred)
     propagate_service: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh:
+    # Configuration or detail about a specific deployment. (AI-inferred)
     deployment: Any = None
+    # The HTTP route resource splitting traffic between revisions for this canary deployment. (AI-inferred)
     http_route: Any = None
+    # The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
     pod_selector_label: Any = None
+    # The destination(s) traffic is routed to as part of this canary deployment. (AI-inferred)
     route_destinations: Any = None
+    # How long to wait after updating traffic routing before proceeding to the next step. (AI-inferred)
     route_update_wait_time: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
+    # How long traffic is held on the stable revision after a canary is rolled back, before resuming normal routing. (AI-inferred)
     stable_cutback_duration: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking:
+    # Configuration or detail about a specific deployment. (AI-inferred)
     deployment: Any = None
+    # Whether extra pod capacity is skipped when preparing this deployment, trading faster rollout for less headroom during the transition. (AI-inferred)
     disable_pod_overprovisioning: Any = None
+    # The Kubernetes label selector identifying which pod(s) this verification job inspects. (AI-inferred)
     pod_selector_label: Any = None
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes:
+    # Configuration for routing canary traffic through a Kubernetes Gateway API-based service mesh. (AI-inferred)
     gateway_service_mesh: Any = None
+    # Configuration for routing canary traffic using Cloud Service Mesh. (AI-inferred)
     service_networking: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig:
+    # Configuration specific to deploying this target as a Cloud Run service. (AI-inferred)
     cloud_run: Any = None
+    # Configuration specific to deploying this target to a Kubernetes cluster. (AI-inferred)
     kubernetes: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Canary:
+    # Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
     canary_deployment: Any = None
+    # A canary strategy using caller-defined percentage steps and phase configuration, rather than Cloud Deploy's own standard canary shape. (AI-inferred)
     custom_canary_deployment: Any = None
+    # Configuration specific to the runtime (GKE, Cloud Run, etc.) this target deploys to. (AI-inferred)
     runtime_config: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy_Standard:
+    # Configuration for automated analysis run against a rollout phase. (AI-inferred)
     analysis: Any = None
+    # Configuration for actions run after a phase's own deployment completes. (AI-inferred)
     postdeploy: Any = None
+    # Configuration for actions run before a phase's own deployment starts. (AI-inferred)
     predeploy: Any = None
+    # Configuration for verification tests run against a phase's own deployment. (AI-inferred)
     verify: Any = None
+    # Configuration for how verification is run against a rollout phase, e.g. which container executes the tests. (AI-inferred)
     verify_config: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages_Strategy:
+    # Configuration for a canary rollout strategy -- progressively shifting traffic to the new version across a series of percentage steps. (AI-inferred)
     canary: Any = None
+    # Configuration for the standard (non-canary, all-at-once) rollout strategy. (AI-inferred)
     standard: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipeline_SerialPipeline_Stages:
+    # Caller-supplied key/value parameters made available to the deployment's own rendering and execution. (AI-inferred)
     deploy_parameters: Any = None
+    # The Skaffold profile(s) applied when rendering this release for this target. (AI-inferred)
     profiles: Any = None
+    # Which rollout strategy this release uses, e.g. standard or canary. (AI-inferred)
     strategy: Any = None
+    # A reference to the target this applies to. (AI-inferred)
     target_id: Any = None
 
 @dataclasses.dataclass

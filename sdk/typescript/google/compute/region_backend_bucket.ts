@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionBackendBucket_CdnPolicy_BypassCacheOnRequestHeaders {
+  /** The name of the request header to match. If this header is present in a request, the CDN bypasses the cache for that request. (AI-inferred) */
   headerName?: string | Computed<string>;
 }
 
@@ -13,7 +14,9 @@ export interface RegionBackendBucket_CdnPolicy_CacheKeyPolicy {
 }
 
 export interface RegionBackendBucket_CdnPolicy_NegativeCachingPolicy {
+  /** The HTTP status code for which the negative caching TTL applies. This defines which response status codes will be cached negatively with the specified TTL. (AI-inferred) */
   code?: number | Computed<number>;
+  /** The TTL (in seconds) for caching responses with the corresponding status code. (AI-inferred) */
   ttl?: number | Computed<number>;
 }
 
@@ -50,6 +53,7 @@ export interface RegionBackendBucket_Params {
 }
 
 export interface RegionBackendBucket_UsedBy {
+  /** The URL of the resource that is currently using this backend bucket. This is the full reference to the using resource, such as a URL map or load balancer. (AI-inferred) */
   reference?: string | Computed<string>;
 }
 

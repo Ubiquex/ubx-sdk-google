@@ -4,6 +4,7 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkforcePool_AccessRestrictions_AllowedServices struct {
+	// The domain this allowed service applies to. (AI-inferred)
 	Domain any
 }
 

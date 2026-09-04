@@ -8,23 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysis:
+    # The Google Cloud project the tracked Artifact Analysis data belongs to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class InsightsConfig_ArtifactConfigs_GoogleArtifactRegistry:
+    # The Artifact Registry package this artifact config tracks. (AI-inferred)
     artifact_registry_package: Any = None
+    # The Google Cloud project the tracked Artifact Registry package belongs to. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class InsightsConfig_ArtifactConfigs:
+    # Identifies an artifact tracked via Google Artifact Analysis, for correlating vulnerability/provenance data into insights. (AI-inferred)
     google_artifact_analysis: Any = None
+    # Identifies an artifact tracked via Artifact Registry. (AI-inferred)
     google_artifact_registry: Any = None
+    # The URI identifying this artifact, when tracked by reference rather than by a specific registry integration. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class InsightsConfig_Errors:
+    # The error's own numeric status code. (AI-inferred)
     code: Any = None
+    # Additional structured detail about the error. (AI-inferred)
     details: Any = None
+    # A human-readable description of the error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -34,32 +43,47 @@ class InsightsConfig_Projects:
 
 @dataclasses.dataclass
 class InsightsConfig_RuntimeConfigs_AppHubService:
+    # The App Hub service resource this runtime config links to. (AI-inferred)
     apphub_service: Any = None
+    # The App Hub-assigned criticality level of this service. (AI-inferred)
     criticality: Any = None
+    # The App Hub-assigned environment (e.g. production, staging) this service runs in. (AI-inferred)
     environment: Any = None
 
 @dataclasses.dataclass
 class InsightsConfig_RuntimeConfigs_AppHubWorkload:
+    # The App Hub-assigned criticality level of this workload. (AI-inferred)
     criticality: Any = None
+    # The App Hub-assigned environment (e.g. production, staging) this workload runs in. (AI-inferred)
     environment: Any = None
+    # The App Hub workload resource this runtime config links to. (AI-inferred)
     workload: Any = None
 
 @dataclasses.dataclass
 class InsightsConfig_RuntimeConfigs_GkeWorkload:
+    # The GKE cluster this workload runs in. (AI-inferred)
     cluster: Any = None
+    # The GKE Deployment resource this runtime config links to. (AI-inferred)
     deployment: Any = None
 
 @dataclasses.dataclass
 class InsightsConfig_RuntimeConfigs_GoogleCloudRun:
+    # The URI of the Cloud Run service this runtime config links to. (AI-inferred)
     service_uri: Any = None
 
 @dataclasses.dataclass
 class InsightsConfig_RuntimeConfigs:
+    # Identifies the App Hub service this application is deployed as, for correlating runtime insights. (AI-inferred)
     app_hub_service: Any = None
+    # Identifies the App Hub workload this application is deployed as, for correlating runtime insights. (AI-inferred)
     app_hub_workload: Any = None
+    # Identifies the GKE deployment this application runs as, for correlating runtime insights. (AI-inferred)
     gke_workload: Any = None
+    # Identifies the Cloud Run service this application runs as, for correlating runtime insights. (AI-inferred)
     google_cloud_run: Any = None
+    # Whether this runtime has been successfully `LINKED` to its own source repository, or is `UNLINKED`. (AI-inferred)
     state: Any = None
+    # The URI of the runtime resource this config tracks. (AI-inferred)
     uri: Any = None
 
 _InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysisFields = {

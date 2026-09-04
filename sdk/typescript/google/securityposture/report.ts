@@ -7,32 +7,50 @@ export interface Report_Iac {
 }
 
 export interface Report_IacValidationReport_Violations_ViolatedAsset {
+  /** A reference to the violating resource itself. (AI-inferred) */
   asset?: string | Computed<string>;
+  /** The type of the violating resource. (AI-inferred) */
   assetType?: string | Computed<string>;
 }
 
 export interface Report_IacValidationReport_Violations_ViolatedPolicy {
+  /** The compliance standard(s) (and their own control IDs) this policy maps to. (AI-inferred) */
   complianceStandards?: string[] | Computed<string[]>;
+  /** A reference to the constraint this policy enforces. (AI-inferred) */
   constraint?: string | Computed<string>;
+  /** The kind of constraint that was violated. (AI-inferred) */
   constraintType?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
 }
 
 export interface Report_IacValidationReport_Violations_ViolatedPosture {
+  /** The named group of policies this posture's own constraint belongs to. (AI-inferred) */
   policySet?: string | Computed<string>;
+  /** A reference to the security posture this applies to. (AI-inferred) */
   posture?: string | Computed<string>;
+  /** A reference to the specific deployment of this posture this applies to. (AI-inferred) */
   postureDeployment?: string | Computed<string>;
+  /** The resource this posture deployment's own policies are enforced against. (AI-inferred) */
   postureDeploymentTargetResource?: string | Computed<string>;
+  /** The specific revision of the posture this applies to. (AI-inferred) */
   postureRevisionId?: string | Computed<string>;
 }
 
 export interface Report_IacValidationReport_Violations {
+  /** A reference to the specific infrastructure-as-code resource this violation was found in. (AI-inferred) */
   assetId?: string | Computed<string>;
+  /** Guidance for resolving this violation. (AI-inferred) */
   nextSteps?: string | Computed<string>;
+  /** A reference to the policy this applies to. (AI-inferred) */
   policyId?: string | Computed<string>;
+  /** How serious this finding is. (AI-inferred) */
   severity?: string | Computed<string>;
+  /** The specific resource, as declared in the infrastructure-as-code source, that violates this policy. (AI-inferred) */
   violatedAsset?: Report_IacValidationReport_Violations_ViolatedAsset | Computed<Report_IacValidationReport_Violations_ViolatedAsset>;
+  /** The specific policy constraint that was violated. (AI-inferred) */
   violatedPolicy?: Report_IacValidationReport_Violations_ViolatedPolicy | Computed<Report_IacValidationReport_Violations_ViolatedPolicy>;
+  /** The security posture (and its own deployment) this violation was found against. (AI-inferred) */
   violatedPosture?: Report_IacValidationReport_Violations_ViolatedPosture | Computed<Report_IacValidationReport_Violations_ViolatedPosture>;
 }
 

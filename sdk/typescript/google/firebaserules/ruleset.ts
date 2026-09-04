@@ -7,8 +7,11 @@ export interface Ruleset_Metadata {
 }
 
 export interface Ruleset_Source_Files {
+  /** The raw text content of this Rules source file (Firestore/Realtime Database/Cloud Storage security rules syntax). (AI-inferred) */
   content?: string | Computed<string>;
+  /** A checksum/version identifier for this file's own content, used to detect whether the file changed between requests. (AI-inferred) */
   fingerprint?: string | Computed<string>;
+  /** A file name, unique within this Ruleset's own source, used for diagnostic messages when a rule fails to compile. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

@@ -82,12 +82,16 @@ class Device_ActiveConfig:
 
 @dataclasses.dataclass
 class Device_CurrentChannels_FrequencyRange:
+    # The real, upper bound of this frequency range, in MHz. (AI-inferred)
     high_frequency_mhz: Any = None
+    # The real, lower bound of this frequency range, in MHz. (AI-inferred)
     low_frequency_mhz: Any = None
 
 @dataclasses.dataclass
 class Device_CurrentChannels:
+    # The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred)
     frequency_range: Any = None
+    # A real, SAS-computed suitability score for this available channel. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
@@ -118,19 +122,30 @@ class Device_DeviceMetadata:
 
 @dataclasses.dataclass
 class Device_Grants_MoveList:
+    # The real identifier of the Dynamic Protection Area this move-list entry protects. (AI-inferred)
     dpa_id: Any = None
+    # The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred)
     frequency_range: Any = None
 
 @dataclasses.dataclass
 class Device_Grants:
+    # The real CBRS channel access tier (`CHANNEL_TYPE_GAA` general access, or `CHANNEL_TYPE_PAL` priority access) this device was granted. (AI-inferred)
     channel_type: Any = None
+    # The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
     expire_time: Any = None
+    # The real, licensed CBRS frequency range (`low_frequency_mhz` to `high_frequency_mhz`) this channel or grant covers. (AI-inferred)
     frequency_range: Any = None
+    # The real, SAS-assigned identifier for this spectrum grant. (AI-inferred)
     grant_id: Any = None
+    # The real timestamp after which this device's own transmit authorization expires unless it sends another real heartbeat to the SAS. (AI-inferred)
     last_heartbeat_transmit_expire_time: Any = None
+    # The real maximum Effective Isotropic Radiated Power, in dBm/MHz, this grant authorizes the device to transmit at. (AI-inferred)
     max_eirp: Any = None
+    # The real list of incumbent (protected) users this device's own grant must move off frequency for, if one becomes active nearby. (AI-inferred)
     move_list: Any = None
+    # The real, current state (`GRANT_STATE_GRANTED`, `GRANT_STATE_SUSPENDED`, `GRANT_STATE_TERMINATED`, etc.) of this spectrum grant. (AI-inferred)
     state: Any = None
+    # The real, specific reason code(s) this grant is currently suspended, when its own `state` is suspended. (AI-inferred)
     suspension_reason: Any = None
 
 _Device_ActiveConfig_AirInterfaceFields = {

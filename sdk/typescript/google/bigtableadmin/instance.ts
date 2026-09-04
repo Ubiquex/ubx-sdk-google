@@ -2,36 +2,52 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimits {
+  /** The maximum number of nodes this cluster's own autoscaling may scale up to. (AI-inferred) */
   maxServeNodes?: number | Computed<number>;
+  /** The minimum number of nodes this cluster's own autoscaling scales down to. (AI-inferred) */
   minServeNodes?: number | Computed<number>;
 }
 
 export interface Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargets {
+  /** The target CPU utilization percentage this cluster's own autoscaling aims to maintain. (AI-inferred) */
   cpuUtilizationPercent?: number | Computed<number>;
+  /** Output only. How much storage, in GiB, is used per node in this cluster. (AI-inferred) */
   storageUtilizationGibPerNode?: number | Computed<number>;
 }
 
 export interface Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig {
+  /** The minimum and maximum node count this cluster's own autoscaling may scale between. (AI-inferred) */
   autoscalingLimits?: Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimits | Computed<Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimits>;
+  /** The target utilization metric(s) (e.g. CPU) this cluster's own autoscaling aims to maintain. (AI-inferred) */
   autoscalingTargets?: Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargets | Computed<Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargets>;
 }
 
 export interface Instance_Clusters_ClusterConfig {
+  /** Autoscaling configuration for this cluster. (AI-inferred) */
   clusterAutoscalingConfig?: Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig | Computed<Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig>;
 }
 
 export interface Instance_Clusters_EncryptionConfig {
+  /** The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/* /locations/* /keyRings/* /cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred) */
   kmsKeyName?: string | Computed<string>;
 }
 
 export interface Instance_Clusters {
+  /** Configuration for a single cluster within this instance. (AI-inferred) */
   clusterConfig?: Instance_Clusters_ClusterConfig | Computed<Instance_Clusters_ClusterConfig>;
+  /** The default storage media (SSD or HDD) for clusters in this instance. (AI-inferred) */
   defaultStorageType?: string | Computed<string>;
+  /** Configuration for encrypting this cluster's own data with a customer-managed key. (AI-inferred) */
   encryptionConfig?: Instance_Clusters_EncryptionConfig | Computed<Instance_Clusters_EncryptionConfig>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A multiplier applied to this cluster's own effective node count, for higher-throughput node configurations. (AI-inferred) */
   nodeScalingFactor?: string | Computed<string>;
+  /** The fixed number of nodes provisioned for this cluster, when autoscaling isn't used. (AI-inferred) */
   serveNodes?: number | Computed<number>;
+  /** The current status of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

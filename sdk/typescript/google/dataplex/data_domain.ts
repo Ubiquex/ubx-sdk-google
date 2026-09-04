@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataDomain_Contacts_Identities {
+  /** An identifier for a contact associated with this resource. (AI-inferred) */
   contactId?: string | Computed<string>;
+  /** The name of a contact associated with this resource. (AI-inferred) */
   contactName?: string | Computed<string>;
+  /** The role a contact plays with respect to this resource, e.g. owner or steward. (AI-inferred) */
   contactRole?: string | Computed<string>;
 }
 

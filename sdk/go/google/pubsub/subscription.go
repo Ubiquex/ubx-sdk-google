@@ -85,30 +85,43 @@ type Subscription_ExpirationPolicy struct {
 }
 
 type Subscription_MessageTransforms_AiInference_UnstructuredInference struct {
+	// Model-specific parameters passed to the Vertex AI endpoint for unstructured inference. (AI-inferred)
 	Parameters any
 }
 
 type Subscription_MessageTransforms_AiInference struct {
-	Endpoint              any
-	ServiceAccountEmail   any
+	// The Vertex AI model endpoint this transform sends each message to for inference. (AI-inferred)
+	Endpoint any
+	// The service account this transform uses to call the Vertex AI endpoint. (AI-inferred)
+	ServiceAccountEmail any
+	// Configuration for running inference on unstructured message content (e.g. free text), rather than a fixed schema. (AI-inferred)
 	UnstructuredInference any
 }
 
 type Subscription_MessageTransforms_Compression struct {
+	// The compression algorithm this transform uses, e.g. `ZLIB`. (AI-inferred)
 	CompressionAlgorithm any
-	CompressionMode      any
+	// Whether this transform `COMPRESS`es or `DECOMPRESS`es message data. (AI-inferred)
+	CompressionMode any
 }
 
 type Subscription_MessageTransforms_JavascriptUdf struct {
-	Code         any
+	// The JavaScript source code implementing this transform. (AI-inferred)
+	Code any
+	// The name of the function within `code` Pub/Sub invokes for each message. (AI-inferred)
 	FunctionName any
 }
 
 type Subscription_MessageTransforms struct {
-	AiInference   any
-	Compression   any
-	Disabled      any
-	Enabled       any
+	// A message transform that runs each message through a Vertex AI model and attaches the model's own inference as additional message data. (AI-inferred)
+	AiInference any
+	// A message transform that compresses or decompresses message data as it flows through the transform pipeline. (AI-inferred)
+	Compression any
+	// If `true`, this transform is skipped without being removed from the pipeline. (AI-inferred)
+	Disabled any
+	// Whether this transform is active in the pipeline. (AI-inferred)
+	Enabled any
+	// A message transform implemented as a user-defined JavaScript function, run inline on each message. (AI-inferred)
 	JavascriptUdf any
 }
 

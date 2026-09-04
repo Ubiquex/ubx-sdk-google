@@ -2,18 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V2beta1ParticipantConfig {
+  /** Identifies the real, external agent desktop this participant connects through. (AI-inferred) */
   agentDesktopSource?: string | Computed<string>;
+  /** Real metadata key-value filters restricting which knowledge documents this participant's own suggestions draw from. (AI-inferred) */
   documentsMetadataFilters?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** An opaque, caller-provided identifier for the real end user, used to correlate conversations without exposing their own real identity. (AI-inferred) */
   obfuscatedExternalUserId?: string | Computed<string>;
+  /** This participant's own real role in the conversation, e.g. end user, human agent, or automated agent. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface V2beta1ParticipantAttrs {
+  /** Identifies the real, external agent desktop this participant connects through. (AI-inferred) */
   agentDesktopSource: string;
+  /** Real metadata key-value filters restricting which knowledge documents this participant's own suggestions draw from. (AI-inferred) */
   documentsMetadataFilters: Record<string, string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** An opaque, caller-provided identifier for the real end user, used to correlate conversations without exposing their own real identity. (AI-inferred) */
   obfuscatedExternalUserId: string;
+  /** This participant's own real role in the conversation, e.g. end user, human agent, or automated agent. (AI-inferred) */
   role: string;
 }
 

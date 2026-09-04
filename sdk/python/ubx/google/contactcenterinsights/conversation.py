@@ -40,7 +40,9 @@ class Conversation_DataSource_GcsSource:
 
 @dataclasses.dataclass
 class Conversation_DataSource_TurnLevelAudios:
+    # The total duration of this conversation's own audio recording. (AI-inferred)
     audio_duration: Any = None
+    # The Cloud Storage URI of this conversation's own audio recording. (AI-inferred)
     audio_gcs_uri: Any = None
 
 @dataclasses.dataclass
@@ -56,68 +58,101 @@ class Conversation_DataSource:
 
 @dataclasses.dataclass
 class Conversation_DialogflowIntents:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary:
+    # This segment's own position within the full transcript. (AI-inferred)
     transcript_index: Any = None
+    # This word's own position within the transcript. (AI-inferred)
     word_index: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment:
+    # The overall strength of sentiment detected, regardless of positive/negative direction. (AI-inferred)
     magnitude: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData:
+    # An identifier for this specific entity mention, unique within its own conversation. (AI-inferred)
     entity_unique_id: Any = None
+    # The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
     sentiment: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData:
+    # An identifier for this specific intent match, unique within its own conversation. (AI-inferred)
     intent_unique_id: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the detected issue this applies to. (AI-inferred)
     issue: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData:
+    # Detail assigning this conversation to a specific issue category. (AI-inferred)
     issue_assignment: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A reference to the phrase matcher this applies to. (AI-inferred)
     phrase_matcher: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations:
+    # Where this annotation ends within its own containing transcript or audio. (AI-inferred)
     annotation_end_boundary: Any = None
+    # Where this annotation starts within its own containing transcript or audio. (AI-inferred)
     annotation_start_boundary: Any = None
+    # Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
     channel_tag: Any = None
+    # Detail about a named entity mentioned in this conversation. (AI-inferred)
     entity_mention_data: Any = None
+    # Detail about a hold event within this conversation. (AI-inferred)
     hold_data: Any = None
+    # Detail about an intent matched during this conversation turn. (AI-inferred)
     intent_match_data: Any = None
+    # Detail about a participant interrupting another during this conversation. (AI-inferred)
     interruption_data: Any = None
+    # Detail about an issue detected during this conversation. (AI-inferred)
     issue_match_data: Any = None
+    # Detail about a phrase matcher rule that matched during this conversation. (AI-inferred)
     phrase_match_data: Any = None
+    # Detailed sentiment analysis result for this conversation segment. (AI-inferred)
     sentiment_data: Any = None
+    # Detail about a period of silence detected in this conversation's own audio. (AI-inferred)
     silence_data: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Entities:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # How central this entity is to the overall content, relative to other mentioned entities. (AI-inferred)
     salience: Any = None
+    # The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
     sentiment: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Intents:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
@@ -129,62 +164,101 @@ class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_IssueModel
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # The key of this key/value pair. (AI-inferred)
     key: Any = None
+    # Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred)
     na_value: Any = None
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # A numeric value. (AI-inferred)
     num_value: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # Marks this QA answer as skipped, rather than providing a real value. (AI-inferred)
     skip_value: Any = None
+    # A text value. (AI-inferred)
     str_value: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources:
+    # The literal value of this answer. (AI-inferred)
     answer_value: Any = None
+    # The kind of source this data came from. (AI-inferred)
     source_type: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers:
+    # The source content a generated answer was grounded in. (AI-inferred)
     answer_sources: Any = None
+    # The literal value of this answer. (AI-inferred)
     answer_value: Any = None
+    # A reference to the conversation this applies to. (AI-inferred)
     conversation: Any = None
+    # A reference to the QA scorecard question this applies to. (AI-inferred)
     qa_question: Any = None
+    # The full text/body of this question. (AI-inferred)
     question_body: Any = None
+    # The label(s) attached to this resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults:
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # A label attached to this resource. (AI-inferred)
     tag: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources:
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
     qa_tag_results: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # The kind of source this data came from. (AI-inferred)
     source_type: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults:
+    # An identifier for the human or virtual agent this applies to. (AI-inferred)
     agent_id: Any = None
+    # A reference to the conversation this applies to. (AI-inferred)
     conversation: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # This score, rescaled onto a standard 0-1 range for comparison across metrics. (AI-inferred)
     normalized_score: Any = None
+    # The maximum score achievable on this QA scorecard. (AI-inferred)
     potential_score: Any = None
+    # The answer(s) recorded for this QA scorecard evaluation. (AI-inferred)
     qa_answers: Any = None
+    # A reference to the specific version of the QA scorecard used for this evaluation. (AI-inferred)
     qa_scorecard_revision: Any = None
+    # Per-tag rollup result(s) computed from this QA scorecard evaluation. (AI-inferred)
     qa_tag_results: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
+    # The source(s) contributing to this computed score. (AI-inferred)
     score_sources: Any = None
 
 @dataclasses.dataclass
 class Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Sentiments:
+    # Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
     channel_tag: Any = None
+    # Detailed sentiment analysis result for this conversation segment. (AI-inferred)
     sentiment_data: Any = None
 
 @dataclasses.dataclass
@@ -302,27 +376,46 @@ class Conversation_LatestSummary:
 
 @dataclasses.dataclass
 class Conversation_QualityMetadata_AgentInfo:
+    # An identifier for the human or virtual agent this applies to. (AI-inferred)
     agent_id: Any = None
+    # Whether this participant is a human agent or a virtual (Dialogflow) agent. (AI-inferred)
     agent_type: Any = None
+    # A human-readable name for this deployment. (AI-inferred)
     deployment_display_name: Any = None
+    # An identifier for this deployment. (AI-inferred)
     deployment_id: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A caller-defined code categorizing the outcome of this conversation. (AI-inferred)
     disposition_code: Any = None
+    # The display name of the sub-agent the conversation started with. (AI-inferred)
     entry_subagent_display_name: Any = None
+    # An identifier for the sub-agent the conversation started with. (AI-inferred)
     entry_subagent_id: Any = None
+    # The Google Cloud region or resource location this applies to. (AI-inferred)
     location: Any = None
+    # A reference to the team this applies to. (AI-inferred)
     team: Any = None
+    # The team(s) this applies to. (AI-inferred)
     teams: Any = None
+    # A human-readable name for this version. (AI-inferred)
     version_display_name: Any = None
+    # An identifier for this version. (AI-inferred)
     version_id: Any = None
 
 @dataclasses.dataclass
 class Conversation_QualityMetadata_FeedbackLabels:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable label for this item. (AI-inferred)
     label: Any = None
+    # A reference to the specific resource this label was applied within. (AI-inferred)
     labeled_resource: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A human-readable label for this QA scorecard answer option. (AI-inferred)
     qa_answer_label: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
@@ -340,148 +433,234 @@ class Conversation_QualityMetadata:
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_AnswerFeedback:
+    # Whether the end user clicked on this suggestion. (AI-inferred)
     clicked: Any = None
+    # How accurate a QA answer was judged to be. (AI-inferred)
     correctness_level: Any = None
+    # Whether this suggestion was actually shown to the agent. (AI-inferred)
     displayed: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_ArticleSuggestion:
+    # A numeric score reflecting how confident this detection or match is. (AI-inferred)
     confidence_score: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # A reference to the stored record of this query. (AI-inferred)
     query_record: Any = None
+    # The source this data or configuration is read from. (AI-inferred)
     source: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSession:
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesEndSessionAnnotation:
+    # A record of the conversation session ending. (AI-inferred)
     end_session: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransfer:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The agent this transfer moves the conversation to. (AI-inferred)
     target_agent: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob:
+    # The literal data payload. (AI-inferred)
     data: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool:
+    # An identifier for the tool this applies to. (AI-inferred)
     tool_id: Any = None
+    # A reference to the toolset this applies to. (AI-inferred)
     toolset: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall:
+    # The display name of the agent this applies to. (AI-inferred)
     agent_name: Any = None
+    # The argument(s) passed to this call. (AI-inferred)
     args: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # A reference to the tool call this response corresponds to. (AI-inferred)
     parent_tool_call_id: Any = None
+    # A reference to the tool this applies to. (AI-inferred)
     tool: Any = None
+    # A reference to a specific tool within a toolset. (AI-inferred)
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponse:
+    # The display name of the agent this applies to. (AI-inferred)
     agent_name: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # An identifier for this resource. (AI-inferred)
     id: Any = None
+    # A reference to the tool call this response corresponds to. (AI-inferred)
     parent_tool_call_id: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
+    # A reference to the tool this applies to. (AI-inferred)
     tool: Any = None
+    # A reference to a specific tool within a toolset. (AI-inferred)
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks:
+    # A record of the conversation being transferred to another agent. (AI-inferred)
     agent_transfer: Any = None
+    # Raw binary content. (AI-inferred)
     blob: Any = None
+    # The default value(s) for this resource's own declared variables. (AI-inferred)
     default_variables: Any = None
+    # Image content. (AI-inferred)
     image: Any = None
+    # A custom, integration-specific payload. (AI-inferred)
     payload: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
+    # A request from the agent to invoke a tool. (AI-inferred)
     tool_call: Any = None
+    # The result returned from invoking a tool. (AI-inferred)
     tool_response: Any = None
+    # The transcribed text of this conversation. (AI-inferred)
     transcript: Any = None
+    # The variable(s) whose own value changed as a result of this event. (AI-inferred)
     updated_variables: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages:
+    # The retrieved content chunk(s) making up this result. (AI-inferred)
     chunks: Any = None
+    # When this event occurred. (AI-inferred)
     event_time: Any = None
+    # Who this content is attributed to, e.g. agent or end user. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpan:
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     attributes: Any = None
+    # The nested sub-operation(s) recorded under this trace span. (AI-inferred)
     child_spans: Any = None
+    # How long this event, segment, or conversation lasted. (AI-inferred)
     duration: Any = None
+    # When this event, segment, or conversation ended. (AI-inferred)
     end_time: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # When this event, segment, or conversation started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation:
+    # The message(s) making up this conversation. (AI-inferred)
     messages: Any = None
+    # The top-level trace span this operation's own execution is recorded under. (AI-inferred)
     root_span: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_DialogflowInteraction:
+    # How confident this detection or match is. (AI-inferred)
     confidence: Any = None
+    # The Dialogflow intent matched during this conversation turn. (AI-inferred)
     dialogflow_intent_id: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_FaqAnswer:
+    # The answer text returned for this query. (AI-inferred)
     answer: Any = None
+    # A numeric score reflecting how confident this detection or match is. (AI-inferred)
     confidence_score: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # A reference to the stored record of this query. (AI-inferred)
     query_record: Any = None
+    # The QA scorecard question text. (AI-inferred)
     question: Any = None
+    # The source this data or configuration is read from. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_SmartComposeSuggestion:
+    # A numeric score reflecting how confident this detection or match is. (AI-inferred)
     confidence_score: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # A reference to the stored record of this query. (AI-inferred)
     query_record: Any = None
+    # A suggestion generated for the agent. (AI-inferred)
     suggestion: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_SmartReply:
+    # A numeric score reflecting how confident this detection or match is. (AI-inferred)
     confidence_score: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # A reference to the stored record of this query. (AI-inferred)
     query_record: Any = None
+    # A response message. (AI-inferred)
     reply: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations_UserInput:
+    # The display name of the generator that produced this content. (AI-inferred)
     generator_name: Any = None
+    # The query text or expression. (AI-inferred)
     query: Any = None
+    # Which data source this query was run against. (AI-inferred)
     query_source: Any = None
 
 @dataclasses.dataclass
 class Conversation_RuntimeAnnotations:
+    # An identifier for this annotation. (AI-inferred)
     annotation_id: Any = None
+    # End-user or agent feedback on the quality of a generated answer. (AI-inferred)
     answer_feedback: Any = None
+    # A suggested knowledge-base article surfaced to the agent during the conversation. (AI-inferred)
     article_suggestion: Any = None
+    # An annotation marking where a CES (Customer Engagement Suite) agent session ended. (AI-inferred)
     ces_end_session_annotation: Any = None
+    # An annotation carrying CES (Customer Engagement Suite) agent detail for one conversation turn. (AI-inferred)
     ces_turn_annotation: Any = None
+    # A generated summary of the conversation, suggested to the agent. (AI-inferred)
     conversation_summarization_suggestion: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Detail about a Dialogflow-driven interaction within this conversation. (AI-inferred)
     dialogflow_interaction: Any = None
+    # Where this range ends. (AI-inferred)
     end_boundary: Any = None
+    # A suggested answer sourced from a connected FAQ document. (AI-inferred)
     faq_answer: Any = None
+    # A suggested reply completion offered to the agent while typing. (AI-inferred)
     smart_compose_suggestion: Any = None
+    # A suggested full reply offered to the agent. (AI-inferred)
     smart_reply: Any = None
+    # Where this range starts. (AI-inferred)
     start_boundary: Any = None
+    # The end user's own input for this turn. (AI-inferred)
     user_input: Any = None
 
 @dataclasses.dataclass
 class Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata:
+    # Whether this smart reply suggestion is drawn from the caller's own approved allowlist. (AI-inferred)
     smart_reply_allowlist_covered: Any = None
 
 @dataclasses.dataclass
@@ -573,31 +752,50 @@ class Conversation_Transcript_TranscriptSegments_Parts:
 
 @dataclasses.dataclass
 class Conversation_Transcript_TranscriptSegments_SegmentParticipant:
+    # Detail identifying a Dialogflow virtual agent participant. (AI-inferred)
     dialogflow_participant: Any = None
+    # The display name of the Dialogflow virtual agent participant. (AI-inferred)
     dialogflow_participant_name: Any = None
+    # An anonymized identifier for the end user, consistent across their own conversations but not directly identifying. (AI-inferred)
     obfuscated_external_user_id: Any = None
+    # Who this content is attributed to, e.g. agent or end user. (AI-inferred)
     role: Any = None
+    # An identifier for the end user this applies to. (AI-inferred)
     user_id: Any = None
 
 @dataclasses.dataclass
 class Conversation_Transcript_TranscriptSegments_Words:
+    # How confident this detection or match is. (AI-inferred)
     confidence: Any = None
+    # The ending position this range covers. (AI-inferred)
     end_offset: Any = None
+    # The starting position this range covers. (AI-inferred)
     start_offset: Any = None
+    # A single transcribed word. (AI-inferred)
     word: Any = None
 
 @dataclasses.dataclass
 class Conversation_Transcript_TranscriptSegments:
+    # Which audio channel this segment came from, for a multi-channel recording. (AI-inferred)
     channel_tag: Any = None
+    # How confident this detection or match is. (AI-inferred)
     confidence: Any = None
+    # Metadata Dialogflow attached to this conversation segment. (AI-inferred)
     dialogflow_segment_metadata: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # When this message was sent. (AI-inferred)
     message_time: Any = None
     parts: Any = None
+    # The participant this conversation segment is attributed to. (AI-inferred)
     segment_participant: Any = None
+    # The overall sentiment (positive/negative/neutral) detected in this text. (AI-inferred)
     sentiment: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
+    # The audio segment corresponding to this specific conversation turn. (AI-inferred)
     turn_level_audio: Any = None
+    # The individual word(s) making up this transcript segment. (AI-inferred)
     words: Any = None
 
 @dataclasses.dataclass

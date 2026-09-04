@@ -26,9 +26,11 @@ export interface BetaSnapshotGroupConfig {
   description?: string | Computed<string>;
   /** Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
+  /** Identifies the real resource this snapshot group was created from. (AI-inferred) */
   sourceInfo?: BetaSnapshotGroup_SourceInfo | Computed<BetaSnapshotGroup_SourceInfo>;
   /** Input field for the source instant snapshot group. */
   sourceInstantSnapshotGroup?: string | Computed<string>;
+  /** Identifies the real instant snapshot group this snapshot group was created from. (AI-inferred) */
   sourceInstantSnapshotGroupInfo?: BetaSnapshotGroup_SourceInstantSnapshotGroupInfo | Computed<BetaSnapshotGroup_SourceInstantSnapshotGroupInfo>;
 }
 
@@ -47,9 +49,11 @@ export interface BetaSnapshotGroupAttrs {
   selfLink: string;
   /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
   selfLinkWithId: string;
+  /** Identifies the real resource this snapshot group was created from. (AI-inferred) */
   sourceInfo: BetaSnapshotGroup_SourceInfo;
   /** Input field for the source instant snapshot group. */
   sourceInstantSnapshotGroup: string;
+  /** Identifies the real instant snapshot group this snapshot group was created from. (AI-inferred) */
   sourceInstantSnapshotGroupInfo: BetaSnapshotGroup_SourceInstantSnapshotGroupInfo;
   /** Output only. [Output Only] */
   status: string;

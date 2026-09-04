@@ -13,8 +13,11 @@ class Ruleset_Metadata:
 
 @dataclasses.dataclass
 class Ruleset_Source_Files:
+    # The raw text content of this Rules source file (Firestore/Realtime Database/Cloud Storage security rules syntax). (AI-inferred)
     content: Any = None
+    # A checksum/version identifier for this file's own content, used to detect whether the file changed between requests. (AI-inferred)
     fingerprint: Any = None
+    # A file name, unique within this Ruleset's own source, used for diagnostic messages when a rule fails to compile. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass

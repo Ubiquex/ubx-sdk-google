@@ -16,7 +16,9 @@ type Curation_Endpoint struct {
 }
 
 type Curation_PluginInstanceActions struct {
-	ActionId       any
+	// An identifier for this action, unique within its own containing plugin. (AI-inferred)
+	ActionId any
+	// A reference to the plugin instance this applies to. (AI-inferred)
 	PluginInstance any
 }
 

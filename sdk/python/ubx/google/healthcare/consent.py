@@ -8,19 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Consent_Policies_AuthorizationRule:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A boolean expression evaluated to determine whether this rule applies. (AI-inferred)
     expression: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     location: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class Consent_Policies_ResourceAttributes:
+    # A reference to the attribute definition this applies to. (AI-inferred)
     attribute_definition_id: Any = None
+    # The value(s) making up this field. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Consent_Policies:
+    # The condition determining whether a specific consent authorization applies. (AI-inferred)
     authorization_rule: Any = None
+    # Custom attribute(s) attached to this consent resource. (AI-inferred)
     resource_attributes: Any = None
 
 _Consent_Policies_AuthorizationRuleFields = {

@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V2beta1VersionConfig {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
 }
 
 export interface V2beta1VersionAttrs {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The current status of this resource or operation. (AI-inferred) */
   status: string;
+  /** This version's own real, sequential version number. (AI-inferred) */
   versionNumber: number;
 }
 

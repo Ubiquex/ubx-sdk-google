@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegionInstantSnapshotGroup_ResourceStatus_SourceInfo:
+    # The name of the consistency group associated with the source of the regional instant snapshot group. (AI-inferred)
     consistency_group: Any = None
+    # Output only. The ID of the consistency group associated with this instant snapshot group's source, if the group was created from a consistency group. This is part of the source status information for the resource. (AI-inferred)
     consistency_group_id: Any = None
 
 @dataclasses.dataclass
@@ -38,6 +40,7 @@ class RegionInstantSnapshotGroupConfig:
     # Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     resource_status: Any = None
+    # The self-link of the source consistency group used to create this instant snapshot group. This field is output-only and identifies the consistency group resource from which the group was derived. (AI-inferred)
     source_consistency_group: Any = None
 
 @dataclasses.dataclass
@@ -59,6 +62,7 @@ class RegionInstantSnapshotGroupAttrs:
     self_link: Any = None
     # Output only. [Output Only] Server-defined URL for this resource's resource id.
     self_link_with_id: Any = None
+    # The self-link of the source consistency group used to create this instant snapshot group. This field is output-only and identifies the consistency group resource from which the group was derived. (AI-inferred)
     source_consistency_group: Any = None
     # Output only. [Output Only]
     status: Any = None

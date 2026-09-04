@@ -4,21 +4,31 @@ package contentwarehouse
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan struct {
-	PageEnd   any
+	// The last page number (1-indexed) covered by a `page_span`. (AI-inferred)
+	PageEnd any
+	// The first page number (1-indexed) covered by a `page_span`. (AI-inferred)
 	PageStart any
 }
 
 type Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters struct {
+	// The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred)
 	PageSpan any
-	Text     any
+	// The real, extracted text content of this document element. (AI-inferred)
+	Text any
 }
 
 type Document_CloudAiDocument_ChunkedDocument_Chunks struct {
-	ChunkId        any
-	Content        any
-	PageFooters    any
-	PageHeaders    any
-	PageSpan       any
+	// A stable identifier for one chunk of document content in a chunked (e.g. retrieval-oriented) document representation. (AI-inferred)
+	ChunkId any
+	// The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred)
+	Content any
+	// The real, detected footer block(s) on a document page, structurally distinct from the page's own main body content. (AI-inferred)
+	PageFooters any
+	// The real, detected header block(s) on a document page, structurally distinct from the page's own main body content. (AI-inferred)
+	PageHeaders any
+	// The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred)
+	PageSpan any
+	// The real `block_id`(s) of the document layout block(s) this element (like an entity or chunk) was derived from. (AI-inferred)
 	SourceBlockIds any
 }
 
@@ -28,42 +38,60 @@ type Document_CloudAiDocument_ChunkedDocument struct {
 }
 
 type Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntries struct {
+	// The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
 	Blocks any
 }
 
 type Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock struct {
+	// The real, individual entries that make up a detected `list_block`. (AI-inferred)
 	ListEntries any
-	Type        any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_Cells struct {
-	Blocks  any
+	// The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
+	Blocks any
+	// The number of real table columns this cell spans, for a cell that merges across multiple columns. (AI-inferred)
 	ColSpan any
+	// The number of real table rows this cell spans, for a cell that merges across multiple rows. (AI-inferred)
 	RowSpan any
 }
 
 type Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows struct {
+	// The real table cells that make up a detected table structure on a document page. (AI-inferred)
 	Cells any
 }
 
 type Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock struct {
-	BodyRows   any
-	Caption    any
+	// The real, non-header rows of a detected table, each holding one row's worth of `cells`. (AI-inferred)
+	BodyRows any
+	// The real, detected caption text associated with a table or figure block. (AI-inferred)
+	Caption any
+	// The real header row(s) of a detected table, each holding one row's worth of `cells`. (AI-inferred)
 	HeaderRows any
 }
 
 type Document_CloudAiDocument_DocumentLayout_Blocks_TextBlock struct {
+	// The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
 	Blocks any
-	Text   any
-	Type   any
+	// The real, extracted text content of this document element. (AI-inferred)
+	Text any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Document_CloudAiDocument_DocumentLayout_Blocks struct {
-	BlockId    any
-	ListBlock  any
-	PageSpan   any
+	// A stable identifier for this document layout block, referenced by `source_block_ids` on elements derived from it. (AI-inferred)
+	BlockId any
+	// A detected list-structured content block on a document page, holding its own `list_entries`. (AI-inferred)
+	ListBlock any
+	// The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred)
+	PageSpan any
+	// A detected table-structured content block on a document page, holding its own `header_rows` and `body_rows`. (AI-inferred)
 	TableBlock any
-	TextBlock  any
+	// A detected block of plain, unstructured text content on a document page. (AI-inferred)
+	TextBlock any
 }
 
 type Document_CloudAiDocument_DocumentLayout struct {
@@ -72,121 +100,192 @@ type Document_CloudAiDocument_DocumentLayout struct {
 }
 
 type Document_CloudAiDocument_Entities_NormalizedValue_AddressValue struct {
-	AddressLines       any
+	// The real, individual address line(s) of a normalized postal address, in the order they'd appear on an envelope. (AI-inferred)
+	AddressLines any
+	// The real, highest administrative subdivision (e.g. a state or province) of a normalized postal address. (AI-inferred)
 	AdministrativeArea any
-	LanguageCode       any
-	Locality           any
-	Organization       any
-	PostalCode         any
-	Recipients         any
-	RegionCode         any
-	Revision           any
-	SortingCode        any
-	Sublocality        any
+	// A BCP-47 language code (e.g. `en-US`) identifying a detected or configured language. (AI-inferred)
+	LanguageCode any
+	// The real city or town of a normalized postal address. (AI-inferred)
+	Locality any
+	// The real organization or company name associated with a normalized postal address. (AI-inferred)
+	Organization any
+	// The real postal or ZIP code of a normalized postal address. (AI-inferred)
+	PostalCode any
+	// The real, named recipient(s) of a normalized postal address. (AI-inferred)
+	Recipients any
+	// The real, two-letter CLDR region code (e.g. `US`) of a normalized postal address's own country. (AI-inferred)
+	RegionCode any
+	// One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred)
+	Revision any
+	// A real, country-specific postal sorting code for a normalized postal address, when the country uses one. (AI-inferred)
+	SortingCode any
+	// A real sublocality (e.g. a borough or neighborhood) of a normalized postal address, when the address includes one. (AI-inferred)
+	Sublocality any
 }
 
 type Document_CloudAiDocument_Entities_NormalizedValue_DateValue struct {
-	Day   any
+	// The day of a `google.type.Date` (1-31 for a real, complete month; 0 to specify a year/month with no specific day). (AI-inferred)
+	Day any
+	// The month of a `google.type.Date` (1-12; 0 to specify a year with no specific month). (AI-inferred)
 	Month any
-	Year  any
+	// The year of a `google.type.Date` (0 to specify a date without a year, e.g. an anniversary). (AI-inferred)
+	Year any
 }
 
 type Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZone struct {
-	Id      any
+	// A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
+	Id any
+	// A real identifier for the specific version of this document schema, processor, or content that produced the element. (AI-inferred)
 	Version any
 }
 
 type Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue struct {
-	Day       any
-	Hours     any
-	Minutes   any
-	Month     any
-	Nanos     any
-	Seconds   any
-	TimeZone  any
+	// The day of a `google.type.Date` (1-31 for a real, complete month; 0 to specify a year/month with no specific day). (AI-inferred)
+	Day any
+	// The hour-of-day component (0-23) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
+	Hours any
+	// The minute-of-hour component (0-59) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred)
+	Minutes any
+	// The month of a `google.type.Date` (1-12; 0 to specify a year with no specific month). (AI-inferred)
+	Month any
+	// The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred)
+	Nanos any
+	// The second-of-minute component (0-60, allowing a leap second) of a `google.type.TimeOfDay`/`DateTime`, or the whole-unit component of a `google.protobuf.Duration`/`Timestamp` paired with that same message's own `nanos`. (AI-inferred)
+	Seconds any
+	// The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
+	TimeZone any
+	// The fixed UTC offset a `google.type.DateTime` is expressed in, used instead of a named `time_zone` when the value has no real, resolvable time zone (e.g. a fixed historical offset). (AI-inferred)
 	UtcOffset any
-	Year      any
+	// The year of a `google.type.Date` (0 to specify a date without a year, e.g. an anniversary). (AI-inferred)
+	Year any
 }
 
 type Document_CloudAiDocument_Entities_NormalizedValue_MoneyValue struct {
+	// The real, three-letter ISO 4217 currency code (e.g. `USD`) of a normalized monetary value. (AI-inferred)
 	CurrencyCode any
-	Nanos        any
-	Units        any
+	// The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred)
+	Nanos any
+	// The real, whole-currency-unit component of a normalized monetary value (e.g. the dollars in a USD amount). (AI-inferred)
+	Units any
 }
 
 type Document_CloudAiDocument_Entities_NormalizedValue struct {
-	AddressValue  any
-	BooleanValue  any
-	DateValue     any
+	// This detected entity's own value, when Document AI normalized it as a structured postal address. (AI-inferred)
+	AddressValue any
+	// This document property's own value, when its declared type is boolean. (AI-inferred)
+	BooleanValue any
+	// This detected entity's own value, when Document AI normalized it as a `google.type.Date`. (AI-inferred)
+	DateValue any
+	// This document property's own value, when its declared type is a date-time. (AI-inferred)
 	DatetimeValue any
-	FloatValue    any
-	IntegerValue  any
-	MoneyValue    any
-	Text          any
+	// This document property's own value, when its declared type is a floating-point number. (AI-inferred)
+	FloatValue any
+	// This detected entity's own value, when Document AI normalized it as a whole number. (AI-inferred)
+	IntegerValue any
+	// This detected entity's own value, when Document AI normalized it as a monetary amount (`currency_code` plus `units`). (AI-inferred)
+	MoneyValue any
+	// The real, extracted text content of this document element. (AI-inferred)
+	Text any
 }
 
 type Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices struct {
+	// The horizontal coordinate of one vertex in a `bounding_poly` (pixel or normalized, matching whichever vertex list it appears in). (AI-inferred)
 	X any
+	// The vertical coordinate of one vertex in a `bounding_poly` (pixel or normalized, matching whichever vertex list it appears in). (AI-inferred)
 	Y any
 }
 
 type Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly struct {
+	// The polygon's own vertices, normalized to `[0, 1]` relative to the page's own width and height rather than given in pixels. (AI-inferred)
 	NormalizedVertices any
-	Vertices           any
+	// The polygon's own vertices, in the page image's real pixel coordinate space (origin at the page's top-left corner). (AI-inferred)
+	Vertices any
 }
 
 type Document_CloudAiDocument_Entities_PageAnchor_PageRefs struct {
+	// The polygon locating this element on its page, as either pixel-coordinate `vertices` or `normalized_vertices` scaled to `[0, 1]` relative to the page's own dimensions. (AI-inferred)
 	BoundingPoly any
-	Confidence   any
-	LayoutId     any
-	LayoutType   any
-	Page         any
+	// Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
+	Confidence any
+	// The real, referenced layout element's own ID, when a page reference points at a specific document layout element rather than a whole page. (AI-inferred)
+	LayoutId any
+	// The real, structural type (e.g. `PARAGRAPH`, `TABLE`, `FORM_FIELD`) of the layout element a page reference points at. (AI-inferred)
+	LayoutType any
+	// The real, zero-based page number this page reference points at. (AI-inferred)
+	Page any
 }
 
 type Document_CloudAiDocument_Entities_PageAnchor struct {
+	// The specific real page(s) and layout element(s) a `page_anchor` points at. (AI-inferred)
 	PageRefs any
 }
 
 type Document_CloudAiDocument_Entities_Provenance_Parents struct {
-	Id       any
-	Index    any
+	// A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
+	Id any
+	// The real, zero-based position of this element within its own containing repeated list or table row/column. (AI-inferred)
+	Index any
+	// One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred)
 	Revision any
 }
 
 type Document_CloudAiDocument_Entities_Provenance struct {
-	Id       any
-	Parents  any
+	// A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
+	Id any
+	// The earlier document element(s) this one's own `provenance` was derived from, tracking real lineage across document revisions. (AI-inferred)
+	Parents any
+	// One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred)
 	Revision any
-	Type     any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Document_CloudAiDocument_Entities_TextAnchor_TextSegments struct {
-	EndIndex   any
+	// The ending character offset (exclusive) into the document's own raw text for this text segment. (AI-inferred)
+	EndIndex any
+	// The starting character offset (inclusive) into the document's own raw text for this text segment. (AI-inferred)
 	StartIndex any
 }
 
 type Document_CloudAiDocument_Entities_TextAnchor struct {
-	Content      any
+	// The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred)
+	Content any
+	// The character-offset span(s) into the document's own raw text that this `text_anchor` refers to. (AI-inferred)
 	TextSegments any
 }
 
 type Document_CloudAiDocument_Entities struct {
-	Confidence      any
-	Id              any
-	MentionId       any
-	MentionText     any
+	// Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
+	Confidence any
+	// A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
+	Id any
+	// A stable identifier for one detected entity mention within the document's own text. (AI-inferred)
+	MentionId any
+	// The real, literal text span Document AI detected as referring to this entity. (AI-inferred)
+	MentionText any
+	// A machine-readable, normalized form of a detected document value (e.g. a parsed date or amount), alongside the raw detected `text`. (AI-inferred)
 	NormalizedValue any
-	PageAnchor      any
-	Properties      any
-	Provenance      any
-	Redacted        any
-	TextAnchor      any
-	Type            any
+	// The real page location(s) an entity, form field, or other document element is anchored to. (AI-inferred)
+	PageAnchor any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
+	// Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
+	Provenance any
+	// Whether this detected entity's own value was real, redacted in the document rather than extracted in full. (AI-inferred)
+	Redacted any
+	// A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
+	TextAnchor any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Document_CloudAiDocument_EntityRelations struct {
-	ObjectId  any
-	Relation  any
+	// The real, referenced entity ID this entity relation points at as its own object. (AI-inferred)
+	ObjectId any
+	// The real, named relationship (e.g. a parent-child link) this entity relation describes between two document entities. (AI-inferred)
+	Relation any
+	// The real, referenced entity ID this entity relation points at as its own subject. (AI-inferred)
 	SubjectId any
 }
 
@@ -200,175 +299,278 @@ type Document_CloudAiDocument_Error struct {
 }
 
 type Document_CloudAiDocument_Pages_Blocks_DetectedLanguages struct {
-	Confidence   any
+	// Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
+	Confidence any
+	// A BCP-47 language code (e.g. `en-US`) identifying a detected or configured language. (AI-inferred)
 	LanguageCode any
 }
 
 type Document_CloudAiDocument_Pages_Blocks_Layout struct {
+	// The polygon locating this element on its page, as either pixel-coordinate `vertices` or `normalized_vertices` scaled to `[0, 1]` relative to the page's own dimensions. (AI-inferred)
 	BoundingPoly any
-	Confidence   any
-	Orientation  any
-	TextAnchor   any
+	// Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
+	Confidence any
+	// The detected real orientation of this page or text run, e.g. `PAGE_UP`, `PAGE_RIGHT`, `PAGE_DOWN`, `PAGE_LEFT`. (AI-inferred)
+	Orientation any
+	// A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
+	TextAnchor any
 }
 
 type Document_CloudAiDocument_Pages_Blocks struct {
+	// The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
 	DetectedLanguages any
-	Layout            any
-	Provenance        any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
+	// Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
+	Provenance any
 }
 
 type Document_CloudAiDocument_Pages_DetectedBarcodes_Barcode struct {
-	Format      any
-	RawValue    any
+	// A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
+	Format any
+	// The real, raw decoded bytes or text of this barcode, before any `value_format`-specific interpretation. (AI-inferred)
+	RawValue any
+	// The real, structured interpretation (e.g. a URL or contact card) Document AI applied to this barcode's own `raw_value`. (AI-inferred)
 	ValueFormat any
 }
 
 type Document_CloudAiDocument_Pages_DetectedBarcodes struct {
+	// The real, decoded content of one detected barcode, including its own `format` and `raw_value`. (AI-inferred)
 	Barcode any
-	Layout  any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
 }
 
 type Document_CloudAiDocument_Pages_Dimension struct {
+	// The real height, in Document AI style units, of a detected text run or table cell. (AI-inferred)
 	Height any
-	Unit   any
-	Width  any
+	// The measurement unit (e.g. points, pixels) a `height`/`width`/`font_size` value in Document AI style metadata is expressed in. (AI-inferred)
+	Unit any
+	// The real width, in Document AI style units, of a detected text run or table cell. (AI-inferred)
+	Width any
 }
 
 type Document_CloudAiDocument_Pages_FormFields struct {
-	CorrectedKeyText       any
-	CorrectedValueText     any
-	FieldName              any
-	FieldValue             any
-	NameDetectedLanguages  any
-	Provenance             any
+	// A real, human-corrected version of this form field's own detected key text, when a reviewer has edited it. (AI-inferred)
+	CorrectedKeyText any
+	// A real, human-corrected version of this form field's own detected value text, when a reviewer has edited it. (AI-inferred)
+	CorrectedValueText any
+	// The real, detected label text (the "key" side) of this form field. (AI-inferred)
+	FieldName any
+	// The real, detected value text (the "value" side) of this form field. (AI-inferred)
+	FieldValue any
+	// The real language(s) Document AI detected in this form field's own `field_name` text. (AI-inferred)
+	NameDetectedLanguages any
+	// Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
+	Provenance any
+	// The real language(s) Document AI detected in this form field's own `field_value` text. (AI-inferred)
 	ValueDetectedLanguages any
-	ValueType              any
+	// The real, detected data type (e.g. a date or currency amount) of this form field's own value. (AI-inferred)
+	ValueType any
 }
 
 type Document_CloudAiDocument_Pages_Image struct {
-	Content  any
-	Height   any
+	// The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred)
+	Content any
+	// The real height, in Document AI style units, of a detected text run or table cell. (AI-inferred)
+	Height any
+	// The real IANA MIME type (e.g. `image/png`) of this embedded page image. (AI-inferred)
 	MimeType any
-	Width    any
+	// The real width, in Document AI style units, of a detected text run or table cell. (AI-inferred)
+	Width any
 }
 
 type Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefects struct {
+	// Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred)
 	Confidence any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Document_CloudAiDocument_Pages_ImageQualityScores struct {
+	// Real, specific image quality issues (e.g. blur, glare) Document AI detected on this page. (AI-inferred)
 	DetectedDefects any
-	QualityScore    any
+	// Document AI's own real, overall image quality score for this page, from `0` (worst) to `1` (best). (AI-inferred)
+	QualityScore any
 }
 
 type Document_CloudAiDocument_Pages_Symbols struct {
+	// The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
 	DetectedLanguages any
-	Layout            any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
 }
 
 type Document_CloudAiDocument_Pages_Tables_BodyRows_Cells struct {
-	ColSpan           any
+	// The number of real table columns this cell spans, for a cell that merges across multiple columns. (AI-inferred)
+	ColSpan any
+	// The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
 	DetectedLanguages any
-	Layout            any
-	RowSpan           any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
+	// The number of real table rows this cell spans, for a cell that merges across multiple rows. (AI-inferred)
+	RowSpan any
 }
 
 type Document_CloudAiDocument_Pages_Tables_BodyRows struct {
+	// The real table cells that make up a detected table structure on a document page. (AI-inferred)
 	Cells any
 }
 
 type Document_CloudAiDocument_Pages_Tables struct {
-	BodyRows          any
+	// The real, non-header rows of a detected table, each holding one row's worth of `cells`. (AI-inferred)
+	BodyRows any
+	// The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
 	DetectedLanguages any
-	HeaderRows        any
-	Layout            any
-	Provenance        any
+	// The real header row(s) of a detected table, each holding one row's worth of `cells`. (AI-inferred)
+	HeaderRows any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
+	// Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
+	Provenance any
 }
 
 type Document_CloudAiDocument_Pages_Tokens_DetectedBreak struct {
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor struct {
+	// The alpha (opacity) channel of a `google.type.Color`, as an optional fraction in `[0, 1]`; treated as fully opaque (`1`) if unset. (AI-inferred)
 	Alpha any
-	Blue  any
+	// The blue channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred)
+	Blue any
+	// The green channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred)
 	Green any
-	Red   any
+	// The red channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred)
+	Red any
 }
 
 type Document_CloudAiDocument_Pages_Tokens_StyleInfo struct {
+	// The real, detected background color of a text run, as a `google.type.Color`. (AI-inferred)
 	BackgroundColor any
-	Bold            any
-	FontSize        any
-	FontType        any
-	FontWeight      any
-	Handwritten     any
-	Italic          any
-	LetterSpacing   any
-	PixelFontSize   any
-	Smallcaps       any
-	Strikeout       any
-	Subscript       any
-	Superscript     any
-	TextColor       any
-	Underlined      any
+	// Whether this token's own detected text style is real, bold. (AI-inferred)
+	Bold any
+	// The real, detected font size of a text run. (AI-inferred)
+	FontSize any
+	// The real, detected font family or type name of this token's own text. (AI-inferred)
+	FontType any
+	// The real, detected font weight (e.g. normal, bold) of a text run. (AI-inferred)
+	FontWeight any
+	// Whether this token's own text was real, detected as handwritten rather than printed. (AI-inferred)
+	Handwritten any
+	// Whether this token's own detected text style is real, italic. (AI-inferred)
+	Italic any
+	// The real, detected letter spacing of this token's own text. (AI-inferred)
+	LetterSpacing any
+	// The real, detected font size, in pixels, of this token's own text. (AI-inferred)
+	PixelFontSize any
+	// Whether this token's own detected text style uses real, small capital letters. (AI-inferred)
+	Smallcaps any
+	// Whether this token's own detected text style has a real strikethrough. (AI-inferred)
+	Strikeout any
+	// Whether this token's own detected text style is real, subscript. (AI-inferred)
+	Subscript any
+	// Whether this token's own detected text style is real, superscript. (AI-inferred)
+	Superscript any
+	// The real, detected text color of this token, as a `google.type.Color`. (AI-inferred)
+	TextColor any
+	// Whether this token's own detected text style is real, underlined. (AI-inferred)
+	Underlined any
 }
 
 type Document_CloudAiDocument_Pages_Tokens struct {
-	DetectedBreak     any
+	// Real information about the whitespace or line break immediately following this token, if any. (AI-inferred)
+	DetectedBreak any
+	// The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
 	DetectedLanguages any
-	Layout            any
-	Provenance        any
-	StyleInfo         any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
+	// Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
+	Provenance any
+	// Real, detected text styling (font, weight, color, decoration) for this token. (AI-inferred)
+	StyleInfo any
 }
 
 type Document_CloudAiDocument_Pages_Transforms struct {
+	// The real number of columns in this transform matrix. (AI-inferred)
 	Cols any
+	// The real, raw matrix data of this transform, row-major. (AI-inferred)
 	Data any
+	// The real number of rows in this transform matrix, or of a detected table's own `body_rows`/`header_rows`. (AI-inferred)
 	Rows any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Document_CloudAiDocument_Pages_VisualElements struct {
+	// The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
 	DetectedLanguages any
-	Layout            any
-	Type              any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Document_CloudAiDocument_Pages struct {
-	Blocks             any
-	DetectedBarcodes   any
-	DetectedLanguages  any
-	Dimension          any
-	FormFields         any
-	Image              any
+	// The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred)
+	Blocks any
+	// Real barcodes Document AI detected on this page, each with its own decoded `barcode` value and location. (AI-inferred)
+	DetectedBarcodes any
+	// The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred)
+	DetectedLanguages any
+	// The real width and height, in the page's own coordinate units, of this document page. (AI-inferred)
+	Dimension any
+	// Real key-value form fields Document AI detected on this page. (AI-inferred)
+	FormFields any
+	// The real, embedded raster image of this document page, when the original document image is included in the response. (AI-inferred)
+	Image any
+	// Real, automated image quality scoring for this document page, flagging any `detected_defects`. (AI-inferred)
 	ImageQualityScores any
-	Layout             any
-	Lines              any
-	PageNumber         any
-	Paragraphs         any
-	Provenance         any
-	Symbols            any
-	Tables             any
-	Tokens             any
-	Transforms         any
-	VisualElements     any
+	// The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred)
+	Layout any
+	// Real, detected lines of text on this document page, each grouping a real run of `tokens`. (AI-inferred)
+	Lines any
+	// The real, one-based page number of this page within the document. (AI-inferred)
+	PageNumber any
+	// Real, detected paragraphs of text on this document page, each grouping one or more `lines`. (AI-inferred)
+	Paragraphs any
+	// Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
+	Provenance any
+	// Real, individual detected characters or symbols on this document page, the finest-grained real text detection unit. (AI-inferred)
+	Symbols any
+	// Real, detected tables on this document page, each with its own `header_rows` and `body_rows`. (AI-inferred)
+	Tables any
+	// Real, detected words or word-like units on this document page, each grouping one or more `symbols`. (AI-inferred)
+	Tokens any
+	// A real 2D affine transform matrix applied to reposition this page's own detected content, when the page has been de-skewed or rotated for processing. (AI-inferred)
+	Transforms any
+	// Real, detected non-text visual elements (such as a checkbox or signature) on this document page. (AI-inferred)
+	VisualElements any
 }
 
 type Document_CloudAiDocument_Revisions_HumanReview struct {
-	State        any
+	// The real, current review state (e.g. rejected, needs review) of this document revision's own human review. (AI-inferred)
+	State any
+	// Real, additional detail explaining this document revision's own human review state. (AI-inferred)
 	StateMessage any
 }
 
 type Document_CloudAiDocument_Revisions struct {
-	Agent       any
-	CreateTime  any
+	// The real name of the processor, human reviewer, or tool that produced this document revision. (AI-inferred)
+	Agent any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// Real, human review status and outcome for this document revision, when it went through Document AI human-in-the-loop review. (AI-inferred)
 	HumanReview any
-	Id          any
-	Parent      any
-	ParentIds   any
-	Processor   any
+	// A stable identifier for this element within the document or schema it belongs to. (AI-inferred)
+	Id any
+	// The resource name of the parent collection this resource is created under or listed from. (AI-inferred)
+	Parent any
+	// The real, prior revision ID(s) this revision was derived from, tracking the document's own edit lineage. (AI-inferred)
+	ParentIds any
+	// The real Document AI processor (its own resource name) that produced this document revision. (AI-inferred)
+	Processor any
 }
 
 type Document_CloudAiDocument_ShardInfo struct {
@@ -381,25 +583,38 @@ type Document_CloudAiDocument_ShardInfo struct {
 }
 
 type Document_CloudAiDocument_TextChanges struct {
+	// The real, literal text of one detected change between this document revision and its own prior revision. (AI-inferred)
 	ChangedText any
-	Provenance  any
-	TextAnchor  any
+	// Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred)
+	Provenance any
+	// A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
+	TextAnchor any
 }
 
 type Document_CloudAiDocument_TextStyles_FontSize struct {
+	// The real, detected font size of this text run. (AI-inferred)
 	Size any
+	// The measurement unit (e.g. points, pixels) a `height`/`width`/`font_size` value in Document AI style metadata is expressed in. (AI-inferred)
 	Unit any
 }
 
 type Document_CloudAiDocument_TextStyles struct {
+	// The real, detected background color of a text run, as a `google.type.Color`. (AI-inferred)
 	BackgroundColor any
-	Color           any
-	FontFamily      any
-	FontSize        any
-	FontWeight      any
-	TextAnchor      any
-	TextDecoration  any
-	TextStyle       any
+	// The real, detected color of this text run, as a `google.type.Color`. (AI-inferred)
+	Color any
+	// The real, detected font family name of this text run. (AI-inferred)
+	FontFamily any
+	// The real, detected font size of a text run. (AI-inferred)
+	FontSize any
+	// The real, detected font weight (e.g. normal, bold) of a text run. (AI-inferred)
+	FontWeight any
+	// A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred)
+	TextAnchor any
+	// The real, detected text decoration (e.g. underline, strikethrough) of this text run. (AI-inferred)
+	TextDecoration any
+	// The real, detected overall style classification (e.g. heading, body text) of this text run. (AI-inferred)
+	TextStyle any
 }
 
 type Document_CloudAiDocument struct {
@@ -441,57 +656,82 @@ type Document_CloudAiDocumentOption struct {
 }
 
 type Document_Document_Properties_DateTimeValues struct {
+	// The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
 	Values any
 }
 
 type Document_Document_Properties_EnumValues struct {
+	// The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
 	Values any
 }
 
 type Document_Document_Properties_FloatValues struct {
+	// The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
 	Values any
 }
 
 type Document_Document_Properties_MapProperty_Fields_EnumValue struct {
+	// This map field's own real, single scalar value. (AI-inferred)
 	Value any
 }
 
 type Document_Document_Properties_MapProperty_Fields_TimestampValue struct {
-	TextValue      any
+	// This document property's own value, when its declared type is text. (AI-inferred)
+	TextValue any
+	// This document property's own value, when its declared type is a timestamp. (AI-inferred)
 	TimestampValue any
 }
 
 type Document_Document_Properties_MapProperty_Fields struct {
-	BooleanValue   any
-	DatetimeValue  any
-	EnumValue      any
-	FloatValue     any
-	IntValue       any
-	StringValue    any
+	// This document property's own value, when its declared type is boolean. (AI-inferred)
+	BooleanValue any
+	// This document property's own value, when its declared type is a date-time. (AI-inferred)
+	DatetimeValue any
+	// One real map field's own value, when that field's declared type is a closed enumeration. (AI-inferred)
+	EnumValue any
+	// This document property's own value, when its declared type is a floating-point number. (AI-inferred)
+	FloatValue any
+	// One real map field's own value, when that field's declared type is an integer. (AI-inferred)
+	IntValue any
+	// One real map field's own value, when that field's declared type is text. (AI-inferred)
+	StringValue any
+	// This document property's own value, when its declared type is a timestamp. (AI-inferred)
 	TimestampValue any
 }
 
 type Document_Document_Properties_MapProperty struct {
+	// The real, named sub-fields (and their own typed values) that make up this map-typed document property. (AI-inferred)
 	Fields any
 }
 
 type Document_Document_Properties_PropertyValues struct {
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
 	Properties any
 }
 
 type Document_Document_Properties_TimestampValues struct {
+	// The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred)
 	Values any
 }
 
 type Document_Document_Properties struct {
-	DateTimeValues  any
-	EnumValues      any
-	FloatValues     any
-	IntegerValues   any
-	MapProperty     any
-	Name            any
-	PropertyValues  any
-	TextValues      any
+	// This document property's own real value(s), when its declared type is date-time. (AI-inferred)
+	DateTimeValues any
+	// This document property's own real value(s), when its declared type is a closed enumeration. (AI-inferred)
+	EnumValues any
+	// This document property's own real value(s), when its declared type is a floating-point number. (AI-inferred)
+	FloatValues any
+	// This document property's own real value(s), when its declared type is an integer. (AI-inferred)
+	IntegerValues any
+	// This document property's own real value, when its declared type is a map of named sub-fields. (AI-inferred)
+	MapProperty any
+	// The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred)
+	Name any
+	// This document property's own real value(s), when its declared type is a nested, structured property (not a simple scalar). (AI-inferred)
+	PropertyValues any
+	// This document property's own real value(s), when its declared type is plain text. (AI-inferred)
+	TextValues any
+	// This document property's own real value(s), when its declared type is a timestamp. (AI-inferred)
 	TimestampValues any
 }
 
@@ -541,26 +781,37 @@ type Document_Document struct {
 }
 
 type Document_Policy_AuditConfigs_AuditLogConfigs struct {
+	// The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred)
 	ExemptedMembers any
-	LogType         any
+	// Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred)
+	LogType any
 }
 
 type Document_Policy_AuditConfigs struct {
+	// Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred)
 	AuditLogConfigs any
-	Service         any
+	// The real Google Cloud service this document's own embedded IAM audit log configuration applies to. (AI-inferred)
+	Service any
 }
 
 type Document_Policy_Bindings_Condition struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// The real Common Expression Language (CEL) expression text of this document IAM policy binding's own condition. (AI-inferred)
+	Expression any
+	// The real, human-readable source location of this document IAM policy binding's own condition expression, used for error reporting. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type Document_Policy_Bindings struct {
+	// The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred)
 	Condition any
-	Members   any
-	Role      any
+	// The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred)
+	Members any
+	// The real IAM role this document-level policy binding grants. (AI-inferred)
+	Role any
 }
 
 type Document_Policy struct {

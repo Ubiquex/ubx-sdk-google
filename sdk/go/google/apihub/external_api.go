@@ -4,26 +4,37 @@ package apihub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExternalApi_Attributes_EnumValues_Values struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Id          any
-	Immutable   any
+	// An identifier for this resource. (AI-inferred)
+	Id any
+	// Whether this custom attribute's own value can't be changed after creation. (AI-inferred)
+	Immutable any
 }
 
 type ExternalApi_Attributes_EnumValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type ExternalApi_Attributes_JsonValues struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type ExternalApi_Attributes struct {
-	Attribute    any
-	EnumValues   any
-	JsonValues   any
+	// A reference to the custom attribute this applies to. (AI-inferred)
+	Attribute any
+	// The selected value(s) of a multi-select enum-typed custom attribute. (AI-inferred)
+	EnumValues any
+	// JSON-typed value(s) for this custom attribute. (AI-inferred)
+	JsonValues any
+	// Multiple text value(s) for this custom attribute. (AI-inferred)
 	StringValues any
-	UriValues    any
+	// URI-typed value(s) for this custom attribute. (AI-inferred)
+	UriValues any
 }
 
 type ExternalApi_Documentation struct {

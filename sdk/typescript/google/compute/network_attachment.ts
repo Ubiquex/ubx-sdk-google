@@ -2,17 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NetworkAttachment_ConnectionEndpoints {
+  /** The IP address of the connection endpoint. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  /** The IPv6 address of the connection endpoint that is attached to the network attachment. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
+  /** The project ID or project number of the project that contains the connection endpoint resource. (AI-inferred) */
   projectIdOrNum?: string | Computed<string>;
+  /** List of secondary IP CIDR ranges from the subnetwork that this connection endpoint is allowed to use. If empty, all secondary ranges of the subnetwork are permitted. (AI-inferred) */
   secondaryIpCidrRanges?: string[] | Computed<string[]>;
   serviceClassId?: string | Computed<string>;
+  /** The status of the connection endpoint, which can be one of: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, or STATUS_UNSPECIFIED. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The subnetwork URL of the connected endpoint. (AI-inferred) */
   subnetwork?: string | Computed<string>;
+  /** The CIDR range of the subnetwork that this connection endpoint is associated with. (AI-inferred) */
   subnetworkCidrRange?: string | Computed<string>;
 }
 
 export interface NetworkAttachmentConfig {
+  /** The connection preference of the network attachment, indicating how connection requests are handled. ACCEPT_AUTOMATIC automatically accepts all connection requests, ACCEPT_MANUAL requires manual acceptance, and INVALID indicates an invalid value. (AI-inferred) */
   connectionPreference?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -31,6 +39,7 @@ export interface NetworkAttachmentConfig {
 export interface NetworkAttachmentAttrs {
   /** Output only. [Output Only] An array of connections for all the producers connected to this network attachment. */
   connectionEndpoints: NetworkAttachment_ConnectionEndpoints[];
+  /** The connection preference of the network attachment, indicating how connection requests are handled. ACCEPT_AUTOMATIC automatically accepts all connection requests, ACCEPT_MANUAL requires manual acceptance, and INVALID indicates an invalid value. (AI-inferred) */
   connectionPreference: string;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;

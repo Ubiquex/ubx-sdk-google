@@ -4,27 +4,39 @@ package clouddeploy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomTargetType_CustomActions_IncludeSkaffoldModules_Git struct {
+	// A file or object path. (AI-inferred)
 	Path any
-	Ref  any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// A reference to the source repository. (AI-inferred)
 	Repo any
 }
 
 type CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo struct {
-	Path       any
-	Ref        any
+	// A file or object path. (AI-inferred)
+	Path any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// A reference to the source repository. (AI-inferred)
 	Repository any
 }
 
 type CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage struct {
-	Path   any
+	// A file or object path. (AI-inferred)
+	Path any
+	// The source this data or configuration is read from. (AI-inferred)
 	Source any
 }
 
 type CustomTargetType_CustomActions_IncludeSkaffoldModules struct {
-	Configs              any
-	Git                  any
+	// The configuration(s) making up this resource. (AI-inferred)
+	Configs any
+	// Configuration for reading this deployment's own manifests from a Git repository. (AI-inferred)
+	Git any
+	// A reference to the Cloud Build-connected repository this reads from. (AI-inferred)
 	GoogleCloudBuildRepo any
-	GoogleCloudStorage   any
+	// Configuration for reading this deployment's own manifests from Cloud Storage. (AI-inferred)
+	GoogleCloudStorage any
 }
 
 type CustomTargetType_CustomActions struct {

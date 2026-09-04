@@ -13,7 +13,9 @@ class BackupPlan_BackupConfig_EncryptionKey:
 
 @dataclasses.dataclass
 class BackupPlan_BackupConfig_SelectedApplications_NamespacedNames:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The Kubernetes namespace this applies to. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
@@ -23,7 +25,9 @@ class BackupPlan_BackupConfig_SelectedApplications:
 
 @dataclasses.dataclass
 class BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabels:
+    # The key of this label or field. (AI-inferred)
     key: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -57,27 +61,40 @@ class BackupPlan_BackupConfig:
 
 @dataclasses.dataclass
 class BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeek:
+    # The day(s) of the week this schedule runs on. (AI-inferred)
     days_of_week: Any = None
 
 @dataclasses.dataclass
 class BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDate:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # The month component of a date. (AI-inferred)
     month: Any = None
+    # The year component of a date. (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTime:
+    # The hour component of a time value. (AI-inferred)
     hours: Any = None
+    # The minute component of a time value. (AI-inferred)
     minutes: Any = None
+    # The sub-second, nanosecond component of a time value. (AI-inferred)
     nanos: Any = None
+    # The second component of a time value. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows:
+    # Runs this schedule once per day. (AI-inferred)
     daily: Any = None
+    # The day(s) of the week this schedule runs on. (AI-inferred)
     days_of_week: Any = None
+    # How long this operation is allowed to run before timing out. (AI-inferred)
     duration: Any = None
+    # Runs this schedule exactly once, on the specified date. (AI-inferred)
     single_occurrence_date: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass

@@ -2,51 +2,73 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Application_EndpointMatchers {
+  /** The hostname this endpoint matcher matches incoming requests against. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** The port(s) this endpoint matcher matches incoming requests against, alongside `hostname`. (AI-inferred) */
   ports?: number[] | Computed<number[]>;
 }
 
 export interface Application_Upstreams_EgressPolicy {
+  /** The region(s) this upstream's own egress traffic is restricted to. (AI-inferred) */
   regions?: string[] | Computed<string[]>;
 }
 
 export interface Application_Upstreams_External_Endpoints {
+  /** The hostname of this external endpoint. (AI-inferred) */
   hostname?: string | Computed<string>;
+  /** The port of this external endpoint. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
 export interface Application_Upstreams_External {
+  /** The external endpoint(s) (hostname and port) this upstream forwards to. (AI-inferred) */
   endpoints?: Application_Upstreams_External_Endpoints[] | Computed<Application_Upstreams_External_Endpoints[]>;
 }
 
 export interface Application_Upstreams_Network {
+  /** The VPC network this upstream is reached through. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo {
+  /** The encoding of the device-info header: `PROTOBUF`, `JSON`, or `NONE` to omit it. (AI-inferred) */
   outputType?: string | Computed<string>;
 }
 
 export interface Application_Upstreams_ProxyProtocol_ContextualHeaders {
+  /** Whether and how the requesting device's own posture information is attached as a header. (AI-inferred) */
   deviceInfo?: Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo | Computed<Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo>;
+  /** Whether and how routing/dispatch information for this request is attached as a header. (AI-inferred) */
   dispatchInfo?: Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo | Computed<Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo>;
+  /** Whether and how the requesting user's own group membership is attached as a header. (AI-inferred) */
   groupInfo?: Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo | Computed<Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo>;
+  /** The default encoding applied to contextual headers that don't specify their own `output_type`: `PROTOBUF`, `JSON`, or `NONE`. (AI-inferred) */
   outputType?: string | Computed<string>;
+  /** Whether and how the requesting user's own identity is attached as a header. (AI-inferred) */
   userInfo?: Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo | Computed<Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo>;
 }
 
 export interface Application_Upstreams_ProxyProtocol {
+  /** Client-supplied header names allowed to pass through to the upstream unmodified, alongside BeyondCorp's own injected context headers. (AI-inferred) */
   allowedClientHeaders?: string[] | Computed<string[]>;
+  /** Whether the original client's own IP address is forwarded to the upstream in a proxy header. (AI-inferred) */
   clientIp?: boolean | Computed<boolean>;
+  /** Which identity/device/access context BeyondCorp Enterprise attaches to proxied requests as headers, and in what format. (AI-inferred) */
   contextualHeaders?: Application_Upstreams_ProxyProtocol_ContextualHeaders | Computed<Application_Upstreams_ProxyProtocol_ContextualHeaders>;
+  /** How the gateway identifies itself to the upstream in proxied requests: `RESOURCE_NAME` or unspecified. (AI-inferred) */
   gatewayIdentity?: string | Computed<string>;
+  /** Additional caller-defined key/value headers attached to every proxied request to this upstream. (AI-inferred) */
   metadataHeaders?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Application_Upstreams {
+  /** Restricts which region(s) traffic to this upstream is allowed to egress from. (AI-inferred) */
   egressPolicy?: Application_Upstreams_EgressPolicy | Computed<Application_Upstreams_EgressPolicy>;
+  /** Configuration for an upstream reached over the public internet, by hostname and port, rather than through a private network attachment. (AI-inferred) */
   external?: Application_Upstreams_External | Computed<Application_Upstreams_External>;
+  /** Configuration for an upstream reached through a specific VPC network, rather than the public internet. (AI-inferred) */
   network?: Application_Upstreams_Network | Computed<Application_Upstreams_Network>;
+  /** Configuration for headers BeyondCorp Enterprise attaches to proxied requests, carrying identity and device context to the upstream. (AI-inferred) */
   proxyProtocol?: Application_Upstreams_ProxyProtocol | Computed<Application_Upstreams_ProxyProtocol>;
 }
 

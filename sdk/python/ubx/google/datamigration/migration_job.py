@@ -22,7 +22,9 @@ class MigrationJob_DestinationDatabase:
 
 @dataclasses.dataclass
 class MigrationJob_DumpFlags_DumpFlags:
+    # The name of this flag. (AI-inferred)
     name: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -46,13 +48,18 @@ class MigrationJob_MysqlHomogeneousConfig:
 
 @dataclasses.dataclass
 class MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifier:
+    # The name of the database this applies to. (AI-inferred)
     database: Any = None
+    # The name of the schema this applies to. (AI-inferred)
     schema: Any = None
+    # The name of the table this applies to. (AI-inferred)
     table: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs:
+    # Identifies a specific database object (schema, table, or column) this configuration applies to. (AI-inferred)
     object_identifier: Any = None
 
 @dataclasses.dataclass
@@ -154,13 +161,18 @@ class MigrationJob_SqlserverHomogeneousMigrationJobConfig_DagConfig:
 
 @dataclasses.dataclass
 class MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptions:
+    # The path to the certificate used to decrypt this backup. (AI-inferred)
     cert_path: Any = None
+    # The password protecting the private key used to decrypt this backup. (AI-inferred)
     pvk_password: Any = None
+    # The path to the private key used to decrypt this backup. (AI-inferred)
     pvk_path: Any = None
 
 @dataclasses.dataclass
 class MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups:
+    # The name of the database this applies to. (AI-inferred)
     database: Any = None
+    # Configuration for decrypting an encrypted backup file. (AI-inferred)
     encryption_options: Any = None
 
 @dataclasses.dataclass

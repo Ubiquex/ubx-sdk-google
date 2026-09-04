@@ -9,18 +9,27 @@ type OnlineEvaluator_CloudObservability_OpenTelemetry struct {
 }
 
 type OnlineEvaluator_CloudObservability_SessionScope_Filter_Duration struct {
+	// How the observed value is compared against this filter's own threshold, e.g. `GREATER_OR_EQUAL`. (AI-inferred)
 	ComparisonOperator any
-	Value              any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type OnlineEvaluator_CloudObservability_SessionScope_Filter struct {
-	Duration        any
+	// How long this clip, window, or operation lasts. (AI-inferred)
+	Duration any
+	// Restricts this online evaluator's own observability scope to failed model calls. (AI-inferred)
 	ModelCallErrors any
-	ModelCalls      any
-	ToolCallErrors  any
-	ToolCalls       any
+	// Restricts this online evaluator's own observability scope to model calls. (AI-inferred)
+	ModelCalls any
+	// Restricts this online evaluator's own observability scope to failed tool calls. (AI-inferred)
+	ToolCallErrors any
+	// Restricts this online evaluator's own observability scope to tool calls. (AI-inferred)
+	ToolCalls any
+	// The total token count (input plus output) this filter compares against its own threshold. (AI-inferred)
 	TotalTokenUsage any
-	UserTurns       any
+	// Restricts this online evaluator's own observability scope to user conversation turns. (AI-inferred)
+	UserTurns any
 }
 
 type OnlineEvaluator_CloudObservability_SessionScope_InactivityTrigger struct {
@@ -36,7 +45,9 @@ type OnlineEvaluator_CloudObservability_SessionScope struct {
 }
 
 type OnlineEvaluator_CloudObservability_TraceScope_Filter struct {
-	Duration        any
+	// How long this clip, window, or operation lasts. (AI-inferred)
+	Duration any
+	// The total token count (input plus output) this filter compares against its own threshold. (AI-inferred)
 	TotalTokenUsage any
 }
 
@@ -71,278 +82,437 @@ type OnlineEvaluator_Config struct {
 }
 
 type OnlineEvaluator_MetricSources_Metric_BleuSpec struct {
+	// Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred)
 	UseEffectiveOrder any
 }
 
 type OnlineEvaluator_MetricSources_Metric_ComputationBasedMetricSpec struct {
+	// The JSON Schema describing this function's own callable arguments. (AI-inferred)
 	Parameters any
-	Type       any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type OnlineEvaluator_MetricSources_Metric_CustomCodeExecutionSpec struct {
+	// The function within the supplied custom code that computes this metric. (AI-inferred)
 	EvaluationFunction any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints struct {
+	// BCP-47 language codes (e.g. `en-US`) this configuration applies to. (AI-inferred)
 	LanguageCodes any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig struct {
+	// Domain-specific words or phrases to bias transcription toward recognizing correctly. (AI-inferred)
 	AdaptationPhrases any
-	CustomVocabulary  any
-	Diarization       any
-	LanguageAuto      any
-	LanguageCodes     any
-	LanguageHints     any
-	Mode              any
-	WordTimestamp     any
+	// A caller-supplied vocabulary of domain-specific terms to improve transcription accuracy for. (AI-inferred)
+	CustomVocabulary any
+	// Whether transcription identifies and labels individual speakers. (AI-inferred)
+	Diarization any
+	// Whether the spoken language is auto-detected, rather than specified explicitly. (AI-inferred)
+	LanguageAuto any
+	// BCP-47 language codes (e.g. `en-US`) this configuration applies to. (AI-inferred)
+	LanguageCodes any
+	// Candidate language(s) to bias transcription or generation toward, when the language isn't specified explicitly. (AI-inferred)
+	LanguageHints any
+	// Which operating mode this configuration uses. (AI-inferred)
+	Mode any
+	// Whether individual words in a transcript include their own timestamps. (AI-inferred)
+	WordTimestamp any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptions struct {
+	// The compression level applied to generated image output -- higher values mean better quality at a larger file size. (AI-inferred)
 	CompressionQuality any
-	MimeType           any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig struct {
-	AspectRatio        any
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
+	AspectRatio any
+	// Format and compression settings for generated image output. (AI-inferred)
 	ImageOutputOptions any
-	ImageSize          any
-	PersonGeneration   any
-	ProminentPeople    any
+	// The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
+	ImageSize any
+	// Whether generated images may depict people, and if so, which categories are allowed. (AI-inferred)
+	PersonGeneration any
+	// Real, identifiable people generated image output is allowed to depict, when person generation is otherwise restricted. (AI-inferred)
+	ProminentPeople any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio struct {
-	BitRate    any
-	Delivery   any
-	MimeType   any
+	// The audio or video bit rate, in bits per second. (AI-inferred)
+	BitRate any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The audio sample rate, in Hz. (AI-inferred)
 	SampleRate any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	ImageSize   any
-	MimeType    any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
+	ImageSize any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text struct {
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
 	MimeType any
-	Schema   any
+	// A schema describing this value's own expected structure. (AI-inferred)
+	Schema any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video struct {
+	// The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
 	AspectRatio any
-	Delivery    any
-	Duration    any
-	GcsUri      any
-	Resolution  any
+	// How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
+	Delivery any
+	// How long this clip, window, or operation lasts. (AI-inferred)
+	Duration any
+	// A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
+	GcsUri any
+	// The pixel dimensions of this image or video. (AI-inferred)
+	Resolution any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat struct {
+	// Audio content or configuration. (AI-inferred)
 	Audio any
+	// Image content or configuration. (AI-inferred)
 	Image any
-	Text  any
+	// The plain-text content of this Part. (AI-inferred)
+	Text any
+	// Video content or configuration. (AI-inferred)
 	Video any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchema struct {
+	// Whether -- or, given a schema, how -- an `object`-typed value may carry properties beyond those named in `properties`. (AI-inferred)
 	AdditionalProperties any
-	AnyOf                any
-	Default              any
-	Defs                 any
-	Description          any
-	Enum                 any
-	Example              any
-	Format               any
-	Items                any
-	MaxItems             any
-	MaxLength            any
-	MaxProperties        any
-	Maximum              any
-	MinItems             any
-	MinLength            any
-	MinProperties        any
-	Minimum              any
-	Nullable             any
-	Pattern              any
-	Properties           any
-	PropertyOrdering     any
-	Ref                  any
-	Required             any
-	Title                any
-	Type                 any
+	// A list of schemas where a value must satisfy at least one to be valid. (AI-inferred)
+	AnyOf any
+	// The value used when this field is left unset. (AI-inferred)
+	Default any
+	// Named sub-schemas defined once and referenced elsewhere in this schema via `ref`, avoiding repetition. (AI-inferred)
+	Defs any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The exact, closed set of values a `string`-typed schema allows. (AI-inferred)
+	Enum any
+	// A sample value illustrating this schema, for documentation purposes only -- not enforced as a constraint. (AI-inferred)
+	Example any
+	// A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred)
+	Format any
+	// The schema every element of an `array`-typed value must satisfy. (AI-inferred)
+	Items any
+	// The most elements an `array`-typed value may have. (AI-inferred)
+	MaxItems any
+	// The most characters a `string`-typed value may have. (AI-inferred)
+	MaxLength any
+	// The most properties an `object`-typed value may have. (AI-inferred)
+	MaxProperties any
+	// The largest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Maximum any
+	// The fewest elements an `array`-typed value may have. (AI-inferred)
+	MinItems any
+	// The fewest characters a `string`-typed value may have. (AI-inferred)
+	MinLength any
+	// The fewest properties an `object`-typed value may have. (AI-inferred)
+	MinProperties any
+	// The smallest value a `number`/`integer`-typed value may take. (AI-inferred)
+	Minimum any
+	// Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
+	Nullable any
+	// A regular expression a `string`-typed value must match. (AI-inferred)
+	Pattern any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
+	Properties any
+	// The order this schema's own `properties` should appear in when Gemini generates a structured response -- Gemini otherwise has no guaranteed field order for JSON output. (AI-inferred)
+	PropertyOrdering any
+	// A reference to a schema defined under `defs`, by name. (AI-inferred)
+	Ref any
+	// The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred)
+	Required any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoMode struct {
+	// Which factor (e.g. quality, cost, or latency) automatic model routing should prioritize. (AI-inferred)
 	ModelRoutingPreference any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualMode struct {
+	// The name of the Vertex AI model this applies to, e.g. `gemini-3.0-flash`. (AI-inferred)
 	ModelName any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig struct {
-	AutoMode   any
+	// Lets Vertex AI automatically choose which underlying model handles this request, e.g. by cost/latency/quality tradeoff. (AI-inferred)
+	AutoMode any
+	// Pins this request to a specific, caller-chosen model rather than letting Vertex AI route it automatically. (AI-inferred)
 	ManualMode any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig struct {
+	// The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
 	VoiceName any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig struct {
-	MimeType         any
+	// The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
+	MimeType any
+	// The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
 	VoiceSampleAudio any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig struct {
-	PrebuiltVoiceConfig   any
+	// Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
+	PrebuiltVoiceConfig any
+	// Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
 	ReplicatedVoiceConfig any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs struct {
-	Speaker     any
+	// Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
+	Speaker any
+	// The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
 	VoiceConfig any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig struct {
+	// The per-speaker voice assignments making up a `multi_speaker_voice_config`. (AI-inferred)
 	SpeakerVoiceConfigs any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig struct {
-	LanguageCode            any
+	// A BCP-47 language code, e.g. `en-US`. (AI-inferred)
+	LanguageCode any
+	// Assigns distinct synthesized voices to different speakers in a multi-speaker audio response. (AI-inferred)
 	MultiSpeakerVoiceConfig any
-	VoiceConfig             any
+	// The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
+	VoiceConfig any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfig struct {
+	// Whether the model's own intermediate reasoning steps are included in the response, not just the final answer. (AI-inferred)
 	IncludeThoughts any
-	ThinkingBudget  any
-	ThinkingLevel   any
+	// The maximum number of tokens the model may spend on internal reasoning before responding. (AI-inferred)
+	ThinkingBudget any
+	// How much internal reasoning effort the model applies before responding, e.g. `minimal` through `high` -- a coarser control than `thinking_budget`. (AI-inferred)
+	ThinkingLevel any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig struct {
-	AudioTimestamp           any
+	// Whether transcribed segments include their own timestamps. (AI-inferred)
+	AudioTimestamp any
+	// Configuration for how audio is transcribed, e.g. custom vocabulary and diarization settings. (AI-inferred)
 	AudioTranscriptionConfig any
-	CandidateCount           any
-	EnableAffectiveDialog    any
-	FrequencyPenalty         any
-	ImageConfig              any
-	Logprobs                 any
-	MaxOutputTokens          any
-	MediaResolution          any
-	PresencePenalty          any
-	ResponseFormat           any
-	ResponseJsonSchema       any
-	ResponseLogprobs         any
-	ResponseMimeType         any
-	ResponseModalities       any
-	ResponseSchema           any
-	RoutingConfig            any
-	Seed                     any
-	SpeechConfig             any
-	StopSequences            any
-	Temperature              any
-	ThinkingConfig           any
-	TopK                     any
-	TopP                     any
+	// How many independent response candidates to generate for this request. (AI-inferred)
+	CandidateCount any
+	// Whether Gemini adapts its tone to the emotional content of the conversation, and may decline to respond when a reply isn't warranted. (AI-inferred)
+	EnableAffectiveDialog any
+	// Penalizes tokens proportionally to how often they've already appeared in the response so far, reducing repetition. (AI-inferred)
+	FrequencyPenalty any
+	// Configuration for image generation, when the model produces image output. (AI-inferred)
+	ImageConfig any
+	// How many of the most likely tokens, and their log-probabilities, to return alongside each generated token. (AI-inferred)
+	Logprobs any
+	// The maximum number of tokens the response may contain. (AI-inferred)
+	MaxOutputTokens any
+	// The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred)
+	MediaResolution any
+	// Penalizes tokens that have already appeared at all in the response so far, encouraging the model to introduce new topics. (AI-inferred)
+	PresencePenalty any
+	// The structural format the response should be returned in. (AI-inferred)
+	ResponseFormat any
+	// The response's own required structure, expressed as a plain JSON Schema document -- an alternative to the structured `response_schema` field. Requires `response_mime_type` to also be set, and can't be combined with `response_schema`. (AI-inferred)
+	ResponseJsonSchema any
+	// Whether the response includes per-token log-probabilities. (AI-inferred)
+	ResponseLogprobs any
+	// The MIME type the response should be formatted as, e.g. `application/json` for structured output. (AI-inferred)
+	ResponseMimeType any
+	// Which output modalities (e.g. text, image, audio) the model may use in its response. (AI-inferred)
+	ResponseModalities any
+	// The JSON Schema the response's own structured output must conform to. (AI-inferred)
+	ResponseSchema any
+	// Controls whether the model to use is chosen automatically or fixed manually. (AI-inferred)
+	RoutingConfig any
+	// A fixed random seed for sampling, making otherwise-random generation more reproducible across calls. (AI-inferred)
+	Seed any
+	// Configuration controlling how Gemini synthesizes spoken audio in its response. (AI-inferred)
+	SpeechConfig any
+	// Text sequence(s) that, if generated, cause the model to stop producing further output. (AI-inferred)
+	StopSequences any
+	// Controls the randomness of token sampling -- higher values produce more varied, less predictable output. (AI-inferred)
+	Temperature any
+	// Configuration for the model's own extended, internal reasoning ('thinking') before producing a final response. (AI-inferred)
+	ThinkingConfig any
+	// Restricts sampling to the K most probable next tokens at each step, before applying `top_p`/temperature -- a lower value makes output more predictable. (AI-inferred)
+	TopK any
+	// Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred)
+	TopP any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig struct {
-	AutoraterModel   any
-	FlipEnabled      any
+	// The judge model used to automatically score outputs against this metric, when the metric is model-based rather than computed directly. (AI-inferred)
+	AutoraterModel any
+	// Whether this rubric's own pass/fail evaluation is inverted. (AI-inferred)
+	FlipEnabled any
+	// The sampling and output-format settings (temperature, max tokens, response schema, etc.) applied to this generation request. (AI-inferred)
 	GenerationConfig any
-	SamplingCount    any
+	// How many samples are drawn when computing this metric. (AI-inferred)
+	SamplingCount any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpec struct {
-	MetricSpecName       any
+	// The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
+	MetricSpecName any
+	// Configuration parameters specific to this metric's own computation. (AI-inferred)
 	MetricSpecParameters any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig struct {
+	// The function within the supplied custom code that parses the judge model's own response. (AI-inferred)
 	ParsingFunction any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_ResultParserConfig struct {
+	// Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred)
 	CustomCodeParserConfig any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_RubricGenerationSpec struct {
-	ModelConfig        any
-	PromptTemplate     any
-	RubricContentType  any
+	// Configuration for the model used by this job. (AI-inferred)
+	ModelConfig any
+	// The template used to construct the prompt sent to the model. (AI-inferred)
+	PromptTemplate any
+	// The kind of content generated rubrics should assess. (AI-inferred)
+	RubricContentType any
+	// A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
 	RubricTypeOntology any
 }
 
 type OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec struct {
-	AdditionalConfig               any
-	JudgeAutoraterConfig           any
-	MetricPromptTemplate           any
+	// Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
+	AdditionalConfig any
+	// Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
+	JudgeAutoraterConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
 	PredefinedRubricGenerationSpec any
-	ResultParserConfig             any
-	RubricGenerationSpec           any
-	RubricGroupKey                 any
-	SystemInstruction              any
+	// How the judge model's own raw response text is parsed into a final score. (AI-inferred)
+	ResultParserConfig any
+	// Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
+	RubricGenerationSpec any
+	// A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
+	RubricGroupKey any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type OnlineEvaluator_MetricSources_Metric_Metadata_ScoreRange struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Max         any
-	Min         any
-	Step        any
+	// The upper bound. (AI-inferred)
+	Max any
+	// The lower bound. (AI-inferred)
+	Min any
+	// A single step within this run or sequence. (AI-inferred)
+	Step any
 }
 
 type OnlineEvaluator_MetricSources_Metric_Metadata struct {
+	// Additional, metric-specific metadata beyond the standard fields. (AI-inferred)
 	OtherMetadata any
-	ScoreRange    any
-	Title         any
+	// The minimum and maximum values this metric's own score can take. (AI-inferred)
+	ScoreRange any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec_CustomOutputFormatConfig struct {
+	// Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred)
 	ReturnRawOutput any
 }
 
 type OnlineEvaluator_MetricSources_Metric_PairwiseMetricSpec struct {
-	BaselineResponseFieldName  any
+	// The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred)
+	BaselineResponseFieldName any
+	// The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred)
 	CandidateResponseFieldName any
-	CustomOutputFormatConfig   any
-	MetricPromptTemplate       any
-	SystemInstruction          any
+	// Configuration for the shape of a custom-formatted metric output. (AI-inferred)
+	CustomOutputFormatConfig any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type OnlineEvaluator_MetricSources_Metric_PointwiseMetricSpec struct {
+	// Configuration for the shape of a custom-formatted metric output. (AI-inferred)
 	CustomOutputFormatConfig any
-	MetricPromptTemplate     any
-	SystemInstruction        any
+	// The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
+	MetricPromptTemplate any
+	// A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
+	SystemInstruction any
 }
 
 type OnlineEvaluator_MetricSources_Metric_RougeSpec struct {
-	RougeType      any
+	// Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred)
+	RougeType any
+	// Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred)
 	SplitSummaries any
-	UseStemmer     any
+	// Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred)
+	UseStemmer any
 }
 
 type OnlineEvaluator_MetricSources_Metric struct {
-	AggregationMetrics         any
-	BleuSpec                   any
+	// Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred)
+	AggregationMetrics any
+	// Configuration for computing the BLEU text-similarity metric. (AI-inferred)
+	BleuSpec any
+	// Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
 	ComputationBasedMetricSpec any
-	CustomCodeExecutionSpec    any
-	ExactMatchSpec             any
-	LlmBasedMetricSpec         any
-	Metadata                   any
-	PairwiseMetricSpec         any
-	PointwiseMetricSpec        any
-	PredefinedMetricSpec       any
-	RougeSpec                  any
+	// Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred)
+	CustomCodeExecutionSpec any
+	// Configuration for computing an exact-string-match metric. (AI-inferred)
+	ExactMatchSpec any
+	// Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
+	LlmBasedMetricSpec any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Metadata any
+	// Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred)
+	PairwiseMetricSpec any
+	// Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred)
+	PointwiseMetricSpec any
+	// Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
+	PredefinedMetricSpec any
+	// Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred)
+	RougeSpec any
 }
 
 type OnlineEvaluator_MetricSources struct {
-	Metric             any
+	// The metric this result was computed for. (AI-inferred)
+	Metric any
+	// The full resource name of the metric this applies to. (AI-inferred)
 	MetricResourceName any
 }
 
 type OnlineEvaluator_StateDetails struct {
+	// The message content. (AI-inferred)
 	Message any
 }
 

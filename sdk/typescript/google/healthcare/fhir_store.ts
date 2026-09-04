@@ -37,99 +37,145 @@ export interface FhirStore_NotificationConfig {
 }
 
 export interface FhirStore_NotificationConfigs {
+  /** A reference to the Pub/Sub topic notifications are published to. (AI-inferred) */
   pubsubTopic?: string | Computed<string>;
+  /** Whether the full resource content is included in the notification, rather than just its own reference. (AI-inferred) */
   sendFullResource?: boolean | Computed<boolean>;
+  /** Whether the resource's own prior content is included in the notification when it's deleted. (AI-inferred) */
   sendPreviousResourceOnDelete?: boolean | Computed<boolean>;
 }
 
 export interface FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfig {
+  /** How long, in milliseconds, this consent or resource remains valid. (AI-inferred) */
   expirationMs?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig {
+  /** Partitions BigQuery export by each resource's own last-updated time. (AI-inferred) */
   lastUpdatedPartitionConfig?: FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfig | Computed<FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfig>;
+  /** The maximum nesting depth allowed when parsing recursive HL7v2 structures. (AI-inferred) */
   recursiveStructureDepth?: string | Computed<string>;
+  /** Which schema representation this parser uses. (AI-inferred) */
   schemaType?: string | Computed<string>;
 }
 
 export interface FhirStore_StreamConfigs_BigqueryDestination {
+  /** A reference to the dataset this applies to. (AI-inferred) */
   datasetUri?: string | Computed<string>;
+  /** Whether this operation proceeds even if it would otherwise be blocked by a safety check. (AI-inferred) */
   force?: boolean | Computed<boolean>;
+  /** Configuration for how HL7v2 messages are parsed against a schema. (AI-inferred) */
   schemaConfig?: FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig | Computed<FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig>;
+  /** Whether export output overwrites, appends to, or requires an empty destination table. (AI-inferred) */
   writeDisposition?: string | Computed<string>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList {
+  /** The DICOM tag(s) this applies to. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom {
+  /** A predefined profile determining which resource types/fields this filter includes. (AI-inferred) */
   filterProfile?: string | Computed<string>;
+  /** The field(s) explicitly kept, with everything else removed. (AI-inferred) */
   keepList?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList>;
+  /** The field(s) explicitly removed, with everything else kept. (AI-inferred) */
   removeList?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList>;
+  /** Whether resource ID fields are excluded from de-identification. (AI-inferred) */
   skipIdRedaction?: boolean | Computed<boolean>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataList {
+  /** The action to perform. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The path(s) this applies to. (AI-inferred) */
   paths?: string[] | Computed<string[]>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir {
+  /** Whether unspecified FHIR extension(s) are kept by default, rather than stripped. (AI-inferred) */
   defaultKeepExtensions?: boolean | Computed<boolean>;
+  /** Per-field de-identification configuration, one entry per targeted field. (AI-inferred) */
   fieldMetadataList?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataList[] | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataList[]>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Image {
+  /** How free-text fields are redacted during de-identification. (AI-inferred) */
   textRedactionMode?: string | Computed<string>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfig {
+  /** The character substituted in place of each masked character. (AI-inferred) */
   maskingCharacter?: string | Computed<string>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrapped {
+  /** The encryption key used for this cryptographic transformation. (AI-inferred) */
   cryptoKey?: string | Computed<string>;
+  /** The crypto key's own bytes, encrypted by a Cloud KMS key. (AI-inferred) */
   wrappedKey?: string | Computed<string>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig {
+  /** The encryption key used for this cryptographic transformation. (AI-inferred) */
   cryptoKey?: string | Computed<string>;
+  /** A crypto key wrapped by Cloud KMS. (AI-inferred) */
   kmsWrapped?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrapped | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrapped>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations {
+  /** Replaces characters in a matching value with a fixed masking character. (AI-inferred) */
   characterMaskConfig?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfig | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfig>;
+  /** De-identifies a value by replacing it with a cryptographic hash. (AI-inferred) */
   cryptoHashConfig?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig>;
+  /** De-identifies dates by shifting them a random, per-context number of days. (AI-inferred) */
   dateShiftConfig?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig>;
+  /** The info type(s) this applies to. (AI-inferred) */
   infoTypes?: string[] | Computed<string[]>;
+  /** De-identifies a value by removing it entirely. (AI-inferred) */
   redactConfig?: unknown | Computed<unknown>;
+  /** De-identifies a value by replacing it with its own detected info type name. (AI-inferred) */
   replaceWithInfoTypeConfig?: unknown | Computed<unknown>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text {
+  /** Further de-identification transformation(s) applied on top of the primary configuration. (AI-inferred) */
   additionalTransformations?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations[] | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations[]>;
+  /** Info type(s) excluded from de-identification, even if they'd otherwise match. (AI-inferred) */
   excludeInfoTypes?: string[] | Computed<string[]>;
+  /** The transformation(s) applied to matching data. (AI-inferred) */
   transformations?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations[] | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations[]>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config {
+  /** Configuration specific to DICOM (medical imaging) data. (AI-inferred) */
   dicom?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom>;
+  /** Configuration specific to FHIR (structured clinical) data. (AI-inferred) */
   fhir?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir>;
+  /** Configuration specific to image data within DICOM instances. (AI-inferred) */
   image?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Image | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Image>;
+  /** The plain-text content. (AI-inferred) */
   text?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text>;
+  /** Whether processing happens within the resource's own region, rather than a multi-region location. (AI-inferred) */
   useRegionalDataProcessing?: boolean | Computed<boolean>;
 }
 
 export interface FhirStore_StreamConfigs_DeidentifiedStoreDestination {
+  /** The configuration for this resource. (AI-inferred) */
   config?: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config>;
+  /** A reference to the data store this applies to. (AI-inferred) */
   store?: string | Computed<string>;
 }
 
 export interface FhirStore_StreamConfigs {
+  /** The BigQuery table this operation's own output is written to. (AI-inferred) */
   bigqueryDestination?: FhirStore_StreamConfigs_BigqueryDestination | Computed<FhirStore_StreamConfigs_BigqueryDestination>;
+  /** The destination store de-identified output is written to. (AI-inferred) */
   deidentifiedStoreDestination?: FhirStore_StreamConfigs_DeidentifiedStoreDestination | Computed<FhirStore_StreamConfigs_DeidentifiedStoreDestination>;
+  /** The FHIR resource type(s) this applies to. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
 }
 

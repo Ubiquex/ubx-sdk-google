@@ -4,389 +4,572 @@ package dlp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_ActionDetails_DeidentifyDetails_DeidentifyStats struct {
-	TransformationCount      any
+	// How many values this job successfully transformed. (AI-inferred)
+	TransformationCount any
+	// How many values this job failed to transform. (AI-inferred)
 	TransformationErrorCount any
-	TransformedBytes         any
+	// The total number of bytes this job transformed. (AI-inferred)
+	TransformedBytes any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor struct {
-	Blue  any
+	// The blue color channel value. (AI-inferred)
+	Blue any
+	// The green color channel value. (AI-inferred)
 	Green any
-	Red   any
+	// The red color channel value. (AI-inferred)
+	Red any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore struct {
+	// The sensitivity level value itself (e.g. `LOW`/`MODERATE`/`HIGH`) carried by a `sensitivity_score`. (AI-inferred)
 	Score any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes struct {
-	Name             any
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
+	Name any
+	// A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
 	SensitivityScore any
-	Version          any
+	// The version identifier of this info type or template, distinguishing revisions of the same underlying detector or ruleset. (AI-inferred)
+	Version any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes struct {
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
 	InfoTypes any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms struct {
-	AllInfoTypes      any
-	AllText           any
-	RedactionColor    any
+	// Applies this transformation to every detected info type, rather than a specific selected list. (AI-inferred)
+	AllInfoTypes any
+	// Applies this transformation to all detected text, rather than only specific info types. (AI-inferred)
+	AllText any
+	// The RGB color used to redact matched regions in an image. (AI-inferred)
+	RedactionColor any
+	// Restricts this transformation to specific, named info type(s), rather than all of them. (AI-inferred)
 	SelectedInfoTypes any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations struct {
+	// The transformation(s) to apply. (AI-inferred)
 	Transforms any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue struct {
-	Day   any
+	// The day-of-month component of a date value. (AI-inferred)
+	Day any
+	// The month component of a date value. (AI-inferred)
 	Month any
-	Year  any
+	// The year component of a date value. (AI-inferred)
+	Year any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max struct {
-	BooleanValue   any
-	DateValue      any
+	// A `true`/`false` value, populated when this `Value`'s own type is boolean. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	BooleanValue any
+	// A calendar date value (year/month/day), populated when this `Value`'s own type is a date. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	DateValue any
+	// A day-of-the-week value (e.g. `MONDAY`), populated when this `Value`'s own type is a weekday. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
 	DayOfWeekValue any
-	FloatValue     any
-	IntegerValue   any
-	StringValue    any
-	TimeValue      any
+	// A floating-point number, populated when this `Value`'s own type is a float. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	FloatValue any
+	// A whole-number value, populated when this `Value`'s own type is an integer. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	IntegerValue any
+	// A text value, populated when this `Value`'s own type is a string. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	StringValue any
+	// A time-of-day value (hour/minute/second), populated when this `Value`'s own type is a time and the date/timezone aren't significant. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
+	TimeValue any
+	// A full date-and-time value, populated when this `Value`'s own type is a timestamp. Mutually exclusive with this message's other `*_value` fields. (AI-inferred)
 	TimestampValue any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets struct {
-	Max              any
-	Min              any
+	// The upper bound of this range. (AI-inferred)
+	Max any
+	// The lower bound of this range. (AI-inferred)
+	Min any
+	// The value substituted in place of the original. (AI-inferred)
 	ReplacementValue any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig struct {
+	// The bucket range(s) making up this bucketing configuration. (AI-inferred)
 	Buckets any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore struct {
-	CharactersToSkip         any
+	// How many characters at the start/end are left unmasked, before masking the rest. (AI-inferred)
+	CharactersToSkip any
+	// A predefined character set (e.g. punctuation) skipped over when applying this transformation. (AI-inferred)
 	CommonCharactersToIgnore any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig struct {
+	// Character(s) skipped over (left as-is) when applying this transformation. (AI-inferred)
 	CharactersToIgnore any
-	MaskingCharacter   any
-	NumberToMask       any
-	ReverseOrder       any
+	// The character substituted in place of each masked character. (AI-inferred)
+	MaskingCharacter any
+	// How many characters to mask, counting from the position `reverse_order` specifies. (AI-inferred)
+	NumberToMask any
+	// Whether masking counts characters from the end of the value rather than the start. (AI-inferred)
+	ReverseOrder any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context struct {
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
 	Name any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped struct {
+	// The resource name of the Cloud KMS key used to unwrap `wrapped_key`. (AI-inferred)
 	CryptoKeyName any
-	WrappedKey    any
+	// The crypto key's own bytes, encrypted (wrapped) by the Cloud KMS key named in `crypto_key_name`. (AI-inferred)
+	WrappedKey any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped struct {
+	// The raw key bytes themselves. (AI-inferred)
 	Key any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey struct {
+	// A crypto key wrapped by Cloud KMS -- Sensitive Data Protection calls KMS to unwrap `wrapped_key` using `crypto_key_name` before use. (AI-inferred)
 	KmsWrapped any
-	Transient  any
-	Unwrapped  any
+	// A crypto key generated fresh, at random, for this request only -- never persisted or reusable afterward. (AI-inferred)
+	Transient any
+	// A crypto key supplied as raw, unencrypted bytes. Simpler than `kms_wrapped` but carries more risk of the key leaking, since Sensitive Data Protection never handles it wrapped. (AI-inferred)
+	Unwrapped any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig struct {
-	Context           any
-	CryptoKey         any
+	// Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
+	Context any
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
+	CryptoKey any
+	// The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
 	SurrogateInfoType any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfig struct {
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
 	CryptoKey any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig struct {
-	CommonAlphabet    any
-	Context           any
-	CryptoKey         any
-	CustomAlphabet    any
-	Radix             any
+	// A predefined character set (e.g. numeric, alphanumeric) the format-preserving encryption output is drawn from. (AI-inferred)
+	CommonAlphabet any
+	// Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
+	Context any
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
+	CryptoKey any
+	// A caller-defined character set the format-preserving encryption output is drawn from, instead of a predefined `common_alphabet`. (AI-inferred)
+	CustomAlphabet any
+	// The number of distinct symbols the format-preserving encryption's own alphabet uses. (AI-inferred)
+	Radix any
+	// The info type used to mark de-identified content so it can later be re-identified, standing in for the original sensitive value. (AI-inferred)
 	SurrogateInfoType any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig struct {
-	Context        any
-	CryptoKey      any
+	// Surrounding data (e.g. a neighboring column) this rule considers alongside the value itself when deciding whether it's a match. (AI-inferred)
+	Context any
+	// The encryption key used by this cryptographic transformation, as one of: `transient` (a random key generated for this request only), `unwrapped` (the raw key bytes, supplied directly), or `kms_wrapped` (a key wrapped by Cloud KMS). (AI-inferred)
+	CryptoKey any
+	// The most days a date may be shifted earlier. (AI-inferred)
 	LowerBoundDays any
+	// The most days a date may be shifted later. (AI-inferred)
 	UpperBoundDays any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfig struct {
+	// The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
 	BucketSize any
+	// The lowest value included in bucketing. (AI-inferred)
 	LowerBound any
+	// The highest value included in bucketing. (AI-inferred)
 	UpperBound any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfig struct {
+	// The literal value to substitute in. (AI-inferred)
 	NewValue any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordList struct {
+	// The literal words/phrases making up this `word_list`. (AI-inferred)
 	Words any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig struct {
+	// A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
 	WordList any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfig struct {
+	// Which component of the date/time value to keep, e.g. `YEAR` or `MONTH`. (AI-inferred)
 	PartToExtract any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation struct {
-	BucketingConfig           any
-	CharacterMaskConfig       any
+	// Groups numeric or date values into named ranges, replacing the original value with its own bucket label. (AI-inferred)
+	BucketingConfig any
+	// Replaces characters in a matching value with a fixed masking character, optionally leaving some characters unmasked. (AI-inferred)
+	CharacterMaskConfig any
+	// De-identifies a value with a deterministic, reversible cryptographic transform -- the same input always produces the same output, letting values still be joined/grouped on after de-identification. (AI-inferred)
 	CryptoDeterministicConfig any
-	CryptoHashConfig          any
+	// De-identifies a value by replacing it with a cryptographic hash, a one-way transform that can't be reversed. (AI-inferred)
+	CryptoHashConfig any
+	// De-identifies a value using format-preserving encryption (FFX mode) -- the output has the same format (length, character set) as the input. (AI-inferred)
 	CryptoReplaceFfxFpeConfig any
-	DateShiftConfig           any
-	FixedSizeBucketingConfig  any
-	RedactConfig              any
-	ReplaceConfig             any
-	ReplaceDictionaryConfig   any
+	// De-identifies dates by shifting them a random, per-context number of days within a bounded range, preserving date arithmetic (like intervals between events) while hiding the real dates. (AI-inferred)
+	DateShiftConfig any
+	// Groups numeric values into fixed-width ranges between `lower_bound` and `upper_bound`, each `bucket_size` wide. (AI-inferred)
+	FixedSizeBucketingConfig any
+	// De-identifies a value by removing it entirely, leaving no replacement. (AI-inferred)
+	RedactConfig any
+	// De-identifies a value by replacing it with a fixed, generic replacement token. (AI-inferred)
+	ReplaceConfig any
+	// De-identifies a value by replacing it with a value drawn from a supplied word list. (AI-inferred)
+	ReplaceDictionaryConfig any
+	// De-identifies a value by replacing it with its own detected info type name (e.g. `[EMAIL_ADDRESS]`), rather than a fixed token. (AI-inferred)
 	ReplaceWithInfoTypeConfig any
-	TimePartConfig            any
+	// De-identifies a date/time value by keeping only one component of it (e.g. just the year), discarding the rest. (AI-inferred)
+	TimePartConfig any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations struct {
-	InfoTypes               any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
+	// A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
 	PrimitiveTransformation any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations struct {
+	// The transformation(s) making up this configuration. (AI-inferred)
 	Transformations any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions struct {
-	Field    any
+	// A reference to the field this applies to. (AI-inferred)
+	Field any
+	// The comparison operator this condition uses. (AI-inferred)
 	Operator any
-	Value    any
+	// The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
+	Value any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions struct {
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
 	Conditions any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions struct {
-	Conditions      any
+	// The condition(s) that must hold for this rule to apply. (AI-inferred)
+	Conditions any
+	// How multiple conditions in this expression are combined, e.g. `AND` or `OR`. (AI-inferred)
 	LogicalOperator any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition struct {
+	// The condition expression(s) making up this rule. (AI-inferred)
 	Expressions any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations struct {
-	Condition               any
-	Fields                  any
+	// The condition that must hold for this rule to apply. (AI-inferred)
+	Condition any
+	// The field(s) this applies to. (AI-inferred)
+	Fields any
+	// De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred)
 	InfoTypeTransformations any
+	// A single, atomic de-identification transformation (e.g. masking, bucketing, or a crypto transform) applied to a matching value. (AI-inferred)
 	PrimitiveTransformation any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressions struct {
+	// The condition that must hold for this rule to apply. (AI-inferred)
 	Condition any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations struct {
+	// The transformation(s) applied to specific field(s) of a structured record. (AI-inferred)
 	FieldTransformations any
-	RecordSuppressions   any
+	// Condition(s) under which an entire structured record is suppressed (dropped) rather than transformed. (AI-inferred)
+	RecordSuppressions any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_TransformationErrorHandling struct {
+	// On a transformation error, leaves the original value as-is rather than failing the request. (AI-inferred)
 	LeaveUntransformed any
-	ThrowError         any
+	// On a transformation error, fails the whole request rather than leaving the value untransformed. (AI-inferred)
+	ThrowError any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig struct {
-	ImageTransformations        any
-	InfoTypeTransformations     any
-	RecordTransformations       any
+	// The image redaction transformation(s) to apply. (AI-inferred)
+	ImageTransformations any
+	// De-identification transformation(s) applied per matched info type, rather than uniformly across a whole record. (AI-inferred)
+	InfoTypeTransformations any
+	// De-identification transformation(s) applied to structured (tabular) records, field by field. (AI-inferred)
+	RecordTransformations any
+	// How a transformation error on one value is handled -- fail the whole request, or leave that one value untransformed. (AI-inferred)
 	TransformationErrorHandling any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate struct {
-	CreateTime       any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The de-identification transformation(s) to apply to matched content. (AI-inferred)
 	DeidentifyConfig any
-	Description      any
-	DisplayName      any
-	Name             any
-	UpdateTime       any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
+	Name any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions struct {
-	SnapshotDeidentifyTemplate           any
-	SnapshotImageRedactTemplate          any
+	// A frozen copy of the de-identify template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred)
+	SnapshotDeidentifyTemplate any
+	// A frozen copy of the image redaction template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred)
+	SnapshotImageRedactTemplate any
+	// A frozen copy of the structured de-identify template's own content at the time this job ran, preserved even if the template is later changed or deleted. (AI-inferred)
 	SnapshotStructuredDeidentifyTemplate any
 }
 
 type Job_ActionDetails_DeidentifyDetails struct {
-	DeidentifyStats  any
+	// Summary statistics for the de-identification action this job performed. (AI-inferred)
+	DeidentifyStats any
+	// The de-identification configuration that was requested for this job. (AI-inferred)
 	RequestedOptions any
 }
 
 type Job_ActionDetails struct {
+	// Detail about the de-identification action this job performed. (AI-inferred)
 	DeidentifyDetails any
 }
 
 type Job_Errors_Details struct {
-	Code    any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// Additional detail explaining this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result or error. (AI-inferred)
 	Message any
 }
 
 type Job_Errors struct {
-	Details    any
-	ExtraInfo  any
+	// Additional detail explaining this result. (AI-inferred)
+	Details any
+	// Additional detail about this event. (AI-inferred)
+	ExtraInfo any
+	// The timestamp(s) recorded for this event. (AI-inferred)
 	Timestamps any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfig struct {
-	DeidentifyTemplate           any
-	ImageRedactTemplate          any
+	// A reference to the de-identify template defining how matched values are transformed. (AI-inferred)
+	DeidentifyTemplate any
+	// A reference to the template defining how matched values within images are redacted. (AI-inferred)
+	ImageRedactTemplate any
+	// A reference to the de-identify template applied specifically to structured (tabular) data. (AI-inferred)
 	StructuredDeidentifyTemplate any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table struct {
+	// The BigQuery dataset ID this applies to. (AI-inferred)
 	DatasetId any
+	// The Google Cloud project ID this applies to. (AI-inferred)
 	ProjectId any
-	TableId   any
+	// The BigQuery table ID this applies to. (AI-inferred)
+	TableId any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig struct {
+	// A reference to the table this applies to. (AI-inferred)
 	Table any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify struct {
-	CloudStorageOutput                 any
-	FileTypesToTransform               any
-	TransformationConfig               any
+	// The Cloud Storage location de-identified output is written to. (AI-inferred)
+	CloudStorageOutput any
+	// Which file type(s) this de-identification action applies to. (AI-inferred)
+	FileTypesToTransform any
+	// The de-identification transformation(s) to apply. (AI-inferred)
+	TransformationConfig any
+	// Where a detailed, per-value record of this job's own transformations is stored. (AI-inferred)
 	TransformationDetailsStorageConfig any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSub struct {
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
 	Topic any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePath struct {
+	// A file or object path this configuration reads from or writes to. (AI-inferred)
 	Path any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig struct {
+	// The BigQuery schema findings are written under. (AI-inferred)
 	OutputSchema any
-	StoragePath  any
-	Table        any
+	// The Cloud Storage path data is written to or read from. (AI-inferred)
+	StoragePath any
+	// A reference to the table this applies to. (AI-inferred)
+	Table any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings struct {
+	// Where and how this job's own output is written. (AI-inferred)
 	OutputConfig any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions struct {
-	Deidentify                        any
-	JobNotificationEmails             any
-	PubSub                            any
+	// Configuration for de-identifying discovered sensitive data as part of this action. (AI-inferred)
+	Deidentify any
+	// Sends a notification email to the project's own owners/editors when this job completes. (AI-inferred)
+	JobNotificationEmails any
+	// Publishes a notification to a Pub/Sub topic when this job completes. (AI-inferred)
+	PubSub any
+	// Publishes this job's own findings as Data Catalog tags on the scanned resource. (AI-inferred)
 	PublishFindingsToCloudDataCatalog any
-	PublishFindingsToDataplexCatalog  any
-	PublishSummaryToCscc              any
-	PublishToStackdriver              any
-	SaveFindings                      any
+	// Publishes this job's own findings as Dataplex Catalog metadata on the scanned resource. (AI-inferred)
+	PublishFindingsToDataplexCatalog any
+	// Publishes a summary of this job's own findings to Security Command Center. (AI-inferred)
+	PublishSummaryToCscc any
+	// Publishes this job's own findings as Cloud Logging (Stackdriver) log entries. (AI-inferred)
+	PublishToStackdriver any
+	// Saves this job's own findings to a BigQuery table. (AI-inferred)
+	SaveFindings any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex struct {
+	// For a regex with capture groups, which group number(s) the match applies to, instead of the whole match. (AI-inferred)
 	GroupIndexes any
-	Pattern      any
+	// A regular expression a `string`-typed value must match. (AI-inferred)
+	Pattern any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment struct {
-	FixedLikelihood    any
+	// Sets a triggered finding's likelihood to this exact value, overriding whatever it would otherwise have been. (AI-inferred)
+	FixedLikelihood any
+	// Shifts a triggered finding's likelihood up or down by this many levels, relative to whatever it would otherwise have been. (AI-inferred)
 	RelativeLikelihood any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity struct {
-	WindowAfter  any
+	// How many characters after a finding this hotword rule scans for a match. (AI-inferred)
+	WindowAfter any
+	// How many characters before a finding this hotword rule scans for a match. (AI-inferred)
 	WindowBefore any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule struct {
-	HotwordRegex         any
+	// A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
+	HotwordRegex any
+	// How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
 	LikelihoodAdjustment any
-	Proximity            any
+	// The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
+	Proximity any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules struct {
+	// A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
 	HotwordRule any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary struct {
+	// A `gs://` Cloud Storage path this configuration reads from. (AI-inferred)
 	CloudStoragePath any
-	WordList         any
+	// A custom info type defined by an explicit, literal list of words/phrases to match, rather than a regex or dictionary file. (AI-inferred)
+	WordList any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch struct {
-	Id    any
+	// An identifier for this item. (AI-inferred)
+	Id any
+	// The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
 	Value any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel struct {
+	// Which label field(s) on a Google Drive file are inspected. (AI-inferred)
 	LabelFieldsToMatch any
-	LabelId            any
+	// The identifier of the Google Drive label this applies to. (AI-inferred)
+	LabelId any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel struct {
+	// A globally unique identifier. (AI-inferred)
 	Guid any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType struct {
+	// Configuration for inspecting Google Drive file labels as part of this scan. (AI-inferred)
 	GoogleDriveLabel any
+	// A Google Drive sensitivity label applied to a file, treated as a signal of the file's own real sensitivity. (AI-inferred)
 	SensitivityLabel any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression struct {
-	KeyRegex   any
+	// A regular expression matching against metadata key names. (AI-inferred)
+	KeyRegex any
+	// A regular expression matching against metadata values. (AI-inferred)
 	ValueRegex any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredType struct {
+	// Output only. The timestamp when this resource was created. (AI-inferred)
 	CreateTime any
-	Name       any
+	// The identifying name for this resource, its own field, or its own info type. (AI-inferred)
+	Name any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes struct {
-	DetectionRules             any
-	Dictionary                 any
-	ExclusionType              any
-	FileLabelInfoType          any
-	InfoType                   any
-	Likelihood                 any
+	// The rule(s) that adjust match likelihood for this custom info type based on surrounding context. (AI-inferred)
+	DetectionRules any
+	// A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
+	Dictionary any
+	// Whether a match against this rule excludes the finding from results, or leaves it unaffected. (AI-inferred)
+	ExclusionType any
+	// Reports a Google Drive file's own applied label(s) as findings, treating the label itself as sensitive information to detect. (AI-inferred)
+	FileLabelInfoType any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
+	InfoType any
+	// How confident Sensitive Data Protection is that this is a real match, from `VERY_UNLIKELY` to `VERY_LIKELY`. (AI-inferred)
+	Likelihood any
+	// A condition matching against a specific metadata key/value pair on the scanned object. (AI-inferred)
 	MetadataKeyValueExpression any
-	Regex                      any
-	SensitivityScore           any
-	StoredType                 any
-	SurrogateType              any
+	// A regular expression this rule matches against. (AI-inferred)
+	Regex any
+	// A data profile's own assessed sensitivity, e.g. `LOW`, `MODERATE`, or `HIGH` -- how sensitive the discovered data is, independent of how likely a specific finding is to be correct. (AI-inferred)
+	SensitivityScore any
+	// A reference to a previously created custom info type (a stored dictionary or regex) to reuse here. (AI-inferred)
+	StoredType any
+	// Marks de-identified content with a caller-defined info type name, so it can later be recognized and re-identified. (AI-inferred)
+	SurrogateType any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits_MaxFindingsPerInfoType struct {
-	InfoType    any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
+	InfoType any
+	// The maximum number of findings to report before stopping. (AI-inferred)
 	MaxFindings any
 }
 
@@ -400,62 +583,91 @@ type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits struct {
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_MinLikelihoodPerInfoType struct {
-	InfoType      any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
+	InfoType any
+	// The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
 	MinLikelihood any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType struct {
-	Encloses    any
+	// Whether the redaction region fully contains the finding's own bounding box. (AI-inferred)
+	Encloses any
+	// Whether the finding's own bounding box lies entirely within the redaction region. (AI-inferred)
 	FullyInside any
-	Overlaps    any
+	// Whether the redaction region and the finding's own bounding box share any area at all. (AI-inferred)
+	Overlaps any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings struct {
+	// How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
 	ImageContainmentType any
-	InfoTypes            any
-	MinLikelihood        any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
+	// The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
+	MinLikelihood any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes struct {
-	InfoTypes     any
-	MatchingType  any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
+	// How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
+	MatchingType any
+	// The minimum likelihood a potential match must reach to be reported as a finding. (AI-inferred)
 	MinLikelihood any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule struct {
-	AdjustByImageFindings     any
+	// Adjusts a finding's own likelihood based on whether related findings were also detected in an accompanying image. (AI-inferred)
+	AdjustByImageFindings any
+	// Adjusts a finding's own likelihood based on whether other specific info types were also matched nearby. (AI-inferred)
 	AdjustByMatchingInfoTypes any
-	LikelihoodAdjustment      any
+	// How this detection rule changes a finding's own match likelihood when triggered -- either to a `fixed_likelihood` or by a `relative_likelihood` number of levels. (AI-inferred)
+	LikelihoodAdjustment any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword struct {
+	// A regular expression that, when found near a finding, triggers this hotword rule's own `likelihood_adjustment`. (AI-inferred)
 	HotwordRegex any
-	Proximity    any
+	// The window of surrounding text (`window_before`/`window_after`) this hotword rule scans for `hotword_regex`. (AI-inferred)
+	Proximity any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings struct {
+	// How much of the matched area a redaction region must cover relative to the finding: `ENTIRELY_ENCLOSED` (the region must fully contain the finding) or `PARTIALLY_ENCLOSED` (any overlap counts). (AI-inferred)
 	ImageContainmentType any
-	InfoTypes            any
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
+	InfoTypes any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule struct {
-	Dictionary             any
-	ExcludeByHotword       any
+	// A custom info type defined by matching against a supplied word list or file, rather than a regex. (AI-inferred)
+	Dictionary any
+	// Excludes a finding when a specified hotword regex is found nearby, the inverse of a hotword likelihood-boosting rule. (AI-inferred)
+	ExcludeByHotword any
+	// Excludes a finding based on whether related findings were also detected in an accompanying image. (AI-inferred)
 	ExcludeByImageFindings any
-	ExcludeInfoTypes       any
-	MatchingType           any
-	Regex                  any
+	// Excludes findings that also match one of these other info types. (AI-inferred)
+	ExcludeInfoTypes any
+	// How strictly a rule's own pattern must match the finding: full match, partial match, or inverse (matches when the pattern does NOT match). (AI-inferred)
+	MatchingType any
+	// A regular expression this rule matches against. (AI-inferred)
+	Regex any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules struct {
+	// A rule that raises or lowers a finding's own likelihood, rather than excluding it outright. (AI-inferred)
 	AdjustmentRule any
-	ExclusionRule  any
-	HotwordRule    any
+	// A rule that removes matching findings from the results entirely. (AI-inferred)
+	ExclusionRule any
+	// A rule that adjusts a finding's own likelihood when a nearby hotword regex matches. (AI-inferred)
+	HotwordRule any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet struct {
+	// The info types (e.g. `EMAIL_ADDRESS`, `US_SOCIAL_SECURITY_NUMBER`) this configuration inspects for or applies to. (AI-inferred)
 	InfoTypes any
-	Rules     any
+	// The rule(s) making up this configuration. (AI-inferred)
+	Rules any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig struct {
@@ -626,7 +838,9 @@ type Job_InspectDetails_Result_HybridStats struct {
 }
 
 type Job_InspectDetails_Result_InfoTypeStats struct {
-	Count    any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
 	InfoType any
 }
 
@@ -651,15 +865,22 @@ type Job_InspectDetails struct {
 }
 
 type Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_BucketValues struct {
+	// How many of this item there are. (AI-inferred)
 	Count any
+	// The literal value being matched, transformed, or compared, depending on this field's own containing message. (AI-inferred)
 	Value any
 }
 
 type Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets struct {
-	BucketSize               any
-	BucketValueCount         any
-	BucketValues             any
+	// The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
+	BucketSize any
+	// How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValueCount any
+	// The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValues any
+	// The lower bound of this value-frequency histogram bucket. (AI-inferred)
 	ValueFrequencyLowerBound any
+	// The upper bound of this value-frequency histogram bucket. (AI-inferred)
 	ValueFrequencyUpperBound any
 }
 
@@ -669,16 +890,23 @@ type Job_RiskDetails_CategoricalStatsResult struct {
 }
 
 type Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram_BucketValues struct {
+	// The estimated probability of re-identifying an individual from this equivalence class. (AI-inferred)
 	EstimatedProbability any
-	QuasiIdsValues       any
+	// The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
+	QuasiIdsValues any
 }
 
 type Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram struct {
-	BucketSize       any
+	// The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
+	BucketSize any
+	// How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
 	BucketValueCount any
-	BucketValues     any
-	MaxProbability   any
-	MinProbability   any
+	// The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValues any
+	// The upper bound of re-identification probability this histogram bucket covers. (AI-inferred)
+	MaxProbability any
+	// The lower bound of re-identification probability this histogram bucket covers. (AI-inferred)
+	MinProbability any
 }
 
 type Job_RiskDetails_DeltaPresenceEstimationResult struct {
@@ -687,15 +915,22 @@ type Job_RiskDetails_DeltaPresenceEstimationResult struct {
 }
 
 type Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets_BucketValues struct {
+	// How many records fall into this equivalence class -- records sharing the same combination of quasi-identifier values. (AI-inferred)
 	EquivalenceClassSize any
-	QuasiIdsValues       any
+	// The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
+	QuasiIdsValues any
 }
 
 type Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets struct {
-	BucketSize                     any
-	BucketValueCount               any
-	BucketValues                   any
+	// The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
+	BucketSize any
+	// How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValueCount any
+	// The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValues any
+	// The lower bound of this equivalence-class-size histogram bucket. (AI-inferred)
 	EquivalenceClassSizeLowerBound any
+	// The upper bound of this equivalence-class-size histogram bucket. (AI-inferred)
 	EquivalenceClassSizeUpperBound any
 }
 
@@ -705,16 +940,23 @@ type Job_RiskDetails_KAnonymityResult struct {
 }
 
 type Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram_BucketValues struct {
+	// The estimated minimum number of individuals in the broader population who could share this equivalence class's own quasi-identifier values. (AI-inferred)
 	EstimatedAnonymity any
-	QuasiIdsValues     any
+	// The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
+	QuasiIdsValues any
 }
 
 type Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram struct {
-	BucketSize       any
+	// The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
+	BucketSize any
+	// How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
 	BucketValueCount any
-	BucketValues     any
-	MaxAnonymity     any
-	MinAnonymity     any
+	// The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValues any
+	// The upper bound of estimated anonymity this histogram bucket covers. (AI-inferred)
+	MaxAnonymity any
+	// The lower bound of estimated anonymity this histogram bucket covers. (AI-inferred)
+	MinAnonymity any
 }
 
 type Job_RiskDetails_KMapEstimationResult struct {
@@ -723,17 +965,26 @@ type Job_RiskDetails_KMapEstimationResult struct {
 }
 
 type Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets_BucketValues struct {
-	EquivalenceClassSize       any
+	// How many records fall into this equivalence class -- records sharing the same combination of quasi-identifier values. (AI-inferred)
+	EquivalenceClassSize any
+	// How many distinct sensitive values appear within this equivalence class. (AI-inferred)
 	NumDistinctSensitiveValues any
-	QuasiIdsValues             any
-	TopSensitiveValues         any
+	// The specific quasi-identifier value combination this risk analysis result describes. (AI-inferred)
+	QuasiIdsValues any
+	// The most frequently occurring sensitive value(s) within this equivalence class. (AI-inferred)
+	TopSensitiveValues any
 }
 
 type Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets struct {
-	BucketSize                        any
-	BucketValueCount                  any
-	BucketValues                      any
+	// The width of each bucket, for fixed-size numeric bucketing. (AI-inferred)
+	BucketSize any
+	// How many distinct values fall into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValueCount any
+	// The specific value(s) falling into this equivalence-class bucket, for a risk analysis. (AI-inferred)
+	BucketValues any
+	// The lower bound of this sensitive-value-frequency histogram bucket. (AI-inferred)
 	SensitiveValueFrequencyLowerBound any
+	// The upper bound of this sensitive-value-frequency histogram bucket. (AI-inferred)
 	SensitiveValueFrequencyUpperBound any
 }
 
@@ -757,21 +1008,30 @@ type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsCo
 }
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIds struct {
+	// A caller-defined tag attached to this info type or finding. (AI-inferred)
 	CustomTag any
-	Field     any
+	// A reference to the field this applies to. (AI-inferred)
+	Field any
 }
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables struct {
-	QuasiIds          any
+	// The field(s) treated as quasi-identifiers -- not directly identifying on their own, but potentially identifying in combination -- for a k-anonymity or l-diversity risk analysis. (AI-inferred)
+	QuasiIds any
+	// How common this value's own equivalence class is within the dataset, for a risk analysis. (AI-inferred)
 	RelativeFrequency any
-	Table             any
+	// A reference to the table this applies to. (AI-inferred)
+	Table any
 }
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_QuasiIds struct {
+	// A caller-defined tag attached to this info type or finding. (AI-inferred)
 	CustomTag any
-	Field     any
-	Inferred  any
-	InfoType  any
+	// A reference to the field this applies to. (AI-inferred)
+	Field any
+	// A value the risk analysis inferred rather than observed directly. (AI-inferred)
+	Inferred any
+	// A single info type this applies to, by name (e.g. `PERSON_NAME`). (AI-inferred)
+	InfoType any
 }
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig struct {

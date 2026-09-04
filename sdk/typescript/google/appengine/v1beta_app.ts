@@ -97,6 +97,7 @@ export interface V1betaAppAttrs {
   id: string;
   /** Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations). */
   locationId: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
   /** The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one. */
   serviceAccount: string;

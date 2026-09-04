@@ -4,19 +4,27 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Consent_Policies_AuthorizationRule struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	// A boolean expression evaluated to determine whether this rule applies. (AI-inferred)
+	Expression any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Location any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 type Consent_Policies_ResourceAttributes struct {
+	// A reference to the attribute definition this applies to. (AI-inferred)
 	AttributeDefinitionId any
-	Values                any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type Consent_Policies struct {
-	AuthorizationRule  any
+	// The condition determining whether a specific consent authorization applies. (AI-inferred)
+	AuthorizationRule any
+	// Custom attribute(s) attached to this consent resource. (AI-inferred)
 	ResourceAttributes any
 }
 

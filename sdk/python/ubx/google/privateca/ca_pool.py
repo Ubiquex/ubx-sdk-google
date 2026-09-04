@@ -20,26 +20,35 @@ class CaPool_IssuancePolicy_AllowedIssuanceModes:
 
 @dataclasses.dataclass
 class CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurve:
+    # The algorithm used to sign this certificate. (AI-inferred)
     signature_algorithm: Any = None
 
 @dataclasses.dataclass
 class CaPool_IssuancePolicy_AllowedKeyTypes_Rsa:
+    # The maximum RSA key modulus size, in bits, accepted for a certificate request. (AI-inferred)
     max_modulus_size: Any = None
+    # The minimum RSA key modulus size, in bits, accepted for a certificate request. (AI-inferred)
     min_modulus_size: Any = None
 
 @dataclasses.dataclass
 class CaPool_IssuancePolicy_AllowedKeyTypes:
+    # Configures this key as an elliptic-curve key, on the specified curve. (AI-inferred)
     elliptic_curve: Any = None
+    # Configures this key as an RSA key, with the specified modulus size. (AI-inferred)
     rsa: Any = None
 
 @dataclasses.dataclass
 class CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectId:
+    # The numeric component(s) making up an object identifier. (AI-inferred)
     object_id_path: Any = None
 
 @dataclasses.dataclass
 class CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions:
+    # Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
     critical: Any = None
+    # An X.509 object identifier (OID). (AI-inferred)
     object_id: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

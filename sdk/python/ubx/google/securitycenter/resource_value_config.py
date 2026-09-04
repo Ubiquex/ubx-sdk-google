@@ -64,21 +64,34 @@ _ResourceValueConfig_RequestsFields = {
 
 @dataclasses.dataclass
 class ResourceValueConfigConfig:
+    # Optional. The requested amounts of compute resources. Keys are resource names (e.g., "cpu", "memory"). Values are quantities (e.g., "250m", "512Mi"). (AI-inferred)
     requests: Any = None
 
 @dataclasses.dataclass
 class ResourceValueConfigAttrs:
+    # The real cloud provider this lookup is scoped to. (AI-inferred)
     cloud_provider: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Optional. The requested amounts of compute resources. Keys are resource names (e.g., "cpu", "memory"). Values are quantities (e.g., "250m", "512Mi"). (AI-inferred)
     requests: Any = None
+    # The real label selector used to match resources for this object. (AI-inferred)
     resource_labels_selector: Any = None
+    # The canonical resource type name in the format of a resource type as defined by [AIP-123](https://google.aip.dev/123). For example, `"compute.googleapis.com/Instance"`. Optional. (AI-inferred)
     resource_type: Any = None
+    # The real, assigned business-value rating of this resource. (AI-inferred)
     resource_value: Any = None
+    # The Topology Manager aligns resources in following scopes: * container * pod The default scope is 'container' if unspecified. See https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/#topology-manager-scopes (AI-inferred)
     scope: Any = None
+    # The real Sensitive Data Protection (DLP) mapping applied to this resource. (AI-inferred)
     sensitive_data_protection_mapping: Any = None
+    # The real resource-manager tag values applied to this object. (AI-inferred)
     tag_values: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 ResourceValueConfig = ubx.ResourceBinding(

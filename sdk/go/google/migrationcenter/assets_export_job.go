@@ -14,53 +14,76 @@ type AssetsExportJob_PerformanceData struct {
 }
 
 type AssetsExportJob_RecentExecutions_Result_Error struct {
-	Code    any
+	// A machine-readable code identifying this result. (AI-inferred)
+	Code any
+	// Additional detail about this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result. (AI-inferred)
 	Message any
 }
 
 type AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri struct {
+	// A reference to a specific file. (AI-inferred)
 	File any
-	Uri  any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile struct {
+	// The number of columns found in this file. (AI-inferred)
 	ColumnsCount any
-	RowCount     any
-	SignedUri    any
+	// How many rows this file contains. (AI-inferred)
+	RowCount any
+	// A time-limited, pre-authorized URI for downloading this file. (AI-inferred)
+	SignedUri any
 }
 
 type AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFile struct {
+	// A time-limited, pre-authorized URI for downloading this file. (AI-inferred)
 	SignedUri any
 }
 
 type AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries struct {
-	CsvOutputFile  any
-	FileSizeBytes  any
+	// The generated CSV report file. (AI-inferred)
+	CsvOutputFile any
+	// The size of this file, in bytes. (AI-inferred)
+	FileSizeBytes any
+	// The generated Excel report file. (AI-inferred)
 	XlsxOutputFile any
 }
 
 type AssetsExportJob_RecentExecutions_Result_OutputFiles struct {
+	// The entry/entries making up this collection. (AI-inferred)
 	Entries any
 }
 
 type AssetsExportJob_RecentExecutions_Result_SignedUris struct {
+	// Time-limited, pre-authorized URI(s) for downloading these file(s). (AI-inferred)
 	SignedUris any
 }
 
 type AssetsExportJob_RecentExecutions_Result struct {
-	Error       any
+	// Error detail for this failed operation. (AI-inferred)
+	Error any
+	// The generated output file(s) produced by this report. (AI-inferred)
 	OutputFiles any
-	SignedUris  any
+	// Time-limited, pre-authorized URI(s) for downloading these file(s). (AI-inferred)
+	SignedUris any
 }
 
 type AssetsExportJob_RecentExecutions struct {
-	EndTime             any
-	ExecutionId         any
-	ExpireTime          any
+	// When this event or operation ended. (AI-inferred)
+	EndTime any
+	// An identifier for this specific execution run. (AI-inferred)
+	ExecutionId any
+	// The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
+	ExpireTime any
+	// How many assets were requested to be included in this report. (AI-inferred)
 	RequestedAssetCount any
-	Result              any
-	StartTime           any
+	// The result produced by this operation. (AI-inferred)
+	Result any
+	// When this event or operation started. (AI-inferred)
+	StartTime any
 }
 
 type AssetsExportJob_SignedUriDestination struct {

@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MaterializedView_ClusterStates {
+  /** The current replication status of this cluster relative to the rest of the instance. (AI-inferred) */
   replicationState?: string | Computed<string>;
 }
 

@@ -100,20 +100,32 @@ _V3beta1Webhook_ServiceDirectoryFields = {
 
 @dataclasses.dataclass
 class V3beta1WebhookConfig:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
     generic_web_service: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the Service Directory service this webhook is reached through. (AI-inferred)
     service_directory: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class V3beta1WebhookAttrs:
+    # Whether this configuration is currently turned off. (AI-inferred)
     disabled: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configures this webhook as a plain HTTPS service, called with a caller-defined request/response shape. (AI-inferred)
     generic_web_service: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # A reference to the Service Directory service this webhook is reached through. (AI-inferred)
     service_directory: Any = None
+    # How long to wait before this operation is considered to have timed out. (AI-inferred)
     timeout: Any = None
 
 V3beta1Webhook = ubx.ResourceBinding(

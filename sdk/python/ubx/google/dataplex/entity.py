@@ -63,15 +63,22 @@ class Entity_Format:
 
 @dataclasses.dataclass
 class Entity_Schema_Fields:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The field(s) making up this schema or aspect. (AI-inferred)
     fields: Any = None
+    # Whether this schema field is nullable, required, or repeated. (AI-inferred)
     mode: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Entity_Schema_PartitionFields:
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

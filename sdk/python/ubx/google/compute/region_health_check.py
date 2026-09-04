@@ -105,12 +105,16 @@ class RegionHealthCheckConfig:
     check_interval_sec: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
     grpc_health_check: Any = None
     grpc_tls_health_check: Any = None
     # A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
     healthy_threshold: Any = None
+    # The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred)
     http2_health_check: Any = None
+    # Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred)
     http_health_check: Any = None
+    # The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred)
     https_health_check: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
@@ -122,7 +126,9 @@ class RegionHealthCheckConfig:
     self_link: Any = None
     # The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
     source_regions: Any = None
+    # The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred)
     ssl_health_check: Any = None
+    # The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred)
     tcp_health_check: Any = None
     # How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
     timeout_sec: Any = None
@@ -139,12 +145,16 @@ class RegionHealthCheckAttrs:
     creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
+    # The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
     grpc_health_check: Any = None
     grpc_tls_health_check: Any = None
     # A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
     healthy_threshold: Any = None
+    # The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred)
     http2_health_check: Any = None
+    # Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred)
     http_health_check: Any = None
+    # The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred)
     https_health_check: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
@@ -160,7 +170,9 @@ class RegionHealthCheckAttrs:
     self_link: Any = None
     # The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
     source_regions: Any = None
+    # The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred)
     ssl_health_check: Any = None
+    # The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred)
     tcp_health_check: Any = None
     # How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
     timeout_sec: Any = None

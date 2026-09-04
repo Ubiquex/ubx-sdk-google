@@ -2,23 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Generator_LlmModelSettings {
+  /** The name of the model this applies to. (AI-inferred) */
   model?: string | Computed<string>;
+  /** The prompt text played or displayed to the user. (AI-inferred) */
   promptText?: string | Computed<string>;
 }
 
 export interface Generator_ModelParameter {
+  /** The maximum number of tokens the model may generate. (AI-inferred) */
   maxDecodeSteps?: number | Computed<number>;
+  /** Controls the randomness of the model's own output -- higher values produce more varied, less predictable results. (AI-inferred) */
   temperature?: number | Computed<number>;
+  /** Restricts sampling to the K most probable next tokens at each step. (AI-inferred) */
   topK?: number | Computed<number>;
+  /** Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred) */
   topP?: number | Computed<number>;
 }
 
 export interface Generator_Placeholders {
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Generator_PromptText {
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
@@ -44,20 +53,32 @@ const Generator_PromptTextFields: FieldMap = {
 };
 
 export interface GeneratorConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred) */
   llmModelSettings?: Generator_LlmModelSettings | Computed<Generator_LlmModelSettings>;
+  /** A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred) */
   modelParameter?: Generator_ModelParameter | Computed<Generator_ModelParameter>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred) */
   placeholders?: Generator_Placeholders[] | Computed<Generator_Placeholders[]>;
+  /** The prompt text played or displayed to the user. (AI-inferred) */
   promptText?: Generator_PromptText | Computed<Generator_PromptText>;
 }
 
 export interface GeneratorAttrs {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred) */
   llmModelSettings: Generator_LlmModelSettings;
+  /** A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred) */
   modelParameter: Generator_ModelParameter;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred) */
   placeholders: Generator_Placeholders[];
+  /** The prompt text played or displayed to the user. (AI-inferred) */
   promptText: Generator_PromptText;
 }
 

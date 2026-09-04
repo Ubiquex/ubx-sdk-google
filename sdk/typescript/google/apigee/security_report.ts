@@ -2,10 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityReport_Metrics {
+  /** How values are combined across a time window, e.g. sum or average. (AI-inferred) */
   aggregationFunction?: string | Computed<string>;
+  /** A reference to a key/certificate alias in a keystore. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** How this condition's own operands are compared. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

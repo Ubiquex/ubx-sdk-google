@@ -4,9 +4,12 @@ package dataform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowConfig_InvocationConfig_IncludedTargets struct {
+	// The database (BigQuery project) this included target table belongs to. (AI-inferred)
 	Database any
-	Name     any
-	Schema   any
+	// The name of this included target table. (AI-inferred)
+	Name any
+	// The schema (BigQuery dataset) this included target table belongs to. (AI-inferred)
+	Schema any
 }
 
 type WorkflowConfig_InvocationConfig struct {
@@ -27,14 +30,20 @@ type WorkflowConfig_InvocationConfig struct {
 }
 
 type WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatus struct {
-	Code    any
+	// The error's own numeric status code. (AI-inferred)
+	Code any
+	// Additional structured detail about the error. (AI-inferred)
 	Details any
+	// A human-readable description of the error. (AI-inferred)
 	Message any
 }
 
 type WorkflowConfig_RecentScheduledExecutionRecords struct {
-	ErrorStatus        any
-	ExecutionTime      any
+	// The error this scheduled workflow execution failed with, if it didn't succeed. (AI-inferred)
+	ErrorStatus any
+	// When this scheduled workflow execution occurred. (AI-inferred)
+	ExecutionTime any
+	// The workflow invocation this scheduled execution produced. (AI-inferred)
 	WorkflowInvocation any
 }
 

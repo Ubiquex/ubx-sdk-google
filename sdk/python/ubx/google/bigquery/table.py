@@ -28,6 +28,7 @@ class Table_CloneDefinition_BaseTableReference:
 
 @dataclasses.dataclass
 class Table_CloneDefinition:
+    # A reference to the underlying base table. (AI-inferred)
     base_table_reference: Any = None
     # Required. The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format.
     clone_time: Any = None
@@ -78,26 +79,41 @@ class Table_ExternalDataConfiguration_AvroOptions:
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfig:
+    # The fully qualified name of the protocol buffer message type this data is encoded as. (AI-inferred)
     proto_message_name: Any = None
+    # A reference to the schema bundle (e.g. a set of `.proto` definitions) this configuration uses. (AI-inferred)
     schema_bundle_id: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns:
+    # The text encoding this field's own byte values should be interpreted with. (AI-inferred)
     encoding: Any = None
+    # The name of the field this applies to. (AI-inferred)
     field_name: Any = None
+    # Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
     only_read_latest: Any = None
+    # Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
     proto_config: Any = None
+    # The Bigtable column qualifier, in its own raw encoded (byte) form. (AI-inferred)
     qualifier_encoded: Any = None
+    # The Bigtable column qualifier, decoded as a string. (AI-inferred)
     qualifier_string: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies:
+    # The column(s) this applies to. (AI-inferred)
     columns: Any = None
+    # The text encoding this field's own byte values should be interpreted with. (AI-inferred)
     encoding: Any = None
+    # The Bigtable column family this applies to. (AI-inferred)
     family_id: Any = None
+    # Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred)
     only_read_latest: Any = None
+    # Configuration for reading data encoded as protocol buffer messages. (AI-inferred)
     proto_config: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -168,56 +184,86 @@ class Table_ExternalDataConfiguration_ParquetOptions:
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields_Categories:
+    # The literal name(s) this applies to. (AI-inferred)
     names: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfo:
+    # The data governance tag(s) applied to this column. (AI-inferred)
     data_governance_tags: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields_DataPolicies:
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields_DataPolicyList:
+    # Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
     data_policies: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo:
+    # Whether a generated column's own value is computed asynchronously after write, rather than synchronously. (AI-inferred)
     asynchronous: Any = None
+    # The SQL expression computing this generated column's own value. (AI-inferred)
     generation_expression: Any = None
+    # Whether a generated column's own computed value is physically stored, rather than recomputed on each read. (AI-inferred)
     stored: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn:
+    # Detail about a generated column's own computation. (AI-inferred)
     generated_expression_info: Any = None
+    # Whether this column's own value is stored, virtual (computed on read), or not generated at all. (AI-inferred)
     generated_mode: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields_RangeElementType:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Table_ExternalDataConfiguration_Schema_Fields:
+    # The set of category labels this applies to. (AI-inferred)
     categories: Any = None
+    # The collation (locale-aware string comparison rule) applied to a `STRING`-typed field, e.g. `und:ci` for case-insensitive comparison, or empty for the default case-sensitive comparison. (AI-inferred)
     collation: Any = None
+    # Detail about the data governance tag(s) associated with this column. (AI-inferred)
     data_governance_tags_info: Any = None
+    # Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred)
     data_policies: Any = None
+    # The data policies (e.g. dynamic data masking rules) applied to this column. (AI-inferred)
     data_policy_list: Any = None
+    # A SQL expression computing this column's own default value when none is supplied on insert. (AI-inferred)
     default_value_expression: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred)
     fields: Any = None
+    # The native type definition of this column in the external system it's federated from. (AI-inferred)
     foreign_type_definition: Any = None
+    # A column whose own value is computed from other columns, rather than stored directly. (AI-inferred)
     generated_column: Any = None
+    # The most characters a `string`-typed value may have. (AI-inferred)
     max_length: Any = None
+    # Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred)
     mode: Any = None
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The Data Catalog policy tag(s) governing access to this column. (AI-inferred)
     policy_tags: Any = None
+    # For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred)
     precision: Any = None
+    # The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred)
     range_element_type: Any = None
+    # How values are rounded when they exceed this `NUMERIC`/`BIGNUMERIC` field's own scale. (AI-inferred)
     rounding_mode: Any = None
+    # For a `NUMERIC`/`BIGNUMERIC` field, how many digits are kept after the decimal point. (AI-inferred)
     scale: Any = None
+    # The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred)
     timestamp_precision: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -324,35 +370,56 @@ class Table_MaterializedViewStatus:
 
 @dataclasses.dataclass
 class Table_Model_ModelOptions:
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
+    # The loss function optimized during training. (AI-inferred)
     loss_type: Any = None
+    # The kind of ML model this is, e.g. `LINEAR_REG` or `KMEANS`. (AI-inferred)
     model_type: Any = None
 
 @dataclasses.dataclass
 class Table_Model_TrainingRuns_IterationResults:
+    # How long this operation took, in milliseconds. (AI-inferred)
     duration_ms: Any = None
+    # The loss value computed on the evaluation (held-out) dataset. (AI-inferred)
     eval_loss: Any = None
+    # The position of this item within its own containing sequence. (AI-inferred)
     index: Any = None
+    # The step size used to update model weights during training. (AI-inferred)
     learn_rate: Any = None
+    # The loss value computed on the training dataset. (AI-inferred)
     training_loss: Any = None
 
 @dataclasses.dataclass
 class Table_Model_TrainingRuns_TrainingOptions:
+    # Whether training stops automatically once further iterations no longer improve the evaluation metric. (AI-inferred)
     early_stop: Any = None
+    # The L1 regularization strength applied during training. (AI-inferred)
     l1_reg: Any = None
+    # The L2 regularization strength applied during training. (AI-inferred)
     l2_reg: Any = None
+    # The step size used to update model weights during training. (AI-inferred)
     learn_rate: Any = None
+    # How the learning rate changes over training, e.g. fixed or line-search. (AI-inferred)
     learn_rate_strategy: Any = None
+    # The initial learning rate used when line-search learning rate strategy is selected. (AI-inferred)
     line_search_init_learn_rate: Any = None
+    # The maximum number of training iterations. (AI-inferred)
     max_iteration: Any = None
+    # The minimum relative improvement in loss required to continue training another iteration. (AI-inferred)
     min_rel_progress: Any = None
+    # Whether training resumes from a previous model's own learned weights, rather than starting from scratch. (AI-inferred)
     warm_start: Any = None
 
 @dataclasses.dataclass
 class Table_Model_TrainingRuns:
+    # The per-iteration result(s) recorded during model training. (AI-inferred)
     iteration_results: Any = None
+    # When this operation started. (AI-inferred)
     start_time: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     state: Any = None
+    # The hyperparameter(s) and other setting(s) used to train this model. (AI-inferred)
     training_options: Any = None
 
 @dataclasses.dataclass
@@ -364,6 +431,7 @@ class Table_Model:
 
 @dataclasses.dataclass
 class Table_PartitionDefinition_PartitionedColumn:
+    # A reference to a specific field. (AI-inferred)
     field: Any = None
 
 @dataclasses.dataclass
@@ -389,6 +457,7 @@ class Table_RangePartitioning:
 
 @dataclasses.dataclass
 class Table_SnapshotDefinition:
+    # A reference to the underlying base table. (AI-inferred)
     base_table_reference: Any = None
     # Required. The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format.
     snapshot_time: Any = None
@@ -404,13 +473,18 @@ class Table_StreamingBuffer:
 
 @dataclasses.dataclass
 class Table_TableConstraints_ForeignKeys_ColumnReferences:
+    # The column being referenced. (AI-inferred)
     referenced_column: Any = None
+    # The column that references another table/column. (AI-inferred)
     referencing_column: Any = None
 
 @dataclasses.dataclass
 class Table_TableConstraints_ForeignKeys:
+    # The column(s) this foreign key or constraint references. (AI-inferred)
     column_references: Any = None
+    # The field's own name, unique within its containing schema. (AI-inferred)
     name: Any = None
+    # The table being referenced. (AI-inferred)
     referenced_table: Any = None
 
 @dataclasses.dataclass
@@ -435,6 +509,7 @@ class Table_TableReplicationInfo:
     replication_interval_ms: Any = None
     # Optional. Output only. Replication status of configured replication.
     replication_status: Any = None
+    # The table this job's own input is read from. (AI-inferred)
     source_table: Any = None
 
 @dataclasses.dataclass
@@ -450,7 +525,9 @@ class Table_TimePartitioning:
 
 @dataclasses.dataclass
 class Table_View_ForeignDefinitions:
+    # Which SQL dialect this query is written in, e.g. GoogleSQL or legacy SQL. (AI-inferred)
     dialect: Any = None
+    # The SQL query text. (AI-inferred)
     query: Any = None
 
 @dataclasses.dataclass
@@ -497,7 +574,9 @@ class Table_View_PrivacyPolicy:
 
 @dataclasses.dataclass
 class Table_View_UserDefinedFunctionResources:
+    # Routine logic supplied directly as inline source code, rather than referencing an external definition. (AI-inferred)
     inline_code: Any = None
+    # A URI identifying this external resource. (AI-inferred)
     resource_uri: Any = None
 
 @dataclasses.dataclass
@@ -1097,6 +1176,7 @@ class TableConfig:
     expiration_time: Any = None
     # Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties.
     external_catalog_table_options: Any = None
+    # Configuration for reading this table's own data from an external source, rather than BigQuery-managed storage. (AI-inferred)
     external_data_configuration: Any = None
     # Optional. A descriptive name for this table.
     friendly_name: Any = None
@@ -1112,25 +1192,31 @@ class TableConfig:
     materialized_view_status: Any = None
     # Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type.
     max_staleness: Any = None
+    # A reference to the model this applies to. (AI-inferred)
     model: Any = None
     # The partitioning information, which includes managed table, external table and metastore partitioned table partition information.
     partition_definition: Any = None
+    # Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
     range_partitioning: Any = None
     # Optional. If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
     require_partition_filter: Any = None
     # [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production".
     resource_tags: Any = None
+    # The restriction(s) applied to this data. (AI-inferred)
     restrictions: Any = None
     # Schema of a table
     schema: Any = None
     # Information about base table and snapshot time of the snapshot.
     snapshot_definition: Any = None
+    # Statistics about rows recently streamed into this table that haven't yet been written to permanent storage. (AI-inferred)
     streaming_buffer: Any = None
     # The TableConstraints defines the primary key and foreign key.
     table_constraints: Any = None
+    # A reference to a specific BigQuery table. (AI-inferred)
     table_reference: Any = None
     # Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv`
     table_replication_info: Any = None
+    # Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
     time_partitioning: Any = None
     # Describes the definition of a logical view.
     view: Any = None
@@ -1159,6 +1245,7 @@ class TableAttrs:
     expiration_time: Any = None
     # Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties.
     external_catalog_table_options: Any = None
+    # Configuration for reading this table's own data from an external source, rather than BigQuery-managed storage. (AI-inferred)
     external_data_configuration: Any = None
     # Optional. A descriptive name for this table.
     friendly_name: Any = None
@@ -1180,6 +1267,7 @@ class TableAttrs:
     materialized_view_status: Any = None
     # Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type.
     max_staleness: Any = None
+    # A reference to the model this applies to. (AI-inferred)
     model: Any = None
     # Output only. Number of logical bytes that are less than 90 days old.
     num_active_logical_bytes: Any = None
@@ -1209,6 +1297,7 @@ class TableAttrs:
     num_total_physical_bytes: Any = None
     # The partitioning information, which includes managed table, external table and metastore partitioned table partition information.
     partition_definition: Any = None
+    # Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred)
     range_partitioning: Any = None
     # Optional. Output only. Table references of all replicas currently active on the table.
     replicas: Any = None
@@ -1216,6 +1305,7 @@ class TableAttrs:
     require_partition_filter: Any = None
     # [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production".
     resource_tags: Any = None
+    # The restriction(s) applied to this data. (AI-inferred)
     restrictions: Any = None
     # Schema of a table
     schema: Any = None
@@ -1223,12 +1313,15 @@ class TableAttrs:
     self_link: Any = None
     # Information about base table and snapshot time of the snapshot.
     snapshot_definition: Any = None
+    # Statistics about rows recently streamed into this table that haven't yet been written to permanent storage. (AI-inferred)
     streaming_buffer: Any = None
     # The TableConstraints defines the primary key and foreign key.
     table_constraints: Any = None
+    # A reference to a specific BigQuery table. (AI-inferred)
     table_reference: Any = None
     # Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv`
     table_replication_info: Any = None
+    # Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred)
     time_partitioning: Any = None
     # Output only. Describes the table type. The following values are supported: * `TABLE`: A normal BigQuery table. * `VIEW`: A virtual table defined by a SQL query. * `EXTERNAL`: A table that references data stored in an external storage system, such as Google Cloud Storage. * `MATERIALIZED_VIEW`: A precomputed view defined by a SQL query. * `SNAPSHOT`: An immutable BigQuery table that preserves the contents of a base table at a particular time. See additional information on [table snapshots](https://cloud.google.com/bigquery/docs/table-snapshots-intro). The default value is `TABLE`.
     type: Any = None

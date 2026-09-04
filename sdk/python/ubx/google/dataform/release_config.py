@@ -54,14 +54,20 @@ class ReleaseConfig_CodeCompilationConfig:
 
 @dataclasses.dataclass
 class ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatus:
+    # The error's own numeric status code. (AI-inferred)
     code: Any = None
+    # Additional structured detail about the error. (AI-inferred)
     details: Any = None
+    # A human-readable description of the error. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class ReleaseConfig_RecentScheduledReleaseRecords:
+    # The compilation result produced by this scheduled release run, if it succeeded. (AI-inferred)
     compilation_result: Any = None
+    # The error this scheduled release run failed with, if it didn't succeed. (AI-inferred)
     error_status: Any = None
+    # When this scheduled release run occurred. (AI-inferred)
     release_time: Any = None
 
 _ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields = {

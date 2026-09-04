@@ -11,9 +11,12 @@ type ConnectCluster_CapacityConfig struct {
 }
 
 type ConnectCluster_GcpConfig_AccessConfig_NetworkConfigs struct {
+	// Additional subnet(s), beyond `primary_subnet`, this Connect cluster is reachable from. (AI-inferred)
 	AdditionalSubnets any
-	DnsDomainNames    any
-	PrimarySubnet     any
+	// The DNS domain name(s) this Connect cluster is resolvable under from within the configured network. (AI-inferred)
+	DnsDomainNames any
+	// The primary subnet this Connect cluster is reachable from. (AI-inferred)
+	PrimarySubnet any
 }
 
 type ConnectCluster_GcpConfig_AccessConfig struct {

@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PerfSampleSery_BasicPerfSampleSeries:
+    # The real category of performance metric (`memory`, `cpu`, `network`, `graphics`) this basic performance sample series measures. (AI-inferred)
     perf_metric_type: Any = None
+    # The real unit (e.g. `bytesPerSecond`, `framesPerSecond`, `percent`) this performance sample series' own values are measured in. (AI-inferred)
     perf_unit: Any = None
+    # The real, specific metric this performance sample series tracks (e.g. `cpuTotal`, `graphicsFrameRate`, `memoryRssTotal`). (AI-inferred)
     sample_series_label: Any = None
 
 _PerfSampleSery_BasicPerfSampleSeriesFields = {

@@ -8,280 +8,428 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Citations_Sources:
+    # An identifier for this reference. (AI-inferred)
     reference_id: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Citations:
+    # The ending position this range covers. (AI-inferred)
     end_index: Any = None
+    # The source(s) this content is drawn from. (AI-inferred)
     sources: Any = None
+    # The starting position this range covers. (AI-inferred)
     start_index: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_GroundingSupports:
+    # The ending position this range covers. (AI-inferred)
     end_index: Any = None
+    # Whether this content must pass a grounding check before being returned. (AI-inferred)
     grounding_check_required: Any = None
+    # How well this generated content is supported by the retrieved source material. (AI-inferred)
     grounding_score: Any = None
+    # The source(s) this content is drawn from. (AI-inferred)
     sources: Any = None
+    # The starting position this range covers. (AI-inferred)
     start_index: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfo:
+    # Whether this example illustrates desired (rather than undesired) behavior. (AI-inferred)
     positive: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_QueryUnderstandingInfo:
+    # Detail about how this query was automatically classified, e.g. its own intent. (AI-inferred)
     query_classification_info: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadata:
+    # A reference to the document this applies to. (AI-inferred)
     document: Any = None
+    # An identifier for the specific page this applies to. (AI-inferred)
     page_identifier: Any = None
+    # Arbitrary structured data associated with this document. (AI-inferred)
     struct_data: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_References_ChunkInfo:
+    # A reference to the specific content chunk this applies to. (AI-inferred)
     chunk: Any = None
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # Metadata describing this document. (AI-inferred)
     document_metadata: Any = None
+    # How relevant this result is judged to be to the query. (AI-inferred)
     relevance_score: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_References_StructuredDocumentInfo:
+    # A reference to the document this applies to. (AI-inferred)
     document: Any = None
+    # Arbitrary structured data associated with this document. (AI-inferred)
     struct_data: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContents:
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # An identifier for the specific page this applies to. (AI-inferred)
     page_identifier: Any = None
+    # How relevant this result is judged to be to the query. (AI-inferred)
     relevance_score: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo:
+    # The text content of this retrieved chunk. (AI-inferred)
     chunk_contents: Any = None
+    # A reference to the document this applies to. (AI-inferred)
     document: Any = None
+    # Arbitrary structured data associated with this document. (AI-inferred)
     struct_data: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_References:
+    # Detail about a retrieved content chunk used to ground this answer. (AI-inferred)
     chunk_info: Any = None
+    # Detail about a document's own structured (non-plain-text) content. (AI-inferred)
     structured_document_info: Any = None
+    # Detail about a document's own unstructured (plain-text) content. (AI-inferred)
     unstructured_document_info: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_SafetyRatings:
+    # Whether this content was blocked by a safety or policy check. (AI-inferred)
     blocked: Any = None
+    # The category this belongs to. (AI-inferred)
     category: Any = None
+    # The likelihood this classification is correct. (AI-inferred)
     probability: Any = None
+    # A numeric score reflecting the likelihood this classification is correct. (AI-inferred)
     probability_score: Any = None
+    # How serious this finding is. (AI-inferred)
     severity: Any = None
+    # A numeric score reflecting how serious this finding is. (AI-inferred)
     severity_score: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfo:
+    # A reference to the specific content chunk this applies to. (AI-inferred)
     chunk: Any = None
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # How relevant this result is judged to be to the query. (AI-inferred)
     relevance_score: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfo:
+    # A short excerpt of matching content. (AI-inferred)
     snippet: Any = None
+    # Whether a snippet was successfully generated for this result. (AI-inferred)
     snippet_status: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults:
+    # Detail about a retrieved content chunk used to ground this answer. (AI-inferred)
     chunk_info: Any = None
+    # A reference to the document this applies to. (AI-inferred)
     document: Any = None
+    # Detail about how this snippet was extracted and its own relevance. (AI-inferred)
     snippet_info: Any = None
+    # Arbitrary structured data associated with this document. (AI-inferred)
     struct_data: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Steps_Actions_Observation:
+    # The result(s) returned by this search. (AI-inferred)
     search_results: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Steps_Actions_SearchAction:
+    # The search query text. (AI-inferred)
     query: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Steps_Actions:
+    # The result observed after running a tool or action. (AI-inferred)
     observation: Any = None
+    # An action representing a search query executed as part of answering. (AI-inferred)
     search_action: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer_Steps:
+    # The action(s) taken as part of this agent step. (AI-inferred)
     actions: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     state: Any = None
+    # A step of the model's own intermediate reasoning. (AI-inferred)
     thought: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAnswer:
+    # Why answer generation was skipped for this query, when it was. (AI-inferred)
     answer_skipped_reasons: Any = None
+    # The plain-text content of the generated answer. (AI-inferred)
     answer_text: Any = None
+    # The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred)
     citations: Any = None
+    # When this operation completed. (AI-inferred)
     complete_time: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # How well this generated content is supported by the retrieved source material. (AI-inferred)
     grounding_score: Any = None
+    # The specific source span(s) supporting a claim in the generated answer. (AI-inferred)
     grounding_supports: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Detail about how this query was interpreted before retrieval. (AI-inferred)
     query_understanding_info: Any = None
+    # The source reference(s) supporting this content. (AI-inferred)
     references: Any = None
+    # Suggested follow-up question(s) related to this query. (AI-inferred)
     related_questions: Any = None
+    # The safety rating(s) assessed for this content, per category. (AI-inferred)
     safety_ratings: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     state: Any = None
+    # The ordered step(s) making up this process. (AI-inferred)
     steps: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResult:
+    # The phrase(s) blocked from appearing in generated content. (AI-inferred)
     banned_phrases: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_Error:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult:
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # Detail about a Model Armor policy violation detected in this content. (AI-inferred)
     model_armor_violation: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults:
+    # The outcome of checking this content against the configured banned-phrase policy. (AI-inferred)
     banned_phrase_enforcement_result: Any = None
+    # The outcome of checking this content against Model Armor's own safety policies. (AI-inferred)
     model_armor_enforcement_result: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult:
+    # The outcome of evaluating this content against the configured safety/content policies. (AI-inferred)
     policy_results: Any = None
+    # The final determination reached. (AI-inferred)
     verdict: Any = None
+    # Which policy or check flagged this violation. (AI-inferred)
     violation_source: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDate:
+    # The day-of-month component of a date. (AI-inferred)
     day: Any = None
+    # The month component of a date. (AI-inferred)
     month: Any = None
+    # The year component of a date. (AI-inferred)
     year: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations:
+    # The ending position this range covers. (AI-inferred)
     end_index: Any = None
+    # The license this content is distributed under. (AI-inferred)
     license: Any = None
+    # When this document was published. (AI-inferred)
     publication_date: Any = None
+    # The starting position this range covers. (AI-inferred)
     start_index: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata:
+    # The citation(s) linking claims in the generated answer back to their own source content. (AI-inferred)
     citations: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResult:
+    # The result of this operation. (AI-inferred)
     outcome: Any = None
+    # The output produced by this operation. (AI-inferred)
     output: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCode:
+    # A machine-readable code identifying this result. (AI-inferred)
     code: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_File:
+    # An identifier for this specific file. (AI-inferred)
     file_id: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineData:
+    # The literal data payload. (AI-inferred)
     data: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content:
+    # The output of running a preceding block of generated code. (AI-inferred)
     code_execution_result: Any = None
+    # Code generated by the model for the tool-hosted interpreter to run. (AI-inferred)
     executable_code: Any = None
+    # A reference to a specific file. (AI-inferred)
     file: Any = None
+    # Media content embedded directly, as raw bytes plus a MIME type. (AI-inferred)
     inline_data: Any = None
+    # Who this content is attributed to, e.g. user or model. (AI-inferred)
     role: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
+    # A step of the model's own intermediate reasoning. (AI-inferred)
     thought: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadata:
+    # A reference to the document this applies to. (AI-inferred)
     document: Any = None
+    # The domain this applies to. (AI-inferred)
     domain: Any = None
+    # The language this content is in. (AI-inferred)
     language: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
     mime_type: Any = None
+    # An identifier for the specific page this applies to. (AI-inferred)
     page_identifier: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
+    # A resource URI. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References:
     chunk_metadata: Any = None
+    # A short excerpt of code. (AI-inferred)
     code_snippet: Any = None
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # Metadata describing this document. (AI-inferred)
     document_metadata: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_Segments:
+    # The ending position this range covers. (AI-inferred)
     end_index: Any = None
+    # How well this generated content is supported by the retrieved source material. (AI-inferred)
     grounding_score: Any = None
+    # The reference index/indices this citation points to. (AI-inferred)
     reference_indices: Any = None
+    # The starting position this range covers. (AI-inferred)
     start_index: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegments:
+    # An identifier for this specific content item. (AI-inferred)
     content_id: Any = None
+    # The reference index/indices this citation points to. (AI-inferred)
     reference_indices: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata:
+    # The source reference(s) supporting this content. (AI-inferred)
     references: Any = None
+    # The segment(s) making up this content. (AI-inferred)
     segments: Any = None
+    # Visually distinct region(s) (e.g. a table or figure) identified within this document. (AI-inferred)
     visual_segments: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies_GroundedContent:
+    # Detail about which source(s) support specific claims in the generated answer. (AI-inferred)
     citation_metadata: Any = None
+    # The content of this message or resource. (AI-inferred)
     content: Any = None
+    # Detail linking specific spans of generated text back to their own supporting source content. (AI-inferred)
     text_grounding_metadata: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer_Replies:
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # Content that has been verified as grounded in the retrieved source material. (AI-inferred)
     grounded_content: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_DetailedAssistAnswer:
+    # Why assistance was skipped for this request, when it was. (AI-inferred)
     assist_skipped_reasons: Any = None
+    # The outcome of checking this content against the caller's own custom policy. (AI-inferred)
     customer_policy_enforcement_result: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The reply/replies making up this response. (AI-inferred)
     replies: Any = None
+    # The current status of this resource or operation. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Session_Turns_Query:
+    # An identifier for this specific query. (AI-inferred)
     query_id: Any = None
+    # The plain-text content. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Session_Turns:
+    # The generated answer text. (AI-inferred)
     answer: Any = None
+    # The full, structured answer response, including citations and supporting detail. (AI-inferred)
     detailed_answer: Any = None
+    # The full, structured assistance response, including citations and supporting detail. (AI-inferred)
     detailed_assist_answer: Any = None
+    # Whether this configuration is currently active and serving. (AI-inferred)
     live: Any = None
+    # The search query text. (AI-inferred)
     query: Any = None
+    # Configuration for how this query is processed. (AI-inferred)
     query_config: Any = None
 
 _Session_Turns_DetailedAnswer_Citations_SourcesFields = {

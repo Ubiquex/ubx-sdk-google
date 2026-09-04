@@ -4,30 +4,48 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Object_Acl_ProjectTeam struct {
+	// The numeric identifier of the associated Google Cloud project. (AI-inferred)
 	ProjectNumber any
-	Team          any
+	// The team associated with this entity. (AI-inferred)
+	Team any
 }
 
 type Object_Acl struct {
-	Bucket      any
-	Domain      any
-	Email       any
-	Entity      any
-	EntityId    any
-	Etag        any
-	Generation  any
-	Id          any
-	Kind        any
-	Object      any
+	// A reference to the Cloud Storage bucket this applies to. (AI-inferred)
+	Bucket any
+	// The domain this applies to. (AI-inferred)
+	Domain any
+	// An email address associated with this entity. (AI-inferred)
+	Email any
+	// The scope this access grant applies to, e.g. a specific user, group, or `allUsers`. (AI-inferred)
+	Entity any
+	// The unique identifier of this entity. (AI-inferred)
+	EntityId any
+	// A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred)
+	Etag any
+	// The specific object generation this applies to. (AI-inferred)
+	Generation any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The category of this resource. (AI-inferred)
+	Kind any
+	// A reference to the Cloud Storage object this applies to. (AI-inferred)
+	Object any
+	// The project team role associated with this entity. (AI-inferred)
 	ProjectTeam any
-	Role        any
-	SelfLink    any
+	// The access role granted, e.g. `READER` or `OWNER`. (AI-inferred)
+	Role any
+	// The API URL identifying this resource. (AI-inferred)
+	SelfLink any
 }
 
 type Object_Contexts_Custom struct {
+	// Output only. The timestamp when this resource was created. (AI-inferred)
 	CreateTime any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
 	UpdateTime any
-	Value      any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Object_Contexts struct {

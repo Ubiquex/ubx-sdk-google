@@ -24,6 +24,7 @@ type CertificateTemplate_IdentityConstraints struct {
 }
 
 type CertificateTemplate_PassthroughExtensions_AdditionalExtensions struct {
+	// The numeric component(s) making up an object identifier. (AI-inferred)
 	ObjectIdPath any
 }
 
@@ -35,9 +36,12 @@ type CertificateTemplate_PassthroughExtensions struct {
 }
 
 type CertificateTemplate_PredefinedValues_AdditionalExtensions struct {
+	// Whether this X.509 extension is marked critical, meaning a verifier that doesn't understand it must reject the certificate. (AI-inferred)
 	Critical any
+	// An X.509 object identifier (OID). (AI-inferred)
 	ObjectId any
-	Value    any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type CertificateTemplate_PredefinedValues_CaOptions struct {

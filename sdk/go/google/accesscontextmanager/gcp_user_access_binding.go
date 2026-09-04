@@ -13,40 +13,56 @@ type GcpUserAccessBinding_Principal struct {
 }
 
 type GcpUserAccessBinding_RestrictedClientApplications struct {
+	// The OAuth client ID this restriction applies to. (AI-inferred)
 	ClientId any
-	Name     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings struct {
-	MaxInactivity        any
-	SessionLength        any
+	// How long a session may remain inactive before requiring re-authentication. (AI-inferred)
+	MaxInactivity any
+	// How long a session remains valid before requiring re-authentication. (AI-inferred)
+	SessionLength any
+	// Whether session length limits are enforced. (AI-inferred)
 	SessionLengthEnabled any
-	SessionReauthMethod  any
-	UseOidcMaxAge        any
+	// How the user re-authenticates when their own session expires. (AI-inferred)
+	SessionReauthMethod any
+	// Whether the OIDC token's own `max_age` claim is honored when evaluating session freshness. (AI-inferred)
+	UseOidcMaxAge any
 }
 
 type GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings struct {
-	AccessLevels    any
+	// The access level(s) this applies to. (AI-inferred)
+	AccessLevels any
+	// Configuration for session length and re-authentication requirements. (AI-inferred)
 	SessionSettings any
 }
 
 type GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
 }
 
 type GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope struct {
+	// Restricts this rule to a specific client application. (AI-inferred)
 	RestrictedClientApplication any
-	RestrictedProject           any
+	// A reference to the project this restriction applies to. (AI-inferred)
+	RestrictedProject any
 }
 
 type GcpUserAccessBinding_ScopedAccessSettings_Scope struct {
+	// Restricts this rule to a specific client scope. (AI-inferred)
 	ClientScope any
 }
 
 type GcpUserAccessBinding_ScopedAccessSettings struct {
+	// The settings currently in effect for this session. (AI-inferred)
 	ActiveSettings any
+	// Settings evaluated but not yet enforced, letting the effect of a policy change be previewed first. (AI-inferred)
 	DryRunSettings any
-	Scope          any
+	// What this configuration's own scope covers. (AI-inferred)
+	Scope any
 }
 
 var GcpUserAccessBinding_PrincipalFields = ubx.FieldMap{

@@ -4,22 +4,33 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Entry_Aspects_AspectSource struct {
-	CreateTime  any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The version of the data this profile or scan result was computed from. (AI-inferred)
 	DataVersion any
-	UpdateTime  any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Entry_Aspects struct {
+	// Where this metadata aspect's own data was sourced from. (AI-inferred)
 	AspectSource any
-	AspectType   any
-	CreateTime   any
-	Data         any
-	Path         any
-	UpdateTime   any
+	// A reference to the aspect type defining this metadata aspect's own structure. (AI-inferred)
+	AspectType any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The literal data payload. (AI-inferred)
+	Data any
+	// A file or object path. (AI-inferred)
+	Path any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
+	UpdateTime any
 }
 
 type Entry_EntrySource_Ancestors struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 

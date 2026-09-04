@@ -44,11 +44,13 @@ const AlphaNodeTemplate_ServerBindingFields: FieldMap = {
 };
 
 export interface AlphaNodeTemplateConfig {
+  /** The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred) */
   accelerators?: AlphaNodeTemplate_Accelerators[] | Computed<AlphaNodeTemplate_Accelerators[]>;
   /** CPU overcommit. */
   cpuOvercommitType?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
+  /** The disk configuration nodes created from this template provision. (AI-inferred) */
   disks?: AlphaNodeTemplate_Disks[] | Computed<AlphaNodeTemplate_Disks[]>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
@@ -56,11 +58,14 @@ export interface AlphaNodeTemplateConfig {
   nodeAffinityLabels?: Record<string, string> | Computed<Record<string, string>>;
   /** The node type to use for nodes group that are created from this template. */
   nodeType?: string | Computed<string>;
+  /** A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred) */
   nodeTypeFlexibility?: AlphaNodeTemplate_NodeTypeFlexibility | Computed<AlphaNodeTemplate_NodeTypeFlexibility>;
+  /** Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred) */
   serverBinding?: AlphaNodeTemplate_ServerBinding | Computed<AlphaNodeTemplate_ServerBinding>;
 }
 
 export interface AlphaNodeTemplateAttrs {
+  /** The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred) */
   accelerators: AlphaNodeTemplate_Accelerators[];
   /** CPU overcommit. */
   cpuOvercommitType: string;
@@ -68,6 +73,7 @@ export interface AlphaNodeTemplateAttrs {
   creationTimestamp: string;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;
+  /** The disk configuration nodes created from this template provision. (AI-inferred) */
   disks: AlphaNodeTemplate_Disks[];
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
@@ -79,6 +85,7 @@ export interface AlphaNodeTemplateAttrs {
   nodeAffinityLabels: Record<string, string>;
   /** The node type to use for nodes group that are created from this template. */
   nodeType: string;
+  /** A flexible node type specification (e.g. minimum CPU, memory, local SSD), used instead of naming an exact node type. (AI-inferred) */
   nodeTypeFlexibility: AlphaNodeTemplate_NodeTypeFlexibility;
   /** Output only. [Output Only] The name of the region where the node template resides, such as us-central1. */
   region: string;
@@ -86,6 +93,7 @@ export interface AlphaNodeTemplateAttrs {
   selfLink: string;
   /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
   selfLinkWithId: string;
+  /** Whether a node restarted after maintenance must return to the same physical server or may move to any available one. (AI-inferred) */
   serverBinding: AlphaNodeTemplate_ServerBinding;
   /** Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING. */
   status: string;

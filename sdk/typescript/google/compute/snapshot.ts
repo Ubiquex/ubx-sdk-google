@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Snapshot_GuestOsFeatures {
+  /** The type of guest OS feature. This specifies a feature that the guest OS supports or requires. Valid values are: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -52,16 +53,19 @@ export interface SnapshotConfig {
   name?: string | Computed<string>;
   /** Additional snapshot params. */
   params?: Snapshot_Params | Computed<Snapshot_Params>;
+  /** The encryption key used to encrypt the snapshot. This field is computed and output-only, meaning the provider populates it with the key information returned from the API. (AI-inferred) */
   snapshotEncryptionKey?: Snapshot_SnapshotEncryptionKey | Computed<Snapshot_SnapshotEncryptionKey>;
   /** Indicates the type of the snapshot. */
   snapshotType?: string | Computed<string>;
   /** The source disk used to create this snapshot. */
   sourceDisk?: string | Computed<string>;
+  /** The customer-supplied encryption key used to encrypt the source disk from which the snapshot was created. This field is output-only and reflects the key details as used by the API. (AI-inferred) */
   sourceDiskEncryptionKey?: Snapshot_SnapshotEncryptionKey | Computed<Snapshot_SnapshotEncryptionKey>;
   /** The source disk whose recovery checkpoint will be used to create this snapshot. */
   sourceDiskForRecoveryCheckpoint?: string | Computed<string>;
   /** The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot */
   sourceInstantSnapshot?: string | Computed<string>;
+  /** The encryption key information for the source instant snapshot used to create this snapshot. This is a computed, output-only field that provides the customer-supplied encryption key (CSEK) details if the source instant snapshot was encrypted with one. (AI-inferred) */
   sourceInstantSnapshotEncryptionKey?: Snapshot_SnapshotEncryptionKey | Computed<Snapshot_SnapshotEncryptionKey>;
   /** Cloud Storage bucket storage location of the snapshot (regional or multi-regional). */
   storageLocations?: string[] | Computed<string[]>;
@@ -116,6 +120,7 @@ export interface SnapshotAttrs {
   satisfiesPzs: boolean;
   /** Output only. [Output Only] Server-defined URL for the resource. */
   selfLink: string;
+  /** The encryption key used to encrypt the snapshot. This field is computed and output-only, meaning the provider populates it with the key information returned from the API. (AI-inferred) */
   snapshotEncryptionKey: Snapshot_SnapshotEncryptionKey;
   /** Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted. */
   snapshotGroupId: string;
@@ -125,6 +130,7 @@ export interface SnapshotAttrs {
   snapshotType: string;
   /** The source disk used to create this snapshot. */
   sourceDisk: string;
+  /** The customer-supplied encryption key used to encrypt the source disk from which the snapshot was created. This field is output-only and reflects the key details as used by the API. (AI-inferred) */
   sourceDiskEncryptionKey: Snapshot_SnapshotEncryptionKey;
   /** The source disk whose recovery checkpoint will be used to create this snapshot. */
   sourceDiskForRecoveryCheckpoint: string;
@@ -132,6 +138,7 @@ export interface SnapshotAttrs {
   sourceDiskId: string;
   /** The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot */
   sourceInstantSnapshot: string;
+  /** The encryption key information for the source instant snapshot used to create this snapshot. This is a computed, output-only field that provides the customer-supplied encryption key (CSEK) details if the source instant snapshot was encrypted with one. (AI-inferred) */
   sourceInstantSnapshotEncryptionKey: Snapshot_SnapshotEncryptionKey;
   /** Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this snapshot. For example, if you created the snapshot from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used. */
   sourceInstantSnapshotId: string;

@@ -21,43 +21,72 @@ export interface Device_AndroidSpecificAttributes {
 }
 
 export interface Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfo {
+  /** Whether this Chrome browser is managed, unmanaged, or pending enrollment. (AI-inferred) */
   browserManagementState?: string | Computed<string>;
+  /** The version of Chrome this browser reports. (AI-inferred) */
   browserVersion?: string | Computed<string>;
+  /** Whether Chrome's own built-in DNS client is enabled. (AI-inferred) */
   isBuiltInDnsClientEnabled?: boolean | Computed<boolean>;
+  /** Whether bulk data entry is analyzed for data loss prevention. (AI-inferred) */
   isBulkDataEntryAnalysisEnabled?: boolean | Computed<boolean>;
+  /** Whether the Chrome Cleanup Tool is enabled. (AI-inferred) */
   isChromeCleanupEnabled?: boolean | Computed<boolean>;
+  /** Whether the Chrome Remote Desktop app is blocked. (AI-inferred) */
   isChromeRemoteDesktopAppBlocked?: boolean | Computed<boolean>;
+  /** Whether downloaded files are analyzed for data loss prevention. (AI-inferred) */
   isFileDownloadAnalysisEnabled?: boolean | Computed<boolean>;
+  /** Whether uploaded files are analyzed for data loss prevention. (AI-inferred) */
   isFileUploadAnalysisEnabled?: boolean | Computed<boolean>;
+  /** Whether visited URLs are checked against threat intelligence in real time. (AI-inferred) */
   isRealtimeUrlCheckEnabled?: boolean | Computed<boolean>;
+  /** Whether browser security events are analyzed and reported. (AI-inferred) */
   isSecurityEventAnalysisEnabled?: boolean | Computed<boolean>;
+  /** Whether Chrome's own site isolation security feature is enabled. (AI-inferred) */
   isSiteIsolationEnabled?: boolean | Computed<boolean>;
+  /** Whether third-party software is blocked from injecting into Chrome. (AI-inferred) */
   isThirdPartyBlockingEnabled?: boolean | Computed<boolean>;
+  /** The condition under which a password-reuse warning is shown to the user. (AI-inferred) */
   passwordProtectionWarningTrigger?: string | Computed<string>;
+  /** The level of Safe Browsing protection applied, e.g. standard or enhanced. (AI-inferred) */
   safeBrowsingProtectionLevel?: string | Computed<string>;
 }
 
 export interface Device_EndpointVerificationSpecificAttributes_BrowserAttributes {
+  /** Metadata reported by a managed Chrome browser. (AI-inferred) */
   chromeBrowserInfo?: Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfo | Computed<Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfo>;
+  /** The unique identifier of this Chrome profile. (AI-inferred) */
   chromeProfileId?: string | Computed<string>;
+  /** When this Chrome profile last synced. (AI-inferred) */
   lastProfileSyncTime?: string | Computed<string>;
 }
 
 export interface Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplate {
+  /** A unique identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The major version number this applies to. (AI-inferred) */
   majorVersion?: number | Computed<number>;
+  /** The minor version number this applies to. (AI-inferred) */
   minorVersion?: number | Computed<number>;
 }
 
 export interface Device_EndpointVerificationSpecificAttributes_CertificateAttributes {
+  /** The certificate template this device's own certificate was issued from. (AI-inferred) */
   certificateTemplate?: Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplate | Computed<Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplate>;
+  /** A cryptographic fingerprint of this certificate. (AI-inferred) */
   fingerprint?: string | Computed<string>;
+  /** The issuer identity of this certificate. (AI-inferred) */
   issuer?: string | Computed<string>;
+  /** This certificate's own serial number. (AI-inferred) */
   serialNumber?: string | Computed<string>;
+  /** The subject identity of this certificate. (AI-inferred) */
   subject?: string | Computed<string>;
+  /** A cryptographic thumbprint of this certificate. (AI-inferred) */
   thumbprint?: string | Computed<string>;
+  /** Whether this certificate has passed validation. (AI-inferred) */
   validationState?: string | Computed<string>;
+  /** When this certificate's own validity period ends. (AI-inferred) */
   validityExpirationTime?: string | Computed<string>;
+  /** When this certificate's own validity period begins. (AI-inferred) */
   validityStartTime?: string | Computed<string>;
 }
 

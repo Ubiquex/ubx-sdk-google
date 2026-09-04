@@ -2,44 +2,68 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dataset_Access_Condition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A CEL expression that must evaluate `true` for this access grant to apply. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The Google Cloud region or resource location this applies to. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface Dataset_Access_Dataset_Dataset {
+  /** The BigQuery dataset ID this applies to. (AI-inferred) */
   datasetId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface Dataset_Access_Dataset {
+  /** A reference to the dataset this applies to. (AI-inferred) */
   dataset?: Dataset_Access_Dataset_Dataset | Computed<Dataset_Access_Dataset_Dataset>;
+  /** Which resource type(s) this applies to. (AI-inferred) */
   targetTypes?: string[] | Computed<string[]>;
 }
 
 export interface Dataset_Access_Routine {
+  /** The BigQuery dataset ID this applies to. (AI-inferred) */
   datasetId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** A reference to the routine this applies to. (AI-inferred) */
   routineId?: string | Computed<string>;
 }
 
 export interface Dataset_Access_View {
+  /** The BigQuery dataset ID this applies to. (AI-inferred) */
   datasetId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The BigQuery table ID this applies to. (AI-inferred) */
   tableId?: string | Computed<string>;
 }
 
 export interface Dataset_Access {
+  /** A boolean expression that must evaluate `true` for this to apply. (AI-inferred) */
   condition?: Dataset_Access_Condition | Computed<Dataset_Access_Condition>;
+  /** A reference to the dataset this applies to. (AI-inferred) */
   dataset?: Dataset_Access_Dataset | Computed<Dataset_Access_Dataset>;
+  /** The domain this applies to. (AI-inferred) */
   domain?: string | Computed<string>;
+  /** Whether search history/results are grouped per end-user email, rather than aggregated across all users. (AI-inferred) */
   groupByEmail?: string | Computed<string>;
+  /** The IAM principal this applies to. (AI-inferred) */
   iamMember?: string | Computed<string>;
+  /** The role this applies to. (AI-inferred) */
   role?: string | Computed<string>;
+  /** A reference to the routine this applies to. (AI-inferred) */
   routine?: Dataset_Access_Routine | Computed<Dataset_Access_Routine>;
+  /** A predefined IAM group (e.g. `allAuthenticatedUsers`) this grant applies to. (AI-inferred) */
   specialGroup?: string | Computed<string>;
+  /** The email of the user this applies to. (AI-inferred) */
   userByEmail?: string | Computed<string>;
+  /** Configuration or definition specific to a logical view. (AI-inferred) */
   view?: Dataset_Access_View | Computed<Dataset_Access_View>;
 }
 
@@ -78,7 +102,9 @@ export interface Dataset_Restrictions {
 }
 
 export interface Dataset_Tags {
+  /** The Resource Manager tag key this applies to. (AI-inferred) */
   tagKey?: string | Computed<string>;
+  /** The Resource Manager tag value this applies to. (AI-inferred) */
   tagValue?: string | Computed<string>;
 }
 
@@ -211,6 +237,7 @@ export interface DatasetConfig {
   maxTimeTravelHours?: string | Computed<string>;
   /** Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details. */
   resourceTags?: Record<string, string> | Computed<Record<string, string>>;
+  /** The restriction(s) applied to this data. (AI-inferred) */
   restrictions?: Dataset_Restrictions | Computed<Dataset_Restrictions>;
   /** Optional. Updates storage_billing_model for the dataset. */
   storageBillingModel?: string | Computed<string>;
@@ -265,6 +292,7 @@ export interface DatasetAttrs {
   maxTimeTravelHours: string;
   /** Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details. */
   resourceTags: Record<string, string>;
+  /** The restriction(s) applied to this data. (AI-inferred) */
   restrictions: Dataset_Restrictions;
   /** Output only. Reserved for future use. */
   satisfiesPzi: boolean;

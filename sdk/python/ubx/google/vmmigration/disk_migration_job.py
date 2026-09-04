@@ -19,16 +19,24 @@ class DiskMigrationJob_AwsSourceDiskDetails:
 
 @dataclasses.dataclass
 class DiskMigrationJob_Errors:
+    # The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
     code: Any = None
+    # Real, structured detail data attached to a migration error, giving more specific context than its own `message` alone. (AI-inferred)
     details: Any = None
+    # A real, human-readable status or error message for this migration step. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class DiskMigrationJob_Steps:
+    # Real, detailed progress for VM Migration's own step copying a snapshot of the source disk to Google Cloud, for a standalone disk migration. (AI-inferred)
     copying_source_disk_snapshot: Any = None
+    # Real, detailed progress for VM Migration's own step creating a snapshot of the source disk, for a standalone disk migration. (AI-inferred)
     creating_source_disk_snapshot: Any = None
+    # The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
     end_time: Any = None
+    # Real, detailed progress for VM Migration's own step provisioning the target Persistent Disk in Google Cloud, for a standalone disk migration. (AI-inferred)
     provisioning_target_disk: Any = None
+    # The real timestamp when this migration step or cycle started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass

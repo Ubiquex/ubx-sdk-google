@@ -6,20 +6,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ManagedZone_CloudLoggingConfig struct {
 	// If set, enable query logging for this ManagedZone. False by default, making logging opt-in.
 	EnableLogging any
-	Kind          any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ManagedZone_DnssecConfig_DefaultKeySpecs struct {
+	// The cryptographic algorithm used for this DNSSEC key. (AI-inferred)
 	Algorithm any
+	// The length, in bits, of this DNSSEC key. (AI-inferred)
 	KeyLength any
-	KeyType   any
-	Kind      any
+	// Whether this is a DNSSEC key-signing key or zone-signing key. (AI-inferred)
+	KeyType any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ManagedZone_DnssecConfig struct {
 	// Specifies parameters for generating initial DnsKeys for this ManagedZone. Can only be changed while the state is OFF.
 	DefaultKeySpecs any
-	Kind            any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// Specifies the mechanism for authenticated denial-of-existence responses. Can only be changed while the state is OFF.
 	NonExistence any
 	// Specifies whether DNSSEC is enabled, and what mode it is in.
@@ -27,14 +33,20 @@ type ManagedZone_DnssecConfig struct {
 }
 
 type ManagedZone_ForwardingConfig_TargetNameServers struct {
-	DomainName     any
+	// The DNS domain name this zone serves, e.g. `example.com.`. (AI-inferred)
+	DomainName any
+	// Whether forwarded queries are sent over the public internet or a private network path. (AI-inferred)
 	ForwardingPath any
-	Ipv4Address    any
-	Ipv6Address    any
-	Kind           any
+	// An IPv4 address. (AI-inferred)
+	Ipv4Address any
+	// An IPv6 address. (AI-inferred)
+	Ipv6Address any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ManagedZone_ForwardingConfig struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// List of target name servers to forward to. Cloud DNS selects the best available name server if more than one target is given.
 	TargetNameServers any
@@ -43,48 +55,60 @@ type ManagedZone_ForwardingConfig struct {
 type ManagedZone_PeeringConfig_TargetNetwork struct {
 	// The time at which the zone was deactivated, in RFC 3339 date-time format. An empty string indicates that the peering connection is active. The producer network can deactivate a zone. The zone is automatically deactivated if the producer network that the zone targeted is deleted. Output only.
 	DeactivateTime any
-	Kind           any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// The fully qualified URL of the VPC network to forward queries to. This should be formatted like `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`
 	NetworkUrl any
 }
 
 type ManagedZone_PeeringConfig struct {
-	Kind          any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// A reference to the target VPC network. (AI-inferred)
 	TargetNetwork any
 }
 
 type ManagedZone_PrivateVisibilityConfig_GkeClusters struct {
+	// The GKE cluster this private zone's own visibility is scoped to. (AI-inferred)
 	GkeClusterName any
-	Kind           any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 }
 
 type ManagedZone_PrivateVisibilityConfig_Networks struct {
-	Kind       any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The VPC network this private zone or policy is visible from. (AI-inferred)
 	NetworkUrl any
 }
 
 type ManagedZone_PrivateVisibilityConfig struct {
 	// The list of Google Kubernetes Engine clusters that can see this zone.
 	GkeClusters any
-	Kind        any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// The list of VPC networks that can see this zone.
 	Networks any
 }
 
 type ManagedZone_ReverseLookupConfig struct {
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 }
 
 type ManagedZone_ServiceDirectoryConfig_Namespace struct {
 	// The time that the namespace backing this zone was deleted; an empty string if it still exists. This is in RFC3339 text format. Output only.
 	DeletionTime any
-	Kind         any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
 	// The fully qualified URL of the namespace associated with the zone. Format must be `https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace}`
 	NamespaceUrl any
 }
 
 type ManagedZone_ServiceDirectoryConfig struct {
-	Kind      any
+	// The kind of resource or value this is. (AI-inferred)
+	Kind any
+	// The DNS namespace this applies to. (AI-inferred)
 	Namespace any
 }
 
@@ -194,11 +218,14 @@ type ManagedZoneConfig struct {
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.
 	Description any
 	// The DNS name of this managed zone, for instance "example.com.".
-	DnsName          any
-	DnssecConfig     any
+	DnsName any
+	// Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
+	DnssecConfig any
+	// Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
 	ForwardingConfig any
 	// Unique identifier for the resource; defined by the server (output only)
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any
@@ -207,10 +234,13 @@ type ManagedZoneConfig struct {
 	// Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.
 	NameServerSet any
 	// Delegate your managed_zone to these virtual name servers; defined by the server (output only)
-	NameServers             any
-	PeeringConfig           any
+	NameServers any
+	// Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
+	PeeringConfig any
+	// Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
 	PrivateVisibilityConfig any
-	ReverseLookupConfig     any
+	// Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
+	ReverseLookupConfig any
 	// Contains information about Service Directory-backed zones.
 	ServiceDirectoryConfig any
 	// The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.
@@ -225,11 +255,14 @@ type ManagedZoneAttrs struct {
 	// A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.
 	Description any
 	// The DNS name of this managed zone, for instance "example.com.".
-	DnsName          any
-	DnssecConfig     any
+	DnsName any
+	// Configuration for signing this zone's own records with DNSSEC. (AI-inferred)
+	DnssecConfig any
+	// Configures this zone to forward queries to external name servers, rather than answering from its own records. (AI-inferred)
 	ForwardingConfig any
 	// Unique identifier for the resource; defined by the server (output only)
-	Id   any
+	Id any
+	// The kind of resource or value this is. (AI-inferred)
 	Kind any
 	// User labels.
 	Labels any
@@ -238,10 +271,13 @@ type ManagedZoneAttrs struct {
 	// Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.
 	NameServerSet any
 	// Delegate your managed_zone to these virtual name servers; defined by the server (output only)
-	NameServers             any
-	PeeringConfig           any
+	NameServers any
+	// Configures this zone to forward queries to records in a peered VPC network's own private zones. (AI-inferred)
+	PeeringConfig any
+	// Restricts this private zone's own visibility to specific VPC network(s). (AI-inferred)
 	PrivateVisibilityConfig any
-	ReverseLookupConfig     any
+	// Enables automatic PTR (reverse DNS) record generation for this private zone. (AI-inferred)
+	ReverseLookupConfig any
 	// Contains information about Service Directory-backed zones.
 	ServiceDirectoryConfig any
 	// The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.

@@ -2,14 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Restore_Filter_ExclusionFilters_GroupKind {
+  /** A restore action grouped with the resource(s) it applies to. (AI-inferred) */
   resourceGroup?: string | Computed<string>;
+  /** The Kubernetes resource kind this applies to. (AI-inferred) */
   resourceKind?: string | Computed<string>;
 }
 
 export interface Restore_Filter_ExclusionFilters {
+  /** The API group and kind identifying a Kubernetes resource type. (AI-inferred) */
   groupKind?: Restore_Filter_ExclusionFilters_GroupKind | Computed<Restore_Filter_ExclusionFilters_GroupKind>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Kubernetes namespace this applies to. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
@@ -37,7 +43,9 @@ export interface Restore_RestoreConfig_ExcludedNamespaces {
 }
 
 export interface Restore_RestoreConfig_RestoreOrder_GroupKindDependencies {
+  /** Rule(s) that must ALL match for this restore action to apply, when combined via AND logic. (AI-inferred) */
   requiring?: Restore_Filter_ExclusionFilters_GroupKind | Computed<Restore_Filter_ExclusionFilters_GroupKind>;
+  /** Rule(s) any one of which must match for this restore action to apply, when combined via OR logic. (AI-inferred) */
   satisfying?: Restore_Filter_ExclusionFilters_GroupKind | Computed<Restore_Filter_ExclusionFilters_GroupKind>;
 }
 
@@ -47,7 +55,9 @@ export interface Restore_RestoreConfig_RestoreOrder {
 }
 
 export interface Restore_RestoreConfig_SelectedApplications_NamespacedNames {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Kubernetes namespace this applies to. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
@@ -57,34 +67,51 @@ export interface Restore_RestoreConfig_SelectedApplications {
 }
 
 export interface Restore_RestoreConfig_SubstitutionRules {
+  /** The value this field is set to after transformation. (AI-inferred) */
   newValue?: string | Computed<string>;
+  /** A regular expression the field's own original value must match for this transformation to apply. (AI-inferred) */
   originalValuePattern?: string | Computed<string>;
+  /** The API group(s) and kind(s) this restore action targets. (AI-inferred) */
   targetGroupKinds?: Restore_Filter_ExclusionFilters_GroupKind[] | Computed<Restore_Filter_ExclusionFilters_GroupKind[]>;
+  /** The JSON path this transformation writes its own result to. (AI-inferred) */
   targetJsonPath?: string | Computed<string>;
+  /** The Kubernetes namespace(s) restored resources are placed into. (AI-inferred) */
   targetNamespaces?: string[] | Computed<string[]>;
 }
 
 export interface Restore_RestoreConfig_TransformationRules_FieldActions {
+  /** The JSON path this transformation reads its own source value from. (AI-inferred) */
   fromPath?: string | Computed<string>;
+  /** The transformation operation applied, e.g. `add`, `remove`, or `replace`. (AI-inferred) */
   op?: string | Computed<string>;
+  /** A file or resource path. (AI-inferred) */
   path?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Restore_RestoreConfig_TransformationRules_ResourceFilter {
+  /** The API group(s) and kind(s) this filter matches. (AI-inferred) */
   groupKinds?: Restore_Filter_ExclusionFilters_GroupKind[] | Computed<Restore_Filter_ExclusionFilters_GroupKind[]>;
+  /** The JSON path this rule applies to. (AI-inferred) */
   jsonPath?: string | Computed<string>;
+  /** The Kubernetes namespace(s) this applies to. (AI-inferred) */
   namespaces?: string[] | Computed<string[]>;
 }
 
 export interface Restore_RestoreConfig_TransformationRules {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The transformation(s) applied to a specific field during restore. (AI-inferred) */
   fieldActions?: Restore_RestoreConfig_TransformationRules_FieldActions[] | Computed<Restore_RestoreConfig_TransformationRules_FieldActions[]>;
+  /** Restricts a restore or backup action to matching Kubernetes resource(s). (AI-inferred) */
   resourceFilter?: Restore_RestoreConfig_TransformationRules_ResourceFilter | Computed<Restore_RestoreConfig_TransformationRules_ResourceFilter>;
 }
 
 export interface Restore_RestoreConfig_VolumeDataRestorePolicyBindings {
+  /** The rule(s) restore actions must satisfy. (AI-inferred) */
   policy?: string | Computed<string>;
+  /** How this volume's own data is backed up, e.g. via a Persistent Disk snapshot. (AI-inferred) */
   volumeType?: string | Computed<string>;
 }
 
@@ -125,7 +152,9 @@ export interface Restore_TroubleshootingInfo {
 }
 
 export interface Restore_VolumeDataRestorePolicyOverrides {
+  /** The rule(s) restore actions must satisfy. (AI-inferred) */
   policy?: string | Computed<string>;
+  /** The specific PersistentVolumeClaim(s) this restore action applies to. (AI-inferred) */
   selectedPvcs?: Restore_RestoreConfig_SelectedApplications | Computed<Restore_RestoreConfig_SelectedApplications>;
 }
 

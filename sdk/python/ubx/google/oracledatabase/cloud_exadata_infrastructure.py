@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudExadataInfrastructure_Properties_CustomerContacts:
+    # An email address associated with this resource. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass

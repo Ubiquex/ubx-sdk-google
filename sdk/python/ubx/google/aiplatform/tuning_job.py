@@ -22,71 +22,101 @@ class TuningJob_Error:
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValue:
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputs:
+    # The judge model's own unparsed, raw response text. (AI-inferred)
     raw_output: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput:
+    # The raw, unparsed output(s) produced alongside this metric's own computed result. (AI-inferred)
     raw_outputs: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult:
+    # Free-form output produced by a custom-code or custom-parsed metric. (AI-inferred)
     custom_output: Any = None
+    # A human-readable explanation of this result. (AI-inferred)
     explanation: Any = None
+    # Which candidate the judge preferred: `BASELINE`, `CANDIDATE`, or `TIE`. (AI-inferred)
     pairwise_choice: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResult:
+    # Free-form output produced by a custom-code or custom-parsed metric. (AI-inferred)
     custom_output: Any = None
+    # A human-readable explanation of this result. (AI-inferred)
     explanation: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults:
+    # Which summary statistic this aggregated result reports, e.g. `AVERAGE` or `PERCENTILE_P90`. (AI-inferred)
     aggregation_metric: Any = None
+    # The BLEU score computed for this result. (AI-inferred)
     bleu_metric_value: Any = None
+    # The result produced by running this metric's own caller-supplied evaluation code. (AI-inferred)
     custom_code_execution_result: Any = None
+    # The exact-match score computed for this result. (AI-inferred)
     exact_match_metric_value: Any = None
+    # The result of comparing two candidate responses against each other for this metric. (AI-inferred)
     pairwise_metric_result: Any = None
+    # The result of scoring a single candidate response in isolation for this metric. (AI-inferred)
     pointwise_metric_result: Any = None
+    # The ROUGE score computed for this result. (AI-inferred)
     rouge_metric_value: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySource:
+    # The source URI this data is read from. (AI-inferred)
     input_uri: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSource:
+    # The Cloud Storage URI(s) this applies to. (AI-inferred)
     uris: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset:
+    # A BigQuery table or view this data is read from. (AI-inferred)
     bigquery_source: Any = None
+    # A Cloud Storage location this data is read from. (AI-inferred)
     gcs_source: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput:
+    # The individual aggregated metric value(s) making up this output. (AI-inferred)
     aggregation_results: Any = None
+    # A reference to the dataset this applies to. (AI-inferred)
     dataset: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfo:
+    # The Cloud Storage directory this operation's own output is written to. (AI-inferred)
     gcs_output_directory: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse:
+    # The dataset-level result produced by aggregating per-instance evaluation results. (AI-inferred)
     aggregation_output: Any = None
+    # Detail about where this operation's own output was written. (AI-inferred)
     output_info: Any = None
 
 @dataclasses.dataclass
 class TuningJob_EvaluateDatasetRuns:
+    # An identifier for this specific training checkpoint. (AI-inferred)
     checkpoint_id: Any = None
+    # Error detail for this failed operation. (AI-inferred)
     error: Any = None
+    # The result produced by running this evaluation over the whole dataset. (AI-inferred)
     evaluate_dataset_response: Any = None
+    # A reference to the evaluation run this applies to. (AI-inferred)
     evaluation_run: Any = None
+    # The name of the long-running operation tracking this task. (AI-inferred)
     operation_name: Any = None
 
 @dataclasses.dataclass
@@ -166,36 +196,55 @@ class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio:
+    # The audio or video bit rate, in bits per second. (AI-inferred)
     bit_rate: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The audio sample rate, in Hz. (AI-inferred)
     sample_rate: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # The pixel dimensions or resolution class requested for generated image output. (AI-inferred)
     image_size: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # A schema describing this value's own expected structure. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video:
+    # The width-to-height ratio of generated image output, e.g. `16:9` or `1:1`. (AI-inferred)
     aspect_ratio: Any = None
+    # How generated content is returned to the caller -- e.g. streamed incrementally versus returned only once complete. (AI-inferred)
     delivery: Any = None
+    # How long this clip, window, or operation lasts. (AI-inferred)
     duration: Any = None
+    # A Cloud Storage object URI, in the form `gs://bucket/object`. (AI-inferred)
     gcs_uri: Any = None
+    # The pixel dimensions of this image or video. (AI-inferred)
     resolution: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat:
+    # Audio content or configuration. (AI-inferred)
     audio: Any = None
+    # Image content or configuration. (AI-inferred)
     image: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # Video content or configuration. (AI-inferred)
     video: Any = None
 
 @dataclasses.dataclass
@@ -216,6 +265,7 @@ class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
     example: Any = None
     # Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
     format: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
     # Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
     max_items: Any = None
@@ -269,21 +319,28 @@ class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfig:
+    # The name of the prebuilt Gemini voice to use for speech output. (AI-inferred)
     voice_name: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig:
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
+    # The reference audio sample (`audio/wav`) Gemini clones a custom voice from. (AI-inferred)
     voice_sample_audio: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig:
+    # Selects one of Gemini's own built-in voices for speech output, by name. (AI-inferred)
     prebuilt_voice_config: Any = None
+    # Configuration for a custom voice replicated from a supplied audio sample, rather than one of Gemini's prebuilt voices. (AI-inferred)
     replicated_voice_config: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs:
+    # Which speaker this segment of a multi-speaker transcript or synthesis is attributed to. (AI-inferred)
     speaker: Any = None
+    # The voice Gemini uses when generating spoken audio output -- either a prebuilt voice or a replicated one. (AI-inferred)
     voice_config: Any = None
 
 @dataclasses.dataclass
@@ -373,102 +430,154 @@ class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig:
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_DatasetCustomMetrics:
+    # How per-instance scores for this metric are combined into a single dataset-level result, e.g. average or sum. (AI-inferred)
     aggregation_function: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpec:
+    # Whether BLEU computation accounts for the effective n-gram order when the candidate is shorter than the reference. (AI-inferred)
     use_effective_order: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpec:
+    # The JSON Schema describing this function's own callable arguments. (AI-inferred)
     parameters: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpec:
+    # The function within the supplied custom code that computes this metric. (AI-inferred)
     evaluation_function: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec:
+    # The name of the predefined evaluation metric this applies to, e.g. `instruction_following_v1`. (AI-inferred)
     metric_spec_name: Any = None
+    # Configuration parameters specific to this metric's own computation. (AI-inferred)
     metric_spec_parameters: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig:
+    # The function within the supplied custom code that parses the judge model's own response. (AI-inferred)
     parsing_function: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig:
+    # Parses the judge model's own raw response using caller-supplied code, rather than a built-in parser. (AI-inferred)
     custom_code_parser_config: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec:
+    # Configuration for the model used by this job. (AI-inferred)
     model_config: Any = None
+    # The template used to construct the prompt sent to the model. (AI-inferred)
     prompt_template: Any = None
+    # The kind of content generated rubrics should assess. (AI-inferred)
     rubric_content_type: Any = None
+    # A predefined list of allowed rubric types this generation spec is restricted to. (AI-inferred)
     rubric_type_ontology: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec:
+    # Extra, metric-specific configuration beyond the standard fields. (AI-inferred)
     additional_config: Any = None
+    # Configuration for the judge model used to automatically score this evaluation. (AI-inferred)
     judge_autorater_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # Uses one of Vertex AI's own built-in rubric generation templates, instead of a caller-defined one. (AI-inferred)
     predefined_rubric_generation_spec: Any = None
+    # How the judge model's own raw response text is parsed into a final score. (AI-inferred)
     result_parser_config: Any = None
+    # Configuration for how evaluation rubrics are dynamically generated for this metric. (AI-inferred)
     rubric_generation_spec: Any = None
+    # A key referencing a predefined group of rubrics, from the evaluation instance's own `rubric_groups` map. (AI-inferred)
     rubric_group_key: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRange:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # The upper bound. (AI-inferred)
     max: Any = None
+    # The lower bound. (AI-inferred)
     min: Any = None
+    # A single step within this run or sequence. (AI-inferred)
     step: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata:
+    # Additional, metric-specific metadata beyond the standard fields. (AI-inferred)
     other_metadata: Any = None
+    # The minimum and maximum values this metric's own score can take. (AI-inferred)
     score_range: Any = None
+    # The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig:
+    # Whether the judge model's own raw, unparsed output is included alongside the computed score. (AI-inferred)
     return_raw_output: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec:
+    # The field name holding the baseline response to compare against, in a pairwise metric. (AI-inferred)
     baseline_response_field_name: Any = None
+    # The field name holding the candidate response being evaluated, in a pairwise metric. (AI-inferred)
     candidate_response_field_name: Any = None
+    # Configuration for the shape of a custom-formatted metric output. (AI-inferred)
     custom_output_format_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpec:
+    # Configuration for the shape of a custom-formatted metric output. (AI-inferred)
     custom_output_format_config: Any = None
+    # The prompt template sent to the autorater model, instructing it how to judge and score each output. (AI-inferred)
     metric_prompt_template: Any = None
+    # A system-level instruction shaping the model's own behavior for the whole conversation, distinct from the per-turn user content. (AI-inferred)
     system_instruction: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpec:
+    # Which ROUGE variant to compute, e.g. `rouge1` or `rougeL`. (AI-inferred)
     rouge_type: Any = None
+    # Whether multi-sentence summaries are split before computing ROUGE, changing how overlap is counted. (AI-inferred)
     split_summaries: Any = None
+    # Whether words are reduced to their own stem before computing ROUGE overlap. (AI-inferred)
     use_stemmer: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics:
+    # Which summary statistic(s) (e.g. mean, count) are computed over this metric's own per-instance scores. (AI-inferred)
     aggregation_metrics: Any = None
+    # Configuration for computing the BLEU text-similarity metric. (AI-inferred)
     bleu_spec: Any = None
+    # Computes this metric via a fixed formula (e.g. BLEU, ROUGE, exact match) rather than a judge model. (AI-inferred)
     computation_based_metric_spec: Any = None
+    # Computes this metric by running caller-supplied code, rather than a built-in formula or judge model. (AI-inferred)
     custom_code_execution_spec: Any = None
+    # Configuration for computing an exact-string-match metric. (AI-inferred)
     exact_match_spec: Any = None
+    # Computes this metric by having a judge model score the output, rather than a fixed formula. (AI-inferred)
     llm_based_metric_spec: Any = None
+    # Free-form key/value metadata attached to this resource. (AI-inferred)
     metadata: Any = None
+    # Configures a metric that compares two candidate responses against each other, rather than scoring one in isolation. (AI-inferred)
     pairwise_metric_spec: Any = None
+    # Configures a metric that scores a single candidate response in isolation, rather than comparing two. (AI-inferred)
     pointwise_metric_spec: Any = None
+    # Uses one of Vertex AI's own built-in, predefined evaluation metrics, by name. (AI-inferred)
     predefined_metric_spec: Any = None
+    # Configuration for computing the ROUGE text-summarization-quality metric. (AI-inferred)
     rouge_spec: Any = None
 
 @dataclasses.dataclass
@@ -518,9 +627,13 @@ class TuningJob_SupervisedTuningSpec:
 
 @dataclasses.dataclass
 class TuningJob_TunedModel_Checkpoints:
+    # An identifier for this specific training checkpoint. (AI-inferred)
     checkpoint_id: Any = None
+    # The endpoint this call is directed to. (AI-inferred)
     endpoint: Any = None
+    # The training epoch this checkpoint was saved at. (AI-inferred)
     epoch: Any = None
+    # A single step within this run or sequence. (AI-inferred)
     step: Any = None
 
 @dataclasses.dataclass
@@ -534,8 +647,11 @@ class TuningJob_TunedModel:
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_ScoreVariancePerExampleDistribution_Buckets:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The lower bound of this range. (AI-inferred)
     left: Any = None
+    # The upper bound of this range. (AI-inferred)
     right: Any = None
 
 @dataclasses.dataclass
@@ -559,108 +675,166 @@ class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_ScoreVariancePer
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription_Words:
+    # The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     end_offset: Any = None
+    # The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     start_offset: Any = None
+    # A single transcribed word. (AI-inferred)
     word: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_AudioTranscription:
+    # Which speaker a transcribed segment is attributed to, when speaker diarization is enabled. (AI-inferred)
     speaker_label: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # The individual word(s) making up this transcript segment. (AI-inferred)
     words: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_CodeExecutionResult:
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The result of this operation, e.g. whether it succeeded. (AI-inferred)
     outcome: Any = None
+    # The output produced by this operation. (AI-inferred)
     output: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_ExecutableCode:
+    # A machine-readable code identifying this outcome or error. (AI-inferred)
     code: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The language this content is in or should be processed as, typically a BCP-47 code. (AI-inferred)
     language: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FileData:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The URI of a previously uploaded file this Part references. (AI-inferred)
     file_uri: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall_PartialArgs:
+    # A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
     bool_value: Any = None
+    # A JSONPath expression selecting a location within a JSON document. (AI-inferred)
     json_path: Any = None
+    # Represents an explicit JSON `null`, populated when this field's own type is null. (AI-inferred)
     null_value: Any = None
+    # A numeric value, populated when this field's own type is a number. (AI-inferred)
     number_value: Any = None
+    # A text value, populated when this field's own type is a string. (AI-inferred)
     string_value: Any = None
+    # Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
     will_continue: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionCall:
+    # The argument value(s) passed to this call. (AI-inferred)
     args: Any = None
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The function-call arguments accumulated so far, while the model is still streaming them incrementally. (AI-inferred)
     partial_args: Any = None
+    # Whether more chunks of this same response follow, when the model streams output in parts. (AI-inferred)
     will_continue: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts_InlineData:
+    # The raw, embedded bytes of this inline content. (AI-inferred)
     data: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The IANA MIME type of this content, e.g. `application/json`, `image/png`, or `audio/wav`. (AI-inferred)
     mime_type: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse_Parts:
+    # A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
     file_data: Any = None
+    # Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
     inline_data: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_FunctionResponse:
+    # An identifier for this object. (AI-inferred)
     id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
     parts: Any = None
+    # The response produced for this request. (AI-inferred)
     response: Any = None
+    # Configuration for when and how this job is scheduled to run. (AI-inferred)
     scheduling: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_MediaResolution:
+    # The severity or intensity level of this setting. (AI-inferred)
     level: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts_VideoMetadata:
+    # The ending position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     end_offset: Any = None
+    # The frame rate, in frames per second, video input is sampled at. (AI-inferred)
     fps: Any = None
+    # The starting position (byte or token offset) this range covers within its own containing content. (AI-inferred)
     start_offset: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion_Parts:
+    # Enables Gemini to transcribe spoken audio to text as part of its response. (AI-inferred)
     audio_transcription: Any = None
+    # The output of running a preceding `executable_code` block. (AI-inferred)
     code_execution_result: Any = None
+    # Code the model generated for the tool-hosted interpreter to run, when code execution is enabled. (AI-inferred)
     executable_code: Any = None
+    # A reference to previously uploaded file content this Part carries, identified by `file_uri` and `mime_type`, rather than embedding the bytes inline. (AI-inferred)
     file_data: Any = None
+    # A request from the model, inside its own response, to invoke a specific function the caller declared -- the caller executes it and returns the result via a matching `function_response`. (AI-inferred)
     function_call: Any = None
+    # The caller-supplied result of a previously requested `function_call`, returned to the model in a following turn. (AI-inferred)
     function_response: Any = None
+    # Media content embedded directly in this Part, as raw bytes plus a `mime_type`, rather than referenced by URI. (AI-inferred)
     inline_data: Any = None
+    # The token resolution input media (image/video) is sampled at, trading response quality against how many tokens the media consumes. (AI-inferred)
     media_resolution: Any = None
+    # The plain-text content of this Part. (AI-inferred)
     text: Any = None
+    # A step of the model's own intermediate reasoning, surfaced when extended thinking is enabled. (AI-inferred)
     thought: Any = None
+    # An opaque signature validating a `thought` block as genuinely produced by the model, so it can be safely replayed in a later turn. (AI-inferred)
     thought_signature: Any = None
+    # Configuration controlling how video input is sampled, e.g. frame rate and clipping. (AI-inferred)
     video_metadata: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions_Completion:
+    # The ordered content parts (text, inline media, file references, function calls/responses, or executable code) making up a Content message. (AI-inferred)
     parts: Any = None
+    # Who this Content is attributed to in the conversation: `user` or `model`. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions:
+    # A single candidate completion. (AI-inferred)
     completion: Any = None
+    # The numeric score this evaluation produced. (AI-inferred)
     score: Any = None
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples:
+    # The candidate completion(s) recorded for this example. (AI-inferred)
     completions: Any = None
+    # The message content making up this example. (AI-inferred)
     contents: Any = None
 
 @dataclasses.dataclass
@@ -688,8 +862,11 @@ class TuningJob_TuningDataStats_PreferenceOptimizationDataStats:
 
 @dataclasses.dataclass
 class TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistribution_Buckets:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The lower bound of this range. (AI-inferred)
     left: Any = None
+    # The upper bound of this range. (AI-inferred)
     right: Any = None
 
 @dataclasses.dataclass

@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_Accelerators:
+    # The kind of accelerator (e.g. Cloud Data Fusion accelerator) enabled for this instance. (AI-inferred)
     accelerator_type: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Instance_AvailableVersion:
+    # The feature(s) available to this instance. (AI-inferred)
     available_features: Any = None
+    # The version used when none is explicitly specified. (AI-inferred)
     default_version: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The version number this applies to. (AI-inferred)
     version_number: Any = None
 
 @dataclasses.dataclass
@@ -39,8 +45,11 @@ class Instance_LoggingConfig:
 
 @dataclasses.dataclass
 class Instance_MaintenanceEvents:
+    # When this event or window ended. (AI-inferred)
     end_time: Any = None
+    # When this event or window started. (AI-inferred)
     start_time: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

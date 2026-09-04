@@ -14,84 +14,145 @@ export interface Job_Environment_DebugOptions {
 }
 
 export interface Job_Environment_WorkerPools_AutoscalingSettings {
+  /** The autoscaling algorithm used, e.g. throughput-based. (AI-inferred) */
   algorithm?: string | Computed<string>;
+  /** The maximum number of workers this job's own autoscaling may scale up to. (AI-inferred) */
   maxNumWorkers?: number | Computed<number>;
 }
 
 export interface Job_Environment_WorkerPools_DataDisks {
+  /** The disk type provisioned for each worker. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** The filesystem path this disk is mounted at. (AI-inferred) */
   mountPoint?: string | Computed<string>;
+  /** The size, in GB. (AI-inferred) */
   sizeGb?: number | Computed<number>;
 }
 
 export interface Job_Environment_WorkerPools_Packages {
+  /** The Google Cloud region this job runs in. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A SHA-256 hash of this content. (AI-inferred) */
   sha256?: string | Computed<string>;
 }
 
 export interface Job_Environment_WorkerPools_SdkHarnessContainerImages {
+  /** The capability/capabilities this SDK harness supports. (AI-inferred) */
   capabilities?: string[] | Computed<string[]>;
+  /** The container image used for the worker harness. (AI-inferred) */
   containerImage?: string | Computed<string>;
+  /** An identifier for this job's own execution environment. (AI-inferred) */
   environmentId?: string | Computed<string>;
+  /** Whether each SDK harness container is pinned to a single CPU core. (AI-inferred) */
   useSingleCorePerContainer?: boolean | Computed<boolean>;
 }
 
 export interface Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettings {
+  /** The base URL this applies to. (AI-inferred) */
   baseUrl?: string | Computed<string>;
+  /** Whether usage/diagnostic reporting is enabled for this job. (AI-inferred) */
   reportingEnabled?: boolean | Computed<boolean>;
+  /** The API endpoint this service is reached at. (AI-inferred) */
   servicePath?: string | Computed<string>;
+  /** The API endpoint the managed shuffle service is reached at. (AI-inferred) */
   shuffleServicePath?: string | Computed<string>;
+  /** The Cloud Storage path prefix used for this job's own temporary files. (AI-inferred) */
   tempStoragePrefix?: string | Computed<string>;
+  /** An identifier for this specific worker. (AI-inferred) */
   workerId?: string | Computed<string>;
 }
 
 export interface Job_Environment_WorkerPools_TaskrunnerSettings {
+  /** Whether log output is also written to stderr, in addition to its own normal destination. (AI-inferred) */
   alsologtostderr?: boolean | Computed<boolean>;
+  /** The base directory task-related files are written under on each worker. (AI-inferred) */
   baseTaskDir?: string | Computed<string>;
+  /** The base URL this applies to. (AI-inferred) */
   baseUrl?: string | Computed<string>;
+  /** The name of the file recording command lines executed on this worker. (AI-inferred) */
   commandlinesFileName?: string | Computed<string>;
+  /** Whether the pipeline continues processing after an unhandled exception, rather than failing the job. (AI-inferred) */
   continueOnException?: boolean | Computed<boolean>;
+  /** The Dataflow API version this job was submitted against. (AI-inferred) */
   dataflowApiVersion?: string | Computed<string>;
+  /** The command used to launch the worker harness. (AI-inferred) */
   harnessCommand?: string | Computed<string>;
+  /** A hint indicating which SDK language this job was authored in. (AI-inferred) */
   languageHint?: string | Computed<string>;
+  /** The directory worker logs are written to. (AI-inferred) */
   logDir?: string | Computed<string>;
+  /** Whether worker startup logs are also written to the VM's own serial console. (AI-inferred) */
   logToSerialconsole?: boolean | Computed<boolean>;
+  /** The Cloud Storage location worker logs are uploaded to. (AI-inferred) */
   logUploadLocation?: string | Computed<string>;
+  /** The OAuth scope(s) granted to each worker's own service account. (AI-inferred) */
   oauthScopes?: string[] | Computed<string[]>;
+  /** Configuration for the workers that execute this job's own parallel processing steps. (AI-inferred) */
   parallelWorkerSettings?: Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettings | Computed<Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettings>;
+  /** The main class launched to run the streaming worker harness. (AI-inferred) */
   streamingWorkerMainClass?: string | Computed<string>;
+  /** The task group this worker belongs to. (AI-inferred) */
   taskGroup?: string | Computed<string>;
+  /** The user account tasks run as on this worker. (AI-inferred) */
   taskUser?: string | Computed<string>;
+  /** The Cloud Storage path prefix used for this job's own temporary files. (AI-inferred) */
   tempStoragePrefix?: string | Computed<string>;
+  /** An identifier for this specific worker VM. (AI-inferred) */
   vmId?: string | Computed<string>;
+  /** The name of the file describing this job's own workflow graph. (AI-inferred) */
   workflowFileName?: string | Computed<string>;
 }
 
 export interface Job_Environment_WorkerPools {
+  /** Configuration for automatically resizing this job's own worker pool based on load. (AI-inferred) */
   autoscalingSettings?: Job_Environment_WorkerPools_AutoscalingSettings | Computed<Job_Environment_WorkerPools_AutoscalingSettings>;
+  /** The additional persistent disk(s) attached to each worker. (AI-inferred) */
   dataDisks?: Job_Environment_WorkerPools_DataDisks[] | Computed<Job_Environment_WorkerPools_DataDisks[]>;
+  /** The default set of SDK package(s) staged for this job. (AI-inferred) */
   defaultPackageSet?: string | Computed<string>;
+  /** The provisioned IOPS for the worker's own disk, when using a disk type that supports configuring it. (AI-inferred) */
   diskProvisionedIops?: string | Computed<string>;
+  /** The provisioned throughput, in MiB/s, for the worker's own disk. (AI-inferred) */
   diskProvisionedThroughputMibps?: string | Computed<string>;
+  /** The size, in GB, of each worker's own disk. (AI-inferred) */
   diskSizeGb?: number | Computed<number>;
+  /** The source image used for each worker's own boot disk. (AI-inferred) */
   diskSourceImage?: string | Computed<string>;
+  /** The disk type provisioned for each worker. (AI-inferred) */
   diskType?: string | Computed<string>;
+  /** Whether workers are assigned public IP addresses, or only internal ones. (AI-inferred) */
   ipConfiguration?: string | Computed<string>;
+  /** The kind of pipeline step or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The Compute Engine machine type provisioned for each worker. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** How many threads run per worker. (AI-inferred) */
   numThreadsPerWorker?: number | Computed<number>;
+  /** The number of workers this job runs with. (AI-inferred) */
   numWorkers?: number | Computed<number>;
+  /** How the worker's own VM behaves during a host maintenance event, e.g. live migration versus terminate. (AI-inferred) */
   onHostMaintenance?: string | Computed<string>;
+  /** The SDK package(s) staged for this job. (AI-inferred) */
   packages?: Job_Environment_WorkerPools_Packages[] | Computed<Job_Environment_WorkerPools_Packages[]>;
+  /** Additional, worker-pool-type-specific arguments. (AI-inferred) */
   poolArgs?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The container image(s) used for the SDK harness process(es) on each worker. (AI-inferred) */
   sdkHarnessContainerImages?: Job_Environment_WorkerPools_SdkHarnessContainerImages[] | Computed<Job_Environment_WorkerPools_SdkHarnessContainerImages[]>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
+  /** Configuration for the process that manages task execution on each worker. (AI-inferred) */
   taskrunnerSettings?: Job_Environment_WorkerPools_TaskrunnerSettings | Computed<Job_Environment_WorkerPools_TaskrunnerSettings>;
+  /** Whether worker VMs are torn down when the job completes or fails. (AI-inferred) */
   teardownPolicy?: string | Computed<string>;
+  /** The container image used for the worker harness process. (AI-inferred) */
   workerHarnessContainerImage?: string | Computed<string>;
+  /** The Compute Engine zone workers are provisioned in. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
@@ -139,6 +200,7 @@ export interface Job_Environment {
 }
 
 export interface Job_ExecutionInfo_Stages {
+  /** The name of this pipeline step. (AI-inferred) */
   stepName?: string[] | Computed<string[]>;
 }
 
@@ -148,35 +210,50 @@ export interface Job_ExecutionInfo {
 }
 
 export interface Job_JobMetadata_BigTableDetails {
+  /** An identifier for this specific instance. (AI-inferred) */
   instanceId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** A reference to the BigQuery table this applies to. (AI-inferred) */
   tableId?: string | Computed<string>;
 }
 
 export interface Job_JobMetadata_BigqueryDetails {
+  /** A reference to the dataset this applies to. (AI-inferred) */
   dataset?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The query text or expression. (AI-inferred) */
   query?: string | Computed<string>;
+  /** A reference to the specific table this applies to. (AI-inferred) */
   table?: string | Computed<string>;
 }
 
 export interface Job_JobMetadata_DatastoreDetails {
+  /** The namespace this applies to. (AI-inferred) */
   namespace?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
 export interface Job_JobMetadata_FileDetails {
+  /** A file path pattern, e.g. matching multiple input files with a wildcard. (AI-inferred) */
   filePattern?: string | Computed<string>;
 }
 
 export interface Job_JobMetadata_PubsubDetails {
+  /** A reference to the Pub/Sub subscription this applies to. (AI-inferred) */
   subscription?: string | Computed<string>;
+  /** A reference to the Pub/Sub topic this applies to. (AI-inferred) */
   topic?: string | Computed<string>;
 }
 
 export interface Job_JobMetadata_SdkVersion_Bugs {
+  /** How serious this log entry or finding is. (AI-inferred) */
   severity?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** A resource URI. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
@@ -192,8 +269,11 @@ export interface Job_JobMetadata_SdkVersion {
 }
 
 export interface Job_JobMetadata_SpannerDetails {
+  /** The identifier of the database this applies to. (AI-inferred) */
   databaseId?: string | Computed<string>;
+  /** An identifier for this specific instance. (AI-inferred) */
   instanceId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
@@ -217,56 +297,92 @@ export interface Job_JobMetadata {
 }
 
 export interface Job_PipelineDescription_DisplayData {
+  /** A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** A value expressed as a duration. (AI-inferred) */
   durationValue?: string | Computed<string>;
+  /** A floating-point value, populated when this field's own type is a float. (AI-inferred) */
   floatValue?: number | Computed<number>;
+  /** A 64-bit integer value, populated when this field's own type is an integer. (AI-inferred) */
   int64Value?: string | Computed<string>;
+  /** A fully qualified Java class name, populated when this field's own type is a class reference. (AI-inferred) */
   javaClassValue?: string | Computed<string>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** A human-readable label for this item. (AI-inferred) */
   label?: string | Computed<string>;
+  /** The namespace this applies to. (AI-inferred) */
   namespace?: string | Computed<string>;
+  /** A short text value. (AI-inferred) */
   shortStrValue?: string | Computed<string>;
+  /** A text value. (AI-inferred) */
   strValue?: string | Computed<string>;
+  /** A timestamp value, populated when this field's own type is a timestamp. (AI-inferred) */
   timestampValue?: string | Computed<string>;
+  /** A URL this applies to. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface Job_PipelineDescription_ExecutionPipelineStage_ComponentSource {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The pipeline transform or collection this element was originally part of, before optimization. (AI-inferred) */
   originalTransformOrCollection?: string | Computed<string>;
+  /** The user account this applies to. (AI-inferred) */
   userName?: string | Computed<string>;
 }
 
 export interface Job_PipelineDescription_ExecutionPipelineStage_ComponentTransform {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The pipeline transform this element was originally part of, before optimization. (AI-inferred) */
   originalTransform?: string | Computed<string>;
+  /** The user account this applies to. (AI-inferred) */
   userName?: string | Computed<string>;
 }
 
 export interface Job_PipelineDescription_ExecutionPipelineStage_InputSource {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The pipeline transform or collection this element was originally part of, before optimization. (AI-inferred) */
   originalTransformOrCollection?: string | Computed<string>;
+  /** The size, in bytes. (AI-inferred) */
   sizeBytes?: string | Computed<string>;
+  /** The user account this applies to. (AI-inferred) */
   userName?: string | Computed<string>;
 }
 
 export interface Job_PipelineDescription_ExecutionPipelineStage {
+  /** The pipeline component this element reads from. (AI-inferred) */
   componentSource?: Job_PipelineDescription_ExecutionPipelineStage_ComponentSource[] | Computed<Job_PipelineDescription_ExecutionPipelineStage_ComponentSource[]>;
+  /** The pipeline transform this element belongs to. (AI-inferred) */
   componentTransform?: Job_PipelineDescription_ExecutionPipelineStage_ComponentTransform[] | Computed<Job_PipelineDescription_ExecutionPipelineStage_ComponentTransform[]>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The source this pipeline reads its own input from. (AI-inferred) */
   inputSource?: Job_PipelineDescription_ExecutionPipelineStage_InputSource[] | Computed<Job_PipelineDescription_ExecutionPipelineStage_InputSource[]>;
+  /** The kind of pipeline step or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The destination this pipeline writes its own output to. (AI-inferred) */
   outputSource?: Job_PipelineDescription_ExecutionPipelineStage_InputSource[] | Computed<Job_PipelineDescription_ExecutionPipelineStage_InputSource[]>;
+  /** The execution stage that must complete before this one begins. (AI-inferred) */
   prerequisiteStage?: string[] | Computed<string[]>;
 }
 
 export interface Job_PipelineDescription_OriginalPipelineTransform {
+  /** Human-readable key/value detail describing this pipeline component, shown in the Dataflow console. (AI-inferred) */
   displayData?: Job_PipelineDescription_DisplayData[] | Computed<Job_PipelineDescription_DisplayData[]>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The name of the input collection this transform reads from. (AI-inferred) */
   inputCollectionName?: string[] | Computed<string[]>;
+  /** The kind of pipeline step or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The name of the output collection this transform writes to. (AI-inferred) */
   outputCollectionName?: string[] | Computed<string[]>;
 }
 
@@ -282,19 +398,30 @@ export interface Job_PipelineDescription {
 }
 
 export interface Job_RuntimeUpdatableParams_Schedules_Parameters {
+  /** The target CPU utilization autoscaling aims to maintain. (AI-inferred) */
   cpuUtilizationTarget?: number | Computed<number>;
+  /** The target end-to-end processing latency for this streaming pipeline. (AI-inferred) */
   latencyTarget?: string | Computed<string>;
+  /** The maximum number of workers this job's own autoscaling may scale up to. (AI-inferred) */
   maxWorkerCount?: number | Computed<number>;
+  /** The minimum number of workers this job's own autoscaling scales down to. (AI-inferred) */
   minWorkerCount?: number | Computed<number>;
 }
 
 export interface Job_RuntimeUpdatableParams_Schedules {
+  /** The cron schedule expression this applies to. (AI-inferred) */
   crontab?: string | Computed<string>;
+  /** How long this applies for. (AI-inferred) */
   duration?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: Job_RuntimeUpdatableParams_Schedules_Parameters | Computed<Job_RuntimeUpdatableParams_Schedules_Parameters>;
+  /** The relative priority of this item. (AI-inferred) */
   priority?: string | Computed<string>;
+  /** The time zone this schedule is interpreted in. (AI-inferred) */
   timeZone?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
 }
 
@@ -321,14 +448,20 @@ export interface Job_ServiceResources {
 }
 
 export interface Job_StageStates {
+  /** When this job entered its own current state. (AI-inferred) */
   currentStateTime?: string | Computed<string>;
+  /** The name of this pipeline execution stage. (AI-inferred) */
   executionStageName?: string | Computed<string>;
+  /** The current status of this pipeline execution stage. (AI-inferred) */
   executionStageState?: string | Computed<string>;
 }
 
 export interface Job_Steps {
+  /** The kind of pipeline step or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 

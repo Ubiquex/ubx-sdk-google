@@ -4,23 +4,32 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TcpRoute_Rules_Action_Destinations struct {
+	// The name of the service this applies to. (AI-inferred)
 	ServiceName any
-	Weight      any
+	// The relative weight of this destination -- higher values receive proportionally more traffic. (AI-inferred)
+	Weight any
 }
 
 type TcpRoute_Rules_Action struct {
-	Destinations        any
-	IdleTimeout         any
+	// The destination(s) this traffic may be routed to, with their own relative weight. (AI-inferred)
+	Destinations any
+	// How long an idle connection is kept open before being closed. (AI-inferred)
+	IdleTimeout any
+	// The destination traffic was originally routed to, before mirroring or redirection. (AI-inferred)
 	OriginalDestination any
 }
 
 type TcpRoute_Rules_Matches struct {
+	// The network address this applies to. (AI-inferred)
 	Address any
-	Port    any
+	// A network port number. (AI-inferred)
+	Port any
 }
 
 type TcpRoute_Rules struct {
-	Action  any
+	// The action taken when this rule matches. (AI-inferred)
+	Action any
+	// The match condition(s) this rule evaluates. (AI-inferred)
 	Matches any
 }
 

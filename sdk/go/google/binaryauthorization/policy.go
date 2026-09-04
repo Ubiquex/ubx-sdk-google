@@ -4,100 +4,143 @@ package binaryauthorization
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policy_GkePolicy_CheckSets_Checks_ImageAllowlist struct {
+	// A glob pattern of container image URL(s) exempt from attestation requirements. (AI-inferred)
 	AllowPattern any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheck struct {
+	// The maximum age, in days, an image may have been uploaded and still pass this check. (AI-inferred)
 	MaxUploadAgeDays any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeys struct {
+	// A public key, PEM-encoded. (AI-inferred)
 	PublicKeyPem any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet struct {
+	// The public key(s) this applies to. (AI-inferred)
 	PublicKeys any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities struct {
-	DisplayName  any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A set of public key(s), any one of which may satisfy this check. (AI-inferred)
 	PublicKeySet any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck struct {
+	// The Sigstore authority/authorities trusted to verify this check's own signatures. (AI-inferred)
 	SigstoreAuthorities any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeys struct {
-	KeyId              any
-	PublicKeyPem       any
+	// An identifier for this key. (AI-inferred)
+	KeyId any
+	// A public key, PEM-encoded. (AI-inferred)
+	PublicKeyPem any
+	// The algorithm used to sign this key or attestation. (AI-inferred)
 	SignatureAlgorithm any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet struct {
+	// The PKIX public key(s) this applies to. (AI-inferred)
 	PkixPublicKeys any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators struct {
-	DisplayName      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A set of PKIX public key(s), any one of which may satisfy this check. (AI-inferred)
 	PkixPublicKeySet any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck struct {
-	AttestationAuthenticators            any
+	// The authenticator(s) permitted to sign attestation(s) satisfying this check. (AI-inferred)
+	AttestationAuthenticators any
+	// The project(s) whose own Container Analysis occurrences are trusted as attestation sources. (AI-inferred)
 	ContainerAnalysisAttestationProjects any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSource struct {
+	// The project(s) whose own Container Analysis occurrences are trusted as attestation sources. (AI-inferred)
 	ContainerAnalysisAttestationProjects any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules struct {
-	AttestationSource         any
-	ConfigBasedBuildRequired  any
-	CustomConstraints         any
-	TrustedBuilder            any
+	// Where the attestation(s) evaluated by this check are sourced from. (AI-inferred)
+	AttestationSource any
+	// Whether the image must have been built from a specific, allow-listed build configuration. (AI-inferred)
+	ConfigBasedBuildRequired any
+	// Caller-defined constraint(s) this policy enforces. (AI-inferred)
+	CustomConstraints any
+	// The build system trusted to produce this image's own provenance. (AI-inferred)
+	TrustedBuilder any
+	// The source repository URL pattern(s) trusted to have produced this image. (AI-inferred)
 	TrustedSourceRepoPatterns any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SlsaCheck struct {
+	// The rule(s) making up this policy. (AI-inferred)
 	Rules any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheck struct {
+	// The source directory pattern(s) trusted to have produced this image. (AI-inferred)
 	TrustedDirPatterns any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheck struct {
-	AllowedCves                            any
-	BlockedCves                            any
+	// The known CVE identifier(s) explicitly permitted, even though they would otherwise fail this check. (AI-inferred)
+	AllowedCves any
+	// The known CVE identifier(s) that cause this check to fail if present. (AI-inferred)
+	BlockedCves any
+	// The project(s) whose own Container Analysis occurrences are trusted as vulnerability data sources. (AI-inferred)
 	ContainerAnalysisVulnerabilityProjects any
-	MaximumFixableSeverity                 any
-	MaximumUnfixableSeverity               any
+	// The highest severity of fixable vulnerability an image is permitted to contain. (AI-inferred)
+	MaximumFixableSeverity any
+	// The highest severity of unfixable vulnerability an image is permitted to contain. (AI-inferred)
+	MaximumUnfixableSeverity any
 }
 
 type Policy_GkePolicy_CheckSets_Checks struct {
-	AlwaysDeny                    any
-	DisplayName                   any
-	ImageAllowlist                any
-	ImageFreshnessCheck           any
-	SigstoreSignatureCheck        any
+	// Whether every image is denied, with no exceptions. (AI-inferred)
+	AlwaysDeny any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The container image URL pattern(s) exempt from this policy's own checks. (AI-inferred)
+	ImageAllowlist any
+	// Verifies the image was built recently enough, within a configured age limit. (AI-inferred)
+	ImageFreshnessCheck any
+	// Verifies the image was signed by a trusted Sigstore identity. (AI-inferred)
+	SigstoreSignatureCheck any
+	// Verifies the image carries a valid Simple Signing format attestation. (AI-inferred)
 	SimpleSigningAttestationCheck any
-	SlsaCheck                     any
-	TrustedDirectoryCheck         any
-	VulnerabilityCheck            any
+	// Verifies the image's own SLSA provenance meets a required build level. (AI-inferred)
+	SlsaCheck any
+	// Verifies the image was built from a trusted source directory. (AI-inferred)
+	TrustedDirectoryCheck any
+	// Verifies the image's own known vulnerabilities stay within configured severity limits. (AI-inferred)
+	VulnerabilityCheck any
 }
 
 type Policy_GkePolicy_CheckSets_Scope struct {
-	KubernetesNamespace      any
+	// The Kubernetes namespace this applies to. (AI-inferred)
+	KubernetesNamespace any
+	// The Kubernetes service account this applies to. (AI-inferred)
 	KubernetesServiceAccount any
 }
 
 type Policy_GkePolicy_CheckSets struct {
-	Checks         any
-	DisplayName    any
+	// The check(s) an image must satisfy for this policy to allow it. (AI-inferred)
+	Checks any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The container image URL pattern(s) exempt from this policy's own checks. (AI-inferred)
 	ImageAllowlist any
-	Scope          any
+	// What this configuration's own scope covers. (AI-inferred)
+	Scope any
 }
 
 type Policy_GkePolicy struct {

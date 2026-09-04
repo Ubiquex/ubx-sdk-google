@@ -432,42 +432,76 @@ _V2beta1ConversationProfile_TtsConfigFields = {
 
 @dataclasses.dataclass
 class V2beta1ConversationProfileConfig:
+    # Configures the automated (Dialogflow) agent connected to this conversation. (AI-inferred)
     automated_agent_config: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configures real-time suggestions offered to a human agent handling this conversation. (AI-inferred)
     human_agent_assistant_config: Any = None
+    # Configures the external live-agent service this conversation hands off to. (AI-inferred)
     human_agent_handoff_config: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # Configures whether this conversation's own interaction logs are enabled. (AI-inferred)
     logging_config: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configures the Pub/Sub notification sent whenever a new message occurs in this conversation. (AI-inferred)
     new_message_event_notification_config: Any = None
+    # Configures the Pub/Sub notification sent whenever a new speech recognition result occurs in this conversation. (AI-inferred)
     new_recognition_result_notification_config: Any = None
+    # Configures the Pub/Sub notification sent on conversation lifecycle events. (AI-inferred)
     notification_config: Any = None
+    # A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
     security_settings: Any = None
+    # Configures this conversation profile's own SIP (telephony) connection settings. (AI-inferred)
     sip_config: Any = None
+    # Configures this conversation profile's own speech-to-text recognition settings. (AI-inferred)
     stt_config: Any = None
+    # The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
     time_zone: Any = None
+    # Configures this conversation profile's own text-to-speech synthesis settings. (AI-inferred)
     tts_config: Any = None
+    # Whether this conversation profile uses bidirectional streaming for real-time audio. (AI-inferred)
     use_bidi_streaming: Any = None
 
 @dataclasses.dataclass
 class V2beta1ConversationProfileAttrs:
+    # Configures the automated (Dialogflow) agent connected to this conversation. (AI-inferred)
     automated_agent_config: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configures real-time suggestions offered to a human agent handling this conversation. (AI-inferred)
     human_agent_assistant_config: Any = None
+    # Configures the external live-agent service this conversation hands off to. (AI-inferred)
     human_agent_handoff_config: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # Configures whether this conversation's own interaction logs are enabled. (AI-inferred)
     logging_config: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Configures the Pub/Sub notification sent whenever a new message occurs in this conversation. (AI-inferred)
     new_message_event_notification_config: Any = None
+    # Configures the Pub/Sub notification sent whenever a new speech recognition result occurs in this conversation. (AI-inferred)
     new_recognition_result_notification_config: Any = None
+    # Configures the Pub/Sub notification sent on conversation lifecycle events. (AI-inferred)
     notification_config: Any = None
+    # A reference to the security settings (data retention, redaction) applied to this agent. (AI-inferred)
     security_settings: Any = None
+    # Configures this conversation profile's own SIP (telephony) connection settings. (AI-inferred)
     sip_config: Any = None
+    # Configures this conversation profile's own speech-to-text recognition settings. (AI-inferred)
     stt_config: Any = None
+    # The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred)
     time_zone: Any = None
+    # Configures this conversation profile's own text-to-speech synthesis settings. (AI-inferred)
     tts_config: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
+    # Whether this conversation profile uses bidirectional streaming for real-time audio. (AI-inferred)
     use_bidi_streaming: Any = None
 
 V2beta1ConversationProfile = ubx.ResourceBinding(

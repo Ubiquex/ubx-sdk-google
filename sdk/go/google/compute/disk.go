@@ -15,6 +15,7 @@ type Disk_AsyncPrimaryDisk struct {
 }
 
 type Disk_AsyncSecondaryDisks struct {
+	// The disk to be used as the secondary disk for asynchronous replication. This nested object defines the target disk that receives replicated data from the primary disk. (AI-inferred)
 	AsyncReplicationDisk any
 }
 
@@ -32,6 +33,7 @@ type Disk_DiskEncryptionKey struct {
 }
 
 type Disk_GuestOsFeatures struct {
+	// The type of guest OS feature to enable on the disk. Valid values are: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, and WINDOWS. (AI-inferred)
 	Type any
 }
 
@@ -41,10 +43,12 @@ type Disk_Params struct {
 }
 
 type Disk_ResourceStatus_AsyncPrimaryDisk struct {
+	// The lifecycle state of the asynchronous primary disk replication, such as CREATED, STARTING, ACTIVE, STOPPING, STOPPED, or STATE_UNSPECIFIED. (AI-inferred)
 	State any
 }
 
 type Disk_ResourceStatus struct {
+	// The primary disk that is part of the async replication relationship. This field is present on secondary disks and provides the URL and state of the primary disk. (AI-inferred)
 	AsyncPrimaryDisk any
 	// Key: disk, value: AsyncReplicationStatus message
 	AsyncSecondaryDisks any
@@ -94,10 +98,12 @@ type DiskConfig struct {
 	// The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
 	AccessMode any
 	// The architecture of the disk. Valid values are ARM64 or X86_64.
-	Architecture     any
+	Architecture any
+	// The primary disk in an asynchronous replication pairing. When this disk is configured as a secondary disk, this computed attribute contains the disk name and zone of the primary disk. (AI-inferred)
 	AsyncPrimaryDisk any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description       any
+	Description any
+	// Encryption key configuration for the disk. This block can be used to specify a customer-supplied raw key or a customer-managed Cloud KMS key at creation time, and it is also populated with computed metadata (such as a fingerprint) for the key that was actually used. (AI-inferred)
 	DiskEncryptionKey any
 	// Whether this disk is using confidential compute mode.
 	EnableConfidentialCompute any
@@ -129,18 +135,21 @@ type DiskConfig struct {
 	ReplicaZones any
 	// Resource policies applied to this disk for automatic snapshot creations.
 	ResourcePolicies any
-	ResourceStatus   any
+	// An output-only object that reports the physical storage zones of the disk, including the primary zone and, for regional disks, the replica zone. (AI-inferred)
+	ResourceStatus any
 	// Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0.
 	SizeGb any
 	// The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
 	SourceDisk any
 	// The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
-	SourceImage              any
+	SourceImage any
+	// Customer-supplied encryption key used to decrypt the source image when creating the disk. This field is output-only and is populated by the API with the key details used for the source image. (AI-inferred)
 	SourceImageEncryptionKey any
 	// The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
 	SourceInstantSnapshot any
 	// The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
-	SourceSnapshot              any
+	SourceSnapshot any
+	// The customer-supplied encryption key of the source snapshot used to create this disk. This output-only field exposes details about the key (e.g., raw key or KMS key reference) that was used to decrypt the source snapshot. (AI-inferred)
 	SourceSnapshotEncryptionKey any
 	// The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
 	SourceStorageObject any
@@ -154,14 +163,16 @@ type DiskAttrs struct {
 	// The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
 	AccessMode any
 	// The architecture of the disk. Valid values are ARM64 or X86_64.
-	Architecture     any
+	Architecture any
+	// The primary disk in an asynchronous replication pairing. When this disk is configured as a secondary disk, this computed attribute contains the disk name and zone of the primary disk. (AI-inferred)
 	AsyncPrimaryDisk any
 	// Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
 	AsyncSecondaryDisks any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description       any
+	Description any
+	// Encryption key configuration for the disk. This block can be used to specify a customer-supplied raw key or a customer-managed Cloud KMS key at creation time, and it is also populated with computed metadata (such as a fingerprint) for the key that was actually used. (AI-inferred)
 	DiskEncryptionKey any
 	// Whether this disk is using confidential compute mode.
 	EnableConfidentialCompute any
@@ -203,7 +214,8 @@ type DiskAttrs struct {
 	ReplicaZones any
 	// Resource policies applied to this disk for automatic snapshot creations.
 	ResourcePolicies any
-	ResourceStatus   any
+	// An output-only object that reports the physical storage zones of the disk, including the primary zone and, for regional disks, the replica zone. (AI-inferred)
+	ResourceStatus any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
 	// Output only. [Output Only] Reserved for future use.
@@ -221,7 +233,8 @@ type DiskAttrs struct {
 	// Output only. [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
 	SourceDiskId any
 	// The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
-	SourceImage              any
+	SourceImage any
+	// Customer-supplied encryption key used to decrypt the source image when creating the disk. This field is output-only and is populated by the API with the key details used for the source image. (AI-inferred)
 	SourceImageEncryptionKey any
 	// Output only. [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
 	SourceImageId any
@@ -230,7 +243,8 @@ type DiskAttrs struct {
 	// Output only. [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
 	SourceInstantSnapshotId any
 	// The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
-	SourceSnapshot              any
+	SourceSnapshot any
+	// The customer-supplied encryption key of the source snapshot used to create this disk. This output-only field exposes details about the key (e.g., raw key or KMS key reference) that was used to decrypt the source snapshot. (AI-inferred)
 	SourceSnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
 	SourceSnapshotId any

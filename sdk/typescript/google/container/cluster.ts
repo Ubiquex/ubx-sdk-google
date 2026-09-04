@@ -210,8 +210,11 @@ export interface Cluster_Autoscaling_AutoprovisioningNodePoolDefaults {
 }
 
 export interface Cluster_Autoscaling_ResourceLimits {
+  /** The largest value a `number`/`integer`-typed value may take. (AI-inferred) */
   maximum?: string | Computed<string>;
+  /** The smallest value a `number`/`integer`-typed value may take. (AI-inferred) */
   minimum?: string | Computed<string>;
+  /** Which kind of resource this applies to. (AI-inferred) */
   resourceType?: string | Computed<string>;
 }
 
@@ -240,6 +243,7 @@ export interface Cluster_BinaryAuthorization {
 }
 
 export interface Cluster_Cluster_CompliancePostureConfig_ComplianceStandards {
+  /** Configuration for the standard (non-Autopilot) cluster mode. (AI-inferred) */
   standard?: string | Computed<string>;
 }
 
@@ -251,8 +255,11 @@ export interface Cluster_Cluster_CompliancePostureConfig {
 }
 
 export interface Cluster_Cluster_Conditions {
+  /** A standard gRPC-style status code summarizing this outcome. (AI-inferred) */
   canonicalCode?: string | Computed<string>;
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable description of this result or error. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -275,7 +282,9 @@ export interface Cluster_Cluster_ControlPlaneEndpointsConfig_DnsEndpointConfig {
 }
 
 export interface Cluster_Cluster_ControlPlaneEndpointsConfig_IpEndpointsConfig_AuthorizedNetworksConfig_CidrBlocks {
+  /** An IP address range in CIDR notation. (AI-inferred) */
   cidrBlock?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
@@ -315,8 +324,11 @@ export interface Cluster_Cluster_ControlPlaneEndpointsConfig {
 }
 
 export interface Cluster_Cluster_DatabaseEncryption_LastOperationErrors {
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The name of this key. (AI-inferred) */
   keyName?: string | Computed<string>;
+  /** When this event occurred. (AI-inferred) */
   timestamp?: string | Computed<string>;
 }
 
@@ -367,13 +379,18 @@ export interface Cluster_Cluster_GkeAutoUpgradeConfig {
 }
 
 export interface Cluster_Cluster_IpAllocationPolicy_AdditionalIpRangesConfigs {
+  /** The name(s) of the secondary IP range(s) used for pod IP addresses. (AI-inferred) */
   podIpv4RangeNames?: string[] | Computed<string[]>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_IpAllocationPolicy_AdditionalPodRangesConfig_PodRangeInfo {
+  /** The name of the secondary IP range this applies to. (AI-inferred) */
   rangeName?: string | Computed<string>;
+  /** The observed or target resource utilization level. (AI-inferred) */
   utilization?: number | Computed<number>;
 }
 
@@ -472,13 +489,18 @@ export interface Cluster_Cluster_MaintenancePolicy_Window_DailyMaintenanceWindow
 }
 
 export interface Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions_MaintenanceExclusionOptions {
+  /** What happens once this maintenance exclusion window's own end time is reached. (AI-inferred) */
   endTimeBehavior?: string | Computed<string>;
+  /** What this setting applies to. (AI-inferred) */
   scope?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions {
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** Configuration for a maintenance exclusion window, e.g. its own scope. (AI-inferred) */
   maintenanceExclusionOptions?: Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions_MaintenanceExclusionOptions | Computed<Cluster_Cluster_MaintenancePolicy_Window_MaintenanceExclusions_MaintenanceExclusionOptions>;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
@@ -668,19 +690,27 @@ export interface Cluster_Cluster_NetworkPolicy {
 }
 
 export interface Cluster_Cluster_NodeConfig_Accelerators_GpuDriverInstallationConfig {
+  /** Which GPU driver version GKE installs, e.g. `LATEST` or `DEFAULT`. (AI-inferred) */
   gpuDriverVersion?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodeConfig_Accelerators_GpuSharingConfig {
+  /** How a shared GPU is divided among containers, e.g. `TIME_SHARING` or `MPS`. (AI-inferred) */
   gpuSharingStrategy?: string | Computed<string>;
+  /** The maximum number of containers that may share a single physical GPU. (AI-inferred) */
   maxSharedClientsPerGpu?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodeConfig_Accelerators {
+  /** How many accelerator (GPU/TPU) devices are attached per node. (AI-inferred) */
   acceleratorCount?: string | Computed<string>;
+  /** The accelerator (GPU/TPU) type attached to each node, e.g. `nvidia-tesla-t4`. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
+  /** Whether and how GKE automatically installs the GPU driver on nodes with attached accelerators. (AI-inferred) */
   gpuDriverInstallationConfig?: Cluster_Cluster_NodeConfig_Accelerators_GpuDriverInstallationConfig | Computed<Cluster_Cluster_NodeConfig_Accelerators_GpuDriverInstallationConfig>;
+  /** The fraction of a physical GPU allocated per partition, when GPU partitioning (e.g. MIG) is used instead of a whole device. (AI-inferred) */
   gpuPartitionSize?: string | Computed<string>;
+  /** Configuration letting multiple containers share a single physical GPU, rather than each requiring a dedicated one. (AI-inferred) */
   gpuSharingConfig?: Cluster_Cluster_NodeConfig_Accelerators_GpuSharingConfig | Computed<Cluster_Cluster_NodeConfig_Accelerators_GpuSharingConfig>;
 }
 
@@ -705,11 +735,14 @@ export interface Cluster_Cluster_NodeConfig_BootDisk {
 }
 
 export interface Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig {
+  /** The Secret Manager secret version this value is sourced from. (AI-inferred) */
   secretUri?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig {
+  /** The fully qualified domain name(s) of the private registry/registries this certificate is trusted for. (AI-inferred) */
   fqdns?: string[] | Computed<string[]>;
+  /** A CA certificate sourced from Secret Manager, trusted for verifying a private container registry's own TLS certificate. (AI-inferred) */
   gcpSecretManagerCertificateConfig?: Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig | Computed<Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfig>;
 }
 
@@ -721,31 +754,45 @@ export interface Cluster_Cluster_NodeConfig_ContainerdConfig_PrivateRegistryAcce
 }
 
 export interface Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca {
+  /** The Secret Manager secret version holding this certificate, in the form `projects/{project}/secrets/{secret}/versions/{version}`. (AI-inferred) */
   gcpSecretManagerSecretUri?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Client {
+  /** A TLS certificate. (AI-inferred) */
   cert?: Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca | Computed<Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca | Computed<Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca>;
 }
 
 export interface Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Header {
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value of this key/value pair. (AI-inferred) */
   value?: string[] | Computed<string[]>;
 }
 
 export interface Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts {
+  /** The CA certificate used to verify the remote server's own identity. (AI-inferred) */
   ca?: Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca[] | Computed<Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Ca[]>;
+  /** The capability/capabilities this proxy or client supports. (AI-inferred) */
   capabilities?: string[] | Computed<string[]>;
+  /** Client-side TLS configuration. (AI-inferred) */
   client?: Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Client[] | Computed<Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Client[]>;
+  /** How long to wait when establishing this connection before giving up. (AI-inferred) */
   dialTimeout?: string | Computed<string>;
+  /** An HTTP header sent with this request. (AI-inferred) */
   header?: Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Header[] | Computed<Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts_Header[]>;
+  /** The hostname this applies to. (AI-inferred) */
   host?: string | Computed<string>;
+  /** A path used in place of the default, for reaching this endpoint. (AI-inferred) */
   overridePath?: boolean | Computed<boolean>;
 }
 
 export interface Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts {
+  /** The host(s) this configuration applies to. (AI-inferred) */
   hosts?: Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts[] | Computed<Cluster_Cluster_NodeConfig_ContainerdConfig_RegistryHosts_Hosts[]>;
+  /** Server-side TLS configuration. (AI-inferred) */
   server?: string | Computed<string>;
 }
 
@@ -983,13 +1030,18 @@ export interface Cluster_Cluster_NodeConfig_SandboxConfig {
 }
 
 export interface Cluster_Cluster_NodeConfig_SecondaryBootDisks {
+  /** The disk image used for this node's own boot disk. (AI-inferred) */
   diskImage?: string | Computed<string>;
+  /** Which operating mode this configuration uses. (AI-inferred) */
   mode?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodeConfig_SoleTenantConfig_NodeAffinities {
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** How this taint's own key/value is compared against a pod's own toleration, e.g. `Equal` or `Exists`. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The value(s) making up this configuration. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -1006,8 +1058,11 @@ export interface Cluster_Cluster_NodeConfig_TaintConfig {
 }
 
 export interface Cluster_Cluster_NodeConfig_Taints {
+  /** What happens to a pod that doesn't tolerate this taint, e.g. `NoSchedule` or `NoExecute`. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The value of this key/value pair. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -1155,112 +1210,183 @@ export interface Cluster_Cluster_NodePoolDefaults {
 }
 
 export interface Cluster_Cluster_NodePools_Autoscaling {
+  /** Whether this node pool was created automatically by cluster autoscaling, rather than explicitly by the caller. (AI-inferred) */
   autoprovisioned?: boolean | Computed<boolean>;
+  /** Whether this feature or setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** How new nodes are distributed across zones when autoscaling, e.g. `BALANCED` or `ANY`. (AI-inferred) */
   locationPolicy?: string | Computed<string>;
+  /** The maximum number of nodes this node pool may scale up to. (AI-inferred) */
   maxNodeCount?: number | Computed<number>;
+  /** The minimum number of nodes this node pool scales down to. (AI-inferred) */
   minNodeCount?: number | Computed<number>;
+  /** The maximum total node count across all zones this node pool may scale up to. (AI-inferred) */
   totalMaxNodeCount?: number | Computed<number>;
+  /** The minimum total node count across all zones this node pool scales down to. (AI-inferred) */
   totalMinNodeCount?: number | Computed<number>;
 }
 
 export interface Cluster_Cluster_NodePools_BestEffortProvisioning {
+  /** Whether this feature or setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** The minimum number of nodes that must be provisioned for best-effort provisioning to be considered successful. (AI-inferred) */
   minProvisionNodes?: number | Computed<number>;
 }
 
 export interface Cluster_Cluster_NodePools_KubeletCertInfo {
+  /** When this node's own bootstrap certificate (for nodes without a TPM) expires. (AI-inferred) */
   nonTpmBootstrapCertExpireTime?: string | Computed<string>;
+  /** When this node's own TPM-backed bootstrap certificate expires. (AI-inferred) */
   tpmBootstrapCertExpireTime?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodePools_MaintenancePolicy_ExclusionUntilEndOfSupport {
+  /** Whether this feature or setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodePools_MaintenancePolicy {
+  /** Excludes this cluster from automatic upgrades until its own current minor version reaches end of support. (AI-inferred) */
   exclusionUntilEndOfSupport?: Cluster_Cluster_NodePools_MaintenancePolicy_ExclusionUntilEndOfSupport | Computed<Cluster_Cluster_NodePools_MaintenancePolicy_ExclusionUntilEndOfSupport>;
 }
 
 export interface Cluster_Cluster_NodePools_NetworkConfig_AdditionalNodeNetworkConfigs {
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodePools_NetworkConfig_AdditionalPodNetworkConfigs {
+  /** The maximum number of pods schedulable on a single node in this node pool. (AI-inferred) */
   maxPodsPerNode?: Cluster_Cluster_DefaultMaxPodsConstraint | Computed<Cluster_Cluster_DefaultMaxPodsConstraint>;
+  /** A reference to the Compute Engine network attachment this cluster's own control plane connects through. (AI-inferred) */
   networkAttachment?: string | Computed<string>;
+  /** The subnet secondary IP range used for pod IP addresses. (AI-inferred) */
   secondaryPodRange?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodePools_NetworkConfig {
+  /** The network configuration profile applied to accelerator-attached network interfaces. (AI-inferred) */
   acceleratorNetworkProfile?: string | Computed<string>;
+  /** Additional VPC network interface(s) attached to each node, beyond the primary one. (AI-inferred) */
   additionalNodeNetworkConfigs?: Cluster_Cluster_NodePools_NetworkConfig_AdditionalNodeNetworkConfigs[] | Computed<Cluster_Cluster_NodePools_NetworkConfig_AdditionalNodeNetworkConfigs[]>;
+  /** Additional pod network interface(s) attached to each node, for multi-networking scenarios. (AI-inferred) */
   additionalPodNetworkConfigs?: Cluster_Cluster_NodePools_NetworkConfig_AdditionalPodNetworkConfigs[] | Computed<Cluster_Cluster_NodePools_NetworkConfig_AdditionalPodNetworkConfigs[]>;
+  /** Whether GKE automatically creates a new secondary IP range for pods, rather than using an existing one. (AI-inferred) */
   createPodRange?: boolean | Computed<boolean>;
+  /** Whether nodes in this pool are assigned only internal IP addresses, with no direct public internet access. (AI-inferred) */
   enablePrivateNodes?: boolean | Computed<boolean>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** Configuration for the network bandwidth tier available to each node. (AI-inferred) */
   networkPerformanceConfig?: Cluster_Cluster_NetworkConfig_NetworkPerformanceConfig | Computed<Cluster_Cluster_NetworkConfig_NetworkPerformanceConfig>;
+  /** Configuration for the network performance tier available to each node. (AI-inferred) */
   networkTierConfig?: Cluster_Cluster_IpAllocationPolicy_NetworkTierConfig | Computed<Cluster_Cluster_IpAllocationPolicy_NetworkTierConfig>;
+  /** Configuration for whether a node's own pod IP range is sized larger than its `max_pods_per_node`, to leave room for pod churn. (AI-inferred) */
   podCidrOverprovisionConfig?: Cluster_Cluster_IpAllocationPolicy_PodCidrOverprovisionConfig | Computed<Cluster_Cluster_IpAllocationPolicy_PodCidrOverprovisionConfig>;
+  /** The pod IP address range assigned to this node, in CIDR notation. (AI-inferred) */
   podIpv4CidrBlock?: string | Computed<string>;
+  /** What fraction of this node's own pod IP address range is currently in use. (AI-inferred) */
   podIpv4RangeUtilization?: number | Computed<number>;
+  /** A reference to the secondary IP range used for pod addresses. (AI-inferred) */
   podRange?: string | Computed<string>;
+  /** The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred) */
   subnetwork?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodePools_NodeDrainConfig {
+  /** How long a resource is given to terminate gracefully before being forcibly removed. (AI-inferred) */
   graceTerminationDuration?: string | Computed<string>;
+  /** How long to wait for a PodDisruptionBudget to allow eviction before proceeding anyway. (AI-inferred) */
   pdbTimeoutDuration?: string | Computed<string>;
+  /** Whether PodDisruptionBudgets are honored when nodes in this pool are deleted. (AI-inferred) */
   respectPdbDuringNodePoolDeletion?: boolean | Computed<boolean>;
 }
 
 export interface Cluster_Cluster_NodePools_PlacementPolicy {
+  /** The name of the placement policy this applies. (AI-inferred) */
   policyName?: string | Computed<string>;
+  /** The physical arrangement of TPU chips provisioned for this node pool, e.g. `2x2x1`. (AI-inferred) */
   tpuTopology?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodePools_UpdateInfo_BlueGreenInfo {
+  /** Output only. The Compute Engine instance group URL(s) making up the original (blue) node pool during a blue/green upgrade. (AI-inferred) */
   blueInstanceGroupUrls?: string[] | Computed<string[]>;
+  /** Output only. When deletion of the old (blue) node pool began during a blue/green upgrade. (AI-inferred) */
   bluePoolDeletionStartTime?: string | Computed<string>;
+  /** Output only. The Compute Engine instance group URL(s) making up the new (green) node pool during a blue/green upgrade. (AI-inferred) */
   greenInstanceGroupUrls?: string[] | Computed<string[]>;
+  /** Output only. The node version running in the new (green) node pool during a blue/green upgrade. (AI-inferred) */
   greenPoolVersion?: string | Computed<string>;
+  /** The current phase of this operation or rollout. (AI-inferred) */
   phase?: string | Computed<string>;
 }
 
 export interface Cluster_Cluster_NodePools_UpdateInfo {
+  /** Output only. Detail about an in-progress or completed blue/green node pool upgrade. (AI-inferred) */
   blueGreenInfo?: Cluster_Cluster_NodePools_UpdateInfo_BlueGreenInfo | Computed<Cluster_Cluster_NodePools_UpdateInfo_BlueGreenInfo>;
 }
 
 export interface Cluster_Cluster_NodePools {
+  /** Configuration specific to Autopilot-mode node pools. (AI-inferred) */
   autopilotConfig?: Cluster_AddonsConfig_AgentSandboxConfig | Computed<Cluster_AddonsConfig_AgentSandboxConfig>;
+  /** Configuration for automatically resizing this node pool based on demand. (AI-inferred) */
   autoscaling?: Cluster_Cluster_NodePools_Autoscaling | Computed<Cluster_Cluster_NodePools_Autoscaling>;
+  /** Allows this node pool to start with fewer nodes than requested if full capacity isn't immediately available, rather than failing outright. (AI-inferred) */
   bestEffortProvisioning?: Cluster_Cluster_NodePools_BestEffortProvisioning | Computed<Cluster_Cluster_NodePools_BestEffortProvisioning>;
+  /** The current condition(s) affecting this resource's own status. (AI-inferred) */
   conditions?: Cluster_Cluster_Conditions[] | Computed<Cluster_Cluster_Conditions[]>;
+  /** The configuration for this resource. (AI-inferred) */
   config?: Cluster_Cluster_NodeConfig | Computed<Cluster_Cluster_NodeConfig>;
+  /** A checksum computed by the server from the resource's own current content, used for optimistic concurrency control -- an update/delete that includes a stale `etag` is rejected rather than silently overwriting a concurrent change. (AI-inferred) */
   etag?: string | Computed<string>;
+  /** How many nodes this node pool starts with when first created. (AI-inferred) */
   initialNodeCount?: number | Computed<number>;
+  /** Output only. The Compute Engine instance group URL(s) backing this node pool. (AI-inferred) */
   instanceGroupUrls?: string[] | Computed<string[]>;
+  /** Detail about the kubelet's own TLS certificate for this node. (AI-inferred) */
   kubeletCertInfo?: Cluster_Cluster_NodePools_KubeletCertInfo | Computed<Cluster_Cluster_NodePools_KubeletCertInfo>;
+  /** The zone(s) this resource is spread across. (AI-inferred) */
   locations?: string[] | Computed<string[]>;
+  /** Configuration for when automatic cluster maintenance is allowed to occur. (AI-inferred) */
   maintenancePolicy?: Cluster_Cluster_NodePools_MaintenancePolicy | Computed<Cluster_Cluster_NodePools_MaintenancePolicy>;
+  /** Configuration for automatic node repair and upgrade. (AI-inferred) */
   management?: Cluster_Autoscaling_AutoprovisioningNodePoolDefaults_Management | Computed<Cluster_Autoscaling_AutoprovisioningNodePoolDefaults_Management>;
+  /** The maximum number of pods schedulable on a single node in this node pool. (AI-inferred) */
   maxPodsConstraint?: Cluster_Cluster_DefaultMaxPodsConstraint | Computed<Cluster_Cluster_DefaultMaxPodsConstraint>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Networking configuration for this cluster or node pool. (AI-inferred) */
   networkConfig?: Cluster_Cluster_NodePools_NetworkConfig | Computed<Cluster_Cluster_NodePools_NetworkConfig>;
+  /** Configuration for how nodes are gracefully drained before removal, e.g. during a scale-down or upgrade. (AI-inferred) */
   nodeDrainConfig?: Cluster_Cluster_NodePools_NodeDrainConfig | Computed<Cluster_Cluster_NodePools_NodeDrainConfig>;
+  /** Configuration for how nodes are physically placed relative to each other, e.g. compact placement for low-latency networking. (AI-inferred) */
   placementPolicy?: Cluster_Cluster_NodePools_PlacementPolicy | Computed<Cluster_Cluster_NodePools_PlacementPolicy>;
+  /** The size of the pod IP address range assigned to this node. (AI-inferred) */
   podIpv4CidrSize?: number | Computed<number>;
+  /** Uses Dynamic Workload Scheduler queued provisioning for this node pool, waiting for capacity to become available rather than failing immediately. (AI-inferred) */
   queuedProvisioning?: Cluster_AddonsConfig_AgentSandboxConfig | Computed<Cluster_AddonsConfig_AgentSandboxConfig>;
+  /** Output only. The fully qualified URL identifying this resource. (AI-inferred) */
   selfLink?: string | Computed<string>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: string | Computed<string>;
+  /** A human-readable description of this resource's own current status. (AI-inferred) */
   statusMessage?: string | Computed<string>;
+  /** Detail about an in-progress or completed update to this resource. (AI-inferred) */
   updateInfo?: Cluster_Cluster_NodePools_UpdateInfo | Computed<Cluster_Cluster_NodePools_UpdateInfo>;
+  /** Configuration controlling how this node pool is upgraded, e.g. surge size and strategy. (AI-inferred) */
   upgradeSettings?: Cluster_Autoscaling_AutoprovisioningNodePoolDefaults_UpgradeSettings | Computed<Cluster_Autoscaling_AutoprovisioningNodePoolDefaults_UpgradeSettings>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 

@@ -14,7 +14,9 @@ export interface Curation_Endpoint {
 }
 
 export interface Curation_PluginInstanceActions {
+  /** An identifier for this action, unique within its own containing plugin. (AI-inferred) */
   actionId?: string | Computed<string>;
+  /** A reference to the plugin instance this applies to. (AI-inferred) */
   pluginInstance?: string | Computed<string>;
 }
 

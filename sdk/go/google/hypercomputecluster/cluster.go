@@ -4,54 +4,76 @@ package hypercomputecluster
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_ComputeResources_Config_NewFlexStartInstances struct {
+	// The machine type this instance runs as. (AI-inferred)
 	MachineType any
+	// The maximum amount of time this may run for. (AI-inferred)
 	MaxDuration any
-	Zone        any
+	// The Compute Engine zone this applies to. (AI-inferred)
+	Zone any
 }
 
 type Cluster_ComputeResources_Config_NewOnDemandInstances struct {
+	// The machine type this instance runs as. (AI-inferred)
 	MachineType any
-	Zone        any
+	// The Compute Engine zone this applies to. (AI-inferred)
+	Zone any
 }
 
 type Cluster_ComputeResources_Config_NewReservedInstances struct {
+	// A reference to the capacity reservation this applies to. (AI-inferred)
 	Reservation any
 }
 
 type Cluster_ComputeResources_Config_NewSpotInstances struct {
-	MachineType       any
+	// The machine type this instance runs as. (AI-inferred)
+	MachineType any
+	// What happens to this instance when its own reservation or duration ends. (AI-inferred)
 	TerminationAction any
-	Zone              any
+	// The Compute Engine zone this applies to. (AI-inferred)
+	Zone any
 }
 
 type Cluster_ComputeResources_Config struct {
+	// Provisions new instance(s) using Compute Engine Flex-start. (AI-inferred)
 	NewFlexStartInstances any
-	NewOnDemandInstances  any
-	NewReservedInstances  any
-	NewSpotInstances      any
+	// Provisions new instance(s) using standard on-demand pricing. (AI-inferred)
+	NewOnDemandInstances any
+	// Provisions new instance(s) using an existing capacity reservation. (AI-inferred)
+	NewReservedInstances any
+	// Provisions new instance(s) using Spot pricing. (AI-inferred)
+	NewSpotInstances any
 }
 
 type Cluster_ComputeResources struct {
+	// The configuration for this resource. (AI-inferred)
 	Config any
 }
 
 type Cluster_NetworkResources_Config_ExistingNetwork struct {
-	Network    any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
 	Subnetwork any
 }
 
 type Cluster_NetworkResources_Config_NewNetwork struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Network     any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
 }
 
 type Cluster_NetworkResources_Config struct {
+	// References an already-existing VPC network, rather than creating a new one. (AI-inferred)
 	ExistingNetwork any
-	NewNetwork      any
+	// Creates a new VPC network as part of this cluster. (AI-inferred)
+	NewNetwork any
 }
 
 type Cluster_NetworkResources struct {
-	Config  any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// A reference to the VPC network resource this cluster's compute, storage, and networking are provisioned in. (AI-inferred)
 	Network any
 }
 
@@ -63,11 +85,14 @@ type Cluster_Orchestrator_Slurm_LoginNodes_BootDisk struct {
 }
 
 type Cluster_Orchestrator_Slurm_LoginNodes_Instances struct {
+	// A reference to the underlying instance. (AI-inferred)
 	Instance any
 }
 
 type Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigs struct {
-	Id         any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The local path this file system is mounted at. (AI-inferred)
 	LocalMount any
 }
 
@@ -95,22 +120,33 @@ type Cluster_Orchestrator_Slurm_LoginNodes struct {
 }
 
 type Cluster_Orchestrator_Slurm_NodeSets_ComputeInstance struct {
-	BootDisk      any
-	Labels        any
+	// Configuration for this instance's own boot disk. (AI-inferred)
+	BootDisk any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The script run when this instance starts up. (AI-inferred)
 	StartupScript any
 }
 
 type Cluster_Orchestrator_Slurm_NodeSets struct {
-	ComputeId           any
-	ComputeInstance     any
-	Id                  any
+	// An identifier for this compute resource. (AI-inferred)
+	ComputeId any
+	// Configuration for a Compute Engine VM instance within this cluster. (AI-inferred)
+	ComputeInstance any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The maximum number of dynamically provisioned node(s) this can scale up to. (AI-inferred)
 	MaxDynamicNodeCount any
-	StaticNodeCount     any
-	StorageConfigs      any
+	// The fixed number of node(s) provisioned, when not dynamically scaled. (AI-inferred)
+	StaticNodeCount any
+	// Storage resource(s) provisioned as part of this cluster. (AI-inferred)
+	StorageConfigs any
 }
 
 type Cluster_Orchestrator_Slurm_Partitions struct {
-	Id         any
+	// A unique identifier for this resource. (AI-inferred)
+	Id any
+	// The identifier(s) of the node set(s) this applies to. (AI-inferred)
 	NodeSetIds any
 }
 
@@ -135,68 +171,100 @@ type Cluster_Orchestrator struct {
 }
 
 type Cluster_StorageResources_Bucket struct {
+	// A reference to the Cloud Storage bucket this applies to. (AI-inferred)
 	Bucket any
 }
 
 type Cluster_StorageResources_Config_ExistingFilestore struct {
+	// Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred)
 	Filestore any
 }
 
 type Cluster_StorageResources_Config_ExistingLustre struct {
+	// Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred)
 	Lustre any
 }
 
 type Cluster_StorageResources_Config_NewBucket_Autoclass struct {
-	Enabled              any
+	// Whether this feature is turned on. (AI-inferred)
+	Enabled any
+	// The storage class an object transitions to at the end of its own lifecycle. (AI-inferred)
 	TerminalStorageClass any
 }
 
 type Cluster_StorageResources_Config_NewBucket_HierarchicalNamespace struct {
+	// Whether this feature is turned on. (AI-inferred)
 	Enabled any
 }
 
 type Cluster_StorageResources_Config_NewBucket struct {
-	Autoclass             any
-	Bucket                any
+	// Automatically selects the most cost-effective storage class for each object, based on its own access pattern. (AI-inferred)
+	Autoclass any
+	// A reference to the Cloud Storage bucket this applies to. (AI-inferred)
+	Bucket any
+	// Enables a folder-like hierarchical namespace for this bucket, rather than a flat one. (AI-inferred)
 	HierarchicalNamespace any
-	StorageClass          any
+	// The Cloud Storage class this object or bucket uses. (AI-inferred)
+	StorageClass any
 }
 
 type Cluster_StorageResources_Config_NewFilestore_FileShares struct {
+	// The provisioned capacity, in gibibytes. (AI-inferred)
 	CapacityGb any
-	FileShare  any
+	// A single exported file share within this Filestore instance. (AI-inferred)
+	FileShare any
 }
 
 type Cluster_StorageResources_Config_NewFilestore struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	FileShares  any
-	Filestore   any
-	Protocol    any
-	Tier        any
+	// The exported file share(s) within this Filestore instance. (AI-inferred)
+	FileShares any
+	// Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred)
+	Filestore any
+	// The network protocol used. (AI-inferred)
+	Protocol any
+	// The service tier this resource is provisioned at. (AI-inferred)
+	Tier any
 }
 
 type Cluster_StorageResources_Config_NewLustre struct {
-	CapacityGb               any
-	Description              any
-	Filesystem               any
-	Lustre                   any
+	// The provisioned capacity, in gibibytes. (AI-inferred)
+	CapacityGb any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The name of this file system. (AI-inferred)
+	Filesystem any
+	// Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred)
+	Lustre any
+	// The throughput provisioned per unit of storage capacity. (AI-inferred)
 	PerUnitStorageThroughput any
 }
 
 type Cluster_StorageResources_Config struct {
-	ExistingBucket    any
+	// References an already-existing Cloud Storage bucket, rather than creating a new one. (AI-inferred)
+	ExistingBucket any
+	// References an already-existing Filestore instance, rather than creating a new one. (AI-inferred)
 	ExistingFilestore any
-	ExistingLustre    any
-	NewBucket         any
-	NewFilestore      any
-	NewLustre         any
+	// References an already-existing Managed Lustre instance, rather than creating a new one. (AI-inferred)
+	ExistingLustre any
+	// Creates a new Cloud Storage bucket as part of this cluster. (AI-inferred)
+	NewBucket any
+	// Creates a new Filestore instance as part of this cluster. (AI-inferred)
+	NewFilestore any
+	// Creates a new Managed Lustre instance as part of this cluster. (AI-inferred)
+	NewLustre any
 }
 
 type Cluster_StorageResources struct {
-	Bucket    any
-	Config    any
+	// A reference to the Cloud Storage bucket this applies to. (AI-inferred)
+	Bucket any
+	// The configuration for this resource. (AI-inferred)
+	Config any
+	// Configuration for a Filestore instance provisioned as part of this cluster. (AI-inferred)
 	Filestore any
-	Lustre    any
+	// Configuration for a Managed Lustre instance provisioned as part of this cluster. (AI-inferred)
+	Lustre any
 }
 
 var Cluster_ComputeResources_Config_NewFlexStartInstancesFields = ubx.FieldMap{

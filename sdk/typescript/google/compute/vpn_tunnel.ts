@@ -2,20 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VpnTunnel_CipherSuite_Phase1 {
+  /** List of Diffie-Hellman group identifiers used during IKE phase 1 negotiation for the VPN tunnel cipher suite. (AI-inferred) */
   dh?: string[] | Computed<string[]>;
+  /** List of encryption algorithms used for IKE phase 1 negotiation. These algorithms define the encryption methods permitted during the initial IPsec/IKE key exchange. (AI-inferred) */
   encryption?: string[] | Computed<string[]>;
+  /** The list of integrity algorithms permitted for IKE phase 1 negotiation. Supported values include SHA1, SHA256, SHA384, and SHA512; if left empty, the default set of algorithms is used. (AI-inferred) */
   integrity?: string[] | Computed<string[]>;
+  /** The list of allowed Pseudo-Random Function (PRF) algorithms for the IKE phase 1 proposal, used for key derivation during the IKE handshake. (AI-inferred) */
   prf?: string[] | Computed<string[]>;
 }
 
 export interface VpnTunnel_CipherSuite_Phase2 {
+  /** A list of acceptable encryption algorithms for Phase 2 of the IKE negotiation. (AI-inferred) */
   encryption?: string[] | Computed<string[]>;
+  /** A list of integrity algorithms to be used for the IPsec phase 2 proposal in the VPN tunnel. The tunnel negotiates using one of the listed algorithms to ensure data integrity. (AI-inferred) */
   integrity?: string[] | Computed<string[]>;
+  /** Specifies the Diffie-Hellman groups allowed for Perfect Forward Secrecy (PFS) during Phase 2 of the IKE negotiation. (AI-inferred) */
   pfs?: string[] | Computed<string[]>;
 }
 
 export interface VpnTunnel_CipherSuite {
+  /** The phase1 object defines the IKE Phase 1 (ISAKMP SA) settings for the VPN tunnel's cipher suite, including the encryption, integrity, and DH group algorithms used during the initial key exchange. (AI-inferred) */
   phase1?: VpnTunnel_CipherSuite_Phase1 | Computed<VpnTunnel_CipherSuite_Phase1>;
+  /** Settings for IPsec Phase 2 (IKE Quick Mode), including encryption and integrity algorithms, within the cipher suite for the VPN tunnel. (AI-inferred) */
   phase2?: VpnTunnel_CipherSuite_Phase2 | Computed<VpnTunnel_CipherSuite_Phase2>;
 }
 
@@ -55,6 +64,7 @@ const VpnTunnel_ParamsFields: FieldMap = {
 };
 
 export interface VpnTunnelConfig {
+  /** The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred) */
   cipherSuite?: VpnTunnel_CipherSuite | Computed<VpnTunnel_CipherSuite>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -104,6 +114,7 @@ export interface VpnTunnelConfig {
 }
 
 export interface VpnTunnelAttrs {
+  /** The cryptographic suite (e.g., encryption and authentication algorithms) used for the VPN tunnel. This is a computed read-only field provided by the system. (AI-inferred) */
   cipherSuite: VpnTunnel_CipherSuite;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;

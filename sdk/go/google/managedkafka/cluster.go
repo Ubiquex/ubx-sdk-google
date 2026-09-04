@@ -4,9 +4,12 @@ package managedkafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_BrokerDetails struct {
+	// Output only. This broker's own index within the cluster. (AI-inferred)
 	BrokerIndex any
-	NodeId      any
-	Rack        any
+	// Output only. This broker's own Kafka node ID. (AI-inferred)
+	NodeId any
+	// Output only. The availability zone (rack) this broker runs in, used for rack-aware replica placement. (AI-inferred)
+	Rack any
 }
 
 type Cluster_CapacityConfig struct {
@@ -17,6 +20,7 @@ type Cluster_CapacityConfig struct {
 }
 
 type Cluster_GcpConfig_AccessConfig_NetworkConfigs struct {
+	// The subnet this cluster is reachable from. (AI-inferred)
 	Subnet any
 }
 
@@ -38,6 +42,7 @@ type Cluster_RebalanceConfig struct {
 }
 
 type Cluster_TlsConfig_TrustConfig_CasConfigs struct {
+	// The Certificate Authority Service CA pool trusted for validating client TLS certificates. (AI-inferred)
 	CaPool any
 }
 

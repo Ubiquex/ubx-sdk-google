@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Product_ProductLabels {
+  /** The real, custom label key attached to this Vision Product Search product. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real value of this product label, paired with its own `key`. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

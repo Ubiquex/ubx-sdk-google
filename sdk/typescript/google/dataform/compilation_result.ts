@@ -48,15 +48,22 @@ export interface CompilationResult_CodeCompilationConfig {
 }
 
 export interface CompilationResult_CompilationErrors_ActionTarget {
+  /** The database (BigQuery project) the errored action's own target table belongs to. (AI-inferred) */
   database?: string | Computed<string>;
+  /** The name of the errored action's own target table. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The schema (BigQuery dataset) the errored action's own target table belongs to. (AI-inferred) */
   schema?: string | Computed<string>;
 }
 
 export interface CompilationResult_CompilationErrors {
+  /** Identifies the specific Dataform action (table, view, or assertion) this compilation error occurred on. (AI-inferred) */
   actionTarget?: CompilationResult_CompilationErrors_ActionTarget | Computed<CompilationResult_CompilationErrors_ActionTarget>;
+  /** A human-readable description of the compilation error. (AI-inferred) */
   message?: string | Computed<string>;
+  /** The file path within the repository this compilation error occurred in. (AI-inferred) */
   path?: string | Computed<string>;
+  /** A stack trace showing where in the SQLX/JavaScript compilation this error was raised. (AI-inferred) */
   stack?: string | Computed<string>;
 }
 

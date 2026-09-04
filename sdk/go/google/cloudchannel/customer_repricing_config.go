@@ -19,16 +19,21 @@ type CustomerRepricingConfig_RepricingConfig_Adjustment struct {
 }
 
 type CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupCondition struct {
+	// The real, named group of SKUs this repricing condition matches against. (AI-inferred)
 	SkuGroup any
 }
 
 type CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition struct {
+	// A real repricing condition matching entitlements whose SKU belongs to a specific `sku_group`. (AI-inferred)
 	SkuGroupCondition any
 }
 
 type CustomerRepricingConfig_RepricingConfig_ConditionalOverrides struct {
-	Adjustment         any
-	RebillingBasis     any
+	// The real margin adjustment (as a `percentage_adjustment`) this repricing rule applies when its own `repricing_condition` matches. (AI-inferred)
+	Adjustment any
+	// The real cost basis (`COST_AT_LIST` or `DIRECT_CUSTOMER_COST`) this repricing rule's own adjustment is calculated against. (AI-inferred)
+	RebillingBasis any
+	// The real condition (such as a matching `sku_group`) that must hold for this conditional repricing override to apply. (AI-inferred)
 	RepricingCondition any
 }
 

@@ -4,10 +4,14 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Agent_Tools struct {
+	// HTTP header(s) sent with this tool's own external calls. (AI-inferred)
 	Headers any
-	Name    any
-	Type    any
-	Url     any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The URL this tool calls. (AI-inferred)
+	Url any
 }
 
 var Agent_ToolsFields = ubx.FieldMap{

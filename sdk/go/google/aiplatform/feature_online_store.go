@@ -22,6 +22,7 @@ type FeatureOnlineStore_Bigtable_BigtableMetadata struct {
 }
 
 type FeatureOnlineStore_Bigtable struct {
+	// Autoscaling configuration for the Bigtable instance backing this online serving store. (AI-inferred)
 	AutoScaling any
 	// Metadata of the Bigtable instance. This is used by direct read access to the Bigtable in tenant project.
 	BigtableMetadata any
@@ -32,12 +33,18 @@ type FeatureOnlineStore_Bigtable struct {
 }
 
 type FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfig_PscAutomationConfigs struct {
-	ErrorMessage   any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// A reference to the forwarding rule directing traffic to this resource. (AI-inferred)
 	ForwardingRule any
-	IpAddress      any
-	Network        any
-	ProjectId      any
-	State          any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
+	// The current lifecycle state of this resource or job. (AI-inferred)
+	State any
 }
 
 type FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfig struct {
@@ -127,6 +134,7 @@ var FeatureOnlineStore_EncryptionSpecFields = ubx.FieldMap{
 }
 
 type FeatureOnlineStoreConfig struct {
+	// Configuration for the Bigtable instance backing this online serving store. (AI-inferred)
 	Bigtable any
 	// The dedicated serving endpoint for this FeatureOnlineStore. Only need to set when you choose Optimized storage type. Public endpoint is provisioned by default.
 	DedicatedServingEndpoint any
@@ -143,6 +151,7 @@ type FeatureOnlineStoreConfig struct {
 }
 
 type FeatureOnlineStoreAttrs struct {
+	// Configuration for the Bigtable instance backing this online serving store. (AI-inferred)
 	Bigtable any
 	// Output only. Timestamp when this FeatureOnlineStore was created.
 	CreateTime any

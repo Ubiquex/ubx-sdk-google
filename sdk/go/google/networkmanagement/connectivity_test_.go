@@ -68,21 +68,30 @@ type ConnectivityTest_ProbingDetails_DestinationEgressLocation struct {
 }
 
 type ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentiles struct {
+	// The measured latency for this probe, in microseconds. (AI-inferred)
 	LatencyMicros any
-	Percent       any
+	// A percentage value. (AI-inferred)
+	Percent any
 }
 
 type ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency struct {
+	// The distribution of measured latencies across percentiles for this test. (AI-inferred)
 	LatencyPercentiles any
 }
 
 type ConnectivityTest_ProbingDetails_EdgeResponses struct {
+	// The physical location traffic egressed Google's own network from. (AI-inferred)
 	DestinationEgressLocation any
-	DestinationRouter         any
-	ProbingLatency            any
-	Result                    any
-	SentProbeCount            any
-	SuccessfulProbeCount      any
+	// The router the packet was delivered to. (AI-inferred)
+	DestinationRouter any
+	// Latency statistics measured while probing this test's own live network path. (AI-inferred)
+	ProbingLatency any
+	// The outcome of this operation. (AI-inferred)
+	Result any
+	// How many probe packets were sent during this live connectivity test. (AI-inferred)
+	SentProbeCount any
+	// How many probe packets successfully reached their own destination during this live connectivity test. (AI-inferred)
+	SuccessfulProbeCount any
 }
 
 type ConnectivityTest_ProbingDetails_EndpointInfo struct {
@@ -139,384 +148,647 @@ type ConnectivityTest_ProbingDetails struct {
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Abort struct {
-	Cause                     any
-	IpAddress                 any
+	// Why this outcome occurred. (AI-inferred)
+	Cause any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The project(s) the caller lacks sufficient permission to fully analyze. (AI-inferred)
 	ProjectsMissingPermission any
-	ResourceUri               any
+	// A reference to the specific resource this applies to. (AI-inferred)
+	ResourceUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersion struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
+	// The App Engine environment this applies to. (AI-inferred)
 	Environment any
-	Runtime     any
-	Uri         any
+	// The runtime environment this applies to. (AI-inferred)
+	Runtime any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunction struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Location    any
-	Uri         any
-	VersionId   any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// A resource URI. (AI-inferred)
+	Uri any
+	// The version identifier this applies to. (AI-inferred)
+	VersionId any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Location    any
-	Uri         any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevision struct {
-	DisplayName   any
-	Location      any
-	ServiceUri    any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// A reference to the service this applies to. (AI-inferred)
+	ServiceUri any
+	// A resource URI. (AI-inferred)
 	Uri           any
 	WorkerPoolUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstance struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	ExternalIp  any
-	InternalIp  any
-	NetworkUri  any
-	Region      any
-	Uri         any
+	// An external (public) IP address. (AI-inferred)
+	ExternalIp any
+	// An internal (private) IP address. (AI-inferred)
+	InternalIp any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Deliver struct {
-	GoogleServiceType  any
-	IpAddress          any
+	// Which category of Google-managed service this is. (AI-inferred)
+	GoogleServiceType any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// The Google API this Private Service Connect endpoint targets. (AI-inferred)
 	PscGoogleApiTarget any
-	ResourceUri        any
-	StorageBucket      any
-	Target             any
+	// A reference to the specific resource this applies to. (AI-inferred)
+	ResourceUri any
+	// The Cloud Storage bucket this endpoint resolves to. (AI-inferred)
+	StorageBucket any
+	// The intended destination of this test or rule. (AI-inferred)
+	Target any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnection struct {
-	NetworkUri        any
-	Region            any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// The specific IP address selected for this endpoint, when more than one was possible. (AI-inferred)
 	SelectedIpAddress any
-	SelectedIpRange   any
-	SubnetworkUri     any
+	// The specific IP address range selected for this endpoint. (AI-inferred)
+	SelectedIpRange any
+	// A reference to the subnetwork this applies to. (AI-inferred)
+	SubnetworkUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Drop struct {
-	Cause                      any
+	// Why this outcome occurred. (AI-inferred)
+	Cause any
+	// The geographic location code associated with the destination. (AI-inferred)
 	DestinationGeolocationCode any
-	DestinationIp              any
-	Region                     any
-	ResourceUri                any
-	SourceGeolocationCode      any
-	SourceIp                   any
+	// The destination IP address of the simulated packet at this step. (AI-inferred)
+	DestinationIp any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// A reference to the specific resource this applies to. (AI-inferred)
+	ResourceUri any
+	// The geographic location code associated with the source. (AI-inferred)
+	SourceGeolocationCode any
+	// The source IP address of the simulated packet at this step. (AI-inferred)
+	SourceIp any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Firewall struct {
-	Action                any
-	Direction             any
-	DisplayName           any
-	FirewallRuleType      any
-	NetworkUri            any
-	Policy                any
-	PolicyPriority        any
-	PolicyUri             any
-	Priority              any
+	// The action taken by this step or rule. (AI-inferred)
+	Action any
+	// Whether this rule or step applies to `INGRESS` or `EGRESS` traffic. (AI-inferred)
+	Direction any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Which category of firewall rule matched, e.g. hierarchical or VPC. (AI-inferred)
+	FirewallRuleType any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The policy that matched this step. (AI-inferred)
+	Policy any
+	// The relative priority of this policy -- lower numbers are evaluated first. (AI-inferred)
+	PolicyPriority any
+	// A reference to the specific policy this applies to. (AI-inferred)
+	PolicyUri any
+	// The relative priority of this item -- lower numbers are evaluated first. (AI-inferred)
+	Priority any
+	// The service account(s) this rule applies to. (AI-inferred)
 	TargetServiceAccounts any
-	TargetTags            any
-	TargetType            any
-	Uri                   any
+	// The network tag(s) this rule applies to. (AI-inferred)
+	TargetTags any
+	// The kind of target this forwarding rule directs traffic to. (AI-inferred)
+	TargetType any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Forward struct {
-	IpAddress   any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// A reference to the specific resource this applies to. (AI-inferred)
 	ResourceUri any
-	Target      any
+	// The intended destination of this test or rule. (AI-inferred)
+	Target any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRule struct {
-	DisplayName                          any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// Whether firewall rules allowing Envoy-based health checks are correctly configured. (AI-inferred)
 	EnvoyHealthCheckFirewallsConfigState any
-	LoadBalancerName                     any
-	MatchedPortRange                     any
-	MatchedProtocol                      any
-	NetworkUri                           any
-	PscGoogleApiTarget                   any
-	PscServiceAttachmentUri              any
-	Region                               any
-	Target                               any
-	Uri                                  any
-	Vip                                  any
+	// The name of the load balancer this trace passed through. (AI-inferred)
+	LoadBalancerName any
+	// The port range this rule matched against. (AI-inferred)
+	MatchedPortRange any
+	// The protocol this rule matched against. (AI-inferred)
+	MatchedProtocol any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The Google API this Private Service Connect endpoint targets. (AI-inferred)
+	PscGoogleApiTarget any
+	// A reference to the Private Service Connect service attachment this traffic passed through. (AI-inferred)
+	PscServiceAttachmentUri any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// The intended destination of this test or rule. (AI-inferred)
+	Target any
+	// A resource URI. (AI-inferred)
+	Uri any
+	// A virtual IP address. (AI-inferred)
+	Vip any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMaster struct {
+	// The VPC network the GKE cluster this endpoint belongs to is attached to. (AI-inferred)
 	ClusterNetworkUri any
-	ClusterUri        any
-	DnsEndpoint       any
-	ExternalIp        any
-	InternalIp        any
+	// A reference to the GKE cluster this endpoint belongs to. (AI-inferred)
+	ClusterUri any
+	// The DNS-resolvable endpoint this applies to. (AI-inferred)
+	DnsEndpoint any
+	// An external (public) IP address. (AI-inferred)
+	ExternalIp any
+	// An internal (private) IP address. (AI-inferred)
+	InternalIp any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicy struct {
-	Action      any
-	Direction   any
+	// The action taken by this step or rule. (AI-inferred)
+	Action any
+	// Whether this rule or step applies to `INGRESS` or `EGRESS` traffic. (AI-inferred)
+	Direction any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Uri         any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkipped struct {
+	// A machine-readable reason code. (AI-inferred)
 	Reason any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePod struct {
-	IpAddress  any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// A reference to the VPC network this applies to. (AI-inferred)
 	NetworkUri any
-	PodUri     any
+	// A reference to the GKE pod this applies to. (AI-inferred)
+	PodUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleService struct {
+	// Which category of Google-managed service this is. (AI-inferred)
 	GoogleServiceType any
-	SourceIp          any
+	// The source IP address of the simulated packet at this step. (AI-inferred)
+	SourceIp any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnet struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Region      any
-	Uri         any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Instance struct {
-	DisplayName             any
-	ExternalIp              any
-	Interface               any
-	InternalIp              any
-	NetworkTags             any
-	NetworkUri              any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// An external (public) IP address. (AI-inferred)
+	ExternalIp any
+	// The network interface this applies to. (AI-inferred)
+	Interface any
+	// An internal (private) IP address. (AI-inferred)
+	InternalIp any
+	// The network tag(s) matched by this rule. (AI-inferred)
+	NetworkTags any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// A reference to the Private Service Connect network attachment this traffic passed through. (AI-inferred)
 	PscNetworkAttachmentUri any
-	Running                 any
-	ServiceAccount          any
-	Status                  any
-	Uri                     any
+	// Whether the associated resource is currently running. (AI-inferred)
+	Running any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// The current status of this resource or operation. (AI-inferred)
+	Status any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachment struct {
-	CloudRouterUri               any
-	DisplayName                  any
-	InterconnectUri              any
+	// A reference to the Cloud Router this applies to. (AI-inferred)
+	CloudRouterUri any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the Interconnect this traffic routes through. (AI-inferred)
+	InterconnectUri any
+	// The IP address matched on the Layer 2 Interconnect attachment. (AI-inferred)
 	L2AttachmentMatchedIpAddress any
-	Region                       any
-	Type                         any
-	Uri                          any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkipped struct {
+	// IP range(s) excluded from NAT masquerading. (AI-inferred)
 	NonMasqueradeRange any
-	Reason             any
+	// A machine-readable reason code. (AI-inferred)
+	Reason any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_Backends struct {
-	DisplayName                      any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The firewall rule(s) correctly allowing health check traffic to this backend. (AI-inferred)
 	HealthCheckAllowingFirewallRules any
+	// The firewall rule(s) incorrectly blocking health check traffic to this backend. (AI-inferred)
 	HealthCheckBlockingFirewallRules any
-	HealthCheckFirewallState         any
-	Uri                              any
+	// Whether firewall rules allow health check probes to reach this backend. (AI-inferred)
+	HealthCheckFirewallState any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer struct {
-	BackendType      any
-	BackendUri       any
-	Backends         any
-	HealthCheckUri   any
+	// The kind of backend this traffic is routed to, e.g. instance group or NEG. (AI-inferred)
+	BackendType any
+	// A reference to the specific backend traffic was routed to. (AI-inferred)
+	BackendUri any
+	// The backend(s) configured for this load balancer. (AI-inferred)
+	Backends any
+	// A reference to the health check associated with this backend. (AI-inferred)
+	HealthCheckUri any
+	// The kind of load balancer this trace passed through, e.g. external HTTP(S). (AI-inferred)
 	LoadBalancerType any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfo struct {
-	BackendBucketUri                any
-	BackendServiceUri               any
+	// The backend bucket this load balancer routes matching traffic to. (AI-inferred)
+	BackendBucketUri any
+	// The backend service this load balancer routes matching traffic to. (AI-inferred)
+	BackendServiceUri any
+	// Whether firewall rules allowing health check traffic are correctly configured. (AI-inferred)
 	HealthCheckFirewallsConfigState any
-	HealthCheckUri                  any
-	InstanceGroupUri                any
-	InstanceUri                     any
-	Name                            any
-	NetworkEndpointGroupUri         any
-	PscGoogleApiTarget              any
-	PscServiceAttachmentUri         any
+	// A reference to the health check associated with this backend. (AI-inferred)
+	HealthCheckUri any
+	// A reference to the instance group this endpoint belongs to. (AI-inferred)
+	InstanceGroupUri any
+	// A reference to the specific instance this endpoint resolves to. (AI-inferred)
+	InstanceUri any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the network endpoint group this applies to. (AI-inferred)
+	NetworkEndpointGroupUri any
+	// The Google API this Private Service Connect endpoint targets. (AI-inferred)
+	PscGoogleApiTarget any
+	// A reference to the Private Service Connect service attachment this traffic passed through. (AI-inferred)
+	PscServiceAttachmentUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Nat struct {
+	// Which kind of Cloud NAT gateway handled this traffic, e.g. public or private. (AI-inferred)
 	CloudNatGatewayType any
-	NatGatewayName      any
-	NetworkUri          any
-	NewDestinationIp    any
-	NewDestinationPort  any
-	NewSourceIp         any
-	NewSourcePort       any
-	OldDestinationIp    any
-	OldDestinationPort  any
-	OldSourceIp         any
-	OldSourcePort       any
-	Protocol            any
-	RouterUri           any
-	RuleNumber          any
-	Type                any
+	// The name of the NAT gateway that processed this packet. (AI-inferred)
+	NatGatewayName any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The destination IP address after NAT was applied. (AI-inferred)
+	NewDestinationIp any
+	// The destination port after NAT was applied. (AI-inferred)
+	NewDestinationPort any
+	// The source IP address after NAT was applied. (AI-inferred)
+	NewSourceIp any
+	// The source port after NAT was applied. (AI-inferred)
+	NewSourcePort any
+	// The destination IP address before NAT was applied. (AI-inferred)
+	OldDestinationIp any
+	// The destination port before NAT was applied. (AI-inferred)
+	OldDestinationPort any
+	// The source IP address before NAT was applied. (AI-inferred)
+	OldSourceIp any
+	// The source port before NAT was applied. (AI-inferred)
+	OldSourcePort any
+	// The network protocol this applies to. (AI-inferred)
+	Protocol any
+	// A reference to the Cloud Router this applies to. (AI-inferred)
+	RouterUri any
+	// The numeric priority of the firewall rule that matched. (AI-inferred)
+	RuleNumber any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Network struct {
-	DisplayName      any
-	MatchedIpRange   any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The IP address range this rule matched against. (AI-inferred)
+	MatchedIpRange any
+	// The subnet this step's own IP address matched. (AI-inferred)
 	MatchedSubnetUri any
-	Region           any
-	Uri              any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspection struct {
+	// A reference to the Cloud Next-Generation Firewall security profile group applied. (AI-inferred)
 	SecurityProfileGroupUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnection struct {
-	NetworkUri         any
-	NewDestinationIp   any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The destination IP address after NAT was applied. (AI-inferred)
+	NewDestinationIp any
+	// The destination port after NAT was applied. (AI-inferred)
 	NewDestinationPort any
-	NewSourceIp        any
-	NewSourcePort      any
-	OldDestinationIp   any
+	// The source IP address after NAT was applied. (AI-inferred)
+	NewSourceIp any
+	// The source port after NAT was applied. (AI-inferred)
+	NewSourcePort any
+	// The destination IP address before NAT was applied. (AI-inferred)
+	OldDestinationIp any
+	// The destination port before NAT was applied. (AI-inferred)
 	OldDestinationPort any
-	OldSourceIp        any
-	OldSourcePort      any
-	Protocol           any
-	SubnetUri          any
+	// The source IP address before NAT was applied. (AI-inferred)
+	OldSourceIp any
+	// The source port before NAT was applied. (AI-inferred)
+	OldSourcePort any
+	// The network protocol this applies to. (AI-inferred)
+	Protocol any
+	// A reference to the subnet this applies to. (AI-inferred)
+	SubnetUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisCluster struct {
+	// The discovery endpoint IP address for this resource. (AI-inferred)
 	DiscoveryEndpointIpAddress any
-	DisplayName                any
-	Location                   any
-	NetworkUri                 any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The Google Cloud region or resource location this applies to. (AI-inferred)
+	Location any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// A secondary IP address for this endpoint. (AI-inferred)
 	SecondaryEndpointIpAddress any
-	Uri                        any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstance struct {
-	DisplayName       any
-	NetworkUri        any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The primary IP address of this endpoint. (AI-inferred)
 	PrimaryEndpointIp any
-	ReadEndpointIp    any
-	Region            any
-	Uri               any
+	// The IP address of a database's own read replica endpoint. (AI-inferred)
+	ReadEndpointIp any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_Route struct {
-	AdvertisedRouteNextHopUri      any
+	// The next hop URI advertised for this route. (AI-inferred)
+	AdvertisedRouteNextHopUri any
+	// The router that advertised this route. (AI-inferred)
 	AdvertisedRouteSourceRouterUri any
-	DestIpRange                    any
-	DestPortRanges                 any
-	DisplayName                    any
-	InstanceTags                   any
-	NccHubRouteUri                 any
-	NccHubUri                      any
-	NccSpokeUri                    any
-	NetworkUri                     any
-	NextHop                        any
-	NextHopNetworkUri              any
-	NextHopType                    any
-	NextHopUri                     any
-	OriginatingRouteDisplayName    any
-	OriginatingRouteUri            any
-	Priority                       any
-	Protocols                      any
-	Region                         any
-	RouteScope                     any
-	RouteType                      any
-	SrcIpRange                     any
-	SrcPortRanges                  any
-	Uri                            any
+	// The destination IP address range this rule matches. (AI-inferred)
+	DestIpRange any
+	// The destination port range(s) this rule matches. (AI-inferred)
+	DestPortRanges any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The network tag(s) on this instance. (AI-inferred)
+	InstanceTags any
+	// A reference to the Network Connectivity Center hub route this traffic followed. (AI-inferred)
+	NccHubRouteUri any
+	// A reference to the Network Connectivity Center hub this traffic passed through. (AI-inferred)
+	NccHubUri any
+	// A reference to the Network Connectivity Center spoke this traffic passed through. (AI-inferred)
+	NccSpokeUri any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// Where the packet was forwarded to next. (AI-inferred)
+	NextHop any
+	// The VPC network the next hop belongs to. (AI-inferred)
+	NextHopNetworkUri any
+	// The kind of next hop the packet was forwarded to, e.g. instance or VPN tunnel. (AI-inferred)
+	NextHopType any
+	// A reference to the specific next hop the packet was forwarded to. (AI-inferred)
+	NextHopUri any
+	// A human-readable name for the route this path originated from. (AI-inferred)
+	OriginatingRouteDisplayName any
+	// A reference to the route this path originated from. (AI-inferred)
+	OriginatingRouteUri any
+	// The relative priority of this item -- lower numbers are evaluated first. (AI-inferred)
+	Priority any
+	// The network protocol(s) this rule matches. (AI-inferred)
+	Protocols any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// The scope this route applies within, e.g. network-wide or NCC hub-wide. (AI-inferred)
+	RouteScope any
+	// The kind of route that matched, e.g. subnet, static, or peering. (AI-inferred)
+	RouteType any
+	// The source IP address range this rule matches. (AI-inferred)
+	SrcIpRange any
+	// The source port range(s) this rule matches. (AI-inferred)
+	SrcPortRanges any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnection struct {
+	// The specific IP address selected for this endpoint, when more than one was possible. (AI-inferred)
 	SelectedIpAddress any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNeg struct {
+	// A reference to the network endpoint group this applies to. (AI-inferred)
 	NegUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucket struct {
+	// A reference to the Cloud Storage bucket this applies to. (AI-inferred)
 	Bucket any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfo struct {
+	// The resource type(s) this applies to. (AI-inferred)
 	ResourceTypes any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGateway struct {
-	DisplayName  any
-	IpAddress    any
-	NetworkUri   any
-	Region       any
-	Uri          any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// An IP address, in IPv4 or IPv6 format. (AI-inferred)
+	IpAddress any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// A resource URI. (AI-inferred)
+	Uri any
+	// A reference to the specific VPN tunnel this traffic passed through. (AI-inferred)
 	VpnTunnelUri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnel struct {
-	DisplayName     any
-	NetworkUri      any
-	Region          any
-	RemoteGateway   any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the VPC network this applies to. (AI-inferred)
+	NetworkUri any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Region any
+	// A reference to the remote VPN or Interconnect gateway this traffic passed through. (AI-inferred)
+	RemoteGateway any
+	// The IP address of the remote VPN or Interconnect gateway. (AI-inferred)
 	RemoteGatewayIp any
-	RoutingType     any
-	SourceGateway   any
+	// How this network's own routing is configured, e.g. regional or global dynamic routing. (AI-inferred)
+	RoutingType any
+	// The source VPN or Interconnect gateway this traffic originated from. (AI-inferred)
+	SourceGateway any
+	// The IP address of the source VPN or Interconnect gateway. (AI-inferred)
 	SourceGatewayIp any
-	Uri             any
+	// A resource URI. (AI-inferred)
+	Uri any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces_Steps struct {
-	Abort                        any
-	AppEngineVersion             any
-	CausesDrop                   any
-	CloudFunction                any
-	CloudRunJob                  any
-	CloudRunRevision             any
-	CloudSqlInstance             any
-	DatastreamPrivateConnection  any
-	Deliver                      any
-	Description                  any
-	DirectVpcEgressConnection    any
-	DmsPrivateConnection         any
-	Drop                         any
-	Endpoint                     any
-	Firewall                     any
-	Forward                      any
-	ForwardingRule               any
-	GkeMaster                    any
-	GkeNetworkPolicy             any
-	GkeNetworkPolicySkipped      any
-	GkePod                       any
-	GoogleService                any
-	HybridSubnet                 any
-	Instance                     any
-	InterconnectAttachment       any
-	IpMasqueradingSkipped        any
-	LoadBalancer                 any
-	LoadBalancerBackendInfo      any
-	Nat                          any
-	Network                      any
-	NgfwPacketInspection         any
-	ProjectId                    any
-	ProxyConnection              any
-	RedisCluster                 any
-	RedisInstance                any
-	Route                        any
+	// This trace step aborted, ending analysis without a definitive deliver/drop verdict. (AI-inferred)
+	Abort any
+	// The App Engine service version this endpoint resolves to. (AI-inferred)
+	AppEngineVersion any
+	// Whether this condition results in the packet being dropped. (AI-inferred)
+	CausesDrop any
+	// The Cloud Functions function this endpoint resolves to. (AI-inferred)
+	CloudFunction any
+	// The Cloud Run job this endpoint resolves to. (AI-inferred)
+	CloudRunJob any
+	// The Cloud Run revision this endpoint resolves to. (AI-inferred)
+	CloudRunRevision any
+	// The Cloud SQL instance this endpoint resolves to. (AI-inferred)
+	CloudSqlInstance any
+	// The Datastream private connection this endpoint routes through. (AI-inferred)
+	DatastreamPrivateConnection any
+	// This trace step delivered the packet to its own final destination. (AI-inferred)
+	Deliver any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The direct VPC egress configuration this serverless endpoint routes traffic through. (AI-inferred)
+	DirectVpcEgressConnection any
+	// The Database Migration Service private connection this endpoint routes through. (AI-inferred)
+	DmsPrivateConnection any
+	// This trace step dropped the packet, ending analysis with a drop verdict. (AI-inferred)
+	Drop any
+	// The source or destination endpoint being traced. (AI-inferred)
+	Endpoint any
+	// The firewall rule that matched this step. (AI-inferred)
+	Firewall any
+	// This trace step forwarded the packet on to the next hop. (AI-inferred)
+	Forward any
+	// The forwarding rule that matched this step. (AI-inferred)
+	ForwardingRule any
+	// The GKE cluster control plane this endpoint resolves to. (AI-inferred)
+	GkeMaster any
+	// The GKE NetworkPolicy that matched this step. (AI-inferred)
+	GkeNetworkPolicy any
+	// Whether GKE NetworkPolicy evaluation was skipped for this step, and why. (AI-inferred)
+	GkeNetworkPolicySkipped any
+	// The GKE pod this endpoint resolves to. (AI-inferred)
+	GkePod any
+	// The Google-managed service this endpoint resolves to. (AI-inferred)
+	GoogleService any
+	// The hybrid subnet this endpoint belongs to, for a Google Distributed Cloud environment. (AI-inferred)
+	HybridSubnet any
+	// A reference to the Compute Engine instance this endpoint resolves to. (AI-inferred)
+	Instance any
+	// The Interconnect attachment this traffic routes through. (AI-inferred)
+	InterconnectAttachment any
+	// Whether IP masquerading (NAT) was skipped for this step, and why. (AI-inferred)
+	IpMasqueradingSkipped any
+	// Detail about the load balancer this trace passed through. (AI-inferred)
+	LoadBalancer any
+	// Detail about the specific backend a load balancer routed this trace to. (AI-inferred)
+	LoadBalancerBackendInfo any
+	// Detail about NAT applied to this packet at this step. (AI-inferred)
+	Nat any
+	// A reference to the VPC network this trace step's traffic traverses. (AI-inferred)
+	Network any
+	// Detail about Cloud Next-Generation Firewall inspection applied to this packet. (AI-inferred)
+	NgfwPacketInspection any
+	// The Google Cloud project ID this applies to. (AI-inferred)
+	ProjectId any
+	// Detail about the proxy connection this traffic passed through. (AI-inferred)
+	ProxyConnection any
+	// The Memorystore for Redis Cluster this endpoint resolves to. (AI-inferred)
+	RedisCluster any
+	// The Memorystore for Redis instance this endpoint resolves to. (AI-inferred)
+	RedisInstance any
+	// The route that matched this step. (AI-inferred)
+	Route any
+	// Detail about a serverless resource's own external network connection. (AI-inferred)
 	ServerlessExternalConnection any
-	ServerlessNeg                any
-	State                        any
-	StorageBucket                any
-	ViewerPermissionMissingInfo  any
-	VpcConnector                 any
-	VpnGateway                   any
-	VpnTunnel                    any
+	// The serverless network endpoint group this traffic routed through. (AI-inferred)
+	ServerlessNeg any
+	// The current status of this resource or step. (AI-inferred)
+	State any
+	// The Cloud Storage bucket this endpoint resolves to. (AI-inferred)
+	StorageBucket any
+	// Detail about resource(s) the caller lacked sufficient permission to view during analysis. (AI-inferred)
+	ViewerPermissionMissingInfo any
+	// The Serverless VPC Access connector this endpoint routes through. (AI-inferred)
+	VpcConnector any
+	// A reference to the VPN gateway this traffic passed through. (AI-inferred)
+	VpnGateway any
+	// Detail about the VPN tunnel this traffic passed through. (AI-inferred)
+	VpnTunnel any
 }
 
 type ConnectivityTest_ReachabilityDetails_Traces struct {
-	EndpointInfo   any
+	// Detail identifying this trace's own source and destination endpoints. (AI-inferred)
+	EndpointInfo any
+	// The identifier of a related forward-direction trace, for a return-path trace. (AI-inferred)
 	ForwardTraceId any
-	Steps          any
+	// The ordered step(s) making up this trace. (AI-inferred)
+	Steps any
 }
 
 type ConnectivityTest_ReachabilityDetails struct {

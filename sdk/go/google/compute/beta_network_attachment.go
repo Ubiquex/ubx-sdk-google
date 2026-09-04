@@ -15,6 +15,7 @@ type BetaNetworkAttachment_ConnectionEndpoints struct {
 }
 
 type BetaNetworkAttachmentConfig struct {
+	// Whether this network attachment accepts connection requests automatically or requires explicit acceptance. (AI-inferred)
 	ConnectionPreference any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
@@ -32,7 +33,8 @@ type BetaNetworkAttachmentConfig struct {
 
 type BetaNetworkAttachmentAttrs struct {
 	// Output only. [Output Only] An array of connections for all the producers connected to this network attachment.
-	ConnectionEndpoints  any
+	ConnectionEndpoints any
+	// Whether this network attachment accepts connection requests automatically or requires explicit acceptance. (AI-inferred)
 	ConnectionPreference any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any

@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomRange_Attributes:
+    # The real key of this custom IP range's own metadata attribute. (AI-inferred)
     key: Any = None
+    # The real value of this custom IP range's own metadata attribute. (AI-inferred)
     value: Any = None
 
 _CustomRange_AttributesFields = {

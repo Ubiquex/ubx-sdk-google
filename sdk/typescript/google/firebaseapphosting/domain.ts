@@ -2,29 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Domain_CustomDomainStatus_Issues {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_Records {
+  /** The domain name this applies to. (AI-inferred) */
   domainName?: string | Computed<string>;
+  /** The record data expected for this DNS record. (AI-inferred) */
   rdata?: string | Computed<string>;
+  /** The lifecycle state most relevant to this domain check's own current result. (AI-inferred) */
   relevantState?: string[] | Computed<string[]>;
+  /** The action needed to resolve this domain check's own current issue. (AI-inferred) */
   requiredAction?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Domain_CustomDomainStatus_RequiredDnsUpdates_Desired {
+  /** Detail about an error encountered while checking this domain. (AI-inferred) */
   checkError?: Domain_CustomDomainStatus_Issues | Computed<Domain_CustomDomainStatus_Issues>;
+  /** The domain name this applies to. (AI-inferred) */
   domainName?: string | Computed<string>;
+  /** The DNS record(s) this applies to. (AI-inferred) */
   records?: Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_Records[] | Computed<Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_Records[]>;
 }
 
 export interface Domain_CustomDomainStatus_RequiredDnsUpdates {
+  /** When this domain check was last run. (AI-inferred) */
   checkTime?: string | Computed<string>;
+  /** The value expected for this domain to be considered correctly configured. (AI-inferred) */
   desired?: Domain_CustomDomainStatus_RequiredDnsUpdates_Desired[] | Computed<Domain_CustomDomainStatus_RequiredDnsUpdates_Desired[]>;
+  /** The value actually observed for this domain. (AI-inferred) */
   discovered?: Domain_CustomDomainStatus_RequiredDnsUpdates_Desired[] | Computed<Domain_CustomDomainStatus_RequiredDnsUpdates_Desired[]>;
+  /** The domain name this applies to. (AI-inferred) */
   domainName?: string | Computed<string>;
 }
 

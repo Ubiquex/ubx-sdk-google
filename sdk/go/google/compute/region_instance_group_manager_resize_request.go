@@ -4,33 +4,46 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionInstanceGroupManagerResizeRequest_Instances_PreservedState_Disks struct {
+	// Indicates whether the disk is automatically deleted when the instance is deleted (true) or preserved (false). (AI-inferred)
 	AutoDelete any
-	Mode       any
-	Source     any
+	// The mode of a preserved disk, indicating whether the disk is attached in read-only or read-write mode. Acceptable values are 'READ_WRITE' and 'READ_ONLY'. (AI-inferred)
+	Mode any
+	// The source disk or image to preserve for the instance's stateful disk, specified as a name, self-link, or partial URL. This disk or image is used to restore the instance's disk state during resize operations. (AI-inferred)
+	Source any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddress struct {
+	// The external IP address to preserve and assign to the instance when the resize request is processed. (AI-inferred)
 	Address any
+	// The literal IP address value to assign as the preserved external IP address for this instance. (AI-inferred)
 	Literal any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps struct {
+	// Indicates whether the external IP is automatically deleted when the instance is deleted. Valid values are 'TRUE' and 'FALSE'. (AI-inferred)
 	AutoDelete any
-	IpAddress  any
+	// The preserved external IP address configuration for a network interface. This object includes the IP address and its address type (such as INTERNAL or EXTERNAL). (AI-inferred)
+	IpAddress any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Instances_PreservedState struct {
-	Disks       any
+	// Map of disk names to preserved disk state. Each key is the disk name, and the value is an object specifying the source of the disk and optionally the disk mode (READ_ONLY or READ_WRITE). (AI-inferred)
+	Disks any
+	// A map of external IPs to preserve for the instance as part of its preserved state during a resize operation. (AI-inferred)
 	ExternalIps any
 	InternalIps any
-	Metadata    any
+	// A map of metadata key-value pairs to preserve for the instance when the resize request is applied. (AI-inferred)
+	Metadata any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Instances struct {
-	Fingerprint    any
-	Name           any
+	// The fingerprint of the instance used for optimistic concurrency control, ensuring the instance hasn't changed since it was last read. (AI-inferred)
+	Fingerprint any
+	Name        any
+	// Configuration for preserving instance state during a resize operation, such as metadata and disk settings. (AI-inferred)
 	PreservedState any
-	Status         any
+	// The status of an instance in the resize request. Possible values are: APPLYING, DELETING, EFFECTIVE, NONE, UNAPPLIED, and UNAPPLIED_DELETION. (AI-inferred)
+	Status any
 }
 
 type RegionInstanceGroupManagerResizeRequest_RequestedRunDuration struct {
@@ -41,46 +54,66 @@ type RegionInstanceGroupManagerResizeRequest_RequestedRunDuration struct {
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain    any
+	// The logical grouping to which the error belongs, often a service domain such as 'googleapis.com' or 'gke.io'. (AI-inferred)
+	Domain any
+	// Additional structured details about this error, provided as key-value pairs. Keys must match the regex `[a-z][a-zA-Z0-9]*` or `_[a-z][a-zA-Z0-9]*`. (AI-inferred)
 	Metadatas any
-	Reason    any
+	// The reason that identifies the specific cause of the error. This value is unique within the error's domain and typically follows the pattern `[A-Z0-9_]+` (e.g., 'SERVICE_DISABLED'). (AI-inferred)
+	Reason any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_Links struct {
+	// A human-readable description of the help link, providing context or guidance related to the error. (AI-inferred)
 	Description any
-	Url         any
+	// URL to a help resource related to the error detail. (AI-inferred)
+	Url any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help struct {
+	// A list of links to helpful resources related to the error, where each link object typically contains a description and a URL. (AI-inferred)
 	Links any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale  any
+	// The locale (language tag, e.g., 'en-US') of the localized error message. (AI-inferred)
+	Locale any
+	// The localized human-readable error message text, provided in the language specified by the corresponding 'locale' field within the localized_message error detail. (AI-inferred)
 	Message any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions    any
-	FutureLimit   any
-	Limit         any
-	LimitName     any
-	MetricName    any
+	// A map of quota dimension keys to values, such as region, zone, or resource type, that identifies the specific quota limit that was exceeded. (AI-inferred)
+	Dimensions any
+	// The quota limit that will apply if the resize request is accepted, used in quota error details. (AI-inferred)
+	FutureLimit any
+	// The maximum allowed value for the quota metric, as specified by the quota limit. (AI-inferred)
+	Limit any
+	// The name of the specific quota limit that was exceeded, as reported in the quota_info error details. (AI-inferred)
+	LimitName any
+	// The name of the quota metric that was exceeded, such as 'compute.googleapis.com/cpus'. (AI-inferred)
+	MetricName any
+	// The rollout status of the quota, indicating whether the rollout is in progress. Allowed values: IN_PROGRESS and ROLLOUT_STATUS_UNSPECIFIED. (AI-inferred)
 	RolloutStatus any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails struct {
-	ErrorInfo        any
-	Help             any
+	ErrorInfo any
+	// An object containing links to documentation that help resolve the error. (AI-inferred)
+	Help any
+	// A localized error message object, typically containing a 'locale' (e.g., 'en-US') and a 'message' string with the error text in that locale. (AI-inferred)
 	LocalizedMessage any
-	QuotaInfo        any
+	// Information about the quota limit that was exceeded, including the metric name, the quota limit, and the current usage. (AI-inferred)
+	QuotaInfo any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error_Errors struct {
+	// The machine-readable error code for the resize request failure, as returned by the Compute Engine API. This string typically identifies the specific error condition. (AI-inferred)
 	Code         any
 	ErrorDetails any
-	Location     any
-	Message      any
+	// The path or field in the request that the error pertains to, typically a JSON Pointer or field name. (AI-inferred)
+	Location any
+	// A human-readable error message that explains the failure. (AI-inferred)
+	Message any
 }
 
 type RegionInstanceGroupManagerResizeRequest_Status_Error struct {
@@ -95,7 +128,8 @@ type RegionInstanceGroupManagerResizeRequest_Status_LastAttempt struct {
 
 type RegionInstanceGroupManagerResizeRequest_Status struct {
 	// Output only. Fatal errors encountered during the queueing or provisioning phases of the ResizeRequest that caused the transition to the FAILED state. Contrary to the last_attempt errors, this field is final and errors are never removed from here, as the ResizeRequest is not going to retry.
-	Error       any
+	Error any
+	// Represents the most recent attempt to resize the instance group, including error details if the attempt failed. (AI-inferred)
 	LastAttempt any
 }
 

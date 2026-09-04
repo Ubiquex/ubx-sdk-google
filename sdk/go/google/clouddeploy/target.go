@@ -9,15 +9,21 @@ type Target_AnthosCluster struct {
 }
 
 type Target_AssociatedEntities_GkeClusters struct {
-	Cluster     any
+	// A reference to the GKE cluster this target deploys to. (AI-inferred)
+	Cluster any
+	// Uses a DNS-resolvable endpoint to reach this cluster, rather than a direct IP address. (AI-inferred)
 	DnsEndpoint any
-	InternalIp  any
-	ProxyUrl    any
+	// Whether this cluster is reached over its own internal (private) IP address, rather than a public one. (AI-inferred)
+	InternalIp any
+	// The URL of a proxy used to reach this cluster. (AI-inferred)
+	ProxyUrl any
 }
 
 type Target_AssociatedEntities struct {
+	// The Anthos-registered cluster(s) this applies to. (AI-inferred)
 	AnthosClusters any
-	GkeClusters    any
+	// The GKE cluster(s) this applies to. (AI-inferred)
+	GkeClusters any
 }
 
 type Target_CustomTarget struct {
@@ -26,25 +32,38 @@ type Target_CustomTarget struct {
 }
 
 type Target_ExecutionConfigs_DefaultPool struct {
+	// The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
 	ArtifactStorage any
-	ServiceAccount  any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
 }
 
 type Target_ExecutionConfigs_PrivatePool struct {
+	// The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
 	ArtifactStorage any
-	ServiceAccount  any
-	WorkerPool      any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
+	WorkerPool any
 }
 
 type Target_ExecutionConfigs struct {
-	ArtifactStorage  any
-	DefaultPool      any
+	// The Cloud Storage location build artifacts and release configuration are stored under. (AI-inferred)
+	ArtifactStorage any
+	// Configuration for running jobs on Cloud Build's own default worker pool, rather than a private one. (AI-inferred)
+	DefaultPool any
+	// How long a job is allowed to run before being considered timed out. (AI-inferred)
 	ExecutionTimeout any
-	PrivatePool      any
-	ServiceAccount   any
-	Usages           any
-	Verbose          any
-	WorkerPool       any
+	// Configuration for running jobs on a private Cloud Build worker pool, rather than the default shared one. (AI-inferred)
+	PrivatePool any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// Which purpose(s) (render, deploy, verify) this execution environment configuration applies to. (AI-inferred)
+	Usages any
+	// Whether detailed, verbose output is produced for this operation. (AI-inferred)
+	Verbose any
+	// A reference to the private Cloud Build worker pool used to execute this pipeline's own jobs. (AI-inferred)
+	WorkerPool any
 }
 
 type Target_MultiTarget struct {

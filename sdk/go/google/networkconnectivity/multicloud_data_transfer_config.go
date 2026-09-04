@@ -4,11 +4,14 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MulticloudDataTransferConfig_Services_States struct {
+	// When this configuration took effect. (AI-inferred)
 	EffectiveTime any
-	State         any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type MulticloudDataTransferConfig_Services struct {
+	// The lifecycle state(s) this filter matches. (AI-inferred)
 	States any
 }
 

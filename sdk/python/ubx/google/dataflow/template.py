@@ -49,24 +49,40 @@ class Template_Environment:
 
 @dataclasses.dataclass
 class Template_Metadata_Parameters_EnumOptions:
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A human-readable label for this item. (AI-inferred)
     label: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Template_Metadata_Parameters:
+    # Additional caller-defined key/value metadata attached to this resource. (AI-inferred)
     custom_metadata: Any = None
+    # The value used when this parameter is left unset. (AI-inferred)
     default_value: Any = None
+    # The allowed option(s) for an enum-typed parameter. (AI-inferred)
     enum_options: Any = None
+    # The name of the group this belongs to. (AI-inferred)
     group_name: Any = None
+    # Human-readable guidance text for this parameter. (AI-inferred)
     help_text: Any = None
+    # Whether this parameter is hidden from the console UI. (AI-inferred)
     hidden_ui: Any = None
+    # Whether this parameter may be left unset. (AI-inferred)
     is_optional: Any = None
+    # A human-readable label for this item. (AI-inferred)
     label: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The data type of this parameter. (AI-inferred)
     param_type: Any = None
+    # The name of the parent element this belongs to. (AI-inferred)
     parent_name: Any = None
+    # The value(s) that activate the parent trigger this depends on. (AI-inferred)
     parent_trigger_values: Any = None
+    # The regular expression(s) this rule matches against. (AI-inferred)
     regexes: Any = None
 
 @dataclasses.dataclass

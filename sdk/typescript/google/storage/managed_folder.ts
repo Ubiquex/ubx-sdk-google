@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagedFolder_RapidCacheConfig_Policies {
+  /** Whether this bucket ingests written objects for rapid analytics access as they land. (AI-inferred) */
   ingestOnWrite?: string | Computed<string>;
+  /** The identifier of the rapid storage cache this applies to. (AI-inferred) */
   rapidCacheId?: string | Computed<string>;
 }
 

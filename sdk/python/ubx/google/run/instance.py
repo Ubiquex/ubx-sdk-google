@@ -17,126 +17,193 @@ class Instance_BinaryAuthorization:
 
 @dataclasses.dataclass
 class Instance_Conditions:
+    # Output only. Why this execution is in its current state, e.g. why it failed. (AI-inferred)
     execution_reason: Any = None
+    # Output only. Why this instance is in its current state, e.g. why it isn't serving traffic. (AI-inferred)
     instance_reason: Any = None
+    # Output only. When this condition last changed from one status to another. (AI-inferred)
     last_transition_time: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # Output only. A short, machine-readable identifier for why this condition holds. (AI-inferred)
     reason: Any = None
+    # Output only. Why this revision is in its current state, e.g. why it failed to become ready. (AI-inferred)
     revision_reason: Any = None
+    # Output only. How serious this condition is, e.g. whether it's merely informational or actively blocking the resource from being ready. (AI-inferred)
     severity: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Instance_ContainerStatuses:
+    # The content digest of the container image actually deployed. (AI-inferred)
     image_digest: Any = None
+    # The name identifying this container, revision, execution, or resource. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_BuildInfo:
+    # The name of the function to invoke, when deploying from source as a Cloud Run function. (AI-inferred)
     function_target: Any = None
+    # Where this source code is located. (AI-inferred)
     source_location: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_Env_ValueSource_SecretKeyRef:
+    # The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred)
     secret: Any = None
+    # The version identifier of this resource or revision. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_Env_ValueSource:
+    # References a specific key within a Secret Manager secret. (AI-inferred)
     secret_key_ref: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_Env:
+    # The name identifying this container, revision, execution, or resource. (AI-inferred)
     name: Any = None
+    # The literal value of this environment variable or setting. (AI-inferred)
     value: Any = None
+    # Where this value is sourced from, e.g. a Secret Manager secret. (AI-inferred)
     value_source: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_LivenessProbe_Grpc:
+    # The TCP port this applies to. (AI-inferred)
     port: Any = None
+    # The gRPC health-check service name this probe calls, when using a `grpc` probe. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_LivenessProbe_HttpGet_HttpHeaders:
+    # The name identifying this container, revision, execution, or resource. (AI-inferred)
     name: Any = None
+    # The literal value of this environment variable or setting. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_LivenessProbe_HttpGet:
+    # Extra HTTP headers this `http_get` probe sends with its request. (AI-inferred)
     http_headers: Any = None
+    # The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred)
     path: Any = None
+    # The TCP port this applies to. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_LivenessProbe_TcpSocket:
+    # The TCP port this applies to. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_LivenessProbe:
+    # How many consecutive probe failures are tolerated before the container is considered unhealthy and Cloud Run acts on it. (AI-inferred)
     failure_threshold: Any = None
+    # Configures this probe to call the container's own gRPC health-check service, rather than an HTTP or TCP check. (AI-inferred)
     grpc: Any = None
+    # Configures this probe to send an HTTP GET request to the container, treating a 2xx/3xx response as healthy. (AI-inferred)
     http_get: Any = None
+    # How long Cloud Run waits after the container starts before running this probe for the first time. (AI-inferred)
     initial_delay_seconds: Any = None
+    # How often, in seconds, this probe runs. (AI-inferred)
     period_seconds: Any = None
+    # Configures this probe to simply check the container's port is accepting TCP connections, without sending any application-level request. (AI-inferred)
     tcp_socket: Any = None
+    # How long this probe waits for a response before treating the attempt as a failure. (AI-inferred)
     timeout_seconds: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_Ports:
+    # The port the container listens on. (AI-inferred)
     container_port: Any = None
+    # The name identifying this container, revision, execution, or resource. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_Resources:
+    # Whether CPU is only allocated while actively handling requests, rather than continuously. (AI-inferred)
     cpu_idle: Any = None
+    # The maximum resource amount(s) (CPU, memory) this container may use. (AI-inferred)
     limits: Any = None
+    # Whether extra CPU is temporarily allocated during container startup, to reduce cold-start latency. (AI-inferred)
     startup_cpu_boost: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_SourceCode_CloudStorageSource:
+    # The Cloud Storage bucket this volume mount is backed by. (AI-inferred)
     bucket: Any = None
+    # A number incremented each time this resource is significantly modified. (AI-inferred)
     generation: Any = None
+    # The Cloud Storage object this applies to. (AI-inferred)
     object: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_SourceCode_InlinedSource_Sources:
+    # The literal content of this configuration value. (AI-inferred)
     content: Any = None
+    # The name of this file. (AI-inferred)
     filename: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_SourceCode_InlinedSource:
+    # The source(s) this build reads from. (AI-inferred)
     sources: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_SourceCode:
+    # The Cloud Storage location of the source code for this build. (AI-inferred)
     cloud_storage_source: Any = None
+    # Source code provided directly inline, rather than referencing an external location. (AI-inferred)
     inlined_source: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers_VolumeMounts:
+    # The path within the container this volume is mounted at. (AI-inferred)
     mount_path: Any = None
+    # The name identifying this container, revision, execution, or resource. (AI-inferred)
     name: Any = None
+    # A specific subdirectory within the volume to mount, rather than its own root. (AI-inferred)
     sub_path: Any = None
 
 @dataclasses.dataclass
 class Instance_Containers:
+    # The argument(s) passed to the container's own command. (AI-inferred)
     args: Any = None
+    # The base image this container was built from, tracked for automatic base image update. (AI-inferred)
     base_image_uri: Any = None
+    # Detail about how this revision's own image was built. (AI-inferred)
     build_info: Any = None
+    # The container entrypoint command, overriding the image's own default. (AI-inferred)
     command: Any = None
+    # The container(s) that must be healthy before this one starts. (AI-inferred)
     depends_on: Any = None
+    # Environment variable(s) set in the container. (AI-inferred)
     env: Any = None
+    # The container image reference to run. (AI-inferred)
     image: Any = None
+    # A probe determining whether the container is still running correctly, restarting it if not. (AI-inferred)
     liveness_probe: Any = None
+    # The name identifying this container, revision, execution, or resource. (AI-inferred)
     name: Any = None
+    # The port(s) this container exposes. (AI-inferred)
     ports: Any = None
+    # A probe determining whether the container is ready to receive traffic. (AI-inferred)
     readiness_probe: Any = None
+    # The compute resource requirement(s) (CPU, memory) for this container. (AI-inferred)
     resources: Any = None
+    # Configuration for launching this container within an isolated sandbox environment. (AI-inferred)
     sandbox_launcher: Any = None
+    # The source code this build was produced from. (AI-inferred)
     source_code: Any = None
+    # A probe determining whether the container has finished starting up, before liveness/readiness probes begin. (AI-inferred)
     startup_probe: Any = None
+    # The volume(s) mounted into this container. (AI-inferred)
     volume_mounts: Any = None
+    # The working directory the container's own entrypoint runs from. (AI-inferred)
     working_dir: Any = None
 
 @dataclasses.dataclass
@@ -146,50 +213,74 @@ class Instance_NodeSelector:
 
 @dataclasses.dataclass
 class Instance_Volumes_CloudSqlInstance:
+    # The instance(s) this applies to. (AI-inferred)
     instances: Any = None
 
 @dataclasses.dataclass
 class Instance_Volumes_EmptyDir:
+    # The storage medium backing this volume. (AI-inferred)
     medium: Any = None
+    # The maximum size this ephemeral volume may grow to. (AI-inferred)
     size_limit: Any = None
 
 @dataclasses.dataclass
 class Instance_Volumes_Gcs:
+    # The Cloud Storage bucket this volume mount is backed by. (AI-inferred)
     bucket: Any = None
+    # Additional mount option(s) applied to this volume. (AI-inferred)
     mount_options: Any = None
+    # Whether this volume mount is mounted read-only, preventing the container from writing to it. (AI-inferred)
     read_only: Any = None
 
 @dataclasses.dataclass
 class Instance_Volumes_Nfs:
+    # The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred)
     path: Any = None
+    # Whether this volume mount is mounted read-only, preventing the container from writing to it. (AI-inferred)
     read_only: Any = None
+    # The server hostname or address this connects to. (AI-inferred)
     server: Any = None
 
 @dataclasses.dataclass
 class Instance_Volumes_Secret_Items:
+    # The file permission mode applied. (AI-inferred)
     mode: Any = None
+    # The HTTP path this probe requests, or this volume mount targets, depending on this field's own containing message. (AI-inferred)
     path: Any = None
+    # The version identifier of this resource or revision. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Instance_Volumes_Secret:
+    # The default file permission mode applied to files in this volume. (AI-inferred)
     default_mode: Any = None
+    # The schema every element of an `array`-typed value must satisfy. (AI-inferred)
     items: Any = None
+    # The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred)
     secret: Any = None
 
 @dataclasses.dataclass
 class Instance_Volumes:
+    # The Cloud SQL instance(s) this service connects to. (AI-inferred)
     cloud_sql_instance: Any = None
+    # An ephemeral volume backed by local storage, cleared when the instance stops. (AI-inferred)
     empty_dir: Any = None
+    # Configuration for a volume backed by a Cloud Storage bucket. (AI-inferred)
     gcs: Any = None
+    # The name identifying this container, revision, execution, or resource. (AI-inferred)
     name: Any = None
+    # Configuration for a volume backed by an NFS file share. (AI-inferred)
     nfs: Any = None
+    # The Secret Manager secret this value is sourced from, rather than a literal. (AI-inferred)
     secret: Any = None
 
 @dataclasses.dataclass
 class Instance_VpcAccess_NetworkInterfaces:
+    # The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
     network: Any = None
+    # The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
     subnetwork: Any = None
+    # The traffic tag(s) applied to this revision. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -486,6 +577,7 @@ _Instance_VpcAccessFields = {
 
 @dataclasses.dataclass
 class InstanceConfig:
+    # Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
     annotations: Any = None
     # Settings for Binary Authorization feature.
     binary_authorization: Any = None
@@ -515,6 +607,7 @@ class InstanceConfig:
     ingress: Any = None
     # Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
     invoker_iam_disabled: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
     # The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, `GA` is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if `ALPHA` is provided as input, but only `BETA` and `GA`-level features are used, this field will be `BETA` on output.
     launch_stage: Any = None
@@ -524,6 +617,7 @@ class InstanceConfig:
     node_selector: Any = None
     # Optional. Restart policy for the Instance.
     restart_policy: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
     # Defines a status condition for a resource.
     terminal_condition: Any = None
@@ -534,6 +628,7 @@ class InstanceConfig:
 
 @dataclasses.dataclass
 class InstanceAttrs:
+    # Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
     annotations: Any = None
     # Settings for Binary Authorization feature.
     binary_authorization: Any = None
@@ -577,6 +672,7 @@ class InstanceAttrs:
     ingress: Any = None
     # Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
     invoker_iam_disabled: Any = None
+    # Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
     labels: Any = None
     # Output only. Email address of the last authenticated modifier.
     last_modifier: Any = None
@@ -596,6 +692,7 @@ class InstanceAttrs:
     restart_policy: Any = None
     # Output only. Reserved for future use.
     satisfies_pzs: Any = None
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
     # Defines a status condition for a resource.
     terminal_condition: Any = None

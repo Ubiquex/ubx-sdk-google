@@ -8,14 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Destination_Endpoints:
+    # The BGP Autonomous System Number this applies to. (AI-inferred)
     asn: Any = None
+    # The cloud service provider this hybrid connection reaches. (AI-inferred)
     csp: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 @dataclasses.dataclass
 class Destination_StateTimeline_States:
+    # When this configuration took effect. (AI-inferred)
     effective_time: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

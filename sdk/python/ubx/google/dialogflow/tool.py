@@ -8,75 +8,109 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Tool_DataStoreSpec_DataStoreConnections:
+    # A reference to the Vertex AI Search data store this connection reads from. (AI-inferred)
     data_store: Any = None
+    # What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred)
     data_store_type: Any = None
+    # How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred)
     document_processing_mode: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreSpec:
+    # The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred)
     data_store_connections: Any = None
+    # The prompt played when the caller's own input can't be matched to any expected value. (AI-inferred)
     fallback_prompt: Any = None
 
 @dataclasses.dataclass
 class Tool_FunctionSpec:
+    # The schema describing this tool's own expected input. (AI-inferred)
     input_schema: Any = None
+    # The schema describing this tool's own expected output. (AI-inferred)
     output_schema: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_Authentication_ApiKeyConfig:
+    # The API key used to authenticate this call. (AI-inferred)
     api_key: Any = None
+    # The name of the API key parameter. (AI-inferred)
     key_name: Any = None
+    # Where in the request a value (e.g. an API key) is placed, e.g. a header or query parameter. (AI-inferred)
     request_location: Any = None
+    # The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred)
     secret_version_for_api_key: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_Authentication_BearerTokenConfig:
+    # The Secret Manager secret version holding the bearer token, instead of storing it inline. (AI-inferred)
     secret_version_for_token: Any = None
+    # A token used to authenticate or identify this request. (AI-inferred)
     token: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_Authentication_OauthConfig:
+    # The OAuth client ID used to authenticate. (AI-inferred)
     client_id: Any = None
+    # The OAuth client secret used to authenticate. (AI-inferred)
     client_secret: Any = None
+    # Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred)
     oauth_grant_type: Any = None
+    # The OAuth scope(s) requested. (AI-inferred)
     scopes: Any = None
+    # The Secret Manager secret version holding the OAuth client secret, instead of storing it inline. (AI-inferred)
     secret_version_for_client_secret: Any = None
+    # The OAuth token endpoint URL used to obtain an access token. (AI-inferred)
     token_endpoint: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_Authentication_ServiceAccountAuthConfig:
+    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_Authentication_ServiceAgentAuthConfig:
+    # How Dialogflow's own service agent identity is presented when authenticating the webhook call. (AI-inferred)
     service_agent_auth: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_Authentication:
+    # Configuration for authenticating using an API key. (AI-inferred)
     api_key_config: Any = None
+    # Configuration for authenticating using a static bearer token. (AI-inferred)
     bearer_token_config: Any = None
+    # Authenticates the webhook call using OAuth 2.0 client credentials. (AI-inferred)
     oauth_config: Any = None
+    # Authenticates the webhook call using a Google Cloud service account's own identity token. (AI-inferred)
     service_account_auth_config: Any = None
+    # Configuration for authenticating using Dialogflow's own service agent identity. (AI-inferred)
     service_agent_auth_config: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_ServiceDirectoryConfig:
+    # A reference to the service this applies to. (AI-inferred)
     service: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_TlsConfig_CaCerts:
+    # A TLS certificate. (AI-inferred)
     cert: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec_TlsConfig:
+    # The CA certificate(s) trusted for this TLS connection. (AI-inferred)
     ca_certs: Any = None
 
 @dataclasses.dataclass
 class Tool_OpenApiSpec:
+    # The authentication method used for this call. (AI-inferred)
     authentication: Any = None
+    # Configuration for reaching this webhook via Service Directory, instead of a direct URL. (AI-inferred)
     service_directory_config: Any = None
+    # The schema describing this text value's own expected structure. (AI-inferred)
     text_schema: Any = None
+    # TLS/SSL configuration for this connection. (AI-inferred)
     tls_config: Any = None
 
 _Tool_DataStoreSpec_DataStoreConnectionsFields = {
@@ -194,21 +228,34 @@ _Tool_OpenApiSpecFields = {
 
 @dataclasses.dataclass
 class ToolConfig:
+    # Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
     data_store_spec: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
     function_spec: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_spec: Any = None
 
 @dataclasses.dataclass
 class ToolAttrs:
+    # Configuration for how this playbook or tool queries a connected data store. (AI-inferred)
     data_store_spec: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Defines a tool as a callable function, with its own name, description, and parameter schema. (AI-inferred)
     function_spec: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Defines a tool's own callable operations using an OpenAPI specification document. (AI-inferred)
     open_api_spec: Any = None
+    # Which kind of tool this is, e.g. an OpenAPI-defined service, a function, or a data store. (AI-inferred)
     tool_type: Any = None
 
 Tool = ubx.ResourceBinding(

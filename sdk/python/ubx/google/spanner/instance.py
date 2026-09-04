@@ -8,26 +8,38 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimits:
+    # The maximum number of nodes autoscaling is allowed to scale up to. (AI-inferred)
     max_nodes: Any = None
+    # The maximum number of processing units autoscaling is allowed to scale up to. (AI-inferred)
     max_processing_units: Any = None
+    # The minimum number of nodes autoscaling is allowed to scale down to. (AI-inferred)
     min_nodes: Any = None
+    # The minimum number of processing units autoscaling is allowed to scale down to. (AI-inferred)
     min_processing_units: Any = None
 
 @dataclasses.dataclass
 class Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides:
+    # The minimum and maximum bounds this instance is allowed to autoscale within. (AI-inferred)
     autoscaling_limits: Any = None
+    # The target high-priority CPU utilization percentage autoscaling aims to maintain. (AI-inferred)
     autoscaling_target_high_priority_cpu_utilization_percent: Any = None
+    # The target total CPU utilization percentage autoscaling aims to maintain. (AI-inferred)
     autoscaling_target_total_cpu_utilization_percent: Any = None
+    # Whether autoscaling based on high-priority CPU utilization is disabled. (AI-inferred)
     disable_high_priority_cpu_autoscaling: Any = None
+    # Whether autoscaling based on total CPU utilization is disabled. (AI-inferred)
     disable_total_cpu_autoscaling: Any = None
 
 @dataclasses.dataclass
 class Instance_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection:
+    # The Google Cloud region this applies to. (AI-inferred)
     location: Any = None
 
 @dataclasses.dataclass
 class Instance_AutoscalingConfig_AsymmetricAutoscalingOptions:
+    # Configuration values that override this instance's own inherited defaults. (AI-inferred)
     overrides: Any = None
+    # Restricts an operation to replica(s) matching a specific selector. (AI-inferred)
     replica_selection: Any = None
 
 @dataclasses.dataclass
@@ -59,8 +71,11 @@ class Instance_FreeInstanceMetadata:
 
 @dataclasses.dataclass
 class Instance_Instance_ReplicaComputeCapacity:
+    # The number of nodes provisioned for this instance. (AI-inferred)
     node_count: Any = None
+    # The number of processing units provisioned for this instance. (AI-inferred)
     processing_units: Any = None
+    # Restricts an operation to replica(s) matching a specific selector. (AI-inferred)
     replica_selection: Any = None
 
 @dataclasses.dataclass

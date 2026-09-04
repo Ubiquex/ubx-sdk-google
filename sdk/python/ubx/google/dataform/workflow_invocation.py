@@ -13,8 +13,11 @@ class WorkflowInvocation_DataEncryptionState:
 
 @dataclasses.dataclass
 class WorkflowInvocation_InvocationConfig_IncludedTargets:
+    # The database (BigQuery project) this included target table belongs to. (AI-inferred)
     database: Any = None
+    # The name of this included target table. (AI-inferred)
     name: Any = None
+    # The schema (BigQuery dataset) this included target table belongs to. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass

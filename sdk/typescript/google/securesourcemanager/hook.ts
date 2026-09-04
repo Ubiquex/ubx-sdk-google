@@ -17,6 +17,7 @@ export interface HookConfig {
   events?: string[] | Computed<string[]>;
   /** Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}` */
   name?: string | Computed<string>;
+  /** Configuration for which push events this webhook fires on and what payload it sends -- the per-hook counterpart to a branch rule's own trigger settings. (AI-inferred) */
   pushOption?: Hook_PushOption | Computed<Hook_PushOption>;
   /** Optional. The sensitive query string to be appended to the target URI. */
   sensitiveQueryString?: string | Computed<string>;
@@ -33,6 +34,7 @@ export interface HookAttrs {
   events: string[];
   /** Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}` */
   name: string;
+  /** Configuration for which push events this webhook fires on and what payload it sends -- the per-hook counterpart to a branch rule's own trigger settings. (AI-inferred) */
   pushOption: Hook_PushOption;
   /** Optional. The sensitive query string to be appended to the target URI. */
   sensitiveQueryString: string;

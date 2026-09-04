@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AuthorizedView_SubsetView_FamilySubsets:
+    # Restricts this rule to columns whose own qualifier starts with one of these prefixes. (AI-inferred)
     qualifier_prefixes: Any = None
+    # The specific column qualifier(s) this rule applies to. (AI-inferred)
     qualifiers: Any = None
 
 @dataclasses.dataclass

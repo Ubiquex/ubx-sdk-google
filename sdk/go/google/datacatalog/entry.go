@@ -34,8 +34,10 @@ type Entry_BigqueryTableSpec struct {
 }
 
 type Entry_BusinessContext_Contacts_People struct {
+	// A structured label categorizing this business term or its usage. (AI-inferred)
 	Designation any
-	Email       any
+	// An email address associated with this entry. (AI-inferred)
+	Email any
 }
 
 type Entry_BusinessContext_Contacts struct {
@@ -142,10 +144,14 @@ type Entry_DatabaseTableSpec_DataplexTable_DataplexSpec struct {
 }
 
 type Entry_DatabaseTableSpec_DataplexTable_ExternalTables struct {
-	DataCatalogEntry    any
-	FullyQualifiedName  any
+	// A reference to the linked Data Catalog entry. (AI-inferred)
+	DataCatalogEntry any
+	// The fully qualified name identifying this entry within its own source system. (AI-inferred)
+	FullyQualifiedName any
+	// A reference to the underlying Google Cloud resource this entry represents. (AI-inferred)
 	GoogleCloudResource any
-	System              any
+	// The external system this entry originates from. (AI-inferred)
+	System any
 }
 
 type Entry_DatabaseTableSpec_DataplexTable struct {
@@ -194,15 +200,21 @@ type Entry_FilesetSpec struct {
 }
 
 type Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestamps struct {
+	// Output only. The timestamp when this resource was created. (AI-inferred)
 	CreateTime any
+	// The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred)
 	ExpireTime any
+	// Output only. The timestamp when this resource was most recently updated. (AI-inferred)
 	UpdateTime any
 }
 
 type Entry_GcsFilesetSpec_SampleGcsFileSpecs struct {
-	FilePath      any
+	// The path to this file within its own source system. (AI-inferred)
+	FilePath any
+	// Creation and modification timestamps read from Cloud Storage object metadata. (AI-inferred)
 	GcsTimestamps any
-	SizeBytes     any
+	// The size of this object, in bytes. (AI-inferred)
+	SizeBytes any
 }
 
 type Entry_GcsFilesetSpec struct {
@@ -213,32 +225,49 @@ type Entry_GcsFilesetSpec struct {
 }
 
 type Entry_GraphSpec_EdgeTables_DestinationNodeReference struct {
+	// The column(s) identifying an edge's own source and destination nodes. (AI-inferred)
 	EdgeTableColumns any
-	NodeAlias        any
+	// An alternate name this graph node is also known by. (AI-inferred)
+	NodeAlias any
+	// The column(s) identifying this graph node's own key. (AI-inferred)
 	NodeTableColumns any
 }
 
 type Entry_GraphSpec_EdgeTables_LabelAndProperties_Properties struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Entry_GraphSpec_EdgeTables_LabelAndProperties struct {
-	Label      any
+	// A human-readable label for this entry. (AI-inferred)
+	Label any
+	// The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
 	Properties any
 }
 
 type Entry_GraphSpec_EdgeTables struct {
-	Alias                    any
-	DataSource               any
+	// An alternate name this entry is also known by. (AI-inferred)
+	Alias any
+	// The source system this entry's own data originates from. (AI-inferred)
+	DataSource any
+	// A reference to the node this edge points to. (AI-inferred)
 	DestinationNodeReference any
-	DynamicLabelColumn       any
-	DynamicPropertiesColumn  any
-	ElementKeys              any
-	InputSource              any
-	Kind                     any
-	LabelAndProperties       any
-	SourceNodeReference      any
+	// The column whose own values are used as dynamic labels for this graph element. (AI-inferred)
+	DynamicLabelColumn any
+	// The column whose own values populate dynamic properties for this graph element. (AI-inferred)
+	DynamicPropertiesColumn any
+	// The key(s) identifying element(s) within this schema. (AI-inferred)
+	ElementKeys any
+	// The source data this process consumed. (AI-inferred)
+	InputSource any
+	// The category of this schema element. (AI-inferred)
+	Kind any
+	// The label and associated key/value properties assigned to this graph element. (AI-inferred)
+	LabelAndProperties any
+	// A reference to the node this edge originates from. (AI-inferred)
+	SourceNodeReference any
 }
 
 type Entry_GraphSpec struct {
@@ -303,8 +332,11 @@ type Entry_RoutineSpec_BigqueryRoutineSpec struct {
 }
 
 type Entry_RoutineSpec_RoutineArguments struct {
+	// Whether this field is `REQUIRED`, `NULLABLE`, or `REPEATED`. (AI-inferred)
 	Mode any
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
@@ -324,21 +356,33 @@ type Entry_RoutineSpec struct {
 }
 
 type Entry_Schema_Columns_LookerColumnSpec struct {
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
 	Type any
 }
 
 type Entry_Schema_Columns struct {
-	Column              any
-	DefaultValue        any
-	Description         any
-	GcRule              any
+	// A reference to a specific column. (AI-inferred)
+	Column any
+	// The value used when none is explicitly provided. (AI-inferred)
+	DefaultValue any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The garbage-collection rule applied to this Bigtable column family. (AI-inferred)
+	GcRule any
+	// The strongest indexing level detected for this column. (AI-inferred)
 	HighestIndexingType any
-	LookerColumnSpec    any
-	Mode                any
-	OrdinalPosition     any
-	RangeElementType    any
-	Subcolumns          any
-	Type                any
+	// Metadata specific to a column sourced from Looker. (AI-inferred)
+	LookerColumnSpec any
+	// Whether this field is `REQUIRED`, `NULLABLE`, or `REPEATED`. (AI-inferred)
+	Mode any
+	// This column's own position within its containing schema. (AI-inferred)
+	OrdinalPosition any
+	// The data type of elements within this range-typed field. (AI-inferred)
+	RangeElementType any
+	// The nested column(s) contained within this column. (AI-inferred)
+	Subcolumns any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Entry_Schema struct {
@@ -347,10 +391,14 @@ type Entry_Schema struct {
 }
 
 type Entry_ServiceSpec_CloudBigtableInstanceSpec_CloudBigtableClusterSpecs struct {
-	DisplayName    any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the resource this entry represents. (AI-inferred)
 	LinkedResource any
-	Location       any
-	Type           any
+	// The Google Cloud region this applies to. (AI-inferred)
+	Location any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type Entry_ServiceSpec_CloudBigtableInstanceSpec struct {
@@ -364,14 +412,19 @@ type Entry_ServiceSpec struct {
 }
 
 type Entry_SpannerTableSpec_ForeignKeys_ColumnMappings struct {
-	Column          any
+	// A reference to a specific column. (AI-inferred)
+	Column any
+	// The column this reference points to. (AI-inferred)
 	ReferenceColumn any
 }
 
 type Entry_SpannerTableSpec_ForeignKeys struct {
+	// The mapping of source column(s) to this lineage process's own inputs and outputs. (AI-inferred)
 	ColumnMappings any
-	Entry          any
-	Name           any
+	// A reference to the Data Catalog entry this applies to. (AI-inferred)
+	Entry any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type Entry_SpannerTableSpec_PrimaryKey struct {
@@ -396,14 +449,19 @@ type Entry_SqlDatabaseSystemSpec struct {
 }
 
 type Entry_UsageSignal_CommonUsageWithinTimeRange struct {
+	// The number of times this resource has been viewed. (AI-inferred)
 	ViewCount any
 }
 
 type Entry_UsageSignal_UsageWithinTimeRange struct {
-	TotalCancellations                     any
-	TotalCompletions                       any
+	// The total number of times this task was cancelled. (AI-inferred)
+	TotalCancellations any
+	// The total number of times this task completed successfully. (AI-inferred)
+	TotalCompletions any
+	// The cumulative execution time, in milliseconds, across all successful completions of this task. (AI-inferred)
 	TotalExecutionTimeForCompletionsMillis any
-	TotalFailures                          any
+	// The total number of times this task failed. (AI-inferred)
+	TotalFailures any
 }
 
 type Entry_UsageSignal struct {

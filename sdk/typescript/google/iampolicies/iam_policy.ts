@@ -2,22 +2,33 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IamPolicy_Rules_DenyRule_DenialCondition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The Common Expression Language (CEL) expression evaluated by this condition. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** A human-readable reference to where this expression is defined, for error messages. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface IamPolicy_Rules_DenyRule {
+  /** A Common Expression Language (CEL) condition further restricting when this deny rule applies. (AI-inferred) */
   denialCondition?: IamPolicy_Rules_DenyRule_DenialCondition | Computed<IamPolicy_Rules_DenyRule_DenialCondition>;
+  /** The permission(s) this rule denies. (AI-inferred) */
   deniedPermissions?: string[] | Computed<string[]>;
+  /** The principal(s) this rule denies the listed permission(s) to. (AI-inferred) */
   deniedPrincipals?: string[] | Computed<string[]>;
+  /** The permission(s) exempted from this deny rule's own denial. (AI-inferred) */
   exceptionPermissions?: string[] | Computed<string[]>;
+  /** The principal(s) exempted from this deny rule's own denial. (AI-inferred) */
   exceptionPrincipals?: string[] | Computed<string[]>;
 }
 
 export interface IamPolicy_Rules {
+  /** The deny rule this policy enforces, when this policy is a Deny Policy. (AI-inferred) */
   denyRule?: IamPolicy_Rules_DenyRule | Computed<IamPolicy_Rules_DenyRule>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
 }
 

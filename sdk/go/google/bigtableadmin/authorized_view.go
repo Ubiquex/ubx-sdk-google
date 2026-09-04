@@ -4,8 +4,10 @@ package bigtableadmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthorizedView_SubsetView_FamilySubsets struct {
+	// Restricts this rule to columns whose own qualifier starts with one of these prefixes. (AI-inferred)
 	QualifierPrefixes any
-	Qualifiers        any
+	// The specific column qualifier(s) this rule applies to. (AI-inferred)
+	Qualifiers any
 }
 
 type AuthorizedView_SubsetView struct {

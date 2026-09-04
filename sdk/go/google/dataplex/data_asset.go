@@ -4,6 +4,7 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAsset_AccessGroupConfigs struct {
+	// The IAM role(s) granted. (AI-inferred)
 	IamRoles any
 }
 

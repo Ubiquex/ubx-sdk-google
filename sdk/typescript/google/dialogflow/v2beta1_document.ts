@@ -28,29 +28,50 @@ const V2beta1Document_LatestReloadStatusFields: FieldMap = {
 };
 
 export interface V2beta1DocumentConfig {
+  /** The real, raw content of this document, when provided inline rather than by reference. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The URI this document's own real content is read from. (AI-inferred) */
   contentUri?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether this document is automatically re-imported whenever its own source content changes. (AI-inferred) */
   enableAutoReload?: boolean | Computed<boolean>;
+  /** The real type(s) of knowledge this document provides, e.g. FAQ or extractive question answering. (AI-inferred) */
   knowledgeTypes?: string[] | Computed<string[]>;
+  /** The real outcome of this document's own most recent reload attempt. (AI-inferred) */
   latestReloadStatus?: V2beta1Document_LatestReloadStatus | Computed<V2beta1Document_LatestReloadStatus>;
+  /** Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred) */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
+  /** The real MIME type of this document's own content, e.g. text/html or text/csv. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** This document's own real content, provided directly as bytes rather than by reference. (AI-inferred) */
   rawContent?: string | Computed<string>;
 }
 
 export interface V2beta1DocumentAttrs {
+  /** The real, raw content of this document, when provided inline rather than by reference. (AI-inferred) */
   content: string;
+  /** The URI this document's own real content is read from. (AI-inferred) */
   contentUri: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** Whether this document is automatically re-imported whenever its own source content changes. (AI-inferred) */
   enableAutoReload: boolean;
+  /** The real type(s) of knowledge this document provides, e.g. FAQ or extractive question answering. (AI-inferred) */
   knowledgeTypes: string[];
+  /** The real outcome of this document's own most recent reload attempt. (AI-inferred) */
   latestReloadStatus: V2beta1Document_LatestReloadStatus;
+  /** Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred) */
   metadata: Record<string, string>;
+  /** The real MIME type of this document's own content, e.g. text/html or text/csv. (AI-inferred) */
   mimeType: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** This document's own real content, provided directly as bytes rather than by reference. (AI-inferred) */
   rawContent: string;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state: string;
 }
 

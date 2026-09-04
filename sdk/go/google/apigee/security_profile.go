@@ -4,17 +4,25 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityProfile_Environments struct {
-	AttachTime  any
+	// When this resource was attached. (AI-inferred)
+	AttachTime any
+	// A reference to the Apigee environment this applies to. (AI-inferred)
 	Environment any
 }
 
 type SecurityProfile_ProfileConfig_Categories struct {
-	Abuse         any
+	// Configuration for detecting and mitigating API abuse. (AI-inferred)
+	Abuse any
+	// Authorization configuration for this connection. (AI-inferred)
 	Authorization any
-	Cors          any
-	Mediation     any
-	Mtls          any
-	Threat        any
+	// Cross-Origin Resource Sharing configuration. (AI-inferred)
+	Cors any
+	// Configuration for how requests/responses are transformed as they pass through this proxy. (AI-inferred)
+	Mediation any
+	// Configuration for mutual TLS authentication. (AI-inferred)
+	Mtls any
+	// Detail about a detected security threat. (AI-inferred)
+	Threat any
 }
 
 type SecurityProfile_ProfileConfig struct {
@@ -23,9 +31,12 @@ type SecurityProfile_ProfileConfig struct {
 }
 
 type SecurityProfile_ScoringConfigs struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	ScorePath   any
-	Title       any
+	// The path to the field this abuse-detection score is read from. (AI-inferred)
+	ScorePath any
+	// The resource's own formal name -- a more official variant of `display_name`. (AI-inferred)
+	Title any
 }
 
 var SecurityProfile_EnvironmentsFields = ubx.FieldMap{

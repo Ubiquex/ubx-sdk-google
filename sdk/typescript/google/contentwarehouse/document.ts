@@ -2,21 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan {
+  /** The last page number (1-indexed) covered by a `page_span`. (AI-inferred) */
   pageEnd?: number | Computed<number>;
+  /** The first page number (1-indexed) covered by a `page_span`. (AI-inferred) */
   pageStart?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters {
+  /** The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred) */
   pageSpan?: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan | Computed<Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan>;
+  /** The real, extracted text content of this document element. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_ChunkedDocument_Chunks {
+  /** A stable identifier for one chunk of document content in a chunked (e.g. retrieval-oriented) document representation. (AI-inferred) */
   chunkId?: string | Computed<string>;
+  /** The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The real, detected footer block(s) on a document page, structurally distinct from the page's own main body content. (AI-inferred) */
   pageFooters?: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters[] | Computed<Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters[]>;
+  /** The real, detected header block(s) on a document page, structurally distinct from the page's own main body content. (AI-inferred) */
   pageHeaders?: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters[] | Computed<Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters[]>;
+  /** The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred) */
   pageSpan?: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan | Computed<Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan>;
+  /** The real `block_id`(s) of the document layout block(s) this element (like an entity or chunk) was derived from. (AI-inferred) */
   sourceBlockIds?: string[] | Computed<string[]>;
 }
 
@@ -26,41 +36,59 @@ export interface Document_CloudAiDocument_ChunkedDocument {
 }
 
 export interface Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntries {
+  /** The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred) */
   blocks?: unknown[] | Computed<unknown[]>;
 }
 
 export interface Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock {
+  /** The real, individual entries that make up a detected `list_block`. (AI-inferred) */
   listEntries?: Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntries[] | Computed<Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntries[]>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_Cells {
+  /** The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred) */
   blocks?: unknown[] | Computed<unknown[]>;
+  /** The number of real table columns this cell spans, for a cell that merges across multiple columns. (AI-inferred) */
   colSpan?: number | Computed<number>;
+  /** The number of real table rows this cell spans, for a cell that merges across multiple rows. (AI-inferred) */
   rowSpan?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows {
+  /** The real table cells that make up a detected table structure on a document page. (AI-inferred) */
   cells?: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_Cells[] | Computed<Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_Cells[]>;
 }
 
 export interface Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock {
+  /** The real, non-header rows of a detected table, each holding one row's worth of `cells`. (AI-inferred) */
   bodyRows?: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows[] | Computed<Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows[]>;
+  /** The real, detected caption text associated with a table or figure block. (AI-inferred) */
   caption?: string | Computed<string>;
+  /** The real header row(s) of a detected table, each holding one row's worth of `cells`. (AI-inferred) */
   headerRows?: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows[] | Computed<Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows[]>;
 }
 
 export interface Document_CloudAiDocument_DocumentLayout_Blocks_TextBlock {
+  /** The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred) */
   blocks?: unknown[] | Computed<unknown[]>;
+  /** The real, extracted text content of this document element. (AI-inferred) */
   text?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_DocumentLayout_Blocks {
+  /** A stable identifier for this document layout block, referenced by `source_block_ids` on elements derived from it. (AI-inferred) */
   blockId?: string | Computed<string>;
+  /** A detected list-structured content block on a document page, holding its own `list_entries`. (AI-inferred) */
   listBlock?: Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock | Computed<Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock>;
+  /** The real, inclusive range of pages (`page_start` to `page_end`) a document structural element spans. (AI-inferred) */
   pageSpan?: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan | Computed<Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan>;
+  /** A detected table-structured content block on a document page, holding its own `header_rows` and `body_rows`. (AI-inferred) */
   tableBlock?: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock | Computed<Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock>;
+  /** A detected block of plain, unstructured text content on a document page. (AI-inferred) */
   textBlock?: Document_CloudAiDocument_DocumentLayout_Blocks_TextBlock | Computed<Document_CloudAiDocument_DocumentLayout_Blocks_TextBlock>;
 }
 
@@ -70,121 +98,192 @@ export interface Document_CloudAiDocument_DocumentLayout {
 }
 
 export interface Document_CloudAiDocument_Entities_NormalizedValue_AddressValue {
+  /** The real, individual address line(s) of a normalized postal address, in the order they'd appear on an envelope. (AI-inferred) */
   addressLines?: string[] | Computed<string[]>;
+  /** The real, highest administrative subdivision (e.g. a state or province) of a normalized postal address. (AI-inferred) */
   administrativeArea?: string | Computed<string>;
+  /** A BCP-47 language code (e.g. `en-US`) identifying a detected or configured language. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** The real city or town of a normalized postal address. (AI-inferred) */
   locality?: string | Computed<string>;
+  /** The real organization or company name associated with a normalized postal address. (AI-inferred) */
   organization?: string | Computed<string>;
+  /** The real postal or ZIP code of a normalized postal address. (AI-inferred) */
   postalCode?: string | Computed<string>;
+  /** The real, named recipient(s) of a normalized postal address. (AI-inferred) */
   recipients?: string[] | Computed<string[]>;
+  /** The real, two-letter CLDR region code (e.g. `US`) of a normalized postal address's own country. (AI-inferred) */
   regionCode?: string | Computed<string>;
+  /** One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred) */
   revision?: number | Computed<number>;
+  /** A real, country-specific postal sorting code for a normalized postal address, when the country uses one. (AI-inferred) */
   sortingCode?: string | Computed<string>;
+  /** A real sublocality (e.g. a borough or neighborhood) of a normalized postal address, when the address includes one. (AI-inferred) */
   sublocality?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Entities_NormalizedValue_DateValue {
+  /** The day of a `google.type.Date` (1-31 for a real, complete month; 0 to specify a year/month with no specific day). (AI-inferred) */
   day?: number | Computed<number>;
+  /** The month of a `google.type.Date` (1-12; 0 to specify a year with no specific month). (AI-inferred) */
   month?: number | Computed<number>;
+  /** The year of a `google.type.Date` (0 to specify a date without a year, e.g. an anniversary). (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZone {
+  /** A stable identifier for this element within the document or schema it belongs to. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A real identifier for the specific version of this document schema, processor, or content that produced the element. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue {
+  /** The day of a `google.type.Date` (1-31 for a real, complete month; 0 to specify a year/month with no specific day). (AI-inferred) */
   day?: number | Computed<number>;
+  /** The hour-of-day component (0-23) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred) */
   hours?: number | Computed<number>;
+  /** The minute-of-hour component (0-59) of a `google.type.TimeOfDay` or `google.type.DateTime`. (AI-inferred) */
   minutes?: number | Computed<number>;
+  /** The month of a `google.type.Date` (1-12; 0 to specify a year with no specific month). (AI-inferred) */
   month?: number | Computed<number>;
+  /** The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The second-of-minute component (0-60, allowing a leap second) of a `google.type.TimeOfDay`/`DateTime`, or the whole-unit component of a `google.protobuf.Duration`/`Timestamp` paired with that same message's own `nanos`. (AI-inferred) */
   seconds?: number | Computed<number>;
+  /** The IANA time zone identifier (e.g. `America/New_York`) a `google.type.DateTime` is expressed in. (AI-inferred) */
   timeZone?: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZone | Computed<Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZone>;
+  /** The fixed UTC offset a `google.type.DateTime` is expressed in, used instead of a named `time_zone` when the value has no real, resolvable time zone (e.g. a fixed historical offset). (AI-inferred) */
   utcOffset?: string | Computed<string>;
+  /** The year of a `google.type.Date` (0 to specify a date without a year, e.g. an anniversary). (AI-inferred) */
   year?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Entities_NormalizedValue_MoneyValue {
+  /** The real, three-letter ISO 4217 currency code (e.g. `USD`) of a normalized monetary value. (AI-inferred) */
   currencyCode?: string | Computed<string>;
+  /** The sub-second component, in nanoseconds (0 to 999,999,999), of a `google.protobuf.Timestamp`/`Duration` or a `google.type.TimeOfDay`, paired with that same message's own whole-unit `seconds`/`hours`/etc. field. (AI-inferred) */
   nanos?: number | Computed<number>;
+  /** The real, whole-currency-unit component of a normalized monetary value (e.g. the dollars in a USD amount). (AI-inferred) */
   units?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Entities_NormalizedValue {
+  /** This detected entity's own value, when Document AI normalized it as a structured postal address. (AI-inferred) */
   addressValue?: Document_CloudAiDocument_Entities_NormalizedValue_AddressValue | Computed<Document_CloudAiDocument_Entities_NormalizedValue_AddressValue>;
+  /** This document property's own value, when its declared type is boolean. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
+  /** This detected entity's own value, when Document AI normalized it as a `google.type.Date`. (AI-inferred) */
   dateValue?: Document_CloudAiDocument_Entities_NormalizedValue_DateValue | Computed<Document_CloudAiDocument_Entities_NormalizedValue_DateValue>;
+  /** This document property's own value, when its declared type is a date-time. (AI-inferred) */
   datetimeValue?: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue | Computed<Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue>;
+  /** This document property's own value, when its declared type is a floating-point number. (AI-inferred) */
   floatValue?: number | Computed<number>;
+  /** This detected entity's own value, when Document AI normalized it as a whole number. (AI-inferred) */
   integerValue?: number | Computed<number>;
+  /** This detected entity's own value, when Document AI normalized it as a monetary amount (`currency_code` plus `units`). (AI-inferred) */
   moneyValue?: Document_CloudAiDocument_Entities_NormalizedValue_MoneyValue | Computed<Document_CloudAiDocument_Entities_NormalizedValue_MoneyValue>;
+  /** The real, extracted text content of this document element. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices {
+  /** The horizontal coordinate of one vertex in a `bounding_poly` (pixel or normalized, matching whichever vertex list it appears in). (AI-inferred) */
   x?: number | Computed<number>;
+  /** The vertical coordinate of one vertex in a `bounding_poly` (pixel or normalized, matching whichever vertex list it appears in). (AI-inferred) */
   y?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly {
+  /** The polygon's own vertices, normalized to `[0, 1]` relative to the page's own width and height rather than given in pixels. (AI-inferred) */
   normalizedVertices?: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices[] | Computed<Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices[]>;
+  /** The polygon's own vertices, in the page image's real pixel coordinate space (origin at the page's top-left corner). (AI-inferred) */
   vertices?: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices[] | Computed<Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices[]>;
 }
 
 export interface Document_CloudAiDocument_Entities_PageAnchor_PageRefs {
+  /** The polygon locating this element on its page, as either pixel-coordinate `vertices` or `normalized_vertices` scaled to `[0, 1]` relative to the page's own dimensions. (AI-inferred) */
   boundingPoly?: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly | Computed<Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly>;
+  /** Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** The real, referenced layout element's own ID, when a page reference points at a specific document layout element rather than a whole page. (AI-inferred) */
   layoutId?: string | Computed<string>;
+  /** The real, structural type (e.g. `PARAGRAPH`, `TABLE`, `FORM_FIELD`) of the layout element a page reference points at. (AI-inferred) */
   layoutType?: string | Computed<string>;
+  /** The real, zero-based page number this page reference points at. (AI-inferred) */
   page?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Entities_PageAnchor {
+  /** The specific real page(s) and layout element(s) a `page_anchor` points at. (AI-inferred) */
   pageRefs?: Document_CloudAiDocument_Entities_PageAnchor_PageRefs[] | Computed<Document_CloudAiDocument_Entities_PageAnchor_PageRefs[]>;
 }
 
 export interface Document_CloudAiDocument_Entities_Provenance_Parents {
+  /** A stable identifier for this element within the document or schema it belongs to. (AI-inferred) */
   id?: number | Computed<number>;
+  /** The real, zero-based position of this element within its own containing repeated list or table row/column. (AI-inferred) */
   index?: number | Computed<number>;
+  /** One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred) */
   revision?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Entities_Provenance {
+  /** A stable identifier for this element within the document or schema it belongs to. (AI-inferred) */
   id?: number | Computed<number>;
+  /** The earlier document element(s) this one's own `provenance` was derived from, tracking real lineage across document revisions. (AI-inferred) */
   parents?: Document_CloudAiDocument_Entities_Provenance_Parents[] | Computed<Document_CloudAiDocument_Entities_Provenance_Parents[]>;
+  /** One real, tracked version of the document as it moves through OCR, parsing, and human edits over time. (AI-inferred) */
   revision?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Entities_TextAnchor_TextSegments {
+  /** The ending character offset (exclusive) into the document's own raw text for this text segment. (AI-inferred) */
   endIndex?: string | Computed<string>;
+  /** The starting character offset (inclusive) into the document's own raw text for this text segment. (AI-inferred) */
   startIndex?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Entities_TextAnchor {
+  /** The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The character-offset span(s) into the document's own raw text that this `text_anchor` refers to. (AI-inferred) */
   textSegments?: Document_CloudAiDocument_Entities_TextAnchor_TextSegments[] | Computed<Document_CloudAiDocument_Entities_TextAnchor_TextSegments[]>;
 }
 
 export interface Document_CloudAiDocument_Entities {
+  /** Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** A stable identifier for this element within the document or schema it belongs to. (AI-inferred) */
   id?: string | Computed<string>;
+  /** A stable identifier for one detected entity mention within the document's own text. (AI-inferred) */
   mentionId?: string | Computed<string>;
+  /** The real, literal text span Document AI detected as referring to this entity. (AI-inferred) */
   mentionText?: string | Computed<string>;
+  /** A machine-readable, normalized form of a detected document value (e.g. a parsed date or amount), alongside the raw detected `text`. (AI-inferred) */
   normalizedValue?: Document_CloudAiDocument_Entities_NormalizedValue | Computed<Document_CloudAiDocument_Entities_NormalizedValue>;
+  /** The real page location(s) an entity, form field, or other document element is anchored to. (AI-inferred) */
   pageAnchor?: Document_CloudAiDocument_Entities_PageAnchor | Computed<Document_CloudAiDocument_Entities_PageAnchor>;
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: unknown[] | Computed<unknown[]>;
+  /** Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred) */
   provenance?: Document_CloudAiDocument_Entities_Provenance | Computed<Document_CloudAiDocument_Entities_Provenance>;
+  /** Whether this detected entity's own value was real, redacted in the document rather than extracted in full. (AI-inferred) */
   redacted?: boolean | Computed<boolean>;
+  /** A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred) */
   textAnchor?: Document_CloudAiDocument_Entities_TextAnchor | Computed<Document_CloudAiDocument_Entities_TextAnchor>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_EntityRelations {
+  /** The real, referenced entity ID this entity relation points at as its own object. (AI-inferred) */
   objectId?: string | Computed<string>;
+  /** The real, named relationship (e.g. a parent-child link) this entity relation describes between two document entities. (AI-inferred) */
   relation?: string | Computed<string>;
+  /** The real, referenced entity ID this entity relation points at as its own subject. (AI-inferred) */
   subjectId?: string | Computed<string>;
 }
 
@@ -198,174 +297,277 @@ export interface Document_CloudAiDocument_Error {
 }
 
 export interface Document_CloudAiDocument_Pages_Blocks_DetectedLanguages {
+  /** Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** A BCP-47 language code (e.g. `en-US`) identifying a detected or configured language. (AI-inferred) */
   languageCode?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Pages_Blocks_Layout {
+  /** The polygon locating this element on its page, as either pixel-coordinate `vertices` or `normalized_vertices` scaled to `[0, 1]` relative to the page's own dimensions. (AI-inferred) */
   boundingPoly?: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly | Computed<Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly>;
+  /** Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** The detected real orientation of this page or text run, e.g. `PAGE_UP`, `PAGE_RIGHT`, `PAGE_DOWN`, `PAGE_LEFT`. (AI-inferred) */
   orientation?: string | Computed<string>;
+  /** A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred) */
   textAnchor?: Document_CloudAiDocument_Entities_TextAnchor | Computed<Document_CloudAiDocument_Entities_TextAnchor>;
 }
 
 export interface Document_CloudAiDocument_Pages_Blocks {
+  /** The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred) */
   detectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred) */
   provenance?: Document_CloudAiDocument_Entities_Provenance | Computed<Document_CloudAiDocument_Entities_Provenance>;
 }
 
 export interface Document_CloudAiDocument_Pages_DetectedBarcodes_Barcode {
+  /** A format hint refining `type` (e.g. `date-time`, `int64`, `float`), following OpenAPI's own format vocabulary. (AI-inferred) */
   format?: string | Computed<string>;
+  /** The real, raw decoded bytes or text of this barcode, before any `value_format`-specific interpretation. (AI-inferred) */
   rawValue?: string | Computed<string>;
+  /** The real, structured interpretation (e.g. a URL or contact card) Document AI applied to this barcode's own `raw_value`. (AI-inferred) */
   valueFormat?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Pages_DetectedBarcodes {
+  /** The real, decoded content of one detected barcode, including its own `format` and `raw_value`. (AI-inferred) */
   barcode?: Document_CloudAiDocument_Pages_DetectedBarcodes_Barcode | Computed<Document_CloudAiDocument_Pages_DetectedBarcodes_Barcode>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
 }
 
 export interface Document_CloudAiDocument_Pages_Dimension {
+  /** The real height, in Document AI style units, of a detected text run or table cell. (AI-inferred) */
   height?: number | Computed<number>;
+  /** The measurement unit (e.g. points, pixels) a `height`/`width`/`font_size` value in Document AI style metadata is expressed in. (AI-inferred) */
   unit?: string | Computed<string>;
+  /** The real width, in Document AI style units, of a detected text run or table cell. (AI-inferred) */
   width?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Pages_FormFields {
+  /** A real, human-corrected version of this form field's own detected key text, when a reviewer has edited it. (AI-inferred) */
   correctedKeyText?: string | Computed<string>;
+  /** A real, human-corrected version of this form field's own detected value text, when a reviewer has edited it. (AI-inferred) */
   correctedValueText?: string | Computed<string>;
+  /** The real, detected label text (the "key" side) of this form field. (AI-inferred) */
   fieldName?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** The real, detected value text (the "value" side) of this form field. (AI-inferred) */
   fieldValue?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** The real language(s) Document AI detected in this form field's own `field_name` text. (AI-inferred) */
   nameDetectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred) */
   provenance?: Document_CloudAiDocument_Entities_Provenance | Computed<Document_CloudAiDocument_Entities_Provenance>;
+  /** The real language(s) Document AI detected in this form field's own `field_value` text. (AI-inferred) */
   valueDetectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real, detected data type (e.g. a date or currency amount) of this form field's own value. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Pages_Image {
+  /** The actual text or binary content carried by this document or field, as opposed to metadata describing it. (AI-inferred) */
   content?: string | Computed<string>;
+  /** The real height, in Document AI style units, of a detected text run or table cell. (AI-inferred) */
   height?: number | Computed<number>;
+  /** The real IANA MIME type (e.g. `image/png`) of this embedded page image. (AI-inferred) */
   mimeType?: string | Computed<string>;
+  /** The real width, in Document AI style units, of a detected text run or table cell. (AI-inferred) */
   width?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefects {
+  /** Output only. Document AI's own detection confidence for this element, from `0` (least) to `1` (most confident). (AI-inferred) */
   confidence?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Pages_ImageQualityScores {
+  /** Real, specific image quality issues (e.g. blur, glare) Document AI detected on this page. (AI-inferred) */
   detectedDefects?: Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefects[] | Computed<Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefects[]>;
+  /** Document AI's own real, overall image quality score for this page, from `0` (worst) to `1` (best). (AI-inferred) */
   qualityScore?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Pages_Symbols {
+  /** The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred) */
   detectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
 }
 
 export interface Document_CloudAiDocument_Pages_Tables_BodyRows_Cells {
+  /** The number of real table columns this cell spans, for a cell that merges across multiple columns. (AI-inferred) */
   colSpan?: number | Computed<number>;
+  /** The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred) */
   detectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** The number of real table rows this cell spans, for a cell that merges across multiple rows. (AI-inferred) */
   rowSpan?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Pages_Tables_BodyRows {
+  /** The real table cells that make up a detected table structure on a document page. (AI-inferred) */
   cells?: Document_CloudAiDocument_Pages_Tables_BodyRows_Cells[] | Computed<Document_CloudAiDocument_Pages_Tables_BodyRows_Cells[]>;
 }
 
 export interface Document_CloudAiDocument_Pages_Tables {
+  /** The real, non-header rows of a detected table, each holding one row's worth of `cells`. (AI-inferred) */
   bodyRows?: Document_CloudAiDocument_Pages_Tables_BodyRows[] | Computed<Document_CloudAiDocument_Pages_Tables_BodyRows[]>;
+  /** The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred) */
   detectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real header row(s) of a detected table, each holding one row's worth of `cells`. (AI-inferred) */
   headerRows?: Document_CloudAiDocument_Pages_Tables_BodyRows[] | Computed<Document_CloudAiDocument_Pages_Tables_BodyRows[]>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred) */
   provenance?: Document_CloudAiDocument_Entities_Provenance | Computed<Document_CloudAiDocument_Entities_Provenance>;
 }
 
 export interface Document_CloudAiDocument_Pages_Tokens_DetectedBreak {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor {
+  /** The alpha (opacity) channel of a `google.type.Color`, as an optional fraction in `[0, 1]`; treated as fully opaque (`1`) if unset. (AI-inferred) */
   alpha?: number | Computed<number>;
+  /** The blue channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred) */
   blue?: number | Computed<number>;
+  /** The green channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred) */
   green?: number | Computed<number>;
+  /** The red channel of a `google.type.Color`, as a fraction in `[0, 1]`. (AI-inferred) */
   red?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Pages_Tokens_StyleInfo {
+  /** The real, detected background color of a text run, as a `google.type.Color`. (AI-inferred) */
   backgroundColor?: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor | Computed<Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor>;
+  /** Whether this token's own detected text style is real, bold. (AI-inferred) */
   bold?: boolean | Computed<boolean>;
+  /** The real, detected font size of a text run. (AI-inferred) */
   fontSize?: number | Computed<number>;
+  /** The real, detected font family or type name of this token's own text. (AI-inferred) */
   fontType?: string | Computed<string>;
+  /** The real, detected font weight (e.g. normal, bold) of a text run. (AI-inferred) */
   fontWeight?: number | Computed<number>;
+  /** Whether this token's own text was real, detected as handwritten rather than printed. (AI-inferred) */
   handwritten?: boolean | Computed<boolean>;
+  /** Whether this token's own detected text style is real, italic. (AI-inferred) */
   italic?: boolean | Computed<boolean>;
+  /** The real, detected letter spacing of this token's own text. (AI-inferred) */
   letterSpacing?: number | Computed<number>;
+  /** The real, detected font size, in pixels, of this token's own text. (AI-inferred) */
   pixelFontSize?: number | Computed<number>;
+  /** Whether this token's own detected text style uses real, small capital letters. (AI-inferred) */
   smallcaps?: boolean | Computed<boolean>;
+  /** Whether this token's own detected text style has a real strikethrough. (AI-inferred) */
   strikeout?: boolean | Computed<boolean>;
+  /** Whether this token's own detected text style is real, subscript. (AI-inferred) */
   subscript?: boolean | Computed<boolean>;
+  /** Whether this token's own detected text style is real, superscript. (AI-inferred) */
   superscript?: boolean | Computed<boolean>;
+  /** The real, detected text color of this token, as a `google.type.Color`. (AI-inferred) */
   textColor?: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor | Computed<Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor>;
+  /** Whether this token's own detected text style is real, underlined. (AI-inferred) */
   underlined?: boolean | Computed<boolean>;
 }
 
 export interface Document_CloudAiDocument_Pages_Tokens {
+  /** Real information about the whitespace or line break immediately following this token, if any. (AI-inferred) */
   detectedBreak?: Document_CloudAiDocument_Pages_Tokens_DetectedBreak | Computed<Document_CloudAiDocument_Pages_Tokens_DetectedBreak>;
+  /** The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred) */
   detectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred) */
   provenance?: Document_CloudAiDocument_Entities_Provenance | Computed<Document_CloudAiDocument_Entities_Provenance>;
+  /** Real, detected text styling (font, weight, color, decoration) for this token. (AI-inferred) */
   styleInfo?: Document_CloudAiDocument_Pages_Tokens_StyleInfo | Computed<Document_CloudAiDocument_Pages_Tokens_StyleInfo>;
 }
 
 export interface Document_CloudAiDocument_Pages_Transforms {
+  /** The real number of columns in this transform matrix. (AI-inferred) */
   cols?: number | Computed<number>;
+  /** The real, raw matrix data of this transform, row-major. (AI-inferred) */
   data?: string | Computed<string>;
+  /** The real number of rows in this transform matrix, or of a detected table's own `body_rows`/`header_rows`. (AI-inferred) */
   rows?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: number | Computed<number>;
 }
 
 export interface Document_CloudAiDocument_Pages_VisualElements {
+  /** The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred) */
   detectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Pages {
+  /** The real layout blocks (paragraphs or other structural units of content) detected on a document page. (AI-inferred) */
   blocks?: Document_CloudAiDocument_Pages_Blocks[] | Computed<Document_CloudAiDocument_Pages_Blocks[]>;
+  /** Real barcodes Document AI detected on this page, each with its own decoded `barcode` value and location. (AI-inferred) */
   detectedBarcodes?: Document_CloudAiDocument_Pages_DetectedBarcodes[] | Computed<Document_CloudAiDocument_Pages_DetectedBarcodes[]>;
+  /** The language(s) Document AI detected in this text, each with its own BCP-47 `language_code` and detection confidence. (AI-inferred) */
   detectedLanguages?: Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[] | Computed<Document_CloudAiDocument_Pages_Blocks_DetectedLanguages[]>;
+  /** The real width and height, in the page's own coordinate units, of this document page. (AI-inferred) */
   dimension?: Document_CloudAiDocument_Pages_Dimension | Computed<Document_CloudAiDocument_Pages_Dimension>;
+  /** Real key-value form fields Document AI detected on this page. (AI-inferred) */
   formFields?: Document_CloudAiDocument_Pages_FormFields[] | Computed<Document_CloudAiDocument_Pages_FormFields[]>;
+  /** The real, embedded raster image of this document page, when the original document image is included in the response. (AI-inferred) */
   image?: Document_CloudAiDocument_Pages_Image | Computed<Document_CloudAiDocument_Pages_Image>;
+  /** Real, automated image quality scoring for this document page, flagging any `detected_defects`. (AI-inferred) */
   imageQualityScores?: Document_CloudAiDocument_Pages_ImageQualityScores | Computed<Document_CloudAiDocument_Pages_ImageQualityScores>;
+  /** The real position of a document element on the page: its `text_anchor`, `bounding_poly`, detection `confidence`, and reading `orientation`. (AI-inferred) */
   layout?: Document_CloudAiDocument_Pages_Blocks_Layout | Computed<Document_CloudAiDocument_Pages_Blocks_Layout>;
+  /** Real, detected lines of text on this document page, each grouping a real run of `tokens`. (AI-inferred) */
   lines?: Document_CloudAiDocument_Pages_Blocks[] | Computed<Document_CloudAiDocument_Pages_Blocks[]>;
+  /** The real, one-based page number of this page within the document. (AI-inferred) */
   pageNumber?: number | Computed<number>;
+  /** Real, detected paragraphs of text on this document page, each grouping one or more `lines`. (AI-inferred) */
   paragraphs?: Document_CloudAiDocument_Pages_Blocks[] | Computed<Document_CloudAiDocument_Pages_Blocks[]>;
+  /** Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred) */
   provenance?: Document_CloudAiDocument_Entities_Provenance | Computed<Document_CloudAiDocument_Entities_Provenance>;
+  /** Real, individual detected characters or symbols on this document page, the finest-grained real text detection unit. (AI-inferred) */
   symbols?: Document_CloudAiDocument_Pages_Symbols[] | Computed<Document_CloudAiDocument_Pages_Symbols[]>;
+  /** Real, detected tables on this document page, each with its own `header_rows` and `body_rows`. (AI-inferred) */
   tables?: Document_CloudAiDocument_Pages_Tables[] | Computed<Document_CloudAiDocument_Pages_Tables[]>;
+  /** Real, detected words or word-like units on this document page, each grouping one or more `symbols`. (AI-inferred) */
   tokens?: Document_CloudAiDocument_Pages_Tokens[] | Computed<Document_CloudAiDocument_Pages_Tokens[]>;
+  /** A real 2D affine transform matrix applied to reposition this page's own detected content, when the page has been de-skewed or rotated for processing. (AI-inferred) */
   transforms?: Document_CloudAiDocument_Pages_Transforms[] | Computed<Document_CloudAiDocument_Pages_Transforms[]>;
+  /** Real, detected non-text visual elements (such as a checkbox or signature) on this document page. (AI-inferred) */
   visualElements?: Document_CloudAiDocument_Pages_VisualElements[] | Computed<Document_CloudAiDocument_Pages_VisualElements[]>;
 }
 
 export interface Document_CloudAiDocument_Revisions_HumanReview {
+  /** The real, current review state (e.g. rejected, needs review) of this document revision's own human review. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Real, additional detail explaining this document revision's own human review state. (AI-inferred) */
   stateMessage?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_Revisions {
+  /** The real name of the processor, human reviewer, or tool that produced this document revision. (AI-inferred) */
   agent?: string | Computed<string>;
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** Real, human review status and outcome for this document revision, when it went through Document AI human-in-the-loop review. (AI-inferred) */
   humanReview?: Document_CloudAiDocument_Revisions_HumanReview | Computed<Document_CloudAiDocument_Revisions_HumanReview>;
+  /** A stable identifier for this element within the document or schema it belongs to. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The resource name of the parent collection this resource is created under or listed from. (AI-inferred) */
   parent?: number[] | Computed<number[]>;
+  /** The real, prior revision ID(s) this revision was derived from, tracking the document's own edit lineage. (AI-inferred) */
   parentIds?: string[] | Computed<string[]>;
+  /** The real Document AI processor (its own resource name) that produced this document revision. (AI-inferred) */
   processor?: string | Computed<string>;
 }
 
@@ -379,24 +581,37 @@ export interface Document_CloudAiDocument_ShardInfo {
 }
 
 export interface Document_CloudAiDocument_TextChanges {
+  /** The real, literal text of one detected change between this document revision and its own prior revision. (AI-inferred) */
   changedText?: string | Computed<string>;
+  /** Real lineage metadata tracking which document `revision` produced or last changed this element, and which earlier elements (`parents`) it was derived from. (AI-inferred) */
   provenance?: Document_CloudAiDocument_Entities_Provenance[] | Computed<Document_CloudAiDocument_Entities_Provenance[]>;
+  /** A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred) */
   textAnchor?: Document_CloudAiDocument_Entities_TextAnchor | Computed<Document_CloudAiDocument_Entities_TextAnchor>;
 }
 
 export interface Document_CloudAiDocument_TextStyles_FontSize {
+  /** The real, detected font size of this text run. (AI-inferred) */
   size?: number | Computed<number>;
+  /** The measurement unit (e.g. points, pixels) a `height`/`width`/`font_size` value in Document AI style metadata is expressed in. (AI-inferred) */
   unit?: string | Computed<string>;
 }
 
 export interface Document_CloudAiDocument_TextStyles {
+  /** The real, detected background color of a text run, as a `google.type.Color`. (AI-inferred) */
   backgroundColor?: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor | Computed<Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor>;
+  /** The real, detected color of this text run, as a `google.type.Color`. (AI-inferred) */
   color?: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor | Computed<Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor>;
+  /** The real, detected font family name of this text run. (AI-inferred) */
   fontFamily?: string | Computed<string>;
+  /** The real, detected font size of a text run. (AI-inferred) */
   fontSize?: Document_CloudAiDocument_TextStyles_FontSize | Computed<Document_CloudAiDocument_TextStyles_FontSize>;
+  /** The real, detected font weight (e.g. normal, bold) of a text run. (AI-inferred) */
   fontWeight?: string | Computed<string>;
+  /** A reference into the document's own raw text, given as one or more `text_segments` spanning `start_index` to `end_index`, rather than a copy of the text itself. (AI-inferred) */
   textAnchor?: Document_CloudAiDocument_Entities_TextAnchor | Computed<Document_CloudAiDocument_Entities_TextAnchor>;
+  /** The real, detected text decoration (e.g. underline, strikethrough) of this text run. (AI-inferred) */
   textDecoration?: string | Computed<string>;
+  /** The real, detected overall style classification (e.g. heading, body text) of this text run. (AI-inferred) */
   textStyle?: string | Computed<string>;
 }
 
@@ -439,57 +654,82 @@ export interface Document_CloudAiDocumentOption {
 }
 
 export interface Document_Document_Properties_DateTimeValues {
+  /** The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred) */
   values?: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue[] | Computed<Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue[]>;
 }
 
 export interface Document_Document_Properties_EnumValues {
+  /** The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Document_Document_Properties_FloatValues {
+  /** The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred) */
   values?: number[] | Computed<number[]>;
 }
 
 export interface Document_Document_Properties_MapProperty_Fields_EnumValue {
+  /** This map field's own real, single scalar value. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Document_Document_Properties_MapProperty_Fields_TimestampValue {
+  /** This document property's own value, when its declared type is text. (AI-inferred) */
   textValue?: string | Computed<string>;
+  /** This document property's own value, when its declared type is a timestamp. (AI-inferred) */
   timestampValue?: string | Computed<string>;
 }
 
 export interface Document_Document_Properties_MapProperty_Fields {
+  /** This document property's own value, when its declared type is boolean. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
+  /** This document property's own value, when its declared type is a date-time. (AI-inferred) */
   datetimeValue?: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue | Computed<Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue>;
+  /** One real map field's own value, when that field's declared type is a closed enumeration. (AI-inferred) */
   enumValue?: Document_Document_Properties_MapProperty_Fields_EnumValue | Computed<Document_Document_Properties_MapProperty_Fields_EnumValue>;
+  /** This document property's own value, when its declared type is a floating-point number. (AI-inferred) */
   floatValue?: number | Computed<number>;
+  /** One real map field's own value, when that field's declared type is an integer. (AI-inferred) */
   intValue?: number | Computed<number>;
+  /** One real map field's own value, when that field's declared type is text. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** This document property's own value, when its declared type is a timestamp. (AI-inferred) */
   timestampValue?: Document_Document_Properties_MapProperty_Fields_TimestampValue | Computed<Document_Document_Properties_MapProperty_Fields_TimestampValue>;
 }
 
 export interface Document_Document_Properties_MapProperty {
+  /** The real, named sub-fields (and their own typed values) that make up this map-typed document property. (AI-inferred) */
   fields?: Record<string, Document_Document_Properties_MapProperty_Fields> | Computed<Record<string, Document_Document_Properties_MapProperty_Fields>>;
 }
 
 export interface Document_Document_Properties_PropertyValues {
+  /** The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred) */
   properties?: unknown[] | Computed<unknown[]>;
 }
 
 export interface Document_Document_Properties_TimestampValues {
+  /** The real, one-or-more values held by a repeated document property, matched in count and order against the property's own declared type. (AI-inferred) */
   values?: Document_Document_Properties_MapProperty_Fields_TimestampValue[] | Computed<Document_Document_Properties_MapProperty_Fields_TimestampValue[]>;
 }
 
 export interface Document_Document_Properties {
+  /** This document property's own real value(s), when its declared type is date-time. (AI-inferred) */
   dateTimeValues?: Document_Document_Properties_DateTimeValues | Computed<Document_Document_Properties_DateTimeValues>;
+  /** This document property's own real value(s), when its declared type is a closed enumeration. (AI-inferred) */
   enumValues?: Document_Document_Properties_EnumValues | Computed<Document_Document_Properties_EnumValues>;
+  /** This document property's own real value(s), when its declared type is a floating-point number. (AI-inferred) */
   floatValues?: Document_Document_Properties_FloatValues | Computed<Document_Document_Properties_FloatValues>;
+  /** This document property's own real value(s), when its declared type is an integer. (AI-inferred) */
   integerValues?: Document_Document_Properties_FloatValues | Computed<Document_Document_Properties_FloatValues>;
+  /** This document property's own real value, when its declared type is a map of named sub-fields. (AI-inferred) */
   mapProperty?: Document_Document_Properties_MapProperty | Computed<Document_Document_Properties_MapProperty>;
+  /** The real, declared name of this document property, schema property definition, or IAM policy binding role. (AI-inferred) */
   name?: string | Computed<string>;
+  /** This document property's own real value(s), when its declared type is a nested, structured property (not a simple scalar). (AI-inferred) */
   propertyValues?: Document_Document_Properties_PropertyValues | Computed<Document_Document_Properties_PropertyValues>;
+  /** This document property's own real value(s), when its declared type is plain text. (AI-inferred) */
   textValues?: Document_Document_Properties_EnumValues | Computed<Document_Document_Properties_EnumValues>;
+  /** This document property's own real value(s), when its declared type is a timestamp. (AI-inferred) */
   timestampValues?: Document_Document_Properties_TimestampValues | Computed<Document_Document_Properties_TimestampValues>;
 }
 
@@ -539,25 +779,36 @@ export interface Document_Document {
 }
 
 export interface Document_Policy_AuditConfigs_AuditLogConfigs {
+  /** The identities exempted from Cloud Audit Logs for the `log_type` this `audit_log_configs` entry configures. (AI-inferred) */
   exemptedMembers?: string[] | Computed<string[]>;
+  /** Which Cloud Audit Log type (`ADMIN_READ`, `DATA_READ`, or `DATA_WRITE`) an `audit_log_configs` entry configures. (AI-inferred) */
   logType?: string | Computed<string>;
 }
 
 export interface Document_Policy_AuditConfigs {
+  /** Per-`service` Cloud Audit Logs configuration on a `google.iam.v1.Policy`, controlling which `log_type`s are enabled and which `exempted_members` are excluded from logging. (AI-inferred) */
   auditLogConfigs?: Document_Policy_AuditConfigs_AuditLogConfigs[] | Computed<Document_Policy_AuditConfigs_AuditLogConfigs[]>;
+  /** The real Google Cloud service this document's own embedded IAM audit log configuration applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
 export interface Document_Policy_Bindings_Condition {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The real Common Expression Language (CEL) expression text of this document IAM policy binding's own condition. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The real, human-readable source location of this document IAM policy binding's own condition expression, used for error reporting. (AI-inferred) */
   location?: string | Computed<string>;
+  /** The resource's own formal name -- a more official variant of `display_name`. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface Document_Policy_Bindings {
+  /** The real trigger condition (e.g. a document type and state match) a rule in a `google_contentwarehouse_rule_set` evaluates before running its own actions. (AI-inferred) */
   condition?: Document_Policy_Bindings_Condition | Computed<Document_Policy_Bindings_Condition>;
+  /** The identities (users, service accounts, groups, or domains) a `google.iam.v1.Policy` binding's own `role` is granted to. (AI-inferred) */
   members?: string[] | Computed<string[]>;
+  /** The real IAM role this document-level policy binding grants. (AI-inferred) */
   role?: string | Computed<string>;
 }
 

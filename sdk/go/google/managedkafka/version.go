@@ -4,8 +4,11 @@ package managedkafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Version_References struct {
-	Name    any
+	// The name of the referenced schema or resource. (AI-inferred)
+	Name any
+	// The schema subject this reference points to. (AI-inferred)
 	Subject any
+	// The specific version of the referenced schema. (AI-inferred)
 	Version any
 }
 

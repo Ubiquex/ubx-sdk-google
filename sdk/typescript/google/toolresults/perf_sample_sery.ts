@@ -2,8 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PerfSampleSery_BasicPerfSampleSeries {
+  /** The real category of performance metric (`memory`, `cpu`, `network`, `graphics`) this basic performance sample series measures. (AI-inferred) */
   perfMetricType?: string | Computed<string>;
+  /** The real unit (e.g. `bytesPerSecond`, `framesPerSecond`, `percent`) this performance sample series' own values are measured in. (AI-inferred) */
   perfUnit?: string | Computed<string>;
+  /** The real, specific metric this performance sample series tracks (e.g. `cpuTotal`, `graphicsFrameRate`, `memoryRssTotal`). (AI-inferred) */
   sampleSeriesLabel?: string | Computed<string>;
 }
 

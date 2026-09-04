@@ -4,11 +4,16 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityReport_Metrics struct {
+	// How values are combined across a time window, e.g. sum or average. (AI-inferred)
 	AggregationFunction any
-	Alias               any
-	Name                any
-	Operator            any
-	Value               any
+	// A reference to a key/certificate alias in a keystore. (AI-inferred)
+	Alias any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// How this condition's own operands are compared. (AI-inferred)
+	Operator any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type SecurityReport_QueryParams struct {

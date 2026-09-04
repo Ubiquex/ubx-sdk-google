@@ -160,9 +160,12 @@ type Batch_RuntimeInfo_CurrentUsage struct {
 }
 
 type Batch_RuntimeInfo_PropertiesInfo_AutotuningProperties struct {
-	Annotation      any
+	// A note attached to this workflow step or job. (AI-inferred)
+	Annotation any
+	// The value this setting was overridden to. (AI-inferred)
 	OverriddenValue any
-	Value           any
+	// The literal value of this field. (AI-inferred)
+	Value any
 }
 
 type Batch_RuntimeInfo_PropertiesInfo struct {
@@ -223,8 +226,11 @@ type Batch_SparkSqlBatch struct {
 }
 
 type Batch_StateHistory struct {
-	State          any
-	StateMessage   any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
+	// A human-readable description of the current state. (AI-inferred)
+	StateMessage any
+	// When this resource entered its own current state. (AI-inferred)
 	StateStartTime any
 }
 

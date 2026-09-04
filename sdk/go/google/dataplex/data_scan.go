@@ -104,20 +104,28 @@ type DataScan_DataDiscoverySpec struct {
 }
 
 type DataScan_DataDocumentationResult_DatasetResult_Queries struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Sql         any
+	// A SQL statement or expression. (AI-inferred)
+	Sql any
 }
 
 type DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths struct {
-	Paths    any
+	// The path(s) this applies to. (AI-inferred)
+	Paths any
+	// The fully qualified name of this table. (AI-inferred)
 	TableFqn any
 }
 
 type DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships struct {
-	LeftSchemaPaths  any
+	// The field path(s) on the left-hand entry this relationship connects from. (AI-inferred)
+	LeftSchemaPaths any
+	// The field path(s) on the right-hand entry this relationship connects to. (AI-inferred)
 	RightSchemaPaths any
-	Sources          any
-	Type             any
+	// The source(s) this data or configuration is drawn from. (AI-inferred)
+	Sources any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type DataScan_DataDocumentationResult_DatasetResult struct {
@@ -130,9 +138,12 @@ type DataScan_DataDocumentationResult_DatasetResult struct {
 }
 
 type DataScan_DataDocumentationResult_TableResult_Schema_Fields struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Fields      any
-	Name        any
+	// The field(s) making up this schema or aspect. (AI-inferred)
+	Fields any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type DataScan_DataDocumentationResult_TableResult_Schema struct {
@@ -183,47 +194,73 @@ type DataScan_DataProfileResult_PostScanActionsResult struct {
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfile struct {
-	Average           any
-	Max               any
-	Min               any
-	Quartiles         any
+	// The average (mean) value observed for this column. (AI-inferred)
+	Average any
+	// The largest value this parameter may take. (AI-inferred)
+	Max any
+	// The smallest value this parameter may take. (AI-inferred)
+	Min any
+	// The quartile value(s) computed for this column's own distribution. (AI-inferred)
+	Quartiles any
+	// The standard deviation observed for this column's own values. (AI-inferred)
 	StandardDeviation any
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfile struct {
-	Average           any
-	Max               any
-	Min               any
-	Quartiles         any
+	// The average (mean) value observed for this column. (AI-inferred)
+	Average any
+	// The largest value this parameter may take. (AI-inferred)
+	Max any
+	// The smallest value this parameter may take. (AI-inferred)
+	Min any
+	// The quartile value(s) computed for this column's own distribution. (AI-inferred)
+	Quartiles any
+	// The standard deviation observed for this column's own values. (AI-inferred)
 	StandardDeviation any
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_StringProfile struct {
+	// The average length observed for this string column's own values. (AI-inferred)
 	AverageLength any
-	MaxLength     any
-	MinLength     any
+	// The most characters a `string`-typed value may have. (AI-inferred)
+	MaxLength any
+	// The fewest characters a `string`-typed value may have. (AI-inferred)
+	MinLength any
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_TopNvalues struct {
+	// How many of this item there are. (AI-inferred)
 	Count any
+	// The proportion this applies to. (AI-inferred)
 	Ratio any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile struct {
-	DistinctRatio  any
-	DoubleProfile  any
+	// The fraction of this column's own values that are distinct. (AI-inferred)
+	DistinctRatio any
+	// Statistical profile computed for a floating-point column. (AI-inferred)
+	DoubleProfile any
+	// Statistical profile computed for an integer column. (AI-inferred)
 	IntegerProfile any
-	NullRatio      any
-	StringProfile  any
-	TopNvalues     any
+	// The fraction of this column's own values that are null. (AI-inferred)
+	NullRatio any
+	// Statistical profile computed for a string column. (AI-inferred)
+	StringProfile any
+	// The N most frequently occurring value(s) observed for this column. (AI-inferred)
+	TopNvalues any
 }
 
 type DataScan_DataProfileResult_Profile_Fields struct {
-	Mode    any
-	Name    any
+	// Whether this schema field is nullable, required, or repeated. (AI-inferred)
+	Mode any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// Statistical profile data computed for this column or table. (AI-inferred)
 	Profile any
-	Type    any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
 }
 
 type DataScan_DataProfileResult_Profile struct {
@@ -302,149 +339,226 @@ type DataScan_DataQualityResult_AnomalyDetectionGeneratedAssets struct {
 }
 
 type DataScan_DataQualityResult_Columns_Dimensions_Dimension struct {
+	// The resource name or identifier of this object. (AI-inferred)
 	Name any
 }
 
 type DataScan_DataQualityResult_Columns_Dimensions struct {
+	// The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred)
 	Dimension any
-	Passed    any
-	Score     any
+	// Whether this data quality check passed. (AI-inferred)
+	Passed any
+	// The overall score this quality scan or profile produced. (AI-inferred)
+	Score any
 }
 
 type DataScan_DataQualityResult_Columns struct {
-	Column     any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// The data quality dimension(s) this scan assesses. (AI-inferred)
 	Dimensions any
-	Passed     any
-	Score      any
+	// Whether this data quality check passed. (AI-inferred)
+	Passed any
+	// The overall score this quality scan or profile produced. (AI-inferred)
+	Score any
 }
 
 type DataScan_DataQualityResult_Rules_DebugQueriesResultSets_Results struct {
-	Name  any
-	Type  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type DataScan_DataQualityResult_Rules_DebugQueriesResultSets struct {
+	// The result(s) produced by this operation. (AI-inferred)
 	Results any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_DebugQueries struct {
-	Description  any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// A SQL statement. (AI-inferred)
 	SqlStatement any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RangeExpectation struct {
-	MaxValue         any
-	MinValue         any
+	// The maximum acceptable value for this data quality rule. (AI-inferred)
+	MaxValue any
+	// The minimum acceptable value for this data quality rule. (AI-inferred)
+	MinValue any
+	// Whether the maximum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
 	StrictMaxEnabled any
+	// Whether the minimum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
 	StrictMinEnabled any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RegexExpectation struct {
+	// A regular expression this rule matches against. (AI-inferred)
 	Regex any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation struct {
+	// A SQL expression. (AI-inferred)
 	SqlExpression any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSource struct {
-	EntryLink     any
+	// A typed relationship connecting two catalog entries. (AI-inferred)
+	EntryLink any
+	// The kind of relationship this entry link represents. (AI-inferred)
 	EntryLinkType any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySource struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Entry       any
-	EntryType   any
+	// A reference to the catalog entry this applies to. (AI-inferred)
+	Entry any
+	// A reference to the entry type defining this catalog entry's own structure. (AI-inferred)
+	EntryType any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements struct {
+	// One of the two catalog entries connected by this link. (AI-inferred)
 	EntryLinkSource any
-	EntrySource     any
+	// Detail about where this catalog entry's own data was sourced from. (AI-inferred)
+	EntrySource any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource struct {
+	// The path element(s) locating this rule within its own containing scan. (AI-inferred)
 	RulePathElements any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_SetExpectation struct {
+	// The value(s) making up this field. (AI-inferred)
 	Values any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_SqlAssertion struct {
+	// A SQL statement. (AI-inferred)
 	SqlStatement any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectation struct {
-	MaxValue         any
-	MinValue         any
-	Statistic        any
+	// The maximum acceptable value for this data quality rule. (AI-inferred)
+	MaxValue any
+	// The minimum acceptable value for this data quality rule. (AI-inferred)
+	MinValue any
+	// The specific statistic this measurement reports. (AI-inferred)
+	Statistic any
+	// Whether the maximum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
 	StrictMaxEnabled any
+	// Whether the minimum bound of this range is strictly exclusive, rather than inclusive. (AI-inferred)
 	StrictMinEnabled any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParameters struct {
+	// The value used when this field is left unset. (AI-inferred)
 	DefaultValue any
-	Description  any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollection struct {
+	// The SQL query text. (AI-inferred)
 	Query any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate struct {
-	Capabilities    any
-	Dimension       any
+	// Which operation(s) this entry/resource supports. (AI-inferred)
+	Capabilities any
+	// The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred)
+	Dimension any
+	// The parameter(s) this custom SQL rule or query accepts. (AI-inferred)
 	InputParameters any
-	Name            any
-	SqlCollection   any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the collection of resources this SQL query targets. (AI-inferred)
+	SqlCollection any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_Values struct {
+	// The literal value of this field. (AI-inferred)
 	Value any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference struct {
-	Name         any
-	ResolvedSql  any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The final SQL statement actually run, after any template substitution. (AI-inferred)
+	ResolvedSql any
+	// A predefined rule template this rule instantiates. (AI-inferred)
 	RuleTemplate any
-	Values       any
+	// The value(s) making up this field. (AI-inferred)
+	Values any
 }
 
 type DataScan_DataQualityResult_Rules_Rule struct {
-	Attributes                any
-	Column                    any
-	DebugQueries              any
-	Description               any
-	Dimension                 any
-	IgnoreNull                any
-	Name                      any
-	NonNullExpectation        any
-	RangeExpectation          any
-	RegexExpectation          any
-	RowConditionExpectation   any
-	RuleSource                any
-	SetExpectation            any
-	SqlAssertion              any
+	// Free-form key/value metadata attached to this resource. (AI-inferred)
+	Attributes any
+	// A reference to the specific column this applies to. (AI-inferred)
+	Column any
+	// The underlying SQL query/queries run to compute this result, surfaced for debugging. (AI-inferred)
+	DebugQueries any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The data quality dimension this rule assesses, e.g. completeness or accuracy. (AI-inferred)
+	Dimension any
+	// Whether null values are excluded from this rule's own evaluation. (AI-inferred)
+	IgnoreNull any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A data quality rule asserting that this column's own values are never null. (AI-inferred)
+	NonNullExpectation any
+	// A data quality rule asserting that this column's own values fall within a specified range. (AI-inferred)
+	RangeExpectation any
+	// A data quality rule asserting that this column's own values match a regular expression. (AI-inferred)
+	RegexExpectation any
+	// A data quality rule asserting that a custom SQL row-level condition holds. (AI-inferred)
+	RowConditionExpectation any
+	// Where this rule's own definition came from, e.g. inline or a referenced template. (AI-inferred)
+	RuleSource any
+	// A data quality rule asserting that this column's own values belong to a specified set. (AI-inferred)
+	SetExpectation any
+	// A data quality rule defined by a custom SQL assertion, rather than a built-in rule type. (AI-inferred)
+	SqlAssertion any
+	// A data quality rule asserting that a computed statistic (e.g. row count) falls within a specified range. (AI-inferred)
 	StatisticRangeExpectation any
-	Suspended                 any
+	// Whether this scan or rule is currently suspended from running. (AI-inferred)
+	Suspended any
+	// A data quality rule asserting that a custom SQL table-level condition holds. (AI-inferred)
 	TableConditionExpectation any
-	TemplateReference         any
-	Threshold                 any
-	UniquenessExpectation     any
+	// A reference to the rule template this instantiates. (AI-inferred)
+	TemplateReference any
+	// The value that must be met or crossed for this to apply. (AI-inferred)
+	Threshold any
+	// A data quality rule asserting that this column's own values are all unique. (AI-inferred)
+	UniquenessExpectation any
 }
 
 type DataScan_DataQualityResult_Rules struct {
-	AssertionRowCount      any
+	// How many rows were evaluated for this data quality assertion. (AI-inferred)
+	AssertionRowCount any
+	// The raw result set(s) returned by the debug queries. (AI-inferred)
 	DebugQueriesResultSets any
-	EvaluatedCount         any
-	FailingRowsQuery       any
-	NullCount              any
-	PassRatio              any
-	Passed                 any
-	PassedCount            any
-	Rule                   any
+	// How many rows were evaluated for this data quality rule. (AI-inferred)
+	EvaluatedCount any
+	// A SQL query returning the specific row(s) that failed this data quality rule. (AI-inferred)
+	FailingRowsQuery any
+	// How many null values were observed in this column. (AI-inferred)
+	NullCount any
+	// The fraction of evaluated rows that passed this data quality rule. (AI-inferred)
+	PassRatio any
+	// Whether this data quality check passed. (AI-inferred)
+	Passed any
+	// How many rows passed this data quality rule. (AI-inferred)
+	PassedCount any
+	// The data quality rule that produced this result. (AI-inferred)
+	Rule any
 }
 
 type DataScan_DataQualityResult struct {
@@ -565,52 +679,80 @@ type DataScan_ExecutionStatus struct {
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints struct {
+	// Whether this schema field is required, optional, or repeated. (AI-inferred)
 	Cardinality any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHints struct {
+	// How this value is normalized before comparison. (AI-inferred)
 	Normalization any
-	Synthesis     any
+	// Configuration for how this metadata is automatically synthesized. (AI-inferred)
+	Synthesis any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields struct {
-	DataType        any
-	Description     any
+	// The data type of this value or column. (AI-inferred)
+	DataType any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred)
 	ExtractionHints any
-	Fields          any
-	MetadataType    any
-	Mode            any
-	Name            any
+	// The field(s) making up this schema or aspect. (AI-inferred)
+	Fields any
+	// The category of metadata this entry represents. (AI-inferred)
+	MetadataType any
+	// Whether this schema field is nullable, required, or repeated. (AI-inferred)
+	Mode any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappings struct {
-	Field           any
+	// A reference to a specific field. (AI-inferred)
+	Field any
+	// The field this foreign key references. (AI-inferred)
 	ReferencedField any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys struct {
-	Description        any
-	FieldMappings      any
-	Name               any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// How field(s) from a source entry map into this destination entry. (AI-inferred)
+	FieldMappings any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The type of node a metadata relationship's own target refers to. (AI-inferred)
 	ReferencedNodeType any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes struct {
-	Description     any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred)
 	ExtractionHints any
-	Fields          any
-	ForeignKeys     any
-	Name            any
-	SourceNodeType  any
-	TargetNodeType  any
+	// The field(s) making up this schema or aspect. (AI-inferred)
+	Fields any
+	// The foreign key constraint(s) defined on this table. (AI-inferred)
+	ForeignKeys any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The type of node a metadata relationship's own source refers to. (AI-inferred)
+	SourceNodeType any
+	// The type of node this relationship's own target refers to. (AI-inferred)
+	TargetNodeType any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_NodeTypes struct {
-	Description     any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// Hint(s) guiding how metadata is automatically extracted for this resource. (AI-inferred)
 	ExtractionHints any
-	Fields          any
-	Name            any
-	PrimaryKeys     any
+	// The field(s) making up this schema or aspect. (AI-inferred)
+	Fields any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The column(s) making up this table's own primary key. (AI-inferred)
+	PrimaryKeys any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile struct {

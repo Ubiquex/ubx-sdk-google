@@ -4,7 +4,9 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentages struct {
-	Percentage   any
+	// Percentage of the interconnect's total bandwidth allocated to the associated VLAN attachment. All percentages in the bandwidth_percentages block must sum to 100. (AI-inferred)
+	Percentage any
+	// The traffic class to which this bandwidth percentage applies. Allowed values are TC1, TC2, TC3, TC4, TC5, and TC6. (AI-inferred)
 	TrafficClass any
 }
 
@@ -14,6 +16,7 @@ type Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy struct 
 }
 
 type Interconnect_ApplicationAwareInterconnect struct {
+	// The bandwidth_percentage_policy block configures the bandwidth percentage allocation for an application-aware interconnect. (AI-inferred)
 	BandwidthPercentagePolicy any
 	// Description for the application awareness profile on this Cloud Interconnect.
 	ProfileDescription any
@@ -24,24 +27,34 @@ type Interconnect_ApplicationAwareInterconnect struct {
 }
 
 type Interconnect_CircuitInfos struct {
+	// The customer-side demarcation ID for the interconnect circuit. (AI-inferred)
 	CustomerDemarcId any
 	GoogleCircuitId  any
-	GoogleDemarcId   any
+	// The Google-assigned demarcation point ID for this interconnect circuit. (AI-inferred)
+	GoogleDemarcId any
 }
 
 type Interconnect_ExpectedOutages struct {
+	// The list of circuit names that are affected by this outage. (AI-inferred)
 	AffectedCircuits any
 	Description      any
-	EndTime          any
-	IssueType        any
-	Name             any
-	Source           any
-	StartTime        any
-	State            any
+	// The time at which the expected outage is scheduled to end. (AI-inferred)
+	EndTime any
+	// The type of issue causing the expected outage. Possible values are IT_OUTAGE, IT_PARTIAL_OUTAGE, OUTAGE, and PARTIAL_OUTAGE. (AI-inferred)
+	IssueType any
+	Name      any
+	// The source of the expected outage. Allowed values are GOOGLE for outages initiated by Google, and NSRC_GOOGLE for outages reported by the Network Service Reliability Center. (AI-inferred)
+	Source any
+	// The start time of the outage, in RFC3339 format. (AI-inferred)
+	StartTime any
+	// The current state of the expected outage. Possible values are: ACTIVE, CANCELLED, COMPLETED, NS_ACTIVE, NS_CANCELED. (AI-inferred)
+	State any
 }
 
 type Interconnect_Macsec_PreSharedKeys struct {
-	Name      any
+	// A user-defined name for this pre-shared key. Must be unique within the interconnect. (AI-inferred)
+	Name any
+	// The start time for this pre-shared key, in RFC3339 UTC timestamp format. The key becomes active at this time; if omitted, it becomes active immediately. (AI-inferred)
 	StartTime any
 }
 

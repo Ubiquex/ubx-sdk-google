@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EventSubscription_Destinations_Endpoint_Headers {
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** This HTTP header's own value. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,20 +16,29 @@ export interface EventSubscription_Destinations_Endpoint {
 }
 
 export interface EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValue {
+  /** The Cloud KMS key used to encrypt this resource's data at rest, in the form `projects/* /locations/* /keyRings/* /cryptoKeys/*`. Leave unset to use Google-managed encryption instead. (AI-inferred) */
   kmsKeyName?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValue {
+  /** The specific Secret Manager secret version referenced. (AI-inferred) */
   secretVersion?: string | Computed<string>;
 }
 
 export interface EventSubscription_Destinations_Pubsub_ConfigVariables {
+  /** This configuration variable's own value, when its type is boolean. (AI-inferred) */
   boolValue?: boolean | Computed<boolean>;
+  /** This configuration variable's own value, encrypted with a customer-managed encryption key. (AI-inferred) */
   encryptionKeyValue?: EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValue | Computed<EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValue>;
+  /** This admin filter's own value, when its type is an integer. (AI-inferred) */
   intValue?: string | Computed<string>;
+  /** This configuration variable's own name. (AI-inferred) */
   key?: string | Computed<string>;
+  /** This configuration variable's own value, stored as a Secret Manager reference. (AI-inferred) */
   secretValue?: EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValue | Computed<EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValue>;
+  /** This admin filter's own value, when its type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 

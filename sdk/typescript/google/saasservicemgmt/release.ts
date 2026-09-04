@@ -11,8 +11,11 @@ export interface Release_Blueprint {
 }
 
 export interface Release_InputVariableDefaults {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The real, declared value of this input variable, matching its own `type`. (AI-inferred) */
   value?: string | Computed<string>;
+  /** The real, named input variable this default value applies to. (AI-inferred) */
   variable?: string | Computed<string>;
 }
 

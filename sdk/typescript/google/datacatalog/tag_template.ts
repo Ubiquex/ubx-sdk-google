@@ -2,24 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TagTemplate_Fields_Type_EnumType_AllowedValues {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
 }
 
 export interface TagTemplate_Fields_Type_EnumType {
+  /** The set of values permitted for this enum field. (AI-inferred) */
   allowedValues?: TagTemplate_Fields_Type_EnumType_AllowedValues[] | Computed<TagTemplate_Fields_Type_EnumType_AllowedValues[]>;
 }
 
 export interface TagTemplate_Fields_Type {
+  /** The set of named values this enum field is restricted to. (AI-inferred) */
   enumType?: TagTemplate_Fields_Type_EnumType | Computed<TagTemplate_Fields_Type_EnumType>;
+  /** The base data type of this field, e.g. `STRING` or `NUMBER`. (AI-inferred) */
   primitiveType?: string | Computed<string>;
 }
 
 export interface TagTemplate_Fields {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** Whether this field must be present. (AI-inferred) */
   isRequired?: boolean | Computed<boolean>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The relative ordering position of this item. (AI-inferred) */
   order?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: TagTemplate_Fields_Type | Computed<TagTemplate_Fields_Type>;
 }
 

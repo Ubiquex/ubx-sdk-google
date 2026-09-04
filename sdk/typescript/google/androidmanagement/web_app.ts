@@ -2,6 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WebApp_Icons {
+  /** The real, base64-encoded image bytes for this web app's own icon. (AI-inferred) */
   imageData?: string | Computed<string>;
 }
 

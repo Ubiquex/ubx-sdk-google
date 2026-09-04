@@ -23,6 +23,7 @@ class VmwareAdminCluster_AntiAffinityGroups:
 
 @dataclasses.dataclass
 class VmwareAdminCluster_Authorization_ViewerUsers:
+    # The username used to authenticate. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
@@ -68,13 +69,18 @@ class VmwareAdminCluster_LoadBalancer_ManualLbConfig:
 
 @dataclasses.dataclass
 class VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips:
+    # The hostname of this node. (AI-inferred)
     hostname: Any = None
+    # An IP address. (AI-inferred)
     ip: Any = None
 
 @dataclasses.dataclass
 class VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks:
+    # The default gateway IP address for this network. (AI-inferred)
     gateway: Any = None
+    # The IP address(es) this applies to. (AI-inferred)
     ips: Any = None
+    # The subnet mask for this network. (AI-inferred)
     netmask: Any = None
 
 @dataclasses.dataclass
@@ -103,6 +109,7 @@ class VmwareAdminCluster_LoadBalancer_VipConfig:
 class VmwareAdminCluster_LoadBalancer:
     # VmwareAdminF5BigIpConfig represents configuration parameters for an F5 BIG-IP load balancer.
     f5_config: Any = None
+    # Configuration for a manually (rather than automatically) provisioned load balancer. (AI-inferred)
     manual_lb_config: Any = None
     # VmwareAdminMetalLbConfig represents configuration parameters for a MetalLB load balancer. For admin clusters, currently no configurations is needed.
     metal_lb_config: Any = None
@@ -149,31 +156,45 @@ class VmwareAdminCluster_NetworkConfig:
 
 @dataclasses.dataclass
 class VmwareAdminCluster_PlatformConfig_Bundles_Status_Conditions:
+    # When this condition last changed from one status to another. (AI-inferred)
     last_transition_time: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_Versions:
+    # How many of this item there are. (AI-inferred)
     count: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions:
+    # The version(s) this applies to. (AI-inferred)
     versions: Any = None
 
 @dataclasses.dataclass
 class VmwareAdminCluster_PlatformConfig_Bundles_Status:
+    # The current condition(s) affecting this resource's own status. (AI-inferred)
     conditions: Any = None
+    # A human-readable description of the error. (AI-inferred)
     error_message: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
+    # The version(s) this applies to. (AI-inferred)
     versions: Any = None
 
 @dataclasses.dataclass
 class VmwareAdminCluster_PlatformConfig_Bundles:
+    # The current status of this resource. (AI-inferred)
     status: Any = None
+    # The version identifier this applies to. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -203,10 +224,15 @@ class VmwareAdminCluster_Proxy:
 
 @dataclasses.dataclass
 class VmwareAdminCluster_ValidationCheck_Status_Result:
+    # The category this belongs to. (AI-inferred)
     category: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
+    # The current lifecycle state of this resource. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass

@@ -24,14 +24,20 @@ type Connection_CloudSql struct {
 }
 
 type Connection_Connection_Errors_Details struct {
-	Code    any
+	// A machine-readable code identifying this result or error. (AI-inferred)
+	Code any
+	// Additional detail explaining this result. (AI-inferred)
 	Details any
+	// A human-readable description of this result or error. (AI-inferred)
 	Message any
 }
 
 type Connection_Connection_Errors struct {
-	Details    any
-	ExtraInfo  any
+	// Additional detail explaining this result. (AI-inferred)
+	Details any
+	// Additional detail about this event. (AI-inferred)
+	ExtraInfo any
+	// The timestamp(s) recorded for this event. (AI-inferred)
 	Timestamps any
 }
 

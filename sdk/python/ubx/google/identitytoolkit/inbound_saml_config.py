@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InboundSamlConfig_IdpConfig_IdpCertificates:
+    # The X.509 certificate, in PEM format. (AI-inferred)
     x509_certificate: Any = None
 
 @dataclasses.dataclass
@@ -23,7 +24,9 @@ class InboundSamlConfig_IdpConfig:
 
 @dataclasses.dataclass
 class InboundSamlConfig_SpConfig_SpCertificates:
+    # When this certificate expires. (AI-inferred)
     expires_at: Any = None
+    # The X.509 certificate, in PEM format. (AI-inferred)
     x509_certificate: Any = None
 
 @dataclasses.dataclass

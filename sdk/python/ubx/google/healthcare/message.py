@@ -8,17 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Message_Message_ParsedData_Segments:
+    # The field(s) this applies to. (AI-inferred)
     fields: Any = None
+    # An identifier for this HL7v2 segment type, e.g. `MSH` or `PID`. (AI-inferred)
     segment_id: Any = None
+    # An identifier grouping related HL7v2 segments together. (AI-inferred)
     set_id: Any = None
 
 @dataclasses.dataclass
 class Message_Message_ParsedData:
+    # The segment(s) making up this HL7v2 message. (AI-inferred)
     segments: Any = None
 
 @dataclasses.dataclass
 class Message_Message_PatientIds:
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
+    # The literal value of this field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

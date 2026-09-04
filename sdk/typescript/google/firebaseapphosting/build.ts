@@ -2,11 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Build_Config_EffectiveEnv {
+  /** Whether this record is currently reachable. (AI-inferred) */
   availability?: string[] | Computed<string[]>;
+  /** The origin this rewrite or header rule applies to. (AI-inferred) */
   origin?: string | Computed<string>;
+  /** The name of the file this content originates from. (AI-inferred) */
   originFileName?: string | Computed<string>;
+  /** A reference to the secret this applies to. (AI-inferred) */
   secret?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
+  /** A named environment variable made available to this build or run. (AI-inferred) */
   variable?: string | Computed<string>;
 }
 
@@ -33,14 +39,20 @@ export interface Build_Config {
 }
 
 export interface Build_Errors_Error {
+  /** A machine-readable status or error code. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** A human-readable description of this result. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Build_Errors {
+  /** A reference to the underlying Google Cloud resource. (AI-inferred) */
   cloudResource?: string | Computed<string>;
+  /** Detail about an error that occurred. (AI-inferred) */
   error?: Build_Errors_Error | Computed<Build_Errors_Error>;
+  /** Which layer of the system produced this error. (AI-inferred) */
   errorSource?: string | Computed<string>;
 }
 

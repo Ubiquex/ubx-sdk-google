@@ -16,6 +16,7 @@ export interface ConnectionProfile_Alloydb_Settings_InitialUser {
 }
 
 export interface ConnectionProfile_Alloydb_Settings_PrimaryInstanceSettings_InstanceNetworkConfig_AuthorizedExternalNetworks {
+  /** The IP address range this network rule applies to, in CIDR notation. (AI-inferred) */
   cidrRange?: string | Computed<string>;
 }
 
@@ -80,9 +81,13 @@ export interface ConnectionProfile_Cloudsql_Settings_DataCacheConfig {
 }
 
 export interface ConnectionProfile_Cloudsql_Settings_IpConfig_AuthorizedNetworks {
+  /** The timestamp after which this resource (or the attribute it applies to) is no longer valid. (AI-inferred) */
   expireTime?: string | Computed<string>;
+  /** A human-readable label for this network rule. (AI-inferred) */
   label?: string | Computed<string>;
+  /** How long this network rule remains valid. (AI-inferred) */
   ttl?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

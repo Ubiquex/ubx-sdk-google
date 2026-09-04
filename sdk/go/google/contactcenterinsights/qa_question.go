@@ -4,12 +4,18 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QaQuestion_AnswerChoices struct {
+	// A `true`/`false` value, populated when this field's own type is boolean. (AI-inferred)
 	BoolValue any
-	Key       any
-	NaValue   any
-	NumValue  any
-	Score     any
-	StrValue  any
+	// The key of this key/value pair. (AI-inferred)
+	Key any
+	// Marks this QA answer as not applicable, rather than providing a real value. (AI-inferred)
+	NaValue any
+	// A numeric value. (AI-inferred)
+	NumValue any
+	// The numeric score this evaluation produced. (AI-inferred)
+	Score any
+	// A text value. (AI-inferred)
+	StrValue any
 }
 
 type QaQuestion_Metrics struct {

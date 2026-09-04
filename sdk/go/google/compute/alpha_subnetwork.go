@@ -169,7 +169,8 @@ type AlphaSubnetworkConfig struct {
 	PrivateIpGoogleAccess any
 	// This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
 	PrivateIpv6GoogleAccess any
-	Purpose                 any
+	// What this subnetwork is used for, e.g. a regular subnet or a regional managed proxy subnet for internal HTTP(S) load balancing. (AI-inferred)
+	Purpose any
 	// URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
 	Region any
 	// The URL of the reserved internal range.
@@ -245,7 +246,8 @@ type AlphaSubnetworkAttrs struct {
 	PrivateIpGoogleAccess any
 	// This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
 	PrivateIpv6GoogleAccess any
-	Purpose                 any
+	// What this subnetwork is used for, e.g. a regular subnet or a regional managed proxy subnet for internal HTTP(S) load balancing. (AI-inferred)
+	Purpose any
 	// URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
 	Region any
 	// The URL of the reserved internal range.

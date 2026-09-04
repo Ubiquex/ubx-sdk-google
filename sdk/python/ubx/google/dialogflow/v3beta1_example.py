@@ -566,27 +566,46 @@ _V3beta1Example_ActionsFields = {
 
 @dataclasses.dataclass
 class V3beta1ExampleConfig:
+    # The action(s) taken by this step or event. (AI-inferred)
     actions: Any = None
+    # The current state of this conversation. (AI-inferred)
     conversation_state: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The input parameter value(s) a playbook invocation was given. (AI-inferred)
     playbook_input: Any = None
+    # The output parameter value(s) a playbook invocation produced. (AI-inferred)
     playbook_output: Any = None
 
 @dataclasses.dataclass
 class V3beta1ExampleAttrs:
+    # The action(s) taken by this step or event. (AI-inferred)
     actions: Any = None
+    # The current state of this conversation. (AI-inferred)
     conversation_state: Any = None
+    # Output only. The timestamp when this resource was created. (AI-inferred)
     create_time: Any = None
+    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # A BCP-47 language code, e.g. `en-US`. (AI-inferred)
     language_code: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The input parameter value(s) a playbook invocation was given. (AI-inferred)
     playbook_input: Any = None
+    # The output parameter value(s) a playbook invocation produced. (AI-inferred)
     playbook_output: Any = None
+    # How many tokens this content consumed. (AI-inferred)
     token_count: Any = None
+    # Output only. The timestamp when this resource was most recently updated. (AI-inferred)
     update_time: Any = None
 
 V3beta1Example = ubx.ResourceBinding(

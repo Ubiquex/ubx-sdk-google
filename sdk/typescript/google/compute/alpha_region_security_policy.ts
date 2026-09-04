@@ -563,11 +563,13 @@ const AlphaRegionSecurityPolicy_UserDefinedFieldsFields: FieldMap = {
 export interface AlphaRegionSecurityPolicyConfig {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig?: AlphaRegionSecurityPolicy_AdaptiveProtectionConfig | Computed<AlphaRegionSecurityPolicy_AdaptiveProtectionConfig>;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig?: AlphaRegionSecurityPolicy_AdvancedOptionsConfig | Computed<AlphaRegionSecurityPolicy_AdvancedOptionsConfig>;
   /** A list of associations that belong to this policy. */
   associations?: AlphaRegionSecurityPolicy_Associations[] | Computed<AlphaRegionSecurityPolicy_Associations[]>;
   /** Configuration options for Cloud Armor. */
   cloudArmorConfig?: AlphaRegionSecurityPolicy_CloudArmorConfig | Computed<AlphaRegionSecurityPolicy_CloudArmorConfig>;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig?: AlphaRegionSecurityPolicy_DdosProtectionConfig | Computed<AlphaRegionSecurityPolicy_DdosProtectionConfig>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
@@ -595,6 +597,7 @@ export interface AlphaRegionSecurityPolicyConfig {
 export interface AlphaRegionSecurityPolicyAttrs {
   /** Configuration options for Cloud Armor Adaptive Protection (CAAP). */
   adaptiveProtectionConfig: AlphaRegionSecurityPolicy_AdaptiveProtectionConfig;
+  /** Configures this security policy's own advanced request-inspection behavior, e.g. JSON body parsing and log verbosity. (AI-inferred) */
   advancedOptionsConfig: AlphaRegionSecurityPolicy_AdvancedOptionsConfig;
   /** A list of associations that belong to this policy. */
   associations: AlphaRegionSecurityPolicy_Associations[];
@@ -602,6 +605,7 @@ export interface AlphaRegionSecurityPolicyAttrs {
   cloudArmorConfig: AlphaRegionSecurityPolicy_CloudArmorConfig;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
+  /** Configures this security policy's own DDoS protection tier. (AI-inferred) */
   ddosProtectionConfig: AlphaRegionSecurityPolicy_DdosProtectionConfig;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description: string;

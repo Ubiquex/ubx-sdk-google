@@ -15,7 +15,8 @@ type Targetserver_SSlinfo struct {
 	Ciphers any
 	// Optional. Enables two-way TLS.
 	ClientAuthEnabled any
-	CommonName        any
+	// The Common Name field of this certificate's own subject. (AI-inferred)
+	CommonName any
 	// Required. Enables TLS. If false, neither one-way nor two-way TLS will be enabled.
 	Enabled any
 	// TLS is strictly enforced.

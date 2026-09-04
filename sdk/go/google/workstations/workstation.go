@@ -4,8 +4,10 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workstation_PersistentDirectories struct {
+	// The path this volume is mounted at inside the container. (AI-inferred)
 	MountPath any
-	SizeGb    any
+	// The size of this resource, in gibibytes. (AI-inferred)
+	SizeGb any
 }
 
 type Workstation_RuntimeHost_GceInstanceHost struct {

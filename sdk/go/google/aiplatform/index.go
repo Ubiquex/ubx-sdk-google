@@ -4,9 +4,12 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Index_DeployedIndexes struct {
+	// The identifier this index was deployed under. (AI-inferred)
 	DeployedIndexId any
-	DisplayName     any
-	IndexEndpoint   any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the index endpoint this index is deployed to. (AI-inferred)
+	IndexEndpoint any
 }
 
 type Index_EncryptionSpec struct {

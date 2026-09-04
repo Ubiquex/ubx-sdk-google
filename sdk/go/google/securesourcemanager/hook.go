@@ -18,7 +18,8 @@ type HookConfig struct {
 	// Optional. The events that trigger hook on.
 	Events any
 	// Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`
-	Name       any
+	Name any
+	// Configuration for which push events this webhook fires on and what payload it sends -- the per-hook counterpart to a branch rule's own trigger settings. (AI-inferred)
 	PushOption any
 	// Optional. The sensitive query string to be appended to the target URI.
 	SensitiveQueryString any
@@ -34,7 +35,8 @@ type HookAttrs struct {
 	// Optional. The events that trigger hook on.
 	Events any
 	// Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`
-	Name       any
+	Name any
+	// Configuration for which push events this webhook fires on and what payload it sends -- the per-hook counterpart to a branch rule's own trigger settings. (AI-inferred)
 	PushOption any
 	// Optional. The sensitive query string to be appended to the target URI.
 	SensitiveQueryString any

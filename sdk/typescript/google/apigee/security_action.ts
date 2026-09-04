@@ -32,7 +32,9 @@ export interface SecurityAction_Deny {
 }
 
 export interface SecurityAction_Flag_Headers {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

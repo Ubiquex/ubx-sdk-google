@@ -68,20 +68,32 @@ _V3beta1Generator_PromptTextFields = {
 
 @dataclasses.dataclass
 class V3beta1GeneratorConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
     model_parameter: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
     placeholders: Any = None
+    # The prompt text played or displayed to the user. (AI-inferred)
     prompt_text: Any = None
 
 @dataclasses.dataclass
 class V3beta1GeneratorAttrs:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # Configuration for which generative model this generator/playbook uses, and its own settings. (AI-inferred)
     llm_model_settings: Any = None
+    # A model sampling parameter (e.g. temperature, top-k) affecting how output is generated. (AI-inferred)
     model_parameter: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Named slot(s) within this prompt or template that get filled in with real values. (AI-inferred)
     placeholders: Any = None
+    # The prompt text played or displayed to the user. (AI-inferred)
     prompt_text: Any = None
 
 V3beta1Generator = ubx.ResourceBinding(

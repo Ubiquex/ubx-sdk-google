@@ -4,8 +4,10 @@ package monitoring
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlertPolicy_AlertStrategy_NotificationChannelStrategy struct {
+	// The notification channel(s) alerted when this policy fires. (AI-inferred)
 	NotificationChannelNames any
-	RenotifyInterval         any
+	// How often notifications are re-sent while this alert remains open. (AI-inferred)
+	RenotifyInterval any
 }
 
 type AlertPolicy_AlertStrategy_NotificationRateLimit struct {
@@ -25,111 +27,171 @@ type AlertPolicy_AlertStrategy struct {
 }
 
 type AlertPolicy_Conditions_ConditionAbsent_Aggregations struct {
-	AlignmentPeriod    any
+	// The time interval time series data points are grouped into before aggregation. (AI-inferred)
+	AlignmentPeriod any
+	// How values are combined across multiple time series. (AI-inferred)
 	CrossSeriesReducer any
-	GroupByFields      any
-	PerSeriesAligner   any
+	// The field(s) time series data is grouped by before aggregation. (AI-inferred)
+	GroupByFields any
+	// How data points within each individual time series are aligned. (AI-inferred)
+	PerSeriesAligner any
 }
 
 type AlertPolicy_Conditions_ConditionAbsent_Trigger struct {
-	Count   any
+	// How many of this item there are. (AI-inferred)
+	Count any
+	// A percentage value. (AI-inferred)
 	Percent any
 }
 
 type AlertPolicy_Conditions_ConditionAbsent struct {
+	// The aggregation step(s) applied to the queried time series data. (AI-inferred)
 	Aggregations any
-	Duration     any
-	Filter       any
-	Trigger      any
+	// How long a condition must remain true before this alert fires. (AI-inferred)
+	Duration any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// The condition that must be satisfied across time series for this alert to fire. (AI-inferred)
+	Trigger any
 }
 
 type AlertPolicy_Conditions_ConditionMatchedLog struct {
-	Filter          any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// Rule(s) extracting label values from matching log entries. (AI-inferred)
 	LabelExtractors any
 }
 
 type AlertPolicy_Conditions_ConditionMonitoringQueryLanguage struct {
-	Duration              any
+	// How long a condition must remain true before this alert fires. (AI-inferred)
+	Duration any
+	// How missing data is treated when evaluating this condition. (AI-inferred)
 	EvaluationMissingData any
-	Query                 any
-	Trigger               any
+	// The query evaluated to produce this result. (AI-inferred)
+	Query any
+	// The condition that must be satisfied across time series for this alert to fire. (AI-inferred)
+	Trigger any
 }
 
 type AlertPolicy_Conditions_ConditionPrometheusQueryLanguage struct {
-	AlertRule               any
+	// The name of the alert rule this applies to. (AI-inferred)
+	AlertRule any
+	// Whether validation of the referenced metric is skipped. (AI-inferred)
 	DisableMetricValidation any
-	Duration                any
-	EvaluationInterval      any
-	Labels                  any
-	Query                   any
-	RuleGroup               any
+	// How long a condition must remain true before this alert fires. (AI-inferred)
+	Duration any
+	// How often this SQL condition is evaluated. (AI-inferred)
+	EvaluationInterval any
+	// Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred)
+	Labels any
+	// The query evaluated to produce this result. (AI-inferred)
+	Query any
+	// The rule group this alert rule belongs to. (AI-inferred)
+	RuleGroup any
 }
 
 type AlertPolicy_Conditions_ConditionSql_BooleanTest struct {
+	// A reference to a specific column. (AI-inferred)
 	Column any
 }
 
 type AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTime struct {
-	Hours   any
+	// The hour component of a time value. (AI-inferred)
+	Hours any
+	// The minute component of a time value. (AI-inferred)
 	Minutes any
-	Nanos   any
+	// The sub-second, nanosecond component of a time value. (AI-inferred)
+	Nanos any
+	// The second component of a time value. (AI-inferred)
 	Seconds any
 }
 
 type AlertPolicy_Conditions_ConditionSql_Daily struct {
+	// How long this query is allowed to run before timing out. (AI-inferred)
 	ExecutionTime any
-	Periodicity   any
+	// How often this schedule recurs. (AI-inferred)
+	Periodicity any
 }
 
 type AlertPolicy_Conditions_ConditionSql_Hourly struct {
+	// The number of minutes past the hour this schedule runs at. (AI-inferred)
 	MinuteOffset any
-	Periodicity  any
+	// How often this schedule recurs. (AI-inferred)
+	Periodicity any
 }
 
 type AlertPolicy_Conditions_ConditionSql_Minutes struct {
+	// How often this schedule recurs. (AI-inferred)
 	Periodicity any
 }
 
 type AlertPolicy_Conditions_ConditionSql_RowCountTest struct {
+	// The comparison operator used to evaluate this threshold, e.g. `COMPARISON_GT`. (AI-inferred)
 	Comparison any
-	Threshold  any
+	// The value that must be crossed for this condition to trigger. (AI-inferred)
+	Threshold any
 }
 
 type AlertPolicy_Conditions_ConditionSql struct {
-	BooleanTest  any
-	Daily        any
-	Hourly       any
-	Minutes      any
-	Query        any
+	// A condition that evaluates a boolean-valued log query. (AI-inferred)
+	BooleanTest any
+	// Runs this schedule once per day. (AI-inferred)
+	Daily any
+	// Runs this schedule once per hour. (AI-inferred)
+	Hourly any
+	// The minute component of a time value. (AI-inferred)
+	Minutes any
+	// The query evaluated to produce this result. (AI-inferred)
+	Query any
+	// A condition that evaluates the number of rows returned by a SQL query. (AI-inferred)
 	RowCountTest any
 }
 
 type AlertPolicy_Conditions_ConditionThreshold_ForecastOptions struct {
+	// How far into the future this forecast condition projects. (AI-inferred)
 	ForecastHorizon any
 }
 
 type AlertPolicy_Conditions_ConditionThreshold struct {
-	Aggregations            any
-	Comparison              any
+	// The aggregation step(s) applied to the queried time series data. (AI-inferred)
+	Aggregations any
+	// The comparison operator used to evaluate this threshold, e.g. `COMPARISON_GT`. (AI-inferred)
+	Comparison any
+	// The aggregation step(s) applied to the denominator time series, when computing a ratio. (AI-inferred)
 	DenominatorAggregations any
-	DenominatorFilter       any
-	Duration                any
-	EvaluationMissingData   any
-	Filter                  any
-	ForecastOptions         any
-	ThresholdValue          any
-	Trigger                 any
+	// The filter selecting the denominator time series, when computing a ratio. (AI-inferred)
+	DenominatorFilter any
+	// How long a condition must remain true before this alert fires. (AI-inferred)
+	Duration any
+	// How missing data is treated when evaluating this condition. (AI-inferred)
+	EvaluationMissingData any
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
+	Filter any
+	// Configuration for a forecast-based alerting condition. (AI-inferred)
+	ForecastOptions any
+	// The value that must be crossed for this condition to trigger. (AI-inferred)
+	ThresholdValue any
+	// The condition that must be satisfied across time series for this alert to fire. (AI-inferred)
+	Trigger any
 }
 
 type AlertPolicy_Conditions struct {
-	ConditionAbsent                  any
-	ConditionMatchedLog              any
+	// A condition that triggers when expected data stops arriving. (AI-inferred)
+	ConditionAbsent any
+	// A condition that triggers when a log entry matches a specified filter. (AI-inferred)
+	ConditionMatchedLog any
+	// A condition defined using Monitoring Query Language (MQL). (AI-inferred)
 	ConditionMonitoringQueryLanguage any
+	// A condition defined using PromQL. (AI-inferred)
 	ConditionPrometheusQueryLanguage any
-	ConditionSql                     any
-	ConditionThreshold               any
-	DisplayName                      any
-	Name                             any
+	// A condition defined using a SQL query. (AI-inferred)
+	ConditionSql any
+	// A condition that triggers when a metric crosses a defined threshold. (AI-inferred)
+	ConditionThreshold any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type AlertPolicy_CreationRecord struct {
@@ -140,8 +202,10 @@ type AlertPolicy_CreationRecord struct {
 }
 
 type AlertPolicy_Documentation_Links struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Url         any
+	// A URL this applies to. (AI-inferred)
+	Url any
 }
 
 type AlertPolicy_Documentation struct {

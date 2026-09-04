@@ -2,331 +2,513 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config_BargeInConfig {
+  /** How long after the agent starts speaking before the caller is allowed to interrupt it. (AI-inferred) */
   noBargeInDuration?: string | Computed<string>;
+  /** The total time this operation, run, or window covers. (AI-inferred) */
   totalDuration?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config {
+  /** The audio encoding format, e.g. `AUDIO_ENCODING_LINEAR_16`. (AI-inferred) */
   audioEncoding?: string | Computed<string>;
+  /** Configuration for whether and how the caller can interrupt (barge in on) the agent's own spoken response. (AI-inferred) */
   bargeInConfig?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config_BargeInConfig | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config_BargeInConfig>;
+  /** Whether per-word confidence and timing detail is included in speech recognition results. (AI-inferred) */
   enableWordInfo?: boolean | Computed<boolean>;
+  /** The name of the model this applies to. (AI-inferred) */
   model?: string | Computed<string>;
+  /** Which specific model variant this uses. (AI-inferred) */
   modelVariant?: string | Computed<string>;
+  /** Opts this agent out of automatic migration to Dialogflow's newer Conformer speech-recognition model. (AI-inferred) */
   optOutConformerModelMigration?: boolean | Computed<boolean>;
+  /** Phrase(s) speech recognition is biased toward recognizing correctly. (AI-inferred) */
   phraseHints?: string[] | Computed<string[]>;
+  /** The audio sample rate, in Hz. (AI-inferred) */
   sampleRateHertz?: number | Computed<number>;
+  /** Whether speech recognition ends after detecting a single utterance, rather than continuing to listen. (AI-inferred) */
   singleUtterance?: boolean | Computed<boolean>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio {
+  /** The synthesized audio content for this response. (AI-inferred) */
   audio?: string | Computed<string>;
+  /** The configuration for this resource. (AI-inferred) */
   config?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio_Config>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_Dtmf {
+  /** The DTMF digit(s) entered. (AI-inferred) */
   digits?: string | Computed<string>;
+  /** The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred) */
   finishDigit?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_Event {
+  /** The name of the event this handler responds to. (AI-inferred) */
   event?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_Intent {
+  /** A reference to the intent this applies to. (AI-inferred) */
   intent?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_Text {
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult_Error {
+  /** The message content. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult {
+  /** The specific action, exposed by `tool`, being invoked. (AI-inferred) */
   action?: string | Computed<string>;
+  /** Error detail for this failed operation. (AI-inferred) */
   error?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult_Error | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult_Error>;
+  /** The parameter value(s) produced by this operation. (AI-inferred) */
   outputParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The tool this fulfillment or response invokes. (AI-inferred) */
   tool?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput_Input {
+  /** The synthesized audio content for this response. (AI-inferred) */
   audio?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_Audio>;
+  /** DTMF (touch-tone) input configuration or data. (AI-inferred) */
   dtmf?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_Dtmf | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_Dtmf>;
+  /** The name of the event this handler responds to. (AI-inferred) */
   event?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_Event | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_Event>;
+  /** A reference to the intent this applies to. (AI-inferred) */
   intent?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_Intent | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_Intent>;
+  /** A BCP-47 language code, e.g. `en-US`. (AI-inferred) */
   languageCode?: string | Computed<string>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_Text | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_Text>;
+  /** The result returned from invoking a tool. (AI-inferred) */
   toolCallResult?: TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input_ToolCallResult>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_UserInput {
+  /** Whether Dialogflow analyzes the sentiment of end-user input during the conversation. (AI-inferred) */
   enableSentimentAnalysis?: boolean | Computed<boolean>;
+  /** Parameter value(s) supplied directly into this playbook or flow invocation, bypassing normal collection. (AI-inferred) */
   injectedParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The input provided to this operation. (AI-inferred) */
   input?: TestCase_LastTestResult_ConversationTurns_UserInput_Input | Computed<TestCase_LastTestResult_ConversationTurns_UserInput_Input>;
+  /** Whether this tool is implemented by calling a webhook, rather than a built-in action. (AI-inferred) */
   isWebhookEnabled?: boolean | Computed<boolean>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_AudioExportGcsDestination {
+  /** The URI of an audio clip this response instructs the client to play. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_DtmfSettings {
+  /** Whether this setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** How long Dialogflow waits for further DTMF digits before treating the input as complete and matching it. (AI-inferred) */
   endpointingTimeoutDuration?: string | Computed<string>;
+  /** The DTMF digit that, when pressed, signals the end of the caller's digit sequence. (AI-inferred) */
   finishDigit?: string | Computed<string>;
+  /** The maximum gap allowed between consecutive DTMF digits before Dialogflow treats the sequence as finished. (AI-inferred) */
   interdigitTimeoutDuration?: string | Computed<string>;
+  /** The maximum number of DTMF digits Dialogflow accepts before automatically treating the input as complete. (AI-inferred) */
   maxDigits?: number | Computed<number>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_LoggingSettings {
+  /** Whether end-user input is redacted from logs unless the end user has explicitly consented to its retention. (AI-inferred) */
   enableConsentBasedRedaction?: boolean | Computed<boolean>;
+  /** Whether this agent, flow, or page's own conversation turns are recorded to Dialogflow's interaction history at all. (AI-inferred) */
   enableInteractionLogging?: boolean | Computed<boolean>;
+  /** Whether conversation interactions are also logged to Cloud Logging (Stackdriver), in addition to Dialogflow's own conversation history. (AI-inferred) */
   enableStackdriverLogging?: boolean | Computed<boolean>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_SpeechSettings {
+  /** How sensitive speech-end detection is -- a higher value ends listening sooner after the caller stops talking, a lower value waits longer. (AI-inferred) */
   endpointerSensitivity?: number | Computed<number>;
+  /** Custom speech-recognition model overrides to use for this agent, flow, or page's own speech-to-text, keyed by the audio type they apply to. (AI-inferred) */
   models?: Record<string, string> | Computed<Record<string, string>>;
+  /** How long to wait for the caller to start speaking before treating the turn as having no input. (AI-inferred) */
   noSpeechTimeout?: string | Computed<string>;
+  /** Whether speech-end detection relies on a fixed silence timeout, rather than Dialogflow's own adaptive endpointer. (AI-inferred) */
   useTimeoutBasedEndpointing?: boolean | Computed<boolean>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings {
+  /** The Cloud Storage location conversation audio recordings are exported to, when audio export is enabled. (AI-inferred) */
   audioExportGcsDestination?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_AudioExportGcsDestination | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_AudioExportGcsDestination>;
+  /** Configuration for how this agent, flow, or page interprets DTMF (touch-tone) input from callers. (AI-inferred) */
   dtmfSettings?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_DtmfSettings | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_DtmfSettings>;
+  /** Configuration for what this agent, flow, or page records to Dialogflow's own interaction history, Cloud Logging, and speech logs. (AI-inferred) */
   loggingSettings?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_LoggingSettings | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_LoggingSettings>;
+  /** Configuration for how this agent, flow, or page converts caller speech to text. (AI-inferred) */
   speechSettings?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_SpeechSettings | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_SpeechSettings>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess {
+  /** Free-form key/value data attached to this message or event, for the client to consume. (AI-inferred) */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** The synthesized audio content for this response. (AI-inferred) */
   audio?: string | Computed<string>;
+  /** The URI of an audio clip this response instructs the client to play. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio {
+  /** The ordered audio segments making up a `mixed_audio` response. (AI-inferred) */
   segments?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments[]>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** Speech Synthesis Markup Language text, giving finer control over how this response is spoken aloud than plain `text` allows. (AI-inferred) */
   ssml?: string | Computed<string>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** The URI of the client-hosted audio clip a `play_audio` response points to. (AI-inferred) */
   audioUri?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall {
+  /** The phone number a `telephony_transfer_call` response transfers the call to. (AI-inferred) */
   phoneNumber?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text {
+  /** Output only. Whether the end-user's speech is allowed to interrupt this message's own audio playback. (AI-inferred) */
   allowPlaybackInterruption?: boolean | Computed<boolean>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string[] | Computed<string[]>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall {
+  /** The specific action, exposed by `tool`, being invoked. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The parameter values passed as input when invoking this tool's action. (AI-inferred) */
   inputParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The tool this fulfillment or response invokes. (AI-inferred) */
   tool?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message {
+  /** The output channel this response message is scoped to (e.g. a specific integration), so different channels can receive different responses for the same turn. (AI-inferred) */
   channel?: string | Computed<string>;
+  /** Signals that the conversation reached a successful outcome, optionally carrying metadata describing why. (AI-inferred) */
   conversationSuccess?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess>;
+  /** Signals that the conversation should end -- the agent has nothing further to say and the client should close the session. (AI-inferred) */
   endInteraction?: unknown | Computed<unknown>;
+  /** An info-card response generated from a knowledge base or generative answer, rendered by clients that support Infobot Messenger-compatible cards. (AI-inferred) */
   knowledgeInfoCard?: unknown | Computed<unknown>;
+  /** Signals that the conversation should be transferred to a human live agent, optionally carrying metadata for the handoff. (AI-inferred) */
   liveAgentHandoff?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess>;
+  /** An audio response composed of multiple segments, mixing Dialogflow's own synthesized speech with client-hosted audio clips played via `play_audio`. (AI-inferred) */
   mixedAudio?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio>;
+  /** A text or SSML response used preferentially for speech synthesis, when the response also carries a plain `text` variant for display. (AI-inferred) */
   outputAudioText?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText>;
+  /** A custom, integration-specific JSON payload carried alongside this response message. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Signals the client to play an audio clip hosted at `audio_uri`, rather than synthesizing speech itself. (AI-inferred) */
   playAudio?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio>;
+  /** Which kind of response message this is (e.g. entry prompt, follow-up, or error), controlling when Dialogflow surfaces it. (AI-inferred) */
   responseType?: string | Computed<string>;
+  /** Signals a telephony integration to transfer the active call to `phone_number`. (AI-inferred) */
   telephonyTransferCall?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text>;
+  /** A request from the agent to invoke a specific `tool`'s own `action`, passing `input_parameters`. (AI-inferred) */
   toolCall?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent {
+  /** Further, nested cascading if/else conditions evaluated when this case's own condition matches. (AI-inferred) */
   additionalCases?: unknown | Computed<unknown>;
+  /** The message content. (AI-inferred) */
   message?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases {
+  /** The message(s) or action(s) to run when this case's own condition matches. (AI-inferred) */
   caseContent?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent[]>;
+  /** A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred) */
   condition?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases {
+  /** The ordered condition/content pair(s) making up this cascading if/else. (AI-inferred) */
   cases?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases[]>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Generators {
+  /** A reference to the generator this invokes. (AI-inferred) */
   generator?: string | Computed<string>;
+  /** The parameter values passed as input when invoking this tool's action. (AI-inferred) */
   inputParameters?: Record<string, string> | Computed<Record<string, string>>;
+  /** The session parameter this generator's own output is written to. (AI-inferred) */
   outputParameter?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_SetParameterActions {
+  /** The name of the parameter this applies to. (AI-inferred) */
   parameter?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: unknown | Computed<unknown>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings>;
+  /** The name of the Cloud Function this fulfillment invokes to run custom code inline. (AI-inferred) */
   codeBlockFunction?: string | Computed<string>;
+  /** A cascading if/else list of conditions -- the first one whose own `condition` evaluates true is used, the rest are ignored. (AI-inferred) */
   conditionalCases?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases[]>;
+  /** Whether Dialogflow falls back to a generative (LLM-produced) response when no other route matches, rather than a static no-match message. (AI-inferred) */
   enableGenerativeFallback?: boolean | Computed<boolean>;
+  /** The generator(s) (LLM prompt-based response generation) invoked by this fulfillment. (AI-inferred) */
   generators?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Generators[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Generators[]>;
+  /** The response message(s) this fulfillment returns. (AI-inferred) */
   messages?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message[]>;
+  /** Whether this fulfillment streams its own response back incrementally, rather than waiting to send it all at once. (AI-inferred) */
   returnPartialResponses?: boolean | Computed<boolean>;
+  /** Session parameter value(s) this fulfillment sets before running its own webhook call or response. (AI-inferred) */
   setParameterActions?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_SetParameterActions[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_SetParameterActions[]>;
+  /** A caller-defined identifier included in the webhook request, letting the webhook service tell which fulfillment triggered it. (AI-inferred) */
   tag?: string | Computed<string>;
+  /** A reference to the webhook this fulfillment calls. (AI-inferred) */
   webhook?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers {
+  /** The name of the event this handler responds to. (AI-inferred) */
   event?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The flow this transition moves the conversation to. (AI-inferred) */
   targetFlow?: string | Computed<string>;
+  /** The page this transition moves the conversation to. (AI-inferred) */
   targetPage?: string | Computed<string>;
+  /** The playbook this transition moves the conversation to. (AI-inferred) */
   targetPlaybook?: string | Computed<string>;
+  /** The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred) */
   triggerFulfillment?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters_FillBehavior {
+  /** The fulfillment run the first time this page's own form parameter is requested. (AI-inferred) */
   initialPromptFulfillment?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment>;
+  /** Event handler(s) triggered when the caller's own input doesn't satisfy this form parameter, prompting again. (AI-inferred) */
   repromptEventHandlers?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers[]>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings>;
+  /** The value used when this parameter is left unset. (AI-inferred) */
   defaultValue?: unknown | Computed<unknown>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** A reference to the entity type this applies to. (AI-inferred) */
   entityType?: string | Computed<string>;
+  /** Configuration for how this page prompts for and validates its own required parameters. (AI-inferred) */
   fillBehavior?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters_FillBehavior | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters_FillBehavior>;
+  /** Whether this parameter captures a list of values, rather than a single one. (AI-inferred) */
   isList?: boolean | Computed<boolean>;
+  /** Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred) */
   redact?: boolean | Computed<boolean>;
+  /** The list of `properties` keys that must be present on an `object`-typed value. (AI-inferred) */
   required?: boolean | Computed<boolean>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form {
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters[]>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings_DataStoreConnections {
+  /** A reference to the Vertex AI Search data store this connection reads from. (AI-inferred) */
   dataStore?: string | Computed<string>;
+  /** What kind of content this data store holds: `PUBLIC_WEB`, `UNSTRUCTURED`, or `STRUCTURED`. (AI-inferred) */
   dataStoreType?: string | Computed<string>;
+  /** How documents in this data store are processed for grounding -- applies only to `PUBLIC_WEB`/`UNSTRUCTURED` data stores. (AI-inferred) */
   documentProcessingMode?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings {
+  /** The data store(s) this agent, flow, or page can ground generative answers in. (AI-inferred) */
   dataStoreConnections?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings_DataStoreConnections[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings_DataStoreConnections[]>;
+  /** Whether this setting is turned on. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** The flow this transition moves the conversation to. (AI-inferred) */
   targetFlow?: string | Computed<string>;
+  /** The page this transition moves the conversation to. (AI-inferred) */
   targetPage?: string | Computed<string>;
+  /** The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred) */
   triggerFulfillment?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_TransitionRoutes {
+  /** A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A reference to the intent this applies to. (AI-inferred) */
   intent?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The flow this transition moves the conversation to. (AI-inferred) */
   targetFlow?: string | Computed<string>;
+  /** The page this transition moves the conversation to. (AI-inferred) */
   targetPage?: string | Computed<string>;
+  /** The fulfillment (messages, webhook call, parameter updates) run when this route, event, or intent triggers. (AI-inferred) */
   triggerFulfillment?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage {
+  /** Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred) */
   advancedSettings?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The fulfillment run once, automatically, when the conversation enters this page. (AI-inferred) */
   entryFulfillment?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment>;
+  /** The event handler(s) defined on this page/flow, each running a fulfillment when a specific event fires. (AI-inferred) */
   eventHandlers?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers[]>;
+  /** The parameter collection form defined on this page, prompting the user for each required parameter in turn. (AI-inferred) */
   form?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_Form>;
+  /** Configuration letting this page fall back to a connected knowledge base or data store when no other route matches. (AI-inferred) */
   knowledgeConnectorSettings?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The reusable transition route group(s) included on this page/flow. (AI-inferred) */
   transitionRouteGroups?: string[] | Computed<string[]>;
+  /** The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred) */
   transitionRoutes?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_TransitionRoutes[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_TransitionRoutes[]>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Differences {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Status {
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: number | Computed<number>;
+  /** Additional detail about this result. (AI-inferred) */
   details?: Record<string, unknown>[] | Computed<Record<string, unknown>[]>;
+  /** The message content. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_Parameters {
+  /** A reference to the entity type this applies to. (AI-inferred) */
   entityType?: string | Computed<string>;
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** Whether this parameter captures a list of values, rather than a single one. (AI-inferred) */
   isList?: boolean | Computed<boolean>;
+  /** Whether this parameter's own value is redacted from conversation history and logs. (AI-inferred) */
   redact?: boolean | Computed<boolean>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases_Parts {
+  /** An identifier for this parameter, unique within its own containing form or intent. (AI-inferred) */
   parameterId?: string | Computed<string>;
+  /** The plain-text content of this response message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases {
+  /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The ordered content parts making up this training phrase or message. (AI-inferred) */
   parts?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases_Parts[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases_Parts[]>;
+  /** How many times a matching training phrase part was annotated with this parameter, when disambiguating repeated entities. (AI-inferred) */
   repeatCount?: number | Computed<number>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The DTMF digit pattern this matches against. (AI-inferred) */
   dtmfPattern?: string | Computed<string>;
+  /** Whether this route is used only when nothing else matches, rather than competing on its own trigger. (AI-inferred) */
   isFallback?: boolean | Computed<boolean>;
+  /** Optional. User-provided key/value labels on this resource, usable for organizing and filtering resources in Cloud Billing and the console. (AI-inferred) */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The parameter(s) making up this configuration. (AI-inferred) */
   parameters?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_Parameters[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_Parameters[]>;
+  /** The relative priority of this item -- higher priority is evaluated or preferred first. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** Example user utterances used to train this intent's own recognition. (AI-inferred) */
   trainingPhrases?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases[]>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput {
+  /** The page the conversation is currently on. (AI-inferred) */
   currentPage?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage>;
+  /** Structured, low-level detail about how this turn was processed, useful for debugging. (AI-inferred) */
   diagnosticInfo?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The specific difference(s) found between the expected and actual test results. (AI-inferred) */
   differences?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Differences[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Differences[]>;
+  /** The session parameter value(s) in effect at this point in the conversation. (AI-inferred) */
   sessionParameters?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Status | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_Status>;
+  /** The text response variant(s) this message can be rendered as. (AI-inferred) */
   textResponses?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text[] | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text[]>;
+  /** The intent that was matched and triggered this turn. (AI-inferred) */
   triggeredIntent?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput_TriggeredIntent>;
 }
 
 export interface TestCase_LastTestResult_ConversationTurns {
+  /** The end-user's own input for this turn. (AI-inferred) */
   userInput?: TestCase_LastTestResult_ConversationTurns_UserInput | Computed<TestCase_LastTestResult_ConversationTurns_UserInput>;
+  /** The agent's own recorded output (messages, parameters, matched intent) for this conversation turn. (AI-inferred) */
   virtualAgentOutput?: TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput | Computed<TestCase_LastTestResult_ConversationTurns_VirtualAgentOutput>;
 }
 
 export interface TestCase_LastTestResult {
+  /** The ordered turn(s) making up this conversation or test case. (AI-inferred) */
   conversationTurns?: TestCase_LastTestResult_ConversationTurns[] | Computed<TestCase_LastTestResult_ConversationTurns[]>;
+  /** A reference to the environment this applies to. (AI-inferred) */
   environment?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The outcome of running this test. (AI-inferred) */
   testResult?: string | Computed<string>;
+  /** When this test was run. (AI-inferred) */
   testTime?: string | Computed<string>;
 }
 
 export interface TestCase_TestConfig {
+  /** A reference to the flow this applies to. (AI-inferred) */
   flow?: string | Computed<string>;
+  /** A reference to the page this applies to. (AI-inferred) */
   page?: string | Computed<string>;
+  /** The session parameter(s) tracked and reported for this experiment. (AI-inferred) */
   trackingParameters?: string[] | Computed<string[]>;
 }
 
@@ -888,23 +1070,38 @@ const TestCase_TestConfigFields: FieldMap = {
 };
 
 export interface TestCaseConfig {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The outcome of the most recent run of this test case. (AI-inferred) */
   lastTestResult?: TestCase_LastTestResult | Computed<TestCase_LastTestResult>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Free-text notes attached to this resource. (AI-inferred) */
   notes?: string | Computed<string>;
+  /** Free-form label(s) attached to this resource. (AI-inferred) */
   tags?: string[] | Computed<string[]>;
+  /** The expected conversation turn(s) this test case verifies. (AI-inferred) */
   testCaseConversationTurns?: TestCase_LastTestResult_ConversationTurns[] | Computed<TestCase_LastTestResult_ConversationTurns[]>;
+  /** Configuration for this test run. (AI-inferred) */
   testConfig?: TestCase_TestConfig | Computed<TestCase_TestConfig>;
 }
 
 export interface TestCaseAttrs {
+  /** When this resource was created. (AI-inferred) */
   creationTime: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** The outcome of the most recent run of this test case. (AI-inferred) */
   lastTestResult: TestCase_LastTestResult;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** Free-text notes attached to this resource. (AI-inferred) */
   notes: string;
+  /** Free-form label(s) attached to this resource. (AI-inferred) */
   tags: string[];
+  /** The expected conversation turn(s) this test case verifies. (AI-inferred) */
   testCaseConversationTurns: TestCase_LastTestResult_ConversationTurns[];
+  /** Configuration for this test run. (AI-inferred) */
   testConfig: TestCase_TestConfig;
 }
 

@@ -4,6 +4,7 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationConfig_StreamingConfig struct {
+	// Optional. An expression restricting which resources are returned, using this API's own filter syntax. (AI-inferred)
 	Filter any
 }
 
@@ -12,17 +13,26 @@ var NotificationConfig_StreamingConfigFields = ubx.FieldMap{
 }
 
 type NotificationConfigConfig struct {
-	Description     any
-	Name            any
-	PubsubTopic     any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
+	PubsubTopic any
+	// Configuration for streaming matching finding(s) to a destination. (AI-inferred)
 	StreamingConfig any
 }
 
 type NotificationConfigAttrs struct {
-	Description     any
-	Name            any
-	PubsubTopic     any
-	ServiceAccount  any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// A reference to the Pub/Sub topic notifications are published to. (AI-inferred)
+	PubsubTopic any
+	// The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
+	ServiceAccount any
+	// Configuration for streaming matching finding(s) to a destination. (AI-inferred)
 	StreamingConfig any
 }
 

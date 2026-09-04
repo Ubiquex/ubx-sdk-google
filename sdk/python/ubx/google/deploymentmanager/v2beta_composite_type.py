@@ -450,6 +450,7 @@ _V2betaCompositeType_TemplateContentsFields = {
 class V2betaCompositeTypeConfig:
     # An optional textual description of the resource; provided by the client when the resource is created.
     description: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
     # Output only. Creation timestamp in RFC3339 text format.
     insert_time: Any = None
@@ -461,6 +462,7 @@ class V2betaCompositeTypeConfig:
     operation: Any = None
     # Output only. Server defined URL for the resource.
     self_link: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
     # Files that make up the template contents of a template type.
     template_contents: Any = None
@@ -469,6 +471,7 @@ class V2betaCompositeTypeConfig:
 class V2betaCompositeTypeAttrs:
     # An optional textual description of the resource; provided by the client when the resource is created.
     description: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     id: Any = None
     # Output only. Creation timestamp in RFC3339 text format.
     insert_time: Any = None
@@ -480,6 +483,7 @@ class V2betaCompositeTypeAttrs:
     operation: Any = None
     # Output only. Server defined URL for the resource.
     self_link: Any = None
+    # The current status of this resource. (AI-inferred)
     status: Any = None
     # Files that make up the template contents of a template type.
     template_contents: Any = None

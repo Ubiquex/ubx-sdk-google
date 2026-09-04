@@ -30,79 +30,130 @@ class InstanceTemplate_Properties_ConfidentialInstanceConfig:
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Disks_DiskEncryptionKey:
+    # The fully qualified Cloud KMS key name used to encrypt the disk, such as projects/{{project}}/locations/{{location}}/keyRings/{{key_ring}}/cryptoKeys/{{key}}. (AI-inferred)
     kms_key_name: Any = None
+    # The service account used to access the Cloud KMS key for disk encryption. If not specified, the Compute Engine Service Agent is used. (AI-inferred)
     kms_key_service_account: Any = None
+    # The raw customer-supplied encryption key, a base64-encoded 256-bit key, used to encrypt the disk. This key must be kept secret and is not retrievable after creation. (AI-inferred)
     raw_key: Any = None
+    # The RSA-encrypted customer-supplied encryption key, base64-encoded. This key is used to encrypt the disk and must be a 256-bit key encrypted with Google's public RSA key. (AI-inferred)
     rsa_encrypted_key: Any = None
+    # The SHA256 hash of the raw disk encryption key. This is used to verify the key integrity and is often computed by Google Cloud when a raw_key is provided, but it can also be supplied to match a specific key. (AI-inferred)
     sha256: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Disks_GuestOsFeatures:
+    # The type of guest OS feature to enable. Allowed values: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Disks_InitializeParams:
+    # The architecture of the disk image to use for the boot volume. Valid values are ARM64 and X86_64; ARCHITECTURE_UNSPECIFIED indicates that the architecture is not set. (AI-inferred)
     architecture: Any = None
+    # The description of the disk that will be created from these initialization parameters. (AI-inferred)
     description: Any = None
+    # Specifies the name of the disk to create. If not provided, a name is automatically generated based on the instance name. (AI-inferred)
     disk_name: Any = None
+    # The size of the disk in gigabytes. If not specified, the default size is the size of the source image or snapshot. (AI-inferred)
     disk_size_gb: Any = None
+    # The type of disk to provision, such as 'pd-standard' or 'pd-ssd'. Can be specified as a full or partial URL to a disk type resource. (AI-inferred)
     disk_type: Any = None
+    # Enable Confidential Compute mode for this disk. When enabled, the disk uses a hardware-based secure environment and supports confidential VM features. Defaults to false. (AI-inferred)
     enable_confidential_compute: Any = None
+    # A set of key-value pairs to label the disk created from this initialization configuration. Labels can be used for organizing and identifying the disk. (AI-inferred)
     labels: Any = None
     licenses: Any = None
+    # Specifies the update action to take when the disk configuration changes. Allowed values are 'RECREATE_DISK', 'RECREATE_DISK_IF_SOURCE_CHANGED', and 'USE_EXISTING_DISK', controlling whether to recreate the disk, recreate only if the source changed, or keep the existing disk. (AI-inferred)
     on_update_action: Any = None
+    # Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle, relevant for performance optimization of persistent disks. (AI-inferred)
     provisioned_iops: Any = None
+    # The provisioned throughput for the disk, in MB/s, used to configure performance for supported disk types (e.g., Hyperdisk Throughput). Value is provided as a string. (AI-inferred)
     provisioned_throughput: Any = None
+    # Specifies the zones for a regional persistent disk. The disk is replicated to these zones. Only applicable when creating a regional persistent disk. (AI-inferred)
     replica_zones: Any = None
+    # A map of resource manager tags to apply to the disk. Keys are resource manager tag key IDs (format: tagKeys/1234) and values are resource manager tag value IDs (format: tagValues/5678). (AI-inferred)
     resource_manager_tags: Any = None
+    # List of resource policies (e.g., snapshot schedule policies) to attach to the disk. These policies define automated operations such as scheduled snapshots. (AI-inferred)
     resource_policies: Any = None
+    # The image to use for this disk, specified as a fully-qualified URL, self-link, or name. (AI-inferred)
     source_image: Any = None
+    # The customer-supplied encryption key used to decrypt the source image when creating the disk. This is required if the source image is encrypted with a customer-supplied encryption key. (AI-inferred)
     source_image_encryption_key: Any = None
+    # Specifies the source snapshot to use to create the disk. If provided, the disk is initialized from the snapshot. The snapshot can be specified as a full URL, partial URL, or name. (AI-inferred)
     source_snapshot: Any = None
+    # The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-managed encryption key, used to decrypt the snapshot when initializing the disk. (AI-inferred)
     source_snapshot_encryption_key: Any = None
+    # The URL of the storage pool in which the disk is created. When set, the disk is provisioned from the named storage pool, which must exist in the same project and zone as the instance template. (AI-inferred)
     storage_pool: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState_Dbs:
+    # The base64-encoded content of the DB file (e.g., a certificate or key) used in the shielded instance initial state for this disk. (AI-inferred)
     content: Any = None
+    # The file type of the database entry in the shielded instance initial state. Allowed values are BIN, X509, and UNDEFINED. (AI-inferred)
     file_type: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Disks_ShieldedInstanceInitialState:
     dbs: Any = None
+    # The list of DBX (database exchange) entries for the shielded instance's UEFI secure boot. These entries define the forbidden database used to revoke untrusted certificates or manifests during integrity verification. (AI-inferred)
     dbxs: Any = None
+    # The Key Exchange Key (KEK) for the shielded instance's initial state. This is a list of objects, each specifying a KEK file's content and file type. (AI-inferred)
     keks: Any = None
+    # The Platform Key (PK) of the shielded VM's initial state, which serves as the root of trust for the UEFI secure boot process. (AI-inferred)
     pk: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Disks:
+    # Specifies the CPU architecture of the disk, used for the boot image. Allowed values are ARCHITECTURE_UNSPECIFIED (default), ARM64, and X86_64. (AI-inferred)
     architecture: Any = None
+    # Indicates whether the disk should be automatically deleted when the instance is deleted. Defaults to false if not specified. (AI-inferred)
     auto_delete: Any = None
+    # Whether this disk is the boot disk for the instance. Only one disk can be marked as boot. (AI-inferred)
     boot: Any = None
+    # The name of the disk device as exposed to the guest operating system. This can be used to reference the disk inside the instance. (AI-inferred)
     device_name: Any = None
+    # The customer-supplied encryption key for the disk. This object configures how the disk is encrypted, typically using a raw key or a Cloud KMS key. (AI-inferred)
     disk_encryption_key: Any = None
+    # The size of the disk in gigabytes, specified as a string (e.g., "10"). If omitted, the size is taken from the source image or snapshot. (AI-inferred)
     disk_size_gb: Any = None
+    # If set to true, the disk will be attached even if it is currently in use by another instance. (AI-inferred)
     force_attach: Any = None
+    # List of features to enable for the guest operating system on this disk. Each object in the list specifies a feature via its `type` field, such as `UEFI_COMPATIBLE` or `VIRTIO_SCSI_MULTIQUEUE`, which allows the disk to support advanced guest OS capabilities. (AI-inferred)
     guest_os_features: Any = None
+    # The zero-based index of this disk. The boot disk must have index 0. (AI-inferred)
     index: Any = None
+    # Specifies the parameters for initializing the disk, such as the source image, disk size, and disk type. (AI-inferred)
     initialize_params: Any = None
+    # Specifies the disk interface type. Allowed values are 'SCSI' and 'NVME'. (AI-inferred)
     interface: Any = None
+    # The type of resource. For an attached disk in an instance template, this is always 'compute#attachedDisk'. (AI-inferred)
     kind: Any = None
+    # List of license URIs that apply to the disk, typically derived from the source image or snapshot. (AI-inferred)
     licenses: Any = None
+    # Specifies the access mode of the disk. Valid values are READ_ONLY (attaches the disk as read-only) and READ_WRITE (attaches the disk with read-write access). (AI-inferred)
     mode: Any = None
+    # The saved state of the disk when the instance is stopped. Allowed values are DISK_SAVED_STATE_UNSPECIFIED (default) and PRESERVED. (AI-inferred)
     saved_state: Any = None
+    # Sets the initial state for shielded VM features on the boot disk, such as secure boot, vTPM, and integrity monitoring. This object configures which Shielded VM settings are enabled when the disk is used to boot a shielded instance. (AI-inferred)
     shielded_instance_initial_state: Any = None
+    # The name or fully qualified URL of the source disk, image, or snapshot used to create the disk. (AI-inferred)
     source: Any = None
+    # The type of disk to attach. Valid values are PERSISTENT for a standard persistent disk and SCRATCH for a local SSD. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_GuestAccelerators:
+    # The number of accelerators of the specified type to attach to the instance. (AI-inferred)
     accelerator_count: Any = None
+    # The name of the accelerator type to attach, such as 'nvidia-tesla-k80' or 'nvidia-tesla-p100'. Example: 'nvidia-tesla-k80'. (AI-inferred)
     accelerator_type: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Metadata_Items:
+    # The key of the metadata item, used to set custom metadata on the instance template. (AI-inferred)
     key: Any = None
+    # The value of the metadata item, corresponding to the metadata key in the instance template's metadata. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -116,49 +167,79 @@ class InstanceTemplate_Properties_Metadata:
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_NetworkInterfaces_AccessConfigs:
+    # The external IPv6 address assigned to the instance's network interface access config. If omitted, an ephemeral IPv6 address is automatically assigned. (AI-inferred)
     external_ipv6: Any = None
+    # The prefix length of the external IPv6 address assigned to the instance. In Google Cloud, the only supported value is 96. (AI-inferred)
     external_ipv6_prefix_length: Any = None
+    # The type of resource. For an access config, this is always 'compute#accessConfig'. (AI-inferred)
     kind: Any = None
+    # The name of the access configuration. Defaults to 'external-nat' if not specified. (AI-inferred)
     name: Any = None
+    # The external IP address to assign to the instance. If not specified, an ephemeral IP address is automatically assigned. (AI-inferred)
     nat_ip: Any = None
+    # The network service tier for the access config. Accepted values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD. (AI-inferred)
     network_tier: Any = None
+    # The public DNS domain name to be used for the reverse DNS (PTR) record of the external IP address associated with this access config. Must be a valid DNS name. (AI-inferred)
     public_ptr_domain_name: Any = None
+    # The URL of a Cloud Armor security policy to apply to this access config. This policy filters traffic to the external IP address of the instance. (AI-inferred)
     security_policy: Any = None
+    # If true, a public DNS PTR record is set for the external IP address of this access config, enabling reverse DNS lookup. Defaults to false. (AI-inferred)
     set_public_ptr: Any = None
+    # The type of access configuration. Valid values are DIRECT_IPV6 for direct IPv6 access and ONE_TO_ONE_NAT for static external IP address (NAT). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_NetworkInterfaces_AliasIpRanges:
+    # The IP CIDR range for this alias IP range, in CIDR notation (e.g., '10.0.0.0/24'). (AI-inferred)
     ip_cidr_range: Any = None
+    # The name of a secondary IP range in the subnetwork to allocate IP addresses from for this alias IP range. If not specified, the primary IP range of the subnetwork is used. (AI-inferred)
     subnetwork_range_name: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_NetworkInterfaces:
+    # A list of access configurations for the network interface. Each access config assigns a public IP address to the instance, enabling external connectivity, and can include settings such as the NAT IP and network tier. (AI-inferred)
     access_configs: Any = None
+    # Alias IP ranges for this network interface. Each object in the list specifies a CIDR range (ip_cidr_range) and optionally a subnetwork range name (subnetwork_range_name) to assign as an alias IP range. (AI-inferred)
     alias_ip_ranges: Any = None
     alias_ipv6_ranges: Any = None
+    # Enables VPC-scoped DNS for this network interface, allowing DNS queries to use the VPC's DNS configuration and policies. (AI-inferred)
     enable_vpc_scoped_dns: Any = None
+    # The fingerprint of the network interface configuration, generated by the API and used for optimistic locking. It changes whenever the interface settings are modified. (AI-inferred)
     fingerprint: Any = None
+    # Whether IGMP query is enabled on this network interface. Valid values are `IGMP_QUERY_DISABLED` (no IGMP queries) and `IGMP_QUERY_V2` (enable IGMP v2 queries). (AI-inferred)
     igmp_query: Any = None
+    # The prefix length of the internal IPv6 address assigned to the network interface, such as 64 for a /64 subnetwork. (AI-inferred)
     internal_ipv6_prefix_length: Any = None
+    # The IPv6 access configurations for this network interface. Each configuration assigns an external IPv6 address to the interface, enabling IPv6 internet access, with only one access config supported per interface. (AI-inferred)
     ipv6_access_configs: Any = None
+    # Specifies the access type for IPv6 addresses on this network interface. Set to EXTERNAL for an external IPv6 address, or INTERNAL for an internal IPv6 address. (AI-inferred)
     ipv6_access_type: Any = None
+    # The IPv6 address to assign to the network interface. This is used to specify a static IPv6 address for the interface. (AI-inferred)
     ipv6_address: Any = None
+    # The type of the resource. Always 'compute#networkInterface'. (AI-inferred)
     kind: Any = None
     name: Any = None
+    # The name or self_link of the VPC network to attach this interface to. Either `network` or `subnetwork` is required; if you specify `subnetwork`, `network` is inferred. (AI-inferred)
     network: Any = None
+    # URL of the network attachment resource to which this network interface attaches. If specified, it overrides the network and subnetwork fields, and is used for the network attachment type of network interface. (AI-inferred)
     network_attachment: Any = None
+    # The private IPv4 address to assign to this network interface. If not set, an ephemeral address is automatically assigned. (AI-inferred)
     network_ip: Any = None
+    # Specifies the type of network interface card (NIC) to use for the interface. Allowed values are GVNIC, IDPF, IRDMA, MRDMA, UNSPECIFIED_NIC_TYPE, and VIRTIO_NET. (AI-inferred)
     nic_type: Any = None
     parent_nic_name: Any = None
+    # The number of queues to use for this network interface. A value of 0 indicates the default number of queues (one per vCPU). The value must be a power of 2 and cannot exceed the instance's vCPU count. (AI-inferred)
     queue_count: Any = None
     service_class_id: Any = None
+    # The IP stack type for this network interface. Valid values are IPV4_IPV6 (dual-stack), IPV4_ONLY, and IPV6_ONLY. (AI-inferred)
     stack_type: Any = None
+    # The name or self-link of the subnetwork to which the network interface is attached. If not specified, the default subnetwork of the specified network is used. (AI-inferred)
     subnetwork: Any = None
     vlan: Any = None
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_NetworkPerformanceConfig:
+    # The egress bandwidth tier to enable for the instance's network performance configuration. Allowed values are DEFAULT and TIER_1. (AI-inferred)
     total_egress_bandwidth_tier: Any = None
 
 @dataclasses.dataclass
@@ -186,8 +267,11 @@ class InstanceTemplate_Properties_Scheduling_GracefulShutdown:
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_Scheduling_NodeAffinities:
+    # The label key for the node affinity requirement. This is the key of a node label used to match nodes. (AI-inferred)
     key: Any = None
+    # Specifies the operator for the node affinity expression. Valid values are IN, NOT_IN, and OPERATOR_UNSPECIFIED. (AI-inferred)
     operator: Any = None
+    # The list of node affinity values. These values are matched against the key and operator to determine the scheduling constraint, e.g., the node group names when key is 'node-group-name'. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -234,7 +318,9 @@ class InstanceTemplate_Properties_Scheduling:
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_ServiceAccounts:
+    # The email address of the service account to associate with the instance. If not provided, the default Compute Engine service account is used. (AI-inferred)
     email: Any = None
+    # A list of OAuth scopes to associate with the service account for the instance. For example, 'cloud-platform' gives full access, while 'storage-ro' grants read-only access to Cloud Storage. (AI-inferred)
     scopes: Any = None
 
 @dataclasses.dataclass
@@ -255,7 +341,9 @@ class InstanceTemplate_Properties_Tags:
 
 @dataclasses.dataclass
 class InstanceTemplate_Properties_WorkloadIdentityConfig:
+    # The service account email to use as the workload identity for the instance. If omitted, the default Compute Engine service account is used. (AI-inferred)
     identity: Any = None
+    # Whether the identity certificate is enabled for this workload identity configuration. (AI-inferred)
     identity_certificate_enabled: Any = None
 
 @dataclasses.dataclass
@@ -286,6 +374,7 @@ class InstanceTemplate_Properties:
     min_cpu_platform: Any = None
     # An array of network access configurations for this interface.
     network_interfaces: Any = None
+    # Configuration block for network performance settings, including the total egress bandwidth tier which can be set to 'DEFAULT' or 'TIER_1'. (AI-inferred)
     network_performance_config: Any = None
     # The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
     private_ipv6_google_access: Any = None
@@ -307,9 +396,13 @@ class InstanceTemplate_Properties:
 
 @dataclasses.dataclass
 class InstanceTemplate_SourceInstanceParams_DiskConfigs:
+    # Whether the disk will be auto-deleted when the instance is deleted. When set in source_instance_params.disk_configs, this overrides the corresponding property from the source instance. (AI-inferred)
     auto_delete: Any = None
+    # The custom image to use for this disk when creating the instance template from a source instance. If specified, this overrides the image of the corresponding source disk. (AI-inferred)
     custom_image: Any = None
+    # The device name of the disk in the source instance to which this disk configuration applies. (AI-inferred)
     device_name: Any = None
+    # Specifies how the disk is created from the source instance's disk. Valid values are ATTACH_READ_ONLY (attach read-only), BLANK (create a blank disk), CUSTOM_IMAGE (create from a custom image), DEFAULT (use default behavior), DO_NOT_INCLUDE (exclude the disk), SOURCE_IMAGE (create from the source image), and SOURCE_IMAGE_FAMILY (create from the source image family). (AI-inferred)
     instantiate_from: Any = None
 
 @dataclasses.dataclass
@@ -715,6 +808,7 @@ class InstanceTemplateConfig:
     description: Any = None
     # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
+    # The instance properties defined by the template, containing configuration such as machine type, disks, network interfaces, and metadata. This field is computed and output-only. (AI-inferred)
     properties: Any = None
     # The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance
     source_instance: Any = None
@@ -733,6 +827,7 @@ class InstanceTemplateAttrs:
     kind: Any = None
     # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
+    # The instance properties defined by the template, containing configuration such as machine type, disks, network interfaces, and metadata. This field is computed and output-only. (AI-inferred)
     properties: Any = None
     # Output only. [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
     region: Any = None

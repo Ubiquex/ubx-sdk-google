@@ -9,14 +9,20 @@ export interface Step_CompletionTime {
 }
 
 export interface Step_DimensionValue {
+  /** The real key of this dimension value, identifying what real axis (e.g. device model, API level) this step's own results are broken out by. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real value of this dimension, matching its own `key`. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Step_MultiStep_PrimaryStep_IndividualOutcome {
+  /** The real, sequential number of this individual step's own outcome within a multi-step (sharded) test run. (AI-inferred) */
   multistepNumber?: number | Computed<number>;
+  /** The real, overall outcome (`success`, `failure`, `inconclusive`, `flaky`, `skipped`) of this individual step or multi-step run. (AI-inferred) */
   outcomeSummary?: string | Computed<string>;
+  /** The real, measured wall-clock duration this individual step's own run took. (AI-inferred) */
   runDuration?: Step_CompletionTime | Computed<Step_CompletionTime>;
+  /** The real Tool Results step ID this individual multi-step outcome corresponds to. (AI-inferred) */
   stepId?: string | Computed<string>;
 }
 
@@ -92,35 +98,53 @@ export interface Step_Outcome {
 }
 
 export interface Step_TestExecutionStep_TestIssues_StackTrace {
+  /** The real, raw exception text captured in this test issue's own `stack_trace`. (AI-inferred) */
   exception?: string | Computed<string>;
 }
 
 export interface Step_TestExecutionStep_TestIssues_WarningMigration {
+  /** The real, fully-qualified type name of the structured warning payload in this `warning_migration` entry. (AI-inferred) */
   typeUrl?: string | Computed<string>;
+  /** The real value of this dimension, matching its own `key`. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Step_TestExecutionStep_TestIssues {
+  /** The real category (`common` or `robo`) this detected test issue falls under. (AI-inferred) */
   category?: string | Computed<string>;
+  /** A real, human-readable error message explaining this detected test issue. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The real severity level (`info`, `suggestion`, `warning`, `severe`) Firebase Test Lab assigned this detected test issue. (AI-inferred) */
   severity?: string | Computed<string>;
+  /** The real, captured stack trace for this detected test issue, when the issue is an exception or crash. (AI-inferred) */
   stackTrace?: Step_TestExecutionStep_TestIssues_StackTrace | Computed<Step_TestExecutionStep_TestIssues_StackTrace>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** Real, structured detail for a test issue that's been migrated to a newer warning representation. (AI-inferred) */
   warningMigration?: Step_TestExecutionStep_TestIssues_WarningMigration | Computed<Step_TestExecutionStep_TestIssues_WarningMigration>;
 }
 
 export interface Step_TestExecutionStep_TestSuiteOverviews_XmlSource {
+  /** The real Cloud Storage URI of this test suite's own uploaded `xml_source` file. (AI-inferred) */
   fileUri?: string | Computed<string>;
 }
 
 export interface Step_TestExecutionStep_TestSuiteOverviews {
+  /** The real, total wall-clock duration this test suite took to run. (AI-inferred) */
   elapsedTime?: Step_CompletionTime | Computed<Step_CompletionTime>;
+  /** The real number of tests in this test suite that ended in an error (as opposed to a normal failure). (AI-inferred) */
   errorCount?: number | Computed<number>;
+  /** The real number of tests in this test suite that failed. (AI-inferred) */
   failureCount?: number | Computed<number>;
+  /** The real number of tests in this test suite detected as flaky (inconsistent across reruns). (AI-inferred) */
   flakyCount?: number | Computed<number>;
+  /** The real name of this test suite. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real number of tests in this test suite that were skipped. (AI-inferred) */
   skippedCount?: number | Computed<number>;
+  /** The real total number of tests in this test suite. (AI-inferred) */
   totalCount?: number | Computed<number>;
+  /** A real, uploaded XML test report (e.g. JUnit-format) this test suite overview was parsed from. (AI-inferred) */
   xmlSource?: Step_TestExecutionStep_TestSuiteOverviews_XmlSource | Computed<Step_TestExecutionStep_TestSuiteOverviews_XmlSource>;
 }
 
@@ -135,14 +159,20 @@ export interface Step_TestExecutionStep_ToolExecution_ExitCode {
 }
 
 export interface Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCase {
+  /** The real, fully-qualified class name of the test case this tool output describes. (AI-inferred) */
   className?: string | Computed<string>;
+  /** The real name of this test suite. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The real name of the test suite this test case belongs to. (AI-inferred) */
   testSuiteName?: string | Computed<string>;
 }
 
 export interface Step_TestExecutionStep_ToolExecution_ToolOutputs {
+  /** The real timestamp when this tool execution's own output was recorded. (AI-inferred) */
   creationTime?: Step_CompletionTime | Computed<Step_CompletionTime>;
+  /** The real, captured output (such as a log or report file) produced by running this tool. (AI-inferred) */
   output?: Step_TestExecutionStep_TestSuiteOverviews_XmlSource | Computed<Step_TestExecutionStep_TestSuiteOverviews_XmlSource>;
+  /** Real, structured detail about one individual test case this tool execution's own output describes. (AI-inferred) */
   testCase?: Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCase | Computed<Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCase>;
 }
 

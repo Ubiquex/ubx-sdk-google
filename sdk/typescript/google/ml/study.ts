@@ -7,45 +7,65 @@ export interface Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingCon
 }
 
 export interface Study_StudyConfig_AutomatedStoppingConfig {
+  /** Configuration for stopping trials early using a decay-curve prediction of their own final performance. (AI-inferred) */
   decayCurveStoppingConfig?: Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfig | Computed<Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfig>;
   /** The median automated stopping rule stops a pending trial if the trial's best objective_value is strictly below the median 'performance' of all completed trials reported up to the trial's last measurement. Currently, 'performance' refers to the running average of the objective values reported by the trial in each measurement. */
   medianAutomatedStoppingConfig?: Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfig | Computed<Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfig>;
 }
 
 export interface Study_StudyConfig_Metrics {
+  /** Whether this objective is being minimized or maximized. (AI-inferred) */
   goal?: string | Computed<string>;
+  /** The name of the metric being reported. (AI-inferred) */
   metric?: string | Computed<string>;
 }
 
 export interface Study_StudyConfig_Parameters_CategoricalValueSpec {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Study_StudyConfig_Parameters_DiscreteValueSpec {
+  /** The value(s) making up this field. (AI-inferred) */
   values?: number[] | Computed<number[]>;
 }
 
 export interface Study_StudyConfig_Parameters_DoubleValueSpec {
+  /** The maximum value allowed. (AI-inferred) */
   maxValue?: number | Computed<number>;
+  /** The minimum value allowed. (AI-inferred) */
   minValue?: number | Computed<number>;
 }
 
 export interface Study_StudyConfig_Parameters_IntegerValueSpec {
+  /** The maximum value allowed. (AI-inferred) */
   maxValue?: string | Computed<string>;
+  /** The minimum value allowed. (AI-inferred) */
   minValue?: string | Computed<string>;
 }
 
 export interface Study_StudyConfig_Parameters {
+  /** The set of string value(s) a categorical hyperparameter may take. (AI-inferred) */
   categoricalValueSpec?: Study_StudyConfig_Parameters_CategoricalValueSpec | Computed<Study_StudyConfig_Parameters_CategoricalValueSpec>;
+  /** Hyperparameter(s) evaluated only when this parent parameter takes a specific value. (AI-inferred) */
   childParameterSpecs?: unknown[] | Computed<unknown[]>;
+  /** The set of numeric value(s) a discrete hyperparameter may take. (AI-inferred) */
   discreteValueSpec?: Study_StudyConfig_Parameters_DiscreteValueSpec | Computed<Study_StudyConfig_Parameters_DiscreteValueSpec>;
+  /** The valid range of a floating-point hyperparameter. (AI-inferred) */
   doubleValueSpec?: Study_StudyConfig_Parameters_DoubleValueSpec | Computed<Study_StudyConfig_Parameters_DoubleValueSpec>;
+  /** The valid range of an integer hyperparameter. (AI-inferred) */
   integerValueSpec?: Study_StudyConfig_Parameters_IntegerValueSpec | Computed<Study_StudyConfig_Parameters_IntegerValueSpec>;
+  /** The name of a hyperparameter being tuned. (AI-inferred) */
   parameter?: string | Computed<string>;
+  /** The parent categorical value(s) this conditional parameter applies under. (AI-inferred) */
   parentCategoricalValues?: Study_StudyConfig_Parameters_CategoricalValueSpec | Computed<Study_StudyConfig_Parameters_CategoricalValueSpec>;
+  /** The parent discrete value(s) this conditional parameter applies under. (AI-inferred) */
   parentDiscreteValues?: Study_StudyConfig_Parameters_DiscreteValueSpec | Computed<Study_StudyConfig_Parameters_DiscreteValueSpec>;
+  /** The parent integer value(s) this conditional parameter applies under. (AI-inferred) */
   parentIntValues?: Study_StudyConfig_Parameters_CategoricalValueSpec | Computed<Study_StudyConfig_Parameters_CategoricalValueSpec>;
+  /** How this hyperparameter's own search space is scaled, e.g. linearly or logarithmically. (AI-inferred) */
   scaleType?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

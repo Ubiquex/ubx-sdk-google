@@ -4,7 +4,9 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallEndpoint_Associations struct {
-	Name    any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
 	Network any
 }
 

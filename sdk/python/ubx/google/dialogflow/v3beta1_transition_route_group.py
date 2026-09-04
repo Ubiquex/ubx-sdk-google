@@ -366,14 +366,20 @@ _V3beta1TransitionRouteGroup_TransitionRoutesFields = {
 
 @dataclasses.dataclass
 class V3beta1TransitionRouteGroupConfig:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
     transition_routes: Any = None
 
 @dataclasses.dataclass
 class V3beta1TransitionRouteGroupAttrs:
+    # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The transition route(s) evaluated on this page/flow, each matching an intent or condition to a target and fulfillment. (AI-inferred)
     transition_routes: Any = None
 
 V3beta1TransitionRouteGroup = ubx.ResourceBinding(

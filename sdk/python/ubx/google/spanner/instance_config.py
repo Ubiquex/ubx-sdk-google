@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstanceConfig_InstanceConfig_OptionalReplicas:
+    # The region designated as the default leader for this database's own leader-aware routing. (AI-inferred)
     default_leader_location: Any = None
+    # The Google Cloud region this applies to. (AI-inferred)
     location: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

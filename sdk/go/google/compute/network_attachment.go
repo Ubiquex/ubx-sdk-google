@@ -4,17 +4,25 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkAttachment_ConnectionEndpoints struct {
-	IpAddress             any
-	Ipv6Address           any
-	ProjectIdOrNum        any
+	// The IP address of the connection endpoint. (AI-inferred)
+	IpAddress any
+	// The IPv6 address of the connection endpoint that is attached to the network attachment. (AI-inferred)
+	Ipv6Address any
+	// The project ID or project number of the project that contains the connection endpoint resource. (AI-inferred)
+	ProjectIdOrNum any
+	// List of secondary IP CIDR ranges from the subnetwork that this connection endpoint is allowed to use. If empty, all secondary ranges of the subnetwork are permitted. (AI-inferred)
 	SecondaryIpCidrRanges any
 	ServiceClassId        any
-	Status                any
-	Subnetwork            any
-	SubnetworkCidrRange   any
+	// The status of the connection endpoint, which can be one of: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, or STATUS_UNSPECIFIED. (AI-inferred)
+	Status any
+	// The subnetwork URL of the connected endpoint. (AI-inferred)
+	Subnetwork any
+	// The CIDR range of the subnetwork that this connection endpoint is associated with. (AI-inferred)
+	SubnetworkCidrRange any
 }
 
 type NetworkAttachmentConfig struct {
+	// The connection preference of the network attachment, indicating how connection requests are handled. ACCEPT_AUTOMATIC automatically accepts all connection requests, ACCEPT_MANUAL requires manual acceptance, and INVALID indicates an invalid value. (AI-inferred)
 	ConnectionPreference any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
@@ -32,7 +40,8 @@ type NetworkAttachmentConfig struct {
 
 type NetworkAttachmentAttrs struct {
 	// Output only. [Output Only] An array of connections for all the producers connected to this network attachment.
-	ConnectionEndpoints  any
+	ConnectionEndpoints any
+	// The connection preference of the network attachment, indicating how connection requests are handled. ACCEPT_AUTOMATIC automatically accepts all connection requests, ACCEPT_MANUAL requires manual acceptance, and INVALID indicates an invalid value. (AI-inferred)
 	ConnectionPreference any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any

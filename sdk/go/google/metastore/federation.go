@@ -4,8 +4,10 @@ package metastore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Federation_BackendMetastores struct {
+	// The real backend metastore type (e.g. Dataproc Metastore, BigQuery) this federation member represents. (AI-inferred)
 	MetastoreType any
-	Name          any
+	// The real, fully-qualified resource name of this federation's own backend metastore member. (AI-inferred)
+	Name any
 }
 
 var Federation_BackendMetastoresFields = ubx.FieldMap{

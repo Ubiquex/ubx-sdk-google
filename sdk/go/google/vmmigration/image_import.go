@@ -14,8 +14,10 @@ type ImageImport_DiskImageTargetDefaults_Encryption struct {
 }
 
 type ImageImport_DiskImageTargetDefaults_OsAdaptationParameters_AdaptationModifiers struct {
+	// A real, single OS-adaptation adjustment (paired with an `operator`) applied during migration for a specific detected guest-OS condition. (AI-inferred)
 	Modifier any
-	Value    any
+	// The real value of this key/value adaptation modifier or node affinity entry. (AI-inferred)
+	Value any
 }
 
 type ImageImport_DiskImageTargetDefaults_OsAdaptationParameters struct {
@@ -58,11 +60,16 @@ type ImageImport_MachineImageTargetDefaults_MachineImageParametersOverrides stru
 }
 
 type ImageImport_MachineImageTargetDefaults_NetworkInterfaces struct {
-	ExternalIp  any
-	InternalIp  any
-	Network     any
+	// The real external (public) IP address configuration for a migrated VM's network interface. (AI-inferred)
+	ExternalIp any
+	// The real internal (private) IP address configuration for a migrated VM's network interface. (AI-inferred)
+	InternalIp any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The real Google Cloud network service tier (`PREMIUM` or `STANDARD`) assigned to a migrated VM's network interface. (AI-inferred)
 	NetworkTier any
-	Subnetwork  any
+	// The VPC subnetwork this resource is attached to, in the form `projects/{project}/regions/{region}/subnetworks/{subnetwork}`. (AI-inferred)
+	Subnetwork any
 }
 
 type ImageImport_MachineImageTargetDefaults_ServiceAccount struct {
@@ -113,50 +120,79 @@ type ImageImport_MachineImageTargetDefaults struct {
 }
 
 type ImageImport_RecentImageImportJobs_Errors struct {
-	Code    any
+	// The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
+	Code any
+	// Real, structured detail data attached to a migration error, giving more specific context than its own `message` alone. (AI-inferred)
 	Details any
+	// A real, human-readable status or error message for this migration step. (AI-inferred)
 	Message any
 }
 
 type ImageImport_RecentImageImportJobs_Steps struct {
-	AdaptingOs         any
-	CreatingImage      any
-	EndTime            any
-	Initializing       any
+	// Real, detailed progress for VM Migration's own guest OS adaptation step, adjusting drivers and boot configuration for Google Cloud. (AI-inferred)
+	AdaptingOs any
+	// Real, detailed progress for VM Migration's own step creating the final Compute Engine image or machine image, for an image import job. (AI-inferred)
+	CreatingImage any
+	// The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
+	EndTime any
+	// Real, detailed progress for VM Migration's own initial setup step, before real data transfer begins. (AI-inferred)
+	Initializing any
+	// Real, detailed progress for VM Migration's own step loading the source image's files ahead of import. (AI-inferred)
 	LoadingSourceFiles any
-	StartTime          any
+	// The real timestamp when this migration step or cycle started. (AI-inferred)
+	StartTime any
 }
 
 type ImageImport_RecentImageImportJobs_Warnings_ActionItem struct {
-	Locale  any
+	// The real, detected or configured locale (language and region) of the source VM's own guest operating system. (AI-inferred)
+	Locale any
+	// A real, human-readable status or error message for this migration step. (AI-inferred)
 	Message any
 }
 
 type ImageImport_RecentImageImportJobs_Warnings_HelpLinks struct {
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
 	Description any
-	Url         any
+	// A real URL pointing to more information about this migration warning or error. (AI-inferred)
+	Url any
 }
 
 type ImageImport_RecentImageImportJobs_Warnings struct {
-	ActionItem     any
-	Code           any
-	HelpLinks      any
+	// Real, recommended remediation steps for a migration warning or error, telling the operator what to do about it. (AI-inferred)
+	ActionItem any
+	// The `google.rpc.Code` enum value identifying this error's real category, following the same status-code semantics gRPC and most Google APIs share. (AI-inferred)
+	Code any
+	// Real documentation links attached to a migration warning or error, pointing to more detail on the issue and how to resolve it. (AI-inferred)
+	HelpLinks any
+	// The real, human-readable text of one migration warning. (AI-inferred)
 	WarningMessage any
-	WarningTime    any
+	// The real timestamp when this migration warning was raised. (AI-inferred)
+	WarningTime any
 }
 
 type ImageImport_RecentImageImportJobs struct {
-	CloudStorageUri           any
-	CreateTime                any
-	CreatedResources          any
-	DiskImageTargetDetails    any
-	EndTime                   any
-	Errors                    any
+	// The real Cloud Storage URI of the image file this VM Migration image import job is importing from. (AI-inferred)
+	CloudStorageUri any
+	// Output only. The timestamp when this resource was created. (AI-inferred)
+	CreateTime any
+	// The real Google Cloud resource(s) (such as a Compute Engine image) this image import job created. (AI-inferred)
+	CreatedResources any
+	// Real, target-side configuration for importing the source image as a standalone Compute Engine disk image. (AI-inferred)
+	DiskImageTargetDetails any
+	// The real timestamp when this migration step or cycle finished, successfully or not. (AI-inferred)
+	EndTime any
+	// Real errors, if any, that occurred while running this image import job. (AI-inferred)
+	Errors any
+	// Real, target-side configuration for importing the source image as a Compute Engine machine image (a full VM template) rather than a plain disk image. (AI-inferred)
 	MachineImageTargetDetails any
-	Name                      any
-	State                     any
-	Steps                     any
-	Warnings                  any
+	// The real, target-side name given to this migration step, sync, or final-sync entry. (AI-inferred)
+	Name any
+	// The real, current state of this migration job, step, or resource. (AI-inferred)
+	State any
+	// The real, ordered sequence of steps (such as `initializing_replication`, `replicating`, `post_processing`) this migration cycle progresses through. (AI-inferred)
+	Steps any
+	// Real, non-fatal warnings raised during this migration job, each with its own `warning_message`, severity, and `action_item`. (AI-inferred)
+	Warnings any
 }
 
 var ImageImport_DiskImageTargetDefaults_DataDiskImageImportFields = ubx.FieldMap{

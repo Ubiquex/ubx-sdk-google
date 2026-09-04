@@ -4,10 +4,14 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_AclPolicyInfo_AclPolicyRevisionStatuses struct {
-	AclPolicyRevision       any
+	// The current revision of this cluster's own access control list policy. (AI-inferred)
+	AclPolicyRevision any
+	// The numeric revision identifier of this ACL policy. (AI-inferred)
 	AclPolicyRevisionNumber any
-	ErrorMessage            any
-	State                   any
+	// A human-readable description of the error. (AI-inferred)
+	ErrorMessage any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type Cluster_AclPolicyInfo struct {
@@ -47,34 +51,54 @@ type Cluster_AutomatedBackupConfig struct {
 }
 
 type Cluster_ClusterEndpoints_Connections_PscAutoConnection struct {
-	Address             any
-	ConnectionType      any
-	ForwardingRule      any
-	Network             any
-	ProjectId           any
-	PscConnectionId     any
+	// The IP address this applies to. (AI-inferred)
+	Address any
+	// Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
+	ConnectionType any
+	// A reference to the forwarding rule this applies to. (AI-inferred)
+	ForwardingRule any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The identifier of the associated Google Cloud project. (AI-inferred)
+	ProjectId any
+	// The unique identifier of this Private Service Connect connection. (AI-inferred)
+	PscConnectionId any
+	// The current status of this Private Service Connect connection. (AI-inferred)
 	PscConnectionStatus any
-	ServiceAttachment   any
+	// A reference to the Private Service Connect service attachment this connects to. (AI-inferred)
+	ServiceAttachment any
 }
 
 type Cluster_ClusterEndpoints_Connections_PscConnection struct {
-	Address             any
-	ConnectionType      any
-	ForwardingRule      any
-	Network             any
-	Port                any
-	ProjectId           any
-	PscConnectionId     any
+	// The IP address this applies to. (AI-inferred)
+	Address any
+	// Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
+	ConnectionType any
+	// A reference to the forwarding rule this applies to. (AI-inferred)
+	ForwardingRule any
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
+	Network any
+	// The port number this applies to. (AI-inferred)
+	Port any
+	// The identifier of the associated Google Cloud project. (AI-inferred)
+	ProjectId any
+	// The unique identifier of this Private Service Connect connection. (AI-inferred)
+	PscConnectionId any
+	// The current status of this Private Service Connect connection. (AI-inferred)
 	PscConnectionStatus any
-	ServiceAttachment   any
+	// A reference to the Private Service Connect service attachment this connects to. (AI-inferred)
+	ServiceAttachment any
 }
 
 type Cluster_ClusterEndpoints_Connections struct {
+	// A Private Service Connect connection automatically established for this cluster. (AI-inferred)
 	PscAutoConnection any
-	PscConnection     any
+	// A Private Service Connect connection associated with this instance. (AI-inferred)
+	PscConnection any
 }
 
 type Cluster_ClusterEndpoints struct {
+	// The active connection(s) to this instance. (AI-inferred)
 	Connections any
 }
 
@@ -106,12 +130,16 @@ type Cluster_CrossClusterReplicationConfig struct {
 }
 
 type Cluster_DiscoveryEndpoints_PscConfig struct {
+	// The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred)
 	Network any
 }
 
 type Cluster_DiscoveryEndpoints struct {
-	Address   any
-	Port      any
+	// The IP address this applies to. (AI-inferred)
+	Address any
+	// The port number this applies to. (AI-inferred)
+	Port any
+	// Configuration for connecting to this instance via Private Service Connect. (AI-inferred)
 	PscConfig any
 }
 
@@ -132,7 +160,9 @@ type Cluster_GcsSource struct {
 }
 
 type Cluster_MaintenancePolicy_WeeklyMaintenanceWindow struct {
-	Day       any
+	// The day-of-month component of a date. (AI-inferred)
+	Day any
+	// When this event or window started. (AI-inferred)
 	StartTime any
 }
 
@@ -179,7 +209,9 @@ type Cluster_PersistenceConfig struct {
 }
 
 type Cluster_PscServiceAttachments struct {
-	ConnectionType    any
+	// Whether this connection uses Private Service Connect or a direct peering connection. (AI-inferred)
+	ConnectionType any
+	// A reference to the Private Service Connect service attachment this connects to. (AI-inferred)
 	ServiceAttachment any
 }
 

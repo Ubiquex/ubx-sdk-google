@@ -8,17 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkAttachment_ConnectionEndpoints:
+    # The IP address of the connection endpoint. (AI-inferred)
     ip_address: Any = None
+    # The IPv6 address of the connection endpoint that is attached to the network attachment. (AI-inferred)
     ipv6_address: Any = None
+    # The project ID or project number of the project that contains the connection endpoint resource. (AI-inferred)
     project_id_or_num: Any = None
+    # List of secondary IP CIDR ranges from the subnetwork that this connection endpoint is allowed to use. If empty, all secondary ranges of the subnetwork are permitted. (AI-inferred)
     secondary_ip_cidr_ranges: Any = None
     service_class_id: Any = None
+    # The status of the connection endpoint, which can be one of: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, or STATUS_UNSPECIFIED. (AI-inferred)
     status: Any = None
+    # The subnetwork URL of the connected endpoint. (AI-inferred)
     subnetwork: Any = None
+    # The CIDR range of the subnetwork that this connection endpoint is associated with. (AI-inferred)
     subnetwork_cidr_range: Any = None
 
 @dataclasses.dataclass
 class NetworkAttachmentConfig:
+    # The connection preference of the network attachment, indicating how connection requests are handled. ACCEPT_AUTOMATIC automatically accepts all connection requests, ACCEPT_MANUAL requires manual acceptance, and INVALID indicates an invalid value. (AI-inferred)
     connection_preference: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
@@ -37,6 +45,7 @@ class NetworkAttachmentConfig:
 class NetworkAttachmentAttrs:
     # Output only. [Output Only] An array of connections for all the producers connected to this network attachment.
     connection_endpoints: Any = None
+    # The connection preference of the network attachment, indicating how connection requests are handled. ACCEPT_AUTOMATIC automatically accepts all connection requests, ACCEPT_MANUAL requires manual acceptance, and INVALID indicates an invalid value. (AI-inferred)
     connection_preference: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.
     creation_timestamp: Any = None

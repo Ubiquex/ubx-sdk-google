@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Storelayoutpage_Name:
+    # The real BCP-47 locale this store layout cluster's own localized `name` is written in. (AI-inferred)
     locale: Any = None
+    # The real, localized display text for this store layout cluster's own name, in the paired `locale`. (AI-inferred)
     text: Any = None
 
 _Storelayoutpage_NameFields = {

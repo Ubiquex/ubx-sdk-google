@@ -8,6 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkforcePool_AccessRestrictions_AllowedServices:
+    # The domain this allowed service applies to. (AI-inferred)
     domain: Any = None
 
 @dataclasses.dataclass

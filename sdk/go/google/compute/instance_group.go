@@ -4,7 +4,9 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceGroup_NamedPorts struct {
+	// The name of the named port, which must be unique within the instance group. (AI-inferred)
 	Name any
+	// The port number for the named port. This is the TCP/UDP port that the name maps to, used by load balancers or other services. (AI-inferred)
 	Port any
 }
 

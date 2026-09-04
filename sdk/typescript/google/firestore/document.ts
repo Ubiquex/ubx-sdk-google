@@ -2,43 +2,66 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Document_Fields_ArrayValue {
+  /** The value(s) making up this array. (AI-inferred) */
   values?: unknown[] | Computed<unknown[]>;
 }
 
 export interface Document_Fields_FunctionValue {
+  /** The argument(s) passed to this function call. (AI-inferred) */
   args?: unknown[] | Computed<unknown[]>;
+  /** The name of this function. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Named option(s) passed to this function call. (AI-inferred) */
   options?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Document_Fields_GeoPointValue {
+  /** The geographic coordinate's own latitude, in degrees. (AI-inferred) */
   latitude?: number | Computed<number>;
+  /** The geographic coordinate's own longitude, in degrees. (AI-inferred) */
   longitude?: number | Computed<number>;
 }
 
 export interface Document_Fields_MapValue {
+  /** The key/value pair(s) making up this map. (AI-inferred) */
   fields?: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
 export interface Document_Fields_PipelineValue {
+  /** The ordered stage(s) making up this pipeline. (AI-inferred) */
   stages?: Document_Fields_FunctionValue[] | Computed<Document_Fields_FunctionValue[]>;
 }
 
 export interface Document_Fields {
+  /** This field's own value, when its type is an array. (AI-inferred) */
   arrayValue?: Document_Fields_ArrayValue | Computed<Document_Fields_ArrayValue>;
+  /** This field's own value, when its type is a boolean. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
+  /** This field's own value, when its type is raw bytes, base64-encoded. (AI-inferred) */
   bytesValue?: string | Computed<string>;
+  /** This field's own value, when its type is a floating-point number. (AI-inferred) */
   doubleValue?: number | Computed<number>;
+  /** This field's own value, when it references another field by its dotted path. (AI-inferred) */
   fieldReferenceValue?: string | Computed<string>;
+  /** This field's own value, when it's the result of a Firestore pipeline function call. (AI-inferred) */
   functionValue?: Document_Fields_FunctionValue | Computed<Document_Fields_FunctionValue>;
+  /** This field's own value, when its type is a geographic coordinate (latitude/longitude). (AI-inferred) */
   geoPointValue?: Document_Fields_GeoPointValue | Computed<Document_Fields_GeoPointValue>;
+  /** This field's own value, when its type is a 64-bit integer. (AI-inferred) */
   integerValue?: string | Computed<string>;
+  /** This field's own value, when its type is a nested map of key/value pairs. (AI-inferred) */
   mapValue?: Document_Fields_MapValue | Computed<Document_Fields_MapValue>;
+  /** This field's own value, when it's explicitly null. (AI-inferred) */
   nullValue?: string | Computed<string>;
+  /** This field's own value, when it's the result of a Firestore aggregation pipeline. (AI-inferred) */
   pipelineValue?: Document_Fields_PipelineValue | Computed<Document_Fields_PipelineValue>;
+  /** This field's own value, when it references another document, by its full resource name. (AI-inferred) */
   referenceValue?: string | Computed<string>;
+  /** This field's own value, when its type is a string. (AI-inferred) */
   stringValue?: string | Computed<string>;
+  /** This field's own value, when its type is a point in time. (AI-inferred) */
   timestampValue?: string | Computed<string>;
+  /** This field's own value, when it references a pipeline variable by name. (AI-inferred) */
   variableReferenceValue?: string | Computed<string>;
 }
 

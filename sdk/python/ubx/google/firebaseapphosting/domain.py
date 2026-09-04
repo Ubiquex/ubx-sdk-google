@@ -8,29 +8,44 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Domain_CustomDomainStatus_Issues:
+    # A machine-readable status or error code. (AI-inferred)
     code: Any = None
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_Records:
+    # The domain name this applies to. (AI-inferred)
     domain_name: Any = None
+    # The record data expected for this DNS record. (AI-inferred)
     rdata: Any = None
+    # The lifecycle state most relevant to this domain check's own current result. (AI-inferred)
     relevant_state: Any = None
+    # The action needed to resolve this domain check's own current issue. (AI-inferred)
     required_action: Any = None
+    # The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Domain_CustomDomainStatus_RequiredDnsUpdates_Desired:
+    # Detail about an error encountered while checking this domain. (AI-inferred)
     check_error: Any = None
+    # The domain name this applies to. (AI-inferred)
     domain_name: Any = None
+    # The DNS record(s) this applies to. (AI-inferred)
     records: Any = None
 
 @dataclasses.dataclass
 class Domain_CustomDomainStatus_RequiredDnsUpdates:
+    # When this domain check was last run. (AI-inferred)
     check_time: Any = None
+    # The value expected for this domain to be considered correctly configured. (AI-inferred)
     desired: Any = None
+    # The value actually observed for this domain. (AI-inferred)
     discovered: Any = None
+    # The domain name this applies to. (AI-inferred)
     domain_name: Any = None
 
 @dataclasses.dataclass

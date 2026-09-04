@@ -437,6 +437,7 @@ class BetaRegionCommitmentConfig:
     custom_end_timestamp: Any = None
     # An optional description of the commitment. You can provide this property when you create the resource.
     description: Any = None
+    # The existing reservation resource(s) this commitment applies its own discount to. (AI-inferred)
     existing_reservations: Any = None
     # Commitment for a particular license resource.
     license_resource: Any = None
@@ -475,6 +476,7 @@ class BetaRegionCommitmentAttrs:
     description: Any = None
     # Output only. [Output Only] Commitment end time inRFC3339 text format.
     end_timestamp: Any = None
+    # The existing reservation resource(s) this commitment applies its own discount to. (AI-inferred)
     existing_reservations: Any = None
     # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None

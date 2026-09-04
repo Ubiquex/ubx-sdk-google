@@ -61,20 +61,31 @@ var V2beta1SipTrunk_PeerHostnamesFields = ubx.FieldMap{
 }
 
 type V2beta1SipTrunkConfig struct {
-	DisplayName        any
-	ExpectedHostname   any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The real hostname(s) this SIP trunk expects its own peer to present. (AI-inferred)
+	ExpectedHostname any
+	// The real Google root certificate this SIP trunk uses to verify its own peer's TLS connection. (AI-inferred)
 	GoogleRootCertFile any
-	Name               any
-	PeerHostnames      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The real hostname(s) of this SIP trunk's own peer endpoint(s). (AI-inferred)
+	PeerHostnames any
 }
 
 type V2beta1SipTrunkAttrs struct {
-	Connections        any
-	DisplayName        any
-	ExpectedHostname   any
+	// The real, current connection(s) this SIP trunk maintains. (AI-inferred)
+	Connections any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// The real hostname(s) this SIP trunk expects its own peer to present. (AI-inferred)
+	ExpectedHostname any
+	// The real Google root certificate this SIP trunk uses to verify its own peer's TLS connection. (AI-inferred)
 	GoogleRootCertFile any
-	Name               any
-	PeerHostnames      any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
+	// The real hostname(s) of this SIP trunk's own peer endpoint(s). (AI-inferred)
+	PeerHostnames any
 }
 
 var V2beta1SipTrunk = ubx.ResourceBinding{

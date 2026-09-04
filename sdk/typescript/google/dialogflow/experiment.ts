@@ -2,66 +2,97 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Experiment_Definition_VersionVariants_Variants {
+  /** Whether this experiment variant is the unmodified control, rather than a variation being tested. (AI-inferred) */
   isControlGroup?: boolean | Computed<boolean>;
+  /** How incoming traffic is split across this experiment's own variants. (AI-inferred) */
   trafficAllocation?: number | Computed<number>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Experiment_Definition_VersionVariants {
+  /** The variant(s) making up this experiment. (AI-inferred) */
   variants?: Experiment_Definition_VersionVariants_Variants[] | Computed<Experiment_Definition_VersionVariants_Variants[]>;
 }
 
 export interface Experiment_Definition {
+  /** A boolean expression that must evaluate `true` for this case, rule, or route to apply. (AI-inferred) */
   condition?: string | Computed<string>;
+  /** The agent version(s) participating in this experiment, one per variant. (AI-inferred) */
   versionVariants?: Experiment_Definition_VersionVariants | Computed<Experiment_Definition_VersionVariants>;
 }
 
 export interface Experiment_Result_VersionMetrics_Metrics_ConfidenceInterval {
+  /** The statistical confidence level used when computing this experiment's own results. (AI-inferred) */
   confidenceLevel?: number | Computed<number>;
+  /** The lower bound of this range. (AI-inferred) */
   lowerBound?: number | Computed<number>;
+  /** The proportion this applies to. (AI-inferred) */
   ratio?: number | Computed<number>;
+  /** The upper bound of this range. (AI-inferred) */
   upperBound?: number | Computed<number>;
 }
 
 export interface Experiment_Result_VersionMetrics_Metrics {
+  /** The statistical confidence interval computed for this experiment metric. (AI-inferred) */
   confidenceInterval?: Experiment_Result_VersionMetrics_Metrics_ConfidenceInterval | Computed<Experiment_Result_VersionMetrics_Metrics_ConfidenceInterval>;
+  /** How many of this item there are. (AI-inferred) */
   count?: number | Computed<number>;
+  /** Which kind of count this metric reports. (AI-inferred) */
   countType?: string | Computed<string>;
+  /** The proportion this applies to. (AI-inferred) */
   ratio?: number | Computed<number>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Experiment_Result_VersionMetrics {
+  /** The metric value(s) recorded for this result. (AI-inferred) */
   metrics?: Experiment_Result_VersionMetrics_Metrics[] | Computed<Experiment_Result_VersionMetrics_Metrics[]>;
+  /** How many sessions this metric or result covers. (AI-inferred) */
   sessionCount?: number | Computed<number>;
+  /** The version identifier this applies to. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Experiment_Result {
+  /** When this resource was last updated. (AI-inferred) */
   lastUpdateTime?: string | Computed<string>;
+  /** The metric value(s) recorded for a specific agent version. (AI-inferred) */
   versionMetrics?: Experiment_Result_VersionMetrics[] | Computed<Experiment_Result_VersionMetrics[]>;
 }
 
 export interface Experiment_RolloutConfig_RolloutSteps {
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** The minimum duration required. (AI-inferred) */
   minDuration?: string | Computed<string>;
+  /** The percentage of traffic this variant or rollout step receives. (AI-inferred) */
   trafficPercent?: number | Computed<number>;
 }
 
 export interface Experiment_RolloutConfig {
+  /** The condition under which this rollout or experiment is considered to have failed. (AI-inferred) */
   failureCondition?: string | Computed<string>;
+  /** The condition traffic must meet to advance to the next rollout step. (AI-inferred) */
   rolloutCondition?: string | Computed<string>;
+  /** The ordered step(s) (traffic percentage and minimum duration) making up this gradual rollout. (AI-inferred) */
   rolloutSteps?: Experiment_RolloutConfig_RolloutSteps[] | Computed<Experiment_RolloutConfig_RolloutSteps[]>;
 }
 
 export interface Experiment_RolloutState {
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** A single step within this run or sequence. (AI-inferred) */
   step?: string | Computed<string>;
+  /** This step's own position within its own containing sequence. (AI-inferred) */
   stepIndex?: number | Computed<number>;
 }
 
 export interface Experiment_VariantsHistory {
+  /** Output only. The timestamp when this resource was most recently updated. (AI-inferred) */
   updateTime?: string | Computed<string>;
+  /** The agent version(s) participating in this experiment, one per variant. (AI-inferred) */
   versionVariants?: Experiment_Definition_VersionVariants | Computed<Experiment_Definition_VersionVariants>;
 }
 
@@ -158,38 +189,68 @@ const Experiment_VariantsHistoryFields: FieldMap = {
 };
 
 export interface ExperimentConfig {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime?: string | Computed<string>;
+  /** The definition of this resource. (AI-inferred) */
   definition?: Experiment_Definition | Computed<Experiment_Definition>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime?: string | Computed<string>;
+  /** How long this experiment runs before automatically concluding. (AI-inferred) */
   experimentLength?: string | Computed<string>;
+  /** When this resource was last updated. (AI-inferred) */
   lastUpdateTime?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The result produced by this operation. (AI-inferred) */
   result?: Experiment_Result | Computed<Experiment_Result>;
+  /** Configuration for gradually shifting traffic to a new agent version. (AI-inferred) */
   rolloutConfig?: Experiment_RolloutConfig | Computed<Experiment_RolloutConfig>;
+  /** Why this rollout was halted, if it failed. (AI-inferred) */
   rolloutFailureReason?: string | Computed<string>;
+  /** The current progress of this gradual rollout. (AI-inferred) */
   rolloutState?: Experiment_RolloutState | Computed<Experiment_RolloutState>;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** The history of variant configurations this experiment has run with over time. (AI-inferred) */
   variantsHistory?: Experiment_VariantsHistory[] | Computed<Experiment_VariantsHistory[]>;
 }
 
 export interface ExperimentAttrs {
+  /** Output only. The timestamp when this resource was created. (AI-inferred) */
   createTime: string;
+  /** The definition of this resource. (AI-inferred) */
   definition: Experiment_Definition;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description: string;
+  /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName: string;
+  /** When this operation, run, or window ended. (AI-inferred) */
   endTime: string;
+  /** How long this experiment runs before automatically concluding. (AI-inferred) */
   experimentLength: string;
+  /** When this resource was last updated. (AI-inferred) */
   lastUpdateTime: string;
+  /** The resource name or identifier of this object. (AI-inferred) */
   name: string;
+  /** The result produced by this operation. (AI-inferred) */
   result: Experiment_Result;
+  /** Configuration for gradually shifting traffic to a new agent version. (AI-inferred) */
   rolloutConfig: Experiment_RolloutConfig;
+  /** Why this rollout was halted, if it failed. (AI-inferred) */
   rolloutFailureReason: string;
+  /** The current progress of this gradual rollout. (AI-inferred) */
   rolloutState: Experiment_RolloutState;
+  /** When this operation, run, or window started. (AI-inferred) */
   startTime: string;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state: string;
+  /** The history of variant configurations this experiment has run with over time. (AI-inferred) */
   variantsHistory: Experiment_VariantsHistory[];
 }
 

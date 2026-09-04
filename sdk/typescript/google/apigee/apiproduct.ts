@@ -2,25 +2,36 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Apiproduct_Attributes {
+  /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Apiproduct_GraphqlOperationGroup_OperationConfigs_Operations {
+  /** The specific action being performed. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The kind of operation(s) this applies to. (AI-inferred) */
   operationTypes?: string[] | Computed<string[]>;
 }
 
 export interface Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota {
+  /** How often this recurs. (AI-inferred) */
   interval?: string | Computed<string>;
+  /** The maximum amount allowed. (AI-inferred) */
   limit?: string | Computed<string>;
+  /** The unit of time this quota is measured over, e.g. minute or day. (AI-inferred) */
   timeUnit?: string | Computed<string>;
 }
 
 export interface Apiproduct_GraphqlOperationGroup_OperationConfigs {
+  /** The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred) */
   apiSource?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Apiproduct_Attributes[] | Computed<Apiproduct_Attributes[]>;
+  /** The operation(s) this rule applies to. (AI-inferred) */
   operations?: Apiproduct_GraphqlOperationGroup_OperationConfigs_Operations[] | Computed<Apiproduct_GraphqlOperationGroup_OperationConfigs_Operations[]>;
+  /** The maximum usage allowed within a defined period. (AI-inferred) */
   quota?: Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota | Computed<Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota>;
 }
 
@@ -32,10 +43,15 @@ export interface Apiproduct_GraphqlOperationGroup {
 }
 
 export interface Apiproduct_GrpcOperationGroup_OperationConfigs {
+  /** The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred) */
   apiSource?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Apiproduct_Attributes[] | Computed<Apiproduct_Attributes[]>;
+  /** The HTTP method(s) this applies to. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
+  /** The maximum usage allowed within a defined period. (AI-inferred) */
   quota?: Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota | Computed<Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota>;
+  /** A reference to the backend service this applies to. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
@@ -45,15 +61,22 @@ export interface Apiproduct_GrpcOperationGroup {
 }
 
 export interface Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperations {
+  /** The HTTP method(s) this applies to. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
+  /** The name of the LLM model this applies to. (AI-inferred) */
   model?: string | Computed<string>;
+  /** A reference to the resource this applies to. (AI-inferred) */
   resource?: string | Computed<string>;
 }
 
 export interface Apiproduct_LlmOperationGroup_OperationConfigs {
+  /** The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred) */
   apiSource?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Apiproduct_Attributes[] | Computed<Apiproduct_Attributes[]>;
+  /** The LLM operation(s) (e.g. tokens consumed) this quota tracks. (AI-inferred) */
   llmOperations?: Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperations[] | Computed<Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperations[]>;
+  /** The maximum number of LLM tokens allowed within this quota period. (AI-inferred) */
   llmTokenQuota?: Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota | Computed<Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota>;
 }
 
@@ -63,14 +86,20 @@ export interface Apiproduct_LlmOperationGroup {
 }
 
 export interface Apiproduct_OperationGroup_OperationConfigs_Operations {
+  /** The HTTP method(s) this applies to. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
+  /** A reference to the resource this applies to. (AI-inferred) */
   resource?: string | Computed<string>;
 }
 
 export interface Apiproduct_OperationGroup_OperationConfigs {
+  /** The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred) */
   apiSource?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Apiproduct_Attributes[] | Computed<Apiproduct_Attributes[]>;
+  /** The operation(s) this rule applies to. (AI-inferred) */
   operations?: Apiproduct_OperationGroup_OperationConfigs_Operations[] | Computed<Apiproduct_OperationGroup_OperationConfigs_Operations[]>;
+  /** The maximum usage allowed within a defined period. (AI-inferred) */
   quota?: Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota | Computed<Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota>;
 }
 
@@ -82,13 +111,18 @@ export interface Apiproduct_OperationGroup {
 }
 
 export interface Apiproduct_PayloadOperationGroup_OperationConfigs_Operations {
+  /** The specific action being performed. (AI-inferred) */
   operation?: string | Computed<string>;
 }
 
 export interface Apiproduct_PayloadOperationGroup_OperationConfigs {
+  /** The source (e.g. proxy or shared flow) generating this API traffic. (AI-inferred) */
   apiSource?: string | Computed<string>;
+  /** Free-form key/value metadata attached to this resource. (AI-inferred) */
   attributes?: Apiproduct_Attributes[] | Computed<Apiproduct_Attributes[]>;
+  /** The operation(s) this rule applies to. (AI-inferred) */
   operations?: Apiproduct_PayloadOperationGroup_OperationConfigs_Operations[] | Computed<Apiproduct_PayloadOperationGroup_OperationConfigs_Operations[]>;
+  /** The maximum usage allowed within a defined period. (AI-inferred) */
   quota?: Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota | Computed<Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota>;
 }
 

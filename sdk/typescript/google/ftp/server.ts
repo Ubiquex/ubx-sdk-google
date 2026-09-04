@@ -16,17 +16,23 @@ export interface Server_GoogleManagedServerCredential {
 }
 
 export interface Server_InternalConfig_ConsumerAcceptList {
+  /** The real maximum number of concurrent connections this consumer accept-list entry is allowed. (AI-inferred) */
   connectionLimit?: string | Computed<string>;
+  /** The real Google Cloud project this consumer accept-list entry authorizes to connect via Private Service Connect. (AI-inferred) */
   project?: string | Computed<string>;
 }
 
 export interface Server_InternalConfig_ConsumerRejectList {
+  /** The real Google Cloud project this consumer accept-list entry authorizes to connect via Private Service Connect. (AI-inferred) */
   project?: string | Computed<string>;
 }
 
 export interface Server_InternalConfig_PscEndpoints {
+  /** The real Private Service Connect endpoint address this FTP server is reachable at. (AI-inferred) */
   endpoint?: string | Computed<string>;
+  /** The VPC network this resource is attached to, in the form `projects/{project}/global/networks/{network}`. (AI-inferred) */
   network?: string | Computed<string>;
+  /** The real, current connection status of this Private Service Connect endpoint. (AI-inferred) */
   status?: string | Computed<string>;
 }
 

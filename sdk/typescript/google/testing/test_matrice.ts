@@ -2,7 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TestMatrice_ClientInfo_ClientInfoDetails {
+  /** The real key of one entry in a key/value pair used by this test configuration. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real value of one entry in a key/value pair used by this test configuration. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,9 +16,13 @@ export interface TestMatrice_ClientInfo {
 }
 
 export interface TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevices {
+  /** The real Firebase Test Lab catalog ID of an Android test device model (e.g. `Pixel8`). (AI-inferred) */
   androidModelId?: string | Computed<string>;
+  /** The real Firebase Test Lab catalog ID of an Android OS version to test against. (AI-inferred) */
   androidVersionId?: string | Computed<string>;
+  /** The real device locale (language and region, e.g. `en_US`) to run this test under. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** The real screen orientation (`portrait` or `landscape`) to run this test in. (AI-inferred) */
   orientation?: string | Computed<string>;
 }
 
@@ -37,9 +43,13 @@ export interface TestMatrice_EnvironmentMatrix_AndroidMatrix {
 }
 
 export interface TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevices {
+  /** The real Firebase Test Lab catalog ID of an iOS test device model. (AI-inferred) */
   iosModelId?: string | Computed<string>;
+  /** The real Firebase Test Lab catalog ID of an iOS OS version to test against. (AI-inferred) */
   iosVersionId?: string | Computed<string>;
+  /** The real device locale (language and region, e.g. `en_US`) to run this test under. (AI-inferred) */
   locale?: string | Computed<string>;
+  /** The real screen orientation (`portrait` or `landscape`) to run this test in. (AI-inferred) */
   orientation?: string | Computed<string>;
 }
 
@@ -58,7 +68,9 @@ export interface TestMatrice_EnvironmentMatrix {
 }
 
 export interface TestMatrice_ExtendedInvalidMatrixDetails {
+  /** A real, human-readable explanation for why this test matrix's own invalid-matrix details were flagged. (AI-inferred) */
   message?: string | Computed<string>;
+  /** The real, specific reason this test matrix or test execution was flagged as invalid. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
@@ -95,209 +107,323 @@ export interface TestMatrice_ResultStorage {
 }
 
 export interface TestMatrice_TestExecutions_Environment {
+  /** The real Android device model, OS version, locale, and orientation this test execution ran against. (AI-inferred) */
   androidDevice?: TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevices | Computed<TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevices>;
+  /** The real iOS device model, OS version, and locale this test execution ran against. (AI-inferred) */
   iosDevice?: TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevices | Computed<TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevices>;
 }
 
 export interface TestMatrice_TestExecutions_Shard_TestTargetsForShard {
+  /** The real, specific test class or method names to run, restricting an instrumentation test run to a subset of its full suite. (AI-inferred) */
   testTargets?: string[] | Computed<string[]>;
 }
 
 export interface TestMatrice_TestExecutions_Shard {
+  /** Firebase Test Lab's own real, estimated duration for this specific shard to complete. (AI-inferred) */
   estimatedShardDuration?: string | Computed<string>;
+  /** The real number of parallel shards to split this test run's targets across. (AI-inferred) */
   numShards?: number | Computed<number>;
+  /** The real, zero-based index of this shard among a sharded test run's `num_shards` total shards. (AI-inferred) */
   shardIndex?: number | Computed<number>;
+  /** The real subset of `test_targets` assigned to run on one specific shard, when a test run is manually sharded. (AI-inferred) */
   testTargetsForShard?: TestMatrice_TestExecutions_Shard_TestTargetsForShard | Computed<TestMatrice_TestExecutions_Shard_TestTargetsForShard>;
 }
 
 export interface TestMatrice_TestExecutions_TestDetails {
+  /** A real, human-readable error message explaining why this test execution or issue occurred. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** Real, ordered, human-readable progress messages logged as this test execution ran. (AI-inferred) */
   progressMessages?: string[] | Computed<string[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_Apks {
+  /** The real, split APK files Firebase Test Lab generates from an uploaded App Bundle for a specific device configuration. (AI-inferred) */
   bundleSplits?: TestMatrice_ResultStorage_GoogleCloudStorage[] | Computed<TestMatrice_ResultStorage_GoogleCloudStorage[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle {
+  /** The real, split Android APK files (from an App Bundle) that together make up one installable build for a specific device configuration. (AI-inferred) */
   apks?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_Apks | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_Apks>;
+  /** The real Cloud Storage location of the uploaded Android App Bundle this test run's `bundle_splits` were generated from. (AI-inferred) */
   bundleLocation?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualSharding {
+  /** The real subset of `test_targets` assigned to run on one specific shard, when a test run is manually sharded. (AI-inferred) */
   testTargetsForShard?: TestMatrice_TestExecutions_Shard_TestTargetsForShard[] | Computed<TestMatrice_TestExecutions_Shard_TestTargetsForShard[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartSharding {
+  /** The real, target duration Firebase Test Lab aims for each shard to take, when using smart sharding. (AI-inferred) */
   targetedShardDuration?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformSharding {
+  /** The real number of parallel shards to split this test run's targets across. (AI-inferred) */
   numShards?: number | Computed<number>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption {
+  /** Real, explicit shard-to-test-target assignments for this instrumentation test run. (AI-inferred) */
   manualSharding?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualSharding | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualSharding>;
+  /** Real, automatic sharding for this instrumentation test run, targeting a specific `targeted_shard_duration` per shard. (AI-inferred) */
   smartSharding?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartSharding | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartSharding>;
+  /** Real, automatic, even sharding of this instrumentation test run's targets across `num_shards` shards. (AI-inferred) */
   uniformSharding?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformSharding | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformSharding>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest {
+  /** A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred) */
   appApk?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred) */
   appBundle?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle>;
+  /** The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred) */
   appPackageId?: string | Computed<string>;
+  /** Whether to real, run this Android instrumentation test using Android Test Orchestrator, which isolates each test in its own instrumentation instance. (AI-inferred) */
   orchestratorOption?: string | Computed<string>;
+  /** Real, chosen sharding strategy (`manual_sharding`, `smart_sharding`, or `uniform_sharding`) for this instrumentation test run. (AI-inferred) */
   shardingOption?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption>;
+  /** A reference to the real instrumentation test APK, uploaded to Cloud Storage, that exercises the app under test. (AI-inferred) */
   testApk?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** The real Android application ID (package name) of the instrumentation test APK. (AI-inferred) */
   testPackageId?: string | Computed<string>;
+  /** The real, fully-qualified class name of the instrumentation test runner to use for this test. (AI-inferred) */
   testRunnerClass?: string | Computed<string>;
+  /** The real, specific test class or method names to run, restricting an instrumentation test run to a subset of its full suite. (AI-inferred) */
   testTargets?: string[] | Computed<string[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectives {
+  /** The real type of Robo directive action to take on a matched UI element, e.g. `SINGLE_CLICK` or `ENTER_TEXT`. (AI-inferred) */
   actionType?: string | Computed<string>;
+  /** The real text value a Robo directive types into a matched UI element (for `ENTER_TEXT`-type actions). (AI-inferred) */
   inputText?: string | Computed<string>;
+  /** The real, fully-qualified resource name this reference points at. (AI-inferred) */
   resourceName?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivity {
+  /** The real Android intent action string (e.g. `android.intent.action.MAIN`) a starting intent specifies. (AI-inferred) */
   action?: string | Computed<string>;
+  /** The real Android intent category string(s) (e.g. `android.intent.category.LAUNCHER`) a starting intent specifies. (AI-inferred) */
   categories?: string[] | Computed<string[]>;
+  /** The real URI data an Android intent carries, for a starting intent that launches the app via a deep link. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents {
+  /** Start the Robo test from the app's own real, declared launcher activity. (AI-inferred) */
   launcherActivity?: unknown | Computed<unknown>;
+  /** Start the Robo test without launching any activity, leaving the app in whatever state it's already in. (AI-inferred) */
   noActivity?: unknown | Computed<unknown>;
+  /** Start the Robo test from a specific, real named Android activity rather than the app's own default launcher. (AI-inferred) */
   startActivity?: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivity | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivity>;
+  /** The real maximum duration Firebase Test Lab allows this test or device session to run before it's forcibly stopped. (AI-inferred) */
   timeout?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest {
+  /** A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred) */
   appApk?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred) */
   appBundle?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle>;
+  /** The real, specific Android activity the Robo crawler should start from, overriding the app's own default launcher activity. (AI-inferred) */
   appInitialActivity?: string | Computed<string>;
+  /** The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred) */
   appPackageId?: string | Computed<string>;
+  /** The real maximum depth of UI states the Robo crawler explores from the app's own starting screen. (AI-inferred) */
   maxDepth?: number | Computed<number>;
+  /** The real maximum number of UI actions the Robo crawler takes during this test run. (AI-inferred) */
   maxSteps?: number | Computed<number>;
+  /** Real, targeted instructions (like text to type into a specific field) that guide Firebase Test Lab's Robo crawler when it reaches matching UI elements. (AI-inferred) */
   roboDirectives?: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectives[] | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectives[]>;
+  /** Which real Robo test strategy to use: standard automatic UI exploration, or a mode that starts from `robo_directives`/`starting_intents` instead. (AI-inferred) */
   roboMode?: string | Computed<string>;
+  /** A real, recorded action script that guides Firebase Test Lab's Robo crawler through a specific app flow (like a login screen) instead of relying on automatic exploration alone. (AI-inferred) */
   roboScript?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** Real Android intents Firebase Test Lab's Robo crawler should use to launch the app under test, instead of its default launcher activity. (AI-inferred) */
   startingIntents?: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents[] | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_AndroidTestLoop {
+  /** A reference to the real Android APK file under test, uploaded to Cloud Storage. (AI-inferred) */
   appApk?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** A reference to the real Android App Bundle (`.aab`) under test, uploaded to Cloud Storage, used instead of a single APK when the app ships as split builds. (AI-inferred) */
   appBundle?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle>;
+  /** The real Android application ID (package name) of the app under test, as declared in its own manifest. (AI-inferred) */
   appPackageId?: string | Computed<string>;
+  /** Real, named labels identifying which Game Loop `scenarios` to run, as an alternative to specifying raw scenario numbers. (AI-inferred) */
   scenarioLabels?: string[] | Computed<string[]>;
+  /** The real, numbered Game Loop scenario IDs to exercise for a Game Loop test, letting one app be tested across multiple distinct gameplay scenarios. (AI-inferred) */
   scenarios?: number[] | Computed<number[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_IosRoboTest {
+  /** The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred) */
   appBundleId?: string | Computed<string>;
+  /** A reference to the real iOS `.ipa` app file under test, uploaded to Cloud Storage. (AI-inferred) */
   appIpa?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** A real, recorded action script that guides Firebase Test Lab's Robo crawler through a specific app flow (like a login screen) instead of relying on automatic exploration alone. (AI-inferred) */
   roboScript?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_IosTestLoop {
+  /** The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred) */
   appBundleId?: string | Computed<string>;
+  /** A reference to the real iOS `.ipa` app file under test, uploaded to Cloud Storage. (AI-inferred) */
   appIpa?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** The real, numbered Game Loop scenario IDs to exercise for a Game Loop test, letting one app be tested across multiple distinct gameplay scenarios. (AI-inferred) */
   scenarios?: number[] | Computed<number[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories {
+  /** The real iOS bundle identifier this device configuration or test target applies to. (AI-inferred) */
   bundleId?: string | Computed<string>;
+  /** The real content or configuration payload this test-run entry carries. (AI-inferred) */
   content?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** The real, on-device file path a file should be pushed to or pulled from during a test run. (AI-inferred) */
   devicePath?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_IosTestSetup {
+  /** Extra real iOS `.ipa` files to install onto the device alongside the app under test. (AI-inferred) */
   additionalIpas?: TestMatrice_ResultStorage_GoogleCloudStorage[] | Computed<TestMatrice_ResultStorage_GoogleCloudStorage[]>;
+  /** The real, named network condition profile (simulating a specific bandwidth/latency/packet-loss shape) to apply during the test run. (AI-inferred) */
   networkProfile?: string | Computed<string>;
+  /** Real, on-device directory paths to pull files from after an iOS test run completes. (AI-inferred) */
   pullDirectories?: TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories[] | Computed<TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories[]>;
+  /** Real local files to push onto the device's own filesystem before an iOS test run starts. (AI-inferred) */
   pushFiles?: TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories[] | Computed<TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories[]>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_IosXcTest {
+  /** The real iOS bundle identifier of the app under test, as declared in its own Info.plist. (AI-inferred) */
   appBundleId?: string | Computed<string>;
+  /** Whether this iOS XCTest run real, requires special app entitlements (like Sign in with Apple) that Firebase Test Lab must configure for. (AI-inferred) */
   testSpecialEntitlements?: boolean | Computed<boolean>;
+  /** A real, uploaded zip file containing the built iOS test bundle to run. (AI-inferred) */
   testsZip?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** The real Xcode version used to build (and run) this iOS test. (AI-inferred) */
   xcodeVersion?: string | Computed<string>;
+  /** A real, uploaded `.xctestrun` file describing how to run this iOS XCTest bundle. (AI-inferred) */
   xctestrun?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_TestSetup_Account {
+  /** Real, automatic Google account provisioning for this test run, requiring no explicit credentials. (AI-inferred) */
   googleAuto?: unknown | Computed<unknown>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks {
+  /** The real Google Cloud region this Firebase Test Lab device session or resource runs in. (AI-inferred) */
   location?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** The real Android package name this device configuration, intent, or test target applies to. (AI-inferred) */
   packageName?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFile {
+  /** A real Android OBB expansion file to push onto the device before this test run starts. (AI-inferred) */
   obb?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** The real, on-device file name an `obb_file` must be installed under for the app to find it. (AI-inferred) */
   obbFileName?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFile {
+  /** The real content or configuration payload this test-run entry carries. (AI-inferred) */
   content?: TestMatrice_ResultStorage_GoogleCloudStorage | Computed<TestMatrice_ResultStorage_GoogleCloudStorage>;
+  /** The real, on-device file path a file should be pushed to or pulled from during a test run. (AI-inferred) */
   devicePath?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush {
+  /** A real Android OBB expansion file to install onto the test device alongside the app under test. (AI-inferred) */
   obbFile?: TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFile | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFile>;
+  /** A real, plain file to push onto the device's own filesystem before this test run starts. (AI-inferred) */
   regularFile?: TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFile | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFile>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_TestSetup_Systrace {
+  /** The real duration, in seconds, to capture systrace data for during this test run. (AI-inferred) */
   durationSeconds?: number | Computed<number>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification_TestSetup {
+  /** Real, pre-authenticated Google account configuration to set up on the device before this test run starts. (AI-inferred) */
   account?: TestMatrice_TestExecutions_TestSpecification_TestSetup_Account | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup_Account>;
+  /** Extra real Android APKs to install onto the device alongside the app and test APK, for a test that depends on another app being present. (AI-inferred) */
   additionalApks?: TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks[] | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks[]>;
+  /** Real, on-device directory paths Firebase Test Lab pulls files from after the test run completes, for later inspection. (AI-inferred) */
   directoriesToPull?: string[] | Computed<string[]>;
+  /** Whether Firebase Test Lab should real, skip automatically granting the app's own requested runtime permissions before the test starts. (AI-inferred) */
   dontAutograntPermissions?: boolean | Computed<boolean>;
+  /** Real key/value environment variables passed into the instrumentation test run. (AI-inferred) */
   environmentVariables?: TestMatrice_ClientInfo_ClientInfoDetails[] | Computed<TestMatrice_ClientInfo_ClientInfoDetails[]>;
+  /** Real local files Firebase Test Lab pushes onto the device's own filesystem before the test run starts. (AI-inferred) */
   filesToPush?: TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush[] | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush[]>;
+  /** Real, additional APKs to install onto the device before this test run starts, beyond the app and test APKs themselves. (AI-inferred) */
   initialSetupApks?: TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks[] | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks[]>;
+  /** The real, named network condition profile (simulating a specific bandwidth/latency/packet-loss shape) to apply during the test run. (AI-inferred) */
   networkProfile?: string | Computed<string>;
+  /** Real configuration for collecting an Android systrace during this test run. (AI-inferred) */
   systrace?: TestMatrice_TestExecutions_TestSpecification_TestSetup_Systrace | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup_Systrace>;
 }
 
 export interface TestMatrice_TestExecutions_TestSpecification {
+  /** Real configuration for an Android instrumentation test run: the test APK, runner class, and sharding options. (AI-inferred) */
   androidInstrumentationTest?: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest>;
+  /** Real configuration for an Android Robo test run: exploration depth/steps, starting activity, and directives. (AI-inferred) */
   androidRoboTest?: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest>;
+  /** Real configuration for an Android Game Loop test run: which `scenarios`/`scenario_labels` to exercise. (AI-inferred) */
   androidTestLoop?: TestMatrice_TestExecutions_TestSpecification_AndroidTestLoop | Computed<TestMatrice_TestExecutions_TestSpecification_AndroidTestLoop>;
+  /** Whether to real, disable collection of performance metrics (CPU, memory, graphics) during this test run. (AI-inferred) */
   disablePerformanceMetrics?: boolean | Computed<boolean>;
+  /** Whether to real, disable video recording of this test run. (AI-inferred) */
   disableVideoRecording?: boolean | Computed<boolean>;
+  /** Real configuration for an iOS Robo test run. (AI-inferred) */
   iosRoboTest?: TestMatrice_TestExecutions_TestSpecification_IosRoboTest | Computed<TestMatrice_TestExecutions_TestSpecification_IosRoboTest>;
+  /** Real configuration for an iOS Game Loop test run. (AI-inferred) */
   iosTestLoop?: TestMatrice_TestExecutions_TestSpecification_IosTestLoop | Computed<TestMatrice_TestExecutions_TestSpecification_IosTestLoop>;
+  /** Real, iOS-specific device setup (files to push/pull, additional IPAs) to apply before this test run starts. (AI-inferred) */
   iosTestSetup?: TestMatrice_TestExecutions_TestSpecification_IosTestSetup | Computed<TestMatrice_TestExecutions_TestSpecification_IosTestSetup>;
+  /** Real configuration for an iOS XCTest run: the `tests_zip`/`xctestrun` bundle and Xcode version. (AI-inferred) */
   iosXcTest?: TestMatrice_TestExecutions_TestSpecification_IosXcTest | Computed<TestMatrice_TestExecutions_TestSpecification_IosXcTest>;
+  /** Real, shared Android device setup (files to push, account config, systrace) applied before this test run starts. (AI-inferred) */
   testSetup?: TestMatrice_TestExecutions_TestSpecification_TestSetup | Computed<TestMatrice_TestExecutions_TestSpecification_TestSetup>;
+  /** The real maximum duration Firebase Test Lab allows one individual test run to take before it's forcibly stopped. (AI-inferred) */
   testTimeout?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions_ToolResultsStep {
+  /** The real Tool Results execution ID this test execution's own results are recorded under. (AI-inferred) */
   executionId?: string | Computed<string>;
+  /** The real Tool Results history ID this test execution's own results are recorded under. (AI-inferred) */
   historyId?: string | Computed<string>;
+  /** The real Google Cloud project ID this test matrix or device session runs under. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** The real Tool Results step ID this test execution's own results are recorded under. (AI-inferred) */
   stepId?: string | Computed<string>;
 }
 
 export interface TestMatrice_TestExecutions {
+  /** The real device and OS environment (Android or iOS) one test execution within this matrix ran against. (AI-inferred) */
   environment?: TestMatrice_TestExecutions_Environment | Computed<TestMatrice_TestExecutions_Environment>;
+  /** A real, stable identifier for this test resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The real, parent test matrix ID this test execution belongs to. (AI-inferred) */
   matrixId?: string | Computed<string>;
+  /** The real Google Cloud project ID this test matrix or device session runs under. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** Real sharding details (which shard, and its own estimated duration) for this specific test execution. (AI-inferred) */
   shard?: TestMatrice_TestExecutions_Shard | Computed<TestMatrice_TestExecutions_Shard>;
+  /** The real, current state (e.g. `RUNNING`, `FINISHED`, `ERROR`) of this test execution, or of a detected grant/status in this resource. (AI-inferred) */
   state?: string | Computed<string>;
+  /** Real, additional progress and error detail for this specific test execution. (AI-inferred) */
   testDetails?: TestMatrice_TestExecutions_TestDetails | Computed<TestMatrice_TestExecutions_TestDetails>;
+  /** The real test type (instrumentation, Robo, Game Loop, XCTest) and its own configuration for this test execution. (AI-inferred) */
   testSpecification?: TestMatrice_TestExecutions_TestSpecification | Computed<TestMatrice_TestExecutions_TestSpecification>;
+  /** The real timestamp this test execution was created or last updated at. (AI-inferred) */
   timestamp?: string | Computed<string>;
+  /** A reference to this test execution's own corresponding `google_toolresults_step`, where its detailed results are recorded. (AI-inferred) */
   toolResultsStep?: TestMatrice_TestExecutions_ToolResultsStep | Computed<TestMatrice_TestExecutions_ToolResultsStep>;
 }
 

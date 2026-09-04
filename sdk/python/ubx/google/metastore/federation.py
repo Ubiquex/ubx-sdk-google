@@ -8,7 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Federation_BackendMetastores:
+    # The real backend metastore type (e.g. Dataproc Metastore, BigQuery) this federation member represents. (AI-inferred)
     metastore_type: Any = None
+    # The real, fully-qualified resource name of this federation's own backend metastore member. (AI-inferred)
     name: Any = None
 
 _Federation_BackendMetastoresFields = {

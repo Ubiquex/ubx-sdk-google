@@ -4,15 +4,21 @@ package datafusion
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_Accelerators struct {
+	// The kind of accelerator (e.g. Cloud Data Fusion accelerator) enabled for this instance. (AI-inferred)
 	AcceleratorType any
-	State           any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type Instance_AvailableVersion struct {
+	// The feature(s) available to this instance. (AI-inferred)
 	AvailableFeatures any
-	DefaultVersion    any
-	Type              any
-	VersionNumber     any
+	// The version used when none is explicitly specified. (AI-inferred)
+	DefaultVersion any
+	// The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred)
+	Type any
+	// The version number this applies to. (AI-inferred)
+	VersionNumber any
 }
 
 type Instance_CryptoKeyConfig struct {
@@ -35,9 +41,12 @@ type Instance_LoggingConfig struct {
 }
 
 type Instance_MaintenanceEvents struct {
-	EndTime   any
+	// When this event or window ended. (AI-inferred)
+	EndTime any
+	// When this event or window started. (AI-inferred)
 	StartTime any
-	State     any
+	// The current lifecycle state of this resource. (AI-inferred)
+	State any
 }
 
 type Instance_MaintenancePolicy_MaintenanceExclusionWindow struct {

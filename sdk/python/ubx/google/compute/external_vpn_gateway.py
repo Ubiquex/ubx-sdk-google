@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExternalVpnGateway_Interfaces:
+    # The numeric identifier for this interface, unique within the external VPN gateway, used to associate it with VPN tunnels. (AI-inferred)
     id: Any = None
+    # The public IPv4 address for this interface of the external VPN gateway. (AI-inferred)
     ip_address: Any = None
+    # The IPv6 address of the external VPN gateway interface. This is the peer address used for establishing VPN tunnels over IPv6. (AI-inferred)
     ipv6_address: Any = None
 
 @dataclasses.dataclass

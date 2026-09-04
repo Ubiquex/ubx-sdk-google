@@ -9,32 +9,50 @@ type Report_Iac struct {
 }
 
 type Report_IacValidationReport_Violations_ViolatedAsset struct {
-	Asset     any
+	// A reference to the violating resource itself. (AI-inferred)
+	Asset any
+	// The type of the violating resource. (AI-inferred)
 	AssetType any
 }
 
 type Report_IacValidationReport_Violations_ViolatedPolicy struct {
+	// The compliance standard(s) (and their own control IDs) this policy maps to. (AI-inferred)
 	ComplianceStandards any
-	Constraint          any
-	ConstraintType      any
-	Description         any
+	// A reference to the constraint this policy enforces. (AI-inferred)
+	Constraint any
+	// The kind of constraint that was violated. (AI-inferred)
+	ConstraintType any
+	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
+	Description any
 }
 
 type Report_IacValidationReport_Violations_ViolatedPosture struct {
-	PolicySet                       any
-	Posture                         any
-	PostureDeployment               any
+	// The named group of policies this posture's own constraint belongs to. (AI-inferred)
+	PolicySet any
+	// A reference to the security posture this applies to. (AI-inferred)
+	Posture any
+	// A reference to the specific deployment of this posture this applies to. (AI-inferred)
+	PostureDeployment any
+	// The resource this posture deployment's own policies are enforced against. (AI-inferred)
 	PostureDeploymentTargetResource any
-	PostureRevisionId               any
+	// The specific revision of the posture this applies to. (AI-inferred)
+	PostureRevisionId any
 }
 
 type Report_IacValidationReport_Violations struct {
-	AssetId         any
-	NextSteps       any
-	PolicyId        any
-	Severity        any
-	ViolatedAsset   any
-	ViolatedPolicy  any
+	// A reference to the specific infrastructure-as-code resource this violation was found in. (AI-inferred)
+	AssetId any
+	// Guidance for resolving this violation. (AI-inferred)
+	NextSteps any
+	// A reference to the policy this applies to. (AI-inferred)
+	PolicyId any
+	// How serious this finding is. (AI-inferred)
+	Severity any
+	// The specific resource, as declared in the infrastructure-as-code source, that violates this policy. (AI-inferred)
+	ViolatedAsset any
+	// The specific policy constraint that was violated. (AI-inferred)
+	ViolatedPolicy any
+	// The security posture (and its own deployment) this violation was found against. (AI-inferred)
 	ViolatedPosture any
 }
 

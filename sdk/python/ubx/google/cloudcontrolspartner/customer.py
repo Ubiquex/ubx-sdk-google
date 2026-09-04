@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Customer_CustomerOnboardingState_OnboardingSteps:
+    # The real, current completion status (`PENDING`, `SUCCEEDED`, `FAILED`, `NOT_APPLICABLE`) of this customer onboarding step. (AI-inferred)
     completion_state: Any = None
+    # The real timestamp when this customer onboarding step completed, if it has. (AI-inferred)
     completion_time: Any = None
+    # The real timestamp when this customer onboarding step started. (AI-inferred)
     start_time: Any = None
+    # The real, specific onboarding step (`KAJ_ENROLLMENT` or `CUSTOMER_ENVIRONMENT`) this status entry describes. (AI-inferred)
     step: Any = None
 
 @dataclasses.dataclass

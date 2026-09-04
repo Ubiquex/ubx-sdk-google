@@ -22,9 +22,11 @@ export interface Job_Configuration_Copy {
   destinationEncryptionConfiguration?: Job_Configuration_Copy_DestinationEncryptionConfiguration | Computed<Job_Configuration_Copy_DestinationEncryptionConfiguration>;
   /** Optional. The time when the destination table expires. Expired tables will be deleted and their storage reclaimed. */
   destinationExpirationTime?: string | Computed<string>;
+  /** The table this operation writes to. (AI-inferred) */
   destinationTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** Optional. Supported operation types in table copy job. */
   operationType?: string | Computed<string>;
+  /** The table this job's own input is read from. (AI-inferred) */
   sourceTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** [Pick one] Source tables to copy. */
   sourceTables?: Job_Configuration_Copy_DestinationTable[] | Computed<Job_Configuration_Copy_DestinationTable[]>;
@@ -63,6 +65,7 @@ export interface Job_Configuration_Extract {
   printHeader?: boolean | Computed<boolean>;
   /** Id path of a model. */
   sourceModel?: Job_Configuration_Extract_SourceModel | Computed<Job_Configuration_Extract_SourceModel>;
+  /** The table this job's own input is read from. (AI-inferred) */
   sourceTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** Whether to use logical types when extracting to AVRO format. Not applicable when extracting models. */
   useAvroLogicalTypes?: boolean | Computed<boolean>;
@@ -74,7 +77,9 @@ export interface Job_Configuration_Load_Clustering {
 }
 
 export interface Job_Configuration_Load_ConnectionProperties {
+  /** The key of this key/value pair. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -126,56 +131,86 @@ export interface Job_Configuration_Load_RangePartitioning {
 }
 
 export interface Job_Configuration_Load_Schema_Fields_Categories {
+  /** The literal name(s) this applies to. (AI-inferred) */
   names?: string[] | Computed<string[]>;
 }
 
 export interface Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfo {
+  /** The data governance tag(s) applied to this column. (AI-inferred) */
   dataGovernanceTags?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Job_Configuration_Load_Schema_Fields_DataPolicies {
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Load_Schema_Fields_DataPolicyList {
+  /** Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred) */
   dataPolicies?: Job_Configuration_Load_Schema_Fields_DataPolicies[] | Computed<Job_Configuration_Load_Schema_Fields_DataPolicies[]>;
 }
 
 export interface Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo {
+  /** Whether a generated column's own value is computed asynchronously after write, rather than synchronously. (AI-inferred) */
   asynchronous?: boolean | Computed<boolean>;
+  /** The SQL expression computing this generated column's own value. (AI-inferred) */
   generationExpression?: string | Computed<string>;
+  /** Whether a generated column's own computed value is physically stored, rather than recomputed on each read. (AI-inferred) */
   stored?: boolean | Computed<boolean>;
 }
 
 export interface Job_Configuration_Load_Schema_Fields_GeneratedColumn {
+  /** Detail about a generated column's own computation. (AI-inferred) */
   generatedExpressionInfo?: Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo | Computed<Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo>;
+  /** Whether this column's own value is stored, virtual (computed on read), or not generated at all. (AI-inferred) */
   generatedMode?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Load_Schema_Fields_RangeElementType {
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Load_Schema_Fields {
+  /** The set of category labels this applies to. (AI-inferred) */
   categories?: Job_Configuration_Load_Schema_Fields_Categories | Computed<Job_Configuration_Load_Schema_Fields_Categories>;
+  /** The collation (locale-aware string comparison rule) applied to a `STRING`-typed field, e.g. `und:ci` for case-insensitive comparison, or empty for the default case-sensitive comparison. (AI-inferred) */
   collation?: string | Computed<string>;
+  /** Detail about the data governance tag(s) associated with this column. (AI-inferred) */
   dataGovernanceTagsInfo?: Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfo | Computed<Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfo>;
+  /** Column-level data governance policies (e.g. dynamic data masking) applied to this field. (AI-inferred) */
   dataPolicies?: Job_Configuration_Load_Schema_Fields_DataPolicies[] | Computed<Job_Configuration_Load_Schema_Fields_DataPolicies[]>;
+  /** The data policies (e.g. dynamic data masking rules) applied to this column. (AI-inferred) */
   dataPolicyList?: Job_Configuration_Load_Schema_Fields_DataPolicyList | Computed<Job_Configuration_Load_Schema_Fields_DataPolicyList>;
+  /** A SQL expression computing this column's own default value when none is supplied on insert. (AI-inferred) */
   defaultValueExpression?: string | Computed<string>;
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred) */
   fields?: unknown[] | Computed<unknown[]>;
+  /** The native type definition of this column in the external system it's federated from. (AI-inferred) */
   foreignTypeDefinition?: string | Computed<string>;
+  /** A column whose own value is computed from other columns, rather than stored directly. (AI-inferred) */
   generatedColumn?: Job_Configuration_Load_Schema_Fields_GeneratedColumn | Computed<Job_Configuration_Load_Schema_Fields_GeneratedColumn>;
+  /** The most characters a `string`-typed value may have. (AI-inferred) */
   maxLength?: string | Computed<string>;
+  /** Whether this field is `NULLABLE` (may be absent), `REQUIRED` (must always be present), or `REPEATED` (an array of this type). (AI-inferred) */
   mode?: string | Computed<string>;
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The Data Catalog policy tag(s) governing access to this column. (AI-inferred) */
   policyTags?: Job_Configuration_Load_Schema_Fields_Categories | Computed<Job_Configuration_Load_Schema_Fields_Categories>;
+  /** For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred) */
   precision?: string | Computed<string>;
+  /** The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred) */
   rangeElementType?: Job_Configuration_Load_Schema_Fields_RangeElementType | Computed<Job_Configuration_Load_Schema_Fields_RangeElementType>;
+  /** How values are rounded when they exceed this `NUMERIC`/`BIGNUMERIC` field's own scale. (AI-inferred) */
   roundingMode?: string | Computed<string>;
+  /** For a `NUMERIC`/`BIGNUMERIC` field, how many digits are kept after the decimal point. (AI-inferred) */
   scale?: string | Computed<string>;
+  /** The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred) */
   timestampPrecision?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -229,6 +264,7 @@ export interface Job_Configuration_Load {
   decimalTargetTypes?: string[] | Computed<string[]>;
   /** Configuration for Cloud KMS encryption settings. */
   destinationEncryptionConfiguration?: Job_Configuration_Copy_DestinationEncryptionConfiguration | Computed<Job_Configuration_Copy_DestinationEncryptionConfiguration>;
+  /** The table this operation writes to. (AI-inferred) */
   destinationTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** Properties for the destination table. */
   destinationTableProperties?: Job_Configuration_Load_DestinationTableProperties | Computed<Job_Configuration_Load_DestinationTableProperties>;
@@ -258,6 +294,7 @@ export interface Job_Configuration_Load {
   projectionFields?: string[] | Computed<string[]>;
   /** Optional. The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true. To include the specific quote character within a quoted value, precede it with an additional matching quote character. For example, if you want to escape the default character ' " ', use ' "" '. @default " */
   quote?: string | Computed<string>;
+  /** Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred) */
   rangePartitioning?: Job_Configuration_Load_RangePartitioning | Computed<Job_Configuration_Load_RangePartitioning>;
   /** Optional. The user can provide a reference file with the reader schema. This file is only loaded if it is part of source URIs, but is not loaded otherwise. It is enabled for the following formats: AVRO, PARQUET, ORC. */
   referenceFileSchemaUri?: string | Computed<string>;
@@ -279,6 +316,7 @@ export interface Job_Configuration_Load {
   sourceUris?: string[] | Computed<string[]>;
   /** Optional. Date format used for parsing TIME values. */
   timeFormat?: string | Computed<string>;
+  /** Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred) */
   timePartitioning?: Job_Configuration_Load_TimePartitioning | Computed<Job_Configuration_Load_TimePartitioning>;
   /** Optional. Default time zone that will apply when parsing timestamp values that have no specific time zone. */
   timeZone?: string | Computed<string>;
@@ -300,34 +338,51 @@ export interface Job_Configuration_Query_DefaultDataset {
 }
 
 export interface Job_Configuration_Query_QueryParameters_ParameterType_StructTypes {
+  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: unknown | Computed<unknown>;
 }
 
 export interface Job_Configuration_Query_QueryParameters_ParameterType {
+  /** The schema of the element type, when this field is an `ARRAY`. (AI-inferred) */
   arrayType?: unknown | Computed<unknown>;
+  /** The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred) */
   rangeElementType?: unknown | Computed<unknown>;
+  /** The field(s) making up a `STRUCT`-typed schema. (AI-inferred) */
   structTypes?: Job_Configuration_Query_QueryParameters_ParameterType_StructTypes[] | Computed<Job_Configuration_Query_QueryParameters_ParameterType_StructTypes[]>;
+  /** The sub-second precision a `TIMESTAMP`-typed field is stored at: `6` (microsecond, the default) or `12` (picosecond). (AI-inferred) */
   timestampPrecision?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_QueryParameters_ParameterValue_RangeValue {
+  /** Where this range ends. (AI-inferred) */
   end?: unknown | Computed<unknown>;
+  /** Where this range starts. (AI-inferred) */
   start?: unknown | Computed<unknown>;
 }
 
 export interface Job_Configuration_Query_QueryParameters_ParameterValue {
+  /** The individual element value(s) making up an array value. (AI-inferred) */
   arrayValues?: unknown[] | Computed<unknown[]>;
+  /** A value expressed as a `RANGE` type. (AI-inferred) */
   rangeValue?: Job_Configuration_Query_QueryParameters_ParameterValue_RangeValue | Computed<Job_Configuration_Query_QueryParameters_ParameterValue_RangeValue>;
+  /** The field value(s) making up a `STRUCT`-typed value. (AI-inferred) */
   structValues?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The literal value of this field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_QueryParameters {
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The data type of this routine parameter. (AI-inferred) */
   parameterType?: Job_Configuration_Query_QueryParameters_ParameterType | Computed<Job_Configuration_Query_QueryParameters_ParameterType>;
+  /** The value passed for this parameter. (AI-inferred) */
   parameterValue?: Job_Configuration_Query_QueryParameters_ParameterValue | Computed<Job_Configuration_Query_QueryParameters_ParameterValue>;
 }
 
@@ -341,18 +396,25 @@ export interface Job_Configuration_Query_ScriptOptions {
 }
 
 export interface Job_Configuration_Query_SystemVariables_Types_StructType_Fields {
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: unknown | Computed<unknown>;
 }
 
 export interface Job_Configuration_Query_SystemVariables_Types_StructType {
+  /** The nested field schemas that make up a `RECORD`-typed field's own sub-structure. (AI-inferred) */
   fields?: Job_Configuration_Query_SystemVariables_Types_StructType_Fields[] | Computed<Job_Configuration_Query_SystemVariables_Types_StructType_Fields[]>;
 }
 
 export interface Job_Configuration_Query_SystemVariables_Types {
+  /** The type of each element in an `ARRAY`-typed value. (AI-inferred) */
   arrayElementType?: unknown | Computed<unknown>;
+  /** The subtype a `RANGE`-typed field holds -- required when, and only meaningful when, `type` is `RANGE`. (AI-inferred) */
   rangeElementType?: unknown | Computed<unknown>;
+  /** The field(s) making up a `STRUCT`-typed value. (AI-inferred) */
   structType?: Job_Configuration_Query_SystemVariables_Types_StructType | Computed<Job_Configuration_Query_SystemVariables_Types_StructType>;
+  /** The base data type this schema node represents, e.g. `STRING` or `STRUCT`. (AI-inferred) */
   typeKind?: string | Computed<string>;
 }
 
@@ -364,94 +426,156 @@ export interface Job_Configuration_Query_SystemVariables {
 }
 
 export interface Job_Configuration_Query_TableDefinitions_AvroOptions {
+  /** Whether Avro logical types (e.g. decimal, timestamp) are converted to their corresponding BigQuery types, rather than their raw underlying type. (AI-inferred) */
   useAvroLogicalTypes?: boolean | Computed<boolean>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig {
+  /** The fully qualified name of the protocol buffer message type this data is encoded as. (AI-inferred) */
   protoMessageName?: string | Computed<string>;
+  /** A reference to the schema bundle (e.g. a set of `.proto` definitions) this configuration uses. (AI-inferred) */
   schemaBundleId?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns {
+  /** The text encoding this field's own byte values should be interpreted with. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The name of the field this applies to. (AI-inferred) */
   fieldName?: string | Computed<string>;
+  /** Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred) */
   onlyReadLatest?: boolean | Computed<boolean>;
+  /** Configuration for reading data encoded as protocol buffer messages. (AI-inferred) */
   protoConfig?: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig | Computed<Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig>;
+  /** The Bigtable column qualifier, in its own raw encoded (byte) form. (AI-inferred) */
   qualifierEncoded?: string | Computed<string>;
+  /** The Bigtable column qualifier, decoded as a string. (AI-inferred) */
   qualifierString?: string | Computed<string>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies {
+  /** The column(s) this applies to. (AI-inferred) */
   columns?: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns[] | Computed<Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns[]>;
+  /** The text encoding this field's own byte values should be interpreted with. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The Bigtable column family this applies to. (AI-inferred) */
   familyId?: string | Computed<string>;
+  /** Whether only the most recent version of each Bigtable cell is read, ignoring older versions. (AI-inferred) */
   onlyReadLatest?: boolean | Computed<boolean>;
+  /** Configuration for reading data encoded as protocol buffer messages. (AI-inferred) */
   protoConfig?: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig | Computed<Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig>;
+  /** The JSON Schema data type this (sub-)schema constrains values to: `string`, `number`, `integer`, `boolean`, `object`, `array`, or `null`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions_BigtableOptions {
+  /** The Bigtable column family/families this configuration applies to. (AI-inferred) */
   columnFamilies?: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies[] | Computed<Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies[]>;
+  /** Whether Bigtable column families not explicitly configured are silently ignored, rather than causing an error. (AI-inferred) */
   ignoreUnspecifiedColumnFamilies?: boolean | Computed<boolean>;
+  /** Whether Bigtable column family data is returned as a single JSON-encoded column, rather than one column per qualifier. (AI-inferred) */
   outputColumnFamiliesAsJson?: boolean | Computed<boolean>;
+  /** Whether the Bigtable row key is read as a plain string, rather than raw bytes. (AI-inferred) */
   readRowkeyAsString?: boolean | Computed<boolean>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions_CsvOptions {
+  /** Whether CSV rows with fewer columns than the schema are accepted, with missing trailing fields treated as null. (AI-inferred) */
   allowJaggedRows?: boolean | Computed<boolean>;
+  /** Whether newline characters are allowed inside quoted CSV field values. (AI-inferred) */
   allowQuotedNewlines?: boolean | Computed<boolean>;
+  /** The text encoding this field's own byte values should be interpreted with. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The character separating fields in a delimited source file, e.g. `,`. (AI-inferred) */
   fieldDelimiter?: string | Computed<string>;
+  /** The string that represents a null value in the source data. (AI-inferred) */
   nullMarker?: string | Computed<string>;
+  /** The string(s) that represent a null value in the source data. (AI-inferred) */
   nullMarkers?: string[] | Computed<string[]>;
+  /** Whether ASCII control characters in CSV data are preserved as-is, rather than stripped. (AI-inferred) */
   preserveAsciiControlCharacters?: boolean | Computed<boolean>;
+  /** The character used to quote field values in a delimited source file. (AI-inferred) */
   quote?: string | Computed<string>;
+  /** How many leading rows of the source file are skipped, e.g. a CSV header row. (AI-inferred) */
   skipLeadingRows?: string | Computed<string>;
+  /** Whether source file columns are matched to table columns by name or by position. (AI-inferred) */
   sourceColumnMatch?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions_GoogleSheetsOptions {
+  /** The range this value spans. (AI-inferred) */
   range?: string | Computed<string>;
+  /** How many leading rows of the source file are skipped, e.g. a CSV header row. (AI-inferred) */
   skipLeadingRows?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions_JsonOptions {
+  /** The text encoding this field's own byte values should be interpreted with. (AI-inferred) */
   encoding?: string | Computed<string>;
 }
 
 export interface Job_Configuration_Query_TableDefinitions {
+  /** Whether the table's own schema is automatically inferred from the source data, rather than explicitly specified. (AI-inferred) */
   autodetect?: boolean | Computed<boolean>;
+  /** Configuration specific to reading data in Avro format. (AI-inferred) */
   avroOptions?: Job_Configuration_Query_TableDefinitions_AvroOptions | Computed<Job_Configuration_Query_TableDefinitions_AvroOptions>;
+  /** Configuration specific to reading data from a federated Bigtable source. (AI-inferred) */
   bigtableOptions?: Job_Configuration_Query_TableDefinitions_BigtableOptions | Computed<Job_Configuration_Query_TableDefinitions_BigtableOptions>;
+  /** The compression codec applied to this data. (AI-inferred) */
   compression?: string | Computed<string>;
+  /** A reference to the connection resource this uses to reach an external data source. (AI-inferred) */
   connectionId?: string | Computed<string>;
+  /** Configuration specific to reading data in CSV format. (AI-inferred) */
   csvOptions?: Job_Configuration_Query_TableDefinitions_CsvOptions | Computed<Job_Configuration_Query_TableDefinitions_CsvOptions>;
+  /** The format date values are parsed/rendered with. (AI-inferred) */
   dateFormat?: string | Computed<string>;
+  /** The format datetime values are parsed/rendered with. (AI-inferred) */
   datetimeFormat?: string | Computed<string>;
+  /** Which numeric type(s) `NUMERIC`/`BIGNUMERIC` source values are converted to when loaded. (AI-inferred) */
   decimalTargetTypes?: string[] | Computed<string[]>;
+  /** How the source file set is specified, e.g. as a list of URIs or a manifest file. (AI-inferred) */
   fileSetSpecType?: string | Computed<string>;
+  /** Configuration specific to reading data from a linked Google Sheet. (AI-inferred) */
   googleSheetsOptions?: Job_Configuration_Query_TableDefinitions_GoogleSheetsOptions | Computed<Job_Configuration_Query_TableDefinitions_GoogleSheetsOptions>;
+  /** Configuration for reading data laid out using Hive-style directory partitioning. (AI-inferred) */
   hivePartitioningOptions?: Job_Configuration_Load_HivePartitioningOptions | Computed<Job_Configuration_Load_HivePartitioningOptions>;
+  /** Whether source data values not matching any column in the table's own schema are silently dropped, rather than causing an error. (AI-inferred) */
   ignoreUnknownValues?: boolean | Computed<boolean>;
+  /** How JSON source data is interpreted, e.g. as newline-delimited records or a GeoJSON feature collection. (AI-inferred) */
   jsonExtension?: string | Computed<string>;
+  /** Configuration specific to reading data in JSON format. (AI-inferred) */
   jsonOptions?: Job_Configuration_Query_TableDefinitions_JsonOptions | Computed<Job_Configuration_Query_TableDefinitions_JsonOptions>;
+  /** The maximum number of bad records tolerated before the load job fails. (AI-inferred) */
   maxBadRecords?: number | Computed<number>;
+  /** Whether and how BigLake table metadata is cached, e.g. automatically refreshed. (AI-inferred) */
   metadataCacheMode?: string | Computed<string>;
+  /** Metadata describing an object referenced by this table, for object tables. (AI-inferred) */
   objectMetadata?: string | Computed<string>;
+  /** Configuration specific to reading data in Parquet format. (AI-inferred) */
   parquetOptions?: Job_Configuration_Load_ParquetOptions | Computed<Job_Configuration_Load_ParquetOptions>;
+  /** The URI of a reference file whose own embedded schema is used for the whole external table. (AI-inferred) */
   referenceFileSchemaUri?: string | Computed<string>;
+  /** The schema describing this table's own field structure. (AI-inferred) */
   schema?: Job_Configuration_Load_Schema | Computed<Job_Configuration_Load_Schema>;
+  /** The file format of the source data, e.g. `CSV`, `AVRO`, or `PARQUET`. (AI-inferred) */
   sourceFormat?: string | Computed<string>;
+  /** The source file URI(s) this data is loaded/read from. (AI-inferred) */
   sourceUris?: string[] | Computed<string[]>;
+  /** The format time values are parsed/rendered with. (AI-inferred) */
   timeFormat?: string | Computed<string>;
+  /** The time zone this applies to. (AI-inferred) */
   timeZone?: string | Computed<string>;
+  /** The format timestamp values are parsed/rendered with. (AI-inferred) */
   timestampFormat?: string | Computed<string>;
+  /** The precision timestamp values are converted to when loaded. (AI-inferred) */
   timestampTargetPrecision?: number[] | Computed<number[]>;
 }
 
 export interface Job_Configuration_Query_UserDefinedFunctionResources {
+  /** Routine logic supplied directly as inline source code, rather than referencing an external definition. (AI-inferred) */
   inlineCode?: string | Computed<string>;
+  /** A URI identifying this external resource. (AI-inferred) */
   resourceUri?: string | Computed<string>;
 }
 
@@ -472,6 +596,7 @@ export interface Job_Configuration_Query {
   defaultDataset?: Job_Configuration_Query_DefaultDataset | Computed<Job_Configuration_Query_DefaultDataset>;
   /** Configuration for Cloud KMS encryption settings. */
   destinationEncryptionConfiguration?: Job_Configuration_Copy_DestinationEncryptionConfiguration | Computed<Job_Configuration_Copy_DestinationEncryptionConfiguration>;
+  /** The table this operation writes to. (AI-inferred) */
   destinationTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** Optional. If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For GoogleSQL queries, this flag is ignored and results are never flattened. */
   flattenResults?: boolean | Computed<boolean>;
@@ -489,6 +614,7 @@ export interface Job_Configuration_Query {
   query?: string | Computed<string>;
   /** Query parameters for GoogleSQL queries. */
   queryParameters?: Job_Configuration_Query_QueryParameters[] | Computed<Job_Configuration_Query_QueryParameters[]>;
+  /** Configures this table to be partitioned by integer ranges of a specific column. (AI-inferred) */
   rangePartitioning?: Job_Configuration_Load_RangePartitioning | Computed<Job_Configuration_Load_RangePartitioning>;
   /** Allows the schema of the destination table to be updated as a side effect of the query job. Schema update options are supported in three cases: when writeDisposition is WRITE_APPEND; when writeDisposition is WRITE_TRUNCATE_DATA; when writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema. One or more of the following values are specified: * ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. * ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable. */
   schemaUpdateOptions?: string[] | Computed<string[]>;
@@ -498,6 +624,7 @@ export interface Job_Configuration_Query {
   systemVariables?: Job_Configuration_Query_SystemVariables | Computed<Job_Configuration_Query_SystemVariables>;
   /** Optional. You can specify external table definitions, which operate as ephemeral tables that can be queried. These definitions are configured using a JSON map, where the string key represents the table identifier, and the value is the corresponding external data configuration object. */
   tableDefinitions?: Record<string, Job_Configuration_Query_TableDefinitions> | Computed<Record<string, Job_Configuration_Query_TableDefinitions>>;
+  /** Configures this table to be partitioned by time, e.g. daily by a timestamp column. (AI-inferred) */
   timePartitioning?: Job_Configuration_Load_TimePartitioning | Computed<Job_Configuration_Load_TimePartitioning>;
   /** Optional. Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query uses BigQuery's [GoogleSQL](https://docs.cloud.google.com/bigquery/docs/introduction-sql). When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false. */
   useLegacySql?: boolean | Computed<boolean>;
@@ -563,12 +690,19 @@ export interface Job_Statistics_DataMaskingStatistics {
 }
 
 export interface Job_Statistics_Extract_Timeline {
+  /** How many work units this stage is currently processing. (AI-inferred) */
   activeUnits?: string | Computed<string>;
+  /** How many work units this stage has finished processing. (AI-inferred) */
   completedUnits?: string | Computed<string>;
+  /** How long this stage/step has been running, in milliseconds. (AI-inferred) */
   elapsedMs?: string | Computed<string>;
+  /** An estimate of how many more work units could run in parallel right now, given available slots. (AI-inferred) */
   estimatedRunnableUnits?: string | Computed<string>;
+  /** How many work units this stage hasn't started processing yet. (AI-inferred) */
   pendingUnits?: string | Computed<string>;
+  /** What fraction of available shuffle memory this stage used. (AI-inferred) */
   shuffleRamUsageRatio?: number | Computed<number>;
+  /** The total slot-milliseconds consumed across every stage of this job. (AI-inferred) */
   totalSlotMs?: string | Computed<string>;
 }
 
@@ -597,7 +731,9 @@ export interface Job_Statistics_Load {
 }
 
 export interface Job_Statistics_Query_BiEngineStatistics_BiEngineReasons {
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable message describing this event, error, or status. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -651,11 +787,17 @@ export interface Job_Statistics_Query_ExportDataStatistics {
 }
 
 export interface Job_Statistics_Query_ExternalServiceCosts {
+  /** How compute cost for this job is charged, e.g. on-demand or by reserved slots. (AI-inferred) */
   billingMethod?: string | Computed<string>;
+  /** The number of bytes this job was billed for. (AI-inferred) */
   bytesBilled?: string | Computed<string>;
+  /** The number of bytes this job actually processed. (AI-inferred) */
   bytesProcessed?: string | Computed<string>;
+  /** A reference to the external service this job used. (AI-inferred) */
   externalService?: string | Computed<string>;
+  /** The number of query slots reserved for this job. (AI-inferred) */
   reservedSlotCount?: string | Computed<string>;
+  /** The total slot-milliseconds this job consumed. (AI-inferred) */
   slotMs?: string | Computed<string>;
 }
 
@@ -665,25 +807,36 @@ export interface Job_Statistics_Query_GenAiStats_ErrorStats {
 }
 
 export interface Job_Statistics_Query_GenAiStats_FunctionStats_CacheStats {
+  /** The number of rows served from cached metadata. (AI-inferred) */
   numCacheHitRows?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStats {
+  /** A human-readable message describing this event, error, or status. (AI-inferred) */
   message?: string | Computed<string>;
+  /** The number of rows this query avoided scanning due to metadata caching. (AI-inferred) */
   numCostOptimizedRows?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStats {
+  /** The error(s) encountered. (AI-inferred) */
   errors?: string[] | Computed<string[]>;
+  /** The number of rows that failed to load. (AI-inferred) */
   numFailedRows?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_GenAiStats_FunctionStats {
+  /** Statistics about how effectively cached metadata was used for this query. (AI-inferred) */
   cacheStats?: Job_Statistics_Query_GenAiStats_FunctionStats_CacheStats | Computed<Job_Statistics_Query_GenAiStats_FunctionStats_CacheStats>;
+  /** Statistics about how metadata caching reduced this query's own scan cost. (AI-inferred) */
   costOptimizationStats?: Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStats | Computed<Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStats>;
+  /** Statistics about error rows encountered while loading data. (AI-inferred) */
   errorStats?: Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStats | Computed<Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStats>;
+  /** The name of the routine. (AI-inferred) */
   functionName?: string | Computed<string>;
+  /** The number of rows processed. (AI-inferred) */
   numProcessedRows?: string | Computed<string>;
+  /** The prompt text sent to the model. (AI-inferred) */
   prompt?: string | Computed<string>;
 }
 
@@ -727,9 +880,13 @@ export interface Job_Statistics_Query_LoadQueryStatistics {
 }
 
 export interface Job_Statistics_Query_MaterializedViewStatistics_MaterializedView {
+  /** Whether this option was actually selected/used. (AI-inferred) */
   chosen?: boolean | Computed<boolean>;
+  /** The estimated number of bytes this query avoided scanning due to metadata caching or BI Engine acceleration. (AI-inferred) */
   estimatedBytesSaved?: string | Computed<string>;
+  /** Why this row or record was rejected. (AI-inferred) */
   rejectedReason?: string | Computed<string>;
+  /** A reference to a specific BigQuery table. (AI-inferred) */
   tableReference?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
 }
 
@@ -739,17 +896,26 @@ export interface Job_Statistics_Query_MaterializedViewStatistics {
 }
 
 export interface Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStats {
+  /** The number of input partitions remaining after column-metadata-based pruning. (AI-inferred) */
   postCmetaPruningParallelInputCount?: string | Computed<string>;
+  /** The number of partitions remaining after column-metadata-based pruning. (AI-inferred) */
   postCmetaPruningPartitionCount?: string | Computed<string>;
+  /** The number of input partitions before column-metadata-based pruning. (AI-inferred) */
   preCmetaPruningParallelInputCount?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage {
+  /** A human-readable explanation of this result. (AI-inferred) */
   explanation?: string | Computed<string>;
+  /** Statistics about how much data this query avoided reading due to partition/index pruning. (AI-inferred) */
   pruningStats?: Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStats | Computed<Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStats>;
+  /** How old this cached data or metadata currently is. (AI-inferred) */
   staleness?: string | Computed<string>;
+  /** A reference to a specific BigQuery table. (AI-inferred) */
   tableReference?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
+  /** Whether this table is a standard table, view, materialized view, or external table. (AI-inferred) */
   tableType?: string | Computed<string>;
+  /** Why this index, cache, or optimization wasn't used for this query. (AI-inferred) */
   unusedReason?: string | Computed<string>;
 }
 
@@ -759,305 +925,524 @@ export interface Job_Statistics_Query_MetadataCacheStatistics {
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics {
+  /** The Akaike Information Criterion for this fitted model -- lower values indicate a better tradeoff between fit and complexity. (AI-inferred) */
   aic?: number | Computed<number>;
+  /** The log-likelihood of the fitted model given the training data. (AI-inferred) */
   logLikelihood?: number | Computed<number>;
+  /** The variance of the model's own residuals. (AI-inferred) */
   variance?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder {
+  /** The differencing degree (`d`) of the ARIMA model -- how many times the series was differenced to make it stationary. (AI-inferred) */
   d?: string | Computed<string>;
+  /** The autoregressive order (`p`) of the ARIMA model -- how many past values it regresses on. (AI-inferred) */
   p?: string | Computed<string>;
+  /** The moving-average order (`q`) of the ARIMA model -- how many past forecast errors it incorporates. (AI-inferred) */
   q?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics {
+  /** Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred) */
   arimaFittingMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics>;
+  /** Whether this ARIMA model was fit with a drift term. (AI-inferred) */
   hasDrift?: boolean | Computed<boolean>;
+  /** Whether the fitted ARIMA model detected a holiday effect in the time series. (AI-inferred) */
   hasHolidayEffect?: boolean | Computed<boolean>;
+  /** Whether the fitted ARIMA model detected spikes and dips in the time series. (AI-inferred) */
   hasSpikesAndDips?: boolean | Computed<boolean>;
+  /** Whether the fitted ARIMA model detected step changes in the time series. (AI-inferred) */
   hasStepChanges?: boolean | Computed<boolean>;
+  /** The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred) */
   nonSeasonalOrder?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder>;
+  /** The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred) */
   seasonalPeriods?: string[] | Computed<string[]>;
+  /** The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred) */
   timeSeriesId?: string | Computed<string>;
+  /** The identifier(s) of the time series this applies to. (AI-inferred) */
   timeSeriesIds?: string[] | Computed<string[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics {
+  /** Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred) */
   arimaFittingMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics[]>;
+  /** Forecast-quality metrics for a single fitted ARIMA time series model. (AI-inferred) */
   arimaSingleModelForecastingMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics[]>;
+  /** Whether this ARIMA model was fit with a drift term. (AI-inferred) */
   hasDrift?: boolean[] | Computed<boolean[]>;
+  /** The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred) */
   nonSeasonalOrder?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder[]>;
+  /** The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred) */
   seasonalPeriods?: string[] | Computed<string[]>;
+  /** The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred) */
   timeSeriesId?: string[] | Computed<string[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics {
+  /** The fraction of predictions this model got exactly right, on its own evaluation data. (AI-inferred) */
   accuracy?: number | Computed<number>;
+  /** The harmonic mean of this model's own precision and recall, on its own evaluation data. (AI-inferred) */
   f1Score?: number | Computed<number>;
+  /** The logarithmic loss of the model's own predicted probabilities against the true labels -- lower is better. (AI-inferred) */
   logLoss?: number | Computed<number>;
+  /** For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred) */
   precision?: number | Computed<number>;
+  /** The fraction of actual positive cases this model correctly identified, on its own evaluation data. (AI-inferred) */
   recall?: number | Computed<number>;
+  /** The area under the ROC curve for this classification model -- closer to 1.0 indicates better separation between classes. (AI-inferred) */
   rocAuc?: number | Computed<number>;
+  /** The classification probability threshold above which a prediction is treated as positive. (AI-inferred) */
   threshold?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixList {
+  /** The fraction of predictions this model got exactly right, on its own evaluation data. (AI-inferred) */
   accuracy?: number | Computed<number>;
+  /** The harmonic mean of this model's own precision and recall, on its own evaluation data. (AI-inferred) */
   f1Score?: number | Computed<number>;
+  /** The count of instances the model incorrectly predicted as negative. (AI-inferred) */
   falseNegatives?: string | Computed<string>;
+  /** The count of instances the model incorrectly predicted as positive. (AI-inferred) */
   falsePositives?: string | Computed<string>;
+  /** The classification probability threshold above which a prediction is treated as the positive class. (AI-inferred) */
   positiveClassThreshold?: number | Computed<number>;
+  /** For a `NUMERIC`/`BIGNUMERIC` field, the total number of digits it can hold, both before and after the decimal point. (AI-inferred) */
   precision?: number | Computed<number>;
+  /** The fraction of actual positive cases this model correctly identified, on its own evaluation data. (AI-inferred) */
   recall?: number | Computed<number>;
+  /** The count of instances the model correctly predicted as negative. (AI-inferred) */
   trueNegatives?: string | Computed<string>;
+  /** The count of instances the model correctly predicted as positive. (AI-inferred) */
   truePositives?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics {
+  /** Classification evaluation metrics (precision, recall, accuracy, etc.) computed across all classes, aggregated to a single score. (AI-inferred) */
   aggregateClassificationMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics>;
+  /** The confusion matrix/matrices computed at various classification thresholds, for a binary classifier. (AI-inferred) */
   binaryConfusionMatrixList?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixList[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixList[]>;
+  /** The label value treated as the negative class. (AI-inferred) */
   negativeLabel?: string | Computed<string>;
+  /** The label value treated as the positive class. (AI-inferred) */
   positiveLabel?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCounts {
+  /** The category this value or classification belongs to. (AI-inferred) */
   category?: string | Computed<string>;
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue {
+  /** How many times each category value occurred. (AI-inferred) */
   categoryCounts?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCounts[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCounts[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues {
+  /** A single categorical value and its own observed count. (AI-inferred) */
   categoricalValue?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue>;
+  /** The name of the feature (input) column this applies to. (AI-inferred) */
   featureColumn?: string | Computed<string>;
+  /** A numeric value. (AI-inferred) */
   numericalValue?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters {
+  /** The identifier of the cluster centroid this applies to, for a clustering model. (AI-inferred) */
   centroidId?: string | Computed<string>;
+  /** How many of this item there are. (AI-inferred) */
   count?: string | Computed<string>;
+  /** The value(s) of the input feature(s) for this instance. (AI-inferred) */
   featureValues?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics {
+  /** The cluster(s) produced by a clustering model. (AI-inferred) */
   clusters?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters[]>;
+  /** A clustering-quality score measuring average similarity between each cluster and its most similar other cluster -- lower is better. (AI-inferred) */
   daviesBouldinIndex?: number | Computed<number>;
+  /** The average squared distance from each point to its own assigned cluster centroid. (AI-inferred) */
   meanSquaredDistance?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetrics {
+  /** The total fraction of variance explained across all retained principal components. (AI-inferred) */
   totalExplainedVarianceRatio?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_Entries {
+  /** How many item(s) this applies to. (AI-inferred) */
   itemCount?: string | Computed<string>;
+  /** The label the model predicted for this instance. (AI-inferred) */
   predictedLabel?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows {
+  /** The true, observed label for this evaluation instance. (AI-inferred) */
   actualLabel?: string | Computed<string>;
+  /** The entry/entries making up this collection. (AI-inferred) */
   entries?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_Entries[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_Entries[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList {
+  /** The minimum confidence a prediction must reach to be accepted. (AI-inferred) */
   confidenceThreshold?: number | Computed<number>;
+  /** The row(s) making up this result. (AI-inferred) */
   rows?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics {
+  /** Classification evaluation metrics (precision, recall, accuracy, etc.) computed across all classes, aggregated to a single score. (AI-inferred) */
   aggregateClassificationMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics>;
+  /** The confusion matrix/matrices computed at various classification thresholds. (AI-inferred) */
   confusionMatrixList?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList[] | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetrics {
+  /** The average rank assigned across evaluation instances, for a ranking model. (AI-inferred) */
   averageRank?: number | Computed<number>;
+  /** The mean of average precision scores across queries/users, for a ranking model. (AI-inferred) */
   meanAveragePrecision?: number | Computed<number>;
+  /** The average squared difference between predicted and actual values, for a regression model. (AI-inferred) */
   meanSquaredError?: number | Computed<number>;
+  /** A ranking-quality score comparing the model's own result ordering to an ideal ordering, normalized to [0, 1]. (AI-inferred) */
   normalizedDiscountedCumulativeGain?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetrics {
+  /** The average absolute difference between predicted and actual values, for a regression model. (AI-inferred) */
   meanAbsoluteError?: number | Computed<number>;
+  /** The average squared difference between predicted and actual values, for a regression model. (AI-inferred) */
   meanSquaredError?: number | Computed<number>;
+  /** The average squared difference between the log of predicted and actual values, for a regression model. (AI-inferred) */
   meanSquaredLogError?: number | Computed<number>;
+  /** The median absolute difference between predicted and actual values, for a regression model. (AI-inferred) */
   medianAbsoluteError?: number | Computed<number>;
+  /** The proportion of variance in the target explained by the model -- closer to 1.0 indicates a better fit. (AI-inferred) */
   rSquared?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics {
+  /** Forecast-quality metrics for a fitted ARIMA model, one set per time series. (AI-inferred) */
   arimaForecastingMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics>;
+  /** Evaluation metrics specific to a binary (two-class) classification model. (AI-inferred) */
   binaryClassificationMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics>;
+  /** Evaluation metrics specific to a clustering model. (AI-inferred) */
   clusteringMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics>;
+  /** Evaluation metrics specific to a dimensionality-reduction (e.g. PCA) model. (AI-inferred) */
   dimensionalityReductionMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetrics>;
+  /** Evaluation metrics specific to a multi-class classification model. (AI-inferred) */
   multiClassClassificationMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics>;
+  /** Evaluation metrics specific to a ranking/recommendation model. (AI-inferred) */
   rankingMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetrics>;
+  /** Evaluation metrics specific to a regression model. (AI-inferred) */
   regressionMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetrics>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials_Hparams {
+  /** The activation function used between hidden layers of a neural network model, e.g. `RELU`. (AI-inferred) */
   activationFn?: string | Computed<string>;
+  /** Whether the ARIMA model automatically adjusts for detected step changes in the time series. (AI-inferred) */
   adjustStepChanges?: boolean | Computed<boolean>;
+  /** Whether feature attribution is computed using a faster, approximate method rather than an exact one. (AI-inferred) */
   approxGlobalFeatureContrib?: boolean | Computed<boolean>;
+  /** Whether BigQuery ML automatically searches for the best-fitting ARIMA order, rather than using a caller-specified one. (AI-inferred) */
   autoArima?: boolean | Computed<boolean>;
+  /** The maximum ARIMA order considered during automatic order search. (AI-inferred) */
   autoArimaMaxOrder?: string | Computed<string>;
+  /** The minimum ARIMA order considered during automatic order search. (AI-inferred) */
   autoArimaMinOrder?: string | Computed<string>;
+  /** Whether class weights are automatically balanced based on label frequency in the training data. (AI-inferred) */
   autoClassWeights?: boolean | Computed<boolean>;
+  /** How many examples are processed together in each training step. (AI-inferred) */
   batchSize?: string | Computed<string>;
+  /** The boosting algorithm used, e.g. `GBTREE` or `DART`. (AI-inferred) */
   boosterType?: string | Computed<string>;
+  /** The maximum training time allotted, in hours. (AI-inferred) */
   budgetHours?: number | Computed<number>;
+  /** Whether statistical p-values are computed for model coefficients. (AI-inferred) */
   calculatePvalues?: boolean | Computed<boolean>;
+  /** How categorical features are encoded into numeric input for the model, e.g. one-hot. (AI-inferred) */
   categoryEncodingMethod?: string | Computed<string>;
+  /** Whether transient spikes and dips are automatically smoothed out of the time series before fitting. (AI-inferred) */
   cleanSpikesAndDips?: boolean | Computed<boolean>;
+  /** The color space used to interpret pixel data. (AI-inferred) */
   colorSpace?: string | Computed<string>;
+  /** The fraction of features randomly sampled at each tree level, for a boosted tree model. (AI-inferred) */
   colsampleBylevel?: number | Computed<number>;
+  /** The fraction of features randomly sampled at each tree split, for a boosted tree model. (AI-inferred) */
   colsampleBynode?: number | Computed<number>;
+  /** The fraction of features randomly sampled when building each tree, for a boosted tree model. (AI-inferred) */
   colsampleBytree?: number | Computed<number>;
+  /** Which metric feature contributions/attributions are computed relative to. (AI-inferred) */
   contributionMetric?: string | Computed<string>;
+  /** How tree contributions are normalized in DART boosting, e.g. `TREE` or `FOREST`. (AI-inferred) */
   dartNormalizeType?: string | Computed<string>;
+  /** The expected time interval between consecutive observations in a time series, e.g. daily or hourly. (AI-inferred) */
   dataFrequency?: string | Computed<string>;
+  /** The column identifying which split (train/eval) each row belongs to, for a custom data split. (AI-inferred) */
   dataSplitColumn?: string | Computed<string>;
+  /** The fraction of training data held out for evaluation. (AI-inferred) */
   dataSplitEvalFraction?: number | Computed<number>;
+  /** How training data is divided into training and evaluation sets, e.g. random or sequential. (AI-inferred) */
   dataSplitMethod?: string | Computed<string>;
+  /** Whether the time series is decomposed into trend, seasonal, and holiday components as part of fitting. (AI-inferred) */
   decomposeTimeSeries?: boolean | Computed<boolean>;
+  /** The column(s) identifying which entity/dimension each row of a multi-dimensional time series belongs to. (AI-inferred) */
   dimensionIdColumns?: string[] | Computed<string[]>;
+  /** The distance metric used to measure similarity between points, e.g. Euclidean or cosine. (AI-inferred) */
   distanceType?: string | Computed<string>;
+  /** The fraction of units randomly dropped during training, to reduce overfitting. (AI-inferred) */
   dropout?: number | Computed<number>;
+  /** Whether training stops automatically once further iterations no longer improve the evaluation metric. (AI-inferred) */
   earlyStop?: boolean | Computed<boolean>;
+  /** Whether global (whole-model) feature-importance explanations are computed, in addition to per-prediction ones. (AI-inferred) */
   enableGlobalExplain?: boolean | Computed<boolean>;
+  /** How long a deployed model endpoint is kept warm without traffic before being torn down. (AI-inferred) */
   endpointIdleTtl?: string | Computed<string>;
+  /** Whether user feedback for this recommender model is implicit or explicit. (AI-inferred) */
   feedbackType?: string | Computed<string>;
+  /** Whether an intercept term is fit as part of the model, rather than forcing it to zero. (AI-inferred) */
   fitIntercept?: boolean | Computed<boolean>;
+  /** The lower bound of the forecast's own confidence interval. (AI-inferred) */
   forecastLimitLowerBound?: number | Computed<number>;
+  /** The upper bound of the forecast's own confidence interval. (AI-inferred) */
   forecastLimitUpperBound?: number | Computed<number>;
+  /** The number of units in each hidden layer, for a neural network model. (AI-inferred) */
   hiddenUnits?: string[] | Computed<string[]>;
+  /** The region whose public holidays are factored into ARIMA forecasting. (AI-inferred) */
   holidayRegion?: string | Computed<string>;
+  /** The region(s) whose public holidays are factored into ARIMA forecasting. (AI-inferred) */
   holidayRegions?: string[] | Computed<string[]>;
+  /** How many future time steps this forecast covers. (AI-inferred) */
   horizon?: string | Computed<string>;
+  /** The metric(s) hyperparameter tuning optimizes for. (AI-inferred) */
   hparamTuningObjectives?: string[] | Computed<string[]>;
+  /** The Hugging Face Hub identifier of the model this references. (AI-inferred) */
   huggingFaceModelId?: string | Computed<string>;
+  /** Whether the ARIMA model's own drift term is included when computing forecasts. (AI-inferred) */
   includeDrift?: boolean | Computed<boolean>;
+  /** The learning rate used at the start of training, before any line-search adjustment. (AI-inferred) */
   initialLearnRate?: number | Computed<number>;
+  /** The column(s) holding the true label(s) used to train and evaluate the model. (AI-inferred) */
   inputLabelColumns?: string[] | Computed<string[]>;
+  /** The column giving each training example's own relative importance weight. (AI-inferred) */
   instanceWeightColumn?: string | Computed<string>;
+  /** How many interpolation steps are used when computing Integrated Gradients feature attributions. (AI-inferred) */
   integratedGradientsNumSteps?: string | Computed<string>;
+  /** The column marking which rows belong to the held-out test set. (AI-inferred) */
   isTestColumn?: string | Computed<string>;
+  /** The column identifying the item in a recommender model's own training data. (AI-inferred) */
   itemColumn?: string | Computed<string>;
+  /** The column providing caller-specified initial centroid positions for k-means clustering. (AI-inferred) */
   kmeansInitializationColumn?: string | Computed<string>;
+  /** How initial centroid positions are chosen for k-means clustering, e.g. random or k-means++. (AI-inferred) */
   kmeansInitializationMethod?: string | Computed<string>;
+  /** The L1 regularization strength applied to activations, for a neural network model. (AI-inferred) */
   l1RegActivation?: number | Computed<number>;
+  /** The L1 regularization strength applied during training. (AI-inferred) */
   l1Regularization?: number | Computed<number>;
+  /** The L2 regularization strength applied during training. (AI-inferred) */
   l2Regularization?: number | Computed<number>;
+  /** Per-class weight(s) applied during training, to counteract class imbalance. (AI-inferred) */
   labelClassWeights?: Record<string, number> | Computed<Record<string, number>>;
+  /** The step size used to update model weights during training. (AI-inferred) */
   learnRate?: number | Computed<number>;
+  /** How the learning rate changes over training, e.g. fixed or line-search. (AI-inferred) */
   learnRateStrategy?: string | Computed<string>;
+  /** The loss function optimized during training. (AI-inferred) */
   lossType?: string | Computed<string>;
+  /** The machine type provisioned for this training job. (AI-inferred) */
   machineType?: string | Computed<string>;
+  /** The maximum number of training iterations. (AI-inferred) */
   maxIterations?: string | Computed<string>;
+  /** The maximum number of hyperparameter tuning trials run concurrently. (AI-inferred) */
   maxParallelTrials?: string | Computed<string>;
+  /** The maximum number of serving replicas this deployed model may scale up to. (AI-inferred) */
   maxReplicaCount?: string | Computed<string>;
+  /** The maximum number of historical time steps used when fitting the model. (AI-inferred) */
   maxTimeSeriesLength?: string | Computed<string>;
+  /** The maximum depth a single decision tree may reach. (AI-inferred) */
   maxTreeDepth?: string | Computed<string>;
+  /** The minimum support threshold an itemset must reach to be considered frequent, for association rule mining. (AI-inferred) */
   minAprioriSupport?: number | Computed<number>;
+  /** The minimum relative improvement in loss required to continue training another iteration. (AI-inferred) */
   minRelativeProgress?: number | Computed<number>;
+  /** The minimum number of serving replicas this deployed model scales down to. (AI-inferred) */
   minReplicaCount?: string | Computed<string>;
+  /** The minimum loss reduction required to make a further split in a decision tree. (AI-inferred) */
   minSplitLoss?: number | Computed<number>;
+  /** The minimum number of historical time steps required to fit the model. (AI-inferred) */
   minTimeSeriesLength?: string | Computed<string>;
+  /** The minimum sum of instance weight required in a tree leaf, for a boosted tree model. (AI-inferred) */
   minTreeChildWeight?: string | Computed<string>;
+  /** The Model Garden identifier of the foundation model this references. (AI-inferred) */
   modelGardenModelName?: string | Computed<string>;
+  /** Which model registry this model is published to. (AI-inferred) */
   modelRegistry?: string | Computed<string>;
+  /** The Cloud Storage URI of the model artifact. (AI-inferred) */
   modelUri?: string | Computed<string>;
+  /** The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred) */
   nonSeasonalOrder?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder>;
+  /** The number of clusters the model is fit with. (AI-inferred) */
   numClusters?: string | Computed<string>;
+  /** The number of latent factors used in a matrix factorization model. (AI-inferred) */
   numFactors?: string | Computed<string>;
+  /** The number of trees built in parallel at each boosting round, for a random-forest-style ensemble. (AI-inferred) */
   numParallelTree?: string | Computed<string>;
+  /** The number of principal components computed by a PCA model. (AI-inferred) */
   numPrincipalComponents?: string | Computed<string>;
+  /** The number of hyperparameter tuning trials run. (AI-inferred) */
   numTrials?: string | Computed<string>;
+  /** Which algorithm is used to optimize the training objective. (AI-inferred) */
   optimizationStrategy?: string | Computed<string>;
+  /** The optimization algorithm used to update model weights during training, e.g. Adam. (AI-inferred) */
   optimizer?: string | Computed<string>;
+  /** The fraction of total variance each principal component explains. (AI-inferred) */
   pcaExplainedVarianceRatio?: number | Computed<number>;
+  /** The algorithm used to compute principal components. (AI-inferred) */
   pcaSolver?: string | Computed<string>;
+  /** The reservation-assignment label key this job's own reservation affinity matches on. (AI-inferred) */
   reservationAffinityKey?: string | Computed<string>;
+  /** Whether this job must, may, or must not use a specific reservation. (AI-inferred) */
   reservationAffinityType?: string | Computed<string>;
+  /** The reservation-assignment label value(s) this job's own reservation affinity matches on. (AI-inferred) */
   reservationAffinityValues?: string[] | Computed<string[]>;
+  /** How many feature-permutation paths Sampled Shapley samples to approximate attributions. (AI-inferred) */
   sampledShapleyNumPaths?: string | Computed<string>;
+  /** Whether input features are automatically normalized (scaled) before training. (AI-inferred) */
   scaleFeatures?: boolean | Computed<boolean>;
+  /** Whether input features are standardized (zero mean, unit variance) before training. (AI-inferred) */
   standardizeFeatures?: boolean | Computed<boolean>;
+  /** The fraction of training examples randomly sampled for each boosting round. (AI-inferred) */
   subsample?: number | Computed<number>;
+  /** The TensorFlow version this imported model was trained with. (AI-inferred) */
   tfVersion?: string | Computed<string>;
+  /** The column holding the value(s) to forecast. (AI-inferred) */
   timeSeriesDataColumn?: string | Computed<string>;
+  /** The column identifying which time series each row belongs to, when training on multiple series at once. (AI-inferred) */
   timeSeriesIdColumn?: string | Computed<string>;
+  /** The column(s) identifying which time series each row belongs to, when training on multiple series at once. (AI-inferred) */
   timeSeriesIdColumns?: string[] | Computed<string[]>;
+  /** The fraction of the time series' own full length used to compute this metric. (AI-inferred) */
   timeSeriesLengthFraction?: number | Computed<number>;
+  /** The column holding each observation's own timestamp. (AI-inferred) */
   timeSeriesTimestampColumn?: string | Computed<string>;
+  /** The algorithm used to build each decision tree, e.g. exact or histogram-based. (AI-inferred) */
   treeMethod?: string | Computed<string>;
+  /** The window size used to smooth the trend component when decomposing the time series. (AI-inferred) */
   trendSmoothingWindowSize?: string | Computed<string>;
+  /** The column identifying the user in a recommender model's own training data. (AI-inferred) */
   userColumn?: string | Computed<string>;
+  /** The Vertex AI Model Registry version alias(es) assigned to this model. (AI-inferred) */
   vertexAiModelVersionAliases?: string[] | Computed<string[]>;
+  /** The confidence weighting parameter used by the Weighted Alternating Least Squares algorithm, for matrix factorization. (AI-inferred) */
   walsAlpha?: number | Computed<number>;
+  /** Whether training resumes from a previous model's own learned weights, rather than starting from scratch. (AI-inferred) */
   warmStart?: boolean | Computed<boolean>;
+  /** The XGBoost library version this imported model was trained with. (AI-inferred) */
   xgboostVersion?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_HparamTrials {
+  /** When this event ended, as a Unix timestamp in milliseconds. (AI-inferred) */
   endTimeMs?: string | Computed<string>;
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The loss value computed on the evaluation (held-out) dataset. (AI-inferred) */
   evalLoss?: number | Computed<number>;
+  /** The evaluation metric(s) computed for this trained model. (AI-inferred) */
   evaluationMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics>;
+  /** The evaluation metric(s) recorded for one hyperparameter tuning trial. (AI-inferred) */
   hparamTuningEvaluationMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics>;
+  /** The hyperparameter value(s) used for this trial. (AI-inferred) */
   hparams?: Job_Statistics_Query_MlStatistics_HparamTrials_Hparams | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_Hparams>;
+  /** When this event started, as a Unix timestamp in milliseconds. (AI-inferred) */
   startTimeMs?: string | Computed<string>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The loss value computed on the training dataset. (AI-inferred) */
   trainingLoss?: number | Computed<number>;
+  /** An identifier for this hyperparameter tuning trial. (AI-inferred) */
   trialId?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficients {
+  /** The fitted autoregressive coefficient(s) of the model. (AI-inferred) */
   autoRegressiveCoefficients?: number[] | Computed<number[]>;
+  /** The fitted intercept term of the model. (AI-inferred) */
   interceptCoefficient?: number | Computed<number>;
+  /** The fitted moving-average coefficient(s) of an ARIMA model. (AI-inferred) */
   movingAverageCoefficients?: number[] | Computed<number[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo {
+  /** The fitted autoregressive, moving-average, and intercept coefficient(s) of an ARIMA model. (AI-inferred) */
   arimaCoefficients?: Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficients | Computed<Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficients>;
+  /** Goodness-of-fit statistic(s) (e.g. AIC, log-likelihood) for a fitted ARIMA time-series model. (AI-inferred) */
   arimaFittingMetrics?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics>;
+  /** Whether this ARIMA model was fit with a drift term. (AI-inferred) */
   hasDrift?: boolean | Computed<boolean>;
+  /** Whether the fitted ARIMA model detected a holiday effect in the time series. (AI-inferred) */
   hasHolidayEffect?: boolean | Computed<boolean>;
+  /** Whether the fitted ARIMA model detected spikes and dips in the time series. (AI-inferred) */
   hasSpikesAndDips?: boolean | Computed<boolean>;
+  /** Whether the fitted ARIMA model detected step changes in the time series. (AI-inferred) */
   hasStepChanges?: boolean | Computed<boolean>;
+  /** The (p, d, q) ARIMA order -- autoregressive terms, differencing degree, and moving-average terms -- this forecasting model was fit with. (AI-inferred) */
   nonSeasonalOrder?: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder | Computed<Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder>;
+  /** The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred) */
   seasonalPeriods?: string[] | Computed<string[]>;
+  /** The identifier of the specific time series this result applies to, for a multi-series model. (AI-inferred) */
   timeSeriesId?: string | Computed<string>;
+  /** The identifier(s) of the time series this applies to. (AI-inferred) */
   timeSeriesIds?: string[] | Computed<string[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult {
+  /** Detail about one fitted ARIMA model, when a query trains multiple time series at once. (AI-inferred) */
   arimaModelInfo?: Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo[] | Computed<Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo[]>;
+  /** The seasonal period length(s) (e.g. weekly, yearly) this ARIMA model accounts for; a model may account for more than one. (AI-inferred) */
   seasonalPeriods?: string[] | Computed<string[]>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfos {
+  /** The identifier of the cluster centroid this applies to, for a clustering model. (AI-inferred) */
   centroidId?: string | Computed<string>;
+  /** The average distance from a cluster's own centroid to its member points. (AI-inferred) */
   clusterRadius?: number | Computed<number>;
+  /** How many training examples fall into this cluster. (AI-inferred) */
   clusterSize?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfos {
+  /** The running total of variance explained as successive principal components are added, for a PCA model. (AI-inferred) */
   cumulativeExplainedVarianceRatio?: number | Computed<number>;
+  /** How much of the total variance in the data this component/model accounts for. (AI-inferred) */
   explainedVariance?: number | Computed<number>;
+  /** The fraction of total variance this principal component explains. (AI-inferred) */
   explainedVarianceRatio?: number | Computed<number>;
+  /** The identifier of the principal component this applies to. (AI-inferred) */
   principalComponentId?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_MlStatistics_IterationResults {
+  /** The fitted ARIMA model result(s), one per time series analyzed. (AI-inferred) */
   arimaResult?: Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult | Computed<Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult>;
+  /** Detail about each cluster produced by a clustering model. (AI-inferred) */
   clusterInfos?: Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfos[] | Computed<Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfos[]>;
+  /** How long this operation took, in milliseconds. (AI-inferred) */
   durationMs?: string | Computed<string>;
+  /** The loss value computed on the evaluation (held-out) dataset. (AI-inferred) */
   evalLoss?: number | Computed<number>;
+  /** The position of this item within its own containing sequence. (AI-inferred) */
   index?: number | Computed<number>;
+  /** The step size used to update model weights during training. (AI-inferred) */
   learnRate?: number | Computed<number>;
+  /** Detail about each principal component computed by a PCA model. (AI-inferred) */
   principalComponentInfos?: Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfos[] | Computed<Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfos[]>;
+  /** The loss value computed on the training dataset. (AI-inferred) */
   trainingLoss?: number | Computed<number>;
 }
 
@@ -1082,55 +1467,81 @@ export interface Job_Statistics_Query_ModelTraining {
 }
 
 export interface Job_Statistics_Query_ObjectStorageStats {
+  /** The number of bytes served from cached metadata/results, rather than freshly read. (AI-inferred) */
   cacheBytesRead?: string | Computed<string>;
+  /** Which cloud provider hosts this external resource. (AI-inferred) */
   cloudProvider?: string | Computed<string>;
+  /** The number of bytes read from Cloud Storage objects. (AI-inferred) */
   objectStorageBytesRead?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChange {
+  /** How much the record count read differs from a prior baseline, as a percentage. (AI-inferred) */
   recordsReadDiffPercentage?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights {
+  /** How the model's own input data has changed since it was last trained, if at all. (AI-inferred) */
   inputDataChange?: Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChange | Computed<Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChange>;
+  /** An identifier for this query stage. (AI-inferred) */
   stageId?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoins {
+  /** The number of rows on the left side of a join stage. (AI-inferred) */
   leftRows?: string | Computed<string>;
+  /** The number of rows this stage/job produced. (AI-inferred) */
   outputRows?: string | Computed<string>;
+  /** The number of rows on the right side of a join stage. (AI-inferred) */
   rightRows?: string | Computed<string>;
+  /** This step's own position within its own containing sequence. (AI-inferred) */
   stepIndex?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSources {
+  /** The maximum output size any single work unit in this stage produced, in bytes. (AI-inferred) */
   outputBytesMax?: string | Computed<string>;
+  /** The median output size across work units in this stage, in bytes. (AI-inferred) */
   outputBytesMedian?: string | Computed<string>;
+  /** The 95th-percentile output size across work units in this stage, in bytes. (AI-inferred) */
   outputBytesP95?: string | Computed<string>;
+  /** An identifier for this query stage. (AI-inferred) */
   stageId?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew {
+  /** The query stage(s) identified as the source of a detected data skew. (AI-inferred) */
   skewSources?: Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSources[] | Computed<Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSources[]>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights {
+  /** Why this query wasn't accelerated by BI Engine, when it wasn't. (AI-inferred) */
   biEngineReasons?: Job_Statistics_Query_BiEngineStatistics_BiEngineReasons[] | Computed<Job_Statistics_Query_BiEngineStatistics_BiEngineReasons[]>;
+  /** Join(s) in this query involving a high-cardinality key, flagged as a potential performance concern. (AI-inferred) */
   highCardinalityJoins?: Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoins[] | Computed<Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoins[]>;
+  /** Whether this query was slowed by hitting its own project's shuffle capacity limit. (AI-inferred) */
   insufficientShuffleQuota?: boolean | Computed<boolean>;
+  /** Whether one or more partitions in this stage received disproportionately more data than others, flagged as a potential performance concern. (AI-inferred) */
   partitionSkew?: Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew | Computed<Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew>;
+  /** Whether this stage was slowed by contention for query execution slots. (AI-inferred) */
   slotContention?: boolean | Computed<boolean>;
+  /** An identifier for this query stage. (AI-inferred) */
   stageId?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsight {
+  /** The average age, in milliseconds, of the cached metadata used before this refresh. (AI-inferred) */
   avgPreviousStalenessMs?: string | Computed<string>;
+  /** How much cache staleness increased relative to a prior baseline, as a percentage. (AI-inferred) */
   stalenessPercentageIncrease?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_PerformanceInsights_TableChangeInsights {
+  /** Whether cached metadata was available but deliberately not used for this query, despite being used previously. (AI-inferred) */
   metadataCacheNotUsedButUsedPreviously?: boolean | Computed<boolean>;
+  /** Detail about how stale the cached metadata used for this query was. (AI-inferred) */
   metadataCacheStalenessInsight?: Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsight | Computed<Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsight>;
+  /** A reference to a specific BigQuery table. (AI-inferred) */
   tableReference?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
 }
 
@@ -1151,66 +1562,112 @@ export interface Job_Statistics_Query_QueryInfo {
 }
 
 export interface Job_Statistics_Query_QueryPlan_Steps {
+  /** The kind of resource or value this is. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The finer-grained sub-step(s) making up this step. (AI-inferred) */
   substeps?: string[] | Computed<string[]>;
 }
 
 export interface Job_Statistics_Query_QueryPlan {
+  /** How many parallel input partitions have finished processing. (AI-inferred) */
   completedParallelInputs?: string | Computed<string>;
+  /** Whether this query ran using on-demand or reserved compute capacity. (AI-inferred) */
   computeMode?: string | Computed<string>;
+  /** The average compute time per work unit in this stage, in milliseconds. (AI-inferred) */
   computeMsAvg?: string | Computed<string>;
+  /** The maximum compute time for any single work unit in this stage, in milliseconds. (AI-inferred) */
   computeMsMax?: string | Computed<string>;
+  /** The average fraction of total stage time spent computing, versus reading/writing/waiting. (AI-inferred) */
   computeRatioAvg?: number | Computed<number>;
+  /** The maximum fraction of total stage time any single work unit spent computing. (AI-inferred) */
   computeRatioMax?: number | Computed<number>;
+  /** When this stage/step ended, in milliseconds since the job started. (AI-inferred) */
   endMs?: string | Computed<string>;
+  /** An identifier for this resource. (AI-inferred) */
   id?: string | Computed<string>;
+  /** The upstream query stage(s) this stage reads its own input from. (AI-inferred) */
   inputStages?: string[] | Computed<string[]>;
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The number of input partitions this stage processes in parallel. (AI-inferred) */
   parallelInputs?: string | Computed<string>;
+  /** The average time spent reading per work unit in this stage, in milliseconds. (AI-inferred) */
   readMsAvg?: string | Computed<string>;
+  /** The maximum time spent reading by any single work unit in this stage, in milliseconds. (AI-inferred) */
   readMsMax?: string | Computed<string>;
+  /** The average fraction of total stage time spent reading. (AI-inferred) */
   readRatioAvg?: number | Computed<number>;
+  /** The maximum fraction of total stage time any single work unit spent reading. (AI-inferred) */
   readRatioMax?: number | Computed<number>;
+  /** The number of records read. (AI-inferred) */
   recordsRead?: string | Computed<string>;
+  /** The number of records written. (AI-inferred) */
   recordsWritten?: string | Computed<string>;
+  /** The total number of bytes this stage wrote to shuffle. (AI-inferred) */
   shuffleOutputBytes?: string | Computed<string>;
+  /** The number of shuffle output bytes that spilled to disk because they didn't fit in memory. (AI-inferred) */
   shuffleOutputBytesSpilled?: string | Computed<string>;
+  /** The total slot-milliseconds this job consumed. (AI-inferred) */
   slotMs?: string | Computed<string>;
+  /** When this stage/step started, in milliseconds since the job started. (AI-inferred) */
   startMs?: string | Computed<string>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The ordered step(s) making up this sequence. (AI-inferred) */
   steps?: Job_Statistics_Query_QueryPlan_Steps[] | Computed<Job_Statistics_Query_QueryPlan_Steps[]>;
+  /** The average time spent waiting per work unit in this stage, in milliseconds. (AI-inferred) */
   waitMsAvg?: string | Computed<string>;
+  /** The maximum time spent waiting by any single work unit in this stage, in milliseconds. (AI-inferred) */
   waitMsMax?: string | Computed<string>;
+  /** The average fraction of total stage time spent waiting. (AI-inferred) */
   waitRatioAvg?: number | Computed<number>;
+  /** The maximum fraction of total stage time any single work unit spent waiting. (AI-inferred) */
   waitRatioMax?: number | Computed<number>;
+  /** The average time spent writing per work unit in this stage, in milliseconds. (AI-inferred) */
   writeMsAvg?: string | Computed<string>;
+  /** The maximum time spent writing by any single work unit in this stage, in milliseconds. (AI-inferred) */
   writeMsMax?: string | Computed<string>;
+  /** The average fraction of total stage time spent writing. (AI-inferred) */
   writeRatioAvg?: number | Computed<number>;
+  /** The maximum fraction of total stage time any single work unit spent writing. (AI-inferred) */
   writeRatioMax?: number | Computed<number>;
 }
 
 export interface Job_Statistics_Query_ReferencedPropertyGraphs {
+  /** The BigQuery dataset ID this applies to. (AI-inferred) */
   datasetId?: string | Computed<string>;
+  /** The Google Cloud project ID this applies to. (AI-inferred) */
   projectId?: string | Computed<string>;
+  /** A reference to the property graph this applies to. (AI-inferred) */
   propertyGraphId?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_ReservationUsage {
+  /** The field's own name, unique within its containing schema. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The total slot-milliseconds this job consumed. (AI-inferred) */
   slotMs?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_SearchStatistics_IndexPruningStats {
+  /** A reference to the underlying table a view or materialized view is defined over. (AI-inferred) */
   baseTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
+  /** A reference to the search index this applies to. (AI-inferred) */
   indexId?: string | Computed<string>;
+  /** The number of input partitions remaining after index-based pruning. (AI-inferred) */
   postIndexPruningParallelInputCount?: string | Computed<string>;
+  /** The number of input partitions before index-based pruning. (AI-inferred) */
   preIndexPruningParallelInputCount?: string | Computed<string>;
 }
 
 export interface Job_Statistics_Query_SearchStatistics_IndexUnusedReasons {
+  /** A reference to the underlying table a view or materialized view is defined over. (AI-inferred) */
   baseTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** The name of the search index. (AI-inferred) */
   indexName?: string | Computed<string>;
+  /** A human-readable message describing this event, error, or status. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -1246,14 +1703,20 @@ export interface Job_Statistics_Query_SparkStatistics {
 }
 
 export interface Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasons {
+  /** A machine-readable code identifying this result or error. (AI-inferred) */
   code?: string | Computed<string>;
+  /** A human-readable message describing this event, error, or status. (AI-inferred) */
   message?: string | Computed<string>;
+  /** The column(s) a search index doesn't cover, requiring a fallback table scan for queries referencing them. (AI-inferred) */
   uncoveredColumns?: string[] | Computed<string[]>;
 }
 
 export interface Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages {
+  /** A reference to the underlying table a view or materialized view is defined over. (AI-inferred) */
   baseTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
+  /** Whether this query was accelerated by BI Engine. (AI-inferred) */
   isQueryAccelerated?: boolean | Computed<boolean>;
+  /** Why a search index's own stored column(s) weren't used to answer this query. (AI-inferred) */
   storedColumnsUnusedReasons?: Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasons[] | Computed<Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasons[]>;
 }
 
@@ -1275,10 +1738,13 @@ export interface Job_Statistics_Query {
   cacheHit?: boolean | Computed<boolean>;
   /** Identifier for a dataset. */
   dclTargetDataset?: Job_Configuration_Query_DefaultDataset | Computed<Job_Configuration_Query_DefaultDataset>;
+  /** The table a Data Control Language statement (e.g. `GRANT`) applies to. (AI-inferred) */
   dclTargetTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
+  /** The view a Data Control Language statement (e.g. `GRANT`) applies to. (AI-inferred) */
   dclTargetView?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** Output only. The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries. */
   ddlAffectedRowAccessPolicyCount?: string | Computed<string>;
+  /** The table a Data Definition Language statement created or modified. (AI-inferred) */
   ddlDestinationTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** Output only. The DDL operation performed, possibly dependent on the pre-existence of the DDL target. */
   ddlOperationPerformed?: string | Computed<string>;
@@ -1288,6 +1754,7 @@ export interface Job_Statistics_Query {
   ddlTargetRoutine?: Job_Statistics_Query_DdlTargetRoutine | Computed<Job_Statistics_Query_DdlTargetRoutine>;
   /** Id path of a row access policy. */
   ddlTargetRowAccessPolicy?: Job_Statistics_Query_DdlTargetRowAccessPolicy | Computed<Job_Statistics_Query_DdlTargetRowAccessPolicy>;
+  /** The table a Data Definition Language statement applies to. (AI-inferred) */
   ddlTargetTable?: Job_Configuration_Copy_DestinationTable | Computed<Job_Configuration_Copy_DestinationTable>;
   /** Detailed statistics for DML statements */
   dmlStats?: Job_Statistics_Query_DmlStats | Computed<Job_Statistics_Query_DmlStats>;
@@ -1309,6 +1776,7 @@ export interface Job_Statistics_Query {
   metadataCacheStatistics?: Job_Statistics_Query_MetadataCacheStatistics | Computed<Job_Statistics_Query_MetadataCacheStatistics>;
   /** Job statistics specific to a BigQuery ML training job. */
   mlStatistics?: Job_Statistics_Query_MlStatistics | Computed<Job_Statistics_Query_MlStatistics>;
+  /** Detail about this model's own training run. (AI-inferred) */
   modelTraining?: Job_Statistics_Query_ModelTraining | Computed<Job_Statistics_Query_ModelTraining>;
   /** Deprecated. */
   modelTrainingCurrentIteration?: number | Computed<number>;
@@ -1368,11 +1836,17 @@ export interface Job_Statistics_RowLevelSecurityStatistics {
 }
 
 export interface Job_Statistics_ScriptStatistics_StackFrames {
+  /** The column position this range ends at. (AI-inferred) */
   endColumn?: number | Computed<number>;
+  /** The line number this range ends at. (AI-inferred) */
   endLine?: number | Computed<number>;
+  /** A reference to the stored procedure this applies to. (AI-inferred) */
   procedureId?: string | Computed<string>;
+  /** The column position this range starts at. (AI-inferred) */
   startColumn?: number | Computed<number>;
+  /** The line number this range starts at. (AI-inferred) */
   startLine?: number | Computed<number>;
+  /** The plain-text content. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
@@ -3358,6 +3832,7 @@ const Job_StatusFields: FieldMap = {
 };
 
 export interface JobConfig {
+  /** The configuration for this job. (AI-inferred) */
   configuration?: Job_Configuration | Computed<Job_Configuration>;
   /** Reason about why a Job was created from a [`jobs.query`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query) method when used with `JOB_CREATION_OPTIONAL` Job creation mode. For [`jobs.insert`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/insert) method calls it will always be `REQUESTED`. */
   jobCreationReason?: Job_JobCreationReason | Computed<Job_JobCreationReason>;
@@ -3365,10 +3840,12 @@ export interface JobConfig {
   jobReference?: Job_JobReference | Computed<Job_JobReference>;
   /** Statistics for a single job execution. */
   statistics?: Job_Statistics | Computed<Job_Statistics>;
+  /** The current status of this resource or operation. (AI-inferred) */
   status?: Job_Status | Computed<Job_Status>;
 }
 
 export interface JobAttrs {
+  /** The configuration for this job. (AI-inferred) */
   configuration: Job_Configuration;
   /** Output only. A hash of this resource. */
   etag: string;
@@ -3386,6 +3863,7 @@ export interface JobAttrs {
   selfLink: string;
   /** Statistics for a single job execution. */
   statistics: Job_Statistics;
+  /** The current status of this resource or operation. (AI-inferred) */
   status: Job_Status;
   /** Output only. Email address of the user who ran the job. */
   userEmail: string;

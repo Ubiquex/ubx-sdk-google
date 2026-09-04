@@ -13,8 +13,11 @@ type IssueModel_InputDataConfig struct {
 }
 
 type IssueModel_TrainingStats_IssueStats struct {
-	DisplayName               any
-	Issue                     any
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
+	DisplayName any
+	// A reference to the detected issue this applies to. (AI-inferred)
+	Issue any
+	// How many conversations have been manually labeled for this dataset. (AI-inferred)
 	LabeledConversationsCount any
 }
 

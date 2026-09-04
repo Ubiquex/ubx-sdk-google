@@ -4,8 +4,10 @@ package apphub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workload_Attributes_BusinessOwners struct {
+	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
-	Email       any
+	// The email address associated with this identity. (AI-inferred)
+	Email any
 }
 
 type Workload_Attributes_Criticality struct {
@@ -27,6 +29,7 @@ type Workload_Attributes struct {
 }
 
 type Workload_WorkloadProperties_ExtendedMetadata struct {
+	// Additional, caller-defined structured metadata attached to this resource. (AI-inferred)
 	MetadataStruct any
 }
 

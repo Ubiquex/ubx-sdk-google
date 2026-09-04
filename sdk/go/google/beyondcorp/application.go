@@ -4,51 +4,73 @@ package beyondcorp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Application_EndpointMatchers struct {
+	// The hostname this endpoint matcher matches incoming requests against. (AI-inferred)
 	Hostname any
-	Ports    any
+	// The port(s) this endpoint matcher matches incoming requests against, alongside `hostname`. (AI-inferred)
+	Ports any
 }
 
 type Application_Upstreams_EgressPolicy struct {
+	// The region(s) this upstream's own egress traffic is restricted to. (AI-inferred)
 	Regions any
 }
 
 type Application_Upstreams_External_Endpoints struct {
+	// The hostname of this external endpoint. (AI-inferred)
 	Hostname any
-	Port     any
+	// The port of this external endpoint. (AI-inferred)
+	Port any
 }
 
 type Application_Upstreams_External struct {
+	// The external endpoint(s) (hostname and port) this upstream forwards to. (AI-inferred)
 	Endpoints any
 }
 
 type Application_Upstreams_Network struct {
+	// The VPC network this upstream is reached through. (AI-inferred)
 	Name any
 }
 
 type Application_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo struct {
+	// The encoding of the device-info header: `PROTOBUF`, `JSON`, or `NONE` to omit it. (AI-inferred)
 	OutputType any
 }
 
 type Application_Upstreams_ProxyProtocol_ContextualHeaders struct {
-	DeviceInfo   any
+	// Whether and how the requesting device's own posture information is attached as a header. (AI-inferred)
+	DeviceInfo any
+	// Whether and how routing/dispatch information for this request is attached as a header. (AI-inferred)
 	DispatchInfo any
-	GroupInfo    any
-	OutputType   any
-	UserInfo     any
+	// Whether and how the requesting user's own group membership is attached as a header. (AI-inferred)
+	GroupInfo any
+	// The default encoding applied to contextual headers that don't specify their own `output_type`: `PROTOBUF`, `JSON`, or `NONE`. (AI-inferred)
+	OutputType any
+	// Whether and how the requesting user's own identity is attached as a header. (AI-inferred)
+	UserInfo any
 }
 
 type Application_Upstreams_ProxyProtocol struct {
+	// Client-supplied header names allowed to pass through to the upstream unmodified, alongside BeyondCorp's own injected context headers. (AI-inferred)
 	AllowedClientHeaders any
-	ClientIp             any
-	ContextualHeaders    any
-	GatewayIdentity      any
-	MetadataHeaders      any
+	// Whether the original client's own IP address is forwarded to the upstream in a proxy header. (AI-inferred)
+	ClientIp any
+	// Which identity/device/access context BeyondCorp Enterprise attaches to proxied requests as headers, and in what format. (AI-inferred)
+	ContextualHeaders any
+	// How the gateway identifies itself to the upstream in proxied requests: `RESOURCE_NAME` or unspecified. (AI-inferred)
+	GatewayIdentity any
+	// Additional caller-defined key/value headers attached to every proxied request to this upstream. (AI-inferred)
+	MetadataHeaders any
 }
 
 type Application_Upstreams struct {
-	EgressPolicy  any
-	External      any
-	Network       any
+	// Restricts which region(s) traffic to this upstream is allowed to egress from. (AI-inferred)
+	EgressPolicy any
+	// Configuration for an upstream reached over the public internet, by hostname and port, rather than through a private network attachment. (AI-inferred)
+	External any
+	// Configuration for an upstream reached through a specific VPC network, rather than the public internet. (AI-inferred)
+	Network any
+	// Configuration for headers BeyondCorp Enterprise attaches to proxied requests, carrying identity and device context to the upstream. (AI-inferred)
 	ProxyProtocol any
 }
 

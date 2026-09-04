@@ -8,16 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_Fields:
+    # A reference to a specific field. (AI-inferred)
     field: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections:
+    # A reference to the source collection (e.g. a MongoDB collection) this applies to. (AI-inferred)
     collection: Any = None
+    # The field(s) making up this schema. (AI-inferred)
     fields: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_MongodbExcludedObjects_Databases:
+    # The source collection(s) included or excluded by this filter. (AI-inferred)
     collections: Any = None
+    # The source database this applies to. (AI-inferred)
     database: Any = None
 
 @dataclasses.dataclass
@@ -27,24 +32,37 @@ class Stream_BackfillAll_MongodbExcludedObjects:
 
 @dataclasses.dataclass
 class Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumns:
+    # The character set collation used for this column's own string comparisons. (AI-inferred)
     collation: Any = None
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # The data type of this column. (AI-inferred)
     data_type: Any = None
+    # The maximum length of this column's own value. (AI-inferred)
     length: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # This column's own position within its own containing table, starting from 1. (AI-inferred)
     ordinal_position: Any = None
+    # The total number of digits a numeric column may hold. (AI-inferred)
     precision: Any = None
+    # The column(s) making up this table's own primary key. (AI-inferred)
     primary_key: Any = None
+    # The number of digits kept after the decimal point in a numeric column. (AI-inferred)
     scale: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables:
+    # The MySQL column(s) making up this table. (AI-inferred)
     mysql_columns: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases:
+    # The source database this applies to. (AI-inferred)
     database: Any = None
+    # The MySQL table(s) this applies to. (AI-inferred)
     mysql_tables: Any = None
 
 @dataclasses.dataclass
@@ -54,24 +72,37 @@ class Stream_BackfillAll_MysqlExcludedObjects:
 
 @dataclasses.dataclass
 class Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumns:
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # The data type of this column. (AI-inferred)
     data_type: Any = None
+    # The character encoding used for this column's own text data. (AI-inferred)
     encoding: Any = None
+    # The maximum length of this column's own value. (AI-inferred)
     length: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # This column's own position within its own containing table, starting from 1. (AI-inferred)
     ordinal_position: Any = None
+    # The total number of digits a numeric column may hold. (AI-inferred)
     precision: Any = None
+    # The column(s) making up this table's own primary key. (AI-inferred)
     primary_key: Any = None
+    # The number of digits kept after the decimal point in a numeric column. (AI-inferred)
     scale: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables:
+    # The Oracle column(s) making up this table. (AI-inferred)
     oracle_columns: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_OracleExcludedObjects_OracleSchemas:
+    # The Oracle table(s) this applies to. (AI-inferred)
     oracle_tables: Any = None
+    # A reference to the source schema this applies to. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
@@ -81,23 +112,35 @@ class Stream_BackfillAll_OracleExcludedObjects:
 
 @dataclasses.dataclass
 class Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumns:
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # The data type of this column. (AI-inferred)
     data_type: Any = None
+    # The maximum length of this column's own value. (AI-inferred)
     length: Any = None
+    # Whether `null` is a valid value for this otherwise-typed field. (AI-inferred)
     nullable: Any = None
+    # This column's own position within its own containing table, starting from 1. (AI-inferred)
     ordinal_position: Any = None
+    # The total number of digits a numeric column may hold. (AI-inferred)
     precision: Any = None
+    # The column(s) making up this table's own primary key. (AI-inferred)
     primary_key: Any = None
+    # The number of digits kept after the decimal point in a numeric column. (AI-inferred)
     scale: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables:
+    # The PostgreSQL column(s) making up this table. (AI-inferred)
     postgresql_columns: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas:
+    # The PostgreSQL table(s) this applies to. (AI-inferred)
     postgresql_tables: Any = None
+    # A reference to the source schema this applies to. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
@@ -107,13 +150,18 @@ class Stream_BackfillAll_PostgresqlExcludedObjects:
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SaasExcludedObjects_Objects_Properties:
+    # The column(s) making up this table's own primary key. (AI-inferred)
     primary_key: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
+    # The name of the MongoDB field this applies to. (AI-inferred)
     property_name: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SaasExcludedObjects_Objects:
+    # The name of the source object (table/collection) this applies to. (AI-inferred)
     object_name: Any = None
+    # The named sub-schemas an `object`-typed value's own fields must each satisfy. (AI-inferred)
     properties: Any = None
 
 @dataclasses.dataclass
@@ -123,13 +171,18 @@ class Stream_BackfillAll_SaasExcludedObjects:
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SalesforceExcludedObjects_Objects_Fields:
+    # The data type of this column. (AI-inferred)
     data_type: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # Whether this Salesforce field may hold a null value. (AI-inferred)
     nillable: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SalesforceExcludedObjects_Objects:
+    # The field(s) making up this schema. (AI-inferred)
     fields: Any = None
+    # The name of the source object (table/collection) this applies to. (AI-inferred)
     object_name: Any = None
 
 @dataclasses.dataclass
@@ -139,19 +192,27 @@ class Stream_BackfillAll_SalesforceExcludedObjects:
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_Columns:
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # The data type of this column. (AI-inferred)
     data_type: Any = None
+    # Whether this column is part of the source table's own primary key. (AI-inferred)
     is_primary_key: Any = None
+    # This column's own position within its own containing table, starting from 1. (AI-inferred)
     ordinal_position: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables:
+    # The column(s) making up this table. (AI-inferred)
     columns: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SpannerExcludedObjects_Schemas:
+    # A reference to the source schema this applies to. (AI-inferred)
     schema: Any = None
+    # The table(s) making up this schema. (AI-inferred)
     tables: Any = None
 
 @dataclasses.dataclass
@@ -161,12 +222,16 @@ class Stream_BackfillAll_SpannerExcludedObjects:
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SqlServerExcludedObjects_Schemas_Tables:
+    # The column(s) making up this table. (AI-inferred)
     columns: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Stream_BackfillAll_SqlServerExcludedObjects_Schemas:
+    # A reference to the source schema this applies to. (AI-inferred)
     schema: Any = None
+    # The table(s) making up this schema. (AI-inferred)
     tables: Any = None
 
 @dataclasses.dataclass
@@ -273,80 +338,116 @@ class Stream_DestinationConfig:
 
 @dataclasses.dataclass
 class Stream_Errors:
+    # Additional detail about this result. (AI-inferred)
     details: Any = None
+    # When this error occurred. (AI-inferred)
     error_time: Any = None
+    # A unique identifier for this specific error occurrence. (AI-inferred)
     error_uuid: Any = None
+    # A human-readable description of this result. (AI-inferred)
     message: Any = None
+    # A machine-readable reason code. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_CustomizationRules_BigqueryClustering:
+    # The column(s) making up this table. (AI-inferred)
     columns: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartition:
+    # The time granularity (e.g. day, hour) the destination table is partitioned at. (AI-inferred)
     partitioning_time_granularity: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartition:
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # Where this range ends. (AI-inferred)
     end: Any = None
+    # How often this recurring action happens. (AI-inferred)
     interval: Any = None
+    # Where this range starts. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartition:
+    # A reference to the specific column this applies to. (AI-inferred)
     column: Any = None
+    # The time granularity (e.g. day, hour) the destination table is partitioned at. (AI-inferred)
     partitioning_time_granularity: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_CustomizationRules_BigqueryPartitioning:
+    # Partitions the destination table by the time each row was ingested, rather than a source column's own value. (AI-inferred)
     ingestion_time_partition: Any = None
+    # Partitions the destination table by integer ranges of a specific column. (AI-inferred)
     integer_range_partition: Any = None
+    # Whether queries against the destination table must include a filter on the partitioning column. (AI-inferred)
     require_partition_filter: Any = None
+    # Partitions the destination table by a fixed time unit (e.g. day) derived from a source column's own value. (AI-inferred)
     time_unit_partition: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_CustomizationRules:
+    # Configures the destination BigQuery table to be clustered by specific column(s). (AI-inferred)
     bigquery_clustering: Any = None
+    # Configures the destination BigQuery table to be partitioned, e.g. by ingestion time or a specific column. (AI-inferred)
     bigquery_partitioning: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifier:
+    # A reference to the source collection (e.g. a MongoDB collection) this applies to. (AI-inferred)
     collection: Any = None
+    # The source database this applies to. (AI-inferred)
     database: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifier:
+    # The source database this applies to. (AI-inferred)
     database: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifier:
+    # A reference to the source schema this applies to. (AI-inferred)
     schema: Any = None
+    # A reference to the specific table this applies to. (AI-inferred)
     table: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifier:
+    # The name of the source object (table/collection) this applies to. (AI-inferred)
     object_name: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_ObjectFilter_SourceObjectIdentifier:
+    # Identifies a specific MongoDB database, collection, or field this applies to. (AI-inferred)
     mongodb_identifier: Any = None
+    # Identifies a specific MySQL database or table this applies to. (AI-inferred)
     mysql_identifier: Any = None
+    # Identifies a specific Oracle schema or table this applies to. (AI-inferred)
     oracle_identifier: Any = None
+    # Identifies a specific PostgreSQL schema or table this applies to. (AI-inferred)
     postgresql_identifier: Any = None
+    # Identifies a specific Salesforce object or field this applies to. (AI-inferred)
     salesforce_identifier: Any = None
+    # Identifies a specific Spanner database or table this applies to. (AI-inferred)
     spanner_identifier: Any = None
+    # Identifies a specific SQL Server schema or table this applies to. (AI-inferred)
     sql_server_identifier: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets_ObjectFilter:
+    # Identifies the specific source object (table/collection) this applies to. (AI-inferred)
     source_object_identifier: Any = None
 
 @dataclasses.dataclass
 class Stream_RuleSets:
+    # Rule(s) transforming how source schema objects are represented in the destination. (AI-inferred)
     customization_rules: Any = None
+    # Restricts this stream to specific source object(s), by inclusion or exclusion. (AI-inferred)
     object_filter: Any = None
 
 @dataclasses.dataclass

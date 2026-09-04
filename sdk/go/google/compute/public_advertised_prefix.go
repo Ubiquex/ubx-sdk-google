@@ -4,11 +4,14 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicAdvertisedPrefix_PublicDelegatedPrefixs struct {
+	// The IP address range of the public delegated prefix, expressed in CIDR notation. (AI-inferred)
 	IpRange any
 	Name    any
+	// The project ID where the public delegated prefix is created, allowing the public advertised prefix to be shared with a different project. (AI-inferred)
 	Project any
-	Region  any
-	Status  any
+	// The region where this delegated prefix is located. (AI-inferred)
+	Region any
+	Status any
 }
 
 type PublicAdvertisedPrefixConfig struct {

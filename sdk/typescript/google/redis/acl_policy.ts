@@ -2,19 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses {
+  /** The current revision of this cluster's own access control list policy. (AI-inferred) */
   aclPolicyRevision?: string | Computed<string>;
+  /** The numeric revision identifier of this ACL policy. (AI-inferred) */
   aclPolicyRevisionNumber?: string | Computed<string>;
+  /** A human-readable description of the error. (AI-inferred) */
   errorMessage?: string | Computed<string>;
+  /** The current lifecycle state of this resource. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface AclPolicy_ClusterAclPolicyAttachments {
+  /** The status of this ACL policy revision as it propagates across shard(s). (AI-inferred) */
   aclPolicyRevisionStatuses?: AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses[] | Computed<AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses[]>;
+  /** A reference to the Redis cluster this applies to. (AI-inferred) */
   cluster?: string | Computed<string>;
 }
 
 export interface AclPolicy_Rules {
+  /** A single access control rule. (AI-inferred) */
   rule?: string | Computed<string>;
+  /** The username used to authenticate. (AI-inferred) */
   username?: string | Computed<string>;
 }
 

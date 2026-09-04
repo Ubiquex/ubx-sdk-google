@@ -17,8 +17,11 @@ class Repo_MirrorConfig:
 
 @dataclasses.dataclass
 class Repo_PubsubConfigs:
+    # The encoding of the Pub/Sub messages this repository publishes on push: `PROTOBUF` (a serialized `SourceRepoEvent` protocol buffer) or `JSON` (the same event as a JSON string). (AI-inferred)
     message_format: Any = None
+    # The service account Cloud Source Repositories uses to publish to `topic`. Must be in the same project as this Pub/Sub config and needs `iam.serviceAccounts.actAs` granted to the caller; defaults to the project's Compute Engine default service account when unset. (AI-inferred)
     service_account_email: Any = None
+    # The Pub/Sub topic push events are published to, in the form `projects/{project}/topics/{topic}`. (AI-inferred)
     topic: Any = None
 
 _Repo_MirrorConfigFields = {

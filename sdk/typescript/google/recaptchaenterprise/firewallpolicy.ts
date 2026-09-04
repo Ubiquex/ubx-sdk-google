@@ -2,20 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Firewallpolicy_Actions_SetHeader {
+  /** The header name to set. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The header value to set. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Firewallpolicy_Actions_Substitute {
+  /** The path whose content is served in place of the matching request. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface Firewallpolicy_Actions {
+  /** Lets the matching request through unmodified. (AI-inferred) */
   allow?: unknown | Computed<unknown>;
+  /** Blocks the matching request outright. (AI-inferred) */
   block?: unknown | Computed<unknown>;
+  /** Injects the reCAPTCHA client-side script into the matching response, without otherwise altering it. (AI-inferred) */
   includeRecaptchaScript?: unknown | Computed<unknown>;
+  /** Redirects the matching request to reCAPTCHA's own interstitial challenge page. (AI-inferred) */
   redirect?: unknown | Computed<unknown>;
+  /** Adds or overwrites a header on the matching request before forwarding it. (AI-inferred) */
   setHeader?: Firewallpolicy_Actions_SetHeader | Computed<Firewallpolicy_Actions_SetHeader>;
+  /** Serves an alternate path's own content in place of the matching request, without redirecting the client. (AI-inferred) */
   substitute?: Firewallpolicy_Actions_Substitute | Computed<Firewallpolicy_Actions_Substitute>;
 }
 

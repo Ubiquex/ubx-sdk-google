@@ -19,10 +19,15 @@ class Volume_BackupConfig:
 
 @dataclasses.dataclass
 class Volume_BlockDevices:
+    # The host group(s) this policy applies to. (AI-inferred)
     host_groups: Any = None
+    # A unique identifier for this resource. (AI-inferred)
     identifier: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    # The operating system type this applies to. (AI-inferred)
     os_type: Any = None
+    # The size of this resource, in gibibytes. (AI-inferred)
     size_gib: Any = None
 
 @dataclasses.dataclass
@@ -83,18 +88,31 @@ class Volume_CloneDetails:
 
 @dataclasses.dataclass
 class Volume_ExportPolicy_Rules:
+    # Whether this client is granted read-only or read-write access. (AI-inferred)
     access_type: Any = None
+    # The client IP address range(s), in CIDR notation, permitted to access this export. (AI-inferred)
     allowed_clients: Any = None
+    # The user ID mapped to anonymous or root requests, when squashing is enabled. (AI-inferred)
     anon_uid: Any = None
+    # Whether this client is granted root access. (AI-inferred)
     has_root_access: Any = None
+    # Whether Kerberos v5 authenticated clients are granted read-only access. (AI-inferred)
     kerberos5_read_only: Any = None
+    # Whether Kerberos v5 authenticated clients are granted read-write access. (AI-inferred)
     kerberos5_read_write: Any = None
+    # Whether Kerberos v5 with integrity checking authenticated clients are granted read-only access. (AI-inferred)
     kerberos5i_read_only: Any = None
+    # Whether Kerberos v5 with integrity checking authenticated clients are granted read-write access. (AI-inferred)
     kerberos5i_read_write: Any = None
+    # Whether Kerberos v5 with privacy protection authenticated clients are granted read-only access. (AI-inferred)
     kerberos5p_read_only: Any = None
+    # Whether Kerberos v5 with privacy protection authenticated clients are granted read-write access. (AI-inferred)
     kerberos5p_read_write: Any = None
+    # Whether NFS version 3 is enabled for this volume. (AI-inferred)
     nfsv3: Any = None
+    # Whether NFS version 4 is enabled for this volume. (AI-inferred)
     nfsv4: Any = None
+    # How requests from root or unmapped clients are remapped. (AI-inferred)
     squash_mode: Any = None
 
 @dataclasses.dataclass
@@ -134,10 +152,15 @@ class Volume_LargeCapacityConfig:
 
 @dataclasses.dataclass
 class Volume_MountOptions:
+    # The NFS export path for this volume. (AI-inferred)
     export: Any = None
+    # The fully qualified NFS export path for this volume. (AI-inferred)
     export_full: Any = None
+    # Guidance for how to mount or connect to this resource. (AI-inferred)
     instructions: Any = None
+    # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    # The network protocol used. (AI-inferred)
     protocol: Any = None
 
 @dataclasses.dataclass
